@@ -1,5 +1,5 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -21,6 +21,8 @@
 \font_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -60,6 +62,7 @@
 \suppress_date false
 \justification true
 \use_refstyle 1
+\use_minted 0
 \index Index
 \shortcut idx
 \color #008000
@@ -68,7 +71,10 @@
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -116,21 +122,21 @@ footnotemark[1]}
 \end_layout
 
 \begin_layout Title
-Input dealer attributes and the use of improved maize seed in Uganda: Farmers’
- and Input Dealers’ Perceptions
+Working title: Input dealer attributes and the use of improved maize seed
+ in Uganda: Farmers’ and Input Dealers’ Perceptions
 \end_layout
 
-\begin_layout Section
+\begin_layout Standard
 Introduction
 \end_layout
 
 \begin_layout Standard
-Over the past decade, and for the next National Development Plan (NDP) 2010/11-2
-015/16, the Government of Uganda has prioritized the maize crop for national
+Over the past decade, and for the next National Development Plan (NDP) 2020/21-2
+024/25, the Government of Uganda has prioritized the maize for national
  food security and increased household incomes.
- This is based on the crop’s impressive past performance1 and contribution
- to the country’s foreign exchange earnings2 despite its increasing vulnerabilit
-y to climate risks and unpredictable output and price fluctuations.
+ This is based on the crop’s impressive past performance and contribution
+ to the country’s foreign exchange earnings despite its increasing vulnerability
+ to climate risks and unpredictable output and price fluctuations.
  The maize sub-sector is among the three crop sectors (in addition to cassava
  and bananas) that contributed to the recovery of the agricultural sector
  in the FY 2017/18 and 2018/19.
@@ -147,6 +153,7 @@ Government’s interventions in the maize sub-sector have targeted increasing
 \begin_inset CommandInset citation
 LatexCommand citep
 key "fermont2011estimating"
+literal "true"
 
 \end_inset
 
@@ -157,6 +164,7 @@ key "fermont2011estimating"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "GOURLAY2019102376"
+literal "true"
 
 \end_inset
 
@@ -167,17 +175,18 @@ key "GOURLAY2019102376"
  Explanations for the limited use of improved inputs have mainly centered
  on the characteristics of the farmer/household (e.g income, gender, education
  level, location), market characteristics and characteristics of the inputs
- (e.g high yielding, labour requirements, etc).
+ (e.g yield level, labour requirements, etc).
  
 \end_layout
 
 \begin_layout Standard
-Recently, concerns about seed quality has come to the center of the debate
+Recently, concerns about seed quality have come to the center of the debate
  in both policy circles and among researchers.
  In a recent study, 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "10.1093/qje/qjx009"
+literal "true"
 
 \end_inset
 
@@ -188,6 +197,7 @@ key "10.1093/qje/qjx009"
 \begin_inset CommandInset citation
 LatexCommand citet
 key "michelson2018misperceived"
+literal "true"
 
 \end_inset
 
@@ -197,6 +207,7 @@ key "michelson2018misperceived"
 \begin_inset CommandInset citation
 LatexCommand citet
 key "doi:10.1080/00220388.2018.1464143"
+literal "true"
 
 \end_inset
 
@@ -238,8 +249,8 @@ n farmers ); and rating between farmers and input dealers.
 \begin_layout Standard
 The goal is to establish the key attribute(s) that influence farmer-input
  dealer relationships and hence demand/use of improved maize seed.
- The findings will be useful in informing and guiding the current discourse
- in Uganda on how to strengthen trust and links between farmers and input
+ The findings will be useful in guiding the current discourse in Uganda
+ on the strategies to strengthen trust and links between farmers and input
  dealers especially under the e-voucher input system being piloted by government.
 \end_layout
 
@@ -272,7 +283,18 @@ Methods
 \end_layout
 
 \begin_layout Itemize
-Estimate intra-class correlation with classes formed by input provider
+Estimate intra-class correlation (ICC) with classes formed by farmers and
+ input provider.
+ ICC is widely used to measure the extent of agreement and consistency among
+ raters for two or more numerical or quantitative variables
+\begin_inset CommandInset citation
+LatexCommand citet
+key "bujang2017"
+literal "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Itemize
@@ -282,7 +304,7 @@ Estimate correlation between different characteristics (controlling for
 
 \begin_layout Itemize
 Estimate correlation (and plot differences) between ratings agro-input dealers
- give to themselves and averages of farmer scores per input dealer
+ give to themselves and averages of farmer scores per input dealer.
 \end_layout
 
 \begin_layout Standard
