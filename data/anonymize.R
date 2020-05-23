@@ -181,6 +181,10 @@ farmers$hh.maize.sub <- NULL
 farmers$hh.maize.parish <- NULL
 farmers$hh.maize.village <- NULL
 
+farmers <- merge(farmers, read.csv("/home/bjvca/data/projects/PIMMVC/data/raw_non_public/TravelTime50k.csv")[c("ID","RASTERVALU")] ,all.x=T)
+
+names(farmers)[names(farmers) == 'RASTERVALU'] <- 'travel_time_min'
+
 write.csv(farmers, "/home/bjvca/data/projects/PIMMVC/data/public/farmers.csv", row.names=F)
 
 ### now for millers
@@ -285,5 +289,18 @@ traders$hh.maize.village <- NULL
 
 
 write.csv(traders, "/home/bjvca/data/projects/PIMMVC/data/public/traders.csv", row.names=F)
+
+
+### insert GPS coordinates - for liz 
+#farmers_gps <- cbind(farmers,read.csv("/home/bjvca/data/projects/PIMMVC/data/raw_non_public/3rd level_Farmers_shops_Traders_Millers_LINKED.csv")[c("hh.maize._gps_latitude", "hh.maize._gps_longitude", "hh.maize._gps_altitude")])
+#write.csv(farmers_gps, "/home/bjvca/data/projects/PIMMVC/data/public/farmers_gps.csv", row.names=F)
+
+
+
+
+
+
+
+
 
 
