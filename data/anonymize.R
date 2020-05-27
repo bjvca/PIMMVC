@@ -1,13 +1,44 @@
 ### copy pictures
 #### find ~/data/projects/PIMMVC/data/raw_non_public/pictures/1831e23ac6df4e44ac29698c0d6b3e2f/ -name '*.jpg' -exec cp -t ~/data/projects/PIMMVC/data/raw_non_public/pictures/ {} +
-
-
-### for central milk shed
 rm(list=ls())
+library(pracma)
+
+
 agro_input_dealers <- read.csv("/home/bjvca/data/projects/PIMMVC/data/raw_non_public/RawData_Shops_ids.csv")
 farmers <- read.csv("/home/bjvca/data/projects/PIMMVC/data/raw_non_public/3rd level_Farmers_shops_Traders_Millers_LINKED.csv")
 millers <- read.csv("/home/bjvca/data/projects/PIMMVC/data/raw_non_public/RawData_Millers_ids.csv")
 traders <- read.csv("/home/bjvca/data/projects/PIMMVC/data/raw_non_public/RawData_Traders_ids.csv")
+
+### determine catchment areas for agro_input dealer
+farmers$hh.maize._gps_latitude <- as.numeric(as.character(farmers$hh.maize._gps_latitude))
+farmers$hh.maize._gps_longitude <- as.numeric(as.character(farmers$hh.maize._gps_longitude))
+
+agro_input_dealers$hh.maize._gps_latitude <- as.numeric(as.character(agro_input_dealers$hh.maize._gps_latitude))
+agro_input_dealers$hh.maize._gps_longitude <- as.numeric(as.character(agro_input_dealers$hh.maize._gps_longitude))
+
+farmers$dist <- 1000000000000000000
+farmers$agro_dist_lowest <- 10000000000000000000000
+
+farmers$agro_catchID <- NA
+for (j in 1:nrow(agro_input_dealers)) {
+	for (i in 1:nrow(farmers)) {
+	if (!is.na(farmers$hh.maize._gps_latitude[i]) & !is.na(farmers$hh.maize._gps_longitude[i]) & !is.na(agro_input_dealers$hh.maize._gps_latitude[j]) & !is.na(agro_input_dealers$hh.maize._gps_longitude[j])) {
+print(j)	
+farmers$dist[i] <- haversine(c(farmers$hh.maize._gps_latitude[i] ,farmers$hh.maize._gps_longitude[i]),c(agro_input_dealers$hh.maize._gps_latitude[j],agro_input_dealers$hh.maize._gps_longitude[j]))*1000
+
+		if (farmers$dist[i] < farmers$agro_dist_lowest[i]) {
+			farmers$agro_catchID[i] <- as.character(agro_input_dealers$id.agro[j])
+			farmers$agro_dist_lowest[i] <- farmers$dist[i]
+		}
+} else {
+print("NA")
+}
+}
+}
+farmers$dist <- NULL
+farmers$agro_dist_lowest[is.na(farmers$agro_catchID) ] <- NA
+
+### create catchment areas
 
 ### first for agro_input_dealers
 ### remove location (GPS)
@@ -62,7 +93,7 @@ write.csv(agro_input_dealers, "/home/bjvca/data/projects/PIMMVC/data/public/agro
 
 ### now for farmers
 ### remove location (GPS)
-farmers <- farmers[,9:494]
+farmers <- farmers[,c(9:494, 505,506)]
 farmers <- farmers[,!(names(farmers) %in% c("hh.q4","hh.q5","hh.q6","hh.phone","hh.consent")) ]  
 
 ### mask location IDs
