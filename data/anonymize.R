@@ -16,6 +16,27 @@ farmers$hh.maize._gps_longitude <- as.numeric(as.character(farmers$hh.maize._gps
 agro_input_dealers$hh.maize._gps_latitude <- as.numeric(as.character(agro_input_dealers$hh.maize._gps_latitude))
 agro_input_dealers$hh.maize._gps_longitude <- as.numeric(as.character(agro_input_dealers$hh.maize._gps_longitude))
 
+### we found that a few locations are taken at the hotel where enumerators stay - remove these
+agro_input_dealers$hh.maize._gps_latitude[agro_input_dealers$hh.maize._gps_latitude  > 0.604217379 &
+agro_input_dealers$hh.maize._gps_latitude  < 0.613710477 &
+agro_input_dealers$hh.maize._gps_longitude > 33.47659906 &
+agro_input_dealers$hh.maize._gps_longitude < 33.4922358] <- NA
+
+agro_input_dealers$hh.maize._gps_longitude[is.na(agro_input_dealers$hh.maize._gps_latitude) &
+agro_input_dealers$hh.maize._gps_longitude > 33.47659906 &
+agro_input_dealers$hh.maize._gps_longitude < 33.4922358] 
+
+farmers$hh.maize._gps_latitude[farmers$hh.maize._gps_latitude  > 0.609166355 &
+farmers$hh.maize._gps_latitude  < 0.609686321 &
+farmers$hh.maize._gps_longitude > 33.4782433 &
+farmers$hh.maize._gps_longitude < 33.47861667] <- NA
+
+farmers$hh.maize._gps_longitude[is.na(farmers$hh.maize._gps_latitude) &
+farmers$hh.maize._gps_longitude > 33.4782433 &
+farmers$hh.maize._gps_longitude < 33.47861667] 
+
+
+
 farmers$dist <- 1000000000000000000
 farmers$agro_dist_lowest <- 10000000000000000000000
 
@@ -205,7 +226,7 @@ farmers$hh.maize.agro3.q111d   <- NULL
 farmers$hh.maize.agro3.q111f <- NULL
 farmers$hh.maize.agro3.q111g <- NULL
 
-farmers$ID <- paste("F", rownames(farmers), sep="_")
+farmers$ID <- paste("F", as.numeric(as.character(rownames(farmers))), sep="_")
 
 farmers$hh.maize.district <- NULL
 farmers$hh.maize.sub <- NULL
@@ -215,6 +236,8 @@ farmers$hh.maize.village <- NULL
 farmers <- merge(farmers, read.csv("/home/bjvca/data/projects/PIMMVC/data/raw_non_public/TravelTime50k.csv")[c("ID","RASTERVALU")] ,all.x=T)
 
 names(farmers)[names(farmers) == 'RASTERVALU'] <- 'travel_time_min'
+
+farmers$id.agro2[farmers$id.agro2=="A005"] <- "AS005"
 
 write.csv(farmers, "/home/bjvca/data/projects/PIMMVC/data/public/farmers.csv", row.names=F)
 
