@@ -1,11 +1,14 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
 \save_transient_properties true
 \origin unavailable
 \textclass article
 \use_default_options true
+\begin_modules
+knitr
+\end_modules
 \maintain_unincluded_children false
 \language english
 \language_package default
@@ -21,6 +24,8 @@
 \font_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -60,6 +65,7 @@
 \suppress_date false
 \justification true
 \use_refstyle 1
+\use_minted 0
 \index Index
 \shortcut idx
 \color #008000
@@ -68,7 +74,10 @@
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -95,9 +104,7 @@ status open
 author{Richard Ariong
 \backslash
 thanks{Development Strategy and Governance Division, International Food
- Policy Research Institute, Kampala, Uganda} , Leocardia Nabwire 
-\backslash
-footnotemark[1], and Bjorn Van Campenhout
+ Policy Research Institute, Kampala, Uganda}  and Bjorn Van Campenhout
 \backslash
 thanks{LICOS Center for Institutions and Economic Performance, KULeuven,
  Belgium} 
@@ -116,12 +123,103 @@ footnotemark[1]}
 \end_layout
 
 \begin_layout Title
-Evolution of quality consideration along the maize value chain in Uganda
- 
+Inclusiveness in Maize Value Chains in Uganda: Evidence from Linke Stack
+ Surveys
+\end_layout
+
+\begin_layout Abstract
+Commodity value chains play a central role in structural transformation.
+ Using a stack survey that preserves linkages between value chain actors,
+ we look at inclusiveness of the maize value chain
 \end_layout
 
 \begin_layout Section
 Introduction
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<global_declarations,  echo=FALSE, warning = FALSE, message=FALSE>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+path <- getwd()
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Commodity value chains play a central role in structural transformation.
+ Recently, value chains studies have started looking at inclusiveness, as
+ some argue that especially high value global supply chains my benefit only
+ certain groups in society.
+ Available evidence shows that this does not always appears to be the case
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+before "eg."
+key "doi:10.1111/j.1574-0862.2009.00371.x"
+literal "false"
+
+\end_inset
+
+, but who benefits and to what extent also depends on many factors including
+ commodity, value chain structure, etc.
+\end_layout
+
+\begin_layout Standard
+In this paper, we look at inclusiveness of the maize value chain.
+ Staple food supply chains have received much less attention in the literature.
+ Most studies focus on complex high value and/or global commodity value
+ chains, such as horticulture and dairy value chains.
+ Exceptions include teff in Ethiopia.
+ Often, these studies are specifically designed to study rural-urban linkages
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "VANDERCASTEELEN2018383"
+literal "false"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+One novel feature of this study lies in a unique data set: a stack survey
+ that preserves linkages between the different value chain actors.
+ In particular, maize farmers were randomly sampled in selected maize growing
+ areas.
+ Farmers were then asked to indicate actors up- and down-stream the value
+ chain.
+ These links were preserved in the data, such that outcomes at one level
+ of the value chain can be connected to outcomes at another level.
+ This allows us to investigate how inequality at one level of the value
+ chain is reproduced at other levels.
+\end_layout
+
+\begin_layout Standard
+The article is organized as follows: The next section starts with the context.
+ We then describe the structure of the maize value chain and provide some
+ statistics to get a sense of the scale of the actors involved.
+\end_layout
+
+\begin_layout Section
+Context
 \end_layout
 
 \begin_layout Standard
@@ -130,6 +228,7 @@ Maize is a strategically important crop for food security and economic growth
 \begin_inset CommandInset citation
 LatexCommand citep
 key "doi:10.22434/IFAMR2016.0086"
+literal "true"
 
 \end_inset
 
@@ -147,6 +246,7 @@ key "doi:10.22434/IFAMR2016.0086"
 \begin_inset CommandInset citation
 LatexCommand citet
 key "daly2016maize"
+literal "true"
 
 \end_inset
 
@@ -209,12 +309,193 @@ e is scarce on how various value chain actors consider and react to quality
 \end_layout
 
 \begin_layout Section
-Objective 
+Structure of the value chain
 \end_layout
 
 \begin_layout Standard
-To document how quality considerations are transmitted throughout the value
- chain.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<boring-random,  echo=TRUE, warning = TRUE, message=TRUE>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+source(paste(path,"code/init.R", sep="/"))
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Central to the maize value chain are maize farmers.
+ Generally, these farmers are small, cultivating maize on about 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{ format(round(mean(farmers$tot_plot_size, na.rm=T),digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ acres of land.
+ They use rudimentary tools, customary practices and planting material obtained
+ from informal seed markets such that maize yields are very low (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{ format(round(mean(farmers$maize_yield, na.rm=T),digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ kg per acre).
+ Households consist of on average 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{ format(round(mean(farmers$hh.maize.q28, na.rm=T),digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ household members.
+ They produce for own consumption, but a considerable share of households
+ also sells part of the harvest (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{ format(round(mean(farmers$market_part_rate>0, na.rm=T) ,digits=4)*100,nsma
+ll=2)}
+\end_layout
+
+\end_inset
+
+ percent of households).
+ Households that report to be selling sell on average about 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{ format(round(mean(farmers$market_part_rate[farmers$market_part_rate>0],
+ na.rm=T),digits=2)*100,nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of their harvest.
+ 
+\end_layout
+
+\begin_layout Standard
+A second important actor in the value chain are the traders.
+ These traders are often small and use bicycles (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{ format(round((table(traders$hh.maize.q18=="c")/dim(traders)[1])[2],digits=2
+)*100,nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of traders in sample) or motorbikes (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{ format(round((table(traders$hh.maize.q18=="d")/dim(traders)[1])[2],digits=2
+)*100,nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of traders in sample) to collect maize that the farm gate.
+ In particular, we find that about 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{ format(round(mean(traders$hh.maize.value.q15a, na.rm=T) ,digits=2),nsmall=2)}
+\end_layout
+
+\end_inset
+
+ percent of the maize that the average farmer procures comes directly from
+ farmers.
+ Traders also buy significant amounts from each other (about 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{ format(round(mean(traders$hh.maize.value.q15d, na.rm=T) ,digits=2),nsmall=2)}
+\end_layout
+
+\end_inset
+
+ percent).
+ As quantities are concerned,  
+\end_layout
+
+\begin_layout Standard
+Some farmers buy maize seed from agro-input dealers, a third important actor
+ in the Ugandan maize value chain.
+ 
+\end_layout
+
+\begin_layout Subsection
+Inclusiveness in terms of size
+\end_layout
+
+\begin_layout Standard
+For farmers, the scale outcome takes into account production, area, and
+ household size.
+ In particular kg/acre/capita.
 \end_layout
 
 \begin_layout Section
