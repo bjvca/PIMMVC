@@ -309,6 +309,10 @@ e is scarce on how various value chain actors consider and react to quality
 \end_layout
 
 \begin_layout Section
+Analysis
+\end_layout
+
+\begin_layout Subsection
 Structure of the value chain
 \end_layout
 
@@ -318,7 +322,7 @@ status open
 
 \begin_layout Plain Layout
 
-<<boring-random,  echo=TRUE, warning = TRUE, message=TRUE>>=
+<<boring-random,  echo=FALSE, warning = FALSE, message=FALSE>>=
 \end_layout
 
 \begin_layout Plain Layout
@@ -479,13 +483,397 @@ Sexpr{ format(round(mean(traders$hh.maize.value.q15d, na.rm=T) ,digits=2),nsmall
 \end_inset
 
  percent).
- As quantities are concerned,  
+ As quantities procured are concerned, there is a clear difference in activity
+ depending on the season.
+ Immediately after the harvest, when supply of maize by farmers is highest,
+ the average traders records about 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{ format(round(mean(traders$hh.maize.q22a, na.rm=T) ,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ separate transactions.
+ This reduces to about 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{ format(round(mean(traders$hh.maize.q23a, na.rm=T) ,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ separate transactions in the lean season, when farmers have little on offer
+ (and prices are higher).
+ As for quantities, immediately harvest, the average trader collects about
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{ format(round(mean(traders$hh.maize.q22b, na.rm=T) ,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ kilograms (or about 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{ format(round(mean((traders$hh.maize.q22b[traders$hh.maize.q22a>0]/traders$hh.m
+aize.q22a[traders$hh.maize.q22a>0]), na.rm=T) ,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ kgs per transaction); in the lean season this is only 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{ format(round(mean(traders$hh.maize.q23b, na.rm=T) ,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ (corresponding to 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{ format(round(mean((traders$hh.maize.q23b[traders$hh.maize.q23a>0]/traders$hh.m
+aize.q23a[traders$hh.maize.q23a>0]), na.rm=T) ,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ kg per transaction).
+\end_layout
+
+\begin_layout Standard
+Maize that is consumed by farmers is taken to millers.
+ Most millers do not procure maize themselves, but only provide milling
+ services (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{ format(round(prop.table(table(millers$hh.maize.q17a==100))[2]*100  ,digits=0
+),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of millers that were interviewed).
+ 
 \end_layout
 
 \begin_layout Standard
 Some farmers buy maize seed from agro-input dealers, a third important actor
  in the Ugandan maize value chain.
  
+\end_layout
+
+\begin_layout Subsection
+Prices
+\end_layout
+
+\begin_layout Standard
+As mentioned in the previous section, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{ format(round(mean(farmers$market_part_rate>0, na.rm=T) ,digits=4)*100,nsma
+ll=2)}
+\end_layout
+
+\end_inset
+
+ percent of households sell part of their harvest.
+ Most households that sell report that they sell only once, but some recorded
+ up to 7 separate transactions.
+ In total, we recorded 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{ format(round(length(sold_all) ,digits=4),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ transactions.
+ Most of these transactions happen in August or even July, immediately after
+ the harvest (see Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Seasonality-in-maize"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+ The figure also shows the share in total quantities marketed in each month.
+ While this follows the sales pattern, we do see that larger quantities
+ are sold immediately after harvest in July: while in this month 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{ format(round(prop.table(table(sold_all))["7"]  ,digits=4)*100,nsmall=2)}
+\end_layout
+
+\end_inset
+
+ percent of sales transactions take place, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{ format(round(sum(df_fig$amount[df_fig$month=="7"])/sum(df_fig$amount)
+ ,digits=4)*100,nsmall=2)}
+\end_layout
+
+\end_inset
+
+ percent of total quantity marketed is sold.
+ This may indicate some degree of distress sales.
+ Similar sales patterns are observed among maize farmers in other countries
+ in the regions 
+\begin_inset CommandInset citation
+LatexCommand citep
+before "eg."
+key "van2015inter"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/fig_1.png
+	lyxscale 10
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Seasonality in maize sales
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Seasonality-in-maize"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This seasonality leads to significant price variation.
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Seasonality-in-prices"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ shows that immediately after the harvest, prices are at their lowest.
+ Average price that farmers obtain in July and August were about 470 Ugandan
+ shillings per kg (corresponding to about 13 cent).
+ Prices increase gradually from August onward, and reach prices as high
+ as 700 Ugandan shillings per kg (20 cent) around February and march 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Which is really strange as at that period the harvest of the first season
+ should kick in.
+\end_layout
+
+\end_inset
+
+ We also inquired at the level of the traders.
+ Traders report that immediately post-harvest, they buy maize at on average
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{ format(round(mean(traders$hh.maize.q22c, na.rm=T) ,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ per kg.
+ During the lean season, this increases to 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{ format(round(mean(traders$hh.maize.q23c, na.rm=T) ,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+.
+ A similar pattern emerges when traders sell maize further down the value
+ chain.
+ Immediately after harvest when prices are low, they get 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{ format(round(mean(as.numeric(as.character(traders$hh.maize.q22e)), na.rm=T)
+ ,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ UGX per kg.
+ During lean season, they get 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{ format(round(mean(as.numeric(as.character(traders$hh.maize.q23e)), na.rm=T)
+ ,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ UGX.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/fig_2.png
+	lyxscale 10
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Seasonality in prices
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Seasonality-in-prices"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -496,6 +884,27 @@ Inclusiveness in terms of size
 For farmers, the scale outcome takes into account production, area, and
  household size.
  In particular kg/acre/capita.
+\end_layout
+
+\begin_layout Subsection
+Inclusiveness related to quality
+\end_layout
+
+\begin_layout Standard
+Quality is very important in the maize value chain.
+ 
+\end_layout
+
+\begin_layout Standard
+We asked farmers to rate other actors in the value chain on the basis of
+ 5 characteristics.
+ For
+\end_layout
+
+\begin_layout Standard
+These ratings are then used to allocate ratings to each input dealer, trader
+ and processor.
+ 
 \end_layout
 
 \begin_layout Section
