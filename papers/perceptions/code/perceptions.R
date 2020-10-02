@@ -1,0 +1,253 @@
+path <- getwd()
+library(ggplot2)
+library(ggsignif) 
+path_2 <- strsplit(path, "/papers/perceptions")[[1]]
+farmers <- read.csv(paste(path_2,"data/public/farmers.csv", sep = "/"))
+
+
+
+trans <- c("hh.maize.agro1.q108h","hh.maize.agro1.q108i","hh.maize.agro1.q108j","hh.maize.agro1.q108k","hh.maize.agro1.q108l")
+farmers[trans] <- lapply(farmers[trans], function(x) as.numeric(as.character(x)) )
+trans <- c("hh.maize.agro2.q109h","hh.maize.agro2.q109i","hh.maize.agro2.q109j","hh.maize.agro2.q109k","hh.maize.agro2.q109l")
+farmers[trans] <- lapply(farmers[trans], function(x) as.numeric(as.character(x)) )
+trans <- c("hh.maize.agro3.q111h","hh.maize.agro3.q111i","hh.maize.agro3.q111j","hh.maize.agro3.q111k","hh.maize.agro3.q111l")
+farmers[trans] <- lapply(farmers[trans], function(x) as.numeric(as.character(x)) )
+
+stack1 <- cbind(farmers[c("id.agro1","hh.maize.agro1.q108h","hh.maize.agro1.q108i","hh.maize.agro1.q108j","hh.maize.agro1.q108k","hh.maize.agro1.q108l")],"Yes")
+names(stack1) <- c("id.agro","rating_location","rating_price","rating_quality","rating_stock","rating_reputation", "bought")
+stack2 <- cbind(farmers[c("id.agro2","hh.maize.agro2.q109h","hh.maize.agro2.q109i","hh.maize.agro2.q109j","hh.maize.agro2.q109k","hh.maize.agro2.q109l","hh.maize.agro2.q110")])
+names(stack2) <- c("id.agro","rating_location","rating_price","rating_quality","rating_stock","rating_reputation", "bought")
+stack3 <- cbind(farmers[c("id.agro3","hh.maize.agro3.q111h","hh.maize.agro3.q111i","hh.maize.agro3.q111j","hh.maize.agro3.q111k","hh.maize.agro3.q111l","hh.maize.agro3.q112")])
+names(stack3) <- c("id.agro","rating_location","rating_price","rating_quality","rating_stock","rating_reputation", "bought")
+
+ratings <-rbind(stack1,stack2,stack3)
+ratings[c("id.agro","bought")] <- lapply(ratings[c("id.agro","bought")], function(x) as.factor(as.character(x)) )
+
+
+ratings <- subset(ratings, !is.na(rating_reputation) )
+### simple average
+ratings$rating_overall <- rowSums(ratings[c("rating_location","rating_price","rating_quality","rating_stock","rating_reputation")])/5
+summary(ratings$rating_overall)
+tapply(ratings$rating_overall,ratings$bought, mean )
+wilcox.test(ratings$rating_quality~ratings$bought)
+
+dealers <- read.csv(paste(path_2,"data/public/agro_input_dealers.csv", sep = "/"))
+
+dealers$dealer_rating_overall <- rowSums(dealers[c("hh.maize.q79","hh.maize.q80","hh.maize.q81","hh.maize.q82","hh.maize.q83")])/5
+summary(dealers$dealer_rating_overall)
+
+wilcox.test(ratings$rating_overall,dealers$dealer_rating_overall)
+### these are the three tests in the graph
+wilcox.test(ratings$rating_overall[ratings$bought=="No"],dealers$dealer_rating_overall)
+wilcox.test(ratings$rating_overall[ratings$bought=="Yes"],dealers$dealer_rating_overall)
+wilcox.test(ratings$rating_overall[ratings$bought=="Yes"],ratings$rating_overall[ratings$bought=="No"])
+
+### create graphs
+## first graph is a simple bar chart of means - overall rating of customers, non-customers and dealers
+
+df <- data.frame(c(mean(dealers$dealer_rating_overall),tapply(ratings$rating_overall,ratings$bought, mean )[2:3]))
+names(df) <- "score"
+rownames(df) <- NULL
+df$levels <- c("dealer","non-customer","customer")
+df <- df[order(df$score,decreasing = TRUE),]
+df$levels <- factor(df$levels,levels= c("dealer","customer","non-customer"))
+
+png(paste(path, "figures/fig_dealer_1.png",sep = "/"), units="px", height=3200, width= 3200, res=600)
+ggplot(df, aes(x=levels, y=score)) +  geom_bar(stat="identity")+theme_minimal() + theme(axis.title = element_blank()) + geom_signif(comparisons = list(c("dealer", "customer")), annotations="***", y_position = 4.3, tip_length = 0.03) +
+  geom_signif(comparisons = list(c("dealer", "non-customer")), annotations="***", y_position = 4.5, tip_length = 0.03) +
+  geom_signif(comparisons = list(c("customer", "non-customer")), annotations="***", y_position = 4.1, tip_length = 0.03)
+dev.off()
+
+## now create these kind of likert scales bar charts for the different components of the scores, again for the three categories
+
+plot_non_customer <- data.frame(cbind(prop.table(table(ratings$rating_location, ratings$bought=="Yes"),2)[,1],
+prop.table(table(ratings$rating_price, ratings$bought=="Yes"),2)[,1],
+prop.table(table(ratings$rating_quality, ratings$bought=="Yes"),2)[,1],
+prop.table(table(ratings$rating_stock, ratings$bought=="Yes"),2)[,1],
+prop.table(table(ratings$rating_reputation, ratings$bought=="Yes"),2)[,1]))
+names(plot_non_customer) <- c("location","price","quality","stock","reputation")
+
+plot_customer <- data.frame(cbind(prop.table(table(ratings$rating_location, ratings$bought=="Yes"),2)[,2],
+prop.table(table(ratings$rating_price, ratings$bought=="Yes"),2)[,2],
+prop.table(table(ratings$rating_quality, ratings$bought=="Yes"),2)[,2],
+prop.table(table(ratings$rating_stock, ratings$bought=="Yes"),2)[,2],
+prop.table(table(ratings$rating_reputation, ratings$bought=="Yes"),2)[,2]))
+names(plot_customer) <- c("location","price","quality","stock","reputation")
+
+plot_dealer <- data.frame(cbind(c(0,prop.table(table(dealers$hh.maize.q79))),
+c(0,prop.table(table(dealers$hh.maize.q80))),
+c(0,0,prop.table(table(dealers$hh.maize.q81))),
+c(prop.table(table(dealers$hh.maize.q82))),
+c(prop.table(table(dealers$hh.maize.q83)))))
+names(plot_dealer) <- c("location","price","quality","stock","reputation")
+png(paste(path, "figures/fig_dealer_2.png",sep = "/"), units="px", height=3200, width= 3200, res=600)
+par(mfrow=c(1,3), xpd=NA, mar = c(10, 5,5, 1)) 
+colfunc<-colorRampPalette(c("red", "green"))
+barplot(as.matrix(plot_non_customer), col=colfunc(5), main="non-customer", cex.main=1.5,cex.axis=1.5, cex.names=1.5,las=2) 
+barplot(as.matrix(plot_customer), col=colfunc(5), main="customer", cex.main=1.5,cex.axis=1.5, cex.names=1.5,las=2)
+barplot(as.matrix(plot_dealer), col=colfunc(5), main="dealer", cex.main=1.5,cex.axis=1.5, cex.names=1.5,las=2)
+dev.off()
+
+### now do this for traders
+ 
+trans <- c("hh.maize.trader1.q102g","hh.maize.trader1.q102h","hh.maize.trader1.q102i","hh.maize.trader1.q102j","hh.maize.trader1.q102k")
+farmers[trans] <- lapply(farmers[trans], function(x) as.numeric(as.character(x)) )
+trans <- c("hh.maize.trader2.q103g","hh.maize.trader2.q103h","hh.maize.trader2.q103i","hh.maize.trader2.q103j","hh.maize.trader2.q103k")
+farmers[trans] <- lapply(farmers[trans], function(x) as.numeric(as.character(x)) )
+trans <- c("hh.maize.trader3.q104g","hh.maize.trader3.q104h","hh.maize.trader3.q104i","hh.maize.trader3.q104j","hh.maize.trader3.q104k")
+farmers[trans] <- lapply(farmers[trans], function(x) as.numeric(as.character(x)) )
+
+stack1 <- cbind(farmers[c("id.trader1","hh.maize.trader1.q102g","hh.maize.trader1.q102h","hh.maize.trader1.q102i","hh.maize.trader1.q102j","hh.maize.trader1.q102k")],"Yes")
+names(stack1) <- c("id.trader","rating_location","rating_price","rating_quality","rating_honesty","rating_reputation", "sold")
+stack2 <- cbind(farmers[c("id.trader2","hh.maize.trader2.q103g","hh.maize.trader2.q103h","hh.maize.trader2.q103i","hh.maize.trader2.q103j","hh.maize.trader2.q103k","hh.maize.trader2.q103l")])
+names(stack2) <- c("id.trader","rating_location","rating_price","rating_quality","rating_honesty","rating_reputation", "sold")
+stack3 <- cbind(farmers[c("id.trader3","hh.maize.trader3.q104g","hh.maize.trader3.q104h","hh.maize.trader3.q104i","hh.maize.trader3.q104j","hh.maize.trader3.q104k","hh.maize.trader3.q104l")])
+names(stack3) <- c("id.trader","rating_location","rating_price","rating_quality","rating_honesty","rating_reputation", "sold")
+
+ratings <-rbind(stack1,stack2,stack3)
+ratings[c("id.trader","sold")] <- lapply(ratings[c("id.trader","sold")], function(x) as.factor(as.character(x)) )
+
+ratings <- subset(ratings,!is.na(rating_reputation))
+### simple average
+ratings$rating_overall <- rowSums(ratings[c("rating_location","rating_price","rating_quality","rating_honesty","rating_reputation")])/5
+summary(ratings$rating_overall)
+tapply(ratings$rating_overall,ratings$sold, mean )
+wilcox.test(ratings$rating_quality~ratings$sold)
+
+traders <- read.csv(paste(path_2,"data/public/traders.csv", sep = "/"))
+
+traders$trader_rating_overall <- rowSums(traders[c("hh.maize.q40a","hh.maize.q40b","hh.maize.q40c","hh.maize.q40d","hh.maize.q40e")])/5
+summary(traders$trader_rating_overall)
+
+wilcox.test(ratings$rating_overall,traders$trader_rating_overall)
+### these are the three tests in the graph
+wilcox.test(ratings$rating_overall[ratings$sold=="No"],traders$traders_rating_overall)
+wilcox.test(ratings$rating_overall[ratings$sold=="Yes"],traders$trader_rating_overall)
+wilcox.test(ratings$rating_overall[ratings$sold=="Yes"],ratings$rating_overall[ratings$sold=="No"])
+
+
+df <- data.frame(c(mean(traders$trader_rating_overall),tapply(ratings$rating_overall,ratings$sold, mean )[2:3]))
+names(df) <- "score"
+rownames(df) <- NULL
+df$levels <- c("trader","non-customer","customer")
+df <- df[order(df$score,decreasing = TRUE),]
+df$levels <- factor(df$levels,levels= c("trader","customer","non-customer"))
+
+png(paste(path, "figures/fig_trader_1.png",sep = "/"), units="px", height=3200, width= 3200, res=600)
+ggplot(df, aes(x=levels, y=score)) +  geom_bar(stat="identity")+theme_minimal() + theme(axis.title = element_blank()) + geom_signif(comparisons = list(c("trader", "customer")), annotations="***", y_position = 4.4, tip_length = 0.03) +
+  geom_signif(comparisons = list(c("trader", "non-customer")), annotations="***", y_position = 4.6, tip_length = 0.03) +
+  geom_signif(comparisons = list(c("customer", "non-customer")), annotations="***", y_position = 4.2, tip_length = 0.03)
+dev.off()
+
+# now create these kind of likert scales bar charts for the different components of the scores, again for the three categories
+
+plot_non_customer <- data.frame(cbind(prop.table(table(ratings$rating_location, ratings$sold=="Yes"),2)[,1],
+prop.table(table(ratings$rating_price, ratings$sold=="Yes"),2)[,1],
+prop.table(table(ratings$rating_quality, ratings$sold=="Yes"),2)[,1],
+prop.table(table(ratings$rating_honesty, ratings$sold=="Yes"),2)[,1],
+prop.table(table(ratings$rating_reputation, ratings$sold=="Yes"),2)[,1]))
+names(plot_non_customer) <- c("location","price","quality","honesty","reputation")
+
+plot_customer <- data.frame(cbind(prop.table(table(ratings$rating_location, ratings$sold=="Yes"),2)[,2],
+prop.table(table(ratings$rating_price, ratings$sold=="Yes"),2)[,2],
+prop.table(table(ratings$rating_quality, ratings$sold=="Yes"),2)[,2],
+prop.table(table(ratings$rating_honesty, ratings$sold=="Yes"),2)[,2],
+prop.table(table(ratings$rating_reputation, ratings$sold=="Yes"),2)[,2]))
+names(plot_customer) <- c("location","price","quality","honesty","reputation")
+
+plot_trader <- data.frame(cbind(c(prop.table(table(traders$hh.maize.q40a))),
+c(prop.table(table(traders$hh.maize.q40b))),
+c(prop.table(table(traders$hh.maize.q40c))),
+c(prop.table(table(traders$hh.maize.q40d))),
+c(0,prop.table(table(traders$hh.maize.q40e)))))
+names(plot_trader) <- c("location","price","quality","honesty","reputation")
+png(paste(path, "figures/fig_trader_2.png",sep = "/"), units="px", height=3200, width= 3200, res=600)
+par(mfrow=c(1,3), xpd=NA, mar = c(10, 5,5, 1)) 
+colfunc<-colorRampPalette(c("red", "green"))
+barplot(as.matrix(plot_non_customer), col=colfunc(5), main="non-customer", cex.main=1.5,cex.axis=1.5, cex.names=1.5,las=2) 
+barplot(as.matrix(plot_customer), col=colfunc(5), main="customer", cex.main=1.5,cex.axis=1.5, cex.names=1.5,las=2)
+barplot(as.matrix(plot_trader), col=colfunc(5), main="trader", cex.main=1.5,cex.axis=1.5, cex.names=1.5,las=2)
+dev.off()
+
+### now do this for millers
+ 
+trans <- c("hh.maize.miller1.q98g","hh.maize.miller1.q98h","hh.maize.miller1.q98i","hh.maize.miller1.q98j","hh.maize.miller1.q98k")
+farmers[trans] <- lapply(farmers[trans], function(x) as.numeric(as.character(x)) )
+trans <- c("hh.maize.miller2.q99g","hh.maize.miller2.q99h","hh.maize.miller2.q99i","hh.maize.miller2.q99j","hh.maize.miller2.q99k")
+farmers[trans] <- lapply(farmers[trans], function(x) as.numeric(as.character(x)) )
+trans <- c("hh.maize.miller3.q100g","hh.maize.miller3.q100h","hh.maize.miller3.q100i","hh.maize.miller3.q100j","hh.maize.miller3.q100k")
+farmers[trans] <- lapply(farmers[trans], function(x) as.numeric(as.character(x)) )
+
+stack1 <- cbind(farmers[c("id.miller1","hh.maize.miller1.q98g","hh.maize.miller1.q98h","hh.maize.miller1.q98i","hh.maize.miller1.q98j","hh.maize.miller1.q98k")],"Yes")
+names(stack1) <- c("id.miller","rating_location","rating_price","rating_quality","rating_service","rating_reputation", "used")
+stack2 <- cbind(farmers[c("id.miller2","hh.maize.miller2.q99g","hh.maize.miller2.q99h","hh.maize.miller2.q99i","hh.maize.miller2.q99j","hh.maize.miller2.q99k","hh.maize.miller2.q99l")])
+names(stack2) <- c("id.miller","rating_location","rating_price","rating_quality","rating_service","rating_reputation", "used")
+stack3 <- cbind(farmers[c("id.miller3","hh.maize.miller3.q100g","hh.maize.miller3.q100h","hh.maize.miller3.q100i","hh.maize.miller3.q100j","hh.maize.miller3.q100k","hh.maize.miller3.q100l")])
+names(stack3) <- c("id.miller","rating_location","rating_price","rating_quality","rating_service","rating_reputation", "used")
+
+ratings <-rbind(stack1,stack2,stack3)
+ratings[c("id.miller","used")] <- lapply(ratings[c("id.miller","used")], function(x) as.factor(as.character(x)) )
+
+ratings <- subset(ratings, !is.na(rating_reputation) )
+### simple average
+ratings$rating_overall <- rowSums(ratings[c("rating_location","rating_price","rating_quality","rating_service","rating_reputation")])/5
+summary(ratings$rating_overall)
+tapply(ratings$rating_overall,ratings$used, mean )
+
+
+millers <- read.csv(paste(path_2,"data/public/millers.csv", sep = "/"))
+
+millers$miller_rating_overall <- rowSums(millers[c("hh.maize.q36","hh.maize.q37","hh.maize.q38","hh.maize.q39","hh.maize.q40")])/5
+summary(millers$miller_rating_overall)
+
+wilcox.test(ratings$rating_overall,millers$miller_rating_overall)
+### these are the three tests in the graph
+wilcox.test(ratings$rating_overall[ratings$used=="No"],millers$miller_rating_overall)
+wilcox.test(ratings$rating_overall[ratings$used=="Yes"],millers$miller_rating_overall)
+wilcox.test(ratings$rating_overall[ratings$used=="Yes"],ratings$rating_overall[ratings$used=="No"])
+
+
+df <- data.frame(c(mean(millers$miller_rating_overall),tapply(ratings$rating_overall,ratings$used, mean )[2:3]))
+names(df) <- "score"
+rownames(df) <- NULL
+df$levels <- c("miller","non-customer","customer")
+df <- df[order(df$score,decreasing = TRUE),]
+df$levels <- factor(df$levels,levels= c("miller","customer","non-customer"))
+
+png(paste(path, "figures/fig_miller_1.png",sep = "/"), units="px", height=3200, width= 3200, res=600)
+ggplot(df, aes(x=levels, y=score)) +  geom_bar(stat="identity")+theme_minimal() + theme(axis.title = element_blank()) + geom_signif(comparisons = list(c("miller", "customer")), annotations="***", y_position = 4.4, tip_length = 0.03) +
+  geom_signif(comparisons = list(c("miller", "non-customer")), annotations="***", y_position = 4.6, tip_length = 0.03) +
+  geom_signif(comparisons = list(c("customer", "non-customer")), annotations="***", y_position = 4.2, tip_length = 0.03)
+dev.off()
+
+
+# now create these kind of likert scales bar charts for the different components of the scores, again for the three categories
+
+plot_non_customer <- data.frame(cbind(prop.table(table(ratings$rating_location, ratings$used=="Yes"),2)[,1],
+prop.table(table(ratings$rating_price, ratings$used=="Yes"),2)[,1],
+prop.table(table(ratings$rating_quality, ratings$used=="Yes"),2)[,1],
+prop.table(table(ratings$rating_service, ratings$used=="Yes"),2)[,1],
+prop.table(table(ratings$rating_reputation, ratings$used=="Yes"),2)[,1]))
+names(plot_non_customer) <- c("location","price","quality","service","reputation")
+
+plot_customer <- data.frame(cbind(prop.table(table(ratings$rating_location, ratings$used=="Yes"),2)[,2],
+prop.table(table(ratings$rating_price, ratings$used=="Yes"),2)[,2],
+prop.table(table(ratings$rating_quality, ratings$used=="Yes"),2)[,2],
+prop.table(table(ratings$rating_service, ratings$used=="Yes"),2)[,2],
+prop.table(table(ratings$rating_reputation, ratings$used=="Yes"),2)[,2]))
+names(plot_customer) <- c("location","price","quality","service","reputation")
+
+plot_miller <- data.frame(cbind(c(prop.table(table(millers$hh.maize.q36))),
+c(prop.table(table(millers$hh.maize.q37))),
+c(0,prop.table(table(millers$hh.maize.q38))),
+c(prop.table(table(millers$hh.maize.q39))),
+c(0,prop.table(table(millers$hh.maize.q40)))))
+names(plot_miller) <- c("location","price","quality","service","reputation")
+png(paste(path, "figures/fig_miller_2.png",sep = "/"), units="px", height=3200, width= 3200, res=600)
+par(mfrow=c(1,3), xpd=NA, mar = c(10, 5,5, 1)) 
+colfunc<-colorRampPalette(c("red", "green"))
+barplot(as.matrix(plot_non_customer), col=colfunc(5), main="non-customer", cex.main=1.5,cex.axis=1.5, cex.names=1.5,las=2) 
+barplot(as.matrix(plot_customer), col=colfunc(5), main="customer", cex.main=1.5,cex.axis=1.5, cex.names=1.5,las=2)
+barplot(as.matrix(plot_miller), col=colfunc(5), main="miller", cex.main=1.5,cex.axis=1.5, cex.names=1.5,las=2)
+dev.off()
+
