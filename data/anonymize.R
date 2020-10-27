@@ -115,7 +115,8 @@ write.csv(agro_input_dealers, "/home/bjvca/data/projects/PIMMVC/data/public/agro
 ### now for farmers
 ### remove location (GPS)
 farmers <- farmers[,c(9:494, 505,506)]
-farmers <- farmers[,!(names(farmers) %in% c("hh.q4","hh.q5","hh.q6","hh.phone","hh.consent")) ]  
+
+
 
 ### mask location IDs
 #### NOTE: These IDs need cleaning from sub-county downward
@@ -228,23 +229,32 @@ farmers$hh.maize.agro3.q111g <- NULL
 
 farmers$ID <- paste("F", as.numeric(as.character(rownames(farmers))), sep="_")
 
-farmers$hh.maize.district <- NULL
-farmers$hh.maize.sub <- NULL
-farmers$hh.maize.parish <- NULL
-farmers$hh.maize.village <- NULL
-
 farmers <- merge(farmers, read.csv("/home/bjvca/data/projects/PIMMVC/data/raw_non_public/TravelTime50k.csv")[c("ID","RASTERVALU")] ,all.x=T)
 
 names(farmers)[names(farmers) == 'RASTERVALU'] <- 'travel_time_min'
 
 farmers$id.agro2[farmers$id.agro2=="A005"] <- "AS005"
 
+farmers_follow_up <- farmers[c("ID","hh.q5","hh.phone","hh.maize.district","hh.maize.sub","hh.maize.parish","hh.maize.village")]
+farmers_follow_up <- subset(farmers_follow_up , hh.phone != "n/a")
+farmers_follow_up <- subset(farmers_follow_up , hh.phone != "999")
+write.csv(farmers_follow_up, "/home/bjvca/data/projects/PIMMVC/data/raw_non_public/farmers_follow_up.csv", row.names=F)
+
+farmers$hh.maize.district <- NULL
+farmers$hh.maize.sub <- NULL
+farmers$hh.maize.parish <- NULL
+farmers$hh.maize.village <- NULL
+############################################################################################################
+farmers <- farmers[,!(names(farmers) %in% c("hh.q4","hh.q5","hh.q6","hh.phone","hh.consent")) ]  
+
+
+
 write.csv(farmers, "/home/bjvca/data/projects/PIMMVC/data/public/farmers.csv", row.names=F)
 
 ### now for millers
 ### remove location (GPS)
 millers <- millers[,9:105]
-millers <- millers[,!(names(millers) %in% c( "hh.q4", "hh.q4b",  "hh.q5", "hh.q5a", "hh.phone", "hh.consent")) ]  
+
 
 ### mask location IDs
 #### NOTE: These IDs need cleaning from sub-county downward
@@ -283,7 +293,12 @@ for (dist in names(table(millers$hh.maize.district))) {
 millers$distID[millers$hh.maize.district==dist ] <- i_dist
 i_dist <- i_dist + 1
 }
+millers_follow_up <- millers[c("id.miller","hh.q4", "hh.q4b",  "hh.q5","hh.phone","hh.maize.district","hh.maize.sub","hh.maize.village")]
+millers_follow_up <- subset(millers_follow_up , hh.phone != "n/a")
+millers_follow_up <- subset(millers_follow_up , hh.phone != "999")
+write.csv(millers_follow_up, "/home/bjvca/data/projects/PIMMVC/data/raw_non_public/millers_follow_up.csv", row.names=F)
 
+millers <- millers[,!(names(millers) %in% c( "hh.q4", "hh.q4b",  "hh.q5", "hh.q5a", "hh.phone", "hh.consent")) ]  
 millers$hh.maize.q11c <- NULL
 millers$hh.maize.district <- NULL
 millers$hh.maize.sub <- NULL
@@ -295,7 +310,7 @@ write.csv(millers, "/home/bjvca/data/projects/PIMMVC/data/public/millers.csv", r
 ## now for traders
 ### remove location (GPS)
 traders <- traders[,9:146]
-traders <- traders[,!(names(traders) %in% c( "hh.q2","hh.q3", "hh.phone", "hh.consent")) ]  
+#traders <- traders[,!(names(traders) %in% c( "hh.q2","hh.q3", "hh.phone", "hh.consent")) ]  
 
 ### mask location IDs
 #### NOTE: These IDs need cleaning from sub-county downward
@@ -336,6 +351,13 @@ i_dist <- i_dist + 1
 }
 
 
+traders_follow_up <- traders[c("id.trader","hh.q2","hh.phone","hh.maize.district","hh.maize.sub","hh.maize.village")]
+traders_follow_up <- subset(traders_follow_up , hh.phone != "n/a")
+traders_follow_up <- subset(traders_follow_up , hh.phone != "999")
+write.csv(traders_follow_up, "/home/bjvca/data/projects/PIMMVC/data/raw_non_public/traders_follow_up.csv", row.names=F)
+
+
+traders <- traders[,!(names(traders) %in% c( "hh.q2","hh.q3", "hh.phone", "hh.consent")) ]  
 traders$hh.maize.district <- NULL  
 traders$hh.maize.sub <- NULL
 traders$hh.maize.parish <- NULL
