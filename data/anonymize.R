@@ -293,7 +293,7 @@ for (dist in names(table(millers$hh.maize.district))) {
 millers$distID[millers$hh.maize.district==dist ] <- i_dist
 i_dist <- i_dist + 1
 }
-millers_follow_up <- millers[c("id.miller","hh.q4", "hh.q4b",  "hh.q5","hh.phone","hh.maize.district","hh.maize.sub","hh.maize.village")]
+millers_follow_up <- millers[c("id.miller","hh.q4", "hh.q4b",  "hh.q5","hh.phone","hh.maize.district","hh.maize.sub","hh.maize.parish","hh.maize.village")]
 millers_follow_up <- subset(millers_follow_up , hh.phone != "n/a")
 millers_follow_up <- subset(millers_follow_up , hh.phone != "999")
 write.csv(millers_follow_up, "/home/bjvca/data/projects/PIMMVC/data/raw_non_public/millers_follow_up.csv", row.names=F)

@@ -1,15 +1,10 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
 \save_transient_properties true
 \origin unavailable
 \textclass article
-\begin_preamble
-% Added by lyx2lyx
-\renewcommand{\textendash}{--}
-\renewcommand{\textemdash}{---}
-\end_preamble
 \use_default_options true
 \maintain_unincluded_children false
 \language english
@@ -26,6 +21,8 @@
 \font_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -65,6 +62,7 @@
 \suppress_date false
 \justification true
 \use_refstyle 1
+\use_minted 0
 \index Index
 \shortcut idx
 \color #008000
@@ -73,7 +71,10 @@
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -130,7 +131,7 @@ or
 \end_layout
 
 \begin_layout Standard
-Do (seed) input dealer attributes influence farmers' use of improved seed?
+Do (seed) input dealer attributes influence farmer's use of improved seed?
  Evidence from Uganda
 \end_layout
 
@@ -146,6 +147,7 @@ There is ample evidence of the essential role of improved agricultural inputs,
 \begin_inset CommandInset citation
 LatexCommand citep
 key "McArthur2017,Zeng2015,Evenson2003"
+literal "true"
 
 \end_inset
 
@@ -155,14 +157,16 @@ key "McArthur2017,Zeng2015,Evenson2003"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Erenstein2018,Swinnen2010,Jayne2013"
+literal "true"
 
 \end_inset
 
 , adoption levels of such improved inputs remain extremely low, especially
- in sub-saharan Africa 
+ in sub-Saharan Africa 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Sheahan2017,Benin2016"
+literal "true"
 
 \end_inset
 
@@ -174,6 +178,7 @@ key "Sheahan2017,Benin2016"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Porteous2020,Mbowa2016,Fisher2014,Minten2013"
+literal "true"
 
 \end_inset
 
@@ -183,16 +188,18 @@ s in developing countries
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Asfaw2012,Maredia2000"
+literal "true"
 
 \end_inset
 
 .
  However, as improved inputs become more available in developing countries
- (due to increased research and breeding, privatisation/liberalisation of
+ (due to increased research and breeding, privatization/liberalization of
  the inputs market, and input subsidy programs) 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Sheahan2017,Fisher2014,Minten2013,Jayne2013,Jayne2013a"
+literal "true"
 
 \end_inset
 
@@ -200,6 +207,7 @@ key "Sheahan2017,Fisher2014,Minten2013,Jayne2013,Jayne2013a"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Ashour2019,Bold2017"
+literal "true"
 
 \end_inset
 
@@ -209,6 +217,7 @@ key "Ashour2019,Bold2017"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Bold2015"
+literal "true"
 
 \end_inset
 
@@ -222,15 +231,17 @@ Research and policy have focused on two main explanations for low quality
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Omotilewa2018,Barriga2018"
+literal "true"
 
 \end_inset
 
 .
- Although some studies find inaccuracy in farmers' perceptions that purchased
+ Although some studies find inaccuracy in farmer's perceptions that purchased
  inputs are of poor quality 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Ashour2019,michelson2018misperceived"
+literal "true"
 
 \end_inset
 
@@ -239,6 +250,7 @@ key "Ashour2019,michelson2018misperceived"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Ashour2019,UrreaHernandez2016"
+literal "true"
 
 \end_inset
 
@@ -247,6 +259,7 @@ key "Ashour2019,UrreaHernandez2016"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Ashour2019,Boef2019,Barriga2018,Bold2017"
+literal "true"
 
 \end_inset
 
@@ -256,6 +269,7 @@ key "Ashour2019,Boef2019,Barriga2018,Bold2017"
 \begin_inset CommandInset citation
 LatexCommand citet
 key "Barriga2018"
+literal "true"
 
 \end_inset
 
@@ -268,6 +282,7 @@ tly drop as soon as the seeds leave the breeders, and that this is the same
 \begin_inset CommandInset citation
 LatexCommand citet
 key "Bold2017"
+literal "true"
 
 \end_inset
 
@@ -276,6 +291,7 @@ key "Bold2017"
 \begin_inset CommandInset citation
 LatexCommand citet
 key "Bold2017"
+literal "true"
 
 \end_inset
 
@@ -285,6 +301,7 @@ key "Bold2017"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Ashour2019"
+literal "true"
 
 \end_inset
 
@@ -293,6 +310,7 @@ key "Ashour2019"
 \begin_inset CommandInset citation
 LatexCommand citet
 key "Boef2019"
+literal "true"
 
 \end_inset
 
@@ -303,6 +321,7 @@ key "Boef2019"
 \begin_inset CommandInset citation
 LatexCommand citet
 key "Ashour2019"
+literal "true"
 
 \end_inset
 
@@ -319,6 +338,7 @@ The growing incidence of input quality issues (counterfeiting, adulteration
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Etyang2014,Odame2011,Chinsinga2011,Feder2011,Adhiguru2009"
+literal "true"
 
 \end_inset
 
@@ -328,6 +348,7 @@ key "Etyang2014,Odame2011,Chinsinga2011,Feder2011,Adhiguru2009"
 \begin_inset CommandInset citation
 LatexCommand citet
 key "Etyang2014"
+literal "true"
 
 \end_inset
 
@@ -339,6 +360,7 @@ key "Etyang2014"
 \begin_inset CommandInset citation
 LatexCommand citet
 key "Feder2011"
+literal "true"
 
 \end_inset
 
@@ -351,6 +373,7 @@ key "Feder2011"
 \begin_inset CommandInset citation
 LatexCommand citet
 key "Odame2011"
+literal "true"
 
 \end_inset
 
@@ -373,20 +396,22 @@ For this paper, we use input dealer attributes, such as perceived ease of
  dealer's stock levels (input dealers operating with smaller stock levels
  may engage in counterfeiting in order to have more inputs to sell).
  Other input dealer attributes such as the price charged by a given dealer
- may influence farmers' perception of the quality of seed; 
+ may influence farmer's perception of the quality of seed; 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "Ashour2019"
+literal "true"
 
 \end_inset
 
 , for instance find that the price of a bottle of herbicide adjusts to its
  measured quality, although to a very limited degree.
  Ease of access to an input dealer also determines transactions costs and
- subsequently farmers' access to and use improved inputs 
+ subsequently farmer's access to and use improved inputs 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Alene2008"
+literal "true"
 
 \end_inset
 
@@ -401,6 +426,7 @@ key "Alene2008"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Jayashankar2018,Chiu2014"
+literal "true"
 
 \end_inset
 
@@ -414,11 +440,11 @@ key "Jayashankar2018,Chiu2014"
 \begin_layout Standard
 The case for our investigation is the maize value chain in Uganda.
  We use data from a sample of 1500 maize farmers and 78 input (seed) dealers
- from Eastern Uganda to: (i) examine the (in)consistency in farmers' and
- input (seed) dealers' perceived attribute ratings of input dealers; and
+ from Eastern Uganda to: (i) examine the (in)consistency in farmer's and
+ input (seed) dealer's perceived attribute ratings of input dealers; and
  (ii) assess the possible influence of the perceived input dealer attributes
  on smallholder farmers’ use of improved seed.
- We have conceptualized farmers' purchase patterns of improved maize seed
+ We have conceptualized farmer's purchase patterns of improved maize seed
  in the 2018 agricultural year as a proxy for their use of improved seed.
 \end_layout
 
@@ -436,7 +462,7 @@ Our first objective is to establish how the perceived attribute ratings
  other dealers; and (v) reputation of a given dealer relative to other dealers.
  The first objective is studied using intra-class correlation analysis.
  In our second objective, we investigate the relationship between the input
- dealer attributes and farmers' purchase patterns of improved maize seed
+ dealer attributes and farmer's purchase patterns of improved maize seed
  while controlling for additional farmer and input dealer variables, for
  example, farmer's education level, or other sales services offered by input
  dealer.
@@ -448,13 +474,14 @@ This study contributes additional literature to understanding agricultural
  technology adoption processes in emerging markets, specifically; the role
  of agro-input dealers in facilitating or limiting technology adoption in
  smallholder agriculture.
- Seller (input dealer) ratings, which this study employs to examine farmers'
+ Seller (input dealer) ratings, which this study employs to examine farmer's
  perceived value of input dealers, is widely used system in marketing- as
  a mechanism to increase customer trust in and purchase of services/products
  
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Jayashankar2018,Chiu2014"
+literal "true"
 
 \end_inset
 
@@ -466,6 +493,7 @@ key "Jayashankar2018,Chiu2014"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Kim2013,Bente2012,BarIsaac2008"
+literal "true"
 
 \end_inset
 
@@ -478,6 +506,7 @@ key "Kim2013,Bente2012,BarIsaac2008"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "BarIsaac2008"
+literal "true"
 
 \end_inset
 
@@ -513,6 +542,7 @@ The case for this investigation is the maize value chain in Uganda.
 \begin_inset CommandInset citation
 LatexCommand citet
 key "Gourlay2019"
+literal "true"
 
 \end_inset
 
@@ -522,6 +552,7 @@ key "Gourlay2019"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Gourlay2019"
+literal "true"
 
 \end_inset
 
@@ -530,6 +561,7 @@ key "Gourlay2019"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "VanCampenhout2020"
+literal "true"
 
 \end_inset
 
@@ -538,6 +570,7 @@ key "VanCampenhout2020"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Fermont2011"
+literal "true"
 
 \end_inset
 
@@ -555,6 +588,7 @@ Improved maize seed (hybrid and open pollinated varieties) is among the
 \begin_inset CommandInset citation
 LatexCommand citep
 key "VanCampenhout2020"
+literal "true"
 
 \end_inset
 
@@ -565,6 +599,7 @@ key "VanCampenhout2020"
 \begin_inset CommandInset citation
 LatexCommand citet
 key "Sheahan2017"
+literal "true"
 
 \end_inset
 
@@ -576,19 +611,21 @@ ing maize yields in Uganda.
  Figures from a recent study on Uganda suggest that an average farmer incurs
  two times less cost per acre on improved maize seed (even for the most
  expensive hybrid variety, UH5354/Bazooka), than on other inputs such as
- inorganic fertiliser 
+ inorganic fertilizer 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "VanCampenhout2020"
+literal "true"
 
 \end_inset
 
 .
- Similar cost differences between improved seed and fertiliser also manifest
+ Similar cost differences between improved seed and fertilizer also manifest
  in Ethiopia 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Minten2013"
+literal "true"
 
 \end_inset
 
@@ -599,17 +636,19 @@ key "Minten2013"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Obunyali2019,Lunduka2012"
+literal "true"
 
 \end_inset
 
 , such that, if properly used by farmers (for example, planted and weeded
  timely), may reduce requirements for fertilizers or agro-chemicals.
- Generally, however, to maximise yield gains from use of improved inputs,
+ Generally, however, to maximize yield gains from use of improved inputs,
  a cost-effective mix of improved seed and other complimentary inputs is
  recommended 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "VanCampenhout2020,Khonje2018,Wainaina2016"
+literal "true"
 
 \end_inset
 
@@ -617,21 +656,22 @@ key "VanCampenhout2020,Khonje2018,Wainaina2016"
 \end_layout
 
 \begin_layout Standard
-Several factors at household, market and policy levels contrain the use
+Several factors at household, market and policy levels constrain the use
  of improved maize seed and generally improved agricultural inputs by Ugandan
  farmers.
  The current study focuses on the market level factors, specifically, the
  influence of input dealer attributes such as, reputation or perceived quality
- of seed sold by the dealer, on farmers' use of improved seed.
+ of seed sold by the dealer, on farmer's use of improved seed.
  As earlier discussed, the increasing incidence of input quality concerns
  at input dealer/distribution level provide a strong case to place input
- retailers at the centre of intervnetions working to increase farmers' access
+ retailers at the center of interventions working to increase farmer's access
  to and use of quality inputs.
- Additionally, the ongoing policy reforms towards pluralistic agicultural
+ Additionally, the ongoing policy reforms towards pluralistic agricultural
  extension systems in developing countries, including Uganda 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Chowa2013,Rivera2011,Adhiguru2009"
+literal "true"
 
 \end_inset
 
@@ -640,7 +680,7 @@ key "Chowa2013,Rivera2011,Adhiguru2009"
 \end_layout
 
 \begin_layout Standard
-Our general hypothersis is that, input dealer attributes, such as, perceived
+Our general hypothesis is that, input dealer attributes, such as, perceived
  quality of seed sold by the input dealer or perceived reputation or perceived
  ease of access to the input dealer, have a significant influence on the
  purchase/use of purchased inputs.
@@ -658,7 +698,7 @@ Sample and Data
 The data for this study come from a survey of 1526 farming households and
  78 agro-input dealer shops operating in the maize growing districts of
  Iganga, Bugiri and Namutumba in Eastern Uganda.The data were collected in
- July 2019 as part of a larger seed systems development resesarch in Uganda,
+ July 2019 as part of a larger seed systems development research in Uganda,
  targeting farmers, input dealers, traders and millers.
  The farmer household sample is drawn from 64 villages in the three districts.
  Using the 2012 sampling frame of Uganda National Bureau of Statistics (UBoS),
@@ -719,6 +759,7 @@ A key question that may arise is the degree to which results for the three
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Daly2016"
+literal "true"
 
 \end_inset
 
@@ -737,7 +778,7 @@ Design: measuring perceived attributes and input use
 \begin_layout Standard
 The two primary variables of interest used in this paper are farmers' use
  of improved seed- the outcome variable, and the input dealer perceived
- attributes- the independent varibale.
+ attributes- the independent variable.
 \end_layout
 
 \begin_layout Standard
@@ -747,11 +788,12 @@ Several methods have been proposed and used to measure respondents’ perception
 \begin_inset CommandInset citation
 LatexCommand citet
 key "Delavande2011"
+literal "true"
 
 \end_inset
 
  survey the literature on the measurement of subjective beliefs in developing
- countries and categorise possible methods into three groups: Likert style
+ countries and categorize possible methods into three groups: Likert style
  questions, elicitation of the ‘most likely’ outcome, and a full elicitation
  of the distribution of beliefs, most often conducted with visual aids.
 \end_layout
@@ -772,26 +814,30 @@ Descriptive analysis
 
 \begin_layout Itemize
 Start by simply calculating average scores for the different characteristics
- (price, quality,...) for all farmers; do the same for all traders.
+ (price, quality,...) for all farmers; do the same for all input dealers.
  Also create overall perception indicators by simply summing scores and
  dividing by 5.
 \end_layout
 
 \begin_layout Itemize
-Estimate intra-class correlation (ICC) with classes formed by farmers and
- input provider.
- ICC is widely used to measure the extent of agreement and consistency among
- raters for two or more numerical or quantitative variables.
+Is there consistency in the rating of farmers? That is, do most of the farmers
+ rate a good input dealer higher, or are farmer ratings all over the place?
+ Use input dealer fixed effects and test if they are jointly significant?
+ In other words is there significant intra-cluster correlation.
+ How is this different from inter-rater agreement? https://en.wikipedia.org/wiki/I
+nter-rater_reliability
 \end_layout
 
 \begin_layout Itemize
-Estimate correlation between different characteristics (controlling for
- additional variables).
+Is there consistency between ratings of farmers and ratings of input dealers?
+ Is there a systematic bias (eg input dealers always think they do better
+ than farmers,...)
 \end_layout
 
-\begin_layout Itemize
-Estimate correlation (and plot differences) between ratings agro-input dealers
- give to themselves and averages of farmer scores per input dealer.
+\begin_layout Standard
+
+\series bold
+Exploratory analysis
 \end_layout
 
 \begin_layout Standard
