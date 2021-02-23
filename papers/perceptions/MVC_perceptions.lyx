@@ -98,17 +98,15 @@ status open
 
 
 \backslash
-author{Leocardia Nabwire
+author{Bjorn Van Campenhout
 \backslash
 thanks{Development Strategy and Governance Division, International Food
- Policy Research Institute, Kampala, Uganda} , Richard Ariong 
+ Policy Research Institute, Kampala, Uganda} 
 \backslash
-footnotemark[1], and Bjorn Van Campenhout
+footnotemark[2] , , and Anousha De
 \backslash
 thanks{LICOS Center for Institutions and Economic Performance, KULeuven,
- Belgium} 
-\backslash
-footnotemark[1]}
+ Belgium}}
 \end_layout
 
 \end_inset
@@ -122,17 +120,22 @@ footnotemark[1]}
 \end_layout
 
 \begin_layout Title
-Effect of various (seed) input dealer attributes on the farmers' use of
- improved seed: Evidence from Uganda
+Perceptions in Maize Supply Chains: Evidence from Uganda
 \end_layout
 
-\begin_layout Standard
-or
-\end_layout
-
-\begin_layout Standard
-Do (seed) input dealer attributes influence farmer's use of improved seed?
- Evidence from Uganda
+\begin_layout Abstract
+Economic actors base decisions on limited information and perceptions related
+ to the quality of goods or services.
+ Inaccurate perceptions or false beliefs may result in sub-optimal allocation
+ of resources.
+ We study perceptions related to a set of important attributes that characterize
+ maize supply chains in Uganda.
+ We ask a random sample of maize farmers rate agro-input dealers, assembly
+ traders and maize millers.
+ We then track these other actors and ask them to rate themselves on the
+ same attributes.
+ The fact that linkages between actors are preserved enables us to study
+ how perceptions reverberate through the value chain
 \end_layout
 
 \begin_layout Section
@@ -586,7 +589,7 @@ Improved maize seed (hybrid and open pollinated varieties) is among the
  to range between 27% and 37%, compared to between 30% and 50% in Tanzania
  and Malawi 
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand citet
 key "VanCampenhout2020"
 literal "true"
 
@@ -683,7 +686,8 @@ literal "true"
 Our general hypothesis is that, input dealer attributes, such as, perceived
  quality of seed sold by the input dealer or perceived reputation or perceived
  ease of access to the input dealer, have a significant influence on the
- purchase/use of purchased inputs.
+ purchase/use of puruse of improved maize seed and generally improved agricultur
+al inputs chased inputs.
 \end_layout
 
 \begin_layout Section
