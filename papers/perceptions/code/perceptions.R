@@ -13,12 +13,12 @@ farmers[trans] <- lapply(farmers[trans], function(x) as.numeric(as.character(x))
 trans <- c("hh.maize.agro3.q111h","hh.maize.agro3.q111i","hh.maize.agro3.q111j","hh.maize.agro3.q111k","hh.maize.agro3.q111l")
 farmers[trans] <- lapply(farmers[trans], function(x) as.numeric(as.character(x)) )
 
-stack1 <- cbind(farmers[c("id.agro1","hh.maize.agro1.q108h","hh.maize.agro1.q108i","hh.maize.agro1.q108j","hh.maize.agro1.q108k","hh.maize.agro1.q108l")],"Yes")
-names(stack1) <- c("id.agro","rating_location","rating_price","rating_quality","rating_stock","rating_reputation", "bought")
-stack2 <- cbind(farmers[c("id.agro2","hh.maize.agro2.q109h","hh.maize.agro2.q109i","hh.maize.agro2.q109j","hh.maize.agro2.q109k","hh.maize.agro2.q109l","hh.maize.agro2.q110")])
-names(stack2) <- c("id.agro","rating_location","rating_price","rating_quality","rating_stock","rating_reputation", "bought")
-stack3 <- cbind(farmers[c("id.agro3","hh.maize.agro3.q111h","hh.maize.agro3.q111i","hh.maize.agro3.q111j","hh.maize.agro3.q111k","hh.maize.agro3.q111l","hh.maize.agro3.q112")])
-names(stack3) <- c("id.agro","rating_location","rating_price","rating_quality","rating_stock","rating_reputation", "bought")
+stack1 <- cbind(farmers[c("ID","id.agro1","hh.maize.agro1.q108h","hh.maize.agro1.q108i","hh.maize.agro1.q108j","hh.maize.agro1.q108k","hh.maize.agro1.q108l")],"Yes")
+names(stack1) <- c("farmerID","id.agro","rating_location","rating_price","rating_quality","rating_stock","rating_reputation", "bought")
+stack2 <- cbind(farmers[c("ID","id.agro2","hh.maize.agro2.q109h","hh.maize.agro2.q109i","hh.maize.agro2.q109j","hh.maize.agro2.q109k","hh.maize.agro2.q109l","hh.maize.agro2.q110")])
+names(stack2) <- c("farmerID","id.agro","rating_location","rating_price","rating_quality","rating_stock","rating_reputation", "bought")
+stack3 <- cbind(farmers[c("ID","id.agro3","hh.maize.agro3.q111h","hh.maize.agro3.q111i","hh.maize.agro3.q111j","hh.maize.agro3.q111k","hh.maize.agro3.q111l","hh.maize.agro3.q112")])
+names(stack3) <- c("farmerID","id.agro","rating_location","rating_price","rating_quality","rating_stock","rating_reputation", "bought")
 
 ratings <-rbind(stack1,stack2,stack3)
 ratings[c("id.agro","bought")] <- lapply(ratings[c("id.agro","bought")], function(x) as.factor(as.character(x)) )
@@ -250,4 +250,79 @@ barplot(as.matrix(plot_non_customer), col=colfunc(5), main="non-customer", cex.m
 barplot(as.matrix(plot_customer), col=colfunc(5), main="customer", cex.main=1.5,cex.axis=1.5, cex.names=1.5,las=2)
 barplot(as.matrix(plot_miller), col=colfunc(5), main="miller", cex.main=1.5,cex.axis=1.5, cex.names=1.5,las=2)
 dev.off()
+
+######################################
+#inter-rater agreements 
+library(agreement)
+devtools::install_github("jmgirard/agreement")
+
+newdata <- ratings[ , c("id.agro", "farmerID", "rating_overall")]   
+
+rat <- newdata[!apply(newdata == "", 1, any), ] ##check if it works without this
+
+library(dplyr)
+ratnew <- rat %>% rename (Object = id.agro, Rater = farmerID, Score = rating_overall)
+
+##Calculate chance-adjusted indexes of categorical agreement for unordered categories
+results1 <- cat_adjusted(ratnew)
+summary(results1, ci = TRUE, type = "perc")
+tidy(results1, type = "perc")
+plot(results1)
+
+##Calculate chance-adjusted indexes of categorical agreement for ordered categories
+results2 <- cat_adjusted(ratnew, weighting = "linear")
+summary(results2, ci = TRUE, type = "perc")
+tidy(results2, type = "perc")
+plot(results2)
+
+##Calculate category-specific agreement
+results3 <- cat_specific(ratnew)
+summary(results3, ci = TRUE, type = "bca")
+tidy(results3, type = "bca")
+plot(results3)
+
+##Calculate intraclass correlation coefficient for dimensional data with 1 trial
+##each rater rates a different group of objects
+results4 <- dim_icc(ratnew, model = "1A", type = "agreement", unit = "average",
+                    object = Object, rater = Rater, score = Score, warnings = FALSE)
+summary(results4)
+tidy(results4)
+plot(results4, intra = FALSE, inter = TRUE)
+
+res <- dim_icc(highscore, model = "2", type = "agreement", unit = "average",
+                             object = Object, rater = Rater, score = Score, warnings = FALSE)
+
+##model 2A:both raters and objects are random, excludes interaction, can be used with single or multiple trials per rater
+results_highscore <- dim_icc(highscore, model = "2A", type = "agreement", unit = "average",
+                    object = Object, rater = Rater, score = Score, warnings = FALSE)
+
+reshigh <- dim_icc(highscore, model = "2A", type = "consistency", unit = "average",
+                             object = Object, rater = Rater, score = Score, warnings = FALSE)
+
+rhigh <- dim_icc(highs, model = "2A", type = "agreement", unit = "average",
+                   object = Object, rater = Rater, score = Score, warnings = FALSE)
+
+##each rater rates a different group of objects
+
+rate <- dim_icc(highs, model = "1B", type = "agreement", unit = "single",
+                   object = Object, rater = Rater, score = Score, warnings = FALSE)
+
+rate1 <- dim_icc(highs, model = "1B", type = "agreement", unit = "average",
+                   object = Object, rater = Rater, score = Score, warnings = FALSE)
+
+highscore <- subset(ratnew, Score>=3)
+
+highs <- subset(ratnew, Score>=4)
+
+##Calculate chance-adjusted indexes of categorical agreement for ordered categories
+r <- cat_adjusted(highs, weighting = "linear")
+summary(r, ci = TRUE, type = "perc")
+tidy(r, type = "perc")
+plot(r)
+
+r1 <- cat_specific(highs)
+summary(r1, ci = TRUE, type = "bca")
+tidy(r1, type = "bca")
+plot(r1)
+
 
