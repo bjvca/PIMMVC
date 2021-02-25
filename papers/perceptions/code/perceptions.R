@@ -304,6 +304,9 @@ rhigh <- dim_icc(highs, model = "2A", type = "agreement", unit = "average",
 
 ##each rater rates a different group of objects
 
+rate1b <- dim_icc(ratnew, model = "1B", type = "agreement", unit = "average",
+                     object = Object, rater = Rater, score = Score, bootstrap = 20, warnings = TRUE)
+
 rate <- dim_icc(highs, model = "1B", type = "agreement", unit = "single",
                    object = Object, rater = Rater, score = Score, warnings = FALSE)
 
@@ -315,14 +318,220 @@ highscore <- subset(ratnew, Score>=3)
 highs <- subset(ratnew, Score>=4)
 
 ##Calculate chance-adjusted indexes of categorical agreement for ordered categories
-r <- cat_adjusted(highs, weighting = "linear")
-summary(r, ci = TRUE, type = "perc")
-tidy(r, type = "perc")
-plot(r)
+results_high <- cat_adjusted(highs, weighting = "linear")
+summary(results_high, ci = TRUE, type = "perc")
+tidy(results_high, type = "perc")
+plot(results_high)
 
 r1 <- cat_specific(highs)
 summary(r1, ci = TRUE, type = "bca")
 tidy(r1, type = "bca")
 plot(r1)
+
+###############################################
+##checking for missing data
+library(mice)
+md.pattern(ratings)
+#No need for mice. This data set is completely observed.
+
+
+###############################################
+###RATING LOCATION
+fe_interceptloc <- lm(rating_location ~ 1, data=ratings)
+summary(fe_interceptloc)
+#3.47568
+
+tab_model(fe_interceptloc, show.se = TRUE, show.stat = TRUE)
+
+fe_modlocation <- lm(rating_location ~ factor(id.agro) - 1, data = ratings)
+summary(fe_modlocation)
+##reject null
+
+tab_model(fe_modlocation, show.se = TRUE, show.stat = TRUE)
+
+tab_model(fe_interceptloc, fe_modlocation, show.se = TRUE, show.stat = TRUE)
+
+##testing for normality
+library(fBasics)
+jarqueberaTest(fe_modlocation$resid)
+#Asymptotic p Value: 3.625e-13 
+#we reject the null that the skewness and kurtosis of residuals are statistically equal to zero
+#therefore, not a normal distribution
+
+##Joint Hypothesis testing using F stat
+#Can we reject the hypothesis that the coefficient on id.agro is 0?
+#We have to do joint hypothesis test. A joint hypothesis imposes restrictions on multiple regression coefficients.
+library(car)
+linearHypothesis(fe_modlocation, c("factor(id.agro)=0"))
+#we can reject the hypothesis that the coefficients are 0 
+
+##heteroskedasticity robust f-test
+linearHypothesis(fe_modlocation, c("factor(id.agro)=0"), white.adjust = "hc1")
+##same conclusion
+
+
+########################################
+##RATING PRICE 
+fe_interceptprice <- lm(rating_price ~ 1, data=ratings)
+summary(fe_interceptprice)
+#2.93735
+
+fe_modprice <- lm(rating_price ~ factor(id.agro) - 1, data = ratings)
+summary(fe_modprice)
+##reject null
+
+tab_model(fe_modprice, show.se = TRUE, show.stat = TRUE)
+
+tab_model(fe_interceptprice, fe_modprice, show.se = TRUE, show.stat = TRUE)
+
+##testing for normality
+library(fBasics)
+jarqueberaTest(fe_modprice$resid)
+#Asymptotic p Value: 0.001193 
+#we reject the null that the skewness and kurtosis of residuals are statistically equal to zero
+#therefore, not a normal distribution
+
+##Joint Hypothesis testing using F stat
+#Can we reject the hypothesis that the coefficient on id.agro is 0?
+#We have to do joint hypothesis test. A joint hypothesis imposes restrictions on multiple regression coefficients.
+library(car)
+linearHypothesis(fe_modprice, c("factor(id.agro)=0"))
+#we can reject the hypothesis that the coefficients are 0 
+
+##heteroskedasticity robust f-test
+linearHypothesis(fe_modprice, c("factor(id.agro)=0"), white.adjust = "hc1")
+##same conclusion
+
+
+########################################
+##RATING QUALITY
+fe_interceptqual <- lm(rating_quality ~ 1, data=ratings)
+summary(fe_interceptqual)
+#3.56224
+
+fe_modqual <- lm(rating_quality ~ factor(id.agro) - 1, data = ratings)
+summary(fe_modqual)
+##reject null
+
+tab_model(fe_modqual, show.se = TRUE, show.stat = TRUE)
+
+tab_model(fe_interceptqual, fe_modqual, show.se = TRUE, show.stat = TRUE)
+
+##testing for normality
+library(fBasics)
+jarqueberaTest(fe_modqual$resid)
+#Asymptotic p Value: 4.104e-12 
+#we reject the null that the skewness and kurtosis of residuals are statistically equal to zero
+#therefore, not a normal distribution
+
+##Joint Hypothesis testing using F stat
+#Can we reject the hypothesis that the coefficient on id.agro is 0?
+#We have to do joint hypothesis test. A joint hypothesis imposes restrictions on multiple regression coefficients.
+library(car)
+linearHypothesis(fe_modqual, c("factor(id.agro)=0"))
+#we can reject the hypothesis that the coefficients are 0 
+
+##heteroskedasticity robust f-test
+linearHypothesis(fe_modqual, c("factor(id.agro)=0"), white.adjust = "hc1")
+##same conclusion
+
+###############################################################
+##RATING STOCK
+fe_interceptstock <- lm(rating_stock ~ 1, data=ratings)
+summary(fe_interceptstock)
+#3.79143
+
+fe_modstock <- lm(rating_stock ~ factor(id.agro) - 1, data = ratings)
+summary(fe_modstock)
+##reject null
+
+tab_model(fe_modstock, show.se = TRUE, show.stat = TRUE)
+
+tab_model(fe_interceptstock, fe_modstock, show.se = TRUE, show.stat = TRUE)
+
+##testing for normality
+library(fBasics)
+jarqueberaTest(fe_modstock$resid)
+#Asymptotic p Value: < 2.2e-16 
+#we reject the null that the skewness and kurtosis of residuals are statistically equal to zero
+#therefore, not a normal distribution
+
+##Joint Hypothesis testing using F stat
+#Can we reject the hypothesis that the coefficient on id.agro is 0?
+#We have to do joint hypothesis test. A joint hypothesis imposes restrictions on multiple regression coefficients.
+library(car)
+linearHypothesis(fe_modstock, c("factor(id.agro)=0"))
+#we can reject the hypothesis that the coefficients are 0 
+
+##heteroskedasticity robust f-test
+linearHypothesis(fe_modqual, c("factor(id.agro)=0"), white.adjust = "hc1")
+##same conclusion
+
+
+###############################################################
+##RATING REPUTATION
+fe_interceptrepu <- lm(rating_reputation ~ 1, data=ratings)
+summary(fe_interceptrepu)
+#3.73042
+
+fe_modrepu <- lm(rating_reputation ~ factor(id.agro) - 1, data = ratings)
+summary(fe_modrepu)
+##reject null
+
+tab_model(fe_modrepu, show.se = TRUE, show.stat = TRUE)
+
+tab_model(fe_interceptrepu, fe_modrepu, show.se = TRUE, show.stat = TRUE)
+
+##testing for normality
+library(fBasics)
+jarqueberaTest(fe_modrepu$resid)
+#Asymptotic p Value: < 2.2e-16 
+#we reject the null that the skewness and kurtosis of residuals are statistically equal to zero
+#therefore, not a normal distribution
+
+##Joint Hypothesis testing using F stat
+#Can we reject the hypothesis that the coefficient on id.agro is 0?
+#We have to do joint hypothesis test. A joint hypothesis imposes restrictions on multiple regression coefficients.
+library(car)
+linearHypothesis(fe_modrepu, c("factor(id.agro)=0"))
+#we can reject the hypothesis that the coefficients are 0 
+
+##heteroskedasticity robust f-test
+linearHypothesis(fe_modrepu, c("factor(id.agro)=0"), white.adjust = "hc1")
+##same conclusion
+
+###############################################################
+##RATING OVERALL
+fe_interceptoverall <- lm(rating_overall ~ 1, data=ratings)
+summary(fe_interceptoverall)
+#3.49942 
+
+fe_modoverall <- lm(rating_overall ~ factor(id.agro) - 1, data = ratings)
+summary(fe_modoverall)
+##reject null
+
+tab_model(fe_modoverall, show.se = TRUE, show.stat = TRUE)
+
+tab_model(fe_interceptoverall, fe_modoverall, show.se = TRUE, show.stat = TRUE)
+
+##testing for normality
+library(fBasics)
+jarqueberaTest(fe_modoverall$resid)
+#Asymptotic p Value: < 2.2e-16 
+#we reject the null that the skewness and kurtosis of residuals are statistically equal to zero
+#therefore, not a normal distribution
+
+##Joint Hypothesis testing using F stat
+#Can we reject the hypothesis that the coefficient on id.agro is 0?
+#We have to do joint hypothesis test. A joint hypothesis imposes restrictions on multiple regression coefficients.
+library(car)
+linearHypothesis(fe_modoverall, c("factor(id.agro)=0"))
+#we can reject the hypothesis that the coefficients are 0 
+
+##heteroskedasticity robust f-test
+linearHypothesis(fe_modoverall, c("factor(id.agro)=0"), white.adjust = "hc1")
+##same conclusion
+
+
 
 
