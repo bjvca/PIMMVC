@@ -37,6 +37,12 @@ summary(ratings$rating_overall)
 #new data with farmerID, agro ID and ratings 
 rat <- subset(ratings[c(1,2,9)])
 
+## Getting Dealers' data
+dealers <- read.csv(paste(path_2,"data/public/agro_input_dealers.csv", sep = "/"))
+##Index for overall rating by dealers for themselves 
+dealers$dealer_rating_overall <- rowSums(dealers[c("hh.maize.q79","hh.maize.q80","hh.maize.q81","hh.maize.q82","hh.maize.q83")])/5
+summary(dealers$dealer_rating_overall)
+
 #shows duplicate rows
 which(duplicated(ratings))
 which(duplicated(rat)) 
@@ -284,11 +290,6 @@ gt40 <- ratings[ ratings$id.agro %in%  names(table(ratings$id.agro))[table(ratin
 tapply(ratings$rating_overall,ratings$bought, mean )
 wilcox.test(ratings$rating_quality~ratings$bought)
 
-## Getting Dealers' data
-dealers <- read.csv(paste(path_2,"data/public/agro_input_dealers.csv", sep = "/"))
-##Index for overall rating by dealers for themselves 
-dealers$dealer_rating_overall <- rowSums(dealers[c("hh.maize.q79","hh.maize.q80","hh.maize.q81","hh.maize.q82","hh.maize.q83")])/5
-summary(dealers$dealer_rating_overall)
 wiltest<-wilcox.test(ratings$rating_overall,dealers$dealer_rating_overall)
 ##Null: Distributions are same and have same median
 ##Looking at p-value, we may conclude that the medians of the 2 distributions differ (<0.05)
@@ -2416,11 +2417,17 @@ ratings_gen <- subset(ratings_gen[!apply(ratings_gen == "", 1, any),])
 ratings_gen$rating_overall <- rowSums(ratings_gen[c("rating_location","rating_price","rating_quality","rating_stock","rating_reputation")])/5
 summary(ratings_gen$rating_overall)
 
+#subset for merging 
+dealers_m <- subset(dealers, select = c('id.agro' , 'hh.maize.q7','dealer_rating_overall'))
+
 #  Percentage of females in the datasets
 sum(table(ratings_gen$farmerID[ratings_gen$gender=="Female"]))/sum(table(ratings_gen$farmerID))*100
 #35.39095 percent are female farmers 
 sum(table(dealers$id.agro[dealers$hh.maize.q7=="Female"]))/sum(table(dealers$id.agro))*100
 #29.48718 percent are female dealers 
+
+#Merging the datasets
+merged <- merge(ratings_gen,dealers_m, by.x="id.agro", by.y="id.agro")
 
 ########## OVERALL RATING ###########
 
@@ -2484,6 +2491,57 @@ sum(table(ratings_gen$farmerID[ratings_gen$rating_overall>4 & ratings_gen$gender
 sum(table(ratings_gen$farmerID[ratings_gen$rating_overall>4 & ratings_gen$gender=="Female"]))/sum(table(ratings_gen$farmerID[ratings_gen$gender=="Female"]))*100
 #24.4186
 #Female farmers more likely to rate more than 4 
+
+#With the merged dataset
+#Overall female farmers give higher scores compared to male farmers 
+mean(merged$rating_overall[merged$hh.maize.q7=="Female" & merged$gender=="Female"])
+# 3.615152
+mean(merged$rating_overall[merged$hh.maize.q7=="Male" & merged$gender=="Female"])
+#3.594792
+mean(merged$rating_overall[merged$hh.maize.q7=="Male" & merged$gender=="Male"])
+# 3.578235
+mean(merged$rating_overall[merged$hh.maize.q7=="Female" & merged$gender=="Male"])
+#3.532824
+#mean of the overall ratings higher when the gender of the rater and the dealer is the same 
+
+mean(merged$rating_overall[merged$hh.maize.q7=="Female" & merged$gender=="Female" & merged$bought=="Yes"])
+# 3.648
+mean(merged$rating_overall[merged$hh.maize.q7=="Male" & merged$gender=="Female" & merged$bought=="Yes"])
+#3.719403
+#mean of the overall rating higher when the female raters are customers and the dealer is male 
+mean(merged$rating_overall[merged$hh.maize.q7=="Male" & merged$gender=="Male" & merged$bought=="Yes"])
+#3.652857
+mean(merged$rating_overall[merged$hh.maize.q7=="Female" & merged$gender=="Male" & merged$bought=="Yes"])
+#3.626168
+#mean of the overall rating higher when the male raters are customers and they rate male dealers 
+
+mean(merged$rating_overall[merged$hh.maize.q7=="Female" & merged$gender=="Female" & merged$bought=="No"])
+# 3.5125
+mean(merged$rating_overall[merged$hh.maize.q7=="Male" & merged$gender=="Female" & merged$bought=="No"])
+#3.306897
+mean(merged$rating_overall[merged$hh.maize.q7=="Male" & merged$gender=="Male" & merged$bought=="No"])
+#3.23
+mean(merged$rating_overall[merged$hh.maize.q7=="Female" & merged$gender=="Male" & merged$bought=="No"])
+#3.116667
+##mean of the overall ratings higher when the gender of the rater and the dealer is the same and the rater is non-customer 
+
+### Rating >4
+#female farmers rating female dealer
+sum(table(merged$farmerID[merged$rating_overall>4 & merged$gender=="Female" & merged$hh.maize.q7=="Female"]))/sum(table(merged$farmerID[merged$gender=="Female" & merged$hh.maize.q7=="Female"]))*100
+#18.18182
+#male farmers rating male dealer
+sum(table(merged$farmerID[merged$rating_overall>4 & merged$gender=="Male" & merged$hh.maize.q7=="Male"]))/sum(table(merged$farmerID[merged$gender=="Male" & merged$hh.maize.q7=="Male"]))*100
+#21.17647
+#female farmers rating male dealers 
+sum(table(merged$farmerID[merged$rating_overall>4 & merged$gender=="Female" & merged$hh.maize.q7=="Male"]))/sum(table(merged$farmerID[merged$gender=="Female" & merged$hh.maize.q7=="Male"]))*100
+# 26.5625
+#male farmers rating female dealers 
+sum(table(merged$farmerID[merged$rating_overall>4 & merged$gender=="Male" & merged$hh.maize.q7=="Female"]))/sum(table(merged$farmerID[merged$gender=="Male" & merged$hh.maize.q7=="Female"]))*100
+#19.08397
+##### More percentage of male raters give >4 rating when the dealer is male 
+##### More percentage of female raters give >4 rating when the dealer is male 
+#Maybe male dealers are performing well
+
 
 
 ##################################################################################################################################################
