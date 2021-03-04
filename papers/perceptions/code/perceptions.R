@@ -2384,8 +2384,109 @@ jarqueberaTest(fe_modoverallm$resid)
 jarqueberaTest(fe_modoverallm20$resid) #not normal
 
 
+######################################################################################################################################
 
-######################################
+##### ANALYSIS OF RATINGS BASED ON GENDER
+
+# DEALERS
+##Prepping data
+trans <- c("hh.maize.agro1.q108h","hh.maize.agro1.q108i","hh.maize.agro1.q108j","hh.maize.agro1.q108k","hh.maize.agro1.q108l")
+farmers[trans] <- lapply(farmers[trans], function(x) as.numeric(as.character(x)) )
+trans <- c("hh.maize.agro2.q109h","hh.maize.agro2.q109i","hh.maize.agro2.q109j","hh.maize.agro2.q109k","hh.maize.agro2.q109l")
+farmers[trans] <- lapply(farmers[trans], function(x) as.numeric(as.character(x)) )
+trans <- c("hh.maize.agro3.q111h","hh.maize.agro3.q111i","hh.maize.agro3.q111j","hh.maize.agro3.q111k","hh.maize.agro3.q111l")
+farmers[trans] <- lapply(farmers[trans], function(x) as.numeric(as.character(x)) )
+
+#including gender of the farmers 
+stack1 <- cbind(farmers[c("ID","id.agro1","hh.maize.q25","hh.maize.agro1.q108h","hh.maize.agro1.q108i","hh.maize.agro1.q108j","hh.maize.agro1.q108k","hh.maize.agro1.q108l")],"Yes")
+names(stack1) <- c("farmerID","id.agro","gender","rating_location","rating_price","rating_quality","rating_stock","rating_reputation", "bought")
+stack2 <- cbind(farmers[c("ID","id.agro2","hh.maize.q25","hh.maize.agro2.q109h","hh.maize.agro2.q109i","hh.maize.agro2.q109j","hh.maize.agro2.q109k","hh.maize.agro2.q109l","hh.maize.agro2.q110")])
+names(stack2) <- c("farmerID","id.agro","gender","rating_location","rating_price","rating_quality","rating_stock","rating_reputation", "bought")
+stack3 <- cbind(farmers[c("ID","id.agro3","hh.maize.q25","hh.maize.agro3.q111h","hh.maize.agro3.q111i","hh.maize.agro3.q111j","hh.maize.agro3.q111k","hh.maize.agro3.q111l","hh.maize.agro3.q112")])
+names(stack3) <- c("farmerID","id.agro","gender","rating_location","rating_price","rating_quality","rating_stock","rating_reputation", "bought")
+
+ratings_gen <-rbind(stack1,stack2,stack3)
+ratings_gen[c("id.agro","bought")] <- lapply(ratings_gen[c("id.agro","bought")], function(x) as.factor(as.character(x)) )
+
+##Subsetting 
+ratings_gen <- subset(ratings_gen, !is.na(rating_reputation) )
+ratings_gen <- subset(ratings_gen[!apply(ratings_gen == "", 1, any),])
+
+### simple average (Index for overall rating)
+ratings_gen$rating_overall <- rowSums(ratings_gen[c("rating_location","rating_price","rating_quality","rating_stock","rating_reputation")])/5
+summary(ratings_gen$rating_overall)
+
+#  Percentage of females in the datasets
+sum(table(ratings_gen$farmerID[ratings_gen$gender=="Female"]))/sum(table(ratings_gen$farmerID))*100
+#35.39095 percent are female farmers 
+sum(table(dealers$id.agro[dealers$hh.maize.q7=="Female"]))/sum(table(dealers$id.agro))*100
+#29.48718 percent are female dealers 
+
+########## OVERALL RATING ###########
+
+##### ratings from dealers
+
+mean(dealers$dealer_rating_overall[dealers$hh.maize.q7=="Male"])   #4.170909
+mean(dealers$dealer_rating_overall[dealers$hh.maize.q7=="Female"]) #4.034783
+#mean overall rating higher for males
+
+sum(table(dealers$id.agro[dealers$dealer_rating_overall>4 & dealers$hh.maize.q7=="Male"]))/sum(table(dealers$id.agro [dealers$hh.maize.q7=="Male"]))*100
+#56.36364, Male 
+sum(table(dealers$id.agro[dealers$dealer_rating_overall>4 & dealers$hh.maize.q7=="Female"]))/sum(table(dealers$id.agro [dealers$hh.maize.q7=="Female"]))*100
+#52.17391, Female 
+#female dealers less likely to rate themselves more than 4 
+sum(table(dealers$id.agro[dealers$dealer_rating_overall<=3 & dealers$hh.maize.q7=="Male"]))/sum(table(dealers$id.agro [dealers$hh.maize.q7=="Male"]))*100
+#1.818182, Male 
+sum(table(dealers$id.agro[dealers$dealer_rating_overall<=3 & dealers$hh.maize.q7=="Female"]))/sum(table(dealers$id.agro [dealers$hh.maize.q7=="Female"]))*100
+# 4.347826, Female 
+#female dealers more likely to rate themselves less than equal to 3 
+
+#####ratings from farmers for dealers 
+
+mean(ratings_gen$rating_overall[dealers$hh.maize.q7=="Male"]) #3.605426
+mean(ratings_gen$rating_overall[dealers$hh.maize.q7=="Female"]) #3.510798
+#ratings for male dealers higher
+
+mean(ratings_gen$rating_overall[ratings_gen$gender=="Male"]) #3.565605
+mean(ratings_gen$rating_overall[ratings_gen$gender=="Female"]) # 3.6
+#ratings by female farmers are higher
+
+#customers
+sum(table(ratings_gen$farmerID[ratings_gen$rating_overall<=2 & ratings_gen$bought=="Yes" & ratings_gen$gender=="Male"]))/sum(table(ratings_gen$farmerID[ratings_gen$bought=="Yes" & ratings_gen$gender=="Male"]))*100
+#2.842377
+sum(table(ratings_gen$farmerID[ratings_gen$rating_overall<=2 & ratings_gen$bought=="Yes" & ratings_gen$gender=="Female"]))/sum(table(ratings_gen$farmerID[ratings_gen$bought=="Yes" & ratings_gen$gender=="Female"]))*100
+#0.5434783
+#Females who are customers less likely to rate lower than equal 2
+sum(table(ratings_gen$farmerID[ratings_gen$rating_overall>4 & ratings_gen$bought=="Yes" & ratings_gen$gender=="Male"]))/sum(table(ratings_gen$farmerID[ratings_gen$bought=="Yes" & ratings_gen$gender=="Male"]))*100
+#22.48062
+sum(table(ratings_gen$farmerID[ratings_gen$rating_overall>4 & ratings_gen$bought=="Yes" & ratings_gen$gender=="Female"]))/sum(table(ratings_gen$farmerID[ratings_gen$bought=="Yes" & ratings_gen$gender=="Female"]))*100
+#26.63043
+#Females who are customers more likely to rate more than 4 
+#non customers 
+sum(table(ratings_gen$farmerID[ratings_gen$rating_overall<=2 & ratings_gen$bought=="No" & ratings_gen$gender=="Male"]))/sum(table(ratings_gen$farmerID[ratings_gen$bought=="No" & ratings_gen$gender=="Male"]))*100
+# 13.09524
+sum(table(ratings_gen$farmerID[ratings_gen$rating_overall<=2 & ratings_gen$bought=="No" & ratings_gen$gender=="Female"]))/sum(table(ratings_gen$farmerID[ratings_gen$bought=="No" & ratings_gen$gender=="Female"]))*100
+#9.459459
+#Females who are non-customers less likely to rate lower than equal 2
+sum(table(ratings_gen$farmerID[ratings_gen$rating_overall>4 & ratings_gen$bought=="No" & ratings_gen$gender=="Male"]))/sum(table(ratings_gen$farmerID[ratings_gen$bought=="No" & ratings_gen$gender=="Male"]))*100
+#11.90476
+sum(table(ratings_gen$farmerID[ratings_gen$rating_overall>4 & ratings_gen$bought=="No" & ratings_gen$gender=="Female"]))/sum(table(ratings_gen$farmerID[ratings_gen$bought=="No" & ratings_gen$gender=="Female"]))*100
+#18.91892
+#Females who are non-customers more likely to rate more than 4 
+#customers and non-customers 
+sum(table(ratings_gen$farmerID[ratings_gen$rating_overall<=2 & ratings_gen$gender=="Male"]))/sum(table(ratings_gen$farmerID[ratings_gen$gender=="Male"]))*100
+#4.670913
+sum(table(ratings_gen$farmerID[ratings_gen$rating_overall<=2 & ratings_gen$gender=="Female"]))/sum(table(ratings_gen$farmerID[ratings_gen$gender=="Female"]))*100
+#3.100775
+#Female farmers less likely to rate less than equal to 2 
+sum(table(ratings_gen$farmerID[ratings_gen$rating_overall>4 & ratings_gen$gender=="Male"]))/sum(table(ratings_gen$farmerID[ratings_gen$gender=="Male"]))*100
+#20.59448
+sum(table(ratings_gen$farmerID[ratings_gen$rating_overall>4 & ratings_gen$gender=="Female"]))/sum(table(ratings_gen$farmerID[ratings_gen$gender=="Female"]))*100
+#24.4186
+#Female farmers more likely to rate more than 4 
+
+
+##################################################################################################################################################
 #inter-rater agreements 
 library(agreement)
 devtools::install_github("jmgirard/agreement")
