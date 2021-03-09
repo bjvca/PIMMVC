@@ -46,11 +46,28 @@ summary(dealers$dealer_rating_overall)
 #subset for merging 
 #input dealers who provide extension/training to clients (dealers$hh.maize.q67) and seed on credit (dealers$hh.maize.q68)
 #1 = No, 2 = To some, 3 = to everyone who wants 
+#Including Total quantity sold of the top 3 most popular hybrid maize seeds over the first season of 2018
 #hh.maize.q7 - gender of input dealers 
-dealers_m <- subset(dealers, select = c('id.agro' , 'hh.maize.q7','hh.maize.q67','hh.maize.q68','hh.maize.q79','hh.maize.q80','hh.maize.q81','hh.maize.q82','hh.maize.q83','dealer_rating_overall'))
+dealers_m <- subset(dealers, select = c('id.agro' , 'hh.maize.q7','hh.maize.q67','hh.maize.q68','hh.maize.q79','hh.maize.q80','hh.maize.q81','hh.maize.q82','hh.maize.q83','dealer_rating_overall', 'hh.maize.seed.1..q22', 'hh.maize.seed.2..q22', 'hh.maize.seed.3..q22'))
 
 #Merging the datasets
 merged_dealer <- merge(ratings,dealers_m, by="id.agro")
+merged_dealer$ratingoverall_diff <- merged_dealer$rating_overall - merged_dealer$dealer_rating_overall #difference in ratings 
+merged_dealer[merged_dealer=="n/a"] <- 0
+
+head(as.numeric(merged_dealer$hh.maize.seed.1..q22)) 
+head(as.numeric(merged_dealer$hh.maize.seed.2..q22)) 
+head(as.numeric(merged_dealer$hh.maize.seed.3..q22)) 
+
+merged_dealer$hh.maize.seed.1..q22 <- as.numeric(merged_dealer$hh.maize.seed.1..q22)
+merged_dealer$hh.maize.seed.2..q22 <- as.numeric(merged_dealer$hh.maize.seed.2..q22)
+merged_dealer$hh.maize.seed.3..q22 <- as.numeric(merged_dealer$hh.maize.seed.3..q22)
+
+merged_dealer$hh.maize.seed.1..q22 <- as.numeric(as.character(merged_dealer$hh.maize.seed.1..q22))
+merged_dealer$hh.maize.seed.2..q22 <- as.numeric(as.character(merged_dealer$hh.maize.seed.2..q22))
+merged_dealer$hh.maize.seed.3..q22 <- as.numeric(as.character(merged_dealer$hh.maize.seed.3..q22))
+
+merged_dealer$seed_sale <- merged_dealer$hh.maize.seed.1..q22 + merged_dealer$hh.maize.seed.2..q22 + merged_dealer$hh.maize.seed.3..q22 
 
 #Correlations 
 cor(merged_dealer$rating_overall, merged_dealer$hh.maize.q67) #extension or training to clients 
@@ -1555,6 +1572,734 @@ dev.off()
 
 ##########################################################################################################################
 
+######################################################################################################################################
+
+##### ANALYSIS OF RATINGS BASED ON GENDER
+
+# DEALERS
+
+#  Percentage of females in the datasets
+sum(table(ratings$farmerID[ratings$farmer_gender=="Female"]))/sum(table(ratings$farmerID))*100
+#35.55241 percent are female farmers 
+sum(table(dealers$id.agro[dealers$hh.maize.q7=="Female"]))/sum(table(dealers$id.agro))*100
+#29.48718 percent are female dealers 
+sum(table(dealers$id.agro[dealers$hh.maize.q7=="Female"])) #23 female dealers 
+sum(table(dealers$id.agro)) #total 78 dealers 
+
+########## OVERALL RATING ###########
+
+##### ratings from dealers
+
+mean(dealers$dealer_rating_overall[dealers$hh.maize.q7=="Male"])   #4.170909
+mean(dealers$dealer_rating_overall[dealers$hh.maize.q7=="Female"]) #4.034783
+#mean overall rating higher for males
+
+sum(table(dealers$id.agro[dealers$dealer_rating_overall>4 & dealers$hh.maize.q7=="Male"]))/sum(table(dealers$id.agro [dealers$hh.maize.q7=="Male"]))*100
+#56.36364, Male 
+sum(table(dealers$id.agro[dealers$dealer_rating_overall>4 & dealers$hh.maize.q7=="Female"]))/sum(table(dealers$id.agro [dealers$hh.maize.q7=="Female"]))*100
+#52.17391, Female 
+#female dealers less likely to rate themselves more than 4 
+sum(table(dealers$id.agro[dealers$dealer_rating_overall<=3 & dealers$hh.maize.q7=="Male"]))/sum(table(dealers$id.agro [dealers$hh.maize.q7=="Male"]))*100
+#1.818182, Male 
+sum(table(dealers$id.agro[dealers$dealer_rating_overall<=3 & dealers$hh.maize.q7=="Female"]))/sum(table(dealers$id.agro [dealers$hh.maize.q7=="Female"]))*100
+# 4.347826, Female 
+#female dealers more likely to rate themselves less than equal to 3 
+
+#####ratings from farmers for dealers 
+
+mean(merged_dealer$rating_overall[merged_dealer$hh.maize.q7=="Male"]) #3.588716
+mean(merged_dealer$rating_overall[merged_dealer$hh.maize.q7=="Female"]) #3.580208
+#ratings for male dealers little bit higher
+
+mean(merged_dealer$rating_overall[merged_dealer$farmer_gender=="Male"]) #3.577143
+mean(merged_dealer$rating_overall[merged_dealer$farmer_gender=="Female"]) #3.603187
+#ratings by female farmers are higher
+
+#customers
+sum(table(merged_dealer$farmerID[merged_dealer$rating_overall<=2 & merged_dealer$bought=="Yes" & merged_dealer$farmer_gender=="Male"]))/sum(table(merged_dealer$farmerID[merged_dealer$bought=="Yes" & merged_dealer$farmer_gender=="Male"]))*100
+# 2.917772, male 
+sum(table(merged_dealer$farmerID[merged_dealer$rating_overall<=2 & merged_dealer$bought=="Yes" & merged_dealer$farmer_gender=="Female"]))/sum(table(merged_dealer$farmerID[merged_dealer$bought=="Yes" & merged_dealer$farmer_gender=="Female"]))*100
+#  0.5524862, female
+#Females who are customers less likely to rate lower than equal 2
+sum(table(merged_dealer$farmerID[merged_dealer$rating_overall>4 & merged_dealer$bought=="Yes" & merged_dealer$farmer_gender=="Male"]))/sum(table(merged_dealer$farmerID[merged_dealer$bought=="Yes" & merged_dealer$farmer_gender=="Male"]))*100
+# 22.28117, male 
+sum(table(merged_dealer$farmerID[merged_dealer$rating_overall>4 & merged_dealer$bought=="Yes" & merged_dealer$farmer_gender=="Female"]))/sum(table(merged_dealer$farmerID[merged_dealer$bought=="Yes" & merged_dealer$farmer_gender=="Female"]))*100
+#27.07182, female
+#Females who are customers more likely to rate more than 4 
+
+#non customers 
+sum(table(merged_dealer$farmerID[merged_dealer$rating_overall<=2 & merged_dealer$bought=="No" & merged_dealer$farmer_gender=="Male"]))/sum(table(merged_dealer$farmerID[merged_dealer$bought=="No" & merged_dealer$farmer_gender=="Male"]))*100
+# 10.25641, male 
+sum(table(merged_dealer$farmerID[merged_dealer$rating_overall<=2 & merged_dealer$bought=="No" & merged_dealer$farmer_gender=="Female"]))/sum(table(merged_dealer$farmerID[merged_dealer$bought=="No" & merged_dealer$farmer_gender=="Female"]))*100
+#10, female
+#Females who are non-customers less likely to rate lower than equal 2
+sum(table(merged_dealer$farmerID[merged_dealer$rating_overall>4 & merged_dealer$bought=="No" & merged_dealer$farmer_gender=="Male"]))/sum(table(merged_dealer$farmerID[merged_dealer$bought=="No" & merged_dealer$farmer_gender=="Male"]))*100
+# 11.53846, male 
+sum(table(merged_dealer$farmerID[merged_dealer$rating_overall>4 & merged_dealer$bought=="No" & merged_dealer$farmer_gender=="Female"]))/sum(table(merged_dealer$farmerID[merged_dealer$bought=="No" & merged_dealer$farmer_gender=="Female"]))*100
+#20, female
+#Females who are non-customers more likely to rate more than 4 
+
+#customers and non-customers 
+sum(table(merged_dealer$farmerID[merged_dealer$rating_overall<=2 & merged_dealer$farmer_gender=="Male"]))/sum(table(merged_dealer$farmerID[merged_dealer$farmer_gender=="Male"]))*100
+#  4.175824, male 
+sum(table(merged_dealer$farmerID[merged_dealer$rating_overall<=2 & merged_dealer$farmer_gender=="Female"]))/sum(table(merged_dealer$farmerID[merged_dealer$farmer_gender=="Female"]))*100
+#3.187251, female
+#Female farmers less likely to rate lower than equal 2
+sum(table(merged_dealer$farmerID[merged_dealer$rating_overall>4 & merged_dealer$farmer_gender=="Male"]))/sum(table(merged_dealer$farmerID[merged_dealer$farmer_gender=="Male"]))*100
+# 20.43956, male 
+sum(table(merged_dealer$farmerID[merged_dealer$rating_overall>4 & merged_dealer$farmer_gender=="Female"]))/sum(table(merged_dealer$farmerID[merged_dealer$farmer_gender=="Female"]))*100
+#25.0996, female
+#Female farmers more likely to rate more than 4 
+
+#Gender of rater and subject
+#Overall female farmers give higher scores compared to male farmers 
+mean(merged_dealer$rating_overall[merged_dealer$hh.maize.q7=="Female" & merged_dealer$farmer_gender=="Female"])
+# 3.609231
+mean(merged_dealer$rating_overall[merged_dealer$hh.maize.q7=="Male" & merged_dealer$farmer_gender=="Female"])
+#3.601075
+mean(merged_dealer$rating_overall[merged_dealer$hh.maize.q7=="Male" & merged_dealer$farmer_gender=="Male"])
+# 3.581707
+mean(merged_dealer$rating_overall[merged_dealer$hh.maize.q7=="Female" & merged_dealer$farmer_gender=="Male"])
+#3.565354
+#mean of the overall ratings higher when the gender of the rater and the dealer is the same 
+
+#CUSTOMERS
+mean(merged_dealer$rating_overall[merged_dealer$hh.maize.q7=="Female" & merged_dealer$farmer_gender=="Female" & merged_dealer$bought=="Yes"])
+# 3.640816
+mean(merged_dealer$rating_overall[merged_dealer$hh.maize.q7=="Male" & merged_dealer$farmer_gender=="Female" & merged_dealer$bought=="Yes"])
+#3.721212
+mean(merged_dealer$rating_overall[merged_dealer$hh.maize.q7=="Male" & merged_dealer$farmer_gender=="Male" & merged_dealer$bought=="Yes"])
+# 3.644118
+mean(merged_dealer$rating_overall[merged_dealer$hh.maize.q7=="Female" & merged_dealer$farmer_gender=="Male" & merged_dealer$bought=="Yes"])
+#3.64
+##Male dealers get higher score irrespective of the gender of the farmer 
+
+#NON-CUSTOMERS 
+mean(merged_dealer$rating_overall[merged_dealer$hh.maize.q7=="Female" & merged_dealer$farmer_gender=="Female" & merged_dealer$bought=="No"])
+# 3.5125
+mean(merged_dealer$rating_overall[merged_dealer$hh.maize.q7=="Male" & merged_dealer$farmer_gender=="Female" & merged_dealer$bought=="No"])
+#3.307407
+mean(merged_dealer$rating_overall[merged_dealer$hh.maize.q7=="Male" & merged_dealer$farmer_gender=="Male" & merged_dealer$bought=="No"])
+# 3.278571
+mean(merged_dealer$rating_overall[merged_dealer$hh.maize.q7=="Female" & merged_dealer$farmer_gender=="Male" & merged_dealer$bought=="No"])
+#3.209091
+##Male dealers get higher score, but female farmers rate female dealers better
+
+### Rating >4
+#female farmers rating female dealer
+sum(table(merged_dealer$farmerID[merged_dealer$rating_overall>4 & merged_dealer$farmer_gender=="Female" & merged_dealer$hh.maize.q7=="Female"]))/sum(table(merged_dealer$farmerID[merged_dealer$farmer_gender=="Female" & merged_dealer$hh.maize.q7=="Female"]))*100
+#18.46154
+#male farmers rating male dealer
+sum(table(merged_dealer$farmerID[merged_dealer$rating_overall>4 & merged_dealer$farmer_gender=="Male" & merged_dealer$hh.maize.q7=="Male"]))/sum(table(merged_dealer$farmerID[merged_dealer$farmer_gender=="Male" & merged_dealer$hh.maize.q7=="Male"]))*100
+#20.73171
+#female farmers rating male dealers 
+sum(table(merged_dealer$farmerID[merged_dealer$rating_overall>4 & merged_dealer$farmer_gender=="Female" & merged_dealer$hh.maize.q7=="Male"]))/sum(table(merged_dealer$farmerID[merged_dealer$farmer_gender=="Female" & merged_dealer$hh.maize.q7=="Male"]))*100
+# 27.41935
+#male farmers rating female dealers 
+sum(table(merged_dealer$farmerID[merged_dealer$rating_overall>4 & merged_dealer$farmer_gender=="Male" & merged_dealer$hh.maize.q7=="Female"]))/sum(table(merged_dealer$farmerID[merged_dealer$farmer_gender=="Male" & merged_dealer$hh.maize.q7=="Female"]))*100
+#19.68504
+###Overall male dealers are rated more often more than 4 
+##### More percentage of male raters give >4 rating when the dealer is male 
+##### More percentage of female raters give >4 rating when the dealer is male 
+#Maybe male dealers are performing well
+
+################################################################################################
+
+########## LOCATION RATING ###########
+
+##### ratings from dealers
+
+mean(dealers$hh.maize.q79[dealers$hh.maize.q7=="Male"])   #4.327273
+mean(dealers$hh.maize.q79[dealers$hh.maize.q7=="Female"]) #3.956522
+#rating higher for males 
+
+sum(table(dealers$id.agro[dealers$hh.maize.q79>4 & dealers$hh.maize.q7=="Male"]))/sum(table(dealers$id.agro [dealers$hh.maize.q7=="Male"]))*100
+# 50.90909, Male 
+sum(table(dealers$id.agro[dealers$hh.maize.q79>4 & dealers$hh.maize.q7=="Female"]))/sum(table(dealers$id.agro [dealers$hh.maize.q7=="Female"]))*100
+#39.13043, Female 
+#female dealers less likely to rate themselves more than 4 
+sum(table(dealers$id.agro[dealers$hh.maize.q79<=2 & dealers$hh.maize.q7=="Male"]))/sum(table(dealers$id.agro [dealers$hh.maize.q7=="Male"]))*100
+#1.818182, Male 
+sum(table(dealers$id.agro[dealers$hh.maize.q79<=2 & dealers$hh.maize.q7=="Female"]))/sum(table(dealers$id.agro [dealers$hh.maize.q7=="Female"]))*100
+#8.695652, Female 
+#female dealers more likely to rate themselves less than equal to 2 
+
+#####ratings from farmers for dealers 
+
+mean(merged_dealer$rating_location[merged_dealer$hh.maize.q7=="Male"]) #3.723735
+mean(merged_dealer$rating_location[merged_dealer$hh.maize.q7=="Female"]) #3.447917
+#ratings for male dealers higher
+
+mean(merged_dealer$rating_location[merged_dealer$farmer_gender=="Male"]) # 3.534066
+mean(merged_dealer$rating_location[merged_dealer$farmer_gender=="Female"]) #3.856574
+#ratings by female farmers are higher
+
+#customers and non-customers 
+sum(table(merged_dealer$farmerID[merged_dealer$rating_location<=2 & merged_dealer$farmer_gender=="Male"]))/sum(table(merged_dealer$farmerID[merged_dealer$farmer_gender=="Male"]))*100
+#   22.85714, male 
+sum(table(merged_dealer$farmerID[merged_dealer$rating_location<=2 & merged_dealer$farmer_gender=="Female"]))/sum(table(merged_dealer$farmerID[merged_dealer$farmer_gender=="Female"]))*100
+#12.749, female
+#Female farmers less likely to rate lower than equal 2
+sum(table(merged_dealer$farmerID[merged_dealer$rating_location>4 & merged_dealer$farmer_gender=="Male"]))/sum(table(merged_dealer$farmerID[merged_dealer$farmer_gender=="Male"]))*100
+# 29.01099, male 
+sum(table(merged_dealer$farmerID[merged_dealer$rating_location>4 & merged_dealer$farmer_gender=="Female"]))/sum(table(merged_dealer$farmerID[merged_dealer$farmer_gender=="Female"]))*100
+# 36.25498, female
+#Female farmers more likely to rate more than 4 
+
+#Gender of rater and subject
+#Overall female farmers give higher scores compared to male farmers 
+mean(merged_dealer$rating_location[merged_dealer$hh.maize.q7=="Female" & merged_dealer$farmer_gender=="Female"])
+#3.676923
+mean(merged_dealer$rating_location[merged_dealer$hh.maize.q7=="Male" & merged_dealer$farmer_gender=="Female"])
+#3.919355
+mean(merged_dealer$rating_location[merged_dealer$hh.maize.q7=="Male" & merged_dealer$farmer_gender=="Male"])
+#3.612805
+mean(merged_dealer$rating_location[merged_dealer$hh.maize.q7=="Female" & merged_dealer$farmer_gender=="Male"])
+#3.330709
+#male dealers get better scores from both male and female farmers 
+
+### Rating >4
+#female farmers rating female dealer
+sum(table(merged_dealer$farmerID[merged_dealer$rating_location>4 & merged_dealer$farmer_gender=="Female" & merged_dealer$hh.maize.q7=="Female"]))/sum(table(merged_dealer$farmerID[merged_dealer$farmer_gender=="Female" & merged_dealer$hh.maize.q7=="Female"]))*100
+#27.69231
+#male farmers rating male dealer
+sum(table(merged_dealer$farmerID[merged_dealer$rating_location>4 & merged_dealer$farmer_gender=="Male" & merged_dealer$hh.maize.q7=="Male"]))/sum(table(merged_dealer$farmerID[merged_dealer$farmer_gender=="Male" & merged_dealer$hh.maize.q7=="Male"]))*100
+#32.62195
+#female farmers rating male dealers 
+sum(table(merged_dealer$farmerID[merged_dealer$rating_location>4 & merged_dealer$farmer_gender=="Female" & merged_dealer$hh.maize.q7=="Male"]))/sum(table(merged_dealer$farmerID[merged_dealer$farmer_gender=="Female" & merged_dealer$hh.maize.q7=="Male"]))*100
+#39.24731
+#male farmers rating female dealers 
+sum(table(merged_dealer$farmerID[merged_dealer$rating_location>4 & merged_dealer$farmer_gender=="Male" & merged_dealer$hh.maize.q7=="Female"]))/sum(table(merged_dealer$farmerID[merged_dealer$farmer_gender=="Male" & merged_dealer$hh.maize.q7=="Female"]))*100
+#19.68504
+###Overall male dealers are rated more often more than 4 
+##### More percentage of male raters give >4 rating when the dealer is male 
+##### More percentage of female raters give >4 rating when the dealer is male 
+
+#######################################################################################################
+
+########## PRICE RATING ###########
+
+##### ratings from dealers
+
+mean(dealers$hh.maize.q80[dealers$hh.maize.q7=="Male"])   # 4.036364
+mean(dealers$hh.maize.q80[dealers$hh.maize.q7=="Female"]) # 4.086957
+#rating higher for females 
+
+sum(table(dealers$id.agro[dealers$hh.maize.q80>4 & dealers$hh.maize.q7=="Male"]))/sum(table(dealers$id.agro [dealers$hh.maize.q7=="Male"]))*100
+#  34.54545, Male 
+sum(table(dealers$id.agro[dealers$hh.maize.q80>4 & dealers$hh.maize.q7=="Female"]))/sum(table(dealers$id.agro [dealers$hh.maize.q7=="Female"]))*100
+#34.78261, Female 
+#female dealers more likely to rate themselves more than 4 
+sum(table(dealers$id.agro[dealers$hh.maize.q80<=3 & dealers$hh.maize.q7=="Male"]))/sum(table(dealers$id.agro [dealers$hh.maize.q7=="Male"]))*100
+#29.09091, Male 
+sum(table(dealers$id.agro[dealers$hh.maize.q80<=3 & dealers$hh.maize.q7=="Female"]))/sum(table(dealers$id.agro [dealers$hh.maize.q7=="Female"]))*100
+# 26.08696, Female 
+#female dealers less likely to rate themselves less than equal to 3
+
+#####ratings from farmers for dealers 
+
+mean(merged_dealer$rating_price[merged_dealer$hh.maize.q7=="Male"]) #2.994163
+mean(merged_dealer$rating_price[merged_dealer$hh.maize.q7=="Female"]) #2.979167
+#ratings for male dealers higher
+
+mean(merged_dealer$rating_price[merged_dealer$farmer_gender=="Male"]) #2.945055
+mean(merged_dealer$rating_price[merged_dealer$farmer_gender=="Female"]) #3.071713
+#ratings by female farmers are higher
+
+#customers and non-customers 
+sum(table(merged_dealer$farmerID[merged_dealer$rating_price<=2 & merged_dealer$farmer_gender=="Male"]))/sum(table(merged_dealer$farmerID[merged_dealer$farmer_gender=="Male"]))*100
+# 31.20879, male 
+sum(table(merged_dealer$farmerID[merged_dealer$rating_price<=2 & merged_dealer$farmer_gender=="Female"]))/sum(table(merged_dealer$farmerID[merged_dealer$farmer_gender=="Female"]))*100
+# 27.49004, female
+#Female farmers less likely to rate lower than equal 2
+sum(table(merged_dealer$farmerID[merged_dealer$rating_price>4 & merged_dealer$farmer_gender=="Male"]))/sum(table(merged_dealer$farmerID[merged_dealer$farmer_gender=="Male"]))*100
+# 8.791209, male 
+sum(table(merged_dealer$farmerID[merged_dealer$rating_price>4 & merged_dealer$farmer_gender=="Female"]))/sum(table(merged_dealer$farmerID[merged_dealer$farmer_gender=="Female"]))*100
+# 8.366534, female
+#Female farmers less likely to rate more than 4 
+
+#Gender of rater and subject
+#Overall female farmers give higher scores compared to male farmers 
+mean(merged_dealer$rating_price[merged_dealer$hh.maize.q7=="Female" & merged_dealer$farmer_gender=="Female"])
+#3.107692
+mean(merged_dealer$rating_price[merged_dealer$hh.maize.q7=="Male" & merged_dealer$farmer_gender=="Female"])
+#3.05914
+mean(merged_dealer$rating_price[merged_dealer$hh.maize.q7=="Male" & merged_dealer$farmer_gender=="Male"])
+#2.957317
+mean(merged_dealer$rating_price[merged_dealer$hh.maize.q7=="Female" & merged_dealer$farmer_gender=="Male"])
+#2.913386
+#higher scores if gender of rater and subject same 
+
+### Rating >4
+#female farmers rating female dealer
+sum(table(merged_dealer$farmerID[merged_dealer$rating_price>4 & merged_dealer$farmer_gender=="Female" & merged_dealer$hh.maize.q7=="Female"]))/sum(table(merged_dealer$farmerID[merged_dealer$farmer_gender=="Female" & merged_dealer$hh.maize.q7=="Female"]))*100
+# 6.153846
+#male farmers rating male dealer
+sum(table(merged_dealer$farmerID[merged_dealer$rating_price>4 & merged_dealer$farmer_gender=="Male" & merged_dealer$hh.maize.q7=="Male"]))/sum(table(merged_dealer$farmerID[merged_dealer$farmer_gender=="Male" & merged_dealer$hh.maize.q7=="Male"]))*100
+#  9.146341
+#female farmers rating male dealers 
+sum(table(merged_dealer$farmerID[merged_dealer$rating_price>4 & merged_dealer$farmer_gender=="Female" & merged_dealer$hh.maize.q7=="Male"]))/sum(table(merged_dealer$farmerID[merged_dealer$farmer_gender=="Female" & merged_dealer$hh.maize.q7=="Male"]))*100
+#    9.139785
+#male farmers rating female dealers 
+sum(table(merged_dealer$farmerID[merged_dealer$rating_price>4 & merged_dealer$farmer_gender=="Male" & merged_dealer$hh.maize.q7=="Female"]))/sum(table(merged_dealer$farmerID[merged_dealer$farmer_gender=="Male" & merged_dealer$hh.maize.q7=="Female"]))*100
+#   7.874016
+###Overall male dealers are rated more often more than 4 by both genders 
+
+####################################################################################################################
+
+########## QUALITY RATING ###########
+
+##### ratings from dealers
+
+mean(dealers$hh.maize.q81[dealers$hh.maize.q7=="Male"])   # 4.563636
+mean(dealers$hh.maize.q81[dealers$hh.maize.q7=="Female"]) # 4.608696
+#rating higher for females 
+
+sum(table(dealers$id.agro[dealers$hh.maize.q81>4 & dealers$hh.maize.q7=="Male"]))/sum(table(dealers$id.agro [dealers$hh.maize.q7=="Male"]))*100
+# 63.63636, Male 
+sum(table(dealers$id.agro[dealers$hh.maize.q81>4 & dealers$hh.maize.q7=="Female"]))/sum(table(dealers$id.agro [dealers$hh.maize.q7=="Female"]))*100
+#  65.21739, Female 
+#female dealers more likely to rate themselves more than 4 
+sum(table(dealers$id.agro[dealers$hh.maize.q81<=3 & dealers$hh.maize.q7=="Male"]))/sum(table(dealers$id.agro [dealers$hh.maize.q7=="Male"]))*100
+#7.272727, Male 
+sum(table(dealers$id.agro[dealers$hh.maize.q81<=3 & dealers$hh.maize.q7=="Female"]))/sum(table(dealers$id.agro [dealers$hh.maize.q7=="Female"]))*100
+#  4.347826, Female 
+#female dealers less likely to rate themselves less than equal to 3
+
+#####ratings from farmers for dealers 
+
+mean(merged_dealer$rating_quality[merged_dealer$hh.maize.q7=="Male"]) #3.61284
+mean(merged_dealer$rating_quality[merged_dealer$hh.maize.q7=="Female"]) #3.640625
+#ratings for female dealers higher
+
+mean(merged_dealer$rating_quality[merged_dealer$farmer_gender=="Male"]) #3.676923
+mean(merged_dealer$rating_quality[merged_dealer$farmer_gender=="Female"]) #3.517928
+#ratings by male farmers are higher
+
+#customers and non-customers 
+sum(table(merged_dealer$farmerID[merged_dealer$rating_quality<=2 & merged_dealer$farmer_gender=="Male"]))/sum(table(merged_dealer$farmerID[merged_dealer$farmer_gender=="Male"]))*100
+# 9.89011, male 
+sum(table(merged_dealer$farmerID[merged_dealer$rating_quality<=2 & merged_dealer$farmer_gender=="Female"]))/sum(table(merged_dealer$farmerID[merged_dealer$farmer_gender=="Female"]))*100
+# 12.3506, female
+#Female farmers more likely to rate lower than equal 2
+sum(table(merged_dealer$farmerID[merged_dealer$rating_quality>4 & merged_dealer$farmer_gender=="Male"]))/sum(table(merged_dealer$farmerID[merged_dealer$farmer_gender=="Male"]))*100
+#  23.51648, male 
+sum(table(merged_dealer$farmerID[merged_dealer$rating_quality>4 & merged_dealer$farmer_gender=="Female"]))/sum(table(merged_dealer$farmerID[merged_dealer$farmer_gender=="Female"]))*100
+# 16.33466, female
+#Female farmers less likely to rate more than 4 
+
+#Gender of rater and subject
+mean(merged_dealer$rating_quality[merged_dealer$hh.maize.q7=="Female" & merged_dealer$farmer_gender=="Female"])
+#3.646154
+mean(merged_dealer$rating_quality[merged_dealer$hh.maize.q7=="Male" & merged_dealer$farmer_gender=="Female"])
+#  3.473118
+mean(merged_dealer$rating_quality[merged_dealer$hh.maize.q7=="Male" & merged_dealer$farmer_gender=="Male"])
+#3.692073
+mean(merged_dealer$rating_quality[merged_dealer$hh.maize.q7=="Female" & merged_dealer$farmer_gender=="Male"])
+# 3.637795
+#higher scores if gender of rater and subject same 
+
+### Rating >4
+#female farmers rating female dealer
+sum(table(merged_dealer$farmerID[merged_dealer$rating_quality>4 & merged_dealer$farmer_gender=="Female" & merged_dealer$hh.maize.q7=="Female"]))/sum(table(merged_dealer$farmerID[merged_dealer$farmer_gender=="Female" & merged_dealer$hh.maize.q7=="Female"]))*100
+#16.92308
+#male farmers rating male dealer
+sum(table(merged_dealer$farmerID[merged_dealer$rating_quality>4 & merged_dealer$farmer_gender=="Male" & merged_dealer$hh.maize.q7=="Male"]))/sum(table(merged_dealer$farmerID[merged_dealer$farmer_gender=="Male" & merged_dealer$hh.maize.q7=="Male"]))*100
+#25.30488
+#female farmers rating male dealers 
+sum(table(merged_dealer$farmerID[merged_dealer$rating_quality>4 & merged_dealer$farmer_gender=="Female" & merged_dealer$hh.maize.q7=="Male"]))/sum(table(merged_dealer$farmerID[merged_dealer$farmer_gender=="Female" & merged_dealer$hh.maize.q7=="Male"]))*100
+#16.12903
+#male farmers rating female dealers 
+sum(table(merged_dealer$farmerID[merged_dealer$rating_quality>4 & merged_dealer$farmer_gender=="Male" & merged_dealer$hh.maize.q7=="Female"]))/sum(table(merged_dealer$farmerID[merged_dealer$farmer_gender=="Male" & merged_dealer$hh.maize.q7=="Female"]))*100
+# 18.89764
+### gender of rater and subject same, more likely to be rated >4 
+
+######################################################################################
+
+########## STOCK RATING ###########
+
+##### ratings from dealers
+
+mean(dealers$hh.maize.q82[dealers$hh.maize.q7=="Male"])   #  3.490909
+mean(dealers$hh.maize.q82[dealers$hh.maize.q7=="Female"]) # 3.217391
+#rating higher for males 
+
+sum(table(dealers$id.agro[dealers$hh.maize.q82>4 & dealers$hh.maize.q7=="Male"]))/sum(table(dealers$id.agro [dealers$hh.maize.q7=="Male"]))*100
+# 20, Male 
+sum(table(dealers$id.agro[dealers$hh.maize.q82>4 & dealers$hh.maize.q7=="Female"]))/sum(table(dealers$id.agro [dealers$hh.maize.q7=="Female"]))*100
+#   8.695652, Female 
+#female dealers less likely to rate themselves more than 4 
+sum(table(dealers$id.agro[dealers$hh.maize.q82<=3 & dealers$hh.maize.q7=="Male"]))/sum(table(dealers$id.agro [dealers$hh.maize.q7=="Male"]))*100
+#  58.18182, Male 
+sum(table(dealers$id.agro[dealers$hh.maize.q82<=3 & dealers$hh.maize.q7=="Female"]))/sum(table(dealers$id.agro [dealers$hh.maize.q7=="Female"]))*100
+#  56.52174, Female 
+#female dealers less likely to rate themselves less than equal to 3
+
+#####ratings from farmers for dealers 
+
+mean(merged_dealer$rating_stock[merged_dealer$hh.maize.q7=="Male"]) #3.811284
+mean(merged_dealer$rating_stock[merged_dealer$hh.maize.q7=="Female"]) #3.921875
+#ratings for female dealers higher
+
+mean(merged_dealer$rating_stock[merged_dealer$farmer_gender=="Male"]) # 3.876923
+mean(merged_dealer$rating_stock[merged_dealer$farmer_gender=="Female"]) #3.776892
+#ratings by male farmers are higher
+
+#customers and non-customers 
+sum(table(merged_dealer$farmerID[merged_dealer$rating_stock<=2 & merged_dealer$farmer_gender=="Male"]))/sum(table(merged_dealer$farmerID[merged_dealer$farmer_gender=="Male"]))*100
+# 10.98901, male 
+sum(table(merged_dealer$farmerID[merged_dealer$rating_stock<=2 & merged_dealer$farmer_gender=="Female"]))/sum(table(merged_dealer$farmerID[merged_dealer$farmer_gender=="Female"]))*100
+# 10.75697, female
+#Female farmers less likely to rate lower than equal 2
+sum(table(merged_dealer$farmerID[merged_dealer$rating_stock>4 & merged_dealer$farmer_gender=="Male"]))/sum(table(merged_dealer$farmerID[merged_dealer$farmer_gender=="Male"]))*100
+#  32.74725, male 
+sum(table(merged_dealer$farmerID[merged_dealer$rating_stock>4 & merged_dealer$farmer_gender=="Female"]))/sum(table(merged_dealer$farmerID[merged_dealer$farmer_gender=="Female"]))*100
+# 27.88845, female
+#Female farmers less likely to rate more than 4 
+
+#Gender of rater and subject
+mean(merged_dealer$rating_stock[merged_dealer$hh.maize.q7=="Female" & merged_dealer$farmer_gender=="Female"])
+#3.784615
+mean(merged_dealer$rating_stock[merged_dealer$hh.maize.q7=="Male" & merged_dealer$farmer_gender=="Female"])
+# 3.774194
+mean(merged_dealer$rating_stock[merged_dealer$hh.maize.q7=="Male" & merged_dealer$farmer_gender=="Male"])
+#3.832317
+mean(merged_dealer$rating_stock[merged_dealer$hh.maize.q7=="Female" & merged_dealer$farmer_gender=="Male"])
+#3.992126
+#higher scores for female dealers from both genders 
+
+### Rating >4
+#female farmers rating female dealer
+sum(table(merged_dealer$farmerID[merged_dealer$rating_stock>4 & merged_dealer$farmer_gender=="Female" & merged_dealer$hh.maize.q7=="Female"]))/sum(table(merged_dealer$farmerID[merged_dealer$farmer_gender=="Female" & merged_dealer$hh.maize.q7=="Female"]))*100
+#   24.61538
+#male farmers rating male dealer
+sum(table(merged_dealer$farmerID[merged_dealer$rating_stock>4 & merged_dealer$farmer_gender=="Male" & merged_dealer$hh.maize.q7=="Male"]))/sum(table(merged_dealer$farmerID[merged_dealer$farmer_gender=="Male" & merged_dealer$hh.maize.q7=="Male"]))*100
+#   32.92683
+#female farmers rating male dealers 
+sum(table(merged_dealer$farmerID[merged_dealer$rating_stock>4 & merged_dealer$farmer_gender=="Female" & merged_dealer$hh.maize.q7=="Male"]))/sum(table(merged_dealer$farmerID[merged_dealer$farmer_gender=="Female" & merged_dealer$hh.maize.q7=="Male"]))*100
+# 29.03226
+#male farmers rating female dealers 
+sum(table(merged_dealer$farmerID[merged_dealer$rating_stock>4 & merged_dealer$farmer_gender=="Male" & merged_dealer$hh.maize.q7=="Female"]))/sum(table(merged_dealer$farmerID[merged_dealer$farmer_gender=="Male" & merged_dealer$hh.maize.q7=="Female"]))*100
+#32.28346
+### male dealers get more often >4 from both genders 
+
+##############################################################################
+
+########## REPUTATION RATING ###########
+
+##### ratings from dealers
+
+mean(dealers$hh.maize.q83[dealers$hh.maize.q7=="Male"])   # 4.436364
+mean(dealers$hh.maize.q83[dealers$hh.maize.q7=="Female"]) #4.304348
+#rating higher for males 
+
+sum(table(dealers$id.agro[dealers$hh.maize.q83>4 & dealers$hh.maize.q7=="Male"]))/sum(table(dealers$id.agro [dealers$hh.maize.q7=="Male"]))*100
+#56.36364, Male 
+sum(table(dealers$id.agro[dealers$hh.maize.q83>4 & dealers$hh.maize.q7=="Female"]))/sum(table(dealers$id.agro [dealers$hh.maize.q7=="Female"]))*100
+#52.17391, Female 
+#female dealers less likely to rate themselves more than 4 
+sum(table(dealers$id.agro[dealers$hh.maize.q83<=3 & dealers$hh.maize.q7=="Male"]))/sum(table(dealers$id.agro [dealers$hh.maize.q7=="Male"]))*100
+#7.272727, Male 
+sum(table(dealers$id.agro[dealers$hh.maize.q83<=3 & dealers$hh.maize.q7=="Female"]))/sum(table(dealers$id.agro [dealers$hh.maize.q7=="Female"]))*100
+# 13.04348, Female 
+#female dealers more likely to rate themselves less than equal to 3
+
+#####ratings from farmers for dealers 
+
+mean(merged_dealer$rating_reputation[merged_dealer$hh.maize.q7=="Male"]) #  3.801556
+mean(merged_dealer$rating_reputation[merged_dealer$hh.maize.q7=="Female"]) #3.911458
+#ratings for female dealers higher
+mean(merged_dealer$rating_reputation[merged_dealer$farmer_gender=="Male"]) # 3.852747
+mean(merged_dealer$rating_reputation[merged_dealer$farmer_gender=="Female"]) #  3.792829
+#ratings by male farmers are higher
+
+#customers and non-customers 
+sum(table(merged_dealer$farmerID[merged_dealer$rating_reputation<=2 & merged_dealer$farmer_gender=="Male"]))/sum(table(merged_dealer$farmerID[merged_dealer$farmer_gender=="Male"]))*100
+# 7.252747, male 
+sum(table(merged_dealer$farmerID[merged_dealer$rating_reputation<=2 & merged_dealer$farmer_gender=="Female"]))/sum(table(merged_dealer$farmerID[merged_dealer$farmer_gender=="Female"]))*100
+# 9.561753, female
+#Female farmers more likely to rate lower than equal 2
+sum(table(merged_dealer$farmerID[merged_dealer$rating_reputation>4 & merged_dealer$farmer_gender=="Male"]))/sum(table(merged_dealer$farmerID[merged_dealer$farmer_gender=="Male"]))*100
+#  26.37363, male 
+sum(table(merged_dealer$farmerID[merged_dealer$rating_reputation>4 & merged_dealer$farmer_gender=="Female"]))/sum(table(merged_dealer$farmerID[merged_dealer$farmer_gender=="Female"]))*100
+# 21.91235, female
+#Female farmers less likely to rate more than 4 
+
+#Gender of rater and subject
+mean(merged_dealer$rating_reputation[merged_dealer$hh.maize.q7=="Female" & merged_dealer$farmer_gender=="Female"])
+#3.830769
+mean(merged_dealer$rating_reputation[merged_dealer$hh.maize.q7=="Male" & merged_dealer$farmer_gender=="Female"])
+#  3.77957
+mean(merged_dealer$rating_reputation[merged_dealer$hh.maize.q7=="Male" & merged_dealer$farmer_gender=="Male"])
+#3.814024
+mean(merged_dealer$rating_reputation[merged_dealer$hh.maize.q7=="Female" & merged_dealer$farmer_gender=="Male"])
+#3.952756
+#higher scores for female dealers from both genders 
+
+### Rating >4
+#female farmers rating female dealer
+sum(table(merged_dealer$farmerID[merged_dealer$rating_reputation>4 & merged_dealer$farmer_gender=="Female" & merged_dealer$hh.maize.q7=="Female"]))/sum(table(merged_dealer$farmerID[merged_dealer$farmer_gender=="Female" & merged_dealer$hh.maize.q7=="Female"]))*100
+#16.92308
+#male farmers rating male dealer
+sum(table(merged_dealer$farmerID[merged_dealer$rating_reputation>4 & merged_dealer$farmer_gender=="Male" & merged_dealer$hh.maize.q7=="Male"]))/sum(table(merged_dealer$farmerID[merged_dealer$farmer_gender=="Male" & merged_dealer$hh.maize.q7=="Male"]))*100
+#25.30488
+#female farmers rating male dealers 
+sum(table(merged_dealer$farmerID[merged_dealer$rating_reputation>4 & merged_dealer$farmer_gender=="Female" & merged_dealer$hh.maize.q7=="Male"]))/sum(table(merged_dealer$farmerID[merged_dealer$farmer_gender=="Female" & merged_dealer$hh.maize.q7=="Male"]))*100
+#  23.65591
+#male farmers rating female dealers 
+sum(table(merged_dealer$farmerID[merged_dealer$rating_reputation>4 & merged_dealer$farmer_gender=="Male" & merged_dealer$hh.maize.q7=="Female"]))/sum(table(merged_dealer$farmerID[merged_dealer$farmer_gender=="Male" & merged_dealer$hh.maize.q7=="Female"]))*100
+#  29.13386
+### female dealers get more >4 from male farmers 
+### male dealers fer more more >4 from female farmers 
+
+################################################################################################
+
+
+# TRADERS 
+
+#  Percentage of females in the datasets
+sum(table(ratings_trader$farmerID[ratings_trader$farmer_gender=="Female"]))/sum(table(ratings_trader$farmerID))*100
+#43.8 percent are female farmers 
+sum(table(traders$id.trader[traders$hh.maize.q7=="Female"]))/sum(table(traders$id.trader))*100
+# 2.052786 percent are female traders
+sum(table(traders$id.trader[traders$hh.maize.q7=="Female"])) #7 female traders 
+sum(table(traders$id.trader))  #total 341 traders 
+
+########## OVERALL RATING ###########
+
+##### ratings from traders
+
+mean(traders$trader_rating_overall[traders$hh.maize.q7=="Male"])   # 4.286826
+mean(traders$trader_rating_overall[traders$hh.maize.q7=="Female"])  # 4.514286
+#mean overall rating higher for females 
+
+sum(table(traders$id.trader[traders$trader_rating_overall>4 & traders$hh.maize.q7=="Male"]))/sum(table(traders$id.trader [traders$hh.maize.q7=="Male"]))*100
+# 65.86826, Male 
+sum(table(traders$id.trader[traders$trader_rating_overall>4 & traders$hh.maize.q7=="Female"]))/sum(table(traders$id.trader [traders$hh.maize.q7=="Female"]))*100
+# 71.42857, Female 
+#female traders more likely to rate themselves more than 4 
+sum(table(traders$id.trader[traders$trader_rating_overall<=3 & traders$hh.maize.q7=="Male"]))/sum(table(traders$id.trader [traders$hh.maize.q7=="Male"]))*100
+# 2.39521, Male 
+sum(table(traders$id.trader[traders$trader_rating_overall<=3 & traders$hh.maize.q7=="Female"]))/sum(table(traders$id.trader [traders$hh.maize.q7=="Female"]))*100
+# 0, female 
+#female traders not at all likely to rate themselves less than equal to 3 
+
+#####ratings from farmers for traders 
+
+mean(merged_trader$rating_overall[merged_trader$hh.maize.q7=="Male"]) #3.637286
+mean(merged_trader$rating_overall[merged_trader$hh.maize.q7=="Female"]) #3.951351
+#ratings for female traders --- higher
+
+mean(merged_trader$rating_overall[merged_trader$farmer_gender=="Male"]) #3.624524
+mean(merged_trader$rating_overall[merged_trader$farmer_gender=="Female"]) #3.671341
+#ratings by female farmers are higher
+
+#customers  
+sum(table(merged_trader$farmerID[merged_trader$rating_overall<=2 & merged_trader$farmer_gender=="Male" & merged_trader$sold=="Yes"]))/sum(table(merged_trader$farmerID[merged_trader$farmer_gender=="Male" & merged_trader$sold=="Yes"]))*100
+#  3.606103, male 
+sum(table(merged_trader$farmerID[merged_trader$rating_overall<=2 & merged_trader$farmer_gender=="Female" & merged_trader$sold=="Yes"]))/sum(table(merged_trader$farmerID[merged_trader$farmer_gender=="Female" & merged_trader$sold=="Yes"]))*100
+# 2.851711, female
+#Female customers less likely to rate lower than equal 2
+sum(table(merged_trader$farmerID[merged_trader$rating_overall>4 & merged_trader$farmer_gender=="Male" & merged_trader$sold=="Yes"]))/sum(table(merged_trader$farmerID[merged_trader$farmer_gender=="Male" & merged_trader$sold=="Yes"]))*100
+# 32.45492, male 
+sum(table(merged_trader$farmerID[merged_trader$rating_overall>4 & merged_trader$farmer_gender=="Female" & merged_trader$sold=="Yes"]))/sum(table(merged_trader$farmerID[merged_trader$farmer_gender=="Female" & merged_trader$sold=="Yes"]))*100
+#   32.31939, female
+#male customers more likely to rate more than 4 
+
+#non-customers  
+sum(table(merged_trader$farmerID[merged_trader$rating_overall<=2 & merged_trader$farmer_gender=="Male" & merged_trader$sold=="No"]))/sum(table(merged_trader$farmerID[merged_trader$farmer_gender=="Male" & merged_trader$sold=="No"]))*100
+# 12.60504, male 
+sum(table(merged_trader$farmerID[merged_trader$rating_overall<=2 & merged_trader$farmer_gender=="Female" & merged_trader$sold=="No"]))/sum(table(merged_trader$farmerID[merged_trader$farmer_gender=="Female" & merged_trader$sold=="No"]))*100
+# 7.692308, female
+#Female non-customers less likely to rate lower than equal 2
+sum(table(merged_trader$farmerID[merged_trader$rating_overall>4 & merged_trader$farmer_gender=="Male" & merged_trader$sold=="No"]))/sum(table(merged_trader$farmerID[merged_trader$farmer_gender=="Male" & merged_trader$sold=="No"]))*100
+# 18.48739, male 
+sum(table(merged_trader$farmerID[merged_trader$rating_overall>4 & merged_trader$farmer_gender=="Female" & merged_trader$sold=="No"]))/sum(table(merged_trader$farmerID[merged_trader$farmer_gender=="Female" & merged_trader$sold=="No"]))*100
+# 21.53846, female
+#female non-customers more likely to rate more than 4 
+
+#customers and non-customers 
+sum(table(merged_trader$farmerID[merged_trader$rating_overall<=2 & merged_trader$farmer_gender=="Male"]))/sum(table(merged_trader$farmerID[merged_trader$farmer_gender=="Male"]))*100
+#  4.880952, male 
+sum(table(merged_trader$farmerID[merged_trader$rating_overall<=2 & merged_trader$farmer_gender=="Female"]))/sum(table(merged_trader$farmerID[merged_trader$farmer_gender=="Female"]))*100
+#   3.810976, female
+#Female farmers less likely to rate lower than equal 2
+sum(table(merged_trader$farmerID[merged_trader$rating_overall>4 & merged_trader$farmer_gender=="Male"]))/sum(table(merged_trader$farmerID[merged_trader$farmer_gender=="Male"]))*100
+# 30.47619, male 
+sum(table(merged_trader$farmerID[merged_trader$rating_overall>4 & merged_trader$farmer_gender=="Female"]))/sum(table(merged_trader$farmerID[merged_trader$farmer_gender=="Female"]))*100
+#   30.18293, female
+#male farmers more likely to rate more than 4 
+
+#Gender of the rater and the subject 
+#Customers and non-customers 
+mean(merged_trader$rating_overall[merged_trader$hh.maize.q7=="Female" & merged_trader$farmer_gender=="Female"])
+#  4.117647
+mean(merged_trader$rating_overall[merged_trader$hh.maize.q7=="Male" & merged_trader$farmer_gender=="Female"])
+#  3.659468
+mean(merged_trader$rating_overall[merged_trader$hh.maize.q7=="Male" & merged_trader$farmer_gender=="Male"])
+#  3.62
+mean(merged_trader$rating_overall[merged_trader$hh.maize.q7=="Female" & merged_trader$farmer_gender=="Male"])
+#  3.81
+#Female traders get higher scores 
+#female and male farmers give higher scores to female traders 
+
+#Customers 
+mean(merged_trader$rating_overall[merged_trader$hh.maize.q7=="Female" & merged_trader$farmer_gender=="Female" & merged_trader$sold=="Yes"])
+# 4.353846
+mean(merged_trader$rating_overall[merged_trader$hh.maize.q7=="Male" & merged_trader$farmer_gender=="Female" & merged_trader$sold=="Yes"])
+# 3.706823
+mean(merged_trader$rating_overall[merged_trader$hh.maize.q7=="Male" & merged_trader$farmer_gender=="Male" & merged_trader$sold=="Yes"])
+#  3.678865
+mean(merged_trader$rating_overall[merged_trader$hh.maize.q7=="Female" & merged_trader$farmer_gender=="Male" & merged_trader$sold=="Yes"])
+#  3.8625
+#Female traders get higher scores 
+#female and male farmers give higher scores to female traders 
+
+#Non-Customers 
+mean(merged_trader$rating_overall[merged_trader$hh.maize.q7=="Female" & merged_trader$farmer_gender=="Female" & merged_trader$sold=="No"])
+# 3.35
+mean(merged_trader$rating_overall[merged_trader$hh.maize.q7=="Male" & merged_trader$farmer_gender=="Female" & merged_trader$sold=="No"])
+# 3.466667
+mean(merged_trader$rating_overall[merged_trader$hh.maize.q7=="Male" & merged_trader$farmer_gender=="Male" & merged_trader$sold=="No"])
+#  3.25913
+mean(merged_trader$rating_overall[merged_trader$hh.maize.q7=="Female" & merged_trader$farmer_gender=="Male" & merged_trader$sold=="No"])
+#  3.6
+#Female traders get higher scores from male farmers 
+#Male traders get higher scores from female farmers 
+
+### Rating >4
+#female farmers rating female traders
+sum(table(merged_trader$farmerID[merged_trader$rating_overall>4 & merged_trader$farmer_gender=="Female" & merged_trader$hh.maize.q7=="Female"]))/sum(table(merged_trader$farmerID[merged_trader$farmer_gender=="Female" & merged_trader$hh.maize.q7=="Female"]))*100
+#58.82353
+#male farmers rating male traders
+sum(table(merged_trader$farmerID[merged_trader$rating_overall>4 & merged_trader$farmer_gender=="Male" & merged_trader$hh.maize.q7=="Male"]))/sum(table(merged_trader$farmerID[merged_trader$farmer_gender=="Male" & merged_trader$hh.maize.q7=="Male"]))*100
+#30.4878
+#female farmers rating male traders
+sum(table(merged_trader$farmerID[merged_trader$rating_overall>4 & merged_trader$farmer_gender=="Female" & merged_trader$hh.maize.q7=="Male"]))/sum(table(merged_trader$farmerID[merged_trader$farmer_gender=="Female" & merged_trader$hh.maize.q7=="Male"]))*100
+#29.42097
+#male farmers rating female traders
+sum(table(merged_trader$farmerID[merged_trader$rating_overall>4 & merged_trader$farmer_gender=="Male" & merged_trader$hh.maize.q7=="Female"]))/sum(table(merged_trader$farmerID[merged_trader$farmer_gender=="Male" & merged_trader$hh.maize.q7=="Female"]))*100
+#30
+###when gender of rater and trader same, they are rater more than 4 more often 
+##female farmers rating female traders (more percentage >4)
+
+###################################################################################################
+
+#   MILLERS
+
+#  Percentage of females in the datasets
+sum(table(ratings_mill$farmerID[ratings_mill$farmer_gender=="Female"]))/sum(table(ratings_mill$farmerID))*100
+#44.06085 percent are female farmers 
+sum(table(millers$id.miller[millers$hh.maize.q7=="Female"]))/sum(table(millers$id.miller))*100
+#6.896552 percent are female millers 
+sum(table(millers$id.miller[millers$hh.maize.q7=="Female"])) #12 female millers
+sum(table(millers$id.miller)) #total 174 millers
+
+########## OVERALL RATING ###########
+
+##### ratings from millers 
+
+mean(millers$miller_rating_overall[millers$hh.maize.q7=="Male"])   #4.171605
+mean(millers$miller_rating_overall[millers$hh.maize.q7=="Female"]) #4.25
+#mean overall rating higher for females 
+
+sum(table(millers$id.miller[millers$miller_rating_overall>4 & millers$hh.maize.q7=="Male"]))/sum(table(millers$id.miller [millers$hh.maize.q7=="Male"]))*100
+#56.79012, Male 
+sum(table(millers$id.miller[millers$miller_rating_overall>4 & millers$hh.maize.q7=="Female"]))/sum(table(millers$id.miller [millers$hh.maize.q7=="Female"]))*100
+#66.66667, female 
+#female millers more likely to rate themselves more than 4 
+sum(table(millers$id.miller[millers$miller_rating_overall<=3 & millers$hh.maize.q7=="Male"]))/sum(table(millers$id.miller [millers$hh.maize.q7=="Male"]))*100
+#3.08642, Male 
+sum(table(millers$id.miller[millers$miller_rating_overall<=3 & millers$hh.maize.q7=="Female"]))/sum(table(millers$id.miller [millers$hh.maize.q7=="Female"]))*100
+#0, female 
+#male millers more likely to rate themselves less than equal to 3 
+
+#####ratings from farmers for millers 
+
+mean(merged_miller$rating_overall[merged_miller$hh.maize.q7=="Male"]) #3.530056
+mean(merged_miller$rating_overall[merged_miller$hh.maize.q7=="Female"]) #3.552475
+#ratings for female millers little bit higher
+mean(merged_miller$rating_overall[merged_miller$farmer_gender=="Male"]) # 3.51623
+mean(merged_miller$rating_overall[merged_miller$farmer_gender=="Female"])  #3.550598
+#ratings by female farmers are higher
+
+#customers
+sum(table(merged_miller$farmerID[merged_miller$rating_overall<=2 & merged_miller$used=="Yes" & merged_miller$farmer_gender=="Male"]))/sum(table(merged_miller$farmerID[merged_miller$used=="Yes" & merged_miller$farmer_gender=="Male"]))*100
+# 3.543743, male 
+sum(table(merged_miller$farmerID[merged_miller$rating_overall<=2 & merged_miller$used=="Yes" & merged_miller$farmer_gender=="Female"]))/sum(table(merged_miller$farmerID[merged_miller$used=="Yes" & merged_miller$farmer_gender=="Female"]))*100
+# 3.366059, female 
+#Females who are customers more likely to rate lower than equal 2
+sum(table(merged_miller$farmerID[merged_miller$rating_overall>4 & merged_miller$used=="Yes" & merged_miller$farmer_gender=="Male"]))/sum(table(merged_miller$farmerID[merged_miller$used=="Yes" & merged_miller$farmer_gender=="Male"]))*100
+# 22.03765, male 
+sum(table(merged_miller$farmerID[merged_miller$rating_overall>4 & merged_miller$used=="Yes" & merged_miller$farmer_gender=="Female"]))/sum(table(merged_miller$farmerID[merged_miller$used=="Yes" & merged_miller$farmer_gender=="Female"]))*100
+#25.6662, female 
+#Females who are customers more likely to rate more than 4 
+
+#non customers 
+sum(table(merged_miller$farmerID[merged_miller$rating_overall<=2 & merged_miller$used=="No" & merged_miller$farmer_gender=="Male"]))/sum(table(merged_miller$farmerID[merged_miller$used=="No" & merged_miller$farmer_gender=="Male"]))*100
+#  7.843137, male 
+sum(table(merged_miller$farmerID[merged_miller$rating_overall<=2 & merged_miller$used=="No" & merged_miller$farmer_gender=="Female"]))/sum(table(merged_miller$farmerID[merged_miller$used=="No" & merged_miller$farmer_gender=="Female"]))*100
+# 12.5, female 
+#Female non-customers more likely to rate lower than equal 2
+sum(table(merged_miller$farmerID[merged_miller$rating_overall>4 & merged_miller$used=="No" & merged_miller$farmer_gender=="Male"]))/sum(table(merged_miller$farmerID[merged_miller$used=="No" & merged_miller$farmer_gender=="Male"]))*100
+# 11.76471, male 
+sum(table(merged_miller$farmerID[merged_miller$rating_overall>4 & merged_miller$used=="No" & merged_miller$farmer_gender=="Female"]))/sum(table(merged_miller$farmerID[merged_miller$used=="No" & merged_miller$farmer_gender=="Female"]))*100
+#7.5, female 
+#Female non-customers less likely to rate more than 4 
+
+#customers and non-customers 
+sum(table(merged_miller$farmerID[merged_miller$rating_overall<=2 & merged_miller$farmer_gender=="Male"]))/sum(table(merged_miller$farmerID[merged_miller$farmer_gender=="Male"]))*100
+#   3.769634, male 
+sum(table(merged_miller$farmerID[merged_miller$rating_overall<=2 & merged_miller$farmer_gender=="Female"]))/sum(table(merged_miller$farmerID[ merged_miller$farmer_gender=="Female"]))*100
+# 3.851262, female 
+#Female farmers more likely to rate lower than equal 2
+sum(table(merged_miller$farmerID[merged_miller$rating_overall>4 & merged_miller$farmer_gender=="Male"]))/sum(table(merged_miller$farmerID[merged_miller$farmer_gender=="Male"]))*100
+#  21.46597, male 
+sum(table(merged_miller$farmerID[merged_miller$rating_overall>4 & merged_miller$farmer_gender=="Female"]))/sum(table(merged_miller$farmerID[merged_miller$farmer_gender=="Female"]))*100
+#24.7012, female 
+#Female farmers more likely to rate more than 4 
+
+#Gender of rater and the subject
+#customers and non-customers 
+mean(merged_miller$rating_overall[merged_miller$hh.maize.q7=="Female" & merged_miller$farmer_gender=="Female"]) # 3.504545
+mean(merged_miller$rating_overall[merged_miller$hh.maize.q7=="Male" & merged_miller$farmer_gender=="Female"]) #3.553456
+mean(merged_miller$rating_overall[merged_miller$hh.maize.q7=="Male" & merged_miller$farmer_gender=="Male"])    #3.511581
+mean(merged_miller$rating_overall[merged_miller$hh.maize.q7=="Female" & merged_miller$farmer_gender=="Male"]) #3.589474
+#female farmers give higher scores to female millers, male farmers give higher scores to female millers 
+#female farmers give higher rating to male millers compared to male farmers rating male millers 
+
+#CUSTOMERS
+mean(merged_miller$rating_overall[merged_miller$hh.maize.q7=="Female" & merged_miller$farmer_gender=="Female" & merged_miller$used=="Yes"]) #3.556098
+mean(merged_miller$rating_overall[merged_miller$hh.maize.q7=="Male" & merged_miller$farmer_gender=="Female" & merged_miller$used=="Yes"]) #3.579762
+mean(merged_miller$rating_overall[merged_miller$hh.maize.q7=="Male" & merged_miller$farmer_gender=="Male" & merged_miller$used=="Yes"]) # 3.531294
+mean(merged_miller$rating_overall[merged_miller$hh.maize.q7=="Female" & merged_miller$farmer_gender=="Male" & merged_miller$used=="Yes"]) #3.607547
+##female customers give higher rating to male millers, male customers give higher rating to female millers 
+
+#NON-CUSTOMERS 
+mean(merged_miller$rating_overall[merged_miller$hh.maize.q7=="Female" & merged_miller$farmer_gender=="Female" & merged_miller$used=="No"]) #2.8
+mean(merged_miller$rating_overall[merged_miller$hh.maize.q7=="Male" & merged_miller$farmer_gender=="Female" & merged_miller$used=="No"]) #3.075676
+mean(merged_miller$rating_overall[merged_miller$hh.maize.q7=="Male" & merged_miller$farmer_gender=="Male" & merged_miller$used=="No"]) #3.157447
+mean(merged_miller$rating_overall[merged_miller$hh.maize.q7=="Female" & merged_miller$farmer_gender=="Male" & merged_miller$used=="No"]) #3.35
+##female non-customers give higher rating to male millers, male non-customers give higher rating to female millers 
+
+### Rating >4
+#female farmers rating female miller
+sum(table(merged_miller$farmerID[merged_miller$rating_overall>4 & merged_miller$farmer_gender=="Female" & merged_miller$hh.maize.q7=="Female"]))/sum(table(merged_miller$farmerID[merged_miller$farmer_gender=="Female" & merged_miller$hh.maize.q7=="Female"]))*100
+#15.90909
+#male farmers rating male miller
+sum(table(merged_miller$farmerID[merged_miller$rating_overall>4 & merged_miller$farmer_gender=="Male" & merged_miller$hh.maize.q7=="Male"]))/sum(table(merged_miller$farmerID[merged_miller$farmer_gender=="Male" & merged_miller$hh.maize.q7=="Male"]))*100
+# 20.93541
+#female farmers rating male millers
+sum(table(merged_miller$farmerID[merged_miller$rating_overall>4 & merged_miller$farmer_gender=="Female" & merged_miller$hh.maize.q7=="Male"]))/sum(table(merged_miller$farmerID[merged_miller$farmer_gender=="Female" & merged_miller$hh.maize.q7=="Male"]))*100
+#  25.24683
+#male farmers rating female millers 
+sum(table(merged_miller$farmerID[merged_miller$rating_overall>4 & merged_miller$farmer_gender=="Male" & merged_miller$hh.maize.q7=="Female"]))/sum(table(merged_miller$farmerID[merged_miller$farmer_gender=="Male" & merged_miller$hh.maize.q7=="Female"]))*100
+# 29.82456
+#gender of rater and miller different, more chances of getting >4
+
+##############################################################################################################################################
+
+
 
 ###### REGRESSIONS ######
 #Also regressions run on subsets where the value chain actors have received ratings more than 20 times from the farmers 
@@ -1703,6 +2448,45 @@ tab_model(fe_interceptoverall, show.se = TRUE, show.stat = TRUE)
 tab_model(fe_modoverall, show.se = TRUE, show.stat = TRUE)
 tab_model(fe_interceptoverall, fe_modoverall, show.se = TRUE, show.stat = TRUE)
 tab_model(fe_modoverall, fe_modoverall20, show.se = TRUE, show.stat = TRUE)
+
+#########################
+
+##### REGRESSIONS WITH SALES OF HYBRID MAIZE SEEDS ########
+lm_overalld_dealer <- lm(ratingoverall_diff ~ id.agro + seed_sale, data=merged_dealer)
+summary(lm(ratingoverall_diff ~ id.agro + seed_sale, data=merged_dealer)) #seed_sale coeff = NA
+alias(lm_overalld_dealer)
+##high collinearity
+
+#LOCATION
+merged_dealer$ratingloc_diff <- merged_dealer$rating_location - merged_dealer$hh.maize.q79 ##diff in location ratings 
+summary(lm(ratingloc_diff ~ id.agro + seed_sale, data=merged_dealer)) #seed_sale=NA
+
+##### REGRESSIONS WITH GENDER ########
+merged_dealer$farmer_fem <- ifelse(merged_dealer$farmer_gender == 'Female', 1, 0)
+merged_dealer$dealer_fem <- ifelse(merged_dealer$hh.maize.q7 == 'Female', 1, 0)
+merged_dealer$farmer_male <- ifelse(merged_dealer$farmer_gender == 'Male', 1, 0)
+merged_dealer$dealer_male <- ifelse(merged_dealer$hh.maize.q7 == 'Male', 1, 0)
+
+#OVERALL RATING
+summary(lm(ratingoverall_diff ~ id.agro + farmer_fem, data=merged_dealer)) #-0.003227   
+#if the rater is female, the differences in rater rating and subject rating reduce 
+
+mod1 <- lm(ratingoverall_diff ~ id.agro + dealer_fem, data=merged_dealer)
+alias(mod1)
+summary(lm(ratingoverall_diff ~ id.agro + dealer_fem, data=merged_dealer)) #NA
+
+##### with interactions 
+summary(lm(ratingoverall_diff ~ id.agro + farmer_fem + farmer_fem*dealer_fem, data=merged_dealer)) #female rater and subject
+#farmer_fem             0.01047    0.07187   0.146 0.884173    
+#dealer_fem                  NA         NA      NA       NA    
+#farmer_fem:dealer_fem -0.05415    0.14287  -0.379 0.704831 
+#if the rater is a female, the differences in rater rating and subject rating increase :  0.01047  
+#if the dealer is a female, having a female rater reduces differences between rater and subject ratings
+#if the dealer is male, having a female rater increases differences between rater and subject ratings
+
+summary(lm(ratingoverall_diff ~ id.agro + farmer_male + farmer_male*dealer_male, data=merged_dealer))  #male rater and subject 
+#if the dealer is male, having a male rater reduces differences between rater and subject ratings 
+#if the dealer is female, having a male rater increases differences between rater and subject ratings 
 
 
 #################################################################################################################
@@ -1978,215 +2762,4 @@ tab_model(fe_interceptoverallm, show.se = TRUE, show.stat = TRUE)
 tab_model(fe_modoverallm, show.se = TRUE, show.stat = TRUE)
 tab_model(fe_interceptoverallm, fe_modoverallm, show.se = TRUE, show.stat = TRUE)
 tab_model(fe_modoverallm, fe_modoverallm20, show.se = TRUE, show.stat = TRUE)
-
-
-######################################################################################################################################
-
-##### ANALYSIS OF RATINGS BASED ON GENDER
-
-# DEALERS
-
-#  Percentage of females in the datasets
-sum(table(ratings$farmerID[ratings$farmer_gender=="Female"]))/sum(table(ratings$farmerID))*100
-#35.55241 percent are female farmers 
-sum(table(dealers$id.agro[dealers$hh.maize.q7=="Female"]))/sum(table(dealers$id.agro))*100
-#29.48718 percent are female dealers 
-
-########## OVERALL RATING ###########
-
-##### ratings from dealers
-
-mean(dealers$dealer_rating_overall[dealers$hh.maize.q7=="Male"])   #4.170909
-mean(dealers$dealer_rating_overall[dealers$hh.maize.q7=="Female"]) #4.034783
-#mean overall rating higher for males
-
-sum(table(dealers$id.agro[dealers$dealer_rating_overall>4 & dealers$hh.maize.q7=="Male"]))/sum(table(dealers$id.agro [dealers$hh.maize.q7=="Male"]))*100
-#56.36364, Male 
-sum(table(dealers$id.agro[dealers$dealer_rating_overall>4 & dealers$hh.maize.q7=="Female"]))/sum(table(dealers$id.agro [dealers$hh.maize.q7=="Female"]))*100
-#52.17391, Female 
-#female dealers less likely to rate themselves more than 4 
-sum(table(dealers$id.agro[dealers$dealer_rating_overall<=3 & dealers$hh.maize.q7=="Male"]))/sum(table(dealers$id.agro [dealers$hh.maize.q7=="Male"]))*100
-#1.818182, Male 
-sum(table(dealers$id.agro[dealers$dealer_rating_overall<=3 & dealers$hh.maize.q7=="Female"]))/sum(table(dealers$id.agro [dealers$hh.maize.q7=="Female"]))*100
-# 4.347826, Female 
-#female dealers more likely to rate themselves less than equal to 3 
-
-#####ratings from farmers for dealers 
-
-mean(merged_dealer$rating_overall[merged_dealer$hh.maize.q7=="Male"]) #3.588716
-mean(merged_dealer$rating_overall[merged_dealer$hh.maize.q7=="Female"]) #3.580208
-#ratings for male dealers little bit higher
-
-mean(merged_dealer$rating_overall[merged_dealer$farmer_gender=="Male"]) #3.577143
-mean(merged_dealer$rating_overall[merged_dealer$farmer_gender=="Female"]) #3.603187
-#ratings by female farmers are higher
-
-#customers
-sum(table(merged_dealer$farmerID[merged_dealer$rating_overall<=2 & merged_dealer$bought=="Yes" & merged_dealer$farmer_gender=="Male"]))/sum(table(merged_dealer$farmerID[merged_dealer$bought=="Yes" & merged_dealer$farmer_gender=="Male"]))*100
-# 2.917772, male 
-sum(table(merged_dealer$farmerID[merged_dealer$rating_overall<=2 & merged_dealer$bought=="Yes" & merged_dealer$farmer_gender=="Female"]))/sum(table(merged_dealer$farmerID[merged_dealer$bought=="Yes" & merged_dealer$farmer_gender=="Female"]))*100
-#  0.5524862, female
-#Females who are customers less likely to rate lower than equal 2
-sum(table(merged_dealer$farmerID[merged_dealer$rating_overall>4 & merged_dealer$bought=="Yes" & merged_dealer$farmer_gender=="Male"]))/sum(table(merged_dealer$farmerID[merged_dealer$bought=="Yes" & merged_dealer$farmer_gender=="Male"]))*100
-# 22.28117, male 
-sum(table(merged_dealer$farmerID[merged_dealer$rating_overall>4 & merged_dealer$bought=="Yes" & merged_dealer$farmer_gender=="Female"]))/sum(table(merged_dealer$farmerID[merged_dealer$bought=="Yes" & merged_dealer$farmer_gender=="Female"]))*100
-#27.07182, female
-#Females who are customers more likely to rate more than 4 
-
-#non customers 
-sum(table(merged_dealer$farmerID[merged_dealer$rating_overall<=2 & merged_dealer$bought=="No" & merged_dealer$farmer_gender=="Male"]))/sum(table(merged_dealer$farmerID[merged_dealer$bought=="No" & merged_dealer$farmer_gender=="Male"]))*100
-# 10.25641, male 
-sum(table(merged_dealer$farmerID[merged_dealer$rating_overall<=2 & merged_dealer$bought=="No" & merged_dealer$farmer_gender=="Female"]))/sum(table(merged_dealer$farmerID[merged_dealer$bought=="No" & merged_dealer$farmer_gender=="Female"]))*100
-#10, female
-#Females who are non-customers less likely to rate lower than equal 2
-sum(table(merged_dealer$farmerID[merged_dealer$rating_overall>4 & merged_dealer$bought=="No" & merged_dealer$farmer_gender=="Male"]))/sum(table(merged_dealer$farmerID[merged_dealer$bought=="No" & merged_dealer$farmer_gender=="Male"]))*100
-# 11.53846, male 
-sum(table(merged_dealer$farmerID[merged_dealer$rating_overall>4 & merged_dealer$bought=="No" & merged_dealer$farmer_gender=="Female"]))/sum(table(merged_dealer$farmerID[merged_dealer$bought=="No" & merged_dealer$farmer_gender=="Female"]))*100
-#20, female
-#Females who are non-customers more likely to rate more than 4 
-
-#customers and non-customers 
-sum(table(merged_dealer$farmerID[merged_dealer$rating_overall<=2 & merged_dealer$farmer_gender=="Male"]))/sum(table(merged_dealer$farmerID[merged_dealer$farmer_gender=="Male"]))*100
-#  4.175824, male 
-sum(table(merged_dealer$farmerID[merged_dealer$rating_overall<=2 & merged_dealer$farmer_gender=="Female"]))/sum(table(merged_dealer$farmerID[merged_dealer$farmer_gender=="Female"]))*100
-#3.187251, female
-#Female farmers less likely to rate lower than equal 2
-sum(table(merged_dealer$farmerID[merged_dealer$rating_overall>4 & merged_dealer$farmer_gender=="Male"]))/sum(table(merged_dealer$farmerID[merged_dealer$farmer_gender=="Male"]))*100
-# 20.43956, male 
-sum(table(merged_dealer$farmerID[merged_dealer$rating_overall>4 & merged_dealer$farmer_gender=="Female"]))/sum(table(merged_dealer$farmerID[merged_dealer$farmer_gender=="Female"]))*100
-#25.0996, female
-#Female farmers more likely to rate more than 4 
-
-#With the merged dataset
-#Overall female farmers give higher scores compared to male farmers 
-mean(merged_dealer$rating_overall[merged_dealer$hh.maize.q7=="Female" & merged_dealer$farmer_gender=="Female"])
-# 3.609231
-mean(merged_dealer$rating_overall[merged_dealer$hh.maize.q7=="Male" & merged_dealer$farmer_gender=="Female"])
-#3.601075
-mean(merged_dealer$rating_overall[merged_dealer$hh.maize.q7=="Male" & merged_dealer$farmer_gender=="Male"])
-# 3.581707
-mean(merged_dealer$rating_overall[merged_dealer$hh.maize.q7=="Female" & merged_dealer$farmer_gender=="Male"])
-#3.565354
-#mean of the overall ratings higher when the gender of the rater and the dealer is the same 
-
-#CUSTOMERS
-mean(merged_dealer$rating_overall[merged_dealer$hh.maize.q7=="Female" & merged_dealer$farmer_gender=="Female" & merged_dealer$bought=="Yes"])
-# 3.640816
-mean(merged_dealer$rating_overall[merged_dealer$hh.maize.q7=="Male" & merged_dealer$farmer_gender=="Female" & merged_dealer$bought=="Yes"])
-#3.721212
-mean(merged_dealer$rating_overall[merged_dealer$hh.maize.q7=="Male" & merged_dealer$farmer_gender=="Male" & merged_dealer$bought=="Yes"])
-# 3.644118
-mean(merged_dealer$rating_overall[merged_dealer$hh.maize.q7=="Female" & merged_dealer$farmer_gender=="Male" & merged_dealer$bought=="Yes"])
-#3.64
-##Male dealers get higher score irrespective of the gender of the farmer 
-
-#NON-CUSTOMERS 
-mean(merged_dealer$rating_overall[merged_dealer$hh.maize.q7=="Female" & merged_dealer$farmer_gender=="Female" & merged_dealer$bought=="No"])
-# 3.5125
-mean(merged_dealer$rating_overall[merged_dealer$hh.maize.q7=="Male" & merged_dealer$farmer_gender=="Female" & merged_dealer$bought=="No"])
-#3.307407
-mean(merged_dealer$rating_overall[merged_dealer$hh.maize.q7=="Male" & merged_dealer$farmer_gender=="Male" & merged_dealer$bought=="No"])
-# 3.278571
-mean(merged_dealer$rating_overall[merged_dealer$hh.maize.q7=="Female" & merged_dealer$farmer_gender=="Male" & merged_dealer$bought=="No"])
-#3.209091
-##Male dealers get higher score, but female farmers rate female dealers better
-
-### Rating >4
-#female farmers rating female dealer
-sum(table(merged_dealer$farmerID[merged_dealer$rating_overall>4 & merged_dealer$farmer_gender=="Female" & merged_dealer$hh.maize.q7=="Female"]))/sum(table(merged_dealer$farmerID[merged_dealer$farmer_gender=="Female" & merged_dealer$hh.maize.q7=="Female"]))*100
-#18.46154
-#male farmers rating male dealer
-sum(table(merged_dealer$farmerID[merged_dealer$rating_overall>4 & merged_dealer$farmer_gender=="Male" & merged_dealer$hh.maize.q7=="Male"]))/sum(table(merged_dealer$farmerID[merged_dealer$farmer_gender=="Male" & merged_dealer$hh.maize.q7=="Male"]))*100
-#20.73171
-#female farmers rating male dealers 
-sum(table(merged_dealer$farmerID[merged_dealer$rating_overall>4 & merged_dealer$farmer_gender=="Female" & merged_dealer$hh.maize.q7=="Male"]))/sum(table(merged_dealer$farmerID[merged_dealer$farmer_gender=="Female" & merged_dealer$hh.maize.q7=="Male"]))*100
-# 27.41935
-#male farmers rating female dealers 
-sum(table(merged_dealer$farmerID[merged_dealer$rating_overall>4 & merged_dealer$farmer_gender=="Male" & merged_dealer$hh.maize.q7=="Female"]))/sum(table(merged_dealer$farmerID[merged_dealer$farmer_gender=="Male" & merged_dealer$hh.maize.q7=="Female"]))*100
-#19.68504
-###Overall male dealers are rated more often more than 4 
-##### More percentage of male raters give >4 rating when the dealer is male 
-##### More percentage of female raters give >4 rating when the dealer is male 
-#Maybe male dealers are performing well
-
-################################################################################################
-
-
-# TRADERS 
-
-#  Percentage of females in the datasets
-sum(table(ratings_trader$farmerID[ratings_trader$farmer_gender=="Female"]))/sum(table(ratings_trader$farmerID))*100
-#43.8 percent are female farmers 
-sum(table(traders$id.trader[traders$hh.maize.q7=="Female"]))/sum(table(traders$id.trader))*100
-# 2.052786 percent are female dealers 
-
-########## OVERALL RATING ###########
-
-##### ratings from traders
-
-mean(traders$trader_rating_overall[traders$hh.maize.q7=="Male"])   # 4.286826
-mean(traders$trader_rating_overall[traders$hh.maize.q7=="Female"])  # 4.514286
-#mean overall rating higher for females 
-
-sum(table(traders$id.trader[traders$trader_rating_overall>4 & traders$hh.maize.q7=="Male"]))/sum(table(traders$id.trader [traders$hh.maize.q7=="Male"]))*100
-# 65.86826, Male 
-sum(table(traders$id.trader[traders$trader_rating_overall>4 & traders$hh.maize.q7=="Female"]))/sum(table(traders$id.trader [traders$hh.maize.q7=="Female"]))*100
-# 71.42857, Female 
-#female traders more likely to rate themselves more than 4 
-sum(table(traders$id.trader[traders$trader_rating_overall<=3 & traders$hh.maize.q7=="Male"]))/sum(table(traders$id.trader [traders$hh.maize.q7=="Male"]))*100
-# 2.39521, Male 
-sum(table(traders$id.trader[traders$trader_rating_overall<=3 & traders$hh.maize.q7=="Female"]))/sum(table(traders$id.trader [traders$hh.maize.q7=="Female"]))*100
-# 0, female 
-#female traders not at all likely to rate themselves less than equal to 3 
-
-#####ratings from farmers for traders 
-
-mean(merged_trader$rating_overall[merged_trader$hh.maize.q7=="Male"]) #3.637286
-mean(merged_trader$rating_overall[merged_trader$hh.maize.q7=="Female"]) #3.951351
-#ratings for female traders --- higher
-
-mean(merged_trader$rating_overall[merged_trader$farmer_gender=="Male"]) #3.624524
-mean(merged_trader$rating_overall[merged_trader$farmer_gender=="Female"]) #3.671341
-#ratings by female farmers are higher
-
-#customers and non-customers 
-sum(table(merged_trader$farmerID[merged_trader$rating_overall<=2 & merged_trader$farmer_gender=="Male"]))/sum(table(merged_trader$farmerID[merged_trader$farmer_gender=="Male"]))*100
-#  4.880952, male 
-sum(table(merged_trader$farmerID[merged_trader$rating_overall<=2 & merged_trader$farmer_gender=="Female"]))/sum(table(merged_trader$farmerID[merged_trader$farmer_gender=="Female"]))*100
-#   3.810976, female
-#Female farmers less likely to rate lower than equal 2
-sum(table(merged_trader$farmerID[merged_trader$rating_overall>4 & merged_trader$farmer_gender=="Male"]))/sum(table(merged_trader$farmerID[merged_trader$farmer_gender=="Male"]))*100
-# 30.47619, male 
-sum(table(merged_trader$farmerID[merged_trader$rating_overall>4 & merged_trader$farmer_gender=="Female"]))/sum(table(merged_trader$farmerID[merged_trader$farmer_gender=="Female"]))*100
-#   30.18293, female
-#male farmers more likely to rate more than 4 
-
-#With the merged dataset
-mean(merged_trader$rating_overall[merged_trader$hh.maize.q7=="Female" & merged_trader$farmer_gender=="Female"])
-#  4.117647
-mean(merged_trader$rating_overall[merged_trader$hh.maize.q7=="Male" & merged_trader$farmer_gender=="Female"])
-#  3.659468
-mean(merged_trader$rating_overall[merged_trader$hh.maize.q7=="Male" & merged_trader$farmer_gender=="Male"])
-#  3.62
-mean(merged_trader$rating_overall[merged_trader$hh.maize.q7=="Female" & merged_trader$farmer_gender=="Male"])
-#  3.81
-#Female traders get higher scores 
-#female and male farmers give higher scores to female traders 
-
-### Rating >4
-#female farmers rating female traders
-sum(table(merged_trader$farmerID[merged_trader$rating_overall>4 & merged_trader$farmer_gender=="Female" & merged_trader$hh.maize.q7=="Female"]))/sum(table(merged_trader$farmerID[merged_trader$farmer_gender=="Female" & merged_trader$hh.maize.q7=="Female"]))*100
-#58.82353
-#male farmers rating male traders
-sum(table(merged_trader$farmerID[merged_trader$rating_overall>4 & merged_trader$farmer_gender=="Male" & merged_trader$hh.maize.q7=="Male"]))/sum(table(merged_trader$farmerID[merged_trader$farmer_gender=="Male" & merged_trader$hh.maize.q7=="Male"]))*100
-#30.4878
-#female farmers rating male traders
-sum(table(merged_trader$farmerID[merged_trader$rating_overall>4 & merged_trader$farmer_gender=="Female" & merged_trader$hh.maize.q7=="Male"]))/sum(table(merged_trader$farmerID[merged_trader$farmer_gender=="Female" & merged_trader$hh.maize.q7=="Male"]))*100
-#29.42097
-#male farmers rating female traders
-sum(table(merged_trader$farmerID[merged_trader$rating_overall>4 & merged_trader$farmer_gender=="Male" & merged_trader$hh.maize.q7=="Female"]))/sum(table(merged_trader$farmerID[merged_trader$farmer_gender=="Male" & merged_trader$hh.maize.q7=="Female"]))*100
-#30
-###when gender of rater and trader same, they are rater more than 4 more often 
-##female farmers rating female traders (more percentage >4)
-
 
