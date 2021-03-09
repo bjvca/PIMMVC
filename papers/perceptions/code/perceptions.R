@@ -46,13 +46,12 @@ summary(dealers$dealer_rating_overall)
 #subset for merging 
 #input dealers who provide extension/training to clients (dealers$hh.maize.q67) and seed on credit (dealers$hh.maize.q68)
 #1 = No, 2 = To some, 3 = to everyone who wants 
-#Including Total quantity sold of the top 3 most popular hybrid maize seeds over the first season of 2018
+#Including Total quantity sold of the top 3 most popular hybrid maize seeds over the first season of 2018 - q22; Total quantity sold of the top 3 most popular opv seeds over the first season of 2018 - q38
 #hh.maize.q7 - gender of input dealers 
-dealers_m <- subset(dealers, select = c('id.agro' , 'hh.maize.q7','hh.maize.q67','hh.maize.q68','hh.maize.q79','hh.maize.q80','hh.maize.q81','hh.maize.q82','hh.maize.q83','dealer_rating_overall', 'hh.maize.seed.1..q22', 'hh.maize.seed.2..q22', 'hh.maize.seed.3..q22'))
+dealers_m <- subset(dealers, select = c('id.agro' , 'hh.maize.q7','hh.maize.q67','hh.maize.q68','hh.maize.q79','hh.maize.q80','hh.maize.q81','hh.maize.q82','hh.maize.q83','dealer_rating_overall', 'hh.maize.seed.1..q22', 'hh.maize.seed.2..q22', 'hh.maize.seed.3..q22', 'hh.maize.opv.1..q38', 'hh.maize.opv.2..q38', 'hh.maize.opv.3..q38'))
 
 #Merging the datasets
 merged_dealer <- merge(ratings,dealers_m, by="id.agro")
-merged_dealer$ratingoverall_diff <- merged_dealer$rating_overall - merged_dealer$dealer_rating_overall #difference in ratings 
 merged_dealer[merged_dealer=="n/a"] <- 0
 
 head(as.numeric(merged_dealer$hh.maize.seed.1..q22)) 
@@ -68,6 +67,20 @@ merged_dealer$hh.maize.seed.2..q22 <- as.numeric(as.character(merged_dealer$hh.m
 merged_dealer$hh.maize.seed.3..q22 <- as.numeric(as.character(merged_dealer$hh.maize.seed.3..q22))
 
 merged_dealer$seed_sale <- merged_dealer$hh.maize.seed.1..q22 + merged_dealer$hh.maize.seed.2..q22 + merged_dealer$hh.maize.seed.3..q22 
+
+head(as.numeric(merged_dealer$hh.maize.opv.1..q38 )) 
+head(as.numeric(merged_dealer$hh.maize.opv.2..q38 )) 
+head(as.numeric(merged_dealer$hh.maize.opv.3..q38 )) 
+
+merged_dealer$hh.maize.opv.1..q38  <- as.numeric(merged_dealer$hh.maize.opv.1..q38 )
+merged_dealer$hh.maize.opv.2..q38  <- as.numeric(merged_dealer$hh.maize.opv.2..q38 )
+merged_dealer$hh.maize.opv.3..q38 <- as.numeric(merged_dealer$hh.maize.opv.3..q38 )
+
+merged_dealer$hh.maize.opv.1..q38  <- as.numeric(as.character(merged_dealer$hh.maize.opv.1..q38 ))
+merged_dealer$hh.maize.opv.2..q38 <- as.numeric(as.character(merged_dealer$hh.maize.opv.2..q38 ))
+merged_dealer$hh.maize.opv.3..q38 <- as.numeric(as.character(merged_dealer$hh.maize.opv.3..q38 ))
+
+merged_dealer$opv_sale <- merged_dealer$hh.maize.opv.1..q38 + merged_dealer$hh.maize.opv.2..q38 + merged_dealer$hh.maize.opv.3..q38 
 
 #Correlations 
 cor(merged_dealer$rating_overall, merged_dealer$hh.maize.q67) #extension or training to clients 
@@ -1113,7 +1126,7 @@ millers$miller_rating_overall <- rowSums(millers[c("hh.maize.q36","hh.maize.q37"
 summary(millers$miller_rating_overall)
 
 #subset for merging 
-millers_m <- subset(millers, select = c('id.miller' , 'hh.maize.q7','hh.maize.q36','hh.maize.q37','hh.maize.q38','hh.maize.q39','hh.maize.q40','miller_rating_overall'))
+millers_m <- subset(millers, select = c('id.miller' , 'hh.maize.q7','hh.maize.q36','hh.maize.q37','hh.maize.q38','hh.maize.q39','hh.maize.q40','miller_rating_overall','hh.maize.q24', 'hh.maize.q26', 'hh.maize.q27', 'hh.maize.q23', 'hh.maize.q23a'))
 
 #Merging the datasets
 merged_miller <- merge(ratings_mill,millers_m, by="id.miller")
@@ -2451,6 +2464,14 @@ tab_model(fe_modoverall, fe_modoverall20, show.se = TRUE, show.stat = TRUE)
 
 #########################
 
+#differences in ratings 
+merged_dealer$ratingoverall_diff <- merged_dealer$rating_overall - merged_dealer$dealer_rating_overall #difference in overall ratings 
+merged_dealer$ratingloc_diff <- merged_dealer$rating_location - merged_dealer$hh.maize.q79 ##diff in location ratings 
+merged_dealer$ratingprice_diff <- merged_dealer$rating_price - merged_dealer$hh.maize.q80 ##diff in price ratings 
+merged_dealer$ratingqual_diff <- merged_dealer$rating_quality - merged_dealer$hh.maize.q81 ##diff in quality ratings 
+merged_dealer$ratingstock_diff <- merged_dealer$rating_stock - merged_dealer$hh.maize.q82 ##diff in stock ratings 
+merged_dealer$ratingrepu_diff <- merged_dealer$rating_reputation - merged_dealer$hh.maize.q83 ##diff in reputation ratings 
+
 ##### REGRESSIONS WITH SALES OF HYBRID MAIZE SEEDS ########
 lm_overalld_dealer <- lm(ratingoverall_diff ~ id.agro + seed_sale, data=merged_dealer)
 summary(lm(ratingoverall_diff ~ id.agro + seed_sale, data=merged_dealer)) #seed_sale coeff = NA
@@ -2458,8 +2479,102 @@ alias(lm_overalld_dealer)
 ##high collinearity
 
 #LOCATION
-merged_dealer$ratingloc_diff <- merged_dealer$rating_location - merged_dealer$hh.maize.q79 ##diff in location ratings 
 summary(lm(ratingloc_diff ~ id.agro + seed_sale, data=merged_dealer)) #seed_sale=NA
+
+#### looking at ratings from farmers #####
+mean(merged_dealer$rating_overall[merged_dealer$seed_sale>1000])  #3.673504
+mean(merged_dealer$rating_overall[merged_dealer$seed_sale<300])  #3.563765
+
+mean(merged_dealer$rating_location[merged_dealer$seed_sale>1000]) #3.923077
+mean(merged_dealer$rating_location[merged_dealer$seed_sale<300])  # 3.677647
+
+mean(merged_dealer$rating_quality[merged_dealer$seed_sale>1000])  #  3.555556
+mean(merged_dealer$rating_quality[merged_dealer$seed_sale<300]) #3.592941
+
+mean(merged_dealer$rating_price[merged_dealer$seed_sale>1000])  #3.034188
+mean(merged_dealer$rating_price[merged_dealer$seed_sale<300]) # 2.983529
+
+mean(merged_dealer$rating_stock[merged_dealer$seed_sale>1000]) #4
+mean(merged_dealer$rating_stock[merged_dealer$seed_sale<300]) # 3.781176
+
+mean(merged_dealer$rating_reputation[merged_dealer$seed_sale>1000]) #3.854701
+mean(merged_dealer$rating_reputation[merged_dealer$seed_sale<300]) #3.783529
+
+##### REGRESSIONS WITH SALES OF OPV SEEDS ########
+lm_dealeroverall_opv <- lm(ratingoverall_diff ~ id.agro + opv_sale, data=merged_dealer)
+summary(lm_dealeroverall_opv) #opv_sale = NA
+alias(lm_dealeroverall_opv)
+
+#### looking at ratings from farmers #####
+mean(merged_dealer$rating_overall[merged_dealer$opv_sale>1000])  # 3.650909
+mean(merged_dealer$rating_overall[merged_dealer$opv_sale<300])  # 3.572792
+
+mean(merged_dealer$rating_location[merged_dealer$opv_sale>1000]) #3.563636
+mean(merged_dealer$rating_location[merged_dealer$opv_sale<300])  #3.642005
+
+mean(merged_dealer$rating_quality[merged_dealer$opv_sale>1000])  # 3.745455
+mean(merged_dealer$rating_quality[merged_dealer$opv_sale<300]) #3.603819
+
+mean(merged_dealer$rating_price[merged_dealer$opv_sale>1000])  #2.872727
+mean(merged_dealer$rating_price[merged_dealer$opv_sale<300]) #3.011933
+
+mean(merged_dealer$rating_stock[merged_dealer$opv_sale>1000]) # 4.072727
+mean(merged_dealer$rating_stock[merged_dealer$opv_sale<300]) #3.785203
+
+mean(merged_dealer$rating_reputation[merged_dealer$opv_sale>1000]) #4
+mean(merged_dealer$rating_reputation[merged_dealer$opv_sale<300]) #3.821002
+
+##### REGRESSIONS --- input dealers providing extension/training to clients ########
+merged_dealer$extension_training <- ifelse(merged_dealer$hh.maize.q67 == '3', 1, 0)
+summary(lm(ratingoverall_diff ~ id.agro + extension_training, data=merged_dealer)) #NA
+lm_ext_train <- lm(ratingoverall_diff ~ id.agro + extension_training, data=merged_dealer)
+alias(lm_ext_train)
+
+#### looking at ratings from farmers #####
+mean(merged_dealer$rating_overall[merged_dealer$hh.maize.q67=="3"])  #3.575492
+mean(merged_dealer$rating_overall[merged_dealer$hh.maize.q67=="1"])  # 3.559292
+
+mean(merged_dealer$rating_location[merged_dealer$hh.maize.q67=="3"]) #3.673961
+mean(merged_dealer$rating_location[merged_dealer$hh.maize.q67=="1"])  #3.672566
+
+mean(merged_dealer$rating_quality[merged_dealer$hh.maize.q67=="3"])  # 3.599562
+mean(merged_dealer$rating_quality[merged_dealer$hh.maize.q67=="1"]) #3.646018
+
+mean(merged_dealer$rating_price[merged_dealer$hh.maize.q67=="3"])  # 2.956236
+mean(merged_dealer$rating_price[merged_dealer$hh.maize.q67=="1"]) # 2.99115
+
+mean(merged_dealer$rating_stock[merged_dealer$hh.maize.q67=="3"]) # 3.835886
+mean(merged_dealer$rating_stock[merged_dealer$hh.maize.q67=="1"]) # 3.716814
+
+mean(merged_dealer$rating_reputation[merged_dealer$hh.maize.q67=="3"]) # 3.811816
+mean(merged_dealer$rating_reputation[merged_dealer$hh.maize.q67=="1"]) #3.769912
+
+
+##### REGRESSIONS --- input dealers providing seed on credit ########
+merged_dealer$seed_credit <- ifelse(merged_dealer$hh.maize.q68 == '3', 1, 0)
+summary(lm(ratingoverall_diff ~ id.agro + seed_credit, data=merged_dealer)) #NA
+lm_seedcredit <- lm(ratingoverall_diff ~ id.agro + seed_credit, data=merged_dealer)
+alias(lm_seedcredit)
+
+#### looking at ratings from farmers #####
+mean(merged_dealer$rating_overall[merged_dealer$hh.maize.q68=="3"])  #3.521951
+mean(merged_dealer$rating_overall[merged_dealer$hh.maize.q68=="1"])  #3.571014
+
+mean(merged_dealer$rating_location[merged_dealer$hh.maize.q68=="3"]) #3.634146
+mean(merged_dealer$rating_location[merged_dealer$hh.maize.q68=="1"])  #3.681159
+
+mean(merged_dealer$rating_quality[merged_dealer$hh.maize.q68=="3"])  #3.609756
+mean(merged_dealer$rating_quality[merged_dealer$hh.maize.q68=="1"]) #3.584541
+
+mean(merged_dealer$rating_price[merged_dealer$hh.maize.q68=="3"])  #  2.926829
+mean(merged_dealer$rating_price[merged_dealer$hh.maize.q68=="1"]) # 3
+
+mean(merged_dealer$rating_stock[merged_dealer$hh.maize.q68=="3"]) #3.707317
+mean(merged_dealer$rating_stock[merged_dealer$hh.maize.q68=="1"]) #3.78744
+
+mean(merged_dealer$rating_reputation[merged_dealer$hh.maize.q68=="3"]) #  3.731707
+mean(merged_dealer$rating_reputation[merged_dealer$hh.maize.q68=="1"]) # 3.801932
+
 
 ##### REGRESSIONS WITH GENDER ########
 merged_dealer$farmer_fem <- ifelse(merged_dealer$farmer_gender == 'Female', 1, 0)
@@ -2467,7 +2582,7 @@ merged_dealer$dealer_fem <- ifelse(merged_dealer$hh.maize.q7 == 'Female', 1, 0)
 merged_dealer$farmer_male <- ifelse(merged_dealer$farmer_gender == 'Male', 1, 0)
 merged_dealer$dealer_male <- ifelse(merged_dealer$hh.maize.q7 == 'Male', 1, 0)
 
-#OVERALL RATING
+###################OVERALL RATING
 summary(lm(ratingoverall_diff ~ id.agro + farmer_fem, data=merged_dealer)) #-0.003227   
 #if the rater is female, the differences in rater rating and subject rating reduce 
 
@@ -2485,8 +2600,94 @@ summary(lm(ratingoverall_diff ~ id.agro + farmer_fem + farmer_fem*dealer_fem, da
 #if the dealer is male, having a female rater increases differences between rater and subject ratings
 
 summary(lm(ratingoverall_diff ~ id.agro + farmer_male + farmer_male*dealer_male, data=merged_dealer))  #male rater and subject 
+#if the rater is male, diff increase:   0.04367
 #if the dealer is male, having a male rater reduces differences between rater and subject ratings 
 #if the dealer is female, having a male rater increases differences between rater and subject ratings 
+
+####################LOCATION RATING
+summary(lm(ratingloc_diff ~ id.agro + farmer_fem, data=merged_dealer)) # 0.14541    
+#if the rater is female, the differences in rater rating and subject rating increase for location 
+
+summary(lm(ratingloc_diff ~ id.agro + dealer_fem, data=merged_dealer)) #NA
+
+##### with interactions 
+summary(lm(ratingloc_diff ~ id.agro + farmer_fem + farmer_fem*dealer_fem, data=merged_dealer)) #female rater and subject
+#if the rater is a female, the differences in rater rating and subject rating increase :0.18122   
+#if the dealer is a female, having a female rater reduces differences between rater and subject ratings
+#if the dealer is male, having a female rater increases differences between rater and subject ratings
+
+summary(lm(ratingloc_diff ~ id.agro + farmer_male + farmer_male*dealer_male, data=merged_dealer))  #male rater and subject 
+# if the rater is male, the diff in rater and subject ratings reduce :  -0.039693
+#if the dealer is male, having a male rater reduces differences between rater and subject ratings 
+#if the dealer is female, having a male rater increases differences between rater and subject ratings
+
+####################PRICE RATING
+summary(lm(ratingprice_diff ~ id.agro + farmer_fem, data=merged_dealer)) # 0.08326    
+#if the rater is female, the differences in rater rating and subject rating increase
+
+summary(lm(ratingprice_diff ~ id.agro + dealer_fem, data=merged_dealer)) #NA
+
+##### with interactions 
+summary(lm(ratingprice_diff ~ id.agro + farmer_fem + farmer_fem*dealer_fem, data=merged_dealer)) #female rater and subject
+#if the rater is a female, the differences in rater rating and subject rating increase :0.10976  
+#if the dealer is a female, having a female rater reduces differences between rater and subject ratings
+#if the dealer is male, having a female rater increases differences between rater and subject ratings
+
+summary(lm(ratingprice_diff ~ id.agro + farmer_male + farmer_male*dealer_male, data=merged_dealer))  #male rater and subject 
+# if the rater is male, the diff in rater and subject ratings reduce :  -0.005039 
+#if the dealer is male, having a male rater reduces differences between rater and subject ratings 
+#if the dealer is female, having a male rater increases differences between rater and subject ratings 
+
+#################### QUALITY RATING
+summary(lm(ratingqual_diff ~ id.agro + farmer_fem, data=merged_dealer)) #-0.12861   
+#if the rater is female, the differences in rater rating and subject rating reduce
+
+summary(lm(ratingqual_diff ~ id.agro + dealer_fem, data=merged_dealer)) #NA
+
+##### with interactions 
+summary(lm(ratingqual_diff ~ id.agro + farmer_fem + farmer_fem*dealer_fem, data=merged_dealer)) #female rater and subject
+#if the rater is a female, the differences in rater rating and subject rating reduce :-0.18249 
+#if the dealer is a female, having a female rater increases differences between rater and subject ratings
+#if the dealer is male, having a female rater reduces differences between rater and subject ratings
+
+summary(lm(ratingqual_diff ~ id.agro + farmer_male + farmer_male*dealer_male, data=merged_dealer))  #male rater and subject 
+# if the rater is male, the diff in rater and subject ratings reduce :   -0.03043  
+#if the dealer is male, having a male rater increases differences between rater and subject ratings 
+#if the dealer is female, having a male rater reduces differences between rater and subject ratings 
+
+#################### STOCK RATING
+summary(lm(ratingstock_diff ~ id.agro + farmer_fem, data=merged_dealer)) #-0.07370 
+#if the rater is female, the differences in rater rating and subject rating reduce
+
+summary(lm(ratingstock_diff ~ id.agro + dealer_fem, data=merged_dealer)) #NA
+
+##### with interactions 
+summary(lm(ratingstock_diff ~ id.agro + farmer_fem + farmer_fem*dealer_fem, data=merged_dealer)) #female rater and subject
+#if the rater is a female, the differences in rater rating and subject rating reduce : -0.03813
+#if the dealer is a female, having a female rater reduces differences between rater and subject ratings
+#if the dealer is male, having a female rater increases differences between rater and subject ratings
+
+summary(lm(ratingstock_diff ~ id.agro + farmer_male + farmer_male*dealer_male, data=merged_dealer))  #male rater and subject 
+# if the rater is male, the diff in rater and subject ratings increase :  0.17870  
+#if the dealer is male, having a male rater reduces differences between rater and subject ratings 
+#if the dealer is female, having a male rater increases differences between rater and subject ratings 
+
+#################### REPUTATION RATING
+summary(lm(ratingrepu_diff ~ id.agro + farmer_fem, data=merged_dealer)) # -0.04249 
+#if the rater is female, the differences in rater rating and subject rating reduce
+
+summary(lm(ratingrepu_diff ~ id.agro + dealer_fem, data=merged_dealer)) #NA
+
+##### with interactions 
+summary(lm(ratingrepu_diff ~ id.agro + farmer_fem + farmer_fem*dealer_fem, data=merged_dealer)) #female rater and subject
+#if the rater is a female, the differences in rater rating and subject rating reduce : -0.01799 
+#if the dealer is a female, having a female rater reduces differences between rater and subject ratings
+#if the dealer is male, having a female rater increases differences between rater and subject ratings
+
+summary(lm(ratingrepu_diff ~ id.agro + farmer_male + farmer_male*dealer_male, data=merged_dealer))  #male rater and subject 
+# if the rater is male, the diff in rater and subject ratings increase :   0.11482 
+#if the dealer is male, having a male rater reduces differences between rater and subject ratings 
+#if the dealer is female, having a male rater increases differences between rater and subject ratings
 
 
 #################################################################################################################
@@ -2762,4 +2963,113 @@ tab_model(fe_interceptoverallm, show.se = TRUE, show.stat = TRUE)
 tab_model(fe_modoverallm, show.se = TRUE, show.stat = TRUE)
 tab_model(fe_interceptoverallm, fe_modoverallm, show.se = TRUE, show.stat = TRUE)
 tab_model(fe_modoverallm, fe_modoverallm20, show.se = TRUE, show.stat = TRUE)
+
+
+################################################################################################################
+#regression without FE
+install.packages("stargazer")
+library(stargazer)
+
+stargazer(lm(ratingoverall_diff ~ extension_training + seed_sale + seed_credit + dealer_fem + opv_sale + farmer_fem, data=merged_dealer), type = "text")
+#extension training significant at 5%, intercept and seed credit significant at 1%
+
+stargazer(lm(dealer_rating_overall ~ extension_training + seed_sale + seed_credit + dealer_fem + opv_sale, data=merged_dealer), type ="text")
+#1% significance = extension training, seed credit, opv sale, intercept; dealer female at 10%
+
+stargazer(lm(rating_overall ~ extension_training + seed_sale + seed_credit + dealer_fem + farmer_fem + opv_sale, data=merged_dealer), type="text")
+#interecpt at 1%
+
+##############################################################################################################
+##MILLERS
+
+###looking at ratings based on different aspects 
+
+### Min quantity to be processed - yes/no
+table(merged_miller$hh.maize.q23)
+
+mean(merged_miller$rating_overall[merged_miller$hh.maize.q23=="Yes"])  # 3.571594
+mean(merged_miller$rating_overall[merged_miller$hh.maize.q23=="No"])   # 3.504126
+
+mean(merged_miller$rating_location[merged_miller$hh.maize.q23=="Yes"])  #3.811594
+mean(merged_miller$rating_location[merged_miller$hh.maize.q23=="No"])  #3.824165
+
+mean(merged_miller$rating_price[merged_miller$hh.maize.q23=="Yes"])  #  3.013043
+mean(merged_miller$rating_price[merged_miller$hh.maize.q23=="No"])  #3.009823
+
+mean(merged_miller$rating_quality[merged_miller$hh.maize.q23=="Yes"])  #3.523188
+mean(merged_miller$rating_quality[merged_miller$hh.maize.q23=="No"])    #3.304519
+
+mean(merged_miller$rating_service[merged_miller$hh.maize.q23=="Yes"])  #3.655072
+mean(merged_miller$rating_service[merged_miller$hh.maize.q23=="No"])   # 3.584479
+
+mean(merged_miller$rating_reputation[merged_miller$hh.maize.q23=="Yes"])  #3.855072
+mean(merged_miller$rating_reputation[merged_miller$hh.maize.q23=="No"]) #3.797642
+
+### Number of milling machines 
+table(merged_miller$hh.maize.q26)
+
+mean(merged_miller$rating_overall[merged_miller$hh.maize.q26>3])  # 3.448889
+mean(merged_miller$rating_overall[merged_miller$hh.maize.q26<2])  #3.52244
+
+mean(merged_miller$rating_location[merged_miller$hh.maize.q26>3])  #3.577778
+mean(merged_miller$rating_location[merged_miller$hh.maize.q26<2])    #3.871988
+
+mean(merged_miller$rating_price[merged_miller$hh.maize.q26>3])  #2.822222
+mean(merged_miller$rating_price[merged_miller$hh.maize.q26<2])    #3.03238
+
+mean(merged_miller$rating_quality[merged_miller$hh.maize.q26>3])  #3.533333
+mean(merged_miller$rating_quality[merged_miller$hh.maize.q26<2])    #3.313253
+
+mean(merged_miller$rating_service[merged_miller$hh.maize.q26>3])  #3.688889
+mean(merged_miller$rating_service[merged_miller$hh.maize.q26<2])  #3.588855
+
+mean(merged_miller$rating_reputation[merged_miller$hh.maize.q26>3])  # 3.622222
+mean(merged_miller$rating_reputation[merged_miller$hh.maize.q26<2])    #3.805723
+
+### Number of debranning machines 
+table(merged_miller$hh.maize.q27)
+
+mean(merged_miller$rating_overall[merged_miller$hh.maize.q27==1])  #3.530322
+mean(merged_miller$rating_overall[merged_miller$hh.maize.q27==2])   #3.802198
+
+mean(merged_miller$rating_location[merged_miller$hh.maize.q27==1])  #3.817933
+mean(merged_miller$rating_location[merged_miller$hh.maize.q27==2])   #3.725275
+
+mean(merged_miller$rating_price[merged_miller$hh.maize.q27==1])  #3.008898
+mean(merged_miller$rating_price[merged_miller$hh.maize.q27==2])   # 3.197802
+
+mean(merged_miller$rating_quality[merged_miller$hh.maize.q27==1])  #3.382615
+mean(merged_miller$rating_quality[merged_miller$hh.maize.q27==2])  #4.153846
+
+mean(merged_miller$rating_service[merged_miller$hh.maize.q27==1])  # 3.612594
+mean(merged_miller$rating_service[merged_miller$hh.maize.q27==2])   #3.912088
+
+mean(merged_miller$rating_reputation[merged_miller$hh.maize.q27==1])  # 3.829569
+mean(merged_miller$rating_reputation[merged_miller$hh.maize.q27==2])  # 4.021978
+
+### Discounts for processing large quantities  
+table(merged_miller$hh.maize.q24)
+
+mean(merged_miller$rating_overall[merged_miller$hh.maize.q24=="Yes"])  #3.542492
+mean(merged_miller$rating_overall[merged_miller$hh.maize.q24=="No"])   #3.500877
+
+mean(merged_miller$rating_location[merged_miller$hh.maize.q24=="Yes"])  #3.77476
+mean(merged_miller$rating_location[merged_miller$hh.maize.q24=="No"])   #3.940789
+
+mean(merged_miller$rating_price[merged_miller$hh.maize.q24=="Yes"])  #2.984824
+mean(merged_miller$rating_price[merged_miller$hh.maize.q24=="No"])    #3.083333
+
+mean(merged_miller$rating_quality[merged_miller$hh.maize.q24=="Yes"])  #3.480831
+mean(merged_miller$rating_quality[merged_miller$hh.maize.q24=="No"])   #3.151316
+
+mean(merged_miller$rating_service[merged_miller$hh.maize.q24=="Yes"])  #3.627796
+mean(merged_miller$rating_service[merged_miller$hh.maize.q24=="No"])   #3.572368
+
+mean(merged_miller$rating_reputation[merged_miller$hh.maize.q24=="Yes"])  #3.844249
+mean(merged_miller$rating_reputation[merged_miller$hh.maize.q24=="No"])   # 3.756579
+
+
+
+
+
 
