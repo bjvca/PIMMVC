@@ -2478,6 +2478,13 @@ summary(lm(ratingoverall_diff ~ id.agro + seed_sale, data=merged_dealer)) #seed_
 alias(lm_overalld_dealer)
 ##high collinearity
 
+#Restricting to run FE
+gt10d <- merged_dealer[merged_dealer$id.agro %in%  names(table(merged_dealer$id.agro))[table(merged_dealer$id.agro) >10] , ]   #482 obs
+gt20d <- merged_dealer[merged_dealer$id.agro %in%  names(table(merged_dealer$id.agro))[table(merged_dealer$id.agro) >20] , ]   #284 obs
+
+summary(lm(ratingoverall_diff ~ id.agro + (seed_sale>500) -1,
+           data=gt10d))
+
 #LOCATION
 summary(lm(ratingloc_diff ~ id.agro + seed_sale, data=merged_dealer)) #seed_sale=NA
 
@@ -2967,7 +2974,6 @@ tab_model(fe_modoverallm, fe_modoverallm20, show.se = TRUE, show.stat = TRUE)
 
 ################################################################################################################
 #regression without FE
-install.packages("stargazer")
 library(stargazer)
 
 stargazer(lm(ratingoverall_diff ~ extension_training + seed_sale + seed_credit + dealer_fem + opv_sale + farmer_fem, data=merged_dealer), type = "text")
@@ -3067,7 +3073,6 @@ mean(merged_miller$rating_service[merged_miller$hh.maize.q24=="No"])   #3.572368
 
 mean(merged_miller$rating_reputation[merged_miller$hh.maize.q24=="Yes"])  #3.844249
 mean(merged_miller$rating_reputation[merged_miller$hh.maize.q24=="No"])   # 3.756579
-
 
 
 
