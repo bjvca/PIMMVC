@@ -17,12 +17,12 @@ farmers[trans] <- lapply(farmers[trans], function(x) as.numeric(as.character(x))
 trans <- c("hh.maize.agro3.q111h","hh.maize.agro3.q111i","hh.maize.agro3.q111j","hh.maize.agro3.q111k","hh.maize.agro3.q111l")
 farmers[trans] <- lapply(farmers[trans], function(x) as.numeric(as.character(x)) )
 
-stack1 <- cbind(farmers[c("ID","id.agro1","hh.maize.q25","hh.maize.agro1.q108h","hh.maize.agro1.q108i","hh.maize.agro1.q108j","hh.maize.agro1.q108k","hh.maize.agro1.q108l")],"Yes")
-names(stack1) <- c("farmerID","id.agro", "farmer_gender","rating_location","rating_price","rating_quality","rating_stock","rating_reputation", "bought")
-stack2 <- cbind(farmers[c("ID","id.agro2","hh.maize.q25","hh.maize.agro2.q109h","hh.maize.agro2.q109i","hh.maize.agro2.q109j","hh.maize.agro2.q109k","hh.maize.agro2.q109l","hh.maize.agro2.q110")])
-names(stack2) <- c("farmerID","id.agro", "farmer_gender","rating_location","rating_price","rating_quality","rating_stock","rating_reputation", "bought")
-stack3 <- cbind(farmers[c("ID","id.agro3","hh.maize.q25","hh.maize.agro3.q111h","hh.maize.agro3.q111i","hh.maize.agro3.q111j","hh.maize.agro3.q111k","hh.maize.agro3.q111l","hh.maize.agro3.q112")])
-names(stack3) <- c("farmerID","id.agro", "farmer_gender","rating_location","rating_price","rating_quality","rating_stock","rating_reputation", "bought")
+stack1 <- cbind(farmers[c("ID","id.agro1","hh.maize.q25","hh.maize.agro1.q108h","hh.maize.agro1.q108i","hh.maize.agro1.q108j","hh.maize.agro1.q108k","hh.maize.agro1.q108l","hh.maize.beans.bean.q81","hh.maize.beans.bean.q81a","hh.maize.q106")],"Yes")
+names(stack1) <- c("farmerID","id.agro", "farmer_gender","rating_location","rating_price","rating_quality","rating_stock","rating_reputation", "bought","seedqual_satis","seed_fake","seed_purchase")
+stack2 <- cbind(farmers[c("ID","id.agro2","hh.maize.q25","hh.maize.agro2.q109h","hh.maize.agro2.q109i","hh.maize.agro2.q109j","hh.maize.agro2.q109k","hh.maize.agro2.q109l","hh.maize.agro2.q110","hh.maize.beans.bean.q81","hh.maize.beans.bean.q81a","hh.maize.q106")])
+names(stack2) <- c("farmerID","id.agro", "farmer_gender","rating_location","rating_price","rating_quality","rating_stock","rating_reputation", "bought","seedqual_satis","seed_fake","seed_purchase")
+stack3 <- cbind(farmers[c("ID","id.agro3","hh.maize.q25","hh.maize.agro3.q111h","hh.maize.agro3.q111i","hh.maize.agro3.q111j","hh.maize.agro3.q111k","hh.maize.agro3.q111l","hh.maize.agro3.q112","hh.maize.beans.bean.q81","hh.maize.beans.bean.q81a","hh.maize.q106")])
+names(stack3) <- c("farmerID","id.agro", "farmer_gender","rating_location","rating_price","rating_quality","rating_stock","rating_reputation", "bought","seedqual_satis","seed_fake","seed_purchase")
 
 ratings <-rbind(stack1,stack2,stack3)
 ratings[c("id.agro","bought")] <- lapply(ratings[c("id.agro","bought")], function(x) as.factor(as.character(x)) )
@@ -49,11 +49,43 @@ summary(dealers$dealer_rating_overall)
 #1 = No, 2 = To some, 3 = to everyone who wants 
 #Including Total quantity sold of the top 3 most popular hybrid maize seeds over the first season of 2018 - q22; Total quantity sold of the top 3 most popular opv seeds over the first season of 2018 - q38
 #hh.maize.q7 - gender of input dealers 
-dealers_m <- subset(dealers, select = c('id.agro' , 'hh.maize.q7','hh.maize.q67','hh.maize.q68','hh.maize.q79','hh.maize.q80','hh.maize.q81','hh.maize.q82','hh.maize.q83','dealer_rating_overall', 'hh.maize.seed.1..q22', 'hh.maize.seed.2..q22', 'hh.maize.seed.3..q22', 'hh.maize.opv.1..q38', 'hh.maize.opv.2..q38', 'hh.maize.opv.3..q38'))
+dealers_m <- subset(dealers, select = c('id.agro' , 'hh.maize.q7','hh.maize.q67','hh.maize.q68','hh.maize.q79','hh.maize.q80','hh.maize.q81','hh.maize.q82','hh.maize.q83',
+                                        'dealer_rating_overall', 'hh.maize.seed.1..q22', 'hh.maize.seed.2..q22', 'hh.maize.seed.3..q22', 'hh.maize.opv.1..q38', 'hh.maize.opv.2..q38', 
+                                        'hh.maize.opv.3..q38','hh.maize.q6a','hh.maize.q6b','hh.maize.q6c','hh.maize.q6d', 'hh.maize.q10','hh.maize.q13','hh.maize.q14',
+                                        'hh.maize.q16a','hh.maize.q19', 'hh.maize.q35',  'hh.maize.q51',  'hh.maize.q70','hh.maize.q72','hh.maize.q73'))
 
 #Merging the datasets
 merged_dealer <- merge(ratings,dealers_m, by="id.agro")
+merged_dealer[merged_dealer=="999"] <- 0
 merged_dealer[merged_dealer=="n/a"] <- 0
+
+names(merged_dealer)[names(merged_dealer) == "hh.maize.q6a"] <- "dist_tarmac"
+names(merged_dealer)[names(merged_dealer) == "hh.maize.q6b"] <- "dist_murram"
+names(merged_dealer)[names(merged_dealer) == "hh.maize.q6c"] <- "dist_competitor"
+names(merged_dealer)[names(merged_dealer) == "hh.maize.q6d"] <- "number_aginputshops"
+names(merged_dealer)[names(merged_dealer) == "hh.maize.q10"] <- "farminput_seller"
+names(merged_dealer)[names(merged_dealer) == "hh.maize.q13"] <- "reg_UNADA"
+names(merged_dealer)[names(merged_dealer) == "hh.maize.q14"] <- "license"
+names(merged_dealer)[names(merged_dealer) == "hh.maize.q16a"] <- "no_otheroutlets"
+names(merged_dealer)[names(merged_dealer) == "hh.maize.q19"] <- "no_hybridseedsale"
+names(merged_dealer)[names(merged_dealer) == "hh.maize.q35"] <- "no_opvmaizeseed"
+names(merged_dealer)[names(merged_dealer) == "hh.maize.q51"] <- "sell_beanseed"
+names(merged_dealer)[names(merged_dealer) == "hh.maize.q70"] <- "promote_seed"
+names(merged_dealer)[names(merged_dealer) == "hh.maize.q72"] <- "insp"
+names(merged_dealer)[names(merged_dealer) == "hh.maize.q73"] <- "no_insp"
+
+merged_dealer$specialfarminputshop<- ifelse(merged_dealer$farminput_seller == 'Yes', 1, 0)
+merged_dealer$reg_UNADA_dummy<- ifelse(merged_dealer$reg_UNADA == 'Yes', 1, 0)
+merged_dealer$license_dummy<- ifelse(merged_dealer$license == 'Yes', 1, 0)
+merged_dealer$sell_beanseed_dummy<- ifelse(merged_dealer$sell_beanseed == 'Yes', 1, 0)
+merged_dealer$promote_seed_dummy<- ifelse(merged_dealer$promote_seed == 'Yes', 1, 0)
+merged_dealer$insp_dummy<- ifelse(merged_dealer$insp == 'Yes', 1, 0)
+merged_dealer['no_insp_yr'] <- 0
+merged_dealer$no_insp_yr[merged_dealer$no_insp=="a"] <- 52 #weekly
+merged_dealer$no_insp_yr[merged_dealer$no_insp=="b"] <- 12 #monthly
+merged_dealer$no_insp_yr[merged_dealer$no_insp=="c"] <- 4 #4 times a year
+merged_dealer$no_insp_yr[merged_dealer$no_insp=="d"] <- 2 #twice a year
+merged_dealer$no_insp_yr[merged_dealer$no_insp=="e"] <- 1 #yearly 
 
 head(as.numeric(merged_dealer$hh.maize.seed.1..q22)) 
 head(as.numeric(merged_dealer$hh.maize.seed.2..q22)) 
@@ -2482,6 +2514,21 @@ merged_dealer$seed_credit <- ifelse(merged_dealer$hh.maize.q68 == '3', 1, 0)
 #female farmers 
 merged_dealer$farmer_fem <- ifelse(merged_dealer$farmer_gender == 'Female', 1, 0)
 
+#customers 
+merged_dealer$customer <- ifelse(merged_dealer$bought == 'Yes', 1, 0)
+
+#dealer_gender
+merged_dealer$dealer_fem <- ifelse(merged_dealer$hh.maize.q7 == 'Female', 1, 0)
+
+#farmer satisfaction with quality of seed
+merged_dealer$seedqual_satisfaction <- ifelse(merged_dealer$seedqual_satis == 'Yes', 1, 0)
+
+#farmer thinks seed is fake 
+merged_dealer$fakeseed <- ifelse(merged_dealer$seed_fake == 'Yes', 1, 0)
+
+#farmer purchases improved variety of seed 
+merged_dealer$improve_seedpurchase<- ifelse(merged_dealer$seed_purchase == 'Yes', 1, 0)
+
 ########### REGRESSIONS WITH CLUSTERED SE #############
 
 ####### Dealers #########
@@ -2491,8 +2538,75 @@ gt10d <- merged_dealer[merged_dealer$id.agro %in%  names(table(merged_dealer$id.
 gt20d <- merged_dealer[merged_dealer$id.agro %in%  names(table(merged_dealer$id.agro))[table(merged_dealer$id.agro) >20] , ]   #284 obs
 gt30d <- merged_dealer[merged_dealer$id.agro %in%  names(table(merged_dealer$id.agro))[table(merged_dealer$id.agro) >30] , ]  #122 obs
 
-##### REGRESSIONS WITH SALES OF HYBRID MAIZE SEEDS ########
 library(miceadds)
+
+##### REGRESSION WITH CONTROLS #####
+
+###description of the variables#####
+
+#seed_sale = total quantity of all seeds sold in the first quarter of 2018 in kgs
+#seed_credit = whether dealers give seed on credit, dummy ---- 1 indicates they give seed on credit to everyone 
+#extension_training = training/extension provided by the dealers, dummy with 1 indicating if they give the service to everyone 
+#farmer_fem = dummy indicating if the farmer is a female, 1 if female 
+#opv_sale = total quantity of opv seeds sold in the first quarter of 2018 in kgs
+#customer= dummy indcating if the farmer is a customer of the input dealer he or she is rating, 1 if a customer 
+#dealer_fem = dummy indicating if the dealer is a female , 1 if female 
+#seedqual_satisfaction = dummy where 1 indicates that the farmers are satisfied with the quality of seed
+#fakeseed = dummy where 1 indicates that the farmer thinks the seed is fake 
+#improve_seedpurchase = dummy where 1 indicates that the farmer has purchased improved seeds 
+#dist_tarmac = distance of agro input shop to nearest tarmac road (in kms)
+#dist_murram = distance of agro input shop to nearest murram road (in kms)
+#dist_competitor = distance of agro input shop to nearest competitor (in kms)
+#number_aginputshops = number of agro-input shops in the neighbourhood 
+#no_otheroutlets = number of other outlets that the dealer has 
+#no_hybridseedsale = number of hybrid seed types that the dealer has sold 
+# no_opvmaizeseed = number of opv maize seed types that the dealer has sold
+#specialfarminputshop = dummy indicating whether the agro-input shop is a specialized farm input shop 
+#reg_UNADA_dummy = dummy indicating whether the business is registered as a seed dealer with UNADA (Uganda National Agro-input Dealers Association)
+#license_dummy = dummy indicating whether the ag-input shop has a trading license issued by the local govt
+#sell_beanseed_dummy = dummy indicating whether the business sells bean seeds 
+#promote_seed_dummy = dummy indicating whether the shop promotes or advertises their seed
+#insp_dummy = dummy indicating whether the shop is inspected
+#no_insp_yr = number of inspection visits done every year for the agro-input business 
+
+
+summary(lm.cluster(data = merged_dealer, formula = ratingoverall_diff ~ seed_sale + seed_credit + extension_training +
+                     farmer_fem + opv_sale + customer + dealer_fem + seedqual_satisfaction + fakeseed + improve_seedpurchase +
+                     dist_tarmac + dist_murram + dist_competitor + number_aginputshops + no_otheroutlets + no_hybridseedsale +
+                     no_opvmaizeseed + specialfarminputshop + reg_UNADA_dummy + license_dummy + sell_beanseed_dummy +
+                     promote_seed_dummy + insp_dummy + no_insp_yr, cluster = "id.agro") ) 
+#seed_credit, opv_sale, customer, dist_tarmac, dist_competitor, nootheroutlets3/4, reg_UNADA_dummy - significant (upto 10%)
+
+#Seed_sale 
+summary(lm.cluster(data = merged_dealer, formula = ratingoverall_diff ~ seed_sale + seed_credit + opv_sale + customer +
+                     dist_tarmac + dist_competitor + no_otheroutlets, cluster = "id.agro") ) #seed_sale coeff significant 
+summary(lm.cluster(data = merged_dealer, formula = ratingloc_diff ~ seed_sale + seed_credit + opv_sale + customer +
+                     dist_tarmac + dist_competitor + no_otheroutlets, cluster = "id.agro") ) #seed sale coeff significant 
+summary(lm.cluster(data = merged_dealer, formula = ratingprice_diff ~ seed_sale + seed_credit + opv_sale + customer +
+                     dist_tarmac + dist_competitor + no_otheroutlets, cluster = "id.agro") ) #seed sale coeff significant 
+summary(lm.cluster(data = merged_dealer, formula = ratingqual_diff ~ seed_sale + seed_credit + opv_sale + customer +
+                     dist_tarmac + dist_competitor + no_otheroutlets, cluster = "id.agro") ) #seed sale coeff significant 
+summary(lm.cluster(data = merged_dealer, formula = ratingstock_diff ~ seed_sale + seed_credit + opv_sale + customer +
+                     dist_tarmac + dist_competitor + no_otheroutlets, cluster = "id.agro") )  #seed_sale non-significant 
+summary(lm.cluster(data = merged_dealer, formula = ratingrepu_diff ~ seed_sale + seed_credit + opv_sale + customer +
+                     dist_tarmac + dist_competitor + no_otheroutlets, cluster = "id.agro") )  #seed_Sale significant 
+
+#farmer_fem
+summary(lm.cluster(data = merged_dealer, formula = ratingoverall_diff ~ farmer_fem + seed_sale + seed_credit + opv_sale + customer +
+                     dist_tarmac + dist_competitor + insp_dummy + promote_seed_dummy, cluster = "id.agro") ) #farmer_fem coeff significant 
+summary(lm.cluster(data = merged_dealer, formula = ratingloc_diff ~ farmer_fem + seed_sale + seed_credit + opv_sale + customer +
+                     dist_tarmac + dist_competitor + insp_dummy + promote_seed_dummy, cluster = "id.agro") )   #farmer_fem coeff significant 
+summary(lm.cluster(data = merged_dealer, formula = ratingprice_diff ~ farmer_fem + seed_sale + seed_credit + opv_sale + customer +
+                     dist_tarmac + dist_competitor + insp_dummy + promote_seed_dummy, cluster = "id.agro") )  #farmer_fem coeff non-significant 
+summary(lm.cluster(data = merged_dealer, formula = ratingqual_diff ~ farmer_fem + seed_sale + seed_credit + opv_sale + customer +
+                     dist_tarmac + dist_competitor + insp_dummy + promote_seed_dummy, cluster = "id.agro") )   #farmer_fem coeff non-significant 
+summary(lm.cluster(data = merged_dealer, formula = ratingstock_diff ~ farmer_fem + seed_sale + seed_credit + opv_sale + customer +
+                     dist_tarmac + dist_competitor + insp_dummy + promote_seed_dummy, cluster = "id.agro") )   #farmer_fem coeff non-significant 
+summary(lm.cluster(data = merged_dealer, formula = ratingrepu_diff ~ farmer_fem + seed_sale + seed_credit + opv_sale + customer +
+                     dist_tarmac + dist_competitor + insp_dummy + promote_seed_dummy, cluster = "id.agro") )   #farmer_fem coeff non-significant 
+
+
+##### REGRESSIONS WITH SALES OF HYBRID MAIZE SEEDS ########
 
 #overall rating diff 
 
@@ -2892,6 +3006,12 @@ summary(lm.cluster(data=gt10d, formula=ratingoverall_diff ~ farmer_fem, cluster=
 summary(lm.cluster(data=gt20d, formula=ratingoverall_diff ~ farmer_fem, cluster="id.agro")) #0.1312821 (significance at 5%)
 summary(lm.cluster(data=gt30d, formula=ratingoverall_diff ~ farmer_fem, cluster="id.agro")) #0.1721847 ( significance at 1%)
 
+#overall rating by farmers 
+
+summary(lm.cluster(data = merged_dealer, formula = rating_overall ~ farmer_fem, cluster = "id.agro") )  #0.02604439, non-significant 
+summary(lm.cluster(data=gt10d, formula=rating_overall ~ farmer_fem, cluster="id.agro")) #0.02881027, non-significant 
+summary(lm.cluster(data=gt20d, formula=rating_overall ~ farmer_fem, cluster="id.agro")) # 0.02517094 , non-significant 
+summary(lm.cluster(data=gt30d, formula=rating_overall ~ farmer_fem, cluster="id.agro")) #0.04245495 , non-significant 
 
 #location rating diff 
 
@@ -2900,6 +3020,12 @@ summary(lm.cluster(data=gt10d, formula=ratingloc_diff ~ farmer_fem, cluster="id.
 summary(lm.cluster(data=gt20d, formula=ratingloc_diff ~ farmer_fem, cluster="id.agro")) #   0.8972222 (significance at 1%)
 summary(lm.cluster(data=gt30d, formula=ratingloc_diff ~ farmer_fem, cluster="id.agro")) #  0.7027027  (significance at 10% )       
 
+#location rating by farmers 
+
+summary(lm.cluster(data = merged_dealer, formula = rating_location ~ farmer_fem, cluster = "id.agro") )  #0.3225078, significant at 1%
+summary(lm.cluster(data=gt10d, formula=rating_location ~ farmer_fem, cluster="id.agro")) #0.3049336 , significant at 5% 
+summary(lm.cluster(data=gt20d, formula=rating_location ~ farmer_fem, cluster="id.agro")) # 0.382906 , significant at 5%
+summary(lm.cluster(data=gt30d, formula=rating_location ~ farmer_fem, cluster="id.agro")) #0.2522523 , significant at 5%
 
 #price rating diff 
 
@@ -2908,6 +3034,12 @@ summary(lm.cluster(data=gt10d, formula=ratingprice_diff ~ farmer_fem, cluster="i
 summary(lm.cluster(data=gt20d, formula=ratingprice_diff ~ farmer_fem, cluster="id.agro")) #  0.4275641   ( significance at 1%)
 summary(lm.cluster(data=gt30d, formula=ratingprice_diff ~ farmer_fem, cluster="id.agro")) #0.5461712 (significance at 1%)  
 
+#price rating by farmers 
+
+summary(lm.cluster(data = merged_dealer, formula = rating_price ~ farmer_fem, cluster = "id.agro") )  #0.1266582, non-significant
+summary(lm.cluster(data=gt10d, formula=rating_price ~ farmer_fem, cluster="id.agro")) #0.1451709 , non-significant 
+summary(lm.cluster(data=gt20d, formula=rating_price ~ farmer_fem, cluster="id.agro")) #   0.1987179 , non-significant
+summary(lm.cluster(data=gt30d, formula=rating_price ~ farmer_fem, cluster="id.agro")) # 0.4831081  , significant at 1%
 
 #quality rating diff 
 
@@ -2916,6 +3048,12 @@ summary(lm.cluster(data=gt10d, formula=ratingqual_diff ~ farmer_fem, cluster="id
 summary(lm.cluster(data=gt20d, formula=ratingqual_diff ~ farmer_fem, cluster="id.agro")) # -0.1797009 (no significance)
 summary(lm.cluster(data=gt30d, formula=ratingqual_diff ~ farmer_fem, cluster="id.agro")) #  -0.1711712 (no significance )  
 
+#quality rating by farmers 
+
+summary(lm.cluster(data = merged_dealer, formula = rating_quality ~ farmer_fem, cluster = "id.agro") )  #-0.1589948 , significant at 5%
+summary(lm.cluster(data=gt10d, formula=rating_quality ~ farmer_fem, cluster="id.agro")) #-0.1593148 ,significant at 10%
+summary(lm.cluster(data=gt20d, formula=rating_quality ~ farmer_fem, cluster="id.agro")) #-0.1626068  , non-significant
+summary(lm.cluster(data=gt30d, formula=rating_quality ~ farmer_fem, cluster="id.agro")) #-0.1081081   , non-significant 
 
 #stock rating diff 
 
@@ -2924,6 +3062,12 @@ summary(lm.cluster(data=gt10d, formula=ratingstock_diff ~ farmer_fem, cluster="i
 summary(lm.cluster(data=gt20d, formula=ratingstock_diff ~ farmer_fem, cluster="id.agro")) # -0.4658120 (significance at 10%)
 summary(lm.cluster(data=gt30d, formula=ratingstock_diff ~ farmer_fem, cluster="id.agro")) #  -0.3733108  ( significance at 1%) 
 
+#stock rating by farmers 
+
+summary(lm.cluster(data = merged_dealer, formula = rating_stock ~ farmer_fem, cluster = "id.agro") )  # -0.1000306, non-significant
+summary(lm.cluster(data=gt10d, formula=rating_stock ~ farmer_fem, cluster="id.agro")) #-0.07124198 ,non-significant
+summary(lm.cluster(data=gt20d, formula=rating_stock ~ farmer_fem, cluster="id.agro")) #-0.1775641  , non-significant
+summary(lm.cluster(data=gt30d, formula=rating_stock ~ farmer_fem, cluster="id.agro")) #-0.4093468  , significant at 10%
 
 #reputation rating diff 
 
@@ -2932,6 +3076,12 @@ summary(lm.cluster(data=gt10d, formula=ratingrepu_diff ~ farmer_fem, cluster="id
 summary(lm.cluster(data=gt20d, formula=ratingrepu_diff ~ farmer_fem, cluster="id.agro")) # -0.02286325 (no significance)
 summary(lm.cluster(data=gt30d, formula=ratingrepu_diff ~ farmer_fem, cluster="id.agro")) # 0.1565315 (no significance ) 
 
+#reputation rating by farmers 
+
+summary(lm.cluster(data = merged_dealer, formula = rating_reputation ~ farmer_fem, cluster = "id.agro") )  #  -0.05991857 , non-significant
+summary(lm.cluster(data=gt10d, formula=rating_reputation ~ farmer_fem, cluster="id.agro")) #-0.07549634 ,non-significant
+summary(lm.cluster(data=gt20d, formula=rating_reputation ~ farmer_fem, cluster="id.agro")) #-0.1155983  , non-significant
+summary(lm.cluster(data=gt30d, formula=rating_reputation ~ farmer_fem, cluster="id.agro")) # -0.005630631, non-significant
 
 #gender of the dealers
 
@@ -2976,29 +3126,135 @@ dealers_m$ratingqual_diff <- dealers_m$rating_qual_avg - dealers_m$hh.maize.q81
 dealers_m$ratingstock_diff <- dealers_m$rating_stock_avg - dealers_m$hh.maize.q82
 dealers_m$ratingrepu_diff <- dealers_m$rating_repu_avg - dealers_m$hh.maize.q83
 
+head(as.numeric(dealers_m$hh.maize.seed.1..q22)) 
+head(as.numeric(dealers_m$hh.maize.seed.2..q22)) 
+head(as.numeric(dealers_m$hh.maize.seed.3..q22)) 
+
+dealers_m$hh.maize.seed.1..q22 <- as.numeric(dealers_m$hh.maize.seed.1..q22)
+dealers_m$hh.maize.seed.2..q22 <- as.numeric(dealers_m$hh.maize.seed.2..q22)
+dealers_m$hh.maize.seed.3..q22 <- as.numeric(dealers_m$hh.maize.seed.3..q22)
+
+dealers_m$hh.maize.seed.1..q22 <- as.numeric(as.character(dealers_m$hh.maize.seed.1..q22))
+dealers_m$hh.maize.seed.2..q22 <- as.numeric(as.character(dealers_m$hh.maize.seed.2..q22))
+dealers_m$hh.maize.seed.3..q22 <- as.numeric(as.character(dealers_m$hh.maize.seed.3..q22))
+
+dealers_m$seed_sale <- dealers_m$hh.maize.seed.1..q22 + dealers_m$hh.maize.seed.2..q22 + dealers_m$hh.maize.seed.3..q22 
+
+head(as.numeric(dealers_m$hh.maize.opv.1..q38 )) 
+head(as.numeric(dealers_m$hh.maize.opv.2..q38 )) 
+head(as.numeric(dealers_m$hh.maize.opv.3..q38 )) 
+
+dealers_m$hh.maize.opv.1..q38  <- as.numeric(dealers_m$hh.maize.opv.1..q38 )
+dealers_m$hh.maize.opv.2..q38  <- as.numeric(dealers_m$hh.maize.opv.2..q38 )
+dealers_m$hh.maize.opv.3..q38 <- as.numeric(dealers_m$hh.maize.opv.3..q38 )
+
+dealers_m$hh.maize.opv.1..q38  <- as.numeric(as.character(dealers_m$hh.maize.opv.1..q38 ))
+dealers_m$hh.maize.opv.2..q38 <- as.numeric(as.character(dealers_m$hh.maize.opv.2..q38 ))
+dealers_m$hh.maize.opv.3..q38 <- as.numeric(as.character(dealers_m$hh.maize.opv.3..q38 ))
+
+dealers_m$opv_sale <-dealers_m$hh.maize.opv.1..q38 + dealers_m$hh.maize.opv.2..q38 + dealers_m$hh.maize.opv.3..q38 
+
+dealers_m[dealers_m=="999"] <- 0
+
+names(dealers_m)[names(dealers_m) == "hh.maize.q6a"] <- "dist_tarmac"
+names(dealers_m)[names(dealers_m)== "hh.maize.q6b"] <- "dist_murram"
+names(dealers_m)[names(dealers_m) == "hh.maize.q6c"] <- "dist_competitor"
+names(dealers_m)[names(dealers_m) == "hh.maize.q6d"] <- "number_aginputshops"
+names(dealers_m)[names(dealers_m)== "hh.maize.q10"] <- "farminput_seller"
+names(dealers_m)[names(dealers_m) == "hh.maize.q13"] <- "reg_UNADA"
+names(dealers_m)[names(dealers_m)== "hh.maize.q14"] <- "license"
+names(dealers_m)[names(dealers_m) == "hh.maize.q16a"] <- "no_otheroutlets"
+names(dealers_m)[names(dealers_m) == "hh.maize.q19"] <- "no_hybridseedsale"
+names(dealers_m)[names(dealers_m) == "hh.maize.q35"] <- "no_opvmaizeseed"
+names(dealers_m)[names(dealers_m) == "hh.maize.q51"] <- "sell_beanseed"
+names(dealers_m)[names(dealers_m)== "hh.maize.q70"] <- "promote_seed"
+names(dealers_m)[names(dealers_m)== "hh.maize.q72"] <- "insp"
+names(dealers_m)[names(dealers_m) == "hh.maize.q73"] <- "no_insp"
+
+dealers_m$specialfarminputshop<- ifelse(dealers_m$farminput_seller == 'Yes', 1, 0)
+dealers_m$reg_UNADA_dummy<- ifelse(dealers_m$reg_UNADA == 'Yes', 1, 0)
+dealers_m$license_dummy<- ifelse(dealers_m$license == 'Yes', 1, 0)
+dealers_m$sell_beanseed_dummy<- ifelse(dealers_m$sell_beanseed == 'Yes', 1, 0)
+dealers_m$promote_seed_dummy<- ifelse(dealers_m$promote_seed == 'Yes', 1, 0)
+dealers_m$insp_dummy<- ifelse(dealers_m$insp == 'Yes', 1, 0)
+dealers_m['no_insp_yr'] <- 0
+dealers_m$no_insp_yr[dealers_m$no_insp=="a"] <- 52 #weekly
+dealers_m$no_insp_yr[dealers_m$no_insp=="b"] <- 12 #monthly
+dealers_m$no_insp_yr[dealers_m$no_insp=="c"] <- 4 #4 times a year
+dealers_m$no_insp_yr[dealers_m$no_insp=="d"] <- 2 #twice a year
+dealers_m$no_insp_yr[dealers$no_insp=="e"] <- 1 #yearly 
+
+#dealers providing extension or credit (3=to everyone)
+dealers_m$extension_training <- ifelse(dealers_m$hh.maize.q67 == '3', 1, 0)
+
+#dealers providing seed on credit (3=to everyone)
+dealers_m$seed_credit <- ifelse(dealers_m$hh.maize.q68 == '3', 1, 0)
+
+#REGRESSIONS WITH CONTROLS 
+summary(lm(ratingoverall_diff ~ seed_sale + seed_credit + extension_training + opv_sale + dealer_fem + dist_tarmac + dist_murram + dist_competitor + number_aginputshops + no_otheroutlets + 
+                     no_hybridseedsale + no_opvmaizeseed + specialfarminputshop + reg_UNADA_dummy + license_dummy + sell_beanseed_dummy +
+                     promote_seed_dummy + insp_dummy + no_insp_yr, data = dealers_m) )  ##NOT RUNNING 
+
+summary(lm(ratingoverall_diff ~ dealer_fem + extension_training + insp_dummy + promote_seed_dummy + dist_tarmac + license_dummy 
+           + dist_competitor + number_aginputshops + seed_sale  , data = dealers_m) )  #dealer_fem significant at 10%
+summary(lm(ratingloc_diff ~ dealer_fem + extension_training + insp_dummy + promote_seed_dummy + dist_tarmac + license_dummy 
+           + dist_competitor + number_aginputshops + seed_sale  , data = dealers_m) ) #dealer_fem non-significant 
+summary(lm(ratingprice_diff ~ dealer_fem + extension_training + insp_dummy + promote_seed_dummy + dist_tarmac + license_dummy 
+           + dist_competitor + number_aginputshops + seed_sale  , data = dealers_m) )  #dealer_fem significant at 5%
+summary(lm(ratingqual_diff ~ dealer_fem + extension_training + insp_dummy + promote_seed_dummy + dist_tarmac + license_dummy 
+           + dist_competitor + number_aginputshops + seed_sale  , data = dealers_m) ) #dealer_fem non-significant 
+summary(lm(ratingstock_diff ~ dealer_fem + extension_training + insp_dummy + promote_seed_dummy + dist_tarmac + license_dummy 
+           + dist_competitor + number_aginputshops + seed_sale  , data = dealers_m) ) #dealer_fem significant at 1%
+summary(lm(ratingrepu_diff ~ dealer_fem + extension_training + insp_dummy + promote_seed_dummy + dist_tarmac + license_dummy 
+           + dist_competitor + number_aginputshops + seed_sale  , data = dealers_m) )   #dealer_fem non-significant 
+
 #overall rating diff 
 
 summary(lm(ratingoverall_diff ~ dealer_fem , data=dealers_m)) #0.21619 , no significance 
+
+#overall rating by farmers 
+
+summary(lm(rating_overall_avg ~ dealer_fem , data=dealers_m)) # 0.09091, no significance 
 
 #location rating diff
 
 summary(lm(ratingloc_diff ~ dealer_fem , data=dealers_m)) #0.3397   , no significance 
 
+#location rating by farmers 
+
+summary(lm(rating_loc_avg ~ dealer_fem , data=dealers_m)) # 0.03206  , no significance 
+
 #price rating diff
 
 summary(lm(ratingprice_diff ~ dealer_fem , data=dealers_m)) #-0.006996   , no significance 
+
+#price rating by farmers 
+
+summary(lm(rating_price_avg ~ dealer_fem , data=dealers_m)) # 0.06901   , no significance 
 
 #quality rating diff
 
 summary(lm(ratingqual_diff ~ dealer_fem , data=dealers_m)) #-0.05851    , no significance 
 
+#quality rating by farmers 
+
+summary(lm(rating_qual_avg ~ dealer_fem , data=dealers_m)) #  0.02208    , no significance 
+
 #stock rating diff
 
 summary(lm(ratingstock_diff ~ dealer_fem , data=dealers_m)) # 0.4989    , no significance 
 
+#stock rating by farmers 
+
+summary(lm(rating_stock_avg ~ dealer_fem , data=dealers_m)) # 0.16099  , no significance 
+
 #reputation rating diff
 
 summary(lm(ratingrepu_diff ~ dealer_fem , data=dealers_m)) #0.3078   , no significance 
+
+#reputation rating by farmers 
+
+summary(lm(rating_repu_avg ~ dealer_fem , data=dealers_m)) # 0.17043 , no significance 
 
 #################################################################################################################
 
@@ -3276,19 +3532,7 @@ tab_model(fe_modoverallm, fe_modoverallm20, show.se = TRUE, show.stat = TRUE)
 
 
 ################################################################################################################
-#regression without FE
-library(stargazer)
 
-stargazer(lm(ratingoverall_diff ~ extension_training + seed_sale + seed_credit + dealer_fem + opv_sale + farmer_fem, data=merged_dealer), type = "text")
-#extension training significant at 5%, intercept and seed credit significant at 1%
-
-stargazer(lm(dealer_rating_overall ~ extension_training + seed_sale + seed_credit + dealer_fem + opv_sale, data=merged_dealer), type ="text")
-#1% significance = extension training, seed credit, opv sale, intercept; dealer female at 10%
-
-stargazer(lm(rating_overall ~ extension_training + seed_sale + seed_credit + dealer_fem + farmer_fem + opv_sale, data=merged_dealer), type="text")
-#interecpt at 1%
-
-##############################################################################################################
 ##MILLERS
 
 ###looking at ratings based on different aspects 
