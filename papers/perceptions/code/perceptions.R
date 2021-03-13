@@ -2569,13 +2569,23 @@ library(miceadds)
 #insp_dummy = dummy indicating whether the shop is inspected
 #no_insp_yr = number of inspection visits done every year for the agro-input business 
 
-
+### all controls #####
 summary(lm.cluster(data = merged_dealer, formula = ratingoverall_diff ~ seed_sale + seed_credit + extension_training +
                      farmer_fem + opv_sale + customer + dealer_fem + seedqual_satisfaction + fakeseed + improve_seedpurchase +
                      dist_tarmac + dist_murram + dist_competitor + number_aginputshops + no_otheroutlets + no_hybridseedsale +
                      no_opvmaizeseed + specialfarminputshop + reg_UNADA_dummy + license_dummy + sell_beanseed_dummy +
                      promote_seed_dummy + insp_dummy + no_insp_yr, cluster = "id.agro") ) 
 #seed_credit, opv_sale, customer, dist_tarmac, dist_competitor, nootheroutlets3/4, reg_UNADA_dummy - significant (upto 10%)
+
+#### Restricted data --- dealers with more than 10 ratings --- all controls 
+summary(lm.cluster(data = gt10d, formula = ratingoverall_diff ~ seed_sale + seed_credit + extension_training +
+                     farmer_fem + opv_sale + customer + dealer_fem + seedqual_satisfaction + fakeseed + improve_seedpurchase +
+                     dist_tarmac + dist_murram + dist_competitor + number_aginputshops + no_otheroutlets + no_hybridseedsale +
+                     no_opvmaizeseed + specialfarminputshop + reg_UNADA_dummy + license_dummy + sell_beanseed_dummy +
+                     promote_seed_dummy + insp_dummy + no_insp_yr, cluster = "id.agro") ) 
+#opv_sale, customer, dealer_fem, dist_tarmac, number_aginputshops, no_hybridseedsale, no_opvmaizeseed, specialfarminputshop, reg_UNADA_dummy
+#sell_beanseed_dummy, insp_dummy, no_insp_yr  ---- ALL  significant (upto 10%)
+
 
 #Seed_sale 
 summary(lm.cluster(data = merged_dealer, formula = ratingoverall_diff ~ seed_sale + seed_credit + opv_sale + customer +
@@ -2591,6 +2601,32 @@ summary(lm.cluster(data = merged_dealer, formula = ratingstock_diff ~ seed_sale 
 summary(lm.cluster(data = merged_dealer, formula = ratingrepu_diff ~ seed_sale + seed_credit + opv_sale + customer +
                      dist_tarmac + dist_competitor + no_otheroutlets, cluster = "id.agro") )  #seed_Sale significant 
 
+#Seed_sale - restricted data - dealers with more than 10 ratings 
+summary(lm.cluster(data = gt10d, formula = ratingoverall_diff ~ seed_sale + customer + dist_tarmac + number_aginputshops + 
+                     no_hybridseedsale + no_opvmaizeseed + specialfarminputshop + reg_UNADA_dummy + sell_beanseed_dummy +
+                     insp_dummy + no_insp_yr, cluster = "id.agro") ) #seed_sale significant at 5%
+
+summary(lm.cluster(data = gt10d, formula = ratingloc_diff ~ seed_sale + customer  + dist_tarmac + number_aginputshops + 
+                     no_hybridseedsale + no_opvmaizeseed + specialfarminputshop + reg_UNADA_dummy + sell_beanseed_dummy +
+                     insp_dummy + no_insp_yr, cluster = "id.agro") ) #seed_sale significant at 5%
+
+summary(lm.cluster(data = gt10d, formula = ratingprice_diff ~ seed_sale + customer+ dist_tarmac + number_aginputshops + 
+                     no_hybridseedsale + no_opvmaizeseed + specialfarminputshop + reg_UNADA_dummy + sell_beanseed_dummy +
+                     insp_dummy + no_insp_yr, cluster = "id.agro") ) #seed_sale significant at 1%
+
+summary(lm.cluster(data = gt10d, formula = ratingqual_diff ~ seed_sale + customer + dist_tarmac + number_aginputshops + 
+                     no_hybridseedsale + no_opvmaizeseed + specialfarminputshop + reg_UNADA_dummy + sell_beanseed_dummy +
+                     insp_dummy + no_insp_yr, cluster = "id.agro") ) #seed_sale significant at 1%
+
+summary(lm.cluster(data = gt10d, formula = ratingstock_diff ~ seed_sale + customer + dist_tarmac + number_aginputshops + 
+                     no_hybridseedsale + no_opvmaizeseed + specialfarminputshop + reg_UNADA_dummy + sell_beanseed_dummy +
+                     insp_dummy + no_insp_yr, cluster = "id.agro") ) #seed_sale significant at 1%
+
+summary(lm.cluster(data = gt10d, formula = ratingrepu_diff ~ seed_sale + customer + dist_tarmac + number_aginputshops + 
+                     no_hybridseedsale + no_opvmaizeseed + specialfarminputshop + reg_UNADA_dummy + sell_beanseed_dummy +
+                     insp_dummy + no_insp_yr, cluster = "id.agro") ) #seed_sale significant at 5%
+
+
 #farmer_fem
 summary(lm.cluster(data = merged_dealer, formula = ratingoverall_diff ~ farmer_fem + seed_sale + seed_credit + opv_sale + customer +
                      dist_tarmac + dist_competitor + insp_dummy + promote_seed_dummy, cluster = "id.agro") ) #farmer_fem coeff significant 
@@ -2604,6 +2640,20 @@ summary(lm.cluster(data = merged_dealer, formula = ratingstock_diff ~ farmer_fem
                      dist_tarmac + dist_competitor + insp_dummy + promote_seed_dummy, cluster = "id.agro") )   #farmer_fem coeff non-significant 
 summary(lm.cluster(data = merged_dealer, formula = ratingrepu_diff ~ farmer_fem + seed_sale + seed_credit + opv_sale + customer +
                      dist_tarmac + dist_competitor + insp_dummy + promote_seed_dummy, cluster = "id.agro") )   #farmer_fem coeff non-significant 
+
+#farmer_fem - restricted data - dealers with more than 10 ratings 
+summary(lm.cluster(data = gt10d, formula = ratingoverall_diff ~ farmer_fem + seed_sale + customer + opv_sale, cluster = "id.agro") ) 
+#farmer_fem coeff significant
+summary(lm.cluster(data = gt10d, formula = ratingloc_diff ~ farmer_fem + seed_sale + customer + opv_sale, cluster = "id.agro") )
+#farmer_fem coeff significant
+summary(lm.cluster(data = gt10d, formula = ratingprice_diff ~ farmer_fem + seed_sale + customer + opv_sale, cluster = "id.agro") )
+#farmer_fem coeff non-significant
+summary(lm.cluster(data = gt10d, formula = ratingqual_diff ~ farmer_fem + seed_sale + customer + opv_sale, cluster = "id.agro") )
+#farmer_fem coeff non-significant
+summary(lm.cluster(data = gt10d, formula = ratingstock_diff ~ farmer_fem + seed_sale + customer + opv_sale, cluster = "id.agro") )
+#farmer_fem coeff non-significant
+summary(lm.cluster(data = gt10d, formula = ratingrepu_diff ~ farmer_fem + seed_sale + customer + opv_sale, cluster = "id.agro") )
+#farmer_fem coeff non-significant
 
 
 ##### REGRESSIONS WITH SALES OF HYBRID MAIZE SEEDS ########
