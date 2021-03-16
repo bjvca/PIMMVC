@@ -17,12 +17,12 @@ farmers[trans] <- lapply(farmers[trans], function(x) as.numeric(as.character(x))
 trans <- c("hh.maize.agro3.q111h","hh.maize.agro3.q111i","hh.maize.agro3.q111j","hh.maize.agro3.q111k","hh.maize.agro3.q111l")
 farmers[trans] <- lapply(farmers[trans], function(x) as.numeric(as.character(x)) )
 
-stack1 <- cbind(farmers[c("ID","id.agro1","hh.maize.q25","hh.maize.agro1.q108h","hh.maize.agro1.q108i","hh.maize.agro1.q108j","hh.maize.agro1.q108k","hh.maize.agro1.q108l","hh.maize.beans.bean.q81","hh.maize.beans.bean.q81a","hh.maize.q106")],"Yes")
-names(stack1) <- c("farmerID","id.agro", "farmer_gender","rating_location","rating_price","rating_quality","rating_stock","rating_reputation", "bought","seedqual_satis","seed_fake","seed_purchase")
-stack2 <- cbind(farmers[c("ID","id.agro2","hh.maize.q25","hh.maize.agro2.q109h","hh.maize.agro2.q109i","hh.maize.agro2.q109j","hh.maize.agro2.q109k","hh.maize.agro2.q109l","hh.maize.agro2.q110","hh.maize.beans.bean.q81","hh.maize.beans.bean.q81a","hh.maize.q106")])
-names(stack2) <- c("farmerID","id.agro", "farmer_gender","rating_location","rating_price","rating_quality","rating_stock","rating_reputation", "bought","seedqual_satis","seed_fake","seed_purchase")
-stack3 <- cbind(farmers[c("ID","id.agro3","hh.maize.q25","hh.maize.agro3.q111h","hh.maize.agro3.q111i","hh.maize.agro3.q111j","hh.maize.agro3.q111k","hh.maize.agro3.q111l","hh.maize.agro3.q112","hh.maize.beans.bean.q81","hh.maize.beans.bean.q81a","hh.maize.q106")])
-names(stack3) <- c("farmerID","id.agro", "farmer_gender","rating_location","rating_price","rating_quality","rating_stock","rating_reputation", "bought","seedqual_satis","seed_fake","seed_purchase")
+stack1 <- cbind(farmers[c("ID","id.agro1","hh.maize.q25","hh.maize.agro1.q108h","hh.maize.agro1.q108i","hh.maize.agro1.q108j","hh.maize.agro1.q108k","hh.maize.agro1.q108l","hh.maize.beans.bean.q81","hh.maize.beans.bean.q81a","hh.maize.q106","hh.maize.q24","hh.maize.q27")],"Yes")
+names(stack1) <- c("farmerID","id.agro", "farmer_gender","rating_location","rating_price","rating_quality","rating_stock","rating_reputation","seedqual_satis","seed_fake","seed_purchase","age","education","bought")
+stack2 <- cbind(farmers[c("ID","id.agro2","hh.maize.q25","hh.maize.agro2.q109h","hh.maize.agro2.q109i","hh.maize.agro2.q109j","hh.maize.agro2.q109k","hh.maize.agro2.q109l","hh.maize.agro2.q110","hh.maize.beans.bean.q81","hh.maize.beans.bean.q81a","hh.maize.q106","hh.maize.q24","hh.maize.q27")])
+names(stack2) <- c("farmerID","id.agro", "farmer_gender","rating_location","rating_price","rating_quality","rating_stock","rating_reputation", "bought","seedqual_satis","seed_fake","seed_purchase","age","education")
+stack3 <- cbind(farmers[c("ID","id.agro3","hh.maize.q25","hh.maize.agro3.q111h","hh.maize.agro3.q111i","hh.maize.agro3.q111j","hh.maize.agro3.q111k","hh.maize.agro3.q111l","hh.maize.agro3.q112","hh.maize.beans.bean.q81","hh.maize.beans.bean.q81a","hh.maize.q106","hh.maize.q24","hh.maize.q27")])
+names(stack3) <- c("farmerID","id.agro", "farmer_gender","rating_location","rating_price","rating_quality","rating_stock","rating_reputation", "bought","seedqual_satis","seed_fake","seed_purchase","age","education")
 
 ratings <-rbind(stack1,stack2,stack3)
 ratings[c("id.agro","bought")] <- lapply(ratings[c("id.agro","bought")], function(x) as.factor(as.character(x)) )
@@ -617,8 +617,45 @@ dev.off()
 
 
 
+####################################################
 
 ################### TRADERS ########################
+
+####################################################
+
+### VARIABLES ###
+table(farmers$hh.maize.q101) #did the farmer sell any maize of the total harvested in first season of 2018? Yes/No
+table(farmers$hh.maize.q101a) #how much maize was sold (record in bags)
+table(farmers$hh.maize.q101b) #9 transactions -- number of times sold 
+table(farmers$hh.maize.q105) #how many of the maize traders or middlemen are buying maize in your village or neighborhood?
+table(farmers$hh.maize.q120) #storage capacity in kgs
+#hh.maize.transaction.1..q101d #for 9 transactions - quantity sold in every transaction
+#hh.maize.transaction.4..q101e #for 9 transactions - money receivd in every transaction 
+table(farmers$hh.maize.q118) #How the maize is dried? a = 465 (on ground), b = 15(on a concrete floor/tarred area), c = 502 (on tarpaulin)
+table(farmers$hh.maize.q116) #sort maize cobs before threshing? yes/no
+table(farmers$hh.maize.q13) #nearest tarmac road (in km)
+table(farmers$hh.maize.q14) #nearest murram road (in km)
+table(farmers$hh.maize.q20) #nearest trading center (in km)
+table(farmers$hh.maize.q40) #on how many fields maize grown in first season of 2018
+table(farmers$hh.maize.q37) #member of a group/association/cooperative for maize production --- Yes/No
+
+###storage method of maize used by farmers 
+#TRUE/FALSE
+table(farmers$hh.maize.q119.a)  #544 - Gunny bags on the floor 
+table(farmers$hh.maize.q119.b)  #446  - Gunny bags on palates
+table(farmers$hh.maize.q119.c)  #46  - Pics bags on the floor
+table(farmers$hh.maize.q119.d)  # 34  - Pics bags on the palates
+table(farmers$hh.maize.q119.e)  # 4  - Hermetic container
+table(farmers$hh.maize.q119.f)  # 38  - Plastic containers
+table(farmers$hh.maize.q119.g)  #20 - Baskets
+table(farmers$hh.maize.q119.h)  #3  - pots
+table(farmers$hh.maize.q119.i)  # 7  - Traditional granary
+
+###how do you thresh the maize?
+table(farmers$hh.maize.q117.a) #474 - beating with sticks 
+table(farmers$hh.maize.q117.b)#434 --- using hands 
+table(farmers$hh.maize.q117.c) #169  --- hand powdered thresher
+table(farmers$hh.maize.q117.d) #309  --- machine powdered thresher
 
 ### Prepping data for ratings 
 trans <- c("hh.maize.trader1.q102g","hh.maize.trader1.q102h","hh.maize.trader1.q102i","hh.maize.trader1.q102j","hh.maize.trader1.q102k")
@@ -628,12 +665,51 @@ farmers[trans] <- lapply(farmers[trans], function(x) as.numeric(as.character(x))
 trans <- c("hh.maize.trader3.q104g","hh.maize.trader3.q104h","hh.maize.trader3.q104i","hh.maize.trader3.q104j","hh.maize.trader3.q104k")
 farmers[trans] <- lapply(farmers[trans], function(x) as.numeric(as.character(x)) )
 
-stack1 <- cbind(farmers[c("ID","id.trader1","hh.maize.q25","hh.maize.trader1.q102g","hh.maize.trader1.q102h","hh.maize.trader1.q102i","hh.maize.trader1.q102j","hh.maize.trader1.q102k")],"Yes")
-names(stack1) <- c("farmerID","id.trader","farmer_gender","rating_location","rating_price","rating_quality","rating_honesty","rating_reputation", "sold")
-stack2 <- cbind(farmers[c("ID","id.trader2","hh.maize.q25","hh.maize.trader2.q103g","hh.maize.trader2.q103h","hh.maize.trader2.q103i","hh.maize.trader2.q103j","hh.maize.trader2.q103k","hh.maize.trader2.q103l")])
-names(stack2) <- c("farmerID","id.trader","farmer_gender","rating_location","rating_price","rating_quality","rating_honesty","rating_reputation", "sold")
-stack3 <- cbind(farmers[c("ID","id.trader3","hh.maize.q25","hh.maize.trader3.q104g","hh.maize.trader3.q104h","hh.maize.trader3.q104i","hh.maize.trader3.q104j","hh.maize.trader3.q104k","hh.maize.trader3.q104l")])
-names(stack3) <- c("farmerID","id.trader","farmer_gender","rating_location","rating_price","rating_quality","rating_honesty","rating_reputation", "sold")
+stack1 <- cbind(farmers[c("ID","id.trader1","hh.maize.q25","hh.maize.trader1.q102g","hh.maize.trader1.q102h","hh.maize.trader1.q102i","hh.maize.trader1.q102j",
+                          "hh.maize.trader1.q102k","hh.maize.q101","hh.maize.q101a","hh.maize.q101b","hh.maize.q105","hh.maize.transaction.1..q101d",
+                          "hh.maize.transaction.2..q101d","hh.maize.transaction.3..q101d","hh.maize.transaction.4..q101d","hh.maize.transaction.5..q101d",
+                          "hh.maize.transaction.6..q101d","hh.maize.transaction.7..q101d","hh.maize.transaction.8..q101d","hh.maize.transaction.9..q101d",
+                          "hh.maize.transaction.1..q101e","hh.maize.transaction.2..q101e","hh.maize.transaction.3..q101e","hh.maize.transaction.4..q101e",
+                          "hh.maize.transaction.5..q101e","hh.maize.transaction.6..q101e","hh.maize.transaction.7..q101e","hh.maize.transaction.8..q101e",
+                          "hh.maize.transaction.9..q101e","hh.maize.q120","hh.maize.q119.a","hh.maize.q119.b","hh.maize.q118","hh.maize.q117.a",
+                          "hh.maize.q117.b","hh.maize.q117.d","hh.maize.q116","hh.maize.q13","hh.maize.q14","hh.maize.q20","hh.maize.q40",
+                          "hh.maize.q37")],"Yes")
+names(stack1) <- c("farmerID","id.trader","farmer_gender","rating_location","rating_price","rating_quality","rating_honesty","rating_reputation",
+                   "sell_maize_yesno","maize_bags_sold","times_sold","traders_buying_village","qsold_trans_1","qsold_trans_2","qsold_trans_3",
+                   "qsold_trans_4","qsold_trans_5","qsold_trans_6","qsold_trans_7","qsold_trans_8","qsold_trans_9","money_trans_1","money_trans_2",
+                   "money_trans_3","money_trans_4","money_trans_5","money_trans_6","money_trans_7","money_trans_8","money_trans_9",
+                   "storage_capacity","gunny_floor_storage","gunny_palates_storage","maize_dry","stick_beating_thresh","hands_thresh",
+                   "machine_powdered_thresh","maizecob_sort","tarmac","murram","trading_center","no_fields_maize","member","sold")
+stack2 <- cbind(farmers[c("ID","id.trader2","hh.maize.q25","hh.maize.trader2.q103g","hh.maize.trader2.q103h","hh.maize.trader2.q103i","hh.maize.trader2.q103j",
+                          "hh.maize.trader2.q103k","hh.maize.q101","hh.maize.q101a","hh.maize.q101b","hh.maize.q105","hh.maize.transaction.1..q101d",
+                          "hh.maize.transaction.2..q101d","hh.maize.transaction.3..q101d","hh.maize.transaction.4..q101d","hh.maize.transaction.5..q101d",
+                          "hh.maize.transaction.6..q101d","hh.maize.transaction.7..q101d","hh.maize.transaction.8..q101d","hh.maize.transaction.9..q101d",
+                          "hh.maize.transaction.1..q101e","hh.maize.transaction.2..q101e","hh.maize.transaction.3..q101e","hh.maize.transaction.4..q101e",
+                          "hh.maize.transaction.5..q101e","hh.maize.transaction.6..q101e","hh.maize.transaction.7..q101e","hh.maize.transaction.8..q101e",
+                          "hh.maize.transaction.9..q101e","hh.maize.q120","hh.maize.q119.a","hh.maize.q119.b","hh.maize.q118","hh.maize.q117.a",
+                          "hh.maize.q117.b","hh.maize.q117.d","hh.maize.q116","hh.maize.q13","hh.maize.q14","hh.maize.q20","hh.maize.q40",
+                          "hh.maize.q37","hh.maize.trader2.q103l")])
+names(stack2) <- c("farmerID","id.trader","farmer_gender","rating_location","rating_price","rating_quality","rating_honesty","rating_reputation", 
+                   "sell_maize_yesno","maize_bags_sold","times_sold","traders_buying_village","qsold_trans_1","qsold_trans_2","qsold_trans_3",
+                   "qsold_trans_4","qsold_trans_5","qsold_trans_6","qsold_trans_7","qsold_trans_8","qsold_trans_9","money_trans_1","money_trans_2",
+                   "money_trans_3","money_trans_4","money_trans_5","money_trans_6","money_trans_7","money_trans_8","money_trans_9",
+                   "storage_capacity","gunny_floor_storage","gunny_palates_storage","maize_dry","stick_beating_thresh","hands_thresh",
+                   "machine_powdered_thresh","maizecob_sort","tarmac","murram","trading_center","no_fields_maize","member","sold")
+stack3 <- cbind(farmers[c("ID","id.trader3","hh.maize.q25","hh.maize.trader3.q104g","hh.maize.trader3.q104h","hh.maize.trader3.q104i","hh.maize.trader3.q104j",
+                          "hh.maize.trader3.q104k","hh.maize.q101","hh.maize.q101a","hh.maize.q101b","hh.maize.q105","hh.maize.transaction.1..q101d",
+                          "hh.maize.transaction.2..q101d","hh.maize.transaction.3..q101d","hh.maize.transaction.4..q101d","hh.maize.transaction.5..q101d",
+                          "hh.maize.transaction.6..q101d","hh.maize.transaction.7..q101d","hh.maize.transaction.8..q101d","hh.maize.transaction.9..q101d",
+                          "hh.maize.transaction.1..q101e","hh.maize.transaction.2..q101e","hh.maize.transaction.3..q101e","hh.maize.transaction.4..q101e",
+                          "hh.maize.transaction.5..q101e","hh.maize.transaction.6..q101e","hh.maize.transaction.7..q101e","hh.maize.transaction.8..q101e",
+                          "hh.maize.transaction.9..q101e","hh.maize.q120","hh.maize.q119.a","hh.maize.q119.b","hh.maize.q118","hh.maize.q117.a",
+                          "hh.maize.q117.b","hh.maize.q117.d","hh.maize.q116","hh.maize.q13","hh.maize.q14","hh.maize.q20","hh.maize.q40",
+                          "hh.maize.q37","hh.maize.trader3.q104l")])
+names(stack3) <- c("farmerID","id.trader","farmer_gender","rating_location","rating_price","rating_quality","rating_honesty","rating_reputation", 
+                   "sell_maize_yesno","maize_bags_sold","times_sold","traders_buying_village","qsold_trans_1","qsold_trans_2","qsold_trans_3",
+                   "qsold_trans_4","qsold_trans_5","qsold_trans_6","qsold_trans_7","qsold_trans_8","qsold_trans_9","money_trans_1","money_trans_2",
+                   "money_trans_3","money_trans_4","money_trans_5","money_trans_6","money_trans_7","money_trans_8","money_trans_9",
+                   "storage_capacity","gunny_floor_storage","gunny_palates_storage","maize_dry","stick_beating_thresh","hands_thresh",
+                   "machine_powdered_thresh","maizecob_sort","tarmac","murram","trading_center","no_fields_maize","member","sold")
 
 ratings_trader <-rbind(stack1,stack2,stack3)
 ratings_trader[c("id.trader","sold")] <- lapply(ratings_trader[c("id.trader","sold")], function(x) as.factor(as.character(x)) )
@@ -656,11 +732,127 @@ traders <- read.csv(paste(path_2,"data/public/traders.csv", sep = "/"))
 traders$trader_rating_overall <- rowSums(traders[c("hh.maize.q40a","hh.maize.q40b","hh.maize.q40c","hh.maize.q40d","hh.maize.q40e")])/5
 summary(traders$trader_rating_overall)
 
+### VARIABLES ###
+table(traders$hh.maize.q7) #gender --- male = 334
+table(traders$hh.maize.q14) #total maize trade compared to other crops over last year, value-wise (%)
+table(traders$hh.maize.q12) #trade other commodities apart from maize? yes (317)/no
+table(traders$hh.maize.radius) #action radius of maize bought --- b = various districts - 73
+table(traders$hh.maize.q21) #how many other traders operate in the area
+table(traders$hh.maize.q22b) #after harvest, how much maize collected in kgs everyday
+table(traders$hh.maize.q22d) #after harvest, how many buyers delivered to everyday
+table(traders$hh.maize.q23b) #planting and growing season - how much maize collected in kgs everyday
+table(traders$hh.maize.q23d) #planting and growing season -  how many buyers delivered to everyday
+table(traders$hh.maize.q28) #storage capacity in kgs
+table(traders$hh.maize.q31) #have scale? yes/no
+table(traders$hh.maize.q32) #scale currently certified? yes/no
+table(traders$hh.maize.q34) #better prices for larger quantities? yes/no
+table(traders$hh.maize.q35) #better prices for better quality maize? yes/no
+
 #subset for merging 
-traders_m <- subset(traders, select = c('id.trader' , 'hh.maize.q7','hh.maize.q40a','hh.maize.q40b','hh.maize.q40c','hh.maize.q40d','hh.maize.q40e','trader_rating_overall'))
+traders_m <- subset(traders, select = c('id.trader' , 'hh.maize.q7','hh.maize.q40a','hh.maize.q40b','hh.maize.q40c','hh.maize.q40d','hh.maize.q40e','trader_rating_overall',
+                                        'hh.maize.q14','hh.maize.q12','hh.maize.radius','hh.maize.q21','hh.maize.q22b','hh.maize.q22d','hh.maize.q23b',
+                                        'hh.maize.q23d','hh.maize.q28','hh.maize.q31','hh.maize.q32','hh.maize.q34','hh.maize.q35'))
+
+names(traders_m) <- c("id.trader","hh.maize.q7","hh.maize.q40a","hh.maize.q40b","hh.maize.q40c","hh.maize.q40d","hh.maize.q40e", 
+                   "trader_rating_overall","maize_trade_value","other_trade","action_radius","no_other_traders","maizecollect_afterharvest","buyers_afterharvest",
+                   "maizecollect_plantgrow","buyers_plantgrow","storage_kgs","scales_yesno","certified_scales","better_price_largeq","betterprice_betterqual")
 
 #Merging the datasets
 merged_trader <- merge(ratings_trader,traders_m, by="id.trader")
+merged_trader[merged_trader=="999"] <- 0
+merged_trader[merged_trader=="n/a"] <- 0
+
+#dummies from dealers dataset
+merged_trader$trad_fem<- ifelse(merged_trader$hh.maize.q7 == 'Female', 1, 0)
+merged_trader$other_trade_yes<- ifelse(merged_trader$other_trade == 'Yes', 1, 0)
+merged_trader$rad_manydistricts<- ifelse(merged_trader$action_radius == 'b', 1, 0)
+merged_trader$scale_yes<- ifelse(merged_trader$scales_yesno == 'Yes', 1, 0)
+merged_trader$scalecert_yes<- ifelse(merged_trader$certified_scales == 'Yes', 1, 0)
+merged_trader$betterprice_quan_yes<- ifelse(merged_trader$better_price_largeq == 'Yes', 1, 0)
+merged_trader$betterprice_qual_yes<- ifelse(merged_trader$betterprice_betterqual == 'Yes', 1, 0)
+
+#dummies from farmers dataset
+merged_trader$farmer_fem<- ifelse(merged_trader$farmer_gender == 'Female', 1, 0)
+merged_trader$maizesell_yes<- ifelse(merged_trader$sell_maize_yesno == 'Yes', 1, 0)
+merged_trader$gunny_floor_yes<- ifelse(merged_trader$gunny_floor_storage == 'Yes', 1, 0)
+merged_trader$gunny_palates_yes<- ifelse(merged_trader$gunny_palates_storage == 'Yes', 1, 0)
+merged_trader$dry_ground_yes<- ifelse(merged_trader$maize_dry == 'a', 1, 0)
+merged_trader$dry_tarpaulin_yes<- ifelse(merged_trader$maize_dry == 'c', 1, 0)
+merged_trader$thresh_stick_yes<- ifelse(merged_trader$stick_beating_thresh == 'TRUE', 1, 0)
+merged_trader$thresh_hands_yes<- ifelse(merged_trader$hands_thresh == 'TRUE', 1, 0)
+merged_trader$thresh_machine_yes<- ifelse(merged_trader$machine_powdered_thresh == 'TRUE', 1, 0)
+merged_trader$sortmaizecobs_yes<- ifelse(merged_trader$maizecob_sort == 'Yes', 1, 0)
+merged_trader$member_yes<- ifelse(merged_trader$member == 'Yes', 1, 0)
+
+#QUANTITY SOLD - RECORD IN BAGS - ALL TRANSACTIONS 
+head(as.numeric(merged_trader$qsold_trans_1)) 
+head(as.numeric(merged_trader$qsold_trans_2)) 
+head(as.numeric(merged_trader$qsold_trans_3)) 
+head(as.numeric(merged_trader$qsold_trans_4)) 
+head(as.numeric(merged_trader$qsold_trans_5)) 
+head(as.numeric(merged_trader$qsold_trans_6))
+head(as.numeric(merged_trader$qsold_trans_7)) 
+head(as.numeric(merged_trader$qsold_trans_8)) 
+head(as.numeric(merged_trader$qsold_trans_9))
+
+merged_trader$qsold_trans_1<- as.numeric(merged_trader$qsold_trans_1)
+merged_trader$qsold_trans_2 <- as.numeric(merged_trader$qsold_trans_2)
+merged_trader$qsold_trans_3<- as.numeric(merged_trader$qsold_trans_3)
+merged_trader$qsold_trans_4<- as.numeric(merged_trader$qsold_trans_4)
+merged_trader$qsold_trans_5 <- as.numeric(merged_trader$qsold_trans_5)
+merged_trader$qsold_trans_6<- as.numeric(merged_trader$qsold_trans_6)
+merged_trader$qsold_trans_7<- as.numeric(merged_trader$qsold_trans_7)
+merged_trader$qsold_trans_8 <- as.numeric(merged_trader$qsold_trans_8)
+merged_trader$qsold_trans_9<- as.numeric(merged_trader$qsold_trans_9)
+
+merged_trader$qsold_trans_1 <- as.numeric(as.character(merged_trader$qsold_trans_1))
+merged_trader$qsold_trans_2 <- as.numeric(as.character(merged_trader$qsold_trans_2))
+merged_trader$qsold_trans_3 <- as.numeric(as.character(merged_trader$qsold_trans_3))
+merged_trader$qsold_trans_4 <- as.numeric(as.character(merged_trader$qsold_trans_4))
+merged_trader$qsold_trans_5 <- as.numeric(as.character(merged_trader$qsold_trans_5))
+merged_trader$qsold_trans_6 <- as.numeric(as.character(merged_trader$qsold_trans_6))
+merged_trader$qsold_trans_7 <- as.numeric(as.character(merged_trader$qsold_trans_7))
+merged_trader$qsold_trans_8 <- as.numeric(as.character(merged_trader$qsold_trans_8))
+merged_trader$qsold_trans_9 <- as.numeric(as.character(merged_trader$qsold_trans_9))
+
+merged_trader$total_quantitysold <- merged_trader$qsold_trans_1 + merged_trader$qsold_trans_2 + merged_trader$qsold_trans_3 + 
+                                     merged_trader$qsold_trans_4 + merged_trader$qsold_trans_5 + merged_trader$qsold_trans_6 +
+                                     merged_trader$qsold_trans_7 + merged_trader$qsold_trans_8 + merged_trader$qsold_trans_9
+
+#MONEY RECEIVED - ALL TRANSACTIONS 
+head(as.numeric(merged_trader$money_trans_1)) 
+head(as.numeric(merged_trader$money_trans_2)) 
+head(as.numeric(merged_trader$money_trans_3)) 
+head(as.numeric(merged_trader$money_trans_4)) 
+head(as.numeric(merged_trader$money_trans_5)) 
+head(as.numeric(merged_trader$money_trans_6))
+head(as.numeric(merged_trader$money_trans_7)) 
+head(as.numeric(merged_trader$money_trans_8)) 
+head(as.numeric(merged_trader$money_trans_9))
+
+merged_trader$money_trans_1<- as.numeric(merged_trader$money_trans_1)
+merged_trader$money_trans_2 <- as.numeric(merged_trader$money_trans_2)
+merged_trader$money_trans_3<- as.numeric(merged_trader$money_trans_3)
+merged_trader$money_trans_4<- as.numeric(merged_trader$money_trans_4)
+merged_trader$money_trans_5 <- as.numeric(merged_trader$money_trans_5)
+merged_trader$money_trans_6<- as.numeric(merged_trader$money_trans_6)
+merged_trader$money_trans_7<- as.numeric(merged_trader$money_trans_7)
+merged_trader$money_trans_8 <- as.numeric(merged_trader$money_trans_8)
+merged_trader$money_trans_9<- as.numeric(merged_trader$money_trans_9)
+
+merged_trader$money_trans_1 <- as.numeric(as.character(merged_trader$money_trans_1))
+merged_trader$money_trans_2 <- as.numeric(as.character(merged_trader$money_trans_2))
+merged_trader$money_trans_3 <- as.numeric(as.character(merged_trader$money_trans_3))
+merged_trader$money_trans_4 <- as.numeric(as.character(merged_trader$money_trans_4))
+merged_trader$money_trans_5 <- as.numeric(as.character(merged_trader$money_trans_5))
+merged_trader$money_trans_6 <- as.numeric(as.character(merged_trader$money_trans_6))
+merged_trader$money_trans_7 <- as.numeric(as.character(merged_trader$money_trans_7))
+merged_trader$money_trans_8 <- as.numeric(as.character(merged_trader$money_trans_8))
+merged_trader$money_trans_9 <- as.numeric(as.character(merged_trader$money_trans_9))
+
+merged_trader$total_quantitysold <- merged_trader$money_trans_1 + merged_trader$money_trans_2 + merged_trader$money_trans_3 + 
+                                    merged_trader$money_trans_4 + merged_trader$money_trans_5 + merged_trader$money_trans_6 +
+                                    merged_trader$money_trans_7 + merged_trader$money_trans_8 + merged_trader$money_trans_9
 
 
 ##RATINGS ---- PERCENTAGE OF FARMERS AND TRADERS WHO RATE
@@ -2529,6 +2721,15 @@ merged_dealer$fakeseed <- ifelse(merged_dealer$seed_fake == 'Yes', 1, 0)
 #farmer purchases improved variety of seed 
 merged_dealer$improve_seedpurchase<- ifelse(merged_dealer$seed_purchase == 'Yes', 1, 0)
 
+#farmer's education 
+merged_dealer$no_educ<- ifelse(merged_dealer$education == 'a', 1, 0)
+merged_dealer$some_primary<- ifelse(merged_dealer$education == 'b', 1, 0)
+merged_dealer$finished_primary<- ifelse(merged_dealer$education == 'c', 1, 0)
+merged_dealer$some_secondary<- ifelse(merged_dealer$education == 'd', 1, 0)
+merged_dealer$finished_secondary<- ifelse(merged_dealer$education == 'e', 1, 0)
+merged_dealer$higher_than_secondary<- ifelse(merged_dealer$education == 'f', 1, 0)
+
+
 ########### REGRESSIONS WITH CLUSTERED SE #############
 
 ####### Dealers #########
@@ -2576,6 +2777,24 @@ summary(lm.cluster(data = merged_dealer, formula = ratingoverall_diff ~ seed_sal
                      no_opvmaizeseed + specialfarminputshop + reg_UNADA_dummy + license_dummy + sell_beanseed_dummy +
                      promote_seed_dummy + insp_dummy + no_insp_yr, cluster = "id.agro") ) 
 #seed_credit, opv_sale, customer, dist_tarmac, dist_competitor, nootheroutlets3/4, reg_UNADA_dummy - significant (upto 10%)
+
+
+summary(lm.cluster(data = merged_dealer, formula = rating_price ~ farmer_fem + age + no_educ + some_primary + some_secondary +
+                          finished_secondary + finished_primary + higher_than_secondary + extension_training +
+                          customer + dist_competitor + license_dummy + reg_UNADA_dummy, cluster = "id.agro") ) 
+library(graphics)
+interaction.plot( merged_dealer$farmer_fem, merged_dealer$dealer_fem, merged_dealer$rating_overall)
+interaction.plot( merged_dealer$farmer_fem, merged_dealer$dealer_fem, merged_dealer$rating_location)
+interaction.plot( merged_dealer$farmer_fem, merged_dealer$dealer_fem, merged_dealer$rating_price)
+interaction.plot( merged_dealer$farmer_fem, merged_dealer$dealer_fem, merged_dealer$rating_quality)
+interaction.plot( merged_dealer$farmer_fem, merged_dealer$dealer_fem, merged_dealer$rating_stock)
+interaction.plot( merged_dealer$farmer_fem, merged_dealer$dealer_fem, merged_dealer$rating_reputation)
+
+summary(lm.cluster(data = merged_dealer, formula = rating_overall ~ dealer_fem , cluster = "id.agro") ) 
+
+summary(lm.cluster(data = merged_dealer, formula = rating_overall ~ farmer_fem*dealer_fem + age + no_educ + some_primary + some_secondary +
+                     finished_secondary + finished_primary + higher_than_secondary + extension_training +
+                     customer + dist_competitor + license_dummy + reg_UNADA_dummy, cluster = "id.agro") ) 
 
 #### Restricted data --- dealers with more than 10 ratings --- all controls 
 summary(lm.cluster(data = gt10d, formula = ratingoverall_diff ~ seed_sale + seed_credit + extension_training +
