@@ -526,6 +526,203 @@ In the sections that follow, we expound on the study context; explain the
 \end_layout
 
 \begin_layout Section
+Gender Based Ratings
+\end_layout
+
+\begin_layout Standard
+Ratings can be largely used as an instrument for identifying performance
+ levels of various actors in the markets or respective industries of choice,
+ for information transparency 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Karminsky2016"
+literal "true"
+
+\end_inset
+
+ and for decision management.
+ Various rating based decision management studies come from the financial
+ sector like credit ratings explaining investment decisions (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Cantor2007"
+literal "true"
+
+\end_inset
+
+; 
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Bolton2012"
+literal "true"
+
+\end_inset
+
+) and financial risk (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "karminsky2009ratings"
+literal "true"
+
+\end_inset
+
+), the link between corporate credit ratings and the financial crisis (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "deHaan2017"
+literal "true"
+
+\end_inset
+
+) and bond ratings's informational value (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Kliger2000"
+literal "true"
+
+\end_inset
+
+).
+ In marketing research, ratings are the tool to identify demand (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Dhar2016"
+literal "true"
+
+\end_inset
+
+), sales and consumer preferences (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Sun2012"
+literal "true"
+
+\end_inset
+
+) and helps the product manufacturer to improve quality and align the product
+ features with consumer tastes (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Cheung2003,Jan2008,Barton2006,Fainmesser2020,Kuksov2010"
+literal "true"
+
+\end_inset
+
+).
+ Social and psychological studies widely use ratings to analyse social behaviour
+ (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Renk2004,Schofield2007,Arnesen2018"
+literal "true"
+
+\end_inset
+
+), teaching and learning patterns (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Kornell2016,Mashburn2006,Feldman2007,pas2014,Spooren2006,Borman2005"
+literal "true"
+
+\end_inset
+
+), development of children (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Bukowski2012,johnson2010internet,Sandner2016"
+literal "true"
+
+\end_inset
+
+), parenting aspects (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Johnston2005,Kuppens2009,Healey2011"
+literal "true"
+
+\end_inset
+
+) and languages (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Rudell1993,Cole2019"
+literal "true"
+
+\end_inset
+
+).
+ Similarly, ratings can also be used to study various agricultural aspects,
+ providing an understanding of the perceptions of the different actors of
+ the value chain.
+ Broadly, studying the rater's ratings and the ratee's ratings can give
+ insights about the deeper mechanisms of performance perceptions in the
+ value chains.
+ The ratings can be used as a tool to understand what factors determine
+ widespread perceptions about certain actors in the food value chains and
+ whether consistency can be obtained amongst the rater's and ratee's ratings.
+ Traditionally, higher ratings always motivate better performance as a boost
+ to the existing performance level of the concerned actor and lower ratings
+ improve performance or atleast induce efforts by the rated sujects to improve
+ performance.
+ Ratings can be assumed as a method of assessment which does not couple
+ with direct repurcussions but do successfully indicate long-term repurcussions
+ in the near or distant future which impacts the rated subjects.
+ 
+\end_layout
+
+\begin_layout Standard
+In this study, we focus on ratings based on gender.
+ Ratings based on gender of the rater and the ratee has only been of interest
+ in the recent decades and the literature shows a wide range of studies
+ in different fields to address the gender based rating patterns (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Furnham2005,Robinson2011,Patiar2008"
+literal "true"
+
+\end_inset
+
+).
+ In the agricultural sector, studies based on gender of the various actors
+ of the food value chains are becoming more prominent, particularly in the
+ developing economies (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Masamha2018,barrientos2019,Kruijssen2018,Mnimbo2017,Gengenbach2018,Stoian2018"
+literal "true"
+
+\end_inset
+
+).
+ This motivates the aim to understand the ratings' mechanism based on the
+ gender of the rater and the ratee in the case of maize value chains in
+ Uganda.
+ Traditionally, females have not been majorly involved in the input dealing,
+ processing and trading activities for maize in Uganda.
+ The goal is to look at the ratings from the farmers for the input dealers,
+ processors and traders of maize and then also study the ratings given by
+ input dealers, processors and traders to themselves.
+ Following this, I will focus on the gender of each actor and see how gender
+ impacts the ratings from the rater and the ratee.
+ Gender based analysis of the ratings is crucial in the Ugandan maize value
+ chain as it will explain the lower involvement of females in input dealing,
+ processing and trading activities.
+ The perceptions obtained from the study can explain why females do not
+ participate as much their male counterparts in these kind of businesses
+ which basically fuel the maize value chain and the production of maize
+ in Uganda.
+ 
+\end_layout
+
+\begin_layout Subsection
+Hypothesis and Model 
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Section
 Study context and data
 \end_layout
 
@@ -847,8 +1044,9 @@ Exploratory analysis
 \begin_layout Standard
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
+btprint "btPrintCited"
 bibfiles "amsj,MVC_perceptions"
-options "../quality/IFPRI_Style"
+options "apalike"
 
 \end_inset
 
