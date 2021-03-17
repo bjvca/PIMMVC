@@ -136,6 +136,11 @@ Economic actors base decisions on limited information and perceptions related
  same attributes.
  The fact that linkages between actors are preserved enables us to study
  how perceptions reverberate through the value chain.
+ With a particular focus on gendered perceptions, we analyse the perceived
+ performance levels of male and female actors in the maize supply chains.
+ Self-ratings and rater (farmer) ratings through gender-based interactions
+ provide fresh insights regarding the gendered rating patterns and gender
+ roles in Ugandan maize value chain.
 \end_layout
 
 \begin_layout Section
@@ -804,7 +809,7 @@ literal "true"
  Higher self-ratings can also be a result of leniency in assessing self-performa
 nce as discussed by 
 \begin_inset CommandInset citation
-LatexCommand citealp
+LatexCommand citet
 key "mehmet2020evaluation"
 literal "true"
 
@@ -812,7 +817,7 @@ literal "true"
 
  and 
 \begin_inset CommandInset citation
-LatexCommand citealp
+LatexCommand citet
 key "Cheng2017"
 literal "true"
 
@@ -828,7 +833,7 @@ Then, I turn to the variations in ratings based on gender (hypothesis 2).
  give higher ratings when compared to their male counterparts.
  
 \begin_inset CommandInset citation
-LatexCommand citealp
+LatexCommand citet
 key "Furnham2005"
 literal "true"
 
@@ -839,7 +844,7 @@ literal "true"
  were noticed from female raters.
  
 \begin_inset CommandInset citation
-LatexCommand citealp
+LatexCommand citet
 key "Bellezza1986"
 literal "true"
 
@@ -849,7 +854,7 @@ literal "true"
  familiarity scales.
  Interestingly, 
 \begin_inset CommandInset citation
-LatexCommand citealp
+LatexCommand citet
 key "Rappoport1993"
 literal "true"
 
@@ -889,11 +894,10 @@ literal "true"
 \begin_layout Standard
 Hypothesis 3 essentially compares the self-ratings given by female and male
  dealers, processors and traders.
- Females generally tend to undermine themselves and always rate themselves
- lower.
+ Females generally tend to underrate themselves.
  
 \begin_inset CommandInset citation
-LatexCommand citealp
+LatexCommand citet
 key "Patiar2008"
 literal "true"
 
@@ -905,15 +909,15 @@ literal "true"
  Gendered differences in self-perceptions do exist and this induces female
  and male respondents to rate themselves differently, as obtained by 
 \begin_inset CommandInset citation
-LatexCommand citealp
-key "Beyer1990,Jones2002,Taylor1986,WOHLERS1989,rosenkrantz1968"
+LatexCommand citet
+key "Beyer1990,Jones2002,Taylor1986,WOHLERS1989,rosenkrantz1968,turan2002study"
 literal "true"
 
 \end_inset
 
  and 
 \begin_inset CommandInset citation
-LatexCommand citealp
+LatexCommand citet
 key "wrisberg1988"
 literal "true"
 
@@ -922,14 +926,47 @@ literal "true"
 .
  Such gendered ideas of self-assessment can partially explain why less female
  dealers, processors and traders get involved in the maize markets in Uganda.
- Since they undermine their ability and do not think themselves to be performing
- well enough as their male counterparts, females could be less willing to
- be involved in these kind of business activities.
+ Since they underestimate their ability and do not think themselves to be
+ performing well enough as their male counterparts, females could be less
+ willing to be involved in these kind of business activities.
  Thus, the markets remain majorly dominated by male actors of the maize
  value chain.
  Another important reason or consequence of lower self-ratings can be the
  lack of confidence to strive in the business.
- In the developing economies, females generally have low confidence 
+ In the developing economies, females generally have low confidence levels
+ and face a lot of obstacles due to the standard cultural norms, societal
+ expectations, gender discrimination and job-family conflicts (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Izhar2006"
+literal "true"
+
+\end_inset
+
+).
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "brown1996"
+literal "true"
+
+\end_inset
+
+ illustrated this phenomenon for Ugandan women describing how socialization
+ effects, cultural validation of male dominance and sex stereotyping hinders
+ the advancement of these women in educational management roles.
+ As a result of social imposition of family roles, Ugandan women tend to
+ have lower self-esteem and confidence in their potential to succeed outside
+ domestic roles (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Izhar2006,brown1996"
+literal "true"
+
+\end_inset
+
+).
+ 
 \end_layout
 
 \begin_layout Section
