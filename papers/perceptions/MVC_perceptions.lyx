@@ -526,6 +526,413 @@ In the sections that follow, we expound on the study context; explain the
 \end_layout
 
 \begin_layout Section
+Gender Based Ratings
+\end_layout
+
+\begin_layout Standard
+Ratings can be largely used as an instrument for identifying performance
+ levels of various actors in the markets or respective industries of choice,
+ for information transparency 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Karminsky2016"
+literal "true"
+
+\end_inset
+
+ and for decision management.
+ Various rating based decision management studies come from the financial
+ sector like credit ratings explaining investment decisions (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Cantor2007"
+literal "true"
+
+\end_inset
+
+; 
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Bolton2012"
+literal "true"
+
+\end_inset
+
+) and financial risk (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "karminsky2009ratings"
+literal "true"
+
+\end_inset
+
+), the link between corporate credit ratings and the financial crisis (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "deHaan2017"
+literal "true"
+
+\end_inset
+
+) and bond ratings's informational value (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Kliger2000"
+literal "true"
+
+\end_inset
+
+).
+ In marketing research, ratings are the tool to identify demand (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Dhar2016"
+literal "true"
+
+\end_inset
+
+), sales and consumer preferences (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Sun2012"
+literal "true"
+
+\end_inset
+
+) and helps the product manufacturer to improve quality and align the product
+ features with consumer tastes (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Cheung2003,Jan2008,Barton2006,Fainmesser2020,Kuksov2010"
+literal "true"
+
+\end_inset
+
+).
+ Social and psychological studies widely use ratings to analyse social behaviour
+ (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Renk2004,Schofield2007,Arnesen2018"
+literal "true"
+
+\end_inset
+
+), teaching and learning patterns (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Kornell2016,Mashburn2006,Feldman2007,pas2014,Spooren2006,Borman2005"
+literal "true"
+
+\end_inset
+
+), development of children (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Bukowski2012,johnson2010internet,Sandner2016"
+literal "true"
+
+\end_inset
+
+), parenting aspects (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Johnston2005,Kuppens2009,Healey2011"
+literal "true"
+
+\end_inset
+
+) and languages (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Rudell1993,Cole2019"
+literal "true"
+
+\end_inset
+
+).
+ Similarly, ratings can also be used to study various agricultural aspects,
+ providing an understanding of the perceptions of the different actors of
+ the value chain.
+ Broadly, studying the rater's ratings and the ratee's ratings can give
+ insights about the deeper mechanisms of performance perceptions in the
+ value chains.
+ The ratings can be used as a tool to understand what factors determine
+ widespread perceptions about certain actors in the food value chains and
+ whether consistency can be obtained amongst the rater's and ratee's ratings.
+ Traditionally, higher ratings always motivate better performance as a boost
+ to the existing performance level of the concerned actor and lower ratings
+ improve performance or atleast induce efforts by the rated sujects to improve
+ performance.
+ Ratings can be assumed as a method of assessment which does not couple
+ with direct repurcussions but do successfully indicate long-term repurcussions
+ in the near or distant future which impacts the rated subjects.
+ 
+\end_layout
+
+\begin_layout Standard
+In this study, we focus on ratings based on gender.
+ Ratings based on gender of the rater and the ratee has only been of interest
+ in the recent decades and the literature shows a wide range of studies
+ in different fields to address the gender based rating patterns (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Furnham2005,Robinson2011,Patiar2008"
+literal "true"
+
+\end_inset
+
+).
+ In the agricultural sector, studies based on gender of the various actors
+ of the food value chains are becoming more prominent, particularly in the
+ developing economies (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Masamha2018,barrientos2019,Kruijssen2018,Mnimbo2017,Gengenbach2018,Stoian2018"
+literal "true"
+
+\end_inset
+
+).
+ This motivates the aim to understand the ratings' mechanism based on the
+ gender of the rater and the ratee in the case of maize value chains in
+ Uganda.
+ Traditionally, females have not been majorly involved in the input dealing,
+ processing and trading activities for maize in Uganda.
+ The goal is to look at the ratings from the farmers for the input dealers,
+ processors and traders of maize and then also study the ratings given by
+ input dealers, processors and traders to themselves.
+ Following this, I will focus on the gender of each actor and see how gender
+ impacts the ratings from the rater and the ratee.
+ Gender based analysis of the ratings is crucial in the Ugandan maize value
+ chain as it will explain the lower involvement of females in input dealing,
+ processing and trading activities.
+ The perceptions obtained from the study can explain why females do not
+ participate as much their male counterparts in these kind of businesses
+ which basically fuel the maize value chain and the production of maize
+ in Uganda.
+ 
+\end_layout
+
+\begin_layout Subsection
+Hypothesis and Model 
+\end_layout
+
+\begin_layout Standard
+In this study, the following hypotheses are focused on:
+\end_layout
+
+\begin_layout Enumerate
+Self-ratings are higher than ratings given by raters to ratees.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Female raters give higher ratings when compared to male raters.
+\end_layout
+
+\begin_layout Enumerate
+Self-ratings given by females are lower compared to males.
+\end_layout
+
+\begin_layout Enumerate
+Female ratees receive lower ratings from raters than male ratees.
+ 
+\end_layout
+
+\begin_layout Standard
+Hypothesis 1 determines how the input dealers, processors and traders rate
+ themselves compared to the farmers' ratings.
+ Self-ratings have been criticised largely and checked for validity by many
+ researchers in different fields of research (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Heneman1974,Lowman1987,Horwood2021"
+literal "true"
+
+\end_inset
+
+).
+ This study does not claim that the self-ratings determine the actual performanc
+e levels of the input dealers, processors and traders in the Ugandan maize
+ value chain.
+ This is because self-ratings can be a victim of self-bias (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Sui2017"
+literal "true"
+
+\end_inset
+
+), self-deception (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "von2011evolution,Smith2017"
+literal "true"
+
+\end_inset
+
+), self-enhancement (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Sedikides2008,Alicke2009,Robins2001"
+literal "true"
+
+\end_inset
+
+) and impression management (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Cheng2017,Wayne1995"
+literal "true"
+
+\end_inset
+
+).
+ However, the self-ratings indicate the perceived level of performance by
+ these actors which is the main motivation towards the inclusion of this
+ hypothesis in the study.
+ Perceptions in this regard can explain a lot about the industry and could
+ also explain slower technological growth and advancements.
+ If these actors perceive themselves to be performing better than they actually
+ are, then there will be lesser efforts to improve their professional stance
+ in the industry.
+ Also, if the farmers rate them lower than their self-ratings, it shows
+ that the dealers, processors and traders are not meeting the expectations
+ of the farmers without even realising their low performance levels which
+ is emanated through their higher self-ratings.
+ Higher self-ratings can also be a result of leniency in assessing self-performa
+nce as discussed by 
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "mehmet2020evaluation"
+literal "true"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Cheng2017"
+literal "true"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Then, I turn to the variations in ratings based on gender (hypothesis 2).
+ There is evidence from various areas of research that females generally
+ give higher ratings when compared to their male counterparts.
+ 
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Furnham2005"
+literal "true"
+
+\end_inset
+
+ discussed ratings from male and female raters on business intelligence
+ where higher ratings for boss's overall, emotional and organizational IQ
+ were noticed from female raters.
+ 
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Bellezza1986"
+literal "true"
+
+\end_inset
+
+ also found that ratings from females were higher for words based on the
+ familiarity scales.
+ Interestingly, 
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Rappoport1993"
+literal "true"
+
+\end_inset
+
+ also showed that females tended to give higher ratings for healthy meals
+ based on the factors like health, pleasure and convenience when compared
+ to the male raters.
+ Similarly, I expect to see a similar trend in this study.
+ Female farmers are expected to give higher ratings to the input dealers,
+ processors and traders on an average compared to the male farmers.
+ This can indicate various interesting and unknown attributes of the value
+ chain.
+ There are possibilities that female farmers are given better services by
+ the dealers, processors and actors and that is the reason behind higher
+ ratings by these female raters.
+ This can be culturally linked for a prominent gendered bias in the provision
+ of services and sale of goods.
+ Another reason for higher ratings could be that the female raters are less
+ stringent and they tend to be lenient while providing ratings for the actors
+ they are involved with in their business.
+ However, the literature does not mention statistically significant presence
+ of leniency for ratings provided by female raters (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "ThorntonIII2019,mehmet2020evaluation"
+literal "true"
+
+\end_inset
+
+).
+ Validating this also in the research of food value chains can be an interesting
+ contribution to the existing studies.
+ 
+\end_layout
+
+\begin_layout Standard
+Hypothesis 3 essentially compares the self-ratings given by female and male
+ dealers, processors and traders.
+ Females generally tend to undermine themselves and always rate themselves
+ lower.
+ 
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Patiar2008"
+literal "true"
+
+\end_inset
+
+ saw a similar pattern for female Department Managers in the hotel industry.
+ Male Department Managers always inflated their self-ratings while their
+ female counterparts refrained from doing so.
+ Gendered differences in self-perceptions do exist and this induces female
+ and male respondents to rate themselves differently, as obtained by 
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Beyer1990,Jones2002,Taylor1986,WOHLERS1989,rosenkrantz1968"
+literal "true"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "wrisberg1988"
+literal "true"
+
+\end_inset
+
+.
+ Such gendered ideas of self-assessment can partially explain why less female
+ dealers, processors and traders get involved in the maize markets in Uganda.
+ Since they undermine their ability and do not think themselves to be performing
+ well enough as their male counterparts, females could be less willing to
+ be involved in these kind of business activities.
+ Thus, the markets remain majorly dominated by male actors of the maize
+ value chain.
+ Another important reason or consequence of lower self-ratings can be the
+ lack of confidence to strive in the business.
+ In the developing economies, females generally have low confidence 
+\end_layout
+
+\begin_layout Section
 Study context and data
 \end_layout
 
@@ -847,8 +1254,9 @@ Exploratory analysis
 \begin_layout Standard
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
+btprint "btPrintCited"
 bibfiles "amsj,MVC_perceptions"
-options "../quality/IFPRI_Style"
+options "apalike"
 
 \end_inset
 
