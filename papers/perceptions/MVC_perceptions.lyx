@@ -614,7 +614,11 @@ literal "true"
 \end_inset
 
 ).
- Social and psychological studies widely use ratings to analyse social behaviour
+ 
+\end_layout
+
+\begin_layout Standard
+Social and psychological studies widely use ratings to analyse social behaviour
  (
 \begin_inset CommandInset citation
 LatexCommand citealp
@@ -659,9 +663,12 @@ literal "true"
  Similarly, ratings can also be used to study various agricultural aspects,
  providing an understanding of the perceptions of the different actors of
  the value chain.
- Broadly, studying the rater's ratings and the ratee's ratings can give
- insights about the deeper mechanisms of performance perceptions in the
- value chains.
+ 
+\end_layout
+
+\begin_layout Standard
+Broadly, studying the rater's ratings and the ratee's ratings can give insights
+ about the deeper mechanisms of performance perceptions in the value chains.
  The ratings can be used as a tool to understand what factors determine
  widespread perceptions about certain actors in the food value chains and
  whether consistency can be obtained amongst the rater's and ratee's ratings.
@@ -699,7 +706,33 @@ literal "true"
 \end_inset
 
 ).
- This motivates the aim to understand the ratings' mechanism based on the
+ For instance, in Africa, attempts of closing the productivity gap between
+ male and female farmers is a new step towards achieving food security.
+ Improved access to markets and extension services for both male and female
+ smallholder maize farmers can help reduce the gender productivity gap in
+ Uganda 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Larson2016"
+literal "true"
+
+\end_inset
+
+.
+ Gender dimensions in the food value chains across Uganda are increasingly
+ gaining importance in the recent years 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "akite2018,bamanyaki2020,nchanji2020,ajambo2018"
+literal "true"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+This motivates the aim to understand the ratings' mechanism based on the
  gender of the rater and the ratee in the case of maize value chains in
  Uganda.
  Traditionally, females have not been majorly involved in the input dealing,
@@ -724,7 +757,7 @@ Hypothesis and Model
 \end_layout
 
 \begin_layout Standard
-In this study, the following hypotheses are focused on:
+In this study, the following hypotheses are analysed:
 \end_layout
 
 \begin_layout Enumerate
@@ -797,7 +830,11 @@ literal "true"
  However, the self-ratings indicate the perceived level of performance by
  these actors which is the main motivation towards the inclusion of this
  hypothesis in the study.
- Perceptions in this regard can explain a lot about the industry and could
+ 
+\end_layout
+
+\begin_layout Standard
+Perceptions in this regard can explain a lot about the industry and could
  also explain slower technological growth and advancements.
  If these actors perceive themselves to be performing better than they actually
  are, then there will be lesser efforts to improve their professional stance
@@ -863,8 +900,22 @@ literal "true"
  also showed that females tended to give higher ratings for healthy meals
  based on the factors like health, pleasure and convenience when compared
  to the male raters.
- Similarly, I expect to see a similar trend in this study.
- Female farmers are expected to give higher ratings to the input dealers,
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Winquist1998"
+literal "true"
+
+\end_inset
+
+ argues that females have a tendency to score higher because female perceptions
+ are more positive than male perceptions.
+ Thus, I expect to see a similar trend in this study.
+ 
+\end_layout
+
+\begin_layout Standard
+Female farmers are expected to give higher ratings to the input dealers,
  processors and traders on an average compared to the male farmers.
  This can indicate various interesting and unknown attributes of the value
  chain.
@@ -924,6 +975,16 @@ literal "true"
 \end_inset
 
 .
+ Not only that, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Braddy2020"
+literal "true"
+
+\end_inset
+
+ found that females tend to experience harsher consequences than men when
+ they overrate themselves.
  Such gendered ideas of self-assessment can partially explain why less female
  dealers, processors and traders get involved in the maize markets in Uganda.
  Since they underestimate their ability and do not think themselves to be
@@ -931,7 +992,11 @@ literal "true"
  willing to be involved in these kind of business activities.
  Thus, the markets remain majorly dominated by male actors of the maize
  value chain.
- Another important reason or consequence of lower self-ratings can be the
+ 
+\end_layout
+
+\begin_layout Standard
+Another important reason or consequence of lower self-ratings can be the
  lack of confidence to strive in the business.
  In the developing economies, females generally have low confidence levels
  and face a lot of obstacles due to the standard cultural norms, societal
@@ -966,6 +1031,112 @@ literal "true"
 \end_inset
 
 ).
+ 
+\end_layout
+
+\begin_layout Standard
+The goal for hypothesis 4 is to study the ratings received by male and female
+ input dealers, traders and processors from maize farmers.
+ Females are generally perceived to be performing worse than their male
+ counterparts and thus, are rated lower.
+ For instance, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "lyness2006"
+literal "true"
+
+\end_inset
+
+ found that female managers received lower performance ratings compared
+ to male managers.
+ Particularly, women involved in line jobs received lower ratings compared
+ to women involved in staff jobs.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "basow1987"
+literal "true"
+
+\end_inset
+
+ also presented similar findings for female professors who were rated by
+ both male and female students.
+ Bias against female professors has been very prominent in the literature
+ in the past decades (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Feldman1993,Mengel2018,miller2000,Mitchell2018,Fisher2019"
+literal "true"
+
+\end_inset
+
+).
+ This evident bias against females is the root for lower ratings received
+ by female ratees.
+ 
+\end_layout
+
+\begin_layout Standard
+In the context of this study, bias against women can aid the explanation
+ for the minimal involvement of women in input dealing, trading and processing
+ of maize.
+ When women are aware that they are perceived to be less capable for these
+ business activities, they might not enter the industry in the first place
+ to avoid criticisms and performance obstacles at a later stage.
+ Social stringency and family practices might limit the women from performing
+ better or being equally competitive as their male counterparts.
+ Another compelling reason for the lower ratings received by female ratees
+ could be that their actual performance levels are worse than the male ratees.
+ Lower access to facilities, finance and business guidance can be the drivers
+ of worse performance for the female dealers, traders and processors alongside
+ the underlying societal aspects.
+ These arguments can be supported by the claims of 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "niethammer2013"
+literal "true"
+
+\end_inset
+
+ mentioning the significant gender differences in the access to finance
+ for the development of businesses and the lower formal bank account penetration
+ for women when compared to men in the developing nations.
+ 
+\end_layout
+
+\begin_layout Standard
+A study done on the women entrepreneurs in the Kigali region of Rwanda by
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Nsengimana2017"
+literal "true"
+
+\end_inset
+
+ reported many challenges for the success of their businesses like the lack
+ of collateral, lack of information technology access, high interest rates
+ for loans, lack of skill development opportunities, cultural imperatives
+ and psychological factors induced by the families and the society.
+ Similarly, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Guma2015"
+literal "true"
+
+\end_inset
+
+ discusses the barriers faced by women entrepreneurs in Uganda.
+ Some of the prominent issues faced by women are gender-related stereotypes
+ (risk-taking behaviour, higher levels of empathy and lower aggressiveness),
+ under-capitalization (credit access limits, availability of collateral),
+ balance across multiple responsibilities (childcare, family responsibilities,
+ inter-role conflict), inadequate skills and business knowledge, disapproval
+ from societal standards, lack of respect from the male-dominated business
+ community, lack of support, time investment constraints, reputation and
+ work credibility challenges.
+ These can majorly impact the ratings received by the female actors in the
+ value chain and can undermine their perceived performance in the industry.
  
 \end_layout
 
@@ -1173,10 +1344,6 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -1185,10 +1352,6 @@ Map of the study areas
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
