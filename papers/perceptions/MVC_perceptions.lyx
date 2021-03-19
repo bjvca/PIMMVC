@@ -6,6 +6,9 @@
 \origin unavailable
 \textclass article
 \use_default_options true
+\begin_modules
+knitr
+\end_modules
 \maintain_unincluded_children false
 \language english
 \language_package default
@@ -154,7 +157,7 @@ status open
 
 \begin_layout Plain Layout
 
-path_2 <- strsplit(path, "/papers/perceptions")[[1]]
+path <- getwd()
 \end_layout
 
 \begin_layout Plain Layout
