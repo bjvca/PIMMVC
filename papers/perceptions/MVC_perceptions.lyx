@@ -143,6 +143,83 @@ Economic actors base decisions on limited information and perceptions related
  roles in Ugandan maize value chain.
 \end_layout
 
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<code,  echo=FALSE, warning = FALSE, message=FALSE>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+path_2 <- strsplit(path, "/papers/perceptions")[[1]]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+source(paste(path,"code/perceptions.R
+\begin_inset Quotes erd
+\end_inset
+
+, sep = "/"))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+\begin_inset CommandInset line
+LatexCommand rule
+offset "1ex"
+width "100col%"
+height "1pt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setlength{
+\backslash
+parindent}{1cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Background
 \end_layout
@@ -1415,6 +1492,35 @@ Design: Additional variables
 
 \begin_layout Subsection
 Analysis
+\end_layout
+
+\begin_layout Standard
+Of a total of 1526 farming households interviewed, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(table(farmers$hh.maize.q25==
+\begin_inset Quotes erd
+\end_inset
+
+Female
+\begin_inset Quotes erd
+\end_inset
+
+)/sum(table(farmers$hh.maize.q25))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \begin_layout Standard
