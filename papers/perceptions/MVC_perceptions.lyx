@@ -1498,10 +1498,7 @@ Analysis
 \end_layout
 
 \begin_layout Standard
-Of a total of 1526 farming households interviewed,
-\end_layout
-
-\begin_layout Standard
+Of a total of 1526 farming households interviewed, 
 \begin_inset ERT
 status open
 
@@ -1515,15 +1512,814 @@ Sexpr{format(round(table(farmers$hh.maize.q25)[1]/sum(table(farmers$hh.maize.q25
 
 \end_inset
 
- percent 
+ percent of the farmers are female and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(farmers$hh.maize.q24[farmers$hh.maize.q24>=30]))
+\end_layout
+
+\begin_layout Plain Layout
+
+/sum(table(farmers$hh.maize.q24))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent are atleast 30 years old.
+ Most of the farmers interviewed are married (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(table(farmers$hh.maize.q26)[1]/sum(table(farmers$hh.maize.q26))*1
+00,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent) while only 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round( (prop.table(table(farmers$hh.maize.q26))[2] + prop.table(table(f
+armers$hh.maize.q26))[3]+ prop.table(table(farmers$hh.maize.q26))[4])*100,digits=0),n
+small=0)}
+\end_layout
+
+\end_inset
+
+ percent are widowed, divorced or separated.
+ The level of education among the farmers interviewed is very important
+ in this study because that can noticeably impact the way they rate the
+ input dealers, traders and maize millers.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(table(farmers$hh.maize.q27)[1]/sum(table(farmers$hh.maize.q27))*1
+00,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent have no formal education, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round( (prop.table(table(farmers$hh.maize.q27))[2] + prop.table(table(f
+armers$hh.maize.q27))[3])*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent have atleast some level of primary education, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round( (prop.table(table(farmers$hh.maize.q27))[4] + prop.table(table(f
+armers$hh.maize.q27))[5])*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent have either finished secondary schooling or have attended secondary
+ level schooling and only 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(table(farmers$hh.maize.q27)[6]/sum(table(farmers$hh.maize.q27))*1
+00,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent have higher than secondary level education.
+ If I only consider the female farmers, I find that 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(table(farmers$hh.maize.q27[farmers$hh.maize.q25==
+\begin_inset Quotes erd
+\end_inset
+
+Female
+\begin_inset Quotes erd
+\end_inset
+
+])[1] /sum(table(farmers$hh.maize.q27[farmers$hh.maize.q25==
+\begin_inset Quotes erd
+\end_inset
+
+Female
+\begin_inset Quotes erd
+\end_inset
+
+]))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent have no formal education, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round( (prop.table(table(farmers$hh.maize.q27[farmers$hh.maize.q25==
+\begin_inset Quotes erd
+\end_inset
+
+Female
+\begin_inset Quotes erd
+\end_inset
+
+]))[2] + prop.table(table(farmers$hh.maize.q27[farmers$hh.maize.q25==
+\begin_inset Quotes erd
+\end_inset
+
+Female
+\begin_inset Quotes erd
+\end_inset
+
+]))[3]+ prop.table(table(farmers$hh.maize.q27[farmers$hh.maize.q25==
+\begin_inset Quotes erd
+\end_inset
+
+Female
+\begin_inset Quotes erd
+\end_inset
+
+]))[4]+ prop.table(table(farmers$hh.maize.q27[farmers$hh.maize.q25==
+\begin_inset Quotes erd
+\end_inset
+
+Female
+\begin_inset Quotes erd
+\end_inset
+
+]))[5])*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent have atleast some level of primary or secondary education and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(table(farmers$hh.maize.q27[farmers$hh.maize.q25==
+\begin_inset Quotes erd
+\end_inset
+
+Female
+\begin_inset Quotes erd
+\end_inset
+
+])[6]/sum(table(farmers$hh.maize.q27[farmers$hh.maize.q25==
+\begin_inset Quotes erd
+\end_inset
+
+Female
+\begin_inset Quotes erd
+\end_inset
+
+]))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent have higher than secondary level education.
+ Thus, compared to the group overall, the female raters have lower levels
+ of education.
 \end_layout
 
 \begin_layout Standard
+Looking at the main source of income for the farming households, I find
+ that 
+\begin_inset ERT
+status open
 
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(farmers$hh.maize.q29)[2])/sum(table(farmers$hh.maize.q2
+9))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent report crop farming as the main source (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(table(farmers$hh.maize.q29[farmers$hh.maize.q25==
+\begin_inset Quotes erd
+\end_inset
+
+Female
+\begin_inset Quotes erd
+\end_inset
+
+])[2]/sum(table(farmers$hh.maize.q29[farmers$hh.maize.q25==
+\begin_inset Quotes erd
+\end_inset
+
+Female
+\begin_inset Quotes erd
+\end_inset
+
+]))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent for only the female farming households).
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(farmers$hh.maize.q36[farmers$hh.maize.q36>=2]))
+\end_layout
+
+\begin_layout Plain Layout
+
+/sum(table(farmers$hh.maize.q36))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of the farming households atleast have 2 acres of land for crop
+ production.
+ This lowers for female farming households (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(farmers$hh.maize.q36[farmers$hh.maize.q25==
+\begin_inset Quotes erd
+\end_inset
+
+Female
+\begin_inset Quotes erd
+\end_inset
+
+]>=2))/sum(table(farmers$hh.maize.q36[farmers$hh.maize.q25==
+\begin_inset Quotes erd
+\end_inset
+
+Female
+\begin_inset Quotes erd
+\end_inset
+
+]))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent).
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(farmers$hh.maize.q37[farmers$hh.maize.q25==
+\begin_inset Quotes erd
+\end_inset
+
+Female
+\begin_inset Quotes erd
+\end_inset
+
+]==
+\begin_inset Quotes erd
+\end_inset
+
+Yes
+\begin_inset Quotes erd
+\end_inset
+
+)),digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ of the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(farmers$hh.maize.q25==
+\begin_inset Quotes erd
+\end_inset
+
+Female
+\begin_inset Quotes erd
+\end_inset
+
+)),digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ female farmers are a member of a farmer group, association or cooperative
+ involved in maize production.
+ On the other hand, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(farmers$hh.maize.q37[farmers$hh.maize.q25==
+\begin_inset Quotes erd
+\end_inset
+
+Male
+\begin_inset Quotes erd
+\end_inset
+
+]==
+\begin_inset Quotes erd
+\end_inset
+
+Yes
+\begin_inset Quotes erd
+\end_inset
+
+)),digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ of the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(farmers$hh.maize.q25==
+\begin_inset Quotes erd
+\end_inset
+
+Male
+\begin_inset Quotes erd
+\end_inset
+
+)),digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ male farmers are members.
+ The number of plots the farmers used to grow maize in the first season
+ of 2018 varies between male and female farmers.
+ All farmers had access to atleast one plot for growing maize.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(table(farmers$hh.maize.q40[farmers$hh.maize.q25==
+\begin_inset Quotes erd
+\end_inset
+
+Male
+\begin_inset Quotes erd
+\end_inset
+
+]>=2)/sum(table(farmers$hh.maize.q40[farmers$hh.maize.q25==
+\begin_inset Quotes erd
+\end_inset
+
+Male
+\begin_inset Quotes erd
+\end_inset
+
+]))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of the male farmers grew maize on atleast 2 plots and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(table(farmers$hh.maize.q40[farmers$hh.maize.q25==
+\begin_inset Quotes erd
+\end_inset
+
+Female
+\begin_inset Quotes erd
+\end_inset
+
+]>=2)/sum(table(farmers$hh.maize.q40[farmers$hh.maize.q25==
+\begin_inset Quotes erd
+\end_inset
+
+Female
+\begin_inset Quotes erd
+\end_inset
+
+]))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of the female farmers did the same.
+ However, looking at the access for atleast 3 plots, female farmers seem
+ to have greater plot availability compared to their male counterparts (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(table(farmers$hh.maize.q40[farmers$hh.maize.q25==
+\begin_inset Quotes erd
+\end_inset
+
+Female
+\begin_inset Quotes erd
+\end_inset
+
+]>=3)/sum(table(farmers$hh.maize.q40[farmers$hh.maize.q25==
+\begin_inset Quotes erd
+\end_inset
+
+Female
+\begin_inset Quotes erd
+\end_inset
+
+]))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent for females, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(table(farmers$hh.maize.q40[farmers$hh.maize.q25==
+\begin_inset Quotes erd
+\end_inset
+
+Male
+\begin_inset Quotes erd
+\end_inset
+
+]>=3)/sum(table(farmers$hh.maize.q40[farmers$hh.maize.q25==
+\begin_inset Quotes erd
+\end_inset
+
+Male
+\begin_inset Quotes erd
+\end_inset
+
+]))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent for males).
+ 
 \end_layout
 
 \begin_layout Standard
+Interestingly, 
+\begin_inset ERT
+status open
 
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(table(farmers$hh.maize.q95[farmers$hh.maize.q25==
+\begin_inset Quotes erd
+\end_inset
+
+Male
+\begin_inset Quotes erd
+\end_inset
+
+]>=10)/sum(table(farmers$hh.maize.q95[farmers$hh.maize.q25==
+\begin_inset Quotes erd
+\end_inset
+
+Male
+\begin_inset Quotes erd
+\end_inset
+
+]))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of the male farmers harvested atleast 10 bags of maize from all
+ the plots in the first season of 2018.
+ The overall percentage is 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(table(farmers$hh.maize.q95>=10)/sum(table(farmers$hh.maize.q95))*
+100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+.
+ Females have lower harvest levels (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(table(farmers$hh.maize.q95[farmers$hh.maize.q25==
+\begin_inset Quotes erd
+\end_inset
+
+Female
+\begin_inset Quotes erd
+\end_inset
+
+]>=10)/sum(table(farmers$hh.maize.q95[farmers$hh.maize.q25==
+\begin_inset Quotes erd
+\end_inset
+
+Female
+\begin_inset Quotes erd
+\end_inset
+
+]))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent for atleast 10 bags of maize).
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(table(farmers$hh.maize.q98==
+\begin_inset Quotes erd
+\end_inset
+
+Yes
+\begin_inset Quotes erd
+\end_inset
+
+)/sum(table(farmers$hh.maize.q98))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of all the farming households surveyed took their maize for milling,
+ out of which 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(table(farmers$hh.maize.q98[farmers$hh.maize.q25==
+\begin_inset Quotes erd
+\end_inset
+
+Female
+\begin_inset Quotes erd
+\end_inset
+
+]==
+\begin_inset Quotes erd
+\end_inset
+
+Yes
+\begin_inset Quotes erd
+\end_inset
+
+)/sum(table(farmers$hh.maize.q98))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent were female farmers.
+ More male farmers could sell maize harvested in the first season of 2018
+ (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(table(farmers$hh.maize.q101[farmers$hh.maize.q25==
+\begin_inset Quotes erd
+\end_inset
+
+Male
+\begin_inset Quotes erd
+\end_inset
+
+]==
+\begin_inset Quotes erd
+\end_inset
+
+Yes
+\begin_inset Quotes erd
+\end_inset
+
+)/sum(table(farmers$hh.maize.q101[farmers$hh.maize.q25==
+\begin_inset Quotes erd
+\end_inset
+
+Male
+\begin_inset Quotes erd
+\end_inset
+
+]))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+percent) compared to their female counterparts (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(table(farmers$hh.maize.q101[farmers$hh.maize.q25==
+\begin_inset Quotes erd
+\end_inset
+
+Female
+\begin_inset Quotes erd
+\end_inset
+
+]==
+\begin_inset Quotes erd
+\end_inset
+
+Yes
+\begin_inset Quotes erd
+\end_inset
+
+)/sum(table(farmers$hh.maize.q101[farmers$hh.maize.q25==
+\begin_inset Quotes erd
+\end_inset
+
+Female
+\begin_inset Quotes erd
+\end_inset
+
+]))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent).
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(table(farmers$hh.maize.q101a[farmers$hh.maize.q25==
+\begin_inset Quotes erd
+\end_inset
+
+Female
+\begin_inset Quotes erd
+\end_inset
+
+]>=50)/sum(table(farmers$hh.maize.q101a[farmers$hh.maize.q25==
+\begin_inset Quotes erd
+\end_inset
+
+Female
+\begin_inset Quotes erd
+\end_inset
+
+]))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of the female farmers sold atleast 50 bags of maize while only
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(table(farmers$hh.maize.q101a[farmers$hh.maize.q25==
+\begin_inset Quotes erd
+\end_inset
+
+Female
+\begin_inset Quotes erd
+\end_inset
+
+]>=50)/sum(table(farmers$hh.maize.q101a[farmers$hh.maize.q25==
+\begin_inset Quotes erd
+\end_inset
+
+Female
+\begin_inset Quotes erd
+\end_inset
+
+]))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of the male farmers could sell the same amount.
+ 
 \end_layout
 
 \begin_layout Standard
