@@ -1498,7 +1498,10 @@ Analysis
 \end_layout
 
 \begin_layout Standard
-Of a total of 1526 farming households interviewed, 
+Of a total of 1526 farming households interviewed,
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -1506,20 +1509,17 @@ status open
 
 
 \backslash
-Sexpr{format(round(table(farmers$hh.maize.q25==
-\begin_inset Quotes erd
-\end_inset
-
-Female
-\begin_inset Quotes erd
-\end_inset
-
-)/sum(table(farmers$hh.maize.q25))*100,digits=0),nsmall=0)}
+Sexpr{format(round(table(farmers$hh.maize.q25)[1]/sum(table(farmers$hh.maize.q25))*1
+00,digits=0),nsmall=0)}
 \end_layout
 
 \end_inset
 
- percent
+ percent 
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \begin_layout Standard
