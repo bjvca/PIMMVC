@@ -1531,6 +1531,77 @@ Sexpr{format(round(sum(table(farmers$hh.maize.q24[farmers$hh.maize.q24>=30]))
 \end_inset
 
  percent are atleast 30 years old.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(farmers$hh.maize.q24[farmers$hh.maize.q24>=30 &
+ farmers$hh.maize.q25==
+\begin_inset Quotes erd
+\end_inset
+
+Female
+\begin_inset Quotes erd
+\end_inset
+
+]))
+\end_layout
+
+\begin_layout Plain Layout
+
+/sum(table(farmers$hh.maize.q24[farmers$hh.maize.q25==
+\begin_inset Quotes erd
+\end_inset
+
+Female
+\begin_inset Quotes erd
+\end_inset
+
+]))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of the female farmers and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(farmers$hh.maize.q24[farmers$hh.maize.q24>=30 &
+ farmers$hh.maize.q25==
+\begin_inset Quotes erd
+\end_inset
+
+Male
+\begin_inset Quotes erd
+\end_inset
+
+]))
+\end_layout
+
+\begin_layout Plain Layout
+
+/sum(table(farmers$hh.maize.q24[farmers$hh.maize.q25==
+\begin_inset Quotes erd
+\end_inset
+
+Male
+\begin_inset Quotes erd
+\end_inset
+
+]))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of the male farmers are atleast 30 years old.
  Most of the farmers interviewed are married (
 \begin_inset ERT
 status open
@@ -1545,7 +1616,81 @@ Sexpr{format(round(table(farmers$hh.maize.q26)[1]/sum(table(farmers$hh.maize.q26
 
 \end_inset
 
- percent) while only 
+ percent overall, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(farmers$hh.maize.q26[farmers$hh.maize.q26==
+\begin_inset Quotes erd
+\end_inset
+
+a
+\begin_inset Quotes erd
+\end_inset
+
+ & farmers$hh.maize.q25==
+\begin_inset Quotes erd
+\end_inset
+
+Female
+\begin_inset Quotes erd
+\end_inset
+
+]))/sum(table(farmers$hh.maize.q26[farmers$hh.maize.q25==
+\begin_inset Quotes erd
+\end_inset
+
+Female
+\begin_inset Quotes erd
+\end_inset
+
+]))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent for female farmers and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(farmers$hh.maize.q26[farmers$hh.maize.q26==
+\begin_inset Quotes erd
+\end_inset
+
+a
+\begin_inset Quotes erd
+\end_inset
+
+ & farmers$hh.maize.q25==
+\begin_inset Quotes erd
+\end_inset
+
+Male
+\begin_inset Quotes erd
+\end_inset
+
+]))/sum(table(farmers$hh.maize.q26[farmers$hh.maize.q25==
+\begin_inset Quotes erd
+\end_inset
+
+Male
+\begin_inset Quotes erd
+\end_inset
+
+]))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent for male farmers) while only 
 \begin_inset ERT
 status open
 
@@ -1560,10 +1705,15 @@ small=0)}
 
 \end_inset
 
- percent are widowed, divorced or separated.
- The level of education among the farmers interviewed is very important
- in this study because that can noticeably impact the way they rate the
- input dealers, traders and maize millers.
+ percent are widowed, divorced or separated in the entire group of farmers
+ surveyed.
+ 
+\end_layout
+
+\begin_layout Standard
+The level of education among the farmers interviewed is very important in
+ this study because that can noticeably impact the way they rate the input
+ dealers, traders and maize millers.
  
 \begin_inset ERT
 status open
@@ -1754,7 +1904,7 @@ status open
 
 
 \backslash
-Sexpr{format(round(table(farmers$hh.maize.q29[farmers$hh.maize.q25==
+Sexpr{format(round(sum(table(farmers$hh.maize.q29[farmers$hh.maize.q25==
 \begin_inset Quotes erd
 \end_inset
 
@@ -1762,7 +1912,7 @@ Female
 \begin_inset Quotes erd
 \end_inset
 
-])[2]/sum(table(farmers$hh.maize.q29[farmers$hh.maize.q25==
+])[2])/sum(table(farmers$hh.maize.q29[farmers$hh.maize.q25==
 \begin_inset Quotes erd
 \end_inset
 
@@ -1804,29 +1954,18 @@ status open
 
 
 \backslash
-Sexpr{format(round(sum(table(farmers$hh.maize.q36[farmers$hh.maize.q25==
-\begin_inset Quotes erd
-\end_inset
-
-Female
-\begin_inset Quotes erd
-\end_inset
-
-]>=2))/sum(table(farmers$hh.maize.q36[farmers$hh.maize.q25==
-\begin_inset Quotes erd
-\end_inset
-
-Female
-\begin_inset Quotes erd
-\end_inset
-
-]))*100,digits=0),nsmall=0)}
+Sexpr{format(round(sum(table(farmers$hh.maize.q36[farmers$hh.maize.q25=="Female"
+ & farmers$hh.maize.q36>=2]))/sum(table(farmers$hh.maize.q36[farmers$hh.maize.q25=="Fe
+male"]))*100,digits=0),nsmall=0)}
 \end_layout
 
 \end_inset
 
  percent).
  
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -1842,7 +1981,7 @@ Female
 \begin_inset Quotes erd
 \end_inset
 
-]==
+ & farmers$hh.maize.q37==
 \begin_inset Quotes erd
 \end_inset
 
@@ -1850,7 +1989,7 @@ Yes
 \begin_inset Quotes erd
 \end_inset
 
-)),digits=0),nsmall=0)}
+])),digits=0),nsmall=0)}
 \end_layout
 
 \end_inset
@@ -1863,15 +2002,8 @@ status open
 
 
 \backslash
-Sexpr{format(round(sum(table(farmers$hh.maize.q25==
-\begin_inset Quotes erd
-\end_inset
-
-Female
-\begin_inset Quotes erd
-\end_inset
-
-)),digits=0),nsmall=0)}
+Sexpr{format(round(sum(table(farmers$hh.maize.q25[farmers$hh.maize.q25=="Female"])),
+digits=0),nsmall=0)}
 \end_layout
 
 \end_inset
@@ -1894,7 +2026,7 @@ Male
 \begin_inset Quotes erd
 \end_inset
 
-]==
+ & farmers$hh.maize.q37==
 \begin_inset Quotes erd
 \end_inset
 
@@ -1902,7 +2034,7 @@ Yes
 \begin_inset Quotes erd
 \end_inset
 
-)),digits=0),nsmall=0)}
+])),digits=0),nsmall=0)}
 \end_layout
 
 \end_inset
@@ -1915,15 +2047,8 @@ status open
 
 
 \backslash
-Sexpr{format(round(sum(table(farmers$hh.maize.q25==
-\begin_inset Quotes erd
-\end_inset
-
-Male
-\begin_inset Quotes erd
-\end_inset
-
-)),digits=0),nsmall=0)}
+Sexpr{format(round(sum(table(farmers$hh.maize.q25[farmers$hh.maize.q25=="Male"])),di
+gits=0),nsmall=0)}
 \end_layout
 
 \end_inset
@@ -1940,7 +2065,7 @@ status open
 
 
 \backslash
-Sexpr{format(round(table(farmers$hh.maize.q40[farmers$hh.maize.q25==
+Sexpr{format(round(sum(table(farmers$hh.maize.q40[farmers$hh.maize.q25==
 \begin_inset Quotes erd
 \end_inset
 
@@ -1948,7 +2073,7 @@ Male
 \begin_inset Quotes erd
 \end_inset
 
-]>=2)/sum(table(farmers$hh.maize.q40[farmers$hh.maize.q25==
+ & farmers$hh.maize.q40>=2]))/sum(table(farmers$hh.maize.q40[farmers$hh.maize.q25==
 \begin_inset Quotes erd
 \end_inset
 
@@ -1969,7 +2094,7 @@ status open
 
 
 \backslash
-Sexpr{format(round(table(farmers$hh.maize.q40[farmers$hh.maize.q25==
+Sexpr{format(round(sum(table(farmers$hh.maize.q40[farmers$hh.maize.q25==
 \begin_inset Quotes erd
 \end_inset
 
@@ -1977,7 +2102,7 @@ Female
 \begin_inset Quotes erd
 \end_inset
 
-]>=2)/sum(table(farmers$hh.maize.q40[farmers$hh.maize.q25==
+ & farmers$hh.maize.q40>=2]))/sum(table(farmers$hh.maize.q40[farmers$hh.maize.q25==
 \begin_inset Quotes erd
 \end_inset
 
@@ -2000,7 +2125,7 @@ status open
 
 
 \backslash
-Sexpr{format(round(table(farmers$hh.maize.q40[farmers$hh.maize.q25==
+Sexpr{format(round(sum(table(farmers$hh.maize.q40[farmers$hh.maize.q25==
 \begin_inset Quotes erd
 \end_inset
 
@@ -2008,7 +2133,7 @@ Female
 \begin_inset Quotes erd
 \end_inset
 
-]>=3)/sum(table(farmers$hh.maize.q40[farmers$hh.maize.q25==
+ & farmers$hh.maize.q40>=3]))/sum(table(farmers$hh.maize.q40[farmers$hh.maize.q25==
 \begin_inset Quotes erd
 \end_inset
 
@@ -2029,7 +2154,7 @@ status open
 
 
 \backslash
-Sexpr{format(round(table(farmers$hh.maize.q40[farmers$hh.maize.q25==
+Sexpr{format(round(sum(table(farmers$hh.maize.q40[farmers$hh.maize.q25==
 \begin_inset Quotes erd
 \end_inset
 
@@ -2037,7 +2162,7 @@ Male
 \begin_inset Quotes erd
 \end_inset
 
-]>=3)/sum(table(farmers$hh.maize.q40[farmers$hh.maize.q25==
+ & farmers$hh.maize.q40>=3]))/sum(table(farmers$hh.maize.q40[farmers$hh.maize.q25==
 \begin_inset Quotes erd
 \end_inset
 
@@ -2063,7 +2188,7 @@ status open
 
 
 \backslash
-Sexpr{format(round(table(farmers$hh.maize.q95[farmers$hh.maize.q25==
+Sexpr{format(round(sum(table(farmers$hh.maize.q95[farmers$hh.maize.q25==
 \begin_inset Quotes erd
 \end_inset
 
@@ -2071,7 +2196,7 @@ Male
 \begin_inset Quotes erd
 \end_inset
 
-]>=10)/sum(table(farmers$hh.maize.q95[farmers$hh.maize.q25==
+ & farmers$hh.maize.q95>=10]))/sum(table(farmers$hh.maize.q95[farmers$hh.maize.q25==
 \begin_inset Quotes erd
 \end_inset
 
@@ -2094,8 +2219,8 @@ status open
 
 
 \backslash
-Sexpr{format(round(table(farmers$hh.maize.q95>=10)/sum(table(farmers$hh.maize.q95))*
-100,digits=0),nsmall=0)}
+Sexpr{format(round(sum(table(farmers$hh.maize.q95[farmers$hh.maize.q95>=10]))/sum(ta
+ble(farmers$hh.maize.q95))*100,digits=0),nsmall=0)}
 \end_layout
 
 \end_inset
@@ -2109,7 +2234,7 @@ status open
 
 
 \backslash
-Sexpr{format(round(table(farmers$hh.maize.q95[farmers$hh.maize.q25==
+Sexpr{format(round(sum(table(farmers$hh.maize.q95[farmers$hh.maize.q25==
 \begin_inset Quotes erd
 \end_inset
 
@@ -2117,7 +2242,7 @@ Female
 \begin_inset Quotes erd
 \end_inset
 
-]>=10)/sum(table(farmers$hh.maize.q95[farmers$hh.maize.q25==
+ & farmers$hh.maize.q95>=10]))/sum(table(farmers$hh.maize.q95[farmers$hh.maize.q25==
 \begin_inset Quotes erd
 \end_inset
 
@@ -2139,7 +2264,7 @@ status open
 
 
 \backslash
-Sexpr{format(round(table(farmers$hh.maize.q98==
+Sexpr{format(round(sum(table(farmers$hh.maize.q98[farmers$hh.maize.q98==
 \begin_inset Quotes erd
 \end_inset
 
@@ -2147,7 +2272,7 @@ Yes
 \begin_inset Quotes erd
 \end_inset
 
-)/sum(table(farmers$hh.maize.q98))*100,digits=0),nsmall=0)}
+]))/sum(table(farmers$hh.maize.q98))*100,digits=0),nsmall=0)}
 \end_layout
 
 \end_inset
@@ -2161,7 +2286,7 @@ status open
 
 
 \backslash
-Sexpr{format(round(table(farmers$hh.maize.q98[farmers$hh.maize.q25==
+Sexpr{format(round(sum(table(farmers$hh.maize.q98[farmers$hh.maize.q25==
 \begin_inset Quotes erd
 \end_inset
 
@@ -2169,7 +2294,7 @@ Female
 \begin_inset Quotes erd
 \end_inset
 
-]==
+ & farmers$hh.maize.q98==
 \begin_inset Quotes erd
 \end_inset
 
@@ -2177,7 +2302,7 @@ Yes
 \begin_inset Quotes erd
 \end_inset
 
-)/sum(table(farmers$hh.maize.q98))*100,digits=0),nsmall=0)}
+]))/sum(table(farmers$hh.maize.q98))*100,digits=0),nsmall=0)}
 \end_layout
 
 \end_inset
@@ -2192,7 +2317,7 @@ status open
 
 
 \backslash
-Sexpr{format(round(table(farmers$hh.maize.q101[farmers$hh.maize.q25==
+Sexpr{format(round(sum(table(farmers$hh.maize.q101[farmers$hh.maize.q25==
 \begin_inset Quotes erd
 \end_inset
 
@@ -2200,7 +2325,7 @@ Male
 \begin_inset Quotes erd
 \end_inset
 
-]==
+ & farmers$hh.maize.q101==
 \begin_inset Quotes erd
 \end_inset
 
@@ -2208,7 +2333,7 @@ Yes
 \begin_inset Quotes erd
 \end_inset
 
-)/sum(table(farmers$hh.maize.q101[farmers$hh.maize.q25==
+]))/sum(table(farmers$hh.maize.q101[farmers$hh.maize.q25==
 \begin_inset Quotes erd
 \end_inset
 
@@ -2221,7 +2346,7 @@ Male
 
 \end_inset
 
-percent) compared to their female counterparts (
+ percent) compared to their female counterparts (
 \begin_inset ERT
 status open
 
@@ -2229,7 +2354,7 @@ status open
 
 
 \backslash
-Sexpr{format(round(table(farmers$hh.maize.q101[farmers$hh.maize.q25==
+Sexpr{format(round(sum(table(farmers$hh.maize.q101[farmers$hh.maize.q25==
 \begin_inset Quotes erd
 \end_inset
 
@@ -2237,7 +2362,7 @@ Female
 \begin_inset Quotes erd
 \end_inset
 
-]==
+ & farmers$hh.maize.q101==
 \begin_inset Quotes erd
 \end_inset
 
@@ -2245,7 +2370,7 @@ Yes
 \begin_inset Quotes erd
 \end_inset
 
-)/sum(table(farmers$hh.maize.q101[farmers$hh.maize.q25==
+]))/sum(table(farmers$hh.maize.q101[farmers$hh.maize.q25==
 \begin_inset Quotes erd
 \end_inset
 
@@ -2259,6 +2384,91 @@ Female
 \end_inset
 
  percent).
+ Out of the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(farmers$hh.maize.q101a[farmers$hh.maize.q101a>=50])),di
+gits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ farmers who sold atleast 50 bags of maize, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(farmers$hh.maize.q101a[farmers$hh.maize.q25=="Female"
+ & farmers$hh.maize.q101a>=50])),digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ were women.
+ 
+\end_layout
+
+\begin_layout Standard
+Out of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(farmers$hh.maize.q106[farmers$hh.maize.q106==
+\begin_inset Quotes erd
+\end_inset
+
+Yes
+\begin_inset Quotes erd
+\end_inset
+
+]))/sum(table(farmers$hh.maize.q106))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of the farmers who purchased improved varieties of maize or bean
+ seeds, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(farmers$hh.maize.q106[farmers$hh.maize.q25==
+\begin_inset Quotes erd
+\end_inset
+
+Female
+\begin_inset Quotes erd
+\end_inset
+
+ & farmers$hh.maize.q106==
+\begin_inset Quotes erd
+\end_inset
+
+Yes
+\begin_inset Quotes erd
+\end_inset
+
+]))/sum(table(farmers$hh.maize.q106))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent were female farmers.
  
 \begin_inset ERT
 status open
@@ -2267,28 +2477,50 @@ status open
 
 
 \backslash
-Sexpr{format(round(table(farmers$hh.maize.q101a[farmers$hh.maize.q25==
+Sexpr{format(round(sum(table(farmers$hh.maize.q114[farmers$hh.maize.q114==
 \begin_inset Quotes erd
 \end_inset
 
-Female
+a
 \begin_inset Quotes erd
 \end_inset
 
-]>=50)/sum(table(farmers$hh.maize.q101a[farmers$hh.maize.q25==
-\begin_inset Quotes erd
-\end_inset
-
-Female
-\begin_inset Quotes erd
-\end_inset
-
-]))*100,digits=0),nsmall=0)}
+]))/sum(table(farmers$hh.maize.q114))*100,digits=0),nsmall=0)}
 \end_layout
 
 \end_inset
 
- percent of the female farmers sold atleast 50 bags of maize while only
+ percent of the farmers reported that the seeds they bought never appeared
+ to be fake, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(farmers$hh.maize.q114[farmers$hh.maize.q114==
+\begin_inset Quotes erd
+\end_inset
+
+a
+\begin_inset Quotes erd
+\end_inset
+
+ & farmers$hh.maize.q25==
+\begin_inset Quotes erd
+\end_inset
+
+Female
+\begin_inset Quotes erd
+\end_inset
+
+]))/sum(table(farmers$hh.maize.q114))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of them being female.
  
 \begin_inset ERT
 status open
@@ -2297,29 +2529,233 @@ status open
 
 
 \backslash
-Sexpr{format(round(table(farmers$hh.maize.q101a[farmers$hh.maize.q25==
+Sexpr{format(round(sum(table(farmers$hh.maize.q115[farmers$hh.maize.q115==
 \begin_inset Quotes erd
 \end_inset
 
-Female
+f
 \begin_inset Quotes erd
 \end_inset
 
-]>=50)/sum(table(farmers$hh.maize.q101a[farmers$hh.maize.q25==
-\begin_inset Quotes erd
-\end_inset
-
-Female
-\begin_inset Quotes erd
-\end_inset
-
-]))*100,digits=0),nsmall=0)}
+]))/sum(table(farmers$hh.maize.q115))*100,digits=0),nsmall=0)}
 \end_layout
 
 \end_inset
 
- percent of the male farmers could sell the same amount.
+ percent of the farmers find it impossible to distinguish being quality
+ and counterfeit seeds (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(farmers$hh.maize.q115[farmers$hh.maize.q115==
+\begin_inset Quotes erd
+\end_inset
+
+f
+\begin_inset Quotes erd
+\end_inset
+
+ & farmers$hh.maize.q25==
+\begin_inset Quotes erd
+\end_inset
+
+Female
+\begin_inset Quotes erd
+\end_inset
+
+]))/sum(table(farmers$hh.maize.q115))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of them are women).
+ Male farmers (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(farmers$hh.maize.q116[farmers$hh.maize.q116==
+\begin_inset Quotes erd
+\end_inset
+
+Yes
+\begin_inset Quotes erd
+\end_inset
+
+ & farmers$hh.maize.q25==
+\begin_inset Quotes erd
+\end_inset
+
+Male
+\begin_inset Quotes erd
+\end_inset
+
+],useNA=
+\begin_inset Quotes erd
+\end_inset
+
+no
+\begin_inset Quotes erd
+\end_inset
+
+))/sum(table(farmers$hh.maize.q116,useNA=
+\begin_inset Quotes erd
+\end_inset
+
+no
+\begin_inset Quotes erd
+\end_inset
+
+))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent) form a larger share of the group sorting maize cobs before threshing
+ than female farmers (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(farmers$hh.maize.q116[farmers$hh.maize.q116==
+\begin_inset Quotes erd
+\end_inset
+
+Yes
+\begin_inset Quotes erd
+\end_inset
+
+ & farmers$hh.maize.q25==
+\begin_inset Quotes erd
+\end_inset
+
+Female
+\begin_inset Quotes erd
+\end_inset
+
+],useNA=
+\begin_inset Quotes erd
+\end_inset
+
+no
+\begin_inset Quotes erd
+\end_inset
+
+))/sum(table(farmers$hh.maize.q116,useNA=
+\begin_inset Quotes erd
+\end_inset
+
+no
+\begin_inset Quotes erd
+\end_inset
+
+))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent).
+ The most advanced way of threshing is using a machine powered thresher
+ which is done by 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(farmers$hh.maize.q117.d[farmers$hh.maize.q117.d==
+\begin_inset Quotes erd
+\end_inset
+
+TRUE
+\begin_inset Quotes erd
+\end_inset
+
+]))/sum(table(farmers$hh.maize.q117.d))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of the farmers surveyed (only 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(farmers$hh.maize.q117.d[farmers$hh.maize.q117.d==
+\begin_inset Quotes erd
+\end_inset
+
+TRUE
+\begin_inset Quotes erd
+\end_inset
+
+ & farmers$hh.maize.q25==
+\begin_inset Quotes erd
+\end_inset
+
+Female
+\begin_inset Quotes erd
+\end_inset
+
+]))/sum(table(farmers$hh.maize.q117.d))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of them being women).
+ The storage capacity also varies between male and female farmers.
+ The share of female farmers having storage capacity of atleast 5000 kilograms
+ of maize is 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(farmers$hh.maize.q120[farmers$hh.maize.q120>=5000
+ & farmers$hh.maize.q25=="Female"]))/sum(table(farmers$hh.maize.q120))*100,digits=0)
+,nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent.
+ The share is greater for male farmers (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(farmers$hh.maize.q120[farmers$hh.maize.q120>=5000
+ & farmers$hh.maize.q25=="Male"]))/sum(table(farmers$hh.maize.q120))*100,digits=0),n
+small=0)}
+\end_layout
+
+\end_inset
+
+ percent).
  
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \begin_layout Standard
