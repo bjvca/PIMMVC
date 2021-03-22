@@ -1,4 +1,4 @@
-path_2 <- getwd()
+path <- getwd()
 library(ggplot2)
 library(ggsignif) 
 library(miceadds)
@@ -13,6 +13,8 @@ path_2 <- strsplit(path, "/papers/perceptions")[[1]]
 
 ##Farmers' dataset
 farmers <- read.csv(paste(path_2,"data/public/farmers.csv", sep = "/"))
+
+farmers[farmers=="n/a"] <- NA
 
 #############INPUT DEALERS#####################
 
