@@ -4213,6 +4213,10 @@ Sexpr{format(round(table(traders1$hh.maize.q7)[1]/sum(table(traders1$hh.maize.q7
 \end_inset
 
  percent of the traders in the sample (total 341) are female.
+ Thus, the figures below maybe driven by the lower percentage of females
+ in the sample.
+ However, the gendered inherent patterns cannot be completely ignored and
+ do indicate the need for research on a better balanced sample.
  About 
 \begin_inset ERT
 status open
@@ -4910,6 +4914,675 @@ Male
 
  percent).
  For females, mostly it is various districts or various sub-counties.
+\end_layout
+
+\begin_layout Standard
+During the after harvest season, when maize prices have reached their lowest
+ levels and during the planting and growing season, when maize prices have
+ reached their highest levels, most of the traders visit 5 or 10 or 20 sellers
+ to collect maize on a typical day (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(traders1$hh.maize.q22a[traders1$hh.maize.q22a==
+\begin_inset Quotes erd
+\end_inset
+
+5
+\begin_inset Quotes erd
+\end_inset
+
+]) + table(traders1$hh.maize.q22a[traders1$hh.maize.q22a==
+\begin_inset Quotes erd
+\end_inset
+
+10
+\begin_inset Quotes erd
+\end_inset
+
+]) + table(traders1$hh.maize.q22a[traders1$hh.maize.q22a==
+\begin_inset Quotes erd
+\end_inset
+
+20
+\begin_inset Quotes erd
+\end_inset
+
+]))/(sum(table(traders1$hh.maize.q22a)))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent during the first season, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(traders1$hh.maize.q23a[traders1$hh.maize.q23a==
+\begin_inset Quotes erd
+\end_inset
+
+5
+\begin_inset Quotes erd
+\end_inset
+
+]) + table(traders1$hh.maize.q23a[traders1$hh.maize.q23a==
+\begin_inset Quotes erd
+\end_inset
+
+10
+\begin_inset Quotes erd
+\end_inset
+
+]) + table(traders1$hh.maize.q23a[traders1$hh.maize.q23a==
+\begin_inset Quotes erd
+\end_inset
+
+20
+\begin_inset Quotes erd
+\end_inset
+
+]))/(sum(table(traders1$hh.maize.q23a)))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent during the second season).
+ This is similar for both female and male traders.
+ However, more of the female traders tend to go to 5 sellers to collect
+ maize during the after harvest season and more of the female traders tend
+ to go to 2 sellers during the planting and growing season.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(traders1$hh.maize.q22b[traders1$hh.maize.q22b>=3000]))/
+(sum(table(traders1$hh.maize.q22b)))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of the traders collect atleast 3000 kilograms of maize each day
+ during the first season and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(traders1$hh.maize.q23b[traders1$hh.maize.q23b>=3000]))/
+(sum(table(traders1$hh.maize.q23b)))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent during the second season (all of them are male traders).
+ Most of the traders (mostly male) deliver to 1 or 3 or 5 buyers during
+ the first season while most of the traders (mostly male) deliver to 1 or
+ 2 or 3 buyers during the planting and growing season.
+ Also, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(traders1$hh.maize.q22f[traders1$hh.maize.q22f==
+\begin_inset Quotes erd
+\end_inset
+
+Yes
+\begin_inset Quotes erd
+\end_inset
+
+]))/(sum(table(traders1$hh.maize.q22f)))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of the traders have a minimum quantity requirement while selling
+ the maize on a typical day after harvest (only 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(traders1$hh.maize.q22f[traders1$hh.maize.q22f=="Yes"
+ & traders1$hh.maize.q7=="Female"]))/(sum(table(traders1$hh.maize.q22f)))*100,digits
+=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of them are women).
+ On a typical day during the second season, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(traders1$hh.maize.q23f[traders1$hh.maize.q23f==
+\begin_inset Quotes erd
+\end_inset
+
+Yes
+\begin_inset Quotes erd
+\end_inset
+
+]))/(sum(table(traders1$hh.maize.q23f)))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent set a minimum quantity requirement (all of them being male traders).
+ 
+\end_layout
+
+\begin_layout Standard
+Storing maize is common for 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(traders1$hh.maize.q24[traders1$hh.maize.q24==
+\begin_inset Quotes erd
+\end_inset
+
+Yes
+\begin_inset Quotes erd
+\end_inset
+
+]))/(sum(table(traders1$hh.maize.q24)))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of the traders, more common for male traders (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(traders1$hh.maize.q24[traders1$hh.maize.q24=="Yes"
+ & traders1$hh.maize.q7=="Male"]))/(sum(table(traders1$hh.maize.q24 [traders1$hh.maiz
+e.q7=="Male"])))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent) compared to female traders (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(traders1$hh.maize.q24[traders1$hh.maize.q24=="Yes"
+ & traders1$hh.maize.q7=="Female"]))/(sum(table(traders1$hh.maize.q24 [traders1$hh.ma
+ize.q7=="Female"])))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent).
+ After harvest, most of the traders (both male and female) wait for the
+ maize prices to increase to sell maize (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(traders1$hh.maize.q25.c[traders1$hh.maize.q25.c==
+\begin_inset Quotes erd
+\end_inset
+
+TRUE
+\begin_inset Quotes erd
+\end_inset
+
+]))/(sum(table(traders1$hh.maize.q25.c)))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of the total sample).
+ During the planting and growing season, most of the traders sell their
+ maize when the maize prices have increased (particularly the male traders).
+ More of the female traders wait for their stores to be full to sell the
+ maize.
+ The most common form of storing the maize is gunny bags on pallets (for
+ both male and female traders, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(traders1$hh.maize.q27[traders1$hh.maize.q27==
+\begin_inset Quotes erd
+\end_inset
+
+b
+\begin_inset Quotes erd
+\end_inset
+
+]))/(sum(table(traders1$hh.maize.q27)))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of all the traders).
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(traders1$hh.maize.q28[traders1$hh.maize.q28==
+\begin_inset Quotes erd
+\end_inset
+
+10000
+\begin_inset Quotes erd
+\end_inset
+
+ & traders1$hh.maize.q7=="Male"])),digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ male traders have 10,000 kilograms storage capacity.
+ 
+\end_layout
+
+\begin_layout Standard
+The traders sometimes get different services or assets from the buyers.
+ For example, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(traders1$hh.maize.q29.a[traders1$hh.maize.q29.a==
+\begin_inset Quotes erd
+\end_inset
+
+TRUE
+\begin_inset Quotes erd
+\end_inset
+
+])),digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ traders (mostly male) obtain advances or credits, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(traders1$hh.maize.q29.b[traders1$hh.maize.q29.b==
+\begin_inset Quotes erd
+\end_inset
+
+TRUE
+\begin_inset Quotes erd
+\end_inset
+
+])),digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ traders (mostly male) get market information while 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(traders1$hh.maize.q29.i[traders1$hh.maize.q29.i==
+\begin_inset Quotes erd
+\end_inset
+
+TRUE
+\begin_inset Quotes erd
+\end_inset
+
+])),digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ traders receive nothing.
+ Similarly, the traders also provide certain services to the farmers, like
+ gunny bags (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(traders1$hh.maize.q30.d[traders1$hh.maize.q30.d==
+\begin_inset Quotes erd
+\end_inset
+
+TRUE
+\begin_inset Quotes erd
+\end_inset
+
+])),digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ traders) or credit (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(traders1$hh.maize.q30.f[traders1$hh.maize.q30.f==
+\begin_inset Quotes erd
+\end_inset
+
+TRUE
+\begin_inset Quotes erd
+\end_inset
+
+])),digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ traders).
+ More than half of the female traders provide no service to the farmers.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(traders1$hh.maize.q32[traders1$hh.maize.q32==
+\begin_inset Quotes erd
+\end_inset
+
+Yes
+\begin_inset Quotes erd
+\end_inset
+
+]))/(sum(table(traders1$hh.maize.q32)))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of the traders use certified scales.
+ Interestingly, all the female traders use certified scales while 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(traders1$hh.maize.q32[traders1$hh.maize.q32=="Yes"
+ & traders1$hh.maize.q7=="Male"]))/(sum(table(traders1$hh.maize.q32[traders1$hh.maize.
+q7=="Male"])))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of the male traders use certified scales.
+ Most of the traders believe that all of the farmers trust their scales
+ (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(traders1$hh.maize.q33[traders1$hh.maize.q33=="1"]))/(su
+m(table(traders1$hh.maize.q33)))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent).
+ This belief is higher amongst female traders (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(traders1$hh.maize.q33[traders1$hh.maize.q33=="1"
+ & traders1$hh.maize.q7=="Female"]))/(sum(table(traders1$hh.maize.q33[ traders1$hh.ma
+ize.q7=="Female"])))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent).
+ 
+\end_layout
+
+\begin_layout Standard
+Traders also tend to give better prices for large quantities, irrespective
+ of the gender of the trader (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(traders1$hh.maize.q34[traders1$hh.maize.q34=="Yes"
+ ]))/(sum(table(traders1$hh.maize.q34)))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of all the traders interviewed).
+ However, more of the male traders give better prices for better quality
+ maize.
+ Both male and female traders also dry the maize further before selling
+ (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(traders1$hh.maize.q36.a[traders1$hh.maize.q36.a=="TRUE"
+ ]))/(sum(table(traders1$hh.maize.q36.a)))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent).
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(traders1$hh.maize.q37[traders1$hh.maize.q37=="Yes"
+ & traders1$hh.maize.q7=="Male"]))/(sum(table(traders1$hh.maize.q37[traders1$hh.maize.
+q7=="Male"])))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of the male traders and all the female traders obtain better prices
+ for better quality maize being sold.
+ Price fluctuations are considered as a serious risk for trading by 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(traders1$hh.maize.q39.b[traders1$hh.maize.q39.b=="TRUE"
+ & traders1$hh.maize.q7=="Male"]))/(sum(table(traders1$hh.maize.q39.b[traders1$hh.maiz
+e.q7=="Male"])))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of the male traders and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(traders1$hh.maize.q39.b[traders1$hh.maize.q39.b=="TRUE"
+ & traders1$hh.maize.q7=="Female"]))/(sum(table(traders1$hh.maize.q39.b[traders1$hh.ma
+ize.q7=="Female"])))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of the female traders.
+ Other risks that were reported by the traders are theft, pests and storage
+ issues.
+ Some of the traders also agree on a maximum buyer price with other traders
+ always (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(traders1$hh.maize.q40[traders1$hh.maize.q40=="4"
+ ]))/(sum(table(traders1$hh.maize.q40)))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(traders1$hh.maize.q40[traders1$hh.maize.q40=="4"
+ & traders1$hh.maize.q7=="Male"]))/(sum(table(traders1$hh.maize.q40[ traders1$hh.maiz
+e.q7=="Male"])))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of the male traders and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(traders1$hh.maize.q40[traders1$hh.maize.q40=="4"
+ & traders1$hh.maize.q7=="Female"]))/(sum(table(traders1$hh.maize.q40[traders1$hh.mai
+ze.q7=="Female"])))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of the female traders) while there are some who never do so (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(traders1$hh.maize.q40[traders1$hh.maize.q40=="1"
+ ]))/(sum(table(traders1$hh.maize.q40)))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(traders1$hh.maize.q40[traders1$hh.maize.q40=="1"
+ & traders1$hh.maize.q7=="Male"]))/(sum(table(traders1$hh.maize.q40[ traders1$hh.maiz
+e.q7=="Male"])))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of the male traders and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(traders1$hh.maize.q40[traders1$hh.maize.q40=="1"
+ & traders1$hh.maize.q7=="Female"]))/(sum(table(traders1$hh.maize.q40[traders1$hh.mai
+ze.q7=="Female"])))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of the female traders).
+ 
 \end_layout
 
 \begin_layout Standard
