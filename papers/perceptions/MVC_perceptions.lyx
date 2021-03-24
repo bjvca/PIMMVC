@@ -5585,6 +5585,1176 @@ ze.q7=="Female"])))*100,digits=0),nsmall=0)}
  
 \end_layout
 
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+4.4.3 Gendered profile of millers (ratees)
+\end_layout
+
+\begin_layout Standard
+In total, 174 millers (or processors) were interviewed.
+ Only 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(table(millers1$hh.maize.q7)[1]/sum(table(millers1$hh.maize.q7))*1
+00,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent are female which might result in some figures being driven by the
+ lower share of women present in the miller sample.
+ But the gender-based patterns in the industry across different attributes
+ cannot be completely made void.
+ Most of the sample consists of millers who are atleast 30 years old (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(millers1$hh.maize.q6g[millers1$hh.maize.q6g>=30]))
+\end_layout
+
+\begin_layout Plain Layout
+
+/sum(table(millers1$hh.maize.q6g))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(millers1$hh.maize.q6g[millers1$hh.maize.q6g>=30
+ & millers1$hh.maize.q7==
+\begin_inset Quotes erd
+\end_inset
+
+Male
+\begin_inset Quotes erd
+\end_inset
+
+]))
+\end_layout
+
+\begin_layout Plain Layout
+
+/sum(table(millers1$hh.maize.q6g[millers1$hh.maize.q7==
+\begin_inset Quotes erd
+\end_inset
+
+Male
+\begin_inset Quotes erd
+\end_inset
+
+]))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of the male millers and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(millers1$hh.maize.q6g[millers1$hh.maize.q6g>=30
+ & millers1$hh.maize.q7==
+\begin_inset Quotes erd
+\end_inset
+
+Female
+\begin_inset Quotes erd
+\end_inset
+
+]))
+\end_layout
+
+\begin_layout Plain Layout
+
+/sum(table(millers1$hh.maize.q6g[millers1$hh.maize.q7==
+\begin_inset Quotes erd
+\end_inset
+
+Female
+\begin_inset Quotes erd
+\end_inset
+
+]))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of the female millers).
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(millers1$hh.maize.q8[millers1$hh.maize.q8==
+\begin_inset Quotes erd
+\end_inset
+
+a
+\begin_inset Quotes erd
+\end_inset
+
+ & millers1$hh.maize.q7==
+\begin_inset Quotes erd
+\end_inset
+
+Male
+\begin_inset Quotes erd
+\end_inset
+
+]))
+\end_layout
+
+\begin_layout Plain Layout
+
+/sum(table(millers1$hh.maize.q8[millers1$hh.maize.q7==
+\begin_inset Quotes erd
+\end_inset
+
+Male
+\begin_inset Quotes erd
+\end_inset
+
+]))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of the male millers and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(millers1$hh.maize.q8[millers1$hh.maize.q8==
+\begin_inset Quotes erd
+\end_inset
+
+a
+\begin_inset Quotes erd
+\end_inset
+
+ & millers1$hh.maize.q7==
+\begin_inset Quotes erd
+\end_inset
+
+Female
+\begin_inset Quotes erd
+\end_inset
+
+]))
+\end_layout
+
+\begin_layout Plain Layout
+
+/sum(table(millers1$hh.maize.q8[millers1$hh.maize.q7==
+\begin_inset Quotes erd
+\end_inset
+
+Female
+\begin_inset Quotes erd
+\end_inset
+
+]))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of the female millers are married.
+ Interestingly, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round( (prop.table(table(millers1$hh.maize.q9))[2] + prop.table(table(m
+illers1$hh.maize.q9))[3]+ prop.table(table(millers1$hh.maize.q9))[4]+ prop.table(table
+(millers1$hh.maize.q9))[5])*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of the millers have atleast some level of primary or secondary
+ education (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round( (prop.table(table(millers1$hh.maize.q9[millers1$hh.maize.q7==
+\begin_inset Quotes erd
+\end_inset
+
+Female
+\begin_inset Quotes erd
+\end_inset
+
+]))[2] + prop.table(table(millers1$hh.maize.q9[millers1$hh.maize.q7==
+\begin_inset Quotes erd
+\end_inset
+
+Female
+\begin_inset Quotes erd
+\end_inset
+
+]))[3]+ prop.table(table(millers1$hh.maize.q9[millers1$hh.maize.q7==
+\begin_inset Quotes erd
+\end_inset
+
+Female
+\begin_inset Quotes erd
+\end_inset
+
+]))[4])*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of female processors and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round( (prop.table(table(millers1$hh.maize.q9[millers1$hh.maize.q7==
+\begin_inset Quotes erd
+\end_inset
+
+Male
+\begin_inset Quotes erd
+\end_inset
+
+]))[2] + prop.table(table(millers1$hh.maize.q9[millers1$hh.maize.q7==
+\begin_inset Quotes erd
+\end_inset
+
+Male
+\begin_inset Quotes erd
+\end_inset
+
+]))[3]+ prop.table(table(millers1$hh.maize.q9[millers1$hh.maize.q7==
+\begin_inset Quotes erd
+\end_inset
+
+Male
+\begin_inset Quotes erd
+\end_inset
+
+]))[4]+ prop.table(table(millers1$hh.maize.q9[millers1$hh.maize.q7==
+\begin_inset Quotes erd
+\end_inset
+
+Male
+\begin_inset Quotes erd
+\end_inset
+
+]))[5] )*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of male processors).
+ In the total sample of millers, only 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round( (prop.table(table(millers1$hh.maize.q9))[1])*100,digits=0),nsma
+ll=0)}
+\end_layout
+
+\end_inset
+
+ percent and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round( (prop.table(table(millers1$hh.maize.q9))[6])*100,digits=0),nsma
+ll=0)}
+\end_layout
+
+\end_inset
+
+ percent have no education and higher than secondary level education.
+ 
+\end_layout
+
+\begin_layout Standard
+The main products processed by the millers are cassava (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(table(millers1$hh.maize.q10.b)[2]/sum(table(millers1$hh.maize.q10.b
+))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(table(millers1$hh.maize.q10.b[millers1$hh.maize.q7=="Female"])[2]/
+sum(table(millers1$hh.maize.q10.b[millers1$hh.maize.q7=="Female"]))*100,digits=0),nsm
+all=0)}
+\end_layout
+
+\end_inset
+
+ percent of female millers, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(table(millers1$hh.maize.q10.b[millers1$hh.maize.q7=="Male"])[2]/su
+m(table(millers1$hh.maize.q10.b[millers1$hh.maize.q7=="Male"]))*100,digits=0),nsmall=
+0)}
+\end_layout
+
+\end_inset
+
+ percent of male millers) and maize (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(table(millers1$hh.maize.q10.f)[2]/sum(table(millers1$hh.maize.q10.f
+))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(table(millers1$hh.maize.q10.f[millers1$hh.maize.q7=="Female"])[2]/
+sum(table(millers1$hh.maize.q10.f[millers1$hh.maize.q7=="Female"]))*100,digits=0),nsm
+all=0)}
+\end_layout
+
+\end_inset
+
+ percent of female millers, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(table(millers1$hh.maize.q10.f[millers1$hh.maize.q7=="Male"])[2]/su
+m(table(millers1$hh.maize.q10.f[millers1$hh.maize.q7=="Male"]))*100,digits=0),nsmall=
+0)}
+\end_layout
+
+\end_inset
+
+ percent of male millers).
+ The total percentage of maize business compared to other crops has been
+ reported to be atleast 70 percent by 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(millers1$hh.maize.q11[millers1$hh.maize.q7=="Male"
+ & millers1$hh.maize.q11>=70]))/sum(table(millers1$hh.maize.q11[millers1$hh.maize.q7==
+"Male"]))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of male millers and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(millers1$hh.maize.q11[millers1$hh.maize.q7=="Female"
+ & millers1$hh.maize.q11>=70]))/sum(table(millers1$hh.maize.q11[millers1$hh.maize.q7==
+"Female"]))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of female millers.
+ Only 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(table(millers1$hh.maize.q13)[2]/sum(table(millers1$hh.maize.q13))
+*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of the mills belong to a farmer group, cooperative or association.
+ Grade three flour is most commonly produced, by 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(millers1$hh.maize.q14.3[millers1$hh.maize.q7=="Male"
+ & millers1$hh.maize.q14.3==
+\begin_inset Quotes erd
+\end_inset
+
+TRUE
+\begin_inset Quotes erd
+\end_inset
+
+]))/sum(table(millers1$hh.maize.q14.3[millers1$hh.maize.q7=="Male"]))*100,digits=0),n
+small=0)}
+\end_layout
+
+\end_inset
+
+ percent of male millers and all the female millers.
+ Grade one flour is only produced by 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(millers1$hh.maize.q14.1[millers1$hh.maize.q7=="Male"
+ & millers1$hh.maize.q14.1==
+\begin_inset Quotes erd
+\end_inset
+
+TRUE
+\begin_inset Quotes erd
+\end_inset
+
+]))/sum(table(millers1$hh.maize.q14.1[millers1$hh.maize.q7=="Male"]))*100,digits=0),n
+small=0)}
+\end_layout
+
+\end_inset
+
+ percent of male millers and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(millers1$hh.maize.q14.1[millers1$hh.maize.q7=="Female"
+ & millers1$hh.maize.q14.1==
+\begin_inset Quotes erd
+\end_inset
+
+TRUE
+\begin_inset Quotes erd
+\end_inset
+
+]))/sum(table(millers1$hh.maize.q14.1[millers1$hh.maize.q7=="Female"]))*100,digits=0)
+,nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of female millers.
+\end_layout
+
+\begin_layout Standard
+In the overall sample, the conversion rate between raw materials and finished
+ product for grade one flour is atleast 60 percent for 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(millers1$hh.maize.q15[millers1$hh.maize.q15>=60]))/sum(
+table(millers1$hh.maize.q15))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of the millers, for grade two flour is atleast 60 percent for 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(millers1$hh.maize.q15b[millers1$hh.maize.q15b>=60]))/su
+m(table(millers1$hh.maize.q15b))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of the millers.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(millers1$hh.maize.q16a[millers1$hh.maize.q16a<=30]))/su
+m(table(millers1$hh.maize.q16a))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(millers1$hh.maize.q16a[millers1$hh.maize.q16a<=30
+ & millers1$hh.maize.q7=="Female"]))/sum(table(millers1$hh.maize.q16a[millers1$hh.mai
+ze.q7=="Female"]))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of women, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(millers1$hh.maize.q16a[millers1$hh.maize.q16a<=30
+ & millers1$hh.maize.q7=="Male"]))/sum(table(millers1$hh.maize.q16a[millers1$hh.maize.
+q7=="Male"]))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of men) and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(millers1$hh.maize.q16b[millers1$hh.maize.q16b<=30]))/su
+m(table(millers1$hh.maize.q16b))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(millers1$hh.maize.q16b[millers1$hh.maize.q16b<=30
+ & millers1$hh.maize.q7=="Female"]))/sum(table(millers1$hh.maize.q16b[millers1$hh.mai
+ze.q7=="Female"]))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of women, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(millers1$hh.maize.q16b[millers1$hh.maize.q16b<=30
+ & millers1$hh.maize.q7=="Male"]))/sum(table(millers1$hh.maize.q16b[millers1$hh.maize.
+q7=="Male"]))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of men) percent of the millers report that they need atmost 30
+ minutes to process (debranning and milling) one bag for grade one flour
+ and for grade two flour (one bag is 100 kilograms).
+ Similarly, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(millers1$hh.maize.q16c[millers1$hh.maize.q16c<=30]))/su
+m(table(millers1$hh.maize.q16c))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(millers1$hh.maize.q16c[millers1$hh.maize.q16c<=30
+ & millers1$hh.maize.q7=="Female"]))/sum(table(millers1$hh.maize.q16c[millers1$hh.mai
+ze.q7=="Female"]))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of women, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(millers1$hh.maize.q16c[millers1$hh.maize.q16c<=30
+ & millers1$hh.maize.q7=="Male"]))/sum(table(millers1$hh.maize.q16c[millers1$hh.maize.
+q7=="Male"]))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of men) percent of the millers report that they need atmost 30
+ minutes to process one bag for grade three flour.
+\end_layout
+
+\begin_layout Standard
+Some of the millers mainly provide milling service and all the focus of
+ their businesses is on charging a fee for milling somenone else's maize
+ (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(millers1$hh.maize.q17a[millers1$hh.maize.q17a>=100]))/s
+um(table(millers1$hh.maize.q17a))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(millers1$hh.maize.q17a[millers1$hh.maize.q17a>=100
+ & millers1$hh.maize.q7=="Female"]))/sum(table(millers1$hh.maize.q17a[millers1$hh.mai
+ze.q7=="Female"]))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of women, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(millers1$hh.maize.q17a[millers1$hh.maize.q17a>=100
+ & millers1$hh.maize.q7=="Male"]))/sum(table(millers1$hh.maize.q17a[millers1$hh.maize.
+q7=="Male"]))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of men).
+ On the other hand, some millers focus on maize processing.
+ Atleast 50 percent importance to maize processing is given by only 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(millers1$hh.maize.q17b[millers1$hh.maize.q17b>=50]))/su
+m(table(millers1$hh.maize.q17b))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of the millers in the sample.
+ Interestingly, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(millers1$hh.maize.q22.b[millers1$hh.maize.q22.b==
+\begin_inset Quotes erd
+\end_inset
+
+TRUE
+\begin_inset Quotes erd
+\end_inset
+
+]))/sum(table(millers1$hh.maize.q22.b))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(millers1$hh.maize.q22.b[millers1$hh.maize.q22.b=="TRUE"
+ & millers1$hh.maize.q7=="Female"]))/sum(table(millers1$hh.maize.q22.b[millers1$hh.mai
+ze.q7=="Female"]))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of female millers and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(millers1$hh.maize.q22.b[millers1$hh.maize.q22.b=="TRUE"
+ & millers1$hh.maize.q7=="Male"]))/sum(table(millers1$hh.maize.q22.b[millers1$hh.maize.
+q7=="Male"]))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of male millers) of the millers accept by-product as a payment
+ for milling and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(millers1$hh.maize.q22.c[millers1$hh.maize.q22.c==
+\begin_inset Quotes erd
+\end_inset
+
+TRUE
+\begin_inset Quotes erd
+\end_inset
+
+]))/sum(table(millers1$hh.maize.q22.c))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(millers1$hh.maize.q22.c[millers1$hh.maize.q22.c=="TRUE"
+ & millers1$hh.maize.q7=="Female"]))/sum(table(millers1$hh.maize.q22.c[millers1$hh.mai
+ze.q7=="Female"]))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of female millers and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(millers1$hh.maize.q22.c[millers1$hh.maize.q22.c=="TRUE"
+ & millers1$hh.maize.q7=="Male"]))/sum(table(millers1$hh.maize.q22.c[millers1$hh.maize.
+q7=="Male"]))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of male millers) accept maize grains.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(millers1$hh.maize.q23[millers1$hh.maize.q23=="Yes"
+ & millers1$hh.maize.q7=="Female"]))/sum(table(millers1$hh.maize.q23[millers1$hh.maiz
+e.q7=="Female"]))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(millers1$hh.maize.q23[millers1$hh.maize.q23=="Yes"
+ & millers1$hh.maize.q7=="Male"]))/sum(table(millers1$hh.maize.q23[millers1$hh.maize.q
+7=="Male"]))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+) percent of the female (male) millers have a minimum quantity for milling
+ maize.
+ Providing customers discounts for processing larger quantities is also
+ common (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(millers1$hh.maize.q24[millers1$hh.maize.q24=="Yes"
+ & millers1$hh.maize.q7=="Female"]))/sum(table(millers1$hh.maize.q24[millers1$hh.maiz
+e.q7=="Female"]))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of female processors and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(millers1$hh.maize.q24[millers1$hh.maize.q24=="Yes"
+ & millers1$hh.maize.q7=="Male"]))/sum(table(millers1$hh.maize.q24[millers1$hh.maize.q
+7=="Male"]))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of male processors).
+ 
+\end_layout
+
+\begin_layout Standard
+Providing services or assistance to clients is an important aspect of continuing
+ good business.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(millers1$hh.maize.q25.k[millers1$hh.maize.q25.k=="TRUE"
+ & millers1$hh.maize.q7=="Female"]))/sum(table(millers1$hh.maize.q25.k[millers1$hh.mai
+ze.q7=="Female"]))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(millers1$hh.maize.q25.k[millers1$hh.maize.q25.k=="TRUE"
+ & millers1$hh.maize.q7=="Male"]))/sum(table(millers1$hh.maize.q25.k[millers1$hh.maize.
+q7=="Male"]))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+) percent of the female (male) processors do not provide any services while
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(millers1$hh.maize.q25.a[millers1$hh.maize.q25.a=="TRUE"
+ & millers1$hh.maize.q7=="Female"]))/sum(table(millers1$hh.maize.q25.a[millers1$hh.mai
+ze.q7=="Female"]))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(millers1$hh.maize.q25.a[millers1$hh.maize.q25.a=="TRUE"
+ & millers1$hh.maize.q7=="Male"]))/sum(table(millers1$hh.maize.q25.a[millers1$hh.maize.
+q7=="Male"]))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+) percent of the female (male) processors provide advances or credit to
+ their clients.
+ Most of the millers have one milling machine (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(millers1$hh.maize.q26[millers1$hh.maize.q26=="1"
+ ]))/sum(table(millers1$hh.maize.q26))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(millers1$hh.maize.q26[millers1$hh.maize.q26=="1"
+ & millers1$hh.maize.q7=="Female"]))/sum(table(millers1$hh.maize.q26[millers1$hh.maiz
+e.q7=="Female"]))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of the female millers and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(millers1$hh.maize.q26[millers1$hh.maize.q26=="1"
+ & millers1$hh.maize.q7=="Male"]))/sum(table(millers1$hh.maize.q26[millers1$hh.maize.q
+7=="Male"]))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of the male millers) and one debranning machine (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(millers1$hh.maize.q27[millers1$hh.maize.q27=="1"
+ ]))/sum(table(millers1$hh.maize.q27))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(millers1$hh.maize.q27[millers1$hh.maize.q27=="1"
+ & millers1$hh.maize.q7=="Female"]))/sum(table(millers1$hh.maize.q27[millers1$hh.maiz
+e.q7=="Female"]))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of the female millers and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(millers1$hh.maize.q27[millers1$hh.maize.q27=="1"
+ & millers1$hh.maize.q7=="Male"]))/sum(table(millers1$hh.maize.q27[millers1$hh.maize.q
+7=="Male"]))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of the male millers).
+ The milling machines are mostly powered by diesel (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(millers1$hh.maize.q28[millers1$hh.maize.q28=="c"
+ ]))/sum(table(millers1$hh.maize.q28))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent) and some by electricity (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(millers1$hh.maize.q28[millers1$hh.maize.q28=="a"
+ | millers1$hh.maize.q28=="b"]))/sum(table(millers1$hh.maize.q28))*100,digits=0),nsm
+all=0)}
+\end_layout
+
+\end_inset
+
+ percent).
+ Considering only the male millers, the percentages are same as the overall
+ population for machines powered by diesel and electricity.
+ Half of the female millers have machines powered by diesel and the other
+ half have machines powered by electricity.
+ Knowing more about the milling structure and tools used can be interesting.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(millers1$hh.maize.q29[millers1$hh.maize.q29=="Yes"
+ ]))/sum(table(millers1$hh.maize.q29))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent have tables to sieve before processing the maize (common among
+ both female and male millers) and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(millers1$hh.maize.q30[millers1$hh.maize.q30=="Yes"
+ ]))/sum(table(millers1$hh.maize.q30))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent have the mill in a separate structure (more common for female millers).
+ 
+\end_layout
+
 \begin_layout Standard
 
 \series bold
