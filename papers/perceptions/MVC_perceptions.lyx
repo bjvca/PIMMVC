@@ -5589,7 +5589,7 @@ ze.q7=="Female"])))*100,digits=0),nsmall=0)}
 \labelwidthstring 00.00.0000
 
 \series bold
-4.4.3 Gendered profile of millers (ratees)
+4.4.4 Gendered profile of millers (ratees)
 \end_layout
 
 \begin_layout Standard
@@ -6752,6 +6752,357 @@ Sexpr{format(round(sum(table(millers1$hh.maize.q30[millers1$hh.maize.q30=="Yes"
 \end_inset
 
  percent have the mill in a separate structure (more common for female millers).
+ 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+4.4.4 Analysis of the ratings (by ratees and raters)
+\end_layout
+
+\begin_layout Standard
+Average scores are obtained for the ratings given by the raters (farmers)
+ to the ratees (input dealers, processors and traders) and by the ratees
+ to themselves.
+ The average ratings summarise all the characteristics based on which the
+ ratings are obtained and provide the overall ratings.
+ The input dealers are rated by raters and ratees based on the location
+ of the dealer, price set by the dealer, whether the dealer always has stock
+ to serve the clients, quality of the seed sold and reputation.
+ The traders are rated by raters and ratees based on the location (whether
+ the trader is easily accessible), price paid by the trader to the farmers,
+ quality of service provided to farmers, honesty (whether they cheat the
+ farmers or not) and reputation (what others think about the trader interviewed).
+ Similarly, the millers (processors) are rated by raters and ratees based
+ on the location (whether the mill is in a convenient place), price charged
+ by the millers, quality of the end product processed at the mills, quality
+ of service at the mills and reputation (what others think about the milling
+ business).
+ The first step will be to check whether the mean ratings obtained from
+ the dataset reiterate the hypotheses mentioned above.
+ 
+\end_layout
+
+\begin_layout Standard
+The first hypothesis is 
+\begin_inset Quotes eld
+\end_inset
+
+
+\series bold
+Self-ratings are higher than ratings given by raters to ratees
+\series default
+
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Looking at all the ratees (dealers, processors and traders) together, it
+ is observed that the mean overall rating given by the ratees to themselves
+ is 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$ratee_rating_overall, na.rm=T),digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ which is higher than the mean rating (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_overall, na.rm=T),digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+) given by the raters (farmers) to the ratees.
+ This is consistent across all the different rating attributes.
+ Self-ratings are higher for characteristics like location (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_location_ratee, na.rm=T),digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ greater than 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_location, na.rm=T),digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+), price (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_price_ratee, na.rm=T),digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ greater than 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_price, na.rm=T),digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+), quality (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_quality_ratee, na.rm=T),digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ greater than 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_quality, na.rm=T),digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+) and reputation (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_reputation_ratee, na.rm=T),digits=2),nsmall=0
+)}
+\end_layout
+
+\end_inset
+
+ greater than 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_reputation, na.rm=T),digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+).
+ Thus, the mean ratings support the hypothesis mentioned before.
+ 
+\end_layout
+
+\begin_layout Standard
+Now, I will verify whether this holds for each ratee group.
+ First considering the 
+\series bold
+input dealers
+\series default
+, it can be observed that self-ratings are higher than ratings given by
+ the raters across all rating factors like overall rating (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$ratee_rating_overall [pool$dealer_dummy=="1"],
+ na.rm=T),digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ greater than 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_overall[pool$dealer_dummy=="1"], na.rm=T),dig
+its=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+), location (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_location_ratee[pool$dealer_dummy=="1"],
+ na.rm=T),digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ greater than 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_location[pool$dealer_dummy=="1"], na.rm=T),di
+gits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+), price (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_price_ratee[pool$dealer_dummy=="1"],
+ na.rm=T),digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ greater than 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_price[pool$dealer_dummy=="1"], na.rm=T),digit
+s=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+), quality (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_quality_ratee[pool$dealer_dummy=="1"],
+ na.rm=T),digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ greater than 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_quality[pool$dealer_dummy=="1"], na.rm=T),dig
+its=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+) and reputation (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_reputation_ratee[pool$dealer_dummy=="1"],
+ na.rm=T),digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ greater than 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_reputation[pool$dealer_dummy=="1"],
+ na.rm=T),digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Enumerate
+Female raters give higher ratings when compared to male raters.
+\end_layout
+
+\begin_layout Enumerate
+Self-ratings given by females are lower compared to males.
+\end_layout
+
+\begin_layout Enumerate
+Female ratees receive lower ratings from raters than male ratees.
  
 \end_layout
 
