@@ -4189,44 +4189,8 @@ mod5_gender<- lm.cluster(data = pool, formula = rating_overall ~  farmer_fem*mar
 
 interaction.plot(pool$farmer_fem, pool$married, pool$rating_overall)
 
-##Interaction with farmer_fem and crop_farming 
-mod6_gender<- lm.cluster(data = pool, formula = rating_overall ~  farmer_fem*crop_farming + ratee_fem + age + interaction_yes + educ + tarmac
-                         + murram + married + member_dummy + number_plots + total_harvest + maize_sold
-                         + storage_capacity + client_service + age_ratee + married_ratee + educ_ratee, cluster = "id.ratee")
-
-interaction.plot(pool$farmer_fem, pool$crop_farming, pool$rating_overall) #intersecting 
-
-##Interaction with farmer_fem and maize_sold
-mod7_gender<- lm.cluster(data = pool, formula = rating_overall ~  farmer_fem*maize_sold + ratee_fem + age + interaction_yes + educ + tarmac
-                         + murram + married + crop_farming + member_dummy + number_plots + total_harvest
-                         + storage_capacity + client_service + age_ratee + married_ratee + educ_ratee, cluster = "id.ratee") 
-
-interaction.plot(pool$farmer_fem, pool$maize_sold, pool$rating_overall)
-
-##Interaction with farmer_fem and ratee_fem
-mod8_gender<- lm.cluster(data = pool, formula = rating_overall ~  farmer_fem*ratee_fem + age + interaction_yes + educ + tarmac
-                         + murram + married + crop_farming + member_dummy + number_plots + total_harvest + maize_sold
-                         + storage_capacity + client_service + age_ratee + married_ratee + educ_ratee, cluster = "id.ratee") 
-
-interaction.plot(pool$farmer_fem, pool$ratee_fem, pool$rating_overall)
-
-##Interaction with farmer_fem and age
-mod9_gender<- lm.cluster(data = pool, formula = rating_overall ~  farmer_fem*age + ratee_fem + interaction_yes + educ + tarmac
-                         + murram + married + crop_farming + member_dummy + number_plots + total_harvest + maize_sold
-                         + storage_capacity + client_service + age_ratee + married_ratee + educ_ratee, cluster = "id.ratee") 
-
-##Interaction with farmer_fem and total_harvest
-mod10_gender<- lm.cluster(data = pool, formula = rating_overall ~  farmer_fem*total_harvest + ratee_fem + age + interaction_yes + educ + tarmac
-                          + murram + married + crop_farming + member_dummy + number_plots + maize_sold
-                          + storage_capacity + client_service + age_ratee + married_ratee + educ_ratee, cluster = "id.ratee") 
-
-##Interaction with farmer_fem and dist to murram road
-mod11_gender<- lm.cluster(data = pool, formula = rating_overall ~  farmer_fem*murram + total_harvest + ratee_fem + age + interaction_yes + educ + tarmac
-                          + married + crop_farming + member_dummy + number_plots + maize_sold
-                          + storage_capacity + client_service + age_ratee + married_ratee + educ_ratee, cluster = "id.ratee") 
-
-screenreg(list(mod1_gender,mod2_gender,mod3_gender,mod4_gender,mod5_gender, mod6_gender, mod7_gender,mod8_gender
-               ,mod9_gender,mod10_gender, mod11_gender), file="gender_reg1overall", stars = c(0.01, 0.05, 0.1), digits=4)
+#### Saving regression 
+screenreg(list(mod1_gender,mod2_gender,mod3_gender,mod4_gender,mod5_gender), file="gen_overall_farmer", stars = c(0.01, 0.05, 0.1), digits=4)
 
 
 ##### interactions wrt ratees' characteristics 

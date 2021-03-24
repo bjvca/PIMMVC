@@ -8,6 +8,7 @@ library(mice)
 library(texreg)
 library(graphics)
 library(png)
+library(expss)
 options(scipen=999)
 path_2 <- strsplit(path, "/papers/perceptions")[[1]]
 
@@ -871,3 +872,191 @@ mod77_gender <- lm.cluster(data = pool, formula = ratingoverall_diff ~  ratee_fe
 
 #saving regression
 screenreg(list(mod71_gender,mod72_gender,mod73_gender,mod74_gender, mod75_gender, mod76_gender, mod77_gender), file="gen_overall_diff", stars = c(0.01, 0.05, 0.1), digits=4)
+
+
+################# LOCATION RATING ###########################
+
+#all variables 
+mod78_gender<- lm.cluster(data = pool, formula = ratingloc_diff ~  farmer_fem + ratee_fem + age + interaction_yes + educ + tarmac
+                          + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy + miller_dummy, cluster = "id.ratee") 
+
+##### interactions 
+##Interaction with farmer_fem and interaction_yes
+mod79_gender<- lm.cluster(data = pool, formula = ratingloc_diff ~  farmer_fem* interaction_yes + ratee_fem + age  + educ + tarmac
+                          + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy + miller_dummy, cluster = "id.ratee") 
+
+##Interaction with farmer_fem and education
+mod80_gender <- lm.cluster(data = pool, formula = ratingloc_diff ~  farmer_fem*educ + interaction_yes + ratee_fem + age + tarmac
+                           + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy + miller_dummy, cluster = "id.ratee") 
+
+##Interaction with farmer_fem and age
+mod81_gender <- lm.cluster(data = pool, formula = ratingloc_diff ~  farmer_fem*age + educ + interaction_yes + ratee_fem + tarmac
+                           + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy + miller_dummy, cluster = "id.ratee") 
+
+##Interaction with farmer_fem and gender of ratee
+mod82_gender <- lm.cluster(data = pool, formula = ratingloc_diff ~  farmer_fem*ratee_fem + educ + interaction_yes + age + tarmac
+                           + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy + miller_dummy, cluster = "id.ratee") 
+
+##Interaction with ratee_fem and educ of ratee 
+mod83_gender <- lm.cluster(data = pool, formula = ratingloc_diff ~  ratee_fem*educ_ratee + farmer_fem + educ + interaction_yes + age + tarmac
+                           + murram + married + age_ratee + married_ratee + dealer_dummy + trader_dummy + miller_dummy, cluster = "id.ratee") 
+
+##Interaction with ratee_fem and age of ratee 
+mod84_gender <- lm.cluster(data = pool, formula = ratingloc_diff ~  ratee_fem*age_ratee + farmer_fem + educ + interaction_yes + age + tarmac
+                           + murram + married + educ_ratee + married_ratee + dealer_dummy + trader_dummy + miller_dummy, cluster = "id.ratee") 
+
+
+#saving regression
+screenreg(list(mod78_gender,mod79_gender,mod80_gender,mod81_gender, mod82_gender, mod83_gender, mod84_gender), file="gen_loc_diff", stars = c(0.01, 0.05, 0.1), digits=4)
+
+
+
+
+################# PRICE RATING ###########################
+
+#all variables 
+mod85_gender<- lm.cluster(data = pool, formula = ratingprice_diff ~  farmer_fem + ratee_fem + age + interaction_yes + educ + tarmac
+                          + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy + miller_dummy, cluster = "id.ratee") 
+
+##### interactions 
+##Interaction with farmer_fem and interaction_yes
+mod86_gender<- lm.cluster(data = pool, formula = ratingprice_diff ~  farmer_fem* interaction_yes + ratee_fem + age  + educ + tarmac
+                          + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy + miller_dummy, cluster = "id.ratee") 
+
+##Interaction with farmer_fem and education
+mod87_gender <- lm.cluster(data = pool, formula = ratingprice_diff ~  farmer_fem*educ + interaction_yes + ratee_fem + age + tarmac
+                           + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy + miller_dummy, cluster = "id.ratee") 
+
+##Interaction with farmer_fem and age
+mod88_gender <- lm.cluster(data = pool, formula = ratingprice_diff ~  farmer_fem*age + educ + interaction_yes + ratee_fem + tarmac
+                           + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy + miller_dummy, cluster = "id.ratee") 
+
+##Interaction with farmer_fem and gender of ratee
+mod89_gender <- lm.cluster(data = pool, formula = ratingprice_diff ~  farmer_fem*ratee_fem + educ + interaction_yes + age + tarmac
+                           + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy + miller_dummy, cluster = "id.ratee") 
+
+##Interaction with ratee_fem and educ of ratee 
+mod90_gender <- lm.cluster(data = pool, formula = ratingprice_diff ~  ratee_fem*educ_ratee + farmer_fem + educ + interaction_yes + age + tarmac
+                           + murram + married + age_ratee + married_ratee + dealer_dummy + trader_dummy + miller_dummy, cluster = "id.ratee") 
+
+##Interaction with ratee_fem and age of ratee 
+mod91_gender <- lm.cluster(data = pool, formula = ratingprice_diff ~  ratee_fem*age_ratee + farmer_fem + educ + interaction_yes + age + tarmac
+                           + murram + married + educ_ratee + married_ratee + dealer_dummy + trader_dummy + miller_dummy, cluster = "id.ratee") 
+
+
+#saving regression
+screenreg(list(mod85_gender,mod86_gender,mod87_gender,mod88_gender, mod89_gender, mod90_gender, mod91_gender), file="gen_price_diff", stars = c(0.01, 0.05, 0.1), digits=4)
+
+
+
+
+################# QUALITY RATING ###########################
+
+#all variables 
+mod92_gender<- lm.cluster(data = pool, formula = ratingqual_diff ~  farmer_fem + ratee_fem + age + interaction_yes + educ + tarmac
+                          + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy + miller_dummy, cluster = "id.ratee") 
+
+##### interactions 
+##Interaction with farmer_fem and interaction_yes
+mod93_gender<- lm.cluster(data = pool, formula = ratingqual_diff ~  farmer_fem* interaction_yes + ratee_fem + age  + educ + tarmac
+                          + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy + miller_dummy, cluster = "id.ratee") 
+
+##Interaction with farmer_fem and education
+mod94_gender <- lm.cluster(data = pool, formula = ratingqual_diff ~  farmer_fem*educ + interaction_yes + ratee_fem + age + tarmac
+                           + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy + miller_dummy, cluster = "id.ratee") 
+
+##Interaction with farmer_fem and age
+mod95_gender <- lm.cluster(data = pool, formula = ratingqual_diff ~  farmer_fem*age + educ + interaction_yes + ratee_fem + tarmac
+                           + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy + miller_dummy, cluster = "id.ratee") 
+
+##Interaction with farmer_fem and gender of ratee
+mod96_gender <- lm.cluster(data = pool, formula = ratingqual_diff ~  farmer_fem*ratee_fem + educ + interaction_yes + age + tarmac
+                           + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy + miller_dummy, cluster = "id.ratee") 
+
+##Interaction with ratee_fem and educ of ratee 
+mod97_gender <- lm.cluster(data = pool, formula = ratingqual_diff ~  ratee_fem*educ_ratee + farmer_fem + educ + interaction_yes + age + tarmac
+                           + murram + married + age_ratee + married_ratee + dealer_dummy + trader_dummy + miller_dummy, cluster = "id.ratee") 
+
+##Interaction with ratee_fem and age of ratee 
+mod98_gender <- lm.cluster(data = pool, formula = ratingqual_diff ~  ratee_fem*age_ratee + farmer_fem + educ + interaction_yes + age + tarmac
+                           + murram + married + educ_ratee + married_ratee + dealer_dummy + trader_dummy + miller_dummy, cluster = "id.ratee") 
+
+
+#saving regression
+screenreg(list(mod92_gender,mod93_gender,mod94_gender,mod95_gender, mod96_gender, mod97_gender, mod98_gender), file="gen_qual_diff", stars = c(0.01, 0.05, 0.1), digits=4)
+
+
+
+###################### REPUTATION RATING #########################
+
+#all variables 
+mod99_gender<- lm.cluster(data = pool, formula = ratingrepu_diff ~  farmer_fem + ratee_fem + age + interaction_yes + educ + tarmac
+                          + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy + miller_dummy, cluster = "id.ratee") 
+
+##### interactions 
+##Interaction with farmer_fem and interaction_yes
+mod100_gender<- lm.cluster(data = pool, formula = ratingrepu_diff ~  farmer_fem* interaction_yes + ratee_fem + age  + educ + tarmac
+                           + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy + miller_dummy, cluster = "id.ratee") 
+
+##Interaction with farmer_fem and education
+mod101_gender <- lm.cluster(data = pool, formula = ratingrepu_diff ~  farmer_fem*educ + interaction_yes + ratee_fem + age + tarmac
+                            + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy + miller_dummy, cluster = "id.ratee") 
+
+##Interaction with farmer_fem and age
+mod102_gender <- lm.cluster(data = pool, formula = ratingrepu_diff ~  farmer_fem*age + educ + interaction_yes + ratee_fem + tarmac
+                            + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy + miller_dummy, cluster = "id.ratee") 
+
+##Interaction with farmer_fem and gender of ratee
+mod103_gender <- lm.cluster(data = pool, formula = ratingrepu_diff ~  farmer_fem*ratee_fem + educ + interaction_yes + age + tarmac
+                            + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy + miller_dummy, cluster = "id.ratee") 
+
+##Interaction with ratee_fem and educ of ratee 
+mod104_gender <- lm.cluster(data = pool, formula = ratingrepu_diff ~  ratee_fem*educ_ratee + farmer_fem + educ + interaction_yes + age + tarmac
+                            + murram + married + age_ratee + married_ratee + dealer_dummy + trader_dummy + miller_dummy, cluster = "id.ratee") 
+
+##Interaction with ratee_fem and age of ratee 
+mod105_gender <- lm.cluster(data = pool, formula = ratingrepu_diff ~  ratee_fem*age_ratee + farmer_fem + educ + interaction_yes + age + tarmac
+                            + murram + married + educ_ratee + married_ratee + dealer_dummy + trader_dummy + miller_dummy, cluster = "id.ratee") 
+
+
+#saving regression
+screenreg(list(mod99_gender,mod100_gender,mod101_gender,mod102_gender, mod103_gender, mod104_gender, mod105_gender), file="gen_repu_diff", stars = c(0.01, 0.05, 0.1), digits=4)
+
+
+
+###########################################################################
+
+
+## MEAN RATINGS --- ALL raters and ratees 
+mean(pool$ratee_rating_overall, na.rm=T)
+mean(pool$rating_overall, na.rm=T)
+
+mean(pool$rating_location_ratee, na.rm=T)
+mean(pool$rating_location, na.rm=T)
+
+mean(pool$rating_quality_ratee, na.rm=T)
+mean(pool$rating_quality, na.rm=T)
+
+mean(pool$rating_price_ratee, na.rm=T)
+mean(pool$rating_price, na.rm=T)
+
+mean(pool$rating_reputation_ratee, na.rm=T)
+mean(pool$rating_reputation, na.rm=T)
+
+
+
+## MEAN RATINGS --- ALL raters and input dealers 
+mean(pool$ratee_rating_overall [pool$dealer_dummy=="1"], na.rm=T)
+mean(pool$rating_overall[pool$dealer_dummy=="1"], na.rm=T)
+
+mean(pool$rating_location_ratee[pool$dealer_dummy=="1"], na.rm=T)
+mean(pool$rating_location[pool$dealer_dummy=="1"], na.rm=T)
+
+mean(pool$rating_quality_ratee[pool$dealer_dummy=="1"], na.rm=T)
+mean(pool$rating_quality[pool$dealer_dummy=="1"], na.rm=T)
+
+mean(pool$rating_price_ratee[pool$dealer_dummy=="1"], na.rm=T)
+mean(pool$rating_price[pool$dealer_dummy=="1"], na.rm=T)
+
+mean(pool$rating_reputation_ratee[pool$dealer_dummy=="1"], na.rm=T)
+mean(pool$rating_reputation[pool$dealer_dummy=="1"], na.rm=T)
