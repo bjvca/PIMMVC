@@ -7087,10 +7087,461 @@ Sexpr{format(round(mean(pool$rating_reputation[pool$dealer_dummy=="1"],
 \end_inset
 
 ).
+ For 
+\series bold
+traders 
+\series default
+also, the results are the same.
+ Across all the rating factors, the ratings given by the farmers to the
+ traders are lower than the ratings given by the traders to themselves.
+ For overall rating, the mean rating by farmers (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_overall[pool$trader_dummy=="1"], na.rm=T),dig
+its=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+) is lower than the mean rating of the traders (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$ratee_rating_overall [pool$trader_dummy=="1"],
+ na.rm=T),digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+).
+ Similarly, for location (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_location[pool$trader_dummy=="1"], na.rm=T),di
+gits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ less than 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_location_ratee[pool$trader_dummy=="1"],
+ na.rm=T),digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+), price (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_price[pool$trader_dummy=="1"], na.rm=T),digit
+s=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ less than 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_price_ratee[pool$trader_dummy=="1"],
+ na.rm=T),digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+), quality (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_quality[pool$trader_dummy=="1"], na.rm=T),dig
+its=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ less than 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_quality_ratee[pool$trader_dummy=="1"],
+ na.rm=T),digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+) and reputation (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_reputation[pool$trader_dummy=="1"],
+ na.rm=T),digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ less than 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_reputation_ratee[pool$trader_dummy=="1"],
+ na.rm=T),digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+), this holds.
+ 
 \end_layout
 
 \begin_layout Standard
+Finally, the main idea of the hypothesis is also reiterated in the findings
+ from the miller ratings.
+ The overall mean rating given by millers to themselves is 
+\begin_inset ERT
+status open
 
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$ratee_rating_overall [pool$miller_dummy=="1"],
+ na.rm=T),digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ which is greater than the ratings given by the farmers to them (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_overall [pool$miller_dummy=="1"], na.rm=T),di
+gits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+).
+ For location (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_location_ratee[pool$miller_dummy=="1"],
+ na.rm=T),digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ higher than 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_location[pool$miller_dummy=="1"], na.rm=T),di
+gits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+), price (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_price_ratee[pool$miller_dummy=="1"],
+ na.rm=T),digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ higher than 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_price[pool$miller_dummy=="1"], na.rm=T),digit
+s=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+), quality (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_quality_ratee[pool$miller_dummy=="1"],
+ na.rm=T),digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ higher than 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_quality[pool$miller_dummy=="1"], na.rm=T),dig
+its=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+), and reputation (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_reputation_ratee[pool$miller_dummy=="1"],
+ na.rm=T),digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ higher than 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_reputation[pool$miller_dummy=="1"],
+ na.rm=T),digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+) also, similar results are obtained.
+ Henceforth, for the overall group of ratees and individually for each group
+ of input dealers, maize traders and millers (or processors), it can be
+ observed that self-ratings are always greater than the ratings given by
+ the raters (farmers) to the ratees.
+ 
+\end_layout
+
+\begin_layout Standard
+The second hypothesis is 
+\begin_inset Quotes eld
+\end_inset
+
+
+\series bold
+Female raters give higher ratings when compared to male raters
+\series default
+
+\begin_inset Quotes erd
+\end_inset
+
+.
+ In order to validate this hypothesis from the mean ratings, I will first
+ look at the overall group of ratees.
+ The difference is observed in the overall ratings.
+ The mean overall rating from female farmers is 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_overall [pool$farmer_fem=="1"], na.rm=T),digi
+ts=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ which is higher than mean overall rating given by male farmers (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_overall [pool$farmer_fem=="0"], na.rm=T),digi
+ts=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+).
+ For the ratings based on location (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_location [pool$farmer_fem=="1"], na.rm=T),dig
+its=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ from female raters higher than 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_location [pool$farmer_fem=="0"], na.rm=T),dig
+its=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ from male raters) and price (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_price [pool$farmer_fem=="1"], na.rm=T),digits
+=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ from female raters higher than 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_price [pool$farmer_fem=="0"], na.rm=T),digits
+=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ from male raters), similar trend is noticed.
+ For rating based on quality, male raters (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_quality [pool$farmer_fem=="0"], na.rm=T),digi
+ts=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+) give a higher rating compared to the female raters (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_quality [pool$farmer_fem=="1"], na.rm=T),digi
+ts=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+), not supporting the hypothesis mentioned above.
+ For reputation based ratings, the mean ratings from male and female raters
+ are the same (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_reputation [pool$farmer_fem=="1"], na.rm=T),d
+igits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+).
+ Furthermore, I will verify whether for each ratee group, similar trends
+ can be observed or not.
+ 
 \end_layout
 
 \begin_layout Enumerate
