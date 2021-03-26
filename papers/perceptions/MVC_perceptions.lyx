@@ -1462,6 +1462,41 @@ literal "true"
  which is part of this study.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align left
+\begin_inset Graphics
+	filename G:/My Drive/Classroom/Documents from Drive/Pre Doctoral KUL/Paper with Bjorn/PIMMVC/figures/sum_stat.png
+	lyxscale 20
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Summary statistics of main variables.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Design: measuring perceived attributes and input use
 \end_layout
@@ -6828,7 +6863,8 @@ Sexpr{format(round(mean(pool$rating_overall, na.rm=T),digits=2),nsmall=0)}
 \end_inset
 
 ) given by the raters (farmers) to the ratees.
- This is consistent across all the different rating attributes.
+ This is consistent across all the different rating attributes (Table 2
+ shows all the average self-ratings and the average ratings from the farmers).
  Self-ratings are higher for characteristics like location (
 \begin_inset ERT
 status open
@@ -6935,7 +6971,8 @@ Sexpr{format(round(mean(pool$rating_reputation, na.rm=T),digits=2),nsmall=0)}
 \end_inset
 
 ).
- Thus, the mean ratings support the hypothesis mentioned before.
+ Thus, the hypothesis mentioned before is supported by the trends in the
+ data.
  
 \end_layout
 
@@ -6974,275 +7011,20 @@ its=2),nsmall=0)}
 
 \end_inset
 
-), location (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(mean(pool$rating_location_ratee[pool$dealer_dummy=="1"],
- na.rm=T),digits=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
- greater than 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(mean(pool$rating_location[pool$dealer_dummy=="1"], na.rm=T),di
-gits=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
-), price (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(mean(pool$rating_price_ratee[pool$dealer_dummy=="1"],
- na.rm=T),digits=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
- greater than 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(mean(pool$rating_price[pool$dealer_dummy=="1"], na.rm=T),digit
-s=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
-), quality (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(mean(pool$rating_quality_ratee[pool$dealer_dummy=="1"],
- na.rm=T),digits=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
- greater than 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(mean(pool$rating_quality[pool$dealer_dummy=="1"], na.rm=T),dig
-its=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
-) and reputation (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(mean(pool$rating_reputation_ratee[pool$dealer_dummy=="1"],
- na.rm=T),digits=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
- greater than 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(mean(pool$rating_reputation[pool$dealer_dummy=="1"],
- na.rm=T),digits=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
-).
+), location, price, quality and reputation (evident from Table 2).
  For 
 \series bold
 traders 
 \series default
 also, the results are the same.
  Across all the rating factors, the ratings given by the farmers to the
- traders are lower than the ratings given by the traders to themselves.
- For overall rating, the mean rating by farmers (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(mean(pool$rating_overall[pool$trader_dummy=="1"], na.rm=T),dig
-its=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
-) is lower than the mean rating of the traders (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(mean(pool$ratee_rating_overall [pool$trader_dummy=="1"],
- na.rm=T),digits=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
-).
- Similarly, for location (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(mean(pool$rating_location[pool$trader_dummy=="1"], na.rm=T),di
-gits=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
- less than 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(mean(pool$rating_location_ratee[pool$trader_dummy=="1"],
- na.rm=T),digits=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
-), price (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(mean(pool$rating_price[pool$trader_dummy=="1"], na.rm=T),digit
-s=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
- less than 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(mean(pool$rating_price_ratee[pool$trader_dummy=="1"],
- na.rm=T),digits=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
-), quality (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(mean(pool$rating_quality[pool$trader_dummy=="1"], na.rm=T),dig
-its=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
- less than 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(mean(pool$rating_quality_ratee[pool$trader_dummy=="1"],
- na.rm=T),digits=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
-) and reputation (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(mean(pool$rating_reputation[pool$trader_dummy=="1"],
- na.rm=T),digits=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
- less than 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(mean(pool$rating_reputation_ratee[pool$trader_dummy=="1"],
- na.rm=T),digits=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
-), this holds.
- 
-\end_layout
-
-\begin_layout Standard
-Finally, the main idea of the hypothesis is also reiterated in the findings
- from the miller ratings.
- The overall mean rating given by millers to themselves is 
+ traders are lower than the ratings given by the traders to themselves,
+ as can be observed in Table 2.
+ Similarly, for 
+\series bold
+millers
+\series default
+, the overall mean rating given by millers to themselves is 
 \begin_inset ERT
 status open
 
@@ -7271,124 +7053,49 @@ gits=2),nsmall=0)}
 \end_inset
 
 ).
- For location (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(mean(pool$rating_location_ratee[pool$miller_dummy=="1"],
- na.rm=T),digits=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
- higher than 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(mean(pool$rating_location[pool$miller_dummy=="1"], na.rm=T),di
-gits=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
-), price (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(mean(pool$rating_price_ratee[pool$miller_dummy=="1"],
- na.rm=T),digits=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
- higher than 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(mean(pool$rating_price[pool$miller_dummy=="1"], na.rm=T),digit
-s=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
-), quality (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(mean(pool$rating_quality_ratee[pool$miller_dummy=="1"],
- na.rm=T),digits=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
- higher than 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(mean(pool$rating_quality[pool$miller_dummy=="1"], na.rm=T),dig
-its=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
-), and reputation (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(mean(pool$rating_reputation_ratee[pool$miller_dummy=="1"],
- na.rm=T),digits=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
- higher than 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(mean(pool$rating_reputation[pool$miller_dummy=="1"],
- na.rm=T),digits=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
-) also, similar results are obtained.
+ For the other rating attributes also, we can observe similar patterns in
+ Table 2.
  Henceforth, for the overall group of ratees and individually for each group
  of input dealers, maize traders and millers (or processors), it can be
  observed that self-ratings are always greater than the ratings given by
  the raters (farmers) to the ratees.
  
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways true
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename G:/My Drive/Classroom/Documents from Drive/Pre Doctoral KUL/Paper with Bjorn/PIMMVC/figures/mean_ratings.png
+	lyxscale 20
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Ratings from ratees (input dealers, traders, millers) and raters (farmers)
+ based on the overall average, location, quality, price and reputation.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -7405,8 +7112,8 @@ Female raters give higher ratings when compared to male raters
 \end_inset
 
 .
- In order to validate this hypothesis from the mean ratings, I will first
- look at the overall group of ratees.
+ In order to validate this hypothesis from the trends in the dataset, I
+ will first look at the overall group of ratees.
  The difference is observed in the overall ratings.
  The mean overall rating from female farmers is 
 \begin_inset ERT
@@ -7539,13 +7246,42 @@ igits=2),nsmall=0)}
 \end_inset
 
 ).
+ The mean ratings from the female and male farmers are presented in Table
+ 3.
  Furthermore, I will verify whether for each ratee group, similar trends
  can be observed or not.
  
 \end_layout
 
-\begin_layout Enumerate
-Female raters give higher ratings when compared to male raters.
+\begin_layout Standard
+Among the 
+\series bold
+dealer
+\series default
+ ratee group, it can be observed that female farmers rate higher than male
+ farmers across the overall, location and price rating attributes.
+ For quality, the trend is similar to the entire group of ratings discussed
+ before (female farmers rate lower than male farmers).
+ For reputation, it is slightly different as male raters rate higher than
+ female raters.
+ Looking at the 
+\series bold
+traders
+\series default
+, it can be observed that ratings by women are greater than ratings by men
+ for all the different rating factors.
+ Similarly, for 
+\series bold
+millers
+\series default
+, female raters give higher ratings for all the rating factors except reputation.
+ Also, for quality, the mean rating of female farmers is slightly higher
+ than the mean rating of male farmers.
+ The detailed figures are presented in Table 3.
+ Thus, overall, female raters give higher ratings than male raters.
+ However, the pattern can change based on the factor on the basis of which
+ the rating is being given.
+ 
 \end_layout
 
 \begin_layout Enumerate
@@ -7555,6 +7291,43 @@ Self-ratings given by females are lower compared to males.
 \begin_layout Enumerate
 Female ratees receive lower ratings from raters than male ratees.
  
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways true
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename G:/My Drive/Classroom/Documents from Drive/Pre Doctoral KUL/Paper with Bjorn/PIMMVC/figures/mean_rater_gender.png
+	lyxscale 20
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Ratings from female and male raters (farmers) for all ratees (dealers, traders
+ and processors) based on the overall average, location, quality, price
+ and reputation.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
