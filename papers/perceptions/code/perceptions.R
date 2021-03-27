@@ -8,7 +8,12 @@ library(mice)
 library(texreg)
 library(graphics)
 library(png)
+library(data.table)
+library(formattable)
 library(expss)
+library(dplyr)
+library(tidyr)
+library(gridExtra)
 options(scipen=999)
 path_2 <- strsplit(path, "/papers/perceptions")[[1]]
 
@@ -290,6 +295,7 @@ merged_miller_pool <- merged_miller_pool[-c(7)]
 ##################  FINAL DATASET ########################
 
 pool <-rbind(merged_dealer_pool,merged_miller_pool,merged_trader_pool)
+
 
 pool$farmer_fem <- ifelse(pool$farmer_gender == 'Female', 1, 0) #gender dummy for farmers 
 pool$ratee_fem <- ifelse(pool$gender_ratee == 'Female', 1, 0)   #gender dummy for ratees 
@@ -1027,6 +1033,13 @@ screenreg(list(mod99_gender,mod100_gender,mod101_gender,mod102_gender, mod103_ge
 ###########################################################################
 
 
+############################ MEAN RATINGS ######################################
+
+options(scipen=99)
+
+###### HYPOTHESIS 1 : "Self-ratings are higher than ratings given by raters to ratees" #######
+
+
 ## MEAN RATINGS --- ALL raters and ratees 
 mean(pool$ratee_rating_overall, na.rm=T)
 mean(pool$rating_overall, na.rm=T)
@@ -1045,6 +1058,7 @@ mean(pool$rating_reputation, na.rm=T)
 
 
 
+
 ## MEAN RATINGS --- ALL raters and input dealers 
 mean(pool$ratee_rating_overall [pool$dealer_dummy=="1"], na.rm=T)
 mean(pool$rating_overall[pool$dealer_dummy=="1"], na.rm=T)
@@ -1060,3 +1074,525 @@ mean(pool$rating_price[pool$dealer_dummy=="1"], na.rm=T)
 
 mean(pool$rating_reputation_ratee[pool$dealer_dummy=="1"], na.rm=T)
 mean(pool$rating_reputation[pool$dealer_dummy=="1"], na.rm=T)
+
+
+
+
+## MEAN RATINGS --- ALL raters and traders 
+mean(pool$ratee_rating_overall [pool$trader_dummy=="1"], na.rm=T)
+mean(pool$rating_overall[pool$trader_dummy=="1"], na.rm=T)
+
+mean(pool$rating_location_ratee[pool$trader_dummy=="1"], na.rm=T)
+mean(pool$rating_location[pool$trader_dummy=="1"], na.rm=T)
+
+mean(pool$rating_quality_ratee[pool$trader_dummy=="1"], na.rm=T)
+mean(pool$rating_quality[pool$trader_dummy=="1"], na.rm=T)
+
+mean(pool$rating_price_ratee[pool$trader_dummy=="1"], na.rm=T)
+mean(pool$rating_price[pool$trader_dummy=="1"], na.rm=T)
+
+mean(pool$rating_reputation_ratee[pool$trader_dummy=="1"], na.rm=T)
+mean(pool$rating_reputation[pool$trader_dummy=="1"], na.rm=T)
+
+
+## MEAN RATINGS --- ALL raters and millers
+mean(pool$ratee_rating_overall [pool$miller_dummy=="1"], na.rm=T)
+mean(pool$rating_overall[pool$miller_dummy=="1"], na.rm=T)
+
+mean(pool$rating_location_ratee[pool$miller_dummy=="1"], na.rm=T)
+mean(pool$rating_location[pool$miller_dummy=="1"], na.rm=T)
+
+mean(pool$rating_quality_ratee[pool$miller_dummy=="1"], na.rm=T)
+mean(pool$rating_quality[pool$miller_dummy=="1"], na.rm=T)
+
+mean(pool$rating_price_ratee[pool$miller_dummy=="1"], na.rm=T)
+mean(pool$rating_price[pool$miller_dummy=="1"], na.rm=T)
+
+mean(pool$rating_reputation_ratee[pool$miller_dummy=="1"], na.rm=T)
+mean(pool$rating_reputation[pool$miller_dummy=="1"], na.rm=T)
+
+
+
+##### Table for mean ratings ##########
+
+mean_ratings <- matrix(c(round(mean(pool$ratee_rating_overall, na.rm=T), digits = 2), round(mean(pool$rating_location_ratee, na.rm=T), digits=2),
+                      round(mean(pool$rating_quality_ratee, na.rm=T), digits=2), round(mean(pool$rating_price_ratee, na.rm=T), digits =2), 
+                      round(mean(pool$rating_reputation_ratee, na.rm=T), digits = 2), round(mean(pool$rating_overall, na.rm=T), digits=2),
+                      round(mean(pool$rating_location, na.rm=T), digits=2), round(mean(pool$rating_quality, na.rm=T), digits=2),
+                      round(mean(pool$rating_price, na.rm=T), digits =2), round(mean(pool$rating_reputation, na.rm=T), digits = 2),
+                         round(mean(pool$ratee_rating_overall[pool$dealer_dummy=="1"], na.rm=T), digits = 2), 
+                         round(mean(pool$rating_location_ratee[pool$dealer_dummy=="1"], na.rm=T), digits=2),
+                         round(mean(pool$rating_quality_ratee[pool$dealer_dummy=="1"], na.rm=T), digits=2), 
+                         round(mean(pool$rating_price_ratee[pool$dealer_dummy=="1"], na.rm=T), digits =2), 
+                         round(mean(pool$rating_reputation_ratee[pool$dealer_dummy=="1"], na.rm=T), digits = 2), 
+                         round(mean(pool$rating_overall[pool$dealer_dummy=="1"], na.rm=T), digits=2),
+                         round(mean(pool$rating_location[pool$dealer_dummy=="1"], na.rm=T), digits=2), 
+                         round(mean(pool$rating_quality[pool$dealer_dummy=="1"], na.rm=T), digits=2),
+                         round(mean(pool$rating_price[pool$dealer_dummy=="1"], na.rm=T), digits =2), 
+                         round(mean(pool$rating_reputation[pool$dealer_dummy=="1"], na.rm=T), digits = 2),
+                         round(mean(pool$ratee_rating_overall[pool$trader_dummy=="1"], na.rm=T), digits = 2), 
+                         round(mean(pool$rating_location_ratee[pool$trader_dummy=="1"], na.rm=T), digits=2),
+                         round(mean(pool$rating_quality_ratee[pool$trader_dummy=="1"], na.rm=T), digits=2), 
+                         round(mean(pool$rating_price_ratee[pool$trader_dummy=="1"], na.rm=T), digits =2), 
+                         round(mean(pool$rating_reputation_ratee[pool$trader_dummy=="1"], na.rm=T), digits = 2), 
+                         round(mean(pool$rating_overall[pool$trader_dummy=="1"], na.rm=T), digits=2),
+                         round(mean(pool$rating_location[pool$trader_dummy=="1"], na.rm=T), digits=2), 
+                         round(mean(pool$rating_quality[pool$trader_dummy=="1"], na.rm=T), digits=2),
+                         round(mean(pool$rating_price[pool$trader_dummy=="1"], na.rm=T), digits =2), 
+                         round(mean(pool$rating_reputation[pool$trader_dummy=="1"], na.rm=T), digits = 2),
+                      round(mean(pool$ratee_rating_overall[pool$miller_dummy=="1"], na.rm=T), digits = 2), 
+                      round(mean(pool$rating_location_ratee[pool$miller_dummy=="1"], na.rm=T), digits=2),
+                      round(mean(pool$rating_quality_ratee[pool$miller_dummy=="1"], na.rm=T), digits=2), 
+                      round(mean(pool$rating_price_ratee[pool$miller_dummy=="1"], na.rm=T), digits =2), 
+                      round(mean(pool$rating_reputation_ratee[pool$miller_dummy=="1"], na.rm=T), digits = 2), 
+                      round(mean(pool$rating_overall[pool$miller_dummy=="1"], na.rm=T), digits=2),
+                      round(mean(pool$rating_location[pool$miller_dummy=="1"], na.rm=T), digits=2), 
+                      round(mean(pool$rating_quality[pool$miller_dummy=="1"], na.rm=T), digits=2),
+                      round(mean(pool$rating_price[pool$miller_dummy=="1"], na.rm=T), digits =2), 
+                      round(mean(pool$rating_reputation[pool$miller_dummy=="1"], na.rm=T), digits = 2)),ncol=8)
+colnames(mean_ratings) <- c('All Ratee \nRatings', 'Rater Ratings \n(Ratee = \nall Ratees)','Dealer \nRatings', 'Rater Ratings \n(Ratee = Dealers)', 
+                            'Trader \nRatings', 'Rater Ratings \n(Ratee = Traders)', 'Miller \nRatings','Rater Ratings \n(Ratee = Millers)')
+rownames(mean_ratings) <- c('Overall', 'Location', 'Quality', 'Price', 'Reputation')
+trial.table <- as.table(mean_ratings)
+formattable(mean_ratings)
+
+png(paste(path_2, "figures/mean_ratings.png",sep = "/"), units="px", height=2000, width= 5950, res=600)
+grid.table(mean_ratings)
+dev.off()
+
+
+
+########## HYPOTHESIS 2: "Female raters give higher ratings when compared to male raters" ##############
+
+
+## MEAN RATINGS --- ALL raters and ratees --- raters are female
+mean(pool$rating_overall [pool$farmer_fem=="1"], na.rm=T)
+mean(pool$rating_overall[pool$farmer_fem=="0"], na.rm=T)
+
+mean(pool$rating_location [pool$farmer_fem=="1"], na.rm=T)
+mean(pool$rating_location[pool$farmer_fem=="0"], na.rm=T)
+
+mean(pool$rating_price [pool$farmer_fem=="1"], na.rm=T)
+mean(pool$rating_price[pool$farmer_fem=="0"], na.rm=T)
+
+mean(pool$rating_quality [pool$farmer_fem=="1"], na.rm=T)
+mean(pool$rating_quality[pool$farmer_fem=="0"], na.rm=T)
+
+mean(pool$rating_reputation [pool$farmer_fem=="1"], na.rm=T)
+mean(pool$rating_reputation [pool$farmer_fem=="0"], na.rm=T)
+
+
+
+## MEAN RATINGS --- ALL raters and input dealers --- raters are female
+
+mean(pool$rating_overall [pool$farmer_fem=="1" & pool$dealer_dummy=="1"], na.rm=T)
+mean(pool$rating_overall[pool$farmer_fem=="0" & pool$dealer_dummy=="1"], na.rm=T)
+
+mean(pool$rating_location [pool$farmer_fem=="1" & pool$dealer_dummy=="1"], na.rm=T)
+mean(pool$rating_location[pool$farmer_fem=="0" & pool$dealer_dummy=="1"], na.rm=T)
+
+mean(pool$rating_price [pool$farmer_fem=="1" & pool$dealer_dummy=="1"], na.rm=T)
+mean(pool$rating_price[pool$farmer_fem=="0" & pool$dealer_dummy=="1"], na.rm=T)
+
+mean(pool$rating_quality [pool$farmer_fem=="1" & pool$dealer_dummy=="1"], na.rm=T)
+mean(pool$rating_quality[pool$farmer_fem=="0" & pool$dealer_dummy=="1"], na.rm=T)
+
+mean(pool$rating_reputation [pool$farmer_fem=="1" & pool$dealer_dummy=="1"], na.rm=T)
+mean(pool$rating_reputation [pool$farmer_fem=="0" & pool$dealer_dummy=="1"], na.rm=T)
+
+
+
+## MEAN RATINGS --- ALL raters and traders --- raters are female
+
+mean(pool$rating_overall [pool$farmer_fem=="1" & pool$trader_dummy=="1"], na.rm=T)
+mean(pool$rating_overall[pool$farmer_fem=="0" & pool$trader_dummy=="1"], na.rm=T)
+
+mean(pool$rating_location [pool$farmer_fem=="1" & pool$trader_dummy=="1"], na.rm=T)
+mean(pool$rating_location[pool$farmer_fem=="0" & pool$trader_dummy=="1"], na.rm=T)
+
+mean(pool$rating_price [pool$farmer_fem=="1" & pool$trader_dummy=="1"], na.rm=T)
+mean(pool$rating_price[pool$farmer_fem=="0" & pool$trader_dummy=="1"], na.rm=T)
+
+mean(pool$rating_quality [pool$farmer_fem=="1" & pool$trader_dummy=="1"], na.rm=T)
+mean(pool$rating_quality[pool$farmer_fem=="0" & pool$trader_dummy=="1"], na.rm=T)
+
+mean(pool$rating_reputation [pool$farmer_fem=="1" & pool$trader_dummy=="1"], na.rm=T)
+mean(pool$rating_reputation [pool$farmer_fem=="0" & pool$trader_dummy=="1"], na.rm=T)
+
+
+## MEAN RATINGS --- ALL raters and millers --- raters are female
+mean(pool$rating_overall [pool$farmer_fem=="1" & pool$miller_dummy=="1"], na.rm=T)
+mean(pool$rating_overall[pool$farmer_fem=="0" & pool$miller_dummy=="1"], na.rm=T)
+
+mean(pool$rating_location [pool$farmer_fem=="1" & pool$miller_dummy=="1"], na.rm=T)
+mean(pool$rating_location[pool$farmer_fem=="0" & pool$miller_dummy=="1"], na.rm=T)
+
+mean(pool$rating_price [pool$farmer_fem=="1" & pool$miller_dummy=="1"], na.rm=T)
+mean(pool$rating_price[pool$farmer_fem=="0" & pool$miller_dummy=="1"], na.rm=T)
+
+mean(pool$rating_quality [pool$farmer_fem=="1" & pool$miller_dummy=="1"], na.rm=T)
+mean(pool$rating_quality[pool$farmer_fem=="0" & pool$miller_dummy=="1"], na.rm=T)
+
+mean(pool$rating_reputation [pool$farmer_fem=="1" & pool$miller_dummy=="1"], na.rm=T)
+mean(pool$rating_reputation [pool$farmer_fem=="0" & pool$miller_dummy=="1"], na.rm=T)
+
+
+
+##### TABLE FOR MEAN RATINGS #####
+
+mean_rater_gender <- matrix(c(round(mean(pool$rating_overall [pool$farmer_fem=="1"], na.rm=T), digits=2),
+                         round(mean(pool$rating_location [pool$farmer_fem=="1"], na.rm=T), digits=2),
+                         round(mean(pool$rating_price [pool$farmer_fem=="1"], na.rm=T), digits=2),
+                         round(mean(pool$rating_quality [pool$farmer_fem=="1"], na.rm=T), digits=2),
+                         round(mean(pool$rating_reputation [pool$farmer_fem=="1"], na.rm=T), digits=2),
+                         round(mean(pool$rating_overall[pool$farmer_fem=="0"], na.rm=T), digits=2),
+                         round(mean(pool$rating_location[pool$farmer_fem=="0"], na.rm=T), digits=2),
+                         round(mean(pool$rating_price[pool$farmer_fem=="0"], na.rm=T), digits=2),
+                         round(mean(pool$rating_quality[pool$farmer_fem=="0"], na.rm=T), digits=2),
+                         round(mean(pool$rating_reputation [pool$farmer_fem=="0"], na.rm=T), digits=2),
+                         
+                         round(mean(pool$rating_overall [pool$farmer_fem=="1"& pool$dealer_dummy=="1"], na.rm=T), digits=2),
+                         round(mean(pool$rating_location [pool$farmer_fem=="1"& pool$dealer_dummy=="1"], na.rm=T), digits=2),
+                         round(mean(pool$rating_price [pool$farmer_fem=="1"& pool$dealer_dummy=="1"], na.rm=T), digits=2),
+                         round(mean(pool$rating_quality [pool$farmer_fem=="1"& pool$dealer_dummy=="1"], na.rm=T), digits=2),
+                         round(mean(pool$rating_reputation [pool$farmer_fem=="1"& pool$dealer_dummy=="1"], na.rm=T), digits=2),
+                         round(mean(pool$rating_overall[pool$farmer_fem=="0"& pool$dealer_dummy=="1"], na.rm=T), digits=2),
+                         round(mean(pool$rating_location[pool$farmer_fem=="0"& pool$dealer_dummy=="1"], na.rm=T), digits=2),
+                         round(mean(pool$rating_price[pool$farmer_fem=="0"& pool$dealer_dummy=="1"], na.rm=T), digits=2),
+                         round(mean(pool$rating_quality[pool$farmer_fem=="0"& pool$dealer_dummy=="1"], na.rm=T), digits=2),
+                         round(mean(pool$rating_reputation [pool$farmer_fem=="0"& pool$dealer_dummy=="1"], na.rm=T), digits=2),
+                         
+                         round(mean(pool$rating_overall [pool$farmer_fem=="1"& pool$trader_dummy=="1"], na.rm=T), digits=2),
+                         round(mean(pool$rating_location [pool$farmer_fem=="1"& pool$trader_dummy=="1"], na.rm=T), digits=2),
+                         round(mean(pool$rating_price [pool$farmer_fem=="1"& pool$trader_dummy=="1"], na.rm=T), digits=2),
+                         round(mean(pool$rating_quality [pool$farmer_fem=="1"& pool$trader_dummy=="1"], na.rm=T), digits=2),
+                         round(mean(pool$rating_reputation [pool$farmer_fem=="1"& pool$trader_dummy=="1"], na.rm=T), digits=2),
+                         round(mean(pool$rating_overall[pool$farmer_fem=="0"& pool$trader_dummy=="1"], na.rm=T), digits=2),
+                         round(mean(pool$rating_location[pool$farmer_fem=="0"& pool$trader_dummy=="1"], na.rm=T), digits=2),
+                         round(mean(pool$rating_price[pool$farmer_fem=="0"& pool$trader_dummy=="1"], na.rm=T), digits=2),
+                         round(mean(pool$rating_quality[pool$farmer_fem=="0"& pool$trader_dummy=="1"], na.rm=T), digits=2),
+                         round(mean(pool$rating_reputation [pool$farmer_fem=="0"& pool$trader_dummy=="1"], na.rm=T), digits=2),
+                         
+                         round(mean(pool$rating_overall [pool$farmer_fem=="1"& pool$miller_dummy=="1"], na.rm=T), digits=2),
+                         round(mean(pool$rating_location [pool$farmer_fem=="1"& pool$miller_dummy=="1"], na.rm=T), digits=2),
+                         round(mean(pool$rating_price [pool$farmer_fem=="1"& pool$miller_dummy=="1"], na.rm=T), digits=2),
+                         round(mean(pool$rating_quality [pool$farmer_fem=="1"& pool$miller_dummy=="1"], na.rm=T), digits=2),
+                         round(mean(pool$rating_reputation [pool$farmer_fem=="1"& pool$miller_dummy=="1"], na.rm=T), digits=2),
+                         round(mean(pool$rating_overall[pool$farmer_fem=="0"& pool$miller_dummy=="1"], na.rm=T), digits=2),
+                         round(mean(pool$rating_location[pool$farmer_fem=="0"& pool$miller_dummy=="1"], na.rm=T), digits=2),
+                         round(mean(pool$rating_price[pool$farmer_fem=="0"& pool$miller_dummy=="1"], na.rm=T), digits=2),
+                         round(mean(pool$rating_quality[pool$farmer_fem=="0"& pool$miller_dummy=="1"], na.rm=T), digits=2),
+                         round(mean(pool$rating_reputation [pool$farmer_fem=="0"& pool$miller_dummy=="1"], na.rm=T), digits=2)),ncol=8)
+colnames(mean_rater_gender) <- c('Female Raters \n(Ratee = \nall Ratees)', 'Male Raters \n(Ratee = \nall Ratees)','Female Raters \n(Ratee = \nDealers)', 'Male Raters \n(Ratee = \nDealers)', 
+                            'Female Raters \n(Ratee = \nTraders)', 'Male Raters \n(Ratee = \nTraders)', 'Female Raters \n(Ratee = \nMillers)','Male Raters \n(Ratee = \nMillers)')
+rownames(mean_rater_gender) <- c('Overall', 'Location', 'Price', 'Quality', 'Reputation')
+trial.table <- as.table(mean_rater_gender)
+formattable(mean_rater_gender)
+
+png(paste(path_2, "figures/mean_rater_gender.png",sep = "/"), units="px", height=1500, width= 7000, res=600)
+grid.table(mean_rater_gender)
+dev.off()
+
+
+
+
+
+########## HYPOTHESIS 3: "Self-ratings given by females are lower compared to males" ##############
+
+
+## MEAN RATINGS --- ALL raters and ratees --- ratees are female or male 
+mean(pool$ratee_rating_overall [pool$ratee_fem=="1"], na.rm=T)
+mean(pool$ratee_rating_overall[pool$ratee_fem=="0"], na.rm=T)
+
+mean(pool$rating_location_ratee [pool$ratee_fem=="1"], na.rm=T)
+mean(pool$rating_location_ratee[pool$ratee_fem=="0"], na.rm=T)
+
+mean(pool$rating_price_ratee [pool$ratee_fem=="1"], na.rm=T)
+mean(pool$rating_price_ratee[pool$ratee_fem=="0"], na.rm=T)
+
+mean(pool$rating_quality_ratee [pool$ratee_fem=="1"], na.rm=T)
+mean(pool$rating_quality_ratee[pool$ratee_fem=="0"], na.rm=T)
+
+mean(pool$rating_reputation_ratee [pool$ratee_fem=="1"], na.rm=T)
+mean(pool$rating_reputation_ratee [pool$ratee_fem=="0"], na.rm=T)
+
+
+## MEAN RATINGS --- ALL raters and input dealers --- ratees are female and male 
+
+mean(pool$ratee_rating_overall [pool$ratee_fem=="1" & pool$dealer_dummy=="1"], na.rm=T)
+mean(pool$ratee_rating_overall[pool$ratee_fem=="0" & pool$dealer_dummy=="1"], na.rm=T)
+
+mean(pool$rating_location_ratee [pool$ratee_fem=="1" & pool$dealer_dummy=="1"], na.rm=T)
+mean(pool$rating_location_ratee[pool$ratee_fem=="0" & pool$dealer_dummy=="1"], na.rm=T)
+
+mean(pool$rating_price_ratee [pool$ratee_fem=="1" & pool$dealer_dummy=="1"], na.rm=T)
+mean(pool$rating_price_ratee[pool$ratee_fem=="0" & pool$dealer_dummy=="1"], na.rm=T)
+
+mean(pool$rating_quality_ratee [pool$ratee_fem=="1" & pool$dealer_dummy=="1"], na.rm=T)
+mean(pool$rating_quality_ratee[pool$ratee_fem=="0" & pool$dealer_dummy=="1"], na.rm=T)
+
+mean(pool$rating_reputation_ratee [pool$ratee_fem=="1" & pool$dealer_dummy=="1"], na.rm=T)
+mean(pool$rating_reputation_ratee [pool$ratee_fem=="0" & pool$dealer_dummy=="1"], na.rm=T)
+
+
+
+## MEAN RATINGS --- ALL raters and traders --- ratees are female and male 
+
+mean(pool$ratee_rating_overall [pool$ratee_fem=="1" & pool$trader_dummy=="1"], na.rm=T)
+mean(pool$ratee_rating_overall[pool$ratee_fem=="0" & pool$trader_dummy=="1"], na.rm=T)
+
+mean(pool$rating_location_ratee [pool$ratee_fem=="1" & pool$trader_dummy=="1"], na.rm=T)
+mean(pool$rating_location_ratee[pool$ratee_fem=="0" & pool$trader_dummy=="1"], na.rm=T)
+
+mean(pool$rating_price_ratee [pool$ratee_fem=="1" & pool$trader_dummy=="1"], na.rm=T)
+mean(pool$rating_price_ratee [pool$ratee_fem=="0" & pool$trader_dummy=="1"], na.rm=T)
+
+mean(pool$rating_quality_ratee [pool$ratee_fem=="1" & pool$trader_dummy=="1"], na.rm=T)
+mean(pool$rating_quality_ratee[pool$ratee_fem=="0" & pool$trader_dummy=="1"], na.rm=T)
+
+mean(pool$rating_reputation_ratee [pool$ratee_fem=="1" & pool$trader_dummy=="1"], na.rm=T)
+mean(pool$rating_reputation_ratee [pool$ratee_fem=="0" & pool$trader_dummy=="1"], na.rm=T)
+
+
+## MEAN RATINGS --- ALL raters and millers --- ratees are female and male 
+mean(pool$ratee_rating_overall [pool$ratee_fem=="1" & pool$miller_dummy=="1"], na.rm=T)
+mean(pool$ratee_rating_overall[pool$ratee_fem=="0" & pool$miller_dummy=="1"], na.rm=T)
+
+mean(pool$rating_location_ratee [pool$ratee_fem=="1" & pool$miller_dummy=="1"], na.rm=T)
+mean(pool$rating_location_ratee[pool$ratee_fem=="0" & pool$miller_dummy=="1"], na.rm=T)
+
+mean(pool$rating_price_ratee [pool$ratee_fem=="1" & pool$miller_dummy=="1"], na.rm=T)
+mean(pool$rating_price_ratee[pool$ratee_fem=="0" & pool$miller_dummy=="1"], na.rm=T)
+
+mean(pool$rating_quality_ratee [pool$ratee_fem=="1" & pool$miller_dummy=="1"], na.rm=T)
+mean(pool$rating_quality_ratee[pool$ratee_fem=="0" & pool$miller_dummy=="1"], na.rm=T)
+
+mean(pool$rating_reputation_ratee [pool$ratee_fem=="1" & pool$miller_dummy=="1"], na.rm=T)
+mean(pool$rating_reputation_ratee [pool$ratee_fem=="0" & pool$miller_dummy=="1"], na.rm=T)
+
+
+
+##### TABLE FOR MEAN RATINGS #####
+
+mean_ratee_gender <- matrix(c(round(mean(pool$rating_overall [pool$farmer_fem=="1"], na.rm=T), digits=2),
+                              round(mean(pool$rating_location [pool$farmer_fem=="1"], na.rm=T), digits=2),
+                              round(mean(pool$rating_price [pool$farmer_fem=="1"], na.rm=T), digits=2),
+                              round(mean(pool$rating_quality [pool$farmer_fem=="1"], na.rm=T), digits=2),
+                              round(mean(pool$rating_reputation [pool$farmer_fem=="1"], na.rm=T), digits=2),
+                              round(mean(pool$rating_overall[pool$farmer_fem=="0"], na.rm=T), digits=2),
+                              round(mean(pool$rating_location[pool$farmer_fem=="0"], na.rm=T), digits=2),
+                              round(mean(pool$rating_price[pool$farmer_fem=="0"], na.rm=T), digits=2),
+                              round(mean(pool$rating_quality[pool$farmer_fem=="0"], na.rm=T), digits=2),
+                              round(mean(pool$rating_reputation [pool$farmer_fem=="0"], na.rm=T), digits=2),
+                              
+                              round(mean(pool$rating_overall [pool$farmer_fem=="1"& pool$dealer_dummy=="1"], na.rm=T), digits=2),
+                              round(mean(pool$rating_location [pool$farmer_fem=="1"& pool$dealer_dummy=="1"], na.rm=T), digits=2),
+                              round(mean(pool$rating_price [pool$farmer_fem=="1"& pool$dealer_dummy=="1"], na.rm=T), digits=2),
+                              round(mean(pool$rating_quality [pool$farmer_fem=="1"& pool$dealer_dummy=="1"], na.rm=T), digits=2),
+                              round(mean(pool$rating_reputation [pool$farmer_fem=="1"& pool$dealer_dummy=="1"], na.rm=T), digits=2),
+                              round(mean(pool$rating_overall[pool$farmer_fem=="0"& pool$dealer_dummy=="1"], na.rm=T), digits=2),
+                              round(mean(pool$rating_location[pool$farmer_fem=="0"& pool$dealer_dummy=="1"], na.rm=T), digits=2),
+                              round(mean(pool$rating_price[pool$farmer_fem=="0"& pool$dealer_dummy=="1"], na.rm=T), digits=2),
+                              round(mean(pool$rating_quality[pool$farmer_fem=="0"& pool$dealer_dummy=="1"], na.rm=T), digits=2),
+                              round(mean(pool$rating_reputation [pool$farmer_fem=="0"& pool$dealer_dummy=="1"], na.rm=T), digits=2),
+                              
+                              round(mean(pool$rating_overall [pool$farmer_fem=="1"& pool$trader_dummy=="1"], na.rm=T), digits=2),
+                              round(mean(pool$rating_location [pool$farmer_fem=="1"& pool$trader_dummy=="1"], na.rm=T), digits=2),
+                              round(mean(pool$rating_price [pool$farmer_fem=="1"& pool$trader_dummy=="1"], na.rm=T), digits=2),
+                              round(mean(pool$rating_quality [pool$farmer_fem=="1"& pool$trader_dummy=="1"], na.rm=T), digits=2),
+                              round(mean(pool$rating_reputation [pool$farmer_fem=="1"& pool$trader_dummy=="1"], na.rm=T), digits=2),
+                              round(mean(pool$rating_overall[pool$farmer_fem=="0"& pool$trader_dummy=="1"], na.rm=T), digits=2),
+                              round(mean(pool$rating_location[pool$farmer_fem=="0"& pool$trader_dummy=="1"], na.rm=T), digits=2),
+                              round(mean(pool$rating_price[pool$farmer_fem=="0"& pool$trader_dummy=="1"], na.rm=T), digits=2),
+                              round(mean(pool$rating_quality[pool$farmer_fem=="0"& pool$trader_dummy=="1"], na.rm=T), digits=2),
+                              round(mean(pool$rating_reputation [pool$farmer_fem=="0"& pool$trader_dummy=="1"], na.rm=T), digits=2),
+                              
+                              round(mean(pool$rating_overall [pool$farmer_fem=="1"& pool$miller_dummy=="1"], na.rm=T), digits=2),
+                              round(mean(pool$rating_location [pool$farmer_fem=="1"& pool$miller_dummy=="1"], na.rm=T), digits=2),
+                              round(mean(pool$rating_price [pool$farmer_fem=="1"& pool$miller_dummy=="1"], na.rm=T), digits=2),
+                              round(mean(pool$rating_quality [pool$farmer_fem=="1"& pool$miller_dummy=="1"], na.rm=T), digits=2),
+                              round(mean(pool$rating_reputation [pool$farmer_fem=="1"& pool$miller_dummy=="1"], na.rm=T), digits=2),
+                              round(mean(pool$rating_overall[pool$farmer_fem=="0"& pool$miller_dummy=="1"], na.rm=T), digits=2),
+                              round(mean(pool$rating_location[pool$farmer_fem=="0"& pool$miller_dummy=="1"], na.rm=T), digits=2),
+                              round(mean(pool$rating_price[pool$farmer_fem=="0"& pool$miller_dummy=="1"], na.rm=T), digits=2),
+                              round(mean(pool$rating_quality[pool$farmer_fem=="0"& pool$miller_dummy=="1"], na.rm=T), digits=2),
+                              round(mean(pool$rating_reputation [pool$farmer_fem=="0"& pool$miller_dummy=="1"], na.rm=T), digits=2)),ncol=8)
+colnames(mean_rater_gender) <- c('Female Raters \n(Ratee = \nall Ratees)', 'Male Raters \n(Ratee = \nall Ratees)','Female Raters \n(Ratee = \nDealers)', 'Male Raters \n(Ratee = \nDealers)', 
+                                 'Female Raters \n(Ratee = \nTraders)', 'Male Raters \n(Ratee = \nTraders)', 'Female Raters \n(Ratee = \nMillers)','Male Raters \n(Ratee = \nMillers)')
+rownames(mean_rater_gender) <- c('Overall', 'Location', 'Price', 'Quality', 'Reputation')
+trial.table <- as.table(mean_rater_gender)
+formattable(mean_rater_gender)
+
+png(paste(path_2, "figures/mean_rater_gender.png",sep = "/"), units="px", height=1500, width= 7000, res=600)
+grid.table(mean_rater_gender)
+dev.off()
+
+##########################################################################################################################
+
+
+#### SUMMARY STATS ####
+
+
+sum_stat <- matrix(c(round(mean(pool$rating_location, na.rm=T), digits=2),
+                              round(mean(pool$rating_price, na.rm=T), digits=2),
+                              round(mean(pool$rating_quality, na.rm=T), digits=2),
+                              round(mean(pool$rating_reputation, na.rm=T), digits=2),
+                              round(mean(pool$rating_overall, na.rm=T), digits=2),
+                              round(mean(pool$age, na.rm=T), digits=2),
+                              round(mean(pool$married, na.rm=T), digits=2),
+                              round(mean(pool$educ, na.rm=T), digits=2),
+                              round(mean(pool$tarmac, na.rm=T), digits=2),
+                              round(mean(pool$murram, na.rm=T), digits=2),
+                     round(mean(pool$total_harvest, na.rm=T), digits=2),
+                     round(mean(pool$storage_capacity, na.rm=T), digits=2),
+                     round(mean(pool$rating_location_ratee, na.rm=T), digits=2),
+                     round(mean(pool$rating_price_ratee, na.rm=T), digits=2),
+                     round(mean(pool$rating_quality_ratee, na.rm=T), digits=2),
+                     round(mean(pool$rating_reputation_ratee, na.rm=T), digits=2),
+                     round(mean(pool$ratee_rating_overall, na.rm=T), digits=2),
+                     round(mean(pool$client_service, na.rm=T), digits=2),
+                     round(mean(pool$age_ratee, na.rm=T), digits=2),
+                     round(mean(pool$farmer_fem, na.rm=T), digits=2),
+                     round(mean(pool$ratee_fem, na.rm=T), digits=2),
+                     round(mean(pool$interaction_yes, na.rm=T), digits=2),
+                     round(mean(pool$educ_ratee, na.rm=T), digits=2),
+                     round(mean(pool$married_ratee, na.rm=T), digits=2),
+                     round(mean(pool$crop_farming, na.rm=T), digits=2),
+                     round(mean(pool$member_dummy, na.rm=T), digits=2),
+                     round(mean(pool$maize_sold, na.rm=T), digits=2),
+                     round(mean(pool$dealer_dummy, na.rm=T), digits=2),
+                     round(mean(pool$trader_dummy, na.rm=T), digits=2),
+                     round(mean(pool$miller_dummy, na.rm=T), digits=2),
+                     round(mean(pool$ratingoverall_diff, na.rm=T), digits=2),
+                     round(mean(pool$ratingloc_diff, na.rm=T), digits=2),
+                     round(mean(pool$ratingprice_diff, na.rm=T), digits=2),
+                     round(mean(pool$ratingqual_diff, na.rm=T), digits=2),
+                     round(mean(pool$ratingrepu_diff, na.rm=T), digits=2),
+                     round(sd(pool$rating_location, na.rm=T), digits=2),
+                     round(sd(pool$rating_price, na.rm=T), digits=2),
+                     round(sd(pool$rating_quality, na.rm=T), digits=2),
+                     round(sd(pool$rating_reputation, na.rm=T), digits=2),
+                     round(sd(pool$rating_overall, na.rm=T), digits=2),
+                     round(sd(pool$age, na.rm=T), digits=2),
+                     round(sd(pool$married, na.rm=T), digits=2),
+                     round(sd(pool$educ, na.rm=T), digits=2),
+                     round(sd(pool$tarmac, na.rm=T), digits=2),
+                     round(sd(pool$murram, na.rm=T), digits=2),
+                     round(sd(pool$total_harvest, na.rm=T), digits=2),
+                     round(sd(pool$storage_capacity, na.rm=T), digits=2),
+                     round(sd(pool$rating_location_ratee, na.rm=T), digits=2),
+                     round(sd(pool$rating_price_ratee, na.rm=T), digits=2),
+                     round(sd(pool$rating_quality_ratee, na.rm=T), digits=2),
+                     round(sd(pool$rating_reputation_ratee, na.rm=T), digits=2),
+                     round(sd(pool$ratee_rating_overall, na.rm=T), digits=2),
+                     round(sd(pool$client_service, na.rm=T), digits=2),
+                     round(sd(pool$age_ratee, na.rm=T), digits=2),
+                     round(sd(pool$farmer_fem, na.rm=T), digits=2),
+                     round(sd(pool$ratee_fem, na.rm=T), digits=2),
+                     round(sd(pool$interaction_yes, na.rm=T), digits=2),
+                     round(sd(pool$educ_ratee, na.rm=T), digits=2),
+                     round(sd(pool$married_ratee, na.rm=T), digits=2),
+                     round(sd(pool$crop_farming, na.rm=T), digits=2),
+                     round(sd(pool$member_dummy, na.rm=T), digits=2),
+                     round(sd(pool$maize_sold, na.rm=T), digits=2),
+                     round(sd(pool$dealer_dummy, na.rm=T), digits=2),
+                     round(sd(pool$trader_dummy, na.rm=T), digits=2),
+                     round(sd(pool$miller_dummy, na.rm=T), digits=2),
+                     round(sd(pool$ratingoverall_diff, na.rm=T), digits=2),
+                     round(sd(pool$ratingloc_diff, na.rm=T), digits=2),
+                     round(sd(pool$ratingprice_diff, na.rm=T), digits=2),
+                     round(sd(pool$ratingqual_diff, na.rm=T), digits=2),
+                     round(sd(pool$ratingrepu_diff, na.rm=T), digits=2),
+                     round(min(pool$rating_location, na.rm=T), digits=2),
+                     round(min(pool$rating_price, na.rm=T), digits=2),
+                     round(min(pool$rating_quality, na.rm=T), digits=2),
+                     round(min(pool$rating_reputation, na.rm=T), digits=2),
+                     round(min(pool$rating_overall, na.rm=T), digits=2),
+                     round(min(pool$age, na.rm=T), digits=2),
+                     round(min(pool$married, na.rm=T), digits=2),
+                     round(min(pool$educ, na.rm=T), digits=2),
+                     round(min(pool$tarmac, na.rm=T), digits=2),
+                     round(min(pool$murram, na.rm=T), digits=2),
+                     round(min(pool$total_harvest, na.rm=T), digits=2),
+                     round(min(pool$storage_capacity, na.rm=T), digits=2),
+                     round(min(pool$rating_location_ratee, na.rm=T), digits=2),
+                     round(min(pool$rating_price_ratee, na.rm=T), digits=2),
+                     round(min(pool$rating_quality_ratee, na.rm=T), digits=2),
+                     round(min(pool$rating_reputation_ratee, na.rm=T), digits=2),
+                     round(min(pool$ratee_rating_overall, na.rm=T), digits=2),
+                     round(min(pool$client_service, na.rm=T), digits=2),
+                     round(min(pool$age_ratee, na.rm=T), digits=2),
+                     round(min(pool$farmer_fem, na.rm=T), digits=2),
+                     round(min(pool$ratee_fem, na.rm=T), digits=2),
+                     round(min(pool$interaction_yes, na.rm=T), digits=2),
+                     round(min(pool$educ_ratee, na.rm=T), digits=2),
+                     round(min(pool$married_ratee, na.rm=T), digits=2),
+                     round(min(pool$crop_farming, na.rm=T), digits=2),
+                     round(min(pool$member_dummy, na.rm=T), digits=2),
+                     round(min(pool$maize_sold, na.rm=T), digits=2),
+                     round(min(pool$dealer_dummy, na.rm=T), digits=2),
+                     round(min(pool$trader_dummy, na.rm=T), digits=2),
+                     round(min(pool$miller_dummy, na.rm=T), digits=2),
+                     round(min(pool$ratingoverall_diff, na.rm=T), digits=2),
+                     round(min(pool$ratingloc_diff, na.rm=T), digits=2),
+                     round(min(pool$ratingprice_diff, na.rm=T), digits=2),
+                     round(min(pool$ratingqual_diff, na.rm=T), digits=2),
+                     round(min(pool$ratingrepu_diff, na.rm=T), digits=2),
+                     round(max(pool$rating_location, na.rm=T), digits=2),
+                     round(max(pool$rating_price, na.rm=T), digits=2),
+                     round(max(pool$rating_quality, na.rm=T), digits=2),
+                     round(max(pool$rating_reputation, na.rm=T), digits=2),
+                     round(max(pool$rating_overall, na.rm=T), digits=2),
+                     round(max(pool$age, na.rm=T), digits=2),
+                     round(max(pool$married, na.rm=T), digits=2),
+                     round(max(pool$educ, na.rm=T), digits=2),
+                     round(max(pool$tarmac, na.rm=T), digits=2),
+                     round(max(pool$murram, na.rm=T), digits=2),
+                     round(max(pool$total_harvest, na.rm=T), digits=2),
+                     round(max(pool$storage_capacity, na.rm=T), digits=2),
+                     round(max(pool$rating_location_ratee, na.rm=T), digits=2),
+                     round(max(pool$rating_price_ratee, na.rm=T), digits=2),
+                     round(max(pool$rating_quality_ratee, na.rm=T), digits=2),
+                     round(max(pool$rating_reputation_ratee, na.rm=T), digits=2),
+                     round(max(pool$ratee_rating_overall, na.rm=T), digits=2),
+                     round(max(pool$client_service, na.rm=T), digits=2),
+                     round(max(pool$age_ratee, na.rm=T), digits=2),
+                     round(max(pool$farmer_fem, na.rm=T), digits=2),
+                     round(max(pool$ratee_fem, na.rm=T), digits=2),
+                     round(max(pool$interaction_yes, na.rm=T), digits=2),
+                     round(max(pool$educ_ratee, na.rm=T), digits=2),
+                     round(max(pool$married_ratee, na.rm=T), digits=2),
+                     round(max(pool$crop_farming, na.rm=T), digits=2),
+                     round(max(pool$member_dummy, na.rm=T), digits=2),
+                     round(max(pool$maize_sold, na.rm=T), digits=2),
+                     round(max(pool$dealer_dummy, na.rm=T), digits=2),
+                     round(max(pool$trader_dummy, na.rm=T), digits=2),
+                     round(max(pool$miller_dummy, na.rm=T), digits=2),
+                     round(max(pool$ratingoverall_diff, na.rm=T), digits=2),
+                     round(max(pool$ratingloc_diff, na.rm=T), digits=2),
+                     round(max(pool$ratingprice_diff, na.rm=T), digits=2),
+                     round(max(pool$ratingqual_diff, na.rm=T), digits=2),
+                     round(max(pool$ratingrepu_diff, na.rm=T), digits=2)
+),ncol=4)
+
+rownames(sum_stat) <- c('Location rating by rater', 'Price rating by rater','Quality rating by rater', 
+                        'Reputation rating by rater', 'Overall rating by rater',
+                        'Age of raters', 'Marital status (raters)', 'Education (Raters)','Distance of homestead to tarmac road',
+                        'Distance of homestead to murram road', 'Total harvest','Storage capacity of raters',
+                        'Location rating by ratee', 'Price rating by ratee','Quality rating by ratee', 
+                        'Reputation rating by ratee', 'Overall rating by ratee', 'Dummy for client service from ratees',
+                        'Age of ratee', 'Rater gender','Ratee gender','Dummy for interaction between rater and ratee',
+                        'Education (Ratee)','Marital Status (Ratee)', 'Crop farming (main source of income)', 'Member', 
+                        'Maize sold (dummy)', 'Dealer dummy','Trader dummy','Miller dummy','Difference in overall rating',
+                        'Difference in location rating','Difference in price rating','Difference in quality rating',
+                        'Difference in reputation rating')
+colnames(sum_stat) <- c('Mean','Standard Deviation','Minimum','Maximum')
+trial.table <- as.table(sum_stat)
+formattable(sum_stat)
+
+png(paste(path_2, "figures/sum_stat.png",sep = "/"), units="px", height=6000, width= 5000, res=600)
+grid.table(sum_stat)
+dev.off()
+
+
+

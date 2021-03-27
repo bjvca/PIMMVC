@@ -4572,3 +4572,46 @@ screenreg(list(mod17_gender,mod18_gender,mod19_gender,mod20_gender), file="gende
 
 
 
+pool1 <- pool
+pool1 <- pool[, !(colnames(pool) %in% c("farmerID","id.ratee"))]
+
+
+library(stargazer)
+sum_stats <- stargazer(pool1)
+
+png(paste(path_2, "figures/summary_stats.png",sep = "/"), units="px", height=1500, width= 7000, res=600)
+stargazer(pool1)
+dev.off()
+
+sum_stats <- stargazer(pool1)
+
+
+library(arsenal) 
+sum_stats <- tableby(farmer_gender ~ ., data = pool1) 
+# test is now essentially a named numeric vector
+png(paste(path_2, "figures/summary_stats.png",sep = "/"), units="px", height=1500, width= 7000, res=600)
+plot(NA,NA, xlab="", ylab="",ylim=c(0,1), xlim=c(0,1), axes=FALSE)
+# Need to blank out the axis labels and axes and box
+text(0.5,0.5, paste(names(sum_stats), collapse="   " ))
+text(0.5,0.45, paste(sum_stats, collapse="     " ))
+dev.off()
+
+
+library(arsenal) 
+table_one <- tableby(farmer_gender ~ ., data = pool) 
+
+png(paste(path_2, "figures/summary_stats.png",sep = "/"), units="px", height=1500, width= 7000, res=600)
+summary(table_one, title = "Summary stats based on farmer gender")
+dev.off()
+
+pool1 %>% 
+  dplyr::group_by(farmer_gender) %>% 
+  skim() 
+
+stargazer(pool1)
+
+
+
+pool_stats_by_farmer_gender <- stby(data = pool, 
+                               INDICES = pool$farmer_gender, 
+                               FUN = descr, stats = "common", transpose = TRUE)
