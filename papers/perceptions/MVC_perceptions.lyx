@@ -170,10 +170,6 @@ path <- getwd()
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\begin_layout Plain Layout
-
 source(paste(path,"code/perceptions.R
 \begin_inset Quotes erd
 \end_inset
@@ -188,6 +184,10 @@ source(paste(path,"code/perceptions.R
 \begin_layout Plain Layout
 
 @
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \end_inset
@@ -837,7 +837,7 @@ This motivates the aim to understand the ratings' mechanism based on the
 \end_layout
 
 \begin_layout Subsection
-Hypothesis and Model 
+Hypothesis
 \end_layout
 
 \begin_layout Standard
@@ -7583,11 +7583,200 @@ Ratings from female and male ratees for themselves (dealers, traders and
 
 \end_inset
 
+The final hypothesis is that 
+\begin_inset Quotes eld
+\end_inset
 
+
+\series bold
+Female ratees receive lower ratings from raters than male ratees
+\series default
+
+\begin_inset Quotes erd
+\end_inset
+
+.
+ From table 5, it can be observed that overall rating received by female
+ ratees (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_overall [pool$ratee_fem=="1"], na.rm=T),digit
+s=2),nsmall=0)}
 \end_layout
 
-\begin_layout Enumerate
-Female ratees receive lower ratings from raters than male ratees.
+\end_inset
+
+) is higher than male ratees (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_overall [pool$ratee_fem=="0"], na.rm=T),digit
+s=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+).
+ For location based rating and price based rating, male ratees (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_location [pool$ratee_fem=="0"], na.rm=T),digi
+ts=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ for location, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_price [pool$ratee_fem=="0"], na.rm=T),digits=
+2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ for price) receive higher ratings than female ratees (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_location [pool$ratee_fem=="1"], na.rm=T),digi
+ts=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ for location, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_price [pool$ratee_fem=="1"], na.rm=T),digits=
+2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ for price).
+ For other two rating factors, quality and reputation, female ratees (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_quality [pool$ratee_fem=="1"], na.rm=T),digit
+s=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ for quality, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_reputation [pool$ratee_fem=="1"], na.rm=T),di
+gits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ for reputation) receive higher ratings than male ratees (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_quality [pool$ratee_fem=="0"], na.rm=T),digit
+s=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ for quality, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_reputation [pool$ratee_fem=="0"], na.rm=T),di
+gits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ for reputation).
+ Thus, there is a possibility that the female input dealers, traders and
+ processors perform better in terms of quality and reputation compared to
+ their male counterparts.
+ However, for location and price, male ratees seem to be in an improved
+ state compared to female ratees.
+ 
+\end_layout
+
+\begin_layout Standard
+Looking at the 
+\series bold
+dealer
+\series default
+ group of ratees, it is evident that the overall rating received by female
+ ratees is marginally lower than male ratees.
+ For location and price, female ratees receive lower ratings and for quality
+ and reputation, female ratees receive higher ratings.
+ This is in line with the results observed from the entire group of ratees
+ (Table 5).
+ Within the 
+\series bold
+trader
+\series default
+ group of ratees, female ratees receive higher ratings than male ratees
+ for the overall average mean rating.
+ For all the different rating factors, ratings received by female traders
+ are larger than ratings received by male traders.
+ The ratings received from farmers within the 
+\series bold
+miller
+\series default
+ group of ratees follow the exact same pattern as the entire group of ratees
+ (dealers, millers and traders).
+ For overall rating, female ratees receive greater ratings than male ratees.
+ For location and price, female millers receive lower ratings and for quality
+ and reputation, female millers receive higher ratings, as observed in Table
+ 5.
  
 \end_layout
 
@@ -7654,6 +7843,60 @@ nter-rater_reliability
 Is there consistency between ratings of farmers and ratings of input dealers?
  Is there a systematic bias (eg input dealers always think they do better
  than farmers,...)
+\end_layout
+
+\begin_layout Section
+Model and Estimation Strategy
+\end_layout
+
+\begin_layout Standard
+The dependent variable in this study is always the ratings for the input
+ dealers, traders and processors.
+ The ratings can be either obtained from the raters (farmers) or they can
+ be self-ratings by the ratees (dealers, traders and processors) themselves.
+ The ratings or the scores are on a scale of 1 to 5, where 1 is the most
+ negative score and 5 is the most positive score.
+ The dataset used for the analysis is pooled, i.e., ratings for dealers, traders
+ and processors are contained in the same dataset.
+ The estimation method used for understanding gendered perceptions in maize
+ supply chains is linear regressions with cluster robust standard errors.
+ The clustering is done based on the ID of the ratees (dealers, traders
+ and millers) which was assigned after the data was collected.
+ The independent variable depends on the hypothesis being tested.
+ 
+\end_layout
+
+\begin_layout Standard
+To start with, the model to be discussed first looks at the impact of the
+ rater's gender on the rating provided by the rater.
+ This aids in the analysis whether the ratings provided by the farmer are
+ in any way influenced by the gender of the farmer.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{equation} 
+\backslash
+label{eqn} y_{i}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{equation}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
