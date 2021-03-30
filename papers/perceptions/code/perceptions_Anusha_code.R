@@ -4615,3 +4615,17 @@ stargazer(pool1)
 pool_stats_by_farmer_gender <- stby(data = pool, 
                                INDICES = pool$farmer_gender, 
                                FUN = descr, stats = "common", transpose = TRUE)
+
+
+
+
+##### STARGAZER
+ols1 <- lm(data = pool, formula = rating_reputation ~  farmer_fem + ratee_fem + age + interaction_yes + educ + tarmac
+           + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy) 
+
+# summary with cluster-robust SEs
+summary(ols1, cluster="id.ratee") 
+
+# create table in stargazer
+stargazer(ols1, se=list(coef(summary(ols1,cluster = c("id.ratee")))[, 2]), type = "text") 
+
