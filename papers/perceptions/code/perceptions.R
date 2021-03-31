@@ -7,7 +7,7 @@ library(sjPlot)
 library(mice)
 library(texreg)
 library(graphics)
-library(png)
+library()
 library(data.table)
 library(formattable)
 library(expss)
@@ -1162,7 +1162,7 @@ rownames(mean_ratings) <- c('Overall', 'Location', 'Quality', 'Price', 'Reputati
 trial.table <- as.table(mean_ratings)
 formattable(mean_ratings)
 
-png(paste(path_2, "figures/mean_ratings.png",sep = "/"), units="px", height=2000, width= 5950, res=600)
+(paste(path_2, "/papers/perceptions/figure/mean_ratings.",sep = "/"), units="px", height=2000, width= 5950, res=600)
 grid.table(mean_ratings)
 dev.off()
 
@@ -1295,7 +1295,7 @@ rownames(mean_rater_gender) <- c('Overall', 'Location', 'Price', 'Quality', 'Rep
 trial.table <- as.table(mean_rater_gender)
 formattable(mean_rater_gender)
 
-png(paste(path_2, "figures/mean_rater_gender.png",sep = "/"), units="px", height=1500, width= 7000, res=600)
+(paste(path_2, "/papers/perceptions/figure/mean_rater_gender.",sep = "/"), units="px", height=1500, width= 7000, res=600)
 grid.table(mean_rater_gender)
 dev.off()
 
@@ -1429,7 +1429,7 @@ rownames(mean_ratee_gender) <- c('Overall', 'Location', 'Price', 'Quality', 'Rep
 trial.table <- as.table(mean_ratee_gender)
 formattable(mean_ratee_gender)
 
-png(paste(path_2, "figures/mean_ratee_gender.png",sep = "/"), units="px", height=1500, width= 7000, res=600)
+(paste(path_2, "/papers/perceptions/figure/mean_ratee_gender.",sep = "/"), units="px", height=1500, width= 7000, res=600)
 grid.table(mean_ratee_gender)
 dev.off()
 
@@ -1564,7 +1564,7 @@ rownames(mean_ratee_gender_rater_rating) <- c('Overall', 'Location', 'Price', 'Q
 trial.table <- as.table(mean_ratee_gender_rater_rating)
 formattable(mean_ratee_gender_rater_rating)
 
-png(paste(path_2, "figures/mean_ratee_gender_rater_rating.png",sep = "/"), units="px", height=1500, width= 7000, res=600)
+(paste(path_2, "/papers/perceptions/figure/mean_ratee_gender_rater_rating.",sep = "/"), units="px", height=1500, width= 7000, res=600)
 grid.table(mean_ratee_gender_rater_rating)
 dev.off()
 
@@ -1572,7 +1572,7 @@ dev.off()
 ##########################################################################################################################
 
 
-#### SUMMARY STATS ####
+#### SUMMARY STATS (DETAILED) ####
 
 
 sum_stat <- matrix(c(round(mean(pool$rating_location, na.rm=T), digits=2),
@@ -1732,9 +1732,146 @@ colnames(sum_stat) <- c('Mean','Standard Deviation','Minimum','Maximum')
 trial.table <- as.table(sum_stat)
 formattable(sum_stat)
 
-png(paste(path_2, "figures/sum_stat.png",sep = "/"), units="px", height=6000, width= 5000, res=600)
+(paste(path_2, "/papers/perceptions/figure/detailed_sum_stat.",sep = "/"), units="px", height=6000, width= 5000, res=600)
 grid.table(sum_stat)
 dev.off()
 
 
+
+
+#### SUMMARY STATS (MAIN VARIABLES, USED IN LYX) ####
+
+
+sum_stat <- matrix(c(round(mean(pool$rating_location, na.rm=T), digits=2),
+                     round(mean(pool$rating_price, na.rm=T), digits=2),
+                     round(mean(pool$rating_quality, na.rm=T), digits=2),
+                     round(mean(pool$rating_reputation, na.rm=T), digits=2),
+                     round(mean(pool$rating_overall, na.rm=T), digits=2),
+                     round(mean(pool$farmer_fem, na.rm=T), digits=2),
+                     round(mean(pool$ratee_fem, na.rm=T), digits=2),
+                     round(mean(pool$age, na.rm=T), digits=2),
+                     round(mean(pool$married, na.rm=T), digits=2),
+                     round(mean(pool$educ, na.rm=T), digits=2),
+                     round(mean(pool$tarmac, na.rm=T), digits=2),
+                     round(mean(pool$murram, na.rm=T), digits=2),
+                     round(mean(pool$interaction_yes, na.rm=T), digits=2),
+                     round(mean(pool$rating_location_ratee, na.rm=T), digits=2),
+                     round(mean(pool$rating_price_ratee, na.rm=T), digits=2),
+                     round(mean(pool$rating_quality_ratee, na.rm=T), digits=2),
+                     round(mean(pool$rating_reputation_ratee, na.rm=T), digits=2),
+                     round(mean(pool$ratee_rating_overall, na.rm=T), digits=2),
+                     round(mean(pool$age_ratee, na.rm=T), digits=2),
+                     round(mean(pool$educ_ratee, na.rm=T), digits=2),
+                     round(mean(pool$married_ratee, na.rm=T), digits=2),           
+                     round(mean(pool$dealer_dummy, na.rm=T), digits=2),
+                     round(mean(pool$trader_dummy, na.rm=T), digits=2),
+                     round(mean(pool$ratingoverall_diff, na.rm=T), digits=2),
+                     round(mean(pool$ratingloc_diff, na.rm=T), digits=2),
+                     round(mean(pool$ratingprice_diff, na.rm=T), digits=2),
+                     round(mean(pool$ratingqual_diff, na.rm=T), digits=2),
+                     round(mean(pool$ratingrepu_diff, na.rm=T), digits=2),
+                     
+                     round(sd(pool$rating_location, na.rm=T), digits=2),
+                     round(sd(pool$rating_price, na.rm=T), digits=2),
+                     round(sd(pool$rating_quality, na.rm=T), digits=2),
+                     round(sd(pool$rating_reputation, na.rm=T), digits=2),
+                     round(sd(pool$rating_overall, na.rm=T), digits=2),
+                     round(sd(pool$farmer_fem, na.rm=T), digits=2),
+                     round(sd(pool$ratee_fem, na.rm=T), digits=2),
+                     round(sd(pool$age, na.rm=T), digits=2),
+                     round(sd(pool$married, na.rm=T), digits=2),
+                     round(sd(pool$educ, na.rm=T), digits=2),
+                     round(sd(pool$tarmac, na.rm=T), digits=2),
+                     round(sd(pool$murram, na.rm=T), digits=2),
+                     round(sd(pool$interaction_yes, na.rm=T), digits=2),
+                     round(sd(pool$rating_location_ratee, na.rm=T), digits=2),
+                     round(sd(pool$rating_price_ratee, na.rm=T), digits=2),
+                     round(sd(pool$rating_quality_ratee, na.rm=T), digits=2),
+                     round(sd(pool$rating_reputation_ratee, na.rm=T), digits=2),
+                     round(sd(pool$ratee_rating_overall, na.rm=T), digits=2),
+                     round(sd(pool$age_ratee, na.rm=T), digits=2),
+                     round(sd(pool$educ_ratee, na.rm=T), digits=2),
+                     round(sd(pool$married_ratee, na.rm=T), digits=2),           
+                     round(sd(pool$dealer_dummy, na.rm=T), digits=2),
+                     round(sd(pool$trader_dummy, na.rm=T), digits=2),
+                     round(sd(pool$ratingoverall_diff, na.rm=T), digits=2),
+                     round(sd(pool$ratingloc_diff, na.rm=T), digits=2),
+                     round(sd(pool$ratingprice_diff, na.rm=T), digits=2),
+                     round(sd(pool$ratingqual_diff, na.rm=T), digits=2),
+                     round(sd(pool$ratingrepu_diff, na.rm=T), digits=2),
+                     
+                     round(min(pool$rating_location, na.rm=T), digits=2),
+                     round(min(pool$rating_price, na.rm=T), digits=2),
+                     round(min(pool$rating_quality, na.rm=T), digits=2),
+                     round(min(pool$rating_reputation, na.rm=T), digits=2),
+                     round(min(pool$rating_overall, na.rm=T), digits=2),
+                     round(min(pool$farmer_fem, na.rm=T), digits=2),
+                     round(min(pool$ratee_fem, na.rm=T), digits=2),
+                     round(min(pool$age, na.rm=T), digits=2),
+                     round(min(pool$married, na.rm=T), digits=2),
+                     round(min(pool$educ, na.rm=T), digits=2),
+                     round(min(pool$tarmac, na.rm=T), digits=2),
+                     round(min(pool$murram, na.rm=T), digits=2),
+                     round(min(pool$interaction_yes, na.rm=T), digits=2),
+                     round(min(pool$rating_location_ratee, na.rm=T), digits=2),
+                     round(min(pool$rating_price_ratee, na.rm=T), digits=2),
+                     round(min(pool$rating_quality_ratee, na.rm=T), digits=2),
+                     round(min(pool$rating_reputation_ratee, na.rm=T), digits=2),
+                     round(min(pool$ratee_rating_overall, na.rm=T), digits=2),
+                     round(min(pool$age_ratee, na.rm=T), digits=2),
+                     round(min(pool$educ_ratee, na.rm=T), digits=2),
+                     round(min(pool$married_ratee, na.rm=T), digits=2),           
+                     round(min(pool$dealer_dummy, na.rm=T), digits=2),
+                     round(min(pool$trader_dummy, na.rm=T), digits=2),
+                     round(min(pool$ratingoverall_diff, na.rm=T), digits=2),
+                     round(min(pool$ratingloc_diff, na.rm=T), digits=2),
+                     round(min(pool$ratingprice_diff, na.rm=T), digits=2),
+                     round(min(pool$ratingqual_diff, na.rm=T), digits=2),
+                     round(min(pool$ratingrepu_diff, na.rm=T), digits=2),
+                     
+                     round(max(pool$rating_location, na.rm=T), digits=2),
+                     round(max(pool$rating_price, na.rm=T), digits=2),
+                     round(max(pool$rating_quality, na.rm=T), digits=2),
+                     round(max(pool$rating_reputation, na.rm=T), digits=2),
+                     round(max(pool$rating_overall, na.rm=T), digits=2),
+                     round(max(pool$farmer_fem, na.rm=T), digits=2),
+                     round(max(pool$ratee_fem, na.rm=T), digits=2),
+                     round(max(pool$age, na.rm=T), digits=2),
+                     round(max(pool$married, na.rm=T), digits=2),
+                     round(max(pool$educ, na.rm=T), digits=2),
+                     round(max(pool$tarmac, na.rm=T), digits=2),
+                     round(max(pool$murram, na.rm=T), digits=2),
+                     round(max(pool$interaction_yes, na.rm=T), digits=2),
+                     round(max(pool$rating_location_ratee, na.rm=T), digits=2),
+                     round(max(pool$rating_price_ratee, na.rm=T), digits=2),
+                     round(max(pool$rating_quality_ratee, na.rm=T), digits=2),
+                     round(max(pool$rating_reputation_ratee, na.rm=T), digits=2),
+                     round(max(pool$ratee_rating_overall, na.rm=T), digits=2),
+                     round(max(pool$age_ratee, na.rm=T), digits=2),
+                     round(max(pool$educ_ratee, na.rm=T), digits=2),
+                     round(max(pool$married_ratee, na.rm=T), digits=2),           
+                     round(max(pool$dealer_dummy, na.rm=T), digits=2),
+                     round(max(pool$trader_dummy, na.rm=T), digits=2),
+                     round(max(pool$ratingoverall_diff, na.rm=T), digits=2),
+                     round(max(pool$ratingloc_diff, na.rm=T), digits=2),
+                     round(max(pool$ratingprice_diff, na.rm=T), digits=2),
+                     round(max(pool$ratingqual_diff, na.rm=T), digits=2),
+                     round(max(pool$ratingrepu_diff, na.rm=T), digits=2)
+),ncol=4)
+
+rownames(sum_stat) <- c('Location rating by rater', 'Price rating by rater','Quality rating by rater', 
+                        'Reputation rating by rater', 'Overall rating by rater','Gender of rater','Gender of ratee',
+                        'Age of raters', 'Marital status (raters)', 'Education (Raters)','Distance of homestead to tarmac road',
+                        'Distance of homestead to murram road', 'Interaction between rater and ratee','Location rating by ratee', 
+                        'Price rating by ratee','Quality rating by ratee','Reputation rating by ratee', 'Overall rating by ratee', 
+                        'Age of ratee','Education (Ratee)','Marital Status (Ratee)', 'Dealer dummy','Trader dummy',
+                        'Difference in overall rating','Difference in location rating','Difference in price rating',
+                        'Difference in quality rating', 'Difference in reputation rating')
+colnames(sum_stat) <- c('Mean','Standard Deviation','Minimum','Maximum')
+trial.table <- as.table(sum_stat)
+formattable(sum_stat)
+
+(paste(path_2, "/papers/perceptions/figure/sum_stat.",sep = "/"), units="px", height=5000, width= 4500, res=600)
+grid.table(sum_stat)
+dev.off()
 
