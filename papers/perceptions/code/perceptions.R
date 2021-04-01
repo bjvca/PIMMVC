@@ -1874,3 +1874,69 @@ png(paste(path_2, "/papers/perceptions/figure/sum_stat.png",sep = "/"), units="p
 grid.table(sum_stat)
 dev.off()
 
+
+
+
+##########################################################################################################################
+
+
+#### WHETHER INDIVIDUAL MEANS DIFFERENT FROM OVERALL MEAN #####
+
+########### rating from farmers ############
+fe_modoverall <- lm(rating_overall ~ id.ratee, data = pool)
+summary(fe_modoverall)
+#F-statistic:  1.76 on 525 and 3384 DF,  p-value: < 0.00000000000000022
+#reject null at 5% (f-stat > f-table value)
+#indv means diff from overall mean 
+
+fe_modlocation <- lm(rating_location ~ id.ratee, data = pool)
+summary(fe_modlocation)
+#reject null --- therefore, indv means diff from overall mean 
+
+fe_modqual <- lm(rating_quality ~ id.ratee, data = pool)
+summary(fe_modqual) #reject null, indv means diff from overall mean 
+
+fe_modprice <- lm(rating_price ~ id.ratee, data = pool)
+summary(fe_modprice) #reject null, indv means diff from overall mean 
+
+fe_modrepu <- lm(rating_reputation ~ id.ratee, data = pool)
+summary(fe_modrepu)  #reject null, indv means diff from overall mean 
+
+########### rating from ratees ############
+fe_modoverall_ratee <- lm(ratee_rating_overall ~ id.ratee, data = pool)
+summary(fe_modoverall_ratee)
+#reject null 
+#indv means diff from overall mean 
+
+fe_modlocation_ratee <- lm(rating_location_ratee ~ id.ratee, data = pool)
+summary(fe_modlocation_ratee)
+#reject null --- therefore, indv means diff from overall mean 
+
+fe_modqual_ratee <- lm(rating_quality_ratee ~ id.ratee, data = pool)
+summary(fe_modqual_ratee) #reject null, indv means diff from overall mean 
+
+fe_modprice_ratee <- lm(rating_price_ratee ~ id.ratee, data = pool)
+summary(fe_modprice_ratee) #reject null, indv means diff from overall mean 
+
+fe_modrepu_ratee <- lm(rating_reputation_ratee ~ id.ratee, data = pool)
+summary(fe_modrepu_ratee)  #reject null, indv means diff from overall mean 
+
+
+########### difference between rating from raters and ratees ############
+fe_modoverall_diff <- lm(ratingoverall_diff ~ id.ratee, data = pool)
+summary(fe_modoverall_diff)
+#reject null 
+#indv means diff from overall mean 
+
+fe_modlocation_diff <- lm(ratingloc_diff ~ id.ratee, data = pool)
+summary(fe_modlocation_diff)
+#reject null --- therefore, indv means diff from overall mean 
+
+fe_modqual_diff <- lm(ratingqual_diff ~ id.ratee, data = pool)
+summary(fe_modqual_diff) #reject null, indv means diff from overall mean 
+
+fe_modprice_diff <- lm(ratingprice_diff ~ id.ratee, data = pool)
+summary(fe_modprice_diff) #reject null, indv means diff from overall mean 
+
+fe_modrepu_diff <- lm(ratingrepu_diff ~ id.ratee, data = pool)
+summary(fe_modrepu_diff)  #reject null, indv means diff from overall mean 
