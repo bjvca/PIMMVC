@@ -7,7 +7,6 @@ library(sjPlot)
 library(mice)
 library(texreg)
 library(graphics)
-library()
 library(data.table)
 library(formattable)
 library(expss)
@@ -1162,7 +1161,7 @@ rownames(mean_ratings) <- c('Overall', 'Location', 'Quality', 'Price', 'Reputati
 trial.table <- as.table(mean_ratings)
 formattable(mean_ratings)
 
-(paste(path_2, "/papers/perceptions/figure/mean_ratings.",sep = "/"), units="px", height=2000, width= 5950, res=600)
+png(paste(path_2, "/papers/perceptions/figure/mean_ratings.png",sep = "/"), units="px", height=2000, width= 5950, res=600)
 grid.table(mean_ratings)
 dev.off()
 
@@ -1295,7 +1294,7 @@ rownames(mean_rater_gender) <- c('Overall', 'Location', 'Price', 'Quality', 'Rep
 trial.table <- as.table(mean_rater_gender)
 formattable(mean_rater_gender)
 
-(paste(path_2, "/papers/perceptions/figure/mean_rater_gender.",sep = "/"), units="px", height=1500, width= 7000, res=600)
+png(paste(path_2, "/papers/perceptions/figure/mean_rater_gender.png",sep = "/"), units="px", height=1500, width= 7000, res=600)
 grid.table(mean_rater_gender)
 dev.off()
 
@@ -1429,7 +1428,7 @@ rownames(mean_ratee_gender) <- c('Overall', 'Location', 'Price', 'Quality', 'Rep
 trial.table <- as.table(mean_ratee_gender)
 formattable(mean_ratee_gender)
 
-(paste(path_2, "/papers/perceptions/figure/mean_ratee_gender.",sep = "/"), units="px", height=1500, width= 7000, res=600)
+png(paste(path_2, "/papers/perceptions/figure/mean_ratee_gender.png",sep = "/"), units="px", height=1500, width= 7000, res=600)
 grid.table(mean_ratee_gender)
 dev.off()
 
@@ -1564,7 +1563,7 @@ rownames(mean_ratee_gender_rater_rating) <- c('Overall', 'Location', 'Price', 'Q
 trial.table <- as.table(mean_ratee_gender_rater_rating)
 formattable(mean_ratee_gender_rater_rating)
 
-(paste(path_2, "/papers/perceptions/figure/mean_ratee_gender_rater_rating.",sep = "/"), units="px", height=1500, width= 7000, res=600)
+png(paste(path_2, "/papers/perceptions/figure/mean_ratee_gender_rater_rating.png",sep = "/"), units="px", height=1500, width= 7000, res=600)
 grid.table(mean_ratee_gender_rater_rating)
 dev.off()
 
@@ -1732,7 +1731,7 @@ colnames(sum_stat) <- c('Mean','Standard Deviation','Minimum','Maximum')
 trial.table <- as.table(sum_stat)
 formattable(sum_stat)
 
-(paste(path_2, "/papers/perceptions/figure/detailed_sum_stat.",sep = "/"), units="px", height=6000, width= 5000, res=600)
+png(paste(path_2, "/papers/perceptions/figure/detailed_sum_stat.png",sep = "/"), units="px", height=6000, width= 5000, res=600)
 grid.table(sum_stat)
 dev.off()
 
@@ -1871,7 +1870,7 @@ colnames(sum_stat) <- c('Mean','Standard Deviation','Minimum','Maximum')
 trial.table <- as.table(sum_stat)
 formattable(sum_stat)
 
-(paste(path_2, "/papers/perceptions/figure/sum_stat.",sep = "/"), units="px", height=5000, width= 4500, res=600)
+png(paste(path_2, "/papers/perceptions/figure/sum_stat.png",sep = "/"), units="px", height=5000, width= 4500, res=600)
 grid.table(sum_stat)
 dev.off()
 
