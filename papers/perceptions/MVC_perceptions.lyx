@@ -32,7 +32,7 @@ knitr
 \bibtex_command default
 \index_command default
 \paperfontsize default
-\spacing single
+\spacing onehalf
 \use_hyperref true
 \pdf_bookmarks true
 \pdf_bookmarksnumbered false
@@ -70,10 +70,12 @@ knitr
 \shortcut idx
 \color #008000
 \end_index
-\leftmargin 2.5cm
+\leftmargin 4cm
 \topmargin 2.5cm
 \rightmargin 2.5cm
 \bottommargin 2.5cm
+\headsep 0.5cm
+\footskip 1cm
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation indent
@@ -127,7 +129,7 @@ thanks{LICOS Center for Institutions and Economic Performance, KULeuven,
 \end_layout
 
 \begin_layout Title
-Perceptions in Maize Supply Chains: Evidence from Uganda
+Gendered Perceptions in Maize Supply Chains: Evidence from Uganda
 \end_layout
 
 \begin_layout Abstract
@@ -137,7 +139,7 @@ Economic actors base decisions on limited information and perceptions related
  of resources.
  We study perceptions related to a set of important attributes that characterize
  maize supply chains in Uganda.
- We ask a random sample of maize farmers rate agro-input dealers, assembly
+ We ask a random sample of maize farmers to rate agro-input dealers, assembly
  traders and maize millers.
  We then track these other actors and ask them to rate themselves on the
  same attributes.
@@ -228,14 +230,247 @@ parindent}{1cm}
 \end_layout
 
 \begin_layout Section
-Background
+General Introduction 
 \end_layout
 
 \begin_layout Standard
-There is ample evidence of the essential role of improved agricultural inputs,
- especially improved seed, inorganic fertilizers and agro-chemicals, in
- enhancing agricultural productivity, poverty reduction, and generally economic
- transformation 
+Ratings based on gender of the rater and the ratee has only been of interest
+ in the recent decades and the literature shows a wide range of studies
+ in different fields to address the gender based rating patterns (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Furnham2005,Patiar2008"
+literal "true"
+
+\end_inset
+
+).
+ The main focus of this study is to understand gendered perceptions from
+ the ratings given by male and female farmers to the input dealers, traders
+ and processors of the maize supply chain in Uganda and the self-ratings
+ given by the male and female dealers, traders and maize millers to themselves.
+ In the agricultural sector, studies based on gender of the various actors
+ of the food value chains are becoming more prominent, particularly in the
+ developing economies (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "barrientos2019,Kruijssen2018,Mnimbo2017"
+literal "true"
+
+\end_inset
+
+).
+ For instance, in Africa, attempts of closing the productivity gap between
+ male and female farmers is a new step towards achieving food security with
+ gender dimensions in the food value chains across Uganda increasingly gaining
+ importance in the recent years 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "akite2018,bamanyaki2020,nchanji2020"
+literal "true"
+
+\end_inset
+
+.
+ It has been shown that improved access to markets and extension services
+ for both male and female smallholder maize farmers can help reduce the
+ gender productivity gap in Uganda 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Larson2016"
+literal "true"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+This motivates the aim to understand the ratings' mechanism based on the
+ gender of the rater and the ratee in the case of maize value chains in
+ Uganda.
+ Traditionally, females have not been majorly involved in the input dealing,
+ processing and trading activities for maize in Uganda.
+ Thus, analysing how the gender of each actor impacts the ratings from farmers
+ and the self-ratings is crucial in the Ugandan maize value chain as it
+ will explain the lower involvement of females in input dealing, processing
+ and trading activities.
+ The perceptions obtained from the study can explain why females do not
+ participate as much their male counterparts in these kind of businesses
+ which basically fuel the maize value chain and the production of maize
+ in Uganda.
+ 
+\end_layout
+
+\begin_layout Standard
+An intriguing question for researchers in understanding perceptions can
+ be the leading motive behind the usage of ratings as the tool for perception
+ identification.
+ The literature shows that ratings can be largely used as an instrument
+ for identifying performance levels of various actors in the markets or
+ respective industries of choice, for information transparency 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Karminsky2016"
+literal "true"
+
+\end_inset
+
+ and for decision management.
+ Various rating based decision management studies come from the financial
+ sector like credit ratings explaining investment decisions (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Bolton2012"
+literal "true"
+
+\end_inset
+
+) and financial risk (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "karminsky2009ratings"
+literal "true"
+
+\end_inset
+
+), the link between corporate credit ratings and the financial crisis (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "deHaan2017"
+literal "true"
+
+\end_inset
+
+) and bond ratings's informational value (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Kliger2000"
+literal "true"
+
+\end_inset
+
+).
+ In marketing research, ratings are the tool to identify demand (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Dhar2016"
+literal "true"
+
+\end_inset
+
+), sales and consumer preferences (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Sun2012"
+literal "true"
+
+\end_inset
+
+) and helps the product manufacturer to improve quality and align the product
+ features with consumer tastes (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Cheung2003,Barton2006"
+literal "true"
+
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Standard
+Social and psychological studies widely use ratings to analyse social behaviour
+ (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Renk2004,Schofield2007"
+literal "true"
+
+\end_inset
+
+), teaching and learning patterns (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Feldman2007"
+literal "true"
+
+\end_inset
+
+), development of children (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Bukowski2012"
+literal "true"
+
+\end_inset
+
+), parenting aspects (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Kuppens2009"
+literal "true"
+
+\end_inset
+
+) and languages (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Rudell1993,Cole2019"
+literal "true"
+
+\end_inset
+
+).
+ Similarly, ratings can also be used to study various agricultural aspects,
+ providing an understanding of the perceptions of the different actors of
+ the value (demand or supply) chain.
+ Recently, the study of perceptions is becoming more common in food supply
+ chains (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Ola2020,Odongo2016"
+literal "true"
+
+\end_inset
+
+).
+ These perceptions can explain the developments of these chains and can
+ indicate the loopholes in the performance of the involved actors.
+ 
+\end_layout
+
+\begin_layout Standard
+Broadly, studying the rater's ratings and the ratee's ratings can give insights
+ about the deeper mechanisms of performance perceptions in the value chains.
+ The ratings can be used as a tool to understand what factors determine
+ widespread perceptions about certain actors in the food value chains and
+ whether consistency can be obtained amongst the rater's and ratee's ratings.
+ Traditionally, higher ratings always motivate better performance as a boost
+ to the existing performance level of the concerned actor and lower ratings
+ improve performance or atleast induce efforts by the rated sujects to improve
+ performance.
+ It is true that there are various other factors like competition, access
+ to facilities, knowledge of the business and mechanisms, etc.
+ which can influence the performance levels directly.
+ However, the fact that ratings can even drive these factors directly or
+ indirectly cannot be ignored.
+ Ratings can be assumed as a method of assessment which does not couple
+ with direct repurcussions but do successfully indicate long-term repurcussions
+ in the near or distant future which impacts the rated subjects.
+ 
+\end_layout
+
+\begin_layout Standard
+The roles of input dealers, maize traders and maize processors in the maize
+ supply chain are very intricate.
+ Their performance can have major impacts on the entire value chain leading
+ to food security issues.
+ There is ample evidence of the essential role of improved agricultural
+ inputs, especially improved seed, inorganic fertilizers and agro-chemicals,
+ in enhancing agricultural productivity, poverty reduction, and generally
+ economic transformation 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "McArthur2017,Zeng2015,Evenson2003"
@@ -304,8 +539,9 @@ literal "true"
 \end_inset
 
 , is emerging as an additional explanation for the limited adoption.
- Poor quality inputs pose a major disincentive to adoption of improved inputs
- as use of low quality inputs result in low average returns to farmers 
+ Poor quality inputs pose a major disincentive to the adoption of improved
+ inputs as use of low quality inputs result in low average returns to farmers
+ 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Bold2015"
@@ -314,6 +550,7 @@ literal "true"
 \end_inset
 
 .
+ 
 \end_layout
 
 \begin_layout Standard
@@ -357,39 +594,31 @@ literal "true"
 
  provide insights into the actual (poor) quality of agricultural inputs
  in selected African countries, including Uganda.
- 
+ Drop in the quality of seeds after leaving the breeders 
 \begin_inset CommandInset citation
-LatexCommand citet
+LatexCommand citep
 key "Barriga2018"
 literal "true"
 
 \end_inset
 
- tested seeds along the maize supply chain in Uganda for purity, germination
- and genetic similarity, and found that the quality of seed starts to significan
-tly drop as soon as the seeds leave the breeders, and that this is the same
- across all geographic areas and types of suppliers, including wholesalers,
- retailers and major company outlets.
- Indeed, an earlier study by 
+, low levels of authentic seeds in locally retailed hybrid seeds 
 \begin_inset CommandInset citation
-LatexCommand citet
+LatexCommand citep
 key "Bold2017"
 literal "true"
 
 \end_inset
 
- on maize seed in Uganda found locally retailed hybrid maize seed to contain
- less than 50% authentic seeds 
+, counterfeiting/adulteration of inputs 
 \begin_inset CommandInset citation
-LatexCommand citet
-key "Bold2017"
+LatexCommand citep
+key "Ashour2019,Boef2019"
 literal "true"
 
 \end_inset
 
-.
- Just like seed, counterfeiting/adulteration is prevalent in agro-chemicals
- such as herbicides 
+ and high levels of deceptive marketing 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Ashour2019"
@@ -397,36 +626,11 @@ literal "true"
 
 \end_inset
 
-.
- In a comparative study on Uganda and Ghana, 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Boef2019"
-literal "true"
-
-\end_inset
-
- find manufacturers and input-dealers/distributors, respectively, to be
- responsible for 20% and 80% of the counterfeiting/adulteration of inputs.
- The studies also find high levels of deceptive marketing, for instance,
- 31% of the herbicide bottles sampled in 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Ashour2019"
-literal "true"
-
-\end_inset
-
- contained less than 75% of the ingredients advertised.
-\end_layout
-
-\begin_layout Standard
-The growing incidence of input quality issues (counterfeiting, adulteration
- and deceptive marketing) at input dealer level provide a strong case to
- strengthen policy and institutional reforms at this level of the input
- supply chain.
- A few studies have explored the role of agro-input dealers in the agricultural
- innovation process 
+ are some common pheonomena.
+ Henceforth, input dealers dealing in these agricultural inputs are an important
+ node for the sustenance of the maize value chains.
+ Although their role has already been studied with respect to the agricultural
+ innovation processes 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Etyang2014,Odame2011,Chinsinga2011,Feder2011,Adhiguru2009"
@@ -434,54 +638,141 @@ literal "true"
 
 \end_inset
 
-, although they mainly focus on input dealers as agriculture information
- extension agents.
+, it is essential to also realise the perceptions of their performance in
+ the maize supply chain.
  
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Etyang2014"
-literal "true"
-
-\end_inset
-
- examine the relevance of agro-input dealers in disseminating soil fertility
- management knowledge to farmers.
- They argue that enhancing input dealers' knowledge on soil fertility management
- would improve the quality of information passed on to farmers.
- 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Feder2011"
-literal "true"
-
-\end_inset
-
- observe that private sector participation can overcome some of the deficiencies
- of public extension systems, including delivery of inputs, but may lead
- to some challenges, such as inequitable provision of services, and limited
- coverage of farmers’ needs.
- The likelihood of inequitable provision of services to farmers is also
- highlighted by 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Odame2011"
-literal "true"
-
-\end_inset
-
- who find that, while the agro-dealer model offers the best approach for
- delivering new seeds and other modern technologies to the smallholder farmers,
- they (input dealers) remain spread unevenly and inevitably concentrated
- in the higher potential agricultural areas.
 \end_layout
 
 \begin_layout Standard
-For this paper, we use input dealer attributes, such as perceived ease of
- access to the dealer, perceived quality of seed sold, and reputation of
- the dealer, to assess whether such perceived input-dealer attributes have
- any significant influence on farmers' use of improved seed.
- Due to limited knowledge and information asymmetries, it is often hard
- for farmers to detect the quality of purchased inputs.
+Trading of maize is also an essential part of the maize value chain.
+ The assembly traders help in the marketing of maize and thus, are a linkage
+ between the farmers and the markets (or the millers in particular).
+ The local assembly traders reach the remote locations to collect maize
+ harvests sometimes directly from the farmers, farm gates, the small rural
+ storage facilities or the markets.
+ These traders also take the responsibility of transportation in general
+ so that the harvested maize can reach the essential marketing destinations,
+ starting from small retailers, millers or processors, bigger regional markets
+ to export centres.
+ The assembly traders also play a major role in maize storage as traders
+ in Uganda can store the harvest for a maximum of one year.
+ This can also impact the quality of maize in the supply chain as there
+ can be incidences of contamination and mould 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Kaaya2006"
+literal "true"
+
+\end_inset
+
+.
+ While studying market access in Southern and Eastern Africa, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Mather2013"
+literal "true"
+
+\end_inset
+
+ commented that access to assembly traders have increased over time and
+ this has given greater oppotunities to the remote areas with the access
+ of maize markets.
+ This claim is supported by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Sitko2014"
+literal "true"
+
+\end_inset
+
+ with the mention of trading being highly competitive in Eastern and Southern
+ Africa in terms of the marketing margins and the number of traders operating.
+ Studying the perceptions of these important actors can aid in the understanding
+ of the marketing linkages, maintenance of quality during trading activities
+ (storage and transportation) and sustenance of trading relationships in
+ these rural markets.
+ 
+\end_layout
+
+\begin_layout Standard
+Another very important actor of the maize supply chain is the millers or
+ processors who produce the final product from the harvested maize.
+ For instance, the profit-efficiency of the maize mills has been studied
+ by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Abu2009"
+literal "true"
+
+\end_inset
+
+ in South Africa where the researchers also indicated the unexplored potential
+ of the mills due to the deregulation of the maize markets in the country.
+ Maize milling is also very closely integrated with food security.
+ Since maize flour is a staple food for most of the countries in Africa,
+ maize mills can ensure constant supply of processed maize in cases of grain
+ scarcity or less availability of processed maize in the consumer markets.
+ An example of the importance of maize millers during times of deficit was
+ observed in Zambia when maize grain imports were prevalent from South Africa
+ in order to improve the functioning of the markets to meet the demands
+ of the consumers 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "nijhoff2002markets"
+literal "true"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Interestingly, the type of maize being milled can also be influenced by
+ consumer preferences.
+ An example of this can be obtained from 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "omueti2006comparison"
+literal "true"
+
+\end_inset
+
+ where it has been mentioned that soft endosperm varieties of maize are
+ preferred in Western Africa because they are easier to process and thus,
+ finer final products can be achieved from such varieties.
+ Thus, maize millers or processors can also act as a connection between
+ the supply and the demand chains because consumer preferences can be rooted
+ into the supply chains through the decisions of the maize millers in the
+ types of maize they buy to process for selling purposes.
+ At the same time, large scale processors can also influence government
+ actions for the sustenance of food value chains 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "omueti2006comparison"
+literal "true"
+
+\end_inset
+
+, indicating the extent to which maize millers hold a prime role in the
+ maize value chain mechanisms.
+ 
+\end_layout
+
+\begin_layout Standard
+For this study, we use input dealer, trader and miller attributes, such
+ as perceived ease of access to the dealer or trader or miller, perceived
+ quality of the seed sold by the dealer or the quality of service provided
+ by the trader or the miller, and reputation of the dealer or trader or
+ miller, to assess whether such perceived input-dealer or trader or miller
+ attributes can vary significantly based on the gender of the farmer (rater)
+ or the ratee (dealer or trader or miller).
+ 
+\end_layout
+
+\begin_layout Standard
+Due to limited knowledge and information asymmetries, it is often hard for
+ farmers to detect the quality of purchased inputs.
  Hence, for less knowledgeable and experienced farmers, input quality may
  be approximated by, for example, input dealer attributes such as the dealer's
  reputation (information that other buyers have about the seller) or the
@@ -496,10 +787,10 @@ literal "true"
 
 \end_inset
 
-, for instance find that the price of a bottle of herbicide adjusts to its
- measured quality, although to a very limited degree.
+, for instance, find that the price of a bottle of herbicide adjusts to
+ its measured quality, although to a very limited degree.
  Ease of access to an input dealer also determines transactions costs and
- subsequently farmer's access to and use improved inputs 
+ subsequently farmer's access to and use of improved inputs 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Alene2008"
@@ -511,10 +802,9 @@ literal "true"
  Secondly, ease of access to input dealers may increase interaction between
  farmers and the input dealers, thereby increase farmers learning about
  improved seed.
- The theoretical framework guiding our general hypothesis of a possible
- link between input dealer attributes and use of improved seed can be located
- in the literature on customer perceived value and consumption behaviour
- 
+ The theoretical framework motivating a possible link between input dealer
+ attributes and use of improved seed can be located in the literature on
+ customer perceived value and consumption behaviour 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Jayashankar2018,Chiu2014"
@@ -530,46 +820,101 @@ literal "true"
 \end_layout
 
 \begin_layout Standard
-The case for our investigation is the maize value chain in Uganda.
- We use data from a sample of 1500 maize farmers and 78 input (seed) dealers
- from Eastern Uganda to: (i) examine the (in)consistency in farmer's and
- input (seed) dealer's perceived attribute ratings of input dealers; and
- (ii) assess the possible influence of the perceived input dealer attributes
- on smallholder farmers’ use of improved seed.
- We have conceptualized farmer's purchase patterns of improved maize seed
- in the 2018 agricultural year as a proxy for their use of improved seed.
-\end_layout
-
-\begin_layout Standard
-Our first objective is to establish how the perceived attribute ratings
- of input dealers align among farmers, between different farmer categories,
- and between farmers and input dealers themselves.
- In this first objective, we also study the correlation between the input
- dealer attributes.
- The five attributes, as rated on a scale of 1-5 by farmers and input dealers
- themselves, are: (i) quality of seed sold by a given dealer relative to
- the other dealers; (ii) price of seed sold by a given dealer relative to
- other dealers; (iii) Location (ease of access by road or phone) of the
- input dealer relative to other dealers; (iv) level of stock relative to
- other dealers; and (v) reputation of a given dealer relative to other dealers.
- The first objective is studied using intra-class correlation analysis.
- In our second objective, we investigate the relationship between the input
- dealer attributes and farmer's purchase patterns of improved maize seed
- while controlling for additional farmer and input dealer variables, for
- example, farmer's education level, or other sales services offered by input
- dealer.
- The second objective is analysed using multivariate regression models.
-\end_layout
-
-\begin_layout Standard
-This study contributes additional literature to understanding agricultural
- technology adoption processes in emerging markets, specifically; the role
- of agro-input dealers in facilitating or limiting technology adoption in
- smallholder agriculture.
- Seller (input dealer) ratings, which this study employs to examine farmer's
- perceived value of input dealers, is widely used system in marketing- as
- a mechanism to increase customer trust in and purchase of services/products
+Similar arguments can be used for the perceived attributes of the trader.
+ In remote locations, if the traders are easily accessible, that would mean
+ that the farmers have greater exposure to selling opportunities, might
+ reduce wastage of harvest, ensure constant income for the farmer and increase
+ availability of maize harvests at the buying points.
+ Traders who are easily accessible and provide a good quality of service
+ may also have greater reputation amongst the farmers which influence the
+ perceived reputation attributes.
+ The perceived quality of service can be driven by many aspects like behaviour
+ of the trader, flexibility of the trader, risks taken by the trader for
+ the transportation of the harvest, etc.
+ Traders are also rated based on honesty.
+ This is interesting as it indicates trust levels between the farmer and
+ the trader.
+ Traders with good perceived honesty levels might be getting more business
+ and being reputed well.
+ The price paid by traders while buying the harvest is an essential part
+ of the interaction between the trader and the farmer.
+ It is very important to know how well the farmers perceive the prices being
+ paid by the traders and how well the traders perceive the they are paying
+ themselves.
+ Traders paying higher prices will mostly likely be rated well also on the
+ reputation, quality and honesty aspects.
  
+\end_layout
+
+\begin_layout Standard
+Millers or processors are also scored based on similar factors or attributes.
+ The location of the mill is necesary to understand how easy it is for the
+ traders or farmers to take the harvest to the processing points since in
+ Uganda, both farmers and traders can take harvest to the mills.
+ For farmers living in remote areas, it maybe hard to transport their harvest
+ for milling or processing.
+ The quality of service and the quality of end product provided by these
+ mills also impacts their reputation.
+ Friendly behaviour, greater flexibility, higher cleanliness in the mills
+ and lower waiting times can increase the perceived quality of service and
+ earn good reputation amongst the farmers and traders.
+ The prices charged by the mill for processing maize can also influence
+ the farmer's perceived quality of the mill and the end product.
+ Similarly, the prices charged can be very competitive.
+ Thus, perceived prices cannot directly indicate the actual price.
+ Also, in this case, high prices may not always be perceived as bad as they
+ can be coupled with the quality of processing and the quality of the end
+ product ensured by the mill.
+ Finer end products can improve the perceived quality of end product along
+ with the reputation of the mill or the processor.
+ 
+\end_layout
+
+\begin_layout Standard
+The case for our investigation is the maize value chain in Uganda.
+ We use data from a sample of 1500 maize farmers and 78 input (seed) dealers,
+ 341 assembly traders and 174 millers from Eastern Uganda to examine the
+ (in)consistency in farmer's and input (seed) dealer's or trader's or miller's
+ perceived attribute ratings of these actors and identify if the gender
+ of the rater or the ratee has any impact on the ratings.
+ 
+\end_layout
+
+\begin_layout Standard
+The first objective is to establish how the perceived attribute ratings
+ and self-ratings of dealers, traders and millers differ from each other.
+ All the actors are studied together with the focus on the ratings being
+ received and the self-ratings.
+ Since, one attribute for each actor vary, the study considers the other
+ four attributes for every actor.
+ The four attributes, as rated on a scale of 1-5 by farmers and the dealers,
+ traders and millers themselves, are: (i) quality of seed sold by a given
+ dealer relative to the other dealers, quality of service provided by a
+ trader (miller) relative to the other traders (millers); (ii) price of
+ seed sold by a given dealer relative to other dealers, price paid by a
+ given trader relative to other traders, price charged by a given miller
+ relative to the other millers; (iii) Location (ease of access by road or
+ phone) of the input dealer (trader or miller) relative to other dealers
+ (traders or millers); (iv) reputation of a given dealer (trader or miller)
+ relative to other dealers (traders or millers).
+ The second objective aims to understand rating patterns based on the gender
+ of the farmer (rater) and the third objective aims to understand the self-ratin
+g patterns based on the gender of the ratee (dealer or trader or miller).
+ The fourth objective is to identify whether farmers rate the ratees based
+ on their gender.
+ Multivariate regression models with clustered standard errors are used
+ for the analysis.
+ 
+\end_layout
+
+\begin_layout Standard
+This study contributes additional literature to understanding the role of
+ agro-input dealers, traders and millers in facilitating or limiting the
+ development of smallholder agriculture.
+ Ratings for the different actors of the supply chain, which this study
+ employs to examine farmer's perceived value of input dealers or traders
+ or millers, is widely a used system in marketing- as a mechanism to increase
+ customer trust in and purchase of services/products 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Jayashankar2018,Chiu2014"
@@ -579,9 +924,9 @@ literal "true"
 
 .
  Such a rating system, if applied to agricultural input marketing, is likely
- encourage input dealers to desist from counterfeiting, adulteration or
- deceptive marketing of inputs in order to maintain a good reputation and
- higher rating 
+ to encourage input dealers to desist from counterfeiting, adulteration
+ or deceptive marketing of inputs in order to maintain a good reputation
+ and higher rating 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Kim2013,Bente2012,BarIsaac2008"
@@ -590,6 +935,11 @@ literal "true"
 \end_inset
 
 .
+ If applied to assembly trading, it will ensure broader access to maize
+ markets and good prices for the farmers' harvests.
+ Similarly, ratings for maize processing can improve the end products obtained
+ from maize and can sustain the value chain, ensuring less deficits and
+ good quality of food.
  Seller ratings and reputation are increasingly becoming important assets
  in marketing, particularly when the quality of the good or service transacted
  is hard to measure and the buyer and seller cannot perfectly contract on
@@ -603,9 +953,10 @@ literal "true"
 \end_inset
 
 .
- Through seller ratings, the seller will be mindful of building and maintaining
- a good reputation through the information that buyers have about the seller,
- including previous transactions and the reports of other buyers.
+ Through these type of ratings, the supply chain actors will be mindful
+ of building and maintaining a good reputation through the information that
+ the farmers have about these actors, including previous transactions and
+ the reports of other farmers.
 \end_layout
 
 \begin_layout Standard
@@ -615,617 +966,7 @@ In the sections that follow, we expound on the study context; explain the
 \end_layout
 
 \begin_layout Section
-Gender Based Ratings
-\end_layout
-
-\begin_layout Standard
-Ratings can be largely used as an instrument for identifying performance
- levels of various actors in the markets or respective industries of choice,
- for information transparency 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Karminsky2016"
-literal "true"
-
-\end_inset
-
- and for decision management.
- Various rating based decision management studies come from the financial
- sector like credit ratings explaining investment decisions (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "Cantor2007"
-literal "true"
-
-\end_inset
-
-; 
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "Bolton2012"
-literal "true"
-
-\end_inset
-
-) and financial risk (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "karminsky2009ratings"
-literal "true"
-
-\end_inset
-
-), the link between corporate credit ratings and the financial crisis (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "deHaan2017"
-literal "true"
-
-\end_inset
-
-) and bond ratings's informational value (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "Kliger2000"
-literal "true"
-
-\end_inset
-
-).
- In marketing research, ratings are the tool to identify demand (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "Dhar2016"
-literal "true"
-
-\end_inset
-
-), sales and consumer preferences (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "Sun2012"
-literal "true"
-
-\end_inset
-
-) and helps the product manufacturer to improve quality and align the product
- features with consumer tastes (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "Cheung2003,Jan2008,Barton2006,Fainmesser2020,Kuksov2010"
-literal "true"
-
-\end_inset
-
-).
- 
-\end_layout
-
-\begin_layout Standard
-Social and psychological studies widely use ratings to analyse social behaviour
- (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "Renk2004,Schofield2007,Arnesen2018"
-literal "true"
-
-\end_inset
-
-), teaching and learning patterns (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "Kornell2016,Mashburn2006,Feldman2007,pas2014,Spooren2006,Borman2005"
-literal "true"
-
-\end_inset
-
-), development of children (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "Bukowski2012,johnson2010internet,Sandner2016"
-literal "true"
-
-\end_inset
-
-), parenting aspects (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "Johnston2005,Kuppens2009,Healey2011"
-literal "true"
-
-\end_inset
-
-) and languages (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "Rudell1993,Cole2019"
-literal "true"
-
-\end_inset
-
-).
- Similarly, ratings can also be used to study various agricultural aspects,
- providing an understanding of the perceptions of the different actors of
- the value chain.
- 
-\end_layout
-
-\begin_layout Standard
-Broadly, studying the rater's ratings and the ratee's ratings can give insights
- about the deeper mechanisms of performance perceptions in the value chains.
- The ratings can be used as a tool to understand what factors determine
- widespread perceptions about certain actors in the food value chains and
- whether consistency can be obtained amongst the rater's and ratee's ratings.
- Traditionally, higher ratings always motivate better performance as a boost
- to the existing performance level of the concerned actor and lower ratings
- improve performance or atleast induce efforts by the rated sujects to improve
- performance.
- Ratings can be assumed as a method of assessment which does not couple
- with direct repurcussions but do successfully indicate long-term repurcussions
- in the near or distant future which impacts the rated subjects.
- 
-\end_layout
-
-\begin_layout Standard
-In this study, we focus on ratings based on gender.
- Ratings based on gender of the rater and the ratee has only been of interest
- in the recent decades and the literature shows a wide range of studies
- in different fields to address the gender based rating patterns (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "Furnham2005,Robinson2011,Patiar2008"
-literal "true"
-
-\end_inset
-
-).
- In the agricultural sector, studies based on gender of the various actors
- of the food value chains are becoming more prominent, particularly in the
- developing economies (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "Masamha2018,barrientos2019,Kruijssen2018,Mnimbo2017,Gengenbach2018,Stoian2018"
-literal "true"
-
-\end_inset
-
-).
- For instance, in Africa, attempts of closing the productivity gap between
- male and female farmers is a new step towards achieving food security.
- Improved access to markets and extension services for both male and female
- smallholder maize farmers can help reduce the gender productivity gap in
- Uganda 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Larson2016"
-literal "true"
-
-\end_inset
-
-.
- Gender dimensions in the food value chains across Uganda are increasingly
- gaining importance in the recent years 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "akite2018,bamanyaki2020,nchanji2020,ajambo2018"
-literal "true"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-This motivates the aim to understand the ratings' mechanism based on the
- gender of the rater and the ratee in the case of maize value chains in
- Uganda.
- Traditionally, females have not been majorly involved in the input dealing,
- processing and trading activities for maize in Uganda.
- The goal is to look at the ratings from the farmers for the input dealers,
- processors and traders of maize and then also study the ratings given by
- input dealers, processors and traders to themselves.
- Following this, I will focus on the gender of each actor and see how gender
- impacts the ratings from the rater and the ratee.
- Gender based analysis of the ratings is crucial in the Ugandan maize value
- chain as it will explain the lower involvement of females in input dealing,
- processing and trading activities.
- The perceptions obtained from the study can explain why females do not
- participate as much their male counterparts in these kind of businesses
- which basically fuel the maize value chain and the production of maize
- in Uganda.
- 
-\end_layout
-
-\begin_layout Subsection
-Hypothesis
-\end_layout
-
-\begin_layout Standard
-In this study, the following hypotheses are analysed:
-\end_layout
-
-\begin_layout Enumerate
-Self-ratings are higher than ratings given by raters to ratees.
- 
-\end_layout
-
-\begin_layout Enumerate
-Female raters give higher ratings when compared to male raters.
-\end_layout
-
-\begin_layout Enumerate
-Self-ratings given by females are lower compared to males.
-\end_layout
-
-\begin_layout Enumerate
-Female ratees receive lower ratings from raters than male ratees.
- 
-\end_layout
-
-\begin_layout Standard
-Hypothesis 1 determines how the input dealers, processors and traders rate
- themselves compared to the farmers' ratings.
- Self-ratings have been criticised largely and checked for validity by many
- researchers in different fields of research (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "Heneman1974,Lowman1987,Horwood2021"
-literal "true"
-
-\end_inset
-
-).
- This study does not claim that the self-ratings determine the actual performanc
-e levels of the input dealers, processors and traders in the Ugandan maize
- value chain.
- This is because self-ratings can be a victim of self-bias (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "Sui2017"
-literal "true"
-
-\end_inset
-
-), self-deception (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "von2011evolution,Smith2017"
-literal "true"
-
-\end_inset
-
-), self-enhancement (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "Sedikides2008,Alicke2009,Robins2001"
-literal "true"
-
-\end_inset
-
-) and impression management (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "Cheng2017,Wayne1995"
-literal "true"
-
-\end_inset
-
-).
- However, the self-ratings indicate the perceived level of performance by
- these actors which is the main motivation towards the inclusion of this
- hypothesis in the study.
- 
-\end_layout
-
-\begin_layout Standard
-Perceptions in this regard can explain a lot about the industry and could
- also explain slower technological growth and advancements.
- If these actors perceive themselves to be performing better than they actually
- are, then there will be lesser efforts to improve their professional stance
- in the industry.
- Also, if the farmers rate them lower than their self-ratings, it shows
- that the dealers, processors and traders are not meeting the expectations
- of the farmers without even realising their low performance levels which
- is emanated through their higher self-ratings.
- Higher self-ratings can also be a result of leniency in assessing self-performa
-nce as discussed by 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "mehmet2020evaluation"
-literal "true"
-
-\end_inset
-
- and 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Cheng2017"
-literal "true"
-
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_layout Standard
-Then, I turn to the variations in ratings based on gender (hypothesis 2).
- There is evidence from various areas of research that females generally
- give higher ratings when compared to their male counterparts.
- 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Furnham2005"
-literal "true"
-
-\end_inset
-
- discussed ratings from male and female raters on business intelligence
- where higher ratings for boss's overall, emotional and organizational IQ
- were noticed from female raters.
- 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Bellezza1986"
-literal "true"
-
-\end_inset
-
- also found that ratings from females were higher for words based on the
- familiarity scales.
- Interestingly, 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Rappoport1993"
-literal "true"
-
-\end_inset
-
- also showed that females tended to give higher ratings for healthy meals
- based on the factors like health, pleasure and convenience when compared
- to the male raters.
- 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Winquist1998"
-literal "true"
-
-\end_inset
-
- argues that females have a tendency to score higher because female perceptions
- are more positive than male perceptions.
- Thus, I expect to see a similar trend in this study.
- 
-\end_layout
-
-\begin_layout Standard
-Female farmers are expected to give higher ratings to the input dealers,
- processors and traders on an average compared to the male farmers.
- This can indicate various interesting and unknown attributes of the value
- chain.
- There are possibilities that female farmers are given better services by
- the dealers, processors and actors and that is the reason behind higher
- ratings by these female raters.
- This can be culturally linked for a prominent gendered bias in the provision
- of services and sale of goods.
- Another reason for higher ratings could be that the female raters are less
- stringent and they tend to be lenient while providing ratings for the actors
- they are involved with in their business.
- However, the literature does not mention statistically significant presence
- of leniency for ratings provided by female raters (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "ThorntonIII2019,mehmet2020evaluation"
-literal "true"
-
-\end_inset
-
-).
- Validating this also in the research of food value chains can be an interesting
- contribution to the existing studies.
- 
-\end_layout
-
-\begin_layout Standard
-Hypothesis 3 essentially compares the self-ratings given by female and male
- dealers, processors and traders.
- Females generally tend to underrate themselves.
- 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Patiar2008"
-literal "true"
-
-\end_inset
-
- saw a similar pattern for female Department Managers in the hotel industry.
- Male Department Managers always inflated their self-ratings while their
- female counterparts refrained from doing so.
- Gendered differences in self-perceptions do exist and this induces female
- and male respondents to rate themselves differently, as obtained by 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Beyer1990,Jones2002,Taylor1986,WOHLERS1989,rosenkrantz1968,turan2002study"
-literal "true"
-
-\end_inset
-
- and 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "wrisberg1988"
-literal "true"
-
-\end_inset
-
-.
- Not only that, 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Braddy2020"
-literal "true"
-
-\end_inset
-
- found that females tend to experience harsher consequences than men when
- they overrate themselves.
- Such gendered ideas of self-assessment can partially explain why less female
- dealers, processors and traders get involved in the maize markets in Uganda.
- Since they underestimate their ability and do not think themselves to be
- performing well enough as their male counterparts, females could be less
- willing to be involved in these kind of business activities.
- Thus, the markets remain majorly dominated by male actors of the maize
- value chain.
- 
-\end_layout
-
-\begin_layout Standard
-Another important reason or consequence of lower self-ratings can be the
- lack of confidence to strive in the business.
- In the developing economies, females generally have low confidence levels
- and face a lot of obstacles due to the standard cultural norms, societal
- expectations, gender discrimination and job-family conflicts (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "Izhar2006"
-literal "true"
-
-\end_inset
-
-).
- 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "brown1996"
-literal "true"
-
-\end_inset
-
- illustrated this phenomenon for Ugandan women describing how socialization
- effects, cultural validation of male dominance and sex stereotyping hinders
- the advancement of these women in educational management roles.
- As a result of social imposition of family roles, Ugandan women tend to
- have lower self-esteem and confidence in their potential to succeed outside
- domestic roles (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "Izhar2006,brown1996"
-literal "true"
-
-\end_inset
-
-).
- 
-\end_layout
-
-\begin_layout Standard
-The goal for hypothesis 4 is to study the ratings received by male and female
- input dealers, traders and processors from maize farmers.
- Females are generally perceived to be performing worse than their male
- counterparts and thus, are rated lower.
- For instance, 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "lyness2006"
-literal "true"
-
-\end_inset
-
- found that female managers received lower performance ratings compared
- to male managers.
- Particularly, women involved in line jobs received lower ratings compared
- to women involved in staff jobs.
- 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "basow1987"
-literal "true"
-
-\end_inset
-
- also presented similar findings for female professors who were rated by
- both male and female students.
- Bias against female professors has been very prominent in the literature
- in the past decades (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "Feldman1993,Mengel2018,miller2000,Mitchell2018,Fisher2019"
-literal "true"
-
-\end_inset
-
-).
- This evident bias against females is the root for lower ratings received
- by female ratees.
- 
-\end_layout
-
-\begin_layout Standard
-In the context of this study, bias against women can aid the explanation
- for the minimal involvement of women in input dealing, trading and processing
- of maize.
- When women are aware that they are perceived to be less capable for these
- business activities, they might not enter the industry in the first place
- to avoid criticisms and performance obstacles at a later stage.
- Social stringency and family practices might limit the women from performing
- better or being equally competitive as their male counterparts.
- Another compelling reason for the lower ratings received by female ratees
- could be that their actual performance levels are worse than the male ratees.
- Lower access to facilities, finance and business guidance can be the drivers
- of worse performance for the female dealers, traders and processors alongside
- the underlying societal aspects.
- These arguments can be supported by the claims of 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "niethammer2013"
-literal "true"
-
-\end_inset
-
- mentioning the significant gender differences in the access to finance
- for the development of businesses and the lower formal bank account penetration
- for women when compared to men in the developing nations.
- 
-\end_layout
-
-\begin_layout Standard
-A study done on the women entrepreneurs in the Kigali region of Rwanda by
- 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Nsengimana2017"
-literal "true"
-
-\end_inset
-
- reported many challenges for the success of their businesses like the lack
- of collateral, lack of information technology access, high interest rates
- for loans, lack of skill development opportunities, cultural imperatives
- and psychological factors induced by the families and the society.
- Similarly, 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Guma2015"
-literal "true"
-
-\end_inset
-
- discusses the barriers faced by women entrepreneurs in Uganda.
- Some of the prominent issues faced by women are gender-related stereotypes
- (risk-taking behaviour, higher levels of empathy and lower aggressiveness),
- under-capitalization (credit access limits, availability of collateral),
- balance across multiple responsibilities (childcare, family responsibilities,
- inter-role conflict), inadequate skills and business knowledge, disapproval
- from societal standards, lack of respect from the male-dominated business
- community, lack of support, time investment constraints, reputation and
- work credibility challenges.
- These can majorly impact the ratings received by the female actors in the
- value chain and can undermine their perceived performance in the industry.
- 
-\end_layout
-
-\begin_layout Section
-Study context and data
+Study Context and Data 
 \end_layout
 
 \begin_layout Standard
@@ -1387,6 +1128,376 @@ Our general hypothesis is that, input dealer attributes, such as, perceived
  ease of access to the input dealer, have a significant influence on the
  purchase/use of puruse of improved maize seed and generally improved agricultur
 al inputs chased inputs.
+\end_layout
+
+\begin_layout Subsection
+Hypothesis
+\end_layout
+
+\begin_layout Standard
+In this study, the following hypotheses are analysed:
+\end_layout
+
+\begin_layout Enumerate
+Self-ratings are higher than ratings given by raters to ratees.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Female raters give higher ratings when compared to male raters.
+\end_layout
+
+\begin_layout Enumerate
+Self-ratings given by females are lower compared to males.
+\end_layout
+
+\begin_layout Enumerate
+Female ratees receive lower ratings from raters than male ratees.
+ 
+\end_layout
+
+\begin_layout Standard
+Hypothesis 1 determines how the input dealers, processors and traders rate
+ themselves compared to the farmers' ratings.
+ Self-ratings have been criticised largely and checked for validity by many
+ researchers in different fields of research (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Heneman1974,Lowman1987,Horwood2021"
+literal "true"
+
+\end_inset
+
+).
+ This study does not claim that the self-ratings determine the actual performanc
+e levels of the input dealers, processors and traders in the Ugandan maize
+ value chain.
+ This is because self-ratings can be a victim of self-bias (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Sui2017"
+literal "true"
+
+\end_inset
+
+), self-deception (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "von2011evolution"
+literal "true"
+
+\end_inset
+
+), self-enhancement (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Sedikides2008,Alicke2009"
+literal "true"
+
+\end_inset
+
+) and impression management (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Wayne1995"
+literal "true"
+
+\end_inset
+
+).
+ However, the self-ratings indicate the perceived level of performance by
+ these actors which is the main motivation towards the inclusion of this
+ hypothesis in the study.
+ 
+\end_layout
+
+\begin_layout Standard
+Perceptions in this regard can explain a lot about the industry and could
+ also explain slower technological growth and advancements.
+ If these actors perceive themselves to be performing better than they actually
+ are, then there will be lesser efforts to improve their professional stance
+ in the industry.
+ Also, if the farmers rate them lower than their self-ratings, it shows
+ that the dealers, processors and traders are not meeting the expectations
+ of the farmers without even realising their low performance levels which
+ is emanated through their higher self-ratings.
+ Higher self-ratings can also be a result of leniency in assessing self-performa
+nce as discussed by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Cheng2017"
+literal "true"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Then, I turn to the variations in ratings based on gender (hypothesis 2).
+ There is evidence from various areas of research that females generally
+ give higher ratings when compared to their male counterparts.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Furnham2005"
+literal "true"
+
+\end_inset
+
+ discussed ratings from male and female raters on business intelligence
+ where higher ratings for boss's overall, emotional and organizational IQ
+ were obtained from female raters.
+ Interestingly, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Rappoport1993"
+literal "true"
+
+\end_inset
+
+ also showed that females tended to give higher ratings for healthy meals
+ based on the factors like health, pleasure and convenience when compared
+ to the male raters.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Winquist1998"
+literal "true"
+
+\end_inset
+
+ argues that females have a tendency to score higher because female perceptions
+ are more positive than male perceptions.
+ Thus, I expect to see a similar trend in this study.
+ 
+\end_layout
+
+\begin_layout Standard
+Female farmers are expected to give higher ratings to the input dealers,
+ processors and traders on an average compared to the male farmers.
+ This can indicate various interesting and unknown attributes of the value
+ chain.
+ There are possibilities that female farmers are given better services by
+ the dealers, processors and actors and that is the reason behind higher
+ ratings by these female raters.
+ This can be culturally linked for a prominent gendered bias in the provision
+ of services and sale of goods.
+ Another reason for higher ratings could be that the female raters are less
+ stringent and they tend to be lenient while providing ratings for the actors
+ they are involved with in their business.
+ However, the literature does not mention statistically significant presence
+ of leniency for ratings provided by female raters (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "ThorntonIII2019"
+literal "true"
+
+\end_inset
+
+).
+ Validating this also in the research of food value chains can be an interesting
+ contribution to the existing studies.
+ 
+\end_layout
+
+\begin_layout Standard
+Hypothesis 3 essentially compares the self-ratings given by female and male
+ dealers, processors and traders.
+ Females generally tend to underrate themselves.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Patiar2008"
+literal "true"
+
+\end_inset
+
+ saw a similar pattern for female Department Managers in the hotel industry.
+ Male Department Managers always inflated their self-ratings while their
+ female counterparts refrained from doing so.
+ Gendered differences in self-perceptions do exist and this induces female
+ and male respondents to rate themselves differently, as argued by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Beyer1990,WOHLERS1989"
+literal "true"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "rosenkrantz1968"
+literal "true"
+
+\end_inset
+
+.
+ Not only that, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Braddy2020"
+literal "true"
+
+\end_inset
+
+ found that females tend to experience harsher consequences than men when
+ they overrate themselves.
+ Such gendered ideas of self-assessment can partially explain why less female
+ dealers, processors and traders get involved in the maize markets in Uganda.
+ Since they underestimate their ability and do not think themselves to be
+ performing well enough as their male counterparts, females could be less
+ willing to be involved in these kind of business activities.
+ Thus, the markets remain majorly dominated by male actors of the maize
+ value chain.
+ 
+\end_layout
+
+\begin_layout Standard
+Another important reason or consequence of lower self-ratings can be the
+ lack of confidence to strive in the business.
+ In the developing economies, females generally have low confidence levels
+ and face a lot of obstacles due to the standard cultural norms, societal
+ expectations, gender discrimination and job-family conflicts (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Izhar2006"
+literal "true"
+
+\end_inset
+
+).
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "brown1996"
+literal "true"
+
+\end_inset
+
+ illustrated this phenomenon for Ugandan women describing how socialization
+ effects, cultural validation of male dominance and sex stereotyping hinders
+ the advancement of these women in educational management roles.
+ As a result of social imposition of family roles, Ugandan women tend to
+ have lower self-esteem and confidence in their potential to succeed outside
+ domestic roles (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Izhar2006,brown1996"
+literal "true"
+
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Standard
+The goal for hypothesis 4 is to study the ratings received by male and female
+ input dealers, traders and processors from maize farmers.
+ Females are generally perceived to be performing worse than their male
+ counterparts and thus, are rated lower.
+ For instance, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "lyness2006"
+literal "true"
+
+\end_inset
+
+ found that female managers received lower performance ratings compared
+ to male managers.
+ Particularly, women involved in line jobs received lower ratings compared
+ to women involved in staff jobs.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "basow1987"
+literal "true"
+
+\end_inset
+
+ also presented similar findings for female professors who were rated by
+ both male and female students.
+ Bias against female professors has been very prominent in the literature
+ in the past decades (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Feldman1993,Mengel2018,miller2000"
+literal "true"
+
+\end_inset
+
+).
+ This evident bias against females is the root for lower ratings received
+ by female ratees.
+ 
+\end_layout
+
+\begin_layout Standard
+In the context of this study, bias against women can aid the explanation
+ for the minimal involvement of women in input dealing, trading and processing
+ of maize.
+ When women are aware that they are perceived to be less capable for these
+ business activities, they might not enter the industry in the first place
+ to avoid criticisms and performance obstacles at a later stage.
+ Social stringency and family practices might limit the women from performing
+ better or being equally competitive as their male counterparts.
+ Another compelling reason for the lower ratings received by female ratees
+ could be that their actual performance levels are worse than the male ratees.
+ Lower access to facilities, finance and business guidance can be the drivers
+ of worse performance for the female dealers, traders and processors alongside
+ the underlying societal aspects.
+ These arguments can be supported by the claims of 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "niethammer2013"
+literal "true"
+
+\end_inset
+
+ mentioning the significant gender differences in the access to finance
+ for the development of businesses and the lower formal bank account penetration
+ for women when compared to men in the developing nations.
+ 
+\end_layout
+
+\begin_layout Standard
+A study done on the women entrepreneurs in the Kigali region of Rwanda by
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Nsengimana2017"
+literal "true"
+
+\end_inset
+
+ reported many challenges for the success of their businesses like the lack
+ of collateral, lack of information technology access, high interest rates
+ for loans, lack of skill development opportunities, cultural imperatives
+ and psychological factors induced by the families and the society.
+ Similarly, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Guma2015"
+literal "true"
+
+\end_inset
+
+ discusses the barriers faced by women entrepreneurs in Uganda.
+ Some of the prominent issues faced by women are gender-related stereotypes
+ (risk-taking behaviour, higher levels of empathy and lower aggressiveness),
+ under-capitalization (credit access limits, availability of collateral),
+ balance across multiple responsibilities (childcare, family responsibilities,
+ inter-role conflict), inadequate skills and business knowledge, disapproval
+ from societal standards, lack of respect from the male-dominated business
+ community, lack of support, time investment constraints, reputation and
+ work credibility challenges.
+ These can majorly impact the ratings received by the female actors in the
+ value chain and can undermine their perceived performance in the industry.
+ 
 \end_layout
 
 \begin_layout Section
@@ -7859,7 +7970,8 @@ The dependent variable in this study is always the ratings for the input
  The dataset used for the analysis is pooled, i.e., ratings for dealers, traders
  and processors are contained in the same dataset.
  The estimation method used for understanding gendered perceptions in maize
- supply chains is linear regressions with cluster robust standard errors.
+ supply chains is multivariate regressions with cluster robust standard
+ errors.
  The clustering is done based on the ID of the ratees (dealers, traders
  and millers) which was assigned after the data was collected.
  The independent variable depends on the hypothesis being tested.
@@ -9012,8 +9124,8 @@ Results
 \begin_layout Standard
 This section discusses the results obtained from the analysis of the models
  discussed above.
- The tables for the various linear regressions with clustered standard errors
- are presented in this section.
+ The tables for the various multivariate regressions with clustered standard
+ errors are presented in this section.
  From table 6 (model 1), it is noticeable that the impact of farmer's gender
  on the average overall rating given by the farmer is significant.
  If the farmer is a woman, the average score given by the farmer is 0.0573

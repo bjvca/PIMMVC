@@ -1940,3 +1940,27 @@ summary(fe_modprice_diff) #reject null, indv means diff from overall mean
 
 fe_modrepu_diff <- lm(ratingrepu_diff ~ id.ratee, data = pool)
 summary(fe_modrepu_diff)  #reject null, indv means diff from overall mean 
+
+
+
+
+
+################################# ICC ####################################
+library(irrICC)
+
+iccdat <- pool[c("id.ratee","rating_overall","ratee_rating_overall")]
+icc1a.fn(iccdat)
+icc1b.fn(iccdat)
+
+icc2.inter.fn(iccdat)
+
+iccdat20 <- iccdat[iccdat$id.ratee %in%  names(table(iccdat$id.ratee))[table(iccdat$id.ratee) >20] , ]
+icc1a.fn(iccdat20)
+icc1b.fn(iccdat20)
+
+iccdat50 <- iccdat[iccdat$id.ratee %in%  names(table(iccdat$id.ratee))[table(iccdat$id.ratee) >50] , ]
+icc1a.fn(iccdat50)
+icc1b.fn(iccdat50)
+
+#https://cran.r-project.org/web/packages/irrICC/vignettes/UserGuide.pdf
+
