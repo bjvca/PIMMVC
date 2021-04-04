@@ -95,6 +95,222 @@ knitr
 \begin_body
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{titlepage}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{figure}[t]{%       
+\backslash
+begin{overpic}[width=1
+\backslash
+textwidth]{../LaTeX/Layout/Picture1.png}          
+\backslash
+put(46,4){
+\backslash
+color{white}
+\backslash
+large{
+\backslash
+textbf{FACULTY OF ECONOMICS AND BUSINESS}}}       
+\backslash
+end{overpic}     } 
+\backslash
+end{figure}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{4.5cm} {
+\backslash
+Huge  Type your title here}}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{0.5cm} {
+\backslash
+Large Type your subtitle here}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{figure}[b]   %
+\backslash
+centering    
+\backslash
+begin{minipage}[c]{0.4
+\backslash
+textwidth}  {%       
+\backslash
+begin{overpic}[width=0.9
+\backslash
+textwidth]{../LaTeX/Layout/Picture2.png}          
+\backslash
+put(70,45){
+\backslash
+begin{minipage}[c]{1.80
+\backslash
+textwidth} 
+\backslash
+begin{flushright}
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+Large Name} 
+\backslash
+linebreak {Student number} 
+\backslash
+linebreak
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{{
+\backslash
+large Thesis submitted to obtain 
+\backslash
+linebreak the degree of}} 
+\backslash
+linebreak
+\end_layout
+
+\begin_layout Plain Layout
+
+%!!!IMPORTANT!!!: %indicate the appropriate title of your master and major.
+ Check the website https://feb.kuleuven.be/studentenportaal/contact/masterproef-le
+uven {
+\backslash
+large Toegepaste Economische Wetenschappen: Handelsingenieur}
+\backslash
+linebreak {
+\backslash
+large Major Data science en business analytics}
+\backslash
+linebreak 
+\backslash
+linebreak 
+\backslash
+textbf{{
+\backslash
+large Promoter:}}   Prof.
+\backslash
+ Dr.
+\backslash
+ ...
+ 
+\backslash
+linebreak 
+\backslash
+textbf{{
+\backslash
+large Co-promoter:}} Prof.
+\backslash
+ Dr.
+\backslash
+ ...
+ 
+\backslash
+linebreak 
+\backslash
+textbf{{
+\backslash
+large Tutor:}} Prof.
+\backslash
+ Dr.
+\backslash
+ ...
+ 
+\backslash
+linebreak
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+linebreak
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{{
+\backslash
+large Academic year:}} {
+\backslash
+large 20XX-20XX} 
+\backslash
+linebreak 
+\backslash
+end{flushright}   
+\backslash
+end{minipage}}       
+\backslash
+end{overpic}     }   
+\backslash
+end{minipage}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{picture}(540,0.2) 
+\backslash
+put(0,0){
+\backslash
+colorbox{kuleuven1}{
+\backslash
+makebox(540,0.2){}}} 
+\backslash
+end{picture} 
+\backslash
+end{figure}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{titlepage} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Preview
 
 \begin_layout Standard

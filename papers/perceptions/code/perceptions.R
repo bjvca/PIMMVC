@@ -1880,6 +1880,87 @@ dev.off()
 ##########################################################################################################################
 
 
+############# GRAPHS WITH WILCOX TEST ####################
+
+df <- data.frame(c(mean(pool$ratee_rating_overall),tapply(pool$rating_overall,pool$interaction, mean )[2:3]))
+names(df) <- "score"
+rownames(df) <- NULL
+df$levels <- c("Ratee","No Business Interaction","Business Interaction")
+df <- df[order(df$score,decreasing = TRUE),]
+df$levels <- factor(df$levels,levels= c("Ratee","No Business Interaction","Business Interaction"))
+
+png(paste(path_2, "/papers/perceptions/figure/wilcox_bar.png",sep = "/"), units="px", height=3200, width= 3200, res=600)
+ggplot(df, aes(x=levels, y=score)) +  geom_bar(stat="identity")+theme_minimal() + theme(axis.title = element_blank()) + 
+  geom_signif(comparisons = list(c("Ratee", "Business Interaction")), annotations="***", y_position = 4.3, tip_length = 0.03) +
+  geom_signif(comparisons = list(c("Ratee", "No Business Interaction")), annotations="***", y_position = 4.5, tip_length = 0.03) +
+  geom_signif(comparisons = list(c("Business Interaction", "No Business Interaction")), annotations="***", y_position = 4.1, tip_length = 0.03)
+dev.off()
+
+###Tests in the graph
+### OVERALL RATING 
+wilcox.test(pool$rating_overall[pool$interaction_yes=="0"],pool$ratee_rating_overall)
+wilcox.test(pool$rating_overall[pool$interaction_yes=="1"],pool$ratee_rating_overall)
+wilcox.test(pool$rating_overall[pool$interaction_yes=="1"],pool$rating_overall[pool$interaction_yes=="0"])
+#for all 3, we reject the null that the distributions are same
+
+
+##Likert scales bar charts for the different components of the scores
+
+#All ratees 
+plot_ratee <- data.frame(cbind(prop.table(table(pool$rating_location_ratee),1),
+                                    prop.table(table(pool$rating_price_ratee),1),
+                                    prop.table(table(pool$rating_quality_ratee),1),
+                                    prop.table(table(pool$rating_reputation_ratee),1)))
+names(plot_ratee) <- c("Location","Price","Quality","Reputation")
+
+#female ratees
+plot_fem_ratee <- data.frame(cbind(prop.table(table(pool$rating_location_ratee, pool$gender_ratee=="Female"),2)[,1],
+                                   prop.table(table(pool$rating_price_ratee, pool$gender_ratee=="Female"),2)[,1],
+                                   prop.table(table(pool$rating_quality_ratee, pool$gender_ratee=="Female"),2)[,1],
+                                   prop.table(table(pool$rating_reputation_ratee, pool$gender_ratee=="Female"),2)[,1]))
+names(plot_fem_ratee) <- c("Location","Price","Quality","Reputation")
+
+#male ratees
+plot_male_ratee <- data.frame(cbind(prop.table(table(pool$rating_location_ratee, pool$gender_ratee=="Male"),2)[,2],
+                                    prop.table(table(pool$rating_price_ratee, pool$gender_ratee=="Male"),2)[,2],
+                                    prop.table(table(pool$rating_quality_ratee, pool$gender_ratee=="Male"),2)[,2],
+                                    prop.table(table(pool$rating_reputation_ratee, pool$gender_ratee=="Male"),2)[,2]))
+names(plot_male_ratee) <- c("Location","Price","Quality","Reputation")
+
+#all raters
+plot_rater <- data.frame(cbind(prop.table(table(pool$rating_location),1),
+                               prop.table(table(pool$rating_price),1),
+                               prop.table(table(pool$rating_quality),1),
+                               prop.table(table(pool$rating_reputation),1)))
+names(plot_rater) <- c("Location","Price","Quality","Reputation")
+
+#female raters 
+plot_fem_farm <- data.frame(cbind(prop.table(table(pool$rating_location, pool$farmer_gender=="Female"),2)[,1],
+                                  prop.table(table(pool$rating_price, pool$farmer_gender=="Female"),2)[,1],
+                                  prop.table(table(pool$rating_quality, pool$farmer_gender=="Female"),2)[,1],
+                                  prop.table(table(pool$rating_reputation, pool$farmer_gender=="Female"),2)[,1]))
+names(plot_fem_farm) <- c("Location","Price","Quality","Reputation")
+
+#male raters 
+plot_male_farm <- data.frame(cbind(prop.table(table(pool$rating_location, pool$farmer_gender=="Male"),2)[,2],
+                                   prop.table(table(pool$rating_price, pool$farmer_gender=="Male"),2)[,2],
+                                   prop.table(table(pool$rating_quality, pool$farmer_gender=="Male"),2)[,2],
+                                   prop.table(table(pool$rating_reputation, pool$farmer_gender=="Male"),2)[,2]  ))
+names(plot_male_farm) <- c("Location","Price","Quality","Reputation")
+
+png(paste(path_2, "/papers/perceptions/figure/likert.png",sep = "/"), units="px", height=3200, width= 6000, res=600)
+par(mfrow=c(1,6), xpd=NA, mar = c(10, 5,5, 1)) 
+colfunc<-colorRampPalette(c("red", "green"))
+barplot(as.matrix(plot_fem_ratee), col=colfunc(5), main="Ratees", cex.main=1.5,cex.axis=1.5, cex.names=1.5,las=2) 
+barplot(as.matrix(plot_male_ratee), col=colfunc(5), main="Female Ratees", cex.main=1.5,cex.axis=1.5, cex.names=1.5,las=2)
+barplot(as.matrix(plot_fem_ratee), col=colfunc(5), main="Male Ratees", cex.main=1.5,cex.axis=1.5, cex.names=1.5,las=2) 
+barplot(as.matrix(plot_male_ratee), col=colfunc(5), main="Raters", cex.main=1.5,cex.axis=1.5, cex.names=1.5,las=2)
+barplot(as.matrix(plot_fem_ratee), col=colfunc(5), main="Female Raters", cex.main=1.5,cex.axis=1.5, cex.names=1.5,las=2) 
+barplot(as.matrix(plot_male_ratee), col=colfunc(5), main="Male Raters", cex.main=1.5,cex.axis=1.5, cex.names=1.5,las=2)
+dev.off()
+
+####################################################################################################
+
 #### WHETHER INDIVIDUAL MEANS DIFFERENT FROM OVERALL MEAN #####
 
 ########### rating from farmers ############
@@ -1942,25 +2023,191 @@ fe_modrepu_diff <- lm(ratingrepu_diff ~ id.ratee, data = pool)
 summary(fe_modrepu_diff)  #reject null, indv means diff from overall mean 
 
 
+#####Table #####
+fe_fstat <- matrix(c(round(1.76 , digits=2), round(2.282 , digits=2),round(2.232 , digits=2),round(1.335 , digits=2),
+                     round(1.296 , digits=2),
+                     round(38.936, digits=2), round(32.7875 , digits=2),round(32.733 , digits=2),round(30.83582, digits=2),
+                     round(29.775693 , digits=2),
+                     round(4.617, digits=2), round(8.152 , digits=2),round(5.659 , digits=2),round(5.831, digits=2),
+                     round(5.046, digits=2)
+),ncol=1)
 
+colnames(fe_fstat) <- c('F-statistic')
+rownames(fe_fstat) <- c('Rater ratings (overall)', 'Rater ratings (location)', 'Rater ratings (quality)', 'Rater ratings (price)',
+                        'Rater ratings (reputation)',
+                        'Ratee ratings (overall)', 'Ratee ratings (location)','Ratee ratings (quality)', 'Ratee ratings (price)',
+                        'Ratee ratings (reputation)',
+                        'Differences (overall)', 'Differences (location)','Differences (quality)', 'Differences (price)',
+                        'Differences (reputation)')
+trial.table <- as.table(fe_fstat)
+formattable(fe_fstat)
+png(paste(path_2, "/papers/perceptions/figure/fe_fstat.png",sep = "/"), units="px", height=3000, width= 2000, res=600)
+grid.table(fe_fstat)
+dev.off()
 
 
 ################################# ICC ####################################
-library(irrICC)
-
-iccdat <- pool[c("id.ratee","rating_overall","ratee_rating_overall")]
-icc1a.fn(iccdat)
-icc1b.fn(iccdat)
-
-icc2.inter.fn(iccdat)
-
-iccdat20 <- iccdat[iccdat$id.ratee %in%  names(table(iccdat$id.ratee))[table(iccdat$id.ratee) >20] , ]
-icc1a.fn(iccdat20)
-icc1b.fn(iccdat20)
-
-iccdat50 <- iccdat[iccdat$id.ratee %in%  names(table(iccdat$id.ratee))[table(iccdat$id.ratee) >50] , ]
-icc1a.fn(iccdat50)
-icc1b.fn(iccdat50)
 
 #https://cran.r-project.org/web/packages/irrICC/vignettes/UserGuide.pdf
 
+
+library(irrICC)
+library(reshape2)
+
+###### RATINGS FROM FARMERS VS SELF RATINGS 
+
+#MODEL 1A INTER RATER RELIABILITY, MODEL 1B INTRA RATER RELIABILITY
+#WE FOCUS ON MODEL 1A TO SEE HOW SIMILAR THE RATINGS ARE BETWEEN FARMERS AND RATEES
+
+icc_overall <- pool[c("id.ratee","rating_overall","ratee_rating_overall")]
+icc1a.fn(icc_overall)   #0.1256276 
+
+icc_loc <- pool[c("id.ratee","rating_location","rating_location_ratee")]
+icc1a.fn(icc_loc)   #0.2043416
+
+icc_qual <- pool[c("id.ratee","rating_quality","rating_quality_ratee")]
+icc1a.fn(icc_qual)   #0.1948547
+
+icc_price <- pool[c("id.ratee","rating_price","rating_price_ratee")]
+icc1a.fn(icc_price)   #0.1620352 
+
+icc_rep <- pool[c("id.ratee","rating_reputation","rating_reputation_ratee")]
+icc1a.fn(icc_rep)   #0.141539 
+
+
+#gender
+pool1 <-  pool[pool$farmer_fem=="1" & pool$ratee_fem=="1",] 
+icc_overall_fem<- pool1[c("id.ratee","rating_overall","ratee_rating_overall") ]
+icc1a.fn(icc_overall_fem)   #0.1329539 
+
+pool2 <-  pool[pool$farmer_fem=="0" & pool$ratee_fem=="0",] 
+icc_overall_male<- pool2[c("id.ratee","rating_overall","ratee_rating_overall") ]
+icc1a.fn(icc_overall_male)   #0.09886845
+
+pool3 <-  pool[pool$farmer_fem=="1" & pool$ratee_fem=="0",] 
+icc_overall_femmale<- pool3[c("id.ratee","rating_overall","ratee_rating_overall") ]
+icc1a.fn(icc_overall_femmale)   #0.1142191 
+
+pool4 <-  pool[pool$farmer_fem=="0" & pool$ratee_fem=="1",] 
+icc_overall_malefem<- pool4[c("id.ratee","rating_overall","ratee_rating_overall") ]
+icc1a.fn(icc_overall_malefem)   #0.1688775
+
+
+
+### Both inter and intra rater reliability ###
+
+###########################################################################################
+#transposing data
+### overall rating 
+icc <- pool[c("id.ratee","farmerID","rating_overall")]
+icc_recast_overall <- recast(icc, id.ratee ~ farmerID, id.var = c("farmerID", "id.ratee"))
+icc1a.fn(icc_recast_overall) #0.13741
+icc1b.fn(icc_recast_overall) # 0.4892155
+
+#ratings from ratees subset
+icc_30 <- icc[icc$id.ratee %in%  names(table(icc$id.ratee))[table(icc$id.ratee) >30] , ]
+icc_recast_overall30 <- recast(icc_30, id.ratee ~ farmerID, id.var = c("farmerID", "id.ratee"))
+icc1a.fn(icc_recast_overall30) #0.4251301
+icc1b.fn(icc_recast_overall30) # 0.4250636
+
+#ratings from raters subset 
+icc_6 <- icc[icc$farmerID %in%  names(table(icc$farmerID))[table(icc$farmerID) >6] , ]
+icc_recast_overall6 <- recast(icc_6, id.ratee ~ farmerID, id.var = c("farmerID", "id.ratee"))
+icc1a.fn(icc_recast_overall6) #0.5364983
+icc1b.fn(icc_recast_overall6) #0.6431951
+
+#getting data ready
+icc_loc1 <- pool[c("id.ratee","farmerID","rating_location")]
+icc_qual1 <- pool[c("id.ratee","farmerID","rating_quality")]
+icc_price1 <- pool[c("id.ratee","farmerID","rating_price")]
+icc_rep1 <- pool[c("id.ratee","farmerID","rating_reputation")]
+
+#location
+icc_6_loc <- icc_loc1[icc_loc1$farmerID %in%  names(table(icc_loc1$farmerID))[table(icc_loc1$farmerID) >6] , ]
+icc_recast_loc <- recast(icc_6_loc, id.ratee ~ farmerID, id.var = c("farmerID", "id.ratee"))
+icc1a.fn(icc_recast_loc) #0.4689853
+icc1b.fn(icc_recast_loc) #0.6175318 
+#quality
+icc_6_qual <- icc_qual1[icc_qual1$farmerID %in%  names(table(icc_qual1$farmerID))[table(icc_qual1$farmerID) >6] , ]
+icc_recast_qual <- recast(icc_6_qual, id.ratee ~ farmerID, id.var = c("farmerID", "id.ratee"))
+icc1a.fn(icc_recast_qual) #0.1515282 
+icc1b.fn(icc_recast_qual) #0.3144065
+#price
+icc_6_price <- icc_price1[icc_price1$farmerID %in%  names(table(icc_price1$farmerID))[table(icc_price1$farmerID) >6] , ]
+icc_recast_price <- recast(icc_6_price, id.ratee ~ farmerID, id.var = c("farmerID", "id.ratee"))
+icc1a.fn(icc_recast_price) #0.4279139 
+icc1b.fn(icc_recast_price) #0.4278701
+#reputation
+icc_6_rep <- icc_rep1[icc_rep1$farmerID %in%  names(table(icc_rep1$farmerID))[table(icc_rep1$farmerID) >6] , ]
+icc_recast_rep <- recast(icc_6_rep, id.ratee ~ farmerID, id.var = c("farmerID", "id.ratee"))
+icc1a.fn(icc_recast_rep) # 0.2441795
+icc1b.fn(icc_recast_rep) # 0.6776563
+
+
+#### gender
+#female
+pool_genfem <-  pool[pool$farmer_fem=="1",] 
+icc_genfem <- pool_genfem[c("id.ratee","farmerID","rating_overall") ]
+icc_overall_genfem <- icc_genfem[icc_genfem$farmerID %in%  names(table(icc_genfem$farmerID))[table(icc_genfem$farmerID) >5] , ]
+icc_recast_genfem <- recast(icc_overall_genfem, id.ratee ~ farmerID, id.var = c("farmerID", "id.ratee"))
+icc1a.fn(icc_recast_genfem) #0.4652624
+icc1b.fn(icc_recast_genfem) #0.6020727
+#male
+pool_genmale <-  pool[pool$farmer_fem=="0",] 
+icc_genmale <- pool_genmale[c("id.ratee","farmerID","rating_overall") ]
+icc_overall_genmale <- icc_genmale[icc_genmale$farmerID %in%  names(table(icc_genmale$farmerID))[table(icc_genmale$farmerID) >5] , ]
+icc_recast_genmale <- recast(icc_overall_genmale, id.ratee ~ farmerID, id.var = c("farmerID", "id.ratee"))
+icc1a.fn(icc_recast_genmale) #0.4257594 
+icc1b.fn(icc_recast_genmale) #0.7718109
+
+
+
+### Table 
+icc_rater_ratee <- matrix(c(round(icc1a.fn(icc_overall)$icc1a , digits=2),round(icc1a.fn(icc_loc)$icc1a , digits=2),
+                            round(icc1a.fn(icc_qual)$icc1a, digits=2), round(icc1a.fn(icc_price)$icc1a , digits=2),
+                            round(icc1a.fn(icc_rep)$icc1a , digits=2),round(icc1a.fn(icc_recast_overall6)$icc1a, digits=2),
+                            round(icc1a.fn(icc_recast_loc)$icc1a, digits=2),round(icc1a.fn(icc_recast_qual)$icc1a, digits=2),
+                            round(icc1a.fn(icc_recast_price)$icc1a, digits=2),round(icc1a.fn(icc_recast_rep)$icc1a, digits=2),
+                            round(icc1b.fn(icc_recast_overall6)$icc1b, digits=2), round(icc1b.fn(icc_recast_loc)$icc1b, digits=2),
+                            round(icc1b.fn(icc_recast_qual)$icc1b, digits=2), round(icc1b.fn(icc_recast_price)$icc1b, digits=2),
+                            round(icc1b.fn(icc_recast_rep)$icc1b, digits=2)
+),ncol=3)
+colnames(icc_rater_ratee) <- c('ICC (Inter-Rater, \nRaters and Ratees)','ICC (Inter-Rater, \nOnly Raters)','ICC (Intra-Rater, \nOnly Raters')
+rownames(icc_rater_ratee) <- c('Overall', 'Location', 'Quality', 'Price','Reputation')
+trial.table <- as.table(icc_rater_ratee)
+formattable(icc_rater_ratee)
+
+png(paste(path_2, "/papers/perceptions/figure/icc_rater_ratee.png",sep = "/"), units="px", height=1400, width=3500, res=600)
+grid.table(icc_rater_ratee)
+dev.off()
+
+#gender table --- rater vs ratee ratings 
+icc_rater_ratee_gender <- matrix(c(round(icc1a.fn(icc_overall_fem)$icc1a , digits=2),
+                                   round(icc1a.fn(icc_overall_male)$icc1a , digits=2),
+                            round(icc1a.fn(icc_overall_femmale)$icc1a, digits=2), 
+                            round(icc1a.fn(icc_overall_malefem)$icc1a , digits=2)
+                  ),ncol=1)
+
+colnames(icc_rater_ratee_gender) <- c('ICC (Inter-Rater)')
+rownames(icc_rater_ratee_gender) <- c('Female rater & ratee', 'Male rater & ratee', 
+                                      'Female rater & male ratee', 'Male rater & female ratee')
+trial.table <- as.table(icc_rater_ratee_gender)
+formattable(icc_rater_ratee_gender)
+png(paste(path_2, "/papers/perceptions/figure/icc_rater_ratee_gender.png",sep = "/"), units="px", height=1000, width= 2400, res=600)
+grid.table(icc_rater_ratee_gender)
+dev.off()
+
+#gender table, all raters 
+icc_rater_gender <- matrix(c(round(icc1a.fn(icc_recast_genfem)$icc1a , digits=2),
+                                   round(icc1a.fn(icc_recast_genmale)$icc1a , digits=2),
+                                   round(icc1b.fn(icc_recast_genfem)$icc1b , digits=2), 
+                                   round(icc1b.fn(icc_recast_genmale)$icc1b , digits=2)
+),ncol=2)
+
+colnames(icc_rater_gender) <- c('ICC (Inter-Rater)','ICC (Intra-Rater)')
+rownames(icc_rater_gender) <- c('Female rater', 'Male rater')
+trial.table <- as.table(icc_rater_gender)
+formattable(icc_rater_gender)
+png(paste(path_2, "/papers/perceptions/figure/icc_rater_gender.png",sep = "/"), units="px", height=700, width= 2400, res=600)
+grid.table(icc_rater_gender)
+dev.off()

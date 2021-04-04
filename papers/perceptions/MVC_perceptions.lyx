@@ -137,16 +137,15 @@ Economic actors base decisions on limited information and perceptions related
  to the quality of goods or services.
  Inaccurate perceptions or false beliefs may result in sub-optimal allocation
  of resources.
- We study perceptions related to a set of important attributes that characterize
- maize supply chains in Uganda.
- We ask a random sample of maize farmers to rate agro-input dealers, assembly
- traders and maize millers.
- We then track these other actors and ask them to rate themselves on the
- same attributes.
- The fact that linkages between actors are preserved enables us to study
- how perceptions reverberate through the value chain.
- With a particular focus on gendered perceptions, we analyse the perceived
- performance levels of male and female actors in the maize supply chains.
+ Perceptions related to a set of important attributes that characterize
+ maize supply chains in Uganda are studied.
+ A random sample of maize farmers are asked to rate agro-input dealers,
+ assembly traders and maize millers and then these other actors are tracked
+ and asked to rate themselves on the same attributes.
+ The fact that linkages between actors are preserved enables to study how
+ perceptions reverberate through the value chain.
+ With a particular focus on gendered perceptions, the perceived performance
+ levels of male and female actors in the maize supply chains are analysed.
  Self-ratings and rater (farmer) ratings through gender-based interactions
  provide fresh insights regarding the gendered rating patterns and gender
  roles in Ugandan maize value chain.
@@ -224,6 +223,13 @@ setlength{
 parindent}{1cm}
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
 \end_inset
 
 
@@ -460,6 +466,229 @@ Broadly, studying the rater's ratings and the ratee's ratings can give insights
  with direct repurcussions but do successfully indicate long-term repurcussions
  in the near or distant future which impacts the rated subjects.
  
+\end_layout
+
+\begin_layout Standard
+For this study, I use input dealer, trader and miller attributes, such as
+ perceived ease of access to the dealer or trader or miller, perceived quality
+ of the seed sold by the dealer or the quality of service provided by the
+ trader or the miller, and reputation of the dealer or trader or miller,
+ to assess whether such perceived input-dealer or trader or miller attributes
+ can vary significantly based on the gender of the farmer (rater) or the
+ ratee (dealer or trader or miller).
+ 
+\end_layout
+
+\begin_layout Standard
+The case for our investigation is the maize value chain in Uganda.
+ I use data from a sample of 1500 maize farmers and 78 input (seed) dealers,
+ 341 assembly traders and 174 millers from Eastern Uganda to examine the
+ (in)consistency in farmer's and input (seed) dealer's or trader's or miller's
+ perceived attribute ratings of these actors and identify if the gender
+ of the rater or the ratee has any impact on the ratings.
+ 
+\end_layout
+
+\begin_layout Standard
+The first objective is to establish how the perceived attribute ratings
+ and self-ratings of dealers, traders and millers differ from each other.
+ All the actors are studied together with the focus on the ratings being
+ received and the self-ratings.
+ Since, one attribute for each actor vary, the study considers the other
+ four attributes for every actor.
+ The four attributes, as rated on a scale of 1-5 by farmers and the dealers,
+ traders and millers themselves, are: (i) quality of seed sold by a given
+ dealer relative to the other dealers, quality of service provided by a
+ trader (miller) relative to the other traders (millers); (ii) price of
+ seed sold by a given dealer relative to other dealers, price paid by a
+ given trader relative to other traders, price charged by a given miller
+ relative to the other millers; (iii) Location (ease of access by road or
+ phone) of the input dealer (trader or miller) relative to other dealers
+ (traders or millers); (iv) reputation of a given dealer (trader or miller)
+ relative to other dealers (traders or millers).
+ Intra-cluster correlation coefficients are used to determine inter and
+ intra-rater reliability to see the level of agreement betwen the ratings
+ obtained.
+ The second objective aims to understand rating patterns based on the gender
+ of the farmer (rater) and the third objective aims to understand the self-ratin
+g patterns based on the gender of the ratee (dealer or trader or miller).
+ The fourth objective is to identify whether farmers rate the ratees based
+ on their gender.
+ Multivariate regression models with clustered standard errors are used
+ for the analysis.
+ 
+\end_layout
+
+\begin_layout Standard
+This study contributes additional literature to understanding the role of
+ agro-input dealers, traders and millers in facilitating or limiting the
+ development of smallholder agriculture.
+ Ratings for the different actors of the supply chain, which this study
+ employs to examine farmer's perceived value of input dealers or traders
+ or millers, is widely a used system in marketing- as a mechanism to increase
+ customer trust in and purchase of services/products 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Jayashankar2018,Chiu2014"
+literal "true"
+
+\end_inset
+
+.
+ Such a rating system, if applied to agricultural input marketing, is likely
+ to encourage input dealers to desist from counterfeiting, adulteration
+ or deceptive marketing of inputs in order to maintain a good reputation
+ and higher rating 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Kim2013,Bente2012,BarIsaac2008"
+literal "true"
+
+\end_inset
+
+.
+ If applied to assembly trading, it will ensure broader access to maize
+ markets and good prices for the farmers' harvests.
+ Similarly, ratings for maize processing can improve the end products obtained
+ from maize and can sustain the value chain, ensuring less deficits and
+ good quality of food.
+ Seller ratings and reputation are increasingly becoming important assets
+ in marketing, particularly when the quality of the good or service transacted
+ is hard to measure and the buyer and seller cannot perfectly contract on
+ the outcome of the transaction, or where there are no legal institutions
+ to alleviate buyer uncertainty 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "BarIsaac2008"
+literal "true"
+
+\end_inset
+
+.
+ Through these type of ratings, the supply chain actors will be mindful
+ of building and maintaining a good reputation through the information that
+ the farmers have about these actors, including previous transactions and
+ the reports of other farmers.
+\end_layout
+
+\begin_layout Standard
+In the sections that follow, I expound on the study context; explain the
+ study design and analysis methods; present the results; and finally provide
+ a conclusion and recommendations.
+\end_layout
+
+\begin_layout Section
+Study Context
+\end_layout
+
+\begin_layout Standard
+The case for this investigation is the maize value chain in Uganda.
+ Maize is a staple crop in Uganda, prioritized by the government for food
+ security and household income.
+ By land area, maize is the most cultivated crop in Uganda, covering 30%
+ of the total cropped land, followed by beans, covering 15% of cropped land.
+ Government’s interventions in the maize sub-sector over the past decade
+ have targeted increasing on-farm productivity and production, yet productivity
+ remains very low.
+ On-farm maize data from the Uganda Annual Agricultural Survey 2018 agricultural
+ year reports yield figures of 596kg per acre (or 1.49mt/ha); a figure that
+ falls almost midway the yield range of 270 and 995 kg per acre reported
+ by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Gourlay2019"
+literal "true"
+
+\end_inset
+
+.
+ While there is some ambiguity in the on-farm yield figures, partly due
+ to errors in farmer-reported production 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Gourlay2019"
+literal "true"
+
+\end_inset
+
+ and differences in the climatic conditions between different agricultural
+ years 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "VanCampenhout2020"
+literal "true"
+
+\end_inset
+
+, they are still considerably lower than the research station yield figures
+ which range between 730 kg per acre and 1,820 kg per acre 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Fermont2011"
+literal "true"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Improved maize seed (hybrid and open pollinated varieties) is among the
+ top agricultural inputs promoted by the government, development partners
+ and private sector to increase maize yields in Uganda.
+ But, just like the other improved agricultural inputs, the proportion of
+ households using improved maize seed in Uganda is still low, estimated
+ to range between 27% and 37%, compared to between 30% and 50% in Tanzania
+ and Malawi 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "VanCampenhout2020"
+literal "true"
+
+\end_inset
+
+.
+ When measured using the percentage of land under improved maize seed varieties,
+ the use rates in Uganda slightly increase to 54% 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Sheahan2017"
+literal "true"
+
+\end_inset
+
+.
+ Limited use of improved maize seed is just one among the many factors constrain
+ing maize yields in Uganda.
+ Limited access to markets for harvested maize for farmers living in remote
+ areas, slow advancement in milling technologies, price discrimination at
+ all levels of the supply chain, issues of trust amongst the supply chain
+ actors, lower selling prices of the harvest, quality of services provided
+ by the various supply chain actors and business ethics in the industry
+ during selling, trading or milling also influence maize yields at large.
+ Like any other industry, the maize supply chains also need to maximize
+ yield gains, ensure cost-effective sale, storage and production, adhere
+ to improved technologies and increase the usage of improved inputs to increase
+ the profits for all the actors in the industry.
+ For instance, several factors at household, market and policy levels constrain
+ the use of improved maize seed and generally improved agricultural inputs
+ by Ugandan farmers.
+ 
+\end_layout
+
+\begin_layout Standard
+This study focuses on the market level factors, specifically, the influence
+ of input dealer (trader or miller) attributes such as, reputation or perceived
+ quality of seed or service, to understand deeper mechanisms in the industry.
+ By the inclusion of gender-based analysis, the state of women involvement
+ in this industry can be better explained.
+ Gender-based perceptions can aid in the insights about the longer-term
+ outputs of the supply chain.
+ 
+\end_layout
+
+\begin_layout Subsection
+Supply Chain Actors 
 \end_layout
 
 \begin_layout Standard
@@ -759,15 +988,8 @@ literal "true"
  
 \end_layout
 
-\begin_layout Standard
-For this study, we use input dealer, trader and miller attributes, such
- as perceived ease of access to the dealer or trader or miller, perceived
- quality of the seed sold by the dealer or the quality of service provided
- by the trader or the miller, and reputation of the dealer or trader or
- miller, to assess whether such perceived input-dealer or trader or miller
- attributes can vary significantly based on the gender of the farmer (rater)
- or the ratee (dealer or trader or miller).
- 
+\begin_layout Subsection
+Perceived Attributes of Supply Chain Actors 
 \end_layout
 
 \begin_layout Standard
@@ -870,268 +1092,8 @@ Millers or processors are also scored based on similar factors or attributes.
  
 \end_layout
 
-\begin_layout Standard
-The case for our investigation is the maize value chain in Uganda.
- We use data from a sample of 1500 maize farmers and 78 input (seed) dealers,
- 341 assembly traders and 174 millers from Eastern Uganda to examine the
- (in)consistency in farmer's and input (seed) dealer's or trader's or miller's
- perceived attribute ratings of these actors and identify if the gender
- of the rater or the ratee has any impact on the ratings.
- 
-\end_layout
-
-\begin_layout Standard
-The first objective is to establish how the perceived attribute ratings
- and self-ratings of dealers, traders and millers differ from each other.
- All the actors are studied together with the focus on the ratings being
- received and the self-ratings.
- Since, one attribute for each actor vary, the study considers the other
- four attributes for every actor.
- The four attributes, as rated on a scale of 1-5 by farmers and the dealers,
- traders and millers themselves, are: (i) quality of seed sold by a given
- dealer relative to the other dealers, quality of service provided by a
- trader (miller) relative to the other traders (millers); (ii) price of
- seed sold by a given dealer relative to other dealers, price paid by a
- given trader relative to other traders, price charged by a given miller
- relative to the other millers; (iii) Location (ease of access by road or
- phone) of the input dealer (trader or miller) relative to other dealers
- (traders or millers); (iv) reputation of a given dealer (trader or miller)
- relative to other dealers (traders or millers).
- The second objective aims to understand rating patterns based on the gender
- of the farmer (rater) and the third objective aims to understand the self-ratin
-g patterns based on the gender of the ratee (dealer or trader or miller).
- The fourth objective is to identify whether farmers rate the ratees based
- on their gender.
- Multivariate regression models with clustered standard errors are used
- for the analysis.
- 
-\end_layout
-
-\begin_layout Standard
-This study contributes additional literature to understanding the role of
- agro-input dealers, traders and millers in facilitating or limiting the
- development of smallholder agriculture.
- Ratings for the different actors of the supply chain, which this study
- employs to examine farmer's perceived value of input dealers or traders
- or millers, is widely a used system in marketing- as a mechanism to increase
- customer trust in and purchase of services/products 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Jayashankar2018,Chiu2014"
-literal "true"
-
-\end_inset
-
-.
- Such a rating system, if applied to agricultural input marketing, is likely
- to encourage input dealers to desist from counterfeiting, adulteration
- or deceptive marketing of inputs in order to maintain a good reputation
- and higher rating 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Kim2013,Bente2012,BarIsaac2008"
-literal "true"
-
-\end_inset
-
-.
- If applied to assembly trading, it will ensure broader access to maize
- markets and good prices for the farmers' harvests.
- Similarly, ratings for maize processing can improve the end products obtained
- from maize and can sustain the value chain, ensuring less deficits and
- good quality of food.
- Seller ratings and reputation are increasingly becoming important assets
- in marketing, particularly when the quality of the good or service transacted
- is hard to measure and the buyer and seller cannot perfectly contract on
- the outcome of the transaction, or where there are no legal institutions
- to alleviate buyer uncertainty 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "BarIsaac2008"
-literal "true"
-
-\end_inset
-
-.
- Through these type of ratings, the supply chain actors will be mindful
- of building and maintaining a good reputation through the information that
- the farmers have about these actors, including previous transactions and
- the reports of other farmers.
-\end_layout
-
-\begin_layout Standard
-In the sections that follow, we expound on the study context; explain the
- study design and analysis methods; present the results; and finally provide
- a conclusion and recommendations.
-\end_layout
-
 \begin_layout Section
-Study Context and Data 
-\end_layout
-
-\begin_layout Standard
-The case for this investigation is the maize value chain in Uganda.
- Maize is a staple crop in Uganda, prioritized by the government for food
- security and household income.
- By land area, maize is the most cultivated crop in Uganda, covering 30%
- of the total cropped land, followed by beans, covering 15% of cropped land.
- Government’s interventions in the maize sub-sector over the past decade
- have targeted increasing on-farm productivity and production, yet productivity
- remains very low.
- On-farm maize data from the Uganda Annual Agricultural Survey 2018 agricultural
- year reports yield figures of 596kg per acre (or 1.49mt/ha); a figure that
- falls almost midway the yield range of 270 and 995 kg per acre reported
- by 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Gourlay2019"
-literal "true"
-
-\end_inset
-
-.
- While there is some ambiguity in the on-farm yield figures, partly due
- to errors in farmer-reported production 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Gourlay2019"
-literal "true"
-
-\end_inset
-
- and differences in the climatic conditions between different agricultural
- years 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "VanCampenhout2020"
-literal "true"
-
-\end_inset
-
-, they are still considerably lower than the research station yield figures
- which range between 730 kg per acre and 1,820 kg per acre 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Fermont2011"
-literal "true"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-Improved maize seed (hybrid and open pollinated varieties) is among the
- top agricultural inputs promoted by the government, development partners
- and private sector to increase maize yields in Uganda.
- But, just like the other improved agricultural inputs, the proportion of
- households using improved maize seed in Uganda is still low, estimated
- to range between 27% and 37%, compared to between 30% and 50% in Tanzania
- and Malawi 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "VanCampenhout2020"
-literal "true"
-
-\end_inset
-
-.
- When measured using the percentage of land under improved maize seed varieties,
- the use rates in Uganda slightly increase to 54%.
- 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Sheahan2017"
-literal "true"
-
-\end_inset
-
-.
- Limited use of improved maize seed is just one among the many factors constrain
-ing maize yields in Uganda.
- However, its use appears to be a relatively less costly first step to enhancing
- agricultural productivity, compared to other improved inputs.
- Figures from a recent study on Uganda suggest that an average farmer incurs
- two times less cost per acre on improved maize seed (even for the most
- expensive hybrid variety, UH5354/Bazooka), than on other inputs such as
- inorganic fertilizer 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "VanCampenhout2020"
-literal "true"
-
-\end_inset
-
-.
- Similar cost differences between improved seed and fertilizer also manifest
- in Ethiopia 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Minten2013"
-literal "true"
-
-\end_inset
-
-.
- Secondly, different improved seed varieties possess a combination of two
- or more attributes (high yielding, early maturity, climate resilient or
- pest and disease tolerant) 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Obunyali2019,Lunduka2012"
-literal "true"
-
-\end_inset
-
-, such that, if properly used by farmers (for example, planted and weeded
- timely), may reduce requirements for fertilizers or agro-chemicals.
- Generally, however, to maximize yield gains from use of improved inputs,
- a cost-effective mix of improved seed and other complimentary inputs is
- recommended 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "VanCampenhout2020,Khonje2018,Wainaina2016"
-literal "true"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-Several factors at household, market and policy levels constrain the use
- of improved maize seed and generally improved agricultural inputs by Ugandan
- farmers.
- The current study focuses on the market level factors, specifically, the
- influence of input dealer attributes such as, reputation or perceived quality
- of seed sold by the dealer, on farmer's use of improved seed.
- As earlier discussed, the increasing incidence of input quality concerns
- at input dealer/distribution level provide a strong case to place input
- retailers at the center of interventions working to increase farmer's access
- to and use of quality inputs.
- Additionally, the ongoing policy reforms towards pluralistic agricultural
- extension systems in developing countries, including Uganda 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Chowa2013,Rivera2011,Adhiguru2009"
-literal "true"
-
-\end_inset
-
-, empower private input suppliers as key players to accelerating adoption
- of improved agricultural technologies.
-\end_layout
-
-\begin_layout Standard
-Our general hypothesis is that, input dealer attributes, such as, perceived
- quality of seed sold by the input dealer or perceived reputation or perceived
- ease of access to the input dealer, have a significant influence on the
- purchase/use of puruse of improved maize seed and generally improved agricultur
-al inputs chased inputs.
-\end_layout
-
-\begin_layout Subsection
-Hypothesis
+Study Hypotheses
 \end_layout
 
 \begin_layout Standard
@@ -1501,19 +1463,16 @@ literal "true"
 \end_layout
 
 \begin_layout Section
-Methods
-\end_layout
-
-\begin_layout Subsection
-Sample and Data
+Sample and Data 
 \end_layout
 
 \begin_layout Standard
-The data for this study come from a survey of 1526 farming households and
- 78 agro-input dealer shops operating in the maize growing districts of
- Iganga, Bugiri and Namutumba in Eastern Uganda.The data were collected in
- July 2019 as part of a larger seed systems development research in Uganda,
- targeting farmers, input dealers, traders and millers.
+The data for this study come from a survey of 1526 farming households, 78
+ agro-input dealer shops, 341 assembly traders and 174 millers operating
+ in the maize growing districts of Iganga, Bugiri and Namutumba in Eastern
+ Uganda.
+ The data were collected in July 2019 as part of a larger seed systems developme
+nt research in Uganda, targeting farmers, input dealers, traders and millers.
  The farmer household sample is drawn from 64 villages in the three districts.
  Using the 2012 sampling frame of Uganda National Bureau of Statistics (UBoS),
  the household sample per village was randomly allocated, proportionate
@@ -1524,41 +1483,17 @@ The data for this study come from a survey of 1526 farming households and
  were sampled were purposively selected based on their distance (km) from
  the main district town, in the range of 10kms, 20kms and 30kms from the
  main town.
-\end_layout
-
-\begin_layout Standard
-The input dealer shops interviewed are those that were referred to by farmers,
- either because they have ever purchased improved maize seed from them,
- or the input shops are within their viscinity.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Map of the study areas
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
+ The input dealer shops, assembly traders and millers interviewed are those
+ that were referred to by farmers, either because they have ever purchased
+ improved maize seed from them, sold harvest to traders or processed (sold)
+ maize at the milling farms or these supply chain actors are within their
+ vicinity.
 \end_layout
 
 \begin_layout Standard
 A key question that may arise is the degree to which results for the three
  study districts can be generalized to Uganda as a whole.
- To address this, we examine the representativeness of the study area using
+ To address this, the representativeness of the study area is examined using
  maize production figures.
  The Eastern region, where the three districts fall, accounted for the highest
  share (47%) of the roughly 2.3 million tons of maize harvested in 2009 
@@ -1573,7 +1508,7 @@ literal "true"
  Iganga was the largest producer in the region and country, contributing
  13.1%, followed by Mubende (7.4%) in Central Uganda and Soroti (5.9%) in Eastern
  Uganda.
- The remaining districts contributed less than 4% including Bugiri (2.7%)
+ The remaining districts contributed less than 4%, including Bugiri (2.7%)
  which is part of this study.
 \end_layout
 
@@ -1584,7 +1519,7 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-\align left
+\align center
 \begin_inset Graphics
 	filename figure/sum_stat.png
 	lyxscale 20
@@ -1600,6 +1535,76 @@ status open
 
 \begin_layout Plain Layout
 Summary statistics of main variables.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figure/wilcox_bar.png
+	lyxscale 20
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Overall ratings from ratees and raters.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figure/likert.png
+	lyxscale 20
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Ratings on different dimensions, grouped by gender.
 \end_layout
 
 \end_inset
@@ -3435,8 +3440,8 @@ Female
 \begin_layout Standard
 It is important to understand whether the shops are selling mostly hybrid
  and/or OPV maize seeds.
- This will help us to understand whether the farmers have enough access
- to hybrid and OPV maize seeds from the input dealers in Uganda.
+ This will help to understand whether the farmers have enough access to
+ hybrid and OPV maize seeds from the input dealers in Uganda.
  
 \begin_inset ERT
 status open
@@ -7961,6 +7966,71 @@ Model and Estimation Strategy
 \end_layout
 
 \begin_layout Standard
+Fixed effects regression model is used to verify whether the individual
+ means of the ratings are different from the overall means.
+ Ratee fixed effects are used, focusing on F-test to understand whether
+ the null of individual mean ratings being same as the overall mean ratings
+ can be rejected or not.
+ The dependent variable is these regressions is always the ratings.
+ This is tested for ratings from the farmers, self-ratings from the raters
+ and the differences between the rater ratings and ratee self-ratings.
+ 
+\end_layout
+
+\begin_layout Standard
+Intra-cluster correlation coefficients determine the level of agreement
+ between the ratings which aids in proving the hypotheses mentioned before.
+ In other words, intra-cluster correlation coefficients are a measure of
+ inter or intra rater reliability.
+ Inter or intra rater reliability in the ratings literature means levels
+ of agreement between the ratings from different raters 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "gwet2014handbook"
+literal "true"
+
+\end_inset
+
+.
+ In this study, this measure is applied in two different ways.
+ First, inter-rater reliability is obtained for ratings from the raters
+ (farmers) and ratings from the ratees for themselves.
+ The comparison here is made between the rater ratings and ratee self-ratings
+ to understand how different or similar they are.
+ This is done for the overall averaged rating, ratings based on location,
+ quality, price and reputation.
+ Inter-rater agreement or intra-class correlation coefficient can range
+ between 0 and 1.
+ The lower it is, poorer is the agreement and the higher it is, better is
+ the agreement level.
+ In order to study the role of gender in these ratings, intra-cluster correlatio
+n coefficients are also obtained for male and female groups.
+ Four groups are considered for analysing inter-rater reliability: (i) Both
+ rater and ratee are female; (ii) Both rater and ratee are male; (iii) Rater
+ is female and ratee is male; (iv) Rater is male and ratee is female.
+ 
+\end_layout
+
+\begin_layout Standard
+Secondly, inter and intra-rater reliability is studied for all the ratings
+ given by the raters.
+ Only farmers who rated more than 6 times are considered for this analysis.
+ The ICC coefficients indicating inter-rater reliability compare the ratings
+ for each ratee from different farmers (raters).
+ This helps to understand the level of agreement among the farmers on the
+ different attricutes of a particular ratee.
+ The ICC coefficients indicating intra-rater reliability compare the various
+ ratings given by each individual farmer.
+ This shows how similar or different the farmer rates the various ratees.
+ Interestingly, inter and intra rater reliability is also obtained for female
+ farmer group and male farmer group.
+ However, here the sample considered is where the farmers have rated more
+ than 5 times.
+ This gender based analysis is important to understand if the agreement
+ levels can differ based on the gender of the rater.
+\end_layout
+
+\begin_layout Standard
 The dependent variable in this study is always the ratings for the input
  dealers, traders and processors.
  The ratings can be either obtained from the raters (farmers) or they can
@@ -8102,9 +8172,9 @@ Equation 1 looks at the impact of the farmer's (rater's) gender on the dependent
  all the input dealers, traders and processors (results are shown in table
  6).
  In the appendix, similar model results are presented with the dependent
- variables as location based rating by raters (table 9), quality-based rating
- by raters (table 10), price-based rating (table 11) and reputation-based
- rating (table 12).
+ variables as location based rating by raters (table 13), quality-based
+ rating by raters (table 14), price-based rating (table 15) and reputation-based
+ rating (table 16).
  Similar analysis is also implemented with the dependent variable as difference
  between average ratings from raters and average self-ratings from ratees
  across all the rating factors (regression model explained in equation 1).
@@ -9124,7 +9194,327 @@ Results
 \begin_layout Standard
 This section discusses the results obtained from the analysis of the models
  discussed above.
- The tables for the various multivariate regressions with clustered standard
+ With ratee fixed effects and ratings as the dependent variable, it is observed
+ that the null of individual mean ratings being equal to overall mean ratings
+ is always rejected.
+ This is verified for ratings from farmers, self-ratings from input dealers,
+ traders and millers and differences between ratings from raters and self-rating
+s (F-statistics for every regression is presented in table 9 in the appendix).
+ Thus, individual mean ratings are always different from the overall mean
+ ratings.
+ This can further indicate that individual ratings given by farmers and
+ self-ratings for each ratee is different for everyone.
+ The ratees are not rated in the same way for everyone.
+ The different rating factors are important in this aspect.
+ Also, tested for location, quality, price and reputation -based ratings
+ along with overall averaged ratings, it can be deduced that individuals
+ are always rated differently.
+ This observed difference in the ratings can be attributed to various factors.
+ This study focuses on one of those, gender.
+ 
+\end_layout
+
+\begin_layout Standard
+Following this, the intra-cluster correlation coefficients present the levels
+ of agreement among the raters.
+ The results for inter and intra-rater reliability are shown in tables 10,
+ 11 and 12 in the appendix.
+ It is important to understand how similar or different the ratings from
+ raters and ratees are.
+ The ICC coefficient for inter-rater reliability for averaged overall ratings
+ from raters and averaged overall self-ratings from ratees is 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(icc1a.fn(icc_overall)$icc1a,digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ (table 10, appendix).
+ Thus, the level of agreement between the overall ratings from the raters
+ and ratees is very poor.
+ Across the different rating attributes, the level of agreement is higher.
+ Rater ratings and self-ratings are the most similar for location 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(icc1a.fn(icc_loc)$icc1a,digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ and quality based ratings 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(icc1a.fn(icc_qual)$icc1a,digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+.
+ However, the ICC coefficient is still low enough to judge it as poor agreement
+ level.
+ Henceforth, self-ratings are never at par with rater ratings considering
+ all rating attributes.
+ 
+\end_layout
+
+\begin_layout Standard
+These results are not much different when gender of the raters and the ratees
+ are considered (table 11, appendix).
+ Although the agreement levels are poor, the best agreement out of all is
+ when the rater (farmer) is a man and the ratee is a woman (overall averaged
+ ratings are taken into account).
+ The ICC coefficient is 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(icc1a.fn(icc_overall_malefem)$icc1a,digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+.
+ This means that some of the male farmers and some of the female ratees
+ could give similar scores.
+ When both rater and ratee are female (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(icc1a.fn(icc_overall_fem)$icc1a,digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+), the agreement level is higher than when both are male (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(icc1a.fn(icc_overall_male)$icc1a,digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+The most interesting part of the ICC analysis is to see how far the raters
+ (farmers) agree on the ratings given to individual input dealer or trader
+ or miller.
+ First, inter-rater reliability is focused on.
+ Here, the comparison is between ratings from different farmers for the
+ same individual (table 10, appendix).
+ It is observed that raters agree decently on overall ratings given to ratees.
+ The ICC coefficient being 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(icc1a.fn(icc_recast_overall6)$icc1a,digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+, it can be deduced that the ratings captured in the survey are not entirely
+ random or untrue.
+ However, the level of agreement among the raters (farmers) drop majorly
+ for quality (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(icc1a.fn(icc_recast_qual)$icc1a,digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+) and reputation (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(icc1a.fn(icc_recast_rep)$icc1a,digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+).
+ For location and price based ratings, the agreement levels are higher (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(icc1a.fn(icc_recast_loc)$icc1a,digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(icc1a.fn(icc_recast_price)$icc1a,digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+).
+ Inter-rater reliability is also analysed based on the gender with a comparison
+ of the ratings from different farmers (table 12, appendix).
+ It is seen that female farmers (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(icc1a.fn(icc_recast_genfem)$icc1a,digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+) agree slightly more than male farmers (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(icc1a.fn(icc_recast_genmale)$icc1a,digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+) on the ratings they give to the ratees.
+\end_layout
+
+\begin_layout Standard
+Second, intra-rater reliability is studied, where the comparison is done
+ between the ratings given by each farmer to different ratees (the rater
+ remains constant).
+ Looking at overall averaged rating pattern, it can be derived that every
+ farmer rates in a similar way every dealer or trader or miller.
+ This is because the ICC coefficient is 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(icc1b.fn(icc_recast_overall6)$icc1b,digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ (table 10, appendix), indicating a very decent level of agreement.
+ Similar high levels of agreement is noticed for location (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(icc1b.fn(icc_recast_loc)$icc1b,digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+) and reputation (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(icc1b.fn(icc_recast_rep)$icc1b,digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+) based ratings.
+ Gender is also included for intra-rater reliability.
+ Male raters (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(icc1b.fn(icc_recast_genmale)$icc1b,digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+) have higher agreement levels compared to female raters (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(icc1b.fn(icc_recast_genfem)$icc1b,digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+), considered for overall averaged ratings.
+ Thus, it can be a case that male raters follow consistent rating patterns
+ while female raters can be more inconsistent while rating.
+ 
+\end_layout
+
+\begin_layout Standard
+The tables for the various multivariate regressions with clustered standard
  errors are presented in this section.
  From table 6 (model 1), it is noticeable that the impact of farmer's gender
  on the average overall rating given by the farmer is significant.
@@ -9212,9 +9602,9 @@ In model 4, although the interaction between the farmer's gender and ratee's
 Following this, I study whether similar findings can be obtained when the
  dependent variable is the rating based on the various rating factors like
  location, quality, price and reputation.
- The results are presented in the appendix (table 9 to table 12).
+ The results are presented in the appendix (table 13 to table 16).
  The models used in these tables are same as the ones used in table 6.
- Looking at location based rating (table 9), it can be discerned that female
+ Looking at location based rating (table 13), it can be discerned that female
  raters give higher ratings than male raters (significant in model 1, 2,
  4 and 5).
  The relationship between the ratee's gender and the ratings received by
@@ -9236,7 +9626,7 @@ t at 1% level).
 
 \begin_layout Standard
 Results from quality based rating by the raters as the dependent variable
- are interesting (table 10).
+ are interesting (table 14).
  No strong evidence can be found for the impact of farmer's gender on the
  rating.
  Female ratees receive higher quality based ratings compared to male ratees
@@ -9251,7 +9641,7 @@ Results from quality based rating by the raters as the dependent variable
 
 \begin_layout Standard
 The positive relationship between gender of the farmer and price based rating
- given by the farmer is significant only in model 1 and model 5 (table 11).
+ given by the farmer is significant only in model 1 and model 5 (table 15).
  Nothing can be deduced about the impact of ratee's gender on the price
  based rating received by the ratee.
  The impact of the interaction and farmer's education dummies are similar
@@ -9268,7 +9658,7 @@ The positive relationship between gender of the farmer and price based rating
 
 \begin_layout Standard
 Next, moving on to reputation-based ratings given by the farmers (table
- 12), it can be observed that farmer's gender has no impact, female ratees
+ 16), it can be observed that farmer's gender has no impact, female ratees
  receive higher reputation based scores and some business interaction between
  the farmer and the ratee can result in higher reputation based score for
  the ratee.
@@ -9629,10 +10019,10 @@ Table 7 shows the relationship between the gender of the ratee and the average
 \begin_layout Standard
 In the appendix, results are also presented when the ratings for all the
  various factors are considered.
- Table 13 looks at the location-based self-ratings and there is no strong
+ Table 17 looks at the location-based self-ratings and there is no strong
  evidence of a relationship.
  For quality-based self-ratings, female ratees rate themselves higher than
- male ratees (significance in model 1 and 3, table 14).
+ male ratees (significance in model 1 and 3, table 18).
  The interaction between education and gender dummies of the ratee is significan
 t at 10%.
  Female ratees with some level of education rate themselves lower based
@@ -9643,11 +10033,11 @@ t at 10%.
 \end_layout
 
 \begin_layout Standard
-Results in table 15 also do not pose any significant relationship between
+Results in table 19 also do not pose any significant relationship between
  the gender of the ratee and the price-based self-ratings.
  However, it is noticed that with an increase in the age of the ratee, the
  price based ratings also rise (significant at 10%).
- For reputation-based self-ratings, model 3 is interesting (table 16 in
+ For reputation-based self-ratings, model 3 is interesting (table 20 in
  appendix).
  If the ratee is a woman, she gives higher score to herself based on reputation
  compared to her male counterparts.
@@ -9932,25 +10322,25 @@ In model 3 also, a change is noticed in the farmer's gender coefficient.
 \begin_layout Standard
 The results when the ratings are considered for the individual rating factors
  are presented in the appendix.
- Most of the main results in table 17 considering location based difference
+ Most of the main results in table 21 considering location based difference
  in ratings, are consistent with what has been observed in table 8.
  It can also be noted that with an increase in the distance between farmer's
  homestead and the nearest murram road, the difference in ratings decline.
  If the ratee being rated is a trader, the difference in ratings rise.
- Table 18 showing the quality based rating differences do not anymore provide
+ Table 22 showing the quality based rating differences do not anymore provide
  any strong evidence for the impact of farmer's gender, farmer's education
  and marital status dummies.
  
 \end_layout
 
 \begin_layout Standard
-For price-based rating differences in table 19 in the appendix, it can be
+For price-based rating differences in table 23 in the appendix, it can be
  discerned that if the rater is female, there has been some business interaction
  between the rater and the ratee and the rater has some level of education,
  the differences increase.
  Interestingly, if the ratee has some level of education, then the differences
  decline (significant at 5% level).
- Looking at differences in reputation-based ratings (table 20, appendix),
+ Looking at differences in reputation-based ratings (table 24, appendix),
  it can be observed that gender of the farmer does not significantly impact
  the differences.
  However, if the ratee is female, the differences increase.
@@ -10280,17 +10670,273 @@ end{table}
 \end_layout
 
 \begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
 
-\series bold
-Exploratory analysis
+
+\end_layout
+
+\begin_layout Section
+Appendix
 \end_layout
 
 \begin_layout Standard
-\begin_inset CommandInset bibtex
-LatexCommand bibtex
-btprint "btPrintCited"
-bibfiles "amsj,MVC_perceptions"
-options "apalike"
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figure/fe_fstat.png
+	lyxscale 20
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+Note:- The fixed effects regressions are run on the ratings from the raters,
+ self-ratings from the ratees and the differences in ratings between rater
+ ratings and self-ratings (fixed effects on ratees).
+ In every case, the null of individual means being equal to overall mean
+ is rejected with a p-value less than 0.00 (F-statistic greater than F value).
+ Degrees of freedom(1) is 525 and degrees of freedom(2) is 3384.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+F-statistics for all the fixed effects regressions on the ratings.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figure/icc_rater_ratee.png
+	lyxscale 20
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+Note:- ICC(Inter-Rater, Raters and Ratees): Inter-rater reliability here
+ indicates the level of agreement between the ratings given by the farmers
+ (raters) and the self-ratings given by the ratees themselves.
+ The sample consists of all the raters and ratees (input dealers, traders
+ and processors).
+ The averaged overall ratings, ratings based on location, quality, price
+ and reputation are taken into account.
+ ICC (Inter-Rater, Only Raters): Inter-rater reliability here indicates
+ the level of agreement between the ratings given by each individual farmer
+ (rater), the comparison is made amongst ratings from different farmers.
+ The sample consists of only the farmers who have given greater than 6 ratings.
+ ICC (Intra-Rater, Only Raters): Intra-rater reliability here focuses on
+ the agreement between the different ratings given by individual raters,
+ comparison is amongst the ratings coming from the same individual rater
+ who has given more than 6 ratings.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+ICC coefficients for inter-rater reliability (agreement between farmers'
+ and ratee's ratings and between all raters' ratings) and intra-rater reliabilit
+y (agreement in ratings given by each farmer).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figure/icc_rater_ratee_gender.png
+	lyxscale 20
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+Note:- ICC(Inter-Rater): Inter-rater reliability here indicates the level
+ of agreement between the ratings given by the farmers (raters) and the
+ self-ratings given by the ratees themselves.
+ The sample consists of all the raters and ratees (input dealers, traders
+ and processors).
+ The averaged overall ratings are taken into account.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+ICC coefficients for inter-rater reliability (agreement between farmers'
+ and ratee's ratings), grouped by gender.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figure/icc_rater_gender.png
+	lyxscale 20
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+Note:- ICC(Inter-Rater): Inter-rater reliability here indicates the level
+ of agreement between the ratings given by different farmers.
+ The sample consists of the farmers who have given more than 5 ratings.
+ The averaged overall ratings are taken into account.
+ ICC (Intra-Rater): Intra-rater reliability here focuses on the agreement
+ between the different ratings given by individual raters, comparison is
+ amongst the ratings coming from the same individual rater.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+ICC coefficients for inter-rater reliability (agreement between ratings
+ from different farmers) and intra-rater reliability (agreement between
+ ratings from same farmer), grouped by gender.
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -13774,6 +14420,25 @@ label{table:coefficients}
 \backslash
 end{table} 
 \end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+btprint "btPrintCited"
+bibfiles "amsj,MVC_perceptions"
+options "apalike"
 
 \end_inset
 
