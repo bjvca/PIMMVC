@@ -13,6 +13,9 @@ library(expss)
 library(dplyr)
 library(tidyr)
 library(gridExtra)
+library(irrICC)
+library(reshape2)
+
 options(scipen=999)
 path_2 <- strsplit(path, "/papers/perceptions")[[1]]
 
@@ -360,16 +363,24 @@ pool<-pool[!(pool$id.ratee=="."),]
 mod1_gender<- lm.cluster(data = pool, formula = rating_overall ~  farmer_fem + ratee_fem + age + interaction_yes + educ + tarmac
                          + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy, cluster="id.ratee") 
 
+se1 <- sqrt(diag(vcov(mod1_gender)))
+lm_res1<-mod1_gender$lm_res
+
 ##### interactions 
 ##Interaction with farmer_fem and interaction_yes
 mod2_gender<- lm.cluster(data = pool, formula = rating_overall ~  farmer_fem* interaction_yes + ratee_fem + age  + educ + tarmac
                          + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy, cluster="id.ratee") 
+
+se2 <- sqrt(diag(vcov(mod2_gender)))
+lm_res2<-mod2_gender$lm_res
 
 #intplot1 <- interaction.plot(pool$farmer_fem, pool$interaction_yes, pool$rating_overall)
 
 ##Interaction with farmer_fem and education
 mod3_gender <- lm.cluster(data = pool, formula = rating_overall ~  farmer_fem*educ + interaction_yes + ratee_fem + age + tarmac
                           + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy, cluster="id.ratee") 
+se3 <- sqrt(diag(vcov(mod3_gender)))
+lm_res3<-mod3_gender$lm_res
 
 #intplot2 <- interaction.plot(pool$farmer_fem, pool$educ, pool$rating_overall)
 
@@ -382,6 +393,8 @@ mod3_gender <- lm.cluster(data = pool, formula = rating_overall ~  farmer_fem*ed
 ##Interaction with farmer_fem and gender of ratee
 mod5_gender <- lm.cluster(data = pool, formula = rating_overall ~  farmer_fem*ratee_fem + educ + interaction_yes + age + tarmac
                           + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy, cluster="id.ratee") 
+se5 <- sqrt(diag(vcov(mod5_gender)))
+lm_res5<-mod5_gender$lm_res
 
 #intplot4 <- interaction.plot(pool$farmer_fem, pool$ratee_fem, pool$rating_overall)
 
@@ -395,6 +408,8 @@ mod5_gender <- lm.cluster(data = pool, formula = rating_overall ~  farmer_fem*ra
 ##Interaction with ratee_fem and interaction_yes 
 mod7_gender <- lm.cluster(data = pool, formula = rating_overall ~  ratee_fem*interaction_yes + farmer_fem + married + educ + age + tarmac
                           + murram + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy, cluster="id.ratee") 
+se7 <- sqrt(diag(vcov(mod7_gender)))
+lm_res7<-mod7_gender$lm_res
 
 #intplot6 <- interaction.plot(pool$ratee_fem, pool$interaction_yes, pool$rating_overall)
 
@@ -717,11 +732,15 @@ texreg(list(mod41_gender,mod42_gender,mod43_gender,mod45_gender,mod47_gender), f
 #all variables 
 mod51_gender<- lm.cluster(data = pool, formula = ratee_rating_overall ~ ratee_fem + age_ratee + married_ratee + educ_ratee
                           + dealer_dummy + trader_dummy, cluster = "id.ratee") 
+se51 <- sqrt(diag(vcov(mod51_gender)))
+lm_res51<-mod51_gender$lm_res
 
 ##### interactions 
 ##Interaction with ratee_fem and age of ratee
 mod52_gender<- lm.cluster(data = pool, formula = ratee_rating_overall ~ ratee_fem*age_ratee + married_ratee + educ_ratee
                           + dealer_dummy + trader_dummy, cluster = "id.ratee") 
+se52 <- sqrt(diag(vcov(mod52_gender)))
+lm_res52<-mod52_gender$lm_res
 
 ##Interaction with ratee_fem and marital status of ratee 
 #mod53_gender<- lm.cluster(data = pool, formula = ratee_rating_overall ~ ratee_fem*married_ratee + age_ratee + educ_ratee
@@ -730,6 +749,8 @@ mod52_gender<- lm.cluster(data = pool, formula = ratee_rating_overall ~ ratee_fe
 ##Interaction with ratee_fem and education of ratee 
 mod54_gender<- lm.cluster(data = pool, formula = ratee_rating_overall ~ ratee_fem*educ_ratee + age_ratee + married_ratee
                           + dealer_dummy + trader_dummy , cluster = "id.ratee") 
+se54 <- sqrt(diag(vcov(mod54_gender)))
+lm_res54<-mod54_gender$lm_res
 
 
 #saving regression
@@ -743,11 +764,15 @@ texreg(list(mod51_gender,mod52_gender,mod54_gender), file="gen_overall_ratee_lat
 #all variables 
 mod55_gender<- lm.cluster(data = pool, formula = rating_location_ratee ~ ratee_fem + age_ratee + married_ratee + educ_ratee 
                           + dealer_dummy + trader_dummy , cluster = "id.ratee") 
+se55 <- sqrt(diag(vcov(mod55_gender)))
+lm_res55<-mod55_gender$lm_res
 
 ##### interactions 
 ##Interaction with ratee_fem and age of ratee
 mod56_gender<- lm.cluster(data = pool, formula = rating_location_ratee ~ ratee_fem*age_ratee + married_ratee + educ_ratee
                           + dealer_dummy + trader_dummy , cluster = "id.ratee") 
+se56 <- sqrt(diag(vcov(mod56_gender)))
+lm_res56<-mod56_gender$lm_res
 
 ##Interaction with ratee_fem and marital status of ratee 
 #mod57_gender<- lm.cluster(data = pool, formula = rating_location_ratee ~ ratee_fem*married_ratee + age_ratee + educ_ratee 
@@ -756,7 +781,8 @@ mod56_gender<- lm.cluster(data = pool, formula = rating_location_ratee ~ ratee_f
 ##Interaction with ratee_fem and education of ratee 
 mod58_gender<- lm.cluster(data = pool, formula = rating_location_ratee ~ ratee_fem*educ_ratee + age_ratee + married_ratee 
                           + dealer_dummy + trader_dummy , cluster = "id.ratee") 
-
+se58 <- sqrt(diag(vcov(mod58_gender)))
+lm_res58<-mod58_gender$lm_res
 
 #saving regression
 screenreg(list(mod55_gender,mod56_gender,mod58_gender), file="gen_location_ratee", stars = c(0.01, 0.05, 0.1), digits=4)
@@ -851,15 +877,21 @@ pool$ratingrepu_diff <- pool$rating_reputation - pool$rating_reputation_ratee ##
 #all variables 
 mod71_gender<- lm.cluster(data = pool, formula = ratingoverall_diff ~  farmer_fem + ratee_fem + age + interaction_yes + educ + tarmac
                           + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy , cluster = "id.ratee") 
+se71 <- sqrt(diag(vcov(mod71_gender)))
+lm_res71<-mod71_gender$lm_res
 
 ##### interactions 
 ##Interaction with farmer_fem and interaction_yes
 mod72_gender<- lm.cluster(data = pool, formula = ratingoverall_diff ~  farmer_fem* interaction_yes + ratee_fem + age  + educ + tarmac
                          + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy , cluster = "id.ratee") 
+se72 <- sqrt(diag(vcov(mod72_gender)))
+lm_res72<-mod72_gender$lm_res
 
 ##Interaction with farmer_fem and education
 mod73_gender <- lm.cluster(data = pool, formula = ratingoverall_diff ~  farmer_fem*educ + interaction_yes + ratee_fem + age + tarmac
                           + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy, cluster = "id.ratee") 
+se73 <- sqrt(diag(vcov(mod73_gender)))
+lm_res73<-mod73_gender$lm_res
 
 ##Interaction with farmer_fem and age
 #mod74_gender <- lm.cluster(data = pool, formula = ratingoverall_diff ~  farmer_fem*age + educ + interaction_yes + ratee_fem + tarmac
@@ -868,6 +900,8 @@ mod73_gender <- lm.cluster(data = pool, formula = ratingoverall_diff ~  farmer_f
 ##Interaction with farmer_fem and gender of ratee
 mod75_gender <- lm.cluster(data = pool, formula = ratingoverall_diff ~  farmer_fem*ratee_fem + educ + interaction_yes + age + tarmac
                           + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy, cluster = "id.ratee") 
+se75 <- sqrt(diag(vcov(mod75_gender)))
+lm_res75<-mod75_gender$lm_res
 
 ##Interaction with ratee_fem and educ of ratee 
 #mod76_gender <- lm.cluster(data = pool, formula = ratingoverall_diff ~  ratee_fem*educ_ratee + farmer_fem + educ + interaction_yes + age + tarmac
@@ -2050,10 +2084,6 @@ dev.off()
 ################################# ICC ####################################
 
 #https://cran.r-project.org/web/packages/irrICC/vignettes/UserGuide.pdf
-
-
-library(irrICC)
-library(reshape2)
 
 ###### RATINGS FROM FARMERS VS SELF RATINGS 
 
