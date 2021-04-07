@@ -32,7 +32,7 @@ knitr
 \bibtex_command default
 \index_command default
 \paperfontsize default
-\spacing single
+\spacing double
 \use_hyperref true
 \pdf_bookmarks true
 \pdf_bookmarksnumbered false
@@ -62,7 +62,7 @@ knitr
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
-\suppress_date false
+\suppress_date true
 \justification true
 \use_refstyle 1
 \use_minted 0
@@ -76,8 +76,8 @@ knitr
 \bottommargin 2.5cm
 \secnumdepth 3
 \tocdepth 3
-\paragraph_separation indent
-\paragraph_indentation default
+\paragraph_separation skip
+\defskip bigskip
 \is_math_indent 0
 \math_numbering_side default
 \quotes_style english
@@ -94,279 +94,34 @@ knitr
 
 \begin_body
 
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{titlepage}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{figure}[t]{%       
-\backslash
-begin{overpic}[width=1
-\backslash
-textwidth]{../LaTeX/Layout/Picture1.png}          
-\backslash
-put(46,4){
-\backslash
-color{white}
-\backslash
-large{
-\backslash
-textbf{FACULTY OF ECONOMICS AND BUSINESS}}}       
-\backslash
-end{overpic}     } 
-\backslash
-end{figure}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-vspace*{4.5cm} {
-\backslash
-Huge  Type your title here}}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-vspace*{0.5cm} {
-\backslash
-Large Type your subtitle here}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{figure}[b]   %
-\backslash
-centering    
-\backslash
-begin{minipage}[c]{0.4
-\backslash
-textwidth}  {%       
-\backslash
-begin{overpic}[width=0.9
-\backslash
-textwidth]{../LaTeX/Layout/Picture2.png}          
-\backslash
-put(70,45){
-\backslash
-begin{minipage}[c]{1.80
-\backslash
-textwidth} 
-\backslash
-begin{flushright}
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\backslash
-Large Name} 
-\backslash
-linebreak {Student number} 
-\backslash
-linebreak
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-textbf{{
-\backslash
-large Thesis submitted to obtain 
-\backslash
-linebreak the degree of}} 
-\backslash
-linebreak
-\end_layout
-
-\begin_layout Plain Layout
-
-%!!!IMPORTANT!!!: %indicate the appropriate title of your master and major.
- Check the website https://feb.kuleuven.be/studentenportaal/contact/masterproef-le
-uven {
-\backslash
-large Toegepaste Economische Wetenschappen: Handelsingenieur}
-\backslash
-linebreak {
-\backslash
-large Major Data science en business analytics}
-\backslash
-linebreak 
-\backslash
-linebreak 
-\backslash
-textbf{{
-\backslash
-large Promoter:}}   Prof.
-\backslash
- Dr.
-\backslash
- ...
- 
-\backslash
-linebreak 
-\backslash
-textbf{{
-\backslash
-large Co-promoter:}} Prof.
-\backslash
- Dr.
-\backslash
- ...
- 
-\backslash
-linebreak 
-\backslash
-textbf{{
-\backslash
-large Tutor:}} Prof.
-\backslash
- Dr.
-\backslash
- ...
- 
-\backslash
-linebreak
-\end_layout
-
-\begin_layout Plain Layout
-
-%
-\backslash
-linebreak
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-textbf{{
-\backslash
-large Academic year:}} {
-\backslash
-large 20XX-20XX} 
-\backslash
-linebreak 
-\backslash
-end{flushright}   
-\backslash
-end{minipage}}       
-\backslash
-end{overpic}     }   
-\backslash
-end{minipage}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{picture}(540,0.2) 
-\backslash
-put(0,0){
-\backslash
-colorbox{kuleuven1}{
-\backslash
-makebox(540,0.2){}}} 
-\backslash
-end{picture} 
-\backslash
-end{figure}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{titlepage} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage newpage
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Preview
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-author{Bjorn Van Campenhout
-\backslash
-thanks{Development Strategy and Governance Division, International Food
- Policy Research Institute, Kampala, Uganda} 
-\backslash
-footnotemark[2], and Anusha De
-\backslash
-thanks{LICOS Center for Institutions and Economic Performance, KULeuven,
- Belgium}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Title
-Perceptions in Maize Supply Chains: Evidence from Uganda
+\paragraph_spacing onehalf
+Gendered Perceptions in Maize Supply Chains; Subtitle: Evidence from Ugandan
+ maize farmers, input dealers, assembly traders and millers
 \end_layout
 
 \begin_layout Abstract
+\paragraph_spacing onehalf
 Economic actors base decisions on limited information and perceptions related
  to the quality of goods or services.
  Inaccurate perceptions or false beliefs may result in sub-optimal allocation
  of resources.
- We study perceptions related to a set of important attributes that characterize
- maize supply chains in Uganda.
- We ask a random sample of maize farmers rate agro-input dealers, assembly
- traders and maize millers.
- We then track these other actors and ask them to rate themselves on the
- same attributes.
- The fact that linkages between actors are preserved enables us to study
- how perceptions reverberate through the value chain.
- With a particular focus on gendered perceptions, we analyse the perceived
- performance levels of male and female actors in the maize supply chains.
+ Perceptions related to a set of important attributes that characterize
+ maize supply chains in Uganda are studied.
+ A random sample of maize farmers are asked to rate agro-input dealers,
+ assembly traders and maize millers and then these other actors are tracked
+ and asked to rate themselves on the same attributes.
+ The fact that linkages between actors are preserved enables to study how
+ perceptions reverberate through the value chain.
+ With a particular focus on gendered perceptions, the perceived performance
+ levels of male and female actors in the maize supply chains are analysed.
  Self-ratings and rater (farmer) ratings through gender-based interactions
  provide fresh insights regarding the gendered rating patterns and gender
  roles in Ugandan maize value chain.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 \begin_inset ERT
 status open
 
@@ -412,20 +167,15 @@ source(paste(path,"code/perceptions.R
 \end_layout
 
 \begin_layout Standard
-
-\emph on
-\begin_inset CommandInset line
-LatexCommand rule
-offset "1ex"
-width "100col%"
-height "1pt"
-
+\paragraph_spacing onehalf
+\begin_inset Newpage newpage
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 \begin_inset ERT
 status open
 
@@ -433,9 +183,7 @@ status open
 
 
 \backslash
-setlength{
-\backslash
-parindent}{1cm}
+section*{Acknowledgements}
 \end_layout
 
 \end_inset
@@ -443,15 +191,527 @@ parindent}{1cm}
 
 \end_layout
 
-\begin_layout Section
-Background
+\begin_layout Standard
+I acknowledge 
 \end_layout
 
 \begin_layout Standard
-There is ample evidence of the essential role of improved agricultural inputs,
- especially improved seed, inorganic fertilizers and agro-chemicals, in
- enhancing agricultural productivity, poverty reduction, and generally economic
- transformation 
+\paragraph_spacing onehalf
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\paragraph_spacing onehalf
+General Introduction 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+Ratings based on gender of the rater and the ratee has only been of interest
+ in the recent decades and the literature shows a wide range of studies
+ in different fields to address the gender based rating patterns (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Furnham2005,Patiar2008"
+literal "true"
+
+\end_inset
+
+).
+ The main focus of this study is to understand gendered perceptions from
+ the ratings given by male and female farmers to the input dealers, traders
+ and processors of the maize supply chain in Uganda and the self-ratings
+ given by the male and female dealers, traders and maize millers to themselves.
+ In the agricultural sector, studies based on gender of the various actors
+ of the food value chains are becoming more prominent, particularly in the
+ developing economies (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "barrientos2019,Kruijssen2018,Mnimbo2017"
+literal "true"
+
+\end_inset
+
+).
+ For instance, in Africa, attempts of closing the productivity gap between
+ male and female farmers is a new step towards achieving food security with
+ gender dimensions in the food value chains across Uganda increasingly gaining
+ importance in the recent years 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "akite2018,bamanyaki2020,nchanji2020"
+literal "true"
+
+\end_inset
+
+.
+ It has been shown that improved access to markets and extension services
+ for both male and female smallholder maize farmers can help reduce the
+ gender productivity gap in Uganda 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Larson2016"
+literal "true"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+This motivates the aim to understand the ratings' mechanism based on the
+ gender of the rater and the ratee in the case of maize value chains in
+ Uganda.
+ Traditionally, females have not been majorly involved in the input dealing,
+ processing and trading activities for maize in Uganda.
+ Thus, analysing how the gender of each actor impacts the ratings from farmers
+ and the self-ratings is crucial in the Ugandan maize value chain as it
+ will explain the lower involvement of females in input dealing, processing
+ and trading activities.
+ The perceptions obtained from the study can explain why females do not
+ participate as much their male counterparts in these kind of businesses
+ which basically fuel the maize value chain and the production of maize
+ in Uganda.
+ 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+An intriguing question for researchers in understanding perceptions can
+ be the leading motive behind the usage of ratings as the tool for perception
+ identification.
+ The literature shows that ratings can be largely used as an instrument
+ for identifying performance levels of various actors in the markets or
+ respective industries of choice, for information transparency 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Karminsky2016"
+literal "true"
+
+\end_inset
+
+ and for decision management.
+ Various rating based decision management studies come from the financial
+ sector like credit ratings explaining investment decisions (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Bolton2012"
+literal "true"
+
+\end_inset
+
+) and financial risk (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "karminsky2009ratings"
+literal "true"
+
+\end_inset
+
+), the link between corporate credit ratings and the financial crisis (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "deHaan2017"
+literal "true"
+
+\end_inset
+
+) and bond ratings's informational value (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Kliger2000"
+literal "true"
+
+\end_inset
+
+).
+ In marketing research, ratings are the tool to identify demand (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Dhar2016"
+literal "true"
+
+\end_inset
+
+), sales and consumer preferences (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Sun2012"
+literal "true"
+
+\end_inset
+
+) and helps the product manufacturer to improve quality and align the product
+ features with consumer tastes (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Cheung2003,Barton2006"
+literal "true"
+
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+Social and psychological studies widely use ratings to analyse social behaviour
+ (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Renk2004,Schofield2007"
+literal "true"
+
+\end_inset
+
+), teaching and learning patterns (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Feldman2007"
+literal "true"
+
+\end_inset
+
+), development of children (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Bukowski2012"
+literal "true"
+
+\end_inset
+
+), parenting aspects (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Kuppens2009"
+literal "true"
+
+\end_inset
+
+) and languages (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Rudell1993,Cole2019"
+literal "true"
+
+\end_inset
+
+).
+ Similarly, ratings can also be used to study various agricultural aspects,
+ providing an understanding of the perceptions of the different actors of
+ the value (demand or supply) chain.
+ Recently, the study of perceptions is becoming more common in food supply
+ chains (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Ola2020,Odongo2016"
+literal "true"
+
+\end_inset
+
+).
+ These perceptions can explain the developments of these chains and can
+ indicate the loopholes in the performance of the involved actors.
+ 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+Broadly, studying the rater's ratings and the ratee's ratings can give insights
+ about the deeper mechanisms of performance perceptions in the value chains.
+ The ratings can be used as a tool to understand what factors determine
+ widespread perceptions about certain actors in the food value chains and
+ whether consistency can be obtained amongst the rater's and ratee's ratings.
+ Traditionally, higher ratings always motivate better performance as a boost
+ to the existing performance level of the concerned actor and lower ratings
+ improve performance or atleast induce efforts by the rated sujects to improve
+ performance.
+ It is true that there are various other factors like competition, access
+ to facilities, knowledge of the business and mechanisms, etc.
+ which can influence the performance levels directly.
+ However, the fact that ratings can even drive these factors directly or
+ indirectly cannot be ignored.
+ Ratings can be assumed as a method of assessment which does not couple
+ with direct repurcussions but do successfully indicate long-term repurcussions
+ in the near or distant future which impacts the rated subjects.
+ 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+For this study, I use input dealer, trader and miller attributes, such as
+ perceived ease of access to the dealer or trader or miller, perceived quality
+ of the seed sold by the dealer or the quality of service provided by the
+ trader or the miller, and reputation of the dealer or trader or miller,
+ to assess whether such perceived input-dealer or trader or miller attributes
+ can vary significantly based on the gender of the farmer (rater) or the
+ ratee (dealer or trader or miller).
+ 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+The case for our investigation is the maize value chain in Uganda.
+ I use data from a sample of 1500 maize farmers and 78 input (seed) dealers,
+ 341 assembly traders and 174 millers from Eastern Uganda to examine the
+ (in)consistency in farmer's and input (seed) dealer's or trader's or miller's
+ perceived attribute ratings of these actors and identify if the gender
+ of the rater or the ratee has any impact on the ratings.
+ 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+The first objective is to establish how the perceived attribute ratings
+ and self-ratings of dealers, traders and millers differ from each other.
+ All the actors are studied together with the focus on the ratings being
+ received and the self-ratings.
+ Since, one attribute for each actor vary, the study considers the other
+ four attributes for every actor.
+ The four attributes, as rated on a scale of 1-5 by farmers and the dealers,
+ traders and millers themselves, are: (i) quality of seed sold by a given
+ dealer relative to the other dealers, quality of service provided by a
+ trader (miller) relative to the other traders (millers); (ii) price of
+ seed sold by a given dealer relative to other dealers, price paid by a
+ given trader relative to other traders, price charged by a given miller
+ relative to the other millers; (iii) Location (ease of access by road or
+ phone) of the input dealer (trader or miller) relative to other dealers
+ (traders or millers); (iv) reputation of a given dealer (trader or miller)
+ relative to other dealers (traders or millers).
+ Intra-cluster correlation coefficients are used to determine inter and
+ intra-rater reliability to see the level of agreement betwen the ratings
+ obtained.
+ The second objective aims to understand rating patterns based on the gender
+ of the farmer (rater) and the third objective aims to understand the self-ratin
+g patterns based on the gender of the ratee (dealer or trader or miller).
+ The fourth objective is to identify whether farmers rate the ratees based
+ on their gender.
+ Multivariate regression models with clustered standard errors are used
+ for the analysis.
+ 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+This study contributes additional literature to understanding the role of
+ agro-input dealers, traders and millers in facilitating or limiting the
+ development of smallholder agriculture.
+ Ratings for the different actors of the supply chain, which this study
+ employs to examine farmer's perceived value of input dealers or traders
+ or millers, is widely a used system in marketing- as a mechanism to increase
+ customer trust in and purchase of services/products 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Jayashankar2018,Chiu2014"
+literal "true"
+
+\end_inset
+
+.
+ Such a rating system, if applied to agricultural input marketing, is likely
+ to encourage input dealers to desist from counterfeiting, adulteration
+ or deceptive marketing of inputs in order to maintain a good reputation
+ and higher rating 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Kim2013,Bente2012,BarIsaac2008"
+literal "true"
+
+\end_inset
+
+.
+ If applied to assembly trading, it will ensure broader access to maize
+ markets and good prices for the farmers' harvests.
+ Similarly, ratings for maize processing can improve the end products obtained
+ from maize and can sustain the value chain, ensuring less deficits and
+ good quality of food.
+ Seller ratings and reputation are increasingly becoming important assets
+ in marketing, particularly when the quality of the good or service transacted
+ is hard to measure and the buyer and seller cannot perfectly contract on
+ the outcome of the transaction, or where there are no legal institutions
+ to alleviate buyer uncertainty 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "BarIsaac2008"
+literal "true"
+
+\end_inset
+
+.
+ Through these type of ratings, the supply chain actors will be mindful
+ of building and maintaining a good reputation through the information that
+ the farmers have about these actors, including previous transactions and
+ the reports of other farmers.
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+In the sections that follow, I expound on the study context and hypotheses;
+ explain the data design and analysis methods; present the descriptive and
+ empirical results; and finally provide a conclusion and recommendations.
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\paragraph_spacing onehalf
+Study Context
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+This section discusses the context and background of the study.
+ The case for this investigation is the maize value chain in Uganda.
+ Maize is a staple crop in Uganda, prioritized by the government for food
+ security and household income.
+ By land area, maize is the most cultivated crop in Uganda, covering 30%
+ of the total cropped land, followed by beans, covering 15% of cropped land.
+ Government’s interventions in the maize sub-sector over the past decade
+ have targeted increasing on-farm productivity and production, yet productivity
+ remains very low.
+ On-farm maize data from the Uganda Annual Agricultural Survey 2018 agricultural
+ year reports yield figures of 596kg per acre (or 1.49mt/ha); a figure that
+ falls almost midway the yield range of 270 and 995 kg per acre reported
+ by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Gourlay2019"
+literal "true"
+
+\end_inset
+
+.
+ While there is some ambiguity in the on-farm yield figures, partly due
+ to errors in farmer-reported production 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Gourlay2019"
+literal "true"
+
+\end_inset
+
+ and differences in the climatic conditions between different agricultural
+ years 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "VanCampenhout2020"
+literal "true"
+
+\end_inset
+
+, they are still considerably lower than the research station yield figures
+ which range between 730 kg per acre and 1,820 kg per acre 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Fermont2011"
+literal "true"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+Improved maize seed (hybrid and open pollinated varieties) is among the
+ top agricultural inputs promoted by the government, development partners
+ and private sector to increase maize yields in Uganda.
+ But, just like the other improved agricultural inputs, the proportion of
+ households using improved maize seed in Uganda is still low, estimated
+ to range between 27% and 37%, compared to between 30% and 50% in Tanzania
+ and Malawi 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "VanCampenhout2020"
+literal "true"
+
+\end_inset
+
+.
+ When measured using the percentage of land under improved maize seed varieties,
+ the use rates in Uganda slightly increase to 54% 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Sheahan2017"
+literal "true"
+
+\end_inset
+
+.
+ Limited use of improved maize seed is just one among the many factors constrain
+ing maize yields in Uganda.
+ Limited access to markets for harvested maize for farmers living in remote
+ areas, slow advancement in milling technologies, price discrimination at
+ all levels of the supply chain, issues of trust amongst the supply chain
+ actors, lower selling prices of the harvest, quality of services provided
+ by the various supply chain actors and business ethics in the industry
+ during selling, trading or milling also influence maize yields at large.
+ Like any other industry, the maize supply chains also need to maximize
+ yield gains, ensure cost-effective sale, storage and production, adhere
+ to improved technologies and increase the usage of improved inputs to increase
+ the profits for all the actors in the industry.
+ For instance, several factors at household, market and policy levels constrain
+ the use of improved maize seed and generally improved agricultural inputs
+ by Ugandan farmers.
+ 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+This study focuses on the market level factors, specifically, the influence
+ of input dealer (trader or miller) attributes such as, reputation or perceived
+ quality of seed or service, to understand deeper mechanisms in the industry.
+ By the inclusion of gender-based analysis, the state of women involvement
+ in this industry can be better explained.
+ Gender-based perceptions can aid in the insights about the longer-term
+ outputs of the supply chain.
+ 
+\end_layout
+
+\begin_layout Subsection
+\paragraph_spacing onehalf
+Supply Chain Actors 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+The roles of input dealers, maize traders and maize processors in the maize
+ supply chain are very intricate.
+ Their performance can have major impacts on the entire value chain leading
+ to food security issues.
+ There is ample evidence of the essential role of improved agricultural
+ inputs, especially improved seed, inorganic fertilizers and agro-chemicals,
+ in enhancing agricultural productivity, poverty reduction, and generally
+ economic transformation 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "McArthur2017,Zeng2015,Evenson2003"
@@ -520,8 +780,9 @@ literal "true"
 \end_inset
 
 , is emerging as an additional explanation for the limited adoption.
- Poor quality inputs pose a major disincentive to adoption of improved inputs
- as use of low quality inputs result in low average returns to farmers 
+ Poor quality inputs pose a major disincentive to the adoption of improved
+ inputs as use of low quality inputs result in low average returns to farmers
+ 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Bold2015"
@@ -530,9 +791,11 @@ literal "true"
 \end_inset
 
 .
+ 
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 Research and policy have focused on two main explanations for low quality
  inputs: (i) sellers deliberately counterfeiting or adulterating inputs;
  and (ii) poor storage processes along the supply chain 
@@ -573,39 +836,31 @@ literal "true"
 
  provide insights into the actual (poor) quality of agricultural inputs
  in selected African countries, including Uganda.
- 
+ Drop in the quality of seeds after leaving the breeders 
 \begin_inset CommandInset citation
-LatexCommand citet
+LatexCommand citep
 key "Barriga2018"
 literal "true"
 
 \end_inset
 
- tested seeds along the maize supply chain in Uganda for purity, germination
- and genetic similarity, and found that the quality of seed starts to significan
-tly drop as soon as the seeds leave the breeders, and that this is the same
- across all geographic areas and types of suppliers, including wholesalers,
- retailers and major company outlets.
- Indeed, an earlier study by 
+, low levels of authentic seeds in locally retailed hybrid seeds 
 \begin_inset CommandInset citation
-LatexCommand citet
+LatexCommand citep
 key "Bold2017"
 literal "true"
 
 \end_inset
 
- on maize seed in Uganda found locally retailed hybrid maize seed to contain
- less than 50% authentic seeds 
+, counterfeiting/adulteration of inputs 
 \begin_inset CommandInset citation
-LatexCommand citet
-key "Bold2017"
+LatexCommand citep
+key "Ashour2019,Boef2019"
 literal "true"
 
 \end_inset
 
-.
- Just like seed, counterfeiting/adulteration is prevalent in agro-chemicals
- such as herbicides 
+ and high levels of deceptive marketing 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Ashour2019"
@@ -613,36 +868,11 @@ literal "true"
 
 \end_inset
 
-.
- In a comparative study on Uganda and Ghana, 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Boef2019"
-literal "true"
-
-\end_inset
-
- find manufacturers and input-dealers/distributors, respectively, to be
- responsible for 20% and 80% of the counterfeiting/adulteration of inputs.
- The studies also find high levels of deceptive marketing, for instance,
- 31% of the herbicide bottles sampled in 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Ashour2019"
-literal "true"
-
-\end_inset
-
- contained less than 75% of the ingredients advertised.
-\end_layout
-
-\begin_layout Standard
-The growing incidence of input quality issues (counterfeiting, adulteration
- and deceptive marketing) at input dealer level provide a strong case to
- strengthen policy and institutional reforms at this level of the input
- supply chain.
- A few studies have explored the role of agro-input dealers in the agricultural
- innovation process 
+ are some common pheonomena.
+ Henceforth, input dealers dealing in these agricultural inputs are an important
+ node for the sustenance of the maize value chains.
+ Although their role has already been studied with respect to the agricultural
+ innovation processes 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Etyang2014,Odame2011,Chinsinga2011,Feder2011,Adhiguru2009"
@@ -650,54 +880,139 @@ literal "true"
 
 \end_inset
 
-, although they mainly focus on input dealers as agriculture information
- extension agents.
+, it is essential to also realise the perceptions of their performance in
+ the maize supply chain.
  
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Etyang2014"
-literal "true"
-
-\end_inset
-
- examine the relevance of agro-input dealers in disseminating soil fertility
- management knowledge to farmers.
- They argue that enhancing input dealers' knowledge on soil fertility management
- would improve the quality of information passed on to farmers.
- 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Feder2011"
-literal "true"
-
-\end_inset
-
- observe that private sector participation can overcome some of the deficiencies
- of public extension systems, including delivery of inputs, but may lead
- to some challenges, such as inequitable provision of services, and limited
- coverage of farmers’ needs.
- The likelihood of inequitable provision of services to farmers is also
- highlighted by 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Odame2011"
-literal "true"
-
-\end_inset
-
- who find that, while the agro-dealer model offers the best approach for
- delivering new seeds and other modern technologies to the smallholder farmers,
- they (input dealers) remain spread unevenly and inevitably concentrated
- in the higher potential agricultural areas.
 \end_layout
 
 \begin_layout Standard
-For this paper, we use input dealer attributes, such as perceived ease of
- access to the dealer, perceived quality of seed sold, and reputation of
- the dealer, to assess whether such perceived input-dealer attributes have
- any significant influence on farmers' use of improved seed.
- Due to limited knowledge and information asymmetries, it is often hard
- for farmers to detect the quality of purchased inputs.
+\paragraph_spacing onehalf
+Trading of maize is also an essential part of the maize value chain.
+ The assembly traders help in the marketing of maize and thus, are a linkage
+ between the farmers and the markets (or the millers in particular).
+ The local assembly traders reach the remote locations to collect maize
+ harvests sometimes directly from the farmers, farm gates, the small rural
+ storage facilities or the markets.
+ These traders also take the responsibility of transportation in general
+ so that the harvested maize can reach the essential marketing destinations,
+ starting from small retailers, millers or processors, bigger regional markets
+ to export centres.
+ The assembly traders also play a major role in maize storage as traders
+ in Uganda can store the harvest for a maximum of one year.
+ This can also impact the quality of maize in the supply chain as there
+ can be incidences of contamination and mould 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Kaaya2006"
+literal "true"
+
+\end_inset
+
+.
+ While studying market access in Southern and Eastern Africa, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Mather2013"
+literal "true"
+
+\end_inset
+
+ commented that access to assembly traders have increased over time and
+ this has given greater oppotunities to the remote areas with the access
+ of maize markets.
+ This claim is supported by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Sitko2014"
+literal "true"
+
+\end_inset
+
+ with the mention of trading being highly competitive in Eastern and Southern
+ Africa in terms of the marketing margins and the number of traders operating.
+ Studying the perceptions of these important actors can aid in the understanding
+ of the marketing linkages, maintenance of quality during trading activities
+ (storage and transportation) and sustenance of trading relationships in
+ these rural markets.
+ 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+Another very important actor of the maize supply chain is the millers or
+ processors who produce the final product from the harvested maize.
+ For instance, the profit-efficiency of the maize mills has been studied
+ by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Abu2009"
+literal "true"
+
+\end_inset
+
+ in South Africa where the researchers also indicated the unexplored potential
+ of the mills due to the deregulation of the maize markets in the country.
+ Maize milling is also very closely integrated with food security.
+ Since maize flour is a staple food for most of the countries in Africa,
+ maize mills can ensure constant supply of processed maize in cases of grain
+ scarcity or less availability of processed maize in the consumer markets.
+ An example of the importance of maize millers during times of deficit was
+ observed in Zambia when maize grain imports were prevalent from South Africa
+ in order to improve the functioning of the markets to meet the demands
+ of the consumers 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "nijhoff2002markets"
+literal "true"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+Interestingly, the type of maize being milled can also be influenced by
+ consumer preferences.
+ An example of this can be obtained from 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "omueti2006comparison"
+literal "true"
+
+\end_inset
+
+ where it has been mentioned that soft endosperm varieties of maize are
+ preferred in Western Africa because they are easier to process and thus,
+ finer final products can be achieved from such varieties.
+ Thus, maize millers or processors can also act as a connection between
+ the supply and the demand chains because consumer preferences can be rooted
+ into the supply chains through the decisions of the maize millers in the
+ types of maize they buy to process for selling purposes.
+ At the same time, large scale processors can also influence government
+ actions for the sustenance of food value chains 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "omueti2006comparison"
+literal "true"
+
+\end_inset
+
+, indicating the extent to which maize millers hold a prime role in the
+ maize value chain mechanisms.
+ 
+\end_layout
+
+\begin_layout Subsection
+\paragraph_spacing onehalf
+Perceived Attributes of Supply Chain Actors 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+Due to limited knowledge and information asymmetries, it is often hard for
+ farmers to detect the quality of purchased inputs.
  Hence, for less knowledgeable and experienced farmers, input quality may
  be approximated by, for example, input dealer attributes such as the dealer's
  reputation (information that other buyers have about the seller) or the
@@ -712,10 +1027,10 @@ literal "true"
 
 \end_inset
 
-, for instance find that the price of a bottle of herbicide adjusts to its
- measured quality, although to a very limited degree.
+, for instance, find that the price of a bottle of herbicide adjusts to
+ its measured quality, although to a very limited degree.
  Ease of access to an input dealer also determines transactions costs and
- subsequently farmer's access to and use improved inputs 
+ subsequently farmer's access to and use of improved inputs 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Alene2008"
@@ -727,10 +1042,9 @@ literal "true"
  Secondly, ease of access to input dealers may increase interaction between
  farmers and the input dealers, thereby increase farmers learning about
  improved seed.
- The theoretical framework guiding our general hypothesis of a possible
- link between input dealer attributes and use of improved seed can be located
- in the literature on customer perceived value and consumption behaviour
- 
+ The theoretical framework motivating a possible link between input dealer
+ attributes and use of improved seed can be located in the literature on
+ customer perceived value and consumption behaviour 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Jayashankar2018,Chiu2014"
@@ -746,339 +1060,100 @@ literal "true"
 \end_layout
 
 \begin_layout Standard
-The case for our investigation is the maize value chain in Uganda.
- We use data from a sample of 1500 maize farmers and 78 input (seed) dealers
- from Eastern Uganda to: (i) examine the (in)consistency in farmer's and
- input (seed) dealer's perceived attribute ratings of input dealers; and
- (ii) assess the possible influence of the perceived input dealer attributes
- on smallholder farmers’ use of improved seed.
- We have conceptualized farmer's purchase patterns of improved maize seed
- in the 2018 agricultural year as a proxy for their use of improved seed.
-\end_layout
-
-\begin_layout Standard
-Our first objective is to establish how the perceived attribute ratings
- of input dealers align among farmers, between different farmer categories,
- and between farmers and input dealers themselves.
- In this first objective, we also study the correlation between the input
- dealer attributes.
- The five attributes, as rated on a scale of 1-5 by farmers and input dealers
- themselves, are: (i) quality of seed sold by a given dealer relative to
- the other dealers; (ii) price of seed sold by a given dealer relative to
- other dealers; (iii) Location (ease of access by road or phone) of the
- input dealer relative to other dealers; (iv) level of stock relative to
- other dealers; and (v) reputation of a given dealer relative to other dealers.
- The first objective is studied using intra-class correlation analysis.
- In our second objective, we investigate the relationship between the input
- dealer attributes and farmer's purchase patterns of improved maize seed
- while controlling for additional farmer and input dealer variables, for
- example, farmer's education level, or other sales services offered by input
- dealer.
- The second objective is analysed using multivariate regression models.
-\end_layout
-
-\begin_layout Standard
-This study contributes additional literature to understanding agricultural
- technology adoption processes in emerging markets, specifically; the role
- of agro-input dealers in facilitating or limiting technology adoption in
- smallholder agriculture.
- Seller (input dealer) ratings, which this study employs to examine farmer's
- perceived value of input dealers, is widely used system in marketing- as
- a mechanism to increase customer trust in and purchase of services/products
+\paragraph_spacing onehalf
+Similar arguments can be used for the perceived attributes of the trader.
+ In remote locations, if the traders are easily accessible, that would mean
+ that the farmers have greater exposure to selling opportunities, might
+ reduce wastage of harvest, ensure constant income for the farmer and increase
+ availability of maize harvests at the buying points.
+ Traders who are easily accessible and provide a good quality of service
+ may also have greater reputation amongst the farmers which influence the
+ perceived reputation attributes.
+ The perceived quality of service can be driven by many aspects like behaviour
+ of the trader, flexibility of the trader, risks taken by the trader for
+ the transportation of the harvest, etc.
+ Traders are also rated based on honesty.
+ This is interesting as it indicates trust levels between the farmer and
+ the trader.
+ Traders with good perceived honesty levels might be getting more business
+ and being reputed well.
+ The price paid by traders while buying the harvest is an essential part
+ of the interaction between the trader and the farmer.
+ It is very important to know how well the farmers perceive the prices being
+ paid by the traders and how well the traders perceive the they are paying
+ themselves.
+ Traders paying higher prices will mostly likely be rated well also on the
+ reputation, quality and honesty aspects.
  
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Jayashankar2018,Chiu2014"
-literal "true"
-
-\end_inset
-
-.
- Such a rating system, if applied to agricultural input marketing, is likely
- encourage input dealers to desist from counterfeiting, adulteration or
- deceptive marketing of inputs in order to maintain a good reputation and
- higher rating 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Kim2013,Bente2012,BarIsaac2008"
-literal "true"
-
-\end_inset
-
-.
- Seller ratings and reputation are increasingly becoming important assets
- in marketing, particularly when the quality of the good or service transacted
- is hard to measure and the buyer and seller cannot perfectly contract on
- the outcome of the transaction, or where there are no legal institutions
- to alleviate buyer uncertainty 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "BarIsaac2008"
-literal "true"
-
-\end_inset
-
-.
- Through seller ratings, the seller will be mindful of building and maintaining
- a good reputation through the information that buyers have about the seller,
- including previous transactions and the reports of other buyers.
 \end_layout
 
 \begin_layout Standard
-In the sections that follow, we expound on the study context; explain the
- study design and analysis methods; present the results; and finally provide
- a conclusion and recommendations.
+\paragraph_spacing onehalf
+Millers or processors are also scored based on similar factors or attributes.
+ The location of the mill is necesary to understand how easy it is for the
+ traders or farmers to take the harvest to the processing points since in
+ Uganda, both farmers and traders can take harvest to the mills.
+ For farmers living in remote areas, it maybe hard to transport their harvest
+ for milling or processing.
+ The quality of service and the quality of end product provided by these
+ mills also impacts their reputation.
+ Friendly behaviour, greater flexibility, higher cleanliness in the mills
+ and lower waiting times can increase the perceived quality of service and
+ earn good reputation amongst the farmers and traders.
+ The prices charged by the mill for processing maize can also influence
+ the farmer's perceived quality of the mill and the end product.
+ Similarly, the prices charged can be very competitive.
+ Thus, perceived prices cannot directly indicate the actual price.
+ Also, in this case, high prices may not always be perceived as bad as they
+ can be coupled with the quality of processing and the quality of the end
+ product ensured by the mill.
+ Finer end products can improve the perceived quality of end product along
+ with the reputation of the mill or the processor.
+ 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset Newpage newpage
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
-Gender Based Ratings
+\paragraph_spacing onehalf
+Study Hypotheses
 \end_layout
 
 \begin_layout Standard
-Ratings can be largely used as an instrument for identifying performance
- levels of various actors in the markets or respective industries of choice,
- for information transparency 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Karminsky2016"
-literal "true"
-
-\end_inset
-
- and for decision management.
- Various rating based decision management studies come from the financial
- sector like credit ratings explaining investment decisions (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "Cantor2007"
-literal "true"
-
-\end_inset
-
-; 
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "Bolton2012"
-literal "true"
-
-\end_inset
-
-) and financial risk (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "karminsky2009ratings"
-literal "true"
-
-\end_inset
-
-), the link between corporate credit ratings and the financial crisis (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "deHaan2017"
-literal "true"
-
-\end_inset
-
-) and bond ratings's informational value (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "Kliger2000"
-literal "true"
-
-\end_inset
-
-).
- In marketing research, ratings are the tool to identify demand (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "Dhar2016"
-literal "true"
-
-\end_inset
-
-), sales and consumer preferences (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "Sun2012"
-literal "true"
-
-\end_inset
-
-) and helps the product manufacturer to improve quality and align the product
- features with consumer tastes (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "Cheung2003,Jan2008,Barton2006,Fainmesser2020,Kuksov2010"
-literal "true"
-
-\end_inset
-
-).
- 
-\end_layout
-
-\begin_layout Standard
-Social and psychological studies widely use ratings to analyse social behaviour
- (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "Renk2004,Schofield2007,Arnesen2018"
-literal "true"
-
-\end_inset
-
-), teaching and learning patterns (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "Kornell2016,Mashburn2006,Feldman2007,pas2014,Spooren2006,Borman2005"
-literal "true"
-
-\end_inset
-
-), development of children (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "Bukowski2012,johnson2010internet,Sandner2016"
-literal "true"
-
-\end_inset
-
-), parenting aspects (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "Johnston2005,Kuppens2009,Healey2011"
-literal "true"
-
-\end_inset
-
-) and languages (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "Rudell1993,Cole2019"
-literal "true"
-
-\end_inset
-
-).
- Similarly, ratings can also be used to study various agricultural aspects,
- providing an understanding of the perceptions of the different actors of
- the value chain.
- 
-\end_layout
-
-\begin_layout Standard
-Broadly, studying the rater's ratings and the ratee's ratings can give insights
- about the deeper mechanisms of performance perceptions in the value chains.
- The ratings can be used as a tool to understand what factors determine
- widespread perceptions about certain actors in the food value chains and
- whether consistency can be obtained amongst the rater's and ratee's ratings.
- Traditionally, higher ratings always motivate better performance as a boost
- to the existing performance level of the concerned actor and lower ratings
- improve performance or atleast induce efforts by the rated sujects to improve
- performance.
- Ratings can be assumed as a method of assessment which does not couple
- with direct repurcussions but do successfully indicate long-term repurcussions
- in the near or distant future which impacts the rated subjects.
- 
-\end_layout
-
-\begin_layout Standard
-In this study, we focus on ratings based on gender.
- Ratings based on gender of the rater and the ratee has only been of interest
- in the recent decades and the literature shows a wide range of studies
- in different fields to address the gender based rating patterns (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "Furnham2005,Robinson2011,Patiar2008"
-literal "true"
-
-\end_inset
-
-).
- In the agricultural sector, studies based on gender of the various actors
- of the food value chains are becoming more prominent, particularly in the
- developing economies (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "Masamha2018,barrientos2019,Kruijssen2018,Mnimbo2017,Gengenbach2018,Stoian2018"
-literal "true"
-
-\end_inset
-
-).
- For instance, in Africa, attempts of closing the productivity gap between
- male and female farmers is a new step towards achieving food security.
- Improved access to markets and extension services for both male and female
- smallholder maize farmers can help reduce the gender productivity gap in
- Uganda 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Larson2016"
-literal "true"
-
-\end_inset
-
-.
- Gender dimensions in the food value chains across Uganda are increasingly
- gaining importance in the recent years 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "akite2018,bamanyaki2020,nchanji2020,ajambo2018"
-literal "true"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-This motivates the aim to understand the ratings' mechanism based on the
- gender of the rater and the ratee in the case of maize value chains in
- Uganda.
- Traditionally, females have not been majorly involved in the input dealing,
- processing and trading activities for maize in Uganda.
- The goal is to look at the ratings from the farmers for the input dealers,
- processors and traders of maize and then also study the ratings given by
- input dealers, processors and traders to themselves.
- Following this, I will focus on the gender of each actor and see how gender
- impacts the ratings from the rater and the ratee.
- Gender based analysis of the ratings is crucial in the Ugandan maize value
- chain as it will explain the lower involvement of females in input dealing,
- processing and trading activities.
- The perceptions obtained from the study can explain why females do not
- participate as much their male counterparts in these kind of businesses
- which basically fuel the maize value chain and the production of maize
- in Uganda.
- 
-\end_layout
-
-\begin_layout Subsection
-Hypothesis
-\end_layout
-
-\begin_layout Standard
-In this study, the following hypotheses are analysed:
+\paragraph_spacing onehalf
+This section describes the hypotheses that are analysed which are as follows:
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing onehalf
 Self-ratings are higher than ratings given by raters to ratees.
  
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing onehalf
 Female raters give higher ratings when compared to male raters.
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing onehalf
 Self-ratings given by females are lower compared to males.
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing onehalf
 Female ratees receive lower ratings from raters than male ratees.
  
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 Hypothesis 1 determines how the input dealers, processors and traders rate
  themselves compared to the farmers' ratings.
  Self-ratings have been criticised largely and checked for validity by many
@@ -1105,7 +1180,7 @@ literal "true"
 ), self-deception (
 \begin_inset CommandInset citation
 LatexCommand citealp
-key "von2011evolution,Smith2017"
+key "von2011evolution"
 literal "true"
 
 \end_inset
@@ -1113,7 +1188,7 @@ literal "true"
 ), self-enhancement (
 \begin_inset CommandInset citation
 LatexCommand citealp
-key "Sedikides2008,Alicke2009,Robins2001"
+key "Sedikides2008,Alicke2009"
 literal "true"
 
 \end_inset
@@ -1121,7 +1196,7 @@ literal "true"
 ) and impression management (
 \begin_inset CommandInset citation
 LatexCommand citealp
-key "Cheng2017,Wayne1995"
+key "Wayne1995"
 literal "true"
 
 \end_inset
@@ -1134,6 +1209,7 @@ literal "true"
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 Perceptions in this regard can explain a lot about the industry and could
  also explain slower technological growth and advancements.
  If these actors perceive themselves to be performing better than they actually
@@ -1147,14 +1223,6 @@ Perceptions in this regard can explain a lot about the industry and could
 nce as discussed by 
 \begin_inset CommandInset citation
 LatexCommand citet
-key "mehmet2020evaluation"
-literal "true"
-
-\end_inset
-
- and 
-\begin_inset CommandInset citation
-LatexCommand citet
 key "Cheng2017"
 literal "true"
 
@@ -1165,6 +1233,7 @@ literal "true"
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 Then, I turn to the variations in ratings based on gender (hypothesis 2).
  There is evidence from various areas of research that females generally
  give higher ratings when compared to their male counterparts.
@@ -1178,17 +1247,7 @@ literal "true"
 
  discussed ratings from male and female raters on business intelligence
  where higher ratings for boss's overall, emotional and organizational IQ
- were noticed from female raters.
- 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Bellezza1986"
-literal "true"
-
-\end_inset
-
- also found that ratings from females were higher for words based on the
- familiarity scales.
+ were obtained from female raters.
  Interestingly, 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -1215,6 +1274,7 @@ literal "true"
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 Female farmers are expected to give higher ratings to the input dealers,
  processors and traders on an average compared to the male farmers.
  This can indicate various interesting and unknown attributes of the value
@@ -1231,7 +1291,7 @@ Female farmers are expected to give higher ratings to the input dealers,
  of leniency for ratings provided by female raters (
 \begin_inset CommandInset citation
 LatexCommand citealp
-key "ThorntonIII2019,mehmet2020evaluation"
+key "ThorntonIII2019"
 literal "true"
 
 \end_inset
@@ -1243,6 +1303,7 @@ literal "true"
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 Hypothesis 3 essentially compares the self-ratings given by female and male
  dealers, processors and traders.
  Females generally tend to underrate themselves.
@@ -1258,10 +1319,10 @@ literal "true"
  Male Department Managers always inflated their self-ratings while their
  female counterparts refrained from doing so.
  Gendered differences in self-perceptions do exist and this induces female
- and male respondents to rate themselves differently, as obtained by 
+ and male respondents to rate themselves differently, as argued by 
 \begin_inset CommandInset citation
 LatexCommand citet
-key "Beyer1990,Jones2002,Taylor1986,WOHLERS1989,rosenkrantz1968,turan2002study"
+key "Beyer1990,WOHLERS1989"
 literal "true"
 
 \end_inset
@@ -1269,7 +1330,7 @@ literal "true"
  and 
 \begin_inset CommandInset citation
 LatexCommand citet
-key "wrisberg1988"
+key "rosenkrantz1968"
 literal "true"
 
 \end_inset
@@ -1296,6 +1357,7 @@ literal "true"
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 Another important reason or consequence of lower self-ratings can be the
  lack of confidence to strive in the business.
  In the developing economies, females generally have low confidence levels
@@ -1335,6 +1397,7 @@ literal "true"
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 The goal for hypothesis 4 is to study the ratings received by male and female
  input dealers, traders and processors from maize farmers.
  Females are generally perceived to be performing worse than their male
@@ -1365,7 +1428,7 @@ literal "true"
  in the past decades (
 \begin_inset CommandInset citation
 LatexCommand citealp
-key "Feldman1993,Mengel2018,miller2000,Mitchell2018,Fisher2019"
+key "Feldman1993,Mengel2018,miller2000"
 literal "true"
 
 \end_inset
@@ -1377,6 +1440,7 @@ literal "true"
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 In the context of this study, bias against women can aid the explanation
  for the minimal involvement of women in input dealing, trading and processing
  of maize.
@@ -1405,6 +1469,7 @@ literal "true"
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 A study done on the women entrepreneurs in the Kigali region of Rwanda by
  
 \begin_inset CommandInset citation
@@ -1440,185 +1505,39 @@ literal "true"
  
 \end_layout
 
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
-Study context and data
+\paragraph_spacing onehalf
+Data Design
 \end_layout
 
 \begin_layout Standard
-The case for this investigation is the maize value chain in Uganda.
- Maize is a staple crop in Uganda, prioritized by the government for food
- security and household income.
- By land area, maize is the most cultivated crop in Uganda, covering 30%
- of the total cropped land, followed by beans, covering 15% of cropped land.
- Government’s interventions in the maize sub-sector over the past decade
- have targeted increasing on-farm productivity and production, yet productivity
- remains very low.
- On-farm maize data from the Uganda Annual Agricultural Survey 2018 agricultural
- year reports yield figures of 596kg per acre (or 1.49mt/ha); a figure that
- falls almost midway the yield range of 270 and 995 kg per acre reported
- by 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Gourlay2019"
-literal "true"
-
-\end_inset
-
-.
- While there is some ambiguity in the on-farm yield figures, partly due
- to errors in farmer-reported production 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Gourlay2019"
-literal "true"
-
-\end_inset
-
- and differences in the climatic conditions between different agricultural
- years 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "VanCampenhout2020"
-literal "true"
-
-\end_inset
-
-, they are still considerably lower than the research station yield figures
- which range between 730 kg per acre and 1,820 kg per acre 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Fermont2011"
-literal "true"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-Improved maize seed (hybrid and open pollinated varieties) is among the
- top agricultural inputs promoted by the government, development partners
- and private sector to increase maize yields in Uganda.
- But, just like the other improved agricultural inputs, the proportion of
- households using improved maize seed in Uganda is still low, estimated
- to range between 27% and 37%, compared to between 30% and 50% in Tanzania
- and Malawi 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "VanCampenhout2020"
-literal "true"
-
-\end_inset
-
-.
- When measured using the percentage of land under improved maize seed varieties,
- the use rates in Uganda slightly increase to 54%.
+This section explains the characteristics of the sample, describes the data
+ collection, gives information about the variables and gives a preliminary
+ overview of the data.
  
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Sheahan2017"
-literal "true"
-
-\end_inset
-
-.
- Limited use of improved maize seed is just one among the many factors constrain
-ing maize yields in Uganda.
- However, its use appears to be a relatively less costly first step to enhancing
- agricultural productivity, compared to other improved inputs.
- Figures from a recent study on Uganda suggest that an average farmer incurs
- two times less cost per acre on improved maize seed (even for the most
- expensive hybrid variety, UH5354/Bazooka), than on other inputs such as
- inorganic fertilizer 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "VanCampenhout2020"
-literal "true"
-
-\end_inset
-
-.
- Similar cost differences between improved seed and fertilizer also manifest
- in Ethiopia 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Minten2013"
-literal "true"
-
-\end_inset
-
-.
- Secondly, different improved seed varieties possess a combination of two
- or more attributes (high yielding, early maturity, climate resilient or
- pest and disease tolerant) 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Obunyali2019,Lunduka2012"
-literal "true"
-
-\end_inset
-
-, such that, if properly used by farmers (for example, planted and weeded
- timely), may reduce requirements for fertilizers or agro-chemicals.
- Generally, however, to maximize yield gains from use of improved inputs,
- a cost-effective mix of improved seed and other complimentary inputs is
- recommended 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "VanCampenhout2020,Khonje2018,Wainaina2016"
-literal "true"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-Several factors at household, market and policy levels constrain the use
- of improved maize seed and generally improved agricultural inputs by Ugandan
- farmers.
- The current study focuses on the market level factors, specifically, the
- influence of input dealer attributes such as, reputation or perceived quality
- of seed sold by the dealer, on farmer's use of improved seed.
- As earlier discussed, the increasing incidence of input quality concerns
- at input dealer/distribution level provide a strong case to place input
- retailers at the center of interventions working to increase farmer's access
- to and use of quality inputs.
- Additionally, the ongoing policy reforms towards pluralistic agricultural
- extension systems in developing countries, including Uganda 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Chowa2013,Rivera2011,Adhiguru2009"
-literal "true"
-
-\end_inset
-
-, empower private input suppliers as key players to accelerating adoption
- of improved agricultural technologies.
-\end_layout
-
-\begin_layout Standard
-Our general hypothesis is that, input dealer attributes, such as, perceived
- quality of seed sold by the input dealer or perceived reputation or perceived
- ease of access to the input dealer, have a significant influence on the
- purchase/use of puruse of improved maize seed and generally improved agricultur
-al inputs chased inputs.
-\end_layout
-
-\begin_layout Section
-Methods
 \end_layout
 
 \begin_layout Subsection
-Sample and Data
+\paragraph_spacing onehalf
+Sample
 \end_layout
 
 \begin_layout Standard
-The data for this study come from a survey of 1526 farming households and
- 78 agro-input dealer shops operating in the maize growing districts of
- Iganga, Bugiri and Namutumba in Eastern Uganda.The data were collected in
- July 2019 as part of a larger seed systems development research in Uganda,
- targeting farmers, input dealers, traders and millers.
+\paragraph_spacing onehalf
+The data for this study come from a survey of 1526 farming households, 78
+ agro-input dealer shops, 341 assembly traders and 174 millers operating
+ in the maize growing districts of Iganga, Bugiri and Namutumba in Eastern
+ Uganda.
+ The data were collected in July 2019 as part of a larger seed systems developme
+nt research in Uganda, targeting farmers, input dealers, traders and millers.
  The farmer household sample is drawn from 64 villages in the three districts.
  Using the 2012 sampling frame of Uganda National Bureau of Statistics (UBoS),
  the household sample per village was randomly allocated, proportionate
@@ -1629,41 +1548,18 @@ The data for this study come from a survey of 1526 farming households and
  were sampled were purposively selected based on their distance (km) from
  the main district town, in the range of 10kms, 20kms and 30kms from the
  main town.
+ The input dealer shops, assembly traders and millers interviewed are those
+ that were referred to by farmers, either because they have ever purchased
+ improved maize seed from them, sold harvest to traders or processed (sold)
+ maize at the milling farms or these supply chain actors are within their
+ vicinity.
 \end_layout
 
 \begin_layout Standard
-The input dealer shops interviewed are those that were referred to by farmers,
- either because they have ever purchased improved maize seed from them,
- or the input shops are within their viscinity.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Map of the study areas
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
+\paragraph_spacing onehalf
 A key question that may arise is the degree to which results for the three
  study districts can be generalized to Uganda as a whole.
- To address this, we examine the representativeness of the study area using
+ To address this, the representativeness of the study area is examined using
  maize production figures.
  The Eastern region, where the three districts fall, accounted for the highest
  share (47%) of the roughly 2.3 million tons of maize harvested in 2009 
@@ -1678,21 +1574,60 @@ literal "true"
  Iganga was the largest producer in the region and country, contributing
  13.1%, followed by Mubende (7.4%) in Central Uganda and Soroti (5.9%) in Eastern
  Uganda.
- The remaining districts contributed less than 4% including Bugiri (2.7%)
+ The remaining districts contributed less than 4%, including Bugiri (2.7%)
  which is part of this study.
 \end_layout
 
+\begin_layout Subsection
+\paragraph_spacing onehalf
+Design: Variables 
+\end_layout
+
 \begin_layout Standard
+\paragraph_spacing onehalf
+The summary statistics for the main variables used in this study are presented
+ in table 1.
+ Ratings are classified based on location, price, quality, reputation and
+ the average of all.
+ The ratings can either be from the farmers (raters) or from the ratees
+ themselves (self-ratings).
+ The difference of rater ratings and ratee ratings for each dimension is
+ also studied.
+ Ratings range on a scale of 1 to 5.
+ Gender of the rater and the ratee are also considered and they are dummy
+ variables where 1 is female and 0 is male.
+ Age of raters and ratees are defined in years.
+ Marital status of raters and ratees are also a dummy variables where 1
+ indicates married.
+ There are also dummies for education level of raters and ratees, where
+ 1 indicates some level of education.
+ Distance of farmer's homestead to tarmac and murram roads are reported
+ in kilometres.
+ The interaction variable between rater and ratees indicates whether the
+ rater and ratee had any business interaction.
+ The dealer dummy identifies if the ratee is a dealer and the trader dummy
+ identifies if the ratee is a trader.
+ The primary variables of interest in this study are ratings (perceived
+ attributes) from raters and ratees, the differences in the ratings and
+ the gender of the ratee and the rater.
+ In order to identify the ratees as input dealers, traders or processors,
+ IDs were assigned to each of them and similarly, IDs were also assigned
+ to each farmer.
+ 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
 \begin_inset Float table
 wide false
 sideways false
 status open
 
 \begin_layout Plain Layout
-\align left
+\align center
 \begin_inset Graphics
-	filename figure/sum_stat.png
-	lyxscale 20
+	filename G:/My Drive/Classroom/Documents from Drive/Pre Doctoral KUL/Paper with Bjorn/PIMMVC/papers/perceptions/figure/sum_stat.png
+	lyxscale 10
 	scale 75
 
 \end_inset
@@ -1718,18 +1653,213 @@ Summary statistics of main variables.
 \end_layout
 
 \begin_layout Subsection
-Design: measuring perceived attributes and input use
+\paragraph_spacing onehalf
+Preliminary Data Overview 
 \end_layout
 
 \begin_layout Standard
-The two primary variables of interest used in this paper are farmers' use
- of improved seed- the outcome variable, and the input dealer perceived
- attributes- the independent variable.
+\paragraph_spacing onehalf
+This section will discuss some preliminary analysis to give insights about
+ basic patterns in the data and to note important features of the dataset
+ being used.
+ First of all, in order to check whether the self-ratings and ratings by
+ the farmers have same distributions or not, wilcoxon rank sum test with
+ continuity correction is performed.
+ This is done to compare the self-rating distribution with ratings distribution
+ of farmers who had some business interaction with the ratee and with ratings
+ distribution of farmers who had no business interaction with the ratee.
+ In both cases, the null of distributions being equal is rejected (significant
+ at the 1% level).
+ This is presented with the significance levels in figure 1.
+ The ratings considered are averaged overall ratings across four dimensions
+ of location, price, quality and reputation.
+ It is assumed that when rating these ratees, farmers who had no business
+ interaction rely on information they received from others.
+ Also, when the distributions of ratings from farmers who had business interacti
+on and ratings from farmers who had none are compared, the null that the
+ distributions are same is rejected (significant at 1% level).
+ 
 \end_layout
 
 \begin_layout Standard
-Several methods have been proposed and used to measure respondents’ perceptions,
- attitudes or beliefs in social science research.
+\paragraph_spacing onehalf
+From figure 1, it is clear that overall self-ratings are higher than ratings
+ from farmers who had business interaction and from farmers who had no business
+ interaction.
+ This is the main motivation of comparing self-ratings from ratees and ratings
+ from raters as it suggests information asymmetries.
+ It is observed that, overall, input dealers are appreciated by farmers.
+ Using a simple average of scores given on the five dimensions, input dealers
+ received a score of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_overall [pool$dealer_dummy=="1"], na.rm=T),di
+gits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+.
+ Traders and millers are also overall appreciated by farmers.
+ They received a score of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_overall [pool$trader_dummy=="1"], na.rm=T),di
+gits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_overall [pool$miller_dummy=="1"], na.rm=T),di
+gits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+.
+ Considering all ratees, the overall average score is 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_overall, na.rm=T),digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+Figure 1 shows that farmers that have at some point interacted with the
+ ratee are more positive (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_overall [pool$interaction_yes=="1"],
+ na.rm=T),digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+) than those that do not have direct experience with the ratee (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_overall [pool$interaction_yes=="0"],
+ na.rm=T),digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+).
+ This might indicate that perceptions are made incorrectly by some farmers
+ which might be the reason of them not having interaction with certain traders,
+ dealers or millers.
+ However, in reality, these ratees might be giving good service to farmers
+ who are doing business with them.
+ 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename G:/My Drive/Classroom/Documents from Drive/Pre Doctoral KUL/Paper with Bjorn/PIMMVC/papers/perceptions/figure/wilcox_bar.png
+	lyxscale 20
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+{$^{***}p<0.01$; $^{**}p<0.05$; $^{*}p<0.1$}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Overall ratings from ratees and raters.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+It is also interesting to look at the individual ratings on the components
+ of the overall score.
+ This is presented in figure 2.
+ For each of the dimensions (location, price, quality, and reputation),
+ it shows the share of farmers that gave a particular score (1 to 5) for
+ each of the types of ratings (female raters, male raters, female ratees,
+ and self-ratings by ratees).
+ Several methods have been proposed and used to measure respondents’ perceptions
+, attitudes or beliefs in social science research.
  
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -1742,24 +1872,1676 @@ literal "true"
  countries and categorize possible methods into three groups: Likert style
  questions, elicitation of the ‘most likely’ outcome, and a full elicitation
  of the distribution of beliefs, most often conducted with visual aids.
-\end_layout
-
-\begin_layout Subsection
-Design: Additional variables
-\end_layout
-
-\begin_layout Subsection
-Analysis
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-
-\series bold
-4.4.1 Gendered profile of farmers (raters)
+ Following this, likert scale bar charts in figure 2 provide further insights
+ about the rating patterns visually.
+ 
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename G:/My Drive/Classroom/Documents from Drive/Pre Doctoral KUL/Paper with Bjorn/PIMMVC/papers/perceptions/figure/likert.png
+	lyxscale 20
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Ratings on different dimensions, grouped by gender.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+For example, we see that about 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(pool$farmerID[pool$rating_location<=1]))/sum(table(
+pool$farmerID))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(pool$farmerID[pool$rating_location<=1 & pool$farmer
+_fem==
+\begin_inset Quotes erd
+\end_inset
+
+1
+\begin_inset Quotes erd
+\end_inset
+
+]))/sum(table(pool$farmerID[pool$farmer_fem==
+\begin_inset Quotes erd
+\end_inset
+
+1
+\begin_inset Quotes erd
+\end_inset
+
+]))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of female farmers and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(pool$farmerID[pool$rating_location<=1 & pool$farmer
+_fem==
+\begin_inset Quotes erd
+\end_inset
+
+0
+\begin_inset Quotes erd
+\end_inset
+
+]))/sum(table(pool$farmerID[pool$farmer_fem==
+\begin_inset Quotes erd
+\end_inset
+
+0
+\begin_inset Quotes erd
+\end_inset
+
+]))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+percent of male farmers) of the farmers rated the ratees in the lowest category
+ on the location dimension (1), while about 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(pool$farmerID[pool$rating_location>=5]))/sum(table(
+pool$farmerID))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent gave the highest rating for ease of reaching the ratee (5).
+ Female farmers are more inclined to giving highest rating of 5 for location
+ (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(pool$farmerID[pool$rating_location>=5 & pool$farmer
+_fem==
+\begin_inset Quotes erd
+\end_inset
+
+1
+\begin_inset Quotes erd
+\end_inset
+
+]))/sum(table(pool$farmerID[pool$farmer_fem==
+\begin_inset Quotes erd
+\end_inset
+
+1
+\begin_inset Quotes erd
+\end_inset
+
+]))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent) compared to male farmers (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(pool$farmerID[pool$rating_location>=5 & pool$farmer
+_fem==
+\begin_inset Quotes erd
+\end_inset
+
+0
+\begin_inset Quotes erd
+\end_inset
+
+]))/sum(table(pool$farmerID[pool$farmer_fem==
+\begin_inset Quotes erd
+\end_inset
+
+0
+\begin_inset Quotes erd
+\end_inset
+
+]))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent).
+ 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+Considering the dimensions, reputation and quality, more percentage of male
+ farmers give a rating of 5 compared to the female raters.
+ However, for price, the trend is similar to location.
+ Higher percentage of male farmers think that ease of access is poor (atleast
+ level 2 score) and price levels are not correct (atleast level 2 score).
+ Higher percentage of female farmers perceive poorer reputation of the ratees
+ (atleast level 2 score).
+ Same percentage of male and female farmers perceive poor quality of services
+ or seeds from traders, millers or input dealers.
+ 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+The ratees seem to be very confident about their reputation as among all
+ the dimensions, the highest percentage give a self-score of 5 for reputation
+ (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(pool$id.ratee[pool$rating_reputation_ratee>=5]))/sum
+(table(pool$id.ratee))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent).
+ They seem to be the least confident about their location as among all the
+ dimensions, the highest percentage adhere to a score of atleast 2 for location
+ (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(pool$id.ratee[pool$rating_location_ratee<=2]))/sum(t
+able(pool$id.ratee))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent).
+ Among all the different dimensions, the greatest percentage of female ratees
+ rate themselves 5 for quality (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(pool$id.ratee[pool$rating_quality_ratee>=5 &
+ pool$ratee_fem==
+\begin_inset Quotes erd
+\end_inset
+
+1
+\begin_inset Quotes erd
+\end_inset
+
+]))/sum(table(pool$id.ratee[pool$ratee_fem==
+\begin_inset Quotes erd
+\end_inset
+
+1
+\begin_inset Quotes erd
+\end_inset
+
+]))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent) and the highest percentage of male ratees rate themselves 5 for
+ reputation (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(pool$id.ratee[pool$rating_reputation_ratee>=5
+ & pool$ratee_fem==
+\begin_inset Quotes erd
+\end_inset
+
+0
+\begin_inset Quotes erd
+\end_inset
+
+]))/sum(table(pool$id.ratee[pool$ratee_fem==
+\begin_inset Quotes erd
+\end_inset
+
+0
+\begin_inset Quotes erd
+\end_inset
+
+]))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent).
+ Giving self-scores of 5 is more common in women for location, price and
+ quality.
+ However, male ratees think themselves to be more well reputed.
+ Indeed, women think the quality of their services or products are way better
+ as they never rate themselves below 3 and men think they are well reputed
+ as only 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(pool$id.ratee[pool$rating_reputation_ratee<=2
+ & pool$ratee_fem==
+\begin_inset Quotes erd
+\end_inset
+
+0
+\begin_inset Quotes erd
+\end_inset
+
+]))/sum(table(pool$id.ratee[pool$ratee_fem==
+\begin_inset Quotes erd
+\end_inset
+
+0
+\begin_inset Quotes erd
+\end_inset
+
+]))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of them rate themselves below 3.
+ More detailed analysis of the ratings and the methodologies used are discussed
+ in the following sections.
+ 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\paragraph_spacing onehalf
+Methods
+\end_layout
+
+\begin_layout Standard
+This section focuses on the descriptive and empirical methods used for the
+ analysis of maize supply chains.
+ 
+\end_layout
+
+\begin_layout Subsection
+\paragraph_spacing onehalf
+Descriptive Methods
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+Gendered profiles of the raters (farmers) and ratees (input dealers, traders
+ or millers) are discussed.
+ This is in respect to the characteristics of the raters and ratees.
+ In order to understand the rating patterns, mean ratings from farmers and
+ mean self-ratings are described in detail, showing differences in ratings
+ from farmers and ratees and also differences in ratings from women and
+ men.
+ 
+\end_layout
+
+\begin_layout Subsection
+\paragraph_spacing onehalf
+Model and Empirical Methods 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+
+\series bold
+Fixed effects regression
+\series default
+ model is used to verify whether the individual means of the ratings are
+ different from the overall means.
+ Ratee fixed effects are used, focusing on F-test to understand whether
+ the null of individual mean ratings being same as the overall mean ratings
+ can be rejected or not.
+ The dependent variable is these regressions is always the ratings.
+ This is tested for ratings from the farmers, self-ratings from the raters
+ and the differences between the rater ratings and ratee self-ratings.
+ 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+
+\series bold
+Intra-cluster correlation coefficients
+\series default
+ determine the level of agreement between the ratings which aids in proving
+ the hypotheses mentioned before.
+ In other words, intra-cluster correlation coefficients are a measure of
+ inter or intra rater reliability.
+ Inter or intra rater reliability in the ratings literature means levels
+ of agreement between the ratings from different raters 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "gwet2014handbook"
+literal "true"
+
+\end_inset
+
+.
+ In this study, this measure is applied in two different ways.
+ First, inter-rater reliability is obtained for ratings from the raters
+ (farmers) and ratings from the ratees for themselves.
+ The comparison here is made between the rater ratings and ratee self-ratings
+ to understand how different or similar they are.
+ This is done for the overall averaged rating, ratings based on location,
+ quality, price and reputation.
+ Inter-rater agreement or intra-class correlation coefficient can range
+ between 0 and 1.
+ The lower it is, poorer is the agreement and the higher it is, better is
+ the agreement level.
+ In order to study the role of gender in these ratings, intra-cluster correlatio
+n coefficients are also obtained for male and female groups.
+ Four groups are considered for analysing inter-rater reliability: (i) Both
+ rater and ratee are female; (ii) Both rater and ratee are male; (iii) Rater
+ is female and ratee is male; (iv) Rater is male and ratee is female.
+ 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+Secondly, inter and intra-rater reliability is studied for all the ratings
+ given by the raters.
+ Only farmers who rated more than 6 times are considered for this analysis.
+ The ICC coefficients indicating inter-rater reliability compare the ratings
+ for each ratee from different farmers (raters).
+ This helps to understand the level of agreement among the farmers on the
+ different attricutes of a particular ratee.
+ The ICC coefficients indicating intra-rater reliability compare the various
+ ratings given by each individual farmer.
+ This shows how similar or different the farmer rates the various ratees.
+ Interestingly, inter and intra rater reliability is also obtained for female
+ farmer group and male farmer group.
+ However, here the sample considered is where the farmers have rated more
+ than 5 times.
+ This gender based analysis is important to understand if the agreement
+ levels can differ based on the gender of the rater.
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+The dependent variable in this study is always the ratings for the input
+ dealers, traders and processors.
+ The ratings can be either obtained from the raters (farmers) or they can
+ be self-ratings by the ratees (dealers, traders and processors) themselves.
+ The ratings or the scores are on a scale of 1 to 5, where 1 is the most
+ negative score and 5 is the most positive score.
+ The dataset used for the analysis is pooled, i.e., ratings for dealers, traders
+ and processors are contained in the same dataset.
+ The estimation method used for understanding gendered perceptions in maize
+ supply chains is 
+\series bold
+multivariate regressions with cluster robust standard errors
+\series default
+.
+ The clustering is done based on the ID of the ratees (dealers, traders
+ and millers) which was assigned after the data was collected.
+ The independent variable depends on the hypothesis being tested.
+ The regression models with clustered standard errors used in this study
+ are mentioned below.
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{equation} 
+\backslash
+label{eqn} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{array}{l}
+\end_layout
+
+\begin_layout Plain Layout
+
+Y_{i} = 
+\backslash
+beta_0 + 
+\backslash
+beta_1*Gender(F)_{i} + 
+\backslash
+beta_2*Gender(R)_{i} + 
+\backslash
+beta_3*Age 
+\backslash
+, of 
+\backslash
+, farmer_{i} + 
+\backslash
+beta_4*Interaction_{i}  + 
+\backslash
+
+\backslash
+ &
+\backslash
+quad   
+\backslash
+beta_5*Education(F)_{i} + 
+\backslash
+beta_6*Tarmac_{i} + 
+\backslash
+beta_7*Murram_{i} + 
+\backslash
+beta_8*Farmer
+\backslash
+,marital
+\backslash
+,status_{i} +
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ &
+\backslash
+quad 
+\backslash
+beta_9*Age
+\backslash
+,of
+\backslash
+,ratee_{i}  +  
+\backslash
+beta_{10}*Ratee
+\backslash
+,marital
+\backslash
+,status_{i} +  
+\backslash
+beta_{11}*Education(R)_{i} +
+\backslash
+
+\backslash
+ &
+\backslash
+quad 
+\backslash
+beta_{12}*Dealer
+\backslash
+,dummy_{i} + 
+\backslash
+beta_{13}*Trader
+\backslash
+,dummy_{i} + e_{i} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{array}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{equation}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+Equation 1 looks at the impact of the farmer's (rater's) gender on the dependent
+ variable.
+ Here the dependent variable is average rating given by each individual
+ rater across all the rating factors (rating scale varies from 1 to 5) to
+ all the input dealers, traders and processors (results are shown in table
+ 6).
+ In the appendix, similar model results are presented with the dependent
+ variables as location based rating by raters (table 13), quality-based
+ rating by raters (table 14), price-based rating (table 15) and reputation-based
+ rating (table 16).
+ Similar analysis is also implemented with the dependent variable as difference
+ between average ratings from raters and average self-ratings from ratees
+ across all the rating factors (regression model explained in equation 1).
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+The main independent variable, 
+\begin_inset Quotes eld
+\end_inset
+
+Gender(F)
+\begin_inset Quotes erd
+\end_inset
+
+, is the gender of the rater (farmer) which is a dummy taking the value
+ of 1 if the farmer is a female rater and 0 if the farmer is a male rater.
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Gender(R)
+\begin_inset Quotes erd
+\end_inset
+
+ is the gender of the ratee which is a dummy taking the value of 1 if the
+ ratee is a woman and 0 if the ratee is a man.
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Age of farmer
+\begin_inset Quotes erd
+\end_inset
+
+ is a variable presented in years (age of raters).
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Interaction
+\begin_inset Quotes erd
+\end_inset
+
+ is a dummy variable which takes the value of 1 if there has been any business
+ interaction between the rater and the ratee and the value of 0 if there
+ has been no business interaction.
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Education(F)
+\begin_inset Quotes erd
+\end_inset
+
+ is a dummy variable indicating whether the rater (farmer) has any level
+ of education (value of 1) or not (value of 0).
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Tarmac
+\begin_inset Quotes erd
+\end_inset
+
+ states the distance of the farmer's (rater's) homestead to the nearest
+ tarmac road.
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Murram
+\begin_inset Quotes erd
+\end_inset
+
+ states the distance of the farmer's (rater's) homestead to the nearest
+ murram road.
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Farmer marital status
+\begin_inset Quotes erd
+\end_inset
+
+ is a dummy variable indicating whether the farmer is married (value of
+ 1) or not (value of 0).
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Age of ratee
+\begin_inset Quotes erd
+\end_inset
+
+ consists of the age of the dealers, traders and processors in years.
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Ratee marital status
+\begin_inset Quotes erd
+\end_inset
+
+ is a dummy variable taking the value of 1 if the ratee is married and the
+ value of 0 if the ratee is not married.
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Education(R)
+\begin_inset Quotes erd
+\end_inset
+
+ is a dummy indicating whether the rater has some level of education (value
+ of 1) or not (value of 0).
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Dealer dummy
+\begin_inset Quotes erd
+\end_inset
+
+ indicates whether the individual ratee is a dealer (value of 1) or not
+ (value of 0).
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Trader dummy
+\begin_inset Quotes erd
+\end_inset
+
+ takes the value of 1 if the individual ratee is a trader or the value of
+ 0 is the individual ratee is not a trader.
+ The last term of the equation is the error term.
+ Thus, this model aids in the analysis whether the ratings provided by the
+ farmer are in any way influenced by the gender of the farmer and also studies
+ the relationship between the difference in the ratings provided by the
+ farmers (raters) and the ratees and the gender of the rater.
+ Also, the relationship between the gender of the ratee and the ratings
+ received by the ratees can be deduced from this model.
+ 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{equation} 
+\backslash
+label{eqn}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{array}{l}
+\end_layout
+
+\begin_layout Plain Layout
+
+Y_{i} = 
+\backslash
+beta_0 + 
+\backslash
+beta_1*Gender(F)_{i} + 
+\backslash
+beta_2*Gender(R)_{i} + 
+\backslash
+beta_3*Age 
+\backslash
+, of 
+\backslash
+, farmer_{i} + 
+\backslash
+beta_4*Interaction_{i}  + 
+\backslash
+
+\backslash
+ &
+\backslash
+quad   
+\backslash
+beta_5*Education(F)_{i} + 
+\backslash
+beta_6*Tarmac_{i} + 
+\backslash
+beta_7*Murram_{i} + 
+\backslash
+beta_8*Farmer
+\backslash
+,marital
+\backslash
+,status_{i} +
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ &
+\backslash
+quad 
+\backslash
+beta_9*Age
+\backslash
+,of
+\backslash
+,ratee_{i}  +  
+\backslash
+beta_{10}*Ratee
+\backslash
+,marital
+\backslash
+,status_{i} +  
+\backslash
+beta_{11}*Education(R)_{i} +
+\backslash
+
+\backslash
+ &
+\backslash
+quad 
+\backslash
+beta_{12}*Dealer
+\backslash
+,dummy_{i} + 
+\backslash
+beta_{13}*Trader
+\backslash
+,dummy_{i} + 
+\backslash
+beta_{14}*Gender(F)_{i}*Interaction_{i} + e_{i} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{array} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{equation}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{equation} 
+\backslash
+label{eqn}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{array}{l}
+\end_layout
+
+\begin_layout Plain Layout
+
+Y_{i} = 
+\backslash
+beta_0 + 
+\backslash
+beta_1*Gender(F)_{i} + 
+\backslash
+beta_2*Gender(R)_{i} + 
+\backslash
+beta_3*Age 
+\backslash
+, of 
+\backslash
+, farmer_{i} + 
+\backslash
+beta_4*Interaction_{i}  + 
+\backslash
+
+\backslash
+ &
+\backslash
+quad   
+\backslash
+beta_5*Education(F)_{i} + 
+\backslash
+beta_6*Tarmac_{i} + 
+\backslash
+beta_7*Murram_{i} + 
+\backslash
+beta_8*Farmer
+\backslash
+,marital
+\backslash
+,status_{i} +
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ &
+\backslash
+quad 
+\backslash
+beta_9*Age
+\backslash
+,of
+\backslash
+,ratee_{i}  +  
+\backslash
+beta_{10}*Ratee
+\backslash
+,marital
+\backslash
+,status_{i} +  
+\backslash
+beta_{11}*Education(R)_{i} +
+\backslash
+
+\backslash
+ &
+\backslash
+quad 
+\backslash
+beta_{12}*Dealer
+\backslash
+,dummy_{i} + 
+\backslash
+beta_{13}*Trader
+\backslash
+,dummy_{i} + 
+\backslash
+beta_{14}*Gender(F)_{i}*Education(F)_{i} + e_{i} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{array}  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{equation}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{equation} 
+\backslash
+label{eqn}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{array}{l}
+\end_layout
+
+\begin_layout Plain Layout
+
+Y_{i} = 
+\backslash
+beta_0 + 
+\backslash
+beta_1*Gender(F)_{i} + 
+\backslash
+beta_2*Gender(R)_{i} + 
+\backslash
+beta_3*Age 
+\backslash
+, of 
+\backslash
+, farmer_{i} + 
+\backslash
+beta_4*Interaction_{i}  + 
+\backslash
+
+\backslash
+ &
+\backslash
+quad   
+\backslash
+beta_5*Education(F)_{i} + 
+\backslash
+beta_6*Tarmac_{i} + 
+\backslash
+beta_7*Murram_{i} + 
+\backslash
+beta_8*Farmer
+\backslash
+,marital
+\backslash
+,status_{i} +
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ &
+\backslash
+quad 
+\backslash
+beta_9*Age
+\backslash
+,of
+\backslash
+,ratee_{i}  +  
+\backslash
+beta_{10}*Ratee
+\backslash
+,marital
+\backslash
+,status_{i} +  
+\backslash
+beta_{11}*Education(R)_{i} +
+\backslash
+
+\backslash
+ &
+\backslash
+quad 
+\backslash
+beta_{12}*Dealer
+\backslash
+,dummy_{i} + 
+\backslash
+beta_{13}*Trader
+\backslash
+,dummy_{i} + 
+\backslash
+beta_{14}*Gender(F)_{i}*Gender(R)_{i} + e_{i} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{array}  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{equation}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{equation} 
+\backslash
+label{eqn}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{array}{l}
+\end_layout
+
+\begin_layout Plain Layout
+
+Y_{i} = 
+\backslash
+beta_0 + 
+\backslash
+beta_1*Gender(F)_{i} + 
+\backslash
+beta_2*Gender(R)_{i} + 
+\backslash
+beta_3*Age 
+\backslash
+, of 
+\backslash
+, farmer_{i} + 
+\backslash
+beta_4*Interaction_{i}  + 
+\backslash
+
+\backslash
+ &
+\backslash
+quad   
+\backslash
+beta_5*Education(F)_{i} + 
+\backslash
+beta_6*Tarmac_{i} + 
+\backslash
+beta_7*Murram_{i} + 
+\backslash
+beta_8*Farmer
+\backslash
+,marital
+\backslash
+,status_{i} +
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ &
+\backslash
+quad 
+\backslash
+beta_9*Age
+\backslash
+,of
+\backslash
+,ratee_{i}  +  
+\backslash
+beta_{10}*Ratee
+\backslash
+,marital
+\backslash
+,status_{i} +  
+\backslash
+beta_{11}*Education(R)_{i} +
+\backslash
+
+\backslash
+ &
+\backslash
+quad 
+\backslash
+beta_{12}*Dealer
+\backslash
+,dummy_{i} + 
+\backslash
+beta_{13}*Trader
+\backslash
+,dummy_{i} + 
+\backslash
+beta_{14}*Gender(R)_{i}*Interaction_{i} + e_{i} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{array} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{equation}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+Equation 2 adds an interaction term to the regression model.
+ The interaction is between the interaction dummy between the rater and
+ the ratee and the gender of the farmer (rater).
+ The interaction term added in equation 3 looks at the interaction between
+ the education dummy of the farmer and the farmer's gender.
+ Equation 4 has an interaction term with the ratee's and rater's gender
+ (dummies).
+ Equation 5 has a similar interaction term as equation 2.
+ However, in equation 5, the gender of the ratee is considered instead of
+ the gender of the rater.
+ While analysing the impact of farmer's gender on the difference between
+ average ratings from raters and average self-ratings from ratees across
+ all the rating factors, equation 2, 3 and 4 are also implemented.
+ 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{equation} 
+\backslash
+label{eqn} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{array}{l}
+\end_layout
+
+\begin_layout Plain Layout
+
+Y_{i} = 
+\backslash
+beta_0 + 
+\backslash
+beta_1*Gender(R)_{i} + 
+\backslash
+beta_2*Age
+\backslash
+,of
+\backslash
+,ratee_{i} + 
+\backslash
+beta_3*Ratee
+\backslash
+,marital
+\backslash
+,status_{i} + 
+\backslash
+beta_4*Education(R)_{i}  + 
+\backslash
+
+\backslash
+ &
+\backslash
+quad    
+\backslash
+beta_5*Dealer
+\backslash
+,dummy_{i} + 
+\backslash
+beta_6*Trader
+\backslash
+,dummy_{i} + e_{i} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{array}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{equation}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+Equation 6 studies the relationship between the ratee's gender and the dependent
+ variable.
+ The dependent variable is averaged self-rating (ranging from 1 to 5) by
+ the ratees across all the rating factors (results are shown in table 7).
+ Results with the dependent variable as location-based, quality-based, price-bas
+ed and reputation-based self-ratings are discussed in the appendix.
+ Tha main independent variable here is the gender of the ratee, taking the
+ value of 1 when the ratee is a woman and the value of 0 when the ratee
+ is a man.
+ The control variables are age of the ratee in years, dummy for marital
+ status of the ratee, dummy for education level of the ratee, dummy indicating
+ whether the ratee is a dealer or not and dummy indicating whether the ratee
+ is a trader or not.
+ The last term of equation 6 is the error term.
+ 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{equation} 
+\backslash
+label{eqn} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{array}{l}
+\end_layout
+
+\begin_layout Plain Layout
+
+Y_{i} = 
+\backslash
+beta_0 + 
+\backslash
+beta_1*Gender(R)_{i} + 
+\backslash
+beta_2*Age
+\backslash
+,of
+\backslash
+,ratee_{i} + 
+\backslash
+beta_3*Ratee
+\backslash
+,marital
+\backslash
+,status_{i} + 
+\backslash
+beta_4*Education(R)_{i}  + 
+\backslash
+
+\backslash
+ &
+\backslash
+quad    
+\backslash
+beta_5*Dealer
+\backslash
+,dummy_{i} + 
+\backslash
+beta_6*Trader
+\backslash
+,dummy_{i} + 
+\backslash
+beta_7*Gender(R)_{i}*Age
+\backslash
+,of
+\backslash
+,ratee_{i} + e_{i} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{array}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{equation}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{equation} 
+\backslash
+label{eqn} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{array}{l}
+\end_layout
+
+\begin_layout Plain Layout
+
+Y_{i} = 
+\backslash
+beta_0 + 
+\backslash
+beta_1*Gender(R)_{i} + 
+\backslash
+beta_2*Age
+\backslash
+,of
+\backslash
+,ratee_{i} + 
+\backslash
+beta_3*Ratee
+\backslash
+,marital
+\backslash
+,status_{i} + 
+\backslash
+beta_4*Education(R)_{i}  + 
+\backslash
+
+\backslash
+ &
+\backslash
+quad    
+\backslash
+beta_5*Dealer
+\backslash
+,dummy_{i} + 
+\backslash
+beta_6*Trader
+\backslash
+,dummy_{i} + 
+\backslash
+beta_7*Gender(R)_{i}*Education(R)_{i} + e_{i} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{array}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{equation}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+Equation 7 and equation 8 are extensions of the regression model in equation
+ 6.
+ Equation 7 includes an interaction term between the gender of the ratee
+ and the age of ratee.
+ Equation 8 consists of an interaction between the gender of the ratee and
+ the education of the ratee (dummy).
+ Thus, the regression models with ratee's self-ratings as the dependent
+ variable assist in the understanding of the relationship between self-ratings
+ and the gender of the ratee.
+ The detailed results are presented in the next section.
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{equation} 
+\backslash
+label{eqn} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{array}{l}
+\end_layout
+
+\begin_layout Plain Layout
+
+Y_{i} = 
+\backslash
+beta_0 + 
+\backslash
+beta_1*Gender(F)_{i} + 
+\backslash
+beta_2*Gender(R)_{i} + 
+\backslash
+beta_3*Age 
+\backslash
+, of 
+\backslash
+, farmer_{i} + 
+\backslash
+beta_4*Interaction_{i}  + 
+\backslash
+
+\backslash
+ &
+\backslash
+quad   
+\backslash
+beta_5*Education(F)_{i} + 
+\backslash
+beta_6*Tarmac_{i} + 
+\backslash
+beta_7*Murram_{i} + 
+\backslash
+beta_8*Farmer
+\backslash
+,marital
+\backslash
+,status_{i} +
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ &
+\backslash
+quad 
+\backslash
+beta_9*Age
+\backslash
+,of
+\backslash
+,ratee_{i}  +  
+\backslash
+beta_{10}*Ratee
+\backslash
+,marital
+\backslash
+,status_{i} +  
+\backslash
+beta_{11}*Education(R)_{i} +
+\backslash
+
+\backslash
+ &
+\backslash
+quad 
+\backslash
+beta_{12}*Dealer
+\backslash
+,dummy_{i} + 
+\backslash
+beta_{13}*Trader
+\backslash
+,dummy_{i} + e_{i} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{array}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{equation}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\paragraph_spacing onehalf
+Descriptive Results 
+\end_layout
+
+\begin_layout Standard
+This section focuses on the descriptive results, giving an overview of the
+ gendered profiles of the raters (farmers) and ratees and analyses the averaged
+ ratings from the raters and ratees (dealers or traders or millers).
+\end_layout
+
+\begin_layout Subsection
+\paragraph_spacing onehalf
+Gendered profile of farmers (raters)
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
 Of a total of 1526 farming households interviewed, 
 \begin_inset ERT
 status open
@@ -1973,6 +3755,7 @@ farmers1$hh.maize.q26))[3]+ prop.table(table(farmers1$hh.maize.q26))[4])*100,dig
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 The level of education among the farmers interviewed is very important in
  this study because that can noticeably impact the way they rate the input
  dealers, traders and maize millers.
@@ -2143,6 +3926,7 @@ Female
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 Looking at the main source of income for the farming households, I find
  that 
 \begin_inset ERT
@@ -2228,6 +4012,7 @@ Sexpr{format(round(sum(table(farmers1$hh.maize.q36[farmers1$hh.maize.q25=="Femal
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 \begin_inset ERT
 status open
 
@@ -2442,6 +4227,7 @@ Male
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 Interestingly, 
 \begin_inset ERT
 status open
@@ -2681,6 +4467,7 @@ Sexpr{format(round(sum(table(farmers1$hh.maize.q101a[farmers1$hh.maize.q25=="Fem
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 Out of 
 \begin_inset ERT
 status open
@@ -3018,14 +4805,13 @@ Sexpr{format(round(sum(table(farmers1$hh.maize.q120[farmers1$hh.maize.q120>=5000
  
 \end_layout
 
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-
-\series bold
-4.4.2 Gendered profile of input dealers (ratees)
+\begin_layout Subsection
+\paragraph_spacing onehalf
+Gendered profile of input dealers (ratees)
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 \begin_inset ERT
 status open
 
@@ -3257,6 +5043,7 @@ Male
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 Looking at education levels among the input-dealers, I see that some level
  of primary education has been obtained by 
 \begin_inset ERT
@@ -3381,6 +5168,7 @@ Female
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 \begin_inset ERT
 status open
 
@@ -3538,10 +5326,11 @@ Female
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 It is important to understand whether the shops are selling mostly hybrid
  and/or OPV maize seeds.
- This will help us to understand whether the farmers have enough access
- to hybrid and OPV maize seeds from the input dealers in Uganda.
+ This will help to understand whether the farmers have enough access to
+ hybrid and OPV maize seeds from the input dealers in Uganda.
  
 \begin_inset ERT
 status open
@@ -3713,6 +5502,7 @@ Male
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 Most of the input dealers provide extension or credit (
 \begin_inset ERT
 status open
@@ -3878,6 +5668,7 @@ le"]))[6] )*100,digits=0),nsmall=0)}
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 Promotion or advertisement of the seeds is very important for seed sales
  which is done by 
 \begin_inset ERT
@@ -3974,6 +5765,7 @@ Female
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 In order to ensure good quality of the seeds provided and maintain a good
  business standard, inspection is necessary in the industry.
  
@@ -4213,6 +6005,7 @@ Male
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 Training for handling and storing the maize seeds is necessary for the dealers
  to help them maintain the quality of seeds and provide good products to
  their clients.
@@ -4445,14 +6238,13 @@ Female
  
 \end_layout
 
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-
-\series bold
-4.4.3 Gendered profile of traders (ratees)
+\begin_layout Subsection
+\paragraph_spacing onehalf
+Gendered profile of traders (ratees)
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 Only 
 \begin_inset ERT
 status open
@@ -4676,6 +6468,7 @@ all=0)}
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 Some of the traders also trade in other commodities than maize (
 \begin_inset ERT
 status open
@@ -4950,6 +6743,7 @@ Sexpr{format(round(sum(table(traders1$hh.maize.value.q15e[traders1$hh.maize.valu
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 The different points of sales for the traders are consumers in villages,
  retail shops, larger broker or trader or wholesaler, processor or miller,
  exporters, markets, cooperatives, institutions, government and NGOs.
@@ -5172,6 +6966,7 @@ Male
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 During the after harvest season, when maize prices have reached their lowest
  levels and during the planting and growing season, when maize prices have
  reached their highest levels, most of the traders visit 5 or 10 or 20 sellers
@@ -5351,6 +7146,7 @@ Yes
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 Storing maize is common for 
 \begin_inset ERT
 status open
@@ -5479,6 +7275,7 @@ Sexpr{format(round(sum(table(traders1$hh.maize.q28[traders1$hh.maize.q28==
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 The traders sometimes get different services or assets from the buyers.
  For example, 
 \begin_inset ERT
@@ -5663,6 +7460,7 @@ ize.q7=="Female"])))*100,digits=0),nsmall=0)}
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 Traders also tend to give better prices for large quantities, irrespective
  of the gender of the trader (
 \begin_inset ERT
@@ -5840,14 +7638,13 @@ ze.q7=="Female"])))*100,digits=0),nsmall=0)}
  
 \end_layout
 
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-
-\series bold
-4.4.4 Gendered profile of millers (ratees)
+\begin_layout Subsection
+\paragraph_spacing onehalf
+Gendered profile of millers (ratees)
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 In total, 174 millers (or processors) were interviewed.
  Only 
 \begin_inset ERT
@@ -6173,6 +7970,7 @@ ll=0)}
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 The main products processed by the millers are cassava (
 \begin_inset ERT
 status open
@@ -6383,6 +8181,7 @@ TRUE
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 In the overall sample, the conversion rate between raw materials and finished
  product for grade one flour is atleast 60 percent for 
 \begin_inset ERT
@@ -6553,6 +8352,7 @@ q7=="Male"]))*100,digits=0),nsmall=0)}
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 Some of the millers mainly provide milling service and all the focus of
  their businesses is on charging a fee for milling somenone else's maize
  (
@@ -6788,6 +8588,7 @@ Sexpr{format(round(sum(table(millers1$hh.maize.q24[millers1$hh.maize.q24=="Yes"
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 Providing services or assistance to clients is an important aspect of continuing
  good business.
  
@@ -7010,14 +8811,13 @@ Sexpr{format(round(sum(table(millers1$hh.maize.q30[millers1$hh.maize.q30=="Yes"
  
 \end_layout
 
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-
-\series bold
-4.4.4 Analysis of the ratings (by ratees and raters)
+\begin_layout Subsection
+\paragraph_spacing onehalf
+Average Ratings (by ratees and raters)
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 Average scores are obtained for the ratings given by the raters (farmers)
  to the ratees (input dealers, processors and traders) and by the ratees
  to themselves.
@@ -7041,6 +8841,7 @@ Average scores are obtained for the ratings given by the raters (farmers)
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 The first hypothesis is 
 \begin_inset Quotes eld
 \end_inset
@@ -7197,6 +8998,7 @@ Sexpr{format(round(mean(pool$rating_reputation, na.rm=T),digits=2),nsmall=0)}
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 Now, I will verify whether this holds for each ratee group.
  First considering the 
 \series bold
@@ -7283,6 +9085,7 @@ gits=2),nsmall=0)}
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 \begin_inset Float table
 wide false
 sideways true
@@ -7291,7 +9094,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename figure/mean_ratings.png
+	filename G:/My Drive/Classroom/Documents from Drive/Pre Doctoral KUL/Paper with Bjorn/PIMMVC/papers/perceptions/figure/mean_ratings.png
 	lyxscale 20
 	scale 80
 
@@ -7319,6 +9122,7 @@ Ratings from ratees (input dealers, traders, millers) and raters (farmers)
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 The second hypothesis is 
 \begin_inset Quotes eld
 \end_inset
@@ -7474,6 +9278,7 @@ igits=2),nsmall=0)}
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 Among the 
 \series bold
 dealer
@@ -7505,6 +9310,7 @@ millers
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 \begin_inset Float table
 wide false
 sideways true
@@ -7513,7 +9319,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename figure/mean_rater_gender.png
+	filename G:/My Drive/Classroom/Documents from Drive/Pre Doctoral KUL/Paper with Bjorn/PIMMVC/papers/perceptions/figure/mean_rater_gender.png
 	lyxscale 20
 	scale 70
 
@@ -7542,6 +9348,7 @@ Ratings from female and male raters (farmers) for all ratees (dealers, traders
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 \begin_inset Quotes eld
 \end_inset
 
@@ -7702,6 +9509,7 @@ Sexpr{format(round(mean(pool$rating_quality_ratee [pool$ratee_fem=="0"],
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 Exactly same pattern is seen for the dealer group (Table 4).
  Apart from price and quality based ratings, for all other rating factors,
  females rate themselves lower than males.
@@ -7766,6 +9574,7 @@ Sexpr{format(round(mean(pool$rating_reputation_ratee [pool$ratee_fem=="1"
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 \begin_inset Float table
 wide false
 sideways true
@@ -7774,7 +9583,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename figure/mean_ratee_gender.png
+	filename G:/My Drive/Classroom/Documents from Drive/Pre Doctoral KUL/Paper with Bjorn/PIMMVC/papers/perceptions/figure/mean_ratee_gender.png
 	lyxscale 20
 	scale 70
 
@@ -7965,6 +9774,7 @@ gits=2),nsmall=0)}
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 Looking at the 
 \series bold
 dealer
@@ -7997,6 +9807,7 @@ miller
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 \begin_inset Float table
 wide false
 sideways true
@@ -8005,7 +9816,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename figure/mean_ratee_gender_rater_rating.png
+	filename G:/My Drive/Classroom/Documents from Drive/Pre Doctoral KUL/Paper with Bjorn/PIMMVC/papers/perceptions/figure/mean_ratee_gender_rater_rating.png
 	lyxscale 20
 	scale 70
 
@@ -8034,1202 +9845,366 @@ Ratings from raters (farmers) for female and male ratees (dealers, traders
 \end_layout
 
 \begin_layout Standard
-
-\series bold
-Descriptive analysis
-\end_layout
-
-\begin_layout Itemize
-Start by simply calculating average scores for the different characteristics
- (price, quality,...) for all farmers; do the same for all input dealers.
- Also create overall perception indicators by simply summing scores and
- dividing by 5.
-\end_layout
-
-\begin_layout Itemize
-Is there consistency in the rating of farmers? That is, do most of the farmers
- rate a good input dealer higher, or are farmer ratings all over the place?
- Use input dealer fixed effects and test if they are jointly significant?
- In other words is there significant intra-cluster correlation.
- How is this different from inter-rater agreement? https://en.wikipedia.org/wiki/I
-nter-rater_reliability 
-\end_layout
-
-\begin_layout Itemize
-Is there consistency between ratings of farmers and ratings of input dealers?
- Is there a systematic bias (eg input dealers always think they do better
- than farmers,...)
-\end_layout
-
-\begin_layout Section
-Model and Estimation Strategy
-\end_layout
-
-\begin_layout Standard
-The dependent variable in this study is always the ratings for the input
- dealers, traders and processors.
- The ratings can be either obtained from the raters (farmers) or they can
- be self-ratings by the ratees (dealers, traders and processors) themselves.
- The ratings or the scores are on a scale of 1 to 5, where 1 is the most
- negative score and 5 is the most positive score.
- The dataset used for the analysis is pooled, i.e., ratings for dealers, traders
- and processors are contained in the same dataset.
- The estimation method used for understanding gendered perceptions in maize
- supply chains is linear regressions with cluster robust standard errors.
- The clustering is done based on the ID of the ratees (dealers, traders
- and millers) which was assigned after the data was collected.
- The independent variable depends on the hypothesis being tested.
- The regression models with clustered standard errors used in this study
- are mentioned below.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{equation} 
-\backslash
-label{eqn} 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{array}{l}
-\end_layout
-
-\begin_layout Plain Layout
-
-Y_{i} = 
-\backslash
-beta_0 + 
-\backslash
-beta_1*Gender(F)_{i} + 
-\backslash
-beta_2*Gender(R)_{i} + 
-\backslash
-beta_3*Age 
-\backslash
-, of 
-\backslash
-, farmer_{i} + 
-\backslash
-beta_4*Interaction_{i}  + 
-\backslash
-
-\backslash
- &
-\backslash
-quad   
-\backslash
-beta_5*Education(F)_{i} + 
-\backslash
-beta_6*Tarmac_{i} + 
-\backslash
-beta_7*Murram_{i} + 
-\backslash
-beta_8*Farmer
-\backslash
-,marital
-\backslash
-,status_{i} +
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
- &
-\backslash
-quad 
-\backslash
-beta_9*Age
-\backslash
-,of
-\backslash
-,ratee_{i}  +  
-\backslash
-beta_{10}*Ratee
-\backslash
-,marital
-\backslash
-,status_{i} +  
-\backslash
-beta_{11}*Education(R)_{i} +
-\backslash
-
-\backslash
- &
-\backslash
-quad 
-\backslash
-beta_{12}*Dealer
-\backslash
-,dummy_{i} + 
-\backslash
-beta_{13}*Trader
-\backslash
-,dummy_{i} + e_{i} 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{array}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{equation}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Equation 1 looks at the impact of the farmer's (rater's) gender on the dependent
- variable.
- Here the dependent variable is average rating given by each individual
- rater across all the rating factors (rating scale varies from 1 to 5) to
- all the input dealers, traders and processors (results are shown in table
- 6).
- In the appendix, similar model results are presented with the dependent
- variables as location based rating by raters (table 9), quality-based rating
- by raters (table 10), price-based rating (table 11) and reputation-based
- rating (table 12).
- Similar analysis is also implemented with the dependent variable as difference
- between average ratings from raters and average self-ratings from ratees
- across all the rating factors (regression model explained in equation 1).
-\end_layout
-
-\begin_layout Standard
-The main independent variable, 
-\begin_inset Quotes eld
-\end_inset
-
-Gender(F)
-\begin_inset Quotes erd
-\end_inset
-
-, is the gender of the rater (farmer) which is a dummy taking the value
- of 1 if the farmer is a female rater and 0 if the farmer is a male rater.
- 
-\begin_inset Quotes eld
-\end_inset
-
-Gender(R)
-\begin_inset Quotes erd
-\end_inset
-
- is the gender of the ratee which is a dummy taking the value of 1 if the
- ratee is a woman and 0 if the ratee is a man.
- 
-\begin_inset Quotes eld
-\end_inset
-
-Age of farmer
-\begin_inset Quotes erd
-\end_inset
-
- is a variable presented in years (age of raters).
- 
-\begin_inset Quotes eld
-\end_inset
-
-Interaction
-\begin_inset Quotes erd
-\end_inset
-
- is a dummy variable which takes the value of 1 if there has been any business
- interaction between the rater and the ratee and the value of 0 if there
- has been no business interaction.
- 
-\begin_inset Quotes eld
-\end_inset
-
-Education(F)
-\begin_inset Quotes erd
-\end_inset
-
- is a dummy variable indicating whether the rater (farmer) has any level
- of education (value of 1) or not (value of 0).
- 
-\begin_inset Quotes eld
-\end_inset
-
-Tarmac
-\begin_inset Quotes erd
-\end_inset
-
- states the distance of the farmer's (rater's) homestead to the nearest
- tarmac road.
- 
-\begin_inset Quotes eld
-\end_inset
-
-Murram
-\begin_inset Quotes erd
-\end_inset
-
- states the distance of the farmer's (rater's) homestead to the nearest
- murram road.
- 
-\begin_inset Quotes eld
-\end_inset
-
-Farmer marital status
-\begin_inset Quotes erd
-\end_inset
-
- is a dummy variable indicating whether the farmer is married (value of
- 1) or not (value of 0).
- 
-\begin_inset Quotes eld
-\end_inset
-
-Age of ratee
-\begin_inset Quotes erd
-\end_inset
-
- consists of the age of the dealers, traders and processors in years.
- 
-\begin_inset Quotes eld
-\end_inset
-
-Ratee marital status
-\begin_inset Quotes erd
-\end_inset
-
- is a dummy variable taking the value of 1 if the ratee is married and the
- value of 0 if the ratee is not married.
- 
-\begin_inset Quotes eld
-\end_inset
-
-Education(R)
-\begin_inset Quotes erd
-\end_inset
-
- is a dummy indicating whether the rater has some level of education (value
- of 1) or not (value of 0).
- 
-\begin_inset Quotes eld
-\end_inset
-
-Dealer dummy
-\begin_inset Quotes erd
-\end_inset
-
- indicates whether the individual ratee is a dealer (value of 1) or not
- (value of 0).
- 
-\begin_inset Quotes eld
-\end_inset
-
-Trader dummy
-\begin_inset Quotes erd
-\end_inset
-
- takes the value of 1 if the individual ratee is a trader or the value of
- 0 is the individual ratee is not a trader.
- The last term of the equation is the error term.
- Thus, this model aids in the analysis whether the ratings provided by the
- farmer are in any way influenced by the gender of the farmer and also studies
- the relationship between the difference in the ratings provided by the
- farmers (raters) and the ratees and the gender of the rater.
- Also, the relationship between the gender of the ratee and the ratings
- received by the ratees can be deduced from this model.
- 
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{equation} 
-\backslash
-label{eqn}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{array}{l}
-\end_layout
-
-\begin_layout Plain Layout
-
-Y_{i} = 
-\backslash
-beta_0 + 
-\backslash
-beta_1*Gender(F)_{i} + 
-\backslash
-beta_2*Gender(R)_{i} + 
-\backslash
-beta_3*Age 
-\backslash
-, of 
-\backslash
-, farmer_{i} + 
-\backslash
-beta_4*Interaction_{i}  + 
-\backslash
-
-\backslash
- &
-\backslash
-quad   
-\backslash
-beta_5*Education(F)_{i} + 
-\backslash
-beta_6*Tarmac_{i} + 
-\backslash
-beta_7*Murram_{i} + 
-\backslash
-beta_8*Farmer
-\backslash
-,marital
-\backslash
-,status_{i} +
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
- &
-\backslash
-quad 
-\backslash
-beta_9*Age
-\backslash
-,of
-\backslash
-,ratee_{i}  +  
-\backslash
-beta_{10}*Ratee
-\backslash
-,marital
-\backslash
-,status_{i} +  
-\backslash
-beta_{11}*Education(R)_{i} +
-\backslash
-
-\backslash
- &
-\backslash
-quad 
-\backslash
-beta_{12}*Dealer
-\backslash
-,dummy_{i} + 
-\backslash
-beta_{13}*Trader
-\backslash
-,dummy_{i} + 
-\backslash
-beta_{14}*Gender(F)_{i}*Interaction_{i} + e_{i} 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{array} 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{equation}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{equation} 
-\backslash
-label{eqn}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{array}{l}
-\end_layout
-
-\begin_layout Plain Layout
-
-Y_{i} = 
-\backslash
-beta_0 + 
-\backslash
-beta_1*Gender(F)_{i} + 
-\backslash
-beta_2*Gender(R)_{i} + 
-\backslash
-beta_3*Age 
-\backslash
-, of 
-\backslash
-, farmer_{i} + 
-\backslash
-beta_4*Interaction_{i}  + 
-\backslash
-
-\backslash
- &
-\backslash
-quad   
-\backslash
-beta_5*Education(F)_{i} + 
-\backslash
-beta_6*Tarmac_{i} + 
-\backslash
-beta_7*Murram_{i} + 
-\backslash
-beta_8*Farmer
-\backslash
-,marital
-\backslash
-,status_{i} +
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
- &
-\backslash
-quad 
-\backslash
-beta_9*Age
-\backslash
-,of
-\backslash
-,ratee_{i}  +  
-\backslash
-beta_{10}*Ratee
-\backslash
-,marital
-\backslash
-,status_{i} +  
-\backslash
-beta_{11}*Education(R)_{i} +
-\backslash
-
-\backslash
- &
-\backslash
-quad 
-\backslash
-beta_{12}*Dealer
-\backslash
-,dummy_{i} + 
-\backslash
-beta_{13}*Trader
-\backslash
-,dummy_{i} + 
-\backslash
-beta_{14}*Gender(F)_{i}*Education(F)_{i} + e_{i} 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{array}  
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{equation}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{equation} 
-\backslash
-label{eqn}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{array}{l}
-\end_layout
-
-\begin_layout Plain Layout
-
-Y_{i} = 
-\backslash
-beta_0 + 
-\backslash
-beta_1*Gender(F)_{i} + 
-\backslash
-beta_2*Gender(R)_{i} + 
-\backslash
-beta_3*Age 
-\backslash
-, of 
-\backslash
-, farmer_{i} + 
-\backslash
-beta_4*Interaction_{i}  + 
-\backslash
-
-\backslash
- &
-\backslash
-quad   
-\backslash
-beta_5*Education(F)_{i} + 
-\backslash
-beta_6*Tarmac_{i} + 
-\backslash
-beta_7*Murram_{i} + 
-\backslash
-beta_8*Farmer
-\backslash
-,marital
-\backslash
-,status_{i} +
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
- &
-\backslash
-quad 
-\backslash
-beta_9*Age
-\backslash
-,of
-\backslash
-,ratee_{i}  +  
-\backslash
-beta_{10}*Ratee
-\backslash
-,marital
-\backslash
-,status_{i} +  
-\backslash
-beta_{11}*Education(R)_{i} +
-\backslash
-
-\backslash
- &
-\backslash
-quad 
-\backslash
-beta_{12}*Dealer
-\backslash
-,dummy_{i} + 
-\backslash
-beta_{13}*Trader
-\backslash
-,dummy_{i} + 
-\backslash
-beta_{14}*Gender(F)_{i}*Gender(R)_{i} + e_{i} 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{array}  
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{equation}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{equation} 
-\backslash
-label{eqn}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{array}{l}
-\end_layout
-
-\begin_layout Plain Layout
-
-Y_{i} = 
-\backslash
-beta_0 + 
-\backslash
-beta_1*Gender(F)_{i} + 
-\backslash
-beta_2*Gender(R)_{i} + 
-\backslash
-beta_3*Age 
-\backslash
-, of 
-\backslash
-, farmer_{i} + 
-\backslash
-beta_4*Interaction_{i}  + 
-\backslash
-
-\backslash
- &
-\backslash
-quad   
-\backslash
-beta_5*Education(F)_{i} + 
-\backslash
-beta_6*Tarmac_{i} + 
-\backslash
-beta_7*Murram_{i} + 
-\backslash
-beta_8*Farmer
-\backslash
-,marital
-\backslash
-,status_{i} +
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
- &
-\backslash
-quad 
-\backslash
-beta_9*Age
-\backslash
-,of
-\backslash
-,ratee_{i}  +  
-\backslash
-beta_{10}*Ratee
-\backslash
-,marital
-\backslash
-,status_{i} +  
-\backslash
-beta_{11}*Education(R)_{i} +
-\backslash
-
-\backslash
- &
-\backslash
-quad 
-\backslash
-beta_{12}*Dealer
-\backslash
-,dummy_{i} + 
-\backslash
-beta_{13}*Trader
-\backslash
-,dummy_{i} + 
-\backslash
-beta_{14}*Gender(R)_{i}*Interaction_{i} + e_{i} 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{array} 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{equation}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Equation 2 adds an interaction term to the regression model.
- The interaction is between the interaction dummy between the rater and
- the ratee and the gender of the farmer (rater).
- The interaction term added in equation 3 looks at the interaction between
- the education dummy of the farmer and the farmer's gender.
- Equation 4 has an interaction term with the ratee's and rater's gender
- (dummies).
- Equation 5 has a similar interaction term as equation 2.
- However, in equation 5, the gender of the ratee is considered instead of
- the gender of the rater.
- While analysing the impact of farmer's gender on the difference between
- average ratings from raters and average self-ratings from ratees across
- all the rating factors, equation 2, 3 and 4 are also implemented.
- 
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{equation} 
-\backslash
-label{eqn} 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{array}{l}
-\end_layout
-
-\begin_layout Plain Layout
-
-Y_{i} = 
-\backslash
-beta_0 + 
-\backslash
-beta_1*Gender(R)_{i} + 
-\backslash
-beta_2*Age
-\backslash
-,of
-\backslash
-,ratee_{i} + 
-\backslash
-beta_3*Ratee
-\backslash
-,marital
-\backslash
-,status_{i} + 
-\backslash
-beta_4*Education(R)_{i}  + 
-\backslash
-
-\backslash
- &
-\backslash
-quad    
-\backslash
-beta_5*Dealer
-\backslash
-,dummy_{i} + 
-\backslash
-beta_6*Trader
-\backslash
-,dummy_{i} + e_{i} 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{array}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{equation}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Equation 6 studies the relationship between the ratee's gender and the dependent
- variable.
- The dependent variable is averaged self-rating (ranging from 1 to 5) by
- the ratees across all the rating factors (results are shown in table 7).
- Results with the dependent variable as location-based, quality-based, price-bas
-ed and reputation-based self-ratings are discussed in the appendix.
- Tha main independent variable here is the gender of the ratee, taking the
- value of 1 when the ratee is a woman and the value of 0 when the ratee
- is a man.
- The control variables are age of the ratee in years, dummy for marital
- status of the ratee, dummy for education level of the ratee, dummy indicating
- whether the ratee is a dealer or not and dummy indicating whether the ratee
- is a trader or not.
- The last term of equation 6 is the error term.
- 
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{equation} 
-\backslash
-label{eqn} 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{array}{l}
-\end_layout
-
-\begin_layout Plain Layout
-
-Y_{i} = 
-\backslash
-beta_0 + 
-\backslash
-beta_1*Gender(R)_{i} + 
-\backslash
-beta_2*Age
-\backslash
-,of
-\backslash
-,ratee_{i} + 
-\backslash
-beta_3*Ratee
-\backslash
-,marital
-\backslash
-,status_{i} + 
-\backslash
-beta_4*Education(R)_{i}  + 
-\backslash
-
-\backslash
- &
-\backslash
-quad    
-\backslash
-beta_5*Dealer
-\backslash
-,dummy_{i} + 
-\backslash
-beta_6*Trader
-\backslash
-,dummy_{i} + 
-\backslash
-beta_7*Gender(R)_{i}*Age
-\backslash
-,of
-\backslash
-,ratee_{i} + e_{i} 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{array}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{equation}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{equation} 
-\backslash
-label{eqn} 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{array}{l}
-\end_layout
-
-\begin_layout Plain Layout
-
-Y_{i} = 
-\backslash
-beta_0 + 
-\backslash
-beta_1*Gender(R)_{i} + 
-\backslash
-beta_2*Age
-\backslash
-,of
-\backslash
-,ratee_{i} + 
-\backslash
-beta_3*Ratee
-\backslash
-,marital
-\backslash
-,status_{i} + 
-\backslash
-beta_4*Education(R)_{i}  + 
-\backslash
-
-\backslash
- &
-\backslash
-quad    
-\backslash
-beta_5*Dealer
-\backslash
-,dummy_{i} + 
-\backslash
-beta_6*Trader
-\backslash
-,dummy_{i} + 
-\backslash
-beta_7*Gender(R)_{i}*Education(R)_{i} + e_{i} 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{array}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{equation}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Equation 7 and equation 8 are extensions of the regression model in equation
- 6.
- Equation 7 includes an interaction term between the gender of the ratee
- and the age of ratee.
- Equation 8 consists of an interaction between the gender of the ratee and
- the education of the ratee (dummy).
- Thus, the regression models with ratee's self-ratings as the dependent
- variable assist in the understanding of the relationship between self-ratings
- and the gender of the ratee.
- 
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{equation} 
-\backslash
-label{eqn} 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{array}{l}
-\end_layout
-
-\begin_layout Plain Layout
-
-Y_{i} = 
-\backslash
-beta_0 + 
-\backslash
-beta_1*Gender(F)_{i} + 
-\backslash
-beta_2*Gender(R)_{i} + 
-\backslash
-beta_3*Age 
-\backslash
-, of 
-\backslash
-, farmer_{i} + 
-\backslash
-beta_4*Interaction_{i}  + 
-\backslash
-
-\backslash
- &
-\backslash
-quad   
-\backslash
-beta_5*Education(F)_{i} + 
-\backslash
-beta_6*Tarmac_{i} + 
-\backslash
-beta_7*Murram_{i} + 
-\backslash
-beta_8*Farmer
-\backslash
-,marital
-\backslash
-,status_{i} +
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
- &
-\backslash
-quad 
-\backslash
-beta_9*Age
-\backslash
-,of
-\backslash
-,ratee_{i}  +  
-\backslash
-beta_{10}*Ratee
-\backslash
-,marital
-\backslash
-,status_{i} +  
-\backslash
-beta_{11}*Education(R)_{i} +
-\backslash
-
-\backslash
- &
-\backslash
-quad 
-\backslash
-beta_{12}*Dealer
-\backslash
-,dummy_{i} + 
-\backslash
-beta_{13}*Trader
-\backslash
-,dummy_{i} + e_{i} 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{array}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{equation}
-\end_layout
-
+\paragraph_spacing onehalf
+\begin_inset Newpage newpage
 \end_inset
 
 
 \end_layout
 
 \begin_layout Section
-Results 
+\paragraph_spacing onehalf
+Empirical Results
 \end_layout
 
 \begin_layout Standard
-This section discusses the results obtained from the analysis of the models
- discussed above.
- The tables for the various linear regressions with clustered standard errors
- are presented in this section.
+The empirical results of the study are presented in this section.
+\end_layout
+
+\begin_layout Subsection
+\paragraph_spacing onehalf
+Fixed Effects 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+With ratee fixed effects and ratings as the dependent variable, it is observed
+ that the null of individual mean ratings being equal to overall mean ratings
+ is always rejected.
+ This is verified for ratings from farmers, self-ratings from input dealers,
+ traders and millers and differences between ratings from raters and self-rating
+s (F-statistics for every regression is presented in table 9 in the appendix).
+ Thus, individual mean ratings are always different from the overall mean
+ ratings.
+ This can further indicate that individual ratings given by farmers and
+ self-ratings for each ratee is different for everyone.
+ The ratees are not rated in the same way for everyone.
+ The different rating factors are important in this aspect.
+ Also, tested for location, quality, price and reputation -based ratings
+ along with overall averaged ratings, it can be deduced that individuals
+ are always rated differently.
+ This observed difference in the ratings can be attributed to various factors.
+ This study focuses on one of those, gender.
+ 
+\end_layout
+
+\begin_layout Subsection
+\paragraph_spacing onehalf
+Intra-Cluster Correlation (ICC) 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+The intra-cluster correlation coefficients present the levels of agreement
+ among the raters.
+ The results for inter and intra-rater reliability are shown in tables 10,
+ 11 and 12 in the appendix.
+ It is important to understand how similar or different the ratings from
+ raters and ratees are.
+ The ICC coefficient for inter-rater reliability for averaged overall ratings
+ from raters and averaged overall self-ratings from ratees is 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(icc1a.fn(icc_overall)$icc1a,digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ (table 10, appendix).
+ Thus, the level of agreement between the overall ratings from the raters
+ and ratees is very poor.
+ Across the different rating attributes, the level of agreement is higher.
+ Rater ratings and self-ratings are the most similar for location 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(icc1a.fn(icc_loc)$icc1a,digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ and quality based ratings 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(icc1a.fn(icc_qual)$icc1a,digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+.
+ However, the ICC coefficient is still low enough to judge it as poor agreement
+ level.
+ Henceforth, self-ratings are never at par with rater ratings considering
+ all rating attributes.
+ 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+These results are not much different when gender of the raters and the ratees
+ are considered (table 11, appendix).
+ Although the agreement levels are poor, the best agreement out of all is
+ when the rater (farmer) is a man and the ratee is a woman (overall averaged
+ ratings are taken into account).
+ The ICC coefficient is 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(icc1a.fn(icc_overall_malefem)$icc1a,digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+.
+ This means that some of the male farmers and some of the female ratees
+ could give similar scores.
+ When both rater and ratee are female (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(icc1a.fn(icc_overall_fem)$icc1a,digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+), the agreement level is higher than when both are male (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(icc1a.fn(icc_overall_male)$icc1a,digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+The most interesting part of the ICC analysis is to see how far the raters
+ (farmers) agree on the ratings given to individual input dealer or trader
+ or miller.
+ First, inter-rater reliability is focused on.
+ Here, the comparison is between ratings from different farmers for the
+ same individual (table 10, appendix).
+ It is observed that raters agree decently on overall ratings given to ratees.
+ The ICC coefficient being 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(icc1a.fn(icc_recast_overall6)$icc1a,digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+, it can be deduced that the ratings captured in the survey are not entirely
+ random or untrue.
+ However, the level of agreement among the raters (farmers) drop majorly
+ for quality (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(icc1a.fn(icc_recast_qual)$icc1a,digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+) and reputation (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(icc1a.fn(icc_recast_rep)$icc1a,digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+).
+ For location and price based ratings, the agreement levels are higher (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(icc1a.fn(icc_recast_loc)$icc1a,digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(icc1a.fn(icc_recast_price)$icc1a,digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+).
+ Inter-rater reliability is also analysed based on the gender with a comparison
+ of the ratings from different farmers (table 12, appendix).
+ It is seen that female farmers (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(icc1a.fn(icc_recast_genfem)$icc1a,digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+) agree slightly more than male farmers (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(icc1a.fn(icc_recast_genmale)$icc1a,digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+) on the ratings they give to the ratees.
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+Second, intra-rater reliability is studied, where the comparison is done
+ between the ratings given by each farmer to different ratees (the rater
+ remains constant).
+ Looking at overall averaged rating pattern, it can be derived that every
+ farmer rates in a similar way every dealer or trader or miller.
+ This is because the ICC coefficient is 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(icc1b.fn(icc_recast_overall6)$icc1b,digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ (table 10, appendix), indicating a very decent level of agreement.
+ Similar high levels of agreement is noticed for location (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(icc1b.fn(icc_recast_loc)$icc1b,digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+) and reputation (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(icc1b.fn(icc_recast_rep)$icc1b,digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+) based ratings.
+ Gender is also included for intra-rater reliability.
+ Male raters (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(icc1b.fn(icc_recast_genmale)$icc1b,digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+) have higher agreement levels compared to female raters (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(icc1b.fn(icc_recast_genfem)$icc1b,digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+), considered for overall averaged ratings.
+ Thus, it can be a case that male raters follow consistent rating patterns
+ while female raters can be more inconsistent while rating.
+ 
+\end_layout
+
+\begin_layout Subsection
+\paragraph_spacing onehalf
+Multivariate Regressions 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+The tables for the various multivariate regressions with clustered standard
+ errors are presented in this section.
  From table 6 (model 1), it is noticeable that the impact of farmer's gender
  on the average overall rating given by the farmer is significant.
  If the farmer is a woman, the average score given by the farmer is 0.0573
@@ -9241,6 +10216,7 @@ This section discusses the results obtained from the analysis of the models
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 If the farmer had some business interaction with the input dealer or trader
  or processor he or she is rating, the rating given by the farmer is 0.3623
  higher (significant at the 1% level).
@@ -9257,6 +10233,7 @@ If the farmer had some business interaction with the input dealer or trader
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 There is a negative relationship between the ratee's marital status and
  the ratings received by the ratee.
  If the ratee is married, the ratee receives a lower score on average (significa
@@ -9271,6 +10248,7 @@ nt at the 10% level).
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 In model 2, in the same table, an interaction term is added between the
  gender of the farmer and the dummy for business interaction between the
  farmer and the ratee.
@@ -9283,6 +10261,7 @@ In model 2, in the same table, an interaction term is added between the
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 In model 3 (table 6), an interaction between the gender of the farmer and
  the education of the farmer is added, the coefficient for this is insignificant.
  The farmer's gender coefficient becomes insignifcant and also changes to
@@ -9294,6 +10273,7 @@ In model 3 (table 6), an interaction between the gender of the farmer and
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 In model 4, although the interaction between the farmer's gender and ratee's
  gender is insignificant, it indicates that female farmers rate higher on
  an average (significant at the 10% level).
@@ -9313,12 +10293,13 @@ In model 4, although the interaction between the farmer's gender and ratee's
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 Following this, I study whether similar findings can be obtained when the
  dependent variable is the rating based on the various rating factors like
  location, quality, price and reputation.
- The results are presented in the appendix (table 9 to table 12).
+ The results are presented in the appendix (table 13 to table 16).
  The models used in these tables are same as the ones used in table 6.
- Looking at location based rating (table 9), it can be discerned that female
+ Looking at location based rating (table 13), it can be discerned that female
  raters give higher ratings than male raters (significant in model 1, 2,
  4 and 5).
  The relationship between the ratee's gender and the ratings received by
@@ -9339,8 +10320,9 @@ t at 1% level).
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 Results from quality based rating by the raters as the dependent variable
- are interesting (table 10).
+ are interesting (table 14).
  No strong evidence can be found for the impact of farmer's gender on the
  rating.
  Female ratees receive higher quality based ratings compared to male ratees
@@ -9354,8 +10336,9 @@ Results from quality based rating by the raters as the dependent variable
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 The positive relationship between gender of the farmer and price based rating
- given by the farmer is significant only in model 1 and model 5 (table 11).
+ given by the farmer is significant only in model 1 and model 5 (table 15).
  Nothing can be deduced about the impact of ratee's gender on the price
  based rating received by the ratee.
  The impact of the interaction and farmer's education dummies are similar
@@ -9371,8 +10354,9 @@ The positive relationship between gender of the farmer and price based rating
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 Next, moving on to reputation-based ratings given by the farmers (table
- 12), it can be observed that farmer's gender has no impact, female ratees
+ 16), it can be observed that farmer's gender has no impact, female ratees
  receive higher reputation based scores and some business interaction between
  the farmer and the ratee can result in higher reputation based score for
  the ratee.
@@ -9384,6 +10368,7 @@ Next, moving on to reputation-based ratings given by the farmers (table
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 \begin_inset ERT
 status open
 
@@ -9716,6 +10701,7 @@ end{table}
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 Table 7 shows the relationship between the gender of the ratee and the average
  self-ratings given by the ratees across all rating factors.
  The coefficients for ratee's gender, interaction between gender of ratee
@@ -9731,12 +10717,13 @@ Table 7 shows the relationship between the gender of the ratee and the average
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 In the appendix, results are also presented when the ratings for all the
  various factors are considered.
- Table 13 looks at the location-based self-ratings and there is no strong
+ Table 17 looks at the location-based self-ratings and there is no strong
  evidence of a relationship.
  For quality-based self-ratings, female ratees rate themselves higher than
- male ratees (significance in model 1 and 3, table 14).
+ male ratees (significance in model 1 and 3, table 18).
  The interaction between education and gender dummies of the ratee is significan
 t at 10%.
  Female ratees with some level of education rate themselves lower based
@@ -9747,11 +10734,12 @@ t at 10%.
 \end_layout
 
 \begin_layout Standard
-Results in table 15 also do not pose any significant relationship between
+\paragraph_spacing onehalf
+Results in table 19 also do not pose any significant relationship between
  the gender of the ratee and the price-based self-ratings.
  However, it is noticed that with an increase in the age of the ratee, the
  price based ratings also rise (significant at 10%).
- For reputation-based self-ratings, model 3 is interesting (table 16 in
+ For reputation-based self-ratings, model 3 is interesting (table 20 in
  appendix).
  If the ratee is a woman, she gives higher score to herself based on reputation
  compared to her male counterparts.
@@ -9766,6 +10754,7 @@ Results in table 15 also do not pose any significant relationship between
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 \begin_inset ERT
 status open
 
@@ -9992,6 +10981,7 @@ end{table}
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 The impact of farmer's gender on the difference between the averaged rater
  rating and ratee self-rating across all the rating factors is also studied
  (table 8).
@@ -10017,6 +11007,7 @@ The impact of farmer's gender on the difference between the averaged rater
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 In model 3 also, a change is noticed in the farmer's gender coefficient.
  The impact on the difference in ratings is no more significant and also
  the education dummy for farmers loses significance.
@@ -10034,27 +11025,29 @@ In model 3 also, a change is noticed in the farmer's gender coefficient.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 The results when the ratings are considered for the individual rating factors
  are presented in the appendix.
- Most of the main results in table 17 considering location based difference
+ Most of the main results in table 21 considering location based difference
  in ratings, are consistent with what has been observed in table 8.
  It can also be noted that with an increase in the distance between farmer's
  homestead and the nearest murram road, the difference in ratings decline.
  If the ratee being rated is a trader, the difference in ratings rise.
- Table 18 showing the quality based rating differences do not anymore provide
+ Table 22 showing the quality based rating differences do not anymore provide
  any strong evidence for the impact of farmer's gender, farmer's education
  and marital status dummies.
  
 \end_layout
 
 \begin_layout Standard
-For price-based rating differences in table 19 in the appendix, it can be
+\paragraph_spacing onehalf
+For price-based rating differences in table 23 in the appendix, it can be
  discerned that if the rater is female, there has been some business interaction
  between the rater and the ratee and the rater has some level of education,
  the differences increase.
  Interestingly, if the ratee has some level of education, then the differences
  decline (significant at 5% level).
- Looking at differences in reputation-based ratings (table 20, appendix),
+ Looking at differences in reputation-based ratings (table 24, appendix),
  it can be observed that gender of the farmer does not significantly impact
  the differences.
  However, if the ratee is female, the differences increase.
@@ -10067,6 +11060,7 @@ For price-based rating differences in table 19 in the appendix, it can be
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 \begin_inset ERT
 status open
 
@@ -10384,17 +11378,248 @@ end{table}
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset Newpage newpage
+\end_inset
 
-\series bold
-Exploratory analysis
+
+\end_layout
+
+\begin_layout Section
+\paragraph_spacing onehalf
+Conclusion
 \end_layout
 
 \begin_layout Standard
-\begin_inset CommandInset bibtex
-LatexCommand bibtex
-btprint "btPrintCited"
-bibfiles "amsj,MVC_perceptions"
-options "apalike"
+This section summarises the findings of this study.
+ 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\paragraph_spacing onehalf
+Appendix
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+begin{table} 
+\backslash
+begin{center}  
+\backslash
+begin{tabular}{||l c||}   
+\backslash
+hline  & {
+\backslash
+textit{F-Statistic}} 
+\backslash
+
+\backslash
+ [0.5ex]  
+\backslash
+hline
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+Rater ratings (overall)   &      
+\backslash
+Sexpr{format(round(summary(fe_modoverall)$fstat[1],digits=2),nsmall=0)}
+         
+\backslash
+
+\backslash
+                          
+\end_layout
+
+\begin_layout Plain Layout
+
+Rater ratings (location)                 &
+\backslash
+Sexpr{format(round(summary(fe_modlocation)$fstat[1],digits=2),nsmall=0)}
+ 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Rater ratings (quality)               & 
+\backslash
+Sexpr{format(round(summary(fe_modqual)$fstat[1],digits=2),nsmall=0)}  
+\backslash
+
+\backslash
+ Rater ratings (price)                         & 
+\backslash
+Sexpr{format(round(summary(fe_modprice)$fstat[1],digits=2),nsmall=0)}  
+ 
+\backslash
+
+\backslash
+ Rater ratings (reputation)            & 
+\backslash
+Sexpr{format(round(summary(fe_modrepu)$fstat[1],digits=2),nsmall=0)}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Ratee ratings (overall)                & 
+\backslash
+Sexpr{format(round(summary(fe_modoverall_ratee)$fstat[1],digits=2),nsmall=0)}
+ 
+\backslash
+
+\backslash
+                          
+\end_layout
+
+\begin_layout Plain Layout
+
+Ratee ratings (location)                 & 
+\backslash
+Sexpr{format(round(summary(fe_modlocation_ratee)$fstat[1],digits=2),nsmall=0)}
+  
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Ratee ratings (quality)               & 
+\backslash
+Sexpr{format(round(summary(fe_modqual_ratee)$fstat[1],digits=2),nsmall=0)}
+  
+\backslash
+
+\backslash
+ Ratee ratings (price)                         & 
+\backslash
+Sexpr{format(round(summary(fe_modprice_ratee)$fstat[1],digits=2),nsmall=0)}
+      
+\backslash
+
+\backslash
+ Ratee ratings (reputation)            & 
+\backslash
+Sexpr{format(round(summary(fe_modreputation_ratee)$fstat[1],digits=2),nsmall=0)}
+  
+\backslash
+
+\backslash
+ Differences (overall)                    & 
+\backslash
+Sexpr{format(round(summary(fe_modoverall_diff)$fstat[1],digits=2),nsmall=0)}
+   
+\backslash
+
+\backslash
+ Differences (location)         & 
+\backslash
+Sexpr{format(round(summary(fe_modlocation_diff)$fstat[1],digits=2),nsmall=0)}
+  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Differences (quality)         & 
+\backslash
+Sexpr{format(round(summary(fe_modqual_diff)$fstat[1],digits=2),nsmall=0)}
+   
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Differences (price)           & 
+\backslash
+Sexpr{format(round(summary(fe_modprice_diff)$fstat[1],digits=2),nsmall=0)}
+  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Differences (reputation)          & 
+\backslash
+Sexpr{format(round(summary(fe_modrepu_diff)$fstat[1],digits=2),nsmall=0)}
+       
+\backslash
+
+\backslash
+ 
+\backslash
+hline  
+\backslash
+end{tabular}  
+\backslash
+end{center} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+Note:- The fixed effects regressions are run on the ratings from the raters,
+ self-ratings from the ratees and the differences in ratings between rater
+ ratings and self-ratings (fixed effects on ratees).
+ In every case, the null of individual means being equal to overall mean
+ is rejected with a p-value less than 0.00 (F-statistic greater than F value).
+ Degrees of freedom(1) is 525 and degrees of freedom(2) is 3384.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+caption{F-statistics for all the fixed effects regressions on the ratings.}
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{table} 
+\end_layout
 
 \end_inset
 
@@ -10402,6 +11627,211 @@ options "apalike"
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename G:/My Drive/Classroom/Documents from Drive/Pre Doctoral KUL/Paper with Bjorn/PIMMVC/papers/perceptions/figure/icc_rater_ratee.png
+	lyxscale 20
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+Note:- ICC(Inter-Rater, Raters and Ratees): Inter-rater reliability here
+ indicates the level of agreement between the ratings given by the farmers
+ (raters) and the self-ratings given by the ratees themselves.
+ The sample consists of all the raters and ratees (input dealers, traders
+ and processors).
+ The averaged overall ratings, ratings based on location, quality, price
+ and reputation are taken into account.
+ ICC (Inter-Rater, Only Raters): Inter-rater reliability here indicates
+ the level of agreement between the ratings given by each individual farmer
+ (rater), the comparison is made amongst ratings from different farmers.
+ The sample consists of only the farmers who have given greater than 6 ratings.
+ ICC (Intra-Rater, Only Raters): Intra-rater reliability here focuses on
+ the agreement between the different ratings given by individual raters,
+ comparison is amongst the ratings coming from the same individual rater
+ who has given more than 6 ratings.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+ICC coefficients for inter-rater reliability (agreement between farmers'
+ and ratee's ratings and between all raters' ratings) and intra-rater reliabilit
+y (agreement in ratings given by each farmer).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename G:/My Drive/Classroom/Documents from Drive/Pre Doctoral KUL/Paper with Bjorn/PIMMVC/papers/perceptions/figure/icc_rater_ratee_gender.png
+	lyxscale 20
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+Note:- ICC(Inter-Rater): Inter-rater reliability here indicates the level
+ of agreement between the ratings given by the farmers (raters) and the
+ self-ratings given by the ratees themselves.
+ The sample consists of all the raters and ratees (input dealers, traders
+ and processors).
+ The averaged overall ratings are taken into account.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+ICC coefficients for inter-rater reliability (agreement between farmers'
+ and ratee's ratings), grouped by gender.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename G:/My Drive/Classroom/Documents from Drive/Pre Doctoral KUL/Paper with Bjorn/PIMMVC/papers/perceptions/figure/icc_rater_gender.png
+	lyxscale 20
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+Note:- ICC(Inter-Rater): Inter-rater reliability here indicates the level
+ of agreement between the ratings given by different farmers.
+ The sample consists of the farmers who have given more than 5 ratings.
+ The averaged overall ratings are taken into account.
+ ICC (Intra-Rater): Intra-rater reliability here focuses on the agreement
+ between the different ratings given by individual raters, comparison is
+ amongst the ratings coming from the same individual rater.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+ICC coefficients for inter-rater reliability (agreement between ratings
+ from different farmers) and intra-rater reliability (agreement between
+ ratings from same farmer), grouped by gender.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
 \begin_inset ERT
 status open
 
@@ -10728,6 +12158,7 @@ end{table}
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 \begin_inset ERT
 status open
 
@@ -11054,10 +12485,7 @@ end{table}
 \end_layout
 
 \begin_layout Standard
-
-\end_layout
-
-\begin_layout Standard
+\paragraph_spacing onehalf
 \begin_inset ERT
 status open
 
@@ -11384,6 +12812,7 @@ end{table}
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 \begin_inset ERT
 status open
 
@@ -11711,6 +13140,7 @@ end{table}
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 \begin_inset ERT
 status open
 
@@ -11937,6 +13367,7 @@ end{table}
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 \begin_inset ERT
 status open
 
@@ -12163,6 +13594,7 @@ end{table}
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 \begin_inset ERT
 status open
 
@@ -12389,6 +13821,7 @@ end{table}
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 \begin_inset ERT
 status open
 
@@ -12617,6 +14050,7 @@ end{table}
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 \begin_inset ERT
 status open
 
@@ -12934,6 +14368,7 @@ end{table}
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 \begin_inset ERT
 status open
 
@@ -13251,6 +14686,7 @@ end{table}
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 \begin_inset ERT
 status open
 
@@ -13568,6 +15004,7 @@ end{table}
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 \begin_inset ERT
 status open
 
@@ -13878,6 +15315,27 @@ label{table:coefficients}
 \backslash
 end{table} 
 \end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+btprint "btPrintCited"
+bibfiles "amsj,MVC_perceptions"
+options "bibtotoc,apalike"
 
 \end_inset
 

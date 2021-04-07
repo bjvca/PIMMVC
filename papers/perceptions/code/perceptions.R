@@ -1962,6 +1962,7 @@ dev.off()
 ####################################################################################################
 
 #### WHETHER INDIVIDUAL MEANS DIFFERENT FROM OVERALL MEAN #####
+#### FIXED EFFECTS ######
 
 ########### rating from farmers ############
 fe_modoverall <- lm(rating_overall ~ id.ratee, data = pool)

@@ -4629,3 +4629,20 @@ summary(ols1, cluster="id.ratee")
 # create table in stargazer
 stargazer(ols1, se=list(coef(summary(ols1,cluster = c("id.ratee")))[, 2]), type = "text") 
 
+
+
+### if extract coeff and SE from lm
+se1 <- sqrt(diag(vcov(mod1_gender)))
+se1[1]  #gives standard error of the intercept
+
+mod1_gender$lm_res
+lm_res1<-mod1_gender$lm_res
+lm_res1$coefficients[1]  # gives the intercept
+
+summary(lm_res1)$coefficients[1,2]  #standard error
+summary(lm_res1)$coefficients[1,4]  #p-value
+summary(lm_res1)$r.squared #rsquared
+summary(lm_res1)$adj.r.squared
+nobs(lm_res1) #number of obs 
+
+
