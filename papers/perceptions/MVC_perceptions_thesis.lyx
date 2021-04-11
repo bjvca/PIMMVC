@@ -37,7 +37,7 @@ graphicboxes
 \bibtex_command default
 \index_command default
 \paperfontsize 12
-\spacing double
+\spacing onehalf
 \use_hyperref true
 \pdf_bookmarks true
 \pdf_bookmarksnumbered false
@@ -2990,7 +2990,7 @@ end{equation}
 
 \begin_layout Section
 \paragraph_spacing onehalf
-Descriptive Results 
+Results 
 \end_layout
 
 \begin_layout Standard
@@ -3001,107 +3001,210 @@ This section focuses on the descriptive results, giving an overview of the
 
 \begin_layout Subsection
 \paragraph_spacing onehalf
-Multivariate Regressions 
+Average ratings
+\end_layout
+
+\begin_layout Subsection
+\paragraph_spacing onehalf
+Regressions 
 \end_layout
 
 \begin_layout Standard
-\paragraph_spacing onehalf
-In model 4, although the interaction between the farmer's gender and ratee's
- gender is insignificant, it indicates that female farmers significantly
- rate higher on an average.
- Similarly, in model 5, the interaction between the ratee's gender and the
- interaction dummy and farmer's gender coefficient are insignificant.
- Interestingly, farmer's marital status coefficient indicates that if the
- farmer is married, the scores given by the farmer are lower.
- Henceforth, from table 6, it can be concluded that female farmers give
- higher ratings than male farmers; if the farmer has experienced a business
- interaction with the ratee he or she is rating, then the rating is higher
- compared to the farmers who did not experience any business interaction;
- farmers with some level of education give higher ratings; greater distance
- between farmer's homestead and the nearest murram road lowers scores given
- by the farmer; older ratees receive higher ratings and married ratees receive
- lower ratings compared to ratees who are not married.
+Tables 6, 7 and 8 present results from the regressions implemented for this
+ study.
+ Table 6 shows multivariate regressions with clustered standard errors (at
+ the ratee level), discussing the impact of farmer's gender and ratee's
+ gender on the ratings given by the farmers to the ratees.
+ From model 1, it is noticeable that the impact of farmer's gender on the
+ average overall rating given by the farmer is significant.
+ If the farmer is a woman, the average score given by the farmer is 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(lm_res1$coefficients[2],digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ higher.
+ Thus, female farmers give higher ratings when compared to male farmers,
+ consistent with the results from table 5.
+ The relation between the gender of the ratee (dealer or trader or miller)
+ and the overall average ratings given by the farmer is insignificant.
  
 \end_layout
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-Following this, I study whether similar findings can be obtained when the
- dependent variable is the rating based on the various rating factors like
- location, quality, price and reputation.
- The results are presented in the appendix (table 13 to table 16).
- The models used in these tables are same as the ones used in table 6.
- Looking at location based rating (table 13), it can be discerned that female
- raters give higher ratings than male raters (significant in models 1, 2
- and 4).
- The relationship between the ratee's gender and the ratings received by
- the ratees is significant in models 1, 2, 4 and 5 where the relationship
- is ne
+If the farmer had some business interaction with the input dealer or trader
+ or processor the farmer is rating, the rating given by the farmer is 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(lm_res1$coefficients[5],digits=2),nsmall=0)}
 \end_layout
 
-\begin_layout Standard
-\paragraph_spacing onehalf
-As discussed before, farmers with some business interaction with the ratee
- and some level of education give higher scores and with an increase in
- the distance between rater's (farmer's) homestead and the nearest murram
- road, the scores given by the rater reduces.
- No strong evidence of the relationship between the marital status of ratees
- and the ratings received by them can be found.
- Interestingly, the interaction between the interaction dummy and ratee's
- gender is significant at the 1% level.
- Female ratees with whom the rater had some business interaction receive
- lower ratings.
- Also, traders receive higher ratings than millers and input dealers (significan
-t at 1% level).
+\end_inset
+
+ higher (significant).
+ The education level of the farmer also significantly influences the way
+ the farmer rates the ratee.
+ If the farmer has some level of education, the farmer (rater) rates the
+ ratee 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(lm_res1$coefficients[6],digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ point higher.
+ The negative relation between the average overall rating given by the farmer
+ and the distance of the farmer's homestead from the nearest murram road
+ is also significant.
+ This means greater distance from the murram road would imply a lower score
+ given by the farmer (rater).
+ There is a negative relationship between the ratee's marital status and
+ the ratings received by the ratee.
+ If the ratee is married, the ratee receives a significantly lower score.
+ Ratings for dealers are also higher on average by 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(lm_res1$coefficients[13],digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ point (significant) and ratings for traders are significantly higher on
+ average by 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(lm_res1$coefficients[14],digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ point (also observed in table 5).
+ The total number of observations is 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(nobs(lm_res1),digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+.
  
 \end_layout
 
 \begin_layout Standard
-\paragraph_spacing onehalf
-Results from quality based rating by the raters as the dependent variable
- are interesting (table 14).
- No strong evidence can be found for the impact of farmer's gender on the
- rating.
- Female ratees receive higher quality based ratings compared to male ratees
- (significant in model 1, 2, 3, and 4).
- Results for the interaction and farmer's education dummy are similar.
- It is also noticed that with an increase in the distance of rater's homestead
- from the nearest tarmac road, the quality-based scores decline.
- Dealer dummy and trader dummy are also significant, indicating that they
- get higher quality based scores compared to millers.
+It can be observed in table 6 that the interaction between the gender of
+ the farmer and the gender of the ratee is insignificant throughout all
+ the models.
+ The positive relationship between farmer's gender and the farmer's ratings
+ is significantly consistent for location-based and price-based ratings
+ (models 3, 4, 7 and 8).
+ This is consistent with the results from table 5.
+ However, the magnitude of greater ratings from female farmers is most noticeabl
+e for location-based ratings, being highly significant too.
+ Interestingly, for quality and reputation based ratings, if the ratee is
+ a woman, the farmer's rating increases significantly.
+ However, in model 4, it is observed that for location based ratings, farmer's
+ ratings decline if the ratee is a woman (similar findings in table 5).
+ Thus, it can be inferred that female farmers give higher ratings overall
+ (proving hypothesis 2), particularly for location and price and female
+ ratees receive higher ratings from farmers for quality and reputation (disprovi
+ng hypothesis 4).
  
 \end_layout
 
 \begin_layout Standard
-\paragraph_spacing onehalf
-The positive relationship between gender of the farmer and price based rating
- given by the farmer is significant only in model 1 and model 5 (table 15).
- Nothing can be deduced about the impact of ratee's gender on the price
- based rating received by the ratee.
- The impact of the interaction and farmer's education dummies are similar
- to table 6.
- Interestingly, the negative relationship between the education dummy of
- the ratee and the price based rating from the rater is significant at the
- 10% level.
- It indicates that if the ratee has some level of education, the ratee receives
- a lower score based on price.
- Also, traders receive higher price-based ratings compared to dealers and
- millers.
+Following this, table 7 shows the results from multiple regression analysis
+ looking at the impact of ratee's gender on the self-ratings.
+ The relationship is significant only for quality, price and reputaion based
+ self-ratings.
+ It is observed that if the ratee is a woman, she significantly self-assesses
+ herself higher than the male ratees for quality and price.
+ However, for reputation, she gives herself a lower self-rating (significant).
+ These results are consistent with the findings from table 5.
+ Looking at model 1, it can also be noted that older and educated ratees
+ self-assess themselves higher significantly and married ratees self-assess
+ themselves lower significantly.
+ Consistent with table 5 results, it can be observed that traders significantly
+ give higher self-ratings while dealers give significantly lower self-ratings.
+ Henceforth, it can be inferred that for quality and price, women self-assess
+ themselves higher while for reputation, lower.
+ Here, hypothesis 3 is only consistent with the finding about reputation
+ based self-ratings.
  
 \end_layout
 
 \begin_layout Standard
-\paragraph_spacing onehalf
-Next, moving on to reputation-based ratings given by the farmers (table
- 16), it can be observed that farmer's gender has no impact, female ratees
- receive higher reputation based scores and some business interaction between
- the farmer and the ratee can result in higher reputation based score for
- the ratee.
- Thus, female input dealers, processors and millers seem to perform better
- than their male counterparts, in terms of quality and reputation.
- The gender of the rater (farmer) only matters when the ratings are provided
- based on the price and location of the ratee's business.
+Finally, table 8 looks at the relationship between farmer's and ratee's
+ gender and the differences between the farmer ratings and ratee self-ratings.
+ Here, again the standard errors are clustered at the ratee level.
+ The differences increase significantly for the overall average ratings,
+ location and price based ratings if the farmer is a woman (also for reputation
+ (model 10), when the interaction term is added).
+ This means female farmers give significantly more different ratings than
+ the self-assessments by the ratees themselves.
+ The impact of ratee's gender on the differences is interesting as the differenc
+es in ratings decline significantly for quality and price if the ratee is
+ a woman while the differences increase in the case of reputation based
+ ratings.
  
+\end_layout
+
+\begin_layout Standard
+The interaction between farmer's gender and ratee's gender is insignificant.
+ If the farmer had some business interaction with the ratee or if the farmer
+ has some level of education, the differences rise significantly.
+ If the farmer is married, the differences in ratings decline.
+ In the case of dealers and traders being rated, the differences increase
+ significantly.
+ Therefore, it can be stated that women give more different ratings than
+ self-assessments, particularly in the case of location and price.
+ The gender of the ratee only matters significantly when differences in
+ ratings based on quality, price and reputation are considered.
+ From these inferences, it can be derived that indeed self-assessments can
+ be different from the actual ratings received from the farmers (aligns
+ with the idea of hypothesis 1) and gender influences these differences.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -5746,7 +5849,7 @@ Sexpr{format( round(mean(pool$rating_overall [ pool$miller_dummy=="1"],
 
 {
 \backslash
-textit{Ratees}}            & $
+textit{Self-ratings}}            & $
 \backslash
 Sexpr{format( round(mean(pool$ratee_rating_overall [pool$ratee_fem=="0"],
  na.rm=T), digits=2),nsmall=0)}$ 
@@ -6197,7 +6300,7 @@ Sexpr{format( round(mean(pool$rating_location [ pool$miller_dummy=="1"],
 
 {
 \backslash
-textit{Ratees}}            & $
+textit{Self-ratings}}            & $
 \backslash
 Sexpr{format( round(mean(pool$rating_location_ratee [pool$ratee_fem=="0"],
  na.rm=T), digits=2),nsmall=0)}$ 
@@ -6652,7 +6755,7 @@ Sexpr{format( round(mean(pool$rating_quality [ pool$miller_dummy=="1"],
 
 {
 \backslash
-textit{Ratees}}            & $
+textit{Self-ratings}}            & $
 \backslash
 Sexpr{format( round(mean(pool$rating_quality_ratee [pool$ratee_fem=="0"],
  na.rm=T), digits=2),nsmall=0)}$ 
@@ -7107,7 +7210,7 @@ Sexpr{format( round(mean(pool$rating_price [ pool$miller_dummy=="1"], na.rm=T),
 
 {
 \backslash
-textit{Ratees}}            & $
+textit{Self-ratings}}            & $
 \backslash
 Sexpr{format( round(mean(pool$rating_price_ratee [pool$ratee_fem=="0"],
  na.rm=T), digits=2),nsmall=0)}$ 
@@ -7558,7 +7661,7 @@ Sexpr{format( round(mean(pool$rating_reputation [ pool$miller_dummy=="1"],
 
 {
 \backslash
-textit{Ratees}}            & $
+textit{Self-ratings}}            & $
 \backslash
 Sexpr{format( round(mean(pool$rating_reputation_ratee [pool$ratee_fem=="0"],
  na.rm=T), digits=2),nsmall=0)}$ 
@@ -11110,8 +11213,8 @@ Note: This table shows the results of a multiple regression analysis.
  The dependent variable is the self-rating given by the ratees and the main
  independent variable is ratee's gender.
  The dimensions based on which the self-ratings are given are overall average
- (models 1), location (models 2), quality (models 3), price (models 4) and
- reputation (models 5).
+ (model 1), location (model 2), quality (model 3), price (model 4) and reputatio
+n (model 5).
  R refers to ratees.
  
 \end_layout
