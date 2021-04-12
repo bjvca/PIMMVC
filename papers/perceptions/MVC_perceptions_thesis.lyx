@@ -2994,14 +2994,218 @@ Results
 \end_layout
 
 \begin_layout Standard
-This section focuses on the descriptive results, giving an overview of the
- gendered profiles of the raters (farmers) and ratees and analyses the averaged
- ratings from the raters and ratees (dealers or traders or millers).
+This section focuses on the results obtained from the analysis of average
+ ratings from farmers and average self-ratings given by ratees to themselves.
+ Furthermore, the regression results are also presented and discussed below.
+ 
 \end_layout
 
 \begin_layout Subsection
 \paragraph_spacing onehalf
 Average ratings
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+Average scores are obtained for the ratings given by the farmers (raters)
+ to the ratees (input dealers, processors and traders) and for the self-ratings
+ by the ratees themselves.
+ It is important to note that the results for traders and millers may suffer
+ from small sample share of women.
+ The primary goal of this section is to check whether the mean ratings obtained
+ from the dataset (presented in table 5) reiterate the hypotheses of the
+ study.
+ It is observed that the mean overall self-rating given by the ratees (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$ratee_rating_overall, na.rm=T),digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+) is higher than the mean rating from the farmers (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_overall, na.rm=T),digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+).
+ This phenomenon is consistent across all the different rating dimensions.
+ Looking at individual groups of input dealers, traders and millers in table
+ 5, the same inference can be made that self-ratings are always higher.
+ These findings support the first hypothesis.
+ 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+In order to validate hypothesis 2 from the trends in the dataset, I will
+ first look at the entire group of ratees.
+ The mean overall rating from female farmers is 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_overall [pool$farmer_fem=="1"], na.rm=T),digi
+ts=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ which is higher than the mean overall rating given by male farmers (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_overall [pool$farmer_fem=="0"], na.rm=T),digi
+ts=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+).
+ Similar pattern is noticed for location, price and reputation based ratings.
+ However, for quality based rating, male farmers give a higher rating.
+ Interestingly, these patterns vary across the groups of input dealers,
+ traders and millers.
+ For overall average ratings, location and price based ratings, female farmers
+ always give higher ratings to dealers, traders and processors.
+ Male farmers give higher ratings for quality to dealers while lower ratings
+ for quality to traders and millers when compared to their female counterparts.
+ Higher ratings for reputation of dealers and millers come from men while
+ for traders, come from women.
+ Thus, hypothesis 2 is generally true with an exception for quality and
+ reputation based ratings from the farmers.
+ 
+\end_layout
+
+\begin_layout Standard
+Next, I turn to the comparison of self-ratings from women and men.
+ For overall average self-rating, women (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$ratee_rating_overall [pool$ratee_fem=="1"],
+ na.rm=T),digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+) rate lower compared to men (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$ratee_rating_overall [pool$ratee_fem=="0"],
+ na.rm=T),digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+).
+ This is consistent for location and reputation based self-ratings.
+ However, for quality and price, men self-assess themselves lower than how
+ women self-assess themselves.
+ These findings are similar for each rating dimension in the case of input
+ dealers.
+ Self-ratings from male assembly traders are always lower than female assembly
+ traders except when they are rating for reputation.
+ The results obtained from the mean self-ratings of the entire ratee group
+ reflect also in the results for the miller group in particular.
+ However, the only exception is the overall average self-rating where male
+ millers assess themselves worse than the female millers.
+ Thus, supporting hypothesis 3, it can be stated that although women tend
+ to self-assess less favourably, for quality and price, women tend to self-asses
+s more favourably when compared to the men.
+\end_layout
+
+\begin_layout Standard
+Following this, the focus is on the gender of the ratees and the ratings
+ from the farmers.
+ Men receive lower ratings for the overall average, quality and reputation.
+ For location and price, women receive higher ratings than the men.
+ These findings are also observed for the group of input dealers across
+ the rating dimensions.
+ However, both male and female input dealers receive the same overall average
+ rating.
+ Interestingly, all male assembly traders receive lower ratings across all
+ the rating dimensions.
+ Thus, female assembly traders are perceived to be performing better.
+ In the case of millers, women always receive lower ratings, with an exception
+ for quality.
+ Thus, hypothesis 4 does not entirely align with these findings from table
+ 5.
+ Women mostly are rated lower for location and price whereas men are rated
+ worse overall and also for quality and reputation mostly.
+ 
+\end_layout
+
+\begin_layout Standard
+Next, I try to understand how men rate other men and women rate other women.
+ It is observed that women give higher ratings to other women compared to
+ men's ratings for other men, only in the case of overall average, quality
+ and reputation.
+ All female traders are always rated higher by female farmers in every dimension
+ of rating.
+ Male millers are generally rated higher by male farmers with an exception
+ for quality.
+ Women rate female input dealers higher for all aspects except for quality.
+ 
+\end_layout
+
+\begin_layout Standard
+It is interesting to note that generally, women are always rated higher
+ for quality (consistent for dealer, traders and processors), indicating
+ provision of better quality from women.
+ Similarly, men are consistently rated higher for location with an exception
+ of traders.
+ This may indicate that women (dealers and millers) are located in poorer
+ locations.
+ Some of the reasons behind that could be mobility constraints, lack of
+ capital to set up businesses in better locations and less knowledge of
+ good locations for business.
+ 
+\end_layout
+
+\begin_layout Standard
+Farmer ratings also indicate that price competitiveness of male input dealers
+ and millers are perceived to be better, women in input dealing and trading
+ and men in processing of maize are perceived to be well-reputed.
+ The rating attribute that is always scored the lowest is price competitiveness
+ and that is always scored the highest is ease of access for traders and
+ reputation for input dealers and millers.
+ Input dealers get the lowest score for ease of access and price competitiveness
+ and millers get the lowest rating for overall average, quality and reputation.
+ Thus, input dealers are overall not easy to reach while assembly traders
+ are.
+ In terms of the quality of service provided, input dealers are perceived
+ to be the best in comparison to traders and millers.
+ 
 \end_layout
 
 \begin_layout Subsection
@@ -3197,6 +3401,12 @@ The interaction between farmer's gender and ratee's gender is insignificant.
  From these inferences, it can be derived that indeed self-assessments can
  be different from the actual ratings received from the farmers (aligns
  with the idea of hypothesis 1) and gender influences these differences.
+ Looking at the intercepts in table 8, it can also be observed that the
+ coefficients are significantly negative for overall average rating differences,
+ quality, price and reputation rating differences.
+ This indicates that self-ratings are always higher than the farmer ratings,
+ particularly in the case of quality, price and reputation based ratings,
+ a strong evidence supporting hypothesis 1.
  
 \end_layout
 
