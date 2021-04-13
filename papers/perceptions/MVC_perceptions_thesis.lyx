@@ -102,7 +102,7 @@ graphicboxes
 \begin_layout Title
 \paragraph_spacing onehalf
 Gendered Perceptions in Maize Supply Chains; Subtitle: Evidence from Ugandan
- maize farmers, input dealers, assembly traders and millers
+ maize farmers, agro-input dealers, assembly traders and millers
 \end_layout
 
 \begin_layout Abstract
@@ -1587,14 +1587,13 @@ literal "true"
 
 \begin_layout Section
 \paragraph_spacing onehalf
-Data Design
+Data
 \end_layout
 
 \begin_layout Standard
 This section explains the characteristics of the sample, describes the data
- collection, gives information about the variables and gives a preliminary
- overview of the data.
- 
+ collection, gives information about the variables and discusses the validity
+ of the ratings for the analysis.
 \end_layout
 
 \begin_layout Subsection
@@ -1608,8 +1607,7 @@ The data for this study come from a survey of 1526 farming households, 78
  agro-input dealer shops, 341 assembly traders and 174 millers operating
  in the maize growing districts of Iganga, Bugiri and Namutumba in Eastern
  Uganda.
- The data were collected in July 2019 as part of a larger seed systems developme
-nt research in Uganda, targeting farmers, input dealers, traders and millers.
+ The data were collected in July 2019.
  The farmer household sample is drawn from 64 villages in the three districts.
  Using the 2012 sampling frame of Uganda National Bureau of Statistics (UBoS),
  the household sample per village was randomly allocated, proportionate
@@ -1643,167 +1641,61 @@ literal "true"
 \end_inset
 
 .
- Iganga was the largest producer in the region and country, contributing
- 13.1%, followed by Mubende (7.4%) in Central Uganda and Soroti (5.9%) in Eastern
- Uganda.
+ The district of Iganga was the largest producer in the region and country,
+ contributing 13.1%, followed by Mubende (7.4%) in Central Uganda and Soroti
+ (5.9%) in Eastern Uganda.
  The remaining districts contributed less than 4%, including Bugiri (2.7%)
  which is part of this study.
 \end_layout
 
 \begin_layout Subsection
 \paragraph_spacing onehalf
-Design: Variables 
+Variables 
 \end_layout
 
 \begin_layout Standard
 \paragraph_spacing onehalf
 The summary statistics for the main variables used in this study are presented
- in table 1.
- Ratings are classified based on location, price, quality, reputation and
- the average of all.
- The ratings can either be from the farmers (raters) or from the ratees
- themselves (self-ratings).
- The difference of rater ratings and ratee ratings for each dimension is
- also studied.
- Ratings range on a scale of 1 to 5.
- Gender of the rater and the ratee are also considered and they are dummy
- variables where 1 is female and 0 is male.
- Age of raters and ratees are defined in years.
- Marital status of raters and ratees are also a dummy variables where 1
- indicates married.
- There are also dummies for education level of raters and ratees, where
- 1 indicates some level of education.
- Distance of farmer's homestead to tarmac and murram roads are reported
- in kilometers.
- The interaction variable between rater and ratees indicates whether the
- rater and ratee had any business interaction.
- The dealer dummy identifies if the ratee is a dealer and the trader dummy
- identifies if the ratee is a trader.
- The primary variables of interest in this study are ratings (perceived
- attributes) from raters and ratees, the differences in the ratings and
- the gender of the ratee and the rater.
- In order to identify the ratees as input dealers, traders or processors,
- IDs were assigned to each of them and similarly, IDs were also assigned
- to each farmer.
+ in tables 1 and 2.
+ Each farmer rates a minimum of one input dealer or trader or miller to
+ a maximum of three input dealers or traders or millers (ratees).
+ Farmer perceptions about the ratees and ratee perceptions about themselves
+ are understood from the ratings given on four dimensions of location, quality,
+ price and reputation.
+ Also, the averages of these dimension based ratings are obtained to get
+ the overall average ratings (for both farmer ratings and self-ratings).
  
 \end_layout
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-\begin_inset Newpage newpage
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-\paragraph_spacing onehalf
-Model and Empirical Methods 
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-
-\series bold
-Fixed effects regression
-\series default
- model is used to verify whether the individual means of the ratings are
- different from the overall means.
- Ratee fixed effects are used, focusing on F-test to understand whether
- the null of individual mean ratings being same as the overall mean ratings
- can be rejected or not.
- The dependent variable is these regressions is always the ratings.
- This is tested for ratings from the farmers, self-ratings from the raters
- and the differences between the rater ratings and ratee self-ratings.
+Several methods have been proposed and used to measure respondents’ perceptions,
+ attitudes or beliefs in social science research.
  
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-
-\series bold
-Intra-class correlation coefficients
-\series default
- determine the level of agreement between the ratings which aids in proving
- the hypotheses mentioned before.
- In other words, intra-class correlation coefficients are a measure of inter
- or intra rater reliability.
- Inter or intra rater reliability in the ratings literature means levels
- of agreement between the ratings from different raters 
 \begin_inset CommandInset citation
-LatexCommand citep
-key "gwet2014handbook"
+LatexCommand citet
+key "Delavande2011"
 literal "true"
 
 \end_inset
 
-.
- In this study, this measure is applied in two different ways.
- First, inter-rater reliability is obtained for ratings from the raters
- (farmers) and ratings from the ratees for themselves.
- The comparison here is made between the rater ratings and ratee self-ratings
- to understand how different or similar they are.
- This is done for the overall averaged rating, ratings based on location,
- quality, price and reputation.
- Inter-rater agreement or intra-class correlation coefficient can range
- between 0 and 1.
- The lower it is, poorer is the agreement and the higher it is, better is
- the agreement level.
- In order to study the role of gender in these ratings, intra-class correlation
- coefficients are also obtained for male and female groups.
- Four groups are considered for analysing inter-rater reliability: (i) Both
- rater and ratee are female; (ii) Both rater and ratee are male; (iii) Rater
- is female and ratee is male; (iv) Rater is male and ratee is female.
+ survey the literature on the measurement of subjective beliefs in developing
+ countries and categorize possible methods into three groups: Likert style
+ questions, elicitation of the ‘most likely’ outcome, and a full elicitation
+ of the distribution of beliefs, most often conducted with visual aids.
+ The ratings in this study reflect likert style assessment where the scores
+ range from 1 to 5, 5 being the best score and 1 being the worst score.
+ This is the case for both farmer ratings and self-ratings from the agro-input
+ dealers, traders and millers.
  
 \end_layout
 
 \begin_layout Standard
-\paragraph_spacing onehalf
-Secondly, inter and intra-rater reliability is studied for all the ratings
- given by the raters.
- Only farmers who rated more than 6 times are considered for this analysis.
- The ICC coefficients indicating inter-rater reliability compare the ratings
- for each ratee from different farmers (raters).
- This helps to understand the level of agreement among the farmers on the
- different attributes of a particular ratee.
- The ICC coefficients indicating intra-rater reliability compare the various
- ratings given by each individual farmer.
- This shows how similar or different the farmer rates the various ratees.
- Interestingly, inter and intra rater reliability is also obtained for female
- farmer group and male farmer group.
- However, here the sample considered is where the farmers have rated more
- than 5 times.
- This gender based analysis is important to understand if the agreement
- levels can differ based on the gender of the rater.
-\end_layout
-
-\begin_layout Section
-\paragraph_spacing onehalf
-Methods
-\end_layout
-
-\begin_layout Standard
-This section deals with the methodologies and estimation models used for
- the analysis.
- In order to understand the rating patterns, mean ratings from farmers and
- mean self-ratings are described in detail in the next section.
- Ratings from farmers and self-ratings are compared based on gender of the
- farmers and the ratees.
- Also, differences in how women rate other women and how men rate other
- men are presented in section 6.
-\end_layout
-
-\begin_layout Standard
-Next, I turn to the regression models to test the hypotheses laid out in
- Section 3.
- In order to understand the impact of the farmer's gender and the ratee's
- gender on the ratings from the farmers, the following multivariate regression
- specification is used where the standard errors are clustered at the ratee
- level:
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
+Table 1 presents the variables related to the farmers in the dataset.
+ The summary statistics for ratings based on all the dimensions and the
+ overall ratings are presented.
+ Some interesting trends can be observed in the ratings.
+ For example, it is seen that about 
 \begin_inset ERT
 status open
 
@@ -1811,187 +1703,14 @@ status open
 
 
 \backslash
-begin{equation} 
-\backslash
-label{eqn} 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{array}{l}
-\end_layout
-
-\begin_layout Plain Layout
-
-Y_{ija} = 
-\backslash
-beta_0 + 
-\backslash
-beta_1*Gender(F)_{ija} + 
-\backslash
-beta_2*Gender(R)_{ja} + 
-\backslash
-beta_3*X_{ija} + 
-\backslash
-beta_4*Z_{ja} + 
-\backslash
-beta_5*
-\backslash
-Gamma_{a} + e_{ija} 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{array}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{equation}
+Sexpr{format(round(sum(table(pool$farmerID[pool$rating_location<=1]))/sum(table(
+pool$farmerID))*100,digits=0),nsmall=0)}
 \end_layout
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-Here, 
-\emph on
-
-\begin_inset Formula $Y_{ija}$
-\end_inset
-
-
-\emph default
- is the primary outcome variable, the ratings from the farmers or the difference
-s in ratings between the farmer ratings and the self-ratings.
- The ratings are categorized into overall average, location, quality, price
- and reputation.
- In equation 1, 
-\emph on
-i 
-\emph default
-is each individual farmer, 
-\emph on
-j
-\emph default
- is each individual ratee and 
-\emph on
-a
-\emph default
- can be input dealer or assembly trader or processor (ratee groups).
- The main independent variables are gender of the farmer (
-\emph on
-
-\begin_inset Formula $Gender(F)_{ija}$
-\end_inset
-
-
-\emph default
-, a dummy variable which takes the value of 1 if the farmer is a woman and
- 0 otherwise) which can vary for each individual farmer 
-\emph on
-i
-\emph default
-, each individual ratee 
-\emph on
-j
-\emph default
- and each ratee group 
-\emph on
-a
-\emph default
- and the gender of the ratee (
-\emph on
-
-\begin_inset Formula $Gender(R)_{ja}$
-\end_inset
-
-
-\emph default
-, a dummy taking the value of 1 for female ratee and 0 otherwise), varying
- for each individual ratee 
-\emph on
-j
-\emph default
- and each ratee group 
-\emph on
-a
-\emph default
-.
-
-\emph on
- 
-\end_layout
-
-\begin_layout Standard
-
-\emph on
-\begin_inset Formula $X_{ija}$
-\end_inset
-
-
-\emph default
- consists of all the control variables varying for individual farmer, ratee
- and ratee group.
- Age of the farmer, dummy for interaction between the farmer and the ratee,
- dummy variable indicating if the farmer has some level of education, distance
- of farmer's homestead to tarmac and murram roads and marital status of
- farmer (dummy for married farmers) are included.
- 
-\emph on
-
-\begin_inset Formula $Z_{ja}$
-\end_inset
-
-
-\emph default
- consists of the control variables varying for individual ratee and ratee
- group like age, education (dummy for educated ratees) and dummy variable
- for marital status of the ratee.
- The dummies for input dealer (takes the value of 1 if a dealer and 0 otherwise)
- and trader (takes the value of 1 if a trader and 0 otherwise) are contained
- in 
-\emph on
-
-\begin_inset Formula $\Gamma_{a}$
-\end_inset
-
-
-\emph default
- where the ratee being a miller is the reference category.
- The error term in the model is 
-\emph on
-
-\begin_inset Formula $e_{ija}$
-\end_inset
-
-
-\emph default
-.
- The dataset used in the regression analyses is pooled, i.e., ratings for
- dealers, traders and processors are contained in the same dataset.
- 
-\end_layout
-
-\begin_layout Standard
-Following this, for the analysis of how ratings vary if farmer (rater) and
- ratee are of the same gender, an interaction term between the farmer's
- gender and ratee's gender (both dummy variables) is added to the equation
- presented above.
- This is presented in the specification below with cluster robust standard
- errors (equation 2):
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
+ percent of the farmers rated the ratees in the lowest category on the location
+ dimension (score of 1) while about 
 \begin_inset ERT
 status open
 
@@ -1999,93 +1718,22 @@ status open
 
 
 \backslash
-begin{equation} 
-\backslash
-label{eqn} 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{array}{l}
-\end_layout
-
-\begin_layout Plain Layout
-
-Y_{ija} = 
-\backslash
-beta_0 + 
-\backslash
-beta_1*Gender(F)_{ija} + 
-\backslash
-beta_2*Gender(R)_{ja} + 
-\backslash
-beta_3*X_{ija} + 
-\backslash
-beta_4*Z_{ja} + 
-\backslash
-
-\backslash
- &
-\backslash
-quad 
-\backslash
-beta_5*
-\backslash
-Gamma_{a} + 
-\backslash
-beta_6*Gender(F)_{ija}*Gender(R)_{ja} + e_{ija} 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{array}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{equation}
+Sexpr{format(round(sum(table(pool$farmerID[pool$rating_location>=5]))/sum(table(
+pool$farmerID))*100,digits=0),nsmall=0)}
 \end_layout
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-The coefficients of interest in these models are
-\emph on
- 
-\emph default
-
-\begin_inset Formula $\beta_{1}$
-\end_inset
-
-, 
-\begin_inset Formula $\beta_{2}$
-\end_inset
-
- (equations 1 and 2) and 
-\begin_inset Formula $\beta_{6}$
-\end_inset
-
- (equation 6), showing the gender impacts on the ratings from farmers and
- the differences in farmer ratings and self-ratings.
+ percent gave the highest rating for ease of reaching the ratee (score of
+ 5).
+ Gender of the farmer is a dummy variable taking the value of 1 if the farmer
+ is a woman and 0 otherwise.
  
 \end_layout
 
 \begin_layout Standard
-The final regression model aims to study the relationship between the gender
- of the ratee and the self-ratings through multiple regression analysis:
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
+Gender based rating patterns indicate that female farmers are more inclined
+ to giving the highest score of 5 for location (
 \begin_inset ERT
 status open
 
@@ -2093,156 +1741,29 @@ status open
 
 
 \backslash
-begin{equation} 
-\backslash
-label{eqn} 
-\end_layout
+Sexpr{format(round(sum(table(pool$farmerID[pool$rating_location>=5 & pool$farmer
+_fem==
+\begin_inset Quotes erd
+\end_inset
 
-\begin_layout Plain Layout
+1
+\begin_inset Quotes erd
+\end_inset
 
+]))/sum(table(pool$farmerID[pool$farmer_fem==
+\begin_inset Quotes erd
+\end_inset
 
-\backslash
-begin{array}{l}
-\end_layout
+1
+\begin_inset Quotes erd
+\end_inset
 
-\begin_layout Plain Layout
-
-Y_{ja} = 
-\backslash
-beta_0 + 
-\backslash
-beta_1*Gender(R)_{ja} + 
-\backslash
-beta_2*Z_{ja} + 
-\backslash
-beta_4*
-\backslash
-Gamma_{a} + e_{ja} 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{array}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{equation}
+]))*100,digits=0),nsmall=0)}
 \end_layout
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-Here, the primary outcome variable of self-ratings is 
-\emph on
-
-\begin_inset Formula $Y_{ja}$
-\end_inset
-
-,
-\emph default
- 
-\emph on
-j
-\emph default
- is each individual ratee and 
-\emph on
-a
-\emph default
- can be input dealer or assembly trader or processor (ratee groups).
-
-\emph on
- 
-\emph default
-
-\begin_inset Formula $\beta_{1}$
-\end_inset
-
- indicates the relationship between the gender of the ratee and the self-rating
- from the ratee.
- Some of the variables discussed above are included in this equation.
- The main independent variable is gender of the ratee (
-\emph on
-
-\begin_inset Formula $Gender(R)_{ja}$
-\end_inset
-
-
-\emph default
-).
- 
-\emph on
-
-\begin_inset Formula $Z_{ja}$
-\end_inset
-
- 
-\emph default
-and 
-\emph on
-
-\begin_inset Formula $\Gamma_{a}$
-\end_inset
-
-
-\emph default
- consists of the control variables and the dummies for input dealer and
- trader.
- The error term in this model is 
-\emph on
-
-\begin_inset Formula $e_{ja}$
-\end_inset
-
-
-\emph default
-.
- 
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-\begin_inset Newpage newpage
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-\paragraph_spacing onehalf
-Results 
-\end_layout
-
-\begin_layout Standard
-This section focuses on the results obtained from the analysis of average
- ratings from farmers and average self-ratings given by ratees to themselves.
- Furthermore, the regression results are also presented and discussed below.
- 
-\end_layout
-
-\begin_layout Subsection
-\paragraph_spacing onehalf
-Average ratings
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-Average scores are obtained for the ratings given by the farmers (raters)
- to the ratees (input dealers, processors and traders) and for the self-ratings
- by the ratees themselves.
- It is important to note that the results for traders and millers may suffer
- from small sample share of women.
- The primary goal of this section is to check whether the mean ratings obtained
- from the dataset (presented in table 5) reiterate the hypotheses of the
- study.
- It is observed that the mean overall self-rating given by the ratees (
+ percent) compared to male farmers (
 \begin_inset ERT
 status open
 
@@ -2250,37 +1771,43 @@ status open
 
 
 \backslash
-Sexpr{format(round(mean(pool$ratee_rating_overall, na.rm=T),digits=2),nsmall=0)}
+Sexpr{format(round(sum(table(pool$farmerID[pool$rating_location>=5 & pool$farmer
+_fem==
+\begin_inset Quotes erd
+\end_inset
+
+0
+\begin_inset Quotes erd
+\end_inset
+
+]))/sum(table(pool$farmerID[pool$farmer_fem==
+\begin_inset Quotes erd
+\end_inset
+
+0
+\begin_inset Quotes erd
+\end_inset
+
+]))*100,digits=0),nsmall=0)}
 \end_layout
 
 \end_inset
 
-) is higher than the mean rating from the farmers (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(mean(pool$rating_overall, na.rm=T),digits=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
-).
- This phenomenon is consistent across all the different rating dimensions.
- Looking at individual groups of input dealers, traders and millers in table
- 5, the same inference can be made that self-ratings are always higher.
- These findings support the first hypothesis.
- 
+ percent).
+ Considering the dimensions, reputation and quality, larger shares of male
+ farmers give a rating of 5 compared to the female farmers.
+ Higher percentage of male farmers think that ease of access is poor (at
+ least level 2 score) and price competitiveness is poor (at least level
+ 2 score) while higher percentage of female farmers perceive poorer reputation
+ of the ratees (at least level 2 score).
+ Same percentage of male and female farmers perceive poor quality of services
+ from traders, millers or input dealers.
 \end_layout
 
 \begin_layout Standard
-\paragraph_spacing onehalf
-In order to validate hypothesis 2 from the trends in the dataset, I will
- first look at the entire group of ratees.
- The mean overall rating from female farmers is 
+Education and marital status are also dummies indicating whether the farmer
+ has some level of education and whether the farmer is married.
+ It is interesting to note that 
 \begin_inset ERT
 status open
 
@@ -2288,13 +1815,14 @@ status open
 
 
 \backslash
-Sexpr{format(round(mean(pool$rating_overall [pool$farmer_fem=="1"], na.rm=T),digi
-ts=2),nsmall=0)}
+Sexpr{format(round(table(farmers$hh.maize.q25)[1]/sum(table(farmers$hh.maize.q25))*1
+00,digits=0),nsmall=0)}
 \end_layout
 
 \end_inset
 
- which is higher than the mean overall rating given by male farmers (
+ percent of the farmers are women, most of them have some level of education
+ (
 \begin_inset ERT
 status open
 
@@ -2302,31 +1830,13 @@ status open
 
 
 \backslash
-Sexpr{format(round(mean(pool$rating_overall [pool$farmer_fem=="0"], na.rm=T),digi
-ts=2),nsmall=0)}
+Sexpr{format(round(table(farmers$educ)[2]/sum(table(farmers$educ))*100,digits=0)
+,nsmall=0)}
 \end_layout
 
 \end_inset
 
-).
- Similar pattern is noticed for location, price and reputation based ratings.
- However, for quality based rating, male farmers give a higher rating.
- Interestingly, these patterns vary across the groups of input dealers,
- traders and millers.
- For overall average ratings, location and price based ratings, female farmers
- always give higher ratings to dealers, traders and processors.
- Male farmers give higher ratings for quality to dealers while lower ratings
- for quality to traders and millers when compared to their female counterparts.
- Higher ratings for reputation of dealers and millers come from men while
- for traders, come from women.
- Thus, hypothesis 2 is generally true with an exception for quality and
- reputation based ratings from the farmers.
- 
-\end_layout
-
-\begin_layout Standard
-Next, I turn to the comparison of self-ratings from women and men.
- For overall average self-rating, women (
+ percent) and are married (
 \begin_inset ERT
 status open
 
@@ -2334,13 +1844,14 @@ status open
 
 
 \backslash
-Sexpr{format(round(mean(pool$ratee_rating_overall [pool$ratee_fem=="1"],
- na.rm=T),digits=2),nsmall=0)}
+Sexpr{format(round(table(farmers$married)[2]/sum(table(farmers$married))*100,dig
+its=0),nsmall=0)}
 \end_layout
 
 \end_inset
 
-) rate lower compared to men (
+ percent).
+ The average age of the farmers is 
 \begin_inset ERT
 status open
 
@@ -2348,305 +1859,58 @@ status open
 
 
 \backslash
-Sexpr{format(round(mean(pool$ratee_rating_overall [pool$ratee_fem=="0"],
- na.rm=T),digits=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
-).
- This is consistent for location and reputation based self-ratings.
- However, for quality and price, men self-assess themselves lower than how
- women self-assess themselves.
- These findings are similar for each rating dimension in the case of input
- dealers.
- Self-ratings from male assembly traders are always lower than female assembly
- traders except when they are rating for reputation.
- The results obtained from the mean self-ratings of the entire ratee group
- reflect also in the results for the miller group in particular.
- However, the only exception is the overall average self-rating where male
- millers assess themselves worse than the female millers.
- Thus, supporting hypothesis 3, it can be stated that although women tend
- to self-assess less favourably, for quality and price, women tend to self-asses
-s more favourably when compared to the men.
-\end_layout
-
-\begin_layout Standard
-Following this, the focus is on the gender of the ratees and the ratings
- from the farmers.
- Men receive lower ratings for the overall average, quality and reputation.
- For location and price, women receive higher ratings than the men.
- These findings are also observed for the group of input dealers across
- the rating dimensions.
- However, both male and female input dealers receive the same overall average
- rating.
- Interestingly, all male assembly traders receive lower ratings across all
- the rating dimensions.
- Thus, female assembly traders are perceived to be performing better.
- In the case of millers, women always receive lower ratings, with an exception
- for quality.
- Thus, hypothesis 4 does not entirely align with these findings from table
- 5.
- Women mostly are rated lower for location and price whereas men are rated
- worse overall and also for quality and reputation mostly.
- 
-\end_layout
-
-\begin_layout Standard
-Next, I try to understand how men rate other men and women rate other women.
- It is observed that women give higher ratings to other women compared to
- men's ratings for other men, only in the case of overall average, quality
- and reputation.
- All female traders are always rated higher by female farmers in every dimension
- of rating.
- Male millers are generally rated higher by male farmers with an exception
- for quality.
- Women rate female input dealers higher for all aspects except for quality.
- 
-\end_layout
-
-\begin_layout Standard
-It is interesting to note that generally, women are always rated higher
- for quality (consistent for dealer, traders and processors), indicating
- provision of better quality from women.
- Similarly, men are consistently rated higher for location with an exception
- of traders.
- This may indicate that women (dealers and millers) are located in poorer
- locations.
- Some of the reasons behind that could be mobility constraints, lack of
- capital to set up businesses in better locations and less knowledge of
- good locations for business.
- 
-\end_layout
-
-\begin_layout Standard
-Farmer ratings also indicate that price competitiveness of male input dealers
- and millers are perceived to be better, women in input dealing and trading
- and men in processing of maize are perceived to be well-reputed.
- The rating attribute that is always scored the lowest is price competitiveness
- and that is always scored the highest is ease of access for traders and
- reputation for input dealers and millers.
- Input dealers get the lowest score for ease of access and price competitiveness
- and millers get the lowest rating for overall average, quality and reputation.
- Thus, input dealers are overall not easy to reach while assembly traders
- are.
- In terms of the quality of service provided, input dealers are perceived
- to be the best in comparison to traders and millers.
- 
-\end_layout
-
-\begin_layout Subsection
-\paragraph_spacing onehalf
-Regressions 
-\end_layout
-
-\begin_layout Standard
-Tables 6, 7 and 8 present results from the regressions implemented for this
- study.
- Table 6 shows multivariate regressions with clustered standard errors (at
- the ratee level), discussing the impact of farmer's gender and ratee's
- gender on the ratings given by the farmers to the ratees.
- From model 1, it is noticeable that the impact of farmer's gender on the
- average overall rating given by the farmer is significant.
- If the farmer is a woman, the average score given by the farmer is 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(lm_res1$coefficients[2],digits=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
- higher.
- Thus, female farmers give higher ratings when compared to male farmers,
- consistent with the results from table 5.
- The relation between the gender of the ratee (dealer or trader or miller)
- and the overall average ratings given by the farmer is insignificant.
- 
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-If the farmer had some business interaction with the input dealer or trader
- or processor the farmer is rating, the rating given by the farmer is 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(lm_res1$coefficients[5],digits=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
- higher (significant).
- The education level of the farmer also significantly influences the way
- the farmer rates the ratee.
- If the farmer has some level of education, the farmer (rater) rates the
- ratee 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(lm_res1$coefficients[6],digits=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
- point higher.
- The negative relation between the average overall rating given by the farmer
- and the distance of the farmer's homestead from the nearest murram road
- is also significant.
- This means greater distance from the murram road would imply a lower score
- given by the farmer (rater).
- There is a negative relationship between the ratee's marital status and
- the ratings received by the ratee.
- If the ratee is married, the ratee receives a significantly lower score.
- Ratings for dealers are also higher on average by 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(lm_res1$coefficients[13],digits=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
- point (significant) and ratings for traders are significantly higher on
- average by 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(lm_res1$coefficients[14],digits=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
- point (also observed in table 5).
- The total number of observations is 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(nobs(lm_res1),digits=2),nsmall=0)}
+Sexpr{format(round(mean(farmers$hh.maize.q24, na.rm=T),digits=2),nsmall=0)}
 \end_layout
 
 \end_inset
 
 .
- 
+ The average distance of farmer's homestead to tarmac road is 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(farmers$hh.maize.q13, na.rm=T),digits=2),nsmall=0)}
 \end_layout
 
-\begin_layout Standard
-It can be observed in table 6 that the interaction between the gender of
- the farmer and the gender of the ratee is insignificant throughout all
- the models.
- The positive relationship between farmer's gender and the farmer's ratings
- is significantly consistent for location-based and price-based ratings
- (models 3, 4, 7 and 8).
- This is consistent with the results from table 5.
- However, the magnitude of greater ratings from female farmers is most noticeabl
-e for location-based ratings, being highly significant too.
- Interestingly, for quality and reputation based ratings, if the ratee is
- a woman, the farmer's rating increases significantly.
- However, in model 4, it is observed that for location based ratings, farmer's
- ratings decline if the ratee is a woman (similar findings in table 5).
- Thus, it can be inferred that female farmers give higher ratings overall
- (proving hypothesis 2), particularly for location and price and female
- ratees receive higher ratings from farmers for quality and reputation (disprovi
-ng hypothesis 4).
- 
-\end_layout
-
-\begin_layout Standard
-Following this, table 7 shows the results from multiple regression analysis
- looking at the impact of ratee's gender on the self-ratings.
- The relationship is significant only for quality, price and reputaion based
- self-ratings.
- It is observed that if the ratee is a woman, she significantly self-assesses
- herself higher than the male ratees for quality and price.
- However, for reputation, she gives herself a lower self-rating (significant).
- These results are consistent with the findings from table 5.
- Looking at model 1, it can also be noted that older and educated ratees
- self-assess themselves higher significantly and married ratees self-assess
- themselves lower significantly.
- Consistent with table 5 results, it can be observed that traders significantly
- give higher self-ratings while dealers give significantly lower self-ratings.
- Henceforth, it can be inferred that for quality and price, women self-assess
- themselves higher while for reputation, lower.
- Here, hypothesis 3 is only consistent with the finding about reputation
- based self-ratings.
- 
-\end_layout
-
-\begin_layout Standard
-Finally, table 8 looks at the relationship between farmer's and ratee's
- gender and the differences between the farmer ratings and ratee self-ratings.
- Here, again the standard errors are clustered at the ratee level.
- The differences increase significantly for the overall average ratings,
- location and price based ratings if the farmer is a woman (also for reputation
- (model 10), when the interaction term is added).
- This means female farmers give significantly more different ratings than
- the self-assessments by the ratees themselves.
- The impact of ratee's gender on the differences is interesting as the differenc
-es in ratings decline significantly for quality and price if the ratee is
- a woman while the differences increase in the case of reputation based
- ratings.
- 
-\end_layout
-
-\begin_layout Standard
-The interaction between farmer's gender and ratee's gender is insignificant.
- If the farmer had some business interaction with the ratee or if the farmer
- has some level of education, the differences rise significantly.
- If the farmer is married, the differences in ratings decline.
- In the case of dealers and traders being rated, the differences increase
- significantly.
- Therefore, it can be stated that women give more different ratings than
- self-assessments, particularly in the case of location and price.
- The gender of the ratee only matters significantly when differences in
- ratings based on quality, price and reputation are considered.
- From these inferences, it can be derived that indeed self-assessments can
- be different from the actual ratings received from the farmers (aligns
- with the idea of hypothesis 1) and gender influences these differences.
- Looking at the intercepts in table 8, it can also be observed that the
- coefficients are significantly negative for overall average rating differences,
- quality, price and reputation rating differences.
- This indicates that self-ratings are always higher than the farmer ratings,
- particularly in the case of quality, price and reputation based ratings,
- a strong evidence supporting hypothesis 1.
- 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage newpage
 \end_inset
 
+ kms and to murram road is 
+\begin_inset ERT
+status open
 
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(farmers$hh.maize.q14, na.rm=T),digits=2),nsmall=0)}
 \end_layout
 
-\begin_layout Section
-\paragraph_spacing onehalf
-Summary Statistics 
+\end_inset
+
+ km.
+ Dummy variable for interaction between farmers and the input dealer or
+ trader or processor is also included.
+ It is observed that 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(table(pool$interaction_yes)[2]/sum(table(pool$interaction_yes
+))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of the farmers have had some business interaction with the ratee
+ they are rating.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -3453,6 +2717,243 @@ end{table}
 \end_layout
 
 \begin_layout Standard
+Next, in table 2, summary statistics for the self-ratings from agro-input
+ dealers, traders and maize processors are given.
+ The ratees (dealers, traders and millers) seem to be very confident about
+ their reputation as among all the dimensions, the highest percentage give
+ a self-score of 5 for reputation (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(pool$id.ratee[pool$rating_reputation_ratee>=5]))/sum
+(table(pool$id.ratee))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent).
+ They seem to be the least confident about their location as among all the
+ dimensions, the highest percentage adhere to a score of at least 2 for
+ location (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(pool$id.ratee[pool$rating_location_ratee<=2]))/sum(t
+able(pool$id.ratee))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent).
+ 
+\end_layout
+
+\begin_layout Standard
+Gender, education and marital status of these supply chain actors are dummy
+ variables.
+ It is observed that women consist of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(table(dealers$hh.maize.q7)[1]/sum(table(dealers$hh.maize.q7))*100
+,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of the input dealers, only 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(table(traders$hh.maize.q7)[1]/sum(table(traders$hh.maize.q7))*100
+,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of the traders and only 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(table(millers$hh.maize.q7)[1]/sum(table(millers$hh.maize.q7))*100
+,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of the millers.
+ A very good share of these supply chain actors have some level of education
+ and are married.
+ Although the average age of the dealers, traders and millers is between
+ 35 and 40 years, there is noticeable variation in the oldest actor observed.
+ The oldest input dealer is 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(max(dealers$hh.maize.q6g, na.rm=T),digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ years old, the oldest trader is 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(max(traders$hh.maize.q6, na.rm=T),digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ years old while the oldest miller is 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(max(millers$hh.maize.q6g, na.rm=T),digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ years old.
+ 
+\end_layout
+
+\begin_layout Standard
+Looking at self-ratings based on the gender of the ratee, it is noticed
+ that among all the different dimensions, the greatest percentage of female
+ ratees rate themselves 5 for quality (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(pool$id.ratee[pool$rating_quality_ratee>=5 &
+ pool$ratee_fem==
+\begin_inset Quotes erd
+\end_inset
+
+1
+\begin_inset Quotes erd
+\end_inset
+
+]))/sum(table(pool$id.ratee[pool$ratee_fem==
+\begin_inset Quotes erd
+\end_inset
+
+1
+\begin_inset Quotes erd
+\end_inset
+
+]))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent) and the highest percentage of male ratees rate themselves 5 for
+ reputation (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(pool$id.ratee[pool$rating_reputation_ratee>=5
+ & pool$ratee_fem==
+\begin_inset Quotes erd
+\end_inset
+
+0
+\begin_inset Quotes erd
+\end_inset
+
+]))/sum(table(pool$id.ratee[pool$ratee_fem==
+\begin_inset Quotes erd
+\end_inset
+
+0
+\begin_inset Quotes erd
+\end_inset
+
+]))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent).
+ Giving self-scores of 5 is more common in women for location, price and
+ quality.
+ However, male ratees think themselves to be more well reputed.
+ Indeed, women think the quality of their services or products are way better
+ as they never rate themselves below 3 and men think they are well reputed
+ as only 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(pool$id.ratee[pool$rating_reputation_ratee<=2
+ & pool$ratee_fem==
+\begin_inset Quotes erd
+\end_inset
+
+0
+\begin_inset Quotes erd
+\end_inset
+
+]))/sum(table(pool$id.ratee[pool$ratee_fem==
+\begin_inset Quotes erd
+\end_inset
+
+0
+\begin_inset Quotes erd
+\end_inset
+
+]))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of them rate themselves below 3.
+ 
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -3484,7 +2985,7 @@ hline
 \backslash
 multicolumn{4}{c}{
 \backslash
-textit{Summary Statistics}} 
+textit{Summary Statistics (Ratees)}} 
 \backslash
 
 \backslash
@@ -3508,7 +3009,7 @@ cline{2-5}
 \backslash
 multicolumn{4} {c} {
 \backslash
-textit{Input Dealers}}  
+textit{Agro-Input Dealers}}  
 \backslash
 
 \backslash
@@ -3740,7 +3241,7 @@ Sexpr{format( round(max(dealers$educ, na.rm=T), digits=2),nsmall=0)}$
 
 {
 \backslash
-textit{Married}}       & $
+textit{Marital Status}}       & $
 \backslash
 Sexpr{format( round(mean(dealers$married, na.rm=T), digits=2),nsmall=0)}$
         & $
@@ -3980,7 +3481,7 @@ Sexpr{format( round(max(traders$educ, na.rm=T), digits=2),nsmall=0)}$
 
 {
 \backslash
-textit{Married}}       & $
+textit{Marital Status}}       & $
 \backslash
 Sexpr{format( round(mean(traders$married, na.rm=T), digits=2),nsmall=0)}$
         & $
@@ -4220,7 +3721,7 @@ Sexpr{format( round(max(millers$educ, na.rm=T), digits=2),nsmall=0)}$
 
 {
 \backslash
-textit{Married}}       & $
+textit{Marital Status}}       & $
 \backslash
 Sexpr{format( round(mean(millers$married, na.rm=T), digits=2),nsmall=0)}$
         & $
@@ -4280,9 +3781,52 @@ end{table}
 
 \end_layout
 
-\begin_layout Section
+\begin_layout Standard
 \paragraph_spacing onehalf
-F-statistics 
+The primary variables of interest in this study are ratings (perceived attribute
+s) from farmers (raters) and self-ratings (perceived self-attributes) from
+ ratees and the gender of the farmer and the ratee.
+ In order to identify the ratees as input dealers, traders or processors,
+ IDs were assigned to each of them and similarly, IDs were also assigned
+ to each farmer.
+ 
+\end_layout
+
+\begin_layout Subsection
+\paragraph_spacing onehalf
+Validity of ratings
+\end_layout
+
+\begin_layout Standard
+Understanding whether the ratings are signaling anything for further analysis
+ is important.
+ This will give better insights about the validity of the perceptions.
+ I start with 
+\series bold
+Fixed effects regression
+\series default
+ model to verify whether the individual means of the ratings are different
+ from the overall means.
+ Ratee fixed effects are used, focusing on F-test for the analysis.
+ The dependent variable in these regressions is always the ratings.
+ This is tested for ratings from the farmers and the differences between
+ the farmer ratings and ratee self-ratings.
+ The F statistics obtained are presented in table 3.
+ It can be inferred that the null of individual mean ratings being equal
+ to overall mean ratings is always rejected.
+ 
+\end_layout
+
+\begin_layout Standard
+This can further indicate that individual rating given by farmers is different
+ for everyone.
+ All ratees are not rated in the same way.
+ Also, tested for location, quality, price and reputation -based ratings
+ along with overall averaged ratings, it can be deduced that individuals
+ are always rated differently.
+ This observed difference in the ratings can be attributed to various factors.
+ This study focuses on one of those, gender.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -4503,9 +4047,176 @@ end{table}
 
 \end_layout
 
-\begin_layout Section
+\begin_layout Standard
 \paragraph_spacing onehalf
-ICC
+Next, I look at 
+\series bold
+intra-class correlation (ICC) 
+\series default
+coefficients determining the level of agreement between the ratings.
+ In other words, intra-class correlation coefficients are a measure of inter
+ or intra rater reliability.
+ Inter or intra rater reliability in the ratings literature means levels
+ of agreement between the ratings from different raters 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "gwet2014handbook"
+literal "true"
+
+\end_inset
+
+.
+ Inter rater reliability (agreement) looks at how close the ratings from
+ different farmers are for an individual ratee while intra rater reliability
+ (agreement) looks at how close the different ratings from an individual
+ farmer are.
+ 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+Intra-class correlation coefficient can range between 0 and 1.
+ The lower it is, poorer is the agreement and the higher it is, better is
+ the agreement level.
+ In this context, inter and intra-rater reliability is studied for all the
+ ratings given by the raters (farmers).
+ Only farmers who rated more than 6 times are considered for this analysis.
+ The ICC coefficients indicating inter-rater reliability compare the ratings
+ for each ratee from different farmers (raters).
+ This helps to understand the level of agreement among the farmers on the
+ different attributes of a particular ratee.
+ The ICC coefficients indicating intra-rater reliability compare the various
+ ratings given by each individual farmer.
+ This shows how similar or different the farmer rates the various ratees.
+ 
+\end_layout
+
+\begin_layout Standard
+Table 4 presents the ICC coefficients.
+ Firstly, it is observed that raters (farmers) agree decently on overall
+ ratings given to ratees.
+ The ICC coefficient being 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(icc1a.fn(icc_recast_overall6)$icc1a,digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+, it can be deduced that the ratings captured in the survey are not entirely
+ random or untrue.
+ However, the level of agreement among the raters (farmers) drop majorly
+ for quality (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(icc1a.fn(icc_recast_qual)$icc1a,digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+) and reputation (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(icc1a.fn(icc_recast_rep)$icc1a,digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+).
+ For location and price based ratings, the agreement levels are higher (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(icc1a.fn(icc_recast_loc)$icc1a,digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(icc1a.fn(icc_recast_price)$icc1a,digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+).
+ This is expected as location and prices are observable factors an hence,
+ ratings for these factors should be more similar compared to non-observable
+ attributes like quality and reputation.
+ 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+Second, looking at overall averaged rating pattern, it can be derived that
+ every farmer rates in a similar way every dealer or trader or miller.
+ This is because the ICC coefficient is 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(icc1b.fn(icc_recast_overall6)$icc1b,digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ (table 4), indicating a very decent level of agreement.
+ Similar high levels of agreement is noticed for location (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(icc1b.fn(icc_recast_loc)$icc1b,digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+) and reputation (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(icc1b.fn(icc_recast_rep)$icc1b,digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+) based ratings.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -4525,7 +4236,7 @@ begin{center}
 \backslash
 begin{tabular}{@{
 \backslash
-extracolsep{5pt}}lccc}  
+extracolsep{5pt}}lcc}  
 \backslash
 
 \backslash
@@ -4539,9 +4250,9 @@ hline
 \backslash
 [-1.8ex]   & 
 \backslash
-multicolumn{3}{c}{
+multicolumn{2}{c}{
 \backslash
-textit{Intra-class correlation coefficients}} 
+textit{Intraclass correlation coefficients}} 
 \backslash
 
 \backslash
@@ -4552,13 +4263,13 @@ textit{Intra-class correlation coefficients}}
 
 
 \backslash
-cline{2-4} 
+cline{2-3} 
 \backslash
 
 \backslash
 [-1.8ex] & 
 \backslash
-multicolumn{2} {c} {
+multicolumn{1} {c} {
 \backslash
 textit{Inter-Rater Reliability}} &  
 \backslash
@@ -4573,22 +4284,6 @@ textit{Intra-Rater Reliability}}
 
 \begin_layout Plain Layout
 
-
-\backslash
-cline{2-4} 
-\backslash
-
-\backslash
-[-1.8ex] & 
-\backslash
-multicolumn{1} {c} {Raters and Ratees} &  
-\backslash
-multicolumn{1} {c} {Only Raters} &  
-\backslash
-multicolumn{1} {c} {Only Raters}  
-\backslash
-
-\backslash
   
 \backslash
 hline 
@@ -4600,9 +4295,7 @@ hline
 
 \begin_layout Plain Layout
 
-{Overall}                  & $
-\backslash
-Sexpr{format(round(icc1a.fn(icc_overall)$icc1a,digits=2),nsmall=0)}$ 
+{Overall}                 
 \end_layout
 
 \begin_layout Plain Layout
@@ -4632,9 +4325,7 @@ Sexpr{format(round(icc1b.fn(icc_recast_overall6)$icc1b,digits=2),nsmall=0)}$
 
 \begin_layout Plain Layout
 
-{Location}                  & $
-\backslash
-Sexpr{format(round(icc1a.fn(icc_loc)$icc1a,digits=2),nsmall=0)}$ 
+{Location}                
 \end_layout
 
 \begin_layout Plain Layout
@@ -4657,9 +4348,7 @@ Sexpr{format(round(icc1b.fn(icc_recast_loc)$icc1b,digits=2),nsmall=0)}$
 
 \begin_layout Plain Layout
 
-{Quality}                  & $
-\backslash
-Sexpr{format(round(icc1a.fn(icc_qual)$icc1a,digits=2),nsmall=0)}$ 
+{Quality}                 
 \end_layout
 
 \begin_layout Plain Layout
@@ -4684,9 +4373,7 @@ Sexpr{format(round(icc1b.fn(icc_recast_qual)$icc1b,digits=2),nsmall=0)}$
 
 \begin_layout Plain Layout
 
-{Price}                  & $
-\backslash
-Sexpr{format(round(icc1a.fn(icc_price)$icc1a,digits=2),nsmall=0)}$ 
+{Price}             
 \end_layout
 
 \begin_layout Plain Layout
@@ -4711,9 +4398,7 @@ Sexpr{format(round(icc1b.fn(icc_recast_price)$icc1b,digits=2),nsmall=0)}$
 
 \begin_layout Plain Layout
 
-{Reputation}                  & $
-\backslash
-Sexpr{format(round(icc1a.fn(icc_rep)$icc1a,digits=2),nsmall=0)}$ 
+{Reputation}                
 \end_layout
 
 \begin_layout Plain Layout
@@ -4759,21 +4444,18 @@ scriptsize
 
 \begin_layout Plain Layout
 
-Note:- ICC(Inter-Rater Reliability, Raters and Ratees): Inter-rater reliability
- here indicates the level of agreement between the ratings given by the
- farmers (raters) and the ratee self-ratings.
- The sample consists of all the raters and ratees (input dealers, traders
- and processors).
+Note:- The sample consists of all the raters and ratees (agro-input dealers,
+ traders and processors).
  The averaged overall ratings, ratings based on location, quality, price
  and reputation are taken into account.
- ICC (Inter-Rater Reliability, Only Raters): Inter-rater reliability here
- indicates the level of agreement between the ratings given by different
- individual farmer (rater) for the same ratee.
+ ICC (Inter-Rater Reliability): Inter-rater reliability here indicates the
+ level of agreement between the ratings given by different individual farmer
+ (rater) for the same ratee.
  Here, the ratee being rated is constant during the comparison of the ratings.
  The sample consists of only the farmers who have rated more than 6 times.
- ICC (Intra-Rater Reliability, Only Raters): Intra-rater reliability here
- focuses on the agreement between the different ratings given by each individual
- rater for different ratees.
+ ICC (Intra-Rater Reliability): Intra-rater reliability here focuses on
+ the agreement between the different ratings given by each individual rater
+ for different ratees.
  Here, the farmer who has rated more than 6 times is constant during the
  comparison of the ratings.
  
@@ -4801,9 +4483,709 @@ end{table}
 
 \end_layout
 
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 \paragraph_spacing onehalf
+Methods
+\end_layout
+
+\begin_layout Standard
+This section deals with the methodologies and estimation models used for
+ the analysis.
+ In order to understand the rating patterns, mean ratings from farmers and
+ mean self-ratings are described in detail in the next section.
+ Ratings from farmers and self-ratings are compared based on gender of the
+ farmers and the ratees.
+ Also, differences in how women rate other women and how men rate other
+ men are presented in section 6.
+\end_layout
+
+\begin_layout Standard
+Next, I turn to the regression models to test the hypotheses laid out in
+ Section 3.
+ In order to understand the impact of the farmer's gender and the ratee's
+ gender on the ratings from the farmers, the following multivariate regression
+ specification is used where the standard errors are clustered at the ratee
+ level:
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{equation} 
+\backslash
+label{eqn} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{array}{l}
+\end_layout
+
+\begin_layout Plain Layout
+
+Y_{ija} = 
+\backslash
+beta_0 + 
+\backslash
+beta_1*Gender(F)_{ija} + 
+\backslash
+beta_2*Gender(R)_{ja} + 
+\backslash
+beta_3*X_{ija} + 
+\backslash
+beta_4*Z_{ja} + 
+\backslash
+beta_5*
+\backslash
+Gamma_{a} + e_{ija} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{array}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{equation}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Here, 
+\emph on
+
+\begin_inset Formula $Y_{ija}$
+\end_inset
+
+
+\emph default
+ is the primary outcome variable, the ratings from the farmers or the difference
+s in ratings between the farmer ratings and the self-ratings.
+ The ratings are categorized into overall average, location, quality, price
+ and reputation.
+ In equation 1, 
+\emph on
+i 
+\emph default
+is each individual farmer, 
+\emph on
+j
+\emph default
+ is each individual ratee and 
+\emph on
+a
+\emph default
+ can be an agro-input dealer or assembly trader or processor (ratee groups).
+ The main independent variables are gender of the farmer (
+\emph on
+
+\begin_inset Formula $Gender(F)_{ija}$
+\end_inset
+
+
+\emph default
+, a dummy variable which takes the value of 1 if the farmer is a woman and
+ 0 otherwise) which can vary for each individual farmer 
+\emph on
+i
+\emph default
+, each individual ratee 
+\emph on
+j
+\emph default
+ and each ratee group 
+\emph on
+a
+\emph default
+ and the gender of the ratee (
+\emph on
+
+\begin_inset Formula $Gender(R)_{ja}$
+\end_inset
+
+
+\emph default
+, a dummy taking the value of 1 for female ratee and 0 otherwise), varying
+ for each individual ratee 
+\emph on
+j
+\emph default
+ and each ratee group 
+\emph on
+a
+\emph default
+.
+
+\emph on
+ 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+\begin_inset Formula $X_{ija}$
+\end_inset
+
+
+\emph default
+ consists of all the control variables varying for individual farmer, ratee
+ and ratee group.
+ Age of the farmer, dummy for interaction between the farmer and the ratee,
+ dummy variable indicating if the farmer has some level of education, distance
+ of farmer's homestead to tarmac and murram roads and marital status of
+ farmer (dummy for married farmers) are included.
+ 
+\emph on
+
+\begin_inset Formula $Z_{ja}$
+\end_inset
+
+
+\emph default
+ consists of the control variables varying for individual ratee and ratee
+ group like age, education (dummy for educated ratees) and dummy variable
+ for marital status of the ratee.
+ The dummies for input dealer (takes the value of 1 if a dealer and 0 otherwise)
+ and trader (takes the value of 1 if a trader and 0 otherwise) are contained
+ in 
+\emph on
+
+\begin_inset Formula $\Gamma_{a}$
+\end_inset
+
+
+\emph default
+ where the ratee being a miller is the reference category.
+ The error term in the model is 
+\emph on
+
+\begin_inset Formula $e_{ija}$
+\end_inset
+
+
+\emph default
+.
+ The dataset used in the regression analyses is pooled, i.e., ratings for
+ dealers, traders and processors are contained in the same dataset.
+ 
+\end_layout
+
+\begin_layout Standard
+Following this, for the analysis of how ratings vary if farmer (rater) and
+ ratee are of the same gender, an interaction term between the farmer's
+ gender and ratee's gender (both dummy variables) is added to the equation
+ presented above.
+ This is presented in the specification below with cluster robust standard
+ errors (equation 2):
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{equation} 
+\backslash
+label{eqn} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{array}{l}
+\end_layout
+
+\begin_layout Plain Layout
+
+Y_{ija} = 
+\backslash
+beta_0 + 
+\backslash
+beta_1*Gender(F)_{ija} + 
+\backslash
+beta_2*Gender(R)_{ja} + 
+\backslash
+beta_3*X_{ija} + 
+\backslash
+beta_4*Z_{ja} + 
+\backslash
+
+\backslash
+ &
+\backslash
+quad 
+\backslash
+beta_5*
+\backslash
+Gamma_{a} + 
+\backslash
+beta_6*Gender(F)_{ija}*Gender(R)_{ja} + e_{ija} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{array}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{equation}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The coefficients of interest in these models are
+\emph on
+ 
+\emph default
+
+\begin_inset Formula $\beta_{1}$
+\end_inset
+
+, 
+\begin_inset Formula $\beta_{2}$
+\end_inset
+
+ (equations 1 and 2) and 
+\begin_inset Formula $\beta_{6}$
+\end_inset
+
+ (equation 6), showing the gender impacts on the ratings from farmers and
+ the differences in farmer ratings and self-ratings.
+ 
+\end_layout
+
+\begin_layout Standard
+The final regression model aims to study the relationship between the gender
+ of the ratee and the self-ratings through multiple regression analysis:
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{equation} 
+\backslash
+label{eqn} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{array}{l}
+\end_layout
+
+\begin_layout Plain Layout
+
+Y_{ja} = 
+\backslash
+beta_0 + 
+\backslash
+beta_1*Gender(R)_{ja} + 
+\backslash
+beta_2*Z_{ja} + 
+\backslash
+beta_4*
+\backslash
+Gamma_{a} + e_{ja} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{array}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{equation}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Here, the primary outcome variable of self-ratings is 
+\emph on
+
+\begin_inset Formula $Y_{ja}$
+\end_inset
+
+,
+\emph default
+ 
+\emph on
+j
+\emph default
+ is each individual ratee and 
+\emph on
+a
+\emph default
+ can be input dealer or assembly trader or processor (ratee groups).
+
+\emph on
+ 
+\emph default
+
+\begin_inset Formula $\beta_{1}$
+\end_inset
+
+ indicates the relationship between the gender of the ratee and the self-rating
+ from the ratee.
+ Some of the variables discussed above are included in this equation.
+ The main independent variable is gender of the ratee (
+\emph on
+
+\begin_inset Formula $Gender(R)_{ja}$
+\end_inset
+
+
+\emph default
+).
+ 
+\emph on
+
+\begin_inset Formula $Z_{ja}$
+\end_inset
+
+ 
+\emph default
+and 
+\emph on
+
+\begin_inset Formula $\Gamma_{a}$
+\end_inset
+
+
+\emph default
+ consists of the control variables and the dummies for input dealer and
+ trader.
+ The error term in this model is 
+\emph on
+
+\begin_inset Formula $e_{ja}$
+\end_inset
+
+
+\emph default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+An essential discussion is the motivation behind the inclusion of the control
+ variables discussed in the models above.
+ Controlling for education is important as correlation between male farmer
+ and the rating from the farmer maybe confounded by education.
+ This is because male farmers are more likely to receive education.
+ Similarly, since women have only started farming activities in the recent
+ decades, most of the male farmers will be older which motivates to control
+ for age of the farmer.
+ Women have lower chances of business interactions and have limited exposure.
+ Thus, male farmers will be interacting more, giving higher ratings to the
+ ratees.
+ Therefore, the dummy for interaction is included as a control variable.
+ Women from more developed areas generally tend to get involved in activities
+ generating income.
+ Thus, most of the female farmers maybe located near tarmac roads, ensuring
+ easier reach to the dealers, traders and processors (more favourable ratings).
+ Similar argument can be used for murram roads.
+ Hence, controlling for distance of farmer's homestead from tarmac and murram
+ roads can be justified.
+ If the farmer is married, chances are that the farmer is a man (married
+ women devote most of their time to responsibilities at home), so the rating
+ magnitude may be due to the marital status, indicating the need to control
+ for farmer's marital status.
+ 
+\end_layout
+
+\begin_layout Standard
+Male ratees are likely to be older as they stay in income-generating activities
+ for longer time, justifying the inclusion of age of ratee as a control.
+ Men who are dealers, traders or millers have higher chances of having education
+ and if the ratee is married, it is more likely that the ratee is a man.
+ Thus, controlling for education and marital status of the ratee is also
+ important.
+ 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\paragraph_spacing onehalf
+Results 
+\end_layout
+
+\begin_layout Standard
+This section focuses on the results obtained from the analysis of average
+ ratings from farmers and average self-ratings given by ratees to themselves.
+ Furthermore, the regression results are also presented and discussed below.
+ 
+\end_layout
+
+\begin_layout Subsection
+\paragraph_spacing onehalf
 Average ratings
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+Average scores are obtained for the ratings given by the farmers (raters)
+ to the ratees (agro-input dealers, processors and traders) and for the
+ self-ratings by the ratees themselves.
+ It is important to note that the results for traders and millers may suffer
+ from small sample share of women.
+ The primary goal of this section is to check whether the mean ratings obtained
+ from the dataset (presented in table 5) reiterate the hypotheses of the
+ study.
+ It is observed that the mean overall self-rating given by the ratees (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$ratee_rating_overall, na.rm=T),digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+) is higher than the mean rating from the farmers (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_overall, na.rm=T),digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+).
+ This phenomenon is consistent across all the different rating dimensions.
+ Looking at individual groups of input dealers, traders and millers in table
+ 5, the same inference can be made that self-ratings are always higher.
+ These findings support the first hypothesis.
+ 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+In order to validate hypothesis 2 from the trends in the dataset, I will
+ first look at the entire group of ratees.
+ The mean overall rating from female farmers is 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_overall [pool$farmer_fem=="1"], na.rm=T),digi
+ts=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ which is higher than the mean overall rating given by male farmers (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$rating_overall [pool$farmer_fem=="0"], na.rm=T),digi
+ts=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+).
+ Similar pattern is noticed for location, price and reputation based ratings.
+ However, for quality based rating, male farmers give a higher rating.
+ Interestingly, these patterns vary across the groups of input dealers,
+ traders and millers.
+ For overall average ratings, location and price based ratings, female farmers
+ always give better scores to dealers, traders and processors.
+ Male farmers give better scores for quality to dealers while lower scores
+ for quality to traders and millers when compared to their female counterparts.
+ More favourable scores for reputation of dealers and millers come from
+ men while for traders, come from women.
+ Thus, hypothesis 2 is generally true with an exception for quality and
+ reputation based ratings from the farmers.
+ 
+\end_layout
+
+\begin_layout Standard
+Next, I turn to the comparison of self-ratings from women and men.
+ For overall average self-rating, women (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$ratee_rating_overall [pool$ratee_fem=="1"],
+ na.rm=T),digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+) rate lower compared to men (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(pool$ratee_rating_overall [pool$ratee_fem=="0"],
+ na.rm=T),digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+).
+ This is consistent for location and reputation based self-ratings.
+ However, for quality and price, men self-assess themselves lower than how
+ women self-assess themselves.
+ These findings are similar for each rating dimension in the case of input
+ dealers.
+ Self-ratings from male assembly traders are always lower than female assembly
+ traders except when they are rating for reputation.
+ The results obtained from the mean self-ratings of the entire ratee group
+ reflect also in the results for the miller group in particular.
+ However, the only exception is the overall average self-rating where male
+ millers assess themselves worse than the female millers.
+ Thus, supporting hypothesis 3, it can be stated that although women tend
+ to self-assess less favourably, for quality and price, women tend to self-asses
+s more favourably when compared to the men.
+\end_layout
+
+\begin_layout Standard
+Following this, the focus is on the gender of the ratees and the ratings
+ from the farmers.
+ Men receive less favourable ratings for the overall average, quality and
+ reputation.
+ For location and price, women receive better scores than the men.
+ These findings are also observed for the group of agro-input dealers across
+ the rating dimensions.
+ However, both male and female input dealers receive the same overall average
+ rating.
+ Interestingly, all male assembly traders receive worse scores across all
+ the rating dimensions.
+ Thus, female assembly traders are perceived to be performing better.
+ In the case of millers, women always receive less favourable ratings, with
+ an exception for quality.
+ Thus, hypothesis 4 does not entirely align with these findings from table
+ 5.
+ Women mostly are rated lower for location and price whereas men are rated
+ worse overall and also for quality and reputation mostly.
+ 
+\end_layout
+
+\begin_layout Standard
+Next, I try to understand how men rate other men and women rate other women.
+ It is observed that women give more favourable ratings to other women compared
+ to men's ratings for other men, only in the case of overall average, quality
+ and reputation.
+ All female traders are always rated higher by female farmers in every dimension
+ of rating.
+ Male millers are generally rated higher by male farmers with an exception
+ for quality.
+ Women rate female agro-input dealers higher for all aspects except for
+ quality.
+ 
+\end_layout
+
+\begin_layout Standard
+It is interesting to note that generally, women are always rated higher
+ for quality (consistent for dealer, traders and processors), indicating
+ provision of better quality from women.
+ Similarly, men are consistently rated higher for location with an exception
+ of traders.
+ This may indicate that women (dealers and millers) are located in poorer
+ locations.
+ Some of the reasons behind that could be mobility constraints, lack of
+ capital to set up businesses in better locations and less knowledge of
+ good locations for business.
+ 
+\end_layout
+
+\begin_layout Standard
+Farmer ratings also indicate that price competitiveness of male input dealers
+ and millers are perceived to be better, women in input dealing and trading
+ and men in processing of maize are perceived to be well-reputed.
+ The rating attribute that is always scored the lowest is price competitiveness
+ and that is always scored the highest is ease of access for traders and
+ reputation for agro-input dealers and millers.
+ Input dealers get the lowest score for ease of access and price competitiveness
+ and millers get the lowest rating for overall average, quality and reputation.
+ Thus, agro-input dealers are overall not easy to reach while assembly traders
+ are.
+ In terms of the quality of service provided, input dealers are perceived
+ to be the best in comparison to traders and millers.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -4893,7 +5275,7 @@ cline{2-13}
 \backslash
 multicolumn{3} {c} {All Ratees} &  
 \backslash
-multicolumn{3} {c} {Input Dealers} &  
+multicolumn{3} {c} {Agro-Input Dealers} &  
 \backslash
 multicolumn{3} {c} {Assembly Traders} &  
 \backslash
@@ -7247,13 +7629,206 @@ end{landscape}
 
 \end_layout
 
-\begin_layout Standard
-
+\begin_layout Subsection
+\paragraph_spacing onehalf
+Regressions 
 \end_layout
 
-\begin_layout Section
+\begin_layout Standard
+Tables 6, 7 and 8 present results from the regressions implemented for this
+ study.
+ Table 6 shows multivariate regressions with clustered standard errors (at
+ the ratee level), discussing the impact of farmer's gender and ratee's
+ gender on the ratings given by the farmers to the ratees.
+ From model 1, it is noticeable that the impact of farmer's gender on the
+ average overall rating given by the farmer is significant.
+ If the farmer is a woman, the average score given by the farmer is 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(lm_res1$coefficients[2],digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ higher.
+ Thus, female farmers give more favourable ratings when compared to male
+ farmers, consistent with the results from table 5.
+ The relation between the gender of the ratee (dealer or trader or miller)
+ and the overall average ratings given by the farmer is insignificant.
+ 
+\end_layout
+
+\begin_layout Standard
 \paragraph_spacing onehalf
-Regressions (Ratings from farmers)
+If the farmer had some business interaction with the input dealer or trader
+ or processor the farmer is rating, the rating given by the farmer is 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(lm_res1$coefficients[5],digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ higher (significant).
+ The education level of the farmer also significantly influences the way
+ the farmer rates the ratee.
+ If the farmer has some level of education, the farmer (rater) rates the
+ ratee 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(lm_res1$coefficients[6],digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ point higher.
+ The negative relation between the average overall rating given by the farmer
+ and the distance of the farmer's homestead from the nearest murram road
+ is also significant.
+ This means greater distance from the murram road would imply a lower score
+ given by the farmer (rater).
+ There is a negative relationship between the ratee's marital status and
+ the ratings received by the ratee.
+ If the ratee is married, the ratee receives a significantly lower score.
+ Ratings for dealers are also higher on average by 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(lm_res1$coefficients[13],digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ point (significant) and ratings for traders are significantly higher on
+ average by 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(lm_res1$coefficients[14],digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ point (also observed in table 5).
+ The total number of observations is 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(nobs(lm_res1),digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+It can be observed in table 6 that the interaction between the gender of
+ the farmer and the gender of the ratee is insignificant throughout all
+ the models.
+ The positive relationship between farmer's gender and the farmer's ratings
+ is significantly consistent for location-based and price-based ratings
+ (models 3, 4, 7 and 8).
+ This is consistent with the results from table 5.
+ However, the magnitude of greater ratings from female farmers is most noticeabl
+e for location-based ratings, being highly significant too.
+ Interestingly, for quality and reputation based ratings, if the ratee is
+ a woman, the farmer's rating increases significantly.
+ However, in model 4, it is observed that for location based ratings, farmer's
+ ratings decline if the ratee is a woman (similar findings in table 5).
+ Thus, it can be inferred that female farmers give more favourable scores
+ overall (proving hypothesis 2), particularly for location and price and
+ female ratees receive better scores from farmers for quality and reputation
+ (disproving hypothesis 4).
+ 
+\end_layout
+
+\begin_layout Standard
+Following this, table 7 shows the results from multiple regression analysis
+ looking at the impact of ratee's gender on the self-ratings.
+ The relationship is significant only for quality, price and reputaion based
+ self-ratings.
+ It is observed that if the ratee is a woman, she significantly self-assesses
+ herself higher than the male ratees for quality and price.
+ However, for reputation, she gives herself a lower self-rating (significant).
+ These results are consistent with the findings from table 5.
+ Looking at model 1, it can also be noted that older and educated ratees
+ self-assess themselves higher significantly and married ratees self-assess
+ themselves lower significantly.
+ Consistent with table 5 results, it can be observed that traders significantly
+ give higher self-ratings while dealers give significantly lower self-ratings.
+ Henceforth, it can be inferred that for quality and price, women self-assess
+ themselves higher while for reputation, lower.
+ Here, hypothesis 3 is only consistent with the finding about reputation
+ based self-ratings.
+ 
+\end_layout
+
+\begin_layout Standard
+Finally, table 8 looks at the relationship between farmer's and ratee's
+ gender and the differences between the farmer ratings and ratee self-ratings.
+ Here, again the standard errors are clustered at the ratee level.
+ The differences increase significantly for the overall average ratings,
+ location and price based ratings if the farmer is a woman (also for reputation
+ (model 10), when the interaction term is added).
+ This means female farmers give significantly more different ratings than
+ the self-assessments by the ratees themselves.
+ The impact of ratee's gender on the differences is interesting as the differenc
+es in ratings decline significantly for quality and price if the ratee is
+ a woman while the differences increase in the case of reputation based
+ ratings.
+ 
+\end_layout
+
+\begin_layout Standard
+The interaction between farmer's gender and ratee's gender is insignificant.
+ If the farmer had some business interaction with the ratee or if the farmer
+ has some level of education, the differences rise significantly.
+ If the farmer is married, the differences in ratings decline.
+ In the case of dealers and traders being rated, the differences increase
+ significantly.
+ Therefore, it can be stated that women give more different ratings than
+ self-assessments, particularly in the case of location and price.
+ The gender of the ratee only matters significantly when differences in
+ ratings based on quality, price and reputation are considered.
+ From these inferences, it can be derived that indeed self-assessments can
+ be different from the actual ratings received from the farmers (aligns
+ with the idea of hypothesis 1) and gender influences these differences.
+ Looking at the intercepts in table 8, it can also be observed that the
+ coefficients are significantly negative for overall average rating differences,
+ quality, price and reputation rating differences.
+ This indicates that self-ratings are always higher than the farmer ratings,
+ particularly in the case of quality, price and reputation based ratings,
+ a strong evidence supporting hypothesis 1.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -9782,8 +10357,8 @@ tiny
 
 \begin_layout Plain Layout
 
-Note: Standard errors are clustered at the ratee level (input dealers, traders
- and millers).
+Note: Standard errors are clustered at the ratee level (agro-input dealers,
+ traders and millers).
  The dependent variable is the rating given by the farmers and the main
  independent variables are farmer's and ratee's gender.
  The dimensions based on which the ratings are given are overall average
@@ -9817,11 +10392,6 @@ end{landscape}
 \end_inset
 
 
-\end_layout
-
-\begin_layout Section
-\paragraph_spacing onehalf
-Regressions (ratings from ratees)
 \end_layout
 
 \begin_layout Standard
@@ -10676,11 +11246,6 @@ end{table}
 \end_inset
 
 
-\end_layout
-
-\begin_layout Section
-\paragraph_spacing onehalf
-Regressions (differences in ratings)
 \end_layout
 
 \begin_layout Standard
@@ -13206,8 +13771,8 @@ tiny
 
 \begin_layout Plain Layout
 
-Note: Standard errors are clustered at the ratee level (input dealers, traders
- and millers).
+Note: Standard errors are clustered at the ratee level (agro-input dealers,
+ traders and millers).
  The dependent variable is the  differences between ratings given by the
  farmers and the ratee self-ratings and the main independent variables are
  farmer's and ratee's gender.
@@ -13240,6 +13805,18 @@ end{table}
 end{landscape}
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\paragraph_spacing onehalf
+Conclusion
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
 \end_inset
 
 
