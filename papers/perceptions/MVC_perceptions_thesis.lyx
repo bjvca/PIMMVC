@@ -1696,34 +1696,6 @@ The summary statistics for the main variables used in this study are presented
 
 \end_layout
 
-\begin_layout Section
-\paragraph_spacing onehalf
-Methods
-\end_layout
-
-\begin_layout Standard
-This section focuses on the descriptive and empirical methods used for the
- analysis of maize supply chains.
- 
-\end_layout
-
-\begin_layout Subsection
-\paragraph_spacing onehalf
-Descriptive Methods
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-Gendered profiles of the raters (farmers) and ratees (input dealers, traders
- or millers) are discussed.
- This is in respect to the characteristics of the raters and ratees.
- In order to understand the rating patterns, mean ratings from farmers and
- mean self-ratings are described in detail, showing differences in ratings
- from farmers and ratees and also differences in ratings from women and
- men.
- 
-\end_layout
-
 \begin_layout Subsection
 \paragraph_spacing onehalf
 Model and Empirical Methods 
@@ -1805,27 +1777,217 @@ Secondly, inter and intra-rater reliability is studied for all the ratings
  levels can differ based on the gender of the rater.
 \end_layout
 
+\begin_layout Section
+\paragraph_spacing onehalf
+Methods
+\end_layout
+
+\begin_layout Standard
+This section deals with the methodologies and estimation models used for
+ the analysis.
+ In order to understand the rating patterns, mean ratings from farmers and
+ mean self-ratings are described in detail in the next section.
+ Ratings from farmers and self-ratings are compared based on gender of the
+ farmers and the ratees.
+ Also, differences in how women rate other women and how men rate other
+ men are presented in section 6.
+\end_layout
+
+\begin_layout Standard
+Next, I turn to the regression models to test the hypotheses laid out in
+ Section 3.
+ In order to understand the impact of the farmer's gender and the ratee's
+ gender on the ratings from the farmers, the following multivariate regression
+ specification is used where the standard errors are clustered at the ratee
+ level:
+\end_layout
+
 \begin_layout Standard
 \paragraph_spacing onehalf
-The dependent variable in this study is always the ratings for the input
- dealers, traders and processors.
- The ratings can be either obtained from the raters (farmers) or they can
- be self-ratings by the ratees (dealers, traders and processors) themselves.
- The ratings or the scores are on a scale of 1 to 5, where 1 is the most
- negative score and 5 is the most positive score.
- The dataset used for the analysis is pooled, i.e., ratings for dealers, traders
- and processors are contained in the same dataset.
- The estimation method used for understanding gendered perceptions in maize
- supply chains is 
-\series bold
-multivariate regressions with cluster robust standard errors
-\series default
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{equation} 
+\backslash
+label{eqn} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{array}{l}
+\end_layout
+
+\begin_layout Plain Layout
+
+Y_{ija} = 
+\backslash
+beta_0 + 
+\backslash
+beta_1*Gender(F)_{ija} + 
+\backslash
+beta_2*Gender(R)_{ja} + 
+\backslash
+beta_3*X_{ija} + 
+\backslash
+beta_4*Z_{ja} + 
+\backslash
+beta_5*
+\backslash
+Gamma_{a} + e_{ija} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{array}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{equation}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Here, 
+\emph on
+
+\begin_inset Formula $Y_{ija}$
+\end_inset
+
+
+\emph default
+ is the primary outcome variable, the ratings from the farmers or the difference
+s in ratings between the farmer ratings and the self-ratings.
+ The ratings are categorized into overall average, location, quality, price
+ and reputation.
+ In equation 1, 
+\emph on
+i 
+\emph default
+is each individual farmer, 
+\emph on
+j
+\emph default
+ is each individual ratee and 
+\emph on
+a
+\emph default
+ can be input dealer or assembly trader or processor (ratee groups).
+ The main independent variables are gender of the farmer (
+\emph on
+
+\begin_inset Formula $Gender(F)_{ija}$
+\end_inset
+
+
+\emph default
+, a dummy variable which takes the value of 1 if the farmer is a woman and
+ 0 otherwise) which can vary for each individual farmer 
+\emph on
+i
+\emph default
+, each individual ratee 
+\emph on
+j
+\emph default
+ and each ratee group 
+\emph on
+a
+\emph default
+ and the gender of the ratee (
+\emph on
+
+\begin_inset Formula $Gender(R)_{ja}$
+\end_inset
+
+
+\emph default
+, a dummy taking the value of 1 for female ratee and 0 otherwise), varying
+ for each individual ratee 
+\emph on
+j
+\emph default
+ and each ratee group 
+\emph on
+a
+\emph default
 .
- The clustering is done based on the ID of the ratees (dealers, traders
- and millers) which was assigned after the data was collected.
- The independent variable depends on the hypothesis being tested.
- The regression models with clustered standard errors used in this study
- are mentioned below.
+
+\emph on
+ 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+\begin_inset Formula $X_{ija}$
+\end_inset
+
+
+\emph default
+ consists of all the control variables varying for individual farmer, ratee
+ and ratee group.
+ Age of the farmer, dummy for interaction between the farmer and the ratee,
+ dummy variable indicating if the farmer has some level of education, distance
+ of farmer's homestead to tarmac and murram roads and marital status of
+ farmer (dummy for married farmers) are included.
+ 
+\emph on
+
+\begin_inset Formula $Z_{ja}$
+\end_inset
+
+
+\emph default
+ consists of the control variables varying for individual ratee and ratee
+ group like age, education (dummy for educated ratees) and dummy variable
+ for marital status of the ratee.
+ The dummies for input dealer (takes the value of 1 if a dealer and 0 otherwise)
+ and trader (takes the value of 1 if a trader and 0 otherwise) are contained
+ in 
+\emph on
+
+\begin_inset Formula $\Gamma_{a}$
+\end_inset
+
+
+\emph default
+ where the ratee being a miller is the reference category.
+ The error term in the model is 
+\emph on
+
+\begin_inset Formula $e_{ija}$
+\end_inset
+
+
+\emph default
+.
+ The dataset used in the regression analyses is pooled, i.e., ratings for
+ dealers, traders and processors are contained in the same dataset.
+ 
+\end_layout
+
+\begin_layout Standard
+Following this, for the analysis of how ratings vary if farmer (rater) and
+ ratee are of the same gender, an interaction term between the farmer's
+ gender and ratee's gender (both dummy variables) is added to the equation
+ presented above.
+ This is presented in the specification below with cluster robust standard
+ errors (equation 2):
 \end_layout
 
 \begin_layout Standard
@@ -1851,44 +2013,17 @@ begin{array}{l}
 
 \begin_layout Plain Layout
 
-Y_{i} = 
+Y_{ija} = 
 \backslash
 beta_0 + 
 \backslash
-beta_1*Gender(F)_{i} + 
+beta_1*Gender(F)_{ija} + 
 \backslash
-beta_2*Gender(R)_{i} + 
+beta_2*Gender(R)_{ja} + 
 \backslash
-beta_3*Age 
+beta_3*X_{ija} + 
 \backslash
-, of 
-\backslash
-, farmer_{i} + 
-\backslash
-beta_4*Interaction_{i}  + 
-\backslash
-
-\backslash
- &
-\backslash
-quad   
-\backslash
-beta_5*Education(F)_{i} + 
-\backslash
-beta_6*Tarmac_{i} + 
-\backslash
-beta_7*Murram_{i} + 
-\backslash
-beta_8*Farmer
-\backslash
-,marital
-\backslash
-,status_{i} +
-\end_layout
-
-\begin_layout Plain Layout
-
-
+beta_4*Z_{ja} + 
 \backslash
 
 \backslash
@@ -1896,33 +2031,11 @@ beta_8*Farmer
 \backslash
 quad 
 \backslash
-beta_9*Age
+beta_5*
 \backslash
-,of
+Gamma_{a} + 
 \backslash
-,ratee_{i}  +  
-\backslash
-beta_{10}*Ratee
-\backslash
-,marital
-\backslash
-,status_{i} +  
-\backslash
-beta_{11}*Education(R)_{i} +
-\backslash
-
-\backslash
- &
-\backslash
-quad 
-\backslash
-beta_{12}*Dealer
-\backslash
-,dummy_{i} + 
-\backslash
-beta_{13}*Trader
-\backslash
-,dummy_{i} + e_{i} 
+beta_6*Gender(F)_{ija}*Gender(R)_{ja} + e_{ija} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -1945,651 +2058,30 @@ end{equation}
 \end_layout
 
 \begin_layout Standard
-\paragraph_spacing onehalf
-Equation 1 looks at the impact of the farmer's (rater's) gender on the dependent
- variable.
- Here the dependent variable is average rating given by each individual
- rater across all the rating factors (rating scale varies from 1 to 5) to
- all the input dealers, traders and processors (results are shown in table
- 6).
- In the appendix, similar model results are presented with the dependent
- variables as location based rating by raters (table 13), quality-based
- rating by raters (table 14), price-based rating (table 15) and reputation-based
- rating (table 16).
- Similar analysis is also implemented with the dependent variable as difference
- between average ratings from raters and average self-ratings from ratees
- across all the rating factors (regression model explained in equation 1).
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-The main independent variable, 
-\begin_inset Quotes eld
-\end_inset
-
-Gender(F)
-\begin_inset Quotes erd
-\end_inset
-
-, is the gender of the rater (farmer) which is a dummy taking the value
- of 1 if the farmer is a female rater and 0 if the farmer is a male rater.
+The coefficients of interest in these models are
+\emph on
  
-\begin_inset Quotes eld
+\emph default
+
+\begin_inset Formula $\beta_{1}$
 \end_inset
 
-Gender(R)
-\begin_inset Quotes erd
+, 
+\begin_inset Formula $\beta_{2}$
 \end_inset
 
- is the gender of the ratee which is a dummy taking the value of 1 if the
- ratee is a woman and 0 if the ratee is a man.
- 
-\begin_inset Quotes eld
+ (equations 1 and 2) and 
+\begin_inset Formula $\beta_{6}$
 \end_inset
 
-Age of farmer
-\begin_inset Quotes erd
-\end_inset
-
- is a variable presented in years (age of raters).
- 
-\begin_inset Quotes eld
-\end_inset
-
-Interaction
-\begin_inset Quotes erd
-\end_inset
-
- is a dummy variable which takes the value of 1 if there has been any business
- interaction between the rater and the ratee and the value of 0 if there
- has been no business interaction.
- 
-\begin_inset Quotes eld
-\end_inset
-
-Education(F)
-\begin_inset Quotes erd
-\end_inset
-
- is a dummy variable indicating whether the rater (farmer) has any level
- of education (value of 1) or not (value of 0).
- 
-\begin_inset Quotes eld
-\end_inset
-
-Tarmac
-\begin_inset Quotes erd
-\end_inset
-
- states the distance of the farmer's (rater's) homestead to the nearest
- tarmac road.
- 
-\begin_inset Quotes eld
-\end_inset
-
-Murram
-\begin_inset Quotes erd
-\end_inset
-
- states the distance of the farmer's (rater's) homestead to the nearest
- murram road.
- 
-\begin_inset Quotes eld
-\end_inset
-
-Farmer marital status
-\begin_inset Quotes erd
-\end_inset
-
- is a dummy variable indicating whether the farmer is married (value of
- 1) or not (value of 0).
- 
-\begin_inset Quotes eld
-\end_inset
-
-Age of ratee
-\begin_inset Quotes erd
-\end_inset
-
- consists of the age of the dealers, traders and processors in years.
- 
-\begin_inset Quotes eld
-\end_inset
-
-Ratee marital status
-\begin_inset Quotes erd
-\end_inset
-
- is a dummy variable taking the value of 1 if the ratee is married and the
- value of 0 if the ratee is not married.
- 
-\begin_inset Quotes eld
-\end_inset
-
-Education(R)
-\begin_inset Quotes erd
-\end_inset
-
- is a dummy indicating whether the rater has some level of education (value
- of 1) or not (value of 0).
- 
-\begin_inset Quotes eld
-\end_inset
-
-Dealer dummy
-\begin_inset Quotes erd
-\end_inset
-
- indicates whether the individual ratee is a dealer (value of 1) or not
- (value of 0).
- 
-\begin_inset Quotes eld
-\end_inset
-
-Trader dummy
-\begin_inset Quotes erd
-\end_inset
-
- takes the value of 1 if the individual ratee is a trader or the value of
- 0 is the individual ratee is not a trader.
- The last term of the equation is the error term.
- Thus, this model aids in the analysis whether the ratings provided by the
- farmer are in any way influenced by the gender of the farmer and also studies
- the relationship between the difference in the ratings provided by the
- farmers (raters) and the ratees and the gender of the rater.
- Also, the relationship between the gender of the ratee and the ratings
- received by the ratees can be deduced from this model.
+ (equation 6), showing the gender impacts on the ratings from farmers and
+ the differences in farmer ratings and self-ratings.
  
 \end_layout
 
 \begin_layout Standard
-\paragraph_spacing onehalf
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{equation} 
-\backslash
-label{eqn}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{array}{l}
-\end_layout
-
-\begin_layout Plain Layout
-
-Y_{i} = 
-\backslash
-beta_0 + 
-\backslash
-beta_1*Gender(F)_{i} + 
-\backslash
-beta_2*Gender(R)_{i} + 
-\backslash
-beta_3*Age 
-\backslash
-, of 
-\backslash
-, farmer_{i} + 
-\backslash
-beta_4*Interaction_{i}  + 
-\backslash
-
-\backslash
- &
-\backslash
-quad   
-\backslash
-beta_5*Education(F)_{i} + 
-\backslash
-beta_6*Tarmac_{i} + 
-\backslash
-beta_7*Murram_{i} + 
-\backslash
-beta_8*Farmer
-\backslash
-,marital
-\backslash
-,status_{i} +
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
- &
-\backslash
-quad 
-\backslash
-beta_9*Age
-\backslash
-,of
-\backslash
-,ratee_{i}  +  
-\backslash
-beta_{10}*Ratee
-\backslash
-,marital
-\backslash
-,status_{i} +  
-\backslash
-beta_{11}*Education(R)_{i} +
-\backslash
-
-\backslash
- &
-\backslash
-quad 
-\backslash
-beta_{12}*Dealer
-\backslash
-,dummy_{i} + 
-\backslash
-beta_{13}*Trader
-\backslash
-,dummy_{i} + 
-\backslash
-beta_{14}*Gender(F)_{i}*Interaction_{i} + e_{i} 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{array} 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{equation}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{equation} 
-\backslash
-label{eqn}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{array}{l}
-\end_layout
-
-\begin_layout Plain Layout
-
-Y_{i} = 
-\backslash
-beta_0 + 
-\backslash
-beta_1*Gender(F)_{i} + 
-\backslash
-beta_2*Gender(R)_{i} + 
-\backslash
-beta_3*Age 
-\backslash
-, of 
-\backslash
-, farmer_{i} + 
-\backslash
-beta_4*Interaction_{i}  + 
-\backslash
-
-\backslash
- &
-\backslash
-quad   
-\backslash
-beta_5*Education(F)_{i} + 
-\backslash
-beta_6*Tarmac_{i} + 
-\backslash
-beta_7*Murram_{i} + 
-\backslash
-beta_8*Farmer
-\backslash
-,marital
-\backslash
-,status_{i} +
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
- &
-\backslash
-quad 
-\backslash
-beta_9*Age
-\backslash
-,of
-\backslash
-,ratee_{i}  +  
-\backslash
-beta_{10}*Ratee
-\backslash
-,marital
-\backslash
-,status_{i} +  
-\backslash
-beta_{11}*Education(R)_{i} +
-\backslash
-
-\backslash
- &
-\backslash
-quad 
-\backslash
-beta_{12}*Dealer
-\backslash
-,dummy_{i} + 
-\backslash
-beta_{13}*Trader
-\backslash
-,dummy_{i} + 
-\backslash
-beta_{14}*Gender(F)_{i}*Education(F)_{i} + e_{i} 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{array}  
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{equation}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{equation} 
-\backslash
-label{eqn}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{array}{l}
-\end_layout
-
-\begin_layout Plain Layout
-
-Y_{i} = 
-\backslash
-beta_0 + 
-\backslash
-beta_1*Gender(F)_{i} + 
-\backslash
-beta_2*Gender(R)_{i} + 
-\backslash
-beta_3*Age 
-\backslash
-, of 
-\backslash
-, farmer_{i} + 
-\backslash
-beta_4*Interaction_{i}  + 
-\backslash
-
-\backslash
- &
-\backslash
-quad   
-\backslash
-beta_5*Education(F)_{i} + 
-\backslash
-beta_6*Tarmac_{i} + 
-\backslash
-beta_7*Murram_{i} + 
-\backslash
-beta_8*Farmer
-\backslash
-,marital
-\backslash
-,status_{i} +
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
- &
-\backslash
-quad 
-\backslash
-beta_9*Age
-\backslash
-,of
-\backslash
-,ratee_{i}  +  
-\backslash
-beta_{10}*Ratee
-\backslash
-,marital
-\backslash
-,status_{i} +  
-\backslash
-beta_{11}*Education(R)_{i} +
-\backslash
-
-\backslash
- &
-\backslash
-quad 
-\backslash
-beta_{12}*Dealer
-\backslash
-,dummy_{i} + 
-\backslash
-beta_{13}*Trader
-\backslash
-,dummy_{i} + 
-\backslash
-beta_{14}*Gender(F)_{i}*Gender(R)_{i} + e_{i} 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{array}  
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{equation}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{equation} 
-\backslash
-label{eqn}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{array}{l}
-\end_layout
-
-\begin_layout Plain Layout
-
-Y_{i} = 
-\backslash
-beta_0 + 
-\backslash
-beta_1*Gender(F)_{i} + 
-\backslash
-beta_2*Gender(R)_{i} + 
-\backslash
-beta_3*Age 
-\backslash
-, of 
-\backslash
-, farmer_{i} + 
-\backslash
-beta_4*Interaction_{i}  + 
-\backslash
-
-\backslash
- &
-\backslash
-quad   
-\backslash
-beta_5*Education(F)_{i} + 
-\backslash
-beta_6*Tarmac_{i} + 
-\backslash
-beta_7*Murram_{i} + 
-\backslash
-beta_8*Farmer
-\backslash
-,marital
-\backslash
-,status_{i} +
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
- &
-\backslash
-quad 
-\backslash
-beta_9*Age
-\backslash
-,of
-\backslash
-,ratee_{i}  +  
-\backslash
-beta_{10}*Ratee
-\backslash
-,marital
-\backslash
-,status_{i} +  
-\backslash
-beta_{11}*Education(R)_{i} +
-\backslash
-
-\backslash
- &
-\backslash
-quad 
-\backslash
-beta_{12}*Dealer
-\backslash
-,dummy_{i} + 
-\backslash
-beta_{13}*Trader
-\backslash
-,dummy_{i} + 
-\backslash
-beta_{14}*Gender(R)_{i}*Interaction_{i} + e_{i} 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{array} 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{equation}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-Equation 2 adds an interaction term to the regression model.
- The interaction is between the interaction dummy between the rater and
- the ratee and the gender of the farmer (rater).
- The interaction term added in equation 3 looks at the interaction between
- the education dummy of the farmer and the farmer's gender.
- Equation 4 has an interaction term with the ratee's and rater's gender
- (dummies).
- Equation 5 has a similar interaction term as equation 2.
- However, in equation 5, the gender of the ratee is considered instead of
- the gender of the rater.
- While analysing the impact of farmer's gender on the difference between
- average ratings from raters and average self-ratings from ratees across
- all the rating factors, equation 2, 3 and 4 are also implemented.
- 
+The final regression model aims to study the relationship between the gender
+ of the ratee and the self-ratings through multiple regression analysis:
 \end_layout
 
 \begin_layout Standard
@@ -2615,39 +2107,17 @@ begin{array}{l}
 
 \begin_layout Plain Layout
 
-Y_{i} = 
+Y_{ja} = 
 \backslash
 beta_0 + 
 \backslash
-beta_1*Gender(R)_{i} + 
+beta_1*Gender(R)_{ja} + 
 \backslash
-beta_2*Age
+beta_2*Z_{ja} + 
 \backslash
-,of
+beta_4*
 \backslash
-,ratee_{i} + 
-\backslash
-beta_3*Ratee
-\backslash
-,marital
-\backslash
-,status_{i} + 
-\backslash
-beta_4*Education(R)_{i}  + 
-\backslash
-
-\backslash
- &
-\backslash
-quad    
-\backslash
-beta_5*Dealer
-\backslash
-,dummy_{i} + 
-\backslash
-beta_6*Trader
-\backslash
-,dummy_{i} + e_{i} 
+Gamma_{a} + e_{ja} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -2670,314 +2140,71 @@ end{equation}
 \end_layout
 
 \begin_layout Standard
-\paragraph_spacing onehalf
-Equation 6 studies the relationship between the ratee's gender and the dependent
- variable.
- The dependent variable is averaged self-rating (ranging from 1 to 5) by
- the ratees across all the rating factors (results are shown in table 7).
- Results with the dependent variable as location-based, quality-based, price-bas
-ed and reputation-based self-ratings are discussed in the appendix.
- The main independent variable here is the gender of the ratee, taking the
- value of 1 when the ratee is a woman and the value of 0 when the ratee
- is a man.
- The control variables are age of the ratee in years, dummy for marital
- status of the ratee, dummy for education level of the ratee, dummy indicating
- whether the ratee is a dealer or not and dummy indicating whether the ratee
- is a trader or not.
- The last term of equation 6 is the error term.
+Here, the primary outcome variable of self-ratings is 
+\emph on
+
+\begin_inset Formula $Y_{ja}$
+\end_inset
+
+,
+\emph default
  
-\end_layout
+\emph on
+j
+\emph default
+ is each individual ratee and 
+\emph on
+a
+\emph default
+ can be input dealer or assembly trader or processor (ratee groups).
 
-\begin_layout Standard
-\paragraph_spacing onehalf
-\begin_inset ERT
-status open
+\emph on
+ 
+\emph default
 
-\begin_layout Plain Layout
+\begin_inset Formula $\beta_{1}$
+\end_inset
 
+ indicates the relationship between the gender of the ratee and the self-rating
+ from the ratee.
+ Some of the variables discussed above are included in this equation.
+ The main independent variable is gender of the ratee (
+\emph on
 
-\backslash
-begin{equation} 
-\backslash
-label{eqn} 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{array}{l}
-\end_layout
-
-\begin_layout Plain Layout
-
-Y_{i} = 
-\backslash
-beta_0 + 
-\backslash
-beta_1*Gender(R)_{i} + 
-\backslash
-beta_2*Age
-\backslash
-,of
-\backslash
-,ratee_{i} + 
-\backslash
-beta_3*Ratee
-\backslash
-,marital
-\backslash
-,status_{i} + 
-\backslash
-beta_4*Education(R)_{i}  + 
-\backslash
-
-\backslash
- &
-\backslash
-quad    
-\backslash
-beta_5*Dealer
-\backslash
-,dummy_{i} + 
-\backslash
-beta_6*Trader
-\backslash
-,dummy_{i} + 
-\backslash
-beta_7*Gender(R)_{i}*Age
-\backslash
-,of
-\backslash
-,ratee_{i} + e_{i} 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{array}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{equation}
-\end_layout
-
+\begin_inset Formula $Gender(R)_{ja}$
 \end_inset
 
 
-\end_layout
+\emph default
+).
+ 
+\emph on
 
-\begin_layout Standard
-\paragraph_spacing onehalf
-\begin_inset ERT
-status open
+\begin_inset Formula $Z_{ja}$
+\end_inset
 
-\begin_layout Plain Layout
+ 
+\emph default
+and 
+\emph on
 
-
-\backslash
-begin{equation} 
-\backslash
-label{eqn} 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{array}{l}
-\end_layout
-
-\begin_layout Plain Layout
-
-Y_{i} = 
-\backslash
-beta_0 + 
-\backslash
-beta_1*Gender(R)_{i} + 
-\backslash
-beta_2*Age
-\backslash
-,of
-\backslash
-,ratee_{i} + 
-\backslash
-beta_3*Ratee
-\backslash
-,marital
-\backslash
-,status_{i} + 
-\backslash
-beta_4*Education(R)_{i}  + 
-\backslash
-
-\backslash
- &
-\backslash
-quad    
-\backslash
-beta_5*Dealer
-\backslash
-,dummy_{i} + 
-\backslash
-beta_6*Trader
-\backslash
-,dummy_{i} + 
-\backslash
-beta_7*Gender(R)_{i}*Education(R)_{i} + e_{i} 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{array}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{equation}
-\end_layout
-
+\begin_inset Formula $\Gamma_{a}$
 \end_inset
 
 
-\end_layout
+\emph default
+ consists of the control variables and the dummies for input dealer and
+ trader.
+ The error term in this model is 
+\emph on
 
-\begin_layout Standard
-\paragraph_spacing onehalf
-Equation 7 and equation 8 are extensions of the regression model in equation
- 6.
- Equation 7 includes an interaction term between the gender of the ratee
- and the age of ratee.
- Equation 8 consists of an interaction between the gender of the ratee and
- the education of the ratee (dummy).
- Thus, the regression models with ratee's self-ratings as the dependent
- variable assist in the understanding of the relationship between self-ratings
- and the gender of the ratee.
- The detailed results are presented in the next section.
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{equation} 
-\backslash
-label{eqn} 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{array}{l}
-\end_layout
-
-\begin_layout Plain Layout
-
-Y_{i} = 
-\backslash
-beta_0 + 
-\backslash
-beta_1*Gender(F)_{i} + 
-\backslash
-beta_2*Gender(R)_{i} + 
-\backslash
-beta_3*Age 
-\backslash
-, of 
-\backslash
-, farmer_{i} + 
-\backslash
-beta_4*Interaction_{i}  + 
-\backslash
-
-\backslash
- &
-\backslash
-quad   
-\backslash
-beta_5*Education(F)_{i} + 
-\backslash
-beta_6*Tarmac_{i} + 
-\backslash
-beta_7*Murram_{i} + 
-\backslash
-beta_8*Farmer
-\backslash
-,marital
-\backslash
-,status_{i} +
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
- &
-\backslash
-quad 
-\backslash
-beta_9*Age
-\backslash
-,of
-\backslash
-,ratee_{i}  +  
-\backslash
-beta_{10}*Ratee
-\backslash
-,marital
-\backslash
-,status_{i} +  
-\backslash
-beta_{11}*Education(R)_{i} +
-\backslash
-
-\backslash
- &
-\backslash
-quad 
-\backslash
-beta_{12}*Dealer
-\backslash
-,dummy_{i} + 
-\backslash
-beta_{13}*Trader
-\backslash
-,dummy_{i} + e_{i} 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{array}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{equation}
-\end_layout
-
+\begin_inset Formula $e_{ja}$
 \end_inset
 
 
+\emph default
+.
+ 
 \end_layout
 
 \begin_layout Standard
