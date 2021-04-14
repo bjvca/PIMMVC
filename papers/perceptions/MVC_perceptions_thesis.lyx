@@ -1174,31 +1174,36 @@ This section describes the hypotheses that are analysed which are as follows:
 \end_layout
 
 \begin_layout Enumerate
-\paragraph_spacing onehalf
-Self-ratings are higher than ratings given by raters to ratees.
+\paragraph_spacing single
+\noindent
+Self-ratings are higher than ratings given by raters (farmers) to ratees.
  
 \end_layout
 
 \begin_layout Enumerate
-\paragraph_spacing onehalf
-Female raters give higher ratings when compared to male raters.
+\paragraph_spacing single
+\noindent
+Ratings from women are more favourable than ratings from men.
 \end_layout
 
 \begin_layout Enumerate
-\paragraph_spacing onehalf
-Self-ratings given by females are lower compared to males.
+\paragraph_spacing single
+\noindent
+Self-ratings from women are less favourable than self-ratings from men.
+ 
 \end_layout
 
 \begin_layout Enumerate
-\paragraph_spacing onehalf
-Female ratees receive lower ratings from raters than male ratees.
+\paragraph_spacing single
+\noindent
+Ratings for men are higher than ratings for women.
  
 \end_layout
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-Hypothesis 1 determines how the input dealers, processors and traders rate
- themselves compared to the farmers' ratings.
+Hypothesis 1 determines how the agro-input dealers, processors and traders
+ rate themselves (self-assessments) compared to the ratings from the farmers.
  Self-ratings have been criticized largely and checked for validity by many
  researchers in different fields of research (
 \begin_inset CommandInset citation
@@ -1210,8 +1215,8 @@ literal "true"
 
 ).
  This study does not claim that the self-ratings determine the actual performanc
-e levels of the input dealers, processors and traders in the Ugandan maize
- value chain.
+e levels of the agro-input dealers, processors and traders in the Ugandan
+ maize value chain.
  This is because self-ratings can be a victim of self-bias (
 \begin_inset CommandInset citation
 LatexCommand citealp
@@ -1246,24 +1251,24 @@ literal "true"
 
 ).
  However, the self-ratings indicate the perceived level of performance by
- these actors which is the main motivation towards the inclusion of this
- hypothesis in the study.
+ the service and input providers which is the main motivation towards the
+ inclusion of this hypothesis in the study.
  
 \end_layout
 
 \begin_layout Standard
 \paragraph_spacing onehalf
 Perceptions in this regard can explain a lot about the industry and could
- also explain slower technological growth and advancements.
- If these actors perceive themselves to be performing better than they actually
- are, then there will be lesser efforts to improve their professional stance
- in the industry.
- Also, if the farmers rate them lower than their self-ratings, it shows
- that the dealers, processors and traders are not meeting the expectations
- of the farmers without even realizing their low performance levels which
- is emanated through their higher self-ratings.
- Higher self-ratings can also be a result of leniency in assessing self-performa
-nce as discussed by 
+ also explain slower technological change and advancements.
+ If these service and input providers perceive themselves to be performing
+ better than they actually are, then there will be lesser efforts to improve
+ their professional stance in the industry.
+ Also, if the farmers rate the input dealers, traders and millers lower
+ than their self-ratings, it shows that the agro-input dealers, processors
+ and traders are not meeting the expectations of the farmers without even
+ realizing their perceived low performance levels.
+ This non-realization is emanated through their more favourable self-ratings.
+ 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "Cheng2017"
@@ -1271,15 +1276,18 @@ literal "true"
 
 \end_inset
 
-.
+ discusses that more favourable self-assessments can be a result of leniency
+ in assessing self-performance.
+ Such a leniency creates a gap between the perceived performance levels
+ from the farmers and the perceived self performance levels.
  
 \end_layout
 
 \begin_layout Standard
 \paragraph_spacing onehalf
 Then, I turn to the variations in ratings based on gender (hypothesis 2).
- There is evidence from various areas of research that females generally
- give higher ratings when compared to their male counterparts.
+ There is evidence from various areas of research that women generally rate
+ more favourably than men.
  
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -1288,9 +1296,9 @@ literal "true"
 
 \end_inset
 
- discussed ratings from male and female raters on business intelligence
- where higher ratings for boss's overall, emotional and organizational IQ
- were obtained from female raters.
+ discussed ratings from men and women on business intelligence where women
+ rated boss's overall, emotional and organizational IQ more favourably than
+ the male subordinates.
  Interestingly, 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -1299,9 +1307,8 @@ literal "true"
 
 \end_inset
 
- also showed that females tended to give higher ratings for healthy meals
- based on the factors like health, pleasure and convenience when compared
- to the male raters.
+ also showed that women tended to assess healthy meals more favourably based
+ on factors like health, pleasure and convenience compared to men.
  
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -1310,26 +1317,33 @@ literal "true"
 
 \end_inset
 
- argues that females have a tendency to score higher because female perceptions
- are more positive than male perceptions.
+ argues that women have a tendency to score better because perceptions of
+ women are more positive than perceptions of men.
  Thus, I expect to see a similar trend in this study.
  
 \end_layout
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-Female farmers are expected to give higher ratings to the input dealers,
- processors and traders on an average compared to the male farmers.
- This can indicate various interesting and unknown attributes of the value
- chain.
- There are possibilities that female farmers are given better services by
- the dealers, processors and actors and that is the reason behind higher
- ratings by these female raters.
- This can be culturally linked for a prominent gendered bias in the provision
+In this study, it is expected that female farmers will more favourably rate
+ the input dealers, processors and traders on average compared to the male
+ farmers, i.e., perceptions of female farmers will be more positive about
+ the service and input providers.
+ This can indicate various interesting and unknown attributes of the maize
+ value chain.
+ There are possibilities that female farmers are given better services and
+ inputs by the input dealers, maize processors and traders, leading to more
+ favourable ratings from the women.
+ 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+This can be culturally linked for a prominent gender bias in the provision
  of services and sale of goods.
- Another reason for higher ratings could be that the female raters are less
- stringent and they tend to be lenient while providing ratings for the actors
- they are involved with in their business.
+ Another reason for this can be minimal stringency and greater leniency
+ from women while rating the service and input providers they are involved
+ with in their income-generating activities.
  However, the literature does not mention statistically significant presence
  of leniency for ratings provided by female raters (
 \begin_inset CommandInset citation
@@ -1347,9 +1361,10 @@ literal "true"
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-Hypothesis 3 essentially compares the self-ratings given by female and male
- dealers, processors and traders.
- Females generally tend to underrate themselves.
+Hypothesis 3 essentially compares the self-ratings (assessments) given by
+ female and male agro-input dealers, processors and traders.
+ Women generally tend to underrate themselves, i.e., women perceive their
+ potentials to be limited.
  
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -1359,10 +1374,10 @@ literal "true"
 \end_inset
 
  saw a similar pattern for female Department Managers in the hotel industry.
- Male Department Managers always inflated their self-ratings while their
- female counterparts refrained from doing so.
- Gendered differences in self-perceptions do exist and this induces female
- and male respondents to rate themselves differently, as argued by 
+ Male Department Managers always inflated their self-assessments while the
+ women refrained from doing so.
+ Gendered differences in self-perceptions do exist and this induces women
+ and men to rate themselves differently, as argued by 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "Beyer1990,WOHLERS1989"
@@ -1387,23 +1402,24 @@ literal "true"
 
 \end_inset
 
- found that females tend to experience harsher consequences than men when
+ found that women tend to experience harsher consequences than men when
  they overrate themselves.
- Such gendered ideas of self-assessment can partially explain why less female
- dealers, processors and traders get involved in the maize markets in Uganda.
+ Such gendered ideas of self-assessment can partially explain why lesser
+ number of female agro-input dealers, processors and traders get involved
+ in the maize markets in Uganda.
  Since they underestimate their ability and do not think themselves to be
- performing well enough as their male counterparts, females could be less
- willing to be involved in these kind of business activities.
- Thus, the markets remain majorly dominated by male actors of the maize
- value chain.
- 
+ performing well enough as the men, women could be less willing to be involved
+ in these kind of business activities.
+ Thus, the maize value chain remains dominated by the male service and input
+ providers, pointing towards the need for important policy implications
+ in this sector to encourage greater involvement of women.
 \end_layout
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-Another important reason or consequence of lower self-ratings can be the
- lack of confidence to strive in the business.
- In the developing economies, females generally have low confidence levels
+Another important reason or consequence of less favourable self-perceptions
+ can be the lack of confidence to strive in the business.
+ In the developing economies, women generally have low confidence levels
  and face a lot of obstacles due to the standard cultural norms, societal
  expectations, gender discrimination and job-family conflicts (
 \begin_inset CommandInset citation
@@ -1423,8 +1439,8 @@ literal "true"
 \end_inset
 
  illustrated this phenomenon for Ugandan women describing how socialization
- effects, cultural validation of male dominance and sex stereotyping hinders
- the advancement of these women in educational management roles.
+ effects, cultural validation of male dominance and gender stereotyping
+ hinders the advancement of these women in educational management roles.
  As a result of social imposition of family roles, Ugandan women tend to
  have lower self-esteem and confidence in their potential to succeed outside
  domestic roles (
@@ -1441,10 +1457,11 @@ literal "true"
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-The goal for hypothesis 4 is to study the ratings received by male and female
- input dealers, traders and processors from maize farmers.
- Females are generally perceived to be performing worse than their male
- counterparts and thus, are rated lower.
+The goal for hypothesis 4 is to study the differences in ratings received
+ by male and female agro-input dealers, traders and processors from maize
+ farmers.
+ One of the reasons behind lower ratings for women may be that women are
+ generally perceived to be performing worse than men.
  For instance, 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -1455,8 +1472,9 @@ literal "true"
 
  found that female managers received lower performance ratings compared
  to male managers.
- Particularly, women involved in line jobs received lower ratings compared
- to women involved in staff jobs.
+ Particularly, women involved in line jobs (jobs involving physical strain
+ like installation of transmission systems, etc.) received lower ratings
+ compared to women involved in staff jobs.
  
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -1477,8 +1495,8 @@ literal "true"
 \end_inset
 
 ).
- This evident bias against females is the root for lower ratings received
- by female ratees.
+ This evident bias against women can be the root for lower ratings received
+ by female input and service providers.
  A recent study by 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -1496,33 +1514,17 @@ literal "true"
 \end_layout
 
 \begin_layout Standard
-This paper measures gender bias in what people say about women versus men
- in an anonymous online professional forum.
- I study the content of posts that refer to each gender, and the transitions
- in the topics of discussion that occur between consecutive posts in a thread
- once attention turns to one gender or the other.
- I find that discussions about women tend to highlight their personal characteri
-stics (such as physical appearance or family circumstances) rather than
- their professional accomplishments.
- Posts about women are also more likely to lead to deviations from professional
- topics than posts about men.
- I interpret these findings through a model that highlights posters’ incentives
- to boost their own identities relative to the underrepresented out-group
- in a profession.
-\end_layout
-
-\begin_layout Standard
 \paragraph_spacing onehalf
 In the context of this study, bias against women can aid the explanation
- for the minimal involvement of women in input dealing, trading and processing
- of maize.
+ for the minimal involvement of women in agro-input dealing, trading and
+ processing of maize.
  When women are aware that they are perceived to be less capable for these
  business activities, they might not enter the industry in the first place
  to avoid criticisms and performance obstacles at a later stage.
  Social stringency and family practices might limit the women from performing
- better or being equally competitive as their male counterparts.
- Another compelling reason for the lower ratings received by female ratees
- could be that their actual performance levels are worse than the male ratees.
+ better or being equally competitive as the men.
+ Another compelling reason for the lower ratings received by women could
+ be that their actual performance levels are worse than the men.
  Lower access to facilities, finance and business guidance can be the drivers
  of worse performance for the female dealers, traders and processors alongside
  the underlying societal aspects.
@@ -1534,7 +1536,7 @@ literal "true"
 
 \end_inset
 
- mentioning the significant gender differences in the access to finance
+, mentioning the significant gender differences in the access to finance
  for the development of businesses and the lower formal bank account penetration
  for women when compared to men in the developing nations.
  
@@ -1572,8 +1574,9 @@ literal "true"
  from societal standards, lack of respect from the male-dominated business
  community, lack of support, time investment constraints, reputation and
  work credibility challenges.
- These can majorly impact the ratings received by the female actors in the
- value chain and can undermine their perceived performance in the industry.
+ These can significantly impact the ratings received by the female input
+ and service providers in the supply chain and can undermine their perceived
+ performance in the industry.
  
 \end_layout
 
@@ -2717,243 +2720,6 @@ end{table}
 \end_layout
 
 \begin_layout Standard
-Next, in table 2, summary statistics for the self-ratings from agro-input
- dealers, traders and maize processors are given.
- The ratees (dealers, traders and millers) seem to be very confident about
- their reputation as among all the dimensions, the highest percentage give
- a self-score of 5 for reputation (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(sum(table(pool$id.ratee[pool$rating_reputation_ratee>=5]))/sum
-(table(pool$id.ratee))*100,digits=0),nsmall=0)}
-\end_layout
-
-\end_inset
-
- percent).
- They seem to be the least confident about their location as among all the
- dimensions, the highest percentage adhere to a score of at least 2 for
- location (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(sum(table(pool$id.ratee[pool$rating_location_ratee<=2]))/sum(t
-able(pool$id.ratee))*100,digits=0),nsmall=0)}
-\end_layout
-
-\end_inset
-
- percent).
- 
-\end_layout
-
-\begin_layout Standard
-Gender, education and marital status of these supply chain actors are dummy
- variables.
- It is observed that women consist of 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(table(dealers$hh.maize.q7)[1]/sum(table(dealers$hh.maize.q7))*100
-,digits=0),nsmall=0)}
-\end_layout
-
-\end_inset
-
- percent of the input dealers, only 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(table(traders$hh.maize.q7)[1]/sum(table(traders$hh.maize.q7))*100
-,digits=0),nsmall=0)}
-\end_layout
-
-\end_inset
-
- percent of the traders and only 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(table(millers$hh.maize.q7)[1]/sum(table(millers$hh.maize.q7))*100
-,digits=0),nsmall=0)}
-\end_layout
-
-\end_inset
-
- percent of the millers.
- A very good share of these supply chain actors have some level of education
- and are married.
- Although the average age of the dealers, traders and millers is between
- 35 and 40 years, there is noticeable variation in the oldest actor observed.
- The oldest input dealer is 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(max(dealers$hh.maize.q6g, na.rm=T),digits=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
- years old, the oldest trader is 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(max(traders$hh.maize.q6, na.rm=T),digits=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
- years old while the oldest miller is 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(max(millers$hh.maize.q6g, na.rm=T),digits=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
- years old.
- 
-\end_layout
-
-\begin_layout Standard
-Looking at self-ratings based on the gender of the ratee, it is noticed
- that among all the different dimensions, the greatest percentage of female
- ratees rate themselves 5 for quality (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(sum(table(pool$id.ratee[pool$rating_quality_ratee>=5 &
- pool$ratee_fem==
-\begin_inset Quotes erd
-\end_inset
-
-1
-\begin_inset Quotes erd
-\end_inset
-
-]))/sum(table(pool$id.ratee[pool$ratee_fem==
-\begin_inset Quotes erd
-\end_inset
-
-1
-\begin_inset Quotes erd
-\end_inset
-
-]))*100,digits=0),nsmall=0)}
-\end_layout
-
-\end_inset
-
- percent) and the highest percentage of male ratees rate themselves 5 for
- reputation (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(sum(table(pool$id.ratee[pool$rating_reputation_ratee>=5
- & pool$ratee_fem==
-\begin_inset Quotes erd
-\end_inset
-
-0
-\begin_inset Quotes erd
-\end_inset
-
-]))/sum(table(pool$id.ratee[pool$ratee_fem==
-\begin_inset Quotes erd
-\end_inset
-
-0
-\begin_inset Quotes erd
-\end_inset
-
-]))*100,digits=0),nsmall=0)}
-\end_layout
-
-\end_inset
-
- percent).
- Giving self-scores of 5 is more common in women for location, price and
- quality.
- However, male ratees think themselves to be more well reputed.
- Indeed, women think the quality of their services or products are way better
- as they never rate themselves below 3 and men think they are well reputed
- as only 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(sum(table(pool$id.ratee[pool$rating_reputation_ratee<=2
- & pool$ratee_fem==
-\begin_inset Quotes erd
-\end_inset
-
-0
-\begin_inset Quotes erd
-\end_inset
-
-]))/sum(table(pool$id.ratee[pool$ratee_fem==
-\begin_inset Quotes erd
-\end_inset
-
-0
-\begin_inset Quotes erd
-\end_inset
-
-]))*100,digits=0),nsmall=0)}
-\end_layout
-
-\end_inset
-
- percent of them rate themselves below 3.
- 
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -3782,6 +3548,243 @@ end{table}
 \end_layout
 
 \begin_layout Standard
+Next, in table 2, summary statistics for the self-ratings from agro-input
+ dealers, traders and maize processors are given.
+ The ratees (dealers, traders and millers) seem to be very confident about
+ their reputation as among all the dimensions, the highest percentage give
+ a self-score of 5 for reputation (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(pool$id.ratee[pool$rating_reputation_ratee>=5]))/sum
+(table(pool$id.ratee))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent).
+ They seem to be the least confident about their location as among all the
+ dimensions, the highest percentage adhere to a score of at least 2 for
+ location (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(pool$id.ratee[pool$rating_location_ratee<=2]))/sum(t
+able(pool$id.ratee))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent).
+ 
+\end_layout
+
+\begin_layout Standard
+Gender, education and marital status of these supply chain actors are dummy
+ variables.
+ It is observed that women consist of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(table(dealers$hh.maize.q7)[1]/sum(table(dealers$hh.maize.q7))*100
+,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of the input dealers, only 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(table(traders$hh.maize.q7)[1]/sum(table(traders$hh.maize.q7))*100
+,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of the traders and only 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(table(millers$hh.maize.q7)[1]/sum(table(millers$hh.maize.q7))*100
+,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of the millers.
+ A very good share of these supply chain actors have some level of education
+ and are married.
+ Although the average age of the dealers, traders and millers is between
+ 35 and 40 years, there is noticeable variation in the oldest actor observed.
+ The oldest input dealer is 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(max(dealers$hh.maize.q6g, na.rm=T),digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ years old, the oldest trader is 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(max(traders$hh.maize.q6, na.rm=T),digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ years old while the oldest miller is 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(max(millers$hh.maize.q6g, na.rm=T),digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ years old.
+ 
+\end_layout
+
+\begin_layout Standard
+Looking at self-ratings based on the gender of the ratee, it is noticed
+ that among all the different dimensions, the greatest percentage of female
+ ratees rate themselves 5 for quality (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(pool$id.ratee[pool$rating_quality_ratee>=5 &
+ pool$ratee_fem==
+\begin_inset Quotes erd
+\end_inset
+
+1
+\begin_inset Quotes erd
+\end_inset
+
+]))/sum(table(pool$id.ratee[pool$ratee_fem==
+\begin_inset Quotes erd
+\end_inset
+
+1
+\begin_inset Quotes erd
+\end_inset
+
+]))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent) and the highest percentage of male ratees rate themselves 5 for
+ reputation (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(pool$id.ratee[pool$rating_reputation_ratee>=5
+ & pool$ratee_fem==
+\begin_inset Quotes erd
+\end_inset
+
+0
+\begin_inset Quotes erd
+\end_inset
+
+]))/sum(table(pool$id.ratee[pool$ratee_fem==
+\begin_inset Quotes erd
+\end_inset
+
+0
+\begin_inset Quotes erd
+\end_inset
+
+]))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent).
+ Giving self-scores of 5 is more common in women for location, price and
+ quality.
+ However, male ratees think themselves to be more well reputed.
+ Indeed, women think the quality of their services or products are way better
+ as they never rate themselves below 3 and men think they are well reputed
+ as only 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(sum(table(pool$id.ratee[pool$rating_reputation_ratee<=2
+ & pool$ratee_fem==
+\begin_inset Quotes erd
+\end_inset
+
+0
+\begin_inset Quotes erd
+\end_inset
+
+]))/sum(table(pool$id.ratee[pool$ratee_fem==
+\begin_inset Quotes erd
+\end_inset
+
+0
+\begin_inset Quotes erd
+\end_inset
+
+]))*100,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of them rate themselves below 3.
+ 
+\end_layout
+
+\begin_layout Standard
 \paragraph_spacing onehalf
 The primary variables of interest in this study are ratings (perceived attribute
 s) from farmers (raters) and self-ratings (perceived self-attributes) from
@@ -3830,6 +3833,8 @@ This can further indicate that individual rating given by farmers is different
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing single
+\noindent
 \begin_inset ERT
 status open
 
@@ -3999,9 +4004,7 @@ end{center}
 
 
 \backslash
-scriptsize  
-\backslash
-doublespacing
+scriptsize 
 \end_layout
 
 \begin_layout Plain Layout
@@ -4924,37 +4927,83 @@ and
 \begin_layout Standard
 An essential discussion is the motivation behind the inclusion of the control
  variables discussed in the models above.
- Controlling for education is important as correlation between male farmer
- and the rating from the farmer maybe confounded by education.
- This is because male farmers are more likely to receive education.
- Similarly, since women have only started farming activities in the recent
- decades, most of the male farmers will be older which motivates to control
- for age of the farmer.
- Women have lower chances of business interactions and have limited exposure.
- Thus, male farmers will be interacting more, giving higher ratings to the
- ratees.
- Therefore, the dummy for interaction is included as a control variable.
- Women from more developed areas generally tend to get involved in activities
- generating income.
- Thus, most of the female farmers maybe located near tarmac roads, ensuring
- easier reach to the dealers, traders and processors (more favourable ratings).
- Similar argument can be used for murram roads.
- Hence, controlling for distance of farmer's homestead from tarmac and murram
- roads can be justified.
- If the farmer is married, chances are that the farmer is a man (married
- women devote most of their time to responsibilities at home), so the rating
- magnitude may be due to the marital status, indicating the need to control
- for farmer's marital status.
+ Men are likely to be better educated than women.
+ Better levels of education and knowledge will probably mean that farmers
+ have a better understanding of what to expect from service and input providers,
+ and so, may rate more or less favorably.
+ One does have to control for this impact pathway as otherwise, the gender
+ and education effects will be conflated.
+ In other words, correlation between the farmer's gender and the rating
+ from the farmer maybe confounded by education.
+ Women are likely to be younger than men because of recent entry into farming
+ activities and also older women devote more time to family responsibilities.
+ Thus, age may also directly affect ratings.
+ For instance, older individuals may have more experience and so, may rate
+ more or less critically.
+ Therefore, age effects need to be purged from the model by controlling
+ for it.
+ Similar to age, mobility may directly affect ratings.
+ In particular, men are more mobile and so more likely to have interacted
+ with input dealers.
+ If these interactions lead to systematically different ratings, it will
+ also be necessary to control for it.
  
 \end_layout
 
 \begin_layout Standard
-Male ratees are likely to be older as they stay in income-generating activities
- for longer time, justifying the inclusion of age of ratee as a control.
- Men who are dealers, traders or millers have higher chances of having education
- and if the ratee is married, it is more likely that the ratee is a man.
- Thus, controlling for education and marital status of the ratee is also
- important.
+Distance to murram and tarmac roads are proxies of remoteness.
+ In remote areas, input and service providers face many challenges such
+ as larger transaction costs and poor access to services such as power.
+ For instance, in semi-urban areas, mills often run on 3-phase electricity,
+ while in remote areas, combustion engines are used to power the mills.
+ The latter produce inferior quality maize products.
+ These differences will also be reflected in the ratings because farmers
+ in remote areas tend to reach out to the input and service providers operating
+ in those same areas.
+ Thus, by controlling for distance of farmer's homestead to murram and tarmac
+ roads, these differences are accounted for.
+\end_layout
+
+\begin_layout Standard
+Men in farming activities tend to be married.
+ On the other hand, it can be expected that women in farming are mostly
+ not married as married women get involved more in household activities.
+ Being married could also mean that these farmers have been longer in maize
+ production and thus, have more experience with service and input providers.
+ This might make their ratings more or less favourable which makes it important
+ to control for marital status of the farmer.
+ 
+\end_layout
+
+\begin_layout Standard
+The arguments can be similar in the case of ratees.
+ Since men are likely to be more educated than women, the education and
+ knowledge might define what kind of service and inputs they provide to
+ their customers (better or worse knowledge of improved service or inputs).
+ This would also lead to more or less favourable ratings from farmers and
+ self-ratings, justifying the need to control for education of ratees.
+ Men are likely to be older because of longer active periods in service
+ providing and input dealing.
+ Older individuals might have better experience in the business.
+ This can impact the ratings.
+ Farmers may rate older ratees with more experience more favourably while
+ self-ratings are likely to be higher from older individuals because of
+ their greater awareness about their performance in the industry.
+ Hence, I control for age of the ratee (input dealer, trader or miller).
+ 
+\end_layout
+
+\begin_layout Standard
+Controlling for marital status of ratees is also necessary as married service
+ and input providers mostly tend to be men.
+ This would also mean they would have better knowledge and experience (more
+ time spent in the industry as the chances of being married increases with
+ age) which might lead to more favourable ratings from farmers.
+ At the same time, women who are not married might also be rating themselves
+ lower because of minimal experience, knowledge, connections and support
+ in their businesses.
+ Therefore, purging marital status effects of the ratees from the model
+ is essential.
  
 \end_layout
 
@@ -7772,66 +7821,6 @@ e for location-based ratings, being highly significant too.
 \end_layout
 
 \begin_layout Standard
-Following this, table 7 shows the results from multiple regression analysis
- looking at the impact of ratee's gender on the self-ratings.
- The relationship is significant only for quality, price and reputaion based
- self-ratings.
- It is observed that if the ratee is a woman, she significantly self-assesses
- herself higher than the male ratees for quality and price.
- However, for reputation, she gives herself a lower self-rating (significant).
- These results are consistent with the findings from table 5.
- Looking at model 1, it can also be noted that older and educated ratees
- self-assess themselves higher significantly and married ratees self-assess
- themselves lower significantly.
- Consistent with table 5 results, it can be observed that traders significantly
- give higher self-ratings while dealers give significantly lower self-ratings.
- Henceforth, it can be inferred that for quality and price, women self-assess
- themselves higher while for reputation, lower.
- Here, hypothesis 3 is only consistent with the finding about reputation
- based self-ratings.
- 
-\end_layout
-
-\begin_layout Standard
-Finally, table 8 looks at the relationship between farmer's and ratee's
- gender and the differences between the farmer ratings and ratee self-ratings.
- Here, again the standard errors are clustered at the ratee level.
- The differences increase significantly for the overall average ratings,
- location and price based ratings if the farmer is a woman (also for reputation
- (model 10), when the interaction term is added).
- This means female farmers give significantly more different ratings than
- the self-assessments by the ratees themselves.
- The impact of ratee's gender on the differences is interesting as the differenc
-es in ratings decline significantly for quality and price if the ratee is
- a woman while the differences increase in the case of reputation based
- ratings.
- 
-\end_layout
-
-\begin_layout Standard
-The interaction between farmer's gender and ratee's gender is insignificant.
- If the farmer had some business interaction with the ratee or if the farmer
- has some level of education, the differences rise significantly.
- If the farmer is married, the differences in ratings decline.
- In the case of dealers and traders being rated, the differences increase
- significantly.
- Therefore, it can be stated that women give more different ratings than
- self-assessments, particularly in the case of location and price.
- The gender of the ratee only matters significantly when differences in
- ratings based on quality, price and reputation are considered.
- From these inferences, it can be derived that indeed self-assessments can
- be different from the actual ratings received from the farmers (aligns
- with the idea of hypothesis 1) and gender influences these differences.
- Looking at the intercepts in table 8, it can also be observed that the
- coefficients are significantly negative for overall average rating differences,
- quality, price and reputation rating differences.
- This indicates that self-ratings are always higher than the farmer ratings,
- particularly in the case of quality, price and reputation based ratings,
- a strong evidence supporting hypothesis 1.
- 
-\end_layout
-
-\begin_layout Standard
 \paragraph_spacing onehalf
 \begin_inset ERT
 status open
@@ -10395,6 +10384,27 @@ end{landscape}
 \end_layout
 
 \begin_layout Standard
+Following this, table 7 shows the results from multiple regression analysis
+ looking at the impact of ratee's gender on the self-ratings.
+ The relationship is significant only for quality, price and reputaion based
+ self-ratings.
+ It is observed that if the ratee is a woman, she significantly self-assesses
+ herself higher than the male ratees for quality and price.
+ However, for reputation, she gives herself a lower self-rating (significant).
+ These results are consistent with the findings from table 5.
+ Looking at model 1, it can also be noted that older and educated ratees
+ self-assess themselves higher significantly and married ratees self-assess
+ themselves lower significantly.
+ Consistent with table 5 results, it can be observed that traders significantly
+ give higher self-ratings while dealers give significantly lower self-ratings.
+ Henceforth, it can be inferred that for quality and price, women self-assess
+ themselves higher while for reputation, lower.
+ Here, hypothesis 3 is only consistent with the finding about reputation
+ based self-ratings.
+ 
+\end_layout
+
+\begin_layout Standard
 \paragraph_spacing onehalf
 \begin_inset ERT
 status open
@@ -11246,6 +11256,45 @@ end{table}
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Finally, table 8 looks at the relationship between farmer's and ratee's
+ gender and the differences between the farmer ratings and ratee self-ratings.
+ Here, again the standard errors are clustered at the ratee level.
+ The differences increase significantly for the overall average ratings,
+ location and price based ratings if the farmer is a woman (also for reputation
+ (model 10), when the interaction term is added).
+ This means female farmers give significantly more different ratings than
+ the self-assessments by the ratees themselves.
+ The impact of ratee's gender on the differences is interesting as the differenc
+es in ratings decline significantly for quality and price if the ratee is
+ a woman while the differences increase in the case of reputation based
+ ratings.
+ 
+\end_layout
+
+\begin_layout Standard
+The interaction between farmer's gender and ratee's gender is insignificant.
+ If the farmer had some business interaction with the ratee or if the farmer
+ has some level of education, the differences rise significantly.
+ If the farmer is married, the differences in ratings decline.
+ In the case of dealers and traders being rated, the differences increase
+ significantly.
+ Therefore, it can be stated that women give more different ratings than
+ self-assessments, particularly in the case of location and price.
+ The gender of the ratee only matters significantly when differences in
+ ratings based on quality, price and reputation are considered.
+ From these inferences, it can be derived that indeed self-assessments can
+ be different from the actual ratings received from the farmers (aligns
+ with the idea of hypothesis 1) and gender influences these differences.
+ Looking at the intercepts in table 8, it can also be observed that the
+ coefficients are significantly negative for overall average rating differences,
+ quality, price and reputation rating differences.
+ This indicates that self-ratings are always higher than the farmer ratings,
+ particularly in the case of quality, price and reputation based ratings,
+ a strong evidence supporting hypothesis 1.
+ 
 \end_layout
 
 \begin_layout Standard
