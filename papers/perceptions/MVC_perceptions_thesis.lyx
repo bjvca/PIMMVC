@@ -638,12 +638,13 @@ This section discusses the context and background of the study.
  security and household income.
  By land area, maize is the most cultivated crop in Uganda, covering 30%
  of the total cropped land, followed by beans, covering 15% of cropped land.
+ Maize and beans are often intercropped.
  Government’s interventions in the maize sub-sector over the past decade
  have targeted increasing on-farm productivity and production, yet productivity
  remains very low.
  On-farm maize data from the Uganda Annual Agricultural Survey 2018 agricultural
- year reports yield figures of 596kg per acre (or 1.49mt/ha); a figure that
- falls almost midway the yield range of 270 and 995 kg per acre reported
+ year reports yield figures of 596 kg per acre (or 1.49mt/ha); a figure that
+ falls almost midway the yield range of 270 and 995 kg per acre, as reported
  by 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -693,15 +694,15 @@ Improved maize seed (hybrid and open pollinated varieties) is among the
  to range between 27% and 37%, compared to between 30% and 50% in Tanzania
  and Malawi 
 \begin_inset CommandInset citation
-LatexCommand citet
+LatexCommand citep
 key "VanCampenhout2020"
 literal "true"
 
 \end_inset
 
 .
- When measured using the percentage of land under improved maize seed varieties,
- the use rates in Uganda slightly increase to 54% 
+ When measured using the percentage of land under improved maize seed, the
+ use rates in Uganda slightly increase to 54% 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Sheahan2017"
@@ -710,8 +711,13 @@ literal "true"
 \end_inset
 
 .
- Limited use of improved maize seed is just one among the many factors constrain
-ing maize yields in Uganda.
+ 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+Limited use of improved maize seed is just one among the many factors constraini
+ng maize yields in Uganda.
  Limited access to markets for harvested maize for farmers living in remote
  areas, slow advancement in milling technologies, price discrimination at
  all levels of the supply chain, issues of trust amongst the supply chain
@@ -729,14 +735,23 @@ ing maize yields in Uganda.
 \end_layout
 
 \begin_layout Standard
-\paragraph_spacing onehalf
-This study focuses on the market level factors, specifically, the influence
- of input dealer (trader or miller) attributes such as, reputation or perceived
- quality of seed or service, to understand deeper mechanisms in the industry.
- By the inclusion of gender-based analysis, the state of women involvement
- in this industry can be better explained.
- Gender-based perceptions can aid in the insights about the longer-term
- outputs of the supply chain.
+Not only input usage is important in the context of maize supply chains,
+ trading and processing of maize are also essential to meet consumption
+ needs across Sub-Saharan Africa.
+ For instance, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Ekpa2019"
+literal "true"
+
+\end_inset
+
+ discusses the importance of promoting processing techniques reducing the
+ loss of nutrients, improving nutritional and baking properties and increasing
+ shelf life.
+ Traders and processors should be aware of the high potential in localized
+ maize foods, ensuring effective ways to preserve the nutritional components
+ of the maize crops and fair prices for the maize farmers.
  
 \end_layout
 
@@ -748,7 +763,7 @@ Supply Chain Actors
 \begin_layout Standard
 \paragraph_spacing onehalf
 The roles of input dealers, maize traders and maize processors in the maize
- supply chain are very intricate.
+ supply chain are intricate.
  Their performance can have major impacts on the entire value chain leading
  to food security issues.
  There is ample evidence of the essential role of improved agricultural
@@ -782,7 +797,12 @@ literal "true"
 \end_inset
 
 .
- Common explanations advanced in the literature are that: farmers are risk
+ 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+Common explanations advanced in the literature are that: farmers are risk
  averse, or are not aware of existing technologies, or lack knowledge about
  their proper use, or are financially constrained, or lack information about
  profitability 
@@ -869,7 +889,12 @@ literal "true"
 \end_inset
 
 .
- Several qualitative and experimental studies 
+ 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+Several qualitative and experimental studies 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Ashour2019,Boef2019,Barriga2018,Bold2017"
@@ -931,17 +956,21 @@ literal "true"
 \begin_layout Standard
 \paragraph_spacing onehalf
 Trading of maize is also an essential part of the maize value chain.
- The assembly traders help in the marketing of maize and thus, are a linkage
+ Assembly traders help in the marketing of maize and thus, are a bridge
  between the farmers and the markets (or the millers in particular).
- The local assembly traders reach the remote locations to collect maize
- harvests sometimes directly from the farmers, farm gates, the small rural
- storage facilities or the markets.
+ Local assembly traders reach the remote locations to collect maize harvests
+ mostly directly from the farmers at the farm gate, the small rural storage
+ facilities or the markets.
  These traders also take the responsibility of transportation in general
  so that the harvested maize can reach the essential marketing destinations,
  starting from small retailers, millers or processors, bigger regional markets
  to export centers.
- The assembly traders also play a major role in maize storage as traders
- in Uganda can store the harvest for a maximum of one year.
+ 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+The assembly traders also play a major role in the storage of the harvest.
  This can also impact the quality of maize in the supply chain as there
  can be incidences of contamination and mould 
 \begin_inset CommandInset citation
@@ -961,8 +990,8 @@ literal "true"
 \end_inset
 
  commented that access to assembly traders have increased over time and
- this has given greater opportunities to the remote areas with the access
- of maize markets.
+ this has given greater opportunities to the remote areas in terms of access
+ to maize markets.
  This claim is supported by 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -973,17 +1002,17 @@ literal "true"
 
  with the mention of trading being highly competitive in Eastern and Southern
  Africa in terms of the marketing margins and the number of traders operating.
- Studying the perceptions of these important actors can aid in the understanding
- of the marketing linkages, maintenance of quality during trading activities
- (storage and transportation) and sustenance of trading relationships in
- these rural markets.
+ Studying the perceptions of and about these important actors can aid in
+ the understanding of the marketing linkages, maintenance of quality during
+ trading activities (storage and transportation) and sustenance of trading
+ relationships in these rural markets.
  
 \end_layout
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-Another very important actor of the maize supply chain is the millers or
- processors who produce the final product from the harvested maize.
+Another necessary actor of the maize supply chain is the millers or processors
+ who produce the final product from the harvested maize.
  For instance, the profit-efficiency of the maize mills has been studied
  by 
 \begin_inset CommandInset citation
@@ -995,28 +1024,7 @@ literal "true"
 
  in South Africa where the researchers also indicated the unexplored potential
  of the mills due to the deregulation of the maize markets in the country.
- Maize milling is also very closely integrated with food security.
- Since maize flour is a staple food for most of the countries in Africa,
- maize mills can ensure constant supply of processed maize in cases of grain
- scarcity or less availability of processed maize in the consumer markets.
- An example of the importance of maize millers during times of deficit was
- observed in Zambia when maize grain imports were prevalent from South Africa
- in order to improve the functioning of the markets to meet the demands
- of the consumers 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "nijhoff2002markets"
-literal "true"
-
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-Interestingly, the type of maize being milled can also be influenced by
+ Interestingly, the type of maize being milled can also be influenced by
  consumer preferences.
  An example of this can be obtained from 
 \begin_inset CommandInset citation
@@ -1044,6 +1052,8 @@ literal "true"
 
 , indicating the extent to which maize millers hold a prime role in the
  maize value chain mechanisms.
+ Therefore, learning the perceptions of the milling performances can give
+ better insights about the supply chain.
  
 \end_layout
 
@@ -1056,13 +1066,12 @@ Perceived Attributes of Supply Chain Actors
 \paragraph_spacing onehalf
 Due to limited knowledge and information asymmetries, it is often hard for
  farmers to detect the quality of purchased inputs.
- Hence, for less knowledgeable and experienced farmers, input quality may
- be approximated by, for example, input dealer attributes such as the dealer's
- reputation (information that other buyers have about the seller) or the
- dealer's stock levels (input dealers operating with smaller stock levels
- may engage in counterfeiting in order to have more inputs to sell).
+ Generally, they try to make perceptions about the different attributes
+ of the input dealers to understand the actual quality.
+ Based on their knowledge, experience and awareness, farmers perceive the
+ dealer's reputation (information that other buyers have about the seller).
  Other input dealer attributes such as the price charged by a given dealer
- may influence farmer's perception of the quality of seed; 
+ may even influence farmer's perception of the quality of seed; 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "Ashour2019"
@@ -1070,9 +1079,14 @@ literal "true"
 
 \end_inset
 
-, for instance, find that the price of a bottle of herbicide adjusts to
- its measured quality, although to a very limited degree.
- Ease of access to an input dealer also determines transactions costs and
+, for instance, find that the price of a bottle of herbicide correlates
+ with its measured quality, although to a very limited degree.
+ 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+Ease of access to an input dealer also determines transactions costs and
  subsequently farmer's access to and use of improved inputs 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -1083,7 +1097,7 @@ literal "true"
 
 .
  Secondly, ease of access to input dealers may increase interaction between
- farmers and the input dealers, thereby increase farmers learning about
+ farmers and the input dealers, thereby increasing farmers' learning about
  improved seed.
  The theoretical framework motivating a possible link between input dealer
  attributes and use of improved seed can be located in the literature on
@@ -1100,33 +1114,50 @@ literal "true"
  is accompanied by not just a customer’s perceived value (price or quality)
  of that product/service, but also the perceived value (e.g trust/reputation,
  accessibility) of the provider of the product.
+ Thus, the perceptions formed on the basis of price competitiveness, quality
+ of seeds, ease of access and reputation can determine the use of improved
+ inputs to some extent.
+ 
 \end_layout
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-Similar arguments can be used for the perceived attributes of the trader.
+Next, I turn to the perceived attributes of traders.
  In remote locations, if the traders are easily accessible, that would mean
  that the farmers have greater exposure to selling opportunities, might
  reduce wastage of harvest, ensure constant income for the farmer and increase
  availability of maize harvests at the buying points.
- Traders who are easily accessible and provide a good quality of service
- may also have greater reputation amongst the farmers which influence the
- perceived reputation attributes.
- The perceived quality of service can be driven by many aspects like behavior
+ Thus, these factors can explain the perceptions of the farmers about the
+ trader.
+ Traders having better reputation will influence the perceived reputation
+ attributes, i.e., if a farmer hears something good about a trader from another
+ farmer, he or she will perceive that trader to be well-reputed.
+ Reputation of the trader may also be motivated by trustworthiness and higher
+ number of business interactions.
+ Traders in greater demand are likely to be well-reputed.
+ 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+The perceived quality of service can be driven by many aspects like behavior
  of the trader, flexibility of the trader, risks taken by the trader for
  the transportation of the harvest, etc.
- Traders are also rated based on honesty.
- This is interesting as it indicates trust levels between the farmer and
- the trader.
- Traders with good perceived honesty levels might be getting more business
- and being reputed well.
  The price paid by traders while buying the harvest is an essential part
  of the interaction between the trader and the farmer.
  It is very important to know how well the farmers perceive the prices being
- paid by the traders and how well the traders perceive the they are paying
- themselves.
- Traders paying higher prices will mostly likely be rated well also on the
- reputation, quality and honesty aspects.
+ paid by the traders and how well the traders perceive the prices they are
+ paying themselves.
+ This is an observable attribute of the trader, so most farmers should agree
+ on their perceptions.
+ However, these perceptions can also have some underlying factors like length
+ of the relationship between the trader and farmer.
+ For instance, if a trader has been buying maize from a farmer for a long
+ period of time, the farmer might agree at a lower price because he or she
+ will be ensured that the harvest will always be sold on time without any
+ hassle.
+ Therefore, these perceived attributes about the traders can give better
+ insights about access to maize marketing channels.
  
 \end_layout
 
@@ -1138,20 +1169,37 @@ Millers or processors are also scored based on similar factors or attributes.
  in Uganda, both farmers and traders can take harvest to the mills.
  For farmers living in remote areas, it maybe hard to transport their harvest
  for milling or processing.
- The quality of service and the quality of end product provided by these
- mills also impacts their reputation.
- Friendly behavior, greater flexibility, higher cleanliness in the mills
- and lower waiting times can increase the perceived quality of service and
- earn good reputation amongst the farmers and traders.
- The prices charged by the mill for processing maize can also influence
- the farmer's perceived quality of the mill and the end product.
- Similarly, the prices charged can be very competitive.
- Thus, perceived prices cannot directly indicate the actual price.
- Also, in this case, high prices may not always be perceived as bad as they
- can be coupled with the quality of processing and the quality of the end
- product ensured by the mill.
+ Thus, location of the mills can influence perceptions of the farmers about
+ the millers.
+ 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+Perceptions are also formed based on the quality of service and the quality
+ of end product provided by these mills.
+ Better milling technologies, cleanliness of the mills, transparency at
+ the mills and flexibility provided by the mill staff can also result in
+ good perceived performance levels.
+ Similarly, friendly behaviour and lower waiting times at the mills can
+ ensure good perceived reputation of the processors.
+ 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+Perceived prices cannot directly indicate the actual price charged at the
+ mills.
+ In this case, high prices may not always be perceived as bad as they can
+ be coupled with the quality of processing and the quality of the end product
+ ensured by the mill.
+ This may also point towards the provision of price competitiveness among
+ the processors.
  Finer end products can improve the perceived quality of end product along
- with the reputation of the mill or the processor.
+ with the perceived reputation of the mill or the processor.
+ These arguments indicate that the quality of processed maize available
+ for the consumers can be partially explained by the perceived attributes
+ of the maize millers.
  
 \end_layout
 
