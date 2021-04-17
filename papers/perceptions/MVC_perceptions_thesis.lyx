@@ -197,7 +197,7 @@ I would first like to thank Professor Jo Swinnen and Doctor Bjorn Van Campenhout
  I am grateful to Bjorn for giving me immense guidance and helpful advice
  throughout, helping me to learn new things and keeping track of every step
  in the preparation of the thesis.
- I am also thankful of all the surveyors involved in the data collection.
+ I am also thankful for all the surveyors involved in the data collection.
  I would like to express my gratitude for the researchers at International
  Food Policy Research Institute (IFPRI), who were engaged in the design
  of the study, implementation of the surveys and collection of the data.
@@ -265,81 +265,138 @@ General Introduction
 \end_layout
 
 \begin_layout Standard
-\paragraph_spacing onehalf
-Ratings based on gender of the rater and the ratee has only been of interest
- in the recent decades and the literature shows a wide range of studies
- in different fields to address the gender based rating patterns (
+Agricultural economists have started giving importance to imperfect competition
+ only in the recent decades.
+ This is because food markets have been found to be oligopolistic at large,
+ indicating a possibility of emerging food retailers taking over the markets
+ (
 \begin_inset CommandInset citation
 LatexCommand citealp
-key "Furnham2005,Patiar2008"
+key "McCorriston2002"
 literal "true"
 
 \end_inset
 
 ).
- The main focus of this study is to understand gendered perceptions from
- the ratings given by male and female farmers to the input dealers, traders
- and processors of the maize supply chain in Uganda and the self-ratings
- given by the male and female dealers, traders and maize millers to themselves.
- In the agricultural sector, studies based on gender of the various actors
- of the food value chains are becoming more prominent, particularly in the
- developing economies (
+ In countries like Uganda, imperfect competition among the supply chains
+ of crops can have major repercussions.
+ For instance, 
 \begin_inset CommandInset citation
-LatexCommand citealp
-key "barrientos2019,Kruijssen2018,Mnimbo2017"
+LatexCommand citet
+key "Osborne2005"
 literal "true"
 
 \end_inset
 
-).
- For instance, in Africa, attempts of closing the productivity gap between
- male and female farmers is a new step towards achieving food security with
- gender dimensions in the food value chains across Uganda increasingly gaining
- importance in the recent years 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "akite2018,bamanyaki2020,nchanji2020"
-literal "true"
-
-\end_inset
-
-.
- It has been shown that improved access to markets and extension services
- for both male and female smallholder maize farmers can help reduce the
- gender productivity gap in Uganda 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Larson2016"
-literal "true"
-
-\end_inset
-
-.
+ observed that traders engaging in imperfectly competitive markets could
+ drive down the prices received by the farmers.
+ This was significantly prominent in the rural markets.
+ Thus, there can be significant efficiency losses due to imperfect competition
+ and asymmetric information among the actors of the supply chains.
+ These losses can be faced by both the farmers and the other actors of the
+ value chain like input dealers or traders or crop processors.
+ 
 \end_layout
 
 \begin_layout Standard
-\paragraph_spacing onehalf
-This motivates the aim to understand the ratings' mechanism based on the
- gender of the rater and the ratee in the case of maize value chains in
- Uganda.
- Traditionally, females have not been majorly involved in the input dealing,
- processing and trading activities for maize in Uganda.
- Thus, analysing how the gender of each actor impacts the ratings from farmers
- and the self-ratings is crucial in the Ugandan maize value chain as it
- will explain the lower involvement of females in input dealing, processing
- and trading activities.
- The perceptions obtained from the study can explain why females do not
- participate as much their male counterparts in these kind of businesses
- which basically fuel the maize value chain and the production of maize
- in Uganda.
+Particularly, in rural markets, greater market power in the hands of individual
+ actors can shift welfare to either the buyer or the seller side.
+ In most cases where poor farmers attempting to sell their produce are involved,
+ the farmers face discrimation and losses, shifting larger shares of the
+ transaction welfare towards the other actors involved.
+ Moreover, evidence of the relationship between level of market information
+ and seller attributes like price competitiveness and quality of services
+ already exists in the literature (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Tellis1987"
+literal "true"
+
+\end_inset
+
+).
+ The higher the information asymmetries are in the market, the lower is
+ the equilibrium correlation between price and quality.
+ 
+\end_layout
+
+\begin_layout Standard
+Considering such provisions of imperfect competition and asymmetric information,
+ actors in the supply chains use perceptions to form the transaction decisions.
+ These perceptions can be closely linked to each interaction of the supply
+ chain.
+ This is because based on the perceived attributes of the different actors
+ of the supply chains, farmers choose who to interact with for the sale
+ of the harvest.
+ Thus, perceptions can determine the transaction outcomes to some extent.
+ 
+\end_layout
+
+\begin_layout Standard
+Although perceptions provide information to the other actors about the attribute
+s of an individual seller or buyer in the supply chain, these can have significa
+nt consequences.
+ Farmers obtaining perceived performance information from another farmer
+ may make business choices based on that.
+ Hence, incorrect perceptions which do not align with the real attributes
+ might misguide these choices made by the economic actors.
+ This may create better opportunities for a non-deserving economic actor
+ and might worsen market demand for an actor performing well in reality
+ in the industry.
+ 
+\end_layout
+
+\begin_layout Standard
+At the same time, perceptions can deprive actors from the optimal allocation
+ of resources.
+ For instance, bad perceptions of farmers about input dealers might reduce
+ the usage of improved seed, about traders might deteriorate market access
+ and about millers might constrain the sale and processing of harvest.
+ Since perceptions are not always objectively measurable, they are less
+ studied in the literature.
+ However, we cannot ignore the importance of perceptions as a crossing node
+ for operational psychological preferences and real economic mechanisms
+ in the markets.
+ These arguments necessitate the study of perceptions in the agricultural
+ supply chains in detail.
  
 \end_layout
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-An intriguing question for researchers in understanding perceptions can
- be the leading motive behind the usage of ratings as the tool for perception
- identification.
+The case for the investigation is the maize value chain in Uganda where
+ ratings are used as measured perceptions.
+ I use data from a sample of 1500 maize farmers and 78 input (seed) dealers,
+ 341 assembly traders and 174 millers from Eastern Uganda to examine the
+ (in)consistency in farmer's and input (seed) dealer's or trader's or miller's
+ perceived attribute ratings of these actors and identify if the gender
+ of the rater or the ratee has any impact on the ratings (perceptions).
+ The farmers in the sample were asked to rate atleast one to three dealer(s),
+ trader(s) and miller(s).
+ Then these rated actors were traced and asked to provide self-assessment
+ scores.
+ 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+For this study, I use input dealer, trader and miller attributes, such as
+ perceived ease of access to the dealer or trader or miller, perceived quality
+ of the seed sold by the dealer or the quality of service provided by the
+ trader or the miller, and reputation of the dealer or trader or miller,
+ to assess whether such perceived input-dealer or trader or miller attributes
+ can vary significantly based on the gender of the farmer (rater) or the
+ ratee (dealer or trader or miller).
+ 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+The ratings can be used as a tool to understand what factors determine widesprea
+d perceptions about certain actors in the food value chains and whether
+ consistency can be obtained amongst the ratings and the self-assessments.
+ Understanding perceptions also includes the leading motive behind the usage
+ of ratings as the tool for perception identification.
  The literature shows that ratings can be largely used as an instrument
  for identifying performance levels of various actors in the markets or
  respective industries of choice, for information transparency 
@@ -385,7 +442,12 @@ literal "true"
 \end_inset
 
 ).
- In marketing research, ratings are the tool to identify demand (
+ 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+In marketing research, ratings are the tool to identify demand (
 \begin_inset CommandInset citation
 LatexCommand citealp
 key "Dhar2016"
@@ -411,12 +473,7 @@ literal "true"
 \end_inset
 
 ).
- 
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-Social and psychological studies widely use ratings to analyse social behavior
+ Social and psychological studies widely use ratings to analyse social behavior
  (
 \begin_inset CommandInset citation
 LatexCommand citealp
@@ -478,87 +535,141 @@ literal "true"
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-Broadly, studying the rater's ratings and the ratee's ratings can give insights
- about the deeper mechanisms of performance perceptions in the value chains.
- The ratings can be used as a tool to understand what factors determine
- widespread perceptions about certain actors in the food value chains and
- whether consistency can be obtained amongst the rater's and ratee's ratings.
+Broadly, studying the rater's ratings and the self-assessments can give
+ insights about the deeper mechanisms of performance perceptions in the
+ value chains.
  Traditionally, higher ratings always motivate better performance as a boost
  to the existing performance level of the concerned actor and lower ratings
  improve performance or at least induce efforts by the rated subjects to
  improve performance.
  It is true that there are various other factors like competition, access
- to facilities, knowledge of the business and mechanisms, etc.
+ to facilities, knowledge of the business, etc.
  which can influence the performance levels directly.
  However, the fact that ratings can even drive these factors directly or
  indirectly cannot be ignored.
  Ratings can be assumed as a method of assessment which does not couple
- with direct repercussions but do successfully indicate long-term repercussions
- in the near or distant future which impacts the rated subjects.
+ with direct repercussions but do successfully indicate indirect repercussions
+ which impact the rated subjects (in the present or in the future).
  
 \end_layout
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-For this study, I use input dealer, trader and miller attributes, such as
- perceived ease of access to the dealer or trader or miller, perceived quality
- of the seed sold by the dealer or the quality of service provided by the
- trader or the miller, and reputation of the dealer or trader or miller,
- to assess whether such perceived input-dealer or trader or miller attributes
- can vary significantly based on the gender of the farmer (rater) or the
- ratee (dealer or trader or miller).
+Ratings based on gender of the rater and the ratee has only been of interest
+ recently and the literature shows a wide range of studies in different
+ fields to address the gender based rating patterns (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Furnham2005,Patiar2008"
+literal "true"
+
+\end_inset
+
+).
+ The main focus of this study is to understand gendered perceptions from
+ the ratings given by male and female farmers to the input dealers, traders
+ and processors of the maize supply chain in Uganda and the self-ratings
+ given by the male and female dealers, traders and maize millers to themselves.
  
 \end_layout
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-The case for the investigation is the maize value chain in Uganda.
- I use data from a sample of 1500 maize farmers and 78 input (seed) dealers,
- 341 assembly traders and 174 millers from Eastern Uganda to examine the
- (in)consistency in farmer's and input (seed) dealer's or trader's or miller's
- perceived attribute ratings of these actors and identify if the gender
- of the rater or the ratee has any impact on the ratings.
+Traditionally, women have not been majorly involved in the input dealing,
+ processing and trading activities for maize in Uganda.
+ Thus, analysing how the gender of each actor impacts the ratings from farmers
+ and the self-ratings is crucial in the Ugandan maize value chain.
+ The systemic gender bias in perceptions can demotivate the entry of women
+ in the food supply chains, creating better opportunities for men to flourish
+ in these industries.
+ Issues like discrimination against women, barriers to market access for
+ women, mistrust, lower credit availabilities, etc.
+ are some of the consequences of such gender bias in perceptions.
+ Thus, perceptions obtained from the study can aid in the explanation of
+ why women do not participate as much as the men in these kind of businesses
+ which fuel the maize value chain and the production of maize in Uganda.
  
 \end_layout
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-The first objective is to establish how the perceived attribute ratings
- and self-ratings of dealers, traders and millers differ from each other.
+In the agricultural sector, studies based on gender of the various actors
+ of the food value chains are becoming more prominent, particularly in the
+ developing economies (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "barrientos2019,Kruijssen2018,Mnimbo2017"
+literal "true"
+
+\end_inset
+
+).
+ For instance, in Africa, attempts of closing the productivity gap between
+ male and female farmers is a new step towards achieving food security with
+ gender dimensions in the food value chains across Uganda increasingly gaining
+ importance in the recent years 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "akite2018,bamanyaki2020,nchanji2020"
+literal "true"
+
+\end_inset
+
+.
+ It has been shown that improved access to markets and extension services
+ for both male and female smallholder maize farmers can help reduce the
+ gender productivity gap in Uganda 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Larson2016"
+literal "true"
+
+\end_inset
+
+.
+ These motivate the aim to understand the alignment of perceptions based
+ on the gender of the farmer, agro-input dealer, trader and miller in the
+ case of maize value chains in Uganda.
+ 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+The first objective in this study is to establish how the perceived attribute
+ ratings and self-ratings of dealers, traders and millers differ from each
+ other.
  All the actors are studied together with the focus on the ratings being
- received and the self-ratings.
- Since, one attribute for each actor vary, the study considers the other
- four attributes for every actor.
+ received and the self-assessments.
  The four attributes, as rated on a scale of 1-5 by farmers and the dealers,
- traders and millers themselves, are: (i) quality of seed sold by a given
- dealer relative to the other dealers, quality of service provided by a
- trader (miller) relative to the other traders (millers); (ii) price of
- seed sold by a given dealer relative to other dealers, price paid by a
- given trader relative to other traders, price charged by a given miller
- relative to the other millers; (iii) Location (ease of access by road or
- phone) of the input dealer (trader or miller) relative to other dealers
- (traders or millers); (iv) reputation of a given dealer (trader or miller)
- relative to other dealers (traders or millers).
- intra-class correlation coefficients are used to determine inter and intra-rate
-r reliability to see the level of agreement between the ratings obtained.
- The second objective aims to understand rating patterns based on the gender
+ traders and millers themselves, are: (i) quality of service provided by
+ a dealer or trader or miller relative to the other dealers or traders or
+ millers; (ii) price competitiveness assessed of one actor relative to the
+ other actors; (iii) location (ease of access by road or phone) of the input
+ dealer (trader or miller) relative to other dealers (traders or millers);
+ (iv) reputation of a given dealer (trader or miller) relative to other
+ dealers (traders or millers).
+ 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+The second objective aims to understand rating patterns based on the gender
  of the farmer (rater) and the third objective aims to understand the self-ratin
 g patterns based on the gender of the ratee (dealer or trader or miller).
- The fourth objective is to identify whether farmers rate the ratees based
- on their gender.
- Multivariate regression models with clustered standard errors are used
- for the analysis.
+ The fourth objective is to identify whether farmers have gender-based perceptio
+ns while scoring the input and service providers.
+ Average ratings and multivariate regression models are used for the analysis.
  
 \end_layout
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-This study contributes additional literature to understanding the role of
- agro-input dealers, traders and millers in facilitating or limiting the
- development of smallholder agriculture.
+This study contributes to the literature of understanding the role of agro-input
+ dealers, traders and millers in facilitating or limiting the development
+ of smallholder agriculture.
  Ratings for the different actors of the supply chain, which this study
  employs to examine farmer's perceived value of input dealers or traders
- or millers, is widely a used system in marketing- as a mechanism to increase
+ or millers, is widely an used system in marketing- as a mechanism to increase
  customer trust in and purchase of services/products 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -583,9 +694,14 @@ literal "true"
  If applied to assembly trading, it will ensure broader access to maize
  markets and good prices for the farmers' harvests.
  Similarly, ratings for maize processing can improve the end products obtained
- from maize and can sustain the value chain, ensuring less deficits and
- good quality of food.
- Seller ratings and reputation are increasingly becoming important assets
+ from maize and can sustain the value chain, ensuring less wastage and good
+ quality of food.
+ 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+Seller ratings and reputation are increasingly becoming important assets
  in marketing, particularly when the quality of the good or service transacted
  is hard to measure and the buyer and seller cannot perfectly contract on
  the outcome of the transaction, or where there are no legal institutions
@@ -598,6 +714,8 @@ literal "true"
 \end_inset
 
 .
+ This significantly ties into the literature on product standards and traceabili
+ty.
  Through these type of ratings, the supply chain actors will be mindful
  of building and maintaining a good reputation through the information that
  the farmers have about these actors, including previous transactions and
@@ -605,10 +723,20 @@ literal "true"
 \end_layout
 
 \begin_layout Standard
+The findings of the study indicate enhanced (positive) self-perceptions
+ compared to the perceived attributes from the farmers.
+ Interestingly, the prominence of gender is evident in the farmers' perceptions
+ where women are observed to have more positive perceptions about the input
+ and service providers.
+ However, no significant gender bias for the input and service providers
+ is evident in the ratings obtained.
+\end_layout
+
+\begin_layout Standard
 \paragraph_spacing onehalf
 In the sections that follow, I expound on the study context and hypotheses;
- explain the data design and analysis methods; present the descriptive and
- empirical results; and finally provide a conclusion and recommendations.
+ explain the data used and analysis methods; present the results; and finally
+ provide a conclusion and recommendations.
 \end_layout
 
 \begin_layout Standard
@@ -1018,7 +1146,12 @@ literal "true"
 
  in South Africa where the researchers also indicated the unexplored potential
  of the mills due to the deregulation of the maize markets in the country.
- Interestingly, the type of maize being milled can also be influenced by
+ 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+Interestingly, the type of maize being milled can also be influenced by
  consumer preferences.
  An example of this can be obtained from 
 \begin_inset CommandInset citation
@@ -1038,7 +1171,7 @@ literal "true"
  At the same time, large scale processors can also influence government
  actions for the sustenance of food value chains 
 \begin_inset CommandInset citation
-LatexCommand citet
+LatexCommand citep
 key "omueti2006comparison"
 literal "true"
 
@@ -1359,7 +1492,7 @@ literal "true"
 
 \end_inset
 
- argues that women have a tendency to score better because perceptions of
+ argues that women have a tendency to score higher because perceptions of
  women are more positive than perceptions of men.
  Thus, I expect to see a similar trend in this study.
  
@@ -1661,8 +1794,8 @@ The data for this study come from a survey of 1526 farming households, 78
  sampling at sub-county level.
  In each of the three districts, the sub-counties from which the villages
  were sampled were purposely selected based on their distance (km) from
- the main district town, in the range of 10kms, 20kms and 30kms from the
- main town.
+ the main district town, in the range of 10 kms, 20 kms and 30 kms from
+ the main town.
  The input dealer shops, assembly traders and millers interviewed are those
  that were referred to by farmers, either because they have ever purchased
  improved maize seed from them, sold harvest to traders or processed (sold)
@@ -1953,7 +2086,7 @@ Sexpr{format(round(table(pool$interaction_yes)[2]/sum(table(pool$interaction_yes
 
 \end_inset
 
- percent of the farmers have had some business interaction with the ratee
+ percent of the farmers have had some business interaction with the individual
  they are rating.
  
 \end_layout
@@ -4210,7 +4343,7 @@ Sexpr{format(round(icc1a.fn(icc_recast_price)$icc1a,digits=2),nsmall=0)}
 \end_inset
 
 ).
- This is expected as location and prices are observable factors an hence,
+ This is expected as location and prices are observable factors and hence,
  ratings for these factors should be more similar compared to non-observable
  attributes like quality and reputation.
  
@@ -4218,8 +4351,8 @@ Sexpr{format(round(icc1a.fn(icc_recast_price)$icc1a,digits=2),nsmall=0)}
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-Second, looking at overall averaged rating pattern, it can be derived that
- every farmer rates in a similar way every dealer or trader or miller.
+Secondly, looking at overall averaged rating pattern, it can be derived
+ that every farmer rates in a similar way every dealer or trader or miller.
  This is because the ICC coefficient is 
 \begin_inset ERT
 status open
@@ -5209,7 +5342,7 @@ Sexpr{format(round(mean(pool$ratee_rating_overall [pool$ratee_fem=="0"],
  However, the only exception is the overall average self-rating where male
  millers assess themselves worse than the female millers.
  Thus, supporting hypothesis 3, it can be stated that although women tend
- to self-assess less favourably, for quality and price, women tend to self-asses
+ to self-assess less favourably; for quality and price, women tend to self-asses
 s more favourably when compared to the men.
 \end_layout
 
@@ -5251,10 +5384,10 @@ Next, I try to understand how men rate other men and women rate other women.
 
 \begin_layout Standard
 It is interesting to note that generally, women are always rated higher
- for quality (consistent for dealer, traders and processors), indicating
+ for quality (consistent for dealers, traders and processors), indicating
  provision of better quality from women.
  Similarly, men are consistently rated higher for location with an exception
- of traders.
+ for traders.
  This may indicate that women (dealers and millers) are located in poorer
  locations.
  Some of the reasons behind that could be mobility constraints, lack of
@@ -7770,7 +7903,7 @@ Sexpr{format(round(lm_res1$coefficients[5],digits=2),nsmall=0)}
 
 \end_inset
 
- higher (significant).
+ point higher (significant).
  The education level of the farmer also significantly influences the way
  the farmer rates the ratee.
  If the farmer has some level of education, the farmer (rater) rates the
@@ -7849,8 +7982,8 @@ It can be observed in table 6 that the interaction between the gender of
  is significantly consistent for location-based and price-based ratings
  (models 3, 4, 7 and 8).
  This is consistent with the results from table 5.
- However, the magnitude of greater ratings from female farmers is most noticeabl
-e for location-based ratings, being highly significant too.
+ However, the magnitude of more favourable ratings from female farmers is
+ most noticeable for location-based ratings, being highly significant too.
  Interestingly, for quality and reputation based ratings, if the ratee is
  a woman, the farmer's rating increases significantly.
  However, in model 4, it is observed that for location based ratings, farmer's
@@ -14018,7 +14151,7 @@ These perceptions are very important in the maize supply chain and gives
  (ratings) analysed in this study.
  Since the share of female millers and traders is very small in this study,
  more balanced samples of the supply chain actors could reveal better and
- significant results.
+ highly significant results.
  
 \end_layout
 
