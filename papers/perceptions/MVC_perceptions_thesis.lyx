@@ -104,20 +104,61 @@ graphicboxes
 \paragraph_spacing onehalf
 Faced with imperfect information, economic actors use judgment and perceptions
  in decision making.
- Inaccurate perceptions or false beliefs may result in sub-optimal allocation
- of resources.
+ Inaccurate perceptions or false beliefs may result in 
+\change_deleted -461408743 1618861584
+sub-optimal allocation of resources
+\change_inserted -461408743 1618861633
+inefficient value chains and systematic bias in perceptions may affect inclusive
+ness.
+\change_deleted -461408743 1618861601
+.
+
+\change_unchanged
  In this paper, I study perceptions in Ugandan maize supply chains.
- A random sample of maize farmers are asked to rate other value chain actors—agr
-o-input dealers, assembly traders and maize millers—on a set of important
- attributes such as service quality, price competitiveness, ease of access,
- etc.
+ A random sample of maize farmers 
+\change_deleted -461408743 1618861721
+are
+\change_inserted -461408743 1618861721
+were
+\change_unchanged
+ asked to rate other value chain actors—agro-input dealers, assembly traders
+ and maize millers—on a set of important attributes such as service quality,
+ price competitiveness, ease of access, 
+\change_deleted -461408743 1618861749
+etc
+\change_inserted -461408743 1618861752
+and overall reputation
+\change_unchanged
+.
  These other value chain actors are tracked and asked to assess themselves
  on the same attributes.
  We find that input dealers, traders and millers assess themselves more
  favorably than farmers do.
  We also zoom in on heterogeneity in perceptions related to gender, and
- find that women give higher scores than men, but the gender of the actor
- being rated does not affect the rating.
+ find that women 
+\change_deleted -461408743 1618861841
+give
+\change_inserted -461408743 1618861841
+rate
+\change_unchanged
+ higher 
+\change_deleted -461408743 1618861846
+scores 
+\change_unchanged
+than men
+\change_deleted -461408743 1618861856
+, but t
+\change_inserted -461408743 1618861858
+.
+ T
+\change_unchanged
+he 
+\change_deleted -461408743 1618861862
+gender
+\change_inserted -461408743 1618861863
+sex
+\change_unchanged
+ of the actor being rated does not affect the rating.
 \end_layout
 
 \begin_layout Standard
@@ -323,15 +364,33 @@ literal "true"
  The higher the information asymmetries are in the market, the lower is
  the equilibrium correlation between price and quality.
  
+\change_inserted -461408743 1618861910
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -461408743 1618862007
+I really do not see what this has to do with competitiveness.
+ I think this is much more related to decision making under uncertainty
+ and asymmetric information.
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
 \change_unchanged
 
 \end_layout
 
 \begin_layout Standard
 
-\change_inserted -461408743 1618818933
-Neoclassical economic theory assumes rational agents that work in a context
- of full information.
+\change_inserted -461408743 1618862038
+Neoclassical economic theory assumes rational agents that interact in a
+ context of full information.
  However, in the real world, both consumers and producers face substantial
  information frictions.
  Sometimes agents lack skills to correctly assess information about the
@@ -345,13 +404,11 @@ As a result,
 \change_deleted -461408743 1618818734
 ,
 \change_inserted -461408743 1618818750
- value chain
-\change_unchanged
- actors in the supply chains 
-\change_deleted -461408743 1618819047
-use
-\change_inserted -461408743 1618819057
-often rely predominantly on
+ 
+\change_deleted -461408743 1618862095
+ actors in the supply chains use
+\change_inserted -461408743 1618862100
+economic agents often rely predominantly on
 \change_unchanged
  perceptions to 
 \change_inserted -461408743 1618819164
@@ -371,6 +428,12 @@ transaction decisions.
  of the harvest.
  Thus, perceptions can determine the transaction outcomes to some extent.
  
+\change_inserted -461408743 1618862272
+Also in commodity supply chains, information frictions may exist, especially
+ in informal value chains where quality is hard to track and agreements
+ difficult to enforce.
+ As a result, value chain actors also base part of their decisions on perception
+s and beliefs about actors up- and downstream.
 \change_unchanged
 
 \end_layout
@@ -385,16 +448,23 @@ nt consequences
 \change_unchanged
 .
  
-\change_inserted -461408743 1618821462
+\change_inserted -461408743 1618862963
 False beliefs and incorrect preference may lead to inefficient supply chains
  and hamper value chain innovations.
  More importantly, systematically biased perceptions may hamper inclusiveness
  of value chains.
- 
+ For instance, if traders of a certain clan or tribe are traditionally regarded
+ as good traders, other actors may hold inflated perceptions.
+ This may result in barriers to entry for other traders.
 \end_layout
 
 \begin_layout Standard
 
+\change_inserted -461408743 1618863136
+Despite the importance of beliefs and perceptions for transactions within
+ food supply chains, there are few studies that track perceptions throughout
+ the chain.
+ This is at least partly because 
 \change_deleted -461408743 1618820805
 Farmers obtaining perceived performance information from another farmer
  may make business choices based on that.
@@ -408,16 +478,19 @@ Farmers obtaining perceived performance information from another farmer
 
 \begin_layout Standard
 
-\change_deleted -461408743 1618820805
+\change_deleted -461408743 1618863130
 At the same time, perceptions can deprive actors from the optimal allocation
  of resources.
  For instance, bad perceptions of farmers about input dealers might reduce
  the usage of improved seed, about traders might deteriorate market access
  and about millers might constrain the sale and processing of harvest.
-
+ Since
 \change_unchanged
- Since perceptions are not always objectively measurable, they are less
- studied in the literature.
+ perceptions are not always objectively measurable
+\change_deleted -461408743 1618863165
+, they are less studied in the literature
+\change_unchanged
+.
  However, we cannot ignore the importance of perceptions as a crossing node
  for operational psychological preferences and real economic mechanisms
  in the markets.
@@ -428,8 +501,33 @@ At the same time, perceptions can deprive actors from the optimal allocation
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-The case for the investigation is the maize value chain in Uganda where
- ratings are used as measured perceptions.
+
+\change_deleted -461408743 1618863180
+The case for the investigation is
+\change_inserted -461408743 1618863189
+I study the case of
+\change_deleted -461408743 1618863191
+ the
+\change_unchanged
+ maize value chain
+\change_inserted -461408743 1618863194
+s
+\change_unchanged
+ in Uganda where ratings are used as 
+\change_inserted -461408743 1618863221
+a proxy 
+\change_unchanged
+measure
+\change_deleted -461408743 1618863224
+d
+\change_inserted -461408743 1618863224
+ for
+\change_unchanged
+ perceptions
+\change_inserted -461408743 1618863230
+ and beliefs
+\change_unchanged
+.
  I use data from a sample of 1500 maize farmers
 \change_deleted -461408743 1618821613
  and
@@ -440,10 +538,65 @@ The case for the investigation is the maize value chain in Uganda where
 \change_inserted -461408743 1618821619
 ,
 \change_unchanged
- and 174 millers from Eastern Uganda to examine the (in)consistency in farmer's
- and input (seed) dealer's or trader's or miller's perceived attribute ratings
- of these actors and identify if the gender of the rater or the ratee has
- any impact on the ratings (perceptions).
+ and 174 millers from Eastern Uganda to 
+\change_deleted -461408743 1618863367
+examine the
+\change_inserted -461408743 1618863368
+document
+\change_unchanged
+ (in)consistency in farmer's
+\change_deleted -461408743 1618863272
+ and
+\change_inserted -461408743 1618863272
+,
+\change_unchanged
+ input (seed) dealer's
+\change_deleted -461408743 1618863276
+ or
+\change_inserted -461408743 1618863276
+,
+\change_unchanged
+ trader's
+\change_inserted -461408743 1618863279
+,
+\change_unchanged
+ 
+\change_deleted -461408743 1618863281
+or
+\change_inserted -461408743 1618863281
+and
+\change_unchanged
+ miller's perceived attribute ratings of these actors
+\change_inserted -461408743 1618863444
+.
+ 
+\change_deleted -461408743 1618863447
+ and identify
+\change_inserted -461408743 1618863451
+I further test
+\change_unchanged
+ if the 
+\change_deleted -461408743 1618863457
+gender
+\change_inserted -461408743 1618863463
+sex
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -461408743 1618863523
+sex is male/female; gender is related to concepts of gender roles, gender
+ identity, and gender expression.
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+ of the rater or the ratee has any impact on the ratings (perceptions).
  The farmers in the sample were asked to rate at
 \change_inserted -461408743 1618821643
  
@@ -452,17 +605,37 @@ least one to three dealer(s), trader(s) and miller(s).
  Then these rated actors were traced and asked to provide self-assessment
  scores.
  
+\change_deleted -461408743 1618863647
+
 \end_layout
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-For this study, I use input dealer, trader and miller attributes, such as
- perceived ease of access to the dealer or trader or miller, perceived quality
- of the seed sold by the dealer or the quality of service provided by the
- trader or the miller, and reputation of the dealer or trader or miller,
- to assess whether such perceived input-dealer or trader or miller attributes
- can vary significantly based on the gender of the farmer (rater) or the
- ratee (dealer or trader or miller).
+
+\change_deleted -461408743 1618863647
+For this study, 
+\change_unchanged
+I use input dealer, trader and miller attributes, such as perceived ease
+ of access to the dealer or trader or miller, perceived quality of the seed
+ sold by the dealer or the quality of service provided by the trader or
+ the miller, and reputation of the dealer or trader or miller, to assess
+ whether such perceived input-dealer
+\change_deleted -461408743 1618863667
+ or
+\change_inserted -461408743 1618863667
+,
+\change_unchanged
+ trader
+\change_inserted -461408743 1618863670
+,
+\change_unchanged
+ or miller attributes can vary significantly based on the 
+\change_deleted -461408743 1618863683
+gender
+\change_inserted -461408743 1618863683
+sex
+\change_unchanged
+ of the farmer (rater) or the ratee (dealer or trader or miller).
  
 \end_layout
 
@@ -470,18 +643,22 @@ For this study, I use input dealer, trader and miller attributes, such as
 \paragraph_spacing onehalf
 The ratings can be used as a tool to understand what factors determine widesprea
 d perceptions about certain actors in the food value chains and whether
- consistency can be obtained 
-\change_deleted -461408743 1618821682
-amongst
-\change_inserted -461408743 1618821682
-among
+ 
+\change_deleted -461408743 1618863729
+consistency can be obtained amongst
+\change_inserted -461408743 1618863741
+there is consistency between
 \change_unchanged
  the ratings and the self-assessments.
  Understanding perceptions also includes the leading motive behind the usage
  of ratings as the tool for perception identification.
- The literature shows that ratings can be largely used as an instrument
- for identifying performance levels of various actors in the markets or
- respective industries of choice, for information transparency 
+ The literature shows that ratings can be 
+\change_deleted -461408743 1618863801
+largely 
+\change_unchanged
+used as an instrument for identifying performance levels of various actors
+ in the markets or respective industries of choice, for information transparency
+ 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Karminsky2016"
@@ -491,7 +668,11 @@ literal "true"
 
  and for decision management.
  Various rating based decision management studies come from the financial
- sector like credit ratings explaining investment decisions (
+ sector
+\change_inserted -461408743 1618863823
+,
+\change_unchanged
+ like credit ratings explaining investment decisions (
 \begin_inset CommandInset citation
 LatexCommand citealp
 key "Bolton2012"
@@ -525,6 +706,8 @@ literal "true"
 
 ).
  
+\change_deleted -461408743 1618863869
+
 \end_layout
 
 \begin_layout Standard
@@ -620,10 +803,50 @@ literal "true"
 Broadly, studying the rater's ratings and the self-assessments can give
  insights about the deeper mechanisms of performance perceptions in the
  value chains.
- Traditionally, higher ratings always motivate better performance as a boost
- to the existing performance level of the concerned actor and lower ratings
- improve performance or at least induce efforts by the rated subjects to
- improve performance.
+ 
+\change_deleted -461408743 1618863991
+Traditionally, h
+\change_inserted -461408743 1618863992
+H
+\change_unchanged
+igher ratings
+\change_deleted -461408743 1618863995
+ always
+\change_inserted -461408743 1618864023
+may
+\change_unchanged
+ motivate 
+\change_inserted -461408743 1618864117
+actors to sustain 
+\change_deleted -461408743 1618864121
+better 
+\change_unchanged
+performance 
+\change_deleted -461408743 1618864126
+as a boost to the existing performance level of the concerned actor
+\change_inserted -461408743 1618864038
+.
+
+\change_unchanged
+ 
+\change_deleted -461408743 1618864041
+and l
+\change_inserted -461408743 1618864041
+L
+\change_unchanged
+ower ratings 
+\change_inserted -461408743 1618864142
+may lead actors to 
+\change_unchanged
+improve performance or at least induce
+\change_inserted -461408743 1618864157
+ increased
+\change_unchanged
+ effort
+\change_deleted -461408743 1618864161
+s by the rated subjects to improve performance
+\change_unchanged
+.
  It is true that there are various other factors like competition, access
  to facilities, knowledge of the business, etc.
  which can influence the performance levels directly.
@@ -707,10 +930,22 @@ majorly involved
 playing a significant role
 \change_unchanged
  in the input dealing, processing and trading activities for maize in Uganda.
- Thus, analysing how the gender of each actor impacts the ratings from farmers
- and the self-ratings is crucial in the Ugandan maize value chain.
- The systemic gender bias in perceptions can demotivate the entry of women
- in the food supply chains, creating better opportunities for men to flourish
+ Thus, analysing how the 
+\change_deleted -461408743 1618864319
+gender
+\change_inserted -461408743 1618864320
+sex
+\change_unchanged
+ of each actor impacts the ratings from farmers and the self-ratings is
+ crucial in the Ugandan maize value chain.
+ 
+\change_deleted -461408743 1618864338
+The s
+\change_inserted -461408743 1618864338
+S
+\change_unchanged
+ystemic gender bias in perceptions can demotivate the entry of women in
+ the food supply chains, creating better opportunities for men to flourish
  in these industries.
  Issues like discrimination against women, barriers to market access for
  women, mistrust, lower credit availabilities, etc.
@@ -808,13 +1043,25 @@ The first objective in this study is to establish how the perceived attribute
  or millers); (iv) reputation of a given dealer (trader or miller) relative
  to other dealers (traders or millers).
  
+\change_deleted -461408743 1618864465
+
 \end_layout
 
 \begin_layout Standard
 \paragraph_spacing onehalf
 The second objective aims to understand rating patterns based on the gender
  of the farmer (rater) and the third objective aims to understand the self-ratin
-g patterns based on the gender of the ratee (dealer or trader or miller).
+g patterns based on the gender of the ratee (dealer
+\change_deleted -461408743 1618864474
+ or
+\change_inserted -461408743 1618864474
+,
+\change_unchanged
+ trader
+\change_inserted -461408743 1618864478
+,
+\change_unchanged
+ or miller).
  The fourth objective is to identify whether farmers have gender-based perceptio
 ns while scoring the input and service providers
 \change_inserted -461408743 1618824360
@@ -942,8 +1189,13 @@ The findings of the study indicate enhanced (positive) self-perceptions
 \begin_layout Standard
 \paragraph_spacing onehalf
 In the sections that follow, I expound on the study context and hypotheses;
- explain the data used and analysis methods; present the results; and finally
- provide a conclusion and recommendations.
+ explain the data used and 
+\change_deleted -461408743 1618864514
+analysis methods
+\change_inserted -461408743 1618864530
+econometric models I will estimate
+\change_unchanged
+; present the results; and finally provide a conclusion and recommendations.
 \end_layout
 
 \begin_layout Standard
@@ -5030,7 +5282,13 @@ end{table}
 
 \begin_layout Section
 \paragraph_spacing onehalf
+
+\change_deleted -461408743 1618864582
 Methods
+\change_inserted -461408743 1618864587
+Econometric Analysis
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -14396,16 +14654,51 @@ end{landscape}
 \begin_layout Section
 \paragraph_spacing onehalf
 Conclusion
+\change_inserted -461408743 1618864737
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -461408743 1618864753
+conclusion should be written in past tense
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
-The aim of this study is to investigate the perceptions of maize farmers
- about the input and service providers in the maize value chain and the
- perceptions of these input and service providers about themselves.
- Focusing on gender, I also try to identify if gender-based heterogeneity
- can be observed in perceptions.
- The perceptions are captured through the ratings given on dimensions like
- ease of access, quality of service, price competitiveness and reputation.
+The aim of this study 
+\change_deleted -461408743 1618864713
+is
+\change_inserted -461408743 1618864713
+was
+\change_unchanged
+ to investigate the perceptions of maize farmers about the input and service
+ providers in the maize value chain and the perceptions of these input and
+ service providers about themselves.
+ Focusing on gender, I also 
+\change_deleted -461408743 1618864828
+try to identify
+\change_inserted -461408743 1618864829
+tested
+\change_unchanged
+ if gender-based heterogeneity can be observed in perceptions.
+ The perceptions 
+\change_deleted -461408743 1618864841
+are
+\change_inserted -461408743 1618864841
+were
+\change_unchanged
+ captured through the ratings given on dimensions like ease of access, quality
+ of service, price competitiveness and reputation.
  
 \end_layout
 
