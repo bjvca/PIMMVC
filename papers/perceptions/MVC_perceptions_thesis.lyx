@@ -1404,17 +1404,76 @@ Due to limited knowledge and information asymmetries, it is often hard for
 to detect the quality of 
 \change_inserted -461408743 1618827960
 to assess 
+\change_deleted -461408743 1618842737
+purchased inputs.
+ Generally, they try to make perceptions about the different attributes
+ of the input dealers to understand the actual
+\change_inserted -461408743 1618842585
+the
 \change_unchanged
-purchased inputs
-\change_inserted -461408743 1618827979
- on various dimensions, as this is a typical experience good
+ quality
+\change_inserted -461408743 1618842762
+ of products and services offered by input dealers
 \change_unchanged
 .
- Generally, they try to make perceptions about the different attributes
- of the input dealers to understand the actual quality.
- Based on their knowledge, experience and awareness, farmers perceive the
- dealer's reputation (information that other buyers have about the seller).
- Other input dealer attributes such as the price charged by a given dealer
+
+\change_inserted -461408743 1618842973
+ Products sold by agro-input dealers such as improved seed varieties, inorganic
+ fertilizer, and pesticides or herbicides are considered 
+\begin_inset Quotes eld
+\end_inset
+
+experience goods
+\begin_inset Quotes erd
+\end_inset
+
+.
+ The quality of these goods are hard to assess ex-ante, and the information
+ advantage of the input dealer may lead to a lemons market 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Bold2017"
+literal "false"
+
+\end_inset
+
+.
+
+\change_unchanged
+ Based on 
+\change_deleted -461408743 1618843000
+their
+\change_inserted -461408743 1618843001
+limited
+\change_unchanged
+ knowledge, 
+\change_inserted -461408743 1618843006
+own 
+\change_unchanged
+experience 
+\change_deleted -461408743 1618843011
+and awareness, farmers perceive 
+\change_unchanged
+the dealer's reputation (information that other buyers have about the seller)
+\change_inserted -461408743 1618843152
+, a farmer may form his or her own perceptions about quality of inputs and
+ services provided by the input dealer
+\change_unchanged
+.
+ 
+\change_inserted -461408743 1618843156
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+
+\change_inserted -461408743 1618843217
+In addition to the quality attribute, farmers may also used perceptions
+ and beliefs related to a range of other attributes of the input dealer.
+ For instance, 
+\change_deleted -461408743 1618843229
+Other input dealer attributes such as the price charged by a given dealer
  may even influence farmer's perception of the quality of seed; 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -1424,8 +1483,20 @@ literal "true"
 \end_inset
 
 , for instance, find that the price of a bottle of herbicide correlates
- with its measured quality, although to a very limited degree.
+ with its measured quality, although to a very limited degree
+\change_inserted -461408743 1618843288
+price considerations and the relative competitiveness of the dealer will
+ also be important when a farmer decided to transact with a particular input
+ dealer
+\change_unchanged
+.
+
+\change_deleted -461408743 1618843298
  
+\change_inserted -461408743 1618843300
+ 
+\change_deleted -461408743 1618843301
+
 \end_layout
 
 \begin_layout Standard
@@ -1471,8 +1542,14 @@ Next, I turn to the perceived attributes of traders.
  that the farmers have greater exposure to selling opportunities, might
  reduce wastage of harvest, ensure constant income for the farmer and increase
  availability of maize harvests at the buying points.
- Thus, these factors can explain the perceptions of the farmers about the
- trader.
+ Thus, 
+\change_deleted -461408743 1618843367
+these factors can explain the perceptions of the farmers about the trader
+\change_inserted -461408743 1618843429
+ ease of access is likely to be more important than for instance quality
+ when assessing traders
+\change_unchanged
+.
  Traders having better reputation will influence the perceived reputation
  attributes, i.e., if a farmer hears something good about a trader from another
  farmer, he or she will perceive that trader to be well-reputed.
@@ -1511,11 +1588,16 @@ Millers or processors are also scored based on similar factors or attributes.
  The location of the mill is necessary to understand how easy it is for
  the traders or farmers to take the harvest to the processing points since
  in Uganda, both farmers and traders can take harvest to the mills.
- For farmers living in remote areas, it maybe hard to transport their harvest
- for milling or processing.
+ For farmers living in remote areas, it may
+\change_inserted -461408743 1618843536
+ 
+\change_unchanged
+be hard to transport their harvest for milling or processing.
  Thus, location of the mills can influence perceptions of the farmers about
  the millers.
  
+\change_deleted -461408743 1618843564
+
 \end_layout
 
 \begin_layout Standard
@@ -1525,8 +1607,14 @@ Perceptions are also formed based on the quality of service and the quality
  Better milling technologies, cleanliness of the mills, transparency at
  the mills and flexibility provided by the mill staff can also result in
  good perceived performance levels.
- Similarly, friendly behaviour and lower waiting times at the mills can
- ensure good perceived reputation of the processors.
+ Similarly, friendly behaviour and 
+\change_deleted -461408743 1618843559
+lower
+\change_inserted -461408743 1618843560
+shorter
+\change_unchanged
+ waiting times at the mills can ensure good perceived reputation of the
+ processors.
  
 \end_layout
 
@@ -4193,7 +4281,18 @@ Validity of ratings
 \end_layout
 
 \begin_layout Standard
-Understanding whether the ratings are signaling anything for further analysis
+
+\change_deleted -461408743 1618843738
+Understanding
+\change_inserted -461408743 1618843787
+Testing
+\change_unchanged
+ whether the ratings are 
+\change_inserted -461408743 1618843733
+are actually meaningful (instead of just noise)
+\change_deleted -461408743 1618843716
+signaling anything for further analysis
+\change_unchanged
  is important.
  This will give better insights about the validity of the perceptions.
  I start with 
@@ -4205,11 +4304,50 @@ Fixed effects regression
  Ratee fixed effects are used, focusing on F-test for the analysis.
  The dependent variable in these regressions is always the ratings.
  This is tested for ratings from the farmers and the differences between
- the farmer ratings and ratee self-ratings.
+ the farmer ratings and ratee self-ratings
+\change_inserted -461408743 1618844370
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -461408743 1618844524
+Not sure I would consider differences between farmers and self ratings,
+ as the latter is constant within your fixed effect
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+.
  The F statistics obtained are presented in table 3.
  It can be inferred that the null of individual mean ratings being equal
  to overall mean ratings is always rejected.
  
+\change_inserted -461408743 1618844529
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -461408743 1618844634
+Are you sure you are reporting the correct statistic? I would have expected
+ the F statistic to be much higher eg 15 or sth? I dont think an F of 1.2
+ is significant...
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -4219,9 +4357,13 @@ This can further indicate that individual rating given by farmers is different
  Also, tested for location, quality, price and reputation -based ratings
  along with overall averaged ratings, it can be deduced that individuals
  are always rated differently.
- This observed difference in the ratings can be attributed to various factors.
+ 
+\change_deleted -461408743 1618844687
+This observed difference in the ratings can be attributed to various factors.
  This study focuses on one of those, gender.
  
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
