@@ -90,12 +90,11 @@ graphicboxes
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
-\tracking_changes true
+\tracking_changes false
 \output_changes false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
-\author -461408743 "Bjorn Van Campenhout"
 \end_header
 
 \begin_body
@@ -104,61 +103,20 @@ graphicboxes
 \paragraph_spacing onehalf
 Faced with imperfect information, economic actors use judgment and perceptions
  in decision making.
- Inaccurate perceptions or false beliefs may result in 
-\change_deleted -461408743 1618861584
-sub-optimal allocation of resources
-\change_inserted -461408743 1618861633
-inefficient value chains and systematic bias in perceptions may affect inclusive
-ness.
-\change_deleted -461408743 1618861601
-.
-
-\change_unchanged
+ Inaccurate perceptions or false beliefs may result in inefficient value
+ chains and systematic bias in perceptions may affect inclusiveness.
  In this paper, I study perceptions in Ugandan maize supply chains.
- A random sample of maize farmers 
-\change_deleted -461408743 1618861721
-are
-\change_inserted -461408743 1618861721
-were
-\change_unchanged
- asked to rate other value chain actors—agro-input dealers, assembly traders
- and maize millers—on a set of important attributes such as service quality,
- price competitiveness, ease of access, 
-\change_deleted -461408743 1618861749
-etc
-\change_inserted -461408743 1618861752
-and overall reputation
-\change_unchanged
-.
+ A random sample of maize farmers were asked to rate other value chain actors—ag
+ro-input dealers, assembly traders and maize millers—on a set of important
+ attributes such as service quality, price competitiveness, ease of access,
+ and overall reputation.
  These other value chain actors are tracked and asked to assess themselves
  on the same attributes.
  We find that input dealers, traders and millers assess themselves more
  favorably than farmers do.
  We also zoom in on heterogeneity in perceptions related to gender, and
- find that women 
-\change_deleted -461408743 1618861841
-give
-\change_inserted -461408743 1618861841
-rate
-\change_unchanged
- higher 
-\change_deleted -461408743 1618861846
-scores 
-\change_unchanged
-than men
-\change_deleted -461408743 1618861856
-, but t
-\change_inserted -461408743 1618861858
-.
- T
-\change_unchanged
-he 
-\change_deleted -461408743 1618861862
-gender
-\change_inserted -461408743 1618861863
-sex
-\change_unchanged
- of the actor being rated does not affect the rating.
+ find that women rate higher than men.
+ The sex of the actor being rated does not affect the rating.
 \end_layout
 
 \begin_layout Standard
@@ -303,92 +261,17 @@ LatexCommand tableofcontents
 
 \begin_layout Section
 \paragraph_spacing onehalf
-General Introduction 
-\end_layout
-
-\begin_layout Standard
-
-\change_deleted -461408743 1618817872
-Agricultural economists have started giving importance to imperfect competition
- only in the recent decades.
- This is because food markets have been found to be oligopolistic at large,
- indicating a possibility of emerging food retailers taking over the markets
- (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "McCorriston2002"
-literal "true"
+General Introduction
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:General-Introduction"
 
 \end_inset
 
-).
- In countries like Uganda, imperfect competition among the supply chains
- of crops can have major repercussions.
- For instance, 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Osborne2005"
-literal "true"
-
-\end_inset
-
- observed that traders engaging in imperfectly competitive markets could
- drive down the prices received by the farmers.
- This was significantly prominent in the rural markets.
- Thus, there can be significant efficiency losses due to imperfect competition
- and asymmetric information among the actors of the supply chains.
- These losses can be faced by both the farmers and the other actors of the
- value chain like input dealers or traders or crop processors.
- 
-\end_layout
-
-\begin_layout Standard
-
-\change_deleted -461408743 1618817872
-Particularly, in rural markets, greater market power in the hands of individual
- actors can shift welfare to either the buyer or the seller side.
- In most cases where poor farmers attempting to sell their produce are involved,
- the farmers face discrimation and losses, shifting larger shares of the
- transaction welfare towards the other actors involved.
- Moreover, evidence of the relationship between level of market information
- and seller attributes like price competitiveness and quality of services
- already exists in the literature (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "Tellis1987"
-literal "true"
-
-\end_inset
-
-).
- The higher the information asymmetries are in the market, the lower is
- the equilibrium correlation between price and quality.
- 
-\change_inserted -461408743 1618861910
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -461408743 1618862007
-I really do not see what this has to do with competitiveness.
- I think this is much more related to decision making under uncertainty
- and asymmetric information.
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
 
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted -461408743 1618862038
 Neoclassical economic theory assumes rational agents that interact in a
  context of full information.
  However, in the real world, both consumers and producers face substantial
@@ -396,60 +279,21 @@ Neoclassical economic theory assumes rational agents that interact in a
  Sometimes agents lack skills to correctly assess information about the
  counterpart.
  In other cases, one actor may strategically decide to hide valuable information.
- 
-\change_deleted -461408743 1618818729
-Considering such provisions of imperfect competition and asymmetric information
-\change_inserted -461408743 1618818732
-As a result,
-\change_deleted -461408743 1618818734
-,
-\change_inserted -461408743 1618818750
- 
-\change_deleted -461408743 1618862095
- actors in the supply chains use
-\change_inserted -461408743 1618862100
-economic agents often rely predominantly on
-\change_unchanged
- perceptions to 
-\change_inserted -461408743 1618819164
-in
-\change_unchanged
-form 
-\change_deleted -461408743 1618819160
-the 
-\change_unchanged
-transaction decisions.
-
-\change_deleted -461408743 1618819152
- These perceptions can be closely linked to each interaction of the supply
- chain.
- This is because based on the perceived attributes of the different actors
- of the supply chains, farmers choose who to interact with for the sale
- of the harvest.
- Thus, perceptions can determine the transaction outcomes to some extent.
- 
-\change_inserted -461408743 1618862272
-Also in commodity supply chains, information frictions may exist, especially
+ As a result, economic agents often rely predominantly on perceptions to
+ inform transaction decisions.
+ Also in commodity supply chains, information frictions may exist, especially
  in informal value chains where quality is hard to track and agreements
  difficult to enforce.
  As a result, value chain actors also base part of their decisions on perception
 s and beliefs about actors up- and downstream.
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
 Although perceptions provide information to the other actors about the attribute
 s of an individual seller or buyer in the supply chain, these can have significa
-nt consequences
-\change_inserted -461408743 1618819432
- for the entire supply chain, especially if perceptions do not align with
- reality
-\change_unchanged
-.
- 
-\change_inserted -461408743 1618862963
-False beliefs and incorrect preference may lead to inefficient supply chains
+nt consequences for the entire supply chain, especially if perceptions do
+ not align with reality.
+ False beliefs and incorrect preference may lead to inefficient supply chains
  and hamper value chain innovations.
  More importantly, systematically biased perceptions may hamper inclusiveness
  of value chains.
@@ -459,206 +303,51 @@ False beliefs and incorrect preference may lead to inefficient supply chains
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted -461408743 1618863136
 Despite the importance of beliefs and perceptions for transactions within
  food supply chains, there are few studies that track perceptions throughout
  the chain.
- This is at least partly because 
-\change_deleted -461408743 1618820805
-Farmers obtaining perceived performance information from another farmer
- may make business choices based on that.
- Hence, incorrect perceptions which do not align with the real attributes
- might misguide these choices made by the economic actors.
- This may create better opportunities for a non-deserving economic actor
- and might worsen market demand for an actor performing well in reality
- in the industry.
- 
-\end_layout
-
-\begin_layout Standard
-
-\change_deleted -461408743 1618863130
-At the same time, perceptions can deprive actors from the optimal allocation
- of resources.
- For instance, bad perceptions of farmers about input dealers might reduce
- the usage of improved seed, about traders might deteriorate market access
- and about millers might constrain the sale and processing of harvest.
- Since
-\change_unchanged
- perceptions are not always objectively measurable
-\change_deleted -461408743 1618863165
-, they are less studied in the literature
-\change_unchanged
-.
+ This is at least partly because perceptions are not always objectively
+ measurable.
  However, we cannot ignore the importance of perceptions as a crossing node
  for operational psychological preferences and real economic mechanisms
  in the markets.
  These arguments necessitate the study of perceptions in the agricultural
  supply chains in detail.
- 
 \end_layout
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-
-\change_deleted -461408743 1618863180
-The case for the investigation is
-\change_inserted -461408743 1618863189
-I study the case of
-\change_deleted -461408743 1618863191
- the
-\change_unchanged
- maize value chain
-\change_inserted -461408743 1618863194
-s
-\change_unchanged
- in Uganda where ratings are used as 
-\change_inserted -461408743 1618863221
-a proxy 
-\change_unchanged
-measure
-\change_deleted -461408743 1618863224
-d
-\change_inserted -461408743 1618863224
- for
-\change_unchanged
- perceptions
-\change_inserted -461408743 1618863230
- and beliefs
-\change_unchanged
-.
- I use data from a sample of 1500 maize farmers
-\change_deleted -461408743 1618821613
- and
-\change_inserted -461408743 1618821613
-,
-\change_unchanged
- 78 input (seed) dealers, 341 assembly traders
-\change_inserted -461408743 1618821619
-,
-\change_unchanged
- and 174 millers from Eastern Uganda to 
-\change_deleted -461408743 1618863367
-examine the
-\change_inserted -461408743 1618863368
-document
-\change_unchanged
- (in)consistency in farmer's
-\change_deleted -461408743 1618863272
- and
-\change_inserted -461408743 1618863272
-,
-\change_unchanged
- input (seed) dealer's
-\change_deleted -461408743 1618863276
- or
-\change_inserted -461408743 1618863276
-,
-\change_unchanged
- trader's
-\change_inserted -461408743 1618863279
-,
-\change_unchanged
- 
-\change_deleted -461408743 1618863281
-or
-\change_inserted -461408743 1618863281
-and
-\change_unchanged
- miller's perceived attribute ratings of these actors
-\change_inserted -461408743 1618863444
-.
- 
-\change_deleted -461408743 1618863447
- and identify
-\change_inserted -461408743 1618863451
-I further test
-\change_unchanged
- if the 
-\change_deleted -461408743 1618863457
-gender
-\change_inserted -461408743 1618863463
-sex
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -461408743 1618863523
-sex is male/female; gender is related to concepts of gender roles, gender
- identity, and gender expression.
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
- of the rater or the ratee has any impact on the ratings (perceptions).
- The farmers in the sample were asked to rate at
-\change_inserted -461408743 1618821643
- 
-\change_unchanged
-least one to three dealer(s), trader(s) and miller(s).
+I study the case of maize value chains in Uganda where ratings are used
+ as a proxy measure for perceptions and beliefs.
+ I use data from a sample of 1500 maize farmers, 78 input (seed) dealers,
+ 341 assembly traders, and 174 millers from Eastern Uganda to document (in)consi
+stency in farmer's, input (seed) dealer's, trader's, and miller's perceived
+ attribute ratings of these actors.
+ I further test if the sex of the rater or the ratee has any impact on the
+ ratings (perceptions).
+ The farmers in the sample were asked to rate at least one to three dealer(s),
+ trader(s) and miller(s).
  Then these rated actors were traced and asked to provide self-assessment
  scores.
- 
-\change_deleted -461408743 1618863647
-
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-
-\change_deleted -461408743 1618863647
-For this study, 
-\change_unchanged
-I use input dealer, trader and miller attributes, such as perceived ease
- of access to the dealer or trader or miller, perceived quality of the seed
+ I use input dealer, trader and miller attributes, such as perceived ease
+ of access to the dealer, trader or miller, perceived quality of the seed
  sold by the dealer or the quality of service provided by the trader or
- the miller, and reputation of the dealer or trader or miller, to assess
- whether such perceived input-dealer
-\change_deleted -461408743 1618863667
- or
-\change_inserted -461408743 1618863667
-,
-\change_unchanged
- trader
-\change_inserted -461408743 1618863670
-,
-\change_unchanged
- or miller attributes can vary significantly based on the 
-\change_deleted -461408743 1618863683
-gender
-\change_inserted -461408743 1618863683
-sex
-\change_unchanged
- of the farmer (rater) or the ratee (dealer or trader or miller).
- 
+ the miller, and reputation of the dealer, trader or miller, to assess whether
+ such perceived input-dealer, trader, or miller attributes can vary significantl
+y based on the sex of the farmer (rater) or the ratee (dealer, trader or
+ miller).
 \end_layout
 
 \begin_layout Standard
 \paragraph_spacing onehalf
 The ratings can be used as a tool to understand what factors determine widesprea
 d perceptions about certain actors in the food value chains and whether
- 
-\change_deleted -461408743 1618863729
-consistency can be obtained amongst
-\change_inserted -461408743 1618863741
-there is consistency between
-\change_unchanged
- the ratings and the self-assessments.
+ there is consistency between the ratings and the self-assessments.
  Understanding perceptions also includes the leading motive behind the usage
  of ratings as the tool for perception identification.
- The literature shows that ratings can be 
-\change_deleted -461408743 1618863801
-largely 
-\change_unchanged
-used as an instrument for identifying performance levels of various actors
- in the markets or respective industries of choice, for information transparency
- 
+ The literature shows that ratings can be used as an instrument for identifying
+ performance levels of various actors in the markets or respective industries
+ of choice, for information transparency 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Karminsky2016"
@@ -668,11 +357,7 @@ literal "true"
 
  and for decision management.
  Various rating based decision management studies come from the financial
- sector
-\change_inserted -461408743 1618863823
-,
-\change_unchanged
- like credit ratings explaining investment decisions (
+ sector, like credit ratings explaining investment decisions (
 \begin_inset CommandInset citation
 LatexCommand citealp
 key "Bolton2012"
@@ -705,14 +390,7 @@ literal "true"
 \end_inset
 
 ).
- 
-\change_deleted -461408743 1618863869
-
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-In marketing research, ratings are the tool to identify demand (
+ In marketing research, ratings are the tool to identify demand (
 \begin_inset CommandInset citation
 LatexCommand citealp
 key "Dhar2016"
@@ -795,7 +473,6 @@ literal "true"
 ).
  These perceptions can explain the developments of these chains and can
  indicate the loopholes in the performance of the involved actors.
- 
 \end_layout
 
 \begin_layout Standard
@@ -803,50 +480,9 @@ literal "true"
 Broadly, studying the rater's ratings and the self-assessments can give
  insights about the deeper mechanisms of performance perceptions in the
  value chains.
- 
-\change_deleted -461408743 1618863991
-Traditionally, h
-\change_inserted -461408743 1618863992
-H
-\change_unchanged
-igher ratings
-\change_deleted -461408743 1618863995
- always
-\change_inserted -461408743 1618864023
-may
-\change_unchanged
- motivate 
-\change_inserted -461408743 1618864117
-actors to sustain 
-\change_deleted -461408743 1618864121
-better 
-\change_unchanged
-performance 
-\change_deleted -461408743 1618864126
-as a boost to the existing performance level of the concerned actor
-\change_inserted -461408743 1618864038
-.
-
-\change_unchanged
- 
-\change_deleted -461408743 1618864041
-and l
-\change_inserted -461408743 1618864041
-L
-\change_unchanged
-ower ratings 
-\change_inserted -461408743 1618864142
-may lead actors to 
-\change_unchanged
-improve performance or at least induce
-\change_inserted -461408743 1618864157
- increased
-\change_unchanged
- effort
-\change_deleted -461408743 1618864161
-s by the rated subjects to improve performance
-\change_unchanged
-.
+ Higher ratings may motivate actors to sustain performance.
+ Lower ratings may lead actors to improve performance or at least induce
+ increased effort.
  It is true that there are various other factors like competition, access
  to facilities, knowledge of the business, etc.
  which can influence the performance levels directly.
@@ -855,48 +491,14 @@ s by the rated subjects to improve performance
  Ratings can be assumed as a method of assessment which does not couple
  with direct repercussions but do successfully indicate indirect repercussions
  which impact the rated subjects (in the present or in the future).
- 
 \end_layout
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-
-\change_inserted -461408743 1618823021
-Interactions between ratings and 
-\change_deleted -461408743 1618823024
-Ratings based on
-\change_inserted -461408743 1618823024
-the
-\change_unchanged
- 
-\change_deleted -461408743 1618823037
-gender
-\change_inserted -461408743 1618823037
-sex
-\change_unchanged
- of the rater and
-\change_inserted -461408743 1618823116
-/or
-\change_unchanged
- the 
-\change_deleted -461408743 1618823129
-ratee
-\change_inserted -461408743 1618823134
-person being rated
-\change_unchanged
- has 
-\change_deleted -461408743 1618823179
-only been of interest recently
-\change_inserted -461408743 1618823188
-also been studied extensively
-\change_unchanged
- and the literature shows a wide range of studies in different fields 
-\change_deleted -461408743 1618823080
-to address the
-\change_inserted -461408743 1618823080
-on
-\change_unchanged
- gender based rating patterns (
+Interactions between ratings and the sex of the rater and/or the person
+ being rated has also been studied extensively and the literature shows
+ a wide range of studies in different fields on gender based rating patterns
+ (
 \begin_inset CommandInset citation
 LatexCommand citealp
 key "Mitchell2018,Furnham2005,Patiar2008"
@@ -905,46 +507,20 @@ literal "true"
 \end_inset
 
 ).
- 
-\change_inserted -461408743 1618823288
-We look at gendered rating patterns in the context of food supply chains.
- More in particular, we 
-\change_deleted -461408743 1618823247
-The main focus of this study is to understand
-\change_inserted -461408743 1618823252
-focus on
-\change_unchanged
- gendered perceptions from the ratings given by male and female farmers
- to the input dealers, traders and processors of the maize supply chain
- in Uganda and the self-ratings given by the male and female dealers, traders
- and maize millers to themselves.
- 
+ I look at gendered rating patterns in the context of food supply chains.
+ More in particular, I focus on gendered perceptions from the ratings given
+ by male and female farmers to the input dealers, traders and processors
+ of the maize supply chain in Uganda and the self-ratings given by the male
+ and female dealers, traders and maize millers to themselves.
 \end_layout
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-Traditionally, women have not been 
-\change_deleted -461408743 1618823343
-majorly involved
-\change_inserted -461408743 1618823356
-playing a significant role
-\change_unchanged
- in the input dealing, processing and trading activities for maize in Uganda.
- Thus, analysing how the 
-\change_deleted -461408743 1618864319
-gender
-\change_inserted -461408743 1618864320
-sex
-\change_unchanged
- of each actor impacts the ratings from farmers and the self-ratings is
- crucial in the Ugandan maize value chain.
- 
-\change_deleted -461408743 1618864338
-The s
-\change_inserted -461408743 1618864338
-S
-\change_unchanged
-ystemic gender bias in perceptions can demotivate the entry of women in
+Traditionally, women have not been playing a significant role in the input
+ dealing, processing and trading activities for maize in Uganda.
+ Thus, analysing how the sex of each actor impacts the ratings from farmers
+ and the self-ratings is crucial in the Ugandan maize value chain.
+ Systemic gender bias in perceptions can demotivate the entry of women in
  the food supply chains, creating better opportunities for men to flourish
  in these industries.
  Issues like discrimination against women, barriers to market access for
@@ -954,30 +530,12 @@ ystemic gender bias in perceptions can demotivate the entry of women in
  why women do not participate as much as the men in these kind of businesses
  which fuel the maize value chain and the production of maize in Uganda.
  
-\change_inserted -461408743 1618824306
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -461408743 1618824327
-This is in my opinion the most important paragraph of your introduction!
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-In the agricultural sector, studies based on gender of the various actors
- of the food value chains are becoming more prominent, particularly in the
+In the agricultural sector, studies based on sex of the various actors of
+ the food value chains are becoming more prominent, particularly in the
  developing economies (
 \begin_inset CommandInset citation
 LatexCommand citealp
@@ -1011,8 +569,8 @@ literal "true"
 
 .
  These motivate the aim to understand the alignment of perceptions based
- on the gender of the farmer, agro-input dealer, trader and miller in the
- case of maize value chains in Uganda.
+ on the sex of the farmer, agro-input dealer, trader and miller in the case
+ of maize value chains in Uganda.
  
 \end_layout
 
@@ -1025,70 +583,28 @@ The first objective in this study is to establish how the perceived attribute
  received and the self-assessments.
  The four attributes, as rated on a scale of 1-5 by farmers and the dealers,
  traders and millers themselves, are: (i) quality of service provided by
- a dealer
-\change_deleted -461408743 1618823759
- or
-\change_inserted -461408743 1618823759
-,
-\change_unchanged
- trader or miller relative to the other dealers
-\change_deleted -461408743 1618823767
- or
-\change_inserted -461408743 1618823767
-,
-\change_unchanged
- traders or millers; (ii) price competitiveness assessed of one actor relative
- to the other actors; (iii) location (ease of access by road or phone) of
- the input dealer (trader or miller) relative to other dealers (traders
- or millers); (iv) reputation of a given dealer (trader or miller) relative
- to other dealers (traders or millers).
- 
-\change_deleted -461408743 1618864465
-
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-The second objective aims to understand rating patterns based on the gender
+ a dealer, trader or miller relative to the other dealers, traders or millers;
+ (ii) price competitiveness assessed of one actor relative to the other
+ actors; (iii) location (ease of access by road or phone) of the input dealer
+ (trader or miller) relative to other dealers (traders or millers); (iv)
+ reputation of a given dealer (trader or miller) relative to other dealers
+ (traders or millers).
+ The second objective aims to understand rating patterns based on the sex
  of the farmer (rater) and the third objective aims to understand the self-ratin
-g patterns based on the gender of the ratee (dealer
-\change_deleted -461408743 1618864474
- or
-\change_inserted -461408743 1618864474
-,
-\change_unchanged
- trader
-\change_inserted -461408743 1618864478
-,
-\change_unchanged
- or miller).
- The fourth objective is to identify whether farmers have gender-based perceptio
-ns while scoring the input and service providers
-\change_inserted -461408743 1618824360
-
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-
-\change_inserted -461408743 1618827662
-It is unclear if this is different from your second objective.
- If your fourth objective is to look at interactions between the gender
- of the rater and ratee, you should make this clearer.
- Perhaps in this context you can refer to gender related homophily effects,
- something that is studied extensively in the soc lit: https://www.annualreviews.o
-rg/doi/abs/10.1146/annurev.soc.27.1.415
-\change_unchanged
-
-\end_layout
+g patterns based on the gender of the ratee (dealer, trader, or miller).
+ The fourth objective is to identify whether farmers score based on the
+ sex of the input and service providers and the final objective is to study
+ the interaction between the sex of the rater (farmer) and the ratee (essentiall
+y gender related homophily as discussed by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "mcpherson2001birds"
+literal "true"
 
 \end_inset
 
-
-\change_unchanged
-.
+).
  Average ratings and multivariate regression models are used for the analysis.
- 
 \end_layout
 
 \begin_layout Standard
@@ -1097,13 +613,9 @@ This study contributes to the literature of understanding the role of agro-input
  dealers, traders and millers in facilitating or limiting the development
  of smallholder agriculture.
  Ratings for the different actors of the supply chain, which this study
- employs to examine farmer's perceived value of input dealers or traders
- or millers, is widely an used system in marketing
-\change_deleted -461408743 1618827510
--
-\change_unchanged
- as a mechanism to increase customer trust in and purchase of services/products
- 
+ employs to examine farmer's perceived value of input dealers, traders or
+ millers, is widely an used system in marketing as a mechanism to increase
+ customer trust in and purchase of services/products 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Jayashankar2018,Chiu2014"
@@ -1129,7 +641,6 @@ literal "true"
  Similarly, ratings for maize processing can improve the end products obtained
  from maize and can sustain the value chain, ensuring less wastage and good
  quality of food.
- 
 \end_layout
 
 \begin_layout Standard
@@ -1149,31 +660,21 @@ literal "true"
 .
  This significantly ties into the literature on product standards and traceabili
 ty.
+ Ratings can also be aggregated through crowdsourcing in information clearinghou
+ses, an evidence of which was given by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Hasanain2019"
+literal "true"
+
+\end_inset
+
+, where a randomized control trial was used to study the impact of clearinghouse
+ ratings in the context of veterinarian success in Punjab, Pakistan.
  Through these type of ratings, the supply chain actors will be mindful
  of building and maintaining a good reputation through the information that
  the farmers have about these actors, including previous transactions and
  the reports of other farmers.
-
-\change_inserted -461408743 1618827797
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -461408743 1618827857
-Argue that ratings can also be aggregated through crowd sourcing in information
- clearing houses and refer to this paper: https://armanrezaee.github.io/pdfs/lives
-tock_3sept2019.pdf
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
@@ -1189,13 +690,8 @@ The findings of the study indicate enhanced (positive) self-perceptions
 \begin_layout Standard
 \paragraph_spacing onehalf
 In the sections that follow, I expound on the study context and hypotheses;
- explain the data used and 
-\change_deleted -461408743 1618864514
-analysis methods
-\change_inserted -461408743 1618864530
-econometric models I will estimate
-\change_unchanged
-; present the results; and finally provide a conclusion and recommendations.
+ explain the data used and econometric models I will estimate; present the
+ results; and finally provide a conclusion and recommendations.
 \end_layout
 
 \begin_layout Standard
@@ -1209,6 +705,13 @@ econometric models I will estimate
 \begin_layout Section
 \paragraph_spacing onehalf
 Study Context
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Study-Context"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1303,12 +806,12 @@ ng maize yields in Uganda.
  areas, slow advancement in milling technologies, price discrimination at
  all levels of the supply chain, issues of trust amongst the supply chain
  actors, lower selling prices of the harvest, quality of services provided
- by the various supply chain actors and business ethics in the industry
- during selling, trading or milling also influence maize yields at large.
+ by the various supply chain actors and business ethics in the sector during
+ selling, trading or milling also influence maize yields at large.
  Like any other industry, the maize supply chains also need to maximize
  yield gains, ensure cost-effective sale, storage and production, adhere
  to improved technologies and increase the usage of improved inputs to increase
- the profits for all the actors in the industry.
+ the profits for all the actors in the sector.
  For instance, several factors at household, market and policy levels constrain
  the use of improved maize seed and generally improved agricultural inputs
  by Ugandan farmers.
@@ -1338,7 +841,14 @@ literal "true"
 
 \begin_layout Subsection
 \paragraph_spacing onehalf
-Supply Chain Actors 
+Supply Chain Actors
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Supply-Chain-Actors"
+
+\end_inset
+
+ 
 \end_layout
 
 \begin_layout Standard
@@ -1645,31 +1155,21 @@ literal "true"
 
 \begin_layout Subsection
 \paragraph_spacing onehalf
-Perceived Attributes of Supply Chain Actors 
+Perceived Attributes of Supply Chain Actors
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Perceived-Attributes"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 \paragraph_spacing onehalf
 Due to limited knowledge and information asymmetries, it is often hard for
- farmers 
-\change_deleted -461408743 1618827958
-to detect the quality of 
-\change_inserted -461408743 1618827960
-to assess 
-\change_deleted -461408743 1618842737
-purchased inputs.
- Generally, they try to make perceptions about the different attributes
- of the input dealers to understand the actual
-\change_inserted -461408743 1618842585
-the
-\change_unchanged
- quality
-\change_inserted -461408743 1618842762
- of products and services offered by input dealers
-\change_unchanged
-.
-
-\change_inserted -461408743 1618842973
+ farmers to assess the quality of products and services offered by input
+ dealers.
  Products sold by agro-input dealers such as improved seed varieties, inorganic
  fertilizer, and pesticides or herbicides are considered 
 \begin_inset Quotes eld
@@ -1690,70 +1190,20 @@ literal "false"
 \end_inset
 
 .
-
-\change_unchanged
- Based on 
-\change_deleted -461408743 1618843000
-their
-\change_inserted -461408743 1618843001
-limited
-\change_unchanged
- knowledge, 
-\change_inserted -461408743 1618843006
-own 
-\change_unchanged
-experience 
-\change_deleted -461408743 1618843011
-and awareness, farmers perceive 
-\change_unchanged
-the dealer's reputation (information that other buyers have about the seller)
-\change_inserted -461408743 1618843152
-, a farmer may form his or her own perceptions about quality of inputs and
- services provided by the input dealer
-\change_unchanged
-.
- 
-\change_inserted -461408743 1618843156
-
+ Based on limited knowledge, own experience and the dealer's reputation
+ (information that other buyers have about the seller), a farmer may form
+ his or her own perceptions about quality of inputs and services provided
+ by the input dealer.
 \end_layout
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-
-\change_inserted -461408743 1618843217
-In addition to the quality attribute, farmers may also used perceptions
- and beliefs related to a range of other attributes of the input dealer.
- For instance, 
-\change_deleted -461408743 1618843229
-Other input dealer attributes such as the price charged by a given dealer
- may even influence farmer's perception of the quality of seed; 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Ashour2019"
-literal "true"
-
-\end_inset
-
-, for instance, find that the price of a bottle of herbicide correlates
- with its measured quality, although to a very limited degree
-\change_inserted -461408743 1618843288
-price considerations and the relative competitiveness of the dealer will
- also be important when a farmer decided to transact with a particular input
- dealer
-\change_unchanged
-.
-
-\change_deleted -461408743 1618843298
- 
-\change_inserted -461408743 1618843300
- 
-\change_deleted -461408743 1618843301
-
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-Ease of access to an input dealer also determines transactions costs and
+In addition to the quality attribute, farmers may also use perceptions and
+ beliefs related to a range of other attributes of the input dealer.
+ For instance, price considerations and the relative competitiveness of
+ the dealer will also be important when a farmer decides to transact with
+ a particular input dealer.
+ Ease of access to an input dealer also determines transaction costs and
  subsequently farmer's access to and use of improved inputs 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -1779,12 +1229,11 @@ literal "true"
 .
  This literature suggests that (continued) usage of a given product or service
  is accompanied by not just a customer’s perceived value (price or quality)
- of that product/service, but also the perceived value (e.g trust/reputation,
- accessibility) of the provider of the product.
+ of that product/service, but also the perceived value (e.g.
+ trust/reputation, accessibility) of the provider of the product.
  Thus, the perceptions formed on the basis of price competitiveness, quality
  of seeds, ease of access and reputation can determine the use of improved
  inputs to some extent.
- 
 \end_layout
 
 \begin_layout Standard
@@ -1794,21 +1243,14 @@ Next, I turn to the perceived attributes of traders.
  that the farmers have greater exposure to selling opportunities, might
  reduce wastage of harvest, ensure constant income for the farmer and increase
  availability of maize harvests at the buying points.
- Thus, 
-\change_deleted -461408743 1618843367
-these factors can explain the perceptions of the farmers about the trader
-\change_inserted -461408743 1618843429
- ease of access is likely to be more important than for instance quality
- when assessing traders
-\change_unchanged
-.
+ Thus, ease of access is likely to be more important than for instance,
+ quality when assessing traders.
  Traders having better reputation will influence the perceived reputation
  attributes, i.e., if a farmer hears something good about a trader from another
  farmer, he or she will perceive that trader to be well-reputed.
  Reputation of the trader may also be motivated by trustworthiness and higher
  number of business interactions.
  Traders in greater demand are likely to be well-reputed.
- 
 \end_layout
 
 \begin_layout Standard
@@ -1839,35 +1281,18 @@ The perceived quality of service can be driven by many aspects like behavior
 Millers or processors are also scored based on similar factors or attributes.
  The location of the mill is necessary to understand how easy it is for
  the traders or farmers to take the harvest to the processing points since
- in Uganda, both farmers and traders can take harvest to the mills.
- For farmers living in remote areas, it may
-\change_inserted -461408743 1618843536
- 
-\change_unchanged
-be hard to transport their harvest for milling or processing.
+ in Uganda, both farmers and traders can take the harvests to the mills.
+ For farmers living in remote areas, it may be hard to transport their harvest
+ for milling or processing.
  Thus, location of the mills can influence perceptions of the farmers about
  the millers.
- 
-\change_deleted -461408743 1618843564
-
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-Perceptions are also formed based on the quality of service and the quality
+ Perceptions are also formed based on the quality of service and the quality
  of end product provided by these mills.
  Better milling technologies, cleanliness of the mills, transparency at
  the mills and flexibility provided by the mill staff can also result in
  good perceived performance levels.
- Similarly, friendly behaviour and 
-\change_deleted -461408743 1618843559
-lower
-\change_inserted -461408743 1618843560
-shorter
-\change_unchanged
- waiting times at the mills can ensure good perceived reputation of the
- processors.
- 
+ Similarly, friendly behavior and shorter waiting times at the mills can
+ ensure good perceived reputation of the processors.
 \end_layout
 
 \begin_layout Standard
@@ -1898,44 +1323,104 @@ Perceived prices cannot directly indicate the actual price charged at the
 \begin_layout Section
 \paragraph_spacing onehalf
 Study Hypotheses
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Study-Hypotheses"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-\paragraph_spacing onehalf
+\paragraph_spacing single
+\noindent
 This section describes the hypotheses that are analysed which are as follows:
 \end_layout
 
 \begin_layout Enumerate
 \paragraph_spacing single
 \noindent
-Self-ratings are higher than ratings given by raters (farmers) to ratees.
+Self-ratings are higher than ratings given by raters (farmers) to ratees
+\begin_inset CommandInset label
+LatexCommand label
+name "Hypothesis 1"
+
+\end_inset
+
+.
  
 \end_layout
 
 \begin_layout Enumerate
 \paragraph_spacing single
 \noindent
-Ratings from women are more favourable than ratings from men.
+Ratings from women are more favourable than ratings from men
+\begin_inset CommandInset label
+LatexCommand label
+name "Hypothesis 2"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Enumerate
 \paragraph_spacing single
 \noindent
-Self-ratings from women are less favourable than self-ratings from men.
+Self-ratings from women are less favourable than self-ratings from men
+\begin_inset CommandInset label
+LatexCommand label
+name "Hypothesis 3"
+
+\end_inset
+
+.
  
 \end_layout
 
 \begin_layout Enumerate
 \paragraph_spacing single
 \noindent
-Ratings for men are higher than ratings for women.
+Ratings for men are higher than ratings for women
+\begin_inset CommandInset label
+LatexCommand label
+name "Hypothesis 4"
+
+\end_inset
+
+.
  
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing single
+\noindent
+The impact of both rater (farmer) and ratee being a woman is significant
+ on the ratings
+\begin_inset CommandInset label
+LatexCommand label
+name "Hypothesis 5"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-Hypothesis 1 determines how the agro-input dealers, processors and traders
- rate themselves (self-assessments) compared to the ratings from the farmers.
+Hypothesis 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Hypothesis 1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ determines how the agro-input dealers, processors and traders rate themselves
+ (self-assessments) compared to the ratings from the farmers.
  Self-ratings have been criticized largely and checked for validity by many
  researchers in different fields of research (
 \begin_inset CommandInset citation
@@ -1990,7 +1475,7 @@ literal "true"
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-Perceptions in this regard can explain a lot about the industry and could
+Perceptions in this regard can explain a lot about the sector and could
  also explain slower technological change and advancements.
  If these service and input providers perceive themselves to be performing
  better than they actually are, then there will be lesser efforts to improve
@@ -2017,7 +1502,17 @@ literal "true"
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-Then, I turn to the variations in ratings based on gender (hypothesis 2).
+Then, I turn to the variations in ratings based on gender (hypothesis 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Hypothesis 2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
  There is evidence from various areas of research that women generally rate
  more favourably than men.
  
@@ -2066,12 +1561,7 @@ In this study, it is expected that female farmers will more favourably rate
  There are possibilities that female farmers are given better services and
  inputs by the input dealers, maize processors and traders, leading to more
  favourable ratings from the women.
- 
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-This can be culturally linked for a prominent gender bias in the provision
+ This can also be culturally linked for a prominent gender bias in the provision
  of services and sale of goods.
  Another reason for this can be minimal stringency and greater leniency
  from women while rating the service and input providers they are involved
@@ -2093,8 +1583,18 @@ literal "true"
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-Hypothesis 3 essentially compares the self-ratings (assessments) given by
- female and male agro-input dealers, processors and traders.
+Hypothesis 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Hypothesis 3"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ essentially compares the self-ratings (assessments) given by female and
+ male agro-input dealers, processors and traders.
  Women generally tend to underrate themselves, i.e., women perceive their
  potentials to be limited.
  
@@ -2189,9 +1689,18 @@ literal "true"
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-The goal for hypothesis 4 is to study the differences in ratings received
- by male and female agro-input dealers, traders and processors from maize
- farmers.
+The goal for hypothesis 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Hypothesis 4"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ is to study the differences in ratings received by male and female agro-input
+ dealers, traders and processors from maize farmers.
  One of the reasons behind lower ratings for women may be that women are
  generally perceived to be performing worse than men.
  For instance, 
@@ -2251,7 +1760,7 @@ In the context of this study, bias against women can aid the explanation
  for the minimal involvement of women in agro-input dealing, trading and
  processing of maize.
  When women are aware that they are perceived to be less capable for these
- business activities, they might not enter the industry in the first place
+ business activities, they might not enter the sector in the first place
  to avoid criticisms and performance obstacles at a later stage.
  Social stringency and family practices might limit the women from performing
  better or being equally competitive as the men.
@@ -2308,7 +1817,57 @@ literal "true"
  work credibility challenges.
  These can significantly impact the ratings received by the female input
  and service providers in the supply chain and can undermine their perceived
- performance in the industry.
+ performance in the sector.
+ 
+\end_layout
+
+\begin_layout Standard
+Finally, the primary goal of hypothesis 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Hypothesis 5"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ is to study the interaction between the sex of the rater (farmer) and the
+ ratee in order to observe if there is some significant impact of both being
+ of the same sex on the ratings.
+ This is mainly motivated by the literature studying homophily in social
+ networks.
+ The homophily principle essentially focuses on network ties based on relationsh
+ips and characteristics of the actors involved.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "mcpherson2001birds"
+literal "true"
+
+\end_inset
+
+ discussed the consequences of such preferences like limitations in the
+ social world, biased information, attitudes influenced by the characteristics
+ of the ties formed and interactions limited to these homogeneous networks.
+ It was also argued that gender based homophily can strongly divide personal
+ environments.
+ 
+\end_layout
+
+\begin_layout Standard
+Gender based homophily in food value chains can mean bias towards certain
+ actors.
+ For instance, if a female farmer has higher preference for a female trader,
+ she may always interact with traders of the same sex.
+ Other traders of opposite sex might be providing better services which
+ this female farmer will be deprived of.
+ Also, while rating if the farmers intentionally rate the input and service
+ providers of the same sex more or less favourably, incorrect performance
+ perceptions will be exposed within the value chain.
+ This may impact the performance of these actors and also make business
+ worse for some of the actors who received lower scores because of gender
+ based homophily in preferences.
  
 \end_layout
 
@@ -2323,6 +1882,13 @@ literal "true"
 \begin_layout Section
 \paragraph_spacing onehalf
 Data
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Data"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2334,6 +1900,13 @@ This section explains the characteristics of the sample, describes the data
 \begin_layout Subsection
 \paragraph_spacing onehalf
 Sample
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Sample"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2385,15 +1958,48 @@ literal "true"
 
 \begin_layout Subsection
 \paragraph_spacing onehalf
-Variables 
+Variables
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Variables"
+
+\end_inset
+
+ 
 \end_layout
 
 \begin_layout Standard
 \paragraph_spacing onehalf
 The summary statistics for the main variables used in this study are presented
- in tables 1 and 2.
- Each farmer rates a minimum of one input dealer or trader or miller to
- a maximum of three input dealers or traders or millers (ratees).
+ in tables
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+~
+\backslash
+ref{table:table1}
+\end_layout
+
+\end_inset
+
+ and
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+~
+\backslash
+ref{table:table2}
+\end_layout
+
+\end_inset
+
+.
+ Each farmer rates a minimum of one input dealer, trader or miller to a
+ maximum of three input dealers, traders or millers (ratees).
  Farmer perceptions about the ratees and ratee perceptions about themselves
  are understood from the ratings given on four dimensions of location, quality,
  price and reputation.
@@ -2426,7 +2032,20 @@ literal "true"
 \end_layout
 
 \begin_layout Standard
-Table 1 presents the variables related to the farmers in the dataset.
+Table
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+~
+\backslash
+ref{table:table1}
+\end_layout
+
+\end_inset
+
+ presents the variables related to the farmers in the dataset.
  The summary statistics for ratings based on all the dimensions and the
  overall ratings are presented.
  Some interesting trends can be observed in the ratings.
@@ -2627,8 +2246,8 @@ Sexpr{format(round(mean(farmers$hh.maize.q14, na.rm=T),digits=2),nsmall=0)}
 \end_inset
 
  km.
- Dummy variable for interaction between farmers and the input dealer or
- trader or processor is also included.
+ Dummy variable for interaction between farmers and the input dealer, trader
+ or processor is also included.
  It is observed that 
 \begin_inset ERT
 status open
@@ -2649,7 +2268,8 @@ Sexpr{format(round(table(pool$interaction_yes)[2]/sum(table(pool$interaction_yes
 \end_layout
 
 \begin_layout Standard
-\paragraph_spacing onehalf
+\paragraph_spacing single
+\noindent
 \begin_inset ERT
 status open
 
@@ -3435,8 +3055,13 @@ end{center}
 
 \backslash
 caption{Summary Statistics of the variables related to the farmers.} 
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
 \backslash
-label{table:Summary statistics} 
+label{table:table1} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -3444,6 +3069,10 @@ label{table:Summary statistics}
  
 \backslash
 end{table} 
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \end_inset
@@ -4260,7 +3889,7 @@ end{center}
 caption{Summary Statistics of the variables related to the ratees (dealers,
  traders and millers).} 
 \backslash
-label{table:Summary statistics} 
+label{table:table2} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -4270,18 +3899,27 @@ label{table:Summary statistics}
 end{table} 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-Next, in table 2, summary statistics for the self-ratings from agro-input
- dealers, traders and maize processors are given.
+Next, in table
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+~
+\backslash
+ref{table:table2}
+\end_layout
+
+\end_inset
+
+, summary statistics for the self-ratings from agro-input dealers, traders
+ and maize processors are given.
  The ratees (dealers, traders and millers) seem to be very confident about
  their reputation as among all the dimensions, the highest percentage give
  a self-score of 5 for reputation (
@@ -4413,9 +4051,9 @@ Sexpr{format(round(max(millers$hh.maize.q6g, na.rm=T),digits=2),nsmall=0)}
 \end_layout
 
 \begin_layout Standard
-Looking at self-ratings based on the gender of the ratee, it is noticed
- that among all the different dimensions, the greatest percentage of female
- ratees rate themselves 5 for quality (
+Looking at self-ratings based on the sex of the ratee, it is noticed that
+ among all the different dimensions, the greatest percentage of female ratees
+ rate themselves 5 for quality (
 \begin_inset ERT
 status open
 
@@ -4520,7 +4158,7 @@ Sexpr{format(round(sum(table(pool$id.ratee[pool$rating_reputation_ratee<=2
 \paragraph_spacing onehalf
 The primary variables of interest in this study are ratings (perceived attribute
 s) from farmers (raters) and self-ratings (perceived self-attributes) from
- ratees and the gender of the farmer and the ratee.
+ ratees and the sex of the farmer and the ratee.
  In order to identify the ratees as input dealers, traders or processors,
  IDs were assigned to each of them and similarly, IDs were also assigned
  to each farmer.
@@ -4530,315 +4168,20 @@ s) from farmers (raters) and self-ratings (perceived self-attributes) from
 \begin_layout Subsection
 \paragraph_spacing onehalf
 Validity of ratings
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Validity-of-ratings"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-
-\change_deleted -461408743 1618843738
-Understanding
-\change_inserted -461408743 1618843787
-Testing
-\change_unchanged
- whether the ratings are 
-\change_inserted -461408743 1618843733
-are actually meaningful (instead of just noise)
-\change_deleted -461408743 1618843716
-signaling anything for further analysis
-\change_unchanged
- is important.
+Testing whether the ratings are are actually meaningful (instead of just
+ noise) is important.
  This will give better insights about the validity of the perceptions.
- I start with 
-\series bold
-Fixed effects regression
-\series default
- model to verify whether the individual means of the ratings are different
- from the overall means.
- Ratee fixed effects are used, focusing on F-test for the analysis.
- The dependent variable in these regressions is always the ratings.
- This is tested for ratings from the farmers and the differences between
- the farmer ratings and ratee self-ratings
-\change_inserted -461408743 1618844370
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -461408743 1618844524
-Not sure I would consider differences between farmers and self ratings,
- as the latter is constant within your fixed effect
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-.
- The F statistics obtained are presented in table 3.
- It can be inferred that the null of individual mean ratings being equal
- to overall mean ratings is always rejected.
- 
-\change_inserted -461408743 1618844529
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -461408743 1618844634
-Are you sure you are reporting the correct statistic? I would have expected
- the F statistic to be much higher eg 15 or sth? I dont think an F of 1.2
- is significant...
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
-\end_layout
-
-\begin_layout Standard
-This can further indicate that individual rating given by farmers is different
- for everyone.
- All ratees are not rated in the same way.
- Also, tested for location, quality, price and reputation -based ratings
- along with overall averaged ratings, it can be deduced that individuals
- are always rated differently.
- 
-\change_deleted -461408743 1618844687
-This observed difference in the ratings can be attributed to various factors.
- This study focuses on one of those, gender.
- 
-\change_unchanged
-
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing single
-\noindent
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{table} 
-\backslash
-small 
-\backslash
-begin{center} 
-\backslash
-begin{tabular}{@{
-\backslash
-extracolsep{5pt}}lc}  
-\backslash
-
-\backslash
-[-1.8ex]
-\backslash
-hline  
-\backslash
-hline 
-\backslash
-
-\backslash
-[-1.8ex]   & 
-\backslash
-multicolumn{1}{c}{
-\backslash
-textit{F-Statistics}} 
-\backslash
-
-\backslash
-  
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-hline 
-\backslash
-
-\backslash
-[-1.8ex] 
-\end_layout
-
-\begin_layout Plain Layout
-
-Rater ratings (overall)   &      $
-\backslash
-Sexpr{format(round(sum(summary(lm(rating_overall ~ id.ratee, data = pool))$fstat[
-1]),digits=2),nsmall=0)}$        
-\backslash
-
-\backslash
-                          
-\end_layout
-
-\begin_layout Plain Layout
-
-Rater ratings (location)                 & $
-\backslash
-Sexpr{format(round(sum(summary(lm(rating_location ~ id.ratee, data = pool))$fstat
-[1]),digits=2),nsmall=0)}$ 
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-Rater ratings (quality)               & $
-\backslash
-Sexpr{format(round(sum(summary(lm(rating_quality ~ id.ratee, data = pool))$fstat[
-1]),digits=2),nsmall=0)}$  
-\backslash
-
-\backslash
- Rater ratings (price)                         & $
-\backslash
-Sexpr{format(round(sum(summary(lm(rating_price ~ id.ratee, data = pool))$fstat[1]
-),digits=2),nsmall=0)}$   
-\backslash
-
-\backslash
- Rater ratings (reputation)            & $
-\backslash
-Sexpr{format(round(sum(summary(lm(rating_reputation ~ id.ratee, data = pool))$fst
-at[1]),digits=2),nsmall=0)}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
- Differences (overall)                    & $
-\backslash
-Sexpr{format(round(sum(summary(lm(ratingoverall_diff ~ id.ratee, data = pool))$fs
-tat[1]),digits=2),nsmall=0)}$   
-\backslash
-
-\backslash
- Differences (location)         & $
-\backslash
-Sexpr{format(round(sum(summary(lm(ratingloc_diff ~ id.ratee, data = pool))$fstat[
-1]),digits=2),nsmall=0)}$  
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Differences (quality)         & $
-\backslash
-Sexpr{format(round(sum(summary(lm(ratingqual_diff ~ id.ratee, data = pool))$fstat
-[1]),digits=2),nsmall=0)}$   
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Differences (price)           & $
-\backslash
-Sexpr{format(round(sum(summary(lm(ratingprice_diff ~ id.ratee, data = pool))$fsta
-t[1]),digits=2),nsmall=0)}$  
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Differences (reputation)          & $
-\backslash
-Sexpr{format(round(sum(summary(lm(ratingrepu_diff ~ id.ratee, data = pool))$fstat
-[1]),digits=2),nsmall=0)}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-   
-\backslash
-
-\backslash
- 
-\backslash
-hline  
-\backslash
-end{tabular}  
-\backslash
-end{center} 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-scriptsize 
-\end_layout
-
-\begin_layout Plain Layout
-
-Note:- The fixed effects regressions are run on the ratings from the farmers
- (raters) and the differences in ratings between farmer ratings and ratee
- self-ratings (fixed at the ratee level).
- In every case, the null of individual means being equal to overall mean
- is rejected with a p-value less than 0.00 (F-statistic greater than F value).
- Degrees of freedom(1) is 
-\backslash
-Sexpr{format(round(sum(summary(lm(ratingrepu_diff ~ id.ratee, data = pool))$df[1]
-),digits=2),nsmall=0)} and degrees of freedom(2) is 
-\backslash
-Sexpr{format(round(sum(summary(lm(ratingrepu_diff ~ id.ratee, data = pool))$df[2]
-),digits=2),nsmall=0)}.
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-caption{F-statistics from fixed effects regressions on ratings from farmers
- (raters) and differences between farmer ratings and ratee self-ratings.}
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-label{table:f-stats} 
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-end{table} 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-Next, I look at 
+ I look at 
 \series bold
 intra-class correlation (ICC) 
 \series default
@@ -4881,7 +4224,20 @@ Intra-class correlation coefficient can range between 0 and 1.
 \end_layout
 
 \begin_layout Standard
-Table 4 presents the ICC coefficients.
+Table
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+~
+\backslash
+ref{table:table3}
+\end_layout
+
+\end_inset
+
+ presents the ICC coefficients.
  Firstly, it is observed that raters (farmers) agree decently on overall
  ratings given to ratees.
  The ICC coefficient being 
@@ -4963,7 +4319,7 @@ Sexpr{format(round(icc1a.fn(icc_recast_price)$icc1a,digits=2),nsmall=0)}
 \begin_layout Standard
 \paragraph_spacing onehalf
 Secondly, looking at overall averaged rating pattern, it can be derived
- that every farmer rates in a similar way every dealer or trader or miller.
+ that every farmer rates in a similar way every dealer, trader or miller.
  This is because the ICC coefficient is 
 \begin_inset ERT
 status open
@@ -4977,7 +4333,20 @@ Sexpr{format(round(icc1b.fn(icc_recast_overall6)$icc1b,digits=2),nsmall=0)}
 
 \end_inset
 
- (table 4), indicating a very decent level of agreement.
+ (table
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+~
+\backslash
+ref{table:table3}
+\end_layout
+
+\end_inset
+
+), indicating a very decent level of agreement.
  Similar high levels of agreement is noticed for location (
 \begin_inset ERT
 status open
@@ -5257,7 +4626,7 @@ Note:- The sample consists of all the raters and ratees (agro-input dealers,
 caption{ICC coefficients for inter-rater reliability and intra-rater reliability.
 } 
 \backslash
-label{table:ICC} 
+label{table:table3} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -5282,12 +4651,13 @@ end{table}
 
 \begin_layout Section
 \paragraph_spacing onehalf
-
-\change_deleted -461408743 1618864582
-Methods
-\change_inserted -461408743 1618864587
 Econometric Analysis
-\change_unchanged
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Econometric-Analysis"
+
+\end_inset
+
 
 \end_layout
 
@@ -5296,19 +4666,38 @@ This section deals with the methodologies and estimation models used for
  the analysis.
  In order to understand the rating patterns, mean ratings from farmers and
  mean self-ratings are described in detail in the next section.
- Ratings from farmers and self-ratings are compared based on gender of the
- farmers and the ratees.
+ Ratings from farmers and self-ratings are compared based on the sex of
+ the farmers and the ratees.
  Also, differences in how women rate other women and how men rate other
- men are presented in section 6.
+ men are presented in section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Results"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
 Next, I turn to the regression models to test the hypotheses laid out in
- Section 3.
- In order to understand the impact of the farmer's gender and the ratee's
- gender on the ratings from the farmers, the following multivariate regression
- specification is used where the standard errors are clustered at the ratee
- level:
+ section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Study-Hypotheses"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ In order to understand gender based impacts on the ratings from the farmers,
+ the following multivariate regression specification is used where the standard
+ errors are clustered at the ratee level:
 \end_layout
 
 \begin_layout Standard
@@ -5322,7 +4711,7 @@ status open
 \backslash
 begin{equation} 
 \backslash
-label{eqn} 
+label{eqn:eqn1} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -5383,7 +4772,20 @@ Here,
 s in ratings between the farmer ratings and the self-ratings.
  The ratings are categorized into overall average, location, quality, price
  and reputation.
- In equation 1, 
+ In equation
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+~
+\backslash
+ref{eqn:eqn1}
+\end_layout
+
+\end_inset
+
+, 
 \emph on
 i 
 \emph default
@@ -5425,8 +4827,8 @@ a
 
 
 \emph default
-, a dummy taking the value of 1 for female ratee and 0 otherwise), varying
- for each individual ratee 
+, a dummy variable taking the value of 1 for female ratee and 0 otherwise),
+ varying for each individual ratee 
 \emph on
 j
 \emph default
@@ -5492,11 +4894,24 @@ a
 
 \begin_layout Standard
 Following this, for the analysis of how ratings vary if farmer (rater) and
- ratee are of the same gender, an interaction term between the farmer's
- gender and ratee's gender (both dummy variables) is added to the equation
- presented above.
+ ratee are of the same sex, an interaction term between the sex of the farmer
+ (rater) and the ratee (both dummy variables) is added to the equation presented
+ above.
  This is presented in the specification below with cluster robust standard
- errors (equation 2):
+ errors (equation
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+~
+\backslash
+ref{eqn:eqn2}
+\end_layout
+
+\end_inset
+
+):
 \end_layout
 
 \begin_layout Standard
@@ -5510,7 +4925,7 @@ status open
 \backslash
 begin{equation} 
 \backslash
-label{eqn} 
+label{eqn:eqn2} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -5579,17 +4994,56 @@ The coefficients of interest in these models are
 \begin_inset Formula $\beta_{2}$
 \end_inset
 
- (equations 1 and 2) and 
+ (equations
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+~
+\backslash
+ref{eqn:eqn1}
+\end_layout
+
+\end_inset
+
+ and
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+~
+\backslash
+ref{eqn:eqn2}
+\end_layout
+
+\end_inset
+
+) and 
 \begin_inset Formula $\beta_{6}$
 \end_inset
 
- (equation 6), showing the gender impacts on the ratings from farmers and
- the differences in farmer ratings and self-ratings.
+ (equation
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+~
+\backslash
+ref{eqn:eqn2}
+\end_layout
+
+\end_inset
+
+), showing the gender impacts on the ratings from farmers and the differences
+ in farmer ratings and self-ratings.
  
 \end_layout
 
 \begin_layout Standard
-The final regression model aims to study the relationship between the gender
+The final regression model aims to study the relationship between the sex
  of the ratee and the self-ratings through multiple regression analysis:
 \end_layout
 
@@ -5604,7 +5058,7 @@ status open
 \backslash
 begin{equation} 
 \backslash
-label{eqn} 
+label{eqn:eqn3} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -5674,7 +5128,7 @@ a
 \begin_inset Formula $\beta_{1}$
 \end_inset
 
- indicates the relationship between the gender of the ratee and the self-rating
+ indicates the relationship between the sex of the ratee and the self-rating
  from the ratee.
  Some of the variables discussed above are included in this equation.
  The main independent variable is gender of the ratee (
@@ -5726,7 +5180,7 @@ An essential discussion is the motivation behind the inclusion of the control
  One does have to control for this impact pathway as otherwise, the gender
  and education effects will be conflated.
  In other words, correlation between the farmer's gender and the rating
- from the farmer maybe confounded by education.
+ from the farmer may be confounded by education.
  Women are likely to be younger than men because of recent entry into farming
  activities and also older women devote more time to family responsibilities.
  Thus, age may also directly affect ratings.
@@ -5771,7 +5225,7 @@ Men in farming activities tend to be married.
 The arguments can be similar in the case of ratees.
  Since men are likely to be more educated than women, the education and
  knowledge might define what kind of service and inputs they provide to
- their customers (better or worse knowledge of improved service or inputs).
+ their customers (better or worse knowledge of improved services or inputs).
  This would also lead to more or less favourable ratings from farmers and
  self-ratings, justifying the need to control for education of ratees.
  Men are likely to be older because of longer active periods in service
@@ -5780,7 +5234,7 @@ The arguments can be similar in the case of ratees.
  This can impact the ratings.
  Farmers may rate older ratees with more experience more favourably while
  self-ratings are likely to be higher from older individuals because of
- their greater awareness about their performance in the industry.
+ their greater awareness about their performance in the sector.
  Hence, I control for age of the ratee (input dealer, trader or miller).
  
 \end_layout
@@ -5789,8 +5243,8 @@ The arguments can be similar in the case of ratees.
 Controlling for marital status of ratees is also necessary as married service
  and input providers mostly tend to be men.
  This would also mean they would have better knowledge and experience (more
- time spent in the industry as the chances of being married increases with
- age) which might lead to more favourable ratings from farmers.
+ time spent in business as the chances of being married increases with age)
+ which might lead to more favourable ratings from farmers.
  At the same time, women who are not married might also be rating themselves
  lower because of minimal experience, knowledge, connections and support
  in their businesses.
@@ -5809,7 +5263,14 @@ Controlling for marital status of ratees is also necessary as married service
 
 \begin_layout Section
 \paragraph_spacing onehalf
-Results 
+Results
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Results"
+
+\end_inset
+
+ 
 \end_layout
 
 \begin_layout Standard
@@ -5822,6 +5283,13 @@ This section focuses on the results obtained from the analysis of average
 \begin_layout Subsection
 \paragraph_spacing onehalf
 Average ratings
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Average-ratings"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -5832,8 +5300,20 @@ Average scores are obtained for the ratings given by the farmers (raters)
  It is important to note that the results for traders and millers may suffer
  from small sample share of women.
  The primary goal of this section is to check whether the mean ratings obtained
- from the dataset (presented in table 5) reiterate the hypotheses of the
- study.
+ from the dataset (presented in table
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+~
+\backslash
+ref{table:table4}
+\end_layout
+
+\end_inset
+
+) reiterate the hypotheses of the study.
  It is observed that the mean overall self-rating given by the ratees (
 \begin_inset ERT
 status open
@@ -5863,15 +5343,47 @@ Sexpr{format(round(mean(pool$rating_overall, na.rm=T),digits=2),nsmall=0)}
 ).
  This phenomenon is consistent across all the different rating dimensions.
  Looking at individual groups of input dealers, traders and millers in table
- 5, the same inference can be made that self-ratings are always higher.
- These findings support the first hypothesis.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+~
+\backslash
+ref{table:table4}
+\end_layout
+
+\end_inset
+
+, the same inference can be made that self-ratings are always higher.
+ These findings support hypothesis 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Hypothesis 1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
  
 \end_layout
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-In order to validate hypothesis 2 from the trends in the dataset, I will
- first look at the entire group of ratees.
+In order to validate hypothesis 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Hypothesis 2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ from the trends in the dataset, I will first look at the entire group of
+ ratees.
  The mean overall rating from female farmers is 
 \begin_inset ERT
 status open
@@ -5911,8 +5423,18 @@ ts=2),nsmall=0)}
  for quality to traders and millers when compared to their female counterparts.
  More favourable scores for reputation of dealers and millers come from
  men while for traders, come from women.
- Thus, hypothesis 2 is generally true with an exception for quality and
- reputation based ratings from the farmers.
+ Thus, hypothesis 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Hypothesis 2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ is generally true with an exception for quality and reputation based ratings
+ from the farmers.
  
 \end_layout
 
@@ -5948,7 +5470,7 @@ Sexpr{format(round(mean(pool$ratee_rating_overall [pool$ratee_fem=="0"],
 
 ).
  This is consistent for location and reputation based self-ratings.
- However, for quality and price, men self-assess themselves lower than how
+ However, for quality and price, men self-assess themselves worse than how
  women self-assess themselves.
  These findings are similar for each rating dimension in the case of input
  dealers.
@@ -5958,28 +5480,59 @@ Sexpr{format(round(mean(pool$ratee_rating_overall [pool$ratee_fem=="0"],
  reflect also in the results for the miller group in particular.
  However, the only exception is the overall average self-rating where male
  millers assess themselves worse than the female millers.
- Thus, supporting hypothesis 3, it can be stated that although women tend
- to self-assess less favourably; for quality and price, women tend to self-asses
-s more favourably when compared to the men.
+ Thus, supporting hypothesis 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Hypothesis 3"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, it can be stated that although women tend to generally self-assess less
+ favourably; for quality and price, women tend to self-assess more favourably
+ when compared to men.
 \end_layout
 
 \begin_layout Standard
-Following this, the focus is on the gender of the ratees and the ratings
- from the farmers.
- Men receive less favourable ratings for the overall average, quality and
- reputation.
- For location and price, women receive better scores than the men.
+Following this, the focus is on the sex of the ratees and the ratings from
+ the farmers.
+ Men receive less favourable ratings for overall average, quality and reputation.
+ For location and price, women receive better scores than men.
  These findings are also observed for the group of agro-input dealers across
  the rating dimensions.
  However, both male and female input dealers receive the same overall average
  rating.
- Interestingly, all male assembly traders receive worse scores across all
- the rating dimensions.
+ Interestingly, all male assembly traders receive lower scores across all
+ the rating dimensions than the female assembly traders.
  Thus, female assembly traders are perceived to be performing better.
  In the case of millers, women always receive less favourable ratings, with
  an exception for quality.
- Thus, hypothesis 4 does not entirely align with these findings from table
- 5.
+ Thus, hypothesis 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Hypothesis 4"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ does not entirely align with these findings from table
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+~
+\backslash
+ref{table:table4}
+\end_layout
+
+\end_inset
+
+.
  Women mostly are rated lower for location and price whereas men are rated
  worse overall and also for quality and reputation mostly.
  
@@ -5996,7 +5549,17 @@ Next, I try to understand how men rate other men and women rate other women.
  for quality.
  Women rate female agro-input dealers higher for all aspects except for
  quality.
- 
+ These findings portray the underlying idea of hypothesis 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Hypothesis 5"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -8448,7 +8011,7 @@ caption{Average ratings (all dimensions) from farmers and average self-ratings
 
 
 \backslash
-label{table:Mean ratings} 
+label{table:table4} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -8472,17 +8035,75 @@ end{landscape}
 
 \begin_layout Subsection
 \paragraph_spacing onehalf
-Regressions 
+Regressions
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Regressions"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Tables 6, 7 and 8 present results from the regressions implemented for this
- study.
- Table 6 shows multivariate regressions with clustered standard errors (at
- the ratee level), discussing the impact of farmer's gender and ratee's
- gender on the ratings given by the farmers to the ratees.
- From model 1, it is noticeable that the impact of farmer's gender on the
- average overall rating given by the farmer is significant.
+Tables
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+~
+\backslash
+ref{table:table5}
+\end_layout
+
+\end_inset
+
+,
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+~
+\backslash
+ref{table:table6}
+\end_layout
+
+\end_inset
+
+ and
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+~
+\backslash
+ref{table:table7}
+\end_layout
+
+\end_inset
+
+ present results from the regressions implemented for this study.
+ Table
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+~
+\backslash
+ref{table:table5}
+\end_layout
+
+\end_inset
+
+ shows multivariate regressions with clustered standard errors (at the ratee
+ level), discussing the impact of the sex of the farmer (rater) and the
+ ratee on the ratings given by the farmers to the ratees.
+ From model 1, it is noticeable that the impact of the sex of the farmer
+ on the average overall rating given by the farmer is significant.
  If the farmer is a woman, the average score given by the farmer is 
 \begin_inset ERT
 status open
@@ -8498,15 +8119,28 @@ Sexpr{format(round(lm_res1$coefficients[2],digits=2),nsmall=0)}
 
  higher.
  Thus, female farmers give more favourable ratings when compared to male
- farmers, consistent with the results from table 5.
- The relation between the gender of the ratee (dealer or trader or miller)
+ farmers, consistent with the results from table
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+~
+\backslash
+ref{table:table4}
+\end_layout
+
+\end_inset
+
+.
+ The relation between the gender of the ratee (dealer, trader or miller)
  and the overall average ratings given by the farmer is insignificant.
  
 \end_layout
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-If the farmer had some business interaction with the input dealer or trader
+If the farmer had some business interaction with the input dealer, trader
  or processor the farmer is rating, the rating given by the farmer is 
 \begin_inset ERT
 status open
@@ -8573,7 +8207,20 @@ Sexpr{format(round(lm_res1$coefficients[14],digits=2),nsmall=0)}
 
 \end_inset
 
- point (also observed in table 5).
+ point (also observed in table
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+~
+\backslash
+ref{table:table4}
+\end_layout
+
+\end_inset
+
+).
  The total number of observations is 
 \begin_inset ERT
 status open
@@ -8592,23 +8239,93 @@ Sexpr{format(round(nobs(lm_res1),digits=2),nsmall=0)}
 \end_layout
 
 \begin_layout Standard
-It can be observed in table 6 that the interaction between the gender of
- the farmer and the gender of the ratee is insignificant throughout all
- the models.
- The positive relationship between farmer's gender and the farmer's ratings
+It can be observed in table
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+~
+\backslash
+ref{table:table5}
+\end_layout
+
+\end_inset
+
+ that the interaction between the sex of the farmer and the sex of the ratee
+ is insignificant throughout all the models.
+ In other words, no significant gender based homophily effect is observed
+ (disproving hypothesis 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Hypothesis 5"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+ The positive relationship between sex of the farmer and the farmer's ratings
  is significantly consistent for location-based and price-based ratings
  (models 3, 4, 7 and 8).
- This is consistent with the results from table 5.
+ This is consistent with the results from table
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+~
+\backslash
+ref{table:table4}
+\end_layout
+
+\end_inset
+
+.
  However, the magnitude of more favourable ratings from female farmers is
  most noticeable for location-based ratings, being highly significant too.
  Interestingly, for quality and reputation based ratings, if the ratee is
  a woman, the farmer's rating increases significantly.
- However, in model 4, it is observed that for location based ratings, farmer's
- ratings decline if the ratee is a woman (similar findings in table 5).
+ However, the ratings decline for location based ratings if the ratee is
+ a woman (similar findings in table
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+~
+\backslash
+ref{table:table4}
+\end_layout
+
+\end_inset
+
+).
  Thus, it can be inferred that female farmers give more favourable scores
- overall (proving hypothesis 2), particularly for location and price and
- female ratees receive better scores from farmers for quality and reputation
- (disproving hypothesis 4).
+ overall (proving hypothesis 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Hypothesis 2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+), particularly for location and price and female ratees receive better
+ scores from farmers only for quality and reputation (disproving hypothesis
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Hypothesis 4"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
  
 \end_layout
 
@@ -11158,7 +10875,7 @@ Note: Standard errors are clustered at the ratee level (agro-input dealers,
 caption{Regression results looking at the impact of farmer's (rater's) and
  ratee's gender on the ratings given by the farmers to the ratees.} 
 \backslash
-label{table:coefficients} 
+label{table:table5} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -11176,23 +10893,71 @@ end{landscape}
 \end_layout
 
 \begin_layout Standard
-Following this, table 7 shows the results from multiple regression analysis
- looking at the impact of ratee's gender on the self-ratings.
+Following this, table
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+~
+\backslash
+ref{table:table6}
+\end_layout
+
+\end_inset
+
+ shows the results from multiple regression analysis looking at the impact
+ of sex of the ratee on self-assessments (self-ratings).
  The relationship is significant only for quality, price and reputaion based
  self-ratings.
  It is observed that if the ratee is a woman, she significantly self-assesses
  herself higher than the male ratees for quality and price.
- However, for reputation, she gives herself a lower self-rating (significant).
- These results are consistent with the findings from table 5.
+ However, for reputation, she rates herself lower (significant).
+ These results are consistent with the findings from table
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+~
+\backslash
+ref{table:table4}
+\end_layout
+
+\end_inset
+
+.
  Looking at model 1, it can also be noted that older and educated ratees
  self-assess themselves higher significantly and married ratees self-assess
  themselves lower significantly.
- Consistent with table 5 results, it can be observed that traders significantly
- give higher self-ratings while dealers give significantly lower self-ratings.
+ Consistent with table
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+~
+\backslash
+ref{table:table4}
+\end_layout
+
+\end_inset
+
+ results, it can be observed that traders significantly give higher self-ratings
+ while dealers give significantly lower self-ratings.
  Henceforth, it can be inferred that for quality and price, women self-assess
  themselves higher while for reputation, lower.
- Here, hypothesis 3 is only consistent with the finding about reputation
- based self-ratings.
+ Here, hypothesis 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Hypothesis 3"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ is only consistent with the finding about reputation based self-ratings.
  
 \end_layout
 
@@ -12035,7 +11800,7 @@ n (model 5).
 caption{Regression results looking at the impact of ratee's gender on their
  self-ratings.} 
 \backslash
-label{table:coefficients} 
+label{table:table6} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -12051,23 +11816,37 @@ end{table}
 \end_layout
 
 \begin_layout Standard
-Finally, table 8 looks at the relationship between farmer's and ratee's
- gender and the differences between the farmer ratings and ratee self-ratings.
+Finally, table
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+~
+\backslash
+ref{table:table7}
+\end_layout
+
+\end_inset
+
+ looks at the relationship between farmer's and ratee's gender and the differenc
+es between the farmer ratings and ratee self-ratings.
  Here, again the standard errors are clustered at the ratee level.
  The differences increase significantly for the overall average ratings,
  location and price based ratings if the farmer is a woman (also for reputation
  (model 10), when the interaction term is added).
- This means female farmers give significantly more different ratings than
- the self-assessments by the ratees themselves.
- The impact of ratee's gender on the differences is interesting as the differenc
-es in ratings decline significantly for quality and price if the ratee is
- a woman while the differences increase in the case of reputation based
- ratings.
+ This means female farmers give significantly more different ratings compared
+ to the self-assessments by the ratees themselves.
+ The impact of the sex of the ratee on the differences is interesting as
+ the differences in ratings decline significantly for quality and price
+ if the ratee is a woman while the differences increase in the case of reputatio
+n based ratings.
  
 \end_layout
 
 \begin_layout Standard
-The interaction between farmer's gender and ratee's gender is insignificant.
+The interaction between sex of the farmer and the ratee (gender based homophily)
+ is insignificant.
  If the farmer had some business interaction with the ratee or if the farmer
  has some level of education, the differences rise significantly.
  If the farmer is married, the differences in ratings decline.
@@ -12079,13 +11858,46 @@ The interaction between farmer's gender and ratee's gender is insignificant.
  ratings based on quality, price and reputation are considered.
  From these inferences, it can be derived that indeed self-assessments can
  be different from the actual ratings received from the farmers (aligns
- with the idea of hypothesis 1) and gender influences these differences.
- Looking at the intercepts in table 8, it can also be observed that the
- coefficients are significantly negative for overall average rating differences,
- quality, price and reputation rating differences.
- This indicates that self-ratings are always higher than the farmer ratings,
- particularly in the case of quality, price and reputation based ratings,
- a strong evidence supporting hypothesis 1.
+ with the idea of hypothesis 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Hypothesis 1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) and gender influences these differences.
+ Looking at the intercepts in table
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+~
+\backslash
+ref{table:table7}
+\end_layout
+
+\end_inset
+
+, it can also be observed that the coefficients are significantly negative
+ for overall average rating differences, quality, price and reputation based
+ rating differences.
+ This indicates that self-ratings are always higher than the farmers' ratings
+ (in the case of quality, price and reputation), a strong evidence supporting
+ hypothesis 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Hypothesis 1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
  
 \end_layout
 
@@ -14634,7 +14446,7 @@ caption{Regression results looking at the impact of farmer's (rater's) and
  ratee's gender on the differences between farmer ratings and ratee self-ratings.
 } 
 \backslash
-label{table:coefficients} 
+label{table:table7} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -14654,52 +14466,23 @@ end{landscape}
 \begin_layout Section
 \paragraph_spacing onehalf
 Conclusion
-\change_inserted -461408743 1618864737
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -461408743 1618864753
-conclusion should be written in past tense
-\change_unchanged
-
-\end_layout
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Conclusion"
 
 \end_inset
 
 
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
-The aim of this study 
-\change_deleted -461408743 1618864713
-is
-\change_inserted -461408743 1618864713
-was
-\change_unchanged
- to investigate the perceptions of maize farmers about the input and service
- providers in the maize value chain and the perceptions of these input and
- service providers about themselves.
- Focusing on gender, I also 
-\change_deleted -461408743 1618864828
-try to identify
-\change_inserted -461408743 1618864829
-tested
-\change_unchanged
- if gender-based heterogeneity can be observed in perceptions.
- The perceptions 
-\change_deleted -461408743 1618864841
-are
-\change_inserted -461408743 1618864841
-were
-\change_unchanged
- captured through the ratings given on dimensions like ease of access, quality
- of service, price competitiveness and reputation.
- 
+The aim of this study was to investigate the perceptions of maize farmers
+ about the input and service providers in the maize value chain and the
+ perceptions of these input and service providers about themselves.
+ Focusing on gender, I also tested if gender-based heterogeneity can be
+ observed in perceptions.
+ The perceptions were captured through the ratings given on dimensions like
+ ease of access, quality of service, price competitiveness and reputation.
 \end_layout
 
 \begin_layout Standard
@@ -14709,12 +14492,12 @@ It can be concluded from the main findings of this study that women give
  of location and price competitiveness.
  This tendency of women to rate more favourably can have some repercussions.
  The input and service providers can take advantage of the leniency of female
- farmers and provide them lower quality inputs and services.
+ farmers and provide them with lower quality inputs and services.
  Also, the prices may not be too favourable for these female farmers.
  In this context, policy interventions are needed to ensure that all farmers
  are aware of the standard prices and the quality of inputs and services
  they deserve.
- However, gender of the individual being rated does not matter significantly.
+ However, sex of the individual being rated does not matter significantly.
  
 \end_layout
 
@@ -14750,6 +14533,7 @@ ies to do well in businesses.
  Henceforth, provision of policies are necessary for greater opportunities,
  training facilities, spread of awareness, credit availabilities and support
  for women.
+ However, homophily in gender was not observed in the maize supply chain.
  
 \end_layout
 
@@ -14793,10 +14577,10 @@ Surprisingly, price competitiveness is always scored the lowest.
 \end_layout
 
 \begin_layout Standard
-These perceptions are very important in the maize supply chain and gives
+These perceptions are very important in the maize supply chain and give
  a lot of insight about the perceived performance levels of the input and
  service providers.
- Gender-based perceptions also indicate gender preferences in the supply
+ Gender-based perceptions also indicate gendered preferences in the supply
  chain which is essential to be addressed.
  More women with greater support and business knowledge are needed in this
  sector to tackle the imbalance of preferences revealed in the perceptions
@@ -14812,7 +14596,7 @@ Future research should focus on perceptions of the input and service providers
  about the farmers, investigating similar trends in ratings and the change
  in perceptions over time captured through future surveys.
  A compelling addition to the literature can be the relationship between
- competition in this industry and the perceived performances of the actors.
+ competition in this sector and the perceived performances of the actors.
  Investigating perceptions in the maize demand chain and then linking those
  perceptions with the perceived performances of the supply chain actors
  can also reveal interesting results.
