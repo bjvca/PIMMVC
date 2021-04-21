@@ -319,35 +319,32 @@ Despite the importance of beliefs and perceptions for transactions within
 \paragraph_spacing onehalf
 I study the case of maize value chains in Uganda where ratings are used
  as a proxy measure for perceptions and beliefs.
- I use data from a sample of 1500 maize farmers, 78 input (seed) dealers,
- 341 assembly traders, and 174 millers from Eastern Uganda to document (in)consi
-stency in farmer's, input (seed) dealer's, trader's, and miller's perceived
- attribute ratings of these actors.
- I further test if the sex of the rater or the ratee has any impact on the
- ratings (perceptions).
- The farmers in the sample were asked to rate at least one to three dealer(s),
+ I use data from 1500 maize farmers, 78 input (seed) dealers, 341 assembly
+ traders, and 174 millers from Eastern Uganda to document (in)consistency
+ in farmer's, input (seed) dealer's, trader's, and miller's perceived attribute
+ ratings of these actors.
+ To investigate systemic bias along gender lines, I further test if the
+ sex of the rater or the ratee has any impact on the ratings (perceptions).
+ A representative sample of farmers were asked to rate up to three dealer(s),
  trader(s) and miller(s).
- Then these rated actors were traced and asked to provide self-assessment
- scores.
+ Then these dealers, traders and millers were traced and asked to assess
+ themselves in a similar way.
  I use input dealer, trader and miller attributes, such as perceived ease
  of access to the dealer, trader or miller, perceived quality of the seed
  sold by the dealer or the quality of service provided by the trader or
- the miller, and reputation of the dealer, trader or miller, to assess whether
- such perceived input-dealer, trader, or miller attributes can vary significantl
-y based on the sex of the farmer (rater) or the ratee (dealer, trader or
- miller).
+ the miller, and reputation of the dealer, trader or miller, to assess how
+ such perceived input-dealer, trader, or miller attributes align between
+ value chain actors, and how (non-)alignment is mediated by sex of the farmer
+ (rater) or the ratee (dealer, trader or miller).
 \end_layout
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-The ratings can be used as a tool to understand what factors determine widesprea
-d perceptions about certain actors in the food value chains and whether
- there is consistency between the ratings and the self-assessments.
- Understanding perceptions also includes the leading motive behind the usage
- of ratings as the tool for perception identification.
+Ratings can be used as a tool to understand what factors determine widespread
+ perceptions about certain actors in the food value chains.
  The literature shows that ratings can be used as an instrument for identifying
- performance levels of various actors in the markets or respective industries
- of choice, for information transparency 
+ performance levels of various actors in markets and industries, for information
+ transparency 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Karminsky2016"
@@ -416,7 +413,7 @@ literal "true"
 \end_inset
 
 ).
- Social and psychological studies widely use ratings to analyse social behavior
+ Social and psychological studies use ratings to analyse social behavior
  (
 \begin_inset CommandInset citation
 LatexCommand citealp
@@ -433,7 +430,7 @@ literal "true"
 
 \end_inset
 
-), development of children (
+), child development (
 \begin_inset CommandInset citation
 LatexCommand citealp
 key "Bukowski2012"
@@ -460,9 +457,11 @@ literal "true"
 ).
  Similarly, ratings can also be used to study various agricultural aspects,
  providing an understanding of the perceptions of the different actors of
- the value (demand or supply) chain.
- Recently, the study of perceptions is becoming more common in food supply
- chains (
+ the value chain.
+ Recently, the study of perceptions has also been applied to food supply
+ chains where perceptions have been found to correlate to innovations in
+ supply chains and indicate loopholes in the performance of involved actors
+ (
 \begin_inset CommandInset citation
 LatexCommand citealp
 key "Ola2020,Odongo2016"
@@ -471,13 +470,11 @@ literal "true"
 \end_inset
 
 ).
- These perceptions can explain the developments of these chains and can
- indicate the loopholes in the performance of the involved actors.
 \end_layout
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-Broadly, studying the rater's ratings and the self-assessments can give
+Broadly, studying the rater's ratings and ratee's self-assessments can give
  insights about the deeper mechanisms of performance perceptions in the
  value chains.
  Higher ratings may motivate actors to sustain performance.
@@ -486,7 +483,7 @@ Broadly, studying the rater's ratings and the self-assessments can give
  It is true that there are various other factors like competition, access
  to facilities, knowledge of the business, etc.
  which can influence the performance levels directly.
- However, the fact that ratings can even drive these factors directly or
+ However, the fact that ratings can also drive these factors directly or
  indirectly cannot be ignored.
  Ratings can be assumed as a method of assessment which does not couple
  with direct repercussions but do successfully indicate indirect repercussions
@@ -495,10 +492,9 @@ Broadly, studying the rater's ratings and the self-assessments can give
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-Interactions between ratings and the sex of the rater and/or the person
- being rated has also been studied extensively and the literature shows
- a wide range of studies in different fields on gender based rating patterns
- (
+Systematic differences in ratings related to gender have also been studied
+ extensively and the literature shows a wide range of studies in different
+ fields on gender based rating patterns (
 \begin_inset CommandInset citation
 LatexCommand citealp
 key "Mitchell2018,Furnham2005,Patiar2008"
@@ -507,35 +503,8 @@ literal "true"
 \end_inset
 
 ).
- I look at gendered rating patterns in the context of food supply chains.
- More in particular, I focus on gendered perceptions from the ratings given
- by male and female farmers to the input dealers, traders and processors
- of the maize supply chain in Uganda and the self-ratings given by the male
- and female dealers, traders and maize millers to themselves.
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-Traditionally, women have not been playing a significant role in the input
- dealing, processing and trading activities for maize in Uganda.
- Thus, analysing how the sex of each actor impacts the ratings from farmers
- and the self-ratings is crucial in the Ugandan maize value chain.
- Systemic gender bias in perceptions can demotivate the entry of women in
- the food supply chains, creating better opportunities for men to flourish
- in these industries.
- Issues like discrimination against women, barriers to market access for
- women, mistrust, lower credit availabilities, etc.
- are some of the consequences of such gender bias in perceptions.
- Thus, perceptions obtained from the study can aid in the explanation of
- why women do not participate as much as the men in these kind of businesses
- which fuel the maize value chain and the production of maize in Uganda.
- 
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-In the agricultural sector, studies based on sex of the various actors of
- the food value chains are becoming more prominent, particularly in the
+ In the agricultural sector, studies based on sex of the various actors
+ of the food value chains are becoming more prominent, particularly in the
  developing economies (
 \begin_inset CommandInset citation
 LatexCommand citealp
@@ -571,6 +540,23 @@ literal "true"
  These motivate the aim to understand the alignment of perceptions based
  on the sex of the farmer, agro-input dealer, trader and miller in the case
  of maize value chains in Uganda.
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+Traditionally, women have not been playing a significant role in the input
+ dealing, processing and trading activities for maize in Uganda.
+ Thus, analysing how the sex of each actor impacts the ratings from farmers
+ and the self-ratings is crucial in the Ugandan maize value chain.
+ Systemic gender bias in perceptions can demotivate the entry of women in
+ the food supply chains, creating better opportunities for men to flourish
+ in these industries.
+ Issues like discrimination against women, barriers to market access for
+ women, mistrust, lower credit availabilities, etc.
+ are some of the consequences of such gender bias in perceptions.
+ Thus, perceptions obtained from the study can aid in the explanation of
+ why women do not participate as much as the men in these kind of businesses
+ which fuel the maize value chain and the production of maize in Uganda.
  
 \end_layout
 
