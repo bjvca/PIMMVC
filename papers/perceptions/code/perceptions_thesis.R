@@ -2242,7 +2242,7 @@ round(se55[7],digits=4)
 round(se59[7],digits=4)
 round(se63[7],digits=4)
 round(se67[7],digits=4)
-  
+
 #R^2  
 round(summary(mod51_gender)$r.squared,digits=4) #overall
 round(summary(mod55_gender)$r.squared,digits=4) #location
@@ -2916,68 +2916,5 @@ round(nobs(lm_res85),digits=4)
 round(nobs(lm_res89),digits=4)
 round(nobs(lm_res99),digits=4)
 round(nobs(lm_res103),digits=4)
-
-
-#############################################################################################
-#############################################################################################
-#############################################################################################
-#############################################################################################
-
-
-###Likert scale bar charts for the different components of the scores###
-#########################################################################
-
-#All ratees 
-plot_ratee <- data.frame(cbind(prop.table(table(pool$rating_location_ratee),1),
-                               prop.table(table(pool$rating_price_ratee),1),
-                               prop.table(table(pool$rating_quality_ratee),1),
-                               prop.table(table(pool$rating_reputation_ratee),1)))
-names(plot_ratee) <- c("Location","Price","Quality","Reputation")
-
-#female ratees
-plot_fem_ratee <- data.frame(cbind(prop.table(table(pool$rating_location_ratee, pool$gender_ratee=="Female"),2)[,1],
-                                   prop.table(table(pool$rating_price_ratee, pool$gender_ratee=="Female"),2)[,1],
-                                   prop.table(table(pool$rating_quality_ratee, pool$gender_ratee=="Female"),2)[,1],
-                                   prop.table(table(pool$rating_reputation_ratee, pool$gender_ratee=="Female"),2)[,1]))
-names(plot_fem_ratee) <- c("Location","Price","Quality","Reputation")
-
-#male ratees
-plot_male_ratee <- data.frame(cbind(prop.table(table(pool$rating_location_ratee, pool$gender_ratee=="Male"),2)[,2],
-                                    prop.table(table(pool$rating_price_ratee, pool$gender_ratee=="Male"),2)[,2],
-                                    prop.table(table(pool$rating_quality_ratee, pool$gender_ratee=="Male"),2)[,2],
-                                    prop.table(table(pool$rating_reputation_ratee, pool$gender_ratee=="Male"),2)[,2]))
-names(plot_male_ratee) <- c("Location","Price","Quality","Reputation")
-
-#all raters
-plot_rater <- data.frame(cbind(prop.table(table(pool$rating_location),1),
-                               prop.table(table(pool$rating_price),1),
-                               prop.table(table(pool$rating_quality),1),
-                               prop.table(table(pool$rating_reputation),1)))
-names(plot_rater) <- c("Location","Price","Quality","Reputation")
-
-#female raters 
-plot_fem_farm <- data.frame(cbind(prop.table(table(pool$rating_location, pool$farmer_gender=="Female"),2)[,1],
-                                  prop.table(table(pool$rating_price, pool$farmer_gender=="Female"),2)[,1],
-                                  prop.table(table(pool$rating_quality, pool$farmer_gender=="Female"),2)[,1],
-                                  prop.table(table(pool$rating_reputation, pool$farmer_gender=="Female"),2)[,1]))
-names(plot_fem_farm) <- c("Location","Price","Quality","Reputation")
-
-#male raters 
-plot_male_farm <- data.frame(cbind(prop.table(table(pool$rating_location, pool$farmer_gender=="Male"),2)[,2],
-                                   prop.table(table(pool$rating_price, pool$farmer_gender=="Male"),2)[,2],
-                                   prop.table(table(pool$rating_quality, pool$farmer_gender=="Male"),2)[,2],
-                                   prop.table(table(pool$rating_reputation, pool$farmer_gender=="Male"),2)[,2]  ))
-names(plot_male_farm) <- c("Location","Price","Quality","Reputation")
-
-png(paste(path_2, "/papers/perceptions/figure/likert.png",sep = "/"), units="px", height=3200, width= 6000, res=600)
-par(mfrow=c(1,6), xpd=NA, mar = c(10, 5,5, 1)) 
-colfunc<-colorRampPalette(c("red", "green"))
-barplot(as.matrix(plot_fem_ratee), col=colfunc(5), main="Ratees", cex.main=1.5,cex.axis=1.5, cex.names=1.5,las=2) 
-barplot(as.matrix(plot_male_ratee), col=colfunc(5), main="Female Ratees", cex.main=1.5,cex.axis=1.5, cex.names=1.5,las=2)
-barplot(as.matrix(plot_fem_ratee), col=colfunc(5), main="Male Ratees", cex.main=1.5,cex.axis=1.5, cex.names=1.5,las=2) 
-barplot(as.matrix(plot_male_ratee), col=colfunc(5), main="Raters", cex.main=1.5,cex.axis=1.5, cex.names=1.5,las=2)
-barplot(as.matrix(plot_fem_ratee), col=colfunc(5), main="Female Raters", cex.main=1.5,cex.axis=1.5, cex.names=1.5,las=2) 
-barplot(as.matrix(plot_male_ratee), col=colfunc(5), main="Male Raters", cex.main=1.5,cex.axis=1.5, cex.names=1.5,las=2)
-dev.off()
 
 
