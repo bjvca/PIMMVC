@@ -36,7 +36,7 @@ graphicboxes
 \output_sync 0
 \bibtex_command default
 \index_command default
-\paperfontsize 12
+\paperfontsize default
 \spacing onehalf
 \use_hyperref true
 \pdf_bookmarks true
@@ -82,7 +82,7 @@ graphicboxes
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation skip
-\defskip bigskip
+\defskip medskip
 \is_math_indent 0
 \math_numbering_side default
 \quotes_style english
@@ -99,13 +99,49 @@ graphicboxes
 
 \begin_body
 
+\begin_layout Standard
+\begin_inset Preview
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+author{Bjorn Van Campenhout
+\backslash
+thanks{Development Strategy and Governance Division, International Food
+ Policy Research Institute, Kampala, Uganda} 
+\backslash
+footnotemark[2], and Anusha De
+\backslash
+thanks{LICOS Center for Institutions and Economic Performance, KULeuven,
+ Belgium}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+Gendered Perceptions in Maize Supply Chains: Evidence from Uganda
+\end_layout
+
 \begin_layout Abstract
 \paragraph_spacing onehalf
 Faced with imperfect information, economic actors use judgment and perceptions
  in decision making.
  Inaccurate perceptions or false beliefs may result in inefficient value
  chains and systematic bias in perceptions may affect inclusiveness.
- In this paper, I study perceptions in Ugandan maize supply chains.
+ In this paper, we study perceptions in Ugandan maize supply chains.
  A random sample of maize farmers were asked to rate other value chain actors—ag
 ro-input dealers, assembly traders and maize millers—on a set of important
  attributes such as service quality, price competitiveness, ease of access,
@@ -120,7 +156,6 @@ ro-input dealers, assembly traders and maize millers—on a set of important
 \end_layout
 
 \begin_layout Standard
-\paragraph_spacing onehalf
 \begin_inset ERT
 status open
 
@@ -166,15 +201,20 @@ source(paste(path,"code/perceptions.R
 \end_layout
 
 \begin_layout Standard
-\paragraph_spacing onehalf
-\begin_inset Newpage newpage
+
+\emph on
+\begin_inset CommandInset line
+LatexCommand rule
+offset "1ex"
+width "100col%"
+height "1pt"
+
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-\paragraph_spacing onehalf
 \begin_inset ERT
 status open
 
@@ -182,79 +222,11 @@ status open
 
 
 \backslash
-section*{Acknowledgements}
+setlength{
+\backslash
+parindent}{1cm}
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-I would first like to thank Professor Jo Swinnen and Doctor Bjorn Van Campenhout.
- I am very appreciative of Jo for providing me the opportunity to work on
- this topic and get involved in the research project.
- I am grateful to Bjorn for giving me immense guidance and helpful advice
- throughout, and keeping track of every step in the preparation of the thesis.
- I am also thankful for all the surveyors involved in the data collection.
- I would like to express my gratitude for the researchers at International
- Food Policy Research Institute (IFPRI), who were engaged in the design
- of the study, implementation of the surveys and collection of the data.
- I am grateful to all my colleagues at LICOS Centre for Institutions and
- Economic Performance, Faculty of Economics and Business (KU Leuven) for
- their advice and inputs.
- 
-\end_layout
-
-\begin_layout Standard
-Finally, I would take the opportunity to thank my parents for always being
- there for me and my friends for encouraging me.
- 
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing single
-\noindent
-\align right
-Anusha De, 
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing single
-\noindent
-\align right
-Leuven, Belgium,
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing single
-\noindent
-\align right
-10/05/2021.
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-\begin_inset Newpage newpage
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing single
-\noindent
-\begin_inset CommandInset toc
-LatexCommand tableofcontents
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-\begin_inset Newpage newpage
 \end_inset
 
 
@@ -262,7 +234,7 @@ LatexCommand tableofcontents
 
 \begin_layout Section
 \paragraph_spacing onehalf
-General Introduction
+Introduction
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:General-Introduction"
@@ -318,19 +290,19 @@ Despite the importance of beliefs and perceptions for transactions within
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-I study the case of maize value chains in Uganda where ratings are used
+We study the case of maize value chains in Uganda where ratings are used
  as a proxy measure for perceptions and beliefs.
- I use data from 1,500 maize farmers, 78 input (seed) dealers, 341 assembly
+ We use data from 1,500 maize farmers, 78 input (seed) dealers, 341 assembly
  traders, and 174 millers from Eastern Uganda to document (in)consistency
  in farmer's, input (seed) dealer's, trader's, and miller's perceived attribute
  ratings of these actors.
- To investigate systemic bias along gender lines, I further test if the
+ To investigate systemic bias along gender lines, we further test if the
  sex of the rater or the ratee has any impact on the ratings (perceptions).
  A representative sample of farmers were asked to rate up to three dealer(s),
  trader(s) and miller(s).
  Then these dealers, traders and millers were traced and asked to assess
  themselves in a similar way.
- I use input dealer, trader and miller attributes, such as perceived ease
+ We use input dealer, trader and miller attributes, such as perceived ease
  of access to the dealer, trader or miller, perceived quality of the seed
  sold by the dealer or the quality of service provided by the trader or
  the miller, and reputation of the dealer, trader or miller, to assess how
@@ -669,19 +641,11 @@ The findings of this study indicate enhanced (positive) self-perceptions
  Interestingly, the prominence of gender is evident in the farmers' perceptions
  where women are observed to have more positive perceptions about the input
  and service providers.
- However, I find no evidence of significant gender bias for the input and
+ However, we find no evidence of significant gender bias for the input and
  service providers in the ratings obtained.
- In the sections that follow, I expound on the study context and hypotheses;
- explain the data used and econometric models I will estimate; present the
- results; and finally provide a conclusion and recommendations.
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-\begin_inset Newpage newpage
-\end_inset
-
-
+ In the sections that follow, we expound on the study context and hypotheses;
+ explain the data used and econometric models we will estimate; present
+ the results; and finally provide a conclusion and recommendations.
 \end_layout
 
 \begin_layout Section
@@ -1223,7 +1187,7 @@ literal "true"
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-Next, I turn to the perceived attributes of traders.
+Next, we turn to the perceived attributes of traders.
  In remote locations, if the traders are easily accessible, that would mean
  that the farmers have greater exposure to selling opportunities, might
  reduce wastage of harvest, ensure constant income for the farmer and increase
@@ -1295,14 +1259,6 @@ Perceived prices cannot directly indicate the actual price charged at the
  Thus, the quality of processed maize available for the consumers can be
  partially explained by the perceived attributes of the maize millers.
  
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-\begin_inset Newpage newpage
-\end_inset
-
-
 \end_layout
 
 \begin_layout Section
@@ -1488,7 +1444,7 @@ literal "true"
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-Then, I turn to the variations in ratings based on gender (hypothesis 
+Then, we turn to the variations in ratings based on gender (hypothesis 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "Hypothesis 2"
@@ -1853,14 +1809,6 @@ Gender based homophily in food value chains can mean bias towards certain
  for some of the actors who received lower scores because of gender based
  homophily in preferences.
  
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-\begin_inset Newpage newpage
-\end_inset
-
-
 \end_layout
 
 \begin_layout Section
@@ -4220,7 +4168,7 @@ name "subsec:Validity-of-ratings"
 Testing whether the ratings are actually meaningful (instead of just noise)
  is important.
  This will give better insights about the validity of the perceptions.
- I look at intra-class correlation (ICC)
+ We look at intra-class correlation (ICC)
 \series bold
  
 \series default
@@ -4260,6 +4208,160 @@ Intra-class correlation coefficient can range between 0 and 1.
  The ICC coefficients indicating intra-rater reliability compare the various
  ratings given by each individual farmer.
  This shows how similar or different the farmer rates the various ratees.
+ 
+\end_layout
+
+\begin_layout Standard
+Table
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+~
+\backslash
+ref{table:table3}
+\end_layout
+
+\end_inset
+
+ presents the ICC coefficients.
+ Firstly, it can be inferred that raters (farmers) agree decently on overall
+ ratings given to ratees.
+ The ICC coefficient being 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(icc1a.fn(icc_recast_overall6)$icc1a,digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+, it can be deduced that the ratings captured in the survey are not entirely
+ random or untrue.
+ However, the level of agreement among the raters (farmers) drop majorly
+ for quality (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(icc1a.fn(icc_recast_qual)$icc1a,digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+) and reputation (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(icc1a.fn(icc_recast_rep)$icc1a,digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+).
+ For location and price based ratings, the agreement levels are higher (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(icc1a.fn(icc_recast_loc)$icc1a,digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(icc1a.fn(icc_recast_price)$icc1a,digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+).
+ This is expected as location and prices are observable factors and hence,
+ ratings for these factors should be more similar compared to non-observable
+ attributes like quality and reputation.
+ 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+Secondly, analysing the overall averaged rating pattern, it can be derived
+ that every farmer rates in a similar way every dealer, trader or miller.
+ This is because the ICC coefficient is 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(icc1b.fn(icc_recast_overall6)$icc1b,digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ (table
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+~
+\backslash
+ref{table:table3}
+\end_layout
+
+\end_inset
+
+), indicating a very decent level of agreement.
+ Similar high levels of agreement is noticed for location (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(icc1b.fn(icc_recast_loc)$icc1b,digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+) and reputation (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(icc1b.fn(icc_recast_rep)$icc1b,digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+) based ratings.
  
 \end_layout
 
@@ -4528,161 +4630,6 @@ end{table}
 \end_layout
 
 \begin_layout Standard
-Table
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-~
-\backslash
-ref{table:table3}
-\end_layout
-
-\end_inset
-
- presents the ICC coefficients.
- Firstly, it can be inferred that raters (farmers) agree decently on overall
- ratings given to ratees.
- The ICC coefficient being 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(icc1a.fn(icc_recast_overall6)$icc1a,digits=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
-, it can be deduced that the ratings captured in the survey are not entirely
- random or untrue.
- However, the level of agreement among the raters (farmers) drop majorly
- for quality (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(icc1a.fn(icc_recast_qual)$icc1a,digits=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
-) and reputation (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(icc1a.fn(icc_recast_rep)$icc1a,digits=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
-).
- For location and price based ratings, the agreement levels are higher (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(icc1a.fn(icc_recast_loc)$icc1a,digits=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
-, 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(icc1a.fn(icc_recast_price)$icc1a,digits=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
-).
- This is expected as location and prices are observable factors and hence,
- ratings for these factors should be more similar compared to non-observable
- attributes like quality and reputation.
- 
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-Secondly, analysing the overall averaged rating pattern, it can be derived
- that every farmer rates in a similar way every dealer, trader or miller.
- This is because the ICC coefficient is 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(icc1b.fn(icc_recast_overall6)$icc1b,digits=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
- (table
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-~
-\backslash
-ref{table:table3}
-\end_layout
-
-\end_inset
-
-), indicating a very decent level of agreement.
- Similar high levels of agreement is noticed for location (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(icc1b.fn(icc_recast_loc)$icc1b,digits=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
-) and reputation (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(icc1b.fn(icc_recast_rep)$icc1b,digits=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
-) based ratings.
- 
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
 \begin_inset Newpage newpage
 \end_inset
 
@@ -4722,7 +4669,7 @@ noprefix "false"
 \end_layout
 
 \begin_layout Standard
-Next, I turn to the regression models to test the hypotheses laid out in
+Next, we turn to the regression models to test the hypotheses laid out in
  section 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -4772,12 +4719,6 @@ beta_1*Gender(F)_{ija} +
 beta_2*Gender(R)_{ja} + 
 \backslash
 beta_3*X_{ija} + 
-\backslash
-
-\backslash
- &
-\backslash
-quad 
 \backslash
 beta_4*Z_{ja} + 
 \backslash
@@ -5277,7 +5218,7 @@ s, justifying the need to control for education of ratees.
  Farmers may rate older ratees with more experience more favourably while
  self-ratings are likely to be higher from older individuals because of
  their greater awareness about their performance in the sector.
- Hence, I control for age of the ratee (input dealer, trader or miller).
+ Hence, we control for age of the ratee (input dealer, trader or miller).
  
 \end_layout
 
@@ -5293,14 +5234,6 @@ Controlling for marital status of ratees is necessary as married service
  Therefore, purging marital status effects of the ratees from the model
  is essential.
  
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-\begin_inset Newpage newpage
-\end_inset
-
-
 \end_layout
 
 \begin_layout Section
@@ -7888,8 +7821,8 @@ noprefix "false"
 
 \end_inset
 
- from the trends in the dataset, I will first look at the entire group of
- ratees.
+ from the trends in the dataset, we will first look at the entire group
+ of ratees.
  The mean overall rating from female farmers is 
 \begin_inset ERT
 status open
@@ -7945,7 +7878,7 @@ noprefix "false"
 \end_layout
 
 \begin_layout Standard
-Next, I focus on the comparison of self-ratings from women and men.
+Next, we focus on the comparison of self-ratings from women and men.
  For overall average self-rating, women (
 \begin_inset ERT
 status open
@@ -8045,7 +7978,7 @@ ref{table:table4}
 \end_layout
 
 \begin_layout Standard
-Next, I examine how men rate other men and women rate other women.
+Next, we examine how men rate other men and women rate other women.
  The average ratings show that women give more favourable ratings to other
  women compared to men's ratings for other men, only in the case of overall
  average, quality and reputation.
@@ -14544,7 +14477,7 @@ name "sec:Conclusion"
 The aim of this study was to investigate the perceptions of maize farmers
  about the input and service providers in the maize value chain and the
  perceptions of these input and service providers about themselves.
- Focusing on gender, I tested if gender-based heterogeneity can be observed
+ Focusing on gender, we tested if gender-based heterogeneity can be observed
  in perceptions.
  The perceptions were captured through the ratings given on dimensions like
  ease of access, quality of service, price competitiveness and reputation.
