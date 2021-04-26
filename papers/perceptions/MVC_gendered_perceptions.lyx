@@ -1851,18 +1851,82 @@ The data for this study come from a survey of 1,526 farming households,
  The farmer household sample is drawn from 64 villages in the three districts.
  Using the 2012 sampling frame of Uganda National Bureau of Statistics (UBoS),
  the household sample per village was randomly allocated, proportionate
- to the village population.
+ to the village population
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+A random sample of farmers were interviewed in each village.
+ The number of farmers to be sampled in a village was proportional to the
+ size of the village.
+ So in larger villages, more farmers were interviewed.
+\end_layout
+
+\end_inset
+
+.
  The villages were selected through a process of stratified random sampling
  at sub-county level.
  In each of the three districts, the sub-counties from which the villages
  were sampled were purposely selected based on their distance (km) from
  the main district town, in the range of 10 kms, 20 kms and 30 kms from
  the main town.
+ A map of the study area is given below (figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Map-of-the-study-area"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
  The input dealer shops, assembly traders and millers interviewed are those
  that were referred to by farmers, either because they have ever purchased
  improved maize seed from them, sold harvest to traders or processed (sold)
  maize at the milling farms or these supply chain actors are within their
  vicinity.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename G:/My Drive/Classroom/Documents from Drive/Pre Doctoral KUL/Paper with Bjorn/PIMMVC/papers/perceptions/map_outlined.jpg
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Map of the study area.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Map-of-the-study-area"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1886,6 +1950,13 @@ literal "true"
  (5.9%) in Eastern Uganda.
  The remaining districts contributed less than 4%, including Bugiri (2.7%)
  which is part of this study.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
