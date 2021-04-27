@@ -149,7 +149,7 @@ ro-input dealers, assembly traders and maize millers—on a set of important
  These other value chain actors are tracked and asked to assess themselves
  on the same attributes.
  We find that input dealers, traders and millers assess themselves more
- favorably than farmers do.
+ favourably than farmers do.
  We also zoom in on heterogeneity in perceptions related to gender, and
  find that women rate higher than men.
  The sex of the actor being rated does not affect the rating.
@@ -637,7 +637,7 @@ literal "true"
 
 \begin_layout Standard
 The findings of this study indicate enhanced (positive) self-perceptions
- compared to the perceived attributes from the farmers.
+ compared to the perceived attributes of the farmers.
  Interestingly, the prominence of gender is evident in the farmers' perceptions
  where women are observed to have more positive perceptions about the input
  and service providers.
@@ -2030,7 +2030,18 @@ literal "true"
  The ratings in this study reflect likert style assessment where the scores
  range from 1 to 5, 5 being the best score and 1 being the worst score.
  This is the case for both farmer ratings and self-ratings from the agro-input
- dealers, traders and millers.
+ dealers, traders and millers
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+The farmer ratings are assumed to be not exposed to the input and service
+ providers before their self-ratings were collected.
+\end_layout
+
+\end_inset
+
+.
  
 \end_layout
 
@@ -2222,7 +2233,7 @@ Sexpr{format(round(mean(farmers$hh.maize.q24, na.rm=T),digits=2),nsmall=0)}
 \end_inset
 
 .
- The average distance of farmer's homestead to tarmac road is 
+ The average distance of farmers' homestead to tarmac road is 
 \begin_inset ERT
 status open
 
@@ -3997,21 +4008,7 @@ Sexpr{format(round(sum(table(pool$id.ratee[pool$rating_reputation_ratee>=5]))/su
  percent).
  They seem to be the least confident about their location as among all the
  dimensions, the highest percentage adhere to a score of at least 2 for
- location (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(sum(table(pool$id.ratee[pool$rating_location_ratee<=2]))/sum(t
-able(pool$id.ratee))*100,digits=0),nsmall=0)}
-\end_layout
-
-\end_inset
-
- percent).
+ location.
  
 \end_layout
 
@@ -4406,7 +4403,7 @@ ref{table:table3}
 \end_inset
 
 ), indicating a very decent level of agreement.
- Similar high levels of agreement is noticed for location (
+ Similar high levels of agreements are noticed for location (
 \begin_inset ERT
 status open
 
@@ -4701,9 +4698,6 @@ end{table}
 \end_layout
 
 \begin_layout Standard
-\begin_inset Newpage newpage
-\end_inset
-
 
 \end_layout
 
@@ -5229,7 +5223,7 @@ An essential discussion is the motivation behind the inclusion of the control
  Men are likely to be better educated than women.
  Better levels of education and knowledge will probably mean that farmers
  have a better understanding of what to expect from service and input providers,
- and so, may rate more or less favorably (the ratings or scores given will
+ and so, may rate more or less favourably (the ratings or scores given will
  be better informed).
  One does have to control for this impact pathway as otherwise, the gender
  and education effects will be conflated.
@@ -8210,7 +8204,8 @@ ref{table:table4}
 \begin_layout Standard
 \paragraph_spacing onehalf
 If the farmer had some business interaction with the input dealer, trader
- or processor the farmer is rating, the rating given by the farmer is 
+ or processor the farmer is rating, the rating given by the farmer is approximat
+ely 
 \begin_inset ERT
 status open
 
@@ -8249,7 +8244,7 @@ Sexpr{format(round(lm_res1$coefficients[6],digits=2),nsmall=0)}
  There is a negative relationship between the ratee's marital status and
  the ratings received by the ratee.
  If the ratee is married, the ratee receives a significantly lower score.
- Ratings for dealers are higher on average by 
+ Ratings for dealers are higher on average by approximately 
 \begin_inset ERT
 status open
 
@@ -14571,8 +14566,8 @@ The main findings suggest that women give more favourable scores.
 
 \begin_layout Standard
 Self-assessments are always significantly more positive than the ratings
- from the farmers across most of the dimensions (quality, price competitiveness
- and reputation).
+ from the farmers across most of the dimensions (overall, quality, price
+ competitiveness and reputation).
  In other words, input dealers, traders and processors have more positive
  perceptions about themselves compared to the perceptions (ratings) of the
  farmers.
@@ -14637,8 +14632,8 @@ Surprisingly, price competitiveness is always scored the lowest.
  to encourage higher usage of improved seed.
  This can be one of the reasons explaining why lower usage of improved seed
  has consistently been a matter of concern.
- Subsidies for the sale prices and transportation aid from the government
- can improve the prices and ease of access for these dealers.
+ Subsidies for the sale prices of inputs and transportation aid from the
+ government can improve the sale prices and ease of access to these dealers.
  However, ratings for quality are the highest in the case of dealers (indicating
  provision of good quality seeds).
  
