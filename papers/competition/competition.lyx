@@ -1,0 +1,278 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\begin_modules
+knitr
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style plainnat
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+Trader competition and relational contracts
+\end_layout
+
+\begin_layout Abstract
+In their paper on the dangers of emerging-market competition: Evidence from
+ Rwanda’s coffee supply chain, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "10.1093/qje/qjaa048"
+literal "false"
+
+\end_inset
+
+ argue that increased competition in agriculture markets sustained by informal
+ contracts can diminish performance and value for all players in the supply
+ chain.
+ This paper
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<global_declarations,  echo=F, warning = F, message=F>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+path <- getwd()
+\end_layout
+
+\begin_layout Plain Layout
+
+source(paste(path,
+\begin_inset Quotes eld
+\end_inset
+
+analysis/competition.R
+\begin_inset Quotes erd
+\end_inset
+
+,sep=
+\begin_inset Quotes erd
+\end_inset
+
+/
+\begin_inset Quotes erd
+\end_inset
+
+))
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Motivation
+\end_layout
+
+\begin_layout Standard
+A recent paper by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "10.1093/qje/qjaa048"
+literal "false"
+
+\end_inset
+
+ attempts to empirically answer the question whether increased competition
+ is beneficial in settings characterized by weak contract enforcement.
+ In developing economies, weak contract enforcement leads to the emergence
+ of second-best institutions 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "10.1257/aer.98.2.100"
+literal "false"
+
+\end_inset
+
+.
+ In commodity value chains, this often takes the form of relational contracts.
+ 
+\end_layout
+
+\begin_layout Standard
+However, the value chain they focus on seems to be missing an important
+ link.
+ For many commodities, farmers will sell at the farm gate to a trader, who
+ will then aggregate production and link further to processors.
+ It is likely that especially farmers that sell only small quantities will
+ rely on traders.
+ As such, an exclusive focus on the farmer-processor link may mean findings
+ are affected by selection bias.
+\end_layout
+
+\begin_layout Standard
+Similar to 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "10.1093/qje/qjaa048"
+literal "false"
+
+\end_inset
+
+, we define relational contracts in terms of a set of practices that characteriz
+e transactions between farmers and traders.
+ Credit appears to be an important component in relational contracts.
+ In our data, farmers report obtaining credit from We further find that
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(prop.table(table(traders$hh.maize.q30.f))[2] *100,digits=0),nsmal
+l=0)}
+\end_layout
+
+\end_inset
+
+ percent of traders state that the provided to farmers they bought from.
+\end_layout
+
+\begin_layout Standard
+pr a Inputs (seed, fertilizer) pr b Tarpaulins for drying of maize pr c
+ PICS bags pr d Gunny bags pr e Technical assistance or training in post-harvest
+ handling (drying and storage) pr f Credit 
+\end_layout
+
+\begin_layout Standard
+Look up in literature:
+\end_layout
+
+\begin_layout Standard
+Swinnen and Vandeplas 2010 (AgEcon -- my IAAE Plenary presentation from
+ Beijing)
+\begin_inset CommandInset citation
+LatexCommand citet
+key "https://doi.org/10.1111/j.1574-0862.2010.00493.x"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+to do:
+\end_layout
+
+\begin_layout Itemize
+descriptive statistics like table 1 in 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "10.1093/qje/qjaa048"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+develop theoretical model
+\end_layout
+
+\begin_layout Itemize
+alternative ways to link traders to farmers
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+btprint "btPrintCited"
+bibfiles "competition"
+options "IFPRI_Style"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_body
+\end_document
