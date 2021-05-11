@@ -103,3 +103,58 @@ merged$hh.maize.q105[merged$hh.maize.q105==999] <- NA
 merged$hh.maize.q105[merged$hh.maize.q105==0] <- NA
 #test if households report more competition in traders say they collide
 summary(lm(hh.maize.q105~(hh.maize.q40.y==4), data=merged))
+
+
+
+#### Dummies --- Farmers
+farmers$gender <- 0
+farmers$gender [farmers$hh.maize.q25=="Female"] <- 1 #female farmers
+farmers$educ <- 0
+farmers$educ[farmers$hh.maize.q27=="b" | farmers$hh.maize.q27=="c" | farmers$hh.maize.q27=="d" | farmers$hh.maize.q27=="e" | 
+               farmers$hh.maize.q27=="f" | farmers$hh.maize.q27=="g" ] <- 1 #educated farmers
+farmers$married <- ifelse(farmers$hh.maize.q26 == 'a', 1, 0)  #married farmers 
+farmers$member <- ifelse(farmers$hh.maize.q37 == 'Yes', 1, 0)  #member of farmer group or cooperatives 
+
+farmers$maizesold<-as.numeric(farmers$hh.maize.q101a) #maize sold in bags 
+farmers$notrans<-as.numeric(farmers$hh.maize.q101b) #number of separate transactions 
+
+#### Dummies --- Traders
+traders$gender <- 0
+traders$gender [traders$hh.maize.q7=="Female"] <- 1 #female traders
+traders$educ <- 0
+traders$educ[traders$hh.maize.q9=="b" |traders$hh.maize.q9=="c" | traders$hh.maize.q9=="d" | traders$hh.maize.q9=="e" | 
+               traders$hh.maize.q9=="f"] <- 1 #educated traders
+traders$married <- ifelse(traders$hh.maize.q8 == 'a', 1, 0)  #married traders
+
+traders$maizetrade<-as.numeric(traders$hh.maize.q14) #percentage of maize traded
+
+##ACTION radius
+#a	Entire country; b	Various districts ;c	One district
+#d	Various sub-counties ;e	One subcounty; f	various parishes; g	One parish; h	different villages; i	One village
+#j	Part of village; k	Only a few households
+
+traders$radius <- as.numeric(traders$hh.maize.radius)
+traders$rada <- ifelse(traders$radius == '1', 1, 0) 
+traders$radb <- ifelse(traders$radius == '2', 1, 0) 
+traders$radc <- ifelse(traders$radius == '3', 1, 0) 
+traders$radd <- ifelse(traders$radius == '4', 1, 0) 
+traders$rade <- ifelse(traders$radius == '5', 1, 0) 
+traders$radf <- ifelse(traders$radius == '6', 1, 0) 
+traders$radg <- ifelse(traders$radius == '7', 1, 0) 
+traders$radh <- ifelse(traders$radius == '8', 1, 0) 
+traders$radi <- ifelse(traders$radius == '9', 1, 0)
+traders$radj <- ifelse(traders$radius == '10', 1, 0) 
+
+traders$other<-as.numeric(traders$hh.maize.q21) #number of other traders operating in the area 
+
+traders$storage <- as.numeric (traders$hh.maize.q28) #storage capacity in kgs
+
+traders$lowprice <- as.numeric (traders$hh.maize.q22e) #lowest selling price 
+traders$highprice <- as.numeric (traders$hh.maize.q23e) #highest selling price 
+
+### services to farmers
+#a	Inputs (seed, fertilizer); b	Tarpaulins for drying of maize; c	PICS bags; d	Gunny bags
+#e	Technical assistance or training in post-harvest handling (drying and storage)
+#f	Credit; g	Provide nothing
+
+traders$certscales <- ifelse(traders$hh.maize.q32 == 'Yes', 1, 0) #certified scales dummy 
