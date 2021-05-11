@@ -84,27 +84,17 @@ df_averages[4,4,2] <- sum(!is.na(farmers$hh.maize.trader1.q102p))
 
 
 
-#competition indicators:
-
-prop.table(table(traders$hh.maize.q40))
-#40. Do you make agreements on a maximum buyer price with other traders?
-# 1= never, 4 is always
-#         1          2          3          4 
-#0.39296188 0.29912023 0.08211144 0.22580645 
-
-
-
-#This is for farmers:
+#competition indicators: what can we use as measures of competition? 
+#at the level of the farmers, it is probably easiest to use:
 #integer	q105	105. Please estimate how many of these maize traders or middlemen are buying maize in your village or neighborhood.
-
+# for input dealers and input shops, if we decided to also run this analysis, we may want to do something similar to 
 #farmer level
 farmers$hh.maize.q105[farmers$hh.maize.q105==999] <- NA
 
-summary(lm((farmers$hh.maize.trader1.q102p =="Yes")~hh.maize.q105,data=farmers))
 
 ### some quick regressions
 summary(lm((farmers$hh.maize.trader1.q102n == 1 | farmers$hh.maize.trader1.q102n == 2)~hh.maize.q105,data=farmers))
-summary(lm(traders$hh.maize.q30.f~hh.maize.q40,data=traders))
+
 
 #now merge
 merged <- merge(farmers, traders, by.x="id.trader1", by.y="id.trader")
