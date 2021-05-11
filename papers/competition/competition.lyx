@@ -261,7 +261,7 @@ l=0)}
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -294,7 +294,9 @@ status open
 
 
 \backslash
-begin{center}
+begin{center} 
+\backslash
+footnotesize
 \end_layout
 
 \begin_layout Plain Layout
@@ -477,6 +479,514 @@ Sexpr{format(round(df_averages[5,4,1],digits=0),nsmall=0)}
 
 \begin_layout Plain Layout
 
+Age  & 
+\backslash
+Sexpr{format( round(mean(traders$hh.maize.q6, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(median(traders$hh.maize.q6, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(sd(traders$hh.maize.q6, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(sum(!is.na(traders$hh.maize.q6)), digits=0),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Gender  & 
+\backslash
+Sexpr{format( round(mean(traders$gender, na.rm=T), digits=3),nsmall=3)} &
+ 
+\backslash
+Sexpr{format( round(median(traders$gender, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(sd(traders$gender, na.rm=T), digits=3),nsmall=3)} & 
+\backslash
+Sexpr{format( round(sum(!is.na(traders$gender)), digits=0),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Education  & 
+\backslash
+Sexpr{format( round(mean(traders$educ, na.rm=T), digits=3),nsmall=3)} & 
+\backslash
+Sexpr{format( round(median(traders$educ, na.rm=T), digits=3),nsmall=3)} &
+ 
+\backslash
+Sexpr{format( round(sd(traders$educ, na.rm=T), digits=3),nsmall=3)} & 
+\backslash
+Sexpr{format( round(sum(!is.na(traders$educ)), digits=0),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Marital status  & 
+\backslash
+Sexpr{format( round(mean(traders$married, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(median(traders$married, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(sd(traders$married, na.rm=T), digits=3),nsmall=3)} &
+ 
+\backslash
+Sexpr{format( round(sum(!is.na(traders$married)), digits=0),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Percentage of maize trade  & 
+\backslash
+Sexpr{format( round(mean(traders$maizetrade, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(median(traders$maizetrade, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(sd(traders$maizetrade, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(sum(!is.na(traders$maizetrade)), digits=0),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+No.
+ of other traders & 
+\backslash
+Sexpr{format( round(mean(traders$other, na.rm=T), digits=3),nsmall=3)} &
+ 
+\backslash
+Sexpr{format( round(median(traders$other, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(sd(traders$other, na.rm=T), digits=3),nsmall=3)} & 
+\backslash
+Sexpr{format( round(sum(!is.na(traders$other)), digits=0),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Lowest buying price & 
+\backslash
+Sexpr{format( round(mean(traders$hh.maize.q22c, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(median(traders$hh.maize.q22c, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(sd(traders$hh.maize.q22c, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(sum(!is.na(traders$hh.maize.q22c)), digits=0),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Lowest selling price & 
+\backslash
+Sexpr{format( round(mean(traders$lowprice, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(median(traders$lowprice, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(sd(traders$lowprice, na.rm=T), digits=3),nsmall=3)} &
+ 
+\backslash
+Sexpr{format( round(sum(!is.na(traders$lowprice)), digits=0),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Highest buying price & 
+\backslash
+Sexpr{format( round(mean(traders$hh.maize.q23c, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(median(traders$hh.maize.q23c, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(sd(traders$hh.maize.q23c, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(sum(!is.na(traders$hh.maize.q23c)), digits=0),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Highest selling price & 
+\backslash
+Sexpr{format( round(mean(traders$highprice, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(median(traders$highprice, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(sd(traders$highprice, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(sum(!is.na(traders$highprice)), digits=0),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Maize collected per day (kgs, after harvest) & 
+\backslash
+Sexpr{format( round(mean(traders$hh.maize.q22b, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(median(traders$hh.maize.q22b, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(sd(traders$hh.maize.q22b, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(sum(!is.na(traders$hh.maize.q22b)), digits=0),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Maize collected per day (kgs, during planting/growing) & 
+\backslash
+Sexpr{format( round(mean(traders$hh.maize.q23b, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(median(traders$hh.maize.q23b, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(sd(traders$hh.maize.q23b, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(sum(!is.na(traders$hh.maize.q23b)), digits=0),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Storage capacity in kgs & 
+\backslash
+Sexpr{format( round(mean(traders$storage, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(median(traders$storage, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(sd(traders$storage, na.rm=T), digits=3),nsmall=3)} &
+ 
+\backslash
+Sexpr{format( round(sum(!is.na(traders$storage)), digits=0),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Given inputs to farmers & 
+\backslash
+Sexpr{format( round(mean(traders$hh.maize.q30.a, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(median(traders$hh.maize.q30.a, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(sd(traders$hh.maize.q30.a, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(sum(!is.na(traders$hh.maize.q30.a)), digits=0),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Given tarpaulins to farmers & 
+\backslash
+Sexpr{format( round(mean(traders$hh.maize.q30.b, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(median(traders$hh.maize.q30.b, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(sd(traders$hh.maize.q30.b, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(sum(!is.na(traders$hh.maize.q30.b)), digits=0),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Given PICS bags to farmers & 
+\backslash
+Sexpr{format( round(mean(traders$hh.maize.q30.c, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(median(traders$hh.maize.q30.c, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(sd(traders$hh.maize.q30.c, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(sum(!is.na(traders$hh.maize.q30.c)), digits=0),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Given gunny bags to farmers & 
+\backslash
+Sexpr{format( round(mean(traders$hh.maize.q30.d, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(median(traders$hh.maize.q30.d, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(sd(traders$hh.maize.q30.d, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(sum(!is.na(traders$hh.maize.q30.d)), digits=0),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Given technical assistance to farmers & 
+\backslash
+Sexpr{format( round(mean(traders$hh.maize.q30.e, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(median(traders$hh.maize.q30.e, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(sd(traders$hh.maize.q30.e, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(sum(!is.na(traders$hh.maize.q30.e)), digits=0),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Given credit to farmers & 
+\backslash
+Sexpr{format( round(mean(traders$hh.maize.q30.f, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(median(traders$hh.maize.q30.f, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(sd(traders$hh.maize.q30.f, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(sum(!is.na(traders$hh.maize.q30.f)), digits=0),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Certified scales & 
+\backslash
+Sexpr{format( round(mean(traders$certscales, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(median(traders$certscales, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(sd(traders$certscales, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(sum(!is.na(traders$certscales)), digits=0),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-5} 
+\end_layout
+
+\begin_layout Plain Layout
+
 & 
 \backslash
 multicolumn{4}{c}{
@@ -580,6 +1090,288 @@ Sexpr{format(round(df_averages[4,4,2],digits=0),nsmall=0)}
 \backslash
 
 \backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Age  & 
+\backslash
+Sexpr{format( round(mean(farmers$hh.maize.q24, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(median(farmers$hh.maize.q24, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(sd(farmers$hh.maize.q24, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(sum(!is.na(farmers$hh.maize.q24)), digits=0),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Gender  & 
+\backslash
+Sexpr{format( round(mean(farmers$gender, na.rm=T), digits=3),nsmall=3)} &
+ 
+\backslash
+Sexpr{format( round(median(farmers$gender, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(sd(farmers$gender, na.rm=T), digits=3),nsmall=3)} & 
+\backslash
+Sexpr{format( round(sum(!is.na(farmers$gender)), digits=0),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Education  & 
+\backslash
+Sexpr{format( round(mean(farmers$educ, na.rm=T), digits=3),nsmall=3)} & 
+\backslash
+Sexpr{format( round(median(farmers$educ, na.rm=T), digits=3),nsmall=3)} &
+ 
+\backslash
+Sexpr{format( round(sd(farmers$educ, na.rm=T), digits=3),nsmall=3)} & 
+\backslash
+Sexpr{format( round(sum(!is.na(farmers$educ)), digits=0),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Marital status  & 
+\backslash
+Sexpr{format( round(mean(farmers$married, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(median(farmers$married, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(sd(farmers$married, na.rm=T), digits=3),nsmall=3)} &
+ 
+\backslash
+Sexpr{format( round(sum(!is.na(farmers$married)), digits=0),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Household size & 
+\backslash
+Sexpr{format( round(mean(farmers$hh.maize.q28, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(median(farmers$hh.maize.q28, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(sd(farmers$hh.maize.q28, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(sum(!is.na(farmers$hh.maize.q28)), digits=0),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+No.
+ of rooms & 
+\backslash
+Sexpr{format( round(mean(farmers$hh.maize.q30, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(median(farmers$hh.maize.q30, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(sd(farmers$hh.maize.q30, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(sum(!is.na(farmers$hh.maize.q30)), digits=0),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Land for crop production (Acres) & 
+\backslash
+Sexpr{format( round(mean(farmers$hh.maize.q36, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(median(farmers$hh.maize.q36, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(sd(farmers$hh.maize.q36, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(sum(!is.na(farmers$hh.maize.q36)), digits=0),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Member dummy & 
+\backslash
+Sexpr{format( round(mean(farmers$member, na.rm=T), digits=3),nsmall=3)} &
+ 
+\backslash
+Sexpr{format( round(median(farmers$member, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(sd(farmers$member, na.rm=T), digits=3),nsmall=3)} & 
+\backslash
+Sexpr{format( round(sum(!is.na(farmers$member)), digits=0),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+No.
+ of plots for maize & 
+\backslash
+Sexpr{format( round(mean(farmers$hh.maize.q40, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(median(farmers$hh.maize.q40, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(sd(farmers$hh.maize.q40, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(sum(!is.na(farmers$hh.maize.q40)), digits=0),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Maize sold (bags) & 
+\backslash
+Sexpr{format( round(mean(farmers$maizesold, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(median(farmers$maizesold, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(sd(farmers$maizesold, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(sum(!is.na(farmers$maizesold)), digits=0),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+No.
+ of transactions & 
+\backslash
+Sexpr{format( round(mean(farmers$notrans, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(median(farmers$notrans, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(sd(farmers$notrans, na.rm=T), digits=3),nsmall=3)} &
+ 
+\backslash
+Sexpr{format( round(sum(!is.na(farmers$notrans)), digits=0),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
 
 \end_layout
 
