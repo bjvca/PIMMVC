@@ -106,7 +106,9 @@ summary(lm(hh.maize.q105~(hh.maize.q40.y==4), data=merged))
 
 
 
-#### Dummies --- Farmers
+#### Dummies --- FARMERS #####
+##############################
+
 farmers$gender <- 0
 farmers$gender [farmers$hh.maize.q25=="Female"] <- 1 #female farmers
 farmers$educ <- 0
@@ -115,10 +117,23 @@ farmers$educ[farmers$hh.maize.q27=="b" | farmers$hh.maize.q27=="c" | farmers$hh.
 farmers$married <- ifelse(farmers$hh.maize.q26 == 'a', 1, 0)  #married farmers 
 farmers$member <- ifelse(farmers$hh.maize.q37 == 'Yes', 1, 0)  #member of farmer group or cooperatives 
 
-farmers$maizesold<-as.numeric(farmers$hh.maize.q101a) #maize sold in bags 
-farmers$notrans<-as.numeric(farmers$hh.maize.q101b) #number of separate transactions 
+farmers$hh.maize.q24[farmers$hh.maize.q24==999] <- NA #age 
+farmers$hh.maize.q36[farmers$hh.maize.q36==999] <- NA #Land for crop production (Acres) 
 
-#### Dummies --- Traders
+#maize sold in bags 
+farmers$hh.maize.q101a[farmers$hh.maize.q101a==999] <- NA
+table(farmers$hh.maize.q101a)
+farmers$maizesold <- as.numeric(as.character(farmers$hh.maize.q101a))
+mean(farmers$maizesold, na.rm=T)
+
+#number of separate transactions 
+farmers$notrans <- as.numeric(as.character(farmers$hh.maize.q101b))
+mean(farmers$notrans, na.rm=T)
+
+
+#### Dummies --- TRADERS #####
+##############################
+
 traders$gender <- 0
 traders$gender [traders$hh.maize.q7=="Female"] <- 1 #female traders
 traders$educ <- 0
@@ -126,31 +141,51 @@ traders$educ[traders$hh.maize.q9=="b" |traders$hh.maize.q9=="c" | traders$hh.mai
                traders$hh.maize.q9=="f"] <- 1 #educated traders
 traders$married <- ifelse(traders$hh.maize.q8 == 'a', 1, 0)  #married traders
 
-traders$maizetrade<-as.numeric(traders$hh.maize.q14) #percentage of maize traded
+#percentage of maize traded
+traders$maizetrade<-as.numeric(as.character(traders$hh.maize.q14)) 
+mean(traders$maizetrade, na.rm=T)
 
 ##ACTION radius
 #a	Entire country; b	Various districts ;c	One district
 #d	Various sub-counties ;e	One subcounty; f	various parishes; g	One parish; h	different villages; i	One village
 #j	Part of village; k	Only a few households
+traders$radius<-as.character(traders$hh.maize.radius)
+table(traders$radius)
 
-traders$radius <- as.numeric(traders$hh.maize.radius)
-traders$rada <- ifelse(traders$radius == '1', 1, 0) 
-traders$radb <- ifelse(traders$radius == '2', 1, 0) 
-traders$radc <- ifelse(traders$radius == '3', 1, 0) 
-traders$radd <- ifelse(traders$radius == '4', 1, 0) 
-traders$rade <- ifelse(traders$radius == '5', 1, 0) 
-traders$radf <- ifelse(traders$radius == '6', 1, 0) 
-traders$radg <- ifelse(traders$radius == '7', 1, 0) 
-traders$radh <- ifelse(traders$radius == '8', 1, 0) 
-traders$radi <- ifelse(traders$radius == '9', 1, 0)
-traders$radj <- ifelse(traders$radius == '10', 1, 0) 
+traders$rada <- ifelse(traders$radius == 'a', 1, 0) 
+traders$radb <- ifelse(traders$radius == 'b', 1, 0) 
+traders$radc <- ifelse(traders$radius == 'c', 1, 0) 
+traders$radd <- ifelse(traders$radius == 'd', 1, 0) 
+traders$rade <- ifelse(traders$radius == 'e', 1, 0) 
+traders$radf <- ifelse(traders$radius == 'f', 1, 0) 
+traders$radg <- ifelse(traders$radius == 'g', 1, 0) 
+traders$radh <- ifelse(traders$radius == 'h', 1, 0) 
+traders$radi <- ifelse(traders$radius == 'i', 1, 0)
+traders$radj <- ifelse(traders$radius == 'j', 1, 0) 
+traders$radk <- ifelse(traders$radius == 'k', 1, 0) 
 
-traders$other<-as.numeric(traders$hh.maize.q21) #number of other traders operating in the area 
+#number of other traders operating in the area 
+traders$hh.maize.q21[traders$hh.maize.q21==999] <- NA
+table(traders$hh.maize.q21)
+traders$other <- as.numeric(as.character(traders$hh.maize.q21))
+mean(traders$other, na.rm=T)
 
-traders$storage <- as.numeric (traders$hh.maize.q28) #storage capacity in kgs
+#storage capacity in kgs
+traders$hh.maize.q28[traders$hh.maize.q28==999] <- NA
+table(traders$hh.maize.q28)
+traders$storage <- as.numeric(as.character(traders$hh.maize.q28))
+mean(traders$storage, na.rm=T)
 
-traders$lowprice <- as.numeric (traders$hh.maize.q22e) #lowest selling price 
-traders$highprice <- as.numeric (traders$hh.maize.q23e) #highest selling price 
+traders$lowprice <- as.numeric(as.character(traders$hh.maize.q22e)) #lowest selling price 
+mean(traders$lowprice, na.rm=T)
+traders$highprice <- as.numeric(as.character(traders$hh.maize.q23e)) #highest selling price 
+mean(traders$highprice, na.rm=T)
+
+#Highest buying price
+traders$hh.maize.q23c[traders$hh.maize.q23c==999] <- NA
+
+#Maize collected per day (kgs, during planting/growing)
+traders$hh.maize.q23b[traders$hh.maize.q23b==999] <- NA
 
 ### services to farmers
 #a	Inputs (seed, fertilizer); b	Tarpaulins for drying of maize; c	PICS bags; d	Gunny bags
@@ -158,3 +193,5 @@ traders$highprice <- as.numeric (traders$hh.maize.q23e) #highest selling price
 #f	Credit; g	Provide nothing
 
 traders$certscales <- ifelse(traders$hh.maize.q32 == 'Yes', 1, 0) #certified scales dummy 
+
+
