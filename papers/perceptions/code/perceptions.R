@@ -371,11 +371,19 @@ mod1_gender<- lm.cluster(data = pool, formula = rating_overall ~  farmer_fem + r
 se1 <- sqrt(diag(vcov(mod1_gender)))
 lm_res1<-mod1_gender$lm_res
 
+mod_gender1<-lm.cluster(data = pool, formula = rating_overall ~  farmer_fem + ratee_fem + age + educ + tarmac
+           + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy, cluster="id.ratee") 
+summary(mod_gender1)
+
 ##Interaction between sex of farmer and ratee
 mod5_gender <- lm.cluster(data = pool, formula = rating_overall ~  farmer_fem*ratee_fem + educ + interaction_yes + age + tarmac
                           + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy, cluster="id.ratee") 
 se5 <- sqrt(diag(vcov(mod5_gender)))
 lm_res5<-mod5_gender$lm_res
+
+mod_gender2 <- lm.cluster(data = pool, formula = rating_overall ~  farmer_fem*ratee_fem + educ  + age + tarmac
+                          + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy, cluster="id.ratee") 
+summary(mod_gender2)
 
 #saving regression
 #screenreg(list(mod1_gender,mod5_gender), file="gen_overall_farmer", stars = c(0.01, 0.05, 0.1), digits=4)
@@ -390,11 +398,19 @@ mod11_gender<- lm.cluster(data = pool, formula = rating_location ~  farmer_fem +
 se11 <- sqrt(diag(vcov(mod11_gender)))
 lm_res11<-mod11_gender$lm_res
 
+mod_gender3<- lm.cluster(data = pool, formula = rating_location ~  farmer_fem + ratee_fem + age + educ + tarmac
+                          + murram + married + age_ratee + married_ratee + educ_ratee+ dealer_dummy + trader_dummy, cluster = "id.ratee") 
+summary(mod_gender3)
+
 ##Interaction between sex of farmer and ratee
 mod15_gender <- lm.cluster(data = pool, formula = rating_location ~  farmer_fem*ratee_fem + educ + interaction_yes + age + tarmac
                            + murram + married + age_ratee + married_ratee + educ_ratee+ dealer_dummy + trader_dummy, cluster = "id.ratee") 
 se15 <- sqrt(diag(vcov(mod15_gender)))
 lm_res15<-mod15_gender$lm_res
+
+mod_gender4 <- lm.cluster(data = pool, formula = rating_location ~  farmer_fem*ratee_fem + educ + age + tarmac
+                           + murram + married + age_ratee + married_ratee + educ_ratee+ dealer_dummy + trader_dummy, cluster = "id.ratee") 
+summary(mod_gender4)
 
 #saving regression
 #screenreg(list(mod11_gender,mod15_gender), file="gen_loc_farmer", stars = c(0.01, 0.05, 0.1), digits=4)
@@ -409,11 +425,19 @@ mod21_gender<- lm.cluster(data = pool, formula = rating_quality ~  farmer_fem + 
 se21 <- sqrt(diag(vcov(mod21_gender)))
 lm_res21<-mod21_gender$lm_res
 
+mod_gender5<- lm.cluster(data = pool, formula = rating_quality ~  farmer_fem + ratee_fem + age + educ + tarmac
+                          + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy, cluster = "id.ratee") 
+summary(mod_gender5)
+
 ##Interaction between sex of farmer and ratee
 mod25_gender <- lm.cluster(data = pool, formula = rating_quality ~  farmer_fem*ratee_fem + educ + interaction_yes + age + tarmac
                            + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy, cluster = "id.ratee") 
 se25 <- sqrt(diag(vcov(mod25_gender)))
 lm_res25<-mod25_gender$lm_res
+
+mod_gender6 <- lm.cluster(data = pool, formula = rating_quality ~  farmer_fem*ratee_fem + educ + age + tarmac
+                           + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy, cluster = "id.ratee") 
+summary(mod_gender6)
 
 #saving regression
 #screenreg(list(mod21_gender,mod25_gender), file="gen_qual_farmer", stars = c(0.01, 0.05, 0.1), digits=4)
@@ -428,11 +452,19 @@ mod31_gender<- lm.cluster(data = pool, formula = rating_price ~  farmer_fem + ra
 se31 <- sqrt(diag(vcov(mod31_gender)))
 lm_res31<-mod31_gender$lm_res
 
+mod_gender7<- lm.cluster(data = pool, formula = rating_price ~  farmer_fem + ratee_fem + age + educ + tarmac
+                          + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy, cluster = "id.ratee") 
+summary(mod_gender7)
+
 ##Interaction between sex of farmer and ratee
 mod35_gender <- lm.cluster(data = pool, formula = rating_price ~  farmer_fem*ratee_fem + educ + interaction_yes + age + tarmac
                            + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy, cluster = "id.ratee") 
 se35 <- sqrt(diag(vcov(mod35_gender)))
 lm_res35<-mod35_gender$lm_res
+
+mod_gender8 <- lm.cluster(data = pool, formula = rating_price ~  farmer_fem*ratee_fem + educ + age + tarmac
+                           + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy, cluster = "id.ratee") 
+summary(mod_gender8)
 
 #saving regression
 #screenreg(list(mod31_gender,mod35_gender), file="gen_price_farmer", stars = c(0.01, 0.05, 0.1), digits=4)
@@ -447,16 +479,27 @@ mod41_gender<- lm.cluster(data = pool, formula = rating_reputation ~  farmer_fem
 se41 <- sqrt(diag(vcov(mod41_gender)))
 lm_res41<-mod41_gender$lm_res
 
+mod_gender9<- lm.cluster(data = pool, formula = rating_reputation ~  farmer_fem + ratee_fem + age + educ + tarmac
+                          + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy, cluster = "id.ratee") 
+summary(mod_gender9)
+
 ##Interaction between sex of farmer and ratee
 mod45_gender <- lm.cluster(data = pool, formula = rating_reputation ~  farmer_fem*ratee_fem + educ + interaction_yes + age + tarmac
                            + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy , cluster = "id.ratee") 
 se45 <- sqrt(diag(vcov(mod45_gender)))
 lm_res45<-mod45_gender$lm_res
 
+mod_gender10 <- lm.cluster(data = pool, formula = rating_reputation ~  farmer_fem*ratee_fem + educ + age + tarmac
+                           + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy , cluster = "id.ratee") 
+summary(mod_gender10)
+
 #saving regression
 #screenreg(list(mod41_gender,mod45_gender), file="gen_reputation_farmer", stars = c(0.01, 0.05, 0.1), digits=4)
 #texreg(list(mod41_gender,mod45_gender), file="gen_reputation_farmer_latex", stars = c(0.01, 0.05, 0.1), digits=4)
 
+#### without interaction variable 
+texreg(list(mod_gender1, mod_gender2, mod_gender3, mod_gender4, mod_gender5, mod_gender6, mod_gender7, mod_gender8, mod_gender9, 
+            mod_gender10), stars=c(0.01,0.05,0.1), digits=3)
 
 #########################################################################################################################
 #########################################################################################################################
