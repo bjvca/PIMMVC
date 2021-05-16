@@ -497,9 +497,38 @@ summary(mod_gender10)
 #screenreg(list(mod41_gender,mod45_gender), file="gen_reputation_farmer", stars = c(0.01, 0.05, 0.1), digits=4)
 #texreg(list(mod41_gender,mod45_gender), file="gen_reputation_farmer_latex", stars = c(0.01, 0.05, 0.1), digits=4)
 
+library(texreg)
+
 #### without interaction variable 
 texreg(list(mod_gender1, mod_gender2, mod_gender3, mod_gender4, mod_gender5, mod_gender6, mod_gender7, mod_gender8, mod_gender9, 
             mod_gender10), stars=c(0.01,0.05,0.1), digits=3)
+
+####with client_service control
+mod1<- lm.cluster(data = pool, formula = rating_overall ~  farmer_fem + ratee_fem + age + interaction_yes + client_service + educ + tarmac
+                  + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy, cluster="id.ratee") 
+mod2 <- lm.cluster(data = pool, formula = rating_overall ~  farmer_fem*ratee_fem + educ + interaction_yes +  client_service + age + tarmac
+                   + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy, cluster="id.ratee") 
+mod3<- lm.cluster(data = pool, formula = rating_location ~  farmer_fem + ratee_fem + age + interaction_yes + client_service + educ + tarmac
+                  + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy, cluster="id.ratee") 
+mod4 <- lm.cluster(data = pool, formula = rating_location ~  farmer_fem*ratee_fem + educ + interaction_yes +  client_service + age + tarmac
+                   + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy, cluster="id.ratee") 
+mod5<- lm.cluster(data = pool, formula = rating_quality ~  farmer_fem + ratee_fem + age + interaction_yes + client_service + educ + tarmac
+                  + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy, cluster="id.ratee") 
+mod6 <- lm.cluster(data = pool, formula = rating_quality ~  farmer_fem*ratee_fem + educ + interaction_yes +  client_service + age + tarmac
+                   + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy, cluster="id.ratee") 
+mod7<- lm.cluster(data = pool, formula = rating_price ~  farmer_fem + ratee_fem + age + interaction_yes + client_service + educ + tarmac
+                  + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy, cluster="id.ratee") 
+mod8 <- lm.cluster(data = pool, formula = rating_price ~  farmer_fem*ratee_fem + educ + interaction_yes +  client_service + age + tarmac
+                   + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy, cluster="id.ratee") 
+mod9<- lm.cluster(data = pool, formula = rating_reputation ~  farmer_fem + ratee_fem + age + interaction_yes + client_service + educ + tarmac
+                  + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy, cluster="id.ratee") 
+mod10 <- lm.cluster(data = pool, formula = rating_reputation ~  farmer_fem*ratee_fem + educ + interaction_yes +  client_service + age + tarmac
+                    + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy, cluster="id.ratee")
+
+texreg(list(mod1, mod2, mod3, mod4, mod5, mod6, mod7, mod8, mod9, mod10), stars=c(0.01,0.05,0.1), digits=3)
+
+
+pool$maize_sell_dummy <- ifelse(pool$maize_sell == 'Yes', 1, 0) 
 
 #########################################################################################################################
 #########################################################################################################################
