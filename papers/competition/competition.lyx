@@ -1666,6 +1666,75 @@ literal "false"
  Doing so, we find that there are on average 5 traders working in the area.
 \end_layout
 
+\begin_layout Subsection*
+Linking 
+\end_layout
+
+\begin_layout Itemize
+Link farmers to traders
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Check: Village names for inconsistencies (pre-coded/manually typed, spelling
+ mistakes?), can be done by tabulating or verifying from the ODK app
+\end_layout
+
+\begin_layout Itemize
+Check: tabulate villages and districts to ensure that same village names
+ do not exist in different districts OR first merge on districts
+\end_layout
+
+\begin_layout Itemize
+Obtain competition at farm gate: link farmers' responses (q105 - how many
+ traders trade in your village or neighbourhood) with traders, indicating
+ how many traders each farmer faces.
+ 
+\end_layout
+
+\begin_layout Itemize
+Merge the farmers and traders based on the village names.
+ Farmer to trader linking will be thus done at the village level (farm gate
+ level), then we also have to decide on a radius (for instance, within 5
+ kms/10kms, farmer A faces 10 traders) and check what radii the villages
+ cover in general in Uganda (we take the help of the map/GPS coordinates
+ to match the catchment areas for competition).
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Link traders to traders 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+From the 1st linking step, we will obtain the exact locations of every trader.
+ 
+\end_layout
+
+\begin_layout Itemize
+Using this location and each trader's response of their radius of operation,
+ we obtain how many competitors every trader faces.
+ For instance, if trader A operates in a parish, all the other traders operating
+ in the same parish are his/her competitors.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Subsection*
+Thoughts about competition attributes for millers and input-dealers 
+\end_layout
+
+\begin_layout Standard
+They will be different from traders.
+ We only ask nearest distance to mill or dealer shop (verify).
+ Thus, knowing how many millers or dealers a farmer faces is not immediate.
+ We have to think of a different way to capture the competition.
+ Also, relational contract attributes may be weaker when compared to the
+ traders.
+ 
+\end_layout
+
 \begin_layout Section*
 Does competition affect relational agreements?
 \end_layout
