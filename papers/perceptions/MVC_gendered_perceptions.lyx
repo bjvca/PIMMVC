@@ -14909,6 +14909,62 @@ end{table}
 \end_layout
 
 \begin_layout Standard
+Notes on FE:
+\end_layout
+
+\begin_layout Enumerate
+Add a table on significant FE in the paper – F stats, only for all ratees
+ and all farmers 
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Intra-rater
+\series default
+ : compare ratings from one farmer, thus, farmer is fixed - corresponds
+ to 
+\series bold
+farmer FE
+\series default
+; 
+\series bold
+Inter-rater
+\series default
+ : compare ratings for one ratee from different farmers, thus, ratee is
+ fixed - corresponds to 
+\series bold
+ratee FE
+\end_layout
+
+\begin_layout Enumerate
+In the paper, mention the link between the FE and ICC and explain why they
+ are important to know whether the ratings mean anything
+\end_layout
+
+\begin_layout Enumerate
+We find that FE are significant across all rating attributes for farmer
+ level and ratee level.
+ Farmer level: individual means are different from the overall mean (means
+ that each farmer rating differently than overall farmers, significant),
+ it means that the characteristics of the farmers play a role in the differences
+ in the ratings.
+ Ratee level: individual means are different from the overall mean (means
+ that each ratee being rated differently than overall ratees, significant),
+ it means that the characteristics of the ratees play a role in the ratings
+ being given by the farmers 
+\end_layout
+
+\begin_layout Enumerate
+This also links to what we are doing later.
+ We are looking at how the gender of farmer impacts the ratings and how
+ the gender of the ratee impacts the ratings ..
+ relationship between the characteristics of the rater and ratee with the
+ ratings given or obtained.
+ 
+\end_layout
+
+\begin_layout Standard
 \paragraph_spacing onehalf
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
