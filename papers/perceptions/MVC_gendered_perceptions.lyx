@@ -14952,7 +14952,11 @@ We find that FE are significant across all rating attributes for farmer
  Ratee level: individual means are different from the overall mean (means
  that each ratee being rated differently than overall ratees, significant),
  it means that the characteristics of the ratees play a role in the ratings
- being given by the farmers 
+ being given by the farmers.
+ Thus, when both farmer level and ratee level fixed effects are significant,
+ we can say that both farmer's and ratee's characteristics play a role in
+ the ratings.
+ 
 \end_layout
 
 \begin_layout Enumerate
