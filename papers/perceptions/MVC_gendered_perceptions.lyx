@@ -14675,236 +14675,6 @@ Future research should focus on perceptions of the input and service providers
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{table} 
-\backslash
-small 
-\backslash
-begin{center} 
-\backslash
-begin{tabular}{@{
-\backslash
-extracolsep{5pt}}lccccc}  
-\backslash
-
-\backslash
-[-1.8ex]
-\backslash
-hline  
-\backslash
-hline 
-\backslash
-
-\backslash
-[-1.8ex]   & 
-\backslash
-multicolumn{5}{c}{
-\backslash
-textit{Significance of fixed effects}} 
-\backslash
-
-\backslash
-  
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-cline{2-6} 
-\backslash
-
-\backslash
-[-1.8ex] & 
-\backslash
-multicolumn{1} {c} {
-\backslash
-textit{Overall}} &  
-\backslash
-multicolumn{1} {c} {
-\backslash
-textit{Location}} 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  
-\backslash
-multicolumn{1} {c} {
-\backslash
-textit{Quality}} &  
-\backslash
-multicolumn{1} {c} {
-\backslash
-textit{Price}} &  
-\backslash
-multicolumn{1} {c} {
-\backslash
-textit{Reputation}}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-  
-\backslash
-hline 
-\backslash
-
-\backslash
-[-1.8ex]  
-\end_layout
-
-\begin_layout Plain Layout
-
-{FE at Input dealer level}                 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  {Significant} &  {Significant} &  {Non-Significant} &  {Non-Significant}
- &  {Non-Significant} 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{FE at Trader level}                 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  {Significant} &  {Significant} &  {Significant} &  {Significant} &  {Signific
-ant} 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{FE at Miller level}                 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  {Significant} &  {Significant} &  {Significant} &  {Significant} &  {Signific
-ant} 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{FE at ratee level (All ratees)}                 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  {Significant} &  {Significant} &  {Significant} &  {Significant} &  {Signific
-ant} 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{FE at farmer level}                 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  {Significant} &  {Significant} &  {Significant} &  {Significant} &  {Signific
-ant} 
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-
-\backslash
-    
-\backslash
-hline
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-end{tabular} 
-\backslash
-end{center}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-scriptsize
-\end_layout
-
-\begin_layout Plain Layout
-
-Note - 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-caption{Significance of fixed effects.} 
-\backslash
-label{table:table4} 
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-end{table} 
-\end_layout
-
-\end_inset
-
 
 \end_layout
 
@@ -14966,6 +14736,300 @@ This also links to what we are doing later.
  relationship between the characteristics of the rater and ratee with the
  ratings given or obtained.
  
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{table} 
+\backslash
+small 
+\backslash
+begin{center} 
+\backslash
+begin{tabular}{@{
+\backslash
+extracolsep{5pt}}lcccc}  
+\backslash
+
+\backslash
+[-1.8ex]
+\backslash
+hline  
+\backslash
+hline 
+\backslash
+
+\backslash
+[-1.8ex]   & 
+\backslash
+multicolumn{4}{c}{
+\backslash
+textit{Significance of fixed effects regressions}} 
+\backslash
+
+\backslash
+  
+\backslash
+hline
+\backslash
+
+\backslash
+[-1.8ex]   & 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{Ratee level fixed effects}} & 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{Farmer level fixed effects}}  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{DF1=$
+\backslash
+Sexpr{format(round( summary(fe_modoverall_pool)$fstatistic[2],digits=3),nsmall=0
+)}$ , DF2=$
+\backslash
+Sexpr{format(round( summary(fe_modoverall_pool)$fstatistic[3],digits=3),nsmall=0
+)}$}} & 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{DF1=$
+\backslash
+Sexpr{format(round( summary(fe_modoverall)$fstatistic[2],digits=3),nsmall=0)}$
+ , DF2=$
+\backslash
+Sexpr{format(round( summary(fe_modoverall)$fstatistic[3],digits=3),nsmall=0)}$}}
+  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-3} 
+\backslash
+cline{4-5} 
+\backslash
+
+\backslash
+[-1.8ex] & 
+\backslash
+multicolumn{1} {c} {
+\backslash
+textit{F statistic}} &  
+\backslash
+multicolumn{1} {c} {
+\backslash
+textit{Significant (Yes/No)}} 
+\end_layout
+
+\begin_layout Plain Layout
+
+&  
+\backslash
+multicolumn{1} {c} {
+\backslash
+textit{F statistic}} &  
+\backslash
+multicolumn{1} {c} {
+\backslash
+textit{Significant (Yes/No) }} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+hline 
+\backslash
+
+\backslash
+[-1.8ex]  
+\end_layout
+
+\begin_layout Plain Layout
+
+{Overall}                 
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format(round( summary(fe_modoverall_pool)$fstatistic[1],digits=3),nsmall=0
+)}$   &  {Yes}  &  $
+\backslash
+Sexpr{format(round( summary(fe_modoverall)$fstatistic[1],digits=3),nsmall=0)}$
+   &  {Yes} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{Location}                 
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format(round( summary(fe_modloc_pool)$fstatistic[1],digits=3),nsmall=0)}$
+   &  {Yes}  &  $
+\backslash
+Sexpr{format(round( summary(fe_modloc)$fstatistic[1],digits=3),nsmall=0)}$
+   &  {Yes} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{Quality}                 
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format(round( summary(fe_modqual_pool)$fstatistic[1],digits=3),nsmall=0)}$
+   &  {Yes}  &  $
+\backslash
+Sexpr{format(round( summary(fe_modqual)$fstatistic[1],digits=3),nsmall=0)}$
+   &  {Yes} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{Price}                 
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format(round( summary(fe_modprice_pool)$fstatistic[1],digits=3),nsmall=0)}
+$   &  {Yes} &  $
+\backslash
+Sexpr{format(round( summary(fe_modprice)$fstatistic[1],digits=3),nsmall=0)}$
+   &  {Yes} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{Reputation}                 
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format(round( summary(fe_modrep_pool)$fstatistic[1],digits=3),nsmall=0)}$
+   &  {Yes}  &  $
+\backslash
+Sexpr{format(round( summary(fe_modrep)$fstatistic[1],digits=3),nsmall=0)}$
+   &  {Yes} 
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+    
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tabular} 
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+caption{Significance of fixed effects regressions at the ratee and farmer
+ (rater) level.} 
+\backslash
+label{table:table4} 
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{table} 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
