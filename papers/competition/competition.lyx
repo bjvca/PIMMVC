@@ -100,9 +100,11 @@ org}
 footnotemark[2] , Hyejin Lee
 \backslash
 thanks{LICOS Center for Institutions and Economic Performance, KULeuven,
- Belgium}, and Anusha De
+ Belgium}, Anusha De
 \backslash
-footnotemark[2]}
+footnotemark[2], and Jo Swinnen
+\backslash
+footnotemark[1]}
 \end_layout
 
 \end_inset
@@ -128,9 +130,8 @@ literal "false"
  argue that increased competition in agriculture markets sustained by informal
  contracts can diminish performance and value for all players in the supply
  chain.
- This paper revisits this question, but instead of looking at competition
- between processors, we take one step back up the value chain to consider
- competition among traders.
+ This paper revisits this question for the maize value chain in Uganda,
+ and extends it to other links in the chain than just the farm to mill linkage.
  
 \end_layout
 
@@ -205,18 +206,57 @@ literal "false"
 
 .
  In commodity value chains, this often takes the form of relational contracts.
- 
+ The hypothesis is that increased competition encourages side selling, with
+ negative consequences for all parties, particularly in the longer run.
 \end_layout
 
 \begin_layout Standard
-However, the value chain they focus on seems to be missing an important
- link.
- For many commodities, farmers will sell at the farm gate to a trader, who
- will then aggregate production and link further to processors.
+\begin_inset CommandInset citation
+LatexCommand citet
+key "10.1093/qje/qjaa048"
+literal "false"
+
+\end_inset
+
+ use the coffee value chain in Rwanda as a case to empirically test the
+ predictions of a model.
+ However, some of the model assumption seem to be rather specific to the
+ case, and it may be argued that some of the predictions may not hold for
+ value chains for other commodities with a different organizational structure.
+ For instance, local value chains that connect producers of staple food
+ crops such as maize or beans to regional markets and urban centers may
+ differ substantially from global value chains of high value commodities
+ such as coffee or vanilla.
+ Increased competition may thus also affect outcomes differently.
+\end_layout
+
+\begin_layout Standard
+Furthermore, we feel that 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "10.1093/qje/qjaa048"
+literal "false"
+
+\end_inset
+
+ use a somewhat narrow definition of the value chain by solely focusing
+ on the link between coffee farmers and coffee mills.
+ For many commodities, farmers will also sell substantial amounts at the
+ farm gate to a trader, who may then aggregate production and link further
+ to processors.
+ Service and input providers are also part of the value chains, and may
+ be particularly important when the focus is on relational contracts.
+ While a primary focus on a sub-group of farmers that sell directly to processor
+s may affect external validity, ignoring traders, for instance, may lead
+ to selection bias that potentially affects internal validity as well.
  It is likely that especially farmers that sell only small quantities will
  rely on traders.
  As such, an exclusive focus on the farmer-processor link may mean findings
  are affected by selection bias.
+\end_layout
+
+\begin_layout Section*
+Theoretical model
 \end_layout
 
 \begin_layout Section*
@@ -261,7 +301,7 @@ l=0)}
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
