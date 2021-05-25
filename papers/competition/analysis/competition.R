@@ -7,22 +7,6 @@ path <- strsplit(path, "/papers/competition")[[1]]
 
 traders <- read.csv(paste(path,"data/public/traders.csv", sep="/"), stringsAsFactors = TRUE)
 farmers <- read.csv(paste(path,"data/public/farmers.csv", sep="/"), stringsAsFactors = TRUE)
-#These are the variables that 
-
-## linking traders to farmers using  - villages were pre-coded for farmers
-traders <- read.csv(paste(path,"data/raw_non_public/RawData_Traders_ids.csv", sep="/"), stringsAsFactors = TRUE)
-farmers <- read.csv(paste(path,"data/raw_non_public/3rd level_Farmers_shops_Traders_Millers_LINKED.csv", sep="/"), stringsAsFactors = TRUE)
-traders$hh.maize.village <- trimws(traders$hh.maize.village, which = "both")
-traders$hh.maize.village <- str_replace_all(traders$hh.maize.village, "[\r\n]" , " ")
-traders$hh.maize.village <- str_replace_all(traders$hh.maize.village, "\\s+" , " ")
-traders$hh.maize.village <- toupper(traders$hh.maize.village)
-
-### let us see how much we can merge in this first step?
-##first calculate average competition per village
-farmers$hh.maize.q105[farmers$hh.maize.q105==999] <- NA
-mean_comp <- aggregate(farmers$hh.maize.q105, by= list(farmers$hh.maize.village), FUN=mean, na.rm=T)
-names(mean_comp) <- c("village","nr_traders")
-traders <- merge(traders, mean_comp, by.x="hh.maize.village", by.y="village", all.x=T)
 
 ## store data for table 1: dimensions are (variable , statistic, trader/farmer(panel A/B) )
 df_averages <- array(NA,dim=c(10,4,2))
@@ -104,6 +88,8 @@ df_averages[4,4,2] <- sum(!is.na(farmers$hh.maize.trader1.q102p))
 #integer	q105	105. Please estimate how many of these maize traders or middlemen are buying maize in your village or neighborhood.
 # for input dealers and input shops, if we decided to also run this analysis, we may want to do something similar to 
 #farmer level
+
+farmers$hh.maize.q105[farmers$hh.maize.q105==999] <- NA
 
 
 

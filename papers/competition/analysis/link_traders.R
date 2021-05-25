@@ -25,10 +25,13 @@ traders$hh.maize.village <- toupper(traders$hh.maize.village)
 farmers$hh.maize.q105[farmers$hh.maize.q105==999] <- NA
 mean_comp <- aggregate(farmers$hh.maize.q105, by= list(farmers$hh.maize.village), FUN=mean, na.rm=T)
 names(mean_comp) <- c("village","nr_traders")
+
+
+
 traders <- merge(traders, mean_comp, by.x="hh.maize.village", by.y="village", all.x=T)
 
 #create map
-traders <-  traders[ is.na(traders$nr_traders)] 
+traders <-  traders[ is.na(traders$nr_traders),] 
 
 to_plot_f <- farmers[c("hh.maize._gps_longitude", "hh.maize._gps_latitude","hh.maize.village")]
 to_plot_t <- traders[c("hh.maize._gps_longitude", "hh.maize._gps_latitude","hh.maize.village")]
