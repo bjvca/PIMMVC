@@ -19,6 +19,96 @@ traders$hh.maize.village <- str_replace_all(traders$hh.maize.village, "[\r\n]" ,
 traders$hh.maize.village <- str_replace_all(traders$hh.maize.village, "\\s+" , " ")
 traders$hh.maize.village <- toupper(traders$hh.maize.village)
 
+##Correcting the village names based on map by checking if the village names of traders match the village names of farmers
+table(traders$hh.maize.village[traders$hh.maize.village=="NANDEKULA A"])
+traders$hh.maize.village[traders$hh.maize.village=="NANDEKULA A"] <- "NANDEKULA_A"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="NANDEKULA B"])
+traders$hh.maize.village[traders$hh.maize.village=="NANDEKULA B"] <- "NANDEKULA_B"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="BULUKUMU"])
+traders$hh.maize.village[traders$hh.maize.village=="BULUKUMU"] <- "NANDEKULA_B"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="NAKIGO"])
+traders$hh.maize.village[traders$hh.maize.village=="NAKIGO"] <- "NANDEKULA_B"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="BUGAMBWE"])
+traders$hh.maize.village[traders$hh.maize.village=="BUGAMBWE"] <- "BUGABWE"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="BUDWEGE"])
+traders$hh.maize.village[traders$hh.maize.village=="BUDWEGE"] <- "BUDHWEGE"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="BUSU"])
+traders$hh.maize.village[traders$hh.maize.village=="BUSU"] <- "BUDHWEGE"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="WALUKUBA"])
+traders$hh.maize.village[traders$hh.maize.village=="WALUKUBA"] <- "BUKOYO"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="MADIGANDERE"])
+traders$hh.maize.village[traders$hh.maize.village=="MADIGANDERE"] <- "BUKOYO"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="MADIGANDELE"])
+traders$hh.maize.village[traders$hh.maize.village=="MADIGANDELE"] <- "BUKOYO"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="NAMASOGA"])
+traders$hh.maize.village[traders$hh.maize.village=="NAMASOGA"] <- "NAWANSEGA"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="LUYIRA"])
+traders$hh.maize.village[traders$hh.maize.village=="LUYIRA"] <- "BUDHWEGE"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="NKANTU MAIN"])
+traders$hh.maize.village[traders$hh.maize.village=="NKANTU MAIN"] <- "NTINDA"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="NKAATU MAIN"])
+traders$hh.maize.village[traders$hh.maize.village=="NKAATU MAIN"] <- "NTINDA"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="BULUBANDI"])
+traders$hh.maize.village[traders$hh.maize.village=="BULUBANDI"] <- "NANDEKULA_B"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="NKAATU"])
+traders$hh.maize.village[traders$hh.maize.village=="NKAATU"] <- "NTINDA"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="KABIRA"])
+traders$hh.maize.village[traders$hh.maize.village=="KABIRA"] <- "KAMIRA"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="KABILA"])
+traders$hh.maize.village[traders$hh.maize.village=="KABILA"] <- "KAMIRA"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="NAWANSIGE"])
+traders$hh.maize.village[traders$hh.maize.village=="NAWANSIGE"] <- "NAWANSEGA"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="BULUBANDA CENTRAL"])
+traders$hh.maize.village[traders$hh.maize.village=="BULUBANDA CENTRAL"] <- "NANDEKULA_B"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="LUSAGWA"])
+traders$hh.maize.village[traders$hh.maize.village=="LUSAGWA"] <- "LUSAGHWA"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="BUSESA"])
+traders$hh.maize.village[traders$hh.maize.village=="BUSESA"] <- "LUSAGHWA"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="NAKISENYI"])
+traders$hh.maize.village[traders$hh.maize.village=="NAKISENYI"] <- "NAKISENE"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="IDUDI"])
+traders$hh.maize.village[traders$hh.maize.village=="IDUDI"] <- "NAKISENE"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="BUSOOWA"])
+traders$hh.maize.village[traders$hh.maize.village=="BUSOOWA"] <- "KAYAIGO"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="BUSOOLA"])
+traders$hh.maize.village[traders$hh.maize.village=="BUSOOLA"] <- "NAWANSEGA"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="BUWANGA"])
+traders$hh.maize.village[traders$hh.maize.village=="BUWANGA"] <- "KITEIGALWA"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="BUGONDANDALA"])
+traders$hh.maize.village[traders$hh.maize.village=="BUGONDANDALA"] <- "BUGODHANDALA"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="NAWANSENGA"])
+traders$hh.maize.village[traders$hh.maize.village=="NAWANSENGA"] <- "NAWANSEGA"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="BUBONGE"])
+traders$hh.maize.village[traders$hh.maize.village=="BUBONGE"] <- "BUGODHANDALA"
 
 ### let us see how much we can merge in this first step?
 ##first calculate average competition per village
