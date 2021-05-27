@@ -319,7 +319,72 @@ merged_dealer_pool <- merged_dealer_pool[-c(7)]
 merged_trader_pool <- merged_trader_pool[-c(7)]
 merged_miller_pool <- merged_miller_pool[-c(7)]
 
-##################  FINAL DATASET ########################
+####################################
+##### DATASET JUST FOR FARMERS #####
+####################################
+
+ratings_d <- ratings[-c(7)]
+ratings_t <- ratings_trader[-c(7)]
+ratings_m <- ratings_mill[-c(7)]
+
+ratings_d$ratee_dummy <- 1
+ratings_t$ratee_dummy <- 2
+ratings_m$ratee_dummy <- 3
+
+farmers_pool <-rbind(ratings_d,ratings_t,ratings_m)
+
+farmers_pool$farmer_fem <- ifelse(farmers_pool$farmer_gender == 'Female', 1, 0) #gender dummy for farmers 
+farmers_pool$interaction_yes <- ifelse(farmers_pool$interaction == 'Yes', 1, 0) #dummy for interaction between rater and ratee 
+farmers_pool$educ <- 0
+farmers_pool$educ[farmers_pool$education=="b" | farmers_pool$education=="c" | farmers_pool$education=="d" | farmers_pool$education=="e"
+          | farmers_pool$education=="f" | farmers_pool$education=="g" ] <- 1
+#MARITAL STATUS
+#a	Married /b	Widowed / c	Divorced / d	Separated / e	Single
+farmers_pool$married <- ifelse(farmers_pool$marital_status == 'a', 1, 0) #dummy = 1 if married---- farmers 
+
+#dummy for dealer id
+farmers_pool$dealer_dummy <- ifelse(farmers_pool$ratee_dummy == '1', 1, 0) 
+#dummy for trader id 
+farmers_pool$trader_dummy <- ifelse(farmers_pool$ratee_dummy == '2', 1, 0) 
+#dummy for miller id 
+farmers_pool$miller_dummy <- ifelse(farmers_pool$ratee_dummy == '3', 1, 0) 
+
+#cleaning the data
+farmers_pool<-farmers_pool[!(farmers_pool$id.ratee=="n/a"),]
+farmers_pool<-farmers_pool[!(farmers_pool$id.ratee=="."),]
+
+####################################
+##### DATASET JUST FOR RATEES ######
+####################################
+
+dealers_pool$which_ratee <- 1
+traders_pool$which_ratee <- 2
+millers_pool$which_ratee <- 3
+
+ratee_pool <-rbind(dealers_pool,millers_pool,traders_pool)
+
+ratee_pool$ratee_fem <- ifelse(ratee_pool$gender_ratee == 'Female', 1, 0)   #gender dummy for ratees 
+
+ratee_pool$educ <- 0
+ratee_pool$educ[ratee_pool$education_ratee=="b" | ratee_pool$education_ratee=="c" | ratee_pool$education_ratee=="d" | ratee_pool$education_ratee=="e"
+          | ratee_pool$education_ratee=="f" | ratee_pool$education_ratee=="g" ] <- 1
+
+#MARITAL STATUS
+#a	Married /b	Widowed / c	Divorced / d	Separated / e	Single
+ratee_pool$married_ratee <- ifelse(ratee_pool$marital_status_ratee == 'a', 1, 0) #dummy = 1 if married---- ratee
+
+#dummy for dealer id
+ratee_pool$dealer_dummy <- ifelse(ratee_pool$which_ratee == '1', 1, 0) 
+#dummy for trader id 
+ratee_pool$trader_dummy <- ifelse(ratee_pool$which_ratee == '2', 1, 0) 
+#dummy for miller id 
+ratee_pool$miller_dummy <- ifelse(ratee_pool$which_ratee == '3', 1, 0) 
+
+#cleaning the data
+ratee_pool<-ratee_pool[!(ratee_pool$id.ratee=="n/a"),]
+ratee_pool<-ratee_pool[!(ratee_pool$id.ratee=="."),]
+
+##################  FINAL DATASET = POOLED ########################
 
 pool <-rbind(merged_dealer_pool,merged_miller_pool,merged_trader_pool)
 
@@ -357,7 +422,7 @@ pool<-pool[!(pool$id.ratee=="."),]
 ####################################################################################################
 ####################################################################################################
 
-### CLUSTERED REGRESSIONS ###
+### CLUSTERED REGRESSIONS - LOOKING AT BOTH FARMERS' AND RATEES' GENDER ###
 
 #################################################################
 ####### DEPENDENT VARIABLE -- RATINGS FROM FARMERS ##############
@@ -471,10 +536,64 @@ lm_res45<-mod45_gender$lm_res
 #########################################################################################################################
 
 
-####### DEPENDENT VARIABLE -- RATINGS FROM RATEES ##############
-################################################################
+### CLUSTERED REGRESSIONS - LOOKING AT ONLY FARMERS' GENDER ###
+
+#################################################################
+####### DEPENDENT VARIABLE -- RATINGS FROM FARMERS ##############
+#################################################################
 
 ################# OVERALL RATING ###########################
+
+#all variables 
+farm1<- lm.cluster(data = farmers_pool, formula = rating_overall ~  farmer_fem  + age + interaction_yes + educ + tarmac
+                         + murram + married + dealer_dummy + trader_dummy, cluster="id.ratee") 
+se_farm1 <- sqrt(diag(vcov(farm1)))
+res_farm1<-farm1$lm_res
+
+################# LOCATION RATING ###########################
+
+#all variables 
+farm2<- lm.cluster(data = farmers_pool, formula = rating_location ~  farmer_fem  + age + interaction_yes + educ + tarmac
+                   + murram + married + dealer_dummy + trader_dummy, cluster="id.ratee") 
+se_farm2 <- sqrt(diag(vcov(farm2)))
+res_farm2<-farm2$lm_res
+
+################# QUALITY RATING ###########################
+
+#all variables 
+farm3<- lm.cluster(data = farmers_pool, formula = rating_quality ~  farmer_fem  + age + interaction_yes + educ + tarmac
+                   + murram + married + dealer_dummy + trader_dummy, cluster="id.ratee") 
+se_farm3 <- sqrt(diag(vcov(farm3)))
+res_farm3<-farm3$lm_res
+
+################# PRICE RATING ###########################
+
+#all variables 
+farm4<- lm.cluster(data = farmers_pool, formula = rating_price ~  farmer_fem  + age + interaction_yes + educ + tarmac
+                   + murram + married + dealer_dummy + trader_dummy, cluster="id.ratee") 
+se_farm4 <- sqrt(diag(vcov(farm4)))
+res_farm4<-farm4$lm_res
+
+################# REPUTATION RATING ###########################
+
+#all variables 
+farm5<- lm.cluster(data = farmers_pool, formula = rating_reputation ~  farmer_fem  + age + interaction_yes + educ + tarmac
+                   + murram + married + dealer_dummy + trader_dummy, cluster="id.ratee") 
+se_farm5 <- sqrt(diag(vcov(farm5)))
+res_farm5<-farm5$lm_res
+
+#########################################################################################################################
+#########################################################################################################################
+
+
+####### DEPENDENT VARIABLE -- RATINGS FROM RATEES -- DATASET ONLY HAVING THE RATEES ##############
+##################################################################################################
+
+################# OVERALL RATING #################################################################
+
+ratee1<- lm(data = ratee_pool, formula = ratee_rating_overall ~ ratee_fem + age_ratee + married_ratee + educ
+                  + dealer_dummy + trader_dummy) 
+se_ratee1 <- sqrt(diag(vcov(ratee1)))
 
 #all variables 
 mod51_gender<- lm(data = pool, formula = ratee_rating_overall ~ ratee_fem + age_ratee + married_ratee + educ_ratee
@@ -487,6 +606,10 @@ se51 <- sqrt(diag(vcov(mod51_gender)))
 
 ################# LOCATION RATING ###########################
 
+ratee2<- lm(data = ratee_pool, formula = rating_location_ratee ~ ratee_fem + age_ratee + married_ratee + educ
+            + dealer_dummy + trader_dummy) 
+se_ratee2 <- sqrt(diag(vcov(ratee2)))
+
 #all variables 
 mod55_gender<- lm(data = pool, formula = rating_location_ratee ~ ratee_fem + age_ratee + married_ratee + educ_ratee 
                   + dealer_dummy + trader_dummy ) 
@@ -497,6 +620,10 @@ se55 <- sqrt(diag(vcov(mod55_gender)))
 #texreg(list(mod55_gender), file="gen_location_ratee_latex", stars = c(0.01, 0.05, 0.1), digits=4)
 
 ################# QUALITY RATING ###########################
+
+ratee3<- lm(data = ratee_pool, formula = rating_quality_ratee ~ ratee_fem + age_ratee + married_ratee + educ
+            + dealer_dummy + trader_dummy) 
+se_ratee3 <- sqrt(diag(vcov(ratee3)))
 
 #all variables 
 mod59_gender<- lm(data = pool, formula = rating_quality_ratee ~ ratee_fem + age_ratee + married_ratee + educ_ratee 
@@ -509,6 +636,10 @@ se59<- sqrt(diag(vcov(mod59_gender)))
 
 ################# PRICE RATING ###########################
 
+ratee4<- lm(data = ratee_pool, formula = rating_price_ratee ~ ratee_fem + age_ratee + married_ratee + educ
+            + dealer_dummy + trader_dummy) 
+se_ratee4 <- sqrt(diag(vcov(ratee4)))
+
 #all variables 
 mod63_gender<- lm(data = pool, formula = rating_price_ratee ~ ratee_fem + age_ratee + married_ratee + educ_ratee
                   + dealer_dummy + trader_dummy ) 
@@ -520,6 +651,10 @@ se63 <- sqrt(diag(vcov(mod63_gender)))
 
 
 ################# REPUTATION RATING ###########################
+
+ratee5<- lm(data = ratee_pool, formula = rating_reputation_ratee ~ ratee_fem + age_ratee + married_ratee + educ
+            + dealer_dummy + trader_dummy) 
+se_ratee5 <- sqrt(diag(vcov(ratee5)))
 
 #all variables 
 mod67_gender<- lm(data = pool, formula = rating_reputation_ratee ~ ratee_fem + age_ratee + married_ratee + educ_ratee 
