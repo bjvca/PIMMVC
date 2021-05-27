@@ -10,7 +10,6 @@ path <- getwd()
 
 path <- strsplit(path, "/papers/competition")[[1]]
 
-
 ## linking traders to farmers using  - villages were pre-coded for farmers
 traders <- read.csv(paste(path,"data/raw_non_public/RawData_Traders_ids.csv", sep="/"), stringsAsFactors = TRUE)
 farmers <- read.csv(paste(path,"data/raw_non_public/3rd level_Farmers_shops_Traders_Millers_LINKED.csv", sep="/"), stringsAsFactors = TRUE)
