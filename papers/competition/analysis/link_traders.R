@@ -10,7 +10,6 @@ path <- getwd()
 
 path <- strsplit(path, "/papers/competition")[[1]]
 
-
 ## linking traders to farmers using  - villages were pre-coded for farmers
 traders <- read.csv(paste(path,"data/raw_non_public/RawData_Traders_ids.csv", sep="/"), stringsAsFactors = TRUE)
 farmers <- read.csv(paste(path,"data/raw_non_public/3rd level_Farmers_shops_Traders_Millers_LINKED.csv", sep="/"), stringsAsFactors = TRUE)
@@ -250,7 +249,6 @@ table(traders$hh.maize.village[traders$hh.maize.village=="NAMAYEMBA"])
 farmers$hh.maize.q105[farmers$hh.maize.q105==999] <- NA
 mean_comp <- aggregate(farmers$hh.maize.q105, by= list(farmers$hh.maize.village), FUN=mean, na.rm=T)
 names(mean_comp) <- c("village","nr_traders")
-
 
 
 traders <- merge(traders, mean_comp, by.x="hh.maize.village", by.y="village", all.x=T)
