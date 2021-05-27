@@ -117,7 +117,6 @@ mean_comp <- aggregate(farmers$hh.maize.q105, by= list(farmers$hh.maize.village)
 names(mean_comp) <- c("village","nr_traders")
 
 
-
 traders <- merge(traders, mean_comp, by.x="hh.maize.village", by.y="village", all.x=T)
 
 #create map
