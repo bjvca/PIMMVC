@@ -244,6 +244,80 @@ traders$hh.maize.village[traders$hh.maize.village=="MAKOMA"] <- "MAZIRIGA"
 #returns 3, however, can only find 2 in the Bugiri region 
 table(traders$hh.maize.village[traders$hh.maize.village=="NAMAYEMBA"])
 
+table(traders$hh.maize.village[traders$hh.maize.village=="NAMBALE 1B"])
+traders$hh.maize.village[traders$hh.maize.village=="NAMBALE 1B"] <- "NAMBALE_I_B"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="ILENZI"])
+traders$hh.maize.village[traders$hh.maize.village=="ILENZI"] <- "NAMBALE_I_B"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="IRINZI"])
+traders$hh.maize.village[traders$hh.maize.village=="IRINZI"] <- "NAMBALE_I_B"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="NAMBALE IRENZI"])
+traders$hh.maize.village[traders$hh.maize.village=="NAMBALE IRENZI"] <- "NAMBALE_I_B"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="NAMABALE"])
+traders$hh.maize.village[traders$hh.maize.village=="NAMABALE"] <- "NAMBALE_I_B"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="NAMBALE"])
+traders$hh.maize.village[traders$hh.maize.village=="NAMBALE"] <- "NAMBALE_I_B"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="BUYANGA"])
+traders$hh.maize.village[traders$hh.maize.village=="BUYANGA"] <- "NAMBALE_I_B"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="NABALE 1 B"])
+traders$hh.maize.village[traders$hh.maize.village=="NABALE 1 B"] <- "NAMBALE_I_B"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="NABITOVU"])
+traders$hh.maize.village[traders$hh.maize.village=="NABITOVU"] <- "NABITOVU_NORTH"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="NABITOVU A"])
+traders$hh.maize.village[traders$hh.maize.village=="NABITOVU A"] <- "NABITOVU_NORTH"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="NABITOVE"])
+traders$hh.maize.village[traders$hh.maize.village=="NABITOVE"] <- "NABITOVU_NORTH"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="NABITOVU NORTH"])
+traders$hh.maize.village[traders$hh.maize.village=="NABITOVU NORTH"] <- "NABITOVU_NORTH"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="NABITOVE NORTH"])
+traders$hh.maize.village[traders$hh.maize.village=="NABITOVE NORTH"] <- "NABITOVU_NORTH"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="NAYIBIRI"])
+traders$hh.maize.village[traders$hh.maize.village=="NAYIBIRI"] <- "NABITOVU_NORTH"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="NAIBIRI"])
+traders$hh.maize.village[traders$hh.maize.village=="NAIBIRI"] <- "NABITOVU_NORTH"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="KAMIRA/BIKOMO"])
+traders$hh.maize.village[traders$hh.maize.village=="KAMIRA/BIKOMO"] <- "KAMIRA"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="KAMIRA BIKOMA"])
+traders$hh.maize.village[traders$hh.maize.village=="KAMIRA BIKOMA"] <- "KAMIRA"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="BUGONO"])
+traders$hh.maize.village[traders$hh.maize.village=="BUGONO"] <- "KAMIRA"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="NAWANGAIZA 2"])
+traders$hh.maize.village[traders$hh.maize.village=="NAWANGAIZA 2"] <- "NAWANGAIZA_II"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="NAWANGAIZA 11"])
+traders$hh.maize.village[traders$hh.maize.village=="NAWANGAIZA 11"] <- "NAWANGAIZA_II"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="BUSAKAIRE"])
+traders$hh.maize.village[traders$hh.maize.village=="BUSAKAIRE"] <- "NAWANDALA"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="BUGOLE"])
+traders$hh.maize.village[traders$hh.maize.village=="BUGOLE"] <- "BUGOLE A"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="BUGAMBO"])
+traders$hh.maize.village[traders$hh.maize.village=="BUGAMBO"] <- "BUZAAYA"
+
+#Note: Odd green dots
+#NAMBALE_I_B in kamira (greendot)
+#NAWANDALA in Nabyoto (greendot)
+
+
 ### let us see how much we can merge in this first step?
 ##first calculate average competition per village
 farmers$hh.maize.q105[farmers$hh.maize.q105==999] <- NA
@@ -265,6 +339,9 @@ to_plot <- rbind(to_plot_f,to_plot_t)
 pal <- colorFactor(c("green", "red"), domain = c("farmer", "trader"))
 
 m <- leaflet() %>% setView(lat = 0.6, lng = 33.5, zoom=9)  %>%  addTiles(group="OSM") %>% addTiles(urlTemplate = "https://mts1.google.com/vt/lyrs=s&hl=en&src=app&x={x}&y={y}&z={z}&s=G",  group="Google", attribution = 'Google')  %>% addProviderTiles(providers$OpenTopoMap, group="Topography") %>% addCircleMarkers(data=to_plot, lng=~as.numeric(as.character(hh.maize._gps_longitude)), lat=~as.numeric(as.character(hh.maize._gps_latitude)),radius= 3, label=~as.character(hh.maize.village),color=~pal(actor), group="X_uuid")   %>%  addLayersControl(baseGroups=c('OSM','Google','Topography'))
+
+
+
 
 library(htmlwidgets)
 saveWidget(m, file="farmers_traders.html")
