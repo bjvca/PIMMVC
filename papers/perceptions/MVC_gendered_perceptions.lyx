@@ -15529,13 +15529,13 @@ rm5)$coefficients[5,4]<.05,"**",ifelse(summary(res_farm5)$coefficients[5,4]<.1,"
 \backslash
 Sexpr{format(round(se_farm1[5],digits=4),nsmall=0)})$     & $(
 \backslash
-Sexpr{format(round(se_farm1[5],digits=4),nsmall=0)})$   & $(
+Sexpr{format(round(se_farm2[5],digits=4),nsmall=0)})$   & $(
 \backslash
-Sexpr{format(round(se_farm1[5],digits=4),nsmall=0)})$     & $(
+Sexpr{format(round(se_farm3[5],digits=4),nsmall=0)})$     & $(
 \backslash
-Sexpr{format(round(se_farm1[5],digits=4),nsmall=0)})$     & $(
+Sexpr{format(round(se_farm4[5],digits=4),nsmall=0)})$     & $(
 \backslash
-Sexpr{format(round(se_farm1[5],digits=4),nsmall=0)})$ 
+Sexpr{format(round(se_farm5[5],digits=4),nsmall=0)})$ 
 \end_layout
 
 \begin_layout Plain Layout
