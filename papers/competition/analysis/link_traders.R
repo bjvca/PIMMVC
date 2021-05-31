@@ -402,6 +402,44 @@ traders$hh.maize.village[traders$hh.maize.village=="BUSANDA"] <- "BUZAAYA"
 #returns 3, however, can only find 2 in the Bugiri region 
 table(traders$hh.maize.village[traders$hh.maize.village=="NAMAYEMBA"])
 
+table(traders$hh.maize.village[traders$hh.maize.village=="NAMUWONDO A"])
+traders$hh.maize.village[traders$hh.maize.village=="NAMUWONDO A"] <- "NAMUWONDO_A"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="NAMUWONDO"])
+traders$hh.maize.village[traders$hh.maize.village=="NAMUWONDO"] <- "NAMUWONDO_A"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="NAMUWONDA A"])
+traders$hh.maize.village[traders$hh.maize.village=="NAMUWONDA A"] <- "NAMUWONDO_A"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="NAMAKOBA A"])
+traders$hh.maize.village[traders$hh.maize.village=="NAMAKOBA A"] <- "BULAFA"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="KIGALAMA"])
+traders$hh.maize.village[traders$hh.maize.village=="KIGALAMA"] <- "BULAFA"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="BUKEBWE"])
+traders$hh.maize.village[traders$hh.maize.village=="BUKEBWE"] <- "NABIKENGE"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="LSEGERO"])
+traders$hh.maize.village[traders$hh.maize.village=="LSEGERO"] <- "ISEGERO -MAILO"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="ISEGERO A"])
+traders$hh.maize.village[traders$hh.maize.village=="ISEGERO A"] <- "ISEGERO -MAILO"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="KIVULE"])
+traders$hh.maize.village[traders$hh.maize.village=="KIVULE"] <- "BUBINGA"
+
+##RETURNS 2, BUT ONLY 1 FOUND. 
+table(traders$hh.maize.village[traders$hh.maize.village=="NAKYERE"])
+##traders$hh.maize.village[traders$hh.maize.village=="NAKYERE"] <- "NABITULUNTU" 
+
+table(traders$hh.maize.village[traders$hh.maize.village=="BUSUBI"])
+traders$hh.maize.village[traders$hh.maize.village=="BUSUBI"] <- "NANVUNANWA"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="BUSIINI"])
+traders$hh.maize.village[traders$hh.maize.village=="BUSIINI"] <- "NANVUNANWA"
+
+
 ### let us see how much we can merge in this first step?
 ##first calculate average competition per village
 farmers$hh.maize.q105[farmers$hh.maize.q105==999] <- NA
