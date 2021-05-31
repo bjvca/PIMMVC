@@ -241,9 +241,6 @@ traders$hh.maize.village[traders$hh.maize.village=="BULYANSWA"] <- "MAZIRIGA"
 table(traders$hh.maize.village[traders$hh.maize.village=="MAKOMA"])
 traders$hh.maize.village[traders$hh.maize.village=="MAKOMA"] <- "MAZIRIGA"
 
-#returns 3, however, can only find 2 in the Bugiri region 
-table(traders$hh.maize.village[traders$hh.maize.village=="NAMAYEMBA"])
-
 table(traders$hh.maize.village[traders$hh.maize.village=="NAMBALE 1B"])
 traders$hh.maize.village[traders$hh.maize.village=="NAMBALE 1B"] <- "NAMBALE_I_B"
 
@@ -317,6 +314,93 @@ traders$hh.maize.village[traders$hh.maize.village=="BUGAMBO"] <- "BUZAAYA"
 #NAMBALE_I_B in kamira (greendot)
 #NAWANDALA in Nabyoto (greendot)
 
+table(traders$hh.maize.village[traders$hh.maize.village=="NSINZE"])
+traders$hh.maize.village[traders$hh.maize.village=="NSINZE"] <- "NSINZ_ TOWN"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="ISEGERO MILO"])
+traders$hh.maize.village[traders$hh.maize.village=="ISEGERO MILO"] <- "ISEGERO -MAILO"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="ISEGERO MAILO."])
+traders$hh.maize.village[traders$hh.maize.village=="ISEGERO MAILO."] <- "ISEGERO -MAILO"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="ISEGELO MAILO"])
+traders$hh.maize.village[traders$hh.maize.village=="ISEGELO MAILO"] <- "ISEGERO -MAILO"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="NAMATO CENTRAL"])
+traders$hh.maize.village[traders$hh.maize.village=="NAMATO CENTRAL"] <- "NAMATO_EAST"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="NAMATO"])
+traders$hh.maize.village[traders$hh.maize.village=="NAMATO"] <- "NAMATO_EAST"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="NAMANTO"])
+traders$hh.maize.village[traders$hh.maize.village=="NAMANTO"] <- "NAMATO_WEST"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="BULAFU"])
+traders$hh.maize.village[traders$hh.maize.village=="BULAFU"] <- "BULAFA"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="NAWAMPANDU"])
+traders$hh.maize.village[traders$hh.maize.village=="NAWAMPANDU"] <- "NAWAMPANDU_A"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="NAWAMPADU"])
+traders$hh.maize.village[traders$hh.maize.village=="NAWAMPADU"] <- "NAWAMPANDU_A"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="NAWAMPANDU A"])
+traders$hh.maize.village[traders$hh.maize.village=="NAWAMPANDU A"] <- "NAWAMPANDU_A"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="BUGOBI B"])
+traders$hh.maize.village[traders$hh.maize.village=="BUGOBI B"] <- "BUGOBI _B"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="BUGOBI"])
+traders$hh.maize.village[traders$hh.maize.village=="BUGOBI"] <- "BUGOBI _B"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="BUGOBI A"])
+traders$hh.maize.village[traders$hh.maize.village=="BUGOBI A"] <- "BUGOBI _B"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="BUGOBI TRADING CENTER"])
+traders$hh.maize.village[traders$hh.maize.village=="BUGOBI TRADING CENTER"] <- "BUGOBI _B"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="BUGOBI EAST"])
+traders$hh.maize.village[traders$hh.maize.village=="BUGOBI EAST"] <- "BUGOBI _B"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="KISIRO"])
+traders$hh.maize.village[traders$hh.maize.village=="KISIRO"] <- "BUGOBI _B"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="KISIRO WEST"])
+traders$hh.maize.village[traders$hh.maize.village=="KISIRO WEST"] <- "BUGOBI _B"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="BUWAMBI"])
+traders$hh.maize.village[traders$hh.maize.village=="BUWAMBI"] <- "NAMATO_WEST"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="BULIMBA"])
+traders$hh.maize.village[traders$hh.maize.village=="BULIMBA"] <- "BULIMBA_B"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="BULUMBA A"])
+traders$hh.maize.village[traders$hh.maize.village=="BULUMBA A"] <- "BULIMBA_A"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="BULUMBA A (NAMUSISIRI)"])
+traders$hh.maize.village[traders$hh.maize.village=="BULUMBA A (NAMUSISIRI)"] <- "BULIMBA_A"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="BUSIINI"])
+traders$hh.maize.village[traders$hh.maize.village=="BUSINI"] <- "NANVUNANWA"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="NABWEYO CENTRAL"])
+traders$hh.maize.village[traders$hh.maize.village=="NABWEYO CENTRAL"] <- "NANVUNANWA"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="NABWEYO A"])
+traders$hh.maize.village[traders$hh.maize.village=="NABWEYO A"] <- "NANVUNANWA"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="NALUWERERE"])
+traders$hh.maize.village[traders$hh.maize.village=="NALUWERERE"] <- "NANVUNANWA"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="BUSEMBATYA TOWN COUNCIL"])
+traders$hh.maize.village[traders$hh.maize.village=="BUSEMBATYA TOWN COUNCIL"] <- "NSINZ_ TOWN"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="BUSANDA"])
+traders$hh.maize.village[traders$hh.maize.village=="BUSANDA"] <- "BUZAAYA"
+
+
+#returns 3, however, can only find 2 in the Bugiri region 
+table(traders$hh.maize.village[traders$hh.maize.village=="NAMAYEMBA"])
 
 ### let us see how much we can merge in this first step?
 ##first calculate average competition per village
