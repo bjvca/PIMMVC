@@ -245,11 +245,11 @@ d <- dealers_ss[ , c("id.ratee", "age_dealer","dealer_fem","education_dealer")]
 #merging farmers and dealers data by dealer id
 m <- merge(farmers_seed_stack,d, by=c("id.ratee"))
 
-###########################################################################
+############################################################################
 ### CLUSTERED REGRESSIONS - LOOKING AT BOTH FARMERS' AND DEALERS' GENDER ###
-#################################################################
-####### DEPENDENT VARIABLE -- RATINGS FROM FARMERS ##############
-#################################################################
+############################################################################
+####### DEPENDENT VARIABLE -- RATINGS FROM FARMERS #########################
+############################################################################
 
 ################# OVERALL RATING ###########################
 
@@ -334,6 +334,237 @@ fd12<- lm.cluster(data = m, formula = rating_reputation ~  gender*dealer_fem + a
                   + married + age_dealer + education_dealer, cluster="id.ratee") 
 se_fd12 <- sqrt(diag(vcov(fd12)))
 res_fd12<-fd12$lm_res
+
+#########################################################################################################################
+#########################################################################################################################
+
+
+##########################################################
+##########################################################
+############## ONLY SEED SYSTEMS DATA ####################
+
+f_seed<-merged_farmers_seed
+
+#creating dummies for analysis 
+f_seed$interaction_yes <- ifelse(f_seed$interaction == 'Yes', 1, 0) 
+f_seed$gender <- ifelse(f_seed$farmer_gender == 'Female', 1, 0) #female farmers
+f_seed$educ <- 0
+f_seed$educ[f_seed$education=="b" | f_seed$education=="c" | f_seed$education=="d" | f_seed$education=="e" | 
+           f_seed$education=="f" |f_seed$education=="g" ] <- 1 #educated farmers
+f_seed$married <- ifelse(f_seed$marital_status == 'a', 1, 0)  #married farmers
+
+f_seed[f_seed=="999"] <- NA # removing 999
+
+
+### CLUSTERED REGRESSIONS - LOOKING AT FARMERS' GENDER ###
+
+#################################################################
+####### DEPENDENT VARIABLE -- RATINGS FROM FARMERS ##############
+#################################################################
+
+################# OVERALL RATING ###########################
+
+#all variables 
+f_seed1<- lm.cluster(data = f_seed, formula = rating_overall ~  gender + age + interaction_yes + educ + tarmac
+                 + married, cluster="id.ratee") 
+fss1 <- sqrt(diag(vcov(f_seed1)))
+res_fss1<-f_seed1$lm_res
+
+################# LOCATION RATING ###########################
+
+#all variables 
+f_seed2<- lm.cluster(data = f_seed, formula = rating_location ~  gender + age + interaction_yes + educ + tarmac
+                     + married, cluster="id.ratee") 
+fss2 <- sqrt(diag(vcov(f_seed2)))
+res_fss2<-f_seed2$lm_res
+
+
+################# QUALITY RATING ###########################
+
+#all variables 
+f_seed3<- lm.cluster(data = f_seed, formula = rating_quality ~  gender + age + interaction_yes + educ + tarmac
+                     + married, cluster="id.ratee") 
+fss3 <- sqrt(diag(vcov(f_seed3)))
+res_fss3<-f_seed3$lm_res
+
+################# PRICE RATING ###########################
+
+#all variables 
+f_seed4<- lm.cluster(data = f_seed, formula = rating_price ~  gender + age + interaction_yes + educ + tarmac
+                     + married, cluster="id.ratee") 
+fss4 <- sqrt(diag(vcov(f_seed4)))
+res_fss4<-f_seed4$lm_res
+
+################# STOCK RATING ###########################
+#all variables
+f_seed5<- lm.cluster(data = f_seed, formula = rating_stock ~  gender + age + interaction_yes + educ + tarmac
+                     + married, cluster="id.ratee") 
+fss5 <- sqrt(diag(vcov(f_seed5)))
+res_fss5<-f_seed5$lm_res
+
+################# REPUTATION RATING ###########################
+#all variables
+f_seed6<- lm.cluster(data = f_seed, formula = rating_reputation ~  gender + age + interaction_yes + educ + tarmac
+                     + married, cluster="id.ratee") 
+fss6 <- sqrt(diag(vcov(f_seed6)))
+res_fss6<-f_seed6$lm_res
+
+
+#######################################################################
+#######################################################################
+
+############## DATA FROM ONLY SEED SYSTEMS ##################
+deal<-dealers_sub
+
+##Index for overall rating by dealers for themselves 
+deal$ratee_rating_overall <- rowSums(deal[c("self_rating_location", "self_rating_price","self_rating_quality", "self_rating_stock",
+                                                        "self_rating_reputation")])/5
+summary(deal$ratee_rating_overall)
+
+## creating dummies
+deal$dealer_fem <- ifelse(deal$gender_dealer == 'Female', 1, 0) #female dealers
+deal$education_dealer <- 0
+deal$education_dealer[deal$educ_dealer=="b" | deal$educ_dealer=="c" | deal$educ_dealer=="d" | deal$educ_dealer=="e" | 
+                              deal$educ_dealer=="f" |deal$educ_dealer=="g" ] <- 1 #educated dealers 
+
+deal[deal=="999"]<- NA
+
+
+####### DEPENDENT VARIABLE -- RATINGS FROM DEALERS -- DATASET ONLY HAVING ALL THE DEALERS ##############
+#######################################################################################################
+
+################# OVERALL RATING #################################################################
+
+d1<- lm(data = deal, formula = ratee_rating_overall ~ dealer_fem + age_dealer + education_dealer) 
+se_d1 <- sqrt(diag(vcov(d1)))
+
+################# LOCATION RATING ###########################
+
+d2<- lm(data = deal, formula = self_rating_location ~ dealer_fem + age_dealer + education_dealer) 
+se_d2 <- sqrt(diag(vcov(d2)))
+
+################# QUALITY RATING ###########################
+
+d3<- lm(data = deal, formula = self_rating_quality ~ dealer_fem + age_dealer + education_dealer) 
+se_d3 <- sqrt(diag(vcov(d3)))
+
+################# PRICE RATING ###########################
+
+d4<- lm(data = deal, formula = self_rating_price ~ dealer_fem + age_dealer + education_dealer) 
+se_d4 <- sqrt(diag(vcov(d4)))
+
+################# STOCK RATING ###########################
+
+d5<- lm(data = deal, formula = self_rating_stock ~ dealer_fem + age_dealer + education_dealer) 
+se_d5 <- sqrt(diag(vcov(d5)))
+
+################# REPUTATION RATING ###########################
+
+d6<- lm(data = deal, formula = self_rating_reputation ~ dealer_fem + age_dealer + education_dealer) 
+se_d6 <- sqrt(diag(vcov(d6)))
+
+################################################################################################################
+################################################################################################################
+
+
+
+################# CREATING DATASET WITH BOTH FARMER AND DEALER DETAILS FROM SEED SYSTEMS ###########################
+####################################################################################################################
+#getting variables needed from dealer dataset
+deal_all <- deal[ , c("id.ratee", "age_dealer","dealer_fem","education_dealer")]  
+
+#merging farmers and dealers data by dealer id
+m_all <- merge(f_seed,deal_all, by=c("id.ratee"))
+
+############################################################################
+### CLUSTERED REGRESSIONS - LOOKING AT BOTH FARMERS' AND DEALERS' GENDER ###
+############################################################################
+####### DEPENDENT VARIABLE -- RATINGS FROM FARMERS #########################
+############################################################################
+
+################# OVERALL RATING ###########################
+
+#all variables 
+fds1<- lm.cluster(data = m_all, formula = rating_overall ~  gender + dealer_fem + age + interaction_yes + educ + tarmac
+                 + married + age_dealer + education_dealer, cluster="id.ratee") 
+se_fds1 <- sqrt(diag(vcov(fds1)))
+res_fds1<-fds1$lm_res
+
+##Interaction between sex of farmer and dealer
+fds2<- lm.cluster(data = m_all, formula = rating_overall ~  gender*dealer_fem + age + interaction_yes + educ + tarmac
+                 + married + age_dealer + education_dealer, cluster="id.ratee") 
+se_fds2 <- sqrt(diag(vcov(fds2)))
+res_fds2<-fds2$lm_res
+
+################# LOCATION RATING ###########################
+
+#all variables 
+fds3<- lm.cluster(data = m_all, formula = rating_location ~  gender + dealer_fem + age + interaction_yes + educ + tarmac
+                 + married + age_dealer + education_dealer, cluster="id.ratee") 
+se_fds3 <- sqrt(diag(vcov(fds3)))
+res_fds3<-fds3$lm_res
+
+##Interaction between sex of farmer and dealer
+fds4<- lm.cluster(data = m_all, formula = rating_location ~  gender*dealer_fem + age + interaction_yes + educ + tarmac
+                 + married + age_dealer + education_dealer, cluster="id.ratee") 
+se_fds4 <- sqrt(diag(vcov(fds4)))
+res_fds4<-fds4$lm_res
+
+################# QUALITY RATING ###########################
+
+#all variables 
+fds5<- lm.cluster(data = m_all, formula = rating_quality ~  gender + dealer_fem + age + interaction_yes + educ + tarmac
+                 + married + age_dealer + education_dealer, cluster="id.ratee") 
+se_fds5 <- sqrt(diag(vcov(fds5)))
+res_fds5<-fds5$lm_res
+
+##Interaction between sex of farmer and dealer
+fds6<- lm.cluster(data = m_all, formula = rating_quality ~  gender*dealer_fem + age + interaction_yes + educ + tarmac
+                 + married + age_dealer + education_dealer, cluster="id.ratee") 
+se_fds6 <- sqrt(diag(vcov(fds6)))
+res_fds6<-fds6$lm_res
+
+################# PRICE RATING ###########################
+
+#all variables 
+fds7<- lm.cluster(data = m_all, formula = rating_price ~  gender + dealer_fem + age + interaction_yes + educ + tarmac
+                 + married + age_dealer + education_dealer, cluster="id.ratee") 
+se_fds7 <- sqrt(diag(vcov(fds7)))
+res_fds7<-fds7$lm_res
+
+##Interaction between sex of farmer and dealer
+fds8<- lm.cluster(data = m_all, formula = rating_price ~  gender*dealer_fem + age + interaction_yes + educ + tarmac
+                 + married + age_dealer + education_dealer, cluster="id.ratee") 
+se_fds8 <- sqrt(diag(vcov(fds8)))
+res_fds8<-fds8$lm_res
+
+################# STOCK RATING ###########################
+
+#all variables 
+fds9<- lm.cluster(data = m_all, formula = rating_stock ~  gender + dealer_fem + age + interaction_yes + educ + tarmac
+                 + married + age_dealer + education_dealer, cluster="id.ratee") 
+se_fds9 <- sqrt(diag(vcov(fds9)))
+res_fds9<-fds9$lm_res
+
+##Interaction between sex of farmer and dealer
+fds10<- lm.cluster(data = m_all, formula = rating_stock ~  gender*dealer_fem + age + interaction_yes + educ + tarmac
+                  + married + age_dealer + education_dealer, cluster="id.ratee") 
+se_fds10 <- sqrt(diag(vcov(fds10)))
+res_fds10<-fds10$lm_res
+
+################# REPUTATION RATING ###########################
+
+#all variables 
+fds11<- lm.cluster(data = m_all, formula = rating_reputation ~  gender + dealer_fem + age + interaction_yes + educ + tarmac
+                  + married + age_dealer + education_dealer, cluster="id.ratee") 
+se_fds11 <- sqrt(diag(vcov(fds11)))
+res_fds11<-fds11$lm_res
+
+##Interaction between sex of farmer and dealer
+fds12<- lm.cluster(data = m_all, formula = rating_reputation ~  gender*dealer_fem + age + interaction_yes + educ + tarmac
+                  + married + age_dealer + education_dealer, cluster="id.ratee") 
+se_fds12 <- sqrt(diag(vcov(fds12)))
+res_fds12<-fds12$lm_res
 
 #########################################################################################################################
 #########################################################################################################################

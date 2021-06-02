@@ -3987,5 +3987,3843 @@ end{landscape}
 
 \end_layout
 
+\begin_layout Subsection
+\paragraph_spacing onehalf
+Regression: Data from seed system surveys: Impact of farmer's gender only
+ on ratings from farmers (Table 4)
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{table} 
+\backslash
+small 
+\backslash
+begin{center} 
+\backslash
+begin{tabular}{@{
+\backslash
+extracolsep{5pt}}lcccccc}  
+\backslash
+
+\backslash
+[-1.8ex]
+\backslash
+hline  
+\backslash
+hline 
+\backslash
+
+\backslash
+[-1.8ex]   & 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{
+\backslash
+footnotesize Dependent variable: Ratings from Farmers (Raters)}} 
+\backslash
+
+\backslash
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\backslash
+
+\backslash
+[-1.8ex] & 
+\backslash
+multicolumn{1} {c} {Overall} &  
+\backslash
+multicolumn{1} {c} { Location}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} { Quality}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Price}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Stock}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} { Reputation} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+[-1.8ex] & (1) & (2) & (3) & (4) & (5) & (6) 
+\backslash
+
+\backslash
+  
+\backslash
+hline 
+\backslash
+
+\backslash
+[-1.8ex]  
+\end_layout
+
+\begin_layout Plain Layout
+
+{Intercept}                  & $
+\backslash
+Sexpr{format(round(sum(res_fss1$coefficients[1]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fss1)$coefficients[1,4]<.01,"***",ifelse(summary(res_fss
+1)$coefficients[1,4]<.05,"**",ifelse(summary(res_fss1)$coefficients[1,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fss2$coefficients[1]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fss2)$coefficients[1,4]<.01,"***",ifelse(summary(res_fss
+2)$coefficients[1,4]<.05,"**",ifelse(summary(res_fss2)$coefficients[1,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fss3$coefficients[1]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fss3)$coefficients[1,4]<.01,"***",ifelse(summary(res_fss
+3)$coefficients[1,4]<.05,"**",ifelse(summary(res_fss3)$coefficients[1,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fss4$coefficients[1]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fss4)$coefficients[1,4]<.01,"***",ifelse(summary(res_fss
+4)$coefficients[1,4]<.05,"**",ifelse(summary(res_fss4)$coefficients[1,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fss5$coefficients[1]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fss5)$coefficients[1,4]<.01,"***",ifelse(summary(res_fss
+5)$coefficients[1,4]<.05,"**",ifelse(summary(res_fss5)$coefficients[1,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fss6$coefficients[1]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fss6)$coefficients[1,4]<.01,"***",ifelse(summary(res_fss
+6)$coefficients[1,4]<.05,"**",ifelse(summary(res_fss6)$coefficients[1,4]<.1,"*",""
+)))}}$  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+                              & $(
+\backslash
+Sexpr{format(round(fss1[1],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(fss2[1],digits=4),nsmall=0)})$   & $(
+\backslash
+Sexpr{format(round(fss3[1],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(fss4[1],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(fss5[1],digits=4),nsmall=0)})$   & $(
+\backslash
+Sexpr{format(round(fss6[1],digits=4),nsmall=0)})$    
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ {Gender(F)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fss1$coefficients[2]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fss1)$coefficients[2,4]<.01,"***",ifelse(summary(res_fss
+1)$coefficients[2,4]<.05,"**",ifelse(summary(res_fss1)$coefficients[2,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fss2$coefficients[2]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fss2)$coefficients[2,4]<.01,"***",ifelse(summary(res_fss
+2)$coefficients[2,4]<.05,"**",ifelse(summary(res_fss2)$coefficients[2,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fss3$coefficients[2]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fss3)$coefficients[2,4]<.01,"***",ifelse(summary(res_fss
+3)$coefficients[2,4]<.05,"**",ifelse(summary(res_fss3)$coefficients[2,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fss4$coefficients[2]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fss4)$coefficients[2,4]<.01,"***",ifelse(summary(res_fss
+4)$coefficients[2,4]<.05,"**",ifelse(summary(res_fss4)$coefficients[2,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fss5$coefficients[2]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fss5)$coefficients[2,4]<.01,"***",ifelse(summary(res_fss
+5)$coefficients[2,4]<.05,"**",ifelse(summary(res_fss5)$coefficients[2,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fss6$coefficients[2]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fss6)$coefficients[2,4]<.01,"***",ifelse(summary(res_fss
+6)$coefficients[2,4]<.05,"**",ifelse(summary(res_fss6)$coefficients[2,4]<.1,"*",""
+)))}}$  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+                              & $(
+\backslash
+Sexpr{format(round(fss1[2],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(fss2[2],digits=4),nsmall=0)})$   & $(
+\backslash
+Sexpr{format(round(fss3[2],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(fss4[2],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(fss5[2],digits=4),nsmall=0)})$ & $(
+\backslash
+Sexpr{format(round(fss6[2],digits=4),nsmall=0)})$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ {Age of farmer}
+\end_layout
+
+\begin_layout Plain Layout
+
+               & $
+\backslash
+Sexpr{format(round(sum(res_fss1$coefficients[3]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fss1)$coefficients[3,4]<.01,"***",ifelse(summary(res_fss
+1)$coefficients[3,4]<.05,"**",ifelse(summary(res_fss1)$coefficients[3,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fss2$coefficients[3]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fss2)$coefficients[3,4]<.01,"***",ifelse(summary(res_fss
+2)$coefficients[3,4]<.05,"**",ifelse(summary(res_fss2)$coefficients[3,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fss3$coefficients[3]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fss3)$coefficients[3,4]<.01,"***",ifelse(summary(res_fss
+3)$coefficients[3,4]<.05,"**",ifelse(summary(res_fss3)$coefficients[3,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fss4$coefficients[3]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fss4)$coefficients[3,4]<.01,"***",ifelse(summary(res_fss
+4)$coefficients[3,4]<.05,"**",ifelse(summary(res_fss4)$coefficients[3,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fss5$coefficients[3]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fss5)$coefficients[3,4]<.01,"***",ifelse(summary(res_fss
+5)$coefficients[3,4]<.05,"**",ifelse(summary(res_fss5)$coefficients[3,4]<.1,"*",""
+)))}}$   
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fss6$coefficients[3]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fss6)$coefficients[3,4]<.01,"***",ifelse(summary(res_fss
+6)$coefficients[3,4]<.05,"**",ifelse(summary(res_fss6)$coefficients[3,4]<.1,"*",""
+)))}}$   
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+                              & $(
+\backslash
+Sexpr{format(round(fss1[3],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(fss2[3],digits=4),nsmall=0)})$   & $(
+\backslash
+Sexpr{format(round(fss3[3],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(fss4[3],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(fss5[3],digits=4),nsmall=0)})$   & $(
+\backslash
+Sexpr{format(round(fss6[3],digits=4),nsmall=0)})$     
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ {Interaction}                & $
+\backslash
+Sexpr{format(round(sum(res_fss1$coefficients[4]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fss1)$coefficients[4,4]<.01,"***",ifelse(summary(res_fss
+1)$coefficients[4,4]<.05,"**",ifelse(summary(res_fss1)$coefficients[4,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fss2$coefficients[4]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fss2)$coefficients[4,4]<.01,"***",ifelse(summary(res_fss
+2)$coefficients[4,4]<.05,"**",ifelse(summary(res_fss2)$coefficients[4,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fss3$coefficients[4]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fss3)$coefficients[4,4]<.01,"***",ifelse(summary(res_fss
+3)$coefficients[4,4]<.05,"**",ifelse(summary(res_fss3)$coefficients[4,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fss4$coefficients[4]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fss4)$coefficients[4,4]<.01,"***",ifelse(summary(res_fss
+4)$coefficients[4,4]<.05,"**",ifelse(summary(res_fss4)$coefficients[4,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fss5$coefficients[4]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fss5)$coefficients[4,4]<.01,"***",ifelse(summary(res_fss
+5)$coefficients[4,4]<.05,"**",ifelse(summary(res_fss5)$coefficients[4,4]<.1,"*",""
+)))}}$  
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fss6$coefficients[4]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fss6)$coefficients[4,4]<.01,"***",ifelse(summary(res_fss
+6)$coefficients[4,4]<.05,"**",ifelse(summary(res_fss6)$coefficients[4,4]<.1,"*",""
+)))}}$  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+                              & $(
+\backslash
+Sexpr{format(round(fss1[4],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(fss2[4],digits=4),nsmall=0)})$   & $(
+\backslash
+Sexpr{format(round(fss3[4],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(fss4[4],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(fss5[4],digits=4),nsmall=0)})$   
+\end_layout
+
+\begin_layout Plain Layout
+
+  & $(
+\backslash
+Sexpr{format(round(fss6[4],digits=4),nsmall=0)})$      
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ {Education(F)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fss1$coefficients[5]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fss1)$coefficients[5,4]<.01,"***",ifelse(summary(res_fss
+1)$coefficients[5,4]<.05,"**",ifelse(summary(res_fss1)$coefficients[5,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fss2$coefficients[5]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fss2)$coefficients[5,4]<.01,"***",ifelse(summary(res_fss
+2)$coefficients[5,4]<.05,"**",ifelse(summary(res_fss2)$coefficients[5,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fss3$coefficients[5]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fss3)$coefficients[5,4]<.01,"***",ifelse(summary(res_fss
+3)$coefficients[5,4]<.05,"**",ifelse(summary(res_fss3)$coefficients[5,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fss4$coefficients[5]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fss4)$coefficients[5,4]<.01,"***",ifelse(summary(res_fss
+4)$coefficients[5,4]<.05,"**",ifelse(summary(res_fss4)$coefficients[5,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fss5$coefficients[5]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fss5)$coefficients[5,4]<.01,"***",ifelse(summary(res_fss
+5)$coefficients[5,4]<.05,"**",ifelse(summary(res_fss5)$coefficients[5,4]<.1,"*",""
+)))}}$   
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fss6$coefficients[5]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fss6)$coefficients[5,4]<.01,"***",ifelse(summary(res_fss
+6)$coefficients[5,4]<.05,"**",ifelse(summary(res_fss6)$coefficients[5,4]<.1,"*",""
+)))}}$   
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+                              & $(
+\backslash
+Sexpr{format(round(fss1[5],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(fss2[5],digits=4),nsmall=0)})$   & $(
+\backslash
+Sexpr{format(round(fss3[5],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(fss4[5],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(fss5[5],digits=4),nsmall=0)})$ & $(
+\backslash
+Sexpr{format(round(fss6[5],digits=4),nsmall=0)})$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+   {Tarmac}
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fss1$coefficients[6]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fss1)$coefficients[6,4]<.01,"***",ifelse(summary(res_fss
+1)$coefficients[6,4]<.05,"**",ifelse(summary(res_fss1)$coefficients[6,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fss2$coefficients[6]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fss2)$coefficients[6,4]<.01,"***",ifelse(summary(res_fss
+2)$coefficients[6,4]<.05,"**",ifelse(summary(res_fss2)$coefficients[6,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fss3$coefficients[6]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fss3)$coefficients[6,4]<.01,"***",ifelse(summary(res_fss
+3)$coefficients[6,4]<.05,"**",ifelse(summary(res_fss3)$coefficients[6,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fss4$coefficients[6]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fss4)$coefficients[6,4]<.01,"***",ifelse(summary(res_fss
+4)$coefficients[6,4]<.05,"**",ifelse(summary(res_fss4)$coefficients[6,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fss5$coefficients[6]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fss5)$coefficients[6,4]<.01,"***",ifelse(summary(res_fss
+5)$coefficients[6,4]<.05,"**",ifelse(summary(res_fss5)$coefficients[6,4]<.1,"*",""
+)))}}$   & $
+\backslash
+Sexpr{format(round(sum(res_fss6$coefficients[6]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fss6)$coefficients[6,4]<.01,"***",ifelse(summary(res_fss
+6)$coefficients[6,4]<.05,"**",ifelse(summary(res_fss6)$coefficients[6,4]<.1,"*",""
+)))}}$  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+                              & $(
+\backslash
+Sexpr{format(round(fss1[6],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(fss2[6],digits=4),nsmall=0)})$   & $(
+\backslash
+Sexpr{format(round(fss3[6],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(fss4[6],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(fss5[6],digits=4),nsmall=0)})$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $(
+\backslash
+Sexpr{format(round(fss6[6],digits=4),nsmall=0)})$        
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+   {Farmer marital status}
+\end_layout
+
+\begin_layout Plain Layout
+
+               & $
+\backslash
+Sexpr{format(round(sum(res_fss1$coefficients[7]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fss1)$coefficients[7,4]<.01,"***",ifelse(summary(res_fss
+1)$coefficients[7,4]<.05,"**",ifelse(summary(res_fss1)$coefficients[7,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fss2$coefficients[7]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fss2)$coefficients[7,4]<.01,"***",ifelse(summary(res_fss
+2)$coefficients[7,4]<.05,"**",ifelse(summary(res_fss2)$coefficients[7,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fss3$coefficients[7]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fss3)$coefficients[7,4]<.01,"***",ifelse(summary(res_fss
+3)$coefficients[7,4]<.05,"**",ifelse(summary(res_fss3)$coefficients[7,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fss4$coefficients[7]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fss4)$coefficients[7,4]<.01,"***",ifelse(summary(res_fss
+4)$coefficients[7,4]<.05,"**",ifelse(summary(res_fss4)$coefficients[7,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fss5$coefficients[7]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fss5)$coefficients[7,4]<.01,"***",ifelse(summary(res_fss
+5)$coefficients[7,4]<.05,"**",ifelse(summary(res_fss5)$coefficients[7,4]<.1,"*",""
+)))}}$  
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fss6$coefficients[7]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fss6)$coefficients[7,4]<.01,"***",ifelse(summary(res_fss
+6)$coefficients[7,4]<.05,"**",ifelse(summary(res_fss6)$coefficients[7,4]<.1,"*",""
+)))}}$  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+                              & $(
+\backslash
+Sexpr{format(round(fss1[7],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(fss2[7],digits=4),nsmall=0)})$   & $(
+\backslash
+Sexpr{format(round(fss3[7],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(fss4[7],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(fss5[7],digits=4),nsmall=0)})$   
+\end_layout
+
+\begin_layout Plain Layout
+
+& $(
+\backslash
+Sexpr{format(round(fss6[7],digits=4),nsmall=0)})$                 
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+
+\backslash
+ 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+R$^2$                   & $
+\backslash
+Sexpr{format(round(summary(res_fss1)$r.squared,digits=4),nsmall=0)}$    
+   & $
+\backslash
+Sexpr{format(round(summary(res_fss2)$r.squared,digits=4),nsmall=0)}$    
+   & $
+\backslash
+Sexpr{format(round(summary(res_fss3)$r.squared,digits=4),nsmall=0)}$    
+   & $
+\backslash
+Sexpr{format(round(summary(res_fss4)$r.squared,digits=4),nsmall=0)}$    &
+ $
+\backslash
+Sexpr{format(round(summary(res_fss5)$r.squared,digits=4),nsmall=0)}$  & $
+\backslash
+Sexpr{format(round(summary(res_fss6)$r.squared,digits=4),nsmall=0)}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+ Adj.
+ R$^2$                         & $
+\backslash
+Sexpr{format(round(summary(res_fss1)$adj.r.squared,digits=4),nsmall=0)}$ 
+      & $
+\backslash
+Sexpr{format(round(summary(res_fss2)$adj.r.squared,digits=4),nsmall=0)}$ 
+      & $
+\backslash
+Sexpr{format(round(summary(res_fss3)$adj.r.squared,digits=4),nsmall=0)}$ 
+      & $
+\backslash
+Sexpr{format(round(summary(res_fss4)$adj.r.squared,digits=4),nsmall=0)}$ 
+   & $
+\backslash
+Sexpr{format(round(summary(res_fss5)$adj.r.squared,digits=4),nsmall=0)}$ &
+ $
+\backslash
+Sexpr{format(round(summary(res_fss6)$adj.r.squared,digits=4),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ Number of obs.
+                     & $
+\backslash
+Sexpr{format(round(nobs(res_fss1),digits=4),nsmall=0)}$       & $
+\backslash
+Sexpr{format(round(nobs(res_fss2),digits=4),nsmall=0)}$       & $
+\backslash
+Sexpr{format(round(nobs(res_fss3),digits=4),nsmall=0)}$       & $
+\backslash
+Sexpr{format(round(nobs(res_fss4),digits=4),nsmall=0)}$    & $
+\backslash
+Sexpr{format(round(nobs(res_fss5),digits=4),nsmall=0)}$ & $
+\backslash
+Sexpr{format(round(nobs(res_fss6),digits=4),nsmall=0)}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+     
+\backslash
+
+\backslash
+ 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{6}{l}{ 
+\backslash
+scriptsize{$^{***}p<0.01$; $^{**}p<0.05$; $^{*}p<0.1$.}} 
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tabular} 
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: Standard errors are clustered at the dealer level.
+ The dependent variable is the rating given by the farmers and the main
+ independent variable is farmer's gender.
+ The dimensions based on which the ratings are given are overall average
+ (model 1), location (model 2), quality (model 3), price (model 4) , stock
+ (model 5) and reputation (model 6).
+ F refers to farmers.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+caption{Regression results for the impact of farmer's (rater's) gender on
+ the ratings given by the farmers to the agro-input dealers.} 
+\backslash
+label{table:table5} 
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{table}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\paragraph_spacing onehalf
+Regression: Data from seed system surveys: Impact of dealer's gender on
+ self-ratings (only dealers are present in the data) (Table 5)
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{table} 
+\backslash
+small 
+\backslash
+begin{center} 
+\backslash
+begin{tabular}{@{
+\backslash
+extracolsep{5pt}}lcccccc}  
+\backslash
+
+\backslash
+[-1.8ex]
+\backslash
+hline  
+\backslash
+hline 
+\backslash
+
+\backslash
+[-1.8ex]   & 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Dependent variable: Self-ratings by dealers}} 
+\backslash
+
+\backslash
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\backslash
+
+\backslash
+[-1.8ex] & 
+\backslash
+multicolumn{1} {c} {Overall} &  
+\backslash
+multicolumn{1} {c} {Location}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Quality}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Price}& 
+\backslash
+multicolumn{1} {c} {Stock}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Reputation} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+[-1.8ex] & (1) & (2) & (3) & (4) & (5)  & (6) 
+\backslash
+
+\backslash
+  
+\backslash
+hline 
+\backslash
+
+\backslash
+[-1.8ex]  
+\end_layout
+
+\begin_layout Plain Layout
+
+{Intercept}                  & $
+\backslash
+Sexpr{format(round(sum(d1$coefficients[1]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(d1)$coefficients[1,4]<.01,"***",ifelse(summary(d1)$coefficie
+nts[1,4]<.05,"**",ifelse(summary(d1)$coefficients[1,4]<.1,"*","")))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(d2$coefficients[1]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(d2)$coefficients[1,4]<.01,"***",ifelse(summary(d2)$coefficie
+nts[1,4]<.05,"**",ifelse(summary(d2)$coefficients[1,4]<.1,"*","")))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(d3$coefficients[1]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(d3)$coefficients[1,4]<.01,"***",ifelse(summary(d3)$coefficie
+nts[1,4]<.05,"**",ifelse(summary(d3)$coefficients[1,4]<.1,"*","")))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(d4$coefficients[1]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(d4)$coefficients[1,4]<.01,"***",ifelse(summary(d4)$coefficie
+nts[1,4]<.05,"**",ifelse(summary(d4)$coefficients[1,4]<.1,"*","")))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(d5$coefficients[1]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(d5)$coefficients[1,4]<.01,"***",ifelse(summary(d5)$coefficie
+nts[1,4]<.05,"**",ifelse(summary(d5)$coefficients[1,4]<.1,"*","")))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(d6$coefficients[1]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(d6)$coefficients[1,4]<.01,"***",ifelse(summary(d6)$coefficie
+nts[1,4]<.05,"**",ifelse(summary(d6)$coefficients[1,4]<.1,"*","")))}}$  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+                              & $(
+\backslash
+Sexpr{format(round(se_d1[1],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_d2[1],digits=4),nsmall=0)})$   & $(
+\backslash
+Sexpr{format(round(se_d3[1],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_d4[1],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_d5[1],digits=4),nsmall=0)})$ & $(
+\backslash
+Sexpr{format(round(se_d6[1],digits=4),nsmall=0)})$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+                    
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ {Dealer's gender}  
+\end_layout
+
+\begin_layout Plain Layout
+
+              & $
+\backslash
+Sexpr{format(round(sum(d1$coefficients[2]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(d1)$coefficients[2,4]<.01,"***",ifelse(summary(d1)$coefficie
+nts[2,4]<.05,"**",ifelse(summary(d1)$coefficients[2,4]<.1,"*","")))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(d2$coefficients[2]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(d2)$coefficients[2,4]<.01,"***",ifelse(summary(d2)$coefficie
+nts[2,4]<.05,"**",ifelse(summary(d2)$coefficients[2,4]<.1,"*","")))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(d3$coefficients[2]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(d3)$coefficients[2,4]<.01,"***",ifelse(summary(d3)$coefficie
+nts[2,4]<.05,"**",ifelse(summary(d3)$coefficients[2,4]<.1,"*","")))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(d4$coefficients[2]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(d4)$coefficients[2,4]<.01,"***",ifelse(summary(d4)$coefficie
+nts[2,4]<.05,"**",ifelse(summary(d4)$coefficients[2,4]<.1,"*","")))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(d5$coefficients[2]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(d5)$coefficients[2,4]<.01,"***",ifelse(summary(d5)$coefficie
+nts[2,4]<.05,"**",ifelse(summary(d5)$coefficients[2,4]<.1,"*","")))}}$  
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(d6$coefficients[2]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(d6)$coefficients[2,4]<.01,"***",ifelse(summary(d6)$coefficie
+nts[2,4]<.05,"**",ifelse(summary(d6)$coefficients[2,4]<.1,"*","")))}}$  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+                              & $(
+\backslash
+Sexpr{format(round(se_d1[2],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_d2[2],digits=4),nsmall=0)})$   & $(
+\backslash
+Sexpr{format(round(se_d3[2],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_d4[2],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_d5[2],digits=4),nsmall=0)})$  & $(
+\backslash
+Sexpr{format(round(se_d6[2],digits=4),nsmall=0)})$     
+\end_layout
+
+\begin_layout Plain Layout
+
+           
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+   {Age of dealer}
+\end_layout
+
+\begin_layout Plain Layout
+
+                 & $
+\backslash
+Sexpr{format(round(sum(d1$coefficients[3]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(d1)$coefficients[3,4]<.01,"***",ifelse(summary(d1)$coefficie
+nts[3,4]<.05,"**",ifelse(summary(d1)$coefficients[3,4]<.1,"*","")))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(d2$coefficients[3]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(d2)$coefficients[3,4]<.01,"***",ifelse(summary(d2)$coefficie
+nts[3,4]<.05,"**",ifelse(summary(d2)$coefficients[3,4]<.1,"*","")))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(d3$coefficients[3]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(d3)$coefficients[3,4]<.01,"***",ifelse(summary(d3)$coefficie
+nts[3,4]<.05,"**",ifelse(summary(d3)$coefficients[3,4]<.1,"*","")))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(d4$coefficients[3]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(d4)$coefficients[3,4]<.01,"***",ifelse(summary(d4)$coefficie
+nts[3,4]<.05,"**",ifelse(summary(d4)$coefficients[3,4]<.1,"*","")))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(d5$coefficients[3]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(d5)$coefficients[3,4]<.01,"***",ifelse(summary(d5)$coefficie
+nts[3,4]<.05,"**",ifelse(summary(d5)$coefficients[3,4]<.1,"*","")))}}$   
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(d6$coefficients[3]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(d6)$coefficients[3,4]<.01,"***",ifelse(summary(d6)$coefficie
+nts[3,4]<.05,"**",ifelse(summary(d6)$coefficients[3,4]<.1,"*","")))}}$   
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+                              & $(
+\backslash
+Sexpr{format(round(se_d1[3],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_d2[3],digits=4),nsmall=0)})$   & $(
+\backslash
+Sexpr{format(round(se_d3[3],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_d4[3],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_d5[3],digits=4),nsmall=0)})$  & $(
+\backslash
+Sexpr{format(round(se_d6[3],digits=4),nsmall=0)})$
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ {Education of dealer} 
+\end_layout
+
+\begin_layout Plain Layout
+
+             & $
+\backslash
+Sexpr{format(round(sum(d1$coefficients[4]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(d1)$coefficients[4,4]<.01,"***",ifelse(summary(d1)$coefficie
+nts[4,4]<.05,"**",ifelse(summary(d1)$coefficients[4,4]<.1,"*","")))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(d2$coefficients[4]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(d2)$coefficients[4,4]<.01,"***",ifelse(summary(d2)$coefficie
+nts[4,4]<.05,"**",ifelse(summary(d2)$coefficients[4,4]<.1,"*","")))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(d3$coefficients[4]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(d3)$coefficients[4,4]<.01,"***",ifelse(summary(d3)$coefficie
+nts[4,4]<.05,"**",ifelse(summary(d3)$coefficients[4,4]<.1,"*","")))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(d4$coefficients[4]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(d4)$coefficients[4,4]<.01,"***",ifelse(summary(d4)$coefficie
+nts[4,4]<.05,"**",ifelse(summary(d4)$coefficients[4,4]<.1,"*","")))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(d5$coefficients[4]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(d5)$coefficients[4,4]<.01,"***",ifelse(summary(d5)$coefficie
+nts[4,4]<.05,"**",ifelse(summary(d5)$coefficients[4,4]<.1,"*","")))}}$   
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(d6$coefficients[4]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(d6)$coefficients[4,4]<.01,"***",ifelse(summary(d6)$coefficie
+nts[4,4]<.05,"**",ifelse(summary(d6)$coefficients[4,4]<.1,"*","")))}}$   
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+                              & $(
+\backslash
+Sexpr{format(round(se_d1[4],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_d2[4],digits=4),nsmall=0)})$   & $(
+\backslash
+Sexpr{format(round(se_d3[4],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_d4[4],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_d5[4],digits=4),nsmall=0)})$    & $(
+\backslash
+Sexpr{format(round(se_d6[4],digits=4),nsmall=0)})$
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+
+\backslash
+ 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+R$^2$  & $
+\backslash
+Sexpr{format(round(summary(d1)$r.squared,digits=4),nsmall=0)}$    & $
+\backslash
+Sexpr{format(round(summary(d2)$r.squared,digits=4),nsmall=0)}$  & $
+\backslash
+Sexpr{format(round(summary(d3)$r.squared,digits=4),nsmall=0)}$   & $
+\backslash
+Sexpr{format(round(summary(d4)$r.squared,digits=4),nsmall=0)}$    & $
+\backslash
+Sexpr{format(round(summary(d5)$r.squared,digits=4),nsmall=0)}$   & $
+\backslash
+Sexpr{format(round(summary(d6)$r.squared,digits=4),nsmall=0)}$  
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+ Adj.
+ R$^2$                         & $
+\backslash
+Sexpr{format(round(summary(d1)$adj.r.squared,digits=4),nsmall=0)}$       &
+ $
+\backslash
+Sexpr{format(round(summary(d2)$adj.r.squared,digits=4),nsmall=0)}$       &
+ $
+\backslash
+Sexpr{format(round(summary(d3)$adj.r.squared,digits=4),nsmall=0)}$       
+    & $
+\backslash
+Sexpr{format(round(summary(d4)$adj.r.squared,digits=4),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+   & $
+\backslash
+Sexpr{format(round(summary(d5)$adj.r.squared,digits=4),nsmall=0)}$  & $
+\backslash
+Sexpr{format(round(summary(d6)$adj.r.squared,digits=4),nsmall=0)}$       
+        
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ Number of obs.
+                     & $
+\backslash
+Sexpr{format(round(nobs(d1),digits=4),nsmall=0)}$       & $
+\backslash
+Sexpr{format(round(nobs(d2),digits=4),nsmall=0)}$       & $
+\backslash
+Sexpr{format(round(nobs(d3),digits=4),nsmall=0)}$       & $
+\backslash
+Sexpr{format(round(nobs(d4),digits=4),nsmall=0)}$    & $
+\backslash
+Sexpr{format(round(nobs(d5),digits=4),nsmall=0)}$   & $
+\backslash
+Sexpr{format(round(nobs(d6),digits=4),nsmall=0)}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+    
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{6}{l}{ 
+\backslash
+scriptsize{$^{***}p<0.01$; $^{**}p<0.05$; $^{*}p<0.1$.}} 
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tabular} 
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: This table shows the results of a multiple regression analysis.
+ The dependent variable is the self-rating given by the dealers and the
+ main independent variable is dealer's gender.
+ The dimensions based on which the self-ratings are given are overall average
+ (model 1), location (model 2), quality (model 3), price (model 4), stock
+ (model 5) and reputation (model 6).
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+caption{Regression results looking at the impact of dealer's gender on their
+ self-ratings.} 
+\backslash
+label{table:table6} 
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+end{table} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\paragraph_spacing onehalf
+Regression: Data from seed system surveys: Impact of farmer's and dealer's
+ gender on ratings from farmers (Table 6)
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{landscape}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{table} 
+\backslash
+scriptsize 
+\backslash
+begin{center} 
+\backslash
+begin{tabular}{@{
+\backslash
+extracolsep{5pt}}lcccccccccccc}  
+\backslash
+
+\backslash
+[-1.8ex]
+\backslash
+hline  
+\backslash
+hline 
+\backslash
+
+\backslash
+[-1.8ex]   & 
+\backslash
+multicolumn{12}{c}{
+\backslash
+textit{
+\backslash
+footnotesize Dependent variable: Ratings from Farmers (Raters)}} 
+\backslash
+
+\backslash
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-13} 
+\backslash
+
+\backslash
+[-1.8ex] & 
+\backslash
+multicolumn{2} {c} {
+\backslash
+scriptsize Overall} &  
+\backslash
+multicolumn{2} {c} {
+\backslash
+scriptsize Location}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{2} {c} {
+\backslash
+scriptsize Quality}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{2} {c} {
+\backslash
+scriptsize Price}& 
+\backslash
+multicolumn{2} {c} {
+\backslash
+scriptsize Stock}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{2} {c} {
+\backslash
+scriptsize Reputation} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+[-1.8ex] & (
+\backslash
+scriptsize 1) & (
+\backslash
+scriptsize 2) & (
+\backslash
+scriptsize 3) & (
+\backslash
+scriptsize 4) & (
+\backslash
+scriptsize 5)& (
+\backslash
+scriptsize 6) & (
+\backslash
+scriptsize 7) & (
+\backslash
+scriptsize 8) & (
+\backslash
+scriptsize 9) & (
+\backslash
+scriptsize 10) & (
+\backslash
+scriptsize 11) & (
+\backslash
+scriptsize 12) 
+\backslash
+
+\backslash
+  
+\backslash
+hline 
+\backslash
+
+\backslash
+[-1.8ex]  
+\end_layout
+
+\begin_layout Plain Layout
+
+{Intercept}                  & $
+\backslash
+Sexpr{format(round(sum(res_fds1$coefficients[1]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds1)$coefficients[1,4]<.01,"***",ifelse(summary(res_fds
+1)$coefficients[1,4]<.05,"**",ifelse(summary(res_fds1)$coefficients[1,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fds2$coefficients[1]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds2)$coefficients[1,4]<.01,"***",ifelse(summary(res_fds
+2)$coefficients[1,4]<.05,"**",ifelse(summary(res_fds2)$coefficients[1,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds3$coefficients[1]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds3)$coefficients[1,4]<.01,"***",ifelse(summary(res_fds
+3)$coefficients[1,4]<.05,"**",ifelse(summary(res_fds3)$coefficients[1,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fds4$coefficients[1]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds4)$coefficients[1,4]<.01,"***",ifelse(summary(res_fds
+4)$coefficients[1,4]<.05,"**",ifelse(summary(res_fds4)$coefficients[1,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds5$coefficients[1]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds5)$coefficients[1,4]<.01,"***",ifelse(summary(res_fds
+5)$coefficients[1,4]<.05,"**",ifelse(summary(res_fds5)$coefficients[1,4]<.1,"*",""
+)))}}$   
+\end_layout
+
+\begin_layout Plain Layout
+
+      & $
+\backslash
+Sexpr{format(round(sum(res_fds6$coefficients[1]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds6)$coefficients[1,4]<.01,"***",ifelse(summary(res_fds
+6)$coefficients[1,4]<.05,"**",ifelse(summary(res_fds6)$coefficients[1,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fds7$coefficients[1]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds7)$coefficients[1,4]<.01,"***",ifelse(summary(res_fds
+7)$coefficients[1,4]<.05,"**",ifelse(summary(res_fds7)$coefficients[1,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds8$coefficients[1]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds8)$coefficients[1,4]<.01,"***",ifelse(summary(res_fds
+8)$coefficients[1,4]<.05,"**",ifelse(summary(res_fds8)$coefficients[1,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fds9$coefficients[1]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds9)$coefficients[1,4]<.01,"***",ifelse(summary(res_fds
+9)$coefficients[1,4]<.05,"**",ifelse(summary(res_fds9)$coefficients[1,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds10$coefficients[1]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds10)$coefficients[1,4]<.01,"***",ifelse(summary(res_fd
+s10)$coefficients[1,4]<.05,"**",ifelse(summary(res_fds10)$coefficients[1,4]<.1,"*"
+,"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds11$coefficients[1]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds11)$coefficients[1,4]<.01,"***",ifelse(summary(res_fd
+s11)$coefficients[1,4]<.05,"**",ifelse(summary(res_fds11)$coefficients[1,4]<.1,"*"
+,"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds12$coefficients[1]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds12)$coefficients[1,4]<.01,"***",ifelse(summary(res_fd
+s12)$coefficients[1,4]<.05,"**",ifelse(summary(res_fds12)$coefficients[1,4]<.1,"*"
+,"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+                              & $(
+\backslash
+Sexpr{format(round(se_fds1[1],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_fds2[1],digits=4),nsmall=0)})$   & $(
+\backslash
+Sexpr{format(round(se_fds3[1],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_fds4[1],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_fds5[1],digits=4),nsmall=0)})$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+             & $(
+\backslash
+Sexpr{format(round(se_fds6[1],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_fds7[1],digits=4),nsmall=0)})$   & $(
+\backslash
+Sexpr{format(round(se_fds8[1],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_fds9[1],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_fds10[1],digits=4),nsmall=0)})$  & $(
+\backslash
+Sexpr{format(round(se_fds11[1],digits=4),nsmall=0)})$      & $(
+\backslash
+Sexpr{format(round(se_fds12[1],digits=4),nsmall=0)})$          
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ {Farmer's gender}
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds1$coefficients[2]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds1)$coefficients[2,4]<.01,"***",ifelse(summary(res_fds
+1)$coefficients[2,4]<.05,"**",ifelse(summary(res_fds1)$coefficients[2,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fds2$coefficients[2]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds2)$coefficients[2,4]<.01,"***",ifelse(summary(res_fds
+2)$coefficients[2,4]<.05,"**",ifelse(summary(res_fds2)$coefficients[2,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds3$coefficients[2]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds3)$coefficients[2,4]<.01,"***",ifelse(summary(res_fds
+3)$coefficients[2,4]<.05,"**",ifelse(summary(res_fds3)$coefficients[2,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fds4$coefficients[2]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds4)$coefficients[2,4]<.01,"***",ifelse(summary(res_fds
+4)$coefficients[2,4]<.05,"**",ifelse(summary(res_fds4)$coefficients[2,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds5$coefficients[2]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds5)$coefficients[2,4]<.01,"***",ifelse(summary(res_fds
+5)$coefficients[2,4]<.05,"**",ifelse(summary(res_fds5)$coefficients[2,4]<.1,"*",""
+)))}}$   
+\end_layout
+
+\begin_layout Plain Layout
+
+      & $
+\backslash
+Sexpr{format(round(sum(res_fds6$coefficients[2]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds6)$coefficients[2,4]<.01,"***",ifelse(summary(res_fds
+6)$coefficients[2,4]<.05,"**",ifelse(summary(res_fds6)$coefficients[2,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fds7$coefficients[2]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds7)$coefficients[2,4]<.01,"***",ifelse(summary(res_fds
+7)$coefficients[2,4]<.05,"**",ifelse(summary(res_fds7)$coefficients[2,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds8$coefficients[2]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds8)$coefficients[2,4]<.01,"***",ifelse(summary(res_fds
+8)$coefficients[2,4]<.05,"**",ifelse(summary(res_fds8)$coefficients[2,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fds9$coefficients[2]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds9)$coefficients[2,4]<.01,"***",ifelse(summary(res_fds
+9)$coefficients[2,4]<.05,"**",ifelse(summary(res_fds9)$coefficients[2,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds10$coefficients[2]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds10)$coefficients[2,4]<.01,"***",ifelse(summary(res_fd
+s10)$coefficients[2,4]<.05,"**",ifelse(summary(res_fds10)$coefficients[2,4]<.1,"*"
+,"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds11$coefficients[2]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds11)$coefficients[2,4]<.01,"***",ifelse(summary(res_fd
+s11)$coefficients[2,4]<.05,"**",ifelse(summary(res_fds11)$coefficients[2,4]<.1,"*"
+,"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds12$coefficients[2]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds12)$coefficients[2,4]<.01,"***",ifelse(summary(res_fd
+s12)$coefficients[2,4]<.05,"**",ifelse(summary(res_fds12)$coefficients[2,4]<.1,"*"
+,"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+                              & $(
+\backslash
+Sexpr{format(round(se_fds1[2],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_fds2[2],digits=4),nsmall=0)})$   & $(
+\backslash
+Sexpr{format(round(se_fds3[2],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_fds4[2],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_fds5[2],digits=4),nsmall=0)})$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+             & $(
+\backslash
+Sexpr{format(round(se_fds6[2],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_fds7[2],digits=4),nsmall=0)})$   & $(
+\backslash
+Sexpr{format(round(se_fds8[2],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_fds9[2],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_fds10[2],digits=4),nsmall=0)})$  & $(
+\backslash
+Sexpr{format(round(se_fds11[2],digits=4),nsmall=0)})$      & $(
+\backslash
+Sexpr{format(round(se_fds12[2],digits=4),nsmall=0)})$   
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ {Dealer's gender}  
+\end_layout
+
+\begin_layout Plain Layout
+
+             & $
+\backslash
+Sexpr{format(round(sum(res_fds1$coefficients[3]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds1)$coefficients[3,4]<.01,"***",ifelse(summary(res_fds
+1)$coefficients[3,4]<.05,"**",ifelse(summary(res_fds1)$coefficients[3,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fds2$coefficients[3]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds2)$coefficients[3,4]<.01,"***",ifelse(summary(res_fds
+2)$coefficients[3,4]<.05,"**",ifelse(summary(res_fds2)$coefficients[3,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds3$coefficients[3]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds3)$coefficients[3,4]<.01,"***",ifelse(summary(res_fds
+3)$coefficients[3,4]<.05,"**",ifelse(summary(res_fds3)$coefficients[3,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fds4$coefficients[3]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds4)$coefficients[3,4]<.01,"***",ifelse(summary(res_fds
+4)$coefficients[3,4]<.05,"**",ifelse(summary(res_fds4)$coefficients[3,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds5$coefficients[3]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds5)$coefficients[3,4]<.01,"***",ifelse(summary(res_fds
+5)$coefficients[3,4]<.05,"**",ifelse(summary(res_fds5)$coefficients[3,4]<.1,"*",""
+)))}}$   
+\end_layout
+
+\begin_layout Plain Layout
+
+      & $
+\backslash
+Sexpr{format(round(sum(res_fds6$coefficients[3]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds6)$coefficients[3,4]<.01,"***",ifelse(summary(res_fds
+6)$coefficients[3,4]<.05,"**",ifelse(summary(res_fds6)$coefficients[3,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fds7$coefficients[3]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds7)$coefficients[3,4]<.01,"***",ifelse(summary(res_fds
+7)$coefficients[3,4]<.05,"**",ifelse(summary(res_fds7)$coefficients[3,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds8$coefficients[3]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds8)$coefficients[3,4]<.01,"***",ifelse(summary(res_fds
+8)$coefficients[3,4]<.05,"**",ifelse(summary(res_fds8)$coefficients[3,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fds9$coefficients[3]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds9)$coefficients[3,4]<.01,"***",ifelse(summary(res_fds
+9)$coefficients[3,4]<.05,"**",ifelse(summary(res_fds9)$coefficients[3,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds10$coefficients[3]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds10)$coefficients[3,4]<.01,"***",ifelse(summary(res_fd
+s10)$coefficients[3,4]<.05,"**",ifelse(summary(res_fds10)$coefficients[3,4]<.1,"*"
+,"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds11$coefficients[3]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds11)$coefficients[3,4]<.01,"***",ifelse(summary(res_fd
+s11)$coefficients[3,4]<.05,"**",ifelse(summary(res_fds11)$coefficients[3,4]<.1,"*"
+,"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds12$coefficients[3]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds12)$coefficients[3,4]<.01,"***",ifelse(summary(res_fd
+s12)$coefficients[3,4]<.05,"**",ifelse(summary(res_fds12)$coefficients[3,4]<.1,"*"
+,"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+                              & $(
+\backslash
+Sexpr{format(round(se_fds1[3],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_fds2[3],digits=4),nsmall=0)})$   & $(
+\backslash
+Sexpr{format(round(se_fds3[3],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_fds4[3],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_fds5[3],digits=4),nsmall=0)})$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+             & $(
+\backslash
+Sexpr{format(round(se_fds6[3],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_fds7[3],digits=4),nsmall=0)})$   & $(
+\backslash
+Sexpr{format(round(se_fds8[3],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_fds9[3],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_fds10[3],digits=4),nsmall=0)})$  & $(
+\backslash
+Sexpr{format(round(se_fds11[3],digits=4),nsmall=0)})$      & $(
+\backslash
+Sexpr{format(round(se_fds12[3],digits=4),nsmall=0)})$            
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ {Farmer's age}
+\end_layout
+
+\begin_layout Plain Layout
+
+             & $
+\backslash
+Sexpr{format(round(sum(res_fds1$coefficients[4]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds1)$coefficients[4,4]<.01,"***",ifelse(summary(res_fds
+1)$coefficients[4,4]<.05,"**",ifelse(summary(res_fds1)$coefficients[4,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fds2$coefficients[4]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds2)$coefficients[4,4]<.01,"***",ifelse(summary(res_fds
+2)$coefficients[4,4]<.05,"**",ifelse(summary(res_fds2)$coefficients[4,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds3$coefficients[4]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds3)$coefficients[4,4]<.01,"***",ifelse(summary(res_fds
+3)$coefficients[4,4]<.05,"**",ifelse(summary(res_fds3)$coefficients[4,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fds4$coefficients[4]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds4)$coefficients[4,4]<.01,"***",ifelse(summary(res_fds
+4)$coefficients[4,4]<.05,"**",ifelse(summary(res_fds4)$coefficients[4,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds5$coefficients[4]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds5)$coefficients[4,4]<.01,"***",ifelse(summary(res_fds
+5)$coefficients[4,4]<.05,"**",ifelse(summary(res_fds5)$coefficients[4,4]<.1,"*",""
+)))}}$   
+\end_layout
+
+\begin_layout Plain Layout
+
+      & $
+\backslash
+Sexpr{format(round(sum(res_fds6$coefficients[4]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds6)$coefficients[4,4]<.01,"***",ifelse(summary(res_fds
+6)$coefficients[4,4]<.05,"**",ifelse(summary(res_fds6)$coefficients[4,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fds7$coefficients[4]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds7)$coefficients[4,4]<.01,"***",ifelse(summary(res_fds
+7)$coefficients[4,4]<.05,"**",ifelse(summary(res_fds7)$coefficients[4,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds8$coefficients[4]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds8)$coefficients[4,4]<.01,"***",ifelse(summary(res_fds
+8)$coefficients[4,4]<.05,"**",ifelse(summary(res_fds8)$coefficients[4,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fds9$coefficients[4]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds9)$coefficients[4,4]<.01,"***",ifelse(summary(res_fds
+9)$coefficients[4,4]<.05,"**",ifelse(summary(res_fds9)$coefficients[4,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds10$coefficients[4]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds10)$coefficients[4,4]<.01,"***",ifelse(summary(res_fd
+s10)$coefficients[4,4]<.05,"**",ifelse(summary(res_fds10)$coefficients[4,4]<.1,"*"
+,"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds11$coefficients[4]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds11)$coefficients[4,4]<.01,"***",ifelse(summary(res_fd
+s11)$coefficients[4,4]<.05,"**",ifelse(summary(res_fds11)$coefficients[4,4]<.1,"*"
+,"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds12$coefficients[4]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds12)$coefficients[4,4]<.01,"***",ifelse(summary(res_fd
+s12)$coefficients[4,4]<.05,"**",ifelse(summary(res_fds12)$coefficients[4,4]<.1,"*"
+,"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+                              & $(
+\backslash
+Sexpr{format(round(se_fds1[4],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_fds2[4],digits=4),nsmall=0)})$   & $(
+\backslash
+Sexpr{format(round(se_fds3[4],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_fds4[4],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_fds5[4],digits=4),nsmall=0)})$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+             & $(
+\backslash
+Sexpr{format(round(se_fds6[4],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_fds7[4],digits=4),nsmall=0)})$   & $(
+\backslash
+Sexpr{format(round(se_fds8[4],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_fds9[4],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_fds10[4],digits=4),nsmall=0)})$  & $(
+\backslash
+Sexpr{format(round(se_fds11[4],digits=4),nsmall=0)})$      & $(
+\backslash
+Sexpr{format(round(se_fds12[4],digits=4),nsmall=0)})$           
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ {Interaction}         
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds1$coefficients[5]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds1)$coefficients[5,4]<.01,"***",ifelse(summary(res_fds
+1)$coefficients[5,4]<.05,"**",ifelse(summary(res_fds1)$coefficients[5,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fds2$coefficients[5]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds2)$coefficients[5,4]<.01,"***",ifelse(summary(res_fds
+2)$coefficients[5,4]<.05,"**",ifelse(summary(res_fds2)$coefficients[5,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds3$coefficients[5]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds3)$coefficients[5,4]<.01,"***",ifelse(summary(res_fds
+3)$coefficients[5,4]<.05,"**",ifelse(summary(res_fds3)$coefficients[5,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fds4$coefficients[5]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds4)$coefficients[5,4]<.01,"***",ifelse(summary(res_fds
+4)$coefficients[5,4]<.05,"**",ifelse(summary(res_fds4)$coefficients[5,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds5$coefficients[5]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds5)$coefficients[5,4]<.01,"***",ifelse(summary(res_fds
+5)$coefficients[5,4]<.05,"**",ifelse(summary(res_fds5)$coefficients[5,4]<.1,"*",""
+)))}}$   
+\end_layout
+
+\begin_layout Plain Layout
+
+      & $
+\backslash
+Sexpr{format(round(sum(res_fds6$coefficients[5]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds6)$coefficients[5,4]<.01,"***",ifelse(summary(res_fds
+6)$coefficients[5,4]<.05,"**",ifelse(summary(res_fds6)$coefficients[5,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fds7$coefficients[5]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds7)$coefficients[5,4]<.01,"***",ifelse(summary(res_fds
+7)$coefficients[5,4]<.05,"**",ifelse(summary(res_fds7)$coefficients[5,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds8$coefficients[5]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds8)$coefficients[5,4]<.01,"***",ifelse(summary(res_fds
+8)$coefficients[5,4]<.05,"**",ifelse(summary(res_fds8)$coefficients[5,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fds9$coefficients[5]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds9)$coefficients[5,4]<.01,"***",ifelse(summary(res_fds
+9)$coefficients[5,4]<.05,"**",ifelse(summary(res_fds9)$coefficients[5,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds10$coefficients[5]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds10)$coefficients[5,4]<.01,"***",ifelse(summary(res_fd
+s10)$coefficients[5,4]<.05,"**",ifelse(summary(res_fds10)$coefficients[5,4]<.1,"*"
+,"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds11$coefficients[5]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds11)$coefficients[5,4]<.01,"***",ifelse(summary(res_fd
+s11)$coefficients[5,4]<.05,"**",ifelse(summary(res_fds11)$coefficients[5,4]<.1,"*"
+,"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds12$coefficients[5]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds12)$coefficients[5,4]<.01,"***",ifelse(summary(res_fd
+s12)$coefficients[5,4]<.05,"**",ifelse(summary(res_fds12)$coefficients[5,4]<.1,"*"
+,"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+                              & $(
+\backslash
+Sexpr{format(round(se_fds1[5],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_fds2[5],digits=4),nsmall=0)})$   & $(
+\backslash
+Sexpr{format(round(se_fds3[5],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_fds4[5],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_fds5[5],digits=4),nsmall=0)})$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+             & $(
+\backslash
+Sexpr{format(round(se_fds6[5],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_fds7[5],digits=4),nsmall=0)})$   & $(
+\backslash
+Sexpr{format(round(se_fds8[5],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_fds9[5],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_fds10[5],digits=4),nsmall=0)})$  & $(
+\backslash
+Sexpr{format(round(se_fds11[5],digits=4),nsmall=0)})$      & $(
+\backslash
+Sexpr{format(round(se_fds12[5],digits=4),nsmall=0)})$   
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ {Farmer's education}
+\end_layout
+
+\begin_layout Plain Layout
+
+     & $
+\backslash
+Sexpr{format(round(sum(res_fds1$coefficients[6]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds1)$coefficients[6,4]<.01,"***",ifelse(summary(res_fds
+1)$coefficients[6,4]<.05,"**",ifelse(summary(res_fds1)$coefficients[6,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fds2$coefficients[6]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds2)$coefficients[6,4]<.01,"***",ifelse(summary(res_fds
+2)$coefficients[6,4]<.05,"**",ifelse(summary(res_fds2)$coefficients[6,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds3$coefficients[6]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds3)$coefficients[6,4]<.01,"***",ifelse(summary(res_fds
+3)$coefficients[6,4]<.05,"**",ifelse(summary(res_fds3)$coefficients[6,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fds4$coefficients[6]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds4)$coefficients[6,4]<.01,"***",ifelse(summary(res_fds
+4)$coefficients[6,4]<.05,"**",ifelse(summary(res_fds4)$coefficients[6,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds5$coefficients[6]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds5)$coefficients[6,4]<.01,"***",ifelse(summary(res_fds
+5)$coefficients[6,4]<.05,"**",ifelse(summary(res_fds5)$coefficients[6,4]<.1,"*",""
+)))}}$   
+\end_layout
+
+\begin_layout Plain Layout
+
+      & $
+\backslash
+Sexpr{format(round(sum(res_fds6$coefficients[6]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds6)$coefficients[6,4]<.01,"***",ifelse(summary(res_fds
+6)$coefficients[6,4]<.05,"**",ifelse(summary(res_fds6)$coefficients[6,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fds7$coefficients[6]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds7)$coefficients[6,4]<.01,"***",ifelse(summary(res_fds
+7)$coefficients[6,4]<.05,"**",ifelse(summary(res_fds7)$coefficients[6,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds8$coefficients[6]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds8)$coefficients[6,4]<.01,"***",ifelse(summary(res_fds
+8)$coefficients[6,4]<.05,"**",ifelse(summary(res_fds8)$coefficients[6,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fds9$coefficients[6]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds9)$coefficients[6,4]<.01,"***",ifelse(summary(res_fds
+9)$coefficients[6,4]<.05,"**",ifelse(summary(res_fds9)$coefficients[6,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds10$coefficients[6]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds10)$coefficients[6,4]<.01,"***",ifelse(summary(res_fd
+s10)$coefficients[6,4]<.05,"**",ifelse(summary(res_fds10)$coefficients[6,4]<.1,"*"
+,"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds11$coefficients[6]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds11)$coefficients[6,4]<.01,"***",ifelse(summary(res_fd
+s11)$coefficients[6,4]<.05,"**",ifelse(summary(res_fds11)$coefficients[6,4]<.1,"*"
+,"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds12$coefficients[6]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds12)$coefficients[6,4]<.01,"***",ifelse(summary(res_fd
+s12)$coefficients[6,4]<.05,"**",ifelse(summary(res_fds12)$coefficients[6,4]<.1,"*"
+,"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+                              & $(
+\backslash
+Sexpr{format(round(se_fds1[6],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_fds2[6],digits=4),nsmall=0)})$   & $(
+\backslash
+Sexpr{format(round(se_fds3[6],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_fds4[6],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_fds5[6],digits=4),nsmall=0)})$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+             & $(
+\backslash
+Sexpr{format(round(se_fds6[6],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_fds7[6],digits=4),nsmall=0)})$   & $(
+\backslash
+Sexpr{format(round(se_fds8[6],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_fds9[6],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_fds10[6],digits=4),nsmall=0)})$  & $(
+\backslash
+Sexpr{format(round(se_fds11[6],digits=4),nsmall=0)})$      & $(
+\backslash
+Sexpr{format(round(se_fds12[6],digits=4),nsmall=0)})$            
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+   {Tarmac}
+\end_layout
+
+\begin_layout Plain Layout
+
+             & $
+\backslash
+Sexpr{format(round(sum(res_fds1$coefficients[7]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds1)$coefficients[7,4]<.01,"***",ifelse(summary(res_fds
+1)$coefficients[7,4]<.05,"**",ifelse(summary(res_fds1)$coefficients[7,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fds2$coefficients[7]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds2)$coefficients[7,4]<.01,"***",ifelse(summary(res_fds
+2)$coefficients[7,4]<.05,"**",ifelse(summary(res_fds2)$coefficients[7,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds3$coefficients[7]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds3)$coefficients[7,4]<.01,"***",ifelse(summary(res_fds
+3)$coefficients[7,4]<.05,"**",ifelse(summary(res_fds3)$coefficients[7,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fds4$coefficients[7]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds4)$coefficients[7,4]<.01,"***",ifelse(summary(res_fds
+4)$coefficients[7,4]<.05,"**",ifelse(summary(res_fds4)$coefficients[7,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds5$coefficients[7]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds5)$coefficients[7,4]<.01,"***",ifelse(summary(res_fds
+5)$coefficients[7,4]<.05,"**",ifelse(summary(res_fds5)$coefficients[7,4]<.1,"*",""
+)))}}$   
+\end_layout
+
+\begin_layout Plain Layout
+
+      & $
+\backslash
+Sexpr{format(round(sum(res_fds6$coefficients[7]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds6)$coefficients[7,4]<.01,"***",ifelse(summary(res_fds
+6)$coefficients[7,4]<.05,"**",ifelse(summary(res_fds6)$coefficients[7,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fds7$coefficients[7]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds7)$coefficients[7,4]<.01,"***",ifelse(summary(res_fds
+7)$coefficients[7,4]<.05,"**",ifelse(summary(res_fds7)$coefficients[7,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds8$coefficients[7]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds8)$coefficients[7,4]<.01,"***",ifelse(summary(res_fds
+8)$coefficients[7,4]<.05,"**",ifelse(summary(res_fds8)$coefficients[7,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fds9$coefficients[7]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds9)$coefficients[7,4]<.01,"***",ifelse(summary(res_fds
+9)$coefficients[7,4]<.05,"**",ifelse(summary(res_fds9)$coefficients[7,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds10$coefficients[7]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds10)$coefficients[7,4]<.01,"***",ifelse(summary(res_fd
+s10)$coefficients[7,4]<.05,"**",ifelse(summary(res_fds10)$coefficients[7,4]<.1,"*"
+,"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds11$coefficients[7]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds11)$coefficients[7,4]<.01,"***",ifelse(summary(res_fd
+s11)$coefficients[7,4]<.05,"**",ifelse(summary(res_fds11)$coefficients[7,4]<.1,"*"
+,"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds12$coefficients[7]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds12)$coefficients[7,4]<.01,"***",ifelse(summary(res_fd
+s12)$coefficients[7,4]<.05,"**",ifelse(summary(res_fds12)$coefficients[7,4]<.1,"*"
+,"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+                              & $(
+\backslash
+Sexpr{format(round(se_fds1[7],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_fds2[7],digits=4),nsmall=0)})$   & $(
+\backslash
+Sexpr{format(round(se_fds3[7],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_fds4[7],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_fds5[7],digits=4),nsmall=0)})$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+             & $(
+\backslash
+Sexpr{format(round(se_fds6[7],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_fds7[7],digits=4),nsmall=0)})$   & $(
+\backslash
+Sexpr{format(round(se_fds8[7],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_fds9[7],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_fds10[7],digits=4),nsmall=0)})$  & $(
+\backslash
+Sexpr{format(round(se_fds11[7],digits=4),nsmall=0)})$      & $(
+\backslash
+Sexpr{format(round(se_fds12[7],digits=4),nsmall=0)})$             
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+  {Farmer's marital status}
+\end_layout
+
+\begin_layout Plain Layout
+
+                  & $
+\backslash
+Sexpr{format(round(sum(res_fds1$coefficients[8]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds1)$coefficients[8,4]<.01,"***",ifelse(summary(res_fds
+1)$coefficients[8,4]<.05,"**",ifelse(summary(res_fds1)$coefficients[8,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fds2$coefficients[8]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds2)$coefficients[8,4]<.01,"***",ifelse(summary(res_fds
+2)$coefficients[8,4]<.05,"**",ifelse(summary(res_fds2)$coefficients[8,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds3$coefficients[8]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds3)$coefficients[8,4]<.01,"***",ifelse(summary(res_fds
+3)$coefficients[8,4]<.05,"**",ifelse(summary(res_fds3)$coefficients[8,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fds4$coefficients[8]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds4)$coefficients[8,4]<.01,"***",ifelse(summary(res_fds
+4)$coefficients[8,4]<.05,"**",ifelse(summary(res_fds4)$coefficients[8,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds5$coefficients[8]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds5)$coefficients[8,4]<.01,"***",ifelse(summary(res_fds
+5)$coefficients[8,4]<.05,"**",ifelse(summary(res_fds5)$coefficients[8,4]<.1,"*",""
+)))}}$   
+\end_layout
+
+\begin_layout Plain Layout
+
+      & $
+\backslash
+Sexpr{format(round(sum(res_fds6$coefficients[8]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds6)$coefficients[8,4]<.01,"***",ifelse(summary(res_fds
+6)$coefficients[8,4]<.05,"**",ifelse(summary(res_fds6)$coefficients[8,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fds7$coefficients[8]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds7)$coefficients[8,4]<.01,"***",ifelse(summary(res_fds
+7)$coefficients[8,4]<.05,"**",ifelse(summary(res_fds7)$coefficients[8,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds8$coefficients[8]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds8)$coefficients[8,4]<.01,"***",ifelse(summary(res_fds
+8)$coefficients[8,4]<.05,"**",ifelse(summary(res_fds8)$coefficients[8,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fds9$coefficients[8]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds9)$coefficients[8,4]<.01,"***",ifelse(summary(res_fds
+9)$coefficients[8,4]<.05,"**",ifelse(summary(res_fds9)$coefficients[8,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds10$coefficients[8]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds10)$coefficients[8,4]<.01,"***",ifelse(summary(res_fd
+s10)$coefficients[8,4]<.05,"**",ifelse(summary(res_fds10)$coefficients[8,4]<.1,"*"
+,"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds11$coefficients[8]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds11)$coefficients[8,4]<.01,"***",ifelse(summary(res_fd
+s11)$coefficients[8,4]<.05,"**",ifelse(summary(res_fds11)$coefficients[8,4]<.1,"*"
+,"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds12$coefficients[8]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds12)$coefficients[8,4]<.01,"***",ifelse(summary(res_fd
+s12)$coefficients[8,4]<.05,"**",ifelse(summary(res_fds12)$coefficients[8,4]<.1,"*"
+,"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+                              & $(
+\backslash
+Sexpr{format(round(se_fds1[8],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_fds2[8],digits=4),nsmall=0)})$   & $(
+\backslash
+Sexpr{format(round(se_fds3[8],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_fds4[8],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_fds5[8],digits=4),nsmall=0)})$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+             & $(
+\backslash
+Sexpr{format(round(se_fds6[8],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_fds7[8],digits=4),nsmall=0)})$   & $(
+\backslash
+Sexpr{format(round(se_fds8[8],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_fds9[8],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_fds10[8],digits=4),nsmall=0)})$  & $(
+\backslash
+Sexpr{format(round(se_fds11[8],digits=4),nsmall=0)})$      & $(
+\backslash
+Sexpr{format(round(se_fds12[8],digits=4),nsmall=0)})$              
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+    {Dealer's age}
+\end_layout
+
+\begin_layout Plain Layout
+
+              & $
+\backslash
+Sexpr{format(round(sum(res_fds1$coefficients[9]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds1)$coefficients[9,4]<.01,"***",ifelse(summary(res_fds
+1)$coefficients[9,4]<.05,"**",ifelse(summary(res_fds1)$coefficients[9,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fds2$coefficients[9]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds2)$coefficients[9,4]<.01,"***",ifelse(summary(res_fds
+2)$coefficients[9,4]<.05,"**",ifelse(summary(res_fds2)$coefficients[9,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds3$coefficients[9]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds3)$coefficients[9,4]<.01,"***",ifelse(summary(res_fds
+3)$coefficients[9,4]<.05,"**",ifelse(summary(res_fds3)$coefficients[9,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fds4$coefficients[9]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds4)$coefficients[9,4]<.01,"***",ifelse(summary(res_fds
+4)$coefficients[9,4]<.05,"**",ifelse(summary(res_fds4)$coefficients[9,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds5$coefficients[9]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds5)$coefficients[9,4]<.01,"***",ifelse(summary(res_fds
+5)$coefficients[9,4]<.05,"**",ifelse(summary(res_fds5)$coefficients[9,4]<.1,"*",""
+)))}}$   
+\end_layout
+
+\begin_layout Plain Layout
+
+      & $
+\backslash
+Sexpr{format(round(sum(res_fds6$coefficients[9]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds6)$coefficients[9,4]<.01,"***",ifelse(summary(res_fds
+6)$coefficients[9,4]<.05,"**",ifelse(summary(res_fds6)$coefficients[9,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fds7$coefficients[9]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds7)$coefficients[9,4]<.01,"***",ifelse(summary(res_fds
+7)$coefficients[9,4]<.05,"**",ifelse(summary(res_fds7)$coefficients[9,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds8$coefficients[9]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds8)$coefficients[9,4]<.01,"***",ifelse(summary(res_fds
+8)$coefficients[9,4]<.05,"**",ifelse(summary(res_fds8)$coefficients[9,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fds9$coefficients[9]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds9)$coefficients[9,4]<.01,"***",ifelse(summary(res_fds
+9)$coefficients[9,4]<.05,"**",ifelse(summary(res_fds9)$coefficients[9,4]<.1,"*",""
+)))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds10$coefficients[9]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds10)$coefficients[9,4]<.01,"***",ifelse(summary(res_fd
+s10)$coefficients[9,4]<.05,"**",ifelse(summary(res_fds10)$coefficients[9,4]<.1,"*"
+,"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds11$coefficients[9]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds11)$coefficients[9,4]<.01,"***",ifelse(summary(res_fd
+s11)$coefficients[9,4]<.05,"**",ifelse(summary(res_fds11)$coefficients[9,4]<.1,"*"
+,"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds12$coefficients[9]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds12)$coefficients[9,4]<.01,"***",ifelse(summary(res_fd
+s12)$coefficients[9,4]<.05,"**",ifelse(summary(res_fds12)$coefficients[9,4]<.1,"*"
+,"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+                              & $(
+\backslash
+Sexpr{format(round(se_fds1[9],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_fds2[9],digits=4),nsmall=0)})$   & $(
+\backslash
+Sexpr{format(round(se_fds3[9],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_fds4[9],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_fds5[9],digits=4),nsmall=0)})$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+             & $(
+\backslash
+Sexpr{format(round(se_fds6[9],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_fds7[9],digits=4),nsmall=0)})$   & $(
+\backslash
+Sexpr{format(round(se_fds8[9],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_fds9[9],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_fds10[9],digits=4),nsmall=0)})$  & $(
+\backslash
+Sexpr{format(round(se_fds11[9],digits=4),nsmall=0)})$      & $(
+\backslash
+Sexpr{format(round(se_fds12[9],digits=4),nsmall=0)})$   
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+   {Dealer's education}
+\end_layout
+
+\begin_layout Plain Layout
+
+               & $
+\backslash
+Sexpr{format(round(sum(res_fds1$coefficients[10]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds1)$coefficients[10,4]<.01,"***",ifelse(summary(res_fd
+s1)$coefficients[10,4]<.05,"**",ifelse(summary(res_fds1)$coefficients[10,4]<.1,"*"
+,"")))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fds2$coefficients[10]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds2)$coefficients[10,4]<.01,"***",ifelse(summary(res_fd
+s2)$coefficients[10,4]<.05,"**",ifelse(summary(res_fds2)$coefficients[10,4]<.1,"*"
+,"")))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds3$coefficients[10]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds3)$coefficients[10,4]<.01,"***",ifelse(summary(res_fd
+s3)$coefficients[10,4]<.05,"**",ifelse(summary(res_fds3)$coefficients[10,4]<.1,"*"
+,"")))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fds4$coefficients[10]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds4)$coefficients[10,4]<.01,"***",ifelse(summary(res_fd
+s4)$coefficients[10,4]<.05,"**",ifelse(summary(res_fds4)$coefficients[10,4]<.1,"*"
+,"")))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds5$coefficients[10]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds5)$coefficients[10,4]<.01,"***",ifelse(summary(res_fd
+s5)$coefficients[10,4]<.05,"**",ifelse(summary(res_fds5)$coefficients[10,4]<.1,"*"
+,"")))}}$   
+\end_layout
+
+\begin_layout Plain Layout
+
+      & $
+\backslash
+Sexpr{format(round(sum(res_fds6$coefficients[10]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds6)$coefficients[10,4]<.01,"***",ifelse(summary(res_fd
+s6)$coefficients[10,4]<.05,"**",ifelse(summary(res_fds6)$coefficients[10,4]<.1,"*"
+,"")))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fds7$coefficients[10]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds7)$coefficients[10,4]<.01,"***",ifelse(summary(res_fd
+s7)$coefficients[10,4]<.05,"**",ifelse(summary(res_fds7)$coefficients[10,4]<.1,"*"
+,"")))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds8$coefficients[10]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds8)$coefficients[10,4]<.01,"***",ifelse(summary(res_fd
+s8)$coefficients[10,4]<.05,"**",ifelse(summary(res_fds8)$coefficients[10,4]<.1,"*"
+,"")))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fds9$coefficients[10]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds9)$coefficients[10,4]<.01,"***",ifelse(summary(res_fd
+s9)$coefficients[10,4]<.05,"**",ifelse(summary(res_fds9)$coefficients[10,4]<.1,"*"
+,"")))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds10$coefficients[10]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds10)$coefficients[10,4]<.01,"***",ifelse(summary(res_f
+ds10)$coefficients[10,4]<.05,"**",ifelse(summary(res_fds10)$coefficients[10,4]<.1,
+"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds11$coefficients[10]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds11)$coefficients[10,4]<.01,"***",ifelse(summary(res_f
+ds11)$coefficients[10,4]<.05,"**",ifelse(summary(res_fds11)$coefficients[10,4]<.1,
+"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds12$coefficients[10]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds12)$coefficients[10,4]<.01,"***",ifelse(summary(res_f
+ds12)$coefficients[10,4]<.05,"**",ifelse(summary(res_fds12)$coefficients[10,4]<.1,
+"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+                              & $(
+\backslash
+Sexpr{format(round(se_fds1[10],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_fds2[10],digits=4),nsmall=0)})$   & $(
+\backslash
+Sexpr{format(round(se_fds3[10],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_fds4[10],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_fds5[10],digits=4),nsmall=0)})$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+             & $(
+\backslash
+Sexpr{format(round(se_fds6[10],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_fds7[10],digits=4),nsmall=0)})$   & $(
+\backslash
+Sexpr{format(round(se_fds8[10],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_fds9[10],digits=4),nsmall=0)})$     & $(
+\backslash
+Sexpr{format(round(se_fds10[10],digits=4),nsmall=0)})$  & $(
+\backslash
+Sexpr{format(round(se_fds11[10],digits=4),nsmall=0)})$      & $(
+\backslash
+Sexpr{format(round(se_fds12[10],digits=4),nsmall=0)})$              
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ {Gender(F):Gender(D)} 
+\end_layout
+
+\begin_layout Plain Layout
+
+               & 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fds2$coefficients[11]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds2)$coefficients[11,4]<.01,"***",ifelse(summary(res_fd
+s2)$coefficients[11,4]<.05,"**",ifelse(summary(res_fds2)$coefficients[11,4]<.1,"*"
+,"")))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(sum(res_fds4$coefficients[11]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds4)$coefficients[11,4]<.01,"***",ifelse(summary(res_fd
+s4)$coefficients[11,4]<.05,"**",ifelse(summary(res_fds4)$coefficients[11,4]<.1,"*"
+,"")))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ &    
+\end_layout
+
+\begin_layout Plain Layout
+
+      & $
+\backslash
+Sexpr{format(round(sum(res_fds6$coefficients[11]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds6)$coefficients[11,4]<.01,"***",ifelse(summary(res_fd
+s6)$coefficients[11,4]<.05,"**",ifelse(summary(res_fds6)$coefficients[11,4]<.1,"*"
+,"")))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds8$coefficients[11]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds8)$coefficients[11,4]<.01,"***",ifelse(summary(res_fd
+s8)$coefficients[11,4]<.05,"**",ifelse(summary(res_fds8)$coefficients[11,4]<.1,"*"
+,"")))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds10$coefficients[11]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds10)$coefficients[11,4]<.01,"***",ifelse(summary(res_f
+ds10)$coefficients[11,4]<.05,"**",ifelse(summary(res_fds10)$coefficients[11,4]<.1,
+"*","")))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format(round(sum(res_fds12$coefficients[11]),digits=4),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(res_fds12)$coefficients[11,4]<.01,"***",ifelse(summary(res_f
+ds12)$coefficients[11,4]<.05,"**",ifelse(summary(res_fds12)$coefficients[11,4]<.1,
+"*","")))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+                              &     & $(
+\backslash
+Sexpr{format(round(se_fds2[11],digits=4),nsmall=0)})$   &      & $(
+\backslash
+Sexpr{format(round(se_fds4[11],digits=4),nsmall=0)})$     & 
+\end_layout
+
+\begin_layout Plain Layout
+
+             & $(
+\backslash
+Sexpr{format(round(se_fds6[11],digits=4),nsmall=0)})$     &    & $(
+\backslash
+Sexpr{format(round(se_fds8[11],digits=4),nsmall=0)})$     &    & $(
+\backslash
+Sexpr{format(round(se_fds10[11],digits=4),nsmall=0)})$
+\end_layout
+
+\begin_layout Plain Layout
+
+   &    & $(
+\backslash
+Sexpr{format(round(se_fds12[11],digits=4),nsmall=0)})$         
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+
+\backslash
+ 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+R$^2$                   & $
+\backslash
+Sexpr{format(round(summary(res_fds1)$r.squared,digits=4),nsmall=0)}$    
+   & $
+\backslash
+Sexpr{format(round(summary(res_fds2)$r.squared,digits=4),nsmall=0)}$    
+   & $
+\backslash
+Sexpr{format(round(summary(res_fds3)$r.squared,digits=4),nsmall=0)}$    
+   & $
+\backslash
+Sexpr{format(round(summary(res_fds4)$r.squared,digits=4),nsmall=0)}$    &
+ $
+\backslash
+Sexpr{format(round(summary(res_fds5)$r.squared,digits=4),nsmall=0)}$ & $
+\backslash
+Sexpr{format(round(summary(res_fds6)$r.squared,digits=4),nsmall=0)}$ & $
+\backslash
+Sexpr{format(round(summary(res_fds7)$r.squared,digits=4),nsmall=0)}$ & $
+\backslash
+Sexpr{format(round(summary(res_fds8)$r.squared,digits=4),nsmall=0)}$ & $
+\backslash
+Sexpr{format(round(summary(res_fds9)$r.squared,digits=4),nsmall=0)}$ & $
+\backslash
+Sexpr{format(round(summary(res_fds10)$r.squared,digits=4),nsmall=0)}$ & $
+\backslash
+Sexpr{format(round(summary(res_fds11)$r.squared,digits=4),nsmall=0)}$ & $
+\backslash
+Sexpr{format(round(summary(res_fds12)$r.squared,digits=4),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+ Adj.
+ R$^2$                         & $
+\backslash
+Sexpr{format(round(summary(res_fds1)$adj.r.squared,digits=4),nsmall=0)}$ 
+      & $
+\backslash
+Sexpr{format(round(summary(res_fds2)$adj.r.squared,digits=4),nsmall=0)}$ 
+      & $
+\backslash
+Sexpr{format(round(summary(res_fds3)$adj.r.squared,digits=4),nsmall=0)}$ 
+      & $
+\backslash
+Sexpr{format(round(summary(res_fds4)$adj.r.squared,digits=4),nsmall=0)}$ 
+   & $
+\backslash
+Sexpr{format(round(summary(res_fds5)$adj.r.squared,digits=4),nsmall=0)}$ &
+ $
+\backslash
+Sexpr{format(round(summary(res_fds6)$adj.r.squared,digits=4),nsmall=0)}$ &
+ $
+\backslash
+Sexpr{format(round(summary(res_fds7)$adj.r.squared,digits=4),nsmall=0)}$ &
+ $
+\backslash
+Sexpr{format(round(summary(res_fds8)$adj.r.squared,digits=4),nsmall=0)}$ &
+ $
+\backslash
+Sexpr{format(round(summary(res_fds9)$adj.r.squared,digits=4),nsmall=0)}$ &
+ $
+\backslash
+Sexpr{format(round(summary(res_fds10)$adj.r.squared,digits=4),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(summary(res_fds11)$adj.r.squared,digits=4),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format(round(summary(res_fds12)$adj.r.squared,digits=4),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ Number of obs.
+                     & $
+\backslash
+Sexpr{format(round(nobs(res_fds1),digits=4),nsmall=0)}$       & $
+\backslash
+Sexpr{format(round(nobs(res_fds2),digits=4),nsmall=0)}$       & $
+\backslash
+Sexpr{format(round(nobs(res_fds3),digits=4),nsmall=0)}$       & $
+\backslash
+Sexpr{format(round(nobs(res_fds4),digits=4),nsmall=0)}$    & $
+\backslash
+Sexpr{format(round(nobs(res_fds5),digits=4),nsmall=0)}$ & $
+\backslash
+Sexpr{format(round(nobs(res_fds6),digits=4),nsmall=0)}$ & $
+\backslash
+Sexpr{format(round(nobs(res_fds7),digits=4),nsmall=0)}$ & $
+\backslash
+Sexpr{format(round(nobs(res_fds8),digits=4),nsmall=0)}$ & $
+\backslash
+Sexpr{format(round(nobs(res_fds9),digits=4),nsmall=0)}$ & $
+\backslash
+Sexpr{format(round(nobs(res_fds10),digits=4),nsmall=0)}$ & $
+\backslash
+Sexpr{format(round(nobs(res_fds11),digits=4),nsmall=0)}$ & $
+\backslash
+Sexpr{format(round(nobs(res_fds12),digits=4),nsmall=0)}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+     
+\backslash
+
+\backslash
+ 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{12}{l}{ 
+\backslash
+tiny{$^{***}p<0.01$; $^{**}p<0.05$; $^{*}p<0.1$.}} 
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tabular} 
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: Standard errors are clustered at the dealer level.
+ The dependent variable is the rating given by the farmers and the main
+ independent variables are farmer's and dealer's gender.
+ The dimensions based on which the ratings are given are overall average
+ (models 1, 2), location (models 3, 4), quality (models 5, 6), price (models
+ 7, 8), stock (models 9, 10) and reputation (models 11, 12).
+ Models 2, 4, 6, 8, 10 and 12 include an interaction between the farmer's
+ and dealer's gender while the other models do not.
+ F refers to the farmers and D refers to the dealers.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+caption{Regression results for the impact of farmer's (rater's) and dealer's
+ gender on the ratings given by the farmers to the dealers.} 
+\backslash
+label{table:table5} 
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{table} 
+\backslash
+end{landscape}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \end_body
 \end_document
