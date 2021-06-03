@@ -335,6 +335,9 @@ traders$hh.maize.village[traders$hh.maize.village=="NAMATO"] <- "NAMATO_EAST"
 table(traders$hh.maize.village[traders$hh.maize.village=="NAMANTO"])
 traders$hh.maize.village[traders$hh.maize.village=="NAMANTO"] <- "NAMATO_WEST"
 
+table(traders$hh.maize.village[traders$hh.maize.village=="NAMATO WEST"])
+traders$hh.maize.village[traders$hh.maize.village=="NAMATO WEST"] <- "NAMATO_WEST"
+
 table(traders$hh.maize.village[traders$hh.maize.village=="BULAFU"])
 traders$hh.maize.village[traders$hh.maize.village=="BULAFU"] <- "BULAFA"
 
@@ -380,6 +383,9 @@ traders$hh.maize.village[traders$hh.maize.village=="BULUMBA A"] <- "BULIMBA_A"
 table(traders$hh.maize.village[traders$hh.maize.village=="BULUMBA A (NAMUSISIRI)"])
 traders$hh.maize.village[traders$hh.maize.village=="BULUMBA A (NAMUSISIRI)"] <- "BULIMBA_A"
 
+table(traders$hh.maize.village[traders$hh.maize.village=="NAMUSILISILI"])
+traders$hh.maize.village[traders$hh.maize.village=="NAMUSILISILI"] <- "BULIMBA_A"
+
 table(traders$hh.maize.village[traders$hh.maize.village=="BUSIINI"])
 traders$hh.maize.village[traders$hh.maize.village=="BUSINI"] <- "NANVUNANWA"
 
@@ -399,8 +405,9 @@ table(traders$hh.maize.village[traders$hh.maize.village=="BUSANDA"])
 traders$hh.maize.village[traders$hh.maize.village=="BUSANDA"] <- "BUZAAYA"
 
 
-#returns 3, however, can only find 2 in the Bugiri region 
+#returns 3, however, can only find 2 in the Bugiri region -> There are 3 NAMAYEMBA in the data, but one of them does not have gps data. 
 table(traders$hh.maize.village[traders$hh.maize.village=="NAMAYEMBA"])
+traders$hh.maize.village[traders$hh.maize.village=="NAMAYEMBA"] <- "BUJAKA"
 
 table(traders$hh.maize.village[traders$hh.maize.village=="NAMUWONDO A"])
 traders$hh.maize.village[traders$hh.maize.village=="NAMUWONDO A"] <- "NAMUWONDO_A"
@@ -429,15 +436,38 @@ traders$hh.maize.village[traders$hh.maize.village=="ISEGERO A"] <- "ISEGERO -MAI
 table(traders$hh.maize.village[traders$hh.maize.village=="KIVULE"])
 traders$hh.maize.village[traders$hh.maize.village=="KIVULE"] <- "BUBINGA"
 
-##RETURNS 2, BUT ONLY 1 FOUND. 
 table(traders$hh.maize.village[traders$hh.maize.village=="NAKYERE"])
-##traders$hh.maize.village[traders$hh.maize.village=="NAKYERE"] <- "NABITULUNTU" 
+traders$hh.maize.village[traders$hh.maize.village=="NAKYERE"] <- "NABITULUNTU" 
 
 table(traders$hh.maize.village[traders$hh.maize.village=="BUSUBI"])
 traders$hh.maize.village[traders$hh.maize.village=="BUSUBI"] <- "NANVUNANWA"
 
 table(traders$hh.maize.village[traders$hh.maize.village=="BUSIINI"])
 traders$hh.maize.village[traders$hh.maize.village=="BUSIINI"] <- "NANVUNANWA"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="BULIMBA A"])
+traders$hh.maize.village[traders$hh.maize.village=="BULIMBA A"] <- "BULIMBA_A"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="LWAMBA"])
+traders$hh.maize.village[traders$hh.maize.village=="LWAMBA"] <- "BULIMBA_B"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="KIBALE"])
+traders$hh.maize.village[traders$hh.maize.village=="KIBALE"] <- "BULIMBA_B"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="NABISWEGI"])
+traders$hh.maize.village[traders$hh.maize.village=="NABISWEGI"] <- "BULIMBA_B"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="NABISOIGI"])
+traders$hh.maize.village[traders$hh.maize.village=="NABISOIGI"] <- "BULIMBA_B"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="NABISWA"])
+traders$hh.maize.village[traders$hh.maize.village=="NABISWA"] <- "BULIMBA_B"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="NAMUSISI"])
+traders$hh.maize.village[traders$hh.maize.village=="NAMUSISI"] <- "IKUMBYA"
+
+table(traders$hh.maize.village[traders$hh.maize.village=="NAMUTUMBA TRADING CENTER"])
+traders$hh.maize.village[traders$hh.maize.village=="NAMUTUMBA TRADING CENTER"] <- "IKUMBYA"
 
 
 ### let us see how much we can merge in this first step?
