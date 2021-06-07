@@ -4,6 +4,7 @@ options(scipen=999)
 path_2 <- strsplit(path, "/papers/perceptions")[[1]]
 
 library(miceadds)
+library(texreg)
 
 ################# FARMERS:SEED SYSTEMS ######################
 
@@ -568,3 +569,358 @@ res_fds12<-fds12$lm_res
 
 #########################################################################################################################
 #########################################################################################################################
+
+
+###################################################################################################
+###################################################################################################
+
+#SECTION 1 : LOOKING AT GENDER OF DEALER
+
+################# OVERALL RATING ###########################
+model1<- lm.cluster(data = m, formula = rating_overall ~ dealer_fem, cluster="id.ratee") 
+se_model1 <- sqrt(diag(vcov(model1)))
+res_model1<-model1$lm_res
+
+model2<- lm.cluster(data = m, formula = rating_overall ~ dealer_fem + age + interaction_yes + educ + tarmac
+                    + married + age_dealer + education_dealer, cluster="id.ratee") 
+se_model1 <- sqrt(diag(vcov(model1)))
+res_model1<-model1$lm_res
+
+model3<- lm(data = m, formula = rating_overall ~ dealer_fem + age + interaction_yes + educ + tarmac
+                    + married + age_dealer + education_dealer + farmerID) 
+
+
+######################################################
+############ GETTING DATA READY FOR AVERAGES #########
+######################################################
+
+#averages for each dealer
+
+m[c("rating_overall","rating_location","rating_price","rating_quality",
+    "rating_stock","rating_reputation") ] <- lapply(m[c("rating_overall",
+                                                        "rating_location","rating_price","rating_quality","rating_stock","rating_reputation") ], function(x) as.numeric(as.character(x)) )
+
+m_reviews <- data.frame(cbind(tapply(as.numeric(m$rating_overall), m$id.ratee,mean,na.rm=TRUE),
+                              tapply(as.numeric(m$rating_location), m$id.ratee,mean,na.rm=TRUE),
+                              tapply(as.numeric(m$rating_price), m$id.ratee,mean,na.rm=TRUE),
+                              tapply(as.numeric(m$rating_quality), m$id.ratee,mean,na.rm=TRUE),
+                              tapply(as.numeric(m$rating_stock), m$id.ratee,mean,na.rm=TRUE),
+                              tapply(as.numeric(m$rating_reputation), m$id.ratee,mean,na.rm=TRUE),
+                              tapply(as.numeric(m$age_dealer), m$id.ratee,mean,na.rm=TRUE),
+                              tapply(as.numeric(m$dealer_fem), m$id.ratee,mean,na.rm=TRUE),
+                              tapply(as.numeric(m$education_dealer), m$id.ratee,mean,na.rm=TRUE),
+                              tapply(m$interaction=="Yes", m$id.ratee,sum)))
+names(m_reviews) <- c("rating_overall","rating_location","rating_price",
+                      "rating_quality","rating_stock","rating_reputation","age_dealer",
+                      "dealer_fem","education_dealer","nr_rating")
+
+m_reviews$id.ratee <- rownames(m_reviews)
+
+m_reviews <- na.omit(m_reviews)
+
+##### Regressions #####
+model4<- lm(data = m_reviews, formula = rating_overall ~ dealer_fem ) 
+
+model5<- lm(data = m_reviews, formula = rating_overall ~ dealer_fem +
+              age_dealer + education_dealer + nr_rating) 
+
+
+screenreg(list(model1,model2, model4, model5), stars = c(0.01, 0.05, 0.1))
+summary(model3)
+
+
+################# LOCATION RATING ###########################
+
+model6<- lm.cluster(data = m, formula = rating_location ~ dealer_fem, cluster="id.ratee") 
+se_model6 <- sqrt(diag(vcov(model6)))
+res_model6<-model6$lm_res
+
+model7<- lm.cluster(data = m, formula = rating_location ~ dealer_fem + age + interaction_yes + educ + tarmac
+                    + married + age_dealer + education_dealer, cluster="id.ratee") 
+se_model7 <- sqrt(diag(vcov(model7)))
+res_model7<-model7$lm_res
+
+model8<- lm(data = m, formula = rating_location ~ dealer_fem + age + interaction_yes + educ + tarmac
+            + married + age_dealer + education_dealer + farmerID) 
+
+model9<- lm(data = m_reviews, formula = rating_location ~ dealer_fem ) 
+
+model10<- lm(data = m_reviews, formula = rating_location ~ dealer_fem +
+              age_dealer + education_dealer + nr_rating) 
+
+screenreg(list(model6,model7, model9, model10), stars = c(0.01, 0.05, 0.1))
+summary(model8)
+
+
+################# PRICE RATING ###########################
+
+model11<- lm.cluster(data = m, formula = rating_price ~ dealer_fem, cluster="id.ratee") 
+se_model11 <- sqrt(diag(vcov(model11)))
+res_model11<-model11$lm_res
+
+model12<- lm.cluster(data = m, formula = rating_price ~ dealer_fem + age + interaction_yes + educ + tarmac
+                    + married + age_dealer + education_dealer, cluster="id.ratee") 
+se_model12 <- sqrt(diag(vcov(model12)))
+res_model12<-model12$lm_res
+
+model13<- lm(data = m, formula = rating_price ~ dealer_fem + age + interaction_yes + educ + tarmac
+            + married + age_dealer + education_dealer + farmerID) 
+
+model14<- lm(data = m_reviews, formula = rating_price ~ dealer_fem ) 
+
+model15<- lm(data = m_reviews, formula = rating_price ~ dealer_fem +
+               age_dealer + education_dealer + nr_rating) 
+
+screenreg(list(model11,model12, model14, model15), stars = c(0.01, 0.05, 0.1))
+summary(model13)
+
+
+################# QUALITY RATING ###########################
+
+model16<- lm.cluster(data = m, formula = rating_quality ~ dealer_fem, cluster="id.ratee") 
+se_model16 <- sqrt(diag(vcov(model16)))
+res_model16<-model16$lm_res
+
+model17<- lm.cluster(data = m, formula = rating_quality ~ dealer_fem + age + interaction_yes + educ + tarmac
+                     + married + age_dealer + education_dealer, cluster="id.ratee") 
+se_model17 <- sqrt(diag(vcov(model17)))
+res_model17<-model17$lm_res
+
+model18<- lm(data = m, formula = rating_quality ~ dealer_fem + age + interaction_yes + educ + tarmac
+             + married + age_dealer + education_dealer + farmerID) 
+
+model19<- lm(data = m_reviews, formula = rating_quality ~ dealer_fem ) 
+
+model20<- lm(data = m_reviews, formula = rating_quality ~ dealer_fem +
+               age_dealer + education_dealer + nr_rating) 
+
+screenreg(list(model16,model17, model19, model20), stars = c(0.01, 0.05, 0.1))
+summary(model18)
+
+
+################# STOCK RATING ###########################
+
+model21<- lm.cluster(data = m, formula = rating_stock ~ dealer_fem, cluster="id.ratee") 
+se_model21 <- sqrt(diag(vcov(model21)))
+res_model21<-model21$lm_res
+
+model22<- lm.cluster(data = m, formula = rating_stock ~ dealer_fem + age + interaction_yes + educ + tarmac
+                     + married + age_dealer + education_dealer, cluster="id.ratee") 
+se_model22 <- sqrt(diag(vcov(model22)))
+res_model22<-model22$lm_res
+
+model23<- lm(data = m, formula = rating_stock ~ dealer_fem + age + interaction_yes + educ + tarmac
+             + married + age_dealer + education_dealer + farmerID) 
+
+model24<- lm(data = m_reviews, formula = rating_stock ~ dealer_fem ) 
+
+model25<- lm(data = m_reviews, formula = rating_stock ~ dealer_fem +
+               age_dealer + education_dealer + nr_rating) 
+
+screenreg(list(model21,model22, model24, model25), stars = c(0.01, 0.05, 0.1))
+summary(model23)
+
+
+################# REPUTATION RATING ###########################
+
+model26<- lm.cluster(data = m, formula = rating_reputation ~ dealer_fem, cluster="id.ratee") 
+se_model26 <- sqrt(diag(vcov(model26)))
+res_model26<-model26$lm_res
+
+model27<- lm.cluster(data = m, formula = rating_reputation ~ dealer_fem + age + interaction_yes + educ + tarmac
+                     + married + age_dealer + education_dealer, cluster="id.ratee") 
+se_model27 <- sqrt(diag(vcov(model27)))
+res_model27<-model27$lm_res
+
+model28<- lm(data = m, formula = rating_reputation ~ dealer_fem + age + interaction_yes + educ + tarmac
+             + married + age_dealer + education_dealer + farmerID) 
+
+model29<- lm(data = m_reviews, formula = rating_reputation ~ dealer_fem ) 
+
+model30<- lm(data = m_reviews, formula = rating_reputation ~ dealer_fem +
+               age_dealer + education_dealer + nr_rating) 
+
+screenreg(list(model26,model27, model29, model30), stars = c(0.01, 0.05, 0.1))
+summary(model28)
+
+##########################################################################################
+
+
+
+
+#SECTION 2 : LOOKING AT GENDER OF FARMER
+
+################# OVERALL RATING ###########################
+
+model31<- lm.cluster(data = m, formula = rating_overall ~ gender, cluster="id.ratee") 
+se_model31 <- sqrt(diag(vcov(model31)))
+res_model31<-model31$lm_res
+
+model32<- lm.cluster(data = m, formula = rating_overall ~ gender + age + interaction_yes + educ + tarmac
+                     + married + age_dealer + education_dealer, cluster="id.ratee") 
+se_model32 <- sqrt(diag(vcov(model32)))
+res_model32<-model32$lm_res
+
+model33<- lm(data = m, formula = rating_overall ~ gender + age + interaction_yes + educ + tarmac
+             + married + age_dealer + education_dealer + id.ratee) 
+
+######################################################
+############ GETTING DATA READY FOR AVERAGES #########
+######################################################
+
+#averages for each farmer
+
+mf_reviews <- data.frame(cbind(tapply(as.numeric(m$rating_overall), m$farmerID,mean,na.rm=TRUE),
+                              tapply(as.numeric(m$rating_location), m$farmerID,mean,na.rm=TRUE),
+                              tapply(as.numeric(m$rating_price), m$farmerID,mean,na.rm=TRUE),
+                              tapply(as.numeric(m$rating_quality), m$farmerID,mean,na.rm=TRUE),
+                              tapply(as.numeric(m$rating_stock), m$farmerID,mean,na.rm=TRUE),
+                              tapply(as.numeric(m$rating_reputation), m$farmerID,mean,na.rm=TRUE),
+                              tapply(as.numeric(m$age), m$farmerID,mean,na.rm=TRUE),
+                              tapply(as.numeric(m$tarmac), m$farmerID,mean,na.rm=TRUE),
+                              tapply(as.numeric(m$gender), m$farmerID,mean,na.rm=TRUE),
+                              tapply(as.numeric(m$educ), m$farmerID,mean,na.rm=TRUE),
+                              tapply(as.numeric(m$married), m$farmerID,mean,na.rm=TRUE),
+                              tapply(m$interaction=="Yes", m$farmerID,sum)))
+names(mf_reviews) <- c("rating_overall","rating_location","rating_price",
+                      "rating_quality","rating_stock","rating_reputation","age",
+                      "tarmac","gender","educ","married","nr_rating_given")
+
+mf_reviews$farmerID <- rownames(mf_reviews)
+
+mf_reviews <- na.omit(mf_reviews)
+
+mf_reviews<-mf_reviews[(mf_reviews$gender=="1" | mf_reviews$gender=="0" ),]
+mf_reviews<-mf_reviews[(mf_reviews$educ=="1" | mf_reviews$educ=="0"),]
+mf_reviews<-mf_reviews[( mf_reviews$married=="0"| mf_reviews$married=="1"),]
+
+##################################################################################
+
+#regressions 
+
+model34<- lm(data = mf_reviews, formula = rating_overall ~ gender ) 
+
+model35<- lm(data = mf_reviews, formula = rating_overall ~ gender +
+               age + tarmac + educ + married + nr_rating_given) 
+
+screenreg(list(model31,model32, model34, model35), stars = c(0.01, 0.05, 0.1))
+summary(model33)
+
+
+
+################# LOCATION RATING ###########################
+
+model36<- lm.cluster(data = m, formula = rating_location ~ gender, cluster="id.ratee") 
+se_model36 <- sqrt(diag(vcov(model36)))
+res_model36<-model36$lm_res
+
+model37<- lm.cluster(data = m, formula = rating_location ~ gender + age + interaction_yes + educ + tarmac
+                     + married + age_dealer + education_dealer, cluster="id.ratee") 
+se_model37 <- sqrt(diag(vcov(model37)))
+res_model37<-model37$lm_res
+
+model38<- lm(data = m, formula = rating_location ~ gender + age + interaction_yes + educ + tarmac
+             + married + age_dealer + education_dealer + id.ratee) 
+
+model39<- lm(data = mf_reviews, formula = rating_location ~ gender ) 
+
+model40<- lm(data = mf_reviews, formula = rating_location ~ gender +
+               age + tarmac + educ + married + nr_rating_given) 
+
+screenreg(list(model36,model37, model39, model40), stars = c(0.01, 0.05, 0.1))
+summary(model38)
+
+
+
+################# PRICE RATING ###########################
+
+model41<- lm.cluster(data = m, formula = rating_price ~ gender, cluster="id.ratee") 
+se_model41 <- sqrt(diag(vcov(model41)))
+res_model41<-model41$lm_res
+
+model42<- lm.cluster(data = m, formula = rating_price ~ gender + age + interaction_yes + educ + tarmac
+                     + married + age_dealer + education_dealer, cluster="id.ratee") 
+se_model42 <- sqrt(diag(vcov(model42)))
+res_model42<-model42$lm_res
+
+model43<- lm(data = m, formula = rating_price ~ gender + age + interaction_yes + educ + tarmac
+             + married + age_dealer + education_dealer + id.ratee) 
+
+model44<- lm(data = mf_reviews, formula = rating_price ~ gender ) 
+
+model45<- lm(data = mf_reviews, formula = rating_price ~ gender +
+               age + tarmac + educ + married + nr_rating_given) 
+
+screenreg(list(model41,model42, model44, model45), stars = c(0.01, 0.05, 0.1))
+summary(model43)
+
+
+################# QUALITY RATING ###########################
+
+model46<- lm.cluster(data = m, formula = rating_quality ~ gender, cluster="id.ratee") 
+se_model46 <- sqrt(diag(vcov(model46)))
+res_model46<-model46$lm_res
+
+model47<- lm.cluster(data = m, formula = rating_quality ~ gender + age + interaction_yes + educ + tarmac
+                     + married + age_dealer + education_dealer, cluster="id.ratee") 
+se_model47 <- sqrt(diag(vcov(model47)))
+res_model47<-model47$lm_res
+
+model48<- lm(data = m, formula = rating_quality ~ gender + age + interaction_yes + educ + tarmac
+             + married + age_dealer + education_dealer + id.ratee) 
+
+model49<- lm(data = mf_reviews, formula = rating_quality ~ gender ) 
+
+model50<- lm(data = mf_reviews, formula = rating_quality ~ gender +
+               age + tarmac + educ + married + nr_rating_given) 
+
+screenreg(list(model46,model47, model49, model50), stars = c(0.01, 0.05, 0.1))
+summary(model48)
+
+
+################# STOCK RATING ###########################
+
+model51<- lm.cluster(data = m, formula = rating_stock ~ gender, cluster="id.ratee") 
+se_model51 <- sqrt(diag(vcov(model51)))
+res_model51<-model51$lm_res
+
+model52<- lm.cluster(data = m, formula = rating_stock ~ gender + age + interaction_yes + educ + tarmac
+                     + married + age_dealer + education_dealer, cluster="id.ratee") 
+se_model52 <- sqrt(diag(vcov(model52)))
+res_model52<-model52$lm_res
+
+model53<- lm(data = m, formula = rating_stock ~ gender + age + interaction_yes + educ + tarmac
+             + married + age_dealer + education_dealer + id.ratee) 
+
+model54<- lm(data = mf_reviews, formula = rating_stock ~ gender ) 
+
+model55<- lm(data = mf_reviews, formula = rating_stock ~ gender +
+               age + tarmac + educ + married + nr_rating_given) 
+
+screenreg(list(model51,model52, model54, model55), stars = c(0.01, 0.05, 0.1))
+summary(model53)
+
+
+
+################# REPUTATION RATING ###########################
+
+model56<- lm.cluster(data = m, formula = rating_reputation ~ gender, cluster="id.ratee") 
+se_model56 <- sqrt(diag(vcov(model56)))
+res_model56<-model56$lm_res
+
+model57<- lm.cluster(data = m, formula = rating_reputation ~ gender + age + interaction_yes + educ + tarmac
+                     + married + age_dealer + education_dealer, cluster="id.ratee") 
+se_model57 <- sqrt(diag(vcov(model57)))
+res_model57<-model57$lm_res
+
+model58<- lm(data = m, formula = rating_reputation ~ gender + age + interaction_yes + educ + tarmac
+             + married + age_dealer + education_dealer + id.ratee) 
+
+model59<- lm(data = mf_reviews, formula = rating_reputation ~ gender ) 
+
+model60<- lm(data = mf_reviews, formula = rating_reputation ~ gender +
+              age + tarmac + educ + married + nr_rating_given) 
+
+screenreg(list(model56,model57, model59, model60), stars = c(0.01, 0.05, 0.1))
+summary(model58)
+
