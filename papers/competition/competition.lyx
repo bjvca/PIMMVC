@@ -185,16 +185,39 @@ Motivation
 \end_layout
 
 \begin_layout Standard
-A recent paper by 
+In developing countries, a lack of well functioning input and financial
+ markets constrains the efficiency of commodity value chains.
+ Qualified service providers are often in short supply.
+ A variety of institutional innovations, ranging from simple interlinked
+ contract to complete vertical integration, has been documented in emerging
+ value chains to address this problem 
 \begin_inset CommandInset citation
-LatexCommand citet
-key "10.1093/qje/qjaa048"
+LatexCommand citep
+key "SWINNEN2019298"
 literal "false"
 
 \end_inset
 
- attempts to empirically answer the question whether increased competition
- is beneficial in settings characterized by weak contract enforcement.
+.
+ In informal value chains, some value chain actors may provide services
+ to actors immediately up and/and down-stream 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "https://doi.org/10.1111/agec.12638"
+literal "false"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+However, in interlinked transactions there is always a risk that one of
+ the parties renegades on the agreement.
+ In settings characterized by strong institutions, contracts can be used
+ that stipulate the terms for all parties involved, and the consequences
+ when terms are not met.
  In developing economies, weak contract enforcement leads to the emergence
  of second-best institutions 
 \begin_inset CommandInset citation
@@ -205,9 +228,41 @@ literal "false"
 \end_inset
 
 .
- In commodity value chains, this often takes the form of relational contracts.
- The hypothesis is that increased competition encourages side selling, with
- negative consequences for all parties, particularly in the longer run.
+ In commodity value chains, this often takes the form of relational contracts
+ — informal agreements that are self-enforcing via repeat trading 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "michler2020relational"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Unlike contacts that are legally enforced, relational contacts are affected
+ by competition within the value chain.
+ As alternative opportunities open up, parties may be tempted into side
+ selling.
+ The may reduce the likelihood that parties enter into relational contracts
+ in the future, in turn affecting input and service provisions within the
+ value chain.
+ The reduction in value chain efficiency as a result of reduced inputs and
+ services may outweigh the efficiency gains from competition in improving
+ firm performance and management via selection and incentives 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "10.1093/restud/rdu045"
+literal "false"
+
+\end_inset
+
+.
+ As such, in settings characterized by weak contract enforceability and
+ a high incidence fo relational contacting, the effects of increased competition
+ on firms and indeed, the value chain at large are theoretically ambiguous.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -218,8 +273,11 @@ literal "false"
 
 \end_inset
 
- use the coffee value chain in Rwanda as a case to empirically test the
- predictions of a model.
+ use the coffee value chain in Rwanda as a case to answer this question
+ empirically.
+ Informed by a theoretical model, they test a cluster of predictions and
+ find that increased competition indeed erodes informal institutions and
+ reduces overall well-being.
  However, some of the model assumption seem to be rather specific to the
  case, and it may be argued that some of the predictions may not hold for
  value chains for other commodities with a different organizational structure.
@@ -255,20 +313,16 @@ s may affect external validity, ignoring traders, for instance, may lead
  are affected by selection bias.
 \end_layout
 
-\begin_layout Section*
-Theoretical model
-\end_layout
-
-\begin_layout Section*
-Variable construction
-\end_layout
-
-\begin_layout Subsection*
-Relational agreements
-\end_layout
-
 \begin_layout Standard
-Similar to 
+An alternative model that would lead to a contrasting conclusion would be
+ one where traders compete for produce by tying farmers to them using relational
+ contracts.
+ In this case, a positive correlation between relational contracts and competiti
+on would emerge.
+ This seems to be the case when moral hazard is one sided only? Examples
+ of this can be found in the trade credit literature where an increase in
+ competition leads firms to compete by extending trade credit.
+ But 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "10.1093/qje/qjaa048"
@@ -276,25 +330,169 @@ literal "false"
 
 \end_inset
 
-, we define relational contracts in terms of a set of practices that characteriz
-e transactions between farmers and traders.
- Credit appears to be an important component in relational contracts.
- In our data, farmers report obtaining credit from We further find that
+ argue that they deal with two-sided moral hazard as both farmer and mill
+ can cheat.
  
-\begin_inset ERT
+\end_layout
+
+\begin_layout Section*
+Theoretical model
+\end_layout
+
+\begin_layout Section*
+Data collection
+\end_layout
+
+\begin_layout Standard
+Data was collected from four actors in the maize value chain.
+ We started by randomly selecting maize farmers in 3 maize growing districts
+ in eastern Uganda.
+ (Iganga, Bugiri and Namutumba).
+ The farmer household sample of 1526 farmers is drawn from 64 villages in
+ the three districts.
+ Using the 2012 sampling frame of Uganda National Bureau of Statistics (UBoS),
+ households in the villages were sampled proportional to the village population.
+ The village locations were selected through a process of stratified random
+ sampling at sub-county level.
+ In each of the three districts, the sub-counties from which the villages
+ were sampled were sampled based on their distance (km) from the main district
+ town, in the range of 10kms, 20kms and 30kms from the main town.
+ In particular, the following inclusion criteria were used: 
+\end_layout
+
+\begin_layout Standard
+i.
+ The sub-county’s land area falling within a given stratum.
+ The rule was to retain sub-counties with more than 80% land area dominating
+ a given stratum.
+ Sub-counties with less than 80% were not considered for further sampling.
+ 
+\end_layout
+
+\begin_layout Standard
+ii.
+ Whether or not the sub-county was an urban settlement.
+ All town councils and town divisions were dropped and did not advance into
+ the subsequent stages of sampling.
+ 
+\end_layout
+
+\begin_layout Standard
+iii.
+ Whether the sub-county was also located within a 10kms radius to other
+ smaller towns from other districts.
+ The rule was to possibly avoid including sub-counties whose households
+ have influences from other small towns.
+ 
+\end_layout
+
+\begin_layout Standard
+The farmers provide the starting point for sampling other value chain actors.
+ In particular, farmers were asked to indicate up to three agro-input dealers,
+ up to three traders and up to three processors.
+ These actors were than tracked and also interviewed.
+ This resulted in 341 trader, 174 millers and 78 agro-input dealers.
+ Data was collected in July 2019 using in-person interviews.
+ There is considerable variation in the questions that were asked to the
+ different value chain actors.
+ This will affect variable construction and subsequent analysis.
+ We collected most data to characterize the farmer trader relationship.
+\end_layout
+
+\begin_layout Section*
+Maize Value Chains
+\end_layout
+
+\begin_layout Standard
+We start by describing a stylized version of the maize value chain and the
+ volumes of maize transacted.
+ We then provide more detailed information on the key actors in the value
+ chain.
+ Next, we report on the measures we will use to capture relational agreements
+ between the different actors.
+ Finally, we explain how competition was measured.
+\end_layout
+
+\begin_layout Subsection*
+Structure of the maize value chain
+\end_layout
+
+\begin_layout Standard
+Maize is grown by the majority of farmers in Uganda.
+ Maize is often inter-cropped with beans.
+ It has a fairly good value to weight ratio, which means it is also a widely
+ traded commodity.
+\end_layout
+
+\begin_layout Standard
+Farmers grow maize on one or two plots.
+ Input use in Uganda is low, with most farmers using traditional seed saved
+ from previous harvest.
+ Some farmer buy improved seed varieties such as hybird or open pollinated
+ varieties from small agro-input dealers which are located in towns or trading
+ centers throughout Uganda.
+ These agro-input shops also sell inorganic fertilizers and chemicals.
+ The also sell rudimentary farming equipment such as hoes and rucksack sprayers.
+\end_layout
+
+\begin_layout Standard
+Farmers consume maize themselves, but also sell substantial amounts.
+ Often, maize is sold at the farmgate to small itinerant traders that aggregate
+ maize for further transport and sale to larger traders or processors.
+ These traders use Indian of Chinese made light motorbikes or bicycles (
+\emph on
+boda-boda
+\emph default
+) to execute their business.
+\end_layout
+
+\begin_layout Standard
+Maize is generally consumed in the form of 
+\emph on
+posho
+\emph default
+, where maize flour is cooked with water to a porridge- or dough-like consistenc
+y.
+ As such, maize mills are important links between producers and consumers.
+ Also for home consumption, farmers rely on small combustion engine powered
+ maize mills (
+\emph on
+baga-baga
+\emph default
+) that are scattered throughout the rural areas.
+ For commercial grade maize flour production, larger mills that run on three-pha
+se electrical power are used.
+ 
+\begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(prop.table(table(traders$hh.maize.q30.f))[2] *100,digits=0),nsmal
-l=0)}
+Also add figures for volumes transacted.
 \end_layout
 
 \end_inset
 
- percent of traders state that the provided to farmers they bought from.
+
+\end_layout
+
+\begin_layout Subsection*
+Descriptive statistics for actors
+\end_layout
+
+\begin_layout Standard
+Summary statistics for the characteristics of traders and farmers are shown
+ in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:summary_stats"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -396,124 +594,6 @@ cline{2-5}
 \end_layout
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-credit & 
-\backslash
-Sexpr{format(round(df_averages[1,1,1],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_averages[1,2,1],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_averages[1,3,1],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_averages[1,4,1],digits=0),nsmall=0)}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-agricultural inputs & 
-\backslash
-Sexpr{format(round(df_averages[2,1,1],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_averages[2,2,1],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_averages[2,3,1],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_averages[2,4,1],digits=0),nsmall=0)}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-training on storage and handling & 
-\backslash
-Sexpr{format(round(df_averages[3,1,1],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_averages[3,2,1],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_averages[3,3,1],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_averages[3,4,1],digits=0),nsmall=0)}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-storage and handling related inputs  & 
-\backslash
-Sexpr{format(round(df_averages[4,1,1],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_averages[4,2,1],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_averages[4,3,1],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_averages[4,4,1],digits=0),nsmall=0)}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-storage and handling related inputs  & 
-\backslash
-Sexpr{format(round(df_averages[5,1,1],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_averages[5,2,1],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_averages[5,3,1],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_averages[5,4,1],digits=0),nsmall=0)}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
 
 \end_layout
 
@@ -866,6 +946,31 @@ Sexpr{format( round(sum(!is.na(traders$certscales)), digits=0),nsmall=0)}
 
 \begin_layout Plain Layout
 
+Competition & 
+\backslash
+Sexpr{format( round(mean(traders$nr_traders, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(median(traders$nr_traders, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(sd(traders$nr_traders, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(sum(!is.na(traders$nr_traders)), digits=0),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -896,90 +1001,6 @@ cline{2-5}
 \end_layout
 
 \begin_layout Plain Layout
-
-credit & 
-\backslash
-Sexpr{format(round(df_averages[1,1,2],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_averages[1,2,2],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_averages[1,3,2],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_averages[1,4,2],digits=0),nsmall=0)}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-agricultural inputs & 
-\backslash
-Sexpr{format(round(df_averages[2,1,2],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_averages[2,2,2],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_averages[2,3,2],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_averages[2,4,2],digits=0),nsmall=0)}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-training on storage and handling & 
-\backslash
-Sexpr{format(round(df_averages[3,1,2],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_averages[3,2,2],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_averages[3,3,2],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_averages[3,4,2],digits=0),nsmall=0)}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-storage and handling related inputs  & 
-\backslash
-Sexpr{format(round(df_averages[4,1,2],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_averages[4,2,2],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_averages[4,3,2],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_averages[4,4,2],digits=0),nsmall=0)}
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-
-\backslash
 
 \end_layout
 
@@ -1259,9 +1280,472 @@ Sexpr{format( round(sum(!is.na(farmers$notrans)), digits=0),nsmall=0)}
 
 \begin_layout Plain Layout
 
+Competition & 
+\backslash
+Sexpr{format( round(mean(farmers$hh.maize.q105, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(median(farmers$hh.maize.q105, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(sd(farmers$hh.maize.q105, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(sum(!is.na(farmers$hh.maize.q105)), digits=0),nsmall=0)}
 \end_layout
 
 \begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+Note:
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Relational agreements
+\end_layout
+
+\begin_layout Standard
+An informal (or relational) agreement is a legally non-binding agreement
+ between value chain actors that describes how actors should behave over
+ the course of the maize growing season.
+ Generally, relational contracts have an inter-temporal aspect, where a
+ service at one point in time is provided (eg credit or training) in exchange
+ for a reward later (eg.
+ a product of a stipulated quality at a certain price).
+ 
+\end_layout
+
+\begin_layout Standard
+Similar to 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "10.1093/qje/qjaa048"
+literal "false"
+
+\end_inset
+
+, we define relational contracts in terms of a set of practices that characteriz
+e transactions between value chain actors.
+ Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:relational"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ shows measures of relational contracts.
+ The top of the panel reports on services that traders report to extend
+ to farmers they buy maize from.
+ The bottom panel reports services that farmers say they receive from the
+ traders they sell to.
+ Credit appears to be an important component in relational contracts.
+ One particularly unique relational agreement between maize farmer and trader
+ is where traders agree buy the maize when it is still in the garden.
+ This practice, which is also common in more sugar cane growing, often means
+ that traders take care of the harvesting and drying.
+ Table 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Relational Contracts
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:relational"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center} 
+\backslash
+footnotesize
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\end_layout
+
+\begin_layout Plain Layout
+
+	& mean & median & standard deviation & obs 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{4}{c}{
+\backslash
+textit{traders}} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-5} 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+credit & 
+\backslash
+Sexpr{format(round(df_averages[1,1,1],digits=3),nsmall=3)} & 
+\backslash
+Sexpr{format(round(df_averages[1,2,1],digits=3),nsmall=3)} & 
+\backslash
+Sexpr{format(round(df_averages[1,3,1],digits=3),nsmall=3)} & 
+\backslash
+Sexpr{format(round(df_averages[1,4,1],digits=0),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+agricultural inputs & 
+\backslash
+Sexpr{format(round(df_averages[2,1,1],digits=3),nsmall=3)} & 
+\backslash
+Sexpr{format(round(df_averages[2,2,1],digits=3),nsmall=3)} & 
+\backslash
+Sexpr{format(round(df_averages[2,3,1],digits=3),nsmall=3)} & 
+\backslash
+Sexpr{format(round(df_averages[2,4,1],digits=0),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+training on storage and handling & 
+\backslash
+Sexpr{format(round(df_averages[3,1,1],digits=3),nsmall=3)} & 
+\backslash
+Sexpr{format(round(df_averages[3,2,1],digits=3),nsmall=3)} & 
+\backslash
+Sexpr{format(round(df_averages[3,3,1],digits=3),nsmall=3)} & 
+\backslash
+Sexpr{format(round(df_averages[3,4,1],digits=0),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+storage and handling related inputs  & 
+\backslash
+Sexpr{format(round(df_averages[4,1,1],digits=3),nsmall=3)} & 
+\backslash
+Sexpr{format(round(df_averages[4,2,1],digits=3),nsmall=3)} & 
+\backslash
+Sexpr{format(round(df_averages[4,3,1],digits=3),nsmall=3)} & 
+\backslash
+Sexpr{format(round(df_averages[4,4,1],digits=0),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Buys before harvest  & 
+\backslash
+Sexpr{format(round(df_averages[5,1,1],digits=3),nsmall=3)} & 
+\backslash
+Sexpr{format(round(df_averages[5,2,1],digits=3),nsmall=3)} & 
+\backslash
+Sexpr{format(round(df_averages[5,3,1],digits=3),nsmall=3)} & 
+\backslash
+Sexpr{format(round(df_averages[5,4,1],digits=0),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-5} 
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{4}{c}{
+\backslash
+textit{farmers}} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-5} 
+\end_layout
+
+\begin_layout Plain Layout
+
+credit & 
+\backslash
+Sexpr{format(round(df_averages[1,1,2],digits=3),nsmall=3)} & 
+\backslash
+Sexpr{format(round(df_averages[1,2,2],digits=3),nsmall=3)} & 
+\backslash
+Sexpr{format(round(df_averages[1,3,2],digits=3),nsmall=3)} & 
+\backslash
+Sexpr{format(round(df_averages[1,4,2],digits=0),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+agricultural inputs & 
+\backslash
+Sexpr{format(round(df_averages[2,1,2],digits=3),nsmall=3)} & 
+\backslash
+Sexpr{format(round(df_averages[2,2,2],digits=3),nsmall=3)} & 
+\backslash
+Sexpr{format(round(df_averages[2,3,2],digits=3),nsmall=3)} & 
+\backslash
+Sexpr{format(round(df_averages[2,4,2],digits=0),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+training on storage and handling & 
+\backslash
+Sexpr{format(round(df_averages[3,1,2],digits=3),nsmall=3)} & 
+\backslash
+Sexpr{format(round(df_averages[3,2,2],digits=3),nsmall=3)} & 
+\backslash
+Sexpr{format(round(df_averages[3,3,2],digits=3),nsmall=3)} & 
+\backslash
+Sexpr{format(round(df_averages[3,4,2],digits=0),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+storage and handling related inputs  & 
+\backslash
+Sexpr{format(round(df_averages[4,1,2],digits=3),nsmall=3)} & 
+\backslash
+Sexpr{format(round(df_averages[4,2,2],digits=3),nsmall=3)} & 
+\backslash
+Sexpr{format(round(df_averages[4,3,2],digits=3),nsmall=3)} & 
+\backslash
+Sexpr{format(round(df_averages[4,4,2],digits=0),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
 
 \end_layout
 
@@ -1326,7 +1810,7 @@ Note:
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -1703,7 +2187,279 @@ literal "false"
  We therefore measure competition at the level of the farmer by simply asking
  how many maize traders or middlemen are buying maize in there village or
  neighborhood.
- Doing so, we find that there are on average 5 traders working in the area.
+ This gives us a direct measure of trader competition at the farmer level.
+ 
+\end_layout
+
+\begin_layout Standard
+To arrive at a measure of competition at the level of the trader, we start
+ from the trader's base location and take the average at the village level
+ of the number of maize traders as reported by the farmers in that village.
+ We experiment with alternative definitions of competition at the trader
+ level in Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Robustness"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Doing so, we find that there are on average 5 traders working in the area.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Competition
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:competition"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center} 
+\backslash
+footnotesize
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\end_layout
+
+\begin_layout Plain Layout
+
+	& mean & median & standard deviation & obs 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{4}{c}{
+\backslash
+textit{traders}} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-5} 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Competition & 
+\backslash
+Sexpr{format( round(mean(traders$nr_traders, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(median(traders$nr_traders, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(sd(traders$nr_traders, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(sum(!is.na(traders$nr_traders)), digits=0),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-5} 
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{4}{c}{
+\backslash
+textit{farmers}} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-5} 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Competition & 
+\backslash
+Sexpr{format( round(mean(farmers$hh.maize.q105, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(median(farmers$hh.maize.q105, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(sd(farmers$hh.maize.q105, na.rm=T), digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format( round(sum(!is.na(farmers$hh.maize.q105)), digits=0),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+Note:
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection*
@@ -1777,6 +2533,13 @@ They will be different from traders.
 
 \begin_layout Section*
 Does competition affect relational agreements?
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Does-competition-affect"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1831,6 +2594,24 @@ should we also add millers to the analysis? We have collected data on relational
  questions about services, only about credit.
  Same for agro-input dealers.
  
+\end_layout
+
+\begin_layout Section*
+Robustness
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Robustness"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+alternative ways to measure competition at the trader level.
+ In the analysis We asked traders to indicate how many traders similar to
+ themselves were operating in the area.
+ Unfortunately
 \end_layout
 
 \begin_layout Standard

@@ -8,6 +8,9 @@ path <- strsplit(path, "/papers/competition")[[1]]
 traders <- read.csv(paste(path,"data/public/traders.csv", sep="/"), stringsAsFactors = TRUE)
 farmers <- read.csv(paste(path,"data/public/farmers.csv", sep="/"), stringsAsFactors = TRUE)
 
+##merge in competion in trader data set that was prepared through linking
+traders <- merge(traders,read.csv(paste(path,"papers/competition/analysis/data/nr_traders.csv", sep="/"), stringsAsFactors = TRUE), by="id.trader" )
+
 ## store data for table 1: dimensions are (variable , statistic, trader/farmer(panel A/B) )
 df_averages <- array(NA,dim=c(10,4,2))
 ### relational contract proxies (trader level)
@@ -95,6 +98,9 @@ farmers$hh.maize.q105[farmers$hh.maize.q105==999] <- NA
 
 ### some quick regressions
 summary(lm((farmers$hh.maize.trader1.q102n == 1 | farmers$hh.maize.trader1.q102n == 2)~hh.maize.q105,data=farmers))
+
+### do traders buy before harvest more if there is more competition? Yes...
+ summary(lm((hh.maize.q38=="Yes")~nr_traders, data=traders))
 
 
 #now merge
