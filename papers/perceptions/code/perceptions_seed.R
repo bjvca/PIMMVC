@@ -1175,3 +1175,261 @@ dealer_stack_seed <-rbind(stack_d,seed_qual) ### putting both datasets together
 c25<- lm(rating_quality~genderdummy +age_dealer+tarmac+murram+educ , data = dealer_stack_seed)
 c26<- lm(rating_quality~genderdummy  , data = dealer_stack_seed)
 screenreg(list(c25, c26), stars = c(0.01, 0.05, 0.1))
+
+
+
+#######################################################
+#######################################################
+#######################################################
+#######################################################
+
+
+
+rating_d <- read.csv(paste(path_2,"/papers/perceptions/data_seed_systems/data/farmer/rating_dyads.csv", sep = "/"))
+baseline_d <- read.csv(paste(path,"/papers/perceptions/data_seed_systems/data/input_dealer/baseline_dealer.csv", sep="/"), stringsAsFactors = FALSE)
+baseline <- merge(rating_d, baseline_d, by="shop_ID")
+
+baseline$quality_rating<-as.numeric(baseline$quality_rating)
+baseline$seed_quality_general_rating<-as.numeric(baseline$seed_quality_general_rating)
+baseline$seed_yield_rating<-as.numeric(baseline$seed_yield_rating)
+baseline$seed_drought_rating<-as.numeric(baseline$seed_drought_rating)
+baseline$seed_disease_rating<-as.numeric(baseline$seed_disease_rating)
+baseline$seed_maturing_rating<-as.numeric(baseline$seed_maturing_rating)
+baseline$seed_germinate_rating<-as.numeric(baseline$seed_germinate_rating)
+
+baseline[baseline=="98"]<-NA
+baseline$score <-  rowMeans(baseline[c("quality_rating","seed_quality_general_rating","seed_yield_rating","seed_drought_rating","seed_disease_rating","seed_maturing_rating","seed_germinate_rating")],na.rm=T)
+
+#create gender dummy
+baseline$genderdummy <- ifelse(baseline$maize.owner.agree.gender == "Male", 1, 0)
+
+#control for age, education, distance of to nearest tarmac road, distance to nearest murram road
+summary(baseline$maize.owner.agree.age)
+baseline$prim <- FALSE
+baseline$prim <- (baseline$maize.owner.agree.educ %in% c("c","d","e","f"))
+
+baseline$maize.owner.agree.q3[baseline$maize.owner.agree.q3==999] <- NA
+summary(baseline$maize.owner.agree.q3)
+summary(baseline$maize.owner.agree.q4)
+
+#additionally control for
+#Q5. Is this a specialized agro-input shop that only sells farm inputs?
+table(baseline$maize.owner.agree.q5)
+
+#Q8. When was this agro-input shop established? (year)
+baseline$years_shop <- 2020 - as.numeric(as.character(substr(baseline$maize.owner.agree.q8, start=1, stop=4)))
+
+#Q69. Are seed stored in a dedicated area, away from other merchandize?
+table(baseline$maize.owner.agree.temp.q69)
+
+#Q71. Do you have a problem with rats or pests (insects, rats)?
+table(baseline$maize.owner.agree.temp.q71)
+
+#Q72. Is the roof leak-proof?
+table(baseline$maize.owner.agree.temp.q72)
+
+#Q73. Is the roof insulated to keep heat out?
+table(baseline$maize.owner.agree.temp.q73)
+
+#Q74. Are the walls insulated to keep the heat out?
+table(baseline$maize.owner.agree.temp.q74)
+
+#Q75. Is the area ventilated
+table(baseline$maize.owner.agree.temp.q75)
+
+#Q76. Are the walls plastered?
+table(baseline$maize.owner.agree.temp.q76)
+
+#Q77. Material of floor in areas where seed is stored?
+baseline$goodfloor <- FALSE
+baseline$goodfloor <- (baseline$maize.owner.agree.temp.q77 %in% c("Cement","Tiles"))
+table(baseline$goodfloor)
+
+#Q78. Lighting conditions in area where seed is stored?
+baseline$badlighting <- FALSE
+baseline$badlighting <- (baseline$maize.owner.agree.temp.q78 %in% c("1"))
+
+#Q79. On what surface are seed stored?
+baseline$badstored <- FALSE
+baseline$badstored <- (baseline$maize.owner.agree.temp.q79 %in% c("1", "2", "96"))
+
+#Q80. Do you see maize seed that is stored in open bags or open containers?
+table(baseline$maize.owner.agree.temp.q80)
+
+#Q81. Do you see any official certificates displayed in the store (eg that the shop was inspected ,that the owner attended trainings or that the business is registered with some association)
+table(baseline$maize.owner.agree.temp.q81)
+
+#Q82. On a scale of 1 to 5, rate this shop in terms of cleanness and professionality 1 poor 5 excellent
+as.numeric(as.character(baseline$maize.owner.agree.temp.q82))
+summary(baseline$maize.owner.agree.temp.q82)
+
+# #Q92. When repackaging seed, do you keep track of expiry date (eg include it in the bag/write it on the bag)
+# baseline_dealer_with_score$maize.owner.agree.q92[baseline_dealer_with_score$maize.owner.agree.q92=="n/a"] <- NA
+# summary(baseline_dealer_with_score$maize.owner.agree.q92)
+
+#Q96. Since last season, did you receive any complaint from a customer that seed you sold was not good?
+table(baseline$maize.owner.agree.q96)
+
+#Q70. Entert the temperature in the seed store (where seed is stored)
+table(baseline$maize.owner.agree.q70)
+
+baseline_f <- merge(baseline, farmers_seedsub, by="farmer_ID")
+
+#creating dummies for analysis 
+baseline_f$educ_f <- 0
+baseline_f$educ_f[baseline_f$Check2.check.maize.q17=="b" |baseline_f$Check2.check.maize.q17=="c" | baseline_f$Check2.check.maize.q17=="d" | baseline_f$Check2.check.maize.q17=="e" | 
+                    baseline_f$Check2.check.maize.q17=="f" |baseline_f$Check2.check.maize.q17=="g" ] <- 1 #educated farmers
+baseline_f$married <- ifelse(baseline_f$Check2.check.maize.q16 == 'a', 1, 0)  #married farmers
+
+baseline_f[baseline_f=="98"]<-NA
+
+#Regressions 
+
+#Overall score
+qual1 <- lm.cluster(score~genderdummy , cluster="shop_ID",data = baseline_f)
+
+qual2 <- lm.cluster(score~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + 
+                      maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + 
+                      maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+                      maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70,cluster="shop_ID", data = baseline_f)
+qual3 <- lm.cluster(score~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + 
+                      maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + 
+                      maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+                      maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70 + married + educ_f + Check2.check.maize.q14 + Check2.check.maize.q8 ,cluster="shop_ID", data = baseline_f)
+qual4 <- lm(score~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + 
+                      maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + 
+                      maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+                      maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70 + married + educ_f + Check2.check.maize.q14 + Check2.check.maize.q8+ farmer_ID, data = baseline_f)
+screenreg(list(qual1, qual2, qual3, c17), stars = c(0.01, 0.05, 0.15))
+summary(qual4)
+
+
+#QUALITY RATING 
+qual5 <- lm.cluster(quality_rating~genderdummy , cluster="shop_ID",data = baseline_f)
+
+qual6 <- lm.cluster(quality_rating~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + 
+                      maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + 
+                      maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+                      maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70,cluster="shop_ID", data = baseline_f)
+qual7 <- lm.cluster(quality_rating~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + 
+                      maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + 
+                      maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+                      maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70 + married + educ_f + Check2.check.maize.q14 + Check2.check.maize.q8 ,cluster="shop_ID", data = baseline_f)
+qual8 <- lm(quality_rating~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + 
+              maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + 
+              maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+              maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70 + married + educ_f + Check2.check.maize.q14 + Check2.check.maize.q8+ farmer_ID, data = baseline_f)
+screenreg(list(qual5, qual6, qual7, c18), stars = c(0.01, 0.05, 0.15))
+summary(qual8)
+
+#GENERAL RATING 
+qual9 <- lm.cluster(seed_quality_general_rating~genderdummy , cluster="shop_ID",data = baseline_f)
+
+qual10 <- lm.cluster(seed_quality_general_rating~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + 
+                      maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + 
+                      maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+                      maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70,cluster="shop_ID", data = baseline_f)
+qual11 <- lm.cluster(seed_quality_general_rating~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + 
+                      maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + 
+                      maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+                      maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70 + married + educ_f + Check2.check.maize.q14 + Check2.check.maize.q8 ,cluster="shop_ID", data = baseline_f)
+qual12 <- lm(seed_quality_general_rating~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + 
+              maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + 
+              maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+              maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70 + married + educ_f + Check2.check.maize.q14 + Check2.check.maize.q8+ farmer_ID, data = baseline_f)
+screenreg(list(qual9, qual10, qual11, c19), stars = c(0.01, 0.05, 0.15))
+summary(qual12)
+
+
+#yield rating 
+qual13 <- lm.cluster(seed_yield_rating~genderdummy , cluster="shop_ID",data = baseline_f)
+
+qual14 <- lm.cluster(seed_yield_rating~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + 
+                       maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + 
+                       maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+                       maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70,cluster="shop_ID", data = baseline_f)
+qual15 <- lm.cluster(seed_yield_rating~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + 
+                       maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + 
+                       maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+                       maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70 + married + educ_f + Check2.check.maize.q14 + Check2.check.maize.q8 ,cluster="shop_ID", data = baseline_f)
+qual16 <- lm(seed_yield_rating~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + 
+               maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + 
+               maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+               maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70 + married + educ_f + Check2.check.maize.q14 + Check2.check.maize.q8+ farmer_ID, data = baseline_f)
+screenreg(list(qual13, qual14, qual15, c20), stars = c(0.01, 0.05, 0.15))
+summary(qual16)
+
+
+#drought resistency rating 
+qual17 <- lm.cluster(seed_drought_rating~genderdummy , cluster="shop_ID",data = baseline_f)
+
+qual18 <- lm.cluster(seed_drought_rating~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + 
+                       maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + 
+                       maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+                       maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70,cluster="shop_ID", data = baseline_f)
+qual19 <- lm.cluster(seed_drought_rating~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + 
+                       maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + 
+                       maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+                       maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70 + married + educ_f + Check2.check.maize.q14 + Check2.check.maize.q8 ,cluster="shop_ID", data = baseline_f)
+qual20 <- lm(seed_drought_rating~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + 
+               maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + 
+               maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+               maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70 + married + educ_f + Check2.check.maize.q14 + Check2.check.maize.q8+ farmer_ID, data = baseline_f)
+screenreg(list(qual17, qual18, qual19, c21), stars = c(0.01, 0.05, 0.15))
+summary(qual20)
+
+#disease resistency rating 
+qual21 <- lm.cluster(seed_disease_rating~genderdummy , cluster="shop_ID",data = baseline_f)
+
+qual22<- lm.cluster(seed_disease_rating~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + 
+                       maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + 
+                       maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+                       maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70,cluster="shop_ID", data = baseline_f)
+qual23 <- lm.cluster(seed_disease_rating~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + 
+                       maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + 
+                       maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+                       maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70 + married + educ_f + Check2.check.maize.q14 + Check2.check.maize.q8 ,cluster="shop_ID", data = baseline_f)
+qual24 <- lm(seed_disease_rating~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + 
+               maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + 
+               maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+               maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70 + married + educ_f + Check2.check.maize.q14 + Check2.check.maize.q8+ farmer_ID, data = baseline_f)
+screenreg(list(qual21, qual22, qual23, c22), stars = c(0.01, 0.05, 0.15))
+summary(qual24)
+
+
+#early maturing rating 
+qual25 <- lm.cluster(seed_maturing_rating~genderdummy , cluster="shop_ID",data = baseline_f)
+
+qual26<- lm.cluster(seed_maturing_rating~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + 
+                      maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + 
+                      maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+                      maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70,cluster="shop_ID", data = baseline_f)
+qual27 <- lm.cluster(seed_maturing_rating~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + 
+                       maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + 
+                       maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+                       maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70 + married + educ_f + Check2.check.maize.q14 + Check2.check.maize.q8 ,cluster="shop_ID", data = baseline_f)
+qual28 <- lm(seed_maturing_rating~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + 
+               maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + 
+               maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+               maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70 + married + educ_f + Check2.check.maize.q14 + Check2.check.maize.q8+ farmer_ID, data = baseline_f)
+screenreg(list(qual25, qual26, qual27, c23), stars = c(0.01, 0.05, 0.15))
+summary(qual28)
+
+#germination rating 
+qual29 <- lm.cluster(seed_germinate_rating~genderdummy , cluster="shop_ID",data = baseline_f)
+
+qual30<- lm.cluster(seed_germinate_rating~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + 
+                      maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + 
+                      maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+                      maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70,cluster="shop_ID", data = baseline_f)
+qual31 <- lm.cluster(seed_germinate_rating~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + 
+                       maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + 
+                       maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+                       maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70 + married + educ_f + Check2.check.maize.q14 + Check2.check.maize.q8 ,cluster="shop_ID", data = baseline_f)
+qual32 <- lm(seed_germinate_rating~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + 
+               maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + 
+               maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+               maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70 + married + educ_f + Check2.check.maize.q14 + Check2.check.maize.q8+ farmer_ID, data = baseline_f)
+screenreg(list(qual29, qual30, qual31, c24), stars = c(0.01, 0.05, 0.15))
+summary(qual32)
+
