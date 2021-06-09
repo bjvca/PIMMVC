@@ -366,7 +366,7 @@ f_seed[f_seed=="999"] <- NA # removing 999
 ################# OVERALL RATING ###########################
 
 #all variables 
-f_seed1<- lm.cluster(data = f_seed, formula = rating_overall ~  gender + age + interaction_yes + educ + tarmac
+f_seed1<- lm.cluster(data = f_seed, formula = rating_overall ~  gender + age + educ + tarmac
                  + married, cluster="id.ratee") 
 fss1 <- sqrt(diag(vcov(f_seed1)))
 res_fss1<-f_seed1$lm_res
@@ -374,7 +374,7 @@ res_fss1<-f_seed1$lm_res
 ################# LOCATION RATING ###########################
 
 #all variables 
-f_seed2<- lm.cluster(data = f_seed, formula = rating_location ~  gender + age + interaction_yes + educ + tarmac
+f_seed2<- lm.cluster(data = f_seed, formula = rating_location ~  gender + age  + educ + tarmac
                      + married, cluster="id.ratee") 
 fss2 <- sqrt(diag(vcov(f_seed2)))
 res_fss2<-f_seed2$lm_res
@@ -383,7 +383,7 @@ res_fss2<-f_seed2$lm_res
 ################# QUALITY RATING ###########################
 
 #all variables 
-f_seed3<- lm.cluster(data = f_seed, formula = rating_quality ~  gender + age + interaction_yes + educ + tarmac
+f_seed3<- lm.cluster(data = f_seed, formula = rating_quality ~  gender + age  + educ + tarmac
                      + married, cluster="id.ratee") 
 fss3 <- sqrt(diag(vcov(f_seed3)))
 res_fss3<-f_seed3$lm_res
@@ -391,25 +391,27 @@ res_fss3<-f_seed3$lm_res
 ################# PRICE RATING ###########################
 
 #all variables 
-f_seed4<- lm.cluster(data = f_seed, formula = rating_price ~  gender + age + interaction_yes + educ + tarmac
+f_seed4<- lm.cluster(data = f_seed, formula = rating_price ~  gender + age  + educ + tarmac
                      + married, cluster="id.ratee") 
 fss4 <- sqrt(diag(vcov(f_seed4)))
 res_fss4<-f_seed4$lm_res
 
 ################# STOCK RATING ###########################
 #all variables
-f_seed5<- lm.cluster(data = f_seed, formula = rating_stock ~  gender + age + interaction_yes + educ + tarmac
+f_seed5<- lm.cluster(data = f_seed, formula = rating_stock ~  gender + age  + educ + tarmac
                      + married, cluster="id.ratee") 
 fss5 <- sqrt(diag(vcov(f_seed5)))
 res_fss5<-f_seed5$lm_res
 
 ################# REPUTATION RATING ###########################
 #all variables
-f_seed6<- lm.cluster(data = f_seed, formula = rating_reputation ~  gender + age + interaction_yes + educ + tarmac
+f_seed6<- lm.cluster(data = f_seed, formula = rating_reputation ~  gender + age + educ + tarmac
                      + married, cluster="id.ratee") 
 fss6 <- sqrt(diag(vcov(f_seed6)))
 res_fss6<-f_seed6$lm_res
 
+
+screenreg(list(f_seed1, f_seed2, f_seed3, f_seed4, f_seed5, f_seed6), stars = c(0.01, 0.05, 0.1))
 
 #######################################################################
 #######################################################################
@@ -464,6 +466,10 @@ se_d5 <- sqrt(diag(vcov(d5)))
 d6<- lm(data = deal, formula = self_rating_reputation ~ dealer_fem + age_dealer + education_dealer) 
 se_d6 <- sqrt(diag(vcov(d6)))
 
+
+screenreg(list(d1,d2,d3,d4,d5,d6), stars = c(0.01, 0.05, 0.1))
+
+
 ################################################################################################################
 ################################################################################################################
 
@@ -486,13 +492,13 @@ m_all <- merge(f_seed,deal_all, by=c("id.ratee"))
 ################# OVERALL RATING ###########################
 
 #all variables 
-fds1<- lm.cluster(data = m_all, formula = rating_overall ~  gender + dealer_fem + age + interaction_yes + educ + tarmac
+fds1<- lm.cluster(data = m_all, formula = rating_overall ~  gender + dealer_fem + age + educ + tarmac
                  + married + age_dealer + education_dealer, cluster="id.ratee") 
 se_fds1 <- sqrt(diag(vcov(fds1)))
 res_fds1<-fds1$lm_res
 
 ##Interaction between sex of farmer and dealer
-fds2<- lm.cluster(data = m_all, formula = rating_overall ~  gender*dealer_fem + age + interaction_yes + educ + tarmac
+fds2<- lm.cluster(data = m_all, formula = rating_overall ~  gender*dealer_fem + age  + educ + tarmac
                  + married + age_dealer + education_dealer, cluster="id.ratee") 
 se_fds2 <- sqrt(diag(vcov(fds2)))
 res_fds2<-fds2$lm_res
@@ -500,13 +506,13 @@ res_fds2<-fds2$lm_res
 ################# LOCATION RATING ###########################
 
 #all variables 
-fds3<- lm.cluster(data = m_all, formula = rating_location ~  gender + dealer_fem + age + interaction_yes + educ + tarmac
+fds3<- lm.cluster(data = m_all, formula = rating_location ~  gender + dealer_fem + age  + educ + tarmac
                  + married + age_dealer + education_dealer, cluster="id.ratee") 
 se_fds3 <- sqrt(diag(vcov(fds3)))
 res_fds3<-fds3$lm_res
 
 ##Interaction between sex of farmer and dealer
-fds4<- lm.cluster(data = m_all, formula = rating_location ~  gender*dealer_fem + age + interaction_yes + educ + tarmac
+fds4<- lm.cluster(data = m_all, formula = rating_location ~  gender*dealer_fem + age  + educ + tarmac
                  + married + age_dealer + education_dealer, cluster="id.ratee") 
 se_fds4 <- sqrt(diag(vcov(fds4)))
 res_fds4<-fds4$lm_res
@@ -514,13 +520,13 @@ res_fds4<-fds4$lm_res
 ################# QUALITY RATING ###########################
 
 #all variables 
-fds5<- lm.cluster(data = m_all, formula = rating_quality ~  gender + dealer_fem + age + interaction_yes + educ + tarmac
+fds5<- lm.cluster(data = m_all, formula = rating_quality ~  gender + dealer_fem + age + educ + tarmac
                  + married + age_dealer + education_dealer, cluster="id.ratee") 
 se_fds5 <- sqrt(diag(vcov(fds5)))
 res_fds5<-fds5$lm_res
 
 ##Interaction between sex of farmer and dealer
-fds6<- lm.cluster(data = m_all, formula = rating_quality ~  gender*dealer_fem + age + interaction_yes + educ + tarmac
+fds6<- lm.cluster(data = m_all, formula = rating_quality ~  gender*dealer_fem + age  + educ + tarmac
                  + married + age_dealer + education_dealer, cluster="id.ratee") 
 se_fds6 <- sqrt(diag(vcov(fds6)))
 res_fds6<-fds6$lm_res
@@ -528,13 +534,13 @@ res_fds6<-fds6$lm_res
 ################# PRICE RATING ###########################
 
 #all variables 
-fds7<- lm.cluster(data = m_all, formula = rating_price ~  gender + dealer_fem + age + interaction_yes + educ + tarmac
+fds7<- lm.cluster(data = m_all, formula = rating_price ~  gender + dealer_fem + age + educ + tarmac
                  + married + age_dealer + education_dealer, cluster="id.ratee") 
 se_fds7 <- sqrt(diag(vcov(fds7)))
 res_fds7<-fds7$lm_res
 
 ##Interaction between sex of farmer and dealer
-fds8<- lm.cluster(data = m_all, formula = rating_price ~  gender*dealer_fem + age + interaction_yes + educ + tarmac
+fds8<- lm.cluster(data = m_all, formula = rating_price ~  gender*dealer_fem + age  + educ + tarmac
                  + married + age_dealer + education_dealer, cluster="id.ratee") 
 se_fds8 <- sqrt(diag(vcov(fds8)))
 res_fds8<-fds8$lm_res
@@ -542,13 +548,13 @@ res_fds8<-fds8$lm_res
 ################# STOCK RATING ###########################
 
 #all variables 
-fds9<- lm.cluster(data = m_all, formula = rating_stock ~  gender + dealer_fem + age + interaction_yes + educ + tarmac
+fds9<- lm.cluster(data = m_all, formula = rating_stock ~  gender + dealer_fem + age + educ + tarmac
                  + married + age_dealer + education_dealer, cluster="id.ratee") 
 se_fds9 <- sqrt(diag(vcov(fds9)))
 res_fds9<-fds9$lm_res
 
 ##Interaction between sex of farmer and dealer
-fds10<- lm.cluster(data = m_all, formula = rating_stock ~  gender*dealer_fem + age + interaction_yes + educ + tarmac
+fds10<- lm.cluster(data = m_all, formula = rating_stock ~  gender*dealer_fem + age + educ + tarmac
                   + married + age_dealer + education_dealer, cluster="id.ratee") 
 se_fds10 <- sqrt(diag(vcov(fds10)))
 res_fds10<-fds10$lm_res
@@ -556,16 +562,20 @@ res_fds10<-fds10$lm_res
 ################# REPUTATION RATING ###########################
 
 #all variables 
-fds11<- lm.cluster(data = m_all, formula = rating_reputation ~  gender + dealer_fem + age + interaction_yes + educ + tarmac
+fds11<- lm.cluster(data = m_all, formula = rating_reputation ~  gender + dealer_fem + age  + educ + tarmac
                   + married + age_dealer + education_dealer, cluster="id.ratee") 
 se_fds11 <- sqrt(diag(vcov(fds11)))
 res_fds11<-fds11$lm_res
 
 ##Interaction between sex of farmer and dealer
-fds12<- lm.cluster(data = m_all, formula = rating_reputation ~  gender*dealer_fem + age + interaction_yes + educ + tarmac
+fds12<- lm.cluster(data = m_all, formula = rating_reputation ~  gender*dealer_fem + age + educ + tarmac
                   + married + age_dealer + education_dealer, cluster="id.ratee") 
 se_fds12 <- sqrt(diag(vcov(fds12)))
 res_fds12<-fds12$lm_res
+
+
+screenreg(list(fds1,fds2,fds3,fds4,fds5,fds6,fds7,fds8,fds9,fds10,fds11,fds12), stars = c(0.01, 0.05, 0.1))
+
 
 #########################################################################################################################
 #########################################################################################################################
@@ -924,3 +934,244 @@ model60<- lm(data = mf_reviews, formula = rating_reputation ~ gender +
 screenreg(list(model56,model57, model59, model60), stars = c(0.01, 0.05, 0.1))
 summary(model58)
 
+
+##########################################################################################
+
+##########################################################################################
+
+
+###########  Replicating Caro's code ####################################################
+
+rating_dyads <- read.csv(paste(path_2,"/papers/perceptions/data_seed_systems/data/farmer/rating_dyads.csv", sep = "/"))
+
+rating_dyads[c("general_rating","location_rating","price_rating","quality_rating","stock_rating","reputation_rating") ] <- lapply(rating_dyads[c("general_rating","location_rating","price_rating","quality_rating","stock_rating","reputation_rating") ], function(x) as.numeric(as.character(x)) )
+
+reviews <- data.frame(cbind(tapply(as.numeric(rating_dyads$general_rating), rating_dyads$shop_ID,mean,na.rm=TRUE),
+                            tapply(as.numeric(rating_dyads$location_rating), rating_dyads$shop_ID,mean,na.rm=TRUE),
+                            tapply(as.numeric(rating_dyads$price_rating), rating_dyads$shop_ID,mean,na.rm=TRUE),
+                            tapply(as.numeric(rating_dyads$quality_rating), rating_dyads$shop_ID,mean,na.rm=TRUE),
+                            tapply(as.numeric(rating_dyads$stock_rating), rating_dyads$shop_ID,mean,na.rm=TRUE),
+                            tapply(as.numeric(rating_dyads$reputation_rating), rating_dyads$shop_ID,mean,na.rm=TRUE),
+                            tapply(rating_dyads$bought_at_dealer=="Yes" | rating_dyads$knows_other_customer=="Yes", rating_dyads$shop_ID,sum)))
+names(reviews) <- c("general_rating","location_rating","price_rating","quality_rating","stock_rating","reputation_rating","nr_reviews")
+
+reviews$shop_ID <- rownames(reviews)
+
+#path <- strsplit(path, "/farmer")[[1]]
+#write.csv(reviews, paste(path, "agro_input/raw/shiny_app/reviews_general.csv",sep="/"), row.names=FALSE)
+
+### now specifically for seed:
+
+rating_dyads[c("seed_quality_general_rating","seed_yield_rating","seed_drought_rating","seed_disease_rating","seed_maturing_rating","seed_germinate_rating") ] <- lapply(rating_dyads[c("seed_quality_general_rating","seed_yield_rating","seed_drought_rating","seed_disease_rating","seed_maturing_rating","seed_germinate_rating") ], function(x) as.numeric(as.character(x)) )
+
+rating_dyads[c("seed_quality_general_rating","seed_yield_rating","seed_drought_rating","seed_disease_rating","seed_maturing_rating","seed_germinate_rating") ] <- lapply(rating_dyads[c("seed_quality_general_rating","seed_yield_rating","seed_drought_rating","seed_disease_rating","seed_maturing_rating","seed_germinate_rating") ], function(x)replace(x, x == 98,NA) )
+
+rating_dyads$quality_rating[rating_dyads$shop_ID == "AD_99"]
+
+reviews <- data.frame(cbind(tapply(as.numeric(rating_dyads$quality_rating), rating_dyads$shop_ID,mean,na.rm=TRUE),
+                            tapply(as.numeric(rating_dyads$seed_quality_general_rating), rating_dyads$shop_ID,mean,na.rm=TRUE),
+                            tapply(as.numeric(rating_dyads$seed_yield_rating), rating_dyads$shop_ID,mean,na.rm=TRUE),
+                            tapply(as.numeric(rating_dyads$seed_drought_rating), rating_dyads$shop_ID,mean,na.rm=TRUE),
+                            tapply(as.numeric(rating_dyads$seed_disease_rating), rating_dyads$shop_ID,mean,na.rm=TRUE),
+                            tapply(as.numeric(rating_dyads$seed_maturing_rating), rating_dyads$shop_ID,mean,na.rm=TRUE),
+                            tapply(as.numeric(rating_dyads$seed_germinate_rating), rating_dyads$shop_ID,mean,na.rm=TRUE),
+                            tapply(rating_dyads$bought_at_dealer=="Yes" | rating_dyads$knows_other_customer=="Yes", rating_dyads$shop_ID,sum)))
+names(reviews) <- c("quality_rating","general","yield","drought_resistent","disease_resistent","early_maturing","germination","nr_reviews")
+
+reviews$shop_ID <- rownames(reviews)
+
+##missings or ratings based on few raters
+# first calcuate catchement areas mean. For that, we need to merge catchment IDs in first
+#treats_shop_level <- read.csv(paste(path,"agro_input/public/treats_shop_level.csv", sep="/"), stringsAsFactors = FALSE)
+
+#reviews <- merge(reviews, treats_shop_level[c("shop_ID","catchID")], by.x="shop_ID", by.y="shop_ID")
+
+#get subgroup means
+#sg_means <- aggregate(reviews[c("quality_rating","general","yield","drought_resistent","disease_resistent","early_maturing","germination") ], list(reviews$catchID), mean, na.rm=T)
+#names(sg_means) <- paste(names(sg_means),"av",sep="_")
+#names(sg_means)[names(sg_means) == "Group.1_av"] <- "catchID"
+
+#reviews <- merge(reviews, sg_means,by.x="catchID",by.y="catchID")
+##not rated: CA average
+#reviews[reviews$nr_reviews==0,c("general","yield","drought_resistent","disease_resistent","early_maturing","germination")] <- reviews[reviews$nr_reviews==0,c("general_av","yield_av","drought_resistent_av","disease_resistent_av","early_maturing_av","germination_av")]
+
+##rated by 1: 33% 1 rating, 66% CA average
+#reviews[reviews$nr_reviews==1,c("general","yield","drought_resistent","disease_resistent","early_maturing","germination")] <- .3333*reviews[reviews$nr_reviews==1,c("general","yield","drought_resistent","disease_resistent","early_maturing","germination")] + .6667*reviews[reviews$nr_reviews==1,c("general_av","yield_av","drought_resistent_av","disease_resistent_av","early_maturing_av","germination_av")]
+##rated by 2: 66% 2 ratings, 33% CA average
+#reviews[reviews$nr_reviews==2,c("general","yield","drought_resistent","disease_resistent","early_maturing","germination")] <- .6667*reviews[reviews$nr_reviews==2,c("general","yield","drought_resistent","disease_resistent","early_maturing","germination")] + .3333*reviews[reviews$nr_reviews==2,c("general_av","yield_av","drought_resistent_av","disease_resistent_av","early_maturing_av","germination_av")]
+#score
+reviews$score <-  rowMeans(reviews[c("quality_rating","general","yield","drought_resistent","disease_resistent","early_maturing","germination")],na.rm=T)
+
+
+#path <- strsplit(path, "/farmer")[[1]]
+#write.csv(reviews, paste(path, "agro_input/raw/shiny_app/reviews_seed.csv",sep="/"), row.names=FALSE)
+
+
+#######################################################
+#differences between ratings of male & female dealers?#
+#######################################################
+
+#merge with dealer baseline data to get gender variable
+baseline_dealer <- read.csv(paste(path,"/papers/perceptions/data_seed_systems/data/input_dealer/baseline_dealer.csv", sep="/"), stringsAsFactors = FALSE)
+baseline_dealer_with_score <- merge(reviews, baseline_dealer, by="shop_ID")
+
+#create gender dummy
+baseline_dealer_with_score$genderdummy <- ifelse(baseline_dealer_with_score$maize.owner.agree.gender == "Male", 1, 0)
+table(baseline_dealer_with_score$genderdummy)
+
+#control for age, education, distance of to nearest tarmac road, distance to nearest murram road
+summary(baseline_dealer_with_score$maize.owner.agree.age)
+baseline_dealer_with_score$prim <- FALSE
+baseline_dealer_with_score$prim <- (baseline_dealer_with_score$maize.owner.agree.educ %in% c("c","d","e","f"))
+summary(baseline_dealer_with_score$prim)
+baseline_dealer_with_score$maize.owner.agree.q3[baseline_dealer_with_score$maize.owner.agree.q3==999] <- NA
+summary(baseline_dealer_with_score$maize.owner.agree.q3)
+summary(baseline_dealer_with_score$maize.owner.agree.q4)
+
+#regressions with only gender dummy#
+
+c1 <- summary(lm(score~genderdummy , data = baseline_dealer_with_score))
+
+c2 <- summary(lm(quality_rating~genderdummy , data = baseline_dealer_with_score))
+c3<-summary(lm(general~genderdummy , data = baseline_dealer_with_score))
+c4<-summary(lm(yield~genderdummy , data = baseline_dealer_with_score))
+c5<-summary(lm(drought_resistent~genderdummy , data = baseline_dealer_with_score))
+c6<-summary(lm(disease_resistent~genderdummy , data = baseline_dealer_with_score))
+c7<-summary(lm(early_maturing~genderdummy , data = baseline_dealer_with_score))
+c8<-summary(lm(germination~genderdummy , data = baseline_dealer_with_score))
+
+screenreg(list(c1,c2,c3,c4,c5,c6,c7,c8), stars = c(0.01, 0.05, 0.1))
+
+#regressions with only gender dummy and basic controls (age, education, distance to tarmac and murram road)#
+
+c9 <- summary(lm(score~genderdummy+ maize.owner.agree.age+prim+maize.owner.agree.q3+maize.owner.agree.q4  , data = baseline_dealer_with_score))
+
+c10 <- summary(lm(quality_rating~genderdummy + maize.owner.agree.age+prim+maize.owner.agree.q3+maize.owner.agree.q4, data = baseline_dealer_with_score))
+c11<-summary(lm(general~genderdummy+ maize.owner.agree.age+prim+maize.owner.agree.q3+maize.owner.agree.q4 , data = baseline_dealer_with_score))
+c12<-summary(lm(yield~genderdummy+ maize.owner.agree.age+prim+maize.owner.agree.q3+maize.owner.agree.q4 , data = baseline_dealer_with_score))
+c13<-summary(lm(drought_resistent~genderdummy+ maize.owner.agree.age+prim+maize.owner.agree.q3+maize.owner.agree.q4 , data = baseline_dealer_with_score))
+c14<-summary(lm(disease_resistent~genderdummy+ maize.owner.agree.age+prim+maize.owner.agree.q3+maize.owner.agree.q4 , data = baseline_dealer_with_score))
+c15<-summary(lm(early_maturing~genderdummy+ maize.owner.agree.age+prim+maize.owner.agree.q3+maize.owner.agree.q4 , data = baseline_dealer_with_score))
+c16<-summary(lm(germination~genderdummy+ maize.owner.agree.age+prim+maize.owner.agree.q3+maize.owner.agree.q4 , data = baseline_dealer_with_score))
+
+screenreg(list(c9,c10,c11,c12,c13,c14,c15,c16), stars = c(0.01, 0.05, 0.1))
+
+#additionally control for
+#Q5. Is this a specialized agro-input shop that only sells farm inputs?
+table(baseline_dealer_with_score$maize.owner.agree.q5)
+
+#Q8. When was this agro-input shop established? (year)
+baseline_dealer_with_score$years_shop <- 2020 - as.numeric(as.character(substr(baseline_dealer_with_score$maize.owner.agree.q8, start=1, stop=4)))
+summary(baseline_dealer_with_score$years_shop)
+
+#Q69. Are seed stored in a dedicated area, away from other merchandize?
+table(baseline_dealer_with_score$maize.owner.agree.temp.q69)
+
+#Q71. Do you have a problem with rats or pests (insects, rats)?
+table(baseline_dealer_with_score$maize.owner.agree.temp.q71)
+
+#Q72. Is the roof leak-proof?
+table(baseline_dealer_with_score$maize.owner.agree.temp.q72)
+
+#Q73. Is the roof insulated to keep heat out?
+table(baseline_dealer_with_score$maize.owner.agree.temp.q73)
+
+#Q74. Are the walls insulated to keep the heat out?
+table(baseline_dealer_with_score$maize.owner.agree.temp.q74)
+
+#Q75. Is the area ventilated
+table(baseline_dealer_with_score$maize.owner.agree.temp.q75)
+
+#Q76. Are the walls plastered?
+table(baseline_dealer_with_score$maize.owner.agree.temp.q76)
+
+#Q77. Material of floor in areas where seed is stored?
+baseline_dealer_with_score$goodfloor <- FALSE
+baseline_dealer_with_score$goodfloor <- (baseline_dealer_with_score$maize.owner.agree.temp.q77 %in% c("Cement","Tiles"))
+table(baseline_dealer_with_score$goodfloor)
+
+#Q78. Lighting conditions in area where seed is stored?
+baseline_dealer_with_score$badlighting <- FALSE
+baseline_dealer_with_score$badlighting <- (baseline_dealer_with_score$maize.owner.agree.temp.q78 %in% c("1"))
+table(baseline_dealer_with_score$badlighting)
+
+#Q79. On what surface are seed stored?
+baseline_dealer_with_score$badstored <- FALSE
+baseline_dealer_with_score$badstored <- (baseline_dealer_with_score$maize.owner.agree.temp.q79 %in% c("1", "2", "96"))
+table(baseline_dealer_with_score$badstored)
+
+#Q80. Do you see maize seed that is stored in open bags or open containers?
+table(baseline_dealer_with_score$maize.owner.agree.temp.q80)
+
+#Q81. Do you see any official certificates displayed in the store (eg that the shop was inspected ,that the owner attended trainings or that the business is registered with some association)
+table(baseline_dealer_with_score$maize.owner.agree.temp.q81)
+
+#Q82. On a scale of 1 to 5, rate this shop in terms of cleanness and professionality 1 poor 5 excellent
+as.numeric(as.character(baseline_dealer_with_score$maize.owner.agree.temp.q82))
+summary(baseline_dealer_with_score$maize.owner.agree.temp.q82)
+
+# #Q92. When repackaging seed, do you keep track of expiry date (eg include it in the bag/write it on the bag)
+# baseline_dealer_with_score$maize.owner.agree.q92[baseline_dealer_with_score$maize.owner.agree.q92=="n/a"] <- NA
+# summary(baseline_dealer_with_score$maize.owner.agree.q92)
+
+#Q96. Since last season, did you receive any complaint from a customer that seed you sold was not good?
+table(baseline_dealer_with_score$maize.owner.agree.q96)
+
+#Q70. Entert the temperature in the seed store (where seed is stored)
+table(baseline_dealer_with_score$maize.owner.agree.q70)
+
+# #moisture
+# summary(baseline_dealer_with_score$reading)
+
+#regressions with gender dummy and all controls#
+
+c17 <- lm(score~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70, data = baseline_dealer_with_score)
+
+c18 <- lm(quality_rating~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70, data = baseline_dealer_with_score)
+c19 <- lm(general~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70, data = baseline_dealer_with_score)
+c20 <- lm(yield~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70, data = baseline_dealer_with_score)
+c21 <- lm(drought_resistent~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70, data = baseline_dealer_with_score)
+c22 <- lm(disease_resistent~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70, data = baseline_dealer_with_score)
+c23 <- lm(early_maturing~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70, data = baseline_dealer_with_score)
+c24 <- lm(germination~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70, data = baseline_dealer_with_score)
+
+screenreg(list(c17,c18,c19,c20,c21,c22,c23,c24), stars = c(0.01, 0.05, 0.1))
+
+
+
+###### Prepping data for analysing quality rating with both stack and seeds data ######## 
+
+dealers_stack <- dealers[ , c("hh.maize.q6g", "hh.maize.q7","hh.maize.q9","hh.maize.q6a","hh.maize.q6b",
+                             "id.agro")]  
+names(dealers_stack) <- c("age_dealer", "gender_dealer", "educ_dealer","tarmac","murram","id.ratee") #getting dealer variables
+
+###getting ratings given by farmers
+ratings_dealer <- ratings[ , c("id.ratee", "rating_quality")]  
+
+###merging
+stack_d <- merge(dealers_stack,ratings_dealer, by=c("id.ratee"))
+
+## creating dummies
+stack_d$genderdummy <- ifelse(stack_d$gender_dealer == 'Male', 1, 0) #male dealers
+stack_d$educ <- 0
+stack_d$educ[stack_d$educ_dealer=="b" | stack_d$educ_dealer=="c" | stack_d$educ_dealer=="d" | stack_d$educ_dealer=="e" | 
+                              stack_d$educ_dealer=="f" |stack_d$educ_dealer=="g" ] <- 1 #educated dealers 
+
+stack_d[stack_d=="999"]<- NA
+
+stack_d <- stack_d[ , c("id.ratee", "rating_quality","age_dealer", "genderdummy", "educ","tarmac","murram")]  
+
+### extracting variables from seeds data
+seed_qual <- baseline_dealer_with_score[ , c("genderdummy", "maize.owner.agree.age","prim","maize.owner.agree.q3","maize.owner.agree.q4",
+                              "shop_ID", "quality_rating")]  
+seed_qual$educ <- ifelse(seed_qual$prim == 'TRUE', 1, 0)
+
+names(seed_qual) <- c("genderdummy","age_dealer", "prim","tarmac","murram","id.ratee","rating_quality","educ")
+seed_qual <- seed_qual[ , c("genderdummy","age_dealer","tarmac","murram","id.ratee","rating_quality","educ")]  
+
+dealer_stack_seed <-rbind(stack_d,seed_qual) ### putting both datasets together
+
+### Regression
+c25<- lm(rating_quality~genderdummy +age_dealer+tarmac+murram+educ , data = dealer_stack_seed)
+c26<- lm(rating_quality~genderdummy  , data = dealer_stack_seed)
+screenreg(list(c25, c26), stars = c(0.01, 0.05, 0.1))
