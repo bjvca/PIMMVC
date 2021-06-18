@@ -5,6 +5,7 @@ path_2 <- strsplit(path, "/papers/perceptions")[[1]]
 
 library(miceadds)
 library(texreg)
+library(plyr)
 
 ################# FARMERS:SEED SYSTEMS ######################
 
@@ -1531,3 +1532,36 @@ summary(fe14)
 summary(fe15)
 summary(fe16)
 #still farmer characteristics in the reg, all insignificant 
+
+
+#########################################################################################################
+
+
+farm_1 <- subset(c, freq==1) #farmers who have rated just once
+
+fe_lim1 <- lm(score~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + 
+            maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + 
+            maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+            maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70 + married + educ_f + Check2.check.maize.q14 + Check2.check.maize.q8+ farmer_ID, data =farm_1)
+
+summary(fe_lim1)
+
+fe_lim2 <- lm(score~genderdummy + married + educ_f + Check2.check.maize.q14 + Check2.check.maize.q8+ farmer_ID, data =farm_1)
+
+summary(fe_lim2)
+
+
+dup<-farm_1[!duplicated(farm_1$shop_ID), ] #20 farmers rating 20 unique dealers
+count(dup$farmer_ID)
+count(dup$shop_ID)
+
+fe_lim3 <- lm(score~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + 
+                maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + 
+                maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+                maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70 + married + educ_f + Check2.check.maize.q14 + Check2.check.maize.q8+ farmer_ID, data =dup)
+
+
+fe_lim4 <- lm(score~genderdummy + married + educ_f + farmer_ID, data =dup)
+
+summary(fe_lim3)
+summary(fe_lim4)
