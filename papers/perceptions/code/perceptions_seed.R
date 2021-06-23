@@ -1304,6 +1304,12 @@ qual4 <- lm(score~genderdummy + maize.owner.agree.age + prim + maize.owner.agree
 screenreg(list(qual1, qual2, qual3, c17), stars = c(0.01, 0.05, 0.15))
 summary(qual4)
 
+#farmer fixed effects without farmer vars
+fe_f1 <- lm(score~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + 
+              maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + 
+              maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+              maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70 +farmer_ID, data = baseline_f)
+summary(fe_f1)
 
 #QUALITY RATING 
 qual5 <- lm.cluster(quality_rating~genderdummy , cluster="shop_ID",data = baseline_f)
@@ -1323,6 +1329,14 @@ qual8 <- lm(quality_rating~genderdummy + maize.owner.agree.age + prim + maize.ow
 screenreg(list(qual5, qual6, qual7, c18), stars = c(0.01, 0.05, 0.15))
 summary(qual8)
 
+#farmer fixed effects without farmer vars 
+fe_f2 <- lm(quality_rating~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + 
+              maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + 
+              maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+              maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70 + farmer_ID, data = baseline_f)
+summary(fe_f2)
+
+
 #GENERAL RATING 
 qual9 <- lm.cluster(seed_quality_general_rating~genderdummy , cluster="shop_ID",data = baseline_f)
 
@@ -1341,6 +1355,12 @@ qual12 <- lm(seed_quality_general_rating~genderdummy + maize.owner.agree.age + p
 screenreg(list(qual9, qual10, qual11, c19), stars = c(0.01, 0.05, 0.15))
 summary(qual12)
 
+#farmer fixed effects without farmer vars 
+fe_f3 <- lm(seed_quality_general_rating~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + 
+              maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + 
+              maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+              maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70 + farmer_ID, data = baseline_f)
+summary(fe_f3)
 
 #yield rating 
 qual13 <- lm.cluster(seed_yield_rating~genderdummy , cluster="shop_ID",data = baseline_f)
@@ -1359,6 +1379,13 @@ qual16 <- lm(seed_yield_rating~genderdummy + maize.owner.agree.age + prim + maiz
                maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70 + married + educ_f + Check2.check.maize.q14 + Check2.check.maize.q8+ farmer_ID, data = baseline_f)
 screenreg(list(qual13, qual14, qual15, c20), stars = c(0.01, 0.05, 0.15))
 summary(qual16)
+
+#farmer fixed effects without farmer vars 
+fe_f4 <- lm(seed_yield_rating~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + 
+              maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + 
+              maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+              maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70 + farmer_ID, data = baseline_f)
+summary(fe_f4)
 
 
 #drought resistency rating 
@@ -1379,6 +1406,14 @@ qual20 <- lm(seed_drought_rating~genderdummy + maize.owner.agree.age + prim + ma
 screenreg(list(qual17, qual18, qual19, c21), stars = c(0.01, 0.05, 0.15))
 summary(qual20)
 
+#farmer fixed effects without farmer vars 
+fe_f5 <- lm(seed_drought_rating~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + 
+              maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + 
+              maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+              maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70 + farmer_ID, data = baseline_f)
+summary(fe_f5)
+
+
 #disease resistency rating 
 qual21 <- lm.cluster(seed_disease_rating~genderdummy , cluster="shop_ID",data = baseline_f)
 
@@ -1397,6 +1432,12 @@ qual24 <- lm(seed_disease_rating~genderdummy + maize.owner.agree.age + prim + ma
 screenreg(list(qual21, qual22, qual23, c22), stars = c(0.01, 0.05, 0.15))
 summary(qual24)
 
+#farmer fixed effects without farmer vars 
+fe_f6 <- lm(seed_disease_rating~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + 
+              maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + 
+              maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+              maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70 + farmer_ID, data = baseline_f)
+summary(fe_f6)
 
 #early maturing rating 
 qual25 <- lm.cluster(seed_maturing_rating~genderdummy , cluster="shop_ID",data = baseline_f)
@@ -1416,6 +1457,14 @@ qual28 <- lm(seed_maturing_rating~genderdummy + maize.owner.agree.age + prim + m
 screenreg(list(qual25, qual26, qual27, c23), stars = c(0.01, 0.05, 0.15))
 summary(qual28)
 
+#farmer fixed effects without farmer vars 
+fe_f7 <- lm(seed_maturing_rating~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + 
+              maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + 
+              maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+              maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70 + farmer_ID, data = baseline_f)
+summary(fe_f7)
+
+
 #germination rating 
 qual29 <- lm.cluster(seed_germinate_rating~genderdummy , cluster="shop_ID",data = baseline_f)
 
@@ -1434,6 +1483,18 @@ qual32 <- lm(seed_germinate_rating~genderdummy + maize.owner.agree.age + prim + 
 screenreg(list(qual29, qual30, qual31, c24), stars = c(0.01, 0.05, 0.15))
 summary(qual32)
 
+
+#farmer fixed effects without farmer vars 
+fe_f8 <- lm(seed_germinate_rating~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + 
+              maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + 
+              maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+              maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70 + farmer_ID, data = baseline_f)
+summary(fe_f8)
+
+screenreg(list(fe_f1,fe_f2, fe_f3, fe_f4, fe_f5, fe_f6, fe_f7, fe_f8), stars = c(0.01, 0.05, 0.10), file="farmer_fe.doc")
+
+
+texreg(list(fe_f1,fe_f2, fe_f3, fe_f4, fe_f5, fe_f6, fe_f7, fe_f8), stars = c(0.01, 0.05, 0.10))
 
 ############################################################################################################
 count<-count(baseline_f$farmer_ID) #saving the number of occurrences 
