@@ -1013,7 +1013,7 @@ reviews$score <-  rowMeans(reviews[c("quality_rating","general","yield","drought
 #######################################################
 
 #merge with dealer baseline data to get gender variable
-baseline_dealer <- read.csv(paste(path,"/papers/perceptions/data_seed_systems/data/input_dealer/baseline_dealer.csv", sep="/"), stringsAsFactors = FALSE)
+baseline_dealer <- read.csv(paste(path,"/data_seed_systems/data/input_dealer/baseline_dealer.csv", sep="/"), stringsAsFactors = FALSE)
 baseline_dealer_with_score <- merge(reviews, baseline_dealer, by="shop_ID")
 
 #create gender dummy
@@ -1187,7 +1187,7 @@ screenreg(list(c25, c26), stars = c(0.01, 0.05, 0.1))
 
 
 rating_d <- read.csv(paste(path_2,"/papers/perceptions/data_seed_systems/data/farmer/rating_dyads.csv", sep = "/"))
-baseline_d <- read.csv(paste(path,"/papers/perceptions/data_seed_systems/data/input_dealer/baseline_dealer.csv", sep="/"), stringsAsFactors = FALSE)
+baseline_d <- read.csv(paste(path_2,"/papers/perceptions/data_seed_systems/data/input_dealer/baseline_dealer.csv", sep="/"), stringsAsFactors = FALSE)
 baseline <- merge(rating_d, baseline_d, by="shop_ID")
 
 baseline$quality_rating<-as.numeric(baseline$quality_rating)
@@ -1309,6 +1309,8 @@ fe_f1 <- lm(score~genderdummy + maize.owner.agree.age + prim + maize.owner.agree
               maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + 
               maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
               maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70 +farmer_ID, data = baseline_f)
+              
+              fe_f1 <- lm(score~genderdummy +farmer_ID, data = baseline_f)
 summary(fe_f1)
 
 #QUALITY RATING 
