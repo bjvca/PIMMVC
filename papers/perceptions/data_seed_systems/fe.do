@@ -104,5 +104,87 @@ xtreg seed_germinate_rat male maizeowneragreeage prim maizeowneragreeq3 maizeown
             maizeowneragreetempq82 q96 maizeowneragreeq70, fe
 			
 			
-			
-			
+
+********************************************************************************************************************
+import delimited "G:\My Drive\Classroom\Documents from Drive\Pre Doctoral KUL\Paper with Bjorn\PIMMVC\papers\perceptions\data_seed_systems\data\farmer\baseline_f_merged.csv", case(preserve)
+
+encode farmer_ID, gen(farm_id)
+encode shop_ID, gen(deal_id)
+
+tset farm_id deal_id
+
+table deal_id farm_id
+xttab deal_id
+
+sum maizeowneragreeage prim maizeowneragreeq3 maizeowneragreeq4 maizeowneragreeq5 years_shop  ///
+ maizeowneragreetempq69 maizeowneragreetempq71 maizeowneragreetempq72 maizeowneragreetempq73 ///
+ maizeowneragreetempq74 maizeowneragreetempq75 maizeowneragreetempq76 goodfloor badlighting ///
+ badstored maizeowneragreetempq80 maizeowneragreetempq81 maizeowneragreetempq82  maizeowneragreeq96 maizeowneragreeq70
+		
+
+gen score_n = real(score)
+gen qual_rat = real(quality_rating)
+gen seed_quality_general_rat = real(seed_quality_general_rating)
+gen seed_yield_rat = real(seed_yield_rating)
+gen seed_drought_rat = real(seed_drought_rating)
+gen seed_disease_rat = real(seed_disease_rating)
+gen seed_maturing_rat = real(seed_maturing_rating)
+gen seed_germinate_rat = real(seed_germinate_rating)		
+encode prim, gen(educ)
+encode maizeowneragreeq3, gen(q3)
+encode maizeowneragreeq5, gen(q5)
+encode maizeowneragreetempq69, gen(q69)
+encode maizeowneragreetempq71, gen(q71)
+encode maizeowneragreetempq72, gen(q72)
+encode maizeowneragreetempq73, gen(q73)
+encode maizeowneragreetempq74, gen(q74)
+encode maizeowneragreetempq75, gen(q75)
+encode maizeowneragreetempq76, gen(q76)
+encode goodfloor, gen(goodfloor_n)
+encode badlighting, gen(badlighting_n)
+encode badstored, gen(badstored_n)
+encode maizeowneragreetempq80, gen(q80)
+encode maizeowneragreetempq81, gen(q81)
+encode maizeowneragreeq96, gen(q96)
+
+reg score_n genderdummy
+
+xtreg score_n genderdummy, fe
+
+xtreg score_n genderdummy maizeowneragreeage educ q3 maizeowneragreeq4 q5 years_shop q69 q71 q72 q73 q74 q75 q76 goodfloor_n badlighting_n ///
+			  badstored_n q80 q81 maizeowneragreetempq82 q96 maizeowneragreeq70, fe
+	
+xtreg qual_rat genderdummy, fe
+
+xtreg qual_rat genderdummy maizeowneragreeage educ q3 maizeowneragreeq4 q5 years_shop q69 q71 q72 q73 q74 q75 q76 goodfloor_n badlighting_n ///
+			  badstored_n q80 q81 maizeowneragreetempq82 q96 maizeowneragreeq70, fe
+			  
+xtreg seed_quality_general_rat genderdummy, fe
+
+xtreg seed_quality_general_rat genderdummy maizeowneragreeage educ q3 maizeowneragreeq4 q5 years_shop q69 q71 q72 q73 q74 q75 q76 goodfloor_n badlighting_n ///
+			  badstored_n q80 q81 maizeowneragreetempq82 q96 maizeowneragreeq70, fe
+
+xtreg seed_yield_rat genderdummy, fe
+
+xtreg seed_yield_rat genderdummy maizeowneragreeage educ q3 maizeowneragreeq4 q5 years_shop q69 q71 q72 q73 q74 q75 q76 goodfloor_n badlighting_n ///
+			  badstored_n q80 q81 maizeowneragreetempq82 q96 maizeowneragreeq70, fe
+			  
+xtreg seed_drought_rat genderdummy, fe
+
+xtreg seed_drought_rat genderdummy maizeowneragreeage educ q3 maizeowneragreeq4 q5 years_shop q69 q71 q72 q73 q74 q75 q76 goodfloor_n badlighting_n ///
+			  badstored_n q80 q81 maizeowneragreetempq82 q96 maizeowneragreeq70, fe
+			  
+xtreg seed_disease_rat genderdummy, fe
+
+xtreg seed_disease_rat genderdummy maizeowneragreeage educ q3 maizeowneragreeq4 q5 years_shop q69 q71 q72 q73 q74 q75 q76 goodfloor_n badlighting_n ///
+			  badstored_n q80 q81 maizeowneragreetempq82 q96 maizeowneragreeq70, fe
+			  
+xtreg seed_maturing_rat genderdummy, fe
+
+xtreg seed_maturing_rat genderdummy maizeowneragreeage educ q3 maizeowneragreeq4 q5 years_shop q69 q71 q72 q73 q74 q75 q76 goodfloor_n badlighting_n ///
+			  badstored_n q80 q81 maizeowneragreetempq82 q96 maizeowneragreeq70, fe
+			  
+xtreg seed_germinate_rat genderdummy, fe
+
+xtreg seed_germinate_rat genderdummy maizeowneragreeage educ q3 maizeowneragreeq4 q5 years_shop q69 q71 q72 q73 q74 q75 q76 goodfloor_n badlighting_n ///
+			  badstored_n q80 q81 maizeowneragreetempq82 q96 maizeowneragreeq70, fe

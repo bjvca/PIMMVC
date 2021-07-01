@@ -1310,7 +1310,7 @@ fe_f1 <- lm(score~genderdummy + maize.owner.agree.age + prim + maize.owner.agree
               maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
               maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70 +farmer_ID, data = baseline_f)
               
-              fe_f1 <- lm(score~genderdummy +farmer_ID, data = baseline_f)
+              fe_f1_1 <- lm(score~genderdummy +farmer_ID, data = baseline_f)
 summary(fe_f1)
 
 #QUALITY RATING 
@@ -1495,8 +1495,11 @@ summary(fe_f8)
 
 screenreg(list(fe_f1,fe_f2, fe_f3, fe_f4, fe_f5, fe_f6, fe_f7, fe_f8), stars = c(0.01, 0.05, 0.10), file="farmer_fe.doc")
 
-
+#farmer fixed effects without farmer vars 
 texreg(list(fe_f1,fe_f2, fe_f3, fe_f4, fe_f5, fe_f6, fe_f7, fe_f8), stars = c(0.01, 0.05, 0.10))
+#saving the data
+write.csv(baseline_f,paste(path_2,"/papers/perceptions/data_seed_systems/data/farmer/baseline_f_merged.csv", sep="/"), row.names=FALSE)
+
 
 ############################################################################################################
 count<-count(baseline_f$farmer_ID) #saving the number of occurrences 
@@ -1628,3 +1631,6 @@ fe_lim4 <- lm(score~genderdummy + married + educ_f + farmer_ID, data =dup)
 
 summary(fe_lim3)
 summary(fe_lim4)
+
+write.csv(baseline_f,paste(path_2,"/papers/perceptions/data_seed_systems/data/farmer/baseline_f_merged.csv", sep="/"), row.names=FALSE)
+
