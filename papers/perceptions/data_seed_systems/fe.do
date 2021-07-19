@@ -113,8 +113,8 @@ encode shop_ID, gen(deal_id)
 
 tset farm_id deal_id
 
-table deal_id farm_id
-xttab deal_id
+*table deal_id farm_id
+*xttab deal_id
 
 sum maizeowneragreeage prim maizeowneragreeq3 maizeowneragreeq4 maizeowneragreeq5 years_shop  ///
  maizeowneragreetempq69 maizeowneragreetempq71 maizeowneragreetempq72 maizeowneragreetempq73 ///
@@ -129,9 +129,12 @@ gen seed_yield_rat = real(seed_yield_rating)
 gen seed_drought_rat = real(seed_drought_rating)
 gen seed_disease_rat = real(seed_disease_rating)
 gen seed_maturing_rat = real(seed_maturing_rating)
-gen seed_germinate_rat = real(seed_germinate_rating)		
+gen seed_germinate_rat = real(seed_germinate_rating)	
 encode prim, gen(educ)
-encode maizeowneragreeq3, gen(q3)
+
+gen q3 = real(maizeowneragreeq3)
+
+*encode maizeowneragreeq3, gen(q3)
 encode maizeowneragreeq5, gen(q5)
 encode maizeowneragreetempq69, gen(q69)
 encode maizeowneragreetempq71, gen(q71)

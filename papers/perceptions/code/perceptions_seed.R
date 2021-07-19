@@ -1510,6 +1510,13 @@ fe_f1 <- lm(score~genderdummy + maize.owner.agree.age + prim + maize.owner.agree
               fe_f1_1 <- lm(score~genderdummy +farmer_ID, data = baseline_f)
 summary(fe_f1)
 
+fe_f1_try <- plm(score~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + 
+                   maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + 
+                   maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+                   maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70, data = baseline_f, 
+                 index=c("farmer_ID", "shop_ID"), model="within")
+summary(fe_f1_try)
+
 #QUALITY RATING 
 qual5 <- lm.cluster(quality_rating~genderdummy , cluster="shop_ID",data = baseline_f)
 
@@ -1534,6 +1541,13 @@ fe_f2 <- lm(quality_rating~genderdummy + maize.owner.agree.age + prim + maize.ow
               maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
               maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70 + farmer_ID, data = baseline_f)
 summary(fe_f2)
+
+fe_f2_try <- plm(quality_rating~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + 
+                   maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + 
+                   maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+                   maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70, data = baseline_f, 
+                 index=c("farmer_ID", "shop_ID"), model="within")
+summary(fe_f2_try)
 
 
 #GENERAL RATING 
@@ -1561,6 +1575,13 @@ fe_f3 <- lm(seed_quality_general_rating~genderdummy + maize.owner.agree.age + pr
               maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70 + farmer_ID, data = baseline_f)
 summary(fe_f3)
 
+fe_f3_try <- plm(seed_quality_general_rating~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + 
+                   maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + 
+                   maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+                   maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70, data = baseline_f, 
+                 index=c("farmer_ID", "shop_ID"), model="within")
+summary(fe_f3_try)
+
 #yield rating 
 qual13 <- lm.cluster(seed_yield_rating~genderdummy , cluster="shop_ID",data = baseline_f)
 
@@ -1585,6 +1606,13 @@ fe_f4 <- lm(seed_yield_rating~genderdummy + maize.owner.agree.age + prim + maize
               maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
               maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70 + farmer_ID, data = baseline_f)
 summary(fe_f4)
+
+fe_f4_try <- plm(seed_yield_rating~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + 
+                   maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + 
+                   maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+                   maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70, data = baseline_f, 
+                 index=c("farmer_ID", "shop_ID"), model="within")
+summary(fe_f4_try)
 
 
 #drought resistency rating 
@@ -1612,6 +1640,13 @@ fe_f5 <- lm(seed_drought_rating~genderdummy + maize.owner.agree.age + prim + mai
               maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70 + farmer_ID, data = baseline_f)
 summary(fe_f5)
 
+fe_f5_try <- plm(seed_drought_rating~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + 
+                   maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + 
+                   maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+                   maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70, data = baseline_f, 
+                 index=c("farmer_ID", "shop_ID"), model="within")
+summary(fe_f5_try)
+
 
 #disease resistency rating 
 qual21 <- lm.cluster(seed_disease_rating~genderdummy , cluster="shop_ID",data = baseline_f)
@@ -1638,6 +1673,14 @@ fe_f6 <- lm(seed_disease_rating~genderdummy + maize.owner.agree.age + prim + mai
               maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70 + farmer_ID, data = baseline_f)
 summary(fe_f6)
 
+fe_f6_try <- plm(seed_disease_rating~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + 
+                   maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + 
+                   maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+                   maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70, data = baseline_f, 
+                 index=c("farmer_ID", "shop_ID"), model="within")
+summary(fe_f6_try)
+
+
 #early maturing rating 
 qual25 <- lm.cluster(seed_maturing_rating~genderdummy , cluster="shop_ID",data = baseline_f)
 
@@ -1662,6 +1705,13 @@ fe_f7 <- lm(seed_maturing_rating~genderdummy + maize.owner.agree.age + prim + ma
               maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
               maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70 + farmer_ID, data = baseline_f)
 summary(fe_f7)
+
+fe_f7_try <- plm(seed_maturing_rating~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + 
+                   maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + 
+                   maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+                   maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70, data = baseline_f, 
+                 index=c("farmer_ID", "shop_ID"), model="within")
+summary(fe_f7_try)
 
 
 #germination rating 
@@ -1689,6 +1739,13 @@ fe_f8 <- lm(seed_germinate_rating~genderdummy + maize.owner.agree.age + prim + m
               maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
               maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70 + farmer_ID, data = baseline_f)
 summary(fe_f8)
+
+fe_f8_try <- plm(seed_germinate_rating~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + 
+                   maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + 
+                   maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+                   maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70, data = baseline_f, 
+                 index=c("farmer_ID", "shop_ID"), model="within")
+summary(fe_f8_try)
 
 screenreg(list(fe_f1,fe_f2, fe_f3, fe_f4, fe_f5, fe_f6, fe_f7, fe_f8), stars = c(0.01, 0.05, 0.10), file="farmer_fe.doc")
 
