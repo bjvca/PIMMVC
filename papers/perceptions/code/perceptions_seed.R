@@ -248,6 +248,27 @@ d <- dealers_ss[ , c("id.ratee", "age_dealer","dealer_fem","education_dealer")]
 #merging farmers and dealers data by dealer id
 m <- merge(farmers_seed_stack,d, by=c("id.ratee"))
 
+
+###########  Replicating Caro's code ####################################################
+
+avg <- data.frame(cbind(tapply(as.numeric(m$rating_location), m$id.ratee,mean,na.rm=TRUE),
+                            tapply(as.numeric(m$rating_quality), m$id.ratee,mean,na.rm=TRUE),
+                            tapply(as.numeric(m$rating_price), m$id.ratee,mean,na.rm=TRUE),
+                            tapply(as.numeric(m$rating_stock),m$id.ratee,mean,na.rm=TRUE),
+                            tapply(as.numeric(m$rating_reputation), m$id.ratee,mean,na.rm=TRUE),
+                                   tapply(as.numeric(m$rating_overall), m$id.ratee,mean,na.rm=TRUE)))
+names(avg) <- c("rating_overall","rating_location","rating_quality","rating_price","rating_stock","rating_reputation")
+
+avg$id.ratee <- rownames(avg)
+
+avg<- na.omit(avg)
+
+avgm <- m[ , c("age_dealer", "education_dealer",
+                                           "dealer_fem", "id.ratee")] 
+
+a <- merge(avg, avgm, by="id.ratee")
+
+
 ############################################################################
 ### CLUSTERED REGRESSIONS - LOOKING AT BOTH FARMERS' AND DEALERS' GENDER ###
 ############################################################################
@@ -261,6 +282,22 @@ fd1<- lm.cluster(data = m, formula = rating_overall ~  gender + dealer_fem + age
                          + married + age_dealer + education_dealer, cluster="id.ratee") 
 se_fd1 <- sqrt(diag(vcov(fd1)))
 res_fd1<-fd1$lm_res
+
+fd1_1<- lm.cluster(data = m, formula = rating_overall ~  dealer_fem, cluster="farmerID")
+summary(fd1_1)
+
+summary(lm.cluster(data = m, formula = rating_overall ~  dealer_fem, cluster="id.ratee"))
+summary(lm.cluster(data = m, formula = rating_overall ~  dealer_fem + age + educ + tarmac
+           + married + age_dealer + education_dealer, cluster="id.ratee") )
+summary(lm.cluster(data = m, formula = rating_overall ~  dealer_fem + 
+                    age_dealer + education_dealer, cluster="id.ratee") )
+summary(lm(data = m, formula = rating_overall ~  dealer_fem + farmerID))
+summary(lm(data = m, formula = rating_overall ~  dealer_fem + age_dealer + education_dealer+farmerID))
+
+#caro's approach 
+summary(lm(data = a, formula = rating_overall ~  dealer_fem ))
+summary(lm(data = a, formula = rating_overall ~  dealer_fem + age_dealer + education_dealer))
+
 
 ##Interaction between sex of farmer and dealer
 fd2<- lm.cluster(data = m, formula = rating_overall ~  gender*dealer_fem + age + interaction_yes + educ + tarmac
@@ -276,6 +313,21 @@ fd3<- lm.cluster(data = m, formula = rating_location ~  gender + dealer_fem + ag
 se_fd3 <- sqrt(diag(vcov(fd3)))
 res_fd3<-fd3$lm_res
 
+fd3_3<- lm.cluster(data = m, formula = rating_location ~ dealer_fem , cluster="farmerID") 
+summary(fd3_3)
+
+summary(lm.cluster(data = m, formula = rating_location ~ dealer_fem , cluster="id.ratee") )
+summary(lm.cluster(data = m, formula = rating_location ~  dealer_fem + age + educ + tarmac
+                   + married + age_dealer + education_dealer, cluster="id.ratee") )
+summary(lm.cluster(data = m, formula = rating_location ~  dealer_fem + 
+                     age_dealer + education_dealer, cluster="id.ratee") )
+summary(lm(data = m, formula = rating_location ~  dealer_fem + farmerID))
+summary(lm(data = m, formula = rating_location ~  dealer_fem + age_dealer + education_dealer+farmerID))
+#caro's approach 
+summary(lm(data = a, formula = rating_location ~  dealer_fem ))
+summary(lm(data = a, formula = rating_location ~  dealer_fem + age_dealer + education_dealer))
+
+
 ##Interaction between sex of farmer and dealer
 fd4<- lm.cluster(data = m, formula = rating_location ~  gender*dealer_fem + age + interaction_yes + educ + tarmac
                  + married + age_dealer + education_dealer, cluster="id.ratee") 
@@ -289,6 +341,22 @@ fd5<- lm.cluster(data = m, formula = rating_quality ~  gender + dealer_fem + age
                  + married + age_dealer + education_dealer, cluster="id.ratee") 
 se_fd5 <- sqrt(diag(vcov(fd5)))
 res_fd5<-fd5$lm_res
+
+fd5_5<- lm.cluster(data = m, formula = rating_quality ~  dealer_fem , cluster="farmerID") 
+summary(fd5_5)
+
+summary(lm.cluster(data = m, formula = rating_quality ~  dealer_fem , cluster="id.ratee") )
+summary(lm.cluster(data = m, formula = rating_quality ~  dealer_fem + age + educ + tarmac
+                   + married + age_dealer + education_dealer, cluster="id.ratee") )
+summary(lm.cluster(data = m, formula = rating_quality ~  dealer_fem + 
+                     age_dealer + education_dealer, cluster="id.ratee") )
+summary(lm(data = m, formula = rating_quality ~  dealer_fem + farmerID))
+summary(lm(data = m, formula = rating_quality ~  dealer_fem + age_dealer + education_dealer+farmerID))
+
+#caro's approach 
+summary(lm(data = a, formula = rating_quality ~  dealer_fem ))
+summary(lm(data = a, formula = rating_quality ~  dealer_fem + age_dealer + education_dealer))
+
 
 ##Interaction between sex of farmer and dealer
 fd6<- lm.cluster(data = m, formula = rating_quality ~  gender*dealer_fem + age + interaction_yes + educ + tarmac
@@ -304,6 +372,22 @@ fd7<- lm.cluster(data = m, formula = rating_price ~  gender + dealer_fem + age +
 se_fd7 <- sqrt(diag(vcov(fd7)))
 res_fd7<-fd7$lm_res
 
+fd7_7<- lm.cluster(data = m, formula = rating_price ~  dealer_fem , cluster="farmerID")
+summary(fd7_7)
+
+summary(lm.cluster(data = m, formula = rating_price ~  dealer_fem , cluster="id.ratee"))
+summary(lm.cluster(data = m, formula = rating_price ~  dealer_fem + age + educ + tarmac
+                   + married + age_dealer + education_dealer, cluster="id.ratee") )
+summary(lm.cluster(data = m, formula = rating_price~  dealer_fem + 
+                     age_dealer + education_dealer, cluster="id.ratee") )
+summary(lm(data = m, formula = rating_price ~  dealer_fem + farmerID))
+summary(lm(data = m, formula = rating_price ~  dealer_fem + age_dealer + education_dealer+farmerID))
+#caro's approach 
+summary(lm(data = a, formula = rating_price ~  dealer_fem ))
+summary(lm(data = a, formula = rating_price ~  dealer_fem + age_dealer + education_dealer))
+
+
+
 ##Interaction between sex of farmer and dealer
 fd8<- lm.cluster(data = m, formula = rating_price ~  gender*dealer_fem + age + interaction_yes + educ + tarmac
                  + married + age_dealer + education_dealer, cluster="id.ratee") 
@@ -318,6 +402,22 @@ fd9<- lm.cluster(data = m, formula = rating_stock ~  gender + dealer_fem + age +
 se_fd9 <- sqrt(diag(vcov(fd9)))
 res_fd9<-fd9$lm_res
 
+fd9_9<- lm.cluster(data = m, formula = rating_stock ~  dealer_fem, cluster="farmerID") 
+summary(fd9_9)
+
+summary(lm.cluster(data = m, formula = rating_stock ~  dealer_fem, cluster="id.ratee") )
+summary(lm.cluster(data = m, formula = rating_stock ~  dealer_fem + age + educ + tarmac
+                   + married + age_dealer + education_dealer, cluster="id.ratee") )
+summary(lm.cluster(data = m, formula = rating_stock~  dealer_fem + 
+                     age_dealer + education_dealer, cluster="id.ratee") )
+summary(lm(data = m, formula = rating_stock ~  dealer_fem + farmerID))
+summary(lm(data = m, formula = rating_stock ~  dealer_fem + age_dealer + education_dealer+farmerID))
+#caro's approach 
+summary(lm(data = a, formula = rating_stock ~  dealer_fem ))
+summary(lm(data = a, formula = rating_stock ~  dealer_fem + age_dealer + education_dealer))
+
+
+
 ##Interaction between sex of farmer and dealer
 fd10<- lm.cluster(data = m, formula = rating_stock ~  gender*dealer_fem + age + interaction_yes + educ + tarmac
                  + married + age_dealer + education_dealer, cluster="id.ratee") 
@@ -331,6 +431,22 @@ fd11<- lm.cluster(data = m, formula = rating_reputation ~  gender + dealer_fem +
                  + married + age_dealer + education_dealer, cluster="id.ratee") 
 se_fd11 <- sqrt(diag(vcov(fd11)))
 res_fd11<-fd11$lm_res
+
+fd11_11<- lm.cluster(data = m, formula = rating_reputation ~  dealer_fem , cluster="farmerID") 
+summary(fd11_11)
+
+summary(lm.cluster(data = m, formula = rating_reputation ~  dealer_fem , cluster="id.ratee") )
+summary(lm.cluster(data = m, formula = rating_reputation ~  dealer_fem + age + educ + tarmac
+                   + married + age_dealer + education_dealer, cluster="id.ratee") )
+summary(lm.cluster(data = m, formula = rating_reputation~  dealer_fem + 
+                     age_dealer + education_dealer, cluster="id.ratee") )
+summary(lm(data = m, formula = rating_reputation ~  dealer_fem + farmerID))
+summary(lm(data = m, formula = rating_reputation ~  dealer_fem + age_dealer + education_dealer+farmerID))
+
+#caro's approach 
+summary(lm(data = a, formula = rating_reputation ~  dealer_fem ))
+summary(lm(data = a, formula = rating_reputation ~  dealer_fem + age_dealer + education_dealer))
+
 
 ##Interaction between sex of farmer and dealer
 fd12<- lm.cluster(data = m, formula = rating_reputation ~  gender*dealer_fem + age + interaction_yes + educ + tarmac
