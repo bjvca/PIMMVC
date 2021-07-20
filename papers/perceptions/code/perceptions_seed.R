@@ -6,6 +6,7 @@ path_2 <- strsplit(path, "/papers/perceptions")[[1]]
 library(miceadds)
 library(texreg)
 library(plyr)
+library(plm)
 
 ################# FARMERS:SEED SYSTEMS ######################
 
@@ -1484,7 +1485,11 @@ screenreg(list(g), stars = c(0.01, 0.05, 0.1))
 #Regressions 
 
 #Overall score
+#cluster at dealer level
 qual1 <- lm.cluster(score~genderdummy , cluster="shop_ID",data = baseline_f)
+summary(qual1)
+clus1 <- lm.cluster(score~genderdummy , cluster="farmer_ID",data = baseline_f)
+summary(clus1)
 
 qual2 <- lm.cluster(score~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + 
                       maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + 
@@ -1494,6 +1499,8 @@ qual3 <- lm.cluster(score~genderdummy + maize.owner.agree.age + prim + maize.own
                       maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + 
                       maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
                       maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70 + married + educ_f + Check2.check.maize.q14 + Check2.check.maize.q8 ,cluster="shop_ID", data = baseline_f)
+screenreg(list(qual3, qual2), stars = c(0.01, 0.05, 0.10))
+
 qual4 <- lm(score~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + 
                       maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + 
                       maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
@@ -1507,7 +1514,9 @@ fe_f1 <- lm(score~genderdummy + maize.owner.agree.age + prim + maize.owner.agree
               maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
               maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70 +farmer_ID, data = baseline_f)
               
-              fe_f1_1 <- lm(score~genderdummy +farmer_ID, data = baseline_f)
+fe_f1_1 <- lm(score~genderdummy +farmer_ID, data = baseline_f)
+summary (fe_f1_1)
+
 summary(fe_f1)
 
 fe_f1_try <- plm(score~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + 
@@ -1518,7 +1527,11 @@ fe_f1_try <- plm(score~genderdummy + maize.owner.agree.age + prim + maize.owner.
 summary(fe_f1_try)
 
 #QUALITY RATING 
+#cluster at dealer level 
 qual5 <- lm.cluster(quality_rating~genderdummy , cluster="shop_ID",data = baseline_f)
+summary(qual5)
+clus2 <- lm.cluster(quality_rating~genderdummy , cluster="farmer_ID",data = baseline_f)
+summary(clus2)
 
 qual6 <- lm.cluster(quality_rating~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + 
                       maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + 
@@ -1533,6 +1546,7 @@ qual8 <- lm(quality_rating~genderdummy + maize.owner.agree.age + prim + maize.ow
               maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
               maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70 + married + educ_f + Check2.check.maize.q14 + Check2.check.maize.q8+ farmer_ID, data = baseline_f)
 screenreg(list(qual5, qual6, qual7, c18), stars = c(0.01, 0.05, 0.15))
+screenreg(list(qual7, qual6), stars = c(0.01, 0.05, 0.10))
 summary(qual8)
 
 #farmer fixed effects without farmer vars 
@@ -1541,6 +1555,9 @@ fe_f2 <- lm(quality_rating~genderdummy + maize.owner.agree.age + prim + maize.ow
               maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
               maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70 + farmer_ID, data = baseline_f)
 summary(fe_f2)
+
+fe_f2_2 <- lm(quality_rating~genderdummy + farmer_ID, data = baseline_f)
+summary(fe_f2_2)
 
 fe_f2_try <- plm(quality_rating~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + 
                    maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + 
@@ -1551,7 +1568,11 @@ summary(fe_f2_try)
 
 
 #GENERAL RATING 
+#cluster at dealer level 
 qual9 <- lm.cluster(seed_quality_general_rating~genderdummy , cluster="shop_ID",data = baseline_f)
+summary(qual9)
+clus3 <- lm.cluster(seed_quality_general_rating~genderdummy , cluster="farmer_ID",data = baseline_f)
+summary(clus3)
 
 qual10 <- lm.cluster(seed_quality_general_rating~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + 
                       maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + 
@@ -1565,7 +1586,8 @@ qual12 <- lm(seed_quality_general_rating~genderdummy + maize.owner.agree.age + p
               maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + 
               maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
               maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70 + married + educ_f + Check2.check.maize.q14 + Check2.check.maize.q8+ farmer_ID, data = baseline_f)
-screenreg(list(qual9, qual10, qual11, c19), stars = c(0.01, 0.05, 0.15))
+screenreg(list(qual11, qual10), stars = c(0.01, 0.05, 0.10))
+
 summary(qual12)
 
 #farmer fixed effects without farmer vars 
@@ -1575,6 +1597,9 @@ fe_f3 <- lm(seed_quality_general_rating~genderdummy + maize.owner.agree.age + pr
               maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70 + farmer_ID, data = baseline_f)
 summary(fe_f3)
 
+fe_f3_3 <- lm(seed_quality_general_rating~genderdummy + farmer_ID, data = baseline_f)
+summary(fe_f3_3)
+
 fe_f3_try <- plm(seed_quality_general_rating~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + 
                    maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + 
                    maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
@@ -1583,7 +1608,11 @@ fe_f3_try <- plm(seed_quality_general_rating~genderdummy + maize.owner.agree.age
 summary(fe_f3_try)
 
 #yield rating 
+#cluster at dealer level
 qual13 <- lm.cluster(seed_yield_rating~genderdummy , cluster="shop_ID",data = baseline_f)
+summary(qual13)
+clus4 <- lm.cluster(seed_yield_rating~genderdummy , cluster="farmer_ID",data = baseline_f)
+summary(clus4)
 
 qual14 <- lm.cluster(seed_yield_rating~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + 
                        maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + 
@@ -1598,6 +1627,7 @@ qual16 <- lm(seed_yield_rating~genderdummy + maize.owner.agree.age + prim + maiz
                maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
                maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70 + married + educ_f + Check2.check.maize.q14 + Check2.check.maize.q8+ farmer_ID, data = baseline_f)
 screenreg(list(qual13, qual14, qual15, c20), stars = c(0.01, 0.05, 0.15))
+screenreg(list(qual15, qual14), stars = c(0.01, 0.05, 0.10))
 summary(qual16)
 
 #farmer fixed effects without farmer vars 
@@ -1606,6 +1636,9 @@ fe_f4 <- lm(seed_yield_rating~genderdummy + maize.owner.agree.age + prim + maize
               maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
               maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70 + farmer_ID, data = baseline_f)
 summary(fe_f4)
+
+fe_f4_4 <- lm(seed_yield_rating~genderdummy  + farmer_ID, data = baseline_f)
+summary(fe_f4_4)
 
 fe_f4_try <- plm(seed_yield_rating~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + 
                    maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + 
@@ -1616,7 +1649,11 @@ summary(fe_f4_try)
 
 
 #drought resistency rating 
+#cluster at dealer level
 qual17 <- lm.cluster(seed_drought_rating~genderdummy , cluster="shop_ID",data = baseline_f)
+summary(qual17)
+clus5 <- lm.cluster(seed_drought_rating~genderdummy , cluster="farmer_ID",data = baseline_f)
+summary(clus5)
 
 qual18 <- lm.cluster(seed_drought_rating~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + 
                        maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + 
@@ -1631,6 +1668,7 @@ qual20 <- lm(seed_drought_rating~genderdummy + maize.owner.agree.age + prim + ma
                maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
                maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70 + married + educ_f + Check2.check.maize.q14 + Check2.check.maize.q8+ farmer_ID, data = baseline_f)
 screenreg(list(qual17, qual18, qual19, c21), stars = c(0.01, 0.05, 0.15))
+screenreg(list(qual19, qual18), stars = c(0.01, 0.05, 0.10))
 summary(qual20)
 
 #farmer fixed effects without farmer vars 
@@ -1639,6 +1677,9 @@ fe_f5 <- lm(seed_drought_rating~genderdummy + maize.owner.agree.age + prim + mai
               maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
               maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70 + farmer_ID, data = baseline_f)
 summary(fe_f5)
+
+fe_f5_5 <- lm(seed_drought_rating~genderdummy + farmer_ID, data = baseline_f)
+summary(fe_f5_5)
 
 fe_f5_try <- plm(seed_drought_rating~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + 
                    maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + 
@@ -1649,7 +1690,11 @@ summary(fe_f5_try)
 
 
 #disease resistency rating 
+#cluster at dealer level
 qual21 <- lm.cluster(seed_disease_rating~genderdummy , cluster="shop_ID",data = baseline_f)
+summary(qual21)
+clus6<- lm.cluster(seed_disease_rating~genderdummy , cluster="farmer_ID",data = baseline_f)
+summary(clus6)
 
 qual22<- lm.cluster(seed_disease_rating~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + 
                        maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + 
@@ -1664,6 +1709,7 @@ qual24 <- lm(seed_disease_rating~genderdummy + maize.owner.agree.age + prim + ma
                maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
                maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70 + married + educ_f + Check2.check.maize.q14 + Check2.check.maize.q8+ farmer_ID, data = baseline_f)
 screenreg(list(qual21, qual22, qual23, c22), stars = c(0.01, 0.05, 0.15))
+screenreg(list(qual23, qual22), stars = c(0.01, 0.05, 0.10))
 summary(qual24)
 
 #farmer fixed effects without farmer vars 
@@ -1672,6 +1718,9 @@ fe_f6 <- lm(seed_disease_rating~genderdummy + maize.owner.agree.age + prim + mai
               maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
               maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70 + farmer_ID, data = baseline_f)
 summary(fe_f6)
+
+fe_f6_6 <- lm(seed_disease_rating~genderdummy +farmer_ID, data = baseline_f)
+summary(fe_f6_6)
 
 fe_f6_try <- plm(seed_disease_rating~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + 
                    maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + 
@@ -1682,7 +1731,11 @@ summary(fe_f6_try)
 
 
 #early maturing rating 
+#cluster at dealer level 
 qual25 <- lm.cluster(seed_maturing_rating~genderdummy , cluster="shop_ID",data = baseline_f)
+summary(qual25)
+clus7<- lm.cluster(seed_maturing_rating~genderdummy , cluster="farmer_ID",data = baseline_f)
+summary(clus7)
 
 qual26<- lm.cluster(seed_maturing_rating~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + 
                       maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + 
@@ -1697,6 +1750,7 @@ qual28 <- lm(seed_maturing_rating~genderdummy + maize.owner.agree.age + prim + m
                maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
                maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70 + married + educ_f + Check2.check.maize.q14 + Check2.check.maize.q8+ farmer_ID, data = baseline_f)
 screenreg(list(qual25, qual26, qual27, c23), stars = c(0.01, 0.05, 0.15))
+screenreg(list(qual27, qual26), stars = c(0.01, 0.05, 0.10))
 summary(qual28)
 
 #farmer fixed effects without farmer vars 
@@ -1705,6 +1759,10 @@ fe_f7 <- lm(seed_maturing_rating~genderdummy + maize.owner.agree.age + prim + ma
               maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
               maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70 + farmer_ID, data = baseline_f)
 summary(fe_f7)
+
+fe_f7_7 <- lm(seed_maturing_rating~genderdummy + farmer_ID, data = baseline_f)
+summary(fe_f7_7)
+
 
 fe_f7_try <- plm(seed_maturing_rating~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + 
                    maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + 
@@ -1715,7 +1773,11 @@ summary(fe_f7_try)
 
 
 #germination rating 
+#cluster at dealer level
 qual29 <- lm.cluster(seed_germinate_rating~genderdummy , cluster="shop_ID",data = baseline_f)
+summary(qual29)
+clus8 <- lm.cluster(seed_germinate_rating~genderdummy , cluster="farmer_ID",data = baseline_f)
+summary(clus8)
 
 qual30<- lm.cluster(seed_germinate_rating~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + 
                       maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + 
@@ -1730,6 +1792,7 @@ qual32 <- lm(seed_germinate_rating~genderdummy + maize.owner.agree.age + prim + 
                maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
                maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70 + married + educ_f + Check2.check.maize.q14 + Check2.check.maize.q8+ farmer_ID, data = baseline_f)
 screenreg(list(qual29, qual30, qual31, c24), stars = c(0.01, 0.05, 0.15))
+screenreg(list(qual31, qual30), stars = c(0.01, 0.05, 0.10))
 summary(qual32)
 
 
@@ -1739,6 +1802,9 @@ fe_f8 <- lm(seed_germinate_rating~genderdummy + maize.owner.agree.age + prim + m
               maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
               maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70 + farmer_ID, data = baseline_f)
 summary(fe_f8)
+
+fe_f8_8 <- lm(seed_germinate_rating~genderdummy  + farmer_ID, data = baseline_f)
+summary(fe_f8_8)
 
 fe_f8_try <- plm(seed_germinate_rating~genderdummy + maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 + years_shop + 
                    maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 + maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + 
