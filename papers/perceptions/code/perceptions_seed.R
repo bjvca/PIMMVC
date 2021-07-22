@@ -23,6 +23,110 @@ farmers_long <- read.csv(paste(path_2,"/papers/perceptions/data_seed_systems/dat
 #merging baseline and long form
 merged_farmers <- merge(farmers_seedsub,farmers_long, by=c("farmer_ID"))
 
+#### Seed related ratings --- farmer's gender
+mfarm<- merged_farmers
+
+mfarm[mfarm=="98"]<-NA
+
+mfarm$seed_quality_general_rating<-as.numeric(mfarm$seed_quality_general_rating)
+mfarm$general_rating<-as.numeric(mfarm$general_rating)
+mfarm$seed_yield_rating<-as.numeric(mfarm$seed_yield_rating)
+mfarm$seed_drought_rating<-as.numeric(mfarm$seed_drought_rating)
+mfarm$seed_disease_rating<-as.numeric(mfarm$seed_disease_rating)
+mfarm$seed_maturing_rating<-as.numeric(mfarm$seed_maturing_rating)
+mfarm$seed_germinate_rating<-as.numeric(mfarm$seed_germinate_rating)
+mfarm$score <-  rowMeans(mfarm[c("seed_quality_general_rating","general_rating","seed_yield_rating","seed_drought_rating","seed_disease_rating","seed_maturing_rating","seed_germinate_rating")],na.rm=T)
+
+mfarm$gender_f <- ifelse(mfarm$Check2.check.maize.q15 == 'Male', 1, 0)
+
+summary(lm.cluster(data = mfarm, formula = score ~  gender_f, cluster="farmer_ID"))
+summary(lm.cluster(data = mfarm, formula = seed_quality_general_rating ~  gender_f, cluster="farmer_ID"))
+summary(lm.cluster(data = mfarm, formula = general_rating ~  gender_f, cluster="farmer_ID"))
+summary(lm.cluster(data = mfarm, formula = seed_yield_rating ~  gender_f, cluster="farmer_ID"))
+summary(lm.cluster(data = mfarm, formula = seed_drought_rating ~  gender_f, cluster="farmer_ID"))
+summary(lm.cluster(data = mfarm, formula = seed_disease_rating ~  gender_f, cluster="farmer_ID"))
+summary(lm.cluster(data = mfarm, formula = seed_maturing_rating ~  gender_f, cluster="farmer_ID"))
+summary(lm.cluster(data = mfarm, formula = seed_germinate_rating ~  gender_f, cluster="farmer_ID"))
+
+summary(lm.cluster(data = mfarm, formula = score ~  gender_f, cluster="shop_ID"))
+summary(lm.cluster(data = mfarm, formula = seed_quality_general_rating ~  gender_f, cluster="shop_ID"))
+summary(lm.cluster(data = mfarm, formula = general_rating ~  gender_f, cluster="shop_ID"))
+summary(lm.cluster(data = mfarm, formula = seed_yield_rating ~  gender_f, cluster="shop_ID"))
+summary(lm.cluster(data = mfarm, formula = seed_drought_rating ~  gender_f, cluster="shop_ID"))
+summary(lm.cluster(data = mfarm, formula = seed_disease_rating ~  gender_f, cluster="shop_ID"))
+summary(lm.cluster(data = mfarm, formula = seed_maturing_rating ~  gender_f, cluster="shop_ID"))
+summary(lm.cluster(data = mfarm, formula = seed_germinate_rating ~  gender_f, cluster="shop_ID"))
+
+#creating dummies for analysis 
+mfarm$educ_f <- 0
+mfarm$educ_f[mfarm$Check2.check.maize.q17=="b" |mfarm$Check2.check.maize.q17=="c" | mfarm$Check2.check.maize.q17=="d" | mfarm$Check2.check.maize.q17=="e" | 
+                    mfarm$Check2.check.maize.q17=="f" |mfarm$Check2.check.maize.q17=="g" ] <- 1 #educated farmers
+mfarm$married <- ifelse(mfarm$Check2.check.maize.q16 == 'a', 1, 0)  #married farmers
+
+summary(lm.cluster(data = mfarm, formula = score ~  gender_f + Check2.check.maize.q14 + married +educ_f + Check2.check.maize.q8, cluster="shop_ID"))
+summary(lm.cluster(data = mfarm, formula = seed_quality_general_rating ~  gender_f + Check2.check.maize.q14 + married +educ_f + Check2.check.maize.q8, cluster="shop_ID"))
+summary(lm.cluster(data = mfarm, formula = general_rating ~  gender_f + Check2.check.maize.q14 + married +educ_f + Check2.check.maize.q8, cluster="shop_ID"))
+summary(lm.cluster(data = mfarm, formula = seed_yield_rating ~  gender_f + Check2.check.maize.q14 + married +educ_f + Check2.check.maize.q8, cluster="shop_ID"))
+summary(lm.cluster(data = mfarm, formula = seed_drought_rating ~  gender_f + Check2.check.maize.q14 + married +educ_f + Check2.check.maize.q8, cluster="shop_ID"))
+summary(lm.cluster(data = mfarm, formula = seed_disease_rating ~  gender_f + Check2.check.maize.q14 + married +educ_f + Check2.check.maize.q8, cluster="shop_ID"))
+summary(lm.cluster(data = mfarm, formula = seed_maturing_rating ~  gender_f + Check2.check.maize.q14 + married +educ_f + Check2.check.maize.q8, cluster="shop_ID"))
+summary(lm.cluster(data = mfarm, formula = seed_germinate_rating ~  gender_f + Check2.check.maize.q14 + married +educ_f + Check2.check.maize.q8, cluster="shop_ID"))
+
+#fixed effects
+summary(lm(data = mfarm, formula = score ~  gender_f + shop_ID))
+summary(lm(data = mfarm, formula = seed_quality_general_rating ~  gender_f +shop_ID))
+summary(lm(data = mfarm, formula = general_rating ~  gender_f + shop_ID))
+summary(lm(data = mfarm, formula = seed_yield_rating ~  gender_f +shop_ID))
+summary(lm(data = mfarm, formula = seed_drought_rating ~  gender_f+shop_ID))
+summary(lm(data = mfarm, formula = seed_disease_rating ~  gender_f + shop_ID))
+summary(lm(data = mfarm, formula = seed_maturing_rating ~  gender_f +shop_ID))
+summary(lm(data = mfarm, formula = seed_germinate_rating ~  gender_f + shop_ID))
+
+summary(lm(data = mfarm, formula = score ~  gender_f   + Check2.check.maize.q14 + married +educ_f + Check2.check.maize.q8+shop_ID))
+summary(lm(data = mfarm, formula = seed_quality_general_rating ~  gender_f  + Check2.check.maize.q14 + married +educ_f + Check2.check.maize.q8+shop_ID))
+summary(lm(data = mfarm, formula = general_rating ~  gender_f + Check2.check.maize.q14 + married +educ_f + Check2.check.maize.q8 + shop_ID))
+summary(lm(data = mfarm, formula = seed_yield_rating ~  gender_f  + Check2.check.maize.q14 + married +educ_f + Check2.check.maize.q8+shop_ID))
+summary(lm(data = mfarm, formula = seed_drought_rating ~  gender_f + Check2.check.maize.q14 + married +educ_f + Check2.check.maize.q8+shop_ID))
+summary(lm(data = mfarm, formula = seed_disease_rating ~  gender_f + Check2.check.maize.q14 + married +educ_f + Check2.check.maize.q8 + shop_ID))
+summary(lm(data = mfarm, formula = seed_maturing_rating ~  gender_f + Check2.check.maize.q14 + married +educ_f + Check2.check.maize.q8 +shop_ID))
+summary(lm(data = mfarm, formula = seed_germinate_rating ~  gender_f + Check2.check.maize.q14 + married +educ_f + Check2.check.maize.q8 + shop_ID))
+
+### BETWEEN ESTIMATOR - CARO's APPROACH 
+betw_farm <- data.frame(cbind(tapply(as.numeric(mfarm$score), mfarm$farmer_ID,mean,na.rm=TRUE),
+                            tapply(as.numeric(mfarm$seed_quality_general_rating), mfarm$farmer_ID,mean,na.rm=TRUE),
+                            tapply(as.numeric(mfarm$general_rating), mfarm$farmer_ID,mean,na.rm=TRUE),
+                            tapply(as.numeric(mfarm$seed_yield_rating), mfarm$farmer_ID,mean,na.rm=TRUE),
+                            tapply(as.numeric(mfarm$seed_drought_rating), mfarm$farmer_ID,mean,na.rm=TRUE),
+                            tapply(as.numeric(mfarm$seed_disease_rating), mfarm$farmer_ID,mean,na.rm=TRUE),
+                            tapply(as.numeric(mfarm$seed_maturing_rating), mfarm$farmer_ID,mean,na.rm=TRUE),
+                            tapply(as.numeric(mfarm$seed_germinate_rating), mfarm$farmer_ID,mean,na.rm=TRUE)))
+names(betw_farm) <- c("score_avg","seed_quality_general","general","seed_yield","seed_drought",
+                      "seed_disease","seed_maturing","seed_germinate")
+
+betw_farm$farmer_ID <- rownames(betw_farm)
+
+b_farm <- merge(betw_farm, mfarm, by="farmer_ID")
+
+#between estimator --- gender of farmer 
+summary(lm(data = b_farm, formula = score_avg ~  gender_f))
+summary(lm(data = b_farm, formula = seed_quality_general ~  gender_f ))
+summary(lm(data = b_farm, formula = general ~  gender_f ))
+summary(lm(data = b_farm, formula = seed_yield ~  gender_f ))
+summary(lm(data = b_farm, formula = seed_drought~  gender_f))
+summary(lm(data = b_farm, formula = seed_disease ~  gender_f ))
+summary(lm(data = b_farm, formula = seed_maturing ~  gender_f ))
+summary(lm(data = b_farm, formula = seed_germinate ~  gender_f ))
+
+summary(lm(data = b_farm, formula = score_avg ~  gender_f +Check2.check.maize.q14 + married +educ_f + Check2.check.maize.q8))
+summary(lm(data = b_farm, formula = seed_quality_general ~  gender_f+Check2.check.maize.q14 + married +educ_f + Check2.check.maize.q8 ))
+summary(lm(data = b_farm, formula = general ~  gender_f +Check2.check.maize.q14 + married +educ_f + Check2.check.maize.q8))
+summary(lm(data = b_farm, formula = seed_yield ~  gender_f +Check2.check.maize.q14 + married +educ_f + Check2.check.maize.q8))
+summary(lm(data = b_farm, formula = seed_drought~  gender_f+Check2.check.maize.q14 + married +educ_f + Check2.check.maize.q8))
+summary(lm(data = b_farm, formula = seed_disease ~  gender_f+Check2.check.maize.q14 + married +educ_f + Check2.check.maize.q8 ))
+summary(lm(data = b_farm, formula = seed_maturing ~  gender_f+Check2.check.maize.q14 + married +educ_f + Check2.check.maize.q8 ))
+summary(lm(data = b_farm, formula = seed_germinate ~  gender_f +Check2.check.maize.q14 + married +educ_f + Check2.check.maize.q8))
+
+
 ################# FARMERS : STACK SURVEYS ######################
 
 ##Farmers' dataset
@@ -167,6 +271,81 @@ ss_res6<-ss6$lm_res
 
 ################# DEALERS:SEED SYSTEMS ######################
 dealers_seed <- read.csv(paste(path_2,"/papers/perceptions/data_seed_systems/data/input_dealer/baseline_dealer.csv", sep = "/"))
+
+merge_seed <- merge(dealers_seed,mfarm, by=c("shop_ID"))
+
+##### SE clustered reg -- farmer's gender ---- farmer + dealer characteristics as controls 
+merge_seed$prim <- FALSE
+merge_seed$prim <- (merge_seed$maize.owner.agree.educ %in% c("c","d","e","f"))
+merge_seed$maize.owner.agree.q3[merge_seed$maize.owner.agree.q3==999] <- NA
+
+#Q8. When was this agro-input shop established? (year)
+merge_seed$years_shop <- 2020 - as.numeric(as.character(substr(merge_seed$maize.owner.agree.q8, start=1, stop=4)))
+
+#Q77. Material of floor in areas where seed is stored?
+merge_seed$goodfloor <- FALSE
+merge_seed$goodfloor <- (merge_seed$maize.owner.agree.temp.q77 %in% c("Cement","Tiles"))
+
+#Q78. Lighting conditions in area where seed is stored?
+merge_seed$badlighting <- FALSE
+merge_seed$badlighting <- (merge_seed$maize.owner.agree.temp.q78 %in% c("1"))
+
+#Q79. On what surface are seed stored?
+merge_seed$badstored <- FALSE
+merge_seed$badstored <- (merge_seed$maize.owner.agree.temp.q79 %in% c("1", "2", "96"))
+
+#Q82. On a scale of 1 to 5, rate this shop in terms of cleanness and professionality 1 poor 5 excellent
+as.numeric(as.character(merge_seed$maize.owner.agree.temp.q82))
+
+summary(lm.cluster(data = merge_seed, formula = score ~  gender_f + Check2.check.maize.q14 + married +educ_f + Check2.check.maize.q8
+                   +maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 
+                   + years_shop + maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 +
+                     maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76
+                   + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+                     maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70, cluster="shop_ID"))
+summary(lm.cluster(data = merge_seed, formula = general_rating ~  gender_f + Check2.check.maize.q14 + married +educ_f + Check2.check.maize.q8
+                   +maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 
+                   + years_shop + maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 +
+                     maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76
+                   + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+                     maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70, cluster="shop_ID"))
+summary(lm.cluster(data = merge_seed, formula = seed_quality_general_rating ~  gender_f + Check2.check.maize.q14 + married +educ_f + Check2.check.maize.q8
+                   +maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 
+                   + years_shop + maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 +
+                     maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76
+                   + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+                     maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70, cluster="shop_ID"))
+summary(lm.cluster(data = merge_seed, formula = seed_yield_rating ~  gender_f + Check2.check.maize.q14 + married +educ_f + Check2.check.maize.q8
+                   +maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 
+                   + years_shop + maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 +
+                     maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76
+                   + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+                     maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70, cluster="shop_ID"))
+summary(lm.cluster(data = merge_seed, formula = seed_drought_rating ~  gender_f + Check2.check.maize.q14 + married +educ_f + Check2.check.maize.q8
+                   +maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 
+                   + years_shop + maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 +
+                     maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76
+                   + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+                     maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70, cluster="shop_ID"))
+summary(lm.cluster(data = merge_seed, formula = seed_disease_rating ~  gender_f + Check2.check.maize.q14 + married +educ_f + Check2.check.maize.q8
+                   +maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 
+                   + years_shop + maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 +
+                     maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76
+                   + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+                     maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70, cluster="shop_ID"))
+summary(lm.cluster(data = merge_seed, formula = seed_maturing_rating ~  gender_f + Check2.check.maize.q14 + married +educ_f + Check2.check.maize.q8
+                   +maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 
+                   + years_shop + maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 +
+                     maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76
+                   + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+                     maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70, cluster="shop_ID"))
+summary(lm.cluster(data = merge_seed, formula = seed_germinate_rating ~  gender_f + Check2.check.maize.q14 + married +educ_f + Check2.check.maize.q8
+                   +maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 
+                   + years_shop + maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 +
+                     maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76
+                   + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+                     maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70, cluster="shop_ID"))
+
 
 #extracting variables from the baseline data
 dealers_sub <- dealers_seed[ , c("maize.owner.agree.q99", "maize.owner.agree.q100",
