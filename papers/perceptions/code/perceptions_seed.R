@@ -226,6 +226,9 @@ ss1<- lm.cluster(data = farmers_seed_stack, formula = rating_overall ~  gender +
 s1 <- sqrt(diag(vcov(ss1)))
 ss_res1<-ss1$lm_res
 
+summary(lm.cluster(data = farmers_seed_stack, formula = rating_overall ~  gender , cluster="farmerID") )
+summary(lm.cluster(data = farmers_seed_stack, formula = rating_overall ~  gender , cluster="id.ratee") )
+
 ################# LOCATION RATING ###########################
 
 #all variables 
@@ -233,6 +236,10 @@ ss2<- lm.cluster(data = farmers_seed_stack, formula = rating_location ~  gender 
                  + married, cluster="id.ratee") 
 s2 <- sqrt(diag(vcov(ss2)))
 ss_res2<-ss2$lm_res
+
+summary(lm.cluster(data = farmers_seed_stack, formula = rating_location ~  gender , cluster="farmerID") )
+summary(lm.cluster(data = farmers_seed_stack, formula = rating_location ~  gender , cluster="id.ratee") )
+
 
 
 ################# QUALITY RATING ###########################
@@ -243,6 +250,10 @@ ss3<- lm.cluster(data = farmers_seed_stack, formula = rating_quality ~  gender +
 s3 <- sqrt(diag(vcov(ss3)))
 ss_res3<-ss3$lm_res
 
+summary(lm.cluster(data = farmers_seed_stack, formula = rating_quality ~  gender , cluster="farmerID") )
+summary(lm.cluster(data = farmers_seed_stack, formula = rating_quality ~  gender , cluster="id.ratee") )
+
+
 ################# PRICE RATING ###########################
 
 #all variables 
@@ -251,6 +262,10 @@ ss4<- lm.cluster(data = farmers_seed_stack, formula = rating_price ~  gender + a
 s4 <- sqrt(diag(vcov(ss4)))
 ss_res4<-ss4$lm_res
 
+summary(lm.cluster(data = farmers_seed_stack, formula = rating_price ~  gender , cluster="farmerID") )
+summary(lm.cluster(data = farmers_seed_stack, formula = rating_price ~  gender , cluster="id.ratee") )
+
+
 ################# STOCK RATING ###########################
 #all variables
 ss5<- lm.cluster(data = farmers_seed_stack, formula = rating_stock ~  gender + age + interaction_yes + educ + tarmac
@@ -258,12 +273,19 @@ ss5<- lm.cluster(data = farmers_seed_stack, formula = rating_stock ~  gender + a
 s5 <- sqrt(diag(vcov(ss5)))
 ss_res5<-ss5$lm_res
 
+summary(lm.cluster(data = farmers_seed_stack, formula = rating_stock ~  gender , cluster="farmerID") )
+summary(lm.cluster(data = farmers_seed_stack, formula = rating_stock ~  gender , cluster="id.ratee") )
+
+
 ################# REPUTATION RATING ###########################
 #all variables
 ss6<- lm.cluster(data = farmers_seed_stack, formula = rating_reputation ~  gender + age + interaction_yes + educ + tarmac
                  + married, cluster="id.ratee") 
 s6 <- sqrt(diag(vcov(ss6)))
 ss_res6<-ss6$lm_res
+
+summary(lm.cluster(data = farmers_seed_stack, formula = rating_reputation ~  gender , cluster="farmerID") )
+summary(lm.cluster(data = farmers_seed_stack, formula = rating_reputation ~  gender , cluster="id.ratee") )
 
 
 #######################################################################
@@ -345,6 +367,81 @@ summary(lm.cluster(data = merge_seed, formula = seed_germinate_rating ~  gender_
                      maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76
                    + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
                      maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70, cluster="shop_ID"))
+
+#### Looking at interaction of farmer's and dealer's gender in the seed data
+merge_seed$gender_d <- ifelse(merge_seed$maize.owner.agree.gender == 'Male', 1, 0)
+
+summary(lm(data = merge_seed, formula = score ~  gender_f + gender_d+ gender_f*gender_d))
+summary(lm(data = merge_seed, formula = score ~  gender_f +gender_d+ gender_f*gender_d+ Check2.check.maize.q14 + married +educ_f + Check2.check.maize.q8
+                   +maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 
+                   + years_shop + maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 +
+                     maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76
+                   + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+                     maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70))
+
+summary(lm.cluster(data = merge_seed, formula = score ~  gender_f + gender_d+ gender_f*gender_d, cluster="shop_ID"))
+summary(lm.cluster(data = merge_seed, formula = score ~  gender_f +gender_d+ gender_f*gender_d+ Check2.check.maize.q14 + married +educ_f + Check2.check.maize.q8
+                   +maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 
+                   + years_shop + maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 +
+                     maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76
+                   + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+                     maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70, cluster="shop_ID"))
+
+summary(lm(data = merge_seed, formula = general_rating ~  gender_f + gender_d+ gender_f*gender_d))
+summary(lm(data = merge_seed, formula = general_rating ~  gender_f +gender_d+ gender_f*gender_d+ Check2.check.maize.q14 + married +educ_f + Check2.check.maize.q8
+           +maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 
+           + years_shop + maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 +
+             maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76
+           + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+             maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70))
+
+summary(lm(data = merge_seed, formula = seed_quality_general_rating ~  gender_f + gender_d+ gender_f*gender_d))
+summary(lm(data = merge_seed, formula = seed_quality_general_rating ~  gender_f +gender_d+ gender_f*gender_d+ Check2.check.maize.q14 + married +educ_f + Check2.check.maize.q8
+           +maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 
+           + years_shop + maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 +
+             maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76
+           + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+             maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70))
+
+summary(lm(data = merge_seed, formula = seed_yield_rating ~  gender_f + gender_d+ gender_f*gender_d))
+summary(lm(data = merge_seed, formula = seed_yield_rating ~  gender_f +gender_d+ gender_f*gender_d+ Check2.check.maize.q14 + married +educ_f + Check2.check.maize.q8
+           +maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 
+           + years_shop + maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 +
+             maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76
+           + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+             maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70))
+
+summary(lm(data = merge_seed, formula = seed_drought_rating ~  gender_f + gender_d+ gender_f*gender_d))
+summary(lm(data = merge_seed, formula = seed_drought_rating ~  gender_f +gender_d+ gender_f*gender_d+ Check2.check.maize.q14 + married +educ_f + Check2.check.maize.q8
+           +maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 
+           + years_shop + maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 +
+             maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76
+           + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+             maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70))
+
+summary(lm(data = merge_seed, formula = seed_disease_rating ~  gender_f + gender_d+ gender_f*gender_d))
+summary(lm(data = merge_seed, formula = seed_disease_rating ~  gender_f +gender_d+ gender_f*gender_d+ Check2.check.maize.q14 + married +educ_f + Check2.check.maize.q8
+           +maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 
+           + years_shop + maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 +
+             maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76
+           + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+             maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70))
+
+summary(lm(data = merge_seed, formula = seed_maturing_rating ~  gender_f + gender_d+ gender_f*gender_d))
+summary(lm(data = merge_seed, formula = seed_maturing_rating ~  gender_f +gender_d+ gender_f*gender_d+ Check2.check.maize.q14 + married +educ_f + Check2.check.maize.q8
+           +maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 
+           + years_shop + maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 +
+             maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76
+           + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+             maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70))
+
+summary(lm(data = merge_seed, formula = seed_germinate_rating ~  gender_f + gender_d+ gender_f*gender_d))
+summary(lm(data = merge_seed, formula = seed_germinate_rating ~  gender_f +gender_d+ gender_f*gender_d+ Check2.check.maize.q14 + married +educ_f + Check2.check.maize.q8
+           +maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 
+           + years_shop + maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 +
+             maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76
+           + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+             maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70))
 
 
 #extracting variables from the baseline data
@@ -442,7 +539,7 @@ avg$id.ratee <- rownames(avg)
 
 avg<- na.omit(avg)
 
-avgm <- m[ , c("age_dealer", "education_dealer",
+avgm <- m[ , c("age_dealer", "education_dealer","gender","age","educ","tarmac","married",
                                            "dealer_fem", "id.ratee")] 
 
 a <- merge(avg, avgm, by="id.ratee")
@@ -459,6 +556,16 @@ a <- merge(avg, avgm, by="id.ratee")
 #all variables 
 fd1<- lm.cluster(data = m, formula = rating_overall ~  gender + dealer_fem + age + interaction_yes + educ + tarmac
                          + married + age_dealer + education_dealer, cluster="id.ratee") 
+
+summary(lm.cluster(data = m, formula = rating_overall ~  gender + age + educ + tarmac
+           + married + age_dealer + education_dealer, cluster="id.ratee") )
+summary(lm.cluster(data = m, formula = rating_overall ~  gender + age + educ + tarmac
+                   + married, cluster="id.ratee") )
+summary(lm(data = m, formula = rating_overall ~  gender + id.ratee) )
+summary(lm(data = m, formula = rating_overall ~  gender + age + educ + tarmac
+           + married  + id.ratee) )
+
+
 se_fd1 <- sqrt(diag(vcov(fd1)))
 res_fd1<-fd1$lm_res
 
@@ -477,6 +584,9 @@ summary(lm(data = m, formula = rating_overall ~  dealer_fem + age_dealer + educa
 summary(lm(data = a, formula = rating_overall ~  dealer_fem ))
 summary(lm(data = a, formula = rating_overall ~  dealer_fem + age_dealer + education_dealer))
 
+summary(lm(data = a, formula = rating_overall ~ gender ))
+summary(lm(data = a, formula = rating_overall ~ gender + age + educ + tarmac
+           + married))
 
 ##Interaction between sex of farmer and dealer
 fd2<- lm.cluster(data = m, formula = rating_overall ~  gender*dealer_fem + age + interaction_yes + educ + tarmac
@@ -489,6 +599,16 @@ res_fd2<-fd2$lm_res
 #all variables 
 fd3<- lm.cluster(data = m, formula = rating_location ~  gender + dealer_fem + age + interaction_yes + educ + tarmac
                  + married + age_dealer + education_dealer, cluster="id.ratee") 
+
+summary(lm.cluster(data = m, formula = rating_location ~  gender + age + educ + tarmac
+                   + married + age_dealer + education_dealer, cluster="id.ratee") )
+summary(lm.cluster(data = m, formula = rating_location ~  gender + age + educ + tarmac
+                   + married, cluster="id.ratee") )
+summary(lm(data = m, formula = rating_location ~  gender + id.ratee) )
+summary(lm(data = m, formula = rating_location ~  gender + age  + educ + tarmac
+           + married  + id.ratee) )
+
+
 se_fd3 <- sqrt(diag(vcov(fd3)))
 res_fd3<-fd3$lm_res
 
@@ -506,6 +626,10 @@ summary(lm(data = m, formula = rating_location ~  dealer_fem + age_dealer + educ
 summary(lm(data = a, formula = rating_location ~  dealer_fem ))
 summary(lm(data = a, formula = rating_location ~  dealer_fem + age_dealer + education_dealer))
 
+summary(lm(data = a, formula = rating_location ~ gender ))
+summary(lm(data = a, formula = rating_location ~ gender + age + educ + tarmac
+           + married))
+
 
 ##Interaction between sex of farmer and dealer
 fd4<- lm.cluster(data = m, formula = rating_location ~  gender*dealer_fem + age + interaction_yes + educ + tarmac
@@ -518,6 +642,15 @@ res_fd4<-fd4$lm_res
 #all variables 
 fd5<- lm.cluster(data = m, formula = rating_quality ~  gender + dealer_fem + age + interaction_yes + educ + tarmac
                  + married + age_dealer + education_dealer, cluster="id.ratee") 
+
+summary(lm.cluster(data = m, formula = rating_quality ~  gender + age + educ + tarmac
+                   + married + age_dealer + education_dealer, cluster="id.ratee") )
+summary(lm.cluster(data = m, formula = rating_quality ~  gender + age  + educ + tarmac
+                   + married, cluster="id.ratee") )
+summary(lm(data = m, formula = rating_quality ~  gender + id.ratee) )
+summary(lm(data = m, formula = rating_quality ~  gender + age  + educ + tarmac
+           + married  + id.ratee) )
+
 se_fd5 <- sqrt(diag(vcov(fd5)))
 res_fd5<-fd5$lm_res
 
@@ -536,6 +669,10 @@ summary(lm(data = m, formula = rating_quality ~  dealer_fem + age_dealer + educa
 summary(lm(data = a, formula = rating_quality ~  dealer_fem ))
 summary(lm(data = a, formula = rating_quality ~  dealer_fem + age_dealer + education_dealer))
 
+summary(lm(data = a, formula = rating_quality ~ gender ))
+summary(lm(data = a, formula = rating_quality ~ gender + age + educ + tarmac
+           + married))
+
 
 ##Interaction between sex of farmer and dealer
 fd6<- lm.cluster(data = m, formula = rating_quality ~  gender*dealer_fem + age + interaction_yes + educ + tarmac
@@ -548,6 +685,16 @@ res_fd6<-fd6$lm_res
 #all variables 
 fd7<- lm.cluster(data = m, formula = rating_price ~  gender + dealer_fem + age + interaction_yes + educ + tarmac
                  + married + age_dealer + education_dealer, cluster="id.ratee") 
+
+summary(lm.cluster(data = m, formula = rating_price ~  gender + age + educ + tarmac
+                   + married + age_dealer + education_dealer, cluster="id.ratee") )
+summary(lm.cluster(data = m, formula = rating_price ~  gender + age + educ + tarmac
+                   + married, cluster="id.ratee") )
+summary(lm(data = m, formula = rating_price ~  gender + id.ratee) )
+summary(lm(data = m, formula = rating_price~  gender + age + educ + tarmac
+           + married  + id.ratee) )
+
+
 se_fd7 <- sqrt(diag(vcov(fd7)))
 res_fd7<-fd7$lm_res
 
@@ -565,6 +712,9 @@ summary(lm(data = m, formula = rating_price ~  dealer_fem + age_dealer + educati
 summary(lm(data = a, formula = rating_price ~  dealer_fem ))
 summary(lm(data = a, formula = rating_price ~  dealer_fem + age_dealer + education_dealer))
 
+summary(lm(data = a, formula = rating_price ~ gender ))
+summary(lm(data = a, formula = rating_price ~ gender + age + educ + tarmac
+           + married))
 
 
 ##Interaction between sex of farmer and dealer
@@ -578,6 +728,15 @@ res_fd8<-fd8$lm_res
 #all variables 
 fd9<- lm.cluster(data = m, formula = rating_stock ~  gender + dealer_fem + age + interaction_yes + educ + tarmac
                  + married + age_dealer + education_dealer, cluster="id.ratee") 
+
+summary(lm.cluster(data = m, formula = rating_stock ~  gender + age+ educ + tarmac
+                   + married + age_dealer + education_dealer, cluster="id.ratee") )
+summary(lm.cluster(data = m, formula = rating_stock ~  gender + age+ educ + tarmac
+                   + married, cluster="id.ratee") )
+summary(lm(data = m, formula = rating_stock~  gender + id.ratee) )
+summary(lm(data = m, formula = rating_stock ~  gender + age + educ + tarmac
+           + married  + id.ratee) )
+
 se_fd9 <- sqrt(diag(vcov(fd9)))
 res_fd9<-fd9$lm_res
 
@@ -595,7 +754,9 @@ summary(lm(data = m, formula = rating_stock ~  dealer_fem + age_dealer + educati
 summary(lm(data = a, formula = rating_stock ~  dealer_fem ))
 summary(lm(data = a, formula = rating_stock ~  dealer_fem + age_dealer + education_dealer))
 
-
+summary(lm(data = a, formula = rating_stock ~ gender ))
+summary(lm(data = a, formula = rating_stock ~ gender + age + educ + tarmac
+           + married))
 
 ##Interaction between sex of farmer and dealer
 fd10<- lm.cluster(data = m, formula = rating_stock ~  gender*dealer_fem + age + interaction_yes + educ + tarmac
@@ -608,6 +769,16 @@ res_fd10<-fd10$lm_res
 #all variables 
 fd11<- lm.cluster(data = m, formula = rating_reputation ~  gender + dealer_fem + age + interaction_yes + educ + tarmac
                  + married + age_dealer + education_dealer, cluster="id.ratee") 
+
+summary(lm.cluster(data = m, formula = rating_reputation ~  gender + age  + educ + tarmac
+                   + married + age_dealer + education_dealer, cluster="id.ratee") )
+summary(lm.cluster(data = m, formula = rating_reputation ~  gender + age + educ + tarmac
+                   + married, cluster="id.ratee") )
+summary(lm(data = m, formula = rating_reputation~  gender + id.ratee) )
+summary(lm(data = m, formula = rating_reputation ~  gender + age  + educ + tarmac
+           + married  + id.ratee) )
+
+
 se_fd11 <- sqrt(diag(vcov(fd11)))
 res_fd11<-fd11$lm_res
 
@@ -626,6 +797,9 @@ summary(lm(data = m, formula = rating_reputation ~  dealer_fem + age_dealer + ed
 summary(lm(data = a, formula = rating_reputation ~  dealer_fem ))
 summary(lm(data = a, formula = rating_reputation ~  dealer_fem + age_dealer + education_dealer))
 
+summary(lm(data = a, formula = rating_reputation~ gender ))
+summary(lm(data = a, formula = rating_reputation ~ gender + age + educ + tarmac
+           + married))
 
 ##Interaction between sex of farmer and dealer
 fd12<- lm.cluster(data = m, formula = rating_reputation ~  gender*dealer_fem + age + interaction_yes + educ + tarmac
