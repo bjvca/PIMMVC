@@ -580,6 +580,12 @@ summary(lm.cluster(data = m, formula = rating_overall ~  dealer_fem +
 summary(lm(data = m, formula = rating_overall ~  dealer_fem + farmerID))
 summary(lm(data = m, formula = rating_overall ~  dealer_fem + age_dealer + education_dealer+farmerID))
 
+#both farmer and dealer gender, gender: 1= Female; dealer_fem: 1= Female 
+summary(lm(data = m, formula = rating_overall ~  gender + dealer_fem + gender*dealer_fem) )
+summary(lm(data = m, formula = rating_overall ~  gender + dealer_fem + gender*dealer_fem + age + educ + tarmac
+           + married + age_dealer + education_dealer) )
+
+
 #caro's approach 
 summary(lm(data = a, formula = rating_overall ~  dealer_fem ))
 summary(lm(data = a, formula = rating_overall ~  dealer_fem + age_dealer + education_dealer))
@@ -622,6 +628,12 @@ summary(lm.cluster(data = m, formula = rating_location ~  dealer_fem +
                      age_dealer + education_dealer, cluster="id.ratee") )
 summary(lm(data = m, formula = rating_location ~  dealer_fem + farmerID))
 summary(lm(data = m, formula = rating_location ~  dealer_fem + age_dealer + education_dealer+farmerID))
+
+#both farmer and dealer gender, gender: 1= Female; dealer_fem: 1= Female 
+summary(lm(data = m, formula = rating_location ~  gender + dealer_fem + gender*dealer_fem) )
+summary(lm(data = m, formula = rating_location ~  gender + dealer_fem + gender*dealer_fem + age + educ + tarmac
+           + married + age_dealer + education_dealer) )
+
 #caro's approach 
 summary(lm(data = a, formula = rating_location ~  dealer_fem ))
 summary(lm(data = a, formula = rating_location ~  dealer_fem + age_dealer + education_dealer))
@@ -664,6 +676,11 @@ summary(lm.cluster(data = m, formula = rating_quality ~  dealer_fem +
                      age_dealer + education_dealer, cluster="id.ratee") )
 summary(lm(data = m, formula = rating_quality ~  dealer_fem + farmerID))
 summary(lm(data = m, formula = rating_quality ~  dealer_fem + age_dealer + education_dealer+farmerID))
+
+#both farmer and dealer gender, gender: 1= Female; dealer_fem: 1= Female 
+summary(lm(data = m, formula = rating_quality ~  gender + dealer_fem + gender*dealer_fem) )
+summary(lm(data = m, formula = rating_quality ~  gender + dealer_fem + gender*dealer_fem + age + educ + tarmac
+           + married + age_dealer + education_dealer) )
 
 #caro's approach 
 summary(lm(data = a, formula = rating_quality ~  dealer_fem ))
@@ -708,6 +725,13 @@ summary(lm.cluster(data = m, formula = rating_price~  dealer_fem +
                      age_dealer + education_dealer, cluster="id.ratee") )
 summary(lm(data = m, formula = rating_price ~  dealer_fem + farmerID))
 summary(lm(data = m, formula = rating_price ~  dealer_fem + age_dealer + education_dealer+farmerID))
+
+#both farmer and dealer gender, gender: 1= Female; dealer_fem: 1= Female 
+summary(lm(data = m, formula = rating_price ~  gender + dealer_fem + gender*dealer_fem) )
+summary(lm(data = m, formula = rating_price ~  gender + dealer_fem + gender*dealer_fem + age + educ + tarmac
+           + married + age_dealer + education_dealer) )
+
+
 #caro's approach 
 summary(lm(data = a, formula = rating_price ~  dealer_fem ))
 summary(lm(data = a, formula = rating_price ~  dealer_fem + age_dealer + education_dealer))
@@ -750,6 +774,13 @@ summary(lm.cluster(data = m, formula = rating_stock~  dealer_fem +
                      age_dealer + education_dealer, cluster="id.ratee") )
 summary(lm(data = m, formula = rating_stock ~  dealer_fem + farmerID))
 summary(lm(data = m, formula = rating_stock ~  dealer_fem + age_dealer + education_dealer+farmerID))
+
+#both farmer and dealer gender, gender: 1= Female; dealer_fem: 1= Female 
+summary(lm(data = m, formula = rating_stock~  gender + dealer_fem + gender*dealer_fem) )
+summary(lm(data = m, formula = rating_stock ~  gender + dealer_fem + gender*dealer_fem + age + educ + tarmac
+           + married + age_dealer + education_dealer) )
+
+
 #caro's approach 
 summary(lm(data = a, formula = rating_stock ~  dealer_fem ))
 summary(lm(data = a, formula = rating_stock ~  dealer_fem + age_dealer + education_dealer))
@@ -792,6 +823,12 @@ summary(lm.cluster(data = m, formula = rating_reputation~  dealer_fem +
                      age_dealer + education_dealer, cluster="id.ratee") )
 summary(lm(data = m, formula = rating_reputation ~  dealer_fem + farmerID))
 summary(lm(data = m, formula = rating_reputation ~  dealer_fem + age_dealer + education_dealer+farmerID))
+
+#both farmer and dealer gender, gender: 1= Female; dealer_fem: 1= Female 
+summary(lm(data = m, formula = rating_reputation~  gender + dealer_fem + gender*dealer_fem) )
+summary(lm(data = m, formula = rating_reputation ~  gender + dealer_fem + gender*dealer_fem + age + educ + tarmac
+           + married + age_dealer + education_dealer) )
+
 
 #caro's approach 
 summary(lm(data = a, formula = rating_reputation ~  dealer_fem ))
