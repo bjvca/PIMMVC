@@ -371,6 +371,8 @@ summary(lm.cluster(data = merge_seed, formula = seed_germinate_rating ~  gender_
 #### Looking at interaction of farmer's and dealer's gender in the seed data
 merge_seed$gender_d <- ifelse(merge_seed$maize.owner.agree.gender == 'Male', 1, 0)
 
+####OVERALL SCORE 
+
 summary(lm(data = merge_seed, formula = score ~  gender_f + gender_d+ gender_f*gender_d))
 summary(lm(data = merge_seed, formula = score ~  gender_f +gender_d+ gender_f*gender_d+ Check2.check.maize.q14 + married +educ_f + Check2.check.maize.q8
                    +maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 
@@ -440,11 +442,35 @@ PQL2c <- glmmPQL(score.t ~ gender_f + gender_d + gender_f*gender_d+Check2.check.
                 data = merge_seed, verbose = FALSE)
 summary(PQL2c)
 
+
+library(nlme)
+library("mlmRev")
+library(Rcpp)
+library(lme4)
+####Unbalanced data page 25 from book
+##### DOES NOT WORK
+nlme::lme(score ~ gender_d*gender_f, random = ~ 1 | shop_ID/farmer_ID, data = merge_seed)
+
+########## IF I REMOVE NAN FROM RESPONSE VARIABLE SCORE IT WORKS 
+datanan<-subset(merge_seed, score!="NaN" )
+
+########### need to decide which one 
+summary(nlme::lme(score ~ gender_d+gender_f+gender_d*gender_f, random = ~ 1 | shop_ID/farmer_ID, data = datanan))
+#fixed effect for each farmer and a random effect for each dealer, random effects at two levels-- the effect for the dealer and the effect for the different farmer rating each dealer
+
+summary(nlme::lme(score ~ gender_d+gender_f+gender_d*gender_f, random = ~ 1 | farmer_ID/shop_ID, data = datanan))
+
+summary(nlme::lme(score ~ gender_d, random = ~ 1 | shop_ID/farmer_ID, data = datanan))
+summary(nlme::lme(score ~gender_f, random = ~ 1 | farmer_ID/shop_ID, data = datanan))
+
+
+
+#https://rpsychologist.com/r-guide-longitudinal-lme-lmer 
+
+
 ##### does not run 
 
 #Laplace approximation when distribution is not normal
-library("mlmRev")
-library(Rcpp)
 
 #the Laplace approximation is a special case of a parameter estimation method called Gauss-Hermite quadrature (GHQ), with one iteration. 
 #GHQ is more accurate than Laplace due to repeated iterations, but becomes less flexible after the first iteration, so can only use it for one random effect. 
@@ -455,7 +481,6 @@ GHQ2 <- glmer(score ~ gender_f + gender_d + gender_f * gender_d + (1 | shop_ID) 
               family = binomial(link = "logit"), nAGQ = 1)
 
 #does not run 
-library(lme4)
 lmm1 <- lmer(score ~ gender_f+gender_d+gender_f*gender_d + farmer_ID + (1 | shop_ID), data =merge_seed)
 lmm2 <- lmer(score ~ gender_f*gender_d + farmer_ID + (1 | shop_ID), data =merge_seed)
 lmm3 <- lmer(score ~ gender_f*gender_d + shop_ID + (1 | farmer_ID), data =merge_seed)
@@ -470,9 +495,6 @@ lmm4 <- lmer(score ~  gender_f+gender_d+gender_f*gender_d + shop_ID + (1 | farme
 fm1 <- lmer(score ~ gender_f+gender_d+gender_f*gender_d + (1| shop_ID)+(1| farmer_ID),merge_seed)
 
 
-
-
-
 summary(lm.cluster(data = merge_seed, formula = score ~  gender_f + gender_d+ gender_f*gender_d, cluster="shop_ID"))
 summary(lm.cluster(data = merge_seed, formula = score ~  gender_f +gender_d+ gender_f*gender_d+ Check2.check.maize.q14 + married +educ_f + Check2.check.maize.q8
                    +maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 
@@ -480,6 +502,9 @@ summary(lm.cluster(data = merge_seed, formula = score ~  gender_f +gender_d+ gen
                      maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76
                    + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
                      maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70, cluster="shop_ID"))
+
+
+####GENERAL RATING 
 
 summary(lm(data = merge_seed, formula = general_rating ~  gender_f + gender_d+ gender_f*gender_d))
 summary(lm(data = merge_seed, formula = general_rating ~  gender_f +gender_d+ gender_f*gender_d+ Check2.check.maize.q14 + married +educ_f + Check2.check.maize.q8
@@ -508,6 +533,44 @@ ran2<-plm(general_rating ~ gender_f+gender_d+gender_f*gender_d + Check2.check.ma
             maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70, data = merge_seed, index = c("shop_ID", "farmer_ID"), model = "random", 
           effect = "twoways")
 summary(ran2)
+
+#### MIXED MODELS
+
+require(car)
+require(MASS)
+#https://ase.tufts.edu/bugs/guide/assets/mixed_model_guide.html
+
+#checking out distribution of the response variable - the distribution where most of the points are under the dashed line should be considered
+merge_seed$general_rating.t <- merge_seed$general_rating + 1
+qqp(merge_seed$general_rating.t, "norm")
+qqp(merge_seed$general_rating.t, "lnorm")
+#lognormal
+
+
+genPQL1 <- glmmPQL(general_rating.t ~ gender_f + gender_d, ~1 | shop_ID/farmer_ID, family = gaussian(link = "log"),
+                data = merge_seed, verbose = FALSE)
+#verbose --- logical:print out record of iterations?
+summary(genPQL1)
+genPQL2 <- glmmPQL(general_rating.t ~ gender_f + gender_d + gender_f*gender_d, ~1 | shop_ID/farmer_ID, family = gaussian(link = "log"),
+                data = merge_seed, verbose = FALSE)
+summary(genPQL2)
+genPQL3 <- glmmPQL(general_rating.t ~ gender_f + gender_d + gender_f*gender_d, ~1 | farmer_ID/shop_ID, family = gaussian(link = "log"),
+                data = merge_seed, verbose = FALSE)
+#message = iteration limit reached without convergence (10)
+
+genPQL2c <- glmmPQL(general_rating.t ~ gender_f + gender_d + gender_f*gender_d+Check2.check.maize.q14 + married +educ_f + Check2.check.maize.q8
+                 +maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 
+                 + years_shop + maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 +
+                   maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76
+                 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+                   maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70, ~1 | shop_ID/farmer_ID, family = gaussian(link = "log"),
+                 data = merge_seed, verbose = FALSE)
+summary(genPQL2c)
+
+
+
+
+
 
 
 
@@ -836,6 +899,16 @@ summary(lm(data = m, formula = rating_overall ~  gender+ dealer_fem+ gender*deal
 summary(lm(data = m, formula = rating_overall ~  gender+ dealer_fem+ gender*dealer_fem + factor(id.ratee) +factor(farmerID) +age + educ + tarmac
            + married + age_dealer + education_dealer))
 
+#twoway random effects 
+mran1<-plm(rating_overall ~ gender+dealer_fem + gender*dealer_fem , data = m, index = c("id.ratee", "farmerID"), model = "random", 
+             effect = "twoways")
+summary(mran1)
+
+mranc1<-plm(rating_overall ~ gender+dealer_fem + gender*dealer_fem + age + educ + tarmac
+           + married + age_dealer + education_dealer , data = m, index = c("id.ratee", "farmerID"), model = "random", 
+           effect = "twoways")
+summary(mranc1)
+
 
 #caro's approach 
 summary(lm(data = a, formula = rating_overall ~  dealer_fem ))
@@ -890,6 +963,16 @@ summary(lm(data = m, formula = rating_location ~  gender+ dealer_fem+ gender*dea
 summary(lm(data = m, formula = rating_location~  gender+ dealer_fem+ gender*dealer_fem + factor(id.ratee) +factor(farmerID) +age + educ + tarmac
            + married + age_dealer + education_dealer))
 
+#twoway random effects 
+mran2<-plm(rating_location ~ gender+dealer_fem + gender*dealer_fem , data = m, index = c("id.ratee", "farmerID"), model = "random", 
+           effect = "twoways")
+summary(mran2)
+
+mranc2<-plm(rating_location ~ gender+dealer_fem + gender*dealer_fem + age + educ + tarmac
+            + married + age_dealer + education_dealer , data = m, index = c("id.ratee", "farmerID"), model = "random", 
+            effect = "twoways")
+summary(mranc2)
+
 #caro's approach 
 summary(lm(data = a, formula = rating_location ~  dealer_fem ))
 summary(lm(data = a, formula = rating_location ~  dealer_fem + age_dealer + education_dealer))
@@ -942,6 +1025,17 @@ summary(lm(data = m, formula = rating_quality ~  gender + dealer_fem + gender*de
 summary(lm(data = m, formula = rating_quality~  gender+ dealer_fem+ gender*dealer_fem + factor(id.ratee) +factor(farmerID) ))
 summary(lm(data = m, formula = rating_quality~  gender+ dealer_fem+ gender*dealer_fem + factor(id.ratee) +factor(farmerID) +age + educ + tarmac
            + married + age_dealer + education_dealer))
+
+#twoway random effects 
+mran3<-plm(rating_quality ~ gender+dealer_fem + gender*dealer_fem , data = m, index = c("id.ratee", "farmerID"), model = "random", 
+           effect = "twoways")
+summary(mran3)
+
+mranc3<-plm(rating_quality ~ gender+dealer_fem + gender*dealer_fem + age + educ + tarmac
+            + married + age_dealer + education_dealer , data = m, index = c("id.ratee", "farmerID"), model = "random", 
+            effect = "twoways")
+summary(mranc3)
+
 
 #caro's approach 
 summary(lm(data = a, formula = rating_quality ~  dealer_fem ))
@@ -997,6 +1091,17 @@ summary(lm(data = m, formula = rating_price~  gender+ dealer_fem+ gender*dealer_
 summary(lm(data = m, formula = rating_price~  gender+ dealer_fem+ gender*dealer_fem + factor(id.ratee) +factor(farmerID) +age + educ + tarmac
            + married + age_dealer + education_dealer))
 
+#twoway random effects 
+mran4<-plm(rating_price ~ gender+dealer_fem + gender*dealer_fem , data = m, index = c("id.ratee", "farmerID"), model = "random", 
+           effect = "twoways")
+summary(mran4)
+
+mranc4<-plm(rating_price ~ gender+dealer_fem + gender*dealer_fem + age + educ + tarmac
+            + married + age_dealer + education_dealer , data = m, index = c("id.ratee", "farmerID"), model = "random", 
+            effect = "twoways")
+summary(mranc4)
+
+
 
 #caro's approach 
 summary(lm(data = a, formula = rating_price ~  dealer_fem ))
@@ -1051,6 +1156,17 @@ summary(lm(data = m, formula = rating_stock~  gender+ dealer_fem+ gender*dealer_
 summary(lm(data = m, formula = rating_stock~  gender+ dealer_fem+ gender*dealer_fem + factor(id.ratee) +factor(farmerID) +age + educ + tarmac
            + married + age_dealer + education_dealer))
 
+#twoway random effects 
+mran5<-plm(rating_stock ~ gender+dealer_fem + gender*dealer_fem , data = m, index = c("id.ratee", "farmerID"), model = "random", 
+           effect = "twoways")
+summary(mran5)
+
+mranc5<-plm(rating_stock ~ gender+dealer_fem + gender*dealer_fem + age + educ + tarmac
+            + married + age_dealer + education_dealer , data = m, index = c("id.ratee", "farmerID"), model = "random", 
+            effect = "twoways")
+summary(mranc5)
+
+
 
 #caro's approach 
 summary(lm(data = a, formula = rating_stock ~  dealer_fem ))
@@ -1104,6 +1220,16 @@ summary(lm(data = m, formula = rating_reputation ~  gender + dealer_fem + gender
 summary(lm(data = m, formula = rating_reputation~  gender+ dealer_fem+ gender*dealer_fem + factor(id.ratee) +factor(farmerID) ))
 summary(lm(data = m, formula = rating_reputation~  gender+ dealer_fem+ gender*dealer_fem + factor(id.ratee) +factor(farmerID) +age + educ + tarmac
            + married + age_dealer + education_dealer))
+
+#twoway random effects 
+mran6<-plm(rating_reputation ~ gender+dealer_fem + gender*dealer_fem , data = m, index = c("id.ratee", "farmerID"), model = "random", 
+           effect = "twoways")
+summary(mran6)
+
+mranc6<-plm(rating_reputation ~ gender+dealer_fem + gender*dealer_fem + age + educ + tarmac
+            + married + age_dealer + education_dealer , data = m, index = c("id.ratee", "farmerID"), model = "random", 
+            effect = "twoways")
+summary(mranc6)
 
 
 #caro's approach 
