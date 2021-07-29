@@ -379,6 +379,100 @@ summary(lm(data = merge_seed, formula = score ~  gender_f +gender_d+ gender_f*ge
                    + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
                      maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70))
 
+
+#two way FE
+summary(lm(data = merge_seed, formula = score ~  gender_f + gender_d+ gender_f*gender_d + factor(shop_ID) +factor(farmer_ID)))
+plm1<-plm(score ~ gender_f*gender_d , data = merge_seed, index = c("shop_ID", "farmer_ID"), model = "within", 
+         effect = "twoways")
+summary(plm1)
+
+#twoway random effects 
+random1<-plm(score ~ gender_f+gender_d+gender_f*gender_d , data = merge_seed, index = c("shop_ID", "farmer_ID"), model = "random", 
+             effect = "twoways")
+summary(random1)
+
+ran1<-plm(score ~ gender_f+gender_d+gender_f*gender_d + Check2.check.maize.q14 + married +educ_f + Check2.check.maize.q8
+             +maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 
+             + years_shop + maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 +
+               maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76
+             + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+               maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70, data = merge_seed, index = c("shop_ID", "farmer_ID"), model = "random", 
+             effect = "twoways")
+summary(ran1)
+
+#### MIXED MODELS
+
+require(car)
+require(MASS)
+#https://ase.tufts.edu/bugs/guide/assets/mixed_model_guide.html
+
+#checking out distribution of the response variable - the distribution where most of the points are under the dashed line should be considered
+merge_seed$score.t <- merge_seed$score + 1
+qqp(merge_seed$score.t, "norm")
+qqp(merge_seed$score.t, "lnorm")
+#lognormal seems to be the correct distribution
+
+#thus, our case is not normal distribution 
+#the REML and maximum likelihood methods for estimating the effect sizes in the model make assumptions of normality -- so cannot be used
+#we need to test whether we can use penalized quasilikelihood (PQL) or not. 
+#it produces biased estimates if response variable fits a discrete count distribution and the mean is less than 5 - or if your response variable is binary.
+#in our case, score's mean is less than 5, so PQL will likely create biased estimates 
+
+#but still I try PQL
+PQL1 <- glmmPQL(score.t ~ gender_f + gender_d, ~1 | shop_ID/farmer_ID, family = gaussian(link = "log"),
+                data = merge_seed, verbose = FALSE)
+#verbose --- logical:print out record of iterations?
+
+summary(PQL1)
+PQL2 <- glmmPQL(score.t ~ gender_f + gender_d + gender_f*gender_d, ~1 | shop_ID/farmer_ID, family = gaussian(link = "log"),
+                data = merge_seed, verbose = FALSE)
+summary(PQL2)
+PQL3 <- glmmPQL(score.t ~ gender_f + gender_d + gender_f*gender_d, ~1 | farmer_ID/shop_ID, family = gaussian(link = "log"),
+                data = merge_seed, verbose = FALSE)
+summary(PQL3)
+
+PQL2c <- glmmPQL(score.t ~ gender_f + gender_d + gender_f*gender_d+Check2.check.maize.q14 + married +educ_f + Check2.check.maize.q8
+                 +maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 
+                 + years_shop + maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 +
+                   maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76
+                 + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+                   maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70, ~1 | shop_ID/farmer_ID, family = gaussian(link = "log"),
+                data = merge_seed, verbose = FALSE)
+summary(PQL2c)
+
+##### does not run 
+
+#Laplace approximation when distribution is not normal
+library("mlmRev")
+library(Rcpp)
+
+#the Laplace approximation is a special case of a parameter estimation method called Gauss-Hermite quadrature (GHQ), with one iteration. 
+#GHQ is more accurate than Laplace due to repeated iterations, but becomes less flexible after the first iteration, so can only use it for one random effect. 
+GHQ1 <- glmer(score ~ gender_f + gender_d + gender_f * gender_d + (1 | shop_ID) , data = merge_seed,
+              family = binomial(link = "logit"), nAGQ = 1)
+
+GHQ2 <- glmer(score ~ gender_f + gender_d + gender_f * gender_d + (1 | shop_ID) + (1 | farmer_ID), data = merge_seed,
+              family = binomial(link = "logit"), nAGQ = 1)
+
+#does not run 
+library(lme4)
+lmm1 <- lmer(score ~ gender_f+gender_d+gender_f*gender_d + farmer_ID + (1 | shop_ID), data =merge_seed)
+lmm2 <- lmer(score ~ gender_f*gender_d + farmer_ID + (1 | shop_ID), data =merge_seed)
+lmm3 <- lmer(score ~ gender_f*gender_d + shop_ID + (1 | farmer_ID), data =merge_seed)
+lmm4 <- lmer(score ~  gender_f+gender_d+gender_f*gender_d + shop_ID + (1 | farmer_ID), data =merge_seed)
+#returns ---- fixed-effect model matrix is rank deficient so dropping 1 column / coefficient
+
+#Intercept varying among shop_ID and farmer_ID, grouping factors are shop_ID and farmer_ID
+#(1 | g), is the simplest possible mixed-model formula, where each level of the grouping factor, g, has its own random intercept. 
+#any nonzero mean of the random effects as fixed-effects parameters. 
+#https://cran.r-project.org/web/packages/lme4/vignettes/lmer.pdf 
+#does not run
+fm1 <- lmer(score ~ gender_f+gender_d+gender_f*gender_d + (1| shop_ID)+(1| farmer_ID),merge_seed)
+
+
+
+
+
 summary(lm.cluster(data = merge_seed, formula = score ~  gender_f + gender_d+ gender_f*gender_d, cluster="shop_ID"))
 summary(lm.cluster(data = merge_seed, formula = score ~  gender_f +gender_d+ gender_f*gender_d+ Check2.check.maize.q14 + married +educ_f + Check2.check.maize.q8
                    +maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 
@@ -395,6 +489,28 @@ summary(lm(data = merge_seed, formula = general_rating ~  gender_f +gender_d+ ge
            + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
              maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70))
 
+#two way FE
+summary(lm(data = merge_seed, formula = general_rating ~  gender_f + gender_d+ gender_f*gender_d + factor(shop_ID) +factor(farmer_ID)))
+plm2<-plm(general_rating ~ gender_f*gender_d , data = merge_seed, index = c("shop_ID", "farmer_ID"), model = "within", 
+          effect = "twoways")
+summary(plm2)
+
+#twoway random effects 
+random2<-plm(general_rating ~ gender_f+gender_d+gender_f*gender_d , data = merge_seed, index = c("shop_ID", "farmer_ID"), model = "random", 
+             effect = "twoways")
+summary(random2)
+
+ran2<-plm(general_rating ~ gender_f+gender_d+gender_f*gender_d + Check2.check.maize.q14 + married +educ_f + Check2.check.maize.q8
+          +maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 
+          + years_shop + maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 +
+            maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76
+          + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+            maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70, data = merge_seed, index = c("shop_ID", "farmer_ID"), model = "random", 
+          effect = "twoways")
+summary(ran2)
+
+
+
 summary(lm(data = merge_seed, formula = seed_quality_general_rating ~  gender_f + gender_d+ gender_f*gender_d))
 summary(lm(data = merge_seed, formula = seed_quality_general_rating ~  gender_f +gender_d+ gender_f*gender_d+ Check2.check.maize.q14 + married +educ_f + Check2.check.maize.q8
            +maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 
@@ -402,6 +518,28 @@ summary(lm(data = merge_seed, formula = seed_quality_general_rating ~  gender_f 
              maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76
            + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
              maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70))
+
+#two way FE
+summary(lm(data = merge_seed, formula = seed_quality_general_rating ~  gender_f + gender_d+ gender_f*gender_d + factor(shop_ID) +factor(farmer_ID)))
+plm3<-plm(seed_quality_general_rating ~ gender_f*gender_d , data = merge_seed, index = c("shop_ID", "farmer_ID"), model = "within", 
+          effect = "twoways")
+summary(plm3)
+
+#twoway random effects 
+random3<-plm(seed_quality_general_rating ~ gender_f+gender_d+gender_f*gender_d , data = merge_seed, index = c("shop_ID", "farmer_ID"), model = "random", 
+             effect = "twoways")
+summary(random3)
+
+ran3<-plm(seed_quality_general_rating ~ gender_f+gender_d+gender_f*gender_d + Check2.check.maize.q14 + married +educ_f + Check2.check.maize.q8
+          +maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 
+          + years_shop + maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 +
+            maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76
+          + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+            maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70, data = merge_seed, index = c("shop_ID", "farmer_ID"), model = "random", 
+          effect = "twoways")
+summary(ran3)
+
+
 
 summary(lm(data = merge_seed, formula = seed_yield_rating ~  gender_f + gender_d+ gender_f*gender_d))
 summary(lm(data = merge_seed, formula = seed_yield_rating ~  gender_f +gender_d+ gender_f*gender_d+ Check2.check.maize.q14 + married +educ_f + Check2.check.maize.q8
@@ -411,6 +549,29 @@ summary(lm(data = merge_seed, formula = seed_yield_rating ~  gender_f +gender_d+
            + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
              maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70))
 
+#two way FE
+summary(lm(data = merge_seed, formula = seed_yield_rating ~  gender_f + gender_d+ gender_f*gender_d + factor(shop_ID) +factor(farmer_ID)))
+plm4<-plm(seed_yield_rating ~ gender_f*gender_d , data = merge_seed, index = c("shop_ID", "farmer_ID"), model = "within", 
+          effect = "twoways")
+summary(plm4)
+
+
+#twoway random effects 
+random4<-plm(seed_yield_rating ~ gender_f+gender_d+gender_f*gender_d , data = merge_seed, index = c("shop_ID", "farmer_ID"), model = "random", 
+             effect = "twoways")
+summary(random4)
+
+ran4<-plm(seed_yield_rating ~ gender_f+gender_d+gender_f*gender_d + Check2.check.maize.q14 + married +educ_f + Check2.check.maize.q8
+          +maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 
+          + years_shop + maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 +
+            maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76
+          + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+            maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70, data = merge_seed, index = c("shop_ID", "farmer_ID"), model = "random", 
+          effect = "twoways")
+summary(ran4)
+
+
+
 summary(lm(data = merge_seed, formula = seed_drought_rating ~  gender_f + gender_d+ gender_f*gender_d))
 summary(lm(data = merge_seed, formula = seed_drought_rating ~  gender_f +gender_d+ gender_f*gender_d+ Check2.check.maize.q14 + married +educ_f + Check2.check.maize.q8
            +maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 
@@ -418,6 +579,27 @@ summary(lm(data = merge_seed, formula = seed_drought_rating ~  gender_f +gender_
              maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76
            + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
              maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70))
+
+#two way FE
+summary(lm(data = merge_seed, formula = seed_drought_rating ~  gender_f + gender_d+ gender_f*gender_d + factor(shop_ID) +factor(farmer_ID)))
+plm5<-plm(seed_drought_rating ~ gender_f*gender_d , data = merge_seed, index = c("shop_ID", "farmer_ID"), model = "within", 
+          effect = "twoways")
+summary(plm5)
+
+#twoway random effects 
+random5<-plm(seed_drought_rating ~ gender_f+gender_d+gender_f*gender_d , data = merge_seed, index = c("shop_ID", "farmer_ID"), model = "random", 
+             effect = "twoways")
+summary(random5)
+
+ran5<-plm(seed_drought_rating ~ gender_f+gender_d+gender_f*gender_d + Check2.check.maize.q14 + married +educ_f + Check2.check.maize.q8
+          +maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 
+          + years_shop + maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 +
+            maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76
+          + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+            maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70, data = merge_seed, index = c("shop_ID", "farmer_ID"), model = "random", 
+          effect = "twoways")
+summary(ran5)
+
 
 summary(lm(data = merge_seed, formula = seed_disease_rating ~  gender_f + gender_d+ gender_f*gender_d))
 summary(lm(data = merge_seed, formula = seed_disease_rating ~  gender_f +gender_d+ gender_f*gender_d+ Check2.check.maize.q14 + married +educ_f + Check2.check.maize.q8
@@ -427,6 +609,27 @@ summary(lm(data = merge_seed, formula = seed_disease_rating ~  gender_f +gender_
            + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
              maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70))
 
+
+#two way FE
+summary(lm(data = merge_seed, formula = seed_disease_rating ~  gender_f + gender_d+ gender_f*gender_d + factor(shop_ID) +factor(farmer_ID)))
+plm6<-plm(seed_disease_rating ~ gender_f*gender_d , data = merge_seed, index = c("shop_ID", "farmer_ID"), model = "within", 
+          effect = "twoways")
+summary(plm6)
+
+#twoway random effects 
+random6<-plm(seed_disease_rating ~ gender_f+gender_d+gender_f*gender_d , data = merge_seed, index = c("shop_ID", "farmer_ID"), model = "random", 
+             effect = "twoways")
+summary(random6)
+
+ran6<-plm(seed_disease_rating ~ gender_f+gender_d+gender_f*gender_d + Check2.check.maize.q14 + married +educ_f + Check2.check.maize.q8
+          +maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 
+          + years_shop + maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 +
+            maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76
+          + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+            maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70, data = merge_seed, index = c("shop_ID", "farmer_ID"), model = "random", 
+          effect = "twoways")
+summary(ran6)
+
 summary(lm(data = merge_seed, formula = seed_maturing_rating ~  gender_f + gender_d+ gender_f*gender_d))
 summary(lm(data = merge_seed, formula = seed_maturing_rating ~  gender_f +gender_d+ gender_f*gender_d+ Check2.check.maize.q14 + married +educ_f + Check2.check.maize.q8
            +maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 
@@ -435,6 +638,27 @@ summary(lm(data = merge_seed, formula = seed_maturing_rating ~  gender_f +gender
            + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
              maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70))
 
+#two way FE
+summary(lm(data = merge_seed, formula = seed_maturing_rating ~  gender_f + gender_d+ gender_f*gender_d + factor(shop_ID) +factor(farmer_ID)))
+plm7<-plm(seed_maturing_rating ~ gender_f*gender_d , data = merge_seed, index = c("shop_ID", "farmer_ID"), model = "within", 
+          effect = "twoways")
+summary(plm7)
+
+#twoway random effects 
+random7<-plm(seed_maturing_rating ~ gender_f+gender_d+gender_f*gender_d , data = merge_seed, index = c("shop_ID", "farmer_ID"), model = "random", 
+             effect = "twoways")
+summary(random7)
+
+ran7<-plm(seed_maturing_rating ~ gender_f+gender_d+gender_f*gender_d + Check2.check.maize.q14 + married +educ_f + Check2.check.maize.q8
+          +maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 
+          + years_shop + maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 +
+            maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76
+          + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+            maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70, data = merge_seed, index = c("shop_ID", "farmer_ID"), model = "random", 
+          effect = "twoways")
+summary(ran7)
+
+
 summary(lm(data = merge_seed, formula = seed_germinate_rating ~  gender_f + gender_d+ gender_f*gender_d))
 summary(lm(data = merge_seed, formula = seed_germinate_rating ~  gender_f +gender_d+ gender_f*gender_d+ Check2.check.maize.q14 + married +educ_f + Check2.check.maize.q8
            +maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 
@@ -442,6 +666,28 @@ summary(lm(data = merge_seed, formula = seed_germinate_rating ~  gender_f +gende
              maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76
            + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
              maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70))
+
+#two way FE
+summary(lm(data = merge_seed, formula = seed_germinate_rating ~  gender_f + gender_d+ gender_f*gender_d + factor(shop_ID) +factor(farmer_ID)))
+plm8<-plm(seed_germinate_rating ~ gender_f*gender_d , data = merge_seed, index = c("shop_ID", "farmer_ID"), model = "within", 
+          effect = "twoways")
+summary(plm8)
+
+#twoway random effects 
+random8<-plm(seed_germinate_rating ~ gender_f+gender_d+gender_f*gender_d , data = merge_seed, index = c("shop_ID", "farmer_ID"), model = "random", 
+             effect = "twoways")
+summary(random8)
+
+ran8<-plm(seed_germinate_rating ~ gender_f+gender_d+gender_f*gender_d + Check2.check.maize.q14 + married +educ_f + Check2.check.maize.q8
+          +maize.owner.agree.age + prim + maize.owner.agree.q3 + maize.owner.agree.q4 + maize.owner.agree.q5 
+          + years_shop + maize.owner.agree.temp.q69 + maize.owner.agree.temp.q71 + maize.owner.agree.temp.q72 +
+            maize.owner.agree.temp.q73 + maize.owner.agree.temp.q74 + maize.owner.agree.temp.q75 + maize.owner.agree.temp.q76
+          + goodfloor + badlighting + badstored + maize.owner.agree.temp.q80 + maize.owner.agree.temp.q81 + 
+            maize.owner.agree.temp.q82 + maize.owner.agree.q96 + maize.owner.agree.q70, data = merge_seed, index = c("shop_ID", "farmer_ID"), model = "random", 
+          effect = "twoways")
+summary(ran8)
+
+
 
 
 #extracting variables from the baseline data
@@ -585,6 +831,11 @@ summary(lm(data = m, formula = rating_overall ~  gender + dealer_fem + gender*de
 summary(lm(data = m, formula = rating_overall ~  gender + dealer_fem + gender*dealer_fem + age + educ + tarmac
            + married + age_dealer + education_dealer) )
 
+#two way FE
+summary(lm(data = m, formula = rating_overall ~  gender+ dealer_fem+ gender*dealer_fem + factor(id.ratee) +factor(farmerID) ))
+summary(lm(data = m, formula = rating_overall ~  gender+ dealer_fem+ gender*dealer_fem + factor(id.ratee) +factor(farmerID) +age + educ + tarmac
+           + married + age_dealer + education_dealer))
+
 
 #caro's approach 
 summary(lm(data = a, formula = rating_overall ~  dealer_fem ))
@@ -634,6 +885,11 @@ summary(lm(data = m, formula = rating_location ~  gender + dealer_fem + gender*d
 summary(lm(data = m, formula = rating_location ~  gender + dealer_fem + gender*dealer_fem + age + educ + tarmac
            + married + age_dealer + education_dealer) )
 
+#two way FE
+summary(lm(data = m, formula = rating_location ~  gender+ dealer_fem+ gender*dealer_fem + factor(id.ratee) +factor(farmerID) ))
+summary(lm(data = m, formula = rating_location~  gender+ dealer_fem+ gender*dealer_fem + factor(id.ratee) +factor(farmerID) +age + educ + tarmac
+           + married + age_dealer + education_dealer))
+
 #caro's approach 
 summary(lm(data = a, formula = rating_location ~  dealer_fem ))
 summary(lm(data = a, formula = rating_location ~  dealer_fem + age_dealer + education_dealer))
@@ -681,6 +937,11 @@ summary(lm(data = m, formula = rating_quality ~  dealer_fem + age_dealer + educa
 summary(lm(data = m, formula = rating_quality ~  gender + dealer_fem + gender*dealer_fem) )
 summary(lm(data = m, formula = rating_quality ~  gender + dealer_fem + gender*dealer_fem + age + educ + tarmac
            + married + age_dealer + education_dealer) )
+
+#two way FE
+summary(lm(data = m, formula = rating_quality~  gender+ dealer_fem+ gender*dealer_fem + factor(id.ratee) +factor(farmerID) ))
+summary(lm(data = m, formula = rating_quality~  gender+ dealer_fem+ gender*dealer_fem + factor(id.ratee) +factor(farmerID) +age + educ + tarmac
+           + married + age_dealer + education_dealer))
 
 #caro's approach 
 summary(lm(data = a, formula = rating_quality ~  dealer_fem ))
@@ -731,6 +992,11 @@ summary(lm(data = m, formula = rating_price ~  gender + dealer_fem + gender*deal
 summary(lm(data = m, formula = rating_price ~  gender + dealer_fem + gender*dealer_fem + age + educ + tarmac
            + married + age_dealer + education_dealer) )
 
+#two way FE
+summary(lm(data = m, formula = rating_price~  gender+ dealer_fem+ gender*dealer_fem + factor(id.ratee) +factor(farmerID) ))
+summary(lm(data = m, formula = rating_price~  gender+ dealer_fem+ gender*dealer_fem + factor(id.ratee) +factor(farmerID) +age + educ + tarmac
+           + married + age_dealer + education_dealer))
+
 
 #caro's approach 
 summary(lm(data = a, formula = rating_price ~  dealer_fem ))
@@ -780,6 +1046,11 @@ summary(lm(data = m, formula = rating_stock~  gender + dealer_fem + gender*deale
 summary(lm(data = m, formula = rating_stock ~  gender + dealer_fem + gender*dealer_fem + age + educ + tarmac
            + married + age_dealer + education_dealer) )
 
+#two way FE
+summary(lm(data = m, formula = rating_stock~  gender+ dealer_fem+ gender*dealer_fem + factor(id.ratee) +factor(farmerID) ))
+summary(lm(data = m, formula = rating_stock~  gender+ dealer_fem+ gender*dealer_fem + factor(id.ratee) +factor(farmerID) +age + educ + tarmac
+           + married + age_dealer + education_dealer))
+
 
 #caro's approach 
 summary(lm(data = a, formula = rating_stock ~  dealer_fem ))
@@ -828,6 +1099,11 @@ summary(lm(data = m, formula = rating_reputation ~  dealer_fem + age_dealer + ed
 summary(lm(data = m, formula = rating_reputation~  gender + dealer_fem + gender*dealer_fem) )
 summary(lm(data = m, formula = rating_reputation ~  gender + dealer_fem + gender*dealer_fem + age + educ + tarmac
            + married + age_dealer + education_dealer) )
+
+#two way FE
+summary(lm(data = m, formula = rating_reputation~  gender+ dealer_fem+ gender*dealer_fem + factor(id.ratee) +factor(farmerID) ))
+summary(lm(data = m, formula = rating_reputation~  gender+ dealer_fem+ gender*dealer_fem + factor(id.ratee) +factor(farmerID) +age + educ + tarmac
+           + married + age_dealer + education_dealer))
 
 
 #caro's approach 
