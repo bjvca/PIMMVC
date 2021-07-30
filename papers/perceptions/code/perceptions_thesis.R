@@ -2917,4 +2917,16 @@ round(nobs(lm_res89),digits=4)
 round(nobs(lm_res99),digits=4)
 round(nobs(lm_res103),digits=4)
 
+###########  AVERAGE RATINGS 
+#SELF RATINGS HIGHER THAN RATINGS GIVEN BY FARMERS 
+boxplot(pool$rating_overall, pool$ratee_rating_overall, xlab="Ratings from farmers         vs         Self-ratings", ylab="Ratings on a scale of 1 to 5")
+
+boxplot(pool$rating_location, pool$rating_price, pool$rating_quality, pool$rating_reputation, xlab="Ratings from farmers", ylab="Ratings on a scale of 1 to 5")
+
+
+
+
+
+
+
 
