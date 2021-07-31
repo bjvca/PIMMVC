@@ -1,0 +1,573 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Making sense of the estimators
+\end_layout
+
+\begin_layout Standard
+Up to now, we have been thinking about the estimators of the parameters
+ using panel data jargon (i.e.
+ fixed effects (within) estimator and between estimator)
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+For now, forget the pooled model, and random effects models as they use
+ both dimensions of the data.
+\end_layout
+
+\end_inset
+
+.
+ We have referred to the within model as a regression with farmer level
+ fixed effects (ie deviations from farmer means or farmer level dummies)
+ and to the between model as a regression on input dealer level means (the
+ Caro model).
+ But I think this is not entirely correct; I think in doing so we are implicitly
+ switching around the 
+\emph on
+i
+\emph default
+ and the 
+\emph on
+t
+\emph default
+ in panel data model speak.
+ I think part of the confusion is related to the fact that we do not have
+ a completely balanced panel where all farmers rate all input dealers (or
+ all input dealers are not rated by all farmers).
+\end_layout
+
+\begin_layout Standard
+If we estimate a fixed effects model with fixed effects at the farmer level,
+ then the associated between estimator should not be an OLS regression on
+ input dealer means (what we have been estimating up to now), but an OLS
+ regression on farmer level means.
+ I do not think that up to now we have estimated the latter.
+ Likewise, if we estimate a between model on the dealer level averages,
+ the fixed effects counterpart should be a regression with dealer level
+ fixed effects.
+ I also do not think that up to now we have estimated the latter.
+\end_layout
+
+\begin_layout Standard
+In total, this gives us four ways to look at the data (in addition to the
+ pooled model).
+ Differences within farmers, differences between farmers, differences within
+ input dealers, and differences between input dealers.
+ The challenge then remains to understand what models to estimate to answer
+ what question and how are these different models related? What can we learn
+ from each model and what can we learn from looking at all models together?
+\end_layout
+
+\begin_layout Subsubsection*
+Question 1: do farmers discriminate against women dealers?
+\end_layout
+
+\begin_layout Standard
+To answer this question, we need to make sure that gender of the dealer
+ enters the regression in some form.
+ This means that a within transformation should preserve this dealer gender
+ dummy, and so farmer should be 
+\emph on
+i
+\emph default
+ and dealer should be interpreted as 
+\emph on
+t
+\emph default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+The pooled model will look like: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+y_{f,d}=\alpha+\beta x_{f,d}+\gamma g_{f,d}+\varepsilon_{f,d}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where 
+\begin_inset Formula $y_{f,d}$
+\end_inset
+
+ is the rating given by farmer 
+\emph on
+f
+\emph default
+ to dealer 
+\emph on
+d
+\emph default
+, 
+\begin_inset Formula $x_{f,d}$
+\end_inset
+
+ are a bunch of controls that may or may not vary between farmers and input
+ dealer dyads, and 
+\begin_inset Formula $g_{f,d}$
+\end_inset
+
+ is the explanatory variable of interest, in this case the gender of input
+ dealer 
+\emph on
+d
+\emph default
+ that was rated by farmer 
+\emph on
+f
+\emph default
+.
+ 
+\begin_inset Formula $\varepsilon_{f,d}$
+\end_inset
+
+ is an error term and 
+\begin_inset Formula $\alpha$
+\end_inset
+
+, 
+\begin_inset Formula $\beta$
+\end_inset
+
+ and 
+\begin_inset Formula $\gamma$
+\end_inset
+
+ are parameters to be estimated.
+ 
+\end_layout
+
+\begin_layout Standard
+The between-farmer model takes averages over all the dealers that were ranked
+ by the farmer.
+ The number of observations will thus be equal to the number or farmers
+ included in the study (about 3,400).
+ The model uses differences between farmers to estimate the parameters.
+ A significant coefficient on the gender of the agro-input dealer would
+ mean that farmers that rated relatively more male agro-input dealers have
+ also relatively higher scores.
+ As, at least in theory, the farmers rate the same input dealers, any significan
+t differences should be attributed to differences at the level of the farmers.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+In fact, if this would be a completely balanced panel (all farmers rate
+ all dealers), than 
+\begin_inset Formula $\frac{1}{D}\underset{d}{\sum}g_{f,d}$
+\end_inset
+
+ below would be the same for all farmers (the share of female input dealers
+ in the sample) and the effect would be absorbed into the constant.
+ I think that the reason why we can estimate a parameter for a dealer invariant
+ effect like dealer gender in a between farmer model is due to the fact
+ that we have an incomplete panel.
+ This could be something we can use in the paper, but we also need to discuss
+ the potential problems with this, that the incompleteness is perhaps not
+ random?
+\end_layout
+
+\end_inset
+
+.
+ This model requires that the likelihood that the farmer rates a female
+ agro-input dealer is uncorrelated with farmer specific unobservable effects.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{1}{D}\underset{d}{\sum}y_{f,d}=\alpha+\beta\frac{1}{D}\underset{d}{\sum}x_{f,d}+\gamma\frac{1}{D}\underset{d}{\sum}g_{f,d}+\frac{1}{D}\underset{d}{\sum}\varepsilon_{f,d}\label{eq:two}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\overline{y}_{f}=\mu+\beta\overline{x}_{f}+\gamma\overline{g}_{f}+\overline{e}_{f}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Note that up to now, we did not estimate this model yet! Note also that
+ 
+\begin_inset Formula $\overline{g}_{f}$
+\end_inset
+
+ is not a 0/1 variable, but a variable between 0 and 1 indicating the share
+ of female agro-input dealers in the total number of agro input dealers
+ that were rated by the farmer.
+ So for instance if farmer John rated 2 input dealers and one was female
+ it would be 0.5.
+\end_layout
+
+\begin_layout Standard
+The fixed effects model exploits the within dimension of the data (expressed
+ as deviations from farmers mean).
+ The model uses the fact that the same farmer rates input dealers from potential
+ly different genders.
+ It removes farmer level heterogeneity for all attributes that remain constant
+ regardless of which input dealer is rated (eg farmers that are better educated
+ may give lower scores).
+ It is the same farmer so in these models the focus is on explaining heterogenei
+ty in the dealer.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+y_{f,d}-\frac{1}{D}\underset{d}{\sum}y_{f,d}=\alpha+\beta\left(x_{f,d}-\frac{1}{D}\underset{d}{\sum}x_{f,d}\right)+\gamma\left(g_{f,d}-\frac{1}{D}\underset{d}{\sum}g_{fd}\right)+\left(\varepsilon_{f,d}-\frac{1}{D}\underset{d}{\sum}\varepsilon_{f,d}\right)\label{eq:four}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+y_{f,d}-\overline{y}_{f}=\mu+\beta\left(x_{f,d}-\overline{x}_{f}\right)+\gamma\left(g_{f,d}-\overline{g}_{f}\right)+\varepsilon_{f,d}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If we now turn i and t around, we get the between effects model that uses
+ differences between input dealers by averaging across all farmers that
+ rated that particular input dealer.
+ The number of observations here is the number of agro-input dealers (340).
+ In theory, one could assume all input dealers would be rated by the same
+ farmers, so any difference should be attributed to the input dealers
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Again, this would only be the case in complete panels.
+ 
+\end_layout
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{1}{F}\underset{f}{\sum}y_{f,d}=\alpha+\beta\frac{1}{F}\underset{f}{\sum}x_{f,d}+\gamma\frac{1}{F}\underset{f}{\sum}g_{f,d}+\frac{1}{F}\underset{f}{\sum}\varepsilon_{f,d}\label{eq:six}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\overline{y}_{d}=\mu+\beta\overline{x}_{d}+\gamma\overline{g}_{d}+\overline{e}_{d}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This is the Caro model
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Note that both model 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:four"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:six"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ try to explain dealer level heterogeneity.
+ Yet, when we estimate these models, we get different results.
+ Could the significant result that we find in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:six"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ be due to the non-random nature of the panel?
+\end_layout
+
+\end_inset
+
+.
+ Note that here 
+\begin_inset Formula $\overline{g}_{d}$
+\end_inset
+
+ will be 0 or 1.
+\end_layout
+
+\begin_layout Standard
+For the fixed effects model at input dealer level, the gender of the agro
+ input dealer will be dropped as it does not vary within input dealer.
+ So to answer question 1 it is not so interesting.
+ In this model, all variation should be attributed to differences between
+ farmers.
+ Our best guess at explaining variation at this level is thus to use model
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:two"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+y_{f,d}-\frac{1}{F}\underset{f}{\sum}y_{f,d}=\alpha+\beta\left(x_{f,d}-\frac{1}{F}\underset{f}{\sum}x_{f,d}\right)+\gamma\left(g_{f,d}-\frac{1}{F}\underset{f}{\sum}g_{fd}\right)+\left(\varepsilon_{f,d}-\frac{1}{D}\underset{d}{\sum}\varepsilon_{f,d}\right)\label{eq:eight}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+y_{f,d}-\overline{y}_{f}=\mu+\beta\left(x_{f,d}-\overline{x}_{f}\right)+\varepsilon_{f,d}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Question 2: do farmers rate different depending on own gender?
+\end_layout
+
+\begin_layout Standard
+A similar reasoning can be made for the second question.
+ The difference will be that the gender variable 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $g_{f,d}$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ now refers to the gender of the farmer.
+ Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:two"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, with the averages at the farmer level, will be similar, but 
+\begin_inset Formula $\frac{1}{D}\underset{d}{\sum}g_{f,d}$
+\end_inset
+
+ will now be a dummy indicating the gender of the farmer.
+ In equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:six"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, on the other hand, 
+\begin_inset Formula $\underset{f}{\sum}g_{f,d}$
+\end_inset
+
+ is now the average gender of all farmers that rated the particular input
+ dealer, and so will be a proportion
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Again, if this would be a balanced panel and all farmers would have rated
+ all input dealers, this would simply be the share of women farmers in the
+ sample and this would be collinear with the constant.
+\end_layout
+
+\end_inset
+
+.
+ Furthermore, the gender variable would now be dropped in model 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:four"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, but it would be possible to estimate model 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:eight"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\end_body
+\end_document
