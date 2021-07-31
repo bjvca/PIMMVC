@@ -114,7 +114,7 @@ footnotemark[1]}
 
 \end_inset
 
-Competition and relational contracts
+Competition and relational contracts in local food supply chains
 \end_layout
 
 \begin_layout Abstract
@@ -304,13 +304,42 @@ literal "false"
  to processors.
  Service and input providers are also part of the value chains, and may
  be particularly important when the focus is on relational contracts.
- While a primary focus on a sub-group of farmers that sell directly to processor
-s may affect external validity, ignoring traders, for instance, may lead
- to selection bias that potentially affects internal validity as well.
- It is likely that especially farmers that sell only small quantities will
- rely on traders.
- As such, an exclusive focus on the farmer-processor link may mean findings
- are affected by selection bias.
+ Competition may evolve differently at different levels of the value chain.
+ For instance, in many developing countries the emergence of supermarkets
+ and entrance of fast-food chains has led to increased concentration in
+ the food retail sector 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "reardon2003rise"
+literal "false"
+
+\end_inset
+
+.
+ As seed companies start to more aggressively market their products, competition
+ at the agro-input dealer level may increase 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "doi:10.1080/15427528.2020.1737296"
+literal "false"
+
+\end_inset
+
+.
+ It is likely that the interaction between competition and relational contractin
+g may differ depending on the actors involved and transactions made within
+ food supply chains.
+ Furthermore, the effects of competition at a particular link in the chain
+ will depend on the rest of the supply chain and may in turn have consequences
+ in terms of price and welfare effects in the other links of the chain 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "https://doi.org/10.1111/j.1574-0862.2010.00493.x"
+literal "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -2612,6 +2641,15 @@ alternative ways to measure competition at the trader level.
  In the analysis We asked traders to indicate how many traders similar to
  themselves were operating in the area.
  Unfortunately
+\end_layout
+
+\begin_layout Section*
+Implications and Conclusion
+\end_layout
+
+\begin_layout Standard
+Contracting is more likely to break down if the value in the chain is low.
+ Yet we see that 
 \end_layout
 
 \begin_layout Standard
