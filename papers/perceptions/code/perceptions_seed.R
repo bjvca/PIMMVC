@@ -474,17 +474,17 @@ summary(nlme::lme(score ~gender_f, random = ~ 1 | farmer_ID/shop_ID, data = data
 
 #the Laplace approximation is a special case of a parameter estimation method called Gauss-Hermite quadrature (GHQ), with one iteration. 
 #GHQ is more accurate than Laplace due to repeated iterations, but becomes less flexible after the first iteration, so can only use it for one random effect. 
-GHQ1 <- glmer(score ~ gender_f + gender_d + gender_f * gender_d + (1 | shop_ID) , data = merge_seed,
+#GHQ1 <- glmer(score ~ gender_f + gender_d + gender_f * gender_d + (1 | shop_ID) , data = merge_seed,
               family = binomial(link = "logit"), nAGQ = 1)
 
-GHQ2 <- glmer(score ~ gender_f + gender_d + gender_f * gender_d + (1 | shop_ID) + (1 | farmer_ID), data = merge_seed,
+#GHQ2 <- glmer(score ~ gender_f + gender_d + gender_f * gender_d + (1 | shop_ID) + (1 | farmer_ID), data = merge_seed,
               family = binomial(link = "logit"), nAGQ = 1)
 
 #does not run 
-lmm1 <- lmer(score ~ gender_f+gender_d+gender_f*gender_d + farmer_ID + (1 | shop_ID), data =merge_seed)
-lmm2 <- lmer(score ~ gender_f*gender_d + farmer_ID + (1 | shop_ID), data =merge_seed)
-lmm3 <- lmer(score ~ gender_f*gender_d + shop_ID + (1 | farmer_ID), data =merge_seed)
-lmm4 <- lmer(score ~  gender_f+gender_d+gender_f*gender_d + shop_ID + (1 | farmer_ID), data =merge_seed)
+#lmm1 <- lmer(score ~ gender_f+gender_d+gender_f*gender_d + farmer_ID + (1 | shop_ID), data =merge_seed)
+#lmm2 <- lmer(score ~ gender_f*gender_d + farmer_ID + (1 | shop_ID), data =merge_seed)
+#lmm3 <- lmer(score ~ gender_f*gender_d + shop_ID + (1 | farmer_ID), data =merge_seed)
+#lmm4 <- lmer(score ~  gender_f+gender_d+gender_f*gender_d + shop_ID + (1 | farmer_ID), data =merge_seed)
 #returns ---- fixed-effect model matrix is rank deficient so dropping 1 column / coefficient
 
 #Intercept varying among shop_ID and farmer_ID, grouping factors are shop_ID and farmer_ID
@@ -2861,4 +2861,142 @@ summary(fe_lim3)
 summary(fe_lim4)
 
 write.csv(baseline_f,paste(path_2,"/papers/perceptions/data_seed_systems/data/farmer/baseline_f_merged.csv", sep="/"), row.names=FALSE)
+
+
+
+
+
+
+
+
+
+
+############### SEED SYSTEMS DATA 
+
+##################################################################################################################
+####################### BETWEEN FARMER --- FOCUS ON DEALER'S GENDER ##############################################
+
+rating_dyads <- read.csv(paste(path_2,"/papers/perceptions/data_seed_systems/data/farmer/rating_dyads.csv", sep = "/"))
+baseline_dealer <- read.csv(paste(path,"papers/perceptions/data_seed_systems/data/input_dealer/baseline_dealer.csv", sep="/"), stringsAsFactors = FALSE)
+
+#MERGED_DATASET
+between_farmer <- merge(rating_dyads, baseline_dealer, by="shop_ID")
+
+#create gender dummy
+between_farmer$genderdummy <- ifelse(between_farmer$maize.owner.agree.gender == "Male", 1, 0)
+
+### seed:
+
+between_farmer[c("seed_quality_general_rating","seed_yield_rating","seed_drought_rating","seed_disease_rating","seed_maturing_rating","seed_germinate_rating") ] <- lapply(between_farmer[c("seed_quality_general_rating","seed_yield_rating","seed_drought_rating","seed_disease_rating","seed_maturing_rating","seed_germinate_rating") ], function(x) as.numeric(as.character(x)) )
+
+between_farmer[c("seed_quality_general_rating","seed_yield_rating","seed_drought_rating","seed_disease_rating","seed_maturing_rating","seed_germinate_rating") ] <- lapply(between_farmer[c("seed_quality_general_rating","seed_yield_rating","seed_drought_rating","seed_disease_rating","seed_maturing_rating","seed_germinate_rating") ], function(x)replace(x, x == 98,NA) )
+
+between_farmer$quality_rating[between_farmer$shop_ID == "AD_99"]
+
+reviews_bf <- data.frame(cbind(tapply(as.numeric(between_farmer$quality_rating), between_farmer$farmer_ID,mean,na.rm=TRUE),
+                               tapply(as.numeric(between_farmer$seed_quality_general_rating), between_farmer$farmer_ID,mean,na.rm=TRUE),
+                               tapply(as.numeric(between_farmer$seed_yield_rating), between_farmer$farmer_ID,mean,na.rm=TRUE),
+                               tapply(as.numeric(between_farmer$seed_drought_rating), between_farmer$farmer_ID,mean,na.rm=TRUE),
+                               tapply(as.numeric(between_farmer$seed_disease_rating), between_farmer$farmer_ID,mean,na.rm=TRUE),
+                               tapply(as.numeric(between_farmer$seed_maturing_rating), between_farmer$farmer_ID,mean,na.rm=TRUE),
+                               tapply(as.numeric(between_farmer$seed_germinate_rating), between_farmer$farmer_ID,mean,na.rm=TRUE),
+                               tapply(as.numeric(between_farmer$genderdummy), between_farmer$farmer_ID,mean,na.rm=TRUE)))
+names(reviews_bf) <- c("quality","general","yield","drought_resistent","disease_resistent","early_maturing","germination","gender_avg")
+
+reviews_bf$farmer_ID <- rownames(reviews_bf)
+
+reviews_bf$score <-  rowMeans(reviews_bf[c("quality","general","yield","drought_resistent","disease_resistent","early_maturing","germination")],na.rm=T)
+
+#### merge
+bfm <- merge(reviews_bf, between_farmer, by="farmer_ID")
+
+#### regressions without controls - seed related ratings 
+
+summary(lm(score~gender_avg , data = bfm))
+summary(lm(quality~gender_avg , data = bfm))
+summary(lm(general~gender_avg , data = bfm))
+summary(lm(yield~gender_avg , data = bfm))
+summary(lm(drought_resistent~gender_avg , data = bfm))
+summary(lm(disease_resistent~gender_avg , data = bfm))
+summary(lm(early_maturing~gender_avg , data = bfm))
+summary(lm(germination~gender_avg , data = bfm))
+
+
+##Farmers' dataset
+farmers_seed <- read.csv(paste(path_2,"/papers/perceptions/data_seed_systems/data/farmer/baseline_farmers.csv", sep = "/"))
+#extracting variables from the baseline data
+farmers_seedsub <- farmers_seed[ , c("Check2.check.maize.q15", "Check2.check.maize.q14",
+                                     "Check2.check.maize.q16", "Check2.check.maize.q17",
+                                     "Check2.check.maize.q8", "farmer_ID")]  
+
+######## merge to get farmer characteristics 
+bfm <- merge(bfm, farmers_seedsub, by="farmer_ID")
+
+bfm$educ_f <- 0
+bfm$educ_f[bfm$Check2.check.maize.q17=="b" |bfm$Check2.check.maize.q17=="c" | bfm$Check2.check.maize.q17=="d" | bfm$Check2.check.maize.q17=="e" | 
+                    bfm$Check2.check.maize.q17=="f" |bfm$Check2.check.maize.q17=="g" ] <- 1 #educated farmers
+bfm$married <- ifelse(bfm$Check2.check.maize.q16 == 'a', 1, 0)  #married farmers
+
+
+#### regressions with dealer's gender (averaged) and farmer characteristics  --- seed related ratings 
+
+summary(lm(score~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14, data = bfm))
+summary(lm(quality~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14, data = bfm))
+summary(lm(general~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14, data = bfm))
+summary(lm(yield~gender_avg+ educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14 , data = bfm))
+summary(lm(drought_resistent~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14, data = bfm))
+summary(lm(disease_resistent~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14, data = bfm))
+summary(lm(early_maturing~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14, data = bfm))
+summary(lm(germination~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14, data = bfm))
+
+
+#NON-SEED RELATED RATINGS 
+##########################################
+between_farmer[c("general_rating","location_rating","price_rating","quality_rating","stock_rating","reputation_rating") ] <- lapply(between_farmer[c("general_rating","location_rating","price_rating","quality_rating","stock_rating","reputation_rating") ], function(x) as.numeric(as.character(x)) )
+
+between_farmer_long <- data.frame(cbind(tapply(as.numeric(between_farmer$general_rating), between_farmer$farmer_ID,mean,na.rm=TRUE),
+                                        tapply(as.numeric(between_farmer$location_rating), between_farmer$farmer_ID,mean,na.rm=TRUE),
+                                        tapply(as.numeric(between_farmer$price_rating), between_farmer$farmer_ID,mean,na.rm=TRUE),
+                                        tapply(as.numeric(between_farmer$quality_rating), between_farmer$farmer_ID,mean,na.rm=TRUE),
+                                        tapply(as.numeric(between_farmer$stock_rating), between_farmer$farmer_ID,mean,na.rm=TRUE),
+                                        tapply(as.numeric(between_farmer$reputation_rating), between_farmer$farmer_ID,mean,na.rm=TRUE),
+                                        tapply(as.numeric(between_farmer$genderdummy), between_farmer$farmer_ID,mean,na.rm=TRUE),
+                                        tapply(between_farmer$bought_at_dealer=="Yes" | between_farmer$knows_other_customer=="Yes", between_farmer$farmer_ID,sum)))
+names(between_farmer_long) <- c("general_rating_nonseed","location","price","qual","stock","reputation","gender_avg","nr_reviews")
+
+between_farmer_long$farmer_ID <- rownames(between_farmer_long)
+
+between_farmer_long$overall_rating <-  rowMeans(between_farmer_long[c("general_rating_nonseed", "location","price","qual","stock","reputation")],na.rm=T)
+
+#### merge
+bfmm <- merge(between_farmer_long, between_farmer, by="farmer_ID")
+
+#### regressions without controls - non-seed related ratings 
+
+summary(lm(overall_rating~gender_avg , data = bfmm))
+summary(lm(general_rating_nonseed~gender_avg , data = bfmm))
+summary(lm(location~gender_avg , data = bfmm))
+summary(lm(price~gender_avg , data = bfmm))
+summary(lm(qual~gender_avg , data = bfmm))
+summary(lm(stock ~gender_avg , data = bfmm))
+summary(lm(reputation ~gender_avg , data = bfmm))
+
+######## merge to get farmer characteristics 
+bfmm <- merge(bfmm, farmers_seedsub, by="farmer_ID")
+
+bfmm$educ_f <- 0
+bfmm$educ_f[bfmm$Check2.check.maize.q17=="b" |bfmm$Check2.check.maize.q17=="c" | bfmm$Check2.check.maize.q17=="d" | bfmm$Check2.check.maize.q17=="e" | 
+             bfmm$Check2.check.maize.q17=="f" |bfmm$Check2.check.maize.q17=="g" ] <- 1 #educated farmers
+bfmm$married <- ifelse(bfmm$Check2.check.maize.q16 == 'a', 1, 0)  #married farmers
+
+
+#### regressions with dealer's gender (averaged) and farmer characteristics  --- non-seed related ratings 
+
+summary(lm(overall_rating~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14, data = bfmm))
+summary(lm(general_rating_nonseed~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14, data = bfmm))
+summary(lm(location~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14, data = bfmm))
+summary(lm(price~gender_avg+ educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14 , data = bfmm))
+summary(lm(qual~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14, data = bfmm))
+summary(lm(stock~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14, data = bfmm))
+summary(lm(reputation~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14, data = bfmm))
 
