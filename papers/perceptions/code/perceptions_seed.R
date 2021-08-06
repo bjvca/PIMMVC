@@ -3235,6 +3235,9 @@ rating_dyads <- read.csv(paste(path_2,"/papers/perceptions/data_seed_systems/dat
 ##Farmers' dataset
 farmers_seed <- read.csv(paste(path_2,"/papers/perceptions/data_seed_systems/data/farmer/baseline_farmers.csv", sep = "/"))
 
+#how many dealers have been rated (i.e. how many unique shopIDs are in the dyads dataset)?
+print(length(table(rating_dyads$shop_ID)))
+
 #MERGED_DATASET
 between_dealer <- merge(rating_dyads, farmers_seed, by="shop_ID")
 
@@ -3247,346 +3250,307 @@ between_dealer$educ_f[between_dealer$Check2.check.maize.q17=="b" |between_dealer
                         between_dealer$Check2.check.maize.q17=="f" |between_dealer$Check2.check.maize.q17=="g" ] <- 1 #educated farmers
 between_dealer$married <- ifelse(between_dealer$Check2.check.maize.q16 == 'a', 1, 0)  #married farmers
 
-
-
-
-
-
+between_dealer[between_dealer=="n/a"]<- NA
 
 ### seed related ratings:
 
-between_farmer[c("seed_quality_general_rating","seed_yield_rating","seed_drought_rating","seed_disease_rating","seed_maturing_rating","seed_germinate_rating") ] <- lapply(between_farmer[c("seed_quality_general_rating","seed_yield_rating","seed_drought_rating","seed_disease_rating","seed_maturing_rating","seed_germinate_rating") ], function(x) as.numeric(as.character(x)) )
+between_dealer[c("seed_quality_general_rating","seed_yield_rating","seed_drought_rating","seed_disease_rating","seed_maturing_rating","seed_germinate_rating") ] <- lapply(between_dealer[c("seed_quality_general_rating","seed_yield_rating","seed_drought_rating","seed_disease_rating","seed_maturing_rating","seed_germinate_rating") ], function(x) as.numeric(as.character(x)) )
 
-between_farmer[c("seed_quality_general_rating","seed_yield_rating","seed_drought_rating","seed_disease_rating","seed_maturing_rating","seed_germinate_rating") ] <- lapply(between_farmer[c("seed_quality_general_rating","seed_yield_rating","seed_drought_rating","seed_disease_rating","seed_maturing_rating","seed_germinate_rating") ], function(x)replace(x, x == 98,NA) )
+between_dealer[c("seed_quality_general_rating","seed_yield_rating","seed_drought_rating","seed_disease_rating","seed_maturing_rating","seed_germinate_rating") ] <- lapply(between_dealer[c("seed_quality_general_rating","seed_yield_rating","seed_drought_rating","seed_disease_rating","seed_maturing_rating","seed_germinate_rating") ], function(x)replace(x, x == 98,NA) )
 
-between_farmer$quality_rating[between_farmer$shop_ID == "AD_99"]
+between_dealer$quality_rating[between_farmer$shop_ID == "AD_99"]
 
-reviews_bf <- data.frame(cbind(tapply(as.numeric(between_farmer$quality_rating), between_farmer$farmer_ID,mean,na.rm=TRUE),
-                               tapply(as.numeric(between_farmer$seed_quality_general_rating), between_farmer$farmer_ID,mean,na.rm=TRUE),
-                               tapply(as.numeric(between_farmer$seed_yield_rating), between_farmer$farmer_ID,mean,na.rm=TRUE),
-                               tapply(as.numeric(between_farmer$seed_drought_rating), between_farmer$farmer_ID,mean,na.rm=TRUE),
-                               tapply(as.numeric(between_farmer$seed_disease_rating), between_farmer$farmer_ID,mean,na.rm=TRUE),
-                               tapply(as.numeric(between_farmer$seed_maturing_rating), between_farmer$farmer_ID,mean,na.rm=TRUE),
-                               tapply(as.numeric(between_farmer$seed_germinate_rating), between_farmer$farmer_ID,mean,na.rm=TRUE),
-                               tapply(as.numeric(between_farmer$genderdummy), between_farmer$farmer_ID,mean,na.rm=TRUE),
-                               tapply(as.numeric(between_farmer$maize.owner.agree.age), between_farmer$farmer_ID,mean,na.rm=TRUE),
-                               tapply(as.numeric(between_farmer$prim), between_farmer$farmer_ID,mean,na.rm=TRUE),
-                               tapply(as.numeric(between_farmer$maize.owner.agree.q3), between_farmer$farmer_ID,mean,na.rm=TRUE),
-                               tapply(as.numeric(between_farmer$maize.owner.agree.q4), between_farmer$farmer_ID,mean,na.rm=TRUE),
-                               tapply(as.numeric(between_farmer$inputsale), between_farmer$farmer_ID,mean,na.rm=TRUE),
-                               tapply(as.numeric(between_farmer$years_shop), between_farmer$farmer_ID,mean,na.rm=TRUE),
-                               tapply(as.numeric(between_farmer$dedicated_area), between_farmer$farmer_ID,mean,na.rm=TRUE),
-                               tapply(as.numeric(between_farmer$pest_prob), between_farmer$farmer_ID,mean,na.rm=TRUE),
-                               tapply(as.numeric(between_farmer$insulated), between_farmer$farmer_ID,mean,na.rm=TRUE),
-                               tapply(as.numeric(between_farmer$wall_heatproof), between_farmer$farmer_ID,mean,na.rm=TRUE),
-                               tapply(as.numeric(between_farmer$ventilation), between_farmer$farmer_ID,mean,na.rm=TRUE),
-                               tapply(as.numeric(between_farmer$wall_plastered), between_farmer$farmer_ID,mean,na.rm=TRUE),
-                               tapply(as.numeric(between_farmer$goodfloor), between_farmer$farmer_ID,mean,na.rm=TRUE),
-                               tapply(as.numeric(between_farmer$badlighting), between_farmer$farmer_ID,mean,na.rm=TRUE),
-                               tapply(as.numeric(between_farmer$badstored), between_farmer$farmer_ID,mean,na.rm=TRUE),
-                               tapply(as.numeric(between_farmer$open_storage), between_farmer$farmer_ID,mean,na.rm=TRUE),
-                               tapply(as.numeric(between_farmer$cert_yes), between_farmer$farmer_ID,mean,na.rm=TRUE),
-                               tapply(as.numeric(between_farmer$shop_rate), between_farmer$farmer_ID,mean,na.rm=TRUE),
-                               tapply(as.numeric(between_farmer$complaint), between_farmer$farmer_ID,mean,na.rm=TRUE),
-                               tapply(as.numeric(between_farmer$leakproof), between_farmer$farmer_ID,mean,na.rm=TRUE),
-                               tapply(as.numeric(between_farmer$maize.owner.agree.q70), between_farmer$farmer_ID,mean,na.rm=TRUE)))
-names(reviews_bf) <- c("quality","general","yield","drought_resistent","disease_resistent","early_maturing","germination","gender_avg","dealer_age","dealer_educ","tarmac_dealer",
-                       "murram_dealer","farm_inputs","years_shop","dedicatedarea","pestprob","roof_insu","wall_heatproof","ventilation","plasterwall","goodfloor",
-                       "badlighting","badstored","open_storage","cert","shop_rate","complaint","leakproof","temp")
+reviews_bd <- data.frame(cbind(tapply(as.numeric(between_dealer$quality_rating), between_dealer$shop_ID,mean,na.rm=TRUE),
+                               tapply(as.numeric(between_dealer$seed_quality_general_rating), between_dealer$shop_ID,mean,na.rm=TRUE),
+                               tapply(as.numeric(between_dealer$seed_yield_rating), between_dealer$shop_ID,mean,na.rm=TRUE),
+                               tapply(as.numeric(between_dealer$seed_drought_rating), between_dealer$shop_ID,mean,na.rm=TRUE),
+                               tapply(as.numeric(between_dealer$seed_disease_rating), between_dealer$shop_ID,mean,na.rm=TRUE),
+                               tapply(as.numeric(between_dealer$seed_maturing_rating), between_dealer$shop_ID,mean,na.rm=TRUE),
+                               tapply(as.numeric(between_dealer$seed_germinate_rating), between_dealer$shop_ID,mean,na.rm=TRUE),
+                               tapply(as.numeric(between_dealer$farmergen), between_dealer$shop_ID,mean,na.rm=TRUE),
+                               tapply(as.numeric(between_dealer$educ_f), between_dealer$shop_ID,mean,na.rm=TRUE),
+                               tapply(as.numeric(between_dealer$married), between_dealer$shop_ID,mean,na.rm=TRUE),
+                               tapply(as.numeric(between_dealer$Check2.check.maize.q14), between_dealer$shop_ID,mean,na.rm=TRUE),
+                               tapply(as.numeric(between_dealer$Check2.check.maize.q8), between_dealer$shop_ID,mean,na.rm=TRUE),
+                               tapply(as.numeric(between_dealer$general_rating), between_dealer$shop_ID,mean,na.rm=TRUE),
+                               tapply(as.numeric(between_dealer$location_rating), between_dealer$shop_ID,mean,na.rm=TRUE),
+                               tapply(as.numeric(between_dealer$price_rating), between_dealer$shop_ID,mean,na.rm=TRUE),
+                               tapply(as.numeric(between_dealer$stock_rating), between_dealer$shop_ID,mean,na.rm=TRUE),
+                               tapply(as.numeric(between_dealer$reputation_rating), between_dealer$shop_ID,mean,na.rm=TRUE)))
 
-reviews_bf$farmer_ID <- rownames(reviews_bf)
+names(reviews_bd) <- c("quality","general","yield","drought_resistent","disease_resistent","early_maturing","germination","gender_avgf","farmer_educ","farmer_married","farmer_age",
+                       "farmer_tarmac","general_nonseed","location","price","stock","reputation")
 
-reviews_bf$score <-  rowMeans(reviews_bf[c("quality","general","yield","drought_resistent","disease_resistent","early_maturing","germination")],na.rm=T)
+reviews_bd$shop_ID <- rownames(reviews_bd)
+
+reviews_bd$score_bd <-  rowMeans(reviews_bd[c("quality","general","yield","drought_resistent","disease_resistent","early_maturing","germination")],na.rm=T)
+reviews_bd$avg_rating <-  rowMeans(reviews_bd[c("quality","general_nonseed","location","price","stock","reputation")],na.rm=T)
 
 
 
 ###dealer characteristics for  controls
+baseline_dealer <- read.csv(paste(path_2,"papers/perceptions/data_seed_systems/data/input_dealer/baseline_dealer.csv", sep="/"), stringsAsFactors = FALSE)
+
+betwd <- merge(reviews_bd, baseline_dealer, by="shop_ID")
 
 #education of dealers 
-between_farmer$prim <- 0
-between_farmer$prim[between_farmer$maize.owner.agree.educ=="c"|between_farmer$maize.owner.agree.educ=="d"|between_farmer$maize.owner.agree.educ=="e"|
-                      between_farmer$maize.owner.agree.educ=="f"] <- 1
-table(between_farmer$prim)
+betwd$prim <- 0
+betwd$prim[betwd$maize.owner.agree.educ=="c"|betwd$maize.owner.agree.educ=="d"|betwd$maize.owner.agree.educ=="e"|
+                      betwd$maize.owner.agree.educ=="f"] <- 1
+table(betwd$prim)
 
 #distance of shop to nearest tarmac road
-table(between_farmer$maize.owner.agree.q3)
-between_farmer$maize.owner.agree.q3[between_farmer$maize.owner.agree.q3==999] <- NA
+table(betwd$maize.owner.agree.q3)
+betwd$maize.owner.agree.q3[betwd$maize.owner.agree.q3==999] <- NA
 
 #distance of shop to nearest murram road 
-table(between_farmer$maize.owner.agree.q4)
+table(betwd$maize.owner.agree.q4)
 
 #selling only farm inputs 
-table(between_farmer$maize.owner.agree.q5)
-between_farmer$inputsale<- ifelse(between_farmer$maize.owner.agree.q5== 'Yes', 1, 0)  
+table(betwd$maize.owner.agree.q5)
+betwd$inputsale<- ifelse(betwd$maize.owner.agree.q5== 'Yes', 1, 0)  
 
 #Q8. When was this agro-input shop established? (year)
-between_farmer$years_shop <- 2020 - as.numeric(as.character(substr(between_farmer$maize.owner.agree.q8, start=1, stop=4)))
+betwd$years_shop <- 2020 - as.numeric(as.character(substr(betwd$maize.owner.agree.q8, start=1, stop=4)))
 
 #seed stored in dedicated area?
-between_farmer$maize.owner.agree.q69
-between_farmer$dedarea<-as.character(between_farmer$maize.owner.agree.temp.q69)
-between_farmer$dedicated_area<- ifelse(between_farmer$dedarea== 'Yes', 1, 0)  
-table(between_farmer$dedicated_area)
+betwd$maize.owner.agree.q69
+betwd$dedarea<-as.character(betwd$maize.owner.agree.temp.q69)
+betwd$dedicated_area<- ifelse(betwd$dedarea== 'Yes', 1, 0)  
+table(betwd$dedicated_area)
 
 #problem with rats or pests?
-between_farmer$maize.owner.agree.q71
-between_farmer$pest<-as.character(between_farmer$maize.owner.agree.temp.q71)
-between_farmer$pest_prob<- ifelse(between_farmer$pest== 'Yes', 1, 0)  
-table(between_farmer$pest_prob)
+betwd$maize.owner.agree.q71
+betwd$pest<-as.character(betwd$maize.owner.agree.temp.q71)
+betwd$pest_prob<- ifelse(betwd$pest== 'Yes', 1, 0)  
+table(betwd$pest_prob)
 
 #roof leak proof?  ------ NOT USED AS WHILE AVERAGING HAVING SOME ISSUES 
-between_farmer$maize.owner.agree.q72
-between_farmer$roof<-as.character(between_farmer$maize.owner.agree.temp.q72)
-between_farmer$leakproof<- ifelse(between_farmer$roof== 'Yes', 1, 0)  
-table(between_farmer$leakproof)
+betwd$maize.owner.agree.q72
+betwd$roof<-as.character(betwd$maize.owner.agree.temp.q72)
+betwd$leakproof<- ifelse(betwd$roof== 'Yes', 1, 0)  
+table(betwd$leakproof)
 
 #roof insulated?
-between_farmer$maize.owner.agree.q73
-between_farmer$roof_insu<-as.character(between_farmer$maize.owner.agree.temp.q73)
-between_farmer$insulated<- ifelse(between_farmer$roof_insu== 'Yes', 1, 0)  
-table(between_farmer$insulated)
+betwd$maize.owner.agree.q73
+betwd$roof_insu<-as.character(betwd$maize.owner.agree.temp.q73)
+betwd$insulated<- ifelse(betwd$roof_insu== 'Yes', 1, 0)  
+table(betwd$insulated)
 
 #walls insulated?
-between_farmer$maize.owner.agree.q74
-between_farmer$wall_insu<-as.character(between_farmer$maize.owner.agree.temp.q74)
-between_farmer$wall_heatproof<- ifelse(between_farmer$wall_insu== 'Yes', 1, 0)  
-table(between_farmer$wall_heatproof)
+betwd$maize.owner.agree.q74
+betwd$wall_insu<-as.character(betwd$maize.owner.agree.temp.q74)
+betwd$wall_heatproof<- ifelse(betwd$wall_insu== 'Yes', 1, 0)  
+table(betwd$wall_heatproof)
 
 #area ventilated?
-between_farmer$maize.owner.agree.q75
-between_farmer$vent<-as.character(between_farmer$maize.owner.agree.temp.q75)
-between_farmer$ventilation<- ifelse(between_farmer$vent== 'Yes', 1, 0)  
-table(between_farmer$ventilation)
+betwd$maize.owner.agree.q75
+betwd$vent<-as.character(betwd$maize.owner.agree.temp.q75)
+betwd$ventilation<- ifelse(betwd$vent== 'Yes', 1, 0)  
+table(betwd$ventilation)
 
 #plastered walls?
-between_farmer$maize.owner.agree.q76
-between_farmer$plas<-as.character(between_farmer$maize.owner.agree.temp.q76)
-between_farmer$wall_plastered<- ifelse(between_farmer$plas== 'Yes', 1, 0)  
-table(between_farmer$wall_plastered)
+betwd$maize.owner.agree.q76
+betwd$plas<-as.character(betwd$maize.owner.agree.temp.q76)
+betwd$wall_plastered<- ifelse(betwd$plas== 'Yes', 1, 0)  
+table(betwd$wall_plastered)
 
 #Q77. Material of floor in areas where seed is stored?
-between_farmer$goodfloor <- 0
-between_farmer$goodfloor[between_farmer$maize.owner.agree.temp.q77=="Cement"|between_farmer$maize.owner.agree.temp.q77=="Tiles"] <-1
-table(between_farmer$goodfloor)
+betwd$goodfloor <- 0
+betwd$goodfloor[betwd$maize.owner.agree.temp.q77=="Cement"|betwd$maize.owner.agree.temp.q77=="Tiles"] <-1
+table(betwd$goodfloor)
 
 #Q78. Lighting conditions in area where seed is stored?
-between_farmer$badlighting <- 0
-between_farmer$badlighting[between_farmer$maize.owner.agree.temp.q78=="1"]<-1
-table(between_farmer$badlighting)
+betwd$badlighting <- 0
+betwd$badlighting[betwd$maize.owner.agree.temp.q78=="1"]<-1
+table(betwd$badlighting)
 
 #Q79. On what surface are seed stored?
-between_farmer$badstored <- 0
-between_farmer$badstored[between_farmer$maize.owner.agree.temp.q79=="1"|between_farmer$maize.owner.agree.temp.q79=="2"| between_farmer$maize.owner.agree.temp.q79=="96"]<-1
-table(between_farmer$badstored)
+betwd$badstored <- 0
+betwd$badstored[betwd$maize.owner.agree.temp.q79=="1"|betwd$maize.owner.agree.temp.q79=="2"| betwd$maize.owner.agree.temp.q79=="96"]<-1
+table(betwd$badstored)
 
 #Q80. Do you see maize seed that is stored in open bags or containers?
-between_farmer$maize.owner.agree.q80
-between_farmer$open<-as.character(between_farmer$maize.owner.agree.temp.q80)
-between_farmer$open_storage<- ifelse(between_farmer$open== 'Yes', 1, 0)  
-table(between_farmer$open_storage)
+betwd$maize.owner.agree.q80
+betwd$open<-as.character(betwd$maize.owner.agree.temp.q80)
+betwd$open_storage<- ifelse(betwd$open== 'Yes', 1, 0)  
+table(betwd$open_storage)
 
 #Q81. Do you see any official certificates displayed in the store (eg that the shop was inspected ,that the owner attended trainings 
 #or that the business is registered with some association)
-between_farmer$maize.owner.agree.q81
-between_farmer$cert<-as.character(between_farmer$maize.owner.agree.temp.q81)
-between_farmer$cert_yes<- ifelse(between_farmer$cert== 'Yes', 1, 0)  
-table(between_farmer$cert_yes)
+betwd$maize.owner.agree.q81
+betwd$cert<-as.character(betwd$maize.owner.agree.temp.q81)
+betwd$cert_yes<- ifelse(betwd$cert== 'Yes', 1, 0)  
+table(betwd$cert_yes)
 
 #Q82. On a scale of 1 to 5, rate this shop in terms of cleanness and professionality 1 poor 5 excellent
-between_farmer$shop_rate<-as.numeric(as.character(between_farmer$maize.owner.agree.temp.q82))
-table(between_farmer$shop_rate)
+betwd$shop_rate<-as.numeric(as.character(betwd$maize.owner.agree.temp.q82))
+table(betwd$shop_rate)
 
 #Q96. Since last season, did you receive any complaint from a customer that seed you sold was not good?
-between_farmer$maize.owner.agree.q96
-between_farmer$complaint<- ifelse(between_farmer$maize.owner.agree.q96== 'Yes', 1, 0)  
-table(between_farmer$complaint)
+betwd$maize.owner.agree.q96
+betwd$complaint<- ifelse(betwd$maize.owner.agree.q96== 'Yes', 1, 0)  
+table(betwd$complaint)
 
 #Q70. Enter the temperature in the seed store (where seed is stored)
-between_farmer$maize.owner.agree.q70
+betwd$temp<-betwd$maize.owner.agree.q70 
 
 
 #### regressions without controls - seed related ratings 
 
-summary(lm(score~gender_avg , data = reviews_bf))
-summary(lm(quality~gender_avg , data = reviews_bf))
-summary(lm(general~gender_avg , data = reviews_bf))
-summary(lm(yield~gender_avg , data = reviews_bf))
-summary(lm(drought_resistent~gender_avg , data = reviews_bf))
-summary(lm(disease_resistent~gender_avg , data = reviews_bf))
-summary(lm(early_maturing~gender_avg , data = reviews_bf))
-summary(lm(germination~gender_avg , data = reviews_bf))
+summary(lm(score_bd~gender_avgf , data = betwd))
+summary(lm(quality~gender_avgf , data = betwd))
+summary(lm(general~gender_avgf, data = betwd))
+summary(lm(yield~gender_avgf , data = betwd))
+summary(lm(drought_resistent~gender_avgf , data = betwd))
+summary(lm(disease_resistent~gender_avgf , data = betwd))
+summary(lm(early_maturing~gender_avgf , data = betwd))
+summary(lm(germination~gender_avgf , data = betwd))
+
+#### regressions with farmer's gender (averaged) and dealer characteristics  --- seed related ratings 
+
+summary(lm(score_bd~gender_avgf +maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob 
+           +roof_insu+ wall_heatproof +ventilation +wall_plastered +goodfloor+badlighting +badstored+ open_storage+ cert+ shop_rate
+           + complaint + temp+leakproof, data = betwd))
+
+summary(lm(quality~gender_avgf + maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob 
+           +roof_insu+ wall_heatproof +ventilation +wall_plastered +goodfloor+badlighting +badstored+ open_storage+ cert+ shop_rate
+           + complaint + temp+leakproof, data = betwd))
+
+summary(lm(general~gender_avgf + maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob 
+           +roof_insu+ wall_heatproof +ventilation +wall_plastered +goodfloor+badlighting +badstored+ open_storage+ cert+ shop_rate
+           + complaint + temp+leakproof, data = betwd))
+
+summary(lm(yield~gender_avgf + maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob 
+           +roof_insu+ wall_heatproof +ventilation +wall_plastered +goodfloor+badlighting +badstored+ open_storage+ cert+ shop_rate
+           + complaint + temp+leakproof, data = betwd))
+
+summary(lm(drought_resistent~gender_avgf + maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob 
+           +roof_insu+ wall_heatproof +ventilation +wall_plastered +goodfloor+badlighting +badstored+ open_storage+ cert+ shop_rate
+           + complaint + temp+leakproof, data = betwd))
+
+summary(lm(disease_resistent~gender_avgf + maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob 
+           +roof_insu+ wall_heatproof +ventilation +wall_plastered +goodfloor+badlighting +badstored+ open_storage+ cert+ shop_rate
+           + complaint + temp+leakproof, data = betwd))
+
+summary(lm(early_maturing~gender_avgf + maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob 
+           +roof_insu+ wall_heatproof +ventilation +wall_plastered +goodfloor+badlighting +badstored+ open_storage+ cert+ shop_rate
+           + complaint + temp+leakproof, data = betwd))
+
+summary(lm(germination~gender_avgf + maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob 
+           +roof_insu+ wall_heatproof +ventilation +wall_plastered +goodfloor+badlighting +badstored+ open_storage+ cert+ shop_rate
+           + complaint + temp+leakproof, data = betwd))
 
 
-##Farmers' dataset
-farmers_seed <- read.csv(paste(path_2,"/papers/perceptions/data_seed_systems/data/farmer/baseline_farmers.csv", sep = "/"))
-#extracting variables from the baseline data
-farmers_seedsub <- farmers_seed[ , c("Check2.check.maize.q15", "Check2.check.maize.q14",
-                                     "Check2.check.maize.q16", "Check2.check.maize.q17",
-                                     "Check2.check.maize.q8", "farmer_ID")]  
+#### regressions with farmer's gender (averaged) and farmer+dealer characteristics  --- seed related ratings 
 
-######## merge to get farmer characteristics 
-bfm <- merge(reviews_bf, farmers_seedsub, by="farmer_ID")
+summary(lm(score_bd~gender_avgf +  farmer_educ+farmer_married+farmer_age+farmer_tarmac +maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob 
+           +roof_insu+ wall_heatproof +ventilation +wall_plastered +goodfloor+badlighting +badstored+ open_storage+ cert+ shop_rate
+           + complaint + temp+leakproof, data = betwd))
 
-bfm$educ_f <- 0
-bfm$educ_f[bfm$Check2.check.maize.q17=="b" |bfm$Check2.check.maize.q17=="c" | bfm$Check2.check.maize.q17=="d" | bfm$Check2.check.maize.q17=="e" | 
-             bfm$Check2.check.maize.q17=="f" |bfm$Check2.check.maize.q17=="g" ] <- 1 #educated farmers
-bfm$married <- ifelse(bfm$Check2.check.maize.q16 == 'a', 1, 0)  #married farmers
+summary(lm(quality~gender_avgf +  farmer_educ+farmer_married+farmer_age+farmer_tarmac +maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob 
+           +roof_insu+ wall_heatproof +ventilation +wall_plastered +goodfloor+badlighting +badstored+ open_storage+ cert+ shop_rate
+           + complaint + temp+leakproof, data = betwd))
 
+summary(lm(general~gender_avgf +  farmer_educ+farmer_married+farmer_age+farmer_tarmac +maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob 
+           +roof_insu+ wall_heatproof +ventilation +wall_plastered +goodfloor+badlighting +badstored+ open_storage+ cert+ shop_rate
+           + complaint + temp+leakproof, data = betwd))
 
-#### regressions with dealer's gender (averaged) and farmer characteristics  --- seed related ratings 
+summary(lm(yield~gender_avgf +  farmer_educ+farmer_married+farmer_age+farmer_tarmac +maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob 
+           +roof_insu+ wall_heatproof +ventilation +wall_plastered +goodfloor+badlighting +badstored+ open_storage+ cert+ shop_rate
+           + complaint + temp+leakproof, data = betwd))
 
-summary(lm(score~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14, data = bfm))
-summary(lm(quality~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14, data = bfm))
-summary(lm(general~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14, data = bfm))
-summary(lm(yield~gender_avg+ educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14 , data = bfm))
-summary(lm(drought_resistent~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14, data = bfm))
-summary(lm(disease_resistent~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14, data = bfm))
-summary(lm(early_maturing~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14, data = bfm))
-summary(lm(germination~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14, data = bfm))
+summary(lm(drought_resistent~gender_avgf +  farmer_educ+farmer_married+farmer_age+farmer_tarmac +maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob 
+           +roof_insu+ wall_heatproof +ventilation +wall_plastered +goodfloor+badlighting +badstored+ open_storage+ cert+ shop_rate
+           + complaint + temp+leakproof, data = betwd))
 
+summary(lm(disease_resistent~gender_avgf +  farmer_educ+farmer_married+farmer_age+farmer_tarmac +maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob 
+           +roof_insu+ wall_heatproof +ventilation +wall_plastered +goodfloor+badlighting +badstored+ open_storage+ cert+ shop_rate
+           + complaint + temp+leakproof, data = betwd))
 
-#### regressions with dealer's gender (averaged) and farmer+dealer characteristics  --- seed related ratings 
+summary(lm(early_maturing~gender_avgf +  farmer_educ+farmer_married+farmer_age+farmer_tarmac +maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob 
+           +roof_insu+ wall_heatproof +ventilation +wall_plastered +goodfloor+badlighting +badstored+ open_storage+ cert+ shop_rate
+           + complaint + temp+leakproof, data = betwd))
 
-summary(lm(score~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14+dealer_age +dealer_educ +tarmac_dealer +
-             murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +plasterwall +goodfloor+
-             badlighting +badstored+ open_storage+ cert+ shop_rate+ complaint + temp +leakproof, data = bfm))
-
-summary(lm(quality~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14+dealer_age +dealer_educ +tarmac_dealer +
-             murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +plasterwall +goodfloor+
-             badlighting +badstored+ open_storage+ cert+ shop_rate+ complaint + temp+leakproof, data = bfm))
-
-summary(lm(general~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14+dealer_age +dealer_educ +tarmac_dealer +
-             murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +plasterwall +goodfloor+
-             badlighting +badstored+ open_storage+ cert+ shop_rate+ complaint + temp+leakproof, data = bfm))
-
-summary(lm(yield~gender_avg+ educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14 +dealer_age +dealer_educ +tarmac_dealer +
-             murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +plasterwall +goodfloor+
-             badlighting +badstored+ open_storage+ cert+ shop_rate+ complaint + temp+leakproof, data = bfm))
-
-summary(lm(drought_resistent~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14+dealer_age +dealer_educ +tarmac_dealer +
-             murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +plasterwall +goodfloor+
-             badlighting +badstored+ open_storage+ cert+ shop_rate+ complaint + temp+leakproof, data = bfm))
-
-summary(lm(disease_resistent~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14+dealer_age +dealer_educ +tarmac_dealer +
-             murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +plasterwall +goodfloor+
-             badlighting +badstored+ open_storage+ cert+ shop_rate+ complaint + temp+leakproof, data = bfm))
-
-summary(lm(early_maturing~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14+dealer_age +dealer_educ +tarmac_dealer +
-             murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +plasterwall +goodfloor+
-             badlighting +badstored+ open_storage+ cert+ shop_rate+ complaint + temp+leakproof, data = bfm))
-
-summary(lm(germination~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14+dealer_age +dealer_educ +tarmac_dealer +
-             murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +plasterwall +goodfloor+
-             badlighting +badstored+ open_storage+ cert+ shop_rate+ complaint + temp+leakproof, data = bfm))
+summary(lm(germination~gender_avgf +  farmer_educ+farmer_married+farmer_age+farmer_tarmac +maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob 
+           +roof_insu+ wall_heatproof +ventilation +wall_plastered +goodfloor+badlighting +badstored+ open_storage+ cert+ shop_rate
+           + complaint + temp+leakproof, data = betwd))
 
 
 #NON-SEED RELATED RATINGS 
 ##########################################
-between_farmer[c("general_rating","location_rating","price_rating","quality_rating","stock_rating","reputation_rating") ] <- lapply(between_farmer[c("general_rating","location_rating","price_rating","quality_rating","stock_rating","reputation_rating") ], function(x) as.numeric(as.character(x)) )
-
-between_farmer_long <- data.frame(cbind(tapply(as.numeric(between_farmer$general_rating), between_farmer$farmer_ID,mean,na.rm=TRUE),
-                                        tapply(as.numeric(between_farmer$location_rating), between_farmer$farmer_ID,mean,na.rm=TRUE),
-                                        tapply(as.numeric(between_farmer$price_rating), between_farmer$farmer_ID,mean,na.rm=TRUE),
-                                        tapply(as.numeric(between_farmer$quality_rating), between_farmer$farmer_ID,mean,na.rm=TRUE),
-                                        tapply(as.numeric(between_farmer$stock_rating), between_farmer$farmer_ID,mean,na.rm=TRUE),
-                                        tapply(as.numeric(between_farmer$reputation_rating), between_farmer$farmer_ID,mean,na.rm=TRUE),
-                                        tapply(as.numeric(between_farmer$genderdummy), between_farmer$farmer_ID,mean,na.rm=TRUE),
-                                        tapply(between_farmer$bought_at_dealer=="Yes" | between_farmer$knows_other_customer=="Yes", between_farmer$farmer_ID,sum),
-                                        tapply(as.numeric(between_farmer$maize.owner.agree.age), between_farmer$farmer_ID,mean,na.rm=TRUE),
-                                        tapply(as.numeric(between_farmer$prim), between_farmer$farmer_ID,mean,na.rm=TRUE),
-                                        tapply(as.numeric(between_farmer$maize.owner.agree.q3), between_farmer$farmer_ID,mean,na.rm=TRUE),
-                                        tapply(as.numeric(between_farmer$maize.owner.agree.q4), between_farmer$farmer_ID,mean,na.rm=TRUE),
-                                        tapply(as.numeric(between_farmer$inputsale), between_farmer$farmer_ID,mean,na.rm=TRUE),
-                                        tapply(as.numeric(between_farmer$years_shop), between_farmer$farmer_ID,mean,na.rm=TRUE),
-                                        tapply(as.numeric(between_farmer$dedicated_area), between_farmer$farmer_ID,mean,na.rm=TRUE),
-                                        tapply(as.numeric(between_farmer$pest_prob), between_farmer$farmer_ID,mean,na.rm=TRUE),
-                                        tapply(as.numeric(between_farmer$insulated), between_farmer$farmer_ID,mean,na.rm=TRUE),
-                                        tapply(as.numeric(between_farmer$wall_heatproof), between_farmer$farmer_ID,mean,na.rm=TRUE),
-                                        tapply(as.numeric(between_farmer$ventilation), between_farmer$farmer_ID,mean,na.rm=TRUE),
-                                        tapply(as.numeric(between_farmer$wall_plastered), between_farmer$farmer_ID,mean,na.rm=TRUE),
-                                        tapply(as.numeric(between_farmer$goodfloor), between_farmer$farmer_ID,mean,na.rm=TRUE),
-                                        tapply(as.numeric(between_farmer$badlighting), between_farmer$farmer_ID,mean,na.rm=TRUE),
-                                        tapply(as.numeric(between_farmer$badstored), between_farmer$farmer_ID,mean,na.rm=TRUE),
-                                        tapply(as.numeric(between_farmer$open_storage), between_farmer$farmer_ID,mean,na.rm=TRUE),
-                                        tapply(as.numeric(between_farmer$cert_yes), between_farmer$farmer_ID,mean,na.rm=TRUE),
-                                        tapply(as.numeric(between_farmer$shop_rate), between_farmer$farmer_ID,mean,na.rm=TRUE),
-                                        tapply(as.numeric(between_farmer$complaint), between_farmer$farmer_ID,mean,na.rm=TRUE),
-                                        tapply(as.numeric(between_farmer$leakproof), between_farmer$farmer_ID,mean,na.rm=TRUE),
-                                        tapply(as.numeric(between_farmer$maize.owner.agree.q70), between_farmer$farmer_ID,mean,na.rm=TRUE)))
-names(between_farmer_long) <- c("general_rating_nonseed","location","price","qual","stock","reputation","gender_avg","nr_reviews","dealer_age","dealer_educ","tarmac_dealer",
-                                "murram_dealer","farm_inputs","years_shop","dedicatedarea","pestprob","roof_insu","wall_heatproof","ventilation","plasterwall","goodfloor",
-                                "badlighting","badstored","open_storage","cert","shop_rate","complaint","leakproof","temp")
-
-between_farmer_long$farmer_ID <- rownames(between_farmer_long)
-
-between_farmer_long$overall_rating <-  rowMeans(between_farmer_long[c("general_rating_nonseed", "location","price","qual","stock","reputation")],na.rm=T)
 
 
 #### regressions without controls - non-seed related ratings 
 
-summary(lm(overall_rating~gender_avg , data = between_farmer_long))
-summary(lm(general_rating_nonseed~gender_avg , data = between_farmer_long))
-summary(lm(location~gender_avg , data = between_farmer_long))
-summary(lm(price~gender_avg , data = between_farmer_long))
-summary(lm(qual~gender_avg , data = between_farmer_long))
-summary(lm(stock ~gender_avg , data = between_farmer_long))
-summary(lm(reputation ~gender_avg , data = between_farmer_long))
-
-######## merge to get farmer characteristics 
-bfmm <- merge(between_farmer_long, farmers_seedsub, by="farmer_ID")
-
-bfmm$educ_f <- 0
-bfmm$educ_f[bfmm$Check2.check.maize.q17=="b" |bfmm$Check2.check.maize.q17=="c" | bfmm$Check2.check.maize.q17=="d" | bfmm$Check2.check.maize.q17=="e" | 
-              bfmm$Check2.check.maize.q17=="f" |bfmm$Check2.check.maize.q17=="g" ] <- 1 #educated farmers
-bfmm$married <- ifelse(bfmm$Check2.check.maize.q16 == 'a', 1, 0)  #married farmers
+summary(lm(avg_rating~gender_avgf , data = betwd))
+summary(lm(general_nonseed~gender_avgf, data = betwd))
+summary(lm(location~gender_avgf , data = betwd))
+summary(lm(price~gender_avgf , data = betwd))
+summary(lm(quality~gender_avgf , data = betwd))
+summary(lm(stock~gender_avgf , data = betwd))
+summary(lm(reputation~gender_avgf , data = betwd))
 
 
-#### regressions with dealer's gender (averaged) and farmer characteristics  --- non-seed related ratings 
+#### regressions with farmer's gender (averaged) and dealer characteristics  --- non-seed related ratings 
 
-summary(lm(overall_rating~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14, data = bfmm))
-summary(lm(general_rating_nonseed~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14, data = bfmm))
-summary(lm(location~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14, data = bfmm))
-summary(lm(price~gender_avg+ educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14 , data = bfmm))
-summary(lm(qual~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14, data = bfmm))
-summary(lm(stock~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14, data = bfmm))
-summary(lm(reputation~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14, data = bfmm))
+summary(lm(avg_rating~gender_avgf +maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob 
+           +roof_insu+ wall_heatproof +ventilation +wall_plastered +goodfloor+badlighting +badstored+ open_storage+ cert+ shop_rate
+           + complaint + temp+leakproof, data = betwd))
 
+summary(lm(general_nonseed~gender_avgf + maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob 
+           +roof_insu+ wall_heatproof +ventilation +wall_plastered +goodfloor+badlighting +badstored+ open_storage+ cert+ shop_rate
+           + complaint + temp+leakproof, data = betwd))
 
-#### regressions with dealer's gender (averaged) and farmer + dealer characteristics  --- non-seed related ratings 
+summary(lm(location~gender_avgf + maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob 
+           +roof_insu+ wall_heatproof +ventilation +wall_plastered +goodfloor+badlighting +badstored+ open_storage+ cert+ shop_rate
+           + complaint + temp+leakproof, data = betwd))
 
-summary(lm(overall_rating~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14+dealer_age +dealer_educ +tarmac_dealer +
-             murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +plasterwall +goodfloor+
-             badlighting +badstored+ open_storage+ cert+ shop_rate+ complaint + temp+leakproof, data = bfmm))
+summary(lm(price~gender_avgf + maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob 
+           +roof_insu+ wall_heatproof +ventilation +wall_plastered +goodfloor+badlighting +badstored+ open_storage+ cert+ shop_rate
+           + complaint + temp+leakproof, data = betwd))
 
-summary(lm(general_rating_nonseed~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14+dealer_age +dealer_educ +tarmac_dealer +
-             murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +plasterwall +goodfloor+
-             badlighting +badstored+ open_storage+ cert+ shop_rate+ complaint + temp+leakproof, data = bfmm))
+summary(lm(quality~gender_avgf + maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob 
+           +roof_insu+ wall_heatproof +ventilation +wall_plastered +goodfloor+badlighting +badstored+ open_storage+ cert+ shop_rate
+           + complaint + temp+leakproof, data = betwd))
 
-summary(lm(location~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14+dealer_age +dealer_educ +tarmac_dealer +
-             murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +plasterwall +goodfloor+
-             badlighting +badstored+ open_storage+ cert+ shop_rate+ complaint + temp+leakproof, data = bfmm))
+summary(lm(stock~gender_avgf + maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob 
+           +roof_insu+ wall_heatproof +ventilation +wall_plastered +goodfloor+badlighting +badstored+ open_storage+ cert+ shop_rate
+           + complaint + temp+leakproof, data = betwd))
 
-summary(lm(price~gender_avg+ educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14+dealer_age +dealer_educ +tarmac_dealer +
-             murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +plasterwall +goodfloor+
-             badlighting +badstored+ open_storage+ cert+ shop_rate+ complaint + temp+leakproof , data = bfmm))
-
-summary(lm(qual~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14+dealer_age +dealer_educ +tarmac_dealer +
-             murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +plasterwall +goodfloor+
-             badlighting +badstored+ open_storage+ cert+ shop_rate+ complaint + temp+leakproof, data = bfmm))
-
-summary(lm(stock~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14+dealer_age +dealer_educ +tarmac_dealer +
-             murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +plasterwall +goodfloor+
-             badlighting +badstored+ open_storage+ cert+ shop_rate+ complaint + temp+leakproof, data = bfmm))
-
-summary(lm(reputation~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14+dealer_age +dealer_educ +tarmac_dealer +
-             murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +plasterwall +goodfloor+
-             badlighting +badstored+ open_storage+ cert+ shop_rate+ complaint + temp+leakproof, data = bfmm))
+summary(lm(reputation~gender_avgf + maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob 
+           +roof_insu+ wall_heatproof +ventilation +wall_plastered +goodfloor+badlighting +badstored+ open_storage+ cert+ shop_rate
+           + complaint + temp+leakproof, data = betwd))
 
 
+#### regressions with farmer's gender (averaged) and farmer+dealer characteristics  --- non-seed related ratings 
 
+summary(lm(avg_rating~gender_avgf +  farmer_educ+farmer_married+farmer_age+farmer_tarmac +maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob 
+           +roof_insu+ wall_heatproof +ventilation +wall_plastered +goodfloor+badlighting +badstored+ open_storage+ cert+ shop_rate
+           + complaint + temp+leakproof, data = betwd))
 
+summary(lm(general_nonseed~gender_avgf +  farmer_educ+farmer_married+farmer_age+farmer_tarmac +maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob 
+           +roof_insu+ wall_heatproof +ventilation +wall_plastered +goodfloor+badlighting +badstored+ open_storage+ cert+ shop_rate
+           + complaint + temp+leakproof, data = betwd))
 
+summary(lm(location~gender_avgf +  farmer_educ+farmer_married+farmer_age+farmer_tarmac +maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob 
+           +roof_insu+ wall_heatproof +ventilation +wall_plastered +goodfloor+badlighting +badstored+ open_storage+ cert+ shop_rate
+           + complaint + temp+leakproof, data = betwd))
 
+summary(lm(price~gender_avgf +  farmer_educ+farmer_married+farmer_age+farmer_tarmac +maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob 
+           +roof_insu+ wall_heatproof +ventilation +wall_plastered +goodfloor+badlighting +badstored+ open_storage+ cert+ shop_rate
+           + complaint + temp+leakproof, data = betwd))
 
+summary(lm(quality~gender_avgf +  farmer_educ+farmer_married+farmer_age+farmer_tarmac +maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob 
+           +roof_insu+ wall_heatproof +ventilation +wall_plastered +goodfloor+badlighting +badstored+ open_storage+ cert+ shop_rate
+           + complaint + temp+leakproof, data = betwd))
+
+summary(lm(stock~gender_avgf +  farmer_educ+farmer_married+farmer_age+farmer_tarmac +maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob 
+           +roof_insu+ wall_heatproof +ventilation +wall_plastered +goodfloor+badlighting +badstored+ open_storage+ cert+ shop_rate
+           + complaint + temp+leakproof, data = betwd))
+
+summary(lm(reputation~gender_avgf +  farmer_educ+farmer_married+farmer_age+farmer_tarmac +maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob 
+           +roof_insu+ wall_heatproof +ventilation +wall_plastered +goodfloor+badlighting +badstored+ open_storage+ cert+ shop_rate
+           + complaint + temp+leakproof, data = betwd))
 
 
