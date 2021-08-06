@@ -1,3 +1,5 @@
+### run in:  ../PIMMVC/papers/perceptions
+rm(list=ls())
 path <- getwd()
 
 options(scipen=999)
@@ -2877,7 +2879,10 @@ write.csv(baseline_f,paste(path_2,"/papers/perceptions/data_seed_systems/data/fa
 ####################### BETWEEN FARMER --- FOCUS ON DEALER'S GENDER ##############################################
 
 rating_dyads <- read.csv(paste(path_2,"/papers/perceptions/data_seed_systems/data/farmer/rating_dyads.csv", sep = "/"))
-baseline_dealer <- read.csv(paste(path,"papers/perceptions/data_seed_systems/data/input_dealer/baseline_dealer.csv", sep="/"), stringsAsFactors = FALSE)
+baseline_dealer <- read.csv(paste(path_2,"papers/perceptions/data_seed_systems/data/input_dealer/baseline_dealer.csv", sep="/"), stringsAsFactors = FALSE)
+
+#how many farmers have rated at least one agro-input dealers (i.e. how many unique farmerIDs are in the dyads dataset)?
+print(length(table(rating_dyads$farmer_ID)))
 
 #MERGED_DATASET
 between_farmer <- merge(rating_dyads, baseline_dealer, by="shop_ID")
@@ -2889,7 +2894,7 @@ between_farmer$genderdummy <- ifelse(between_farmer$maize.owner.agree.gender == 
 
 between_farmer[c("seed_quality_general_rating","seed_yield_rating","seed_drought_rating","seed_disease_rating","seed_maturing_rating","seed_germinate_rating") ] <- lapply(between_farmer[c("seed_quality_general_rating","seed_yield_rating","seed_drought_rating","seed_disease_rating","seed_maturing_rating","seed_germinate_rating") ], function(x) as.numeric(as.character(x)) )
 
-between_farmer[c("seed_quality_general_rating","seed_yield_rating","seed_drought_rating","seed_disease_rating","seed_maturing_rating","seed_germinate_rating") ] <- lapply(between_farmer[c("seed_quality_general_rating","seed_yield_rating","seed_drought_rating","seed_disease_rating","seed_maturing_rating","seed_germinate_rating") ], function(x)replace(x, x == 98,NA) )
+between_farmer[c("seed_quality_general_rating","seed_yield_rating","seed_drought_rating","seed_disease_rating","seed_maturing_rating","seed_germinate_rating") ] <- lapply(between_farmer[c("seed_quality_general_rating","seed_yield_rating","seed_drought_rating","seed_disease_rating","seed_maturing_rating","seed_germinate_rating") ], function(x) replace(x, x == 98,NA) )
 
 between_farmer$quality_rating[between_farmer$shop_ID == "AD_99"]
 
@@ -2901,18 +2906,19 @@ reviews_bf <- data.frame(cbind(tapply(as.numeric(between_farmer$quality_rating),
                                tapply(as.numeric(between_farmer$seed_maturing_rating), between_farmer$farmer_ID,mean,na.rm=TRUE),
                                tapply(as.numeric(between_farmer$seed_germinate_rating), between_farmer$farmer_ID,mean,na.rm=TRUE),
                                tapply(as.numeric(between_farmer$genderdummy), between_farmer$farmer_ID,mean,na.rm=TRUE)))
+                       
 names(reviews_bf) <- c("quality","general","yield","drought_resistent","disease_resistent","early_maturing","germination","gender_avg")
 
 reviews_bf$farmer_ID <- rownames(reviews_bf)
 
 reviews_bf$score <-  rowMeans(reviews_bf[c("quality","general","yield","drought_resistent","disease_resistent","early_maturing","germination")],na.rm=T)
 
-#### merge
+#### merge - why do merge here???
 bfm <- merge(reviews_bf, between_farmer, by="farmer_ID")
 
 #### regressions without controls - seed related ratings 
 
-summary(lm(score~gender_avg , data = bfm))
+summary(lm(score~gender_avg , data = reviews_bf))
 summary(lm(quality~gender_avg , data = bfm))
 summary(lm(general~gender_avg , data = bfm))
 summary(lm(yield~gender_avg , data = bfm))
