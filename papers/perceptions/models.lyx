@@ -232,7 +232,8 @@ The between-farmer model takes averages over all the dealers that were ranked
  mean that farmers that rated relatively more male agro-input dealers have
  also relatively higher scores.
  As, at least in theory, the farmers rate the same input dealers, any significan
-t differences should be attributed to differences at the level of the farmers.
+t difference in how farmers rate input dealers of different genders should
+ be attributed to differences at the level of the farmers.
 \begin_inset Foot
 status collapsed
 
@@ -304,7 +305,9 @@ ly different genders.
  may give lower scores).
  It is the same farmer so in these models the focus is on explaining heterogenei
 ty in the dealer.
- 
+ In other words, as the same farmer rates different input dealers, any significa
+nt difference in how farmers rate input dealers of different gender should
+ be attributed to differences at the level of the agro-input dealer.
 \end_layout
 
 \begin_layout Standard
