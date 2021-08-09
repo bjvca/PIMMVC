@@ -3229,7 +3229,7 @@ summary(lm(reputation~gender_avg + educ_f + married + Check2.check.maize.q8 + Ch
 
 
 ##################################################################################################################
-####################### BETWEEN FARMER --- FOCUS ON FARMER'S GENDER ##############################################
+####################### BETWEEN DEALER --- FOCUS ON FARMER'S GENDER ##############################################
 
 rating_dyads <- read.csv(paste(path_2,"/papers/perceptions/data_seed_systems/data/farmer/rating_dyads.csv", sep = "/"))
 ##Farmers' dataset
