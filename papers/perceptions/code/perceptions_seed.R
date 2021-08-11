@@ -1,14 +1,15 @@
 ### run in:  ../PIMMVC/papers/perceptions
-rm(list=ls())
+#rm(list=ls())
 path <- getwd()
-
-options(scipen=999)
-path_2 <- strsplit(path, "/papers/perceptions")[[1]]
 
 library(miceadds)
 library(texreg)
 library(plyr)
 library(plm)
+
+options(scipen=999)
+path_2 <- strsplit(path, "/papers/perceptions")[[1]]
+
 
 
 
@@ -214,6 +215,30 @@ bfm$married <- ifelse(bfm$Check2.check.maize.q16 == 'a', 1, 0)  #married farmers
 
 #### regressions without controls - seed related ratings 
 
+m1<-lm(score~gender_avg , data = bfm)
+se1 <- sqrt(diag(vcov(m1)))
+
+m2<-lm(quality~gender_avg , data = bfm)
+se2 <- sqrt(diag(vcov(m2)))
+
+m3<-lm(general~gender_avg , data = bfm)
+se3<- sqrt(diag(vcov(m3)))
+
+m4<-lm(yield~gender_avg , data = bfm)
+se4 <- sqrt(diag(vcov(m4)))
+
+m5<-lm(drought_resistent~gender_avg , data = bfm)
+se5<- sqrt(diag(vcov(m5)))
+
+m6<-lm(disease_resistent~gender_avg , data = bfm)
+se6<- sqrt(diag(vcov(m6)))
+
+m7<-lm(early_maturing~gender_avg , data = bfm)
+se7<- sqrt(diag(vcov(m7)))
+
+m8<-lm(germination~gender_avg , data = bfm)
+se8<- sqrt(diag(vcov(m8)))
+
 summary(lm(score~gender_avg , data = bfm))
 summary(lm(quality~gender_avg , data = bfm))
 summary(lm(general~gender_avg , data = bfm))
@@ -237,6 +262,48 @@ summary(lm(germination~gender_avg + educ_f + married + Check2.check.maize.q8 + C
 
 
 #### regressions with dealer's gender (averaged) and farmer+dealer characteristics  --- seed related ratings 
+
+m9<-lm(score~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14+dealer_age +dealer_educ +tarmac_dealer +
+         murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +plasterwall +goodfloor+
+         badlighting +badstored+ open_storage+ cert+ shop_rate+ complaint + temp +leakproof, data = bfm)
+se9 <- sqrt(diag(vcov(m9)))
+
+m10<-lm(quality~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14+dealer_age +dealer_educ +tarmac_dealer +
+         murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +plasterwall +goodfloor+
+         badlighting +badstored+ open_storage+ cert+ shop_rate+ complaint + temp +leakproof, data = bfm)
+se10 <- sqrt(diag(vcov(m10)))
+
+m11<-lm(general~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14+dealer_age +dealer_educ +tarmac_dealer +
+          murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +plasterwall +goodfloor+
+          badlighting +badstored+ open_storage+ cert+ shop_rate+ complaint + temp +leakproof, data = bfm)
+se11 <- sqrt(diag(vcov(m11)))
+
+m12<-lm(yield~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14+dealer_age +dealer_educ +tarmac_dealer +
+          murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +plasterwall +goodfloor+
+          badlighting +badstored+ open_storage+ cert+ shop_rate+ complaint + temp +leakproof, data = bfm)
+se12 <- sqrt(diag(vcov(m12)))
+
+m13<-lm(drought_resistent ~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14+dealer_age +dealer_educ +tarmac_dealer +
+          murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +plasterwall +goodfloor+
+          badlighting +badstored+ open_storage+ cert+ shop_rate+ complaint + temp +leakproof, data = bfm)
+se13<- sqrt(diag(vcov(m13)))
+
+m14<-lm(disease_resistent ~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14+dealer_age +dealer_educ +tarmac_dealer +
+          murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +plasterwall +goodfloor+
+          badlighting +badstored+ open_storage+ cert+ shop_rate+ complaint + temp +leakproof, data = bfm)
+se14 <- sqrt(diag(vcov(m14)))
+
+m15<-lm(early_maturing ~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14+dealer_age +dealer_educ +tarmac_dealer +
+          murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +plasterwall +goodfloor+
+          badlighting +badstored+ open_storage+ cert+ shop_rate+ complaint + temp +leakproof, data = bfm)
+se15<- sqrt(diag(vcov(m15)))
+
+m16<-lm(germination ~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14+dealer_age +dealer_educ +tarmac_dealer +
+          murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +plasterwall +goodfloor+
+          badlighting +badstored+ open_storage+ cert+ shop_rate+ complaint + temp +leakproof, data = bfm)
+se16<- sqrt(diag(vcov(m16)))
+
+
 
 summary(lm(score~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14+dealer_age +dealer_educ +tarmac_dealer +
              murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +plasterwall +goodfloor+
