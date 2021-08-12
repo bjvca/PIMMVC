@@ -302,7 +302,8 @@ t
 \end_layout
 
 \begin_layout Section*
-Agro-input dealer's gender effect
+Question 1: Do farmers discriminate against female agro-input dealers? (Agro-inp
+ut dealer's gender effect)
 \end_layout
 
 \begin_layout Subsection*
@@ -517,10 +518,14 @@ t
  different dealers.
  Adding dealer level controls deals with confounding variables and quality
  measures like before.
- Including controls at the farmer level is impossible because there is no
- variation within the farmer, ie.
- the matrix of fixed effects will be perfectly co-linear with the farmer
- level controls.
+\end_layout
+
+\begin_layout Standard
+If, after controlling for confounding variables, quality measures, and everythin
+g that remains constant within the farmer, we find a significant positive
+ coefficient, the difference in means originates from the ?.
+ The difference in rating would be caused by discrimination against female
+ agro-input dealers (?).
 \end_layout
 
 \begin_layout Standard
@@ -544,26 +549,59 @@ Dealer fixed effects model
 \end_layout
 
 \begin_layout Standard
-Ideally, one would control for dealer level heterogeneity like we controlled
- for farmer level heterogeneity.
- A dealer fixed effects estimator would exploits variation within dealers
- for identification.
- also controls for characteristics which would be (almost) impossible to
- measure and to control for like kindness, locus of control, norms and values,
- etc.
- The farmer fixed effects estimator removes farmer level heterogeneity for
- all attributes that do not vary and remain constant within the farmer,
- regardless of which dealer he or she is rating.
+Ideally, one would control for (unobserved) dealer level heterogeneity like
+ we control for (unobserved) farmer level heterogeneity.
+ A dealer fixed effects estimator would exploit variation within dealers
+ for identification and remove dealer level heterogeneity for all attributes
+ that do not vary and remain constant within the dealer.
+ It would therefore also remove the true quality (the true rating) of the
+ dealer.
+ The dealer's gender effect that would be left is the difference between
+ male and female ratings which cannot be explained by real quality differences,
+ ie.
+ all variation should be attributed to the farmers who rate, not to the
+ dealers who are rated.
+ We could safely conclude that this effect is dicrimination.
 \end_layout
 
 \begin_layout Standard
-Next, you could argue that you want to similarly control for dealer level
- unobserved heterogeneity, but note that you can not do this because this
- will remove the gender of the dealer from the equation (equation 9).
+\begin_inset Formula 
+\begin{equation}
+y_{f,d}-\frac{1}{F}\underset{f}{\sum}y_{f,d}=\alpha+\beta\left(x_{f,d}-\frac{1}{F}\underset{f}{\sum}x_{f,d}\right)+\gamma\left(g_{f,d}-\frac{1}{F}\underset{f}{\sum}g_{fd}\right)+\left(\varepsilon_{f,d}-\frac{1}{D}\underset{d}{\sum}\varepsilon_{f,d}\right)\label{eq:eight}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+y_{f,d}-\overline{y}_{f}=\mu+\beta\left(x_{f,d}-\overline{x}_{f}\right)+\varepsilon_{f,d}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Unfortunately, including dealer fixed effects and dealer gender in one regressio
+n is impossible because gender does not vary within the dealer, ie.
+ the matrix of dealer fixed effects would be perfectly co-linear with the
+ dealer's gender.
+ Gender remain constant within the dealer, so that the average is the always
+ equal to the observation, thus cancels out and dealer's gender will be
+ removed from the equation above.
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \begin_layout Subsection*
-Between farmers estimator
+Between farmers model
 \end_layout
 
 \begin_layout Standard
@@ -609,93 +647,23 @@ But for the interpretation: be careful, this is a number between 0 and 1.
  men to 60 percent men) reduces average score rating by 0.0337.
 \end_layout
 
-\begin_layout Section*
-Farmers's gender effect
-\end_layout
-
-\begin_layout Subsection*
-Between farmers estimator
-\end_layout
-
-\begin_layout Subsection*
-Dealer fixed/ within effects estimator
-\end_layout
-
 \begin_layout Standard
-The approach to use will depend on the question you want to answer.
- If the focus is on the rater characteristics (gender of the farmer), than
- it may make sense to control for agro-input dealer heterogeneity; If the
- focus is on the ratee characteristics (gender of the agro-input dealer),
- than it may make more sense to control for farmer heterogeneity.
-\end_layout
+Our best guess at explaining variation at this level is thus to use model
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:two"
+plural "false"
+caps "false"
+noprefix "false"
 
-\begin_layout Subsection*
-Farmers fixed/ within effects estimator
-\end_layout
+\end_inset
 
-\begin_layout Subsection*
-Between dealers estimator
-\end_layout
-
-\begin_layout Section*
-"ultimate" regression
-\end_layout
-
-\begin_layout Standard
-that includes two-way fixed effects or a more flexible random effects model)
-\end_layout
-
-\begin_layout Standard
-The I would go over the different models, explaining what additional insights
- they bring (or were expected to bring).
-\end_layout
-
-\begin_layout Standard
-- one regression with the gender of the farmer and gender of input dealer
- and the interaction - one regression with the gender of the farmer and
- gender of input dealer and the interaction and controls - one regression
- with the gender of the farmer and gender of input dealer and the interaction
- and controls and two-way fixed effects - one regression with the gender
- of the farmer and gender of input dealer and the interaction and controls
- and two-way random effects - this could be the ultimate model for our data
- (eg see page 47 of the attached document).
- Mixed effects models are not used a lot by economists and so stata can
- not estimate two way random effects models but R can using nlme4 I think.
- I found the following book very useful to get an idea of random effects/mixed
- effects models https://www.amazon.com/Mixed-Effects-Models-S-PLUS-Statistics-Comp
-uting/dp/1441903178 Bjorn
-\end_layout
-
-\begin_layout Standard
-Random effects models use both dimensions of the data.
-\end_layout
-
-\begin_layout Part*
-Farmer's gender effect
-\end_layout
-
-\begin_layout Standard
-one regression with only the gender of the farmer and controls and fixed
- effects for the input dealers - one regression where you first take averages
- at the farmer level and then run a regression (between estimator)
+.
 \end_layout
 
 \begin_layout Standard
 ***
-\end_layout
-
-\begin_layout Standard
-models:
-\end_layout
-
-\begin_layout Standard
-I think part of the confusion is related to the fact that we do not have
- a completely balanced panel where all farmers rate all input dealers (or
- all input dealers are not rated by all farmers).
-\end_layout
-
-\begin_layout Subsubsection*
-Question 1: do farmers discriminate against women dealers?
 \end_layout
 
 \begin_layout Standard
@@ -771,51 +739,9 @@ Note that up to now, we did not estimate this model yet! Note also that
  it would be 0.5.
 \end_layout
 
-\begin_layout Standard
-For the fixed effects model at input dealer level, the gender of the agro
- input dealer will be dropped as it does not vary within input dealer.
- So to answer question 1 it is not so interesting.
- In this model, all variation should be attributed to differences between
- farmers.
- Our best guess at explaining variation at this level is thus to use model
- 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:two"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{equation}
-y_{f,d}-\frac{1}{F}\underset{f}{\sum}y_{f,d}=\alpha+\beta\left(x_{f,d}-\frac{1}{F}\underset{f}{\sum}x_{f,d}\right)+\gamma\left(g_{f,d}-\frac{1}{F}\underset{f}{\sum}g_{fd}\right)+\left(\varepsilon_{f,d}-\frac{1}{D}\underset{d}{\sum}\varepsilon_{f,d}\right)\label{eq:eight}
-\end{equation}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{equation}
-y_{f,d}-\overline{y}_{f}=\mu+\beta\left(x_{f,d}-\overline{x}_{f}\right)+\varepsilon_{f,d}
-\end{equation}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsubsection*
-Question 2: do farmers rate different depending on own gender?
+\begin_layout Section*
+Question 2: Do female farmers rate agro-input dealers differently? (Farmer's
+ gender effect)
 \end_layout
 
 \begin_layout Standard
@@ -915,6 +841,86 @@ noprefix "false"
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+one regression with only the gender of the farmer and controls and fixed
+ effects for the input dealers - one regression where you first take averages
+ at the farmer level and then run a regression (between estimator)
+\end_layout
+
+\begin_layout Standard
+***
+\end_layout
+
+\begin_layout Standard
+models:
+\end_layout
+
+\begin_layout Standard
+I think part of the confusion is related to the fact that we do not have
+ a completely balanced panel where all farmers rate all input dealers (or
+ all input dealers are not rated by all farmers).
+\end_layout
+
+\begin_layout Subsection*
+Between dealers model
+\end_layout
+
+\begin_layout Subsection*
+Dealer fixed effects model
+\end_layout
+
+\begin_layout Standard
+The approach to use will depend on the question you want to answer.
+ If the focus is on the rater characteristics (gender of the farmer), than
+ it may make sense to control for agro-input dealer heterogeneity; If the
+ focus is on the ratee characteristics (gender of the agro-input dealer),
+ than it may make more sense to control for farmer heterogeneity.
+\end_layout
+
+\begin_layout Subsection*
+Farmer fixed effects model
+\end_layout
+
+\begin_layout Subsection*
+Between dealers model
+\end_layout
+
+\begin_layout Section*
+"ultimate" regression
+\end_layout
+
+\begin_layout Standard
+that includes two-way fixed effects or a more flexible random effects model)
+\end_layout
+
+\begin_layout Standard
+The I would go over the different models, explaining what additional insights
+ they bring (or were expected to bring).
+\end_layout
+
+\begin_layout Standard
+- one regression with the gender of the farmer and gender of input dealer
+ and the interaction - one regression with the gender of the farmer and
+ gender of input dealer and the interaction and controls - one regression
+ with the gender of the farmer and gender of input dealer and the interaction
+ and controls and two-way fixed effects - one regression with the gender
+ of the farmer and gender of input dealer and the interaction and controls
+ and two-way random effects - this could be the ultimate model for our data
+ (eg see page 47 of the attached document).
+ Mixed effects models are not used a lot by economists and so stata can
+ not estimate two way random effects models but R can using nlme4 I think.
+ I found the following book very useful to get an idea of random effects/mixed
+ effects models https://www.amazon.com/Mixed-Effects-Models-S-PLUS-Statistics-Comp
+uting/dp/1441903178 Bjorn
+\end_layout
+
+\begin_layout Standard
+Random effects models use both dimensions of the data.
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
 status open
 
