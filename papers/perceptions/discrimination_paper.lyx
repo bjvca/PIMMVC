@@ -571,7 +571,13 @@ But you have a solution! Because farmers did not rate all input dealers,
  there is variation in the degree to which farmers were exposed to agro-input
  dealers of different genders.
  And so the coefficient we estimate in (3) should be a good alternative
- to the one we can not estimate in (9).
+ to the one w$
+\backslash
+Sexpr{format(round(sum(m13$coefficients[2]),digits=2),nsmall=0)}^{
+\backslash
+Sexpr{ifelse(summary(m13)$coefficients[2,4]<.01,"***",ifelse(summary(m13)$coeffic
+ients[2,4]<.05,"**",ifelse(summary(m13)$coefficients[2,4]<.1,"*","")))}}$
+ e can not estimate in (9).
 \end_layout
 
 \begin_layout Standard
@@ -914,6 +920,9 @@ status open
 
 \begin_layout Plain Layout
 
+
+\backslash
+begin{sideways}
 \end_layout
 
 \begin_layout Plain Layout
@@ -922,7 +931,7 @@ status open
 \backslash
 begin{table} 
 \backslash
-small 
+footnotesize 
 \backslash
 begin{center} 
 \backslash

@@ -36,7 +36,7 @@ graphicboxes
 \output_sync 0
 \bibtex_command default
 \index_command default
-\paperfontsize default
+\paperfontsize 12
 \spacing onehalf
 \use_hyperref true
 \pdf_bookmarks true
@@ -82,7 +82,7 @@ graphicboxes
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation skip
-\defskip medskip
+\defskip bigskip
 \is_math_indent 0
 \math_numbering_side default
 \quotes_style english
@@ -118,7 +118,7 @@ thanks{Development Strategy and Governance Division, International Food
 footnotemark[2], Anusha De
 \backslash
 thanks{LICOS Center for Institutions and Economic Performance, KULeuven,
- Belgium}, and Caroline Miehe
+ Belgium}, and Caroline Miehe 
 \backslash
 footnotemark[2]}
 \end_layout
@@ -143,7 +143,7 @@ Faced with imperfect information, economic actors use judgment and perceptions
  in decision making.
  Inaccurate perceptions or false beliefs may result in inefficient value
  chains and systematic bias in perceptions may affect inclusiveness.
- In this paper, we study perceptions in Ugandan maize supply chains.
+ In this paper, I study perceptions in Ugandan maize supply chains.
  A random sample of maize farmers were asked to rate other value chain actors—ag
 ro-input dealers, assembly traders and maize millers—on a set of important
  attributes such as service quality, price competitiveness, ease of access,
@@ -158,6 +158,7 @@ ro-input dealers, assembly traders and maize millers—on a set of important
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 \begin_inset ERT
 status open
 
@@ -203,32 +204,8 @@ source(paste(path,"code/perceptions.R
 \end_layout
 
 \begin_layout Standard
-
-\emph on
-\begin_inset CommandInset line
-LatexCommand rule
-offset "1ex"
-width "100col%"
-height "1pt"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-setlength{
-\backslash
-parindent}{1cm}
-\end_layout
-
+\paragraph_spacing onehalf
+\begin_inset Newpage newpage
 \end_inset
 
 
@@ -236,7 +213,7 @@ parindent}{1cm}
 
 \begin_layout Section
 \paragraph_spacing onehalf
-Introduction
+General Introduction
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:General-Introduction"
@@ -292,19 +269,19 @@ Despite the importance of beliefs and perceptions for transactions within
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-We study the case of maize value chains in Uganda where ratings are used
+I study the case of maize value chains in Uganda where ratings are used
  as a proxy measure for perceptions and beliefs.
- We use data from 1,500 maize farmers, 78 input (seed) dealers, 341 assembly
+ I use data from 1,500 maize farmers, 78 input (seed) dealers, 341 assembly
  traders, and 174 millers from Eastern Uganda to document (in)consistency
  in farmer's, input (seed) dealer's, trader's, and miller's perceived attribute
  ratings of these actors.
- To investigate systemic bias along gender lines, we further test if the
+ To investigate systemic bias along gender lines, I further test if the
  sex of the rater or the ratee has any impact on the ratings (perceptions).
  A representative sample of farmers were asked to rate up to three dealer(s),
  trader(s) and miller(s).
  Then these dealers, traders and millers were traced and asked to assess
  themselves in a similar way.
- We use input dealer, trader, and miller attributes, such as perceived ease
+ I use input dealer, trader, and miller attributes, such as perceived ease
  of access to the dealer, trader, or miller, perceived quality of the seed
  sold by the dealer or the quality of service provided by the trader or
  the miller, and reputation of the dealer, trader, or miller, to assess
@@ -535,7 +512,7 @@ Traditionally, women have not been playing a significant role in the input
 \begin_layout Standard
 \paragraph_spacing onehalf
 The first objective of this study is to establish how the perceived attribute
- ratings and self-ratings of dealers, traders and millers differ from each
+ ratings and self-ratings of dealers, traders, and millers differ from each
  other.
  All the actors are studied together highlighting the ratings being received
  and the self-assessments.
@@ -570,7 +547,7 @@ literal "true"
 \begin_layout Standard
 \paragraph_spacing onehalf
 This study contributes to the literature that examines the role of agro-input
- dealers, traders, and millers in facilitating or limiting the development
+ dealers, traders and millers in facilitating or limiting the development
  of smallholder agriculture.
  Ratings for the different actors of the supply chain, which this study
  employs to examine farmer's perceived value of input dealers, traders or
@@ -643,11 +620,19 @@ The findings of this study indicate enhanced (positive) self-perceptions
  Interestingly, the prominence of gender is evident in the farmers' perceptions
  where women are observed to have more positive perceptions about the input
  and service providers.
- However, we find no evidence of significant gender bias for the input and
+ However, I find no evidence of significant gender bias for the input and
  service providers in the ratings obtained.
- In the sections that follow, we expound on the study context and hypotheses;
- explain the data used and econometric models we will estimate; present
- the results; and finally provide a conclusion and recommendations.
+ In the sections that follow, I expound on the study context and hypotheses;
+ explain the data used and econometric models I will estimate; present the
+ results; and finally provide a conclusion and recommendations.
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset Newpage newpage
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -1189,7 +1174,7 @@ literal "true"
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-Next, we turn to the perceived attributes of traders.
+Next, I turn to the perceived attributes of traders.
  In remote locations, if the traders are easily accessible, that would mean
  that the farmers have greater exposure to selling opportunities, might
  reduce wastage of harvest, ensure constant income for the farmer and increase
@@ -1261,6 +1246,14 @@ Perceived prices cannot directly indicate the actual price charged at the
  Thus, the quality of processed maize available for the consumers can be
  partially explained by the perceived attributes of the maize millers.
  
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset Newpage newpage
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -1446,7 +1439,7 @@ literal "true"
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-Then, we turn to the variations in ratings based on gender (hypothesis 
+Then, I turn to the variations in ratings based on gender (hypothesis 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "Hypothesis 2"
@@ -1813,6 +1806,14 @@ Gender based homophily in food value chains can mean bias towards certain
  
 \end_layout
 
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 \paragraph_spacing onehalf
 Data
@@ -1862,6 +1863,7 @@ A random sample of farmers were interviewed in each village.
  The number of farmers to be sampled in a village was proportional to the
  size of the village.
  So, in larger villages, more farmers were interviewed.
+ 
 \end_layout
 
 \end_inset
@@ -1901,7 +1903,7 @@ status open
 \noindent
 \align center
 \begin_inset Graphics
-	filename G:/My Drive/Classroom/Documents from Drive/Pre Doctoral KUL/Paper with Bjorn/PIMMVC/papers/perceptions/map_outlined.jpg
+	filename map_outlined.jpg
 	lyxscale 50
 	scale 50
 
@@ -4238,7 +4240,7 @@ name "subsec:Validity-of-ratings"
 Testing whether the ratings are actually meaningful (instead of just noise)
  is important.
  This will give better insights about the validity of the perceptions.
- We look at intra-class correlation (ICC)
+ I look at intra-class correlation (ICC)
 \series bold
  
 \series default
@@ -4278,161 +4280,6 @@ Intra-class correlation coefficient can range between 0 and 1.
  The ICC coefficients indicating intra-rater reliability compare the various
  ratings given by each individual farmer.
  This shows how similar or different the farmer rates the various ratees.
- 
-\end_layout
-
-\begin_layout Standard
-Table
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-~
-\backslash
-ref{table:table3}
-\end_layout
-
-\end_inset
-
- presents the ICC coefficients.
- Firstly, it can be inferred that raters (farmers) agree decently on overall
- ratings given to ratees.
- The ICC coefficient being 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(icc1a.fn(icc_recast_overall6)$icc1a,digits=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
-, it can be deduced that the ratings captured in the survey are not entirely
- random or untrue.
- However, the level of agreement among the raters (farmers) drops majorly
- for quality (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(icc1a.fn(icc_recast_qual)$icc1a,digits=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
-) and reputation (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(icc1a.fn(icc_recast_rep)$icc1a,digits=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
-).
- For location- and price-based ratings, the agreement levels are higher
- (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(icc1a.fn(icc_recast_loc)$icc1a,digits=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
-, 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(icc1a.fn(icc_recast_price)$icc1a,digits=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
-).
- This is expected as location and prices are observable factors and hence,
- ratings for these factors should be more similar compared to non-observable
- attributes like quality and reputation.
- 
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-Secondly, analysing the overall averaged rating pattern, it can be derived
- that every farmer rate in a similar way every dealer, trader or miller.
- This is because the ICC coefficient is 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(icc1b.fn(icc_recast_overall6)$icc1b,digits=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
- (table
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-~
-\backslash
-ref{table:table3}
-\end_layout
-
-\end_inset
-
-), indicating a very decent level of agreement.
- Similarly high levels of agreements are noticed for location (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(icc1b.fn(icc_recast_loc)$icc1b,digits=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
-) and reputation (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(icc1b.fn(icc_recast_rep)$icc1b,digits=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
-) based ratings.
  
 \end_layout
 
@@ -4700,6 +4547,169 @@ end{table}
 
 \end_layout
 
+\begin_layout Standard
+Table
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+~
+\backslash
+ref{table:table3}
+\end_layout
+
+\end_inset
+
+ presents the ICC coefficients.
+ Firstly, it can be inferred that raters (farmers) agree decently on overall
+ ratings given to ratees.
+ The ICC coefficient being 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(icc1a.fn(icc_recast_overall6)$icc1a,digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+, it can be deduced that the ratings captured in the survey are not entirely
+ random or untrue.
+ However, the level of agreement among the raters (farmers) drops majorly
+ for quality (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(icc1a.fn(icc_recast_qual)$icc1a,digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+) and reputation (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(icc1a.fn(icc_recast_rep)$icc1a,digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+).
+ For location- and price-based ratings, the agreement levels are higher
+ (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(icc1a.fn(icc_recast_loc)$icc1a,digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(icc1a.fn(icc_recast_price)$icc1a,digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+).
+ This is expected as location and prices are observable factors and hence,
+ ratings for these factors should be more similar compared to non-observable
+ attributes like quality and reputation.
+ 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+Secondly, analysing the overall averaged rating pattern, it can be derived
+ that every farmer rate in a similar way every dealer, trader or miller.
+ This is because the ICC coefficient is 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(icc1b.fn(icc_recast_overall6)$icc1b,digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ (table
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+~
+\backslash
+ref{table:table3}
+\end_layout
+
+\end_inset
+
+), indicating a very decent level of agreement.
+ Similarly high levels of agreements are noticed for location (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(icc1b.fn(icc_recast_loc)$icc1b,digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+) and reputation (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(icc1b.fn(icc_recast_rep)$icc1b,digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+) based ratings.
+ 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 \paragraph_spacing onehalf
 Econometric Analysis
@@ -4733,7 +4743,7 @@ noprefix "false"
 \end_layout
 
 \begin_layout Standard
-Next, we turn to the regression models to test the hypotheses laid out in
+Next, I turn to the regression models to test the hypotheses laid out in
  section 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -4783,6 +4793,12 @@ beta_1*Gender(F)_{ija} +
 beta_2*Gender(R)_{ja} + 
 \backslash
 beta_3*X_{ija} + 
+\backslash
+
+\backslash
+ &
+\backslash
+quad 
 \backslash
 beta_4*Z_{ja} + 
 \backslash
@@ -5282,7 +5298,7 @@ s, justifying the need to control for education of ratees.
  Farmers may rate older ratees with more experience more favourably while
  self-ratings are likely to be higher from older individuals because of
  their greater awareness about their performance in the sector.
- Hence, we control for age of the ratee (input dealer, trader, or miller).
+ Hence, I control for age of the ratee (input dealer, trader, or miller).
  
 \end_layout
 
@@ -5298,6 +5314,14 @@ Controlling for marital status of ratees is necessary as married service
  Therefore, purging marital status effects of the ratees from the model
  is essential.
  
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset Newpage newpage
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -7886,8 +7910,8 @@ noprefix "false"
 
 \end_inset
 
- from the trends in the dataset, we will first look at the entire group
- of ratees.
+ from the trends in the dataset, I will first look at the entire group of
+ ratees.
  The mean overall rating from female farmers is 
 \begin_inset ERT
 status open
@@ -7922,7 +7946,7 @@ ts=2),nsmall=0)}
  Interestingly, these patterns vary across the groups of input dealers,
  traders, and millers.
  For overall average ratings, location- and price-based ratings, female
- farmers always give better scores to dealers, traders, and processors.
+ farmers always give better scores to dealers, traders and processors.
  Male farmers give better scores for quality to dealers while lower scores
  for quality to traders and millers when compared to their female counterparts.
  More favourable scores for reputation of dealers and millers come from
@@ -7943,7 +7967,7 @@ noprefix "false"
 \end_layout
 
 \begin_layout Standard
-Next, we focus on the comparison of self-ratings from women and men.
+Next, I focus on the comparison of self-ratings from women and men.
  For overall average self-rating, women (
 \begin_inset ERT
 status open
@@ -8044,7 +8068,7 @@ ref{table:table4}
 \end_layout
 
 \begin_layout Standard
-Next, we examine how men rate other men and women rate other women.
+Next, I examine how men rate other men and women rate other women.
  The average ratings show that women give more favourable ratings to other
  women compared to men's ratings for other men, only in the case of overall
  average, quality, and reputation.
@@ -14544,7 +14568,7 @@ name "sec:Conclusion"
 The aim of this study was to investigate the perceptions of maize farmers
  about the input and service providers in the maize value chain and the
  perceptions of these input and service providers about themselves.
- Focusing on gender, we tested if gender-based heterogeneity can be observed
+ Focusing on gender, I tested if gender-based heterogeneity can be observed
  in perceptions.
  The perceptions were captured through the ratings given on dimensions like
  ease of access, quality of service, price competitiveness and reputation.
@@ -14670,2280 +14694,6 @@ Future research should focus on perceptions of the input and service providers
 
 \begin_layout Standard
 \begin_inset Newpage newpage
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-
-\end_layout
-
-\begin_layout Standard
-Notes on FE:
-\end_layout
-
-\begin_layout Enumerate
-Add a table on significant FE in the paper – F stats, only for all ratees
- and all farmers 
-\end_layout
-
-\begin_layout Enumerate
-
-\series bold
-Intra-rater
-\series default
- : compare ratings from one farmer, thus, farmer is fixed - corresponds
- to 
-\series bold
-farmer FE
-\series default
-; 
-\series bold
-Inter-rater
-\series default
- : compare ratings for one ratee from different farmers, thus, ratee is
- fixed - corresponds to 
-\series bold
-ratee FE
-\end_layout
-
-\begin_layout Enumerate
-In the paper, mention the link between the FE and ICC and explain why they
- are important to know whether the ratings mean anything
-\end_layout
-
-\begin_layout Enumerate
-We find that FE are significant across all rating attributes for farmer
- level and ratee level.
- Farmer level: individual means are different from the overall mean (means
- that each farmer rating differently than overall farmers, significant),
- it means that the characteristics of the farmers play a role in the differences
- in the ratings.
- Ratee level: individual means are different from the overall mean (means
- that each ratee being rated differently than overall ratees, significant),
- it means that the characteristics of the ratees play a role in the ratings
- being given by the farmers.
- Thus, when both farmer level and ratee level fixed effects are significant,
- we can say that both farmer's and ratee's characteristics play a role in
- the ratings.
- 
-\end_layout
-
-\begin_layout Enumerate
-This also links to what we are doing later.
- We are looking at how the gender of farmer impacts the ratings and how
- the gender of the ratee impacts the ratings ..
- relationship between the characteristics of the rater and ratee with the
- ratings given or obtained.
- 
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{table} 
-\backslash
-small 
-\backslash
-begin{center} 
-\backslash
-begin{tabular}{@{
-\backslash
-extracolsep{5pt}}lcccc}  
-\backslash
-
-\backslash
-[-1.8ex]
-\backslash
-hline  
-\backslash
-hline 
-\backslash
-
-\backslash
-[-1.8ex]   & 
-\backslash
-multicolumn{4}{c}{
-\backslash
-textit{Significance of fixed effects regressions}} 
-\backslash
-
-\backslash
-  
-\backslash
-hline
-\backslash
-
-\backslash
-[-1.8ex]   & 
-\backslash
-multicolumn{2}{c}{
-\backslash
-textit{Ratee level fixed effects}} & 
-\backslash
-multicolumn{2}{c}{
-\backslash
-textit{Farmer level fixed effects}}  
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-& 
-\backslash
-multicolumn{2}{c}{
-\backslash
-textit{DF1=$
-\backslash
-Sexpr{format(round( summary(fe_modoverall_pool)$fstatistic[2],digits=3),nsmall=0
-)}$ , DF2=$
-\backslash
-Sexpr{format(round( summary(fe_modoverall_pool)$fstatistic[3],digits=3),nsmall=0
-)}$}} & 
-\backslash
-multicolumn{2}{c}{
-\backslash
-textit{DF1=$
-\backslash
-Sexpr{format(round( summary(fe_modoverall)$fstatistic[2],digits=3),nsmall=0)}$
- , DF2=$
-\backslash
-Sexpr{format(round( summary(fe_modoverall)$fstatistic[3],digits=3),nsmall=0)}$}}
-  
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-cline{2-3} 
-\backslash
-cline{4-5} 
-\backslash
-
-\backslash
-[-1.8ex] & 
-\backslash
-multicolumn{1} {c} {
-\backslash
-textit{F statistic}} &  
-\backslash
-multicolumn{1} {c} {
-\backslash
-textit{Significant (Yes/No)}} 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  
-\backslash
-multicolumn{1} {c} {
-\backslash
-textit{F statistic}} &  
-\backslash
-multicolumn{1} {c} {
-\backslash
-textit{Significant (Yes/No) }} 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-  
-\backslash
-hline 
-\backslash
-
-\backslash
-[-1.8ex]  
-\end_layout
-
-\begin_layout Plain Layout
-
-{Overall}                 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format(round( summary(fe_modoverall_pool)$fstatistic[1],digits=3),nsmall=0
-)}$   &  {Yes}  &  $
-\backslash
-Sexpr{format(round( summary(fe_modoverall)$fstatistic[1],digits=3),nsmall=0)}$
-   &  {Yes} 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{Location}                 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format(round( summary(fe_modloc_pool)$fstatistic[1],digits=3),nsmall=0)}$
-   &  {Yes}  &  $
-\backslash
-Sexpr{format(round( summary(fe_modloc)$fstatistic[1],digits=3),nsmall=0)}$
-   &  {Yes} 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{Quality}                 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format(round( summary(fe_modqual_pool)$fstatistic[1],digits=3),nsmall=0)}$
-   &  {Yes}  &  $
-\backslash
-Sexpr{format(round( summary(fe_modqual)$fstatistic[1],digits=3),nsmall=0)}$
-   &  {Yes} 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{Price}                 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format(round( summary(fe_modprice_pool)$fstatistic[1],digits=3),nsmall=0)}
-$   &  {Yes} &  $
-\backslash
-Sexpr{format(round( summary(fe_modprice)$fstatistic[1],digits=3),nsmall=0)}$
-   &  {Yes} 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{Reputation}                 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format(round( summary(fe_modrep_pool)$fstatistic[1],digits=3),nsmall=0)}$
-   &  {Yes}  &  $
-\backslash
-Sexpr{format(round( summary(fe_modrep)$fstatistic[1],digits=3),nsmall=0)}$
-   &  {Yes} 
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-
-\backslash
-    
-\backslash
-hline
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-end{tabular} 
-\backslash
-end{center}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-caption{Significance of fixed effects regressions at the ratee and farmer
- (rater) level.} 
-\backslash
-label{table:table4} 
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-end{table} 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{table} 
-\backslash
-small 
-\backslash
-begin{center} 
-\backslash
-begin{tabular}{@{
-\backslash
-extracolsep{5pt}}lccccc}  
-\backslash
-
-\backslash
-[-1.8ex]
-\backslash
-hline  
-\backslash
-hline 
-\backslash
-
-\backslash
-[-1.8ex]   & 
-\backslash
-multicolumn{5}{c}{
-\backslash
-textit{
-\backslash
-footnotesize Dependent variable: Ratings from Farmers (Raters)}} 
-\backslash
-
-\backslash
-  
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-cline{2-6} 
-\backslash
-
-\backslash
-[-1.8ex] & 
-\backslash
-multicolumn{1} {c} {Overall} &  
-\backslash
-multicolumn{1} {c} { Location}  &
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-multicolumn{1} {c} { Quality}&
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-multicolumn{1} {c} {Price}&
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-multicolumn{1} {c} { Reputation} 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-[-1.8ex] & (1) & (2) & (3) & (4) & (5) 
-\backslash
-
-\backslash
-  
-\backslash
-hline 
-\backslash
-
-\backslash
-[-1.8ex]  
-\end_layout
-
-\begin_layout Plain Layout
-
-{Intercept}                  & $
-\backslash
-Sexpr{format(round(sum(res_farm1$coefficients[1]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(res_farm1)$coefficients[1,4]<.01,"***",ifelse(summary(res_fa
-rm1)$coefficients[1,4]<.05,"**",ifelse(summary(res_farm1)$coefficients[1,4]<.1,"*"
-,"")))}}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format(round(sum(res_farm2$coefficients[1]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(res_farm2)$coefficients[1,4]<.01,"***",ifelse(summary(res_fa
-rm2)$coefficients[1,4]<.05,"**",ifelse(summary(res_farm2)$coefficients[1,4]<.1,"*"
-,"")))}}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{format(round(sum(res_farm3$coefficients[1]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(res_farm3)$coefficients[1,4]<.01,"***",ifelse(summary(res_fa
-rm3)$coefficients[1,4]<.05,"**",ifelse(summary(res_farm3)$coefficients[1,4]<.1,"*"
-,"")))}}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format(round(sum(res_farm4$coefficients[1]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(res_farm4)$coefficients[1,4]<.01,"***",ifelse(summary(res_fa
-rm4)$coefficients[1,4]<.05,"**",ifelse(summary(res_farm4)$coefficients[1,4]<.1,"*"
-,"")))}}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{format(round(sum(res_farm5$coefficients[1]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(res_farm5)$coefficients[1,4]<.01,"***",ifelse(summary(res_fa
-rm5)$coefficients[1,4]<.05,"**",ifelse(summary(res_farm5)$coefficients[1,4]<.1,"*"
-,"")))}}$   
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-                              & $(
-\backslash
-Sexpr{format(round(se_farm1[1],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_farm2[1],digits=4),nsmall=0)})$   & $(
-\backslash
-Sexpr{format(round(se_farm3[1],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_farm4[1],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_farm5[1],digits=4),nsmall=0)})$    
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
- {Gender(F)}
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format(round(sum(res_farm1$coefficients[2]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(res_farm1)$coefficients[2,4]<.01,"***",ifelse(summary(res_fa
-rm1)$coefficients[2,4]<.05,"**",ifelse(summary(res_farm1)$coefficients[2,4]<.1,"*"
-,"")))}}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format(round(sum(res_farm2$coefficients[2]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(res_farm2)$coefficients[2,4]<.01,"***",ifelse(summary(res_fa
-rm2)$coefficients[2,4]<.05,"**",ifelse(summary(res_farm2)$coefficients[2,4]<.1,"*"
-,"")))}}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{format(round(sum(res_farm3$coefficients[2]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(res_farm3)$coefficients[2,4]<.01,"***",ifelse(summary(res_fa
-rm3)$coefficients[2,4]<.05,"**",ifelse(summary(res_farm3)$coefficients[2,4]<.1,"*"
-,"")))}}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format(round(sum(res_farm4$coefficients[2]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(res_farm4)$coefficients[2,4]<.01,"***",ifelse(summary(res_fa
-rm4)$coefficients[2,4]<.05,"**",ifelse(summary(res_farm4)$coefficients[2,4]<.1,"*"
-,"")))}}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{format(round(sum(res_farm5$coefficients[2]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(res_farm5)$coefficients[2,4]<.01,"***",ifelse(summary(res_fa
-rm5)$coefficients[2,4]<.05,"**",ifelse(summary(res_farm5)$coefficients[2,4]<.1,"*"
-,"")))}}$   
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-                              & $(
-\backslash
-Sexpr{format(round(se_farm1[2],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_farm2[2],digits=4),nsmall=0)})$   & $(
-\backslash
-Sexpr{format(round(se_farm3[2],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_farm4[2],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_farm5[2],digits=4),nsmall=0)})$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
- {Age of farmer}
-\end_layout
-
-\begin_layout Plain Layout
-
-               & $
-\backslash
-Sexpr{format(round(sum(res_farm1$coefficients[3]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(res_farm1)$coefficients[3,4]<.01,"***",ifelse(summary(res_fa
-rm1)$coefficients[3,4]<.05,"**",ifelse(summary(res_farm1)$coefficients[3,4]<.1,"*"
-,"")))}}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format(round(sum(res_farm2$coefficients[3]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(res_farm2)$coefficients[3,4]<.01,"***",ifelse(summary(res_fa
-rm2)$coefficients[3,4]<.05,"**",ifelse(summary(res_farm2)$coefficients[3,4]<.1,"*"
-,"")))}}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{format(round(sum(res_farm3$coefficients[3]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(res_farm3)$coefficients[3,4]<.01,"***",ifelse(summary(res_fa
-rm3)$coefficients[3,4]<.05,"**",ifelse(summary(res_farm3)$coefficients[3,4]<.1,"*"
-,"")))}}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format(round(sum(res_farm4$coefficients[3]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(res_farm4)$coefficients[3,4]<.01,"***",ifelse(summary(res_fa
-rm4)$coefficients[3,4]<.05,"**",ifelse(summary(res_farm4)$coefficients[3,4]<.1,"*"
-,"")))}}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{format(round(sum(res_farm5$coefficients[3]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(res_farm5)$coefficients[3,4]<.01,"***",ifelse(summary(res_fa
-rm5)$coefficients[3,4]<.05,"**",ifelse(summary(res_farm5)$coefficients[3,4]<.1,"*"
-,"")))}}$   
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-                              & $(
-\backslash
-Sexpr{format(round(se_farm1[3],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_farm2[3],digits=4),nsmall=0)})$   & $(
-\backslash
-Sexpr{format(round(se_farm3[3],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_farm4[3],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_farm5[3],digits=4),nsmall=0)})$       
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
- {Interaction}                & $
-\backslash
-Sexpr{format(round(sum(res_farm1$coefficients[4]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(res_farm1)$coefficients[4,4]<.01,"***",ifelse(summary(res_fa
-rm1)$coefficients[4,4]<.05,"**",ifelse(summary(res_farm1)$coefficients[4,4]<.1,"*"
-,"")))}}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format(round(sum(res_farm2$coefficients[4]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(res_farm2)$coefficients[4,4]<.01,"***",ifelse(summary(res_fa
-rm2)$coefficients[4,4]<.05,"**",ifelse(summary(res_farm2)$coefficients[4,4]<.1,"*"
-,"")))}}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{format(round(sum(res_farm3$coefficients[4]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(res_farm3)$coefficients[4,4]<.01,"***",ifelse(summary(res_fa
-rm3)$coefficients[4,4]<.05,"**",ifelse(summary(res_farm3)$coefficients[4,4]<.1,"*"
-,"")))}}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format(round(sum(res_farm4$coefficients[4]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(res_farm4)$coefficients[4,4]<.01,"***",ifelse(summary(res_fa
-rm4)$coefficients[4,4]<.05,"**",ifelse(summary(res_farm4)$coefficients[4,4]<.1,"*"
-,"")))}}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{format(round(sum(res_farm5$coefficients[4]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(res_farm5)$coefficients[4,4]<.01,"***",ifelse(summary(res_fa
-rm5)$coefficients[4,4]<.05,"**",ifelse(summary(res_farm5)$coefficients[4,4]<.1,"*"
-,"")))}}$   
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-                              & $(
-\backslash
-Sexpr{format(round(se_farm1[4],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_farm2[4],digits=4),nsmall=0)})$   & $(
-\backslash
-Sexpr{format(round(se_farm3[4],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_farm4[4],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_farm5[4],digits=4),nsmall=0)})$       
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
- {Education(F)}
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format(round(sum(res_farm1$coefficients[5]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(res_farm1)$coefficients[5,4]<.01,"***",ifelse(summary(res_fa
-rm1)$coefficients[5,4]<.05,"**",ifelse(summary(res_farm1)$coefficients[5,4]<.1,"*"
-,"")))}}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format(round(sum(res_farm2$coefficients[5]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(res_farm2)$coefficients[5,4]<.01,"***",ifelse(summary(res_fa
-rm2)$coefficients[5,4]<.05,"**",ifelse(summary(res_farm2)$coefficients[5,4]<.1,"*"
-,"")))}}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{format(round(sum(res_farm3$coefficients[5]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(res_farm3)$coefficients[5,4]<.01,"***",ifelse(summary(res_fa
-rm3)$coefficients[5,4]<.05,"**",ifelse(summary(res_farm3)$coefficients[5,4]<.1,"*"
-,"")))}}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format(round(sum(res_farm4$coefficients[5]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(res_farm4)$coefficients[5,4]<.01,"***",ifelse(summary(res_fa
-rm4)$coefficients[5,4]<.05,"**",ifelse(summary(res_farm4)$coefficients[5,4]<.1,"*"
-,"")))}}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{format(round(sum(res_farm5$coefficients[5]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(res_farm5)$coefficients[5,4]<.01,"***",ifelse(summary(res_fa
-rm5)$coefficients[5,4]<.05,"**",ifelse(summary(res_farm5)$coefficients[5,4]<.1,"*"
-,"")))}}$   
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-                              & $(
-\backslash
-Sexpr{format(round(se_farm1[5],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_farm2[5],digits=4),nsmall=0)})$   & $(
-\backslash
-Sexpr{format(round(se_farm3[5],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_farm4[5],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_farm5[5],digits=4),nsmall=0)})$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-   {Tarmac}
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format(round(sum(res_farm1$coefficients[6]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(res_farm1)$coefficients[6,4]<.01,"***",ifelse(summary(res_fa
-rm1)$coefficients[6,4]<.05,"**",ifelse(summary(res_farm1)$coefficients[6,4]<.1,"*"
-,"")))}}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format(round(sum(res_farm2$coefficients[6]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(res_farm2)$coefficients[6,4]<.01,"***",ifelse(summary(res_fa
-rm2)$coefficients[6,4]<.05,"**",ifelse(summary(res_farm2)$coefficients[6,4]<.1,"*"
-,"")))}}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{format(round(sum(res_farm3$coefficients[6]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(res_farm3)$coefficients[6,4]<.01,"***",ifelse(summary(res_fa
-rm3)$coefficients[6,4]<.05,"**",ifelse(summary(res_farm3)$coefficients[6,4]<.1,"*"
-,"")))}}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format(round(sum(res_farm4$coefficients[6]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(res_farm4)$coefficients[6,4]<.01,"***",ifelse(summary(res_fa
-rm4)$coefficients[6,4]<.05,"**",ifelse(summary(res_farm4)$coefficients[6,4]<.1,"*"
-,"")))}}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{format(round(sum(res_farm5$coefficients[6]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(res_farm5)$coefficients[6,4]<.01,"***",ifelse(summary(res_fa
-rm5)$coefficients[6,4]<.05,"**",ifelse(summary(res_farm5)$coefficients[6,4]<.1,"*"
-,"")))}}$   
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-                              & $(
-\backslash
-Sexpr{format(round(se_farm1[6],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_farm2[6],digits=4),nsmall=0)})$   & $(
-\backslash
-Sexpr{format(round(se_farm3[6],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_farm4[6],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_farm5[6],digits=4),nsmall=0)})$         
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-   {Murram}
-\end_layout
-
-\begin_layout Plain Layout
-
-               & $
-\backslash
-Sexpr{format(round(sum(res_farm1$coefficients[7]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(res_farm1)$coefficients[7,4]<.01,"***",ifelse(summary(res_fa
-rm1)$coefficients[7,4]<.05,"**",ifelse(summary(res_farm1)$coefficients[7,4]<.1,"*"
-,"")))}}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format(round(sum(res_farm2$coefficients[7]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(res_farm2)$coefficients[7,4]<.01,"***",ifelse(summary(res_fa
-rm2)$coefficients[7,4]<.05,"**",ifelse(summary(res_farm2)$coefficients[7,4]<.1,"*"
-,"")))}}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{format(round(sum(res_farm3$coefficients[7]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(res_farm3)$coefficients[7,4]<.01,"***",ifelse(summary(res_fa
-rm3)$coefficients[7,4]<.05,"**",ifelse(summary(res_farm3)$coefficients[7,4]<.1,"*"
-,"")))}}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format(round(sum(res_farm4$coefficients[7]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(res_farm4)$coefficients[7,4]<.01,"***",ifelse(summary(res_fa
-rm4)$coefficients[7,4]<.05,"**",ifelse(summary(res_farm4)$coefficients[7,4]<.1,"*"
-,"")))}}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{format(round(sum(res_farm5$coefficients[7]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(res_farm5)$coefficients[7,4]<.01,"***",ifelse(summary(res_fa
-rm5)$coefficients[7,4]<.05,"**",ifelse(summary(res_farm5)$coefficients[7,4]<.1,"*"
-,"")))}}$   
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-                              & $(
-\backslash
-Sexpr{format(round(se_farm1[7],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_farm2[7],digits=4),nsmall=0)})$   & $(
-\backslash
-Sexpr{format(round(se_farm3[7],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_farm4[7],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_farm5[7],digits=4),nsmall=0)})$            
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-  {Farmer marital status}
-\end_layout
-
-\begin_layout Plain Layout
-
-               & $
-\backslash
-Sexpr{format(round(sum(res_farm1$coefficients[8]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(res_farm1)$coefficients[8,4]<.01,"***",ifelse(summary(res_fa
-rm1)$coefficients[8,4]<.05,"**",ifelse(summary(res_farm1)$coefficients[8,4]<.1,"*"
-,"")))}}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format(round(sum(res_farm2$coefficients[8]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(res_farm2)$coefficients[8,4]<.01,"***",ifelse(summary(res_fa
-rm2)$coefficients[8,4]<.05,"**",ifelse(summary(res_farm2)$coefficients[8,4]<.1,"*"
-,"")))}}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{format(round(sum(res_farm3$coefficients[8]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(res_farm3)$coefficients[8,4]<.01,"***",ifelse(summary(res_fa
-rm3)$coefficients[8,4]<.05,"**",ifelse(summary(res_farm3)$coefficients[8,4]<.1,"*"
-,"")))}}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format(round(sum(res_farm4$coefficients[8]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(res_farm4)$coefficients[8,4]<.01,"***",ifelse(summary(res_fa
-rm4)$coefficients[8,4]<.05,"**",ifelse(summary(res_farm4)$coefficients[8,4]<.1,"*"
-,"")))}}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{format(round(sum(res_farm5$coefficients[8]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(res_farm5)$coefficients[8,4]<.01,"***",ifelse(summary(res_fa
-rm5)$coefficients[8,4]<.05,"**",ifelse(summary(res_farm5)$coefficients[8,4]<.1,"*"
-,"")))}}$   
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-                              & $(
-\backslash
-Sexpr{format(round(se_farm1[8],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_farm2[8],digits=4),nsmall=0)})$   & $(
-\backslash
-Sexpr{format(round(se_farm3[8],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_farm4[8],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_farm5[8],digits=4),nsmall=0)})$         
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-    {Dealer dummy}
-\end_layout
-
-\begin_layout Plain Layout
-
-               & $
-\backslash
-Sexpr{format(round(sum(res_farm1$coefficients[9]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(res_farm1)$coefficients[9,4]<.01,"***",ifelse(summary(res_fa
-rm1)$coefficients[9,4]<.05,"**",ifelse(summary(res_farm1)$coefficients[9,4]<.1,"*"
-,"")))}}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format(round(sum(res_farm2$coefficients[9]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(res_farm2)$coefficients[9,4]<.01,"***",ifelse(summary(res_fa
-rm2)$coefficients[9,4]<.05,"**",ifelse(summary(res_farm2)$coefficients[9,4]<.1,"*"
-,"")))}}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{format(round(sum(res_farm3$coefficients[9]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(res_farm3)$coefficients[9,4]<.01,"***",ifelse(summary(res_fa
-rm3)$coefficients[9,4]<.05,"**",ifelse(summary(res_farm3)$coefficients[9,4]<.1,"*"
-,"")))}}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format(round(sum(res_farm4$coefficients[9]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(res_farm4)$coefficients[9,4]<.01,"***",ifelse(summary(res_fa
-rm4)$coefficients[9,4]<.05,"**",ifelse(summary(res_farm4)$coefficients[9,4]<.1,"*"
-,"")))}}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{format(round(sum(res_farm5$coefficients[9]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(res_farm5)$coefficients[9,4]<.01,"***",ifelse(summary(res_fa
-rm5)$coefficients[9,4]<.05,"**",ifelse(summary(res_farm5)$coefficients[9,4]<.1,"*"
-,"")))}}$   
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-                              & $(
-\backslash
-Sexpr{format(round(se_farm1[9],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_farm2[9],digits=4),nsmall=0)})$   & $(
-\backslash
-Sexpr{format(round(se_farm3[9],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_farm4[9],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_farm5[9],digits=4),nsmall=0)})$         
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-   {Trader dummy}
-\end_layout
-
-\begin_layout Plain Layout
-
-               & $
-\backslash
-Sexpr{format(round(sum(res_farm1$coefficients[10]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(res_farm1)$coefficients[10,4]<.01,"***",ifelse(summary(res_f
-arm1)$coefficients[10,4]<.05,"**",ifelse(summary(res_farm1)$coefficients[10,4]<.1,
-"*","")))}}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format(round(sum(res_farm2$coefficients[10]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(res_farm2)$coefficients[10,4]<.01,"***",ifelse(summary(res_f
-arm2)$coefficients[10,4]<.05,"**",ifelse(summary(res_farm2)$coefficients[10,4]<.1,
-"*","")))}}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{format(round(sum(res_farm3$coefficients[10]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(res_farm3)$coefficients[10,4]<.01,"***",ifelse(summary(res_f
-arm3)$coefficients[10,4]<.05,"**",ifelse(summary(res_farm3)$coefficients[10,4]<.1,
-"*","")))}}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format(round(sum(res_farm4$coefficients[10]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(res_farm4)$coefficients[10,4]<.01,"***",ifelse(summary(res_f
-arm4)$coefficients[10,4]<.05,"**",ifelse(summary(res_farm4)$coefficients[10,4]<.1,
-"*","")))}}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{format(round(sum(res_farm5$coefficients[10]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(res_farm5)$coefficients[10,4]<.01,"***",ifelse(summary(res_f
-arm5)$coefficients[10,4]<.05,"**",ifelse(summary(res_farm5)$coefficients[10,4]<.1,
-"*","")))}}$   
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-                              & $(
-\backslash
-Sexpr{format(round(se_farm1[10],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_farm2[10],digits=4),nsmall=0)})$   & $(
-\backslash
-Sexpr{format(round(se_farm3[10],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_farm4[10],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_farm5[10],digits=4),nsmall=0)})$        
-\end_layout
-
-\begin_layout Plain Layout
-
-    
-\backslash
-
-\backslash
- 
-\backslash
-hline 
-\end_layout
-
-\begin_layout Plain Layout
-
-R$^2$                   & $
-\backslash
-Sexpr{format(round(summary(res_farm1)$r.squared,digits=4),nsmall=0)}$   
-    & $
-\backslash
-Sexpr{format(round(summary(res_farm2)$r.squared,digits=4),nsmall=0)}$   
-    & $
-\backslash
-Sexpr{format(round(summary(res_farm3)$r.squared,digits=4),nsmall=0)}$   
-    & $
-\backslash
-Sexpr{format(round(summary(res_farm4)$r.squared,digits=4),nsmall=0)}$   
- & $
-\backslash
-Sexpr{format(round(summary(res_farm5)$r.squared,digits=4),nsmall=0)}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-
-\backslash
- Adj.
- R$^2$                         & $
-\backslash
-Sexpr{format(round(summary(res_farm1)$adj.r.squared,digits=4),nsmall=0)}$
-       & $
-\backslash
-Sexpr{format(round(summary(res_farm2)$adj.r.squared,digits=4),nsmall=0)}$
-       & $
-\backslash
-Sexpr{format(round(summary(res_farm3)$adj.r.squared,digits=4),nsmall=0)}$
-       & $
-\backslash
-Sexpr{format(round(summary(res_farm4)$adj.r.squared,digits=4),nsmall=0)}$
-    & $
-\backslash
-Sexpr{format(round(summary(res_farm5)$adj.r.squared,digits=4),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
- Number of obs.
-                     & $
-\backslash
-Sexpr{format(round(nobs(res_farm1),digits=4),nsmall=0)}$       & $
-\backslash
-Sexpr{format(round(nobs(res_farm2),digits=4),nsmall=0)}$       & $
-\backslash
-Sexpr{format(round(nobs(res_farm3),digits=4),nsmall=0)}$       & $
-\backslash
-Sexpr{format(round(nobs(res_farm4),digits=4),nsmall=0)}$    & $
-\backslash
-Sexpr{format(round(nobs(res_farm5),digits=4),nsmall=0)}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-     
-\backslash
-
-\backslash
- 
-\backslash
-hline
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-multicolumn{5}{l}{ 
-\backslash
-scriptsize{$^{***}p<0.01$; $^{**}p<0.05$; $^{*}p<0.1$.}} 
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-end{tabular} 
-\backslash
-end{center}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-scriptsize
-\end_layout
-
-\begin_layout Plain Layout
-
-Note: Standard errors are clustered at the ratee level (agro-input dealers,
- traders, and millers).
- The dependent variable is the rating given by the farmers and the main
- independent variable is farmer's gender.
- The dimensions based on which the ratings are given are overall average
- (model 1), location (model 2), quality (model 3), price (model 4) and reputatio
-n (model 5).
- F refers to farmers.
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-caption{Regression results for the impact of farmer's (rater's) gender on
- the ratings given by the farmers to the ratees.} 
-\backslash
-label{table:table5} 
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-end{table}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{table} 
-\backslash
-small 
-\backslash
-begin{center} 
-\backslash
-begin{tabular}{@{
-\backslash
-extracolsep{5pt}}lccccc}  
-\backslash
-
-\backslash
-[-1.8ex]
-\backslash
-hline  
-\backslash
-hline 
-\backslash
-
-\backslash
-[-1.8ex]   & 
-\backslash
-multicolumn{5}{c}{
-\backslash
-textit{Dependent variable: Self-ratings by dealers, traders, and millers}}
- 
-\backslash
-
-\backslash
-  
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-cline{2-6} 
-\backslash
-
-\backslash
-[-1.8ex] & 
-\backslash
-multicolumn{1} {c} {Overall} &  
-\backslash
-multicolumn{1} {c} {Location}  &
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-multicolumn{1} {c} {Quality}&
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-multicolumn{1} {c} {Price}&
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-multicolumn{1} {c} {Reputation} 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-[-1.8ex] & (1) & (2) & (3) & (4) & (5) 
-\backslash
-
-\backslash
-  
-\backslash
-hline 
-\backslash
-
-\backslash
-[-1.8ex]  
-\end_layout
-
-\begin_layout Plain Layout
-
-{Intercept}                  & $
-\backslash
-Sexpr{format(round(sum(ratee1$coefficients[1]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(ratee1)$coefficients[1,4]<.01,"***",ifelse(summary(ratee1)$c
-oefficients[1,4]<.05,"**",ifelse(summary(ratee1)$coefficients[1,4]<.1,"*","")))}}$
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format(round(sum(ratee2$coefficients[1]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(ratee2)$coefficients[1,4]<.01,"***",ifelse(summary(ratee2)$c
-oefficients[1,4]<.05,"**",ifelse(summary(ratee2)$coefficients[1,4]<.1,"*","")))}}$
- 
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{format(round(sum(ratee3$coefficients[1]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(ratee3)$coefficients[1,4]<.01,"***",ifelse(summary(ratee3)$c
-oefficients[1,4]<.05,"**",ifelse(summary(ratee3)$coefficients[1,4]<.1,"*","")))}}$
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format(round(sum(ratee4$coefficients[1]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(ratee4)$coefficients[1,4]<.01,"***",ifelse(summary(ratee4)$c
-oefficients[1,4]<.05,"**",ifelse(summary(ratee4)$coefficients[1,4]<.1,"*","")))}}$
- 
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{format(round(sum(ratee5$coefficients[1]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(ratee5)$coefficients[1,4]<.01,"***",ifelse(summary(ratee5)$c
-oefficients[1,4]<.05,"**",ifelse(summary(ratee5)$coefficients[1,4]<.1,"*","")))}}$
-   
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-                              & $(
-\backslash
-Sexpr{format(round(se_ratee1[1],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_ratee2[1],digits=4),nsmall=0)})$   & $(
-\backslash
-Sexpr{format(round(se_ratee3[1],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_ratee4[1],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_ratee5[1],digits=4),nsmall=0)})$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-                    
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
- {Gender(R)}  
-\end_layout
-
-\begin_layout Plain Layout
-
-              & $
-\backslash
-Sexpr{format(round(sum(ratee1$coefficients[2]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(ratee1)$coefficients[2,4]<.01,"***",ifelse(summary(ratee1)$c
-oefficients[2,4]<.05,"**",ifelse(summary(ratee1)$coefficients[2,4]<.1,"*","")))}}$
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format(round(sum(ratee2$coefficients[2]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(ratee2)$coefficients[2,4]<.01,"***",ifelse(summary(ratee2)$c
-oefficients[2,4]<.05,"**",ifelse(summary(ratee2)$coefficients[2,4]<.1,"*","")))}}$
- 
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{format(round(sum(ratee3$coefficients[2]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(ratee3)$coefficients[2,4]<.01,"***",ifelse(summary(ratee3)$c
-oefficients[2,4]<.05,"**",ifelse(summary(ratee3)$coefficients[2,4]<.1,"*","")))}}$
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format(round(sum(ratee4$coefficients[2]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(ratee4)$coefficients[2,4]<.01,"***",ifelse(summary(ratee4)$c
-oefficients[2,4]<.05,"**",ifelse(summary(ratee4)$coefficients[2,4]<.1,"*","")))}}$
- 
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{format(round(sum(ratee5$coefficients[2]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(ratee5)$coefficients[2,4]<.01,"***",ifelse(summary(ratee5)$c
-oefficients[2,4]<.05,"**",ifelse(summary(ratee5)$coefficients[2,4]<.1,"*","")))}}$
-  
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-                              & $(
-\backslash
-Sexpr{format(round(se_ratee1[2],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_ratee2[2],digits=4),nsmall=0)})$   & $(
-\backslash
-Sexpr{format(round(se_ratee3[2],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_ratee4[2],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_ratee5[2],digits=4),nsmall=0)})$     
-\end_layout
-
-\begin_layout Plain Layout
-
-           
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-   {Age of ratee}
-\end_layout
-
-\begin_layout Plain Layout
-
-                 & $
-\backslash
-Sexpr{format(round(sum(ratee1$coefficients[3]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(ratee1)$coefficients[3,4]<.01,"***",ifelse(summary(ratee1)$c
-oefficients[3,4]<.05,"**",ifelse(summary(ratee1)$coefficients[3,4]<.1,"*","")))}}$
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format(round(sum(ratee2$coefficients[3]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(ratee2)$coefficients[3,4]<.01,"***",ifelse(summary(ratee2)$c
-oefficients[3,4]<.05,"**",ifelse(summary(ratee2)$coefficients[3,4]<.1,"*","")))}}$
- 
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{format(round(sum(ratee3$coefficients[3]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(ratee3)$coefficients[3,4]<.01,"***",ifelse(summary(ratee3)$c
-oefficients[3,4]<.05,"**",ifelse(summary(ratee3)$coefficients[3,4]<.1,"*","")))}}$
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format(round(sum(ratee4$coefficients[3]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(ratee4)$coefficients[3,4]<.01,"***",ifelse(summary(ratee4)$c
-oefficients[3,4]<.05,"**",ifelse(summary(ratee4)$coefficients[3,4]<.1,"*","")))}}$
- 
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{format(round(sum(ratee5$coefficients[3]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(ratee5)$coefficients[3,4]<.01,"***",ifelse(summary(ratee5)$c
-oefficients[3,4]<.05,"**",ifelse(summary(ratee5)$coefficients[3,4]<.1,"*","")))}}$
-    
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-                              & $(
-\backslash
-Sexpr{format(round(se_ratee1[3],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_ratee2[3],digits=4),nsmall=0)})$   & $(
-\backslash
-Sexpr{format(round(se_ratee3[3],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_ratee4[3],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_ratee5[3],digits=4),nsmall=0)})$
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
- {Ratee marital status} 
-\end_layout
-
-\begin_layout Plain Layout
-
-             & $
-\backslash
-Sexpr{format(round(sum(ratee1$coefficients[4]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(ratee1)$coefficients[4,4]<.01,"***",ifelse(summary(ratee1)$c
-oefficients[4,4]<.05,"**",ifelse(summary(ratee1)$coefficients[4,4]<.1,"*","")))}}$
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format(round(sum(ratee2$coefficients[4]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(ratee2)$coefficients[4,4]<.01,"***",ifelse(summary(ratee2)$c
-oefficients[4,4]<.05,"**",ifelse(summary(ratee2)$coefficients[4,4]<.1,"*","")))}}$
- 
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{format(round(sum(ratee3$coefficients[4]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(ratee3)$coefficients[4,4]<.01,"***",ifelse(summary(ratee3)$c
-oefficients[4,4]<.05,"**",ifelse(summary(ratee3)$coefficients[4,4]<.1,"*","")))}}$
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format(round(sum(ratee4$coefficients[4]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(ratee4)$coefficients[4,4]<.01,"***",ifelse(summary(ratee4)$c
-oefficients[4,4]<.05,"**",ifelse(summary(ratee4)$coefficients[4,4]<.1,"*","")))}}$
- 
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{format(round(sum(ratee5$coefficients[4]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(ratee5)$coefficients[4,4]<.01,"***",ifelse(summary(ratee5)$c
-oefficients[4,4]<.05,"**",ifelse(summary(ratee5)$coefficients[4,4]<.1,"*","")))}}$
-   
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-                              & $(
-\backslash
-Sexpr{format(round(se_ratee1[4],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_ratee2[4],digits=4),nsmall=0)})$   & $(
-\backslash
-Sexpr{format(round(se_ratee3[4],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_ratee4[4],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_ratee5[4],digits=4),nsmall=0)})$
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
- {Education(R)}
-\end_layout
-
-\begin_layout Plain Layout
-
-                & $
-\backslash
-Sexpr{format(round(sum(ratee1$coefficients[5]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(ratee1)$coefficients[5,4]<.01,"***",ifelse(summary(ratee1)$c
-oefficients[5,4]<.05,"**",ifelse(summary(ratee1)$coefficients[5,4]<.1,"*","")))}}$
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format(round(sum(ratee2$coefficients[5]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(ratee2)$coefficients[5,4]<.01,"***",ifelse(summary(ratee2)$c
-oefficients[5,4]<.05,"**",ifelse(summary(ratee2)$coefficients[5,4]<.1,"*","")))}}$
- 
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{format(round(sum(ratee3$coefficients[5]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(ratee3)$coefficients[5,4]<.01,"***",ifelse(summary(ratee3)$c
-oefficients[5,4]<.05,"**",ifelse(summary(ratee3)$coefficients[5,4]<.1,"*","")))}}$
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format(round(sum(ratee4$coefficients[5]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(ratee4)$coefficients[5,4]<.01,"***",ifelse(summary(ratee4)$c
-oefficients[5,4]<.05,"**",ifelse(summary(ratee4)$coefficients[5,4]<.1,"*","")))}}$
- 
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{format(round(sum(ratee5$coefficients[5]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(ratee5)$coefficients[5,4]<.01,"***",ifelse(summary(ratee5)$c
-oefficients[5,4]<.05,"**",ifelse(summary(ratee5)$coefficients[5,4]<.1,"*","")))}}$
-   
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-                              & $(
-\backslash
-Sexpr{format(round(se_ratee1[5],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_ratee2[5],digits=4),nsmall=0)})$   & $(
-\backslash
-Sexpr{format(round(se_ratee3[5],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_ratee4[5],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_ratee5[5],digits=4),nsmall=0)})$  
-\end_layout
-
-\begin_layout Plain Layout
-
-         
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
- {Dealer dummy} 
-\end_layout
-
-\begin_layout Plain Layout
-
-                & $
-\backslash
-Sexpr{format(round(sum(ratee1$coefficients[6]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(ratee1)$coefficients[6,4]<.01,"***",ifelse(summary(ratee1)$c
-oefficients[6,4]<.05,"**",ifelse(summary(ratee1)$coefficients[6,4]<.1,"*","")))}}$
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format(round(sum(ratee2$coefficients[6]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(ratee2)$coefficients[6,4]<.01,"***",ifelse(summary(ratee2)$c
-oefficients[6,4]<.05,"**",ifelse(summary(ratee2)$coefficients[6,4]<.1,"*","")))}}$
- 
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{format(round(sum(ratee3$coefficients[6]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(ratee3)$coefficients[6,4]<.01,"***",ifelse(summary(ratee3)$c
-oefficients[6,4]<.05,"**",ifelse(summary(ratee3)$coefficients[6,4]<.1,"*","")))}}$
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format(round(sum(ratee4$coefficients[6]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(ratee4)$coefficients[6,4]<.01,"***",ifelse(summary(ratee4)$c
-oefficients[6,4]<.05,"**",ifelse(summary(ratee4)$coefficients[6,4]<.1,"*","")))}}$
- 
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{format(round(sum(ratee5$coefficients[6]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(ratee5)$coefficients[6,4]<.01,"***",ifelse(summary(ratee5)$c
-oefficients[6,4]<.05,"**",ifelse(summary(ratee5)$coefficients[6,4]<.1,"*","")))}}$
-   
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-                              & $(
-\backslash
-Sexpr{format(round(se_ratee1[6],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_ratee2[6],digits=4),nsmall=0)})$   & $(
-\backslash
-Sexpr{format(round(se_ratee3[6],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_ratee4[6],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_ratee5[6],digits=4),nsmall=0)})$
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
- {Trader dummy} 
-\end_layout
-
-\begin_layout Plain Layout
-
-                     & $
-\backslash
-Sexpr{format(round(sum(ratee1$coefficients[7]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(ratee1)$coefficients[7,4]<.01,"***",ifelse(summary(ratee1)$c
-oefficients[7,4]<.05,"**",ifelse(summary(ratee1)$coefficients[7,4]<.1,"*","")))}}$
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format(round(sum(ratee2$coefficients[7]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(ratee2)$coefficients[7,4]<.01,"***",ifelse(summary(ratee2)$c
-oefficients[7,4]<.05,"**",ifelse(summary(ratee2)$coefficients[7,4]<.1,"*","")))}}$
- 
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{format(round(sum(ratee3$coefficients[7]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(ratee3)$coefficients[7,4]<.01,"***",ifelse(summary(ratee3)$c
-oefficients[7,4]<.05,"**",ifelse(summary(ratee3)$coefficients[7,4]<.1,"*","")))}}$
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format(round(sum(ratee4$coefficients[7]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(ratee4)$coefficients[7,4]<.01,"***",ifelse(summary(ratee4)$c
-oefficients[7,4]<.05,"**",ifelse(summary(ratee4)$coefficients[7,4]<.1,"*","")))}}$
- 
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{format(round(sum(ratee5$coefficients[7]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(ratee5)$coefficients[7,4]<.01,"***",ifelse(summary(ratee5)$c
-oefficients[7,4]<.05,"**",ifelse(summary(ratee5)$coefficients[7,4]<.1,"*","")))}}$
-   
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-                              & $(
-\backslash
-Sexpr{format(round(se_ratee1[7],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_ratee2[7],digits=4),nsmall=0)})$   & $(
-\backslash
-Sexpr{format(round(se_ratee3[7],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_ratee4[7],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_ratee5[7],digits=4),nsmall=0)})$  
-\end_layout
-
-\begin_layout Plain Layout
-
-  
-\end_layout
-
-\begin_layout Plain Layout
-
-    
-\backslash
-
-\backslash
- 
-\backslash
-hline 
-\end_layout
-
-\begin_layout Plain Layout
-
-R$^2$  & $
-\backslash
-Sexpr{format(round(summary(ratee1)$r.squared,digits=4),nsmall=0)}$    & $
-\backslash
-Sexpr{format(round(summary(ratee2)$r.squared,digits=4),nsmall=0)}$  & $
-\backslash
-Sexpr{format(round(summary(ratee3)$r.squared,digits=4),nsmall=0)}$   & $
-\backslash
-Sexpr{format(round(summary(ratee4)$r.squared,digits=4),nsmall=0)}$    & $
-\backslash
-Sexpr{format(round(summary(ratee5)$r.squared,digits=4),nsmall=0)}$  
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-
-\backslash
- Adj.
- R$^2$                         & $
-\backslash
-Sexpr{format(round(summary(ratee1)$adj.r.squared,digits=4),nsmall=0)}$   
-    & $
-\backslash
-Sexpr{format(round(summary(ratee2)$adj.r.squared,digits=4),nsmall=0)}$   
-    & $
-\backslash
-Sexpr{format(round(summary(ratee3)$adj.r.squared,digits=4),nsmall=0)}$   
-        & $
-\backslash
-Sexpr{format(round(summary(ratee4)$adj.r.squared,digits=4),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-   & $
-\backslash
-Sexpr{format(round(summary(ratee5)$adj.r.squared,digits=4),nsmall=0)}$   
-            
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
- Number of obs.
-                     & $
-\backslash
-Sexpr{format(round(nobs(ratee1),digits=4),nsmall=0)}$       & $
-\backslash
-Sexpr{format(round(nobs(ratee2),digits=4),nsmall=0)}$       & $
-\backslash
-Sexpr{format(round(nobs(ratee3),digits=4),nsmall=0)}$       & $
-\backslash
-Sexpr{format(round(nobs(ratee4),digits=4),nsmall=0)}$    & $
-\backslash
-Sexpr{format(round(nobs(ratee5),digits=4),nsmall=0)}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-
-\backslash
-    
-\backslash
-hline
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-multicolumn{5}{l}{ 
-\backslash
-scriptsize{$^{***}p<0.01$; $^{**}p<0.05$; $^{*}p<0.1$.}} 
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-end{tabular} 
-\backslash
-end{center}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-scriptsize
-\end_layout
-
-\begin_layout Plain Layout
-
-Note: This table shows the results of a multiple regression analysis.
- The dependent variable is the self-rating given by the ratees and the main
- independent variable is ratee's gender.
- The dimensions based on which the self-ratings are given are overall average
- (model 1), location (model 2), quality (model 3), price (model 4) and reputatio
-n (model 5).
- R refers to ratees.
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-caption{Regression results looking at the impact of ratee's gender on their
- self-ratings.} 
-\backslash
-label{table:table6} 
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-end{table} 
-\end_layout
-
 \end_inset
 
 
