@@ -219,7 +219,10 @@ f
 \end_inset
 
  are parameters to be estimated.
- 
+ But while this model uses both within and between dimensions of the data,
+ it does not do so efficiently.
+ The random effects estimator also combines both dimensions and does this
+ efficiently.
 \end_layout
 
 \begin_layout Standard
@@ -235,7 +238,7 @@ The between-farmer model takes averages over all the dealers that were ranked
 t difference in how farmers rate input dealers of different genders should
  be attributed to differences at the level of the farmers.
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
 In fact, if this would be a completely balanced panel (all farmers rate
@@ -308,6 +311,9 @@ ty in the dealer.
  In other words, as the same farmer rates different input dealers, any significa
 nt difference in how farmers rate input dealers of different gender should
  be attributed to differences at the level of the agro-input dealer.
+ Yet another way of stating this: if the gender dummy is significant, this
+ can not be because for instance less educated farmers discriminate more
+ (and so the problem is not discrimination but rather education).
 \end_layout
 
 \begin_layout Standard
