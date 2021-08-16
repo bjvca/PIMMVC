@@ -26,7 +26,7 @@ rating_dyads <- read.csv(paste(path_2,"/papers/perceptions/data_seed_systems/dat
 baseline_dealer <- read.csv(paste(path_2,"papers/perceptions/data_seed_systems/data/input_dealer/baseline_dealer.csv", sep="/"), stringsAsFactors = FALSE)
 
 #how many farmers have rated at least one agro-input dealers (i.e. how many unique farmerIDs are in the dyads dataset)?
-print(length(table(rating_dyads$farmer_ID)))
+#print(length(table(rating_dyads$farmer_ID)))
 
 
 #MERGED_DATASET
@@ -3550,6 +3550,10 @@ summary(lm(reputation~genderdummy + maize.owner.agree.age +prim +maize.owner.agr
 
 fedata <- merge(rating_dyads, baseline_dealer, by="shop_ID")
 
+fedata[fedata=="n/a"]<- NA
+fedata[fedata=="98"]<- NA
+fedata[fedata=="999"]<- NA
+
 #create gender dummy
 fedata$genderdummy <- ifelse(fedata$maize.owner.agree.gender == "Male", 1, 0)
 
@@ -3676,19 +3680,50 @@ fedata$reputation<- as.numeric(fedata$reputation_rating)
 fedata$score <-  rowMeans(fedata[c("quality","general","yield","drought_resistent","disease_resistent","early_maturing","germination")],na.rm=T)
 fedata$overall_rating <-  rowMeans(fedata[c("general_rating_nonseed", "location","price","quality","stock","reputation")],na.rm=T)
 
+#fedata$score <-  rowMeans(fedata[c("quality_rating","seed_quality_general_rating","seed_yield_rating","seed_drought_rating","seed_disease_rating","seed_maturing_rating","seed_germinate_rating")],na.rm=T)
+#fedata$overall_rating <-  rowMeans(fedata[c("general_rating", "location_rating","price_rating","quality_rating","stock_rating","reputation_rating")],na.rm=T)
+
+write.csv(fedata, file = "fedata.csv")
 
 ## SEED RELATED RATINGS ##
 
 #### regressions without controls - seed related ratings 
 
 summary(lm(score~genderdummy +farmer_ID, data = fedata))
-summary(lm(quality~genderdummy+farmer_ID , data = fedata))
+reg1<-summary(lm(quality~genderdummy+farmer_ID , data = fedata))
+#with(fedata, plot(genderdummy,quality))
+#abline(reg1)
 summary(lm(general~genderdummy +farmer_ID, data = fedata))
 summary(lm(yield~genderdummy +farmer_ID, data = fedata))
 summary(lm(drought_resistent~genderdummy+farmer_ID , data = fedata))
 summary(lm(disease_resistent~genderdummy+farmer_ID , data = fedata))
 summary(lm(early_maturing~genderdummy+farmer_ID , data = fedata))
 summary(lm(germination~genderdummy+farmer_ID , data = fedata))
+
+plm1<-plm(score~genderdummy, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
+mean(fixef(plm1))
+seplm1<- sqrt(diag(vcov(plm1)))
+
+plm2<-plm(quality~genderdummy, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
+mean(fixef(plm2))
+
+plm3<-plm(general~genderdummy, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
+mean(fixef(plm3))
+
+plm4<-plm(yield~genderdummy, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
+mean(fixef(plm4))
+
+plm5<-plm(drought_resistent~genderdummy, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
+mean(fixef(plm5))
+
+plm6<-plm(disease_resistent~genderdummy, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
+mean(fixef(plm6))
+
+plm7<-plm(early_maturing~genderdummy, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
+mean(fixef(plm7))
+
+plm8<-plm(germination~genderdummy, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
+mean(fixef(plm8))
 
 #### regressions with dealer's gender + dealer characteristics  --- seed related ratings 
 
@@ -3725,6 +3760,48 @@ summary(lm(germination~genderdummy + maize.owner.agree.age +prim +maize.owner.ag
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof+farmer_ID, data = fedata))
 
 
+
+plm9<-plm(score~genderdummy+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+            +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+            badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
+mean(fixef(plm9))
+
+plm10<-plm(quality~genderdummy+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
+mean(fixef(plm10))
+
+plm11<-plm(general~genderdummy+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
+mean(fixef(plm11))
+
+plm12<-plm(yield~genderdummy+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
+mean(fixef(plm12))
+
+plm13<-plm(drought_resistent~genderdummy+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
+mean(fixef(plm13))
+
+plm14<-plm(disease_resistent~genderdummy+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
+mean(fixef(plm14))
+
+plm15<-plm(early_maturing~genderdummy+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
+mean(fixef(plm15))
+
+plm16<-plm(germination~genderdummy+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
+mean(fixef(plm16))
+
+
 ## NON SEED RELATED RATINGS ##
 
 #### regressions without controls - non-seed related ratings 
@@ -3738,11 +3815,41 @@ summary(lm(stock ~genderdummy+farmer_ID , data = fedata))
 summary(lm(reputation ~genderdummy+farmer_ID , data = fedata))
 
 
+plmm1<-plm(overall_rating~genderdummy, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
+mean(fixef(plmm1))
+
+plmm2<-plm(general_rating_nonseed~genderdummy, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
+mean(fixef(plmm2))
+
+plmm3<-plm(location~genderdummy, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
+mean(fixef(plmm3))
+
+plmm4<-plm(price~genderdummy, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
+mean(fixef(plmm4))
+
+plmm5<-plm(quality~genderdummy, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
+mean(fixef(plmm5))
+
+plmm6<-plm(stock~genderdummy, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
+mean(fixef(plmm6))
+
+plmm7<-plm(reputation~genderdummy, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
+mean(fixef(plmm7))
+
+
+
 #### regressions with dealer's gender + dealer characteristics  --- non-seed related ratings 
 
 summary(lm(overall_rating~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
              +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof+farmer_ID, data = fedata))
+
+plm1<-plm(overall_rating~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
+mean(fixef(plm1))
+within_intercept(plm1)
+#https://stat.ethz.ch/pipermail/r-help/2012-December/344338.html 
 
 summary(lm(general_rating_nonseed~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
              +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
@@ -3764,11 +3871,52 @@ summary(lm(stock~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3
              +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof+farmer_ID, data = fedata))
 
+#lm_graph<-lm(stock~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+#    badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof+farmer_ID, data = fedata)
+#with(fedata, plot(genderdummy,stock))
+#abline(lm_graph)
+
 summary(lm(reputation~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
              +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof+farmer_ID, data = fedata))
 
 
+
+plmm8<-plm(overall_rating~genderdummy+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
+mean(fixef(plmm8))
+
+plmm9<-plm(general_rating_nonseed~genderdummy+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
+mean(fixef(plmm9))
+
+plmm10<-plm(location~genderdummy+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
+mean(fixef(plmm10))
+
+plmm11<-plm(price~genderdummy+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
+mean(fixef(plmm11))
+
+plmm12<-plm(quality~genderdummy+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
+mean(fixef(plmm12))
+
+plmm13<-plm(stock~genderdummy+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
+mean(fixef(plmm13))    
+#5.969744   ---- CHECK WHY
+
+plmm14<-plm(reputation~genderdummy+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
+mean(fixef(plmm14))
 
 
 
@@ -3781,7 +3929,7 @@ rating_dyads <- read.csv(paste(path_2,"/papers/perceptions/data_seed_systems/dat
 farmers_seed <- read.csv(paste(path_2,"/papers/perceptions/data_seed_systems/data/farmer/baseline_farmers.csv", sep = "/"))
 
 #how many dealers have been rated (i.e. how many unique shopIDs are in the dyads dataset)?
-print(length(table(rating_dyads$shop_ID)))
+#print(length(table(rating_dyads$shop_ID)))
 
 #MERGED_DATASET
 between_dealer <- merge(rating_dyads, farmers_seed, by="shop_ID")

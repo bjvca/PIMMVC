@@ -1,3 +1,5 @@
+clear
+
 pwd
 cd
 cd "G:\My Drive\Classroom\Documents from Drive\Pre Doctoral KUL\Paper with Bjorn\PIMMVC\papers\perceptions\data_seed_systems"
@@ -106,7 +108,13 @@ xtreg seed_germinate_rat male maizeowneragreeage prim maizeowneragreeq3 maizeown
 			
 
 ********************************************************************************************************************
-import delimited "G:\My Drive\Classroom\Documents from Drive\Pre Doctoral KUL\Paper with Bjorn\PIMMVC\papers\perceptions\data_seed_systems\data\farmer\baseline_f_merged.csv", case(preserve)
+clear
+
+*import delimited "G:\My Drive\Classroom\Documents from Drive\Pre Doctoral KUL\Paper with Bjorn\PIMMVC\papers\perceptions\data_seed_systems\data\farmer\baseline_f_merged.csv", case(preserve)
+
+
+import delimited "G:\My Drive\Classroom\Documents from Drive\Pre Doctoral KUL\Paper with Bjorn\PIMMVC\fedata.csv", case(preserve)
+
 
 encode farmer_ID, gen(farm_id)
 encode shop_ID, gen(deal_id)
@@ -129,8 +137,11 @@ gen seed_yield_rat = real(seed_yield_rating)
 gen seed_drought_rat = real(seed_drought_rating)
 gen seed_disease_rat = real(seed_disease_rating)
 gen seed_maturing_rat = real(seed_maturing_rating)
-gen seed_germinate_rat = real(seed_germinate_rating)	
-encode prim, gen(educ)
+gen seed_germinate_rat = real(seed_germinate_rating)
+	
+
+
+*encode prim, gen(educ)
 
 gen q3 = real(maizeowneragreeq3)
 
@@ -143,9 +154,11 @@ encode maizeowneragreetempq73, gen(q73)
 encode maizeowneragreetempq74, gen(q74)
 encode maizeowneragreetempq75, gen(q75)
 encode maizeowneragreetempq76, gen(q76)
-encode goodfloor, gen(goodfloor_n)
-encode badlighting, gen(badlighting_n)
-encode badstored, gen(badstored_n)
+
+*encode goodfloor, gen(goodfloor_n)
+*encode badlighting, gen(badlighting_n)
+*encode badstored, gen(badstored_n)
+
 encode maizeowneragreetempq80, gen(q80)
 encode maizeowneragreetempq81, gen(q81)
 encode maizeowneragreeq96, gen(q96)
@@ -154,40 +167,87 @@ reg score_n genderdummy
 
 xtreg score_n genderdummy, fe
 
-xtreg score_n genderdummy maizeowneragreeage educ q3 maizeowneragreeq4 q5 years_shop q69 q71 q72 q73 q74 q75 q76 goodfloor_n badlighting_n ///
-			  badstored_n q80 q81 maizeowneragreetempq82 q96 maizeowneragreeq70, fe
+xtreg score_n genderdummy maizeowneragreeage prim q3 maizeowneragreeq4 q5 years_shop q69 q71 q72 q73 q74 q75 q76 goodfloor badlighting ///
+			  badstored q80 q81 maizeowneragreetempq82 q96 maizeowneragreeq70, fe
 	
 xtreg qual_rat genderdummy, fe
 
-xtreg qual_rat genderdummy maizeowneragreeage educ q3 maizeowneragreeq4 q5 years_shop q69 q71 q72 q73 q74 q75 q76 goodfloor_n badlighting_n ///
-			  badstored_n q80 q81 maizeowneragreetempq82 q96 maizeowneragreeq70, fe
+xtreg qual_rat genderdummy maizeowneragreeage prim q3 maizeowneragreeq4 q5 years_shop q69 q71 q72 q73 q74 q75 q76 goodfloor badlighting ///
+			  badstored q80 q81 maizeowneragreetempq82 q96 maizeowneragreeq70, fe
 			  
 xtreg seed_quality_general_rat genderdummy, fe
 
-xtreg seed_quality_general_rat genderdummy maizeowneragreeage educ q3 maizeowneragreeq4 q5 years_shop q69 q71 q72 q73 q74 q75 q76 goodfloor_n badlighting_n ///
-			  badstored_n q80 q81 maizeowneragreetempq82 q96 maizeowneragreeq70, fe
+xtreg seed_quality_general_rat genderdummy maizeowneragreeage prim q3 maizeowneragreeq4 q5 years_shop q69 q71 q72 q73 q74 q75 q76 goodfloor badlighting ///
+			  badstored q80 q81 maizeowneragreetempq82 q96 maizeowneragreeq70, fe
 
 xtreg seed_yield_rat genderdummy, fe
 
-xtreg seed_yield_rat genderdummy maizeowneragreeage educ q3 maizeowneragreeq4 q5 years_shop q69 q71 q72 q73 q74 q75 q76 goodfloor_n badlighting_n ///
-			  badstored_n q80 q81 maizeowneragreetempq82 q96 maizeowneragreeq70, fe
+xtreg seed_yield_rat genderdummy maizeowneragreeage prim q3 maizeowneragreeq4 q5 years_shop q69 q71 q72 q73 q74 q75 q76 goodfloor badlighting ///
+			  badstored q80 q81 maizeowneragreetempq82 q96 maizeowneragreeq70, fe
 			  
 xtreg seed_drought_rat genderdummy, fe
 
-xtreg seed_drought_rat genderdummy maizeowneragreeage educ q3 maizeowneragreeq4 q5 years_shop q69 q71 q72 q73 q74 q75 q76 goodfloor_n badlighting_n ///
-			  badstored_n q80 q81 maizeowneragreetempq82 q96 maizeowneragreeq70, fe
+xtreg seed_drought_rat genderdummy maizeowneragreeage prim q3 maizeowneragreeq4 q5 years_shop q69 q71 q72 q73 q74 q75 q76 goodfloor badlighting ///
+			  badstored q80 q81 maizeowneragreetempq82 q96 maizeowneragreeq70, fe
 			  
 xtreg seed_disease_rat genderdummy, fe
 
-xtreg seed_disease_rat genderdummy maizeowneragreeage educ q3 maizeowneragreeq4 q5 years_shop q69 q71 q72 q73 q74 q75 q76 goodfloor_n badlighting_n ///
-			  badstored_n q80 q81 maizeowneragreetempq82 q96 maizeowneragreeq70, fe
+xtreg seed_disease_rat genderdummy maizeowneragreeage prim q3 maizeowneragreeq4 q5 years_shop q69 q71 q72 q73 q74 q75 q76 goodfloor badlighting ///
+			  badstored q80 q81 maizeowneragreetempq82 q96 maizeowneragreeq70, fe
 			  
 xtreg seed_maturing_rat genderdummy, fe
 
-xtreg seed_maturing_rat genderdummy maizeowneragreeage educ q3 maizeowneragreeq4 q5 years_shop q69 q71 q72 q73 q74 q75 q76 goodfloor_n badlighting_n ///
-			  badstored_n q80 q81 maizeowneragreetempq82 q96 maizeowneragreeq70, fe
+xtreg seed_maturing_rat genderdummy maizeowneragreeage prim q3 maizeowneragreeq4 q5 years_shop q69 q71 q72 q73 q74 q75 q76 goodfloor badlighting ///
+			  badstored q80 q81 maizeowneragreetempq82 q96 maizeowneragreeq70, fe
 			  
 xtreg seed_germinate_rat genderdummy, fe
 
-xtreg seed_germinate_rat genderdummy maizeowneragreeage educ q3 maizeowneragreeq4 q5 years_shop q69 q71 q72 q73 q74 q75 q76 goodfloor_n badlighting_n ///
-			  badstored_n q80 q81 maizeowneragreetempq82 q96 maizeowneragreeq70, fe
+xtreg seed_germinate_rat genderdummy maizeowneragreeage prim q3 maizeowneragreeq4 q5 years_shop q69 q71 q72 q73 q74 q75 q76 goodfloor badlighting ///
+			  badstored q80 q81 maizeowneragreetempq82 q96 maizeowneragreeq70, fe
+
+			  
+**** NON SEED RATINGS *****
+
+
+gen overall = real(overall_rating)
+gen gen_nonseed = real(general_rating_nonseed)
+gen loc = real(location)
+gen price_n = real(price)
+gen stock_n = real(stock)
+gen rep = real(reputation)
+
+xtreg overall genderdummy, fe
+
+xtreg overall genderdummy maizeowneragreeage prim q3 maizeowneragreeq4 q5 years_shop q69 q71 q72 q73 q74 q75 q76 goodfloor badlighting ///
+			  badstored q80 q81 maizeowneragreetempq82 q96 maizeowneragreeq70, fe
+	
+xtreg gen_nonseed genderdummy, fe
+
+xtreg gen_nonseed genderdummy maizeowneragreeage prim q3 maizeowneragreeq4 q5 years_shop q69 q71 q72 q73 q74 q75 q76 goodfloor badlighting ///
+			  badstored q80 q81 maizeowneragreetempq82 q96 maizeowneragreeq70, fe
+			  
+xtreg loc genderdummy, fe
+
+xtreg loc genderdummy maizeowneragreeage prim q3 maizeowneragreeq4 q5 years_shop q69 q71 q72 q73 q74 q75 q76 goodfloor badlighting ///
+			  badstored q80 q81 maizeowneragreetempq82 q96 maizeowneragreeq70, fe
+
+xtreg price_n genderdummy, fe
+
+xtreg price_n genderdummy maizeowneragreeage prim q3 maizeowneragreeq4 q5 years_shop q69 q71 q72 q73 q74 q75 q76 goodfloor badlighting ///
+			  badstored q80 q81 maizeowneragreetempq82 q96 maizeowneragreeq70, fe
+			  
+xtreg qual_rat genderdummy, fe
+
+xtreg qual_rat genderdummy maizeowneragreeage prim q3 maizeowneragreeq4 q5 years_shop q69 q71 q72 q73 q74 q75 q76 goodfloor badlighting ///
+			  badstored q80 q81 maizeowneragreetempq82 q96 maizeowneragreeq70, fe
+			  
+xtreg stock_n genderdummy, fe
+
+xtreg stock_n genderdummy maizeowneragreeage prim q3 maizeowneragreeq4 q5 years_shop q69 q71 q72 q73 q74 q75 q76 goodfloor badlighting ///
+			  badstored q80 q81 maizeowneragreetempq82 q96 maizeowneragreeq70, fe
+			  
+xtreg rep genderdummy, fe
+
+xtreg rep genderdummy maizeowneragreeage prim q3 maizeowneragreeq4 q5 years_shop q69 q71 q72 q73 q74 q75 q76 goodfloor badlighting ///
+			  badstored q80 q81 maizeowneragreetempq82 q96 maizeowneragreeq70, fe
+			  
