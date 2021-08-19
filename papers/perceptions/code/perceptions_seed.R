@@ -3564,6 +3564,7 @@ fedata$prim <- 0
 fedata$prim[fedata$maize.owner.agree.educ=="c"|fedata$maize.owner.agree.educ=="d"|fedata$maize.owner.agree.educ=="e"|
               fedata$maize.owner.agree.educ=="f"] <- 1
 table(fedata$prim)
+#91.6% say yes (1)
 
 #distance of shop to nearest tarmac road
 table(fedata$maize.owner.agree.q3)
@@ -3575,9 +3576,12 @@ table(fedata$maize.owner.agree.q4)
 #selling only farm inputs 
 table(fedata$maize.owner.agree.q5)
 fedata$inputsale<- ifelse(fedata$maize.owner.agree.q5== 'Yes', 1, 0)  
+table(fedata$inputsale)
+#84.4% say yes (1)
 
 #Q8. When was this agro-input shop established? (year)
 fedata$years_shop <- 2020 - as.numeric(as.character(substr(fedata$maize.owner.agree.q8, start=1, stop=4)))
+table(fedata$years_shop)
 
 #seed stored in dedicated area?
 fedata$maize.owner.agree.q69
@@ -3614,17 +3618,20 @@ fedata$maize.owner.agree.q75
 fedata$vent<-as.character(fedata$maize.owner.agree.temp.q75)
 fedata$ventilation<- ifelse(fedata$vent== 'Yes', 1, 0)  
 table(fedata$ventilation)
+#91.3% say yes (1)
 
 #plastered walls?
 fedata$maize.owner.agree.q76
 fedata$plas<-as.character(fedata$maize.owner.agree.temp.q76)
 fedata$wall_plastered<- ifelse(fedata$plas== 'Yes', 1, 0)  
 table(fedata$wall_plastered)
+#97.2% say yes (1)
 
 #Q77. Material of floor in areas where seed is stored?
 fedata$goodfloor <- 0
 fedata$goodfloor[fedata$maize.owner.agree.temp.q77=="Cement"|fedata$maize.owner.agree.temp.q77=="Tiles"] <-1
 table(fedata$goodfloor)
+#98.3% say yes (1)
 
 #Q78. Lighting conditions in area where seed is stored?
 fedata$badlighting <- 0
@@ -5348,6 +5355,31 @@ betwd$temp<-betwd$maize.owner.agree.q70
 
 
 #### regressions without controls - seed related ratings 
+
+bd1<-lm(score_bd~gender_avgf , data = betwd)
+sebd1<- sqrt(diag(vcov(bd1)))
+
+bd2<- lm(quality~gender_avgf , data = betwd)
+sebd2<- sqrt(diag(vcov(bd2)))
+
+bd3<- lm(general~gender_avgf, data = betwd)
+sebd3<- sqrt(diag(vcov(bd3)))
+
+bd4<- lm(yield~gender_avgf , data = betwd)
+sebd4<- sqrt(diag(vcov(bd4)))
+
+bd5<- lm(drought_resistent~gender_avgf , data = betwd)
+sebd5<- sqrt(diag(vcov(bd5)))
+
+bd6<- lm(disease_resistent~gender_avgf , data = betwd)
+sebd6<- sqrt(diag(vcov(bd6)))
+
+bd7<-lm(early_maturing~gender_avgf , data = betwd)
+sebd7<- sqrt(diag(vcov(bd7)))
+
+bd8<-lm(germination~gender_avgf , data = betwd)
+sebd8<- sqrt(diag(vcov(bd8)))
+
 
 summary(lm(score_bd~gender_avgf , data = betwd))
 summary(lm(quality~gender_avgf , data = betwd))
