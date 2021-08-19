@@ -39,14 +39,25 @@ between_farmer$genderdummy <- ifelse(between_farmer$maize.owner.agree.gender == 
 ###dealer characteristics for  controls
 
 #education of dealers 
+table(between_farmer$maize.owner.agree.educ) #430 are g which is Other
 between_farmer$prim <- 0
-between_farmer$prim[between_farmer$maize.owner.agree.educ=="c"|between_farmer$maize.owner.agree.educ=="d"|between_farmer$maize.owner.agree.educ=="e"|
-                      between_farmer$maize.owner.agree.educ=="f"] <- 1
+#between_farmer$prim[between_farmer$maize.owner.agree.educ=="c"|between_farmer$maize.owner.agree.educ=="d"|between_farmer$maize.owner.agree.educ=="e"|between_farmer$maize.owner.agree.educ=="f"]<- 1
+
+#finished secondary educ --- e and f ; a,b,c,d --- did not finish secondary educ 
+between_farmer$prim[between_farmer$maize.owner.agree.educ=="e"|between_farmer$maize.owner.agree.educ=="f"] <- 1
+between_farmer$prim[between_farmer$maize.owner.agree.educ=="g"]<- NA
 table(between_farmer$prim)
+#5208 ARE 1 --- 45 percent 
+
+
+#age of dealer
+summary(between_farmer$maize.owner.agree.age)
+table(between_farmer$maize.owner.agree.age)
 
 #distance of shop to nearest tarmac road
 table(between_farmer$maize.owner.agree.q3)
 between_farmer$maize.owner.agree.q3[between_farmer$maize.owner.agree.q3==999] <- NA
+summary(between_farmer$maize.owner.agree.q3)
 
 #distance of shop to nearest murram road 
 table(between_farmer$maize.owner.agree.q4)
@@ -94,16 +105,19 @@ between_farmer$vent<-as.character(between_farmer$maize.owner.agree.temp.q75)
 between_farmer$ventilation<- ifelse(between_farmer$vent== 'Yes', 1, 0)  
 table(between_farmer$ventilation)
 
-#plastered walls?
-between_farmer$maize.owner.agree.q76
-between_farmer$plas<-as.character(between_farmer$maize.owner.agree.temp.q76)
-between_farmer$wall_plastered<- ifelse(between_farmer$plas== 'Yes', 1, 0)  
-table(between_farmer$wall_plastered)
+#plastered walls? ---- DROP
+#between_farmer$plas<-as.character(between_farmer$maize.owner.agree.temp.q76)
+#between_farmer$wall_plastered<- ifelse(between_farmer$plas== 'Yes', 1, 0)  
+#table(between_farmer$wall_plastered)
 
-#Q77. Material of floor in areas where seed is stored?
-between_farmer$goodfloor <- 0
-between_farmer$goodfloor[between_farmer$maize.owner.agree.temp.q77=="Cement"|between_farmer$maize.owner.agree.temp.q77=="Tiles"] <-1
-table(between_farmer$goodfloor)
+#Q77. Material of floor in areas where seed is stored? ---- DROP
+#between_farmer$goodfloor<- ifelse(between_farmer$maize.owner.agree.temp.q77=="Tiles", 1, 0) 
+#between_farmer$goodfloor <- 0
+#between_farmer$goodfloor[between_farmer$maize.owner.agree.temp.q77=="Cement"|between_farmer$maize.owner.agree.temp.q77=="Tiles"] <-1
+#between_farmer$goodfloor[between_farmer$maize.owner.agree.temp.q77==96]<- NA
+#between_farmer$goodfloor[between_farmer$maize.owner.agree.temp.q77=="Tiles"] <-1
+#table(between_farmer$goodfloor)
+#99 PERCENT OF THE DEALERS HAVE CEMENT OR TILES AS THEIR FLOOR
 
 #Q78. Lighting conditions in area where seed is stored?
 between_farmer$badlighting <- 0
@@ -112,7 +126,8 @@ table(between_farmer$badlighting)
 
 #Q79. On what surface are seed stored?
 between_farmer$badstored <- 0
-between_farmer$badstored[between_farmer$maize.owner.agree.temp.q79=="1"|between_farmer$maize.owner.agree.temp.q79=="2"| between_farmer$maize.owner.agree.temp.q79=="96"]<-1
+between_farmer$badstored[between_farmer$maize.owner.agree.temp.q79=="1"|between_farmer$maize.owner.agree.temp.q79=="2"]<-1
+between_farmer$badstored[between_farmer$maize.owner.agree.temp.q79==96]<-NA
 table(between_farmer$badstored)
 
 #Q80. Do you see maize seed that is stored in open bags or containers?
@@ -133,12 +148,12 @@ between_farmer$shop_rate<-as.numeric(as.character(between_farmer$maize.owner.agr
 table(between_farmer$shop_rate)
 
 #Q96. Since last season, did you receive any complaint from a customer that seed you sold was not good?
-between_farmer$maize.owner.agree.q96
+table(between_farmer$maize.owner.agree.q96)
 between_farmer$complaint<- ifelse(between_farmer$maize.owner.agree.q96== 'Yes', 1, 0)  
 table(between_farmer$complaint)
 
 #Q70. Enter the temperature in the seed store (where seed is stored)
-between_farmer$maize.owner.agree.q70
+table(between_farmer$maize.owner.agree.q70)
 
 between_farmer[between_farmer=="n/a"]<- NA
 
@@ -168,8 +183,8 @@ reviews_bf <- data.frame(cbind(tapply(as.numeric(between_farmer$quality_rating),
                                tapply(as.numeric(between_farmer$insulated), between_farmer$farmer_ID,mean,na.rm=TRUE),
                                tapply(as.numeric(between_farmer$wall_heatproof), between_farmer$farmer_ID,mean,na.rm=TRUE),
                                tapply(as.numeric(between_farmer$ventilation), between_farmer$farmer_ID,mean,na.rm=TRUE),
-                               tapply(as.numeric(between_farmer$wall_plastered), between_farmer$farmer_ID,mean,na.rm=TRUE),
-                               tapply(as.numeric(between_farmer$goodfloor), between_farmer$farmer_ID,mean,na.rm=TRUE),
+                               #tapply(as.numeric(between_farmer$wall_plastered), between_farmer$farmer_ID,mean,na.rm=TRUE),
+                               #tapply(as.numeric(between_farmer$goodfloor), between_farmer$farmer_ID,mean,na.rm=TRUE),
                                tapply(as.numeric(between_farmer$badlighting), between_farmer$farmer_ID,mean,na.rm=TRUE),
                                tapply(as.numeric(between_farmer$badstored), between_farmer$farmer_ID,mean,na.rm=TRUE),
                                tapply(as.numeric(between_farmer$open_storage), between_farmer$farmer_ID,mean,na.rm=TRUE),
@@ -187,7 +202,7 @@ reviews_bf <- data.frame(cbind(tapply(as.numeric(between_farmer$quality_rating),
 
 
 names(reviews_bf) <- c("quality","general","yield","drought_resistent","disease_resistent","early_maturing","germination","gender_avg","dealer_age","dealer_educ","tarmac_dealer",
-                       "murram_dealer","farm_inputs","years_shop","dedicatedarea","pestprob","roof_insu","wall_heatproof","ventilation","plasterwall","goodfloor",
+                       "murram_dealer","farm_inputs","years_shop","dedicatedarea","pestprob","roof_insu","wall_heatproof","ventilation",
                        "badlighting","badstored","open_storage","cert","shop_rate","complaint","leakproof","temp","general_rating_nonseed","location","price",
                        "stock","reputation","nr_reviews")
 
@@ -207,9 +222,20 @@ farmers_seedsub <- farmers_seed[ , c("Check2.check.maize.q15", "Check2.check.mai
 bfm <- merge(reviews_bf, farmers_seedsub, by="farmer_ID")
 
 bfm$educ_f <- 0
-bfm$educ_f[bfm$Check2.check.maize.q17=="b" |bfm$Check2.check.maize.q17=="c" | bfm$Check2.check.maize.q17=="d" | bfm$Check2.check.maize.q17=="e" | 
-                    bfm$Check2.check.maize.q17=="f" |bfm$Check2.check.maize.q17=="g" ] <- 1 #educated farmers
-bfm$married <- ifelse(bfm$Check2.check.maize.q16 == 'a', 1, 0)  #married farmers
+bfm$educ_f[bfm$Check2.check.maize.q17=="c" | bfm$Check2.check.maize.q17=="d" | bfm$Check2.check.maize.q17=="e" | 
+         bfm$Check2.check.maize.q17=="f"  ] <- 1 #educated farmers -- finished primary educ 
+bfm$educ_f[ bfm$Check2.check.maize.q17=="g" ] <- NA 
+table(bfm$educ_f) #52.5 percent have finished primary educ 
+
+bfm$married <- ifelse(bfm$Check2.check.maize.q16 == 'a', 1, 0)  #married farmers -- 88 percent 
+
+#age of farmers 
+bfm$Check2.check.maize.q14[ bfm$Check2.check.maize.q14==999 ] <- NA
+summary(bfm$Check2.check.maize.q14 )
+
+#distance from tarmac road
+bfm$Check2.check.maize.q8[ bfm$Check2.check.maize.q8==999 ] <- NA
+summary(bfm$Check2.check.maize.q8 )
 
 #### SEED RELATED RATINGS ####
 
@@ -344,42 +370,42 @@ summary(lm(germination~gender_avg + educ_f + married + Check2.check.maize.q8 + C
 #### regressions with dealer's gender (averaged) and farmer+dealer characteristics  --- seed related ratings 
 
 m9<-lm(score~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14+dealer_age +dealer_educ +tarmac_dealer +
-         murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +plasterwall +goodfloor+
+         murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +
          badlighting +badstored+ open_storage+ cert+ shop_rate+ complaint + temp +leakproof, data = bfm)
 se9 <- sqrt(diag(vcov(m9)))
 
 m10<-lm(quality~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14+dealer_age +dealer_educ +tarmac_dealer +
-         murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +plasterwall +goodfloor+
+         murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +
          badlighting +badstored+ open_storage+ cert+ shop_rate+ complaint + temp +leakproof, data = bfm)
 se10 <- sqrt(diag(vcov(m10)))
 
 m11<-lm(general~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14+dealer_age +dealer_educ +tarmac_dealer +
-          murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +plasterwall +goodfloor+
+          murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +
           badlighting +badstored+ open_storage+ cert+ shop_rate+ complaint + temp +leakproof, data = bfm)
 se11 <- sqrt(diag(vcov(m11)))
 
 m12<-lm(yield~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14+dealer_age +dealer_educ +tarmac_dealer +
-          murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +plasterwall +goodfloor+
+          murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +
           badlighting +badstored+ open_storage+ cert+ shop_rate+ complaint + temp +leakproof, data = bfm)
 se12 <- sqrt(diag(vcov(m12)))
 
 m13<-lm(drought_resistent ~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14+dealer_age +dealer_educ +tarmac_dealer +
-          murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +plasterwall +goodfloor+
+          murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +
           badlighting +badstored+ open_storage+ cert+ shop_rate+ complaint + temp +leakproof, data = bfm)
 se13<- sqrt(diag(vcov(m13)))
 
 m14<-lm(disease_resistent ~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14+dealer_age +dealer_educ +tarmac_dealer +
-          murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +plasterwall +goodfloor+
+          murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +
           badlighting +badstored+ open_storage+ cert+ shop_rate+ complaint + temp +leakproof, data = bfm)
 se14 <- sqrt(diag(vcov(m14)))
 
 m15<-lm(early_maturing ~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14+dealer_age +dealer_educ +tarmac_dealer +
-          murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +plasterwall +goodfloor+
+          murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +
           badlighting +badstored+ open_storage+ cert+ shop_rate+ complaint + temp +leakproof, data = bfm)
 se15<- sqrt(diag(vcov(m15)))
 
 m16<-lm(germination ~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14+dealer_age +dealer_educ +tarmac_dealer +
-          murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +plasterwall +goodfloor+
+          murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +
           badlighting +badstored+ open_storage+ cert+ shop_rate+ complaint + temp +leakproof, data = bfm)
 se16<- sqrt(diag(vcov(m16)))
 
@@ -1008,56 +1034,7 @@ s2<- rbind(c((format(round(sum(m9$coefficients[1]),digits=4),nsmall=0)),
              (format(round(summary(m14)$coefficients[25,4],digits=4),nsmall=0)),
              (format(round(summary(m15)$coefficients[25,4],digits=4),nsmall=0)),
              (format(round(summary(m16)$coefficients[25,4],digits=4),nsmall=0))),
-           
-           c((format(round(sum(m9$coefficients[26]),digits=4),nsmall=0)),
-             (format(round(sum(m10$coefficients[26]),digits=4),nsmall=0)),
-             (format(round(sum(m11$coefficients[26]),digits=4),nsmall=0)),
-             (format(round(sum(m12$coefficients[26]),digits=4),nsmall=0)),
-             (format(round(sum(m13$coefficients[26]),digits=4),nsmall=0)),
-             (format(round(sum(m14$coefficients[26]),digits=4),nsmall=0)),
-             (format(round(sum(m15$coefficients[26]),digits=4),nsmall=0)),
-             (format(round(sum(m16$coefficients[26]),digits=4),nsmall=0))),
-           c((format(round(se9[26],digits=4),nsmall=0)),
-             (format(round(se10[26],digits=4),nsmall=0)),
-             (format(round(se11[26],digits=4),nsmall=0)),
-             (format(round(se12[26],digits=4),nsmall=0)),
-             (format(round(se13[26],digits=4),nsmall=0)),
-             (format(round(se14[26],digits=4),nsmall=0)),
-             (format(round(se15[26],digits=4),nsmall=0)),
-             (format(round(se16[26],digits=4),nsmall=0))),
-           c((format(round(summary(m9)$coefficients[26,4],digits=4),nsmall=0)),
-             (format(round(summary(m10)$coefficients[26,4],digits=4),nsmall=0)),
-             (format(round(summary(m11)$coefficients[26,4],digits=4),nsmall=0)),
-             (format(round(summary(m12)$coefficients[26,4],digits=4),nsmall=0)),
-             (format(round(summary(m13)$coefficients[26,4],digits=4),nsmall=0)),
-             (format(round(summary(m14)$coefficients[26,4],digits=4),nsmall=0)),
-             (format(round(summary(m15)$coefficients[26,4],digits=4),nsmall=0)),
-             (format(round(summary(m16)$coefficients[26,4],digits=4),nsmall=0))),
-           
-           c((format(round(sum(m9$coefficients[27]),digits=4),nsmall=0)),
-             (format(round(sum(m10$coefficients[27]),digits=4),nsmall=0)),
-             (format(round(sum(m11$coefficients[27]),digits=4),nsmall=0)),
-             (format(round(sum(m12$coefficients[27]),digits=4),nsmall=0)),
-             (format(round(sum(m13$coefficients[27]),digits=4),nsmall=0)),
-             (format(round(sum(m14$coefficients[27]),digits=4),nsmall=0)),
-             (format(round(sum(m15$coefficients[27]),digits=4),nsmall=0)),
-             (format(round(sum(m16$coefficients[27]),digits=4),nsmall=0))),
-           c((format(round(se9[27],digits=4),nsmall=0)),
-             (format(round(se10[27],digits=4),nsmall=0)),
-             (format(round(se11[27],digits=4),nsmall=0)),
-             (format(round(se12[27],digits=4),nsmall=0)),
-             (format(round(se13[27],digits=4),nsmall=0)),
-             (format(round(se14[27],digits=4),nsmall=0)),
-             (format(round(se15[27],digits=4),nsmall=0)),
-             (format(round(se16[27],digits=4),nsmall=0))),
-           c((format(round(summary(m9)$coefficients[27,4],digits=4),nsmall=0)),
-             (format(round(summary(m10)$coefficients[27,4],digits=4),nsmall=0)),
-             (format(round(summary(m11)$coefficients[27,4],digits=4),nsmall=0)),
-             (format(round(summary(m12)$coefficients[27,4],digits=4),nsmall=0)),
-             (format(round(summary(m13)$coefficients[27,4],digits=4),nsmall=0)),
-             (format(round(summary(m14)$coefficients[27,4],digits=4),nsmall=0)),
-             (format(round(summary(m15)$coefficients[27,4],digits=4),nsmall=0)),
-             (format(round(summary(m16)$coefficients[27,4],digits=4),nsmall=0))),
+          
            
            c((format(round(summary(m9)$r.squared,digits=4),nsmall=0)),
              (format(round(summary(m10)$r.squared,digits=4),nsmall=0)),
@@ -1088,35 +1065,35 @@ s2<- rbind(c((format(round(sum(m9$coefficients[1]),digits=4),nsmall=0)),
 
 
 summary(lm(score~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14+dealer_age +dealer_educ +tarmac_dealer +
-             murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +plasterwall +goodfloor+
+             murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert+ shop_rate+ complaint + temp +leakproof, data = bfm))
 
 summary(lm(quality~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14+dealer_age +dealer_educ +tarmac_dealer +
-             murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +plasterwall +goodfloor+
+             murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert+ shop_rate+ complaint + temp+leakproof, data = bfm))
 
 summary(lm(general~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14+dealer_age +dealer_educ +tarmac_dealer +
-             murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +plasterwall +goodfloor+
+             murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert+ shop_rate+ complaint + temp+leakproof, data = bfm))
 
 summary(lm(yield~gender_avg+ educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14 +dealer_age +dealer_educ +tarmac_dealer +
-             murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +plasterwall +goodfloor+
+             murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert+ shop_rate+ complaint + temp+leakproof, data = bfm))
 
 summary(lm(drought_resistent~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14+dealer_age +dealer_educ +tarmac_dealer +
-             murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +plasterwall +goodfloor+
+             murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert+ shop_rate+ complaint + temp+leakproof, data = bfm))
 
 summary(lm(disease_resistent~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14+dealer_age +dealer_educ +tarmac_dealer +
-             murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +plasterwall +goodfloor+
+             murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert+ shop_rate+ complaint + temp+leakproof, data = bfm))
 
 summary(lm(early_maturing~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14+dealer_age +dealer_educ +tarmac_dealer +
-             murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +plasterwall +goodfloor+
+             murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert+ shop_rate+ complaint + temp+leakproof, data = bfm))
 
 summary(lm(germination~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14+dealer_age +dealer_educ +tarmac_dealer +
-             murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +plasterwall +goodfloor+
+             murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert+ shop_rate+ complaint + temp+leakproof, data = bfm))
 
 
@@ -1232,37 +1209,37 @@ summary(lm(reputation~gender_avg + educ_f + married + Check2.check.maize.q8 + Ch
 #### regressions with dealer's gender (averaged) and farmer + dealer characteristics  --- non-seed related ratings 
 
 n9<-lm(overall_rating~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14+dealer_age +dealer_educ +tarmac_dealer +
-         murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +plasterwall +goodfloor+
+         murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +
          badlighting +badstored+ open_storage+ cert+ shop_rate+ complaint + temp +leakproof, data = bfm)
 sen9 <- sqrt(diag(vcov(n9)))
 
 n10<-lm(general_rating_nonseed~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14+dealer_age +dealer_educ +tarmac_dealer +
-          murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +plasterwall +goodfloor+
+          murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +
           badlighting +badstored+ open_storage+ cert+ shop_rate+ complaint + temp +leakproof, data = bfm)
 sen10 <- sqrt(diag(vcov(n10)))
 
 n11<-lm(location~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14+dealer_age +dealer_educ +tarmac_dealer +
-          murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +plasterwall +goodfloor+
+          murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +
           badlighting +badstored+ open_storage+ cert+ shop_rate+ complaint + temp +leakproof, data = bfm)
 sen11 <- sqrt(diag(vcov(n11)))
 
 n12<-lm(price~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14+dealer_age +dealer_educ +tarmac_dealer +
-          murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +plasterwall +goodfloor+
+          murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +
           badlighting +badstored+ open_storage+ cert+ shop_rate+ complaint + temp +leakproof, data = bfm)
 sen12 <- sqrt(diag(vcov(n12)))
 
 n13<-lm(quality ~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14+dealer_age +dealer_educ +tarmac_dealer +
-          murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +plasterwall +goodfloor+
+          murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +
           badlighting +badstored+ open_storage+ cert+ shop_rate+ complaint + temp +leakproof, data = bfm)
 sen13<- sqrt(diag(vcov(n13)))
 
 n14<-lm(stock ~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14+dealer_age +dealer_educ +tarmac_dealer +
-          murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +plasterwall +goodfloor+
+          murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +
           badlighting +badstored+ open_storage+ cert+ shop_rate+ complaint + temp +leakproof, data = bfm)
 sen14 <- sqrt(diag(vcov(n14)))
 
 n15<-lm(reputation ~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14+dealer_age +dealer_educ +tarmac_dealer +
-          murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +plasterwall +goodfloor+
+          murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +
           badlighting +badstored+ open_storage+ cert+ shop_rate+ complaint + temp +leakproof, data = bfm)
 sen15<- sqrt(diag(vcov(n15)))
 
@@ -1816,50 +1793,7 @@ s4<- rbind(c((format(round(sum(n9$coefficients[1]),digits=4),nsmall=0)),
                (format(round(summary(n13)$coefficients[25,4],digits=4),nsmall=0)),
                (format(round(summary(n14)$coefficients[25,4],digits=4),nsmall=0)),
                (format(round(summary(n15)$coefficients[25,4],digits=4),nsmall=0))),
-             
-             c((format(round(sum(n9$coefficients[26]),digits=4),nsmall=0)),
-               (format(round(sum(n10$coefficients[26]),digits=4),nsmall=0)),
-               (format(round(sum(n11$coefficients[26]),digits=4),nsmall=0)),
-               (format(round(sum(n12$coefficients[26]),digits=4),nsmall=0)),
-               (format(round(sum(n13$coefficients[26]),digits=4),nsmall=0)),
-               (format(round(sum(n14$coefficients[26]),digits=4),nsmall=0)),
-               (format(round(sum(n15$coefficients[26]),digits=4),nsmall=0))),
-             c((format(round(sen9[26],digits=4),nsmall=0)),
-               (format(round(sen10[26],digits=4),nsmall=0)),
-               (format(round(sen11[26],digits=4),nsmall=0)),
-               (format(round(sen12[26],digits=4),nsmall=0)),
-               (format(round(sen13[26],digits=4),nsmall=0)),
-               (format(round(sen14[26],digits=4),nsmall=0)),
-               (format(round(sen15[26],digits=4),nsmall=0))),
-             c((format(round(summary(n9)$coefficients[26,4],digits=4),nsmall=0)),
-               (format(round(summary(n10)$coefficients[26,4],digits=4),nsmall=0)),
-               (format(round(summary(n11)$coefficients[26,4],digits=4),nsmall=0)),
-               (format(round(summary(n12)$coefficients[26,4],digits=4),nsmall=0)),
-               (format(round(summary(n13)$coefficients[26,4],digits=4),nsmall=0)),
-               (format(round(summary(n14)$coefficients[26,4],digits=4),nsmall=0)),
-               (format(round(summary(n15)$coefficients[26,4],digits=4),nsmall=0))),
-             
-             c((format(round(sum(n9$coefficients[27]),digits=4),nsmall=0)),
-               (format(round(sum(n10$coefficients[27]),digits=4),nsmall=0)),
-               (format(round(sum(n11$coefficients[27]),digits=4),nsmall=0)),
-               (format(round(sum(n12$coefficients[27]),digits=4),nsmall=0)),
-               (format(round(sum(n13$coefficients[27]),digits=4),nsmall=0)),
-               (format(round(sum(n14$coefficients[27]),digits=4),nsmall=0)),
-               (format(round(sum(n15$coefficients[27]),digits=4),nsmall=0))),
-             c((format(round(sen9[27],digits=4),nsmall=0)),
-               (format(round(sen10[27],digits=4),nsmall=0)),
-               (format(round(sen11[27],digits=4),nsmall=0)),
-               (format(round(sen12[27],digits=4),nsmall=0)),
-               (format(round(sen13[27],digits=4),nsmall=0)),
-               (format(round(sen14[27],digits=4),nsmall=0)),
-               (format(round(sen15[27],digits=4),nsmall=0))),
-             c((format(round(summary(n9)$coefficients[27,4],digits=4),nsmall=0)),
-               (format(round(summary(n10)$coefficients[27,4],digits=4),nsmall=0)),
-               (format(round(summary(n11)$coefficients[27,4],digits=4),nsmall=0)),
-               (format(round(summary(n12)$coefficients[27,4],digits=4),nsmall=0)),
-               (format(round(summary(n13)$coefficients[27,4],digits=4),nsmall=0)),
-               (format(round(summary(n14)$coefficients[27,4],digits=4),nsmall=0)),
-               (format(round(summary(n15)$coefficients[27,4],digits=4),nsmall=0))),
+         
              
              c((format(round(summary(n9)$r.squared,digits=4),nsmall=0)),
                (format(round(summary(n10)$r.squared,digits=4),nsmall=0)),
@@ -1887,31 +1821,31 @@ s4<- rbind(c((format(round(sum(n9$coefficients[1]),digits=4),nsmall=0)),
 
 
 summary(lm(overall_rating~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14+dealer_age +dealer_educ +tarmac_dealer +
-             murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +plasterwall +goodfloor+
+             murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert+ shop_rate+ complaint + temp+leakproof, data = bfm))
 
 summary(lm(general_rating_nonseed~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14+dealer_age +dealer_educ +tarmac_dealer +
-             murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +plasterwall +goodfloor+
+             murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert+ shop_rate+ complaint + temp+leakproof, data = bfm))
 
 summary(lm(location~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14+dealer_age +dealer_educ +tarmac_dealer +
-             murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +plasterwall +goodfloor+
+             murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert+ shop_rate+ complaint + temp+leakproof, data = bfm))
 
 summary(lm(price~gender_avg+ educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14+dealer_age +dealer_educ +tarmac_dealer +
-             murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +plasterwall +goodfloor+
+             murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert+ shop_rate+ complaint + temp+leakproof , data = bfm))
 
 summary(lm(quality~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14+dealer_age +dealer_educ +tarmac_dealer +
-             murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +plasterwall +goodfloor+
+             murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert+ shop_rate+ complaint + temp+leakproof, data = bfm))
 
 summary(lm(stock~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14+dealer_age +dealer_educ +tarmac_dealer +
-             murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +plasterwall +goodfloor+
+             murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert+ shop_rate+ complaint + temp+leakproof, data = bfm))
 
 summary(lm(reputation~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14+dealer_age +dealer_educ +tarmac_dealer +
-             murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +plasterwall +goodfloor+
+             murram_dealer+ farm_inputs+years_shop +dedicatedarea +pestprob +roof_insu+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert+ shop_rate+ complaint + temp+leakproof, data = bfm))
 
 
@@ -1953,17 +1887,29 @@ mean(avg$overall_rating[avg$genderdummy==1], na.rm=TRUE) #3.802201 -- non-seed a
 mean(avg$overall_rating[avg$genderdummy==0], na.rm=TRUE) #3.674769 -- non-seed avg rating , female 
 
 
+
 ###dealer characteristics for  controls
 
 #education of dealers 
+table(avg$maize.owner.agree.educ) #5 are g which is Other
 avg$prim <- 0
-avg$prim[avg$maize.owner.agree.educ=="c"|avg$maize.owner.agree.educ=="d"|avg$maize.owner.agree.educ=="e"|
-           avg$maize.owner.agree.educ=="f"] <- 1
+#avg$prim[avg$maize.owner.agree.educ=="c"|avg$maize.owner.agree.educ=="d"|avg$maize.owner.agree.educ=="e"|avg$maize.owner.agree.educ=="f"]<- 1
+
+#finished secondary educ --- e and f ; a,b,c,d --- did not finish secondary educ 
+avg$prim[avg$maize.owner.agree.educ=="e"|avg$maize.owner.agree.educ=="f"] <- 1
+avg$prim[avg$maize.owner.agree.educ=="g"]<- NA
 table(avg$prim)
+#73 ARE 1 --- 38.83 percent 
+
+
+#age of dealer
+summary(avg$maize.owner.agree.age)
+table(avg$maize.owner.agree.age)
 
 #distance of shop to nearest tarmac road
 table(avg$maize.owner.agree.q3)
 avg$maize.owner.agree.q3[avg$maize.owner.agree.q3==999] <- NA
+summary(avg$maize.owner.agree.q3)
 
 #distance of shop to nearest murram road 
 table(avg$maize.owner.agree.q4)
@@ -2011,17 +1957,6 @@ avg$vent<-as.character(avg$maize.owner.agree.temp.q75)
 avg$ventilation<- ifelse(avg$vent== 'Yes', 1, 0)  
 table(avg$ventilation)
 
-#plastered walls?
-avg$maize.owner.agree.q76
-avg$plas<-as.character(avg$maize.owner.agree.temp.q76)
-avg$wall_plastered<- ifelse(avg$plas== 'Yes', 1, 0)  
-table(avg$wall_plastered)
-
-#Q77. Material of floor in areas where seed is stored?
-avg$goodfloor <- 0
-avg$goodfloor[avg$maize.owner.agree.temp.q77=="Cement"|avg$maize.owner.agree.temp.q77=="Tiles"] <-1
-table(avg$goodfloor)
-
 #Q78. Lighting conditions in area where seed is stored?
 avg$badlighting <- 0
 avg$badlighting[avg$maize.owner.agree.temp.q78=="1"]<-1
@@ -2029,7 +1964,8 @@ table(avg$badlighting)
 
 #Q79. On what surface are seed stored?
 avg$badstored <- 0
-avg$badstored[avg$maize.owner.agree.temp.q79=="1"|avg$maize.owner.agree.temp.q79=="2"| avg$maize.owner.agree.temp.q79=="96"]<-1
+avg$badstored[avg$maize.owner.agree.temp.q79=="1"|avg$maize.owner.agree.temp.q79=="2"]<-1
+avg$badstored[avg$maize.owner.agree.temp.q79==96]<-NA
 table(avg$badstored)
 
 #Q80. Do you see maize seed that is stored in open bags or containers?
@@ -2050,12 +1986,14 @@ avg$shop_rate<-as.numeric(as.character(avg$maize.owner.agree.temp.q82))
 table(avg$shop_rate)
 
 #Q96. Since last season, did you receive any complaint from a customer that seed you sold was not good?
-avg$maize.owner.agree.q96
+table(avg$maize.owner.agree.q96)
 avg$complaint<- ifelse(avg$maize.owner.agree.q96== 'Yes', 1, 0)  
 table(avg$complaint)
 
 #Q70. Enter the temperature in the seed store (where seed is stored)
-avg$maize.owner.agree.q70
+table(avg$maize.owner.agree.q70)
+
+
 
 
 ## SEED RELATED RATINGS ##
@@ -2168,42 +2106,42 @@ summary(lm(germination~genderdummy , data = avg))
 #### regressions with dealer's gender + dealer characteristics  --- seed related ratings 
 
 mm9<- lm(score~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = avg)
 sem9<- sqrt(diag(vcov(mm9)))
 
 mm10<- lm(quality~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = avg)
 sem10<- sqrt(diag(vcov(mm10)))
 
 mm11<-lm(general~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = avg)
 sem11<- sqrt(diag(vcov(mm11)))
 
 mm12<-lm(yield~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = avg)
 sem12<- sqrt(diag(vcov(mm12)))
 
 mm13<-lm(drought_resistent~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = avg)
 sem13<- sqrt(diag(vcov(mm13)))
 
 mm14<-lm(disease_resistent~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = avg)
 sem14<- sqrt(diag(vcov(mm14)))
 
 mm15<-lm(early_maturing~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = avg)
 sem15<- sqrt(diag(vcov(mm15)))
 
 mm16<-lm(germination~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = avg)
 sem16<- sqrt(diag(vcov(mm16)))
 
@@ -2735,55 +2673,7 @@ s6<- rbind(c((format(round(sum(mm9$coefficients[1]),digits=4),nsmall=0)),
              (format(round(summary(mm15)$coefficients[21,4],digits=4),nsmall=0)),
              (format(round(summary(mm16)$coefficients[21,4],digits=4),nsmall=0))),
            
-           c((format(round(sum(mm9$coefficients[22]),digits=4),nsmall=0)),
-             (format(round(sum(mm10$coefficients[22]),digits=4),nsmall=0)),
-             (format(round(sum(mm11$coefficients[22]),digits=4),nsmall=0)),
-             (format(round(sum(mm12$coefficients[22]),digits=4),nsmall=0)),
-             (format(round(sum(mm13$coefficients[22]),digits=4),nsmall=0)),
-             (format(round(sum(mm14$coefficients[22]),digits=4),nsmall=0)),
-             (format(round(sum(mm15$coefficients[22]),digits=4),nsmall=0)),
-             (format(round(sum(mm16$coefficients[22]),digits=4),nsmall=0))),
-           c((format(round(sem9[22],digits=4),nsmall=0)),
-             (format(round(sem10[22],digits=4),nsmall=0)),
-             (format(round(sem11[22],digits=4),nsmall=0)),
-             (format(round(sem12[22],digits=4),nsmall=0)),
-             (format(round(sem13[22],digits=4),nsmall=0)),
-             (format(round(sem14[22],digits=4),nsmall=0)),
-             (format(round(sem15[22],digits=4),nsmall=0)),
-             (format(round(sem16[22],digits=4),nsmall=0))),
-           c((format(round(summary(mm9)$coefficients[22,4],digits=4),nsmall=0)),
-             (format(round(summary(mm10)$coefficients[22,4],digits=4),nsmall=0)),
-             (format(round(summary(mm11)$coefficients[22,4],digits=4),nsmall=0)),
-             (format(round(summary(mm12)$coefficients[22,4],digits=4),nsmall=0)),
-             (format(round(summary(mm13)$coefficients[22,4],digits=4),nsmall=0)),
-             (format(round(summary(mm14)$coefficients[22,4],digits=4),nsmall=0)),
-             (format(round(summary(mm15)$coefficients[22,4],digits=4),nsmall=0)),
-             (format(round(summary(mm16)$coefficients[22,4],digits=4),nsmall=0))),
-           
-           c((format(round(sum(mm9$coefficients[23]),digits=4),nsmall=0)),
-             (format(round(sum(mm10$coefficients[23]),digits=4),nsmall=0)),
-             (format(round(sum(mm11$coefficients[23]),digits=4),nsmall=0)),
-             (format(round(sum(mm12$coefficients[23]),digits=4),nsmall=0)),
-             (format(round(sum(mm13$coefficients[23]),digits=4),nsmall=0)),
-             (format(round(sum(mm14$coefficients[23]),digits=4),nsmall=0)),
-             (format(round(sum(mm15$coefficients[23]),digits=4),nsmall=0)),
-             (format(round(sum(mm16$coefficients[23]),digits=4),nsmall=0))),
-           c((format(round(sem9[23],digits=4),nsmall=0)),
-             (format(round(sem10[23],digits=4),nsmall=0)),
-             (format(round(sem11[23],digits=4),nsmall=0)),
-             (format(round(sem12[23],digits=4),nsmall=0)),
-             (format(round(sem13[23],digits=4),nsmall=0)),
-             (format(round(sem14[23],digits=4),nsmall=0)),
-             (format(round(sem15[23],digits=4),nsmall=0)),
-             (format(round(sem16[23],digits=4),nsmall=0))),
-           c((format(round(summary(mm9)$coefficients[23,4],digits=4),nsmall=0)),
-             (format(round(summary(mm10)$coefficients[23,4],digits=4),nsmall=0)),
-             (format(round(summary(mm11)$coefficients[23,4],digits=4),nsmall=0)),
-             (format(round(summary(mm12)$coefficients[23,4],digits=4),nsmall=0)),
-             (format(round(summary(mm13)$coefficients[23,4],digits=4),nsmall=0)),
-             (format(round(summary(mm14)$coefficients[23,4],digits=4),nsmall=0)),
-             (format(round(summary(mm15)$coefficients[23,4],digits=4),nsmall=0)),
-             (format(round(summary(mm16)$coefficients[23,4],digits=4),nsmall=0))),
+        
            
            c((format(round(summary(mm9)$r.squared,digits=4),nsmall=0)),
              (format(round(summary(mm10)$r.squared,digits=4),nsmall=0)),
@@ -2815,35 +2705,35 @@ s6<- rbind(c((format(round(sum(mm9$coefficients[1]),digits=4),nsmall=0)),
 
 
 summary(lm(score~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation+
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = avg))
 
 summary(lm(quality~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = avg))
 
 summary(lm(general~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = avg))
 
 summary(lm(yield~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = avg))
 
 summary(lm(drought_resistent~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = avg))
 
 summary(lm(disease_resistent~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = avg))
 
 summary(lm(early_maturing~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = avg))
 
 summary(lm(germination~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = avg))
 
 
@@ -2934,6 +2824,7 @@ s7<- rbind(c((format(round(sum(nn1$coefficients[1]),digits=2),nsmall=0)),
              (format(round(nobs(nn7),digits=2),nsmall=0)))
 )
 
+
 summary(lm(overall_rating~genderdummy , data = avg))
 summary(lm(general_rating_nonseed~genderdummy , data = avg))
 summary(lm(location~genderdummy , data = avg))
@@ -2945,44 +2836,39 @@ summary(lm(reputation ~genderdummy , data = avg))
 #### regressions with dealer's gender + dealer characteristics  --- non-seed related ratings 
 
 nn9<- lm(overall_rating~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-           +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+           +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
            badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = avg)
 senn9<- sqrt(diag(vcov(nn9)))
 
-nn10<-lm(overall_rating~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+nn10<-lm(general_rating_nonseed~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = avg)
 senn10<- sqrt(diag(vcov(nn10)))
 
-nn11<-lm(general_rating_nonseed~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+nn11<-lm(location~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = avg)
 senn11<- sqrt(diag(vcov(nn11)))
 
-nn12<-lm(location~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+nn12<-lm(price~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = avg)
 senn12<- sqrt(diag(vcov(nn12)))
 
-nn13<-lm(price~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+nn13<-lm(quality~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = avg)
 senn13<- sqrt(diag(vcov(nn13)))
 
-nn14<-lm(quality~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+nn14<-lm(stock~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = avg)
 senn14<- sqrt(diag(vcov(nn14)))
 
-nn15<-lm(stock~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+nn15<-lm(reputation~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = avg)
 senn15<- sqrt(diag(vcov(nn15)))
-
-nn16<-lm(reputation~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
-             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = avg)
-senn16<- sqrt(diag(vcov(nn16)))
 
 
 s8<- rbind(c((format(round(sum(nn9$coefficients[1]),digits=4),nsmall=0)),
@@ -3446,50 +3332,7 @@ s8<- rbind(c((format(round(sum(nn9$coefficients[1]),digits=4),nsmall=0)),
              (format(round(summary(nn13)$coefficients[21,4],digits=4),nsmall=0)),
              (format(round(summary(nn14)$coefficients[21,4],digits=4),nsmall=0)),
              (format(round(summary(nn15)$coefficients[21,4],digits=4),nsmall=0))),
-           
-           c((format(round(sum(nn9$coefficients[22]),digits=4),nsmall=0)),
-             (format(round(sum(nn10$coefficients[22]),digits=4),nsmall=0)),
-             (format(round(sum(nn11$coefficients[22]),digits=4),nsmall=0)),
-             (format(round(sum(nn12$coefficients[22]),digits=4),nsmall=0)),
-             (format(round(sum(nn13$coefficients[22]),digits=4),nsmall=0)),
-             (format(round(sum(nn14$coefficients[22]),digits=4),nsmall=0)),
-             (format(round(sum(nn15$coefficients[22]),digits=4),nsmall=0))),
-           c((format(round(senn9[22],digits=4),nsmall=0)),
-             (format(round(senn10[22],digits=4),nsmall=0)),
-             (format(round(senn11[22],digits=4),nsmall=0)),
-             (format(round(senn12[22],digits=4),nsmall=0)),
-             (format(round(senn13[22],digits=4),nsmall=0)),
-             (format(round(senn14[22],digits=4),nsmall=0)),
-             (format(round(senn15[22],digits=4),nsmall=0))),
-           c((format(round(summary(nn9)$coefficients[22,4],digits=4),nsmall=0)),
-             (format(round(summary(nn10)$coefficients[22,4],digits=4),nsmall=0)),
-             (format(round(summary(nn11)$coefficients[22,4],digits=4),nsmall=0)),
-             (format(round(summary(nn12)$coefficients[22,4],digits=4),nsmall=0)),
-             (format(round(summary(nn13)$coefficients[22,4],digits=4),nsmall=0)),
-             (format(round(summary(nn14)$coefficients[22,4],digits=4),nsmall=0)),
-             (format(round(summary(nn15)$coefficients[22,4],digits=4),nsmall=0))),
-           
-           c((format(round(sum(nn9$coefficients[23]),digits=4),nsmall=0)),
-             (format(round(sum(nn10$coefficients[23]),digits=4),nsmall=0)),
-             (format(round(sum(nn11$coefficients[23]),digits=4),nsmall=0)),
-             (format(round(sum(nn12$coefficients[23]),digits=4),nsmall=0)),
-             (format(round(sum(nn13$coefficients[23]),digits=4),nsmall=0)),
-             (format(round(sum(nn14$coefficients[23]),digits=4),nsmall=0)),
-             (format(round(sum(nn15$coefficients[23]),digits=4),nsmall=0))),
-           c((format(round(senn9[23],digits=4),nsmall=0)),
-             (format(round(senn10[23],digits=4),nsmall=0)),
-             (format(round(senn11[23],digits=4),nsmall=0)),
-             (format(round(senn12[23],digits=4),nsmall=0)),
-             (format(round(senn13[23],digits=4),nsmall=0)),
-             (format(round(senn14[23],digits=4),nsmall=0)),
-             (format(round(senn15[23],digits=4),nsmall=0))),
-           c((format(round(summary(nn9)$coefficients[23,4],digits=4),nsmall=0)),
-             (format(round(summary(nn10)$coefficients[23,4],digits=4),nsmall=0)),
-             (format(round(summary(nn11)$coefficients[23,4],digits=4),nsmall=0)),
-             (format(round(summary(nn12)$coefficients[23,4],digits=4),nsmall=0)),
-             (format(round(summary(nn13)$coefficients[23,4],digits=4),nsmall=0)),
-             (format(round(summary(nn14)$coefficients[23,4],digits=4),nsmall=0)),
-             (format(round(summary(nn15)$coefficients[23,4],digits=4),nsmall=0))),
+      
            
            c((format(round(summary(nn9)$r.squared,digits=4),nsmall=0)),
              (format(round(summary(nn10)$r.squared,digits=4),nsmall=0)),
@@ -3517,31 +3360,31 @@ s8<- rbind(c((format(round(sum(nn9$coefficients[1]),digits=4),nsmall=0)),
 
 
 summary(lm(overall_rating~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = avg))
 
 summary(lm(general_rating_nonseed~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = avg))
 
 summary(lm(location~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = avg))
 
 summary(lm(price~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = avg))
 
 summary(lm(quality~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = avg))
 
 summary(lm(stock~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = avg))
 
 summary(lm(reputation~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = avg))
 
 
@@ -3557,18 +3400,29 @@ fedata[fedata=="999"]<- NA
 #create gender dummy
 fedata$genderdummy <- ifelse(fedata$maize.owner.agree.gender == "Male", 1, 0)
 
+
 ###dealer characteristics for  controls
 
 #education of dealers 
+table(fedata$maize.owner.agree.educ) #430 are g which is Other
 fedata$prim <- 0
-fedata$prim[fedata$maize.owner.agree.educ=="c"|fedata$maize.owner.agree.educ=="d"|fedata$maize.owner.agree.educ=="e"|
-              fedata$maize.owner.agree.educ=="f"] <- 1
+#fedata$prim[fedata$maize.owner.agree.educ=="c"|fedata$maize.owner.agree.educ=="d"|fedata$maize.owner.agree.educ=="e"|fedata$maize.owner.agree.educ=="f"]<- 1
+
+#finished secondary educ --- e and f ; a,b,c,d --- did not finish secondary educ 
+fedata$prim[fedata$maize.owner.agree.educ=="e"|fedata$maize.owner.agree.educ=="f"] <- 1
+fedata$prim[fedata$maize.owner.agree.educ=="g"]<- NA
 table(fedata$prim)
-#91.6% say yes (1)
+#5208 ARE 1 --- 45 percent 
+
+
+#age of dealer
+summary(fedata$maize.owner.agree.age)
+table(fedata$maize.owner.agree.age)
 
 #distance of shop to nearest tarmac road
 table(fedata$maize.owner.agree.q3)
 fedata$maize.owner.agree.q3[fedata$maize.owner.agree.q3==999] <- NA
+summary(fedata$maize.owner.agree.q3)
 
 #distance of shop to nearest murram road 
 table(fedata$maize.owner.agree.q4)
@@ -3576,12 +3430,9 @@ table(fedata$maize.owner.agree.q4)
 #selling only farm inputs 
 table(fedata$maize.owner.agree.q5)
 fedata$inputsale<- ifelse(fedata$maize.owner.agree.q5== 'Yes', 1, 0)  
-table(fedata$inputsale)
-#84.4% say yes (1)
 
 #Q8. When was this agro-input shop established? (year)
 fedata$years_shop <- 2020 - as.numeric(as.character(substr(fedata$maize.owner.agree.q8, start=1, stop=4)))
-table(fedata$years_shop)
 
 #seed stored in dedicated area?
 fedata$maize.owner.agree.q69
@@ -3618,20 +3469,6 @@ fedata$maize.owner.agree.q75
 fedata$vent<-as.character(fedata$maize.owner.agree.temp.q75)
 fedata$ventilation<- ifelse(fedata$vent== 'Yes', 1, 0)  
 table(fedata$ventilation)
-#91.3% say yes (1)
-
-#plastered walls?
-fedata$maize.owner.agree.q76
-fedata$plas<-as.character(fedata$maize.owner.agree.temp.q76)
-fedata$wall_plastered<- ifelse(fedata$plas== 'Yes', 1, 0)  
-table(fedata$wall_plastered)
-#97.2% say yes (1)
-
-#Q77. Material of floor in areas where seed is stored?
-fedata$goodfloor <- 0
-fedata$goodfloor[fedata$maize.owner.agree.temp.q77=="Cement"|fedata$maize.owner.agree.temp.q77=="Tiles"] <-1
-table(fedata$goodfloor)
-#98.3% say yes (1)
 
 #Q78. Lighting conditions in area where seed is stored?
 fedata$badlighting <- 0
@@ -3640,7 +3477,8 @@ table(fedata$badlighting)
 
 #Q79. On what surface are seed stored?
 fedata$badstored <- 0
-fedata$badstored[fedata$maize.owner.agree.temp.q79=="1"|fedata$maize.owner.agree.temp.q79=="2"| fedata$maize.owner.agree.temp.q79=="96"]<-1
+fedata$badstored[fedata$maize.owner.agree.temp.q79=="1"|fedata$maize.owner.agree.temp.q79=="2"]<-1
+fedata$badstored[fedata$maize.owner.agree.temp.q79==96]<-NA
 table(fedata$badstored)
 
 #Q80. Do you see maize seed that is stored in open bags or containers?
@@ -3661,12 +3499,13 @@ fedata$shop_rate<-as.numeric(as.character(fedata$maize.owner.agree.temp.q82))
 table(fedata$shop_rate)
 
 #Q96. Since last season, did you receive any complaint from a customer that seed you sold was not good?
-fedata$maize.owner.agree.q96
+table(fedata$maize.owner.agree.q96)
 fedata$complaint<- ifelse(fedata$maize.owner.agree.q96== 'Yes', 1, 0)  
 table(fedata$complaint)
 
 #Q70. Enter the temperature in the seed store (where seed is stored)
-fedata$maize.owner.agree.q70
+table(fedata$maize.owner.agree.q70)
+
 
 ###AVERAGE RATINGS 
 fedata$quality<- as.numeric(fedata$quality_rating)
@@ -3698,6 +3537,7 @@ write.csv(fedata, file = "fedata.csv")
 
 summary(lm(score~genderdummy +farmer_ID, data = fedata))
 reg1<-summary(lm(quality~genderdummy+farmer_ID , data = fedata))
+#intercept --- 5.066 
 #with(fedata, plot(genderdummy,quality))
 #abline(reg1)
 summary(lm(general~genderdummy +farmer_ID, data = fedata))
@@ -3808,85 +3648,89 @@ fe1<- rbind( c((format(round(i1[1],digits=2),nsmall=0)),
 #### regressions with dealer's gender + dealer characteristics  --- seed related ratings 
 
 summary(lm(score~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof+farmer_ID, data = fedata))
 
 summary(lm(quality~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof+farmer_ID, data = fedata))
+#reg2<-lm(quality~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+     #      +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+      #     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof+farmer_ID, data = fedata)
+#with(fedata, plot(genderdummy,quality))
+#abline(reg2)
 
 summary(lm(general~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof+farmer_ID, data = fedata))
 
 summary(lm(yield~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof+farmer_ID, data = fedata))
 
 summary(lm(drought_resistent~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof+farmer_ID, data = fedata))
 
 summary(lm(disease_resistent~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof+farmer_ID, data = fedata))
 
 summary(lm(early_maturing~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation+
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof+farmer_ID, data = fedata))
 
 summary(lm(germination~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof+farmer_ID, data = fedata))
 
 
 ####### plm method 
 
 plm9<-plm(score~genderdummy+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-            +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+            +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
 i9<-mean(fixef(plm9))
 seplm9<- sqrt(diag(vcov(plm9)))
 
 plm10<-plm(quality~genderdummy+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
 i10<-mean(fixef(plm10))
 seplm10<- sqrt(diag(vcov(plm10)))
 
 plm11<-plm(general~genderdummy+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
 i11<-mean(fixef(plm11))
 seplm11<- sqrt(diag(vcov(plm11)))
 
 plm12<-plm(yield~genderdummy+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
 i12<-mean(fixef(plm12))
 seplm12<- sqrt(diag(vcov(plm12)))
 
 plm13<-plm(drought_resistent~genderdummy+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered + goodfloor +
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
-#goodfloor here is getting dropped --- CHECK --- it does not get dropped when just dummies are added
 i13<-mean(fixef(plm13))
 seplm13<- sqrt(diag(vcov(plm13)))
 
 plm14<-plm(disease_resistent~genderdummy+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
 i14<-mean(fixef(plm14))
 seplm14<- sqrt(diag(vcov(plm14)))
 
 plm15<-plm(early_maturing~genderdummy+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
 i15<-mean(fixef(plm15))
 seplm15<- sqrt(diag(vcov(plm15)))
 
 plm16<-plm(germination~genderdummy+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
 i16<-mean(fixef(plm16))
 seplm16<- sqrt(diag(vcov(plm16)))
@@ -4401,58 +4245,7 @@ fe2<- rbind(c((format(round(i9[1],digits=4),nsmall=0)),
              (format(round(summary(plm14)$coefficients[20,4],digits=4),nsmall=0)),
              (format(round(summary(plm15)$coefficients[20,4],digits=4),nsmall=0)),
              (format(round(summary(plm16)$coefficients[20,4],digits=4),nsmall=0))),
-           
-           c((format(round(sum(plm9$coefficients[21]),digits=4),nsmall=0)),
-             (format(round(sum(plm10$coefficients[21]),digits=4),nsmall=0)),
-             (format(round(sum(plm11$coefficients[21]),digits=4),nsmall=0)),
-             (format(round(sum(plm12$coefficients[21]),digits=4),nsmall=0)),
-             (format(round(sum(plm13$coefficients[21]),digits=4),nsmall=0)),
-             (format(round(sum(plm14$coefficients[21]),digits=4),nsmall=0)),
-             (format(round(sum(plm15$coefficients[21]),digits=4),nsmall=0)),
-             (format(round(sum(plm16$coefficients[21]),digits=4),nsmall=0))),
-           c((format(round(seplm9[21],digits=4),nsmall=0)),
-             (format(round(seplm10[21],digits=4),nsmall=0)),
-             (format(round(seplm11[21],digits=4),nsmall=0)),
-             (format(round(seplm12[21],digits=4),nsmall=0)),
-             (format(round(seplm13[21],digits=4),nsmall=0)),
-             (format(round(seplm14[21],digits=4),nsmall=0)),
-             (format(round(seplm15[21],digits=4),nsmall=0)),
-             (format(round(seplm16[21],digits=4),nsmall=0))),
-           c((format(round(summary(plm9)$coefficients[21,4],digits=4),nsmall=0)),
-             (format(round(summary(plm10)$coefficients[21,4],digits=4),nsmall=0)),
-             (format(round(summary(plm11)$coefficients[21,4],digits=4),nsmall=0)),
-             (format(round(summary(plm12)$coefficients[21,4],digits=4),nsmall=0)),
-             (format(round(summary(plm13)$coefficients[21,4],digits=4),nsmall=0)),
-             (format(round(summary(plm14)$coefficients[21,4],digits=4),nsmall=0)),
-             (format(round(summary(plm15)$coefficients[21,4],digits=4),nsmall=0)),
-             (format(round(summary(plm16)$coefficients[21,4],digits=4),nsmall=0))),
-           
-           c((format(round(sum(plm9$coefficients[22]),digits=4),nsmall=0)),
-             (format(round(sum(plm10$coefficients[22]),digits=4),nsmall=0)),
-             (format(round(sum(plm11$coefficients[22]),digits=4),nsmall=0)),
-             (format(round(sum(plm12$coefficients[22]),digits=4),nsmall=0)),
-             (format(round(sum(plm13$coefficients[22]),digits=4),nsmall=0)),
-             (format(round(sum(plm14$coefficients[22]),digits=4),nsmall=0)),
-             (format(round(sum(plm15$coefficients[22]),digits=4),nsmall=0)),
-             (format(round(sum(plm16$coefficients[22]),digits=4),nsmall=0))),
-           c((format(round(seplm9[22],digits=4),nsmall=0)),
-             (format(round(seplm10[22],digits=4),nsmall=0)),
-             (format(round(seplm11[22],digits=4),nsmall=0)),
-             (format(round(seplm12[22],digits=4),nsmall=0)),
-             (format(round(seplm13[22],digits=4),nsmall=0)),
-             (format(round(seplm14[22],digits=4),nsmall=0)),
-             (format(round(seplm15[22],digits=4),nsmall=0)),
-             (format(round(seplm16[22],digits=4),nsmall=0))),
-           c((format(round(summary(plm9)$coefficients[22,4],digits=4),nsmall=0)),
-             (format(round(summary(plm10)$coefficients[22,4],digits=4),nsmall=0)),
-             (format(round(summary(plm11)$coefficients[22,4],digits=4),nsmall=0)),
-             (format(round(summary(plm12)$coefficients[22,4],digits=4),nsmall=0)),
-             0,
-            # (format(round(summary(plm13)$coefficients[22,4],digits=4),nsmall=0)),
-            # goodfloor gets dropped for plm --- drought resistent reg 
-             (format(round(summary(plm14)$coefficients[22,4],digits=4),nsmall=0)),
-             (format(round(summary(plm15)$coefficients[22,4],digits=4),nsmall=0)),
-             (format(round(summary(plm16)$coefficients[22,4],digits=4),nsmall=0))),
+
            
            c((format(round(summary(plm9)$r.squared[1],digits=4),nsmall=0)),
              (format(round(summary(plm10)$r.squared[1],digits=4),nsmall=0)),
@@ -4584,87 +4377,82 @@ fe3<- rbind( c((format(round(im1[1],digits=2),nsmall=0)),
 #### regressions with dealer's gender + dealer characteristics  --- non-seed related ratings 
 
 summary(lm(overall_rating~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof+farmer_ID, data = fedata))
 
 plm1<-plm(overall_rating~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
 mean(fixef(plm1))
 within_intercept(plm1)
 #https://stat.ethz.ch/pipermail/r-help/2012-December/344338.html 
 
 summary(lm(general_rating_nonseed~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof+farmer_ID, data = fedata))
 
 summary(lm(location~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof+farmer_ID, data = fedata))
 
 summary(lm(price~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof+farmer_ID, data = fedata))
 
 summary(lm(quality~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof+farmer_ID, data = fedata))
 
 summary(lm(stock~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof+farmer_ID, data = fedata))
 
-#lm_graph<-lm(stock~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
-#    badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof+farmer_ID, data = fedata)
-#with(fedata, plot(genderdummy,stock))
-#abline(lm_graph)
-
 summary(lm(reputation~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof+farmer_ID, data = fedata))
 
 
 ########## plm method 
 
 plmm8<-plm(overall_rating~genderdummy+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
 im8<-mean(fixef(plmm8))
 seplmm8<- sqrt(diag(vcov(plmm8)))
 
 plmm9<-plm(general_rating_nonseed~genderdummy+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
 im9<-mean(fixef(plmm9))
 seplmm9<- sqrt(diag(vcov(plmm9)))
 
 plmm10<-plm(location~genderdummy+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
 im10<-mean(fixef(plmm10))
 seplmm10<- sqrt(diag(vcov(plmm10)))
 
 plmm11<-plm(price~genderdummy+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
 im11<-mean(fixef(plmm11))
 seplmm11<- sqrt(diag(vcov(plmm11)))
 
 plmm12<-plm(quality~genderdummy+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
 im12<-mean(fixef(plmm12))
 seplmm12<- sqrt(diag(vcov(plmm12)))
 
 plmm13<-plm(stock~genderdummy+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
 im13<-mean(fixef(plmm13))    
-#5.969744   ---- CHECK WHY
+#4.332454
 seplmm13<- sqrt(diag(vcov(plmm13)))
 
 plmm14<-plm(reputation~genderdummy+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +wall_plastered +goodfloor+
+             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
 im14<-mean(fixef(plmm14))
 seplmm14<- sqrt(diag(vcov(plmm14)))
@@ -5117,50 +4905,7 @@ fe4<- rbind(c((format(round(im8[1],digits=4),nsmall=0)),
               (format(round(summary(plmm12)$coefficients[20,4],digits=4),nsmall=0)),
               (format(round(summary(plmm13)$coefficients[20,4],digits=4),nsmall=0)),
               (format(round(summary(plmm14)$coefficients[20,4],digits=4),nsmall=0))),
-            
-            c((format(round(sum(plmm8$coefficients[21]),digits=4),nsmall=0)),
-              (format(round(sum(plmm9$coefficients[21]),digits=4),nsmall=0)),
-              (format(round(sum(plmm10$coefficients[21]),digits=4),nsmall=0)),
-              (format(round(sum(plmm11$coefficients[21]),digits=4),nsmall=0)),
-              (format(round(sum(plmm12$coefficients[21]),digits=4),nsmall=0)),
-              (format(round(sum(plmm13$coefficients[21]),digits=4),nsmall=0)),
-              (format(round(sum(plmm14$coefficients[21]),digits=4),nsmall=0))),
-            c((format(round(seplmm8[21],digits=4),nsmall=0)),
-              (format(round(seplmm9[21],digits=4),nsmall=0)),
-              (format(round(seplmm10[21],digits=4),nsmall=0)),
-              (format(round(seplmm11[21],digits=4),nsmall=0)),
-              (format(round(seplmm12[21],digits=4),nsmall=0)),
-              (format(round(seplmm13[21],digits=4),nsmall=0)),
-              (format(round(seplmm14[21],digits=4),nsmall=0))),
-            c((format(round(summary(plmm8)$coefficients[21,4],digits=4),nsmall=0)),
-              (format(round(summary(plmm9)$coefficients[21,4],digits=4),nsmall=0)),
-              (format(round(summary(plmm10)$coefficients[21,4],digits=4),nsmall=0)),
-              (format(round(summary(plmm11)$coefficients[21,4],digits=4),nsmall=0)),
-              (format(round(summary(plmm12)$coefficients[21,4],digits=4),nsmall=0)),
-              (format(round(summary(plmm13)$coefficients[21,4],digits=4),nsmall=0)),
-              (format(round(summary(plmm14)$coefficients[21,4],digits=4),nsmall=0))),
-            
-            c((format(round(sum(plmm8$coefficients[22]),digits=4),nsmall=0)),
-              (format(round(sum(plmm9$coefficients[22]),digits=4),nsmall=0)),
-              (format(round(sum(plmm10$coefficients[22]),digits=4),nsmall=0)),
-              (format(round(sum(plmm11$coefficients[22]),digits=4),nsmall=0)),
-              (format(round(sum(plmm12$coefficients[22]),digits=4),nsmall=0)),
-              (format(round(sum(plmm13$coefficients[22]),digits=4),nsmall=0)),
-              (format(round(sum(plmm14$coefficients[22]),digits=4),nsmall=0))),
-            c((format(round(seplmm8[22],digits=4),nsmall=0)),
-              (format(round(seplmm9[22],digits=4),nsmall=0)),
-              (format(round(seplmm10[22],digits=4),nsmall=0)),
-              (format(round(seplmm11[22],digits=4),nsmall=0)),
-              (format(round(seplmm12[22],digits=4),nsmall=0)),
-              (format(round(seplmm13[22],digits=4),nsmall=0)),
-              (format(round(seplmm14[22],digits=4),nsmall=0))),
-            c((format(round(summary(plmm8)$coefficients[22,4],digits=4),nsmall=0)),
-              (format(round(summary(plmm9)$coefficients[22,4],digits=4),nsmall=0)),
-              (format(round(summary(plmm10)$coefficients[22,4],digits=4),nsmall=0)),
-              (format(round(summary(plmm11)$coefficients[22,4],digits=4),nsmall=0)),
-              (format(round(summary(plmm12)$coefficients[22,4],digits=4),nsmall=0)),
-              (format(round(summary(plmm13)$coefficients[22,4],digits=4),nsmall=0)),
-              (format(round(summary(plmm14)$coefficients[22,4],digits=4),nsmall=0))),
+          
             
             c((format(round(summary(plmm8)$r.squared[1],digits=4),nsmall=0)),
               (format(round(summary(plmm9)$r.squared[1],digits=4),nsmall=0)),
