@@ -252,9 +252,8 @@ d
 \begin_layout Standard
 Farmers rate several agro-input dealers and agro-input dealers are rated
  by several farmers.
- The resulting unique structure has some characteristics of panel data:
- there are multiple observations per farmer but also multiple observations
- per dealer.
+ The resulting structure has some characteristics of panel data: there are
+ multiple observations per farmer but also multiple observations per dealer.
  These repeated observations for farmers can be used to exploit variation
  within raters, and the repeated observations for dealers can be used to
  exploit variation within ratees.
@@ -262,13 +261,12 @@ Farmers rate several agro-input dealers and agro-input dealers are rated
  This provides four ways to look at the data: differences within farmers,
  differences between farmers, differences within dealers, and differences
  between dealers.
- Depeding on the research question, the correct within or between dimension
- has to be exploited.
+ To answer the research questions, the different within and between dimensions
+ have to be exploited.
 \end_layout
 
 \begin_layout Standard
-However, our data differs from panel data as the indices for individuals
- 
+Our data differs from panel data as the indices for individuals 
 \emph on
 i
 \emph default
@@ -473,8 +471,8 @@ Does this belong here: "They may also be more likely to shop at female dealers,
 \end_layout
 
 \begin_layout Standard
-However, the farmer fixed effects estimator uses the fact that the same
- farmer rates both male and female dealers.
+The farmer fixed effects estimator uses the fact that the same farmer rates
+ both male and female dealers.
  It exploits variation within farmers for identification.
  While we can control for the farmer's education level, this estimator also
  controls for characteristics which would be (almost) impossible to measure
@@ -595,7 +593,7 @@ Unfortunately, including dealer fixed effects and dealer gender in one regressio
 n is impossible because gender does not vary within the dealer, ie.
  the matrix of dealer fixed effects would be perfectly co-linear with the
  dealer's gender.
- Gender remain constant within the dealer, so that the average is the always
+ Gender remains constant within the dealer, so that the average is the always
  equal to the observation, thus cancels out and dealer's gender will be
  removed from the equation above.
 \end_layout
@@ -609,103 +607,17 @@ Between farmers model
 \end_layout
 
 \begin_layout Standard
-But you have a solution! Because farmers did not rate all input dealers,
- there is variation in the degree to which farmers were exposed to agro-input
- dealers of different genders.
- And so the coefficient we estimate in (3) should be a good alternative
- to the one w$
-\backslash
-Sexpr{format(round(sum(m13$coefficients[2]),digits=2),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(m13)$coefficients[2,4]<.01,"***",ifelse(summary(m13)$coeffic
-ients[2,4]<.05,"**",ifelse(summary(m13)$coefficients[2,4]<.1,"*","")))}}$
- e can not estimate in (9).
-\end_layout
-
-\begin_layout Standard
-A similar story can then be created for the second question (but mind you
- that the variable of interest now varies at the level of the farmer!)
-\end_layout
-
-\begin_layout Standard
-let i denote the farmer and t the input dealer.
-\end_layout
-
-\begin_layout Standard
-so just to check if I am still following: in these regressions, the variable
- of interest is not a dummy, but a measure of the gender composition of
- the average customer of the input dealer, right? And so it says that input
- dealers with a more female client profile generally get better ratings,
- right?
-\end_layout
-
-\begin_layout Standard
-Yes your interpretation below is correct - those with a largely male customer
- base get worse scores and those that have many women among their clients
- get better scores.
-\end_layout
-
-\begin_layout Standard
-But for the interpretation: be careful, this is a number between 0 and 1.
- So a 10 percentage point increase in the share of men (eg from 50 percent
- men to 60 percent men) reduces average score rating by 0.0337.
-\end_layout
-
-\begin_layout Standard
-Our best guess at explaining variation at this level is thus to use model
- 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:two"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-***
-\end_layout
-
-\begin_layout Standard
-The between-farmer model takes averages over all the dealers that were ranked
- by the farmer.
- The number of observations will thus be equal to the number or farmers
- included in the study (about 3,400).
- The model uses differences between farmers to estimate the parameters.
- A significant coefficient on the gender of the agro-input dealer would
- mean that farmers that rated relatively more male agro-input dealers have
- also relatively higher scores.
- As, at least in theory, the farmers rate the same input dealers, any significan
-t difference in how farmers rate input dealers of different genders should
- be attributed to differences at the level of the farmers.
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-In fact, if this would be a completely balanced panel (all farmers rate
- all dealers), than 
-\begin_inset Formula $\frac{1}{D}\underset{d}{\sum}g_{f,d}$
-\end_inset
-
- below would be the same for all farmers (the share of female input dealers
- in the sample) and the effect would be absorbed into the constant.
- I think that the reason why we can estimate a parameter for a dealer invariant
- effect like dealer gender in a between farmer model is due to the fact
- that we have an incomplete panel.
- This could be something we can use in the paper, but we also need to discuss
- the potential problems with this, that the incompleteness is perhaps not
- random?
-\end_layout
-
-\end_inset
-
-.
- This model requires that the likelihood that the farmer rates a female
- agro-input dealer is uncorrelated with farmer specific unobservable effects.
+While we cannot estimate the previous dealer fixed effects model, we can
+ estimate a between farmers model.
+ To this end, averages across all dealers 
+\emph on
+t
+\emph default
+ who were rated by a particular farmer 
+\emph on
+i
+\emph default
+ are computed, which results in data at the farmer level.
 \end_layout
 
 \begin_layout Standard
@@ -731,21 +643,156 @@ In fact, if this would be a completely balanced panel (all farmers rate
 \end_layout
 
 \begin_layout Standard
-Note that up to now, we did not estimate this model yet! Note also that
- 
+In our data, farmers did not rate all dealers, farmers rated only dealers
+ that they knew (ie.
+ unbalanced panel).
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+In fact, if the panel was completely balanced (ie.
+ all farmers rate all dealers), then 
+\begin_inset Formula $\frac{1}{D}\underset{d}{\sum}g_{f,d}$
+\end_inset
+
+ would be the same for all farmers (the share of female dealers in the sample)
+ and the dealer's gender effect would be absorbed by the constant.
+ We can estimate a dealer invariant effect like the dealer's gender effect
+ in a between farmer model only because we have an incomplete panel.
+\end_layout
+
+\end_inset
+
+Hence the degree to which a farmer is exposed to female dealers varies.
+ The variable of interest 
 \begin_inset Formula $\overline{g}_{f}$
 \end_inset
 
- is not a 0/1 variable, but a variable between 0 and 1 indicating the share
- of female agro-input dealers in the total number of agro input dealers
- that were rated by the farmer.
- So for instance if farmer John rated 2 input dealers and one was female
- it would be 0.5.
+ is not a dummy but a variable between 0 and 1 indicating the share of female
+ dealers in the total number of dealers that were rated by one particular
+ farmer.
+ For instance, farmer John's 
+\begin_inset Formula $\overline{g}_{f}$
+\end_inset
+
+ would be 0.5 if he rated one female and one male dealer.
+ Then the farmers' average ratings are regressed on their share of rated
+ female dealers.
+ In addition to the previously described controls at dealer level, we control
+ for farmer characteristics like education, marital status, remoteness and
+ age
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+I think we should not control for farmer characteristics: Older farmers
+ might indeed discriminate more but why should we control for that if we
+ want to measure discrimination? Farmer characteristics should not be correlated
+ to dealer/ seed quality.
+\end_layout
+
+\end_inset
+
+.
+ This model uses differences between farmers to estimate the parameters.
+\end_layout
+
+\begin_layout Standard
+If the coefficient 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\backslash
+gamma
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ is positive and significant, farmers who rate relatively more male dealers
+ gave relatively higher scores.
+ In theory, one could assume that each farmer rated all (the same) dealers,
+ so that any difference should be attributed to the farmers, and can be
+ interpreted as discrimination.
+ It is a good alternative to the coefficient we cannot estimate in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:eight"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ and our best guess at measuring discrimination.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+This model requires that the likelihood that the farmer rates a female dealer
+ is uncorrelated with farmer specific unobservable effects eg.
+ discrimination.
+ However, our incompleteness might be not random.
+ Could the significant result that we find in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:six-1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ be due to the non-random nature of the panel?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Interpretation: number between 0 and 1 –> a 10 % point increase in the share
+ of men (eg from 50 % men to 60 % men) reduces average rating by coefficient.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section*
 Question 2: Do female farmers rate agro-input dealers differently? (Farmer's
  gender effect)
+\end_layout
+
+\begin_layout Standard
+A similar story can then be created for the second question (but mind you
+ that the variable of interest now varies at the level of the farmer!)
 \end_layout
 
 \begin_layout Standard
@@ -865,6 +912,31 @@ models:
 I think part of the confusion is related to the fact that we do not have
  a completely balanced panel where all farmers rate all input dealers (or
  all input dealers are not rated by all farmers).
+\end_layout
+
+\begin_layout Standard
+A similar story can then be created for the second question (but mind you
+ that the variable of interest now varies at the level of the farmer!)
+\end_layout
+
+\begin_layout Standard
+so just to check if I am still following: in these regressions, the variable
+ of interest is not a dummy, but a measure of the gender composition of
+ the average customer of the input dealer, right? And so it says that input
+ dealers with a more female client profile generally get better ratings,
+ right?
+\end_layout
+
+\begin_layout Standard
+Yes your interpretation below is correct - those with a largely male customer
+ base get worse scores and those that have many women among their clients
+ get better scores.
+\end_layout
+
+\begin_layout Standard
+But for the interpretation: be careful, this is a number between 0 and 1.
+ So a 10 percentage point increase in the share of men (eg from 50 percent
+ men to 60 percent men) reduces average score rating by 0.0337.
 \end_layout
 
 \begin_layout Subsection*
@@ -1393,6 +1465,26 @@ end{table}
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+The number of obs.
+ should be equal to the number of (clearinghouse) treated farmers (1931).
+ However, there seem to be 1201 treated farmers who did not rate a single
+ dealer (see reviews_bf), so that the nobs is 730 here.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
 status open
 
