@@ -52,6 +52,7 @@ table(between_farmer$prim)
 
 #age of dealer
 summary(between_farmer$maize.owner.agree.age)
+between_farmer$maize.owner.agree.age[between_farmer$maize.owner.agree.age==999] <- NA
 table(between_farmer$maize.owner.agree.age)
 
 #distance of shop to nearest tarmac road
@@ -154,6 +155,7 @@ table(between_farmer$complaint)
 
 #Q70. Enter the temperature in the seed store (where seed is stored)
 table(between_farmer$maize.owner.agree.q70)
+between_farmer$maize.owner.agree.q70[between_farmer$maize.owner.agree.q70==999] <- NA
 
 between_farmer[between_farmer=="n/a"]<- NA
 
@@ -1904,6 +1906,7 @@ table(avg$prim)
 
 #age of dealer
 summary(avg$maize.owner.agree.age)
+avg$maize.owner.agree.age[avg$maize.owner.agree.age==999] <- NA
 table(avg$maize.owner.agree.age)
 
 #distance of shop to nearest tarmac road
@@ -1992,6 +1995,7 @@ table(avg$complaint)
 
 #Q70. Enter the temperature in the seed store (where seed is stored)
 table(avg$maize.owner.agree.q70)
+avg$maize.owner.agree.q70[avg$maize.owner.agree.q70==999] <- NA
 
 
 
@@ -3417,6 +3421,7 @@ table(fedata$prim)
 
 #age of dealer
 summary(fedata$maize.owner.agree.age)
+fedata$maize.owner.agree.age[fedata$maize.owner.agree.age==999] <- NA
 table(fedata$maize.owner.agree.age)
 
 #distance of shop to nearest tarmac road
@@ -3505,7 +3510,7 @@ table(fedata$complaint)
 
 #Q70. Enter the temperature in the seed store (where seed is stored)
 table(fedata$maize.owner.agree.q70)
-
+fedata$maize.owner.agree.q70[fedata$maize.owner.agree.q70==999] <- NA
 
 ###AVERAGE RATINGS 
 fedata$quality<- as.numeric(fedata$quality_rating)
@@ -4933,6 +4938,7 @@ fe4<- rbind(c((format(round(im8[1],digits=4),nsmall=0)),
 
 ##################################################################################################################
 ####################### BETWEEN DEALER --- FOCUS ON FARMER'S GENDER ##############################################
+###  Question 2 
 
 rating_dyads <- read.csv(paste(path_2,"/papers/perceptions/data_seed_systems/data/farmer/rating_dyads.csv", sep = "/"))
 ##Farmers' dataset
@@ -5022,6 +5028,7 @@ table(betwd$prim)
 
 #age of dealer
 summary(betwd$maize.owner.agree.age)
+betwd$maize.owner.agree.age[betwd$maize.owner.agree.age==999] <- NA
 table(betwd$maize.owner.agree.age)
 
 #distance of shop to nearest tarmac road
@@ -5110,6 +5117,7 @@ table(betwd$complaint)
 
 #Q70. Enter the temperature in the seed store (where seed is stored)
 table(betwd$maize.owner.agree.q70)
+betwd$maize.owner.agree.q70[betwd$maize.owner.agree.q70==999] <- NA
 betwd$temp<-betwd$maize.owner.agree.q70
 
 
@@ -6739,3 +6747,613 @@ s_deal4<- rbind(c((format(round(sum(bdn9$coefficients[1]),digits=4),nsmall=0)),
                   (format(round(nobs(bdn14),digits=2),nsmall=0)),
                   (format(round(nobs(bdn15),digits=2),nsmall=0))))
 
+
+
+################### BETWEEN FARMERS MODEL (CARO'S APPROACH) --- FOCUS ON FARMER'S GENDER #########################
+
+avg_q <- data.frame(cbind(tapply(as.numeric(between_dealer$quality_rating), between_dealer$farmer_ID.x,mean,na.rm=TRUE),
+                           tapply(as.numeric(between_dealer$seed_quality_general_rating), between_dealer$farmer_ID.x,mean,na.rm=TRUE),
+                           tapply(as.numeric(between_dealer$seed_yield_rating), between_dealer$farmer_ID.x,mean,na.rm=TRUE),
+                           tapply(as.numeric(between_dealer$seed_drought_rating), between_dealer$farmer_ID.x,mean,na.rm=TRUE),
+                           tapply(as.numeric(between_dealer$seed_disease_rating), between_dealer$farmer_ID.x,mean,na.rm=TRUE),
+                           tapply(as.numeric(between_dealer$seed_maturing_rating), between_dealer$farmer_ID.x,mean,na.rm=TRUE),
+                           tapply(as.numeric(between_dealer$seed_germinate_rating), between_dealer$farmer_ID.x,mean,na.rm=TRUE),
+                           tapply(as.numeric(between_dealer$general_rating), between_dealer$farmer_ID.x,mean,na.rm=TRUE),
+                           tapply(as.numeric(between_dealer$location_rating), between_dealer$farmer_ID.x,mean,na.rm=TRUE),
+                           tapply(as.numeric(between_dealer$price_rating), between_dealer$farmer_ID.x,mean,na.rm=TRUE),
+                           tapply(as.numeric(between_dealer$stock_rating), between_dealer$farmer_ID.x,mean,na.rm=TRUE),
+                           tapply(as.numeric(between_dealer$reputation_rating), between_dealer$farmer_ID.x,mean,na.rm=TRUE),
+                           tapply(between_dealer$bought_at_dealer=="Yes" | between_dealer$knows_other_customer=="Yes", between_dealer$farmer_ID.x,sum)))
+
+names(avg_q) <- c("quality","general","yield","drought_resistent","disease_resistent","early_maturing","germination","general_rating_nonseed","location","price",
+                "stock","reputation","nr_reviews")
+
+avg_q$farmer_ID.x <- rownames(avg_q)
+
+avg_q$score <-  rowMeans(avg_q[c("quality","general","yield","drought_resistent","disease_resistent","early_maturing","germination")],na.rm=T)
+avg_q$overall_rating <-  rowMeans(avg_q[c("general_rating_nonseed", "location","price","quality","stock","reputation")],na.rm=T)
+
+colnames(avg_q)[14] <- "farmer_ID"
+avg_q <- merge(avg_q, farmers_seedsub, by="farmer_ID") #merging with baseline farmers data to get the controls and gender 
+
+#create gender dummy
+avg_q$farmergen <- ifelse(avg_q$Check2.check.maize.q15 == "Male", 1, 0)
+
+
+###farmer characteristics for  controls
+avg_q$educ_f <- 0
+avg_q$educ_f[avg_q$Check2.check.maize.q17=="c" | avg_q$Check2.check.maize.q17=="d" | avg_q$Check2.check.maize.q17=="e" | 
+               avg_q$Check2.check.maize.q17=="f"  ] <- 1 #educated farmers -- finished primary educ 
+avg_q$educ_f[ avg_q$Check2.check.maize.q17=="g" ] <- NA 
+table(avg_q$educ_f) 
+
+avg_q$married <- ifelse(avg_q$Check2.check.maize.q16 == 'a', 1, 0)  #married farmers
+
+#age of farmers 
+avg_q$Check2.check.maize.q14[ avg_q$Check2.check.maize.q14==999 ] <- NA
+summary(avg_q$Check2.check.maize.q14 )
+
+#distance from tarmac road
+avg_q$Check2.check.maize.q8[ avg_q$Check2.check.maize.q8==999 ] <- NA
+summary(avg_q$Check2.check.maize.q8 )
+
+
+## SEED RELATED RATINGS ##
+
+#### regressions without controls - seed related ratings 
+
+mm_q1<-lm(score~farmergen, data = avg_q)
+semq1<- sqrt(diag(vcov(mm_q1)))
+mm_q2<-lm(quality~farmergen, data = avg_q)
+semq2<- sqrt(diag(vcov(mm_q2)))
+mm_q3<-lm(general~farmergen, data = avg_q)
+semq3<- sqrt(diag(vcov(mm_q3)))
+mm_q4<-lm(yield~farmergen, data = avg_q)
+semq4<- sqrt(diag(vcov(mm_q4)))
+mm_q5<-lm(drought_resistent~farmergen, data = avg_q)
+semq5<- sqrt(diag(vcov(mm_q5)))
+mm_q6<-lm(disease_resistent~farmergen, data = avg_q)
+semq6<- sqrt(diag(vcov(mm_q6)))
+mm_q7<-lm(early_maturing~farmergen, data = avg_q)
+semq7<- sqrt(diag(vcov(mm_q7)))
+mm_q8<-lm(germination~farmergen, data = avg_q)
+semq8<- sqrt(diag(vcov(mm_q8)))
+
+s_deal5<- rbind(c((format(round(sum(mm_q1$coefficients[1]),digits=2),nsmall=0)),
+                  (format(round(sum(mm_q2$coefficients[1]),digits=2),nsmall=0)),
+                  (format(round(sum(mm_q3$coefficients[1]),digits=2),nsmall=0)),
+                  (format(round(sum(mm_q4$coefficients[1]),digits=2),nsmall=0)),
+                  (format(round(sum(mm_q5$coefficients[1]),digits=2),nsmall=0)),
+                  (format(round(sum(mm_q6$coefficients[1]),digits=2),nsmall=0)),
+                  (format(round(sum(mm_q7$coefficients[1]),digits=2),nsmall=0)),
+                  (format(round(sum(mm_q8$coefficients[1]),digits=2),nsmall=0))),
+                c((format(round(semq1[1],digits=2),nsmall=0)),
+                  (format(round(semq2[1],digits=2),nsmall=0)),
+                  (format(round(semq3[1],digits=2),nsmall=0)),
+                  (format(round(semq4[1],digits=2),nsmall=0)),
+                  (format(round(semq5[1],digits=2),nsmall=0)),
+                  (format(round(semq6[1],digits=2),nsmall=0)),
+                  (format(round(semq7[1],digits=2),nsmall=0)),
+                  (format(round(semq8[1],digits=2),nsmall=0))),
+                c((format(round(summary(mm_q1)$coefficients[1,4],digits=2),nsmall=0)),
+                  (format(round(summary(mm_q2)$coefficients[1,4],digits=2),nsmall=0)),
+                  (format(round(summary(mm_q3)$coefficients[1,4],digits=2),nsmall=0)),
+                  (format(round(summary(mm_q4)$coefficients[1,4],digits=2),nsmall=0)),
+                  (format(round(summary(mm_q5)$coefficients[1,4],digits=2),nsmall=0)),
+                  (format(round(summary(mm_q6)$coefficients[1,4],digits=2),nsmall=0)),
+                  (format(round(summary(mm_q7)$coefficients[1,4],digits=2),nsmall=0)),
+                  (format(round(summary(mm_q8)$coefficients[1,4],digits=2),nsmall=0))),
+                
+                c((format(round(sum(mm_q1$coefficients[2]),digits=2),nsmall=0)),
+                  (format(round(sum(mm_q2$coefficients[2]),digits=2),nsmall=0)),
+                  (format(round(sum(mm_q3$coefficients[2]),digits=2),nsmall=0)),
+                  (format(round(sum(mm_q4$coefficients[2]),digits=2),nsmall=0)),
+                  (format(round(sum(mm_q5$coefficients[2]),digits=2),nsmall=0)),
+                  (format(round(sum(mm_q6$coefficients[2]),digits=2),nsmall=0)),
+                  (format(round(sum(mm_q7$coefficients[2]),digits=2),nsmall=0)),
+                  (format(round(sum(mm_q8$coefficients[2]),digits=2),nsmall=0))),
+                c((format(round(semq1[2],digits=2),nsmall=0)),
+                  (format(round(semq2[2],digits=2),nsmall=0)),
+                  (format(round(semq3[2],digits=2),nsmall=0)),
+                  (format(round(semq4[2],digits=2),nsmall=0)),
+                  (format(round(semq5[2],digits=2),nsmall=0)),
+                  (format(round(semq6[2],digits=2),nsmall=0)),
+                  (format(round(semq7[2],digits=2),nsmall=0)),
+                  (format(round(semq8[2],digits=2),nsmall=0))),
+                c((format(round(summary(mm_q1)$coefficients[2,4],digits=2),nsmall=0)),
+                  (format(round(summary(mm_q2)$coefficients[2,4],digits=2),nsmall=0)),
+                  (format(round(summary(mm_q3)$coefficients[2,4],digits=2),nsmall=0)),
+                  (format(round(summary(mm_q4)$coefficients[2,4],digits=2),nsmall=0)),
+                  (format(round(summary(mm_q5)$coefficients[2,4],digits=2),nsmall=0)),
+                  (format(round(summary(mm_q6)$coefficients[2,4],digits=2),nsmall=0)),
+                  (format(round(summary(mm_q7)$coefficients[2,4],digits=2),nsmall=0)),
+                  (format(round(summary(mm_q8)$coefficients[2,4],digits=2),nsmall=0))),
+                
+                c((format(round(summary(mm_q1)$r.squared,digits=4),nsmall=0)),
+                  (format(round(summary(mm_q2)$r.squared,digits=4),nsmall=0)),
+                  (format(round(summary(mm_q3)$r.squared,digits=4),nsmall=0)),
+                  (format(round(summary(mm_q4)$r.squared,digits=4),nsmall=0)),
+                  (format(round(summary(mm_q5)$r.squared,digits=4),nsmall=0)),
+                  (format(round(summary(mm_q6)$r.squared,digits=4),nsmall=0)),
+                  (format(round(summary(mm_q7)$r.squared,digits=4),nsmall=0)),
+                  (format(round(summary(mm_q8)$r.squared,digits=4),nsmall=0))),
+                c((format(round(summary(mm_q1)$adj.r.squared,digits=4),nsmall=0)),
+                  (format(round(summary(mm_q2)$adj.r.squared,digits=4),nsmall=0)),
+                  (format(round(summary(mm_q3)$adj.r.squared,digits=4),nsmall=0)),
+                  (format(round(summary(mm_q4)$adj.r.squared,digits=4),nsmall=0)),
+                  (format(round(summary(mm_q5)$adj.r.squared,digits=4),nsmall=0)),
+                  (format(round(summary(mm_q6)$adj.r.squared,digits=4),nsmall=0)),
+                  (format(round(summary(mm_q7)$adj.r.squared,digits=4),nsmall=0)),
+                  (format(round(summary(mm_q8)$adj.r.squared,digits=4),nsmall=0))),
+                c((format(round(nobs(mm_q1),digits=2),nsmall=0)),
+                  (format(round(nobs(mm_q2),digits=2),nsmall=0)),
+                  (format(round(nobs(mm_q3),digits=2),nsmall=0)),
+                  (format(round(nobs(mm_q4),digits=2),nsmall=0)),
+                  (format(round(nobs(mm_q5),digits=2),nsmall=0)),
+                  (format(round(nobs(mm_q6),digits=2),nsmall=0)),
+                  (format(round(nobs(mm_q7),digits=2),nsmall=0)),
+                  (format(round(nobs(mm_q8),digits=2),nsmall=0)))
+)
+
+
+
+
+#### regressions with FARMER's gender + FARMER characteristics  --- seed related ratings 
+
+mm_q9<- lm(score~farmergen +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8, data = avg_q)
+semq9<- sqrt(diag(vcov(mm_q9)))
+mm_q10<- lm(quality~farmergen +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8, data = avg_q)
+semq10<- sqrt(diag(vcov(mm_q10)))
+mm_q11<- lm(general~farmergen +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8, data = avg_q)
+semq11<- sqrt(diag(vcov(mm_q11)))
+mm_q12<- lm(yield~farmergen +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8, data = avg_q)
+semq12<- sqrt(diag(vcov(mm_q12)))
+mm_q13<- lm(drought_resistent~farmergen +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8, data = avg_q)
+semq13<- sqrt(diag(vcov(mm_q13)))
+mm_q14<- lm(disease_resistent~farmergen +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8, data = avg_q)
+semq14<- sqrt(diag(vcov(mm_q14)))
+mm_q15<- lm(early_maturing~farmergen +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8, data = avg_q)
+semq15<- sqrt(diag(vcov(mm_q15)))
+mm_q16<- lm(germination~farmergen +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8, data = avg_q)
+semq16<- sqrt(diag(vcov(mm_q16)))
+
+s_deal6<- rbind(c((format(round(sum(mm_q9$coefficients[1]),digits=4),nsmall=0)),
+                  (format(round(sum(mm_q10$coefficients[1]),digits=4),nsmall=0)),
+                  (format(round(sum(mm_q11$coefficients[1]),digits=4),nsmall=0)),
+                  (format(round(sum(mm_q12$coefficients[1]),digits=4),nsmall=0)),
+                  (format(round(sum(mm_q13$coefficients[1]),digits=4),nsmall=0)),
+                  (format(round(sum(mm_q14$coefficients[1]),digits=4),nsmall=0)),
+                  (format(round(sum(mm_q15$coefficients[1]),digits=4),nsmall=0)),
+                  (format(round(sum(mm_q16$coefficients[1]),digits=4),nsmall=0))),
+                c((format(round(semq9[1],digits=4),nsmall=0)),
+                  (format(round(semq10[1],digits=4),nsmall=0)),
+                  (format(round(semq11[1],digits=4),nsmall=0)),
+                  (format(round(semq12[1],digits=4),nsmall=0)),
+                  (format(round(semq13[1],digits=4),nsmall=0)),
+                  (format(round(semq14[1],digits=4),nsmall=0)),
+                  (format(round(semq15[1],digits=4),nsmall=0)),
+                  (format(round(semq16[1],digits=4),nsmall=0))),
+                c((format(round(summary(mm_q9)$coefficients[1,4],digits=4),nsmall=0)),
+                  (format(round(summary(mm_q10)$coefficients[1,4],digits=4),nsmall=0)),
+                  (format(round(summary(mm_q11)$coefficients[1,4],digits=4),nsmall=0)),
+                  (format(round(summary(mm_q12)$coefficients[1,4],digits=4),nsmall=0)),
+                  (format(round(summary(mm_q13)$coefficients[1,4],digits=4),nsmall=0)),
+                  (format(round(summary(mm_q14)$coefficients[1,4],digits=4),nsmall=0)),
+                  (format(round(summary(mm_q15)$coefficients[1,4],digits=4),nsmall=0)),
+                  (format(round(summary(mm_q16)$coefficients[1,4],digits=4),nsmall=0))),
+                
+                c((format(round(sum(mm_q9$coefficients[2]),digits=4),nsmall=0)),
+                  (format(round(sum(mm_q10$coefficients[2]),digits=4),nsmall=0)),
+                  (format(round(sum(mm_q11$coefficients[2]),digits=4),nsmall=0)),
+                  (format(round(sum(mm_q12$coefficients[2]),digits=4),nsmall=0)),
+                  (format(round(sum(mm_q13$coefficients[2]),digits=4),nsmall=0)),
+                  (format(round(sum(mm_q14$coefficients[2]),digits=4),nsmall=0)),
+                  (format(round(sum(mm_q15$coefficients[2]),digits=4),nsmall=0)),
+                  (format(round(sum(mm_q16$coefficients[2]),digits=4),nsmall=0))),
+                c((format(round(semq9[2],digits=4),nsmall=0)),
+                  (format(round(semq10[2],digits=4),nsmall=0)),
+                  (format(round(semq11[2],digits=4),nsmall=0)),
+                  (format(round(semq12[2],digits=4),nsmall=0)),
+                  (format(round(semq13[2],digits=4),nsmall=0)),
+                  (format(round(semq14[2],digits=4),nsmall=0)),
+                  (format(round(semq15[2],digits=4),nsmall=0)),
+                  (format(round(semq16[2],digits=4),nsmall=0))),
+                c((format(round(summary(mm_q9)$coefficients[2,4],digits=4),nsmall=0)),
+                  (format(round(summary(mm_q10)$coefficients[2,4],digits=4),nsmall=0)),
+                  (format(round(summary(mm_q11)$coefficients[2,4],digits=4),nsmall=0)),
+                  (format(round(summary(mm_q12)$coefficients[2,4],digits=4),nsmall=0)),
+                  (format(round(summary(mm_q13)$coefficients[2,4],digits=4),nsmall=0)),
+                  (format(round(summary(mm_q14)$coefficients[2,4],digits=4),nsmall=0)),
+                  (format(round(summary(mm_q15)$coefficients[2,4],digits=4),nsmall=0)),
+                  (format(round(summary(mm_q16)$coefficients[2,4],digits=4),nsmall=0))),
+                
+                c((format(round(sum(mm_q9$coefficients[3]),digits=4),nsmall=0)),
+                  (format(round(sum(mm_q10$coefficients[3]),digits=4),nsmall=0)),
+                  (format(round(sum(mm_q11$coefficients[3]),digits=4),nsmall=0)),
+                  (format(round(sum(mm_q12$coefficients[3]),digits=4),nsmall=0)),
+                  (format(round(sum(mm_q13$coefficients[3]),digits=4),nsmall=0)),
+                  (format(round(sum(mm_q14$coefficients[3]),digits=4),nsmall=0)),
+                  (format(round(sum(mm_q15$coefficients[3]),digits=4),nsmall=0)),
+                  (format(round(sum(mm_q16$coefficients[3]),digits=4),nsmall=0))),
+                c((format(round(semq9[3],digits=4),nsmall=0)),
+                  (format(round(semq10[3],digits=4),nsmall=0)),
+                  (format(round(semq11[3],digits=4),nsmall=0)),
+                  (format(round(semq12[3],digits=4),nsmall=0)),
+                  (format(round(semq13[3],digits=4),nsmall=0)),
+                  (format(round(semq14[3],digits=4),nsmall=0)),
+                  (format(round(semq15[3],digits=4),nsmall=0)),
+                  (format(round(semq16[3],digits=4),nsmall=0))),
+                c((format(round(summary(mm_q9)$coefficients[3,4],digits=4),nsmall=0)),
+                  (format(round(summary(mm_q10)$coefficients[3,4],digits=4),nsmall=0)),
+                  (format(round(summary(mm_q11)$coefficients[3,4],digits=4),nsmall=0)),
+                  (format(round(summary(mm_q12)$coefficients[3,4],digits=4),nsmall=0)),
+                  (format(round(summary(mm_q13)$coefficients[3,4],digits=4),nsmall=0)),
+                  (format(round(summary(mm_q14)$coefficients[3,4],digits=4),nsmall=0)),
+                  (format(round(summary(mm_q15)$coefficients[3,4],digits=4),nsmall=0)),
+                  (format(round(summary(mm_q16)$coefficients[3,4],digits=4),nsmall=0))),
+                
+                c((format(round(sum(mm_q9$coefficients[4]),digits=4),nsmall=0)),
+                  (format(round(sum(mm_q10$coefficients[4]),digits=4),nsmall=0)),
+                  (format(round(sum(mm_q11$coefficients[4]),digits=4),nsmall=0)),
+                  (format(round(sum(mm_q12$coefficients[4]),digits=4),nsmall=0)),
+                  (format(round(sum(mm_q13$coefficients[4]),digits=4),nsmall=0)),
+                  (format(round(sum(mm_q14$coefficients[4]),digits=4),nsmall=0)),
+                  (format(round(sum(mm_q15$coefficients[4]),digits=4),nsmall=0)),
+                  (format(round(sum(mm_q16$coefficients[4]),digits=4),nsmall=0))),
+                c((format(round(semq9[4],digits=4),nsmall=0)),
+                  (format(round(semq10[4],digits=4),nsmall=0)),
+                  (format(round(semq11[4],digits=4),nsmall=0)),
+                  (format(round(semq12[4],digits=4),nsmall=0)),
+                  (format(round(semq13[4],digits=4),nsmall=0)),
+                  (format(round(semq14[4],digits=4),nsmall=0)),
+                  (format(round(semq15[4],digits=4),nsmall=0)),
+                  (format(round(semq16[4],digits=4),nsmall=0))),
+                c((format(round(summary(mm_q9)$coefficients[4,4],digits=4),nsmall=0)),
+                  (format(round(summary(mm_q10)$coefficients[4,4],digits=4),nsmall=0)),
+                  (format(round(summary(mm_q11)$coefficients[4,4],digits=4),nsmall=0)),
+                  (format(round(summary(mm_q12)$coefficients[4,4],digits=4),nsmall=0)),
+                  (format(round(summary(mm_q13)$coefficients[4,4],digits=4),nsmall=0)),
+                  (format(round(summary(mm_q14)$coefficients[4,4],digits=4),nsmall=0)),
+                  (format(round(summary(mm_q15)$coefficients[4,4],digits=4),nsmall=0)),
+                  (format(round(summary(mm_q16)$coefficients[4,4],digits=4),nsmall=0))),
+                
+                c((format(round(sum(mm_q9$coefficients[5]),digits=4),nsmall=0)),
+                  (format(round(sum(mm_q10$coefficients[5]),digits=4),nsmall=0)),
+                  (format(round(sum(mm_q11$coefficients[5]),digits=4),nsmall=0)),
+                  (format(round(sum(mm_q12$coefficients[5]),digits=4),nsmall=0)),
+                  (format(round(sum(mm_q13$coefficients[5]),digits=4),nsmall=0)),
+                  (format(round(sum(mm_q14$coefficients[5]),digits=4),nsmall=0)),
+                  (format(round(sum(mm_q15$coefficients[5]),digits=4),nsmall=0)),
+                  (format(round(sum(mm_q16$coefficients[5]),digits=4),nsmall=0))),
+                c((format(round(semq9[5],digits=4),nsmall=0)),
+                  (format(round(semq10[5],digits=4),nsmall=0)),
+                  (format(round(semq11[5],digits=4),nsmall=0)),
+                  (format(round(semq12[5],digits=4),nsmall=0)),
+                  (format(round(semq13[5],digits=4),nsmall=0)),
+                  (format(round(semq14[5],digits=4),nsmall=0)),
+                  (format(round(semq15[5],digits=4),nsmall=0)),
+                  (format(round(semq16[5],digits=4),nsmall=0))),
+                c((format(round(summary(mm_q9)$coefficients[5,4],digits=4),nsmall=0)),
+                  (format(round(summary(mm_q10)$coefficients[5,4],digits=4),nsmall=0)),
+                  (format(round(summary(mm_q11)$coefficients[5,4],digits=4),nsmall=0)),
+                  (format(round(summary(mm_q12)$coefficients[5,4],digits=4),nsmall=0)),
+                  (format(round(summary(mm_q13)$coefficients[5,4],digits=4),nsmall=0)),
+                  (format(round(summary(mm_q14)$coefficients[5,4],digits=4),nsmall=0)),
+                  (format(round(summary(mm_q15)$coefficients[5,4],digits=4),nsmall=0)),
+                  (format(round(summary(mm_q16)$coefficients[5,4],digits=4),nsmall=0))),
+                
+                c((format(round(sum(mm_q9$coefficients[6]),digits=4),nsmall=0)),
+                  (format(round(sum(mm_q10$coefficients[6]),digits=4),nsmall=0)),
+                  (format(round(sum(mm_q11$coefficients[6]),digits=4),nsmall=0)),
+                  (format(round(sum(mm_q12$coefficients[6]),digits=4),nsmall=0)),
+                  (format(round(sum(mm_q13$coefficients[6]),digits=4),nsmall=0)),
+                  (format(round(sum(mm_q14$coefficients[6]),digits=4),nsmall=0)),
+                  (format(round(sum(mm_q15$coefficients[6]),digits=4),nsmall=0)),
+                  (format(round(sum(mm_q16$coefficients[6]),digits=4),nsmall=0))),
+                c((format(round(semq9[6],digits=4),nsmall=0)),
+                  (format(round(semq10[6],digits=4),nsmall=0)),
+                  (format(round(semq11[6],digits=4),nsmall=0)),
+                  (format(round(semq12[6],digits=4),nsmall=0)),
+                  (format(round(semq13[6],digits=4),nsmall=0)),
+                  (format(round(semq14[6],digits=4),nsmall=0)),
+                  (format(round(semq15[6],digits=4),nsmall=0)),
+                  (format(round(semq16[6],digits=4),nsmall=0))),
+                c((format(round(summary(mm_q9)$coefficients[6,4],digits=4),nsmall=0)),
+                  (format(round(summary(mm_q10)$coefficients[6,4],digits=4),nsmall=0)),
+                  (format(round(summary(mm_q11)$coefficients[6,4],digits=4),nsmall=0)),
+                  (format(round(summary(mm_q12)$coefficients[6,4],digits=4),nsmall=0)),
+                  (format(round(summary(mm_q13)$coefficients[6,4],digits=4),nsmall=0)),
+                  (format(round(summary(mm_q14)$coefficients[6,4],digits=4),nsmall=0)),
+                  (format(round(summary(mm_q15)$coefficients[6,4],digits=4),nsmall=0)),
+                  (format(round(summary(mm_q16)$coefficients[6,4],digits=4),nsmall=0))),
+                
+                
+                c((format(round(summary(mm_q9)$r.squared,digits=4),nsmall=0)),
+                  (format(round(summary(mm_q10)$r.squared,digits=4),nsmall=0)),
+                  (format(round(summary(mm_q11)$r.squared,digits=4),nsmall=0)),
+                  (format(round(summary(mm_q12)$r.squared,digits=4),nsmall=0)),
+                  (format(round(summary(mm_q13)$r.squared,digits=4),nsmall=0)),
+                  (format(round(summary(mm_q14)$r.squared,digits=4),nsmall=0)),
+                  (format(round(summary(mm_q15)$r.squared,digits=4),nsmall=0)),
+                  (format(round(summary(mm_q16)$r.squared,digits=4),nsmall=0))),
+                c((format(round(summary(mm_q9)$adj.r.squared,digits=4),nsmall=0)),
+                  (format(round(summary(mm_q10)$adj.r.squared,digits=4),nsmall=0)),
+                  (format(round(summary(mm_q11)$adj.r.squared,digits=4),nsmall=0)),
+                  (format(round(summary(mm_q12)$adj.r.squared,digits=4),nsmall=0)),
+                  (format(round(summary(mm_q13)$adj.r.squared,digits=4),nsmall=0)),
+                  (format(round(summary(mm_q14)$adj.r.squared,digits=4),nsmall=0)),
+                  (format(round(summary(mm_q15)$adj.r.squared,digits=4),nsmall=0)),
+                  (format(round(summary(mm_q16)$adj.r.squared,digits=4),nsmall=0))),
+                c((format(round(nobs(mm_q9),digits=2),nsmall=0)),
+                  (format(round(nobs(mm_q10),digits=2),nsmall=0)),
+                  (format(round(nobs(mm_q11),digits=2),nsmall=0)),
+                  (format(round(nobs(mm_q12),digits=2),nsmall=0)),
+                  (format(round(nobs(mm_q13),digits=2),nsmall=0)),
+                  (format(round(nobs(mm_q14),digits=2),nsmall=0)),
+                  (format(round(nobs(mm_q15),digits=2),nsmall=0)),
+                  (format(round(nobs(mm_q16),digits=2),nsmall=0)))
+)
+
+
+
+#### NON-SEED RELATED RATINGS ####
+
+#### regressions without controls - non-seed related ratings 
+
+mn_q1 <- lm(overall_rating~farmergen , data =avg_q)
+senm1<- sqrt(diag(vcov(mn_q1)))
+mn_q2 <- lm(general_rating_nonseed~farmergen , data =avg_q)
+senm2<- sqrt(diag(vcov(mn_q2)))
+mn_q3 <- lm(location~farmergen , data =avg_q)
+senm3<- sqrt(diag(vcov(mn_q3)))
+mn_q4 <- lm(price~farmergen , data =avg_q)
+senm4<- sqrt(diag(vcov(mn_q4)))
+mn_q5 <- lm(quality~farmergen , data =avg_q)
+senm5<- sqrt(diag(vcov(mn_q5)))
+mn_q6 <- lm(stock~farmergen , data =avg_q)
+senm6<- sqrt(diag(vcov(mn_q6)))
+mn_q7 <- lm(reputation~farmergen , data =avg_q)
+senm7<- sqrt(diag(vcov(mn_q7)))
+
+
+s_deal7<- rbind(c((format(round(sum(mn_q1$coefficients[1]),digits=2),nsmall=0)),
+                  (format(round(sum(mn_q2$coefficients[1]),digits=2),nsmall=0)),
+                  (format(round(sum(mn_q3$coefficients[1]),digits=2),nsmall=0)),
+                  (format(round(sum(mn_q4$coefficients[1]),digits=2),nsmall=0)),
+                  (format(round(sum(mn_q5$coefficients[1]),digits=2),nsmall=0)),
+                  (format(round(sum(mn_q6$coefficients[1]),digits=2),nsmall=0)),
+                  (format(round(sum(mn_q7$coefficients[1]),digits=2),nsmall=0))),
+                c((format(round(senm1[1],digits=2),nsmall=0)),
+                  (format(round(senm2[1],digits=2),nsmall=0)),
+                  (format(round(senm3[1],digits=2),nsmall=0)),
+                  (format(round(senm4[1],digits=2),nsmall=0)),
+                  (format(round(senm5[1],digits=2),nsmall=0)),
+                  (format(round(senm6[1],digits=2),nsmall=0)),
+                  (format(round(senm7[1],digits=2),nsmall=0))),
+                c((format(round(summary(mn_q1)$coefficients[1,4],digits=2),nsmall=0)),
+                  (format(round(summary(mn_q2)$coefficients[1,4],digits=2),nsmall=0)),
+                  (format(round(summary(mn_q3)$coefficients[1,4],digits=2),nsmall=0)),
+                  (format(round(summary(mn_q4)$coefficients[1,4],digits=2),nsmall=0)),
+                  (format(round(summary(mn_q5)$coefficients[1,4],digits=2),nsmall=0)),
+                  (format(round(summary(mn_q6)$coefficients[1,4],digits=2),nsmall=0)),
+                  (format(round(summary(mn_q7)$coefficients[1,4],digits=2),nsmall=0))),
+                
+                c((format(round(sum(mn_q1$coefficients[2]),digits=2),nsmall=0)),
+                  (format(round(sum(mn_q2$coefficients[2]),digits=2),nsmall=0)),
+                  (format(round(sum(mn_q3$coefficients[2]),digits=2),nsmall=0)),
+                  (format(round(sum(mn_q4$coefficients[2]),digits=2),nsmall=0)),
+                  (format(round(sum(mn_q5$coefficients[2]),digits=2),nsmall=0)),
+                  (format(round(sum(mn_q6$coefficients[2]),digits=2),nsmall=0)),
+                  (format(round(sum(mn_q7$coefficients[2]),digits=2),nsmall=0))),
+                c((format(round(senm1[2],digits=2),nsmall=0)),
+                  (format(round(senm2[2],digits=2),nsmall=0)),
+                  (format(round(senm3[2],digits=2),nsmall=0)),
+                  (format(round(senm4[2],digits=2),nsmall=0)),
+                  (format(round(senm5[2],digits=2),nsmall=0)),
+                  (format(round(senm6[2],digits=2),nsmall=0)),
+                  (format(round(senm7[2],digits=2),nsmall=0))),
+                c((format(round(summary(mn_q1)$coefficients[2,4],digits=2),nsmall=0)),
+                  (format(round(summary(mn_q2)$coefficients[2,4],digits=2),nsmall=0)),
+                  (format(round(summary(mn_q3)$coefficients[2,4],digits=2),nsmall=0)),
+                  (format(round(summary(mn_q4)$coefficients[2,4],digits=2),nsmall=0)),
+                  (format(round(summary(mn_q5)$coefficients[2,4],digits=2),nsmall=0)),
+                  (format(round(summary(mn_q6)$coefficients[2,4],digits=2),nsmall=0)),
+                  (format(round(summary(mn_q7)$coefficients[2,4],digits=2),nsmall=0))),
+                
+                c((format(round(summary(mn_q1)$r.squared,digits=4),nsmall=0)),
+                  (format(round(summary(mn_q2)$r.squared,digits=4),nsmall=0)),
+                  (format(round(summary(mn_q3)$r.squared,digits=4),nsmall=0)),
+                  (format(round(summary(mn_q4)$r.squared,digits=4),nsmall=0)),
+                  (format(round(summary(mn_q5)$r.squared,digits=4),nsmall=0)),
+                  (format(round(summary(mn_q6)$r.squared,digits=4),nsmall=0)),
+                  (format(round(summary(mn_q7)$r.squared,digits=4),nsmall=0))),
+                c((format(round(summary(mn_q1)$adj.r.squared,digits=4),nsmall=0)),
+                  (format(round(summary(mn_q2)$adj.r.squared,digits=4),nsmall=0)),
+                  (format(round(summary(mn_q3)$adj.r.squared,digits=4),nsmall=0)),
+                  (format(round(summary(mn_q4)$adj.r.squared,digits=4),nsmall=0)),
+                  (format(round(summary(mn_q5)$adj.r.squared,digits=4),nsmall=0)),
+                  (format(round(summary(mn_q6)$adj.r.squared,digits=4),nsmall=0)),
+                  (format(round(summary(mn_q7)$adj.r.squared,digits=4),nsmall=0))),
+                c((format(round(nobs(mn_q1),digits=2),nsmall=0)),
+                  (format(round(nobs(mn_q2),digits=2),nsmall=0)),
+                  (format(round(nobs(mn_q3),digits=2),nsmall=0)),
+                  (format(round(nobs(mn_q4),digits=2),nsmall=0)),
+                  (format(round(nobs(mn_q5),digits=2),nsmall=0)),
+                  (format(round(nobs(mn_q6),digits=2),nsmall=0)),
+                  (format(round(nobs(mn_q7),digits=2),nsmall=0)))
+)
+
+
+#### regressions with controls - non-seed related ratings 
+
+
+mn_q8 <- lm(overall_rating~farmergen+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8 , data =avg_q)
+senm8<- sqrt(diag(vcov(mn_q8)))
+mn_q9 <- lm(general_rating_nonseed~farmergen +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8, data =avg_q)
+senm9<- sqrt(diag(vcov(mn_q9)))
+mn_q10 <- lm(location~farmergen +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8, data =avg_q)
+senm10<- sqrt(diag(vcov(mn_q10)))
+mn_q11 <- lm(price~farmergen +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8, data =avg_q)
+senm11<- sqrt(diag(vcov(mn_q11)))
+mn_q12 <- lm(quality~farmergen+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8 , data =avg_q)
+senm12<- sqrt(diag(vcov(mn_q12)))
+mn_q13 <- lm(stock~farmergen +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8, data =avg_q)
+senm13<- sqrt(diag(vcov(mn_q13)))
+mn_q14 <- lm(reputation~farmergen +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8, data =avg_q)
+senm14<- sqrt(diag(vcov(mn_q14)))
+
+s_deal8<- rbind(c((format(round(sum(mn_q8$coefficients[1]),digits=4),nsmall=0)),
+                  (format(round(sum(mn_q9$coefficients[1]),digits=4),nsmall=0)),
+                  (format(round(sum(mn_q10$coefficients[1]),digits=4),nsmall=0)),
+                  (format(round(sum(mn_q11$coefficients[1]),digits=4),nsmall=0)),
+                  (format(round(sum(mn_q12$coefficients[1]),digits=4),nsmall=0)),
+                  (format(round(sum(mn_q13$coefficients[1]),digits=4),nsmall=0)),
+                  (format(round(sum(mn_q14$coefficients[1]),digits=4),nsmall=0))),
+                c((format(round(senm8[1],digits=4),nsmall=0)),
+                  (format(round(senm9[1],digits=4),nsmall=0)),
+                  (format(round(senm10[1],digits=4),nsmall=0)),
+                  (format(round(senm11[1],digits=4),nsmall=0)),
+                  (format(round(senm12[1],digits=4),nsmall=0)),
+                  (format(round(senm13[1],digits=4),nsmall=0)),
+                  (format(round(senm14[1],digits=4),nsmall=0))),
+                c((format(round(summary(mn_q8)$coefficients[1,4],digits=4),nsmall=0)),
+                  (format(round(summary(mn_q9)$coefficients[1,4],digits=4),nsmall=0)),
+                  (format(round(summary(mn_q10)$coefficients[1,4],digits=4),nsmall=0)),
+                  (format(round(summary(mn_q11)$coefficients[1,4],digits=4),nsmall=0)),
+                  (format(round(summary(mn_q12)$coefficients[1,4],digits=4),nsmall=0)),
+                  (format(round(summary(mn_q13)$coefficients[1,4],digits=4),nsmall=0)),
+                  (format(round(summary(mn_q14)$coefficients[1,4],digits=4),nsmall=0))),
+                
+                c((format(round(sum(mn_q8$coefficients[2]),digits=4),nsmall=0)),
+                  (format(round(sum(mn_q9$coefficients[2]),digits=4),nsmall=0)),
+                  (format(round(sum(mn_q10$coefficients[2]),digits=4),nsmall=0)),
+                  (format(round(sum(mn_q11$coefficients[2]),digits=4),nsmall=0)),
+                  (format(round(sum(mn_q12$coefficients[2]),digits=4),nsmall=0)),
+                  (format(round(sum(mn_q13$coefficients[2]),digits=4),nsmall=0)),
+                  (format(round(sum(mn_q14$coefficients[2]),digits=4),nsmall=0))),
+                c((format(round(senm8[2],digits=4),nsmall=0)),
+                  (format(round(senm9[2],digits=4),nsmall=0)),
+                  (format(round(senm10[2],digits=4),nsmall=0)),
+                  (format(round(senm11[2],digits=4),nsmall=0)),
+                  (format(round(senm12[2],digits=4),nsmall=0)),
+                  (format(round(senm13[2],digits=4),nsmall=0)),
+                  (format(round(senm14[2],digits=4),nsmall=0))),
+                c((format(round(summary(mn_q8)$coefficients[2,4],digits=4),nsmall=0)),
+                  (format(round(summary(mn_q9)$coefficients[2,4],digits=4),nsmall=0)),
+                  (format(round(summary(mn_q10)$coefficients[2,4],digits=4),nsmall=0)),
+                  (format(round(summary(mn_q11)$coefficients[2,4],digits=4),nsmall=0)),
+                  (format(round(summary(mn_q12)$coefficients[2,4],digits=4),nsmall=0)),
+                  (format(round(summary(mn_q13)$coefficients[2,4],digits=4),nsmall=0)),
+                  (format(round(summary(mn_q14)$coefficients[2,4],digits=4),nsmall=0))),
+                
+                c((format(round(sum(mn_q8$coefficients[3]),digits=4),nsmall=0)),
+                  (format(round(sum(mn_q9$coefficients[3]),digits=4),nsmall=0)),
+                  (format(round(sum(mn_q10$coefficients[3]),digits=4),nsmall=0)),
+                  (format(round(sum(mn_q11$coefficients[3]),digits=4),nsmall=0)),
+                  (format(round(sum(mn_q12$coefficients[3]),digits=4),nsmall=0)),
+                  (format(round(sum(mn_q13$coefficients[3]),digits=4),nsmall=0)),
+                  (format(round(sum(mn_q14$coefficients[3]),digits=4),nsmall=0))),
+                c((format(round(senm8[3],digits=4),nsmall=0)),
+                  (format(round(senm9[3],digits=4),nsmall=0)),
+                  (format(round(senm10[3],digits=4),nsmall=0)),
+                  (format(round(senm11[3],digits=4),nsmall=0)),
+                  (format(round(senm12[3],digits=4),nsmall=0)),
+                  (format(round(senm13[3],digits=4),nsmall=0)),
+                  (format(round(senm14[3],digits=4),nsmall=0))),
+                c((format(round(summary(mn_q8)$coefficients[3,4],digits=4),nsmall=0)),
+                  (format(round(summary(mn_q9)$coefficients[3,4],digits=4),nsmall=0)),
+                  (format(round(summary(mn_q10)$coefficients[3,4],digits=4),nsmall=0)),
+                  (format(round(summary(mn_q11)$coefficients[3,4],digits=4),nsmall=0)),
+                  (format(round(summary(mn_q12)$coefficients[3,4],digits=4),nsmall=0)),
+                  (format(round(summary(mn_q13)$coefficients[3,4],digits=4),nsmall=0)),
+                  (format(round(summary(mn_q14)$coefficients[3,4],digits=4),nsmall=0))),
+                
+                c((format(round(sum(mn_q8$coefficients[4]),digits=4),nsmall=0)),
+                  (format(round(sum(mn_q9$coefficients[4]),digits=4),nsmall=0)),
+                  (format(round(sum(mn_q10$coefficients[4]),digits=4),nsmall=0)),
+                  (format(round(sum(mn_q11$coefficients[4]),digits=4),nsmall=0)),
+                  (format(round(sum(mn_q12$coefficients[4]),digits=4),nsmall=0)),
+                  (format(round(sum(mn_q13$coefficients[4]),digits=4),nsmall=0)),
+                  (format(round(sum(mn_q14$coefficients[4]),digits=4),nsmall=0))),
+                c((format(round(senm8[4],digits=4),nsmall=0)),
+                  (format(round(senm9[4],digits=4),nsmall=0)),
+                  (format(round(senm10[4],digits=4),nsmall=0)),
+                  (format(round(senm11[4],digits=4),nsmall=0)),
+                  (format(round(senm12[4],digits=4),nsmall=0)),
+                  (format(round(senm13[4],digits=4),nsmall=0)),
+                  (format(round(senm14[4],digits=4),nsmall=0))),
+                c((format(round(summary(mn_q8)$coefficients[4,4],digits=4),nsmall=0)),
+                  (format(round(summary(mn_q9)$coefficients[4,4],digits=4),nsmall=0)),
+                  (format(round(summary(mn_q10)$coefficients[4,4],digits=4),nsmall=0)),
+                  (format(round(summary(mn_q11)$coefficients[4,4],digits=4),nsmall=0)),
+                  (format(round(summary(mn_q12)$coefficients[4,4],digits=4),nsmall=0)),
+                  (format(round(summary(mn_q13)$coefficients[4,4],digits=4),nsmall=0)),
+                  (format(round(summary(mn_q14)$coefficients[4,4],digits=4),nsmall=0))),
+                
+                c((format(round(sum(mn_q8$coefficients[5]),digits=4),nsmall=0)),
+                  (format(round(sum(mn_q9$coefficients[5]),digits=4),nsmall=0)),
+                  (format(round(sum(mn_q10$coefficients[5]),digits=4),nsmall=0)),
+                  (format(round(sum(mn_q11$coefficients[5]),digits=4),nsmall=0)),
+                  (format(round(sum(mn_q12$coefficients[5]),digits=4),nsmall=0)),
+                  (format(round(sum(mn_q13$coefficients[5]),digits=4),nsmall=0)),
+                  (format(round(sum(mn_q14$coefficients[5]),digits=4),nsmall=0))),
+                c((format(round(senm8[5],digits=4),nsmall=0)),
+                  (format(round(senm9[5],digits=4),nsmall=0)),
+                  (format(round(senm10[5],digits=4),nsmall=0)),
+                  (format(round(senm11[5],digits=4),nsmall=0)),
+                  (format(round(senm12[5],digits=4),nsmall=0)),
+                  (format(round(senm13[5],digits=4),nsmall=0)),
+                  (format(round(senm14[5],digits=4),nsmall=0))),
+                c((format(round(summary(mn_q8)$coefficients[5,4],digits=4),nsmall=0)),
+                  (format(round(summary(mn_q9)$coefficients[5,4],digits=4),nsmall=0)),
+                  (format(round(summary(mn_q10)$coefficients[5,4],digits=4),nsmall=0)),
+                  (format(round(summary(mn_q11)$coefficients[5,4],digits=4),nsmall=0)),
+                  (format(round(summary(mn_q12)$coefficients[5,4],digits=4),nsmall=0)),
+                  (format(round(summary(mn_q13)$coefficients[5,4],digits=4),nsmall=0)),
+                  (format(round(summary(mn_q14)$coefficients[5,4],digits=4),nsmall=0))),
+                
+                c((format(round(sum(mn_q8$coefficients[6]),digits=4),nsmall=0)),
+                  (format(round(sum(mn_q9$coefficients[6]),digits=4),nsmall=0)),
+                  (format(round(sum(mn_q10$coefficients[6]),digits=4),nsmall=0)),
+                  (format(round(sum(mn_q11$coefficients[6]),digits=4),nsmall=0)),
+                  (format(round(sum(mn_q12$coefficients[6]),digits=4),nsmall=0)),
+                  (format(round(sum(mn_q13$coefficients[6]),digits=4),nsmall=0)),
+                  (format(round(sum(mn_q14$coefficients[6]),digits=4),nsmall=0))),
+                c((format(round(senm8[6],digits=4),nsmall=0)),
+                  (format(round(senm9[6],digits=4),nsmall=0)),
+                  (format(round(senm10[6],digits=4),nsmall=0)),
+                  (format(round(senm11[6],digits=4),nsmall=0)),
+                  (format(round(senm12[6],digits=4),nsmall=0)),
+                  (format(round(senm13[6],digits=4),nsmall=0)),
+                  (format(round(senm14[6],digits=4),nsmall=0))),
+                c((format(round(summary(mn_q8)$coefficients[6,4],digits=4),nsmall=0)),
+                  (format(round(summary(mn_q9)$coefficients[6,4],digits=4),nsmall=0)),
+                  (format(round(summary(mn_q10)$coefficients[6,4],digits=4),nsmall=0)),
+                  (format(round(summary(mn_q11)$coefficients[6,4],digits=4),nsmall=0)),
+                  (format(round(summary(mn_q12)$coefficients[6,4],digits=4),nsmall=0)),
+                  (format(round(summary(mn_q13)$coefficients[6,4],digits=4),nsmall=0)),
+                  (format(round(summary(mn_q14)$coefficients[6,4],digits=4),nsmall=0))),
+                
+                
+                c((format(round(summary(mn_q8)$r.squared,digits=4),nsmall=0)),
+                  (format(round(summary(mn_q9)$r.squared,digits=4),nsmall=0)),
+                  (format(round(summary(mn_q10)$r.squared,digits=4),nsmall=0)),
+                  (format(round(summary(mn_q11)$r.squared,digits=4),nsmall=0)),
+                  (format(round(summary(mn_q12)$r.squared,digits=4),nsmall=0)),
+                  (format(round(summary(mn_q13)$r.squared,digits=4),nsmall=0)),
+                  (format(round(summary(mn_q14)$r.squared,digits=4),nsmall=0))),
+                c((format(round(summary(mn_q8)$adj.r.squared,digits=4),nsmall=0)),
+                  (format(round(summary(mn_q9)$adj.r.squared,digits=4),nsmall=0)),
+                  (format(round(summary(mn_q10)$adj.r.squared,digits=4),nsmall=0)),
+                  (format(round(summary(mn_q11)$adj.r.squared,digits=4),nsmall=0)),
+                  (format(round(summary(mn_q12)$adj.r.squared,digits=4),nsmall=0)),
+                  (format(round(summary(mn_q13)$adj.r.squared,digits=4),nsmall=0)),
+                  (format(round(summary(mn_q14)$adj.r.squared,digits=4),nsmall=0))),
+                c((format(round(nobs(mn_q8),digits=2),nsmall=0)),
+                  (format(round(nobs(mn_q9),digits=2),nsmall=0)),
+                  (format(round(nobs(mn_q10),digits=2),nsmall=0)),
+                  (format(round(nobs(mn_q11),digits=2),nsmall=0)),
+                  (format(round(nobs(mn_q12),digits=2),nsmall=0)),
+                  (format(round(nobs(mn_q13),digits=2),nsmall=0)),
+                  (format(round(nobs(mn_q14),digits=2),nsmall=0)))
+)
