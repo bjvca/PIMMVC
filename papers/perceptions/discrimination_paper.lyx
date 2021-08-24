@@ -17647,7 +17647,7 @@ Sexpr{s_deal1[2,8]})$
 
 \begin_layout Plain Layout
 
-{Male dealers}   & $
+{Male farmers}   & $
 \backslash
 Sexpr{s_deal1[4,1]}^{
 \backslash
@@ -18114,7 +18114,7 @@ Sexpr{s_deal2[2,8]})$
 
 \begin_layout Plain Layout
 
-{Male dealers}   & $
+{Male farmers}   & $
 \backslash
 Sexpr{s_deal2[4,1]}^{
 \backslash
@@ -20844,7 +20844,7 @@ Sexpr{s_deal3[2,7]})$
 
 \begin_layout Plain Layout
 
-{Male dealers}   & $
+{Male farmers}   & $
 \backslash
 Sexpr{s_deal3[4,1]}^{
 \backslash
@@ -21274,7 +21274,7 @@ Sexpr{s_deal4[2,7]})$
 
 \begin_layout Plain Layout
 
-{Male dealers}   & $
+{Male farmers}   & $
 \backslash
 Sexpr{s_deal4[4,1]}^{
 \backslash
@@ -23490,7 +23490,7 @@ Note: Here, the genders of the different farmers that each input dealer
 caption{Between dealers model focusing on dealer ratings (control variables
  included, Q2).} 
 \backslash
-label{table:table4} 
+label{table:table16} 
 \end_layout
 
 \begin_layout Plain Layout
