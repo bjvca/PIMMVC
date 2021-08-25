@@ -389,7 +389,7 @@ n against female agro-input dealers.
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 In theory, one could assume that each dealer is rated by all (the same)
@@ -405,7 +405,7 @@ In theory, one could assume that each dealer is rated by all (the same)
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Should we mention: implicit weighting: gives more weight to dealers with
@@ -419,7 +419,7 @@ Should we mention: implicit weighting: gives more weight to dealers with
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Could the significant result that we find in 
@@ -441,6 +441,33 @@ noprefix "false"
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Between dealers model focusing on seed ratings (control variables not included,
+ Q1).
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:q1_betw_dealers_seed_no_controls"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
@@ -451,8 +478,6 @@ status open
 \begin_layout Plain Layout
 
 
-\backslash
-begin{table} 
 \backslash
 scriptsize 
 \backslash
@@ -885,23 +910,17 @@ Note: Here, the gender of the dealer is a dummy variable where 1 is male
  and 0 is female.
  The ratings received by the dealers are averaged at the dealer level.
  
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-caption{Between dealers model focusing on seed ratings (control variables
- not included, Q1).} 
 \backslash
 label{table:table5} 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Plain Layout
 
- 
-\backslash
-end{table}
 \end_layout
 
 \end_inset
@@ -911,7 +930,7 @@ end{table}
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 nobs: 193 shops received the CH treatment, 16 didn't get an Overall rating.
@@ -923,6 +942,32 @@ nobs: 193 shops received the CH treatment, 16 didn't get an Overall rating.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Between dealers model focusing on seed ratings (control variables included,
+ Q1).
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:q1_betw_dealers_seed_controls"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
@@ -933,8 +978,6 @@ status open
 \begin_layout Plain Layout
 
 
-\backslash
-begin{table} 
 \backslash
 scriptsize 
 \backslash
@@ -3252,28 +3295,47 @@ Note: Here, the gender of the dealer is a dummy variable where 1 is male
  and 0 is female.
  The ratings received by the dealers are averaged at the dealer level.
  
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-caption{Between dealers model focusing on seed ratings (control variables
- included, Q1).} 
 \backslash
 label{table:table6} 
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-end{table}
 \end_layout
 
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Between dealers model focusing on dealer ratings (control variables not
+ included, Q1).
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:q1_betw_dealers_dealer_no_controls"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
@@ -3284,8 +3346,6 @@ status open
 \begin_layout Plain Layout
 
 
-\backslash
-begin{table} 
 \backslash
 scriptsize 
 \backslash
@@ -3680,24 +3740,18 @@ tiny
 Note: Here, the gender of the dealer is a dummy variable where 1 is male
  and 0 is female.
  The ratings received by the dealers are averaged at the dealer level.
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-caption{Between dealers model focusing on dealer ratings (control variables
- not included, Q1).} 
+  
 \backslash
 label{table:table7} 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Plain Layout
 
- 
-\backslash
-end{table}
 \end_layout
 
 \end_inset
@@ -3706,6 +3760,36 @@ end{table}
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Between dealers model focusing on dealer ratings (control variables included,
+ Q1).
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:q1_betw_dealers_dealer_controls"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
@@ -3716,8 +3800,6 @@ status open
 \begin_layout Plain Layout
 
 
-\backslash
-begin{table} 
 \backslash
 scriptsize 
 \backslash
@@ -5770,23 +5852,17 @@ Note: Here, the gender of the dealer is a dummy variable where 1 is male
  and 0 is female.
  The ratings received by the dealers are averaged at the dealer level.
  
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-caption{Between dealers model focusing on dealer ratings (control variables
- included, Q1).} 
 \backslash
 label{table:table8} 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Plain Layout
 
- 
-\backslash
-end{table}
 \end_layout
 
 \end_inset
@@ -5899,7 +5975,7 @@ g that remains constant within the farmer, we find a significant positive
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Does this model control for discrimination at farmer level, ie.
@@ -5914,18 +5990,42 @@ s at the dealer level)
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
 
 \begin_layout Plain Layout
 
 \end_layout
 
 \begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Farmer fixed effects model focusing on seed ratings (no controls included,
+ Q1).
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:q1_farmer_FE_seed_no_controls"
+
+\end_inset
 
 
-\backslash
-begin{table} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
 \backslash
 scriptsize 
 \backslash
@@ -6287,24 +6387,18 @@ tiny
 Note: Here, the gender of the input dealer is a dummy variable carrying
  the value of either 0 or 1.
  Fixed effects or within estimation has been used at the farmer level.
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-caption{Farmer fixed effects model focusing on seed ratings (no controls
- included, Q1).} 
+  
 \backslash
 label{table:table9} 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Plain Layout
 
- 
-\backslash
-end{table}
 \end_layout
 
 \end_inset
@@ -6314,7 +6408,7 @@ end{table}
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 nobs: 12,003 in rating_dyads - 10981 NAs.
@@ -6327,18 +6421,42 @@ nobs: 12,003 in rating_dyads - 10981 NAs.
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
 
 \begin_layout Plain Layout
 
 \end_layout
 
 \begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Farmer fixed effects model focusing on seed ratings (control variables included,
+ Q1).
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:q1_farmer_FE_seed_controls"
+
+\end_inset
 
 
-\backslash
-begin{table} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
 \backslash
 scriptsize 
 \backslash
@@ -8585,41 +8703,62 @@ tiny
 Note: Here, the gender of the input dealer is a dummy variable carrying
  the value of either 0 or 1.
  Fixed effects or within estimation has been used at the farmer level.
-  
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-caption{Farmer fixed effects model focusing on seed ratings (control variables
- included, Q1).} 
+   
 \backslash
 label{table:table10} 
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-end{table}
 \end_layout
 
 \end_inset
 
 
-\begin_inset ERT
-status open
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
 
 \begin_layout Plain Layout
 
 \end_layout
 
 \begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Farmer fixed effects model focusing on dealer ratings (control variables
+ not included, Q1).
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:q1_farmer_FE_dealer_no_controls"
+
+\end_inset
 
 
-\backslash
-begin{table} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
 \backslash
 scriptsize 
 \backslash
@@ -8969,40 +9108,62 @@ tiny
 Note: Here, the gender of the input dealer is a dummy variable carrying
  the value of either 0 or 1.
  Fixed effects or within estimation has been used at the farmer level.
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-caption{Farmer fixed effects model focusing on dealer ratings (control variables
- not included, Q1).} 
+   
 \backslash
 label{table:table11} 
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-end{table}
 \end_layout
 
 \end_inset
 
 
-\begin_inset ERT
-status open
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
 
 \begin_layout Plain Layout
 
 \end_layout
 
 \begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Farmer fixed effects model focusing on dealer ratings (control variables
+ included, Q1).
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:q1_farmer_FE_dealer_controls"
+
+\end_inset
 
 
-\backslash
-begin{table} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
 \backslash
 scriptsize 
 \backslash
@@ -10995,23 +11156,17 @@ Note: Here, the gender of the input dealer is a dummy variable carrying
  the value of either 0 or 1.
  Fixed effects or within estimation has been used at the farmer level.
   
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-caption{Farmer fixed effects model focusing on dealer ratings (control variables
- included, Q1).} 
 \backslash
 label{table:table12} 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Plain Layout
 
- 
-\backslash
-end{table}
 \end_layout
 
 \end_inset
@@ -11129,7 +11284,7 @@ In our data, farmers did not rate all dealers, farmers rated only dealers
  that they knew (ie.
  unbalanced panel).
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
 In fact, if the panel was completely balanced (ie.
@@ -11164,7 +11319,7 @@ Hence the degree to which a farmer is exposed to female dealers varies.
  for farmer characteristics like education, marital status, remoteness and
  age
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 I think we should not control for farmer characteristics: Older farmers
@@ -11228,7 +11383,7 @@ noprefix "false"
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 This model requires that the likelihood that a farmer rates a female dealer
@@ -11247,7 +11402,7 @@ This model requires that the likelihood that a farmer rates a female dealer
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Interpretation: number between 0 and 1 –> a 10 % point increase in the share
@@ -11260,18 +11415,42 @@ Interpretation: number between 0 and 1 –> a 10 % point increase in the share
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
 
 \begin_layout Plain Layout
 
 \end_layout
 
 \begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Between farmers model focusing on seed ratings (control variables not included,
+ Q1).
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:q1_betw_farmers_seed_no_controls"
+
+\end_inset
 
 
-\backslash
-begin{table} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
 \backslash
 scriptsize 
 \backslash
@@ -11703,24 +11882,18 @@ tiny
 Note: Here, the genders of the different input dealers that each farmer
  rated have been averaged.
  The ratings given by the farmers also are averaged at the farmer level.
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-caption{Between farmers model focusing on seed ratings (control variables
- not included, Q1).} 
+  
 \backslash
 label{table:table1} 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Plain Layout
 
- 
-\backslash
-end{table}
 \end_layout
 
 \end_inset
@@ -11730,7 +11903,7 @@ end{table}
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 The number of obs.
@@ -11745,18 +11918,42 @@ The number of obs.
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
 
 \begin_layout Plain Layout
 
 \end_layout
 
 \begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Between farmers model focusing on seed ratings (control variables included,
+ Q1).
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:q1_betw_farmers_seed_controls"
+
+\end_inset
 
 
-\backslash
-begin{table} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
 \backslash
 scriptsize 
 \backslash
@@ -14471,40 +14668,61 @@ Note: Here, the genders of the different input dealers that each farmer
  All the dealer characteristics are also averaged accordingly.
  The ratings given by the farmers also are averaged at the farmer level.
  
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-caption{Between farmers model focusing on seed ratings (control variables
- included, Q1).} 
 \backslash
 label{table:table2} 
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-end{table}
 \end_layout
 
 \end_inset
 
 
-\begin_inset ERT
-status open
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
 
 \begin_layout Plain Layout
 
 \end_layout
 
 \begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Between farmers model focusing on dealer ratings (control variables not
+ included, Q1).
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:q1_betw_farmers_dealer_no_controls"
+
+\end_inset
 
 
-\backslash
-begin{table} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
 \backslash
 scriptsize 
 \backslash
@@ -14900,40 +15118,61 @@ Note: Here, the genders of the different input dealers that each farmer
  rated have been averaged.
  The ratings given by the farmers also are averaged at the farmer level.
  
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-caption{Between farmers model focusing on dealer ratings (control variables
- not included, Q1).} 
 \backslash
 label{table:table3} 
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-end{table}
 \end_layout
 
 \end_inset
 
 
-\begin_inset ERT
-status open
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
 
 \begin_layout Plain Layout
 
 \end_layout
 
 \begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Between farmers model focusing on dealer ratings (control variables included,
+ Q1).
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:q1_betw_farmers_dealer_controls"
+
+\end_inset
 
 
-\backslash
-begin{table} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
 \backslash
 scriptsize 
 \backslash
@@ -17334,24 +17573,18 @@ Note: Here, the genders of the different input dealers that each farmer
  rated have been averaged.
  All the dealer characteristics are also averaged accordingly.
  The ratings given by the farmers also are averaged at the farmer level.
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-caption{Between farmers model focusing on dealer ratings (control variables
- included, Q1).} 
+  
 \backslash
 label{table:table4} 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Plain Layout
 
- 
-\backslash
-end{table}
 \end_layout
 
 \end_inset
@@ -17538,18 +17771,38 @@ Between dealers model
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Between dealers model focusing on seed ratings (control variables not included,
+ Q2).
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:q2_betw_dealers_seed_no_controls"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
 \begin_layout Plain Layout
 
-\end_layout
 
-\begin_layout Plain Layout
-
-
-\backslash
-begin{table} 
 \backslash
 scriptsize 
 \backslash
@@ -17983,40 +18236,61 @@ Note: Here, the genders of the different farmers that each input dealer
  The ratings obtained by the input dealers are also averaged at the dealer
  level.
  
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-caption{Between dealers model focusing on seed ratings (control variables
- not included, Q2).} 
 \backslash
 label{table:table13} 
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-end{table}
 \end_layout
 
 \end_inset
 
 
-\begin_inset ERT
-status open
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
 
 \begin_layout Plain Layout
 
 \end_layout
 
 \begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Between dealers model focusing on seed ratings (control variables included,
+ Q2).
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:q2_betw_dealers_seed_controls"
+
+\end_inset
 
 
-\backslash
-begin{table} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
 \backslash
 scriptsize 
 \backslash
@@ -20731,41 +21005,64 @@ Note: Here, the genders of the different farmers that each input dealer
  All the farmer characteristics are also averaged accordingly.
  The ratings obtained by the input dealers are also averaged at the dealer
  level.
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-caption{Between dealers model focusing on seed ratings (control variables
- included, Q2).} 
+  
 \backslash
 label{table:table14} 
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-end{table}
 \end_layout
 
 \end_inset
 
 
-\begin_inset ERT
-status open
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
 
 \begin_layout Plain Layout
 
 \end_layout
 
 \begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Between dealers model focusing on dealer ratings (control variables not
+ included, Q2).
+\series bold
+
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:q2_betw_dealers_dealer_no_controls"
+
+\end_inset
 
 
-\backslash
-begin{table} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
 \backslash
 scriptsize 
 \backslash
@@ -21162,40 +21459,57 @@ Note: Here, the genders of the different farmers that each input dealer
  The ratings obtained by the input dealers are also averaged at the dealer
  level.
  
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-caption{Between dealers model focusing on dealer ratings (control variables
- not included, Q2).} 
 \backslash
 label{table:table15} 
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-end{table}
 \end_layout
 
 \end_inset
 
 
-\begin_inset ERT
-status open
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
 
 \begin_layout Plain Layout
 
 \end_layout
 
 \begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Between dealers model focusing on dealer ratings (control variables included,
+ Q2).
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:q2_betw_dealers_dealer_controls"
+
+\end_inset
 
 
-\backslash
-begin{table} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
 \backslash
 scriptsize 
 \backslash
@@ -23598,23 +23912,17 @@ Note: Here, the genders of the different farmers that each input dealer
  The ratings obtained by the input dealers are also averaged at the dealer
  level.
  
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-caption{Between dealers model focusing on dealer ratings (control variables
- included, Q2).} 
 \backslash
 label{table:table16} 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Plain Layout
 
- 
-\backslash
-end{table}
 \end_layout
 
 \end_inset
@@ -23680,6 +23988,2536 @@ Random effects models use both dimensions of the data.
  flexible random effects/ mixed effects (Models With Multiple Random-effects,
  p.
  47) 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Between farmers model focusing on seed ratings (control variables not included,
+ Q2).
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:q2_betw_farmers_seed_no_controls"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize 
+\backslash
+begin{center} 
+\backslash
+begin{tabular}{@{
+\backslash
+extracolsep{5pt}}lcccccccc}  
+\backslash
+
+\backslash
+[-1.8ex]
+\backslash
+hline  
+\backslash
+hline 
+\backslash
+
+\backslash
+[-1.8ex]   & 
+\backslash
+multicolumn{8}{c}{
+\backslash
+textit{
+\backslash
+footnotesize Dependent variable: Ratings averaged at the farmer level}}
+ 
+\backslash
+
+\backslash
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-9} 
+\backslash
+
+\backslash
+[-1.8ex] & 
+\backslash
+multicolumn{1} {c} {Overall} &  
+\backslash
+multicolumn{1} {c} {Quality}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {General}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Yield}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Drought}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Disease}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Maturing}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Germination}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+[-1.8ex] & (1) & (2) & (3) & (4) & (5)& (6)& (7)& (8) 
+\backslash
+
+\backslash
+  
+\backslash
+hline 
+\backslash
+
+\backslash
+[-1.8ex]  
+\end_layout
+
+\begin_layout Plain Layout
+
+{Intercept}                  & $
+\backslash
+Sexpr{s_deal5[1,1]}^{
+\backslash
+Sexpr{ifelse(s_deal5[3,1]<.01,"***",ifelse(s_deal5[3,1]<.05,"**",ifelse(s_deal5[3,
+1]<.1,"*","")))}}$ & $
+\backslash
+Sexpr{s_deal5[1,2]}^{
+\backslash
+Sexpr{ifelse(s_deal5[3,2]<.01,"***",ifelse(s_deal5[3,2]<.05,"**",ifelse(s_deal5[3,
+2]<.1,"*","")))}}$  & $
+\backslash
+Sexpr{s_deal5[1,3]}^{
+\backslash
+Sexpr{ifelse(s_deal5[3,3]<.01,"***",ifelse(s_deal5[3,3]<.05,"**",ifelse(s_deal5[3,
+3]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{s_deal5[1,4]}^{
+\backslash
+Sexpr{ifelse(s_deal5[3,4]<.01,"***",ifelse(s_deal5[3,4]<.05,"**",ifelse(s_deal5[3,
+4]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s_deal5[1,5]}^{
+\backslash
+Sexpr{ifelse(s_deal5[3,5]<.01,"***",ifelse(s_deal5[3,5]<.05,"**",ifelse(s_deal5[3,
+5]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s_deal5[1,6]}^{
+\backslash
+Sexpr{ifelse(s_deal5[3,6]<.01,"***",ifelse(s_deal5[3,6]<.05,"**",ifelse(s_deal5[3,
+6]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s_deal5[1,7]}^{
+\backslash
+Sexpr{ifelse(s_deal5[3,7]<.01,"***",ifelse(s_deal5[3,7]<.05,"**",ifelse(s_deal5[3,
+7]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s_deal5[1,8]}^{
+\backslash
+Sexpr{ifelse(s_deal5[3,8]<.01,"***",ifelse(s_deal5[3,8]<.05,"**",ifelse(s_deal5[3,
+8]<.1,"*","")))}}$    
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  &  $(
+\backslash
+Sexpr{s_deal5[2,1]})$   &  $(
+\backslash
+Sexpr{s_deal5[2,2]})$ & $(
+\backslash
+Sexpr{s_deal5[2,3]})$ & $(
+\backslash
+Sexpr{s_deal5[2,4]})$ & $(
+\backslash
+Sexpr{s_deal5[2,5]})$ & $(
+\backslash
+Sexpr{s_deal5[2,6]})$ & $(
+\backslash
+Sexpr{s_deal5[2,7]})$ &$(
+\backslash
+Sexpr{s_deal5[2,8]})$ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{Male farmers}   & $
+\backslash
+Sexpr{s_deal5[4,1]}^{
+\backslash
+Sexpr{ifelse(s_deal5[6,1]<.01,"***",ifelse(s_deal5[6,1]<.05,"**",ifelse(s_deal5[6,
+1]<.1,"*","")))}}$ & $
+\backslash
+Sexpr{s_deal5[4,2]}^{
+\backslash
+Sexpr{ifelse(s_deal5[6,2]<.01,"***",ifelse(s_deal5[6,2]<.05,"**",ifelse(s_deal5[6,
+2]<.1,"*","")))}}$  & $
+\backslash
+Sexpr{s_deal5[4,3]}^{
+\backslash
+Sexpr{ifelse(s_deal5[6,3]<.01,"***",ifelse(s_deal5[6,3]<.05,"**",ifelse(s_deal5[6,
+3]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{s_deal5[4,4]}^{
+\backslash
+Sexpr{ifelse(s_deal5[6,4]<.01,"***",ifelse(s_deal5[6,4]<.05,"**",ifelse(s_deal5[6,
+4]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s_deal5[4,5]}^{
+\backslash
+Sexpr{ifelse(s_deal5[6,5]<.01,"***",ifelse(s_deal5[6,5]<.05,"**",ifelse(s_deal5[6,
+5]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s_deal5[4,6]}^{
+\backslash
+Sexpr{ifelse(s_deal5[6,6]<.01,"***",ifelse(s_deal5[6,6]<.05,"**",ifelse(s_deal5[6,
+6]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s_deal5[4,7]}^{
+\backslash
+Sexpr{ifelse(s_deal5[6,7]<.01,"***",ifelse(s_deal5[6,7]<.05,"**",ifelse(s_deal5[6,
+7]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s_deal5[4,8]}^{
+\backslash
+Sexpr{ifelse(s_deal5[6,8]<.01,"***",ifelse(s_deal5[6,8]<.05,"**",ifelse(s_deal5[6,
+8]<.1,"*","")))}}$    
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $(
+\backslash
+Sexpr{s_deal5[5,1]})$   &  $(
+\backslash
+Sexpr{s_deal5[5,2]})$ & $(
+\backslash
+Sexpr{s_deal5[5,3]})$ & $(
+\backslash
+Sexpr{s_deal5[5,4]})$ & $(
+\backslash
+Sexpr{s_deal5[5,5]})$ & $(
+\backslash
+Sexpr{s_deal5[5,6]})$ & $(
+\backslash
+Sexpr{s_deal5[5,7]})$ &$(
+\backslash
+Sexpr{s_deal5[5,8]})$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+     
+\backslash
+
+\backslash
+ 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+{R$^2$ }                 &  $
+\backslash
+Sexpr{s_deal5[7,1]}$   &  $
+\backslash
+Sexpr{s_deal5[7,2]}$ & $
+\backslash
+Sexpr{s_deal5[7,3]}$ & $
+\backslash
+Sexpr{s_deal5[7,4]}$ & $
+\backslash
+Sexpr{s_deal5[7,5]}$ & $
+\backslash
+Sexpr{s_deal5[7,6]}$ & $
+\backslash
+Sexpr{s_deal5[7,7]}$ &$
+\backslash
+Sexpr{s_deal5[7,8]}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+{Adj.
+ R$^2$}                 &  $
+\backslash
+Sexpr{s_deal5[8,1]}$   &  $
+\backslash
+Sexpr{s_deal5[8,2]}$ & $
+\backslash
+Sexpr{s_deal5[8,3]}$ & $
+\backslash
+Sexpr{s_deal5[8,4]}$ & $
+\backslash
+Sexpr{s_deal5[8,5]}$ & $
+\backslash
+Sexpr{s_deal5[8,6]}$ & $
+\backslash
+Sexpr{s_deal5[8,7]}$ &$
+\backslash
+Sexpr{s_deal5[8,8]}$     
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+{Number of obs.}                 &  $
+\backslash
+Sexpr{s_deal5[9,1]}$   &  $
+\backslash
+Sexpr{s_deal5[9,2]}$ & $
+\backslash
+Sexpr{s_deal5[9,3]}$ & $
+\backslash
+Sexpr{s_deal5[9,4]}$ & $
+\backslash
+Sexpr{s_deal5[9,5]}$ & $
+\backslash
+Sexpr{s_deal5[9,6]}$ & $
+\backslash
+Sexpr{s_deal5[9,7]}$ &$
+\backslash
+Sexpr{s_deal5[9,8]}$    
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{9}{l}{ 
+\backslash
+scriptsize{$^{***}p<0.01$; $^{**}p<0.05$; $^{*}p<0.1$.}} 
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tabular} 
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: Here, the gender of the farmer is a dummy variable having the value
+ of either 0 (female farmers) or 1 (male farmers).
+ The ratings given by the farmers are averaged at the farmer level.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Between farmers model focusing on seed ratings (control variables included,
+ Q2).
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:q2_betw_farmers_seed_controls"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize 
+\backslash
+begin{center} 
+\backslash
+begin{tabular}{@{
+\backslash
+extracolsep{5pt}}lcccccccc}  
+\backslash
+
+\backslash
+[-1.8ex]
+\backslash
+hline  
+\backslash
+hline 
+\backslash
+
+\backslash
+[-1.8ex]   & 
+\backslash
+multicolumn{8}{c}{
+\backslash
+textit{
+\backslash
+footnotesize Dependent variable: Ratings averaged at the farmer level}}
+ 
+\backslash
+
+\backslash
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-9} 
+\backslash
+
+\backslash
+[-1.8ex] & 
+\backslash
+multicolumn{1} {c} {Overall} &  
+\backslash
+multicolumn{1} {c} {Quality}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {General}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Yield}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Drought}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Disease}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Maturing}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Germination}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+[-1.8ex] & (1) & (2) & (3) & (4) & (5)& (6)& (7)& (8) 
+\backslash
+
+\backslash
+  
+\backslash
+hline 
+\backslash
+
+\backslash
+[-1.8ex]  
+\end_layout
+
+\begin_layout Plain Layout
+
+{Intercept}                  & $
+\backslash
+Sexpr{s_deal6[1,1]}^{
+\backslash
+Sexpr{ifelse(s_deal6[3,1]<.01,"***",ifelse(s_deal6[3,1]<.05,"**",ifelse(s_deal6[3,
+1]<.1,"*","")))}}$ & $
+\backslash
+Sexpr{s_deal6[1,2]}^{
+\backslash
+Sexpr{ifelse(s_deal6[3,2]<.01,"***",ifelse(s_deal6[3,2]<.05,"**",ifelse(s_deal6[3,
+2]<.1,"*","")))}}$  & $
+\backslash
+Sexpr{s_deal6[1,3]}^{
+\backslash
+Sexpr{ifelse(s_deal6[3,3]<.01,"***",ifelse(s_deal6[3,3]<.05,"**",ifelse(s_deal6[3,
+3]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{s_deal6[1,4]}^{
+\backslash
+Sexpr{ifelse(s_deal6[3,4]<.01,"***",ifelse(s_deal6[3,4]<.05,"**",ifelse(s_deal6[3,
+4]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s_deal6[1,5]}^{
+\backslash
+Sexpr{ifelse(s_deal6[3,5]<.01,"***",ifelse(s_deal6[3,5]<.05,"**",ifelse(s_deal6[3,
+5]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s_deal6[1,6]}^{
+\backslash
+Sexpr{ifelse(s_deal6[3,6]<.01,"***",ifelse(s_deal6[3,6]<.05,"**",ifelse(s_deal6[3,
+6]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s_deal6[1,7]}^{
+\backslash
+Sexpr{ifelse(s_deal6[3,7]<.01,"***",ifelse(s_deal6[3,7]<.05,"**",ifelse(s_deal6[3,
+7]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s_deal6[1,8]}^{
+\backslash
+Sexpr{ifelse(s_deal6[3,8]<.01,"***",ifelse(s_deal6[3,8]<.05,"**",ifelse(s_deal6[3,
+8]<.1,"*","")))}}$    
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  &  $(
+\backslash
+Sexpr{s_deal6[2,1]})$   &  $(
+\backslash
+Sexpr{s_deal6[2,2]})$ & $(
+\backslash
+Sexpr{s_deal6[2,3]})$ & $(
+\backslash
+Sexpr{s_deal6[2,4]})$ & $(
+\backslash
+Sexpr{s_deal6[2,5]})$ & $(
+\backslash
+Sexpr{s_deal6[2,6]})$ & $(
+\backslash
+Sexpr{s_deal6[2,7]})$ &$(
+\backslash
+Sexpr{s_deal6[2,8]})$ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{Male farmers}   & $
+\backslash
+Sexpr{s_deal6[4,1]}^{
+\backslash
+Sexpr{ifelse(s_deal6[6,1]<.01,"***",ifelse(s_deal6[6,1]<.05,"**",ifelse(s_deal6[6,
+1]<.1,"*","")))}}$ & $
+\backslash
+Sexpr{s_deal6[4,2]}^{
+\backslash
+Sexpr{ifelse(s_deal6[6,2]<.01,"***",ifelse(s_deal6[6,2]<.05,"**",ifelse(s_deal6[6,
+2]<.1,"*","")))}}$  & $
+\backslash
+Sexpr{s_deal6[4,3]}^{
+\backslash
+Sexpr{ifelse(s_deal6[6,3]<.01,"***",ifelse(s_deal6[6,3]<.05,"**",ifelse(s_deal6[6,
+3]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{s_deal6[4,4]}^{
+\backslash
+Sexpr{ifelse(s_deal6[6,4]<.01,"***",ifelse(s_deal6[6,4]<.05,"**",ifelse(s_deal6[6,
+4]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s_deal6[4,5]}^{
+\backslash
+Sexpr{ifelse(s_deal6[6,5]<.01,"***",ifelse(s_deal6[6,5]<.05,"**",ifelse(s_deal6[6,
+5]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s_deal6[4,6]}^{
+\backslash
+Sexpr{ifelse(s_deal6[6,6]<.01,"***",ifelse(s_deal6[6,6]<.05,"**",ifelse(s_deal6[6,
+6]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s_deal6[4,7]}^{
+\backslash
+Sexpr{ifelse(s_deal6[6,7]<.01,"***",ifelse(s_deal6[6,7]<.05,"**",ifelse(s_deal6[6,
+7]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s_deal6[4,8]}^{
+\backslash
+Sexpr{ifelse(s_deal6[6,8]<.01,"***",ifelse(s_deal6[6,8]<.05,"**",ifelse(s_deal6[6,
+8]<.1,"*","")))}}$    
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $(
+\backslash
+Sexpr{s_deal6[5,1]})$   &  $(
+\backslash
+Sexpr{s_deal6[5,2]})$ & $(
+\backslash
+Sexpr{s_deal6[5,3]})$ & $(
+\backslash
+Sexpr{s_deal6[5,4]})$ & $(
+\backslash
+Sexpr{s_deal6[5,5]})$ & $(
+\backslash
+Sexpr{s_deal6[5,6]})$ & $(
+\backslash
+Sexpr{s_deal6[5,7]})$ &$(
+\backslash
+Sexpr{s_deal6[5,8]})$ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{Farmer's education}   & $
+\backslash
+Sexpr{s_deal6[7,1]}^{
+\backslash
+Sexpr{ifelse(s_deal6[9,1]<.01,"***",ifelse(s_deal6[9,1]<.05,"**",ifelse(s_deal6[9,
+1]<.1,"*","")))}}$ & $
+\backslash
+Sexpr{s_deal6[7,2]}^{
+\backslash
+Sexpr{ifelse(s_deal6[9,2]<.01,"***",ifelse(s_deal6[9,2]<.05,"**",ifelse(s_deal6[9,
+2]<.1,"*","")))}}$  & $
+\backslash
+Sexpr{s_deal6[7,3]}^{
+\backslash
+Sexpr{ifelse(s_deal6[9,3]<.01,"***",ifelse(s_deal6[9,3]<.05,"**",ifelse(s_deal6[9,
+3]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{s_deal6[7,4]}^{
+\backslash
+Sexpr{ifelse(s_deal6[9,4]<.01,"***",ifelse(s_deal6[9,4]<.05,"**",ifelse(s_deal6[9,
+4]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s_deal6[7,5]}^{
+\backslash
+Sexpr{ifelse(s_deal6[9,5]<.01,"***",ifelse(s_deal6[9,5]<.05,"**",ifelse(s_deal6[9,
+5]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s_deal6[7,6]}^{
+\backslash
+Sexpr{ifelse(s_deal6[9,6]<.01,"***",ifelse(s_deal6[9,6]<.05,"**",ifelse(s_deal6[9,
+6]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s_deal6[7,7]}^{
+\backslash
+Sexpr{ifelse(s_deal6[9,7]<.01,"***",ifelse(s_deal6[9,7]<.05,"**",ifelse(s_deal6[9,
+7]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s_deal6[7,8]}^{
+\backslash
+Sexpr{ifelse(s_deal6[9,8]<.01,"***",ifelse(s_deal6[9,8]<.05,"**",ifelse(s_deal6[9,
+8]<.1,"*","")))}}$    
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $(
+\backslash
+Sexpr{s_deal6[8,1]})$   &  $(
+\backslash
+Sexpr{s_deal6[8,2]})$ & $(
+\backslash
+Sexpr{s_deal6[8,3]})$ & $(
+\backslash
+Sexpr{s_deal6[8,4]})$ & $(
+\backslash
+Sexpr{s_deal6[8,5]})$ & $(
+\backslash
+Sexpr{s_deal6[8,6]})$ & $(
+\backslash
+Sexpr{s_deal6[8,7]})$ &$(
+\backslash
+Sexpr{s_deal6[8,8]})$ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{Married farmers}   & $
+\backslash
+Sexpr{s_deal6[10,1]}^{
+\backslash
+Sexpr{ifelse(s_deal6[12,1]<.01,"***",ifelse(s_deal6[12,1]<.05,"**",ifelse(s_deal6[
+12,1]<.1,"*","")))}}$ & $
+\backslash
+Sexpr{s_deal6[10,2]}^{
+\backslash
+Sexpr{ifelse(s_deal6[12,2]<.01,"***",ifelse(s_deal6[12,2]<.05,"**",ifelse(s_deal6[
+12,2]<.1,"*","")))}}$  & $
+\backslash
+Sexpr{s_deal6[10,3]}^{
+\backslash
+Sexpr{ifelse(s_deal6[12,3]<.01,"***",ifelse(s_deal6[12,3]<.05,"**",ifelse(s_deal6[
+12,3]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{s_deal6[10,4]}^{
+\backslash
+Sexpr{ifelse(s_deal6[12,4]<.01,"***",ifelse(s_deal6[12,4]<.05,"**",ifelse(s_deal6[
+12,4]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s_deal6[10,5]}^{
+\backslash
+Sexpr{ifelse(s_deal6[12,5]<.01,"***",ifelse(s_deal6[12,5]<.05,"**",ifelse(s_deal6[
+12,5]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s_deal6[10,6]}^{
+\backslash
+Sexpr{ifelse(s_deal6[12,6]<.01,"***",ifelse(s_deal6[12,6]<.05,"**",ifelse(s_deal6[
+12,6]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s_deal6[10,7]}^{
+\backslash
+Sexpr{ifelse(s_deal6[12,7]<.01,"***",ifelse(s_deal6[12,7]<.05,"**",ifelse(s_deal6[
+12,7]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s_deal6[10,8]}^{
+\backslash
+Sexpr{ifelse(s_deal6[12,8]<.01,"***",ifelse(s_deal6[12,8]<.05,"**",ifelse(s_deal6[
+12,8]<.1,"*","")))}}$    
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $(
+\backslash
+Sexpr{s_deal6[11,1]})$   &  $(
+\backslash
+Sexpr{s_deal6[11,2]})$ & $(
+\backslash
+Sexpr{s_deal6[11,3]})$ & $(
+\backslash
+Sexpr{s_deal6[11,4]})$ & $(
+\backslash
+Sexpr{s_deal6[11,5]})$ & $(
+\backslash
+Sexpr{s_deal6[11,6]})$ & $(
+\backslash
+Sexpr{s_deal6[11,7]})$ &$(
+\backslash
+Sexpr{s_deal6[11,8]})$ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{Farmer's age}   & $
+\backslash
+Sexpr{s_deal6[13,1]}^{
+\backslash
+Sexpr{ifelse(s_deal6[15,1]<.01,"***",ifelse(s_deal6[15,1]<.05,"**",ifelse(s_deal6[
+15,1]<.1,"*","")))}}$ & $
+\backslash
+Sexpr{s_deal6[13,2]}^{
+\backslash
+Sexpr{ifelse(s_deal6[15,2]<.01,"***",ifelse(s_deal6[15,2]<.05,"**",ifelse(s_deal6[
+15,2]<.1,"*","")))}}$  & $
+\backslash
+Sexpr{s_deal6[13,3]}^{
+\backslash
+Sexpr{ifelse(s_deal6[15,3]<.01,"***",ifelse(s_deal6[15,3]<.05,"**",ifelse(s_deal6[
+15,3]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{s_deal6[13,4]}^{
+\backslash
+Sexpr{ifelse(s_deal6[15,4]<.01,"***",ifelse(s_deal6[15,4]<.05,"**",ifelse(s_deal6[
+15,4]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s_deal6[13,5]}^{
+\backslash
+Sexpr{ifelse(s_deal6[15,5]<.01,"***",ifelse(s_deal6[15,5]<.05,"**",ifelse(s_deal6[
+15,5]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s_deal6[13,6]}^{
+\backslash
+Sexpr{ifelse(s_deal6[15,6]<.01,"***",ifelse(s_deal6[15,6]<.05,"**",ifelse(s_deal6[
+15,6]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s_deal6[13,7]}^{
+\backslash
+Sexpr{ifelse(s_deal6[15,7]<.01,"***",ifelse(s_deal6[15,7]<.05,"**",ifelse(s_deal6[
+15,7]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s_deal6[13,8]}^{
+\backslash
+Sexpr{ifelse(s_deal6[15,8]<.01,"***",ifelse(s_deal6[15,8]<.05,"**",ifelse(s_deal6[
+15,8]<.1,"*","")))}}$    
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $(
+\backslash
+Sexpr{s_deal6[14,1]})$   &  $(
+\backslash
+Sexpr{s_deal6[14,2]})$ & $(
+\backslash
+Sexpr{s_deal6[14,3]})$ & $(
+\backslash
+Sexpr{s_deal6[14,4]})$ & $(
+\backslash
+Sexpr{s_deal6[14,5]})$ & $(
+\backslash
+Sexpr{s_deal6[14,6]})$ & $(
+\backslash
+Sexpr{s_deal6[14,7]})$ &$(
+\backslash
+Sexpr{s_deal6[14,8]})$ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{Tarmac (farmer)}   & $
+\backslash
+Sexpr{s_deal6[16,1]}^{
+\backslash
+Sexpr{ifelse(s_deal6[18,1]<.01,"***",ifelse(s_deal6[18,1]<.05,"**",ifelse(s_deal6[
+18,1]<.1,"*","")))}}$ & $
+\backslash
+Sexpr{s_deal6[16,2]}^{
+\backslash
+Sexpr{ifelse(s_deal6[18,2]<.01,"***",ifelse(s_deal6[18,2]<.05,"**",ifelse(s_deal6[
+18,2]<.1,"*","")))}}$  & $
+\backslash
+Sexpr{s_deal6[16,3]}^{
+\backslash
+Sexpr{ifelse(s_deal6[18,3]<.01,"***",ifelse(s_deal6[18,3]<.05,"**",ifelse(s_deal6[
+18,3]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{s_deal6[16,4]}^{
+\backslash
+Sexpr{ifelse(s_deal6[18,4]<.01,"***",ifelse(s_deal6[18,4]<.05,"**",ifelse(s_deal6[
+18,4]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s_deal6[16,5]}^{
+\backslash
+Sexpr{ifelse(s_deal6[18,5]<.01,"***",ifelse(s_deal6[18,5]<.05,"**",ifelse(s_deal6[
+18,5]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s_deal6[16,6]}^{
+\backslash
+Sexpr{ifelse(s_deal6[18,6]<.01,"***",ifelse(s_deal6[18,6]<.05,"**",ifelse(s_deal6[
+18,6]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s_deal6[16,7]}^{
+\backslash
+Sexpr{ifelse(s_deal6[18,7]<.01,"***",ifelse(s_deal6[18,7]<.05,"**",ifelse(s_deal6[
+18,7]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s_deal6[16,8]}^{
+\backslash
+Sexpr{ifelse(s_deal6[18,8]<.01,"***",ifelse(s_deal6[18,8]<.05,"**",ifelse(s_deal6[
+18,8]<.1,"*","")))}}$    
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $(
+\backslash
+Sexpr{s_deal6[17,1]})$   &  $(
+\backslash
+Sexpr{s_deal6[17,2]})$ & $(
+\backslash
+Sexpr{s_deal6[17,3]})$ & $(
+\backslash
+Sexpr{s_deal6[17,4]})$ & $(
+\backslash
+Sexpr{s_deal6[17,5]})$ & $(
+\backslash
+Sexpr{s_deal6[17,6]})$ & $(
+\backslash
+Sexpr{s_deal6[17,7]})$ &$(
+\backslash
+Sexpr{s_deal6[17,8]})$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+     
+\backslash
+
+\backslash
+ 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+{R$^2$ }                 &  $
+\backslash
+Sexpr{s_deal6[19,1]}$   &  $
+\backslash
+Sexpr{s_deal6[19,2]}$ & $
+\backslash
+Sexpr{s_deal6[19,3]}$ & $
+\backslash
+Sexpr{s_deal6[19,4]}$ & $
+\backslash
+Sexpr{s_deal6[19,5]}$ & $
+\backslash
+Sexpr{s_deal6[19,6]}$ & $
+\backslash
+Sexpr{s_deal6[19,7]}$ &$
+\backslash
+Sexpr{s_deal6[19,8]}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+{Adj.
+ R$^2$}                 &  $
+\backslash
+Sexpr{s_deal6[20,1]}$   &  $
+\backslash
+Sexpr{s_deal6[20,2]}$ & $
+\backslash
+Sexpr{s_deal6[20,3]}$ & $
+\backslash
+Sexpr{s_deal6[20,4]}$ & $
+\backslash
+Sexpr{s_deal6[20,5]}$ & $
+\backslash
+Sexpr{s_deal6[20,6]}$ & $
+\backslash
+Sexpr{s_deal6[20,7]}$ &$
+\backslash
+Sexpr{s_deal6[20,8]}$     
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+{Number of obs.}                 &  $
+\backslash
+Sexpr{s_deal6[21,1]}$   &  $
+\backslash
+Sexpr{s_deal6[21,2]}$ & $
+\backslash
+Sexpr{s_deal6[21,3]}$ & $
+\backslash
+Sexpr{s_deal6[21,4]}$ & $
+\backslash
+Sexpr{s_deal6[21,5]}$ & $
+\backslash
+Sexpr{s_deal6[21,6]}$ & $
+\backslash
+Sexpr{s_deal6[21,7]}$ &$
+\backslash
+Sexpr{s_deal6[21,8]}$    
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{9}{l}{ 
+\backslash
+scriptsize{$^{***}p<0.01$; $^{**}p<0.05$; $^{*}p<0.1$.}} 
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tabular} 
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: Here, the gender of the farmer is a dummy variable having the value
+ of either 0 (female farmers) or 1 (male farmers).
+ The ratings given by the farmers are averaged at the farmer level.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Between farmers model focusing on dealer ratings (control variables not
+ included, Q2).
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:q2_betw_farmers_dealer_no_controls"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize 
+\backslash
+begin{center} 
+\backslash
+begin{tabular}{@{
+\backslash
+extracolsep{5pt}}lccccccc}  
+\backslash
+
+\backslash
+[-1.8ex]
+\backslash
+hline  
+\backslash
+hline 
+\backslash
+
+\backslash
+[-1.8ex]   & 
+\backslash
+multicolumn{7}{c}{
+\backslash
+textit{
+\backslash
+footnotesize Dependent variable: Ratings averaged at the farmer level}}
+ 
+\backslash
+
+\backslash
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-8} 
+\backslash
+
+\backslash
+[-1.8ex] & 
+\backslash
+multicolumn{1} {c} {Overall} &  
+\backslash
+multicolumn{1} {c} {General}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Location}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Price}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Quality}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Stock}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Reputation}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+[-1.8ex] & (1) & (2) & (3) & (4) & (5)& (6)& (7) 
+\backslash
+
+\backslash
+  
+\backslash
+hline 
+\backslash
+
+\backslash
+[-1.8ex]  
+\end_layout
+
+\begin_layout Plain Layout
+
+{Intercept}                  & $
+\backslash
+Sexpr{s_deal7[1,1]}^{
+\backslash
+Sexpr{ifelse(s_deal7[3,1]<.01,"***",ifelse(s_deal7[3,1]<.05,"**",ifelse(s_deal7[3,
+1]<.1,"*","")))}}$ & $
+\backslash
+Sexpr{s_deal7[1,2]}^{
+\backslash
+Sexpr{ifelse(s_deal7[3,2]<.01,"***",ifelse(s_deal7[3,2]<.05,"**",ifelse(s_deal7[3,
+2]<.1,"*","")))}}$  & $
+\backslash
+Sexpr{s_deal7[1,3]}^{
+\backslash
+Sexpr{ifelse(s_deal7[3,3]<.01,"***",ifelse(s_deal7[3,3]<.05,"**",ifelse(s_deal7[3,
+3]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{s_deal7[1,4]}^{
+\backslash
+Sexpr{ifelse(s_deal7[3,4]<.01,"***",ifelse(s_deal7[3,4]<.05,"**",ifelse(s_deal7[3,
+4]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s_deal7[1,5]}^{
+\backslash
+Sexpr{ifelse(s_deal7[3,5]<.01,"***",ifelse(s_deal7[3,5]<.05,"**",ifelse(s_deal7[3,
+5]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s_deal7[1,6]}^{
+\backslash
+Sexpr{ifelse(s_deal7[3,6]<.01,"***",ifelse(s_deal7[3,6]<.05,"**",ifelse(s_deal7[3,
+6]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s_deal7[1,7]}^{
+\backslash
+Sexpr{ifelse(s_deal7[3,7]<.01,"***",ifelse(s_deal7[3,7]<.05,"**",ifelse(s_deal7[3,
+7]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  &  $(
+\backslash
+Sexpr{s_deal7[2,1]})$   &  $(
+\backslash
+Sexpr{s_deal7[2,2]})$ & $(
+\backslash
+Sexpr{s_deal7[2,3]})$ & $(
+\backslash
+Sexpr{s_deal7[2,4]})$ & $(
+\backslash
+Sexpr{s_deal7[2,5]})$ & $(
+\backslash
+Sexpr{s_deal7[2,6]})$ & $(
+\backslash
+Sexpr{s_deal7[2,7]})$ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{Male farmers}   & $
+\backslash
+Sexpr{s_deal7[4,1]}^{
+\backslash
+Sexpr{ifelse(s_deal7[6,1]<.01,"***",ifelse(s_deal7[6,1]<.05,"**",ifelse(s_deal7[6,
+1]<.1,"*","")))}}$ & $
+\backslash
+Sexpr{s_deal7[4,2]}^{
+\backslash
+Sexpr{ifelse(s_deal7[6,2]<.01,"***",ifelse(s_deal7[6,2]<.05,"**",ifelse(s_deal7[6,
+2]<.1,"*","")))}}$  & $
+\backslash
+Sexpr{s_deal7[4,3]}^{
+\backslash
+Sexpr{ifelse(s_deal7[6,3]<.01,"***",ifelse(s_deal7[6,3]<.05,"**",ifelse(s_deal7[6,
+3]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{s_deal7[4,4]}^{
+\backslash
+Sexpr{ifelse(s_deal7[6,4]<.01,"***",ifelse(s_deal7[6,4]<.05,"**",ifelse(s_deal7[6,
+4]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s_deal7[4,5]}^{
+\backslash
+Sexpr{ifelse(s_deal7[6,5]<.01,"***",ifelse(s_deal7[6,5]<.05,"**",ifelse(s_deal7[6,
+5]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s_deal7[4,6]}^{
+\backslash
+Sexpr{ifelse(s_deal7[6,6]<.01,"***",ifelse(s_deal7[6,6]<.05,"**",ifelse(s_deal7[6,
+6]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s_deal7[4,7]}^{
+\backslash
+Sexpr{ifelse(s_deal7[6,7]<.01,"***",ifelse(s_deal7[6,7]<.05,"**",ifelse(s_deal7[6,
+7]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $(
+\backslash
+Sexpr{s_deal7[5,1]})$   &  $(
+\backslash
+Sexpr{s_deal7[5,2]})$ & $(
+\backslash
+Sexpr{s_deal7[5,3]})$ & $(
+\backslash
+Sexpr{s_deal7[5,4]})$ & $(
+\backslash
+Sexpr{s_deal7[5,5]})$ & $(
+\backslash
+Sexpr{s_deal7[5,6]})$ & $(
+\backslash
+Sexpr{s_deal7[5,7]})$
+\end_layout
+
+\begin_layout Plain Layout
+
+     
+\backslash
+
+\backslash
+ 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+{R$^2$ }                 &  $
+\backslash
+Sexpr{s_deal7[7,1]}$   &  $
+\backslash
+Sexpr{s_deal7[7,2]}$ & $
+\backslash
+Sexpr{s_deal7[7,3]}$ & $
+\backslash
+Sexpr{s_deal7[7,4]}$ & $
+\backslash
+Sexpr{s_deal7[7,5]}$ & $
+\backslash
+Sexpr{s_deal7[7,6]}$ & $
+\backslash
+Sexpr{s_deal7[7,7]}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+{Adj.
+ R$^2$}                 &  $
+\backslash
+Sexpr{s_deal7[8,1]}$   &  $
+\backslash
+Sexpr{s_deal7[8,2]}$ & $
+\backslash
+Sexpr{s_deal7[8,3]}$ & $
+\backslash
+Sexpr{s_deal7[8,4]}$ & $
+\backslash
+Sexpr{s_deal7[8,5]}$ & $
+\backslash
+Sexpr{s_deal7[8,6]}$ & $
+\backslash
+Sexpr{s_deal7[8,7]}$   
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+{Number of obs.}                 &  $
+\backslash
+Sexpr{s_deal7[9,1]}$   &  $
+\backslash
+Sexpr{s_deal7[9,2]}$ & $
+\backslash
+Sexpr{s_deal7[9,3]}$ & $
+\backslash
+Sexpr{s_deal7[9,4]}$ & $
+\backslash
+Sexpr{s_deal7[9,5]}$ & $
+\backslash
+Sexpr{s_deal7[9,6]}$ & $
+\backslash
+Sexpr{s_deal7[9,7]}$  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{8}{l}{ 
+\backslash
+scriptsize{$^{***}p<0.01$; $^{**}p<0.05$; $^{*}p<0.1$.}} 
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tabular} 
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: Here, the gender of the farmer is a dummy variable having the value
+ of either 0 (female farmers) or 1 (male farmers).
+ The ratings given by the farmers are averaged at the farmer level.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Between farmers model focusing on dealer ratings (control variables included,
+ Q2).
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:q2_betw_farmers_dealer_controls"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize 
+\backslash
+begin{center} 
+\backslash
+begin{tabular}{@{
+\backslash
+extracolsep{5pt}}lccccccc}  
+\backslash
+
+\backslash
+[-1.8ex]
+\backslash
+hline  
+\backslash
+hline 
+\backslash
+
+\backslash
+[-1.8ex]   & 
+\backslash
+multicolumn{7}{c}{
+\backslash
+textit{
+\backslash
+footnotesize Dependent variable: Ratings averaged at the farmer level}}
+ 
+\backslash
+
+\backslash
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-8} 
+\backslash
+
+\backslash
+[-1.8ex] & 
+\backslash
+multicolumn{1} {c} {Overall} &  
+\backslash
+multicolumn{1} {c} {General}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Location}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Price}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Quality}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Stock}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Reputation}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+[-1.8ex] & (1) & (2) & (3) & (4) & (5)& (6)& (7) 
+\backslash
+
+\backslash
+  
+\backslash
+hline 
+\backslash
+
+\backslash
+[-1.8ex]  
+\end_layout
+
+\begin_layout Plain Layout
+
+{Intercept}                  & $
+\backslash
+Sexpr{s_deal8[1,1]}^{
+\backslash
+Sexpr{ifelse(s_deal8[3,1]<.01,"***",ifelse(s_deal8[3,1]<.05,"**",ifelse(s_deal8[3,
+1]<.1,"*","")))}}$ & $
+\backslash
+Sexpr{s_deal8[1,2]}^{
+\backslash
+Sexpr{ifelse(s_deal8[3,2]<.01,"***",ifelse(s_deal8[3,2]<.05,"**",ifelse(s_deal8[3,
+2]<.1,"*","")))}}$  & $
+\backslash
+Sexpr{s_deal8[1,3]}^{
+\backslash
+Sexpr{ifelse(s_deal8[3,3]<.01,"***",ifelse(s_deal8[3,3]<.05,"**",ifelse(s_deal8[3,
+3]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{s_deal8[1,4]}^{
+\backslash
+Sexpr{ifelse(s_deal8[3,4]<.01,"***",ifelse(s_deal8[3,4]<.05,"**",ifelse(s_deal8[3,
+4]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s_deal8[1,5]}^{
+\backslash
+Sexpr{ifelse(s_deal8[3,5]<.01,"***",ifelse(s_deal8[3,5]<.05,"**",ifelse(s_deal8[3,
+5]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s_deal8[1,6]}^{
+\backslash
+Sexpr{ifelse(s_deal8[3,6]<.01,"***",ifelse(s_deal8[3,6]<.05,"**",ifelse(s_deal8[3,
+6]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s_deal8[1,7]}^{
+\backslash
+Sexpr{ifelse(s_deal8[3,7]<.01,"***",ifelse(s_deal8[3,7]<.05,"**",ifelse(s_deal8[3,
+7]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  &  $(
+\backslash
+Sexpr{s_deal8[2,1]})$   &  $(
+\backslash
+Sexpr{s_deal8[2,2]})$ & $(
+\backslash
+Sexpr{s_deal8[2,3]})$ & $(
+\backslash
+Sexpr{s_deal8[2,4]})$ & $(
+\backslash
+Sexpr{s_deal8[2,5]})$ & $(
+\backslash
+Sexpr{s_deal8[2,6]})$ & $(
+\backslash
+Sexpr{s_deal8[2,7]})$ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{Farmer's education}   & $
+\backslash
+Sexpr{s_deal8[7,1]}^{
+\backslash
+Sexpr{ifelse(s_deal8[9,1]<.01,"***",ifelse(s_deal8[9,1]<.05,"**",ifelse(s_deal8[9,
+1]<.1,"*","")))}}$ & $
+\backslash
+Sexpr{s_deal8[7,2]}^{
+\backslash
+Sexpr{ifelse(s_deal8[9,2]<.01,"***",ifelse(s_deal8[9,2]<.05,"**",ifelse(s_deal8[9,
+2]<.1,"*","")))}}$  & $
+\backslash
+Sexpr{s_deal8[7,3]}^{
+\backslash
+Sexpr{ifelse(s_deal8[9,3]<.01,"***",ifelse(s_deal8[9,3]<.05,"**",ifelse(s_deal8[9,
+3]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{s_deal8[7,4]}^{
+\backslash
+Sexpr{ifelse(s_deal8[9,4]<.01,"***",ifelse(s_deal8[9,4]<.05,"**",ifelse(s_deal8[9,
+4]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s_deal8[7,5]}^{
+\backslash
+Sexpr{ifelse(s_deal8[9,5]<.01,"***",ifelse(s_deal8[9,5]<.05,"**",ifelse(s_deal8[9,
+5]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s_deal8[7,6]}^{
+\backslash
+Sexpr{ifelse(s_deal8[9,6]<.01,"***",ifelse(s_deal8[9,6]<.05,"**",ifelse(s_deal8[9,
+6]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s_deal8[7,7]}^{
+\backslash
+Sexpr{ifelse(s_deal8[9,7]<.01,"***",ifelse(s_deal8[9,7]<.05,"**",ifelse(s_deal8[9,
+7]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $(
+\backslash
+Sexpr{s_deal8[8,1]})$   &  $(
+\backslash
+Sexpr{s_deal8[8,2]})$ & $(
+\backslash
+Sexpr{s_deal8[8,3]})$ & $(
+\backslash
+Sexpr{s_deal8[8,4]})$ & $(
+\backslash
+Sexpr{s_deal8[8,5]})$ & $(
+\backslash
+Sexpr{s_deal8[8,6]})$ & $(
+\backslash
+Sexpr{s_deal8[8,7]})$ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{Married farmers}   & $
+\backslash
+Sexpr{s_deal8[10,1]}^{
+\backslash
+Sexpr{ifelse(s_deal8[12,1]<.01,"***",ifelse(s_deal8[12,1]<.05,"**",ifelse(s_deal8[
+12,1]<.1,"*","")))}}$ & $
+\backslash
+Sexpr{s_deal8[10,2]}^{
+\backslash
+Sexpr{ifelse(s_deal8[12,2]<.01,"***",ifelse(s_deal8[12,2]<.05,"**",ifelse(s_deal8[
+12,2]<.1,"*","")))}}$  & $
+\backslash
+Sexpr{s_deal8[10,3]}^{
+\backslash
+Sexpr{ifelse(s_deal8[12,3]<.01,"***",ifelse(s_deal8[12,3]<.05,"**",ifelse(s_deal8[
+12,3]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{s_deal8[10,4]}^{
+\backslash
+Sexpr{ifelse(s_deal8[12,4]<.01,"***",ifelse(s_deal8[12,4]<.05,"**",ifelse(s_deal8[
+12,4]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s_deal8[10,5]}^{
+\backslash
+Sexpr{ifelse(s_deal8[12,5]<.01,"***",ifelse(s_deal8[12,5]<.05,"**",ifelse(s_deal8[
+12,5]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s_deal8[10,6]}^{
+\backslash
+Sexpr{ifelse(s_deal8[12,6]<.01,"***",ifelse(s_deal8[12,6]<.05,"**",ifelse(s_deal8[
+12,6]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s_deal8[10,7]}^{
+\backslash
+Sexpr{ifelse(s_deal8[12,7]<.01,"***",ifelse(s_deal8[12,7]<.05,"**",ifelse(s_deal8[
+12,7]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $(
+\backslash
+Sexpr{s_deal8[11,1]})$   &  $(
+\backslash
+Sexpr{s_deal8[11,2]})$ & $(
+\backslash
+Sexpr{s_deal8[11,3]})$ & $(
+\backslash
+Sexpr{s_deal8[11,4]})$ & $(
+\backslash
+Sexpr{s_deal8[11,5]})$ & $(
+\backslash
+Sexpr{s_deal8[11,6]})$ & $(
+\backslash
+Sexpr{s_deal8[11,7]})$
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{Farmer's age}   & $
+\backslash
+Sexpr{s_deal8[13,1]}^{
+\backslash
+Sexpr{ifelse(s_deal8[15,1]<.01,"***",ifelse(s_deal8[15,1]<.05,"**",ifelse(s_deal8[
+15,1]<.1,"*","")))}}$ & $
+\backslash
+Sexpr{s_deal8[13,2]}^{
+\backslash
+Sexpr{ifelse(s_deal8[15,2]<.01,"***",ifelse(s_deal8[15,2]<.05,"**",ifelse(s_deal8[
+15,2]<.1,"*","")))}}$  & $
+\backslash
+Sexpr{s_deal8[13,3]}^{
+\backslash
+Sexpr{ifelse(s_deal8[15,3]<.01,"***",ifelse(s_deal8[15,3]<.05,"**",ifelse(s_deal8[
+15,3]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{s_deal8[13,4]}^{
+\backslash
+Sexpr{ifelse(s_deal8[15,4]<.01,"***",ifelse(s_deal8[15,4]<.05,"**",ifelse(s_deal8[
+15,4]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s_deal8[13,5]}^{
+\backslash
+Sexpr{ifelse(s_deal8[15,5]<.01,"***",ifelse(s_deal8[15,5]<.05,"**",ifelse(s_deal8[
+15,5]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s_deal8[13,6]}^{
+\backslash
+Sexpr{ifelse(s_deal8[15,6]<.01,"***",ifelse(s_deal8[15,6]<.05,"**",ifelse(s_deal8[
+15,6]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s_deal8[13,7]}^{
+\backslash
+Sexpr{ifelse(s_deal8[15,7]<.01,"***",ifelse(s_deal8[15,7]<.05,"**",ifelse(s_deal8[
+15,7]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $(
+\backslash
+Sexpr{s_deal8[14,1]})$   &  $(
+\backslash
+Sexpr{s_deal8[14,2]})$ & $(
+\backslash
+Sexpr{s_deal8[14,3]})$ & $(
+\backslash
+Sexpr{s_deal8[14,4]})$ & $(
+\backslash
+Sexpr{s_deal8[14,5]})$ & $(
+\backslash
+Sexpr{s_deal8[14,6]})$ & $(
+\backslash
+Sexpr{s_deal8[14,7]})$
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{Tarmac (farmer)}   & $
+\backslash
+Sexpr{s_deal8[16,1]}^{
+\backslash
+Sexpr{ifelse(s_deal8[18,1]<.01,"***",ifelse(s_deal8[18,1]<.05,"**",ifelse(s_deal8[
+18,1]<.1,"*","")))}}$ & $
+\backslash
+Sexpr{s_deal8[16,2]}^{
+\backslash
+Sexpr{ifelse(s_deal8[18,2]<.01,"***",ifelse(s_deal8[18,2]<.05,"**",ifelse(s_deal8[
+18,2]<.1,"*","")))}}$  & $
+\backslash
+Sexpr{s_deal8[16,3]}^{
+\backslash
+Sexpr{ifelse(s_deal8[18,3]<.01,"***",ifelse(s_deal8[18,3]<.05,"**",ifelse(s_deal8[
+18,3]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{s_deal8[16,4]}^{
+\backslash
+Sexpr{ifelse(s_deal8[18,4]<.01,"***",ifelse(s_deal8[18,4]<.05,"**",ifelse(s_deal8[
+18,4]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s_deal8[16,5]}^{
+\backslash
+Sexpr{ifelse(s_deal8[18,5]<.01,"***",ifelse(s_deal8[18,5]<.05,"**",ifelse(s_deal8[
+18,5]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s_deal8[16,6]}^{
+\backslash
+Sexpr{ifelse(s_deal8[18,6]<.01,"***",ifelse(s_deal8[18,6]<.05,"**",ifelse(s_deal8[
+18,6]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s_deal8[16,7]}^{
+\backslash
+Sexpr{ifelse(s_deal8[18,7]<.01,"***",ifelse(s_deal8[18,7]<.05,"**",ifelse(s_deal8[
+18,7]<.1,"*","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $(
+\backslash
+Sexpr{s_deal8[17,1]})$   &  $(
+\backslash
+Sexpr{s_deal8[17,2]})$ & $(
+\backslash
+Sexpr{s_deal8[17,3]})$ & $(
+\backslash
+Sexpr{s_deal8[17,4]})$ & $(
+\backslash
+Sexpr{s_deal8[17,5]})$ & $(
+\backslash
+Sexpr{s_deal8[17,6]})$ & $(
+\backslash
+Sexpr{s_deal8[17,7]})$
+\end_layout
+
+\begin_layout Plain Layout
+
+     
+\backslash
+
+\backslash
+ 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+{R$^2$ }                 &  $
+\backslash
+Sexpr{s_deal8[19,1]}$   &  $
+\backslash
+Sexpr{s_deal8[19,2]}$ & $
+\backslash
+Sexpr{s_deal8[19,3]}$ & $
+\backslash
+Sexpr{s_deal8[19,4]}$ & $
+\backslash
+Sexpr{s_deal8[19,5]}$ & $
+\backslash
+Sexpr{s_deal8[19,6]}$ & $
+\backslash
+Sexpr{s_deal8[19,7]}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+{Adj.
+ R$^2$}                 &  $
+\backslash
+Sexpr{s_deal8[20,1]}$   &  $
+\backslash
+Sexpr{s_deal8[20,2]}$ & $
+\backslash
+Sexpr{s_deal8[20,3]}$ & $
+\backslash
+Sexpr{s_deal8[20,4]}$ & $
+\backslash
+Sexpr{s_deal8[20,5]}$ & $
+\backslash
+Sexpr{s_deal8[20,6]}$ & $
+\backslash
+Sexpr{s_deal8[20,7]}$   
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+{Number of obs.}                 &  $
+\backslash
+Sexpr{s_deal8[21,1]}$   &  $
+\backslash
+Sexpr{s_deal8[21,2]}$ & $
+\backslash
+Sexpr{s_deal8[21,3]}$ & $
+\backslash
+Sexpr{s_deal8[21,4]}$ & $
+\backslash
+Sexpr{s_deal8[21,5]}$ & $
+\backslash
+Sexpr{s_deal8[21,6]}$ & $
+\backslash
+Sexpr{s_deal8[21,7]}$  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{8}{l}{ 
+\backslash
+scriptsize{$^{***}p<0.01$; $^{**}p<0.05$; $^{*}p<0.1$.}} 
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tabular} 
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: Here, the gender of the farmer is a dummy variable having the value
+ of either 0 (female farmers) or 1 (male farmers).
+ The ratings given by the farmers are averaged at the farmer level.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body
