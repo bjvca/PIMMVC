@@ -122,7 +122,7 @@ table(between_farmer$ventilation)
 
 #Q78. Lighting conditions in area where seed is stored?
 between_farmer$badlighting <- 0
-between_farmer$badlighting[between_farmer$maize.owner.agree.temp.q78=="1"]<-1
+between_farmer$badlighting[between_farmer$maize.owner.agree.temp.q78=="1"|between_farmer$maize.owner.agree.temp.q78=="3"]<-1
 table(between_farmer$badlighting)
 
 #Q79. On what surface are seed stored?
@@ -1962,7 +1962,7 @@ table(avg$ventilation)
 
 #Q78. Lighting conditions in area where seed is stored?
 avg$badlighting <- 0
-avg$badlighting[avg$maize.owner.agree.temp.q78=="1"]<-1
+avg$badlighting[avg$maize.owner.agree.temp.q78=="1"|avg$maize.owner.agree.temp.q78=="3"]<-1
 table(avg$badlighting)
 
 #Q79. On what surface are seed stored?
@@ -3477,7 +3477,7 @@ table(fedata$ventilation)
 
 #Q78. Lighting conditions in area where seed is stored?
 fedata$badlighting <- 0
-fedata$badlighting[fedata$maize.owner.agree.temp.q78=="1"]<-1
+fedata$badlighting[fedata$maize.owner.agree.temp.q78=="1"|fedata$maize.owner.agree.temp.q78=="3"]<-1
 table(fedata$badlighting)
 
 #Q79. On what surface are seed stored?
@@ -5084,7 +5084,7 @@ table(betwd$ventilation)
 
 #Q78. Lighting conditions in area where seed is stored?
 betwd$badlighting <- 0
-betwd$badlighting[betwd$maize.owner.agree.temp.q78=="1"]<-1
+betwd$badlighting[betwd$maize.owner.agree.temp.q78=="1"|betwd$maize.owner.agree.temp.q78=="3"]<-1
 table(betwd$badlighting)
 
 #Q79. On what surface are seed stored?
