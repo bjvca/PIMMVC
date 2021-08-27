@@ -28898,5 +28898,140 @@ Random effects models use both dimensions of the data.
  47) 
 \end_layout
 
+\begin_layout Subsection*
+Control variables 
+\end_layout
+
+\begin_layout Itemize
+Dealer/dealer shop related controls 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Education of dealer: This is a dummy variable having the value of 1 if the
+ dealer has finished secondary education.
+\end_layout
+
+\begin_layout Itemize
+Age of dealer: This is measured in years.
+\end_layout
+
+\begin_layout Itemize
+Distance of shop to nearest tarmac road: This is neasured in kms.
+\end_layout
+
+\begin_layout Itemize
+Distance of shop to nearest murram road: This is measured in kms.
+ 
+\end_layout
+
+\begin_layout Itemize
+Selling only farm inputs: This is a dummy variable having the value of 1
+ if the shop is a specialized agro-input shop that only sells farm inputs.
+ 
+\end_layout
+
+\begin_layout Itemize
+Number of years the shop operated: This is measured in years.
+\end_layout
+
+\begin_layout Itemize
+Dedicated area: This is a dummy variable which is 1 when the seed is stored
+ in a dedicated area, away from the merchandise.
+ 
+\end_layout
+
+\begin_layout Itemize
+Pest problem: This is a dummy variable which is 1 when the dealer reports
+ problems with rats or pests.
+ 
+\end_layout
+
+\begin_layout Itemize
+Leak proof roof: This is a dummy variable which is 1 when the roof is leak
+ proof.
+ 
+\end_layout
+
+\begin_layout Itemize
+Insulated roof: This is a dummy variable which is 1 when the roof is insulated
+ to keep the heat out.
+ 
+\end_layout
+
+\begin_layout Itemize
+Insulated walls: This is a dummy variable which is 1 when the walls of the
+ shop are insulated to keep the heat out.
+ 
+\end_layout
+
+\begin_layout Itemize
+Ventilated area: This is a dummy variable which is 1 when the area is ventilated.
+\end_layout
+
+\begin_layout Itemize
+Bad lighting: This is a dummy variable which is 1 when there is either direct
+ sunlight in the seed storage area or it is dark in the seed storage area.
+\end_layout
+
+\begin_layout Itemize
+Badly stored: This is a dummy variable which is 1 when the seed is stored
+ directly on the floor or on cardboard.
+ 
+\end_layout
+
+\begin_layout Itemize
+Open storage: This is a dummy variable which is 1 when the seed is stored
+ in open bags or open containers.
+\end_layout
+
+\begin_layout Itemize
+Has certificate: This is a dummy variable which is 1 when the dealer has
+ an official certificate displayed in the store.
+\end_layout
+
+\begin_layout Itemize
+Shop rating: This is a scale of 1 (poor) to 5 (excellent) where the shops
+ are rated based on cleanliness and professionality.
+ 
+\end_layout
+
+\begin_layout Itemize
+Complaint: This is a dummy variable which is 1 when the dealer received
+ a complaint from a customer mentioning the seed he or she sold being not
+ good.
+ 
+\end_layout
+
+\begin_layout Itemize
+Temperature: This is the temperature in the seed storage area.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Farmer related controls
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Education of farmer: This is a dummy variable which is 1 if the farmer has
+ finished primary education.
+ 
+\end_layout
+
+\begin_layout Itemize
+Married farmer: This is a dummy variable which is 1 if the farmer is married.
+\end_layout
+
+\begin_layout Itemize
+Age of farmers: This is measured in years.
+\end_layout
+
+\begin_layout Itemize
+Distance from tarmac road: This is measured in kms.
+ 
+\end_layout
+
+\end_deeper
 \end_body
 \end_document
