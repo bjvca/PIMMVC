@@ -7357,3 +7357,655 @@ s_deal8<- rbind(c((format(round(sum(mn_q8$coefficients[1]),digits=4),nsmall=0)),
                   (format(round(nobs(mn_q13),digits=2),nsmall=0)),
                   (format(round(nobs(mn_q14),digits=2),nsmall=0)))
 )
+
+
+
+
+####################################################################
+################### FE at the dealer level #########################
+####################################################################
+
+fedatad <- merge(rating_dyads, farmers_seed, by="farmer_ID")
+
+fedatad[fedatad=="n/a"]<- NA
+fedatad[fedatad=="98"]<- NA
+fedatad[fedatad=="999"]<- NA
+
+#create farmer's gender dummy
+fedatad$farmergen <- ifelse(fedatad$Check2.check.maize.q15 == "Male", 1, 0)
+
+###farmer characteristics for controls 
+fedatad$educ_f <- 0
+fedatad$educ_f[fedatad$Check2.check.maize.q17=="c" | fedatad$Check2.check.maize.q17=="d" | fedatad$Check2.check.maize.q17=="e" | 
+                 fedatad$Check2.check.maize.q17=="f"  ] <- 1 #educated farmers -- finished primary educ 
+fedatad$educ_f[ fedatad$Check2.check.maize.q17=="g" ] <- NA 
+table(fedatad$educ_f) 
+
+fedatad$married <- ifelse(fedatad$Check2.check.maize.q16 == 'a', 1, 0)  #married farmers 
+
+#age of farmers 
+fedatad$Check2.check.maize.q14[ fedatad$Check2.check.maize.q14==999 ] <- NA
+summary(fedatad$Check2.check.maize.q14 )
+
+#distance from tarmac road
+fedatad$Check2.check.maize.q8[ fedatad$Check2.check.maize.q8==999 ] <- NA
+summary(fedatad$Check2.check.maize.q8 )
+
+
+###AVERAGE RATINGS 
+fedatad$quality<- as.numeric(fedatad$quality_rating)
+fedatad$general<- as.numeric(fedatad$seed_quality_general_rating)
+fedatad$yield <- as.numeric(fedatad$seed_yield_rating)
+fedatad$drought_resistent <- as.numeric(fedatad$seed_drought_rating)
+fedatad$disease_resistent <- as.numeric(fedatad$seed_disease_rating)
+fedatad$early_maturing<- as.numeric(fedatad$seed_maturing_rating)
+fedatad$germination<- as.numeric(fedatad$seed_germinate_rating)
+
+fedatad$general_rating_nonseed<- as.numeric(fedatad$general_rating)
+fedatad$location<- as.numeric(fedatad$location_rating)
+fedatad$price <- as.numeric(fedatad$price_rating)
+fedatad$stock <- as.numeric(fedatad$stock_rating)
+fedatad$reputation<- as.numeric(fedatad$reputation_rating)
+
+
+fedatad$score <-  rowMeans(fedatad[c("quality","general","yield","drought_resistent","disease_resistent","early_maturing","germination")],na.rm=T)
+fedatad$overall_rating <-  rowMeans(fedatad[c("general_rating_nonseed", "location","price","quality","stock","reputation")],na.rm=T)
+
+
+## SEED RELATED RATINGS ##
+
+#### regressions without controls - seed related ratings 
+
+summary(lm(score~farmergen +shop_ID.x, data = fedatad))
+summary(lm(quality~farmergen+shop_ID.x , data = fedatad))
+summary(lm(general~farmergen +shop_ID.x, data = fedatad))
+summary(lm(yield~farmergen +shop_ID.x, data = fedatad))
+summary(lm(drought_resistent~farmergen+shop_ID.x , data = fedatad))
+summary(lm(disease_resistent~farmergen+shop_ID.x , data = fedatad))
+summary(lm(early_maturing~farmergen+shop_ID.x , data = fedatad))
+summary(lm(germination~farmergen+shop_ID.x , data = fedatad))
+
+
+############# plm method 
+
+plmd1<-plm(score~farmergen, data = fedatad, index=c("shop_ID.x","farmer_ID"), model="within")
+id1<-mean(fixef(plmd1))
+sed1<- sqrt(diag(vcov(plmd1)))
+
+plmd2<-plm(quality~farmergen, data = fedatad, index=c("shop_ID.x","farmer_ID"), model="within")
+id2<-mean(fixef(plmd2))
+sed2<- sqrt(diag(vcov(plmd2)))
+
+plmd3<-plm(general~farmergen, data = fedatad, index=c("shop_ID.x","farmer_ID"), model="within")
+id3<-mean(fixef(plmd3))
+sed3<- sqrt(diag(vcov(plmd3)))
+
+plmd4<-plm(yield~farmergen, data = fedatad, index=c("shop_ID.x","farmer_ID"), model="within")
+id4<-mean(fixef(plmd4))
+sed4<- sqrt(diag(vcov(plmd4)))
+
+plmd5<-plm(drought_resistent~farmergen, data = fedatad, index=c("shop_ID.x","farmer_ID"), model="within")
+id5<-mean(fixef(plmd5))
+sed5<- sqrt(diag(vcov(plmd5)))
+
+plmd6<-plm(disease_resistent~farmergen, data = fedatad, index=c("shop_ID.x","farmer_ID"), model="within")
+id6<-mean(fixef(plmd6))
+sed6<- sqrt(diag(vcov(plmd6)))
+
+plmd7<-plm(early_maturing~farmergen, data = fedatad, index=c("shop_ID.x","farmer_ID"), model="within")
+id7<-mean(fixef(plmd7))
+sed7<- sqrt(diag(vcov(plmd7)))
+
+plmd8<-plm(germination~farmergen, data = fedatad, index=c("shop_ID.x","farmer_ID"), model="within")
+id8<-mean(fixef(plmd8))
+sed8<- sqrt(diag(vcov(plmd8)))
+
+fed1<- rbind( c((format(round(id1[1],digits=2),nsmall=0)),
+                (format(round(id2[1],digits=2),nsmall=0)),
+                (format(round(id3[1],digits=2),nsmall=0)),
+                (format(round(id4[1],digits=2),nsmall=0)),
+                (format(round(id5[1],digits=2),nsmall=0)),
+                (format(round(id6[1],digits=2),nsmall=0)),
+                (format(round(id7[1],digits=2),nsmall=0)),
+                (format(round(id8[1],digits=2),nsmall=0))),
+              c((format(round(sum(plmd1$coefficients[1]),digits=2),nsmall=0)),
+                (format(round(sum(plmd2$coefficients[1]),digits=2),nsmall=0)),
+                (format(round(sum(plmd3$coefficients[1]),digits=2),nsmall=0)),
+                (format(round(sum(plmd4$coefficients[1]),digits=2),nsmall=0)),
+                (format(round(sum(plmd5$coefficients[1]),digits=2),nsmall=0)),
+                (format(round(sum(plmd6$coefficients[1]),digits=2),nsmall=0)),
+                (format(round(sum(plmd7$coefficients[1]),digits=2),nsmall=0)),
+                (format(round(sum(plmd8$coefficients[1]),digits=2),nsmall=0))),
+              c((format(round(sed1[1],digits=2),nsmall=0)),
+                (format(round(sed2[1],digits=2),nsmall=0)),
+                (format(round(sed3[1],digits=2),nsmall=0)),
+                (format(round(sed4[1],digits=2),nsmall=0)),
+                (format(round(sed5[1],digits=2),nsmall=0)),
+                (format(round(sed6[1],digits=2),nsmall=0)),
+                (format(round(sed7[1],digits=2),nsmall=0)),
+                (format(round(sed8[1],digits=2),nsmall=0))),
+              c((format(round(summary(plmd1)$coefficients[1,4],digits=2),nsmall=0)),
+                (format(round(summary(plmd2)$coefficients[1,4],digits=2),nsmall=0)),
+                (format(round(summary(plmd3)$coefficients[1,4],digits=2),nsmall=0)),
+                (format(round(summary(plmd4)$coefficients[1,4],digits=2),nsmall=0)),
+                (format(round(summary(plmd5)$coefficients[1,4],digits=2),nsmall=0)),
+                (format(round(summary(plmd6)$coefficients[1,4],digits=2),nsmall=0)),
+                (format(round(summary(plmd7)$coefficients[1,4],digits=2),nsmall=0)),
+                (format(round(summary(plmd8)$coefficients[1,4],digits=2),nsmall=0))),
+              
+              
+              c((format(round(summary(plmd1)$r.squared[1],digits=4),nsmall=0)),
+                (format(round(summary(plmd2)$r.squared[1],digits=4),nsmall=0)),
+                (format(round(summary(plmd3)$r.squared[1],digits=4),nsmall=0)),
+                (format(round(summary(plmd4)$r.squared[1],digits=4),nsmall=0)),
+                (format(round(summary(plmd5)$r.squared[1],digits=4),nsmall=0)),
+                (format(round(summary(plmd6)$r.squared[1],digits=4),nsmall=0)),
+                (format(round(summary(plmd7)$r.squared[1],digits=4),nsmall=0)),
+                (format(round(summary(plmd8)$r.squared[1],digits=4),nsmall=0))),
+              c((format(round(summary(plmd1)$r.squared[2],digits=4),nsmall=0)),
+                (format(round(summary(plmd2)$r.squared[2],digits=4),nsmall=0)),
+                (format(round(summary(plmd3)$r.squared[2],digits=4),nsmall=0)),
+                (format(round(summary(plmd4)$r.squared[2],digits=4),nsmall=0)),
+                (format(round(summary(plmd5)$r.squared[2],digits=4),nsmall=0)),
+                (format(round(summary(plmd6)$r.squared[2],digits=4),nsmall=0)),
+                (format(round(summary(plmd7)$r.squared[2],digits=4),nsmall=0)),
+                (format(round(summary(plmd8)$r.squared[2],digits=4),nsmall=0))),
+              c((format(round(nobs(plmd1),digits=2),nsmall=0)),
+                (format(round(nobs(plmd2),digits=2),nsmall=0)),
+                (format(round(nobs(plmd3),digits=2),nsmall=0)),
+                (format(round(nobs(plmd4),digits=2),nsmall=0)),
+                (format(round(nobs(plmd5),digits=2),nsmall=0)),
+                (format(round(nobs(plmd6),digits=2),nsmall=0)),
+                (format(round(nobs(plmd7),digits=2),nsmall=0)),
+                (format(round(nobs(plmd8),digits=2),nsmall=0)))
+)
+
+
+#### regressions with controls - seed related ratings 
+
+summary(lm(score~farmergen +shop_ID.x+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8, data = fedatad))
+summary(lm(quality~farmergen+shop_ID.x +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8, data = fedatad))
+summary(lm(general~farmergen +shop_ID.x+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8, data = fedatad))
+summary(lm(yield~farmergen +shop_ID.x+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8, data = fedatad))
+summary(lm(drought_resistent~farmergen+shop_ID.x+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8 , data = fedatad))
+summary(lm(disease_resistent~farmergen+shop_ID.x +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8, data = fedatad))
+summary(lm(early_maturing~farmergen+shop_ID.x +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8, data = fedatad))
+summary(lm(germination~farmergen+shop_ID.x+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8 , data = fedatad))
+
+
+############# plm method 
+
+plmd9<-plm(score~farmergen+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8, data = fedatad, index=c("shop_ID.x","farmer_ID"), model="within")
+id9<-mean(fixef(plmd9))
+sed9<- sqrt(diag(vcov(plmd9)))
+
+plmd10<-plm(quality~farmergen+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8, data = fedatad, index=c("shop_ID.x","farmer_ID"), model="within")
+id10<-mean(fixef(plmd10))
+sed10<- sqrt(diag(vcov(plmd10)))
+
+plmd11<-plm(general~farmergen+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8, data = fedatad, index=c("shop_ID.x","farmer_ID"), model="within")
+id11<-mean(fixef(plmd11))
+sed11<- sqrt(diag(vcov(plmd11)))
+
+plmd12<-plm(yield~farmergen+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8, data = fedatad, index=c("shop_ID.x","farmer_ID"), model="within")
+id12<-mean(fixef(plmd12))
+sed12<- sqrt(diag(vcov(plmd12)))
+
+plmd13<-plm(drought_resistent~farmergen+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8, data = fedatad, index=c("shop_ID.x","farmer_ID"), model="within")
+id13<-mean(fixef(plmd13))
+sed13<- sqrt(diag(vcov(plmd13)))
+
+plmd14<-plm(disease_resistent~farmergen+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8, data = fedatad, index=c("shop_ID.x","farmer_ID"), model="within")
+id14<-mean(fixef(plmd14))
+sed14<- sqrt(diag(vcov(plmd14)))
+
+plmd15<-plm(early_maturing~farmergen+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8, data = fedatad, index=c("shop_ID.x","farmer_ID"), model="within")
+id15<-mean(fixef(plmd15))
+sed15<- sqrt(diag(vcov(plmd15)))
+
+plmd16<-plm(germination~farmergen+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8, data = fedatad, index=c("shop_ID.x","farmer_ID"), model="within")
+id16<-mean(fixef(plmd16))
+sed16<- sqrt(diag(vcov(plmd16)))
+
+fed2<- rbind( c((format(round(id9[1],digits=4),nsmall=0)),
+                (format(round(id10[1],digits=4),nsmall=0)),
+                (format(round(id11[1],digits=4),nsmall=0)),
+                (format(round(id12[1],digits=4),nsmall=0)),
+                (format(round(id13[1],digits=4),nsmall=0)),
+                (format(round(id14[1],digits=4),nsmall=0)),
+                (format(round(id15[1],digits=4),nsmall=0)),
+                (format(round(id16[1],digits=4),nsmall=0))),
+              c((format(round(sum(plmd9$coefficients[1]),digits=4),nsmall=0)),
+                (format(round(sum(plmd10$coefficients[1]),digits=4),nsmall=0)),
+                (format(round(sum(plmd11$coefficients[1]),digits=4),nsmall=0)),
+                (format(round(sum(plmd12$coefficients[1]),digits=4),nsmall=0)),
+                (format(round(sum(plmd13$coefficients[1]),digits=4),nsmall=0)),
+                (format(round(sum(plmd14$coefficients[1]),digits=4),nsmall=0)),
+                (format(round(sum(plmd15$coefficients[1]),digits=4),nsmall=0)),
+                (format(round(sum(plmd16$coefficients[1]),digits=4),nsmall=0))),
+              c((format(round(sed9[1],digits=4),nsmall=0)),
+                (format(round(sed10[1],digits=4),nsmall=0)),
+                (format(round(sed11[1],digits=4),nsmall=0)),
+                (format(round(sed12[1],digits=4),nsmall=0)),
+                (format(round(sed13[1],digits=4),nsmall=0)),
+                (format(round(sed14[1],digits=4),nsmall=0)),
+                (format(round(sed15[1],digits=4),nsmall=0)),
+                (format(round(sed16[1],digits=4),nsmall=0))),
+              c((format(round(summary(plmd9)$coefficients[1,4],digits=4),nsmall=0)),
+                (format(round(summary(plmd10)$coefficients[1,4],digits=4),nsmall=0)),
+                (format(round(summary(plmd11)$coefficients[1,4],digits=4),nsmall=0)),
+                (format(round(summary(plmd12)$coefficients[1,4],digits=4),nsmall=0)),
+                (format(round(summary(plmd13)$coefficients[1,4],digits=4),nsmall=0)),
+                (format(round(summary(plmd14)$coefficients[1,4],digits=4),nsmall=0)),
+                (format(round(summary(plmd15)$coefficients[1,4],digits=4),nsmall=0)),
+                (format(round(summary(plmd16)$coefficients[1,4],digits=4),nsmall=0))),
+              
+              c((format(round(sum(plmd9$coefficients[2]),digits=4),nsmall=0)),
+                (format(round(sum(plmd10$coefficients[2]),digits=4),nsmall=0)),
+                (format(round(sum(plmd11$coefficients[2]),digits=4),nsmall=0)),
+                (format(round(sum(plmd12$coefficients[2]),digits=4),nsmall=0)),
+                (format(round(sum(plmd13$coefficients[2]),digits=4),nsmall=0)),
+                (format(round(sum(plmd14$coefficients[2]),digits=4),nsmall=0)),
+                (format(round(sum(plmd15$coefficients[2]),digits=4),nsmall=0)),
+                (format(round(sum(plmd16$coefficients[2]),digits=4),nsmall=0))),
+              c((format(round(sed9[2],digits=4),nsmall=0)),
+                (format(round(sed10[2],digits=4),nsmall=0)),
+                (format(round(sed11[2],digits=4),nsmall=0)),
+                (format(round(sed12[2],digits=4),nsmall=0)),
+                (format(round(sed13[2],digits=4),nsmall=0)),
+                (format(round(sed14[2],digits=4),nsmall=0)),
+                (format(round(sed15[2],digits=4),nsmall=0)),
+                (format(round(sed16[2],digits=4),nsmall=0))),
+              c((format(round(summary(plmd9)$coefficients[2,4],digits=4),nsmall=0)),
+                (format(round(summary(plmd10)$coefficients[2,4],digits=4),nsmall=0)),
+                (format(round(summary(plmd11)$coefficients[2,4],digits=4),nsmall=0)),
+                (format(round(summary(plmd12)$coefficients[2,4],digits=4),nsmall=0)),
+                (format(round(summary(plmd13)$coefficients[2,4],digits=4),nsmall=0)),
+                (format(round(summary(plmd14)$coefficients[2,4],digits=4),nsmall=0)),
+                (format(round(summary(plmd15)$coefficients[2,4],digits=4),nsmall=0)),
+                (format(round(summary(plmd16)$coefficients[2,4],digits=4),nsmall=0))),
+              
+              c((format(round(sum(plmd9$coefficients[3]),digits=4),nsmall=0)),
+                (format(round(sum(plmd10$coefficients[3]),digits=4),nsmall=0)),
+                (format(round(sum(plmd11$coefficients[3]),digits=4),nsmall=0)),
+                (format(round(sum(plmd12$coefficients[3]),digits=4),nsmall=0)),
+                (format(round(sum(plmd13$coefficients[3]),digits=4),nsmall=0)),
+                (format(round(sum(plmd14$coefficients[3]),digits=4),nsmall=0)),
+                (format(round(sum(plmd15$coefficients[3]),digits=4),nsmall=0)),
+                (format(round(sum(plmd16$coefficients[3]),digits=4),nsmall=0))),
+              c((format(round(sed9[3],digits=4),nsmall=0)),
+                (format(round(sed10[3],digits=4),nsmall=0)),
+                (format(round(sed11[3],digits=4),nsmall=0)),
+                (format(round(sed12[3],digits=4),nsmall=0)),
+                (format(round(sed13[3],digits=4),nsmall=0)),
+                (format(round(sed14[3],digits=4),nsmall=0)),
+                (format(round(sed15[3],digits=4),nsmall=0)),
+                (format(round(sed16[3],digits=4),nsmall=0))),
+              c((format(round(summary(plmd9)$coefficients[3,4],digits=4),nsmall=0)),
+                (format(round(summary(plmd10)$coefficients[3,4],digits=4),nsmall=0)),
+                (format(round(summary(plmd11)$coefficients[3,4],digits=4),nsmall=0)),
+                (format(round(summary(plmd12)$coefficients[3,4],digits=4),nsmall=0)),
+                (format(round(summary(plmd13)$coefficients[3,4],digits=4),nsmall=0)),
+                (format(round(summary(plmd14)$coefficients[3,4],digits=4),nsmall=0)),
+                (format(round(summary(plmd15)$coefficients[3,4],digits=4),nsmall=0)),
+                (format(round(summary(plmd16)$coefficients[3,4],digits=4),nsmall=0))),
+              
+              c((format(round(sum(plmd9$coefficients[4]),digits=4),nsmall=0)),
+                (format(round(sum(plmd10$coefficients[4]),digits=4),nsmall=0)),
+                (format(round(sum(plmd11$coefficients[4]),digits=4),nsmall=0)),
+                (format(round(sum(plmd12$coefficients[4]),digits=4),nsmall=0)),
+                (format(round(sum(plmd13$coefficients[4]),digits=4),nsmall=0)),
+                (format(round(sum(plmd14$coefficients[4]),digits=4),nsmall=0)),
+                (format(round(sum(plmd15$coefficients[4]),digits=4),nsmall=0)),
+                (format(round(sum(plmd16$coefficients[4]),digits=4),nsmall=0))),
+              c((format(round(sed9[4],digits=4),nsmall=0)),
+                (format(round(sed10[4],digits=4),nsmall=0)),
+                (format(round(sed11[4],digits=4),nsmall=0)),
+                (format(round(sed12[4],digits=4),nsmall=0)),
+                (format(round(sed13[4],digits=4),nsmall=0)),
+                (format(round(sed14[4],digits=4),nsmall=0)),
+                (format(round(sed15[4],digits=4),nsmall=0)),
+                (format(round(sed16[4],digits=4),nsmall=0))),
+              c((format(round(summary(plmd9)$coefficients[4,4],digits=4),nsmall=0)),
+                (format(round(summary(plmd10)$coefficients[4,4],digits=4),nsmall=0)),
+                (format(round(summary(plmd11)$coefficients[4,4],digits=4),nsmall=0)),
+                (format(round(summary(plmd12)$coefficients[4,4],digits=4),nsmall=0)),
+                (format(round(summary(plmd13)$coefficients[4,4],digits=4),nsmall=0)),
+                (format(round(summary(plmd14)$coefficients[4,4],digits=4),nsmall=0)),
+                (format(round(summary(plmd15)$coefficients[4,4],digits=4),nsmall=0)),
+                (format(round(summary(plmd16)$coefficients[4,4],digits=4),nsmall=0))),
+              
+              c((format(round(sum(plmd9$coefficients[5]),digits=4),nsmall=0)),
+                (format(round(sum(plmd10$coefficients[5]),digits=4),nsmall=0)),
+                (format(round(sum(plmd11$coefficients[5]),digits=4),nsmall=0)),
+                (format(round(sum(plmd12$coefficients[5]),digits=4),nsmall=0)),
+                (format(round(sum(plmd13$coefficients[5]),digits=4),nsmall=0)),
+                (format(round(sum(plmd14$coefficients[5]),digits=4),nsmall=0)),
+                (format(round(sum(plmd15$coefficients[5]),digits=4),nsmall=0)),
+                (format(round(sum(plmd16$coefficients[5]),digits=4),nsmall=0))),
+              c((format(round(sed9[5],digits=4),nsmall=0)),
+                (format(round(sed10[5],digits=4),nsmall=0)),
+                (format(round(sed11[5],digits=4),nsmall=0)),
+                (format(round(sed12[5],digits=4),nsmall=0)),
+                (format(round(sed13[5],digits=4),nsmall=0)),
+                (format(round(sed14[5],digits=4),nsmall=0)),
+                (format(round(sed15[5],digits=4),nsmall=0)),
+                (format(round(sed16[5],digits=4),nsmall=0))),
+              c((format(round(summary(plmd9)$coefficients[5,4],digits=4),nsmall=0)),
+                (format(round(summary(plmd10)$coefficients[5,4],digits=4),nsmall=0)),
+                (format(round(summary(plmd11)$coefficients[5,4],digits=4),nsmall=0)),
+                (format(round(summary(plmd12)$coefficients[5,4],digits=4),nsmall=0)),
+                (format(round(summary(plmd13)$coefficients[5,4],digits=4),nsmall=0)),
+                (format(round(summary(plmd14)$coefficients[5,4],digits=4),nsmall=0)),
+                (format(round(summary(plmd15)$coefficients[5,4],digits=4),nsmall=0)),
+                (format(round(summary(plmd16)$coefficients[5,4],digits=4),nsmall=0))),
+              
+              c((format(round(summary(plmd9)$r.squared[1],digits=4),nsmall=0)),
+                (format(round(summary(plmd10)$r.squared[1],digits=4),nsmall=0)),
+                (format(round(summary(plmd11)$r.squared[1],digits=4),nsmall=0)),
+                (format(round(summary(plmd12)$r.squared[1],digits=4),nsmall=0)),
+                (format(round(summary(plmd13)$r.squared[1],digits=4),nsmall=0)),
+                (format(round(summary(plmd14)$r.squared[1],digits=4),nsmall=0)),
+                (format(round(summary(plmd15)$r.squared[1],digits=4),nsmall=0)),
+                (format(round(summary(plmd16)$r.squared[1],digits=4),nsmall=0))),
+              c((format(round(summary(plmd9)$r.squared[2],digits=4),nsmall=0)),
+                (format(round(summary(plmd10)$r.squared[2],digits=4),nsmall=0)),
+                (format(round(summary(plmd11)$r.squared[2],digits=4),nsmall=0)),
+                (format(round(summary(plmd12)$r.squared[2],digits=4),nsmall=0)),
+                (format(round(summary(plmd13)$r.squared[2],digits=4),nsmall=0)),
+                (format(round(summary(plmd14)$r.squared[2],digits=4),nsmall=0)),
+                (format(round(summary(plmd15)$r.squared[2],digits=4),nsmall=0)),
+                (format(round(summary(plmd16)$r.squared[2],digits=4),nsmall=0))),
+              c((format(round(nobs(plmd9),digits=4),nsmall=0)),
+                (format(round(nobs(plmd10),digits=4),nsmall=0)),
+                (format(round(nobs(plmd11),digits=4),nsmall=0)),
+                (format(round(nobs(plmd12),digits=4),nsmall=0)),
+                (format(round(nobs(plmd13),digits=4),nsmall=0)),
+                (format(round(nobs(plmd14),digits=4),nsmall=0)),
+                (format(round(nobs(plmd15),digits=4),nsmall=0)),
+                (format(round(nobs(plmd16),digits=4),nsmall=0)))
+)
+
+
+
+
+## NON-SEED RELATED RATINGS ##
+
+#### regressions without controls - non-seed related ratings 
+
+summary(lm(overall_rating~farmergen +shop_ID.x, data = fedatad))
+summary(lm(general_rating_nonseed~farmergen+shop_ID.x , data = fedatad))
+summary(lm(location~farmergen +shop_ID.x, data = fedatad))
+summary(lm(quality~farmergen +shop_ID.x, data = fedatad))
+summary(lm(price~farmergen+shop_ID.x , data = fedatad))
+summary(lm(stock~farmergen+shop_ID.x , data = fedatad))
+summary(lm(reputation~farmergen+shop_ID.x , data = fedatad))
+
+
+############# plm method 
+
+plmdn1<-plm(overall_rating~farmergen, data = fedatad, index=c("shop_ID.x","farmer_ID"), model="within")
+idn1<-mean(fixef(plmdn1))
+sedn1<- sqrt(diag(vcov(plmdn1)))
+
+plmdn2<-plm(general_rating_nonseed~farmergen, data = fedatad, index=c("shop_ID.x","farmer_ID"), model="within")
+idn2<-mean(fixef(plmdn2))
+sedn2<- sqrt(diag(vcov(plmdn2)))
+
+plmdn3<-plm(location~farmergen, data = fedatad, index=c("shop_ID.x","farmer_ID"), model="within")
+idn3<-mean(fixef(plmdn3))
+sedn3<- sqrt(diag(vcov(plmdn3)))
+
+plmdn4<-plm(quality~farmergen, data = fedatad, index=c("shop_ID.x","farmer_ID"), model="within")
+idn4<-mean(fixef(plmdn4))
+sedn4<- sqrt(diag(vcov(plmdn4)))
+
+plmdn5<-plm(price~farmergen, data = fedatad, index=c("shop_ID.x","farmer_ID"), model="within")
+idn5<-mean(fixef(plmdn5))
+sedn5<- sqrt(diag(vcov(plmdn5)))
+
+plmdn6<-plm(stock~farmergen, data = fedatad, index=c("shop_ID.x","farmer_ID"), model="within")
+idn6<-mean(fixef(plmdn6))
+sedn6<- sqrt(diag(vcov(plmdn6)))
+
+plmdn7<-plm(reputation~farmergen, data = fedatad, index=c("shop_ID.x","farmer_ID"), model="within")
+idn7<-mean(fixef(plmdn7))
+sedn7<- sqrt(diag(vcov(plmdn7)))
+
+
+fed3<- rbind( c((format(round(idn1[1],digits=2),nsmall=0)),
+                (format(round(idn2[1],digits=2),nsmall=0)),
+                (format(round(idn3[1],digits=2),nsmall=0)),
+                (format(round(idn4[1],digits=2),nsmall=0)),
+                (format(round(idn5[1],digits=2),nsmall=0)),
+                (format(round(idn6[1],digits=2),nsmall=0)),
+                (format(round(idn7[1],digits=2),nsmall=0))),
+              c((format(round(sum(plmdn1$coefficients[1]),digits=2),nsmall=0)),
+                (format(round(sum(plmdn2$coefficients[1]),digits=2),nsmall=0)),
+                (format(round(sum(plmdn3$coefficients[1]),digits=2),nsmall=0)),
+                (format(round(sum(plmdn4$coefficients[1]),digits=2),nsmall=0)),
+                (format(round(sum(plmdn5$coefficients[1]),digits=2),nsmall=0)),
+                (format(round(sum(plmdn6$coefficients[1]),digits=2),nsmall=0)),
+                (format(round(sum(plmdn7$coefficients[1]),digits=2),nsmall=0))),
+              c((format(round(sedn1[1],digits=2),nsmall=0)),
+                (format(round(sedn2[1],digits=2),nsmall=0)),
+                (format(round(sedn3[1],digits=2),nsmall=0)),
+                (format(round(sedn4[1],digits=2),nsmall=0)),
+                (format(round(sedn5[1],digits=2),nsmall=0)),
+                (format(round(sedn6[1],digits=2),nsmall=0)),
+                (format(round(sedn7[1],digits=2),nsmall=0))),
+              c((format(round(summary(plmdn1)$coefficients[1,4],digits=2),nsmall=0)),
+                (format(round(summary(plmdn2)$coefficients[1,4],digits=2),nsmall=0)),
+                (format(round(summary(plmdn3)$coefficients[1,4],digits=2),nsmall=0)),
+                (format(round(summary(plmdn4)$coefficients[1,4],digits=2),nsmall=0)),
+                (format(round(summary(plmdn5)$coefficients[1,4],digits=2),nsmall=0)),
+                (format(round(summary(plmdn6)$coefficients[1,4],digits=2),nsmall=0)),
+                (format(round(summary(plmdn7)$coefficients[1,4],digits=2),nsmall=0))),
+              
+              
+              c((format(round(summary(plmdn1)$r.squared[1],digits=4),nsmall=0)),
+                (format(round(summary(plmdn2)$r.squared[1],digits=4),nsmall=0)),
+                (format(round(summary(plmdn3)$r.squared[1],digits=4),nsmall=0)),
+                (format(round(summary(plmdn4)$r.squared[1],digits=4),nsmall=0)),
+                (format(round(summary(plmdn5)$r.squared[1],digits=4),nsmall=0)),
+                (format(round(summary(plmdn6)$r.squared[1],digits=4),nsmall=0)),
+                (format(round(summary(plmdn7)$r.squared[1],digits=4),nsmall=0))),
+              c((format(round(summary(plmdn1)$r.squared[2],digits=4),nsmall=0)),
+                (format(round(summary(plmdn2)$r.squared[2],digits=4),nsmall=0)),
+                (format(round(summary(plmdn3)$r.squared[2],digits=4),nsmall=0)),
+                (format(round(summary(plmdn4)$r.squared[2],digits=4),nsmall=0)),
+                (format(round(summary(plmdn5)$r.squared[2],digits=4),nsmall=0)),
+                (format(round(summary(plmdn6)$r.squared[2],digits=4),nsmall=0)),
+                (format(round(summary(plmdn7)$r.squared[2],digits=4),nsmall=0))),
+              c((format(round(nobs(plmdn1),digits=2),nsmall=0)),
+                (format(round(nobs(plmdn2),digits=2),nsmall=0)),
+                (format(round(nobs(plmdn3),digits=2),nsmall=0)),
+                (format(round(nobs(plmdn4),digits=2),nsmall=0)),
+                (format(round(nobs(plmdn5),digits=2),nsmall=0)),
+                (format(round(nobs(plmdn6),digits=2),nsmall=0)),
+                (format(round(nobs(plmdn7),digits=2),nsmall=0)))
+)
+
+
+#### regressions with controls - non-seed related ratings 
+
+summary(lm(overall_rating~farmergen +shop_ID.x+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8, data = fedatad))
+summary(lm(general_rating_nonseed~farmergen+shop_ID.x+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8 , data = fedatad))
+summary(lm(location~farmergen +shop_ID.x+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8, data = fedatad))
+summary(lm(quality~farmergen +shop_ID.x+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8, data = fedatad))
+summary(lm(price~farmergen+shop_ID.x +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8, data = fedatad))
+summary(lm(stock~farmergen+shop_ID.x+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8 , data = fedatad))
+summary(lm(reputation~farmergen+shop_ID.x+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8 , data = fedatad))
+
+
+############# plm method 
+
+plmdn9<-plm(overall_rating~farmergen+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8, data = fedatad, index=c("shop_ID.x","farmer_ID"), model="within")
+idn9<-mean(fixef(plmdn9))
+sedn9<- sqrt(diag(vcov(plmdn9)))
+
+plmdn10<-plm(general_rating_nonseed~farmergen+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8, data = fedatad, index=c("shop_ID.x","farmer_ID"), model="within")
+idn10<-mean(fixef(plmdn10))
+sedn10<- sqrt(diag(vcov(plmdn10)))
+
+plmdn11<-plm(location~farmergen+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8, data = fedatad, index=c("shop_ID.x","farmer_ID"), model="within")
+idn11<-mean(fixef(plmdn11))
+sedn11<- sqrt(diag(vcov(plmdn11)))
+
+plmdn12<-plm(quality~farmergen+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8, data = fedatad, index=c("shop_ID.x","farmer_ID"), model="within")
+idn12<-mean(fixef(plmdn12))
+sedn12<- sqrt(diag(vcov(plmdn12)))
+
+plmdn13<-plm(price~farmergen+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8, data = fedatad, index=c("shop_ID.x","farmer_ID"), model="within")
+idn13<-mean(fixef(plmdn13))
+sedn13<- sqrt(diag(vcov(plmdn13)))
+
+plmdn14<-plm(stock~farmergen+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8, data = fedatad, index=c("shop_ID.x","farmer_ID"), model="within")
+idn14<-mean(fixef(plmdn14))
+sedn14<- sqrt(diag(vcov(plmdn14)))
+
+plmdn15<-plm(reputation~farmergen+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8, data = fedatad, index=c("shop_ID.x","farmer_ID"), model="within")
+idn15<-mean(fixef(plmdn15))
+sedn15<- sqrt(diag(vcov(plmdn15)))
+
+
+fed4<- rbind( c((format(round(idn9[1],digits=4),nsmall=0)),
+                (format(round(idn10[1],digits=4),nsmall=0)),
+                (format(round(idn11[1],digits=4),nsmall=0)),
+                (format(round(idn12[1],digits=4),nsmall=0)),
+                (format(round(idn13[1],digits=4),nsmall=0)),
+                (format(round(idn14[1],digits=4),nsmall=0)),
+                (format(round(idn15[1],digits=4),nsmall=0))),
+              c((format(round(sum(plmdn9$coefficients[1]),digits=4),nsmall=0)),
+                (format(round(sum(plmdn10$coefficients[1]),digits=4),nsmall=0)),
+                (format(round(sum(plmdn11$coefficients[1]),digits=4),nsmall=0)),
+                (format(round(sum(plmdn12$coefficients[1]),digits=4),nsmall=0)),
+                (format(round(sum(plmdn13$coefficients[1]),digits=4),nsmall=0)),
+                (format(round(sum(plmdn14$coefficients[1]),digits=4),nsmall=0)),
+                (format(round(sum(plmdn15$coefficients[1]),digits=4),nsmall=0))),
+              c((format(round(sedn9[1],digits=4),nsmall=0)),
+                (format(round(sedn10[1],digits=4),nsmall=0)),
+                (format(round(sedn11[1],digits=4),nsmall=0)),
+                (format(round(sedn12[1],digits=4),nsmall=0)),
+                (format(round(sedn13[1],digits=4),nsmall=0)),
+                (format(round(sedn14[1],digits=4),nsmall=0)),
+                (format(round(sedn15[1],digits=4),nsmall=0))),
+              c((format(round(summary(plmdn9)$coefficients[1,4],digits=4),nsmall=0)),
+                (format(round(summary(plmdn10)$coefficients[1,4],digits=4),nsmall=0)),
+                (format(round(summary(plmdn11)$coefficients[1,4],digits=4),nsmall=0)),
+                (format(round(summary(plmdn12)$coefficients[1,4],digits=4),nsmall=0)),
+                (format(round(summary(plmdn13)$coefficients[1,4],digits=4),nsmall=0)),
+                (format(round(summary(plmdn14)$coefficients[1,4],digits=4),nsmall=0)),
+                (format(round(summary(plmdn15)$coefficients[1,4],digits=4),nsmall=0))),
+              
+              c((format(round(sum(plmdn9$coefficients[2]),digits=4),nsmall=0)),
+                (format(round(sum(plmdn10$coefficients[2]),digits=4),nsmall=0)),
+                (format(round(sum(plmdn11$coefficients[2]),digits=4),nsmall=0)),
+                (format(round(sum(plmdn12$coefficients[2]),digits=4),nsmall=0)),
+                (format(round(sum(plmdn13$coefficients[2]),digits=4),nsmall=0)),
+                (format(round(sum(plmdn14$coefficients[2]),digits=4),nsmall=0)),
+                (format(round(sum(plmdn15$coefficients[2]),digits=4),nsmall=0))),
+              c((format(round(sedn9[2],digits=4),nsmall=0)),
+                (format(round(sedn10[2],digits=4),nsmall=0)),
+                (format(round(sedn11[2],digits=4),nsmall=0)),
+                (format(round(sedn12[2],digits=4),nsmall=0)),
+                (format(round(sedn13[2],digits=4),nsmall=0)),
+                (format(round(sedn14[2],digits=4),nsmall=0)),
+                (format(round(sedn15[2],digits=4),nsmall=0))),
+              c((format(round(summary(plmdn9)$coefficients[2,4],digits=4),nsmall=0)),
+                (format(round(summary(plmdn10)$coefficients[2,4],digits=4),nsmall=0)),
+                (format(round(summary(plmdn11)$coefficients[2,4],digits=4),nsmall=0)),
+                (format(round(summary(plmdn12)$coefficients[2,4],digits=4),nsmall=0)),
+                (format(round(summary(plmdn13)$coefficients[2,4],digits=4),nsmall=0)),
+                (format(round(summary(plmdn14)$coefficients[2,4],digits=4),nsmall=0)),
+                (format(round(summary(plmdn15)$coefficients[2,4],digits=4),nsmall=0))),
+              
+              c((format(round(sum(plmdn9$coefficients[3]),digits=4),nsmall=0)),
+                (format(round(sum(plmdn10$coefficients[3]),digits=4),nsmall=0)),
+                (format(round(sum(plmdn11$coefficients[3]),digits=4),nsmall=0)),
+                (format(round(sum(plmdn12$coefficients[3]),digits=4),nsmall=0)),
+                (format(round(sum(plmdn13$coefficients[3]),digits=4),nsmall=0)),
+                (format(round(sum(plmdn14$coefficients[3]),digits=4),nsmall=0)),
+                (format(round(sum(plmdn15$coefficients[3]),digits=4),nsmall=0))),
+              c((format(round(sedn9[3],digits=4),nsmall=0)),
+                (format(round(sedn10[3],digits=4),nsmall=0)),
+                (format(round(sedn11[3],digits=4),nsmall=0)),
+                (format(round(sedn12[3],digits=4),nsmall=0)),
+                (format(round(sedn13[3],digits=4),nsmall=0)),
+                (format(round(sedn14[3],digits=4),nsmall=0)),
+                (format(round(sedn15[3],digits=4),nsmall=0))),
+              c((format(round(summary(plmdn9)$coefficients[3,4],digits=4),nsmall=0)),
+                (format(round(summary(plmdn10)$coefficients[3,4],digits=4),nsmall=0)),
+                (format(round(summary(plmdn11)$coefficients[3,4],digits=4),nsmall=0)),
+                (format(round(summary(plmdn12)$coefficients[3,4],digits=4),nsmall=0)),
+                (format(round(summary(plmdn13)$coefficients[3,4],digits=4),nsmall=0)),
+                (format(round(summary(plmdn14)$coefficients[3,4],digits=4),nsmall=0)),
+                (format(round(summary(plmdn15)$coefficients[3,4],digits=4),nsmall=0))),
+              
+              c((format(round(sum(plmdn9$coefficients[4]),digits=4),nsmall=0)),
+                (format(round(sum(plmdn10$coefficients[4]),digits=4),nsmall=0)),
+                (format(round(sum(plmdn11$coefficients[4]),digits=4),nsmall=0)),
+                (format(round(sum(plmdn12$coefficients[4]),digits=4),nsmall=0)),
+                (format(round(sum(plmdn13$coefficients[4]),digits=4),nsmall=0)),
+                (format(round(sum(plmdn14$coefficients[4]),digits=4),nsmall=0)),
+                (format(round(sum(plmdn15$coefficients[4]),digits=4),nsmall=0))),
+              c((format(round(sedn9[4],digits=4),nsmall=0)),
+                (format(round(sedn10[4],digits=4),nsmall=0)),
+                (format(round(sedn11[4],digits=4),nsmall=0)),
+                (format(round(sedn12[4],digits=4),nsmall=0)),
+                (format(round(sedn13[4],digits=4),nsmall=0)),
+                (format(round(sedn14[4],digits=4),nsmall=0)),
+                (format(round(sedn15[4],digits=4),nsmall=0))),
+              c((format(round(summary(plmdn9)$coefficients[4,4],digits=4),nsmall=0)),
+                (format(round(summary(plmdn10)$coefficients[4,4],digits=4),nsmall=0)),
+                (format(round(summary(plmdn11)$coefficients[4,4],digits=4),nsmall=0)),
+                (format(round(summary(plmdn12)$coefficients[4,4],digits=4),nsmall=0)),
+                (format(round(summary(plmdn13)$coefficients[4,4],digits=4),nsmall=0)),
+                (format(round(summary(plmdn14)$coefficients[4,4],digits=4),nsmall=0)),
+                (format(round(summary(plmdn15)$coefficients[4,4],digits=4),nsmall=0))),
+              
+              c((format(round(sum(plmdn9$coefficients[5]),digits=4),nsmall=0)),
+                (format(round(sum(plmdn10$coefficients[5]),digits=4),nsmall=0)),
+                (format(round(sum(plmdn11$coefficients[5]),digits=4),nsmall=0)),
+                (format(round(sum(plmdn12$coefficients[5]),digits=4),nsmall=0)),
+                (format(round(sum(plmdn13$coefficients[5]),digits=4),nsmall=0)),
+                (format(round(sum(plmdn14$coefficients[5]),digits=4),nsmall=0)),
+                (format(round(sum(plmdn15$coefficients[5]),digits=4),nsmall=0))),
+              c((format(round(sedn9[5],digits=4),nsmall=0)),
+                (format(round(sedn10[5],digits=4),nsmall=0)),
+                (format(round(sedn11[5],digits=4),nsmall=0)),
+                (format(round(sedn12[5],digits=4),nsmall=0)),
+                (format(round(sedn13[5],digits=4),nsmall=0)),
+                (format(round(sedn14[5],digits=4),nsmall=0)),
+                (format(round(sedn15[5],digits=4),nsmall=0))),
+              c((format(round(summary(plmdn9)$coefficients[5,4],digits=4),nsmall=0)),
+                (format(round(summary(plmdn10)$coefficients[5,4],digits=4),nsmall=0)),
+                (format(round(summary(plmdn11)$coefficients[5,4],digits=4),nsmall=0)),
+                (format(round(summary(plmdn12)$coefficients[5,4],digits=4),nsmall=0)),
+                (format(round(summary(plmdn13)$coefficients[5,4],digits=4),nsmall=0)),
+                (format(round(summary(plmdn14)$coefficients[5,4],digits=4),nsmall=0)),
+                (format(round(summary(plmdn15)$coefficients[5,4],digits=4),nsmall=0))),
+              
+              c((format(round(summary(plmdn9)$r.squared[1],digits=4),nsmall=0)),
+                (format(round(summary(plmdn10)$r.squared[1],digits=4),nsmall=0)),
+                (format(round(summary(plmdn11)$r.squared[1],digits=4),nsmall=0)),
+                (format(round(summary(plmdn12)$r.squared[1],digits=4),nsmall=0)),
+                (format(round(summary(plmdn13)$r.squared[1],digits=4),nsmall=0)),
+                (format(round(summary(plmdn14)$r.squared[1],digits=4),nsmall=0)),
+                (format(round(summary(plmdn15)$r.squared[1],digits=4),nsmall=0))),
+              c((format(round(summary(plmdn9)$r.squared[2],digits=4),nsmall=0)),
+                (format(round(summary(plmdn10)$r.squared[2],digits=4),nsmall=0)),
+                (format(round(summary(plmdn11)$r.squared[2],digits=4),nsmall=0)),
+                (format(round(summary(plmdn12)$r.squared[2],digits=4),nsmall=0)),
+                (format(round(summary(plmdn13)$r.squared[2],digits=4),nsmall=0)),
+                (format(round(summary(plmdn14)$r.squared[2],digits=4),nsmall=0)),
+                (format(round(summary(plmdn15)$r.squared[2],digits=4),nsmall=0))),
+              c((format(round(nobs(plmdn9),digits=4),nsmall=0)),
+                (format(round(nobs(plmdn10),digits=4),nsmall=0)),
+                (format(round(nobs(plmdn11),digits=4),nsmall=0)),
+                (format(round(nobs(plmdn12),digits=4),nsmall=0)),
+                (format(round(nobs(plmdn13),digits=4),nsmall=0)),
+                (format(round(nobs(plmdn14),digits=4),nsmall=0)),
+                (format(round(nobs(plmdn15),digits=4),nsmall=0)))
+)
+
