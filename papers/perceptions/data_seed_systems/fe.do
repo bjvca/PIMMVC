@@ -126,7 +126,7 @@ tset farm_id deal_id
 
 sum maizeowneragreeage prim maizeowneragreeq3 maizeowneragreeq4 maizeowneragreeq5 years_shop  ///
  maizeowneragreetempq69 maizeowneragreetempq71 maizeowneragreetempq72 maizeowneragreetempq73 ///
- maizeowneragreetempq74 maizeowneragreetempq75 maizeowneragreetempq76 goodfloor badlighting ///
+ maizeowneragreetempq74 maizeowneragreetempq75 maizeowneragreetempq76 badlighting ///
  badstored maizeowneragreetempq80 maizeowneragreetempq81 maizeowneragreetempq82  maizeowneragreeq96 maizeowneragreeq70
 		
 
@@ -167,7 +167,7 @@ reg score_n genderdummy
 
 xtreg score_n genderdummy, fe
 
-xtreg score_n genderdummy maizeowneragreeage prim q3 maizeowneragreeq4 q5 years_shop q69 q71 q72 q73 q74 q75 q76 goodfloor badlighting ///
+xtreg score_n genderdummy maizeowneragreeage prim q3 maizeowneragreeq4 q5 years_shop q69 q71 q72 q73 q74 q75 badlighting ///
 			  badstored q80 q81 maizeowneragreetempq82 q96 maizeowneragreeq70, fe
 	
 xtreg qual_rat genderdummy, fe

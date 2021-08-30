@@ -3541,17 +3541,19 @@ write.csv(fedata, file = "fedata.csv")
 #### regressions without controls - seed related ratings 
 
 summary(lm(score~genderdummy +farmer_ID, data = fedata))
+#if you want to remove intercept 
+#summary(lm(score~genderdummy-1 +farmer_ID, data = fedata))
+#the intercept without -1 is the intercept of the first farmerID
+
 reg1<-summary(lm(quality~genderdummy+farmer_ID , data = fedata))
 #intercept --- 5.066 
 #with(fedata, plot(genderdummy,quality))
 #abline(reg1)
-summary(lm(general~genderdummy +farmer_ID, data = fedata))
 summary(lm(yield~genderdummy +farmer_ID, data = fedata))
 summary(lm(drought_resistent~genderdummy+farmer_ID , data = fedata))
 summary(lm(disease_resistent~genderdummy+farmer_ID , data = fedata))
 summary(lm(early_maturing~genderdummy+farmer_ID , data = fedata))
 summary(lm(germination~genderdummy+farmer_ID , data = fedata))
-
 
 ############# plm method 
 
@@ -3697,6 +3699,13 @@ plm9<-plm(score~genderdummy+ maize.owner.agree.age +prim +maize.owner.agree.q3 +
             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
 i9<-mean(fixef(plm9))
 seplm9<- sqrt(diag(vcov(plm9)))
+
+############## if we want to check the overall intercept --- only works when controls are also included
+#fx_level <- fixef(plm9, type = "level")
+#fx_dmean <- fixef(plm9, type = "dmean")
+#overallint <- within_intercept(plm9)
+#all.equal(overallint + fx_dmean, fx_level, check.attributes = FALSE)
+
 
 plm10<-plm(quality~genderdummy+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
              +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
