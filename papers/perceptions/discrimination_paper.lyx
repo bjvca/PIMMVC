@@ -170,10 +170,6 @@ parindent}{1cm}
 \end_layout
 
 \begin_layout Part*
-Introduction
-\end_layout
-
-\begin_layout Part*
 Models
 \end_layout
 
@@ -250,19 +246,19 @@ d
 \end_layout
 
 \begin_layout Standard
-Farmers rate several agro-input dealers and agro-input dealers are rated
- by several farmers.
+Each farmer rates several agro-input dealers and each agro-input dealer
+ is rated by several farmers.
  The resulting structure has some characteristics of panel data: there are
- multiple observations per farmer but also multiple observations per dealer.
+ multiple observations per farmer and multiple observations per dealer.
  These repeated observations for farmers can be used to exploit variation
  within raters, and the repeated observations for dealers can be used to
  exploit variation within ratees.
  Furthermore, there is variation between farmers and between dealers.
- This provides four ways to look at the data: differences within farmers,
+ This leads to four ways to look at the data: differences within farmers,
  differences between farmers, differences within dealers, and differences
  between dealers.
- To answer the research questions, the different within and between dimensions
- have to be exploited.
+ The different within and between dimensions can be exploited to answer
+ our research questions.
 \end_layout
 
 \begin_layout Standard
@@ -296,16 +292,16 @@ t
  and one can exploit differences within dealers by means of a within (dealers)
  fixed effects estimator or a between (dealers) estimator.
  A step-wise approach is necessary to correctly estimate and understand
- agro-input dealer's and farmer's gender effects.
+ dealer's and farmer's gender effects.
  Hereinafter we explain which questions the different estimators answer
  and how the various estimators are related.
- We elaborate what we can learn from each model and what can we learn from
- looking at all models together.
+ We elaborate what we learn from each model and what we learn from considering
+ all models together.
 \end_layout
 
 \begin_layout Section*
-Question 1: Do farmers discriminate against female agro-input dealers? (Agro-inp
-ut dealer's gender effect)
+Question 1: Do farmers discriminate against female agro-input dealers? (Dealer's
+ gender effect)
 \end_layout
 
 \begin_layout Subsection*
@@ -316,14 +312,15 @@ Between dealers model
 The most obvious way to look at the effect of an agro-input dealer's gender
  on his or her rating is to compare the average ratings of male and female
  dealers.
- A male dealer's seed quality is rated 3.46 on average, while a female dealer's
- seed quality is rated 3.37 on average.
- The mean general dealer rating is 3.80 and 3.67 for male and female dealers
+ We consider seed quality ratings and dealer ratings.
+ A male dealer's seed quality is rated 3.46 out of 5 on average, while a
+ female dealer's seed quality is rated 3.37 out of 5 on average.
+ The mean dealer rating is 3.80 and 3.67 out of 5 for male and female dealers
  respectively.
  While this shows that female dealers get lower ratings than their male
  competitors on average, it does not imply that female dealers are discriminated.
  Instead, female dealers could truly be poorer dealers, for example due
- to less access to education or training.
+ to their lack of access to education or training.
 \end_layout
 
 \begin_layout Standard
@@ -353,25 +350,26 @@ Hence we compute averages across all farmers
 \emph on
 t
 \emph default
- who rate a particular dealer 
+ who rate a particular agro-input dealer 
 \emph on
 i
 \emph default
-, which results in data at the dealer level and enables us to look at the
- effect by means of an ordinary least squares (OLS) regression.
+, which results in data at the dealer level and enables us to use an ordinary
+ least squares (OLS) regression.
  The dealers' average ratings are regressed on their genders, ie.
  the difference in ratings is estimated conditional on the dealer's gender.
  This between dealers estimator exploits differences between dealers for
  identification.
- However, to estimate discrimination, we need to find out which part of
- the effect is due to male and female dealers differing in quality, and
- which part of the effect is due to farmers rating male and female dealers
- differently while in reality they do not differ, ie.
+ However, to estimate discrimination, we need to find out which share of
+ the difference can be explained by male and female dealers really differing
+ in quality, and which share of the difference can be explained by farmers
+ rating male and female dealers differently while in reality they do not
+ differ, ie.
  farmers discriminating against female dealers.
- The advantage of a regression compared to the simple comparisson of two
- means is that it enables us to control for other variables.
- The effect of a dealer's gender on his or her rating may be confounded
- by other dealer characteristics like age (female dealers may be younger
+ The advantage of a regression is that it enalbles us to control for other
+ variables.
+ The effect of a dealer's gender on his or her rating could be confounded
+ by other dealer characteristics like age (female dealers could be younger
  on average, hence less experienced, hence worse dealers), so controlling
  for these variables is necessary.
  Furthermore, we control for various indicators of seed and dealer quality
@@ -380,11 +378,11 @@ i
 
 \begin_layout Standard
 If, after controlling for confounding variables and various quality measures,
- we find a significant positive coefficient, the difference in means originates
- from the farmers.
- As quality is controlled for, female dealers would not be worse than their
- male competitors, and the difference in rating would be caused by discriminatio
-n against female agro-input dealers.
+ we find a significant positive coefficient, the difference originates from
+ the farmers.
+ Because quality is controlled for, female dealers would not be worse than
+ their male competitors, and the difference in rating would be caused by
+ discrimination against female agro-input dealers.
 \end_layout
 
 \begin_layout Standard
@@ -5875,54 +5873,51 @@ Farmer fixed effects model
 \end_layout
 
 \begin_layout Standard
-However, (unobservable) farmer level heterogeneity may conflate the relationship
+However, (unobservable) farmer heterogeneity could conflate the relationship
  between an agro-input dealer's gender and his or her rating.
- To give an example, a farmer's education level may affect both, how he
- or she generally rates dealers and how he or she rates female dealers.
- Better educated farmers may give higher ratings in general.
- Better educated farmers may also discriminate less, ie.
+ A farmer's education level could for example affect both, how he or she
+ generally rates dealers and how he or she rates female dealers.
+ Better educated farmers could give higher ratings in general.
+ Better educated farmers could also discriminate less, ie.
  give higher ratings to female dealers.
+ It is therefore difficult to separate the effect arising from the education
+ of the farmer from the effect arising from gender of the dealer.
+ Not controlling for (unobserved) farmer heterogeneity could lead to omitted
+ variable bias and wrong conclusions.
+\end_layout
+
+\begin_layout Standard
+The agro-input dealer's gender could also be endogenous.
+ Farmer characteristics could affect the likelihood that the rated dealer
+ is female (better educated farmers could be more likely to shop at female
+ dealers), ie.
+ introduce selection bias.
+ It is therefore important to control for all (unobserved) farmer characteristic
+s.
  
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Plain Layout
-Does this belong here: "They may also be more likely to shop at female dealers,
- ie.
- the dealer's gender is not necessarily exogenous, a farmer's characteristic
- may affect the likelihood that the dealer is female which leads to selection
- bias."?
+Should we include this or be very silent about potential selection bias?
 \end_layout
 
 \end_inset
 
- It is therefore difficult to separate the effect arising from the education
- level of the farmer from the effect arising from gender of the dealer.
- Not controlling for (unobserved) farmer level heterogeneity may therefore
- lead to omitted variable bias and wrong conclusions.
+
 \end_layout
 
 \begin_layout Standard
-A dealer’s gender might also be endogenous.
- Farmer characteristics like the farmer's education level might affect the
- likelihood that the rated dealer is female, which might lead to selection
- bias.
- It is therefore important to control for all (unobserved) farmer characteristic
-s.
- 
-\end_layout
-
-\begin_layout Standard
-The farmer fixed effects estimator uses the fact that the same farmer rates
- both male and female dealers.
- It exploits variation within farmers for identification.
- While we can control for the farmer's education level, this estimator also
- controls for characteristics which would be (almost) impossible to measure
- and to control for like motivation, kindness, locus of control, norms and
- values, etc.
+Often, the same farmer rates both male and female agro-input dealers, and
+ the farmer fixed effects estimator exploits this fact.
+ It uses variation within farmers for identification.
+ While we can control for a farmer's education level without farmer fixed
+ effects, this estimator also controls for characteristics which would be
+ (almost) impossible to measure and to control for like motivation, kindness,
+ locus of control, norms and values, etc.
  The farmer fixed effects estimator removes farmer level heterogeneity for
- all attributes that do not vary and remain constant within the farmer,
- regardless of which dealer he or she is rating.
+ all attributes that remain constant within the farmer, regardless of which
+ dealer is rated.
 \end_layout
 
 \begin_layout Standard
@@ -5948,11 +5943,24 @@ y_{f,d}-\overline{y}_{f}=\mu+\beta\left(x_{f,d}-\overline{x}_{f}\right)+\gamma\l
 \end_layout
 
 \begin_layout Standard
-That is why we include a regression with farmer level fixed effects (ie.
+That is why we include farmer level fixed effects (ie.
  we include dummies for all farmers or redefine variables as deviations
- from farmer level means).
- In contrast to the previous between dealers model, we now have repeated
- ratings of the same farmer 
+ from farmer level means 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+We should decide whether we use the Within Groups estimator (demean data:
+ STATA xtreg with fe option or R plm(model = "within")) or the Least Square
+ Dummy Variable estimator to estimate our FE models (different but conceptually
+ equivalent).
+\end_layout
+
+\end_inset
+
+).
+ Unlike in the previous between dealers model, we now use repeated ratings
+ of the same farmer 
 \emph on
 i
 \emph default
@@ -5960,22 +5968,17 @@ i
 \emph on
 t
 \emph default
- different dealers.
- Adding dealer level controls deals with confounding variables and quality
- measures like before.
-\end_layout
-
-\begin_layout Standard
-If, after controlling for confounding variables, quality measures, and everythin
-g that remains constant within the farmer, we find a significant positive
- coefficient, the difference in means originates from the ?.
- The difference in rating would be caused by discrimination against female
- agro-input dealers (?).
+ different agro-input dealers.
+ Dealer level controls are added again.
+ If, after controlling for everything that remains constant within a farmer,
+ confounding variables, and quality measures, we find a significant positive
+ coefficient, the difference in ratings is caused by discrimination against
+ female dealers.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Plain Layout
 Does this model control for discrimination at farmer level, ie.
@@ -5993,7 +5996,7 @@ s at the dealer level)
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -6404,7 +6407,7 @@ label{table:table9}
 
 \begin_layout Standard
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Plain Layout
 nobs: 12,003 in rating_dyads - 10981 NAs.
@@ -11175,25 +11178,22 @@ Dealer fixed effects model
 \end_layout
 
 \begin_layout Standard
-Ideally, one would control for (unobserved) dealer level heterogeneity like
- we control for (unobserved) farmer level heterogeneity.
- Note that the dealers 
+Ideally, one would control for (unobserved) dealer heterogeneity like farmer
+ fixed effects control for (unobserved) farmer heterogeneity.
+ Any dealer fixed effects estimator would remove dealer heterogeneity for
+ all attributes that remain constant within the dealers 
 \emph on
 i
 \emph default
- are rated by farmers 
+ who are rated by farmers 
 \emph on
-t.
-
+t
 \emph default
- A dealer fixed effects estimator would exploit variation within dealers
- for identification and remove dealer level heterogeneity for all attributes
- that do not vary and remain constant within the dealer.
- It would therefore also remove the true quality (the true rating) of the
- dealer.
- The dealer's gender effect that would be left is the difference between
- male and female ratings which cannot be explained by real quality differences,
- ie.
+.
+ Therefore, the true quality (the true rating) of the dealer would also
+ be removed.
+ The remaining dealer's gender effect is the difference between male and
+ female ratings which cannot be explained by real quality differences, ie.
  all variation should be attributed to the farmers who rate, not to the
  dealers who are rated.
  We could safely conclude that this effect is dicrimination.
@@ -11222,13 +11222,13 @@ y_{f,d}-\overline{y}_{f}=\mu+\beta\left(x_{f,d}-\overline{x}_{f}\right)+\varepsi
 \end_layout
 
 \begin_layout Standard
-Unfortunately, including dealer fixed effects and dealer gender in one regressio
-n is impossible because gender does not vary within the dealer, ie.
+Unfortunately, including dealer fixed effects and dealer gender in one model
+ is impossible because gender does not vary within the dealer, ie.
  the matrix of dealer fixed effects would be perfectly co-linear with the
  dealer's gender.
- Gender remains constant within the dealer, so that the average is the always
- equal to the observation, thus cancels out and dealer's gender will be
- removed from the equation above.
+ Gender remains constant within the dealer, so that the within dealer average
+ is always equal to the observation, thus cancels out and dealer's gender
+ is removed from the equation above.
 \end_layout
 
 \begin_layout Standard
@@ -11276,8 +11276,7 @@ i
 \end_layout
 
 \begin_layout Standard
-In our data, farmers did not rate all dealers, farmers rated only dealers
- that they knew (ie.
+Farmers did not rate all dealers, they rated only dealers they knew (ie.
  unbalanced panel).
 \begin_inset Foot
 status collapsed
@@ -11296,21 +11295,21 @@ In fact, if the panel was completely balanced (ie.
 
 \end_inset
 
-Hence the degree to which a farmer is exposed to female dealers varies.
- The variable of interest 
+Hence, the variable of interest 
 \begin_inset Formula $\overline{g}_{f}$
 \end_inset
 
  is not a dummy but a variable between 0 and 1 indicating the share of female
  dealers in the total number of dealers that were rated by one particular
  farmer.
- For instance, farmer John's 
+ For instance, farmer Naigaga's 
 \begin_inset Formula $\overline{g}_{f}$
 \end_inset
 
- would be 0.5 if he rated one female and one male dealer.
+ would be 0.25 if she rated one female dealer and three male dealers.
  Then the farmers' average ratings are regressed on their share of rated
  female dealers.
+ This model exploits differences between farmers to estimate the parameters.
  In addition to the previously described controls at dealer level, we control
  for farmer characteristics like education, marital status, remoteness and
  age
@@ -11319,7 +11318,7 @@ status collapsed
 
 \begin_layout Plain Layout
 I think we should not control for farmer characteristics: Older farmers
- might indeed discriminate more but why should we control for that if we
+ could indeed discriminate more but why should we control for that if we
  want to measure discrimination? Farmer characteristics should not be correlated
  to dealer/ seed quality.
 \end_layout
@@ -11327,11 +11326,10 @@ I think we should not control for farmer characteristics: Older farmers
 \end_inset
 
 .
- This model uses differences between farmers to estimate the parameters.
 \end_layout
 
 \begin_layout Standard
-If the coefficient 
+If we find the coefficient 
 \family roman
 \series medium
 \shape up
@@ -11359,9 +11357,9 @@ gamma
 \uwave default
 \noun default
 \color inherit
- is positive and significant, farmers who rate relatively more male dealers
- gave relatively higher scores.
- In theory, one could assume that each farmer rated all (the same) dealers,
+ to be positive and significant, then farmers who rate more male dealers
+ give higher scores.
+ In theory, one could assume that each farmer rates all (the same) dealers,
  so that any difference should be attributed to the farmers, and can be
  interpreted as discrimination.
  It is a good alternative to the coefficient we cannot estimate in 
@@ -11385,8 +11383,8 @@ status collapsed
 This model requires that the likelihood that a farmer rates a female dealer
  is uncorrelated with farmer specific unobservable effects eg.
  discrimination.
- However, our panel/ incompleteness might be not random.
- Instead, there might be selection bias: discriminating farmers might be
+ However, our panel/ incompleteness could be not random.
+ Instead, there could be selection bias: discriminating farmers could be
  less likely to rate female dealers (but: farmers rate dealers they know,
  not ony dealers they're customer of ...)
 \end_layout
@@ -17593,155 +17591,6 @@ Question 2: Do female farmers rate agro-input dealers differently? (Farmer's
  gender effect)
 \end_layout
 
-\begin_layout Standard
-A similar story can then be created for the second question (but mind you
- that the variable of interest now varies at the level of the farmer!)
-\end_layout
-
-\begin_layout Standard
-A similar reasoning can be made for the second question.
- The difference will be that the gender variable 
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-
-\begin_inset Formula $g_{f,d}$
-\end_inset
-
-
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
- now refers to the gender of the farmer.
- Equation 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:two"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
-, with the averages at the farmer level, will be similar, but 
-\begin_inset Formula $\frac{1}{D}\underset{d}{\sum}g_{f,d}$
-\end_inset
-
- will now be a dummy indicating the gender of the farmer.
- In equation 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:six"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
-, on the other hand, 
-\begin_inset Formula $\underset{f}{\sum}g_{f,d}$
-\end_inset
-
- is now the average gender of all farmers that rated the particular input
- dealer, and so will be a proportion
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-Again, if this would be a balanced panel and all farmers would have rated
- all input dealers, this would simply be the share of women farmers in the
- sample and this would be collinear with the constant.
-\end_layout
-
-\end_inset
-
-.
- Furthermore, the gender variable would now be dropped in model 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:four"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
-, but it would be possible to estimate model 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:eight"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-one regression with only the gender of the farmer and controls and fixed
- effects for the input dealers - one regression where you first take averages
- at the farmer level and then run a regression (between estimator)
-\end_layout
-
-\begin_layout Standard
-***
-\end_layout
-
-\begin_layout Standard
-models:
-\end_layout
-
-\begin_layout Standard
-I think part of the confusion is related to the fact that we do not have
- a completely balanced panel where all farmers rate all input dealers (or
- all input dealers are not rated by all farmers).
-\end_layout
-
-\begin_layout Standard
-A similar story can then be created for the second question (but mind you
- that the variable of interest now varies at the level of the farmer!)
-\end_layout
-
-\begin_layout Standard
-so just to check if I am still following: in these regressions, the variable
- of interest is not a dummy, but a measure of the gender composition of
- the average customer of the input dealer, right? And so it says that input
- dealers with a more female client profile generally get better ratings,
- right?
-\end_layout
-
-\begin_layout Standard
-Yes your interpretation below is correct - those with a largely male customer
- base get worse scores and those that have many women among their clients
- get better scores.
-\end_layout
-
-\begin_layout Standard
-But for the interpretation: be careful, this is a number between 0 and 1.
- So a 10 percentage point increase in the share of men (eg from 50 percent
- men to 60 percent men) reduces average score rating by 0.0337.
-\end_layout
-
 \begin_layout Subsection*
 Between farmers model
 \end_layout
@@ -20281,14 +20130,6 @@ Dealer fixed effects model
 \end_layout
 
 \begin_layout Standard
-The approach to use will depend on the question you want to answer.
- If the focus is on the rater characteristics (gender of the farmer), than
- it may make sense to control for agro-input dealer heterogeneity; If the
- focus is on the ratee characteristics (gender of the agro-input dealer),
- than it may make more sense to control for farmer heterogeneity.
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float table
 wide false
 sideways false
@@ -20718,7 +20559,7 @@ Note: Here, the gender of the farmer is a dummy variable carrying the value
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -21937,7 +21778,7 @@ Note: Here, the gender of the farmer is a dummy variable carrying the value
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -28839,67 +28680,11 @@ label{table:table16}
 \end_layout
 
 \begin_layout Section*
-"ultimate" regression
+Ultimate model
 \end_layout
 
-\begin_layout Standard
-capture farmer level heterogeneity and dealer level heterogeneity
-\end_layout
-
-\begin_layout Standard
-that includes two-way fixed effects or a more flexible random effects model)
-\end_layout
-
-\begin_layout Standard
-The I would go over the different models, explaining what additional insights
- they bring (or were expected to bring).
-\end_layout
-
-\begin_layout Standard
-- one regression with the gender of the farmer and gender of input dealer
- and the interaction - one regression with the gender of the farmer and
- gender of input dealer and the interaction and controls - one regression
- with the gender of the farmer and gender of input dealer and the interaction
- and controls and two-way fixed effects - one regression with the gender
- of the farmer and gender of input dealer and the interaction and controls
- and two-way random effects - this could be the ultimate model for our data
- (eg see page 47 of the attached document).
- Mixed effects models are not used a lot by economists and so stata can
- not estimate two way random effects models but R can using nlme4 I think.
- I found the following book very useful to get an idea of random effects/mixed
- effects models https://www.amazon.com/Mixed-Effects-Models-S-PLUS-Statistics-Comp
-uting/dp/1441903178 Bjorn
-\end_layout
-
-\begin_layout Standard
-Random effects models use both dimensions of the data.
-\end_layout
-
-\begin_layout Standard
-1.1.
- farmer’s gender + dealer’s gender + interaction
-\end_layout
-
-\begin_layout Standard
-1.2.
- farmer’s gender + dealer’s gender + interaction + controls
-\end_layout
-
-\begin_layout Standard
-1.3.
- farmer’s gender + dealer’s gender + interaction + controls + two-way FE
-\end_layout
-
-\begin_layout Standard
-1.4.
- farmer’s gender + dealer’s gender + interaction + controls + two-way/ more
- flexible random effects/ mixed effects (Models With Multiple Random-effects,
- p.
- 47) 
-\end_layout
-
-\begin_layout Subsection*
-Control variables 
+\begin_layout Part*
+Control variables
 \end_layout
 
 \begin_layout Itemize
@@ -28917,7 +28702,7 @@ Age of dealer: This is measured in years.
 \end_layout
 
 \begin_layout Itemize
-Distance of shop to nearest tarmac road: This is neasured in kms.
+Distance of shop to nearest tarmac road: This is measured in kms.
 \end_layout
 
 \begin_layout Itemize
