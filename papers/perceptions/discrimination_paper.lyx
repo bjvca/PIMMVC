@@ -174,7 +174,14 @@ Models
 \end_layout
 
 \begin_layout Section*
-Pooled model
+Empirical strategy
+\end_layout
+
+\begin_layout Standard
+Our empirical strategy exploits the particular nature of the data where
+ each farmer in our dataset rates several input dealers and each input dealer
+ in our dataset is rated by several farmers.
+ A useful starting point is the following specification:
 \end_layout
 
 \begin_layout Standard
@@ -189,7 +196,7 @@ y_{f,d}=\alpha+\beta x_{f,d}+\gamma g_{f,d}+\varepsilon_{f,d}
 \end_layout
 
 \begin_layout Standard
-In the pooled model 
+Here, 
 \begin_inset Formula $y_{f,d}$
 \end_inset
 
@@ -201,15 +208,44 @@ f
 \emph on
 d
 \emph default
-, 
+ (or, equivalently, the rating received by agro-input dealer 
+\emph on
+d
+\emph default
+ from farmer 
+\emph on
+f
+\emph default
+).
+ 
 \begin_inset Formula $x_{f,d}$
 \end_inset
 
- are controls, and 
+ is a vector of control variables
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+are these control variables only farmer level and input dealer level characteris
+tics? In that case I think it would be better to split them up as x_f and
+ x_d and refer to them as such
+\end_layout
+
+\end_inset
+
+.
+ 
 \begin_inset Formula $g_{f,d}$
 \end_inset
 
- is the explanatory variable of interest, the gender of dealer 
+ is the explanatory variable of interest for which we want to identify the
+ treatment effect.
+ 
+\begin_inset Formula $g_{f,d}$
+\end_inset
+
+ depends on the question we want to answer and can be either the gender
+ of dealer 
 \emph on
 d
 \emph default
@@ -246,72 +282,86 @@ d
 \end_layout
 
 \begin_layout Standard
-Each farmer rates several agro-input dealers and each agro-input dealer
- is rated by several farmers.
- The resulting structure has some characteristics of panel data: there are
- multiple observations per farmer and multiple observations per dealer.
+The fact that each farmer rates several agro-input dealers results in a
+ data set that is reminiscent of panel data: there are repeated observations
+ per farmer.
  These repeated observations for farmers can be used to exploit variation
- within raters, and the repeated observations for dealers can be used to
- exploit variation within ratees.
- Furthermore, there is variation between farmers and between dealers.
- This leads to four ways to look at the data: differences within farmers,
+ within raters (and control for farmer level characteristics through fixed
+ effects).
+ Furthermore, if we first calculate farmer level averages, variation between
+ farmers can be used to answer our research questions, leading to the standard
+ between models we know from panel data analysis.
+ However, each agro-input dealer is also rated by several farmers.
+ As such, there are also repeated observations per agro-input dealer that
+ can be used to exploit variation within ratees (and control for agro-input
+ dealer fixed effects).
+ Similarly, first computing input dealer averages allows one to exploit
+ differences between agro-input dealer.
+ 
+\end_layout
+
+\begin_layout Standard
+This leads to four ways to look at the data: differences within farmers,
  differences between farmers, differences within dealers, and differences
  between dealers.
  The different within and between dimensions can be exploited to answer
  our research questions.
-\end_layout
-
-\begin_layout Standard
-Our data differs from panel data as the indices for individuals 
-\emph on
-i
-\emph default
- and time 
-\emph on
-t
-\emph default
- are interchangeable.
- For instance, each farmer 
-\emph on
-i
-\emph default
- rates several agro-input dealers 
-\emph on
-t
-\emph default
-, so that a within (farmers) fixed effects estimator or a between (farmers)
- estimator can exploit differences within farmers.
- Similarly, each dealer 
-\emph on
-i
-\emph default
- is rated by several farmers 
-\emph on
-t
-\emph default
- and one can exploit differences within dealers by means of a within (dealers)
- fixed effects estimator or a between (dealers) estimator.
- A step-wise approach is necessary to correctly estimate and understand
- dealer's and farmer's gender effects.
- Hereinafter we explain which questions the different estimators answer
- and how the various estimators are related.
+ We now explain which questions the different estimators answer and how
+ the various estimators are related.
  We elaborate what we learn from each model and what we learn from considering
  all models together.
 \end_layout
 
-\begin_layout Section*
+\begin_layout Subsection*
 Question 1: Do farmers discriminate against female agro-input dealers? (Dealer's
  gender effect)
 \end_layout
 
-\begin_layout Subsection*
-Between dealers model
+\begin_layout Standard
+A useful starting point to test for discrimination related to agro-input
+ dealer's gender is to compare average ratings received by male agro input
+ dealers to the average ratings received by female agro-input dealers
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+There are two ways in which this can be done.
+ One can do the comparisons on the individual ratings 
+\begin_inset Formula $\left(y_{f,d}\right)$
+\end_inset
+
+.
+ However, this means that agro input dealers that are rated by more farmers
+ will receive a higher weight.
+ A second approach is to first compute averages scores at the agro-input
+ dealer level (as in the between model of equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:six"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+), and then compare male and female agro-input dealers.
+ This is the approach we use in table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:q1_betw_dealers_seed_no_controls"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
 \end_layout
 
-\begin_layout Standard
-The most obvious way to look at the effect of an agro-input dealer's gender
- on his or her rating is to compare the average ratings of male and female
- dealers.
+\end_inset
+
+.
+ Table X looks shows averages in these subgroups...
  We consider seed quality ratings and dealer ratings.
  A male dealer's seed quality is rated 3.46 out of 5 on average, while a
  female dealer's seed quality is rated 3.37 out of 5 on average.
@@ -366,7 +416,7 @@ i
  rating male and female dealers differently while in reality they do not
  differ, ie.
  farmers discriminating against female dealers.
- The advantage of a regression is that it enalbles us to control for other
+ The advantage of a regression is that it enables us to control for other
  variables.
  The effect of a dealer's gender on his or her rating could be confounded
  by other dealer characteristics like age (female dealers could be younger
@@ -442,7 +492,7 @@ noprefix "false"
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
