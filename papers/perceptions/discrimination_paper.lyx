@@ -170,6 +170,39 @@ parindent}{1cm}
 \end_layout
 
 \begin_layout Part*
+Indicators
+\end_layout
+
+\begin_layout Standard
+The dependent variables in this analysis are dealer quality and seed quality,
+ as rated by farmers.
+ To measure the 
+\series bold
+(perceived) quality of agro-input dealers
+\series default
+, farmers were asked to rate these dealers on a scale of 1 to 5 on their
+ general quality, location (convenience, accessibility, closeness to clients),
+ price (competitive pricing, discounts), seed quality, stock (availability
+ of seed), and reputation.
+ We also compute an average of these six dealer ratings.
+ Mind that for these indicators, farmers were asked to rate the shop and
+ the person that sells seed.
+\end_layout
+
+\begin_layout Standard
+To measure the 
+\series bold
+(perceived) quality of seed
+\series default
+, farmers were asked to rate the maize seed that dealers sell on a scale
+ of 1 to 5 on its general quality, yield, drought tolerance, pest/disease
+ tolerance, early maturity, and germination.
+ We also compute an average of these six seed ratings.
+ Note that for these variables, farmers were asked to rate seed, the product
+ itself.
+\end_layout
+
+\begin_layout Part*
 Models
 \end_layout
 
@@ -11291,10 +11324,6 @@ label{table:table12}
 
 \end_layout
 
-\begin_layout Subsection*
-Dealer fixed effects model
-\end_layout
-
 \begin_layout Standard
 The between model from equation 
 \begin_inset CommandInset ref
@@ -11306,33 +11335,33 @@ noprefix "false"
 
 \end_inset
 
- control for observed input dealer heterogeneity.
+ controls for observed input dealer heterogeneity such as input dealer education
+ levels and observable characteristics that are likely to be correlated
+ with seed quality sold by this dealer.
  Ideally, one would like to control for unobserved dealer heterogeneity
  as well, similar to how farmer fixed effects control for (unobserved) farmer
  heterogeneity.
  Dealer fixed effects estimator would remove dealer heterogeneity for all
- attributes that remain constant within the dealers 
-\emph on
-i
-\emph default
- who are rated by farmers 
-\emph on
-t
-\emph default
-.
- Therefore, the true quality (the true rating) of the dealer would also
- be removed.
- The remaining dealer's gender effect is the difference between male and
- female ratings which cannot be explained by real quality differences, ie.
- all variation should be attributed to the farmers who rate, not to the
- dealers who are rated.
- We could safely conclude that this effect is dicrimination.
+ attributes that remain constant within the dealers and so any remaining
+ difference between male and female agro-input dealers should have its source
+ in the farmers who rate the input dealers.
+ Such a fixed effects model is described in equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:eight"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ below
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-y_{f,d}-\frac{1}{F}\underset{f}{\sum}y_{f,d}=\alpha+\beta\left(x_{f,d}-\frac{1}{F}\underset{f}{\sum}x_{f,d}\right)+\gamma\left(g_{f,d}-\frac{1}{F}\underset{f}{\sum}g_{fd}\right)+\left(\varepsilon_{f,d}-\frac{1}{D}\underset{d}{\sum}\varepsilon_{f,d}\right)\label{eq:eight}
+y_{f,d}-\frac{1}{F}\underset{f}{\sum}y_{f,d}=\alpha+\gamma\left(g_{f,d}-\frac{1}{F}\underset{f}{\sum}g_{fd}\right)+\left(\varepsilon_{f,d}-\frac{1}{F}\underset{f}{\sum}\varepsilon_{f,d}\right)\label{eq:eight}
 \end{equation}
 
 \end_inset
@@ -11343,7 +11372,7 @@ y_{f,d}-\frac{1}{F}\underset{f}{\sum}y_{f,d}=\alpha+\beta\left(x_{f,d}-\frac{1}{
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-y_{f,d}-\overline{y}_{f}=\mu+\beta\left(x_{f,d}-\overline{x}_{f}\right)+\varepsilon_{f,d}
+y_{f,d}-\overline{y}_{d}=\gamma\left(g_{f,d}-\overline{g}_{d}\right)+\varepsilon_{f,d}
 \end{equation}
 
 \end_inset
@@ -11359,26 +11388,15 @@ Unfortunately, including dealer fixed effects and dealer gender in one model
  Gender remains constant within the dealer, so that the within dealer average
  is always equal to the observation, thus cancels out and dealer's gender
  is removed from the equation above.
-\end_layout
-
-\begin_layout Standard
-
-\end_layout
-
-\begin_layout Subsection*
-Between farmers model
-\end_layout
-
-\begin_layout Standard
-While we cannot estimate the previous dealer fixed effects model, we can
+ While we cannot estimate the previous dealer fixed effects model, we can
  estimate a between farmers model.
  To this end, averages across all dealers 
 \emph on
-t
+d
 \emph default
  who were rated by a particular farmer 
 \emph on
-i
+f
 \emph default
  are computed, which results in data at the farmer level.
 \end_layout
@@ -11406,8 +11424,8 @@ i
 \end_layout
 
 \begin_layout Standard
-Farmers did not rate all dealers, they rated only dealers they knew (ie.
- unbalanced panel).
+Farmers did not rate all dealers, they rated only dealers they knew leading
+ to an unbalanced panel.
 \begin_inset Foot
 status collapsed
 
@@ -11444,7 +11462,7 @@ Hence, the variable of interest
  for farmer characteristics like education, marital status, remoteness and
  age
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Plain Layout
 I think we should not control for farmer characteristics: Older farmers
@@ -11543,10 +11561,6 @@ Interpretation: number between 0 and 1 –> a 10 % point increase in the share
 wide false
 sideways false
 status collapsed
-
-\begin_layout Plain Layout
-
-\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -12016,10 +12030,6 @@ label{table:table1}
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -12046,10 +12056,6 @@ The number of obs.
 wide false
 sideways false
 status collapsed
-
-\begin_layout Plain Layout
-
-\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -14801,10 +14807,6 @@ label{table:table2}
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -14815,10 +14817,6 @@ label{table:table2}
 wide false
 sideways false
 status collapsed
-
-\begin_layout Plain Layout
-
-\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -15251,10 +15249,6 @@ label{table:table3}
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -15265,10 +15259,6 @@ label{table:table3}
 wide false
 sideways false
 status collapsed
-
-\begin_layout Plain Layout
-
-\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -17704,10 +17694,6 @@ label{table:table4}
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
