@@ -170,6 +170,39 @@ parindent}{1cm}
 \end_layout
 
 \begin_layout Part*
+Indicators
+\end_layout
+
+\begin_layout Standard
+The dependent variables in this analysis are dealer quality and seed quality,
+ as rated by farmers.
+ To measure the 
+\series bold
+(perceived) quality of agro-input dealers
+\series default
+, farmers were asked to rate these dealers on a scale of 1 to 5 on their
+ general quality, location (convenience, accessibility, closeness to clients),
+ price (competitive pricing, discounts), seed quality, stock (availability
+ of seed), and reputation.
+ We also compute an average of these six dealer ratings.
+ Mind that for these indicators, farmers were asked to rate the shop and
+ the person that sells seed.
+\end_layout
+
+\begin_layout Standard
+To measure the 
+\series bold
+(perceived) quality of seed
+\series default
+, farmers were asked to rate the maize seed that dealers sell on a scale
+ of 1 to 5 on its general quality, yield, drought tolerance, pest/disease
+ tolerance, early maturity, and germination.
+ We also compute an average of these six seed ratings.
+ Note that for these variables, farmers were asked to rate seed, the product
+ itself.
+\end_layout
+
+\begin_layout Part*
 Models
 \end_layout
 
@@ -362,9 +395,9 @@ noprefix "false"
 
 .
  Table X looks shows averages in these subgroups...
- We consider seed quality ratings and dealer ratings.
- A male dealer's seed quality is rated 3.46 out of 5 on average, while a
- female dealer's seed quality is rated 3.37 out of 5 on average.
+ We consider seed ratings and dealer ratings.
+ A male dealer's seed is rated 3.46 out of 5 on average, while a female dealer's
+ seed is rated 3.37 out of 5 on average.
  The mean dealer rating is 3.80 and 3.67 out of 5 for male and female dealers
  respectively.
  While this shows that female dealers get lower ratings than their male
@@ -492,7 +525,7 @@ noprefix "false"
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
