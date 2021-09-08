@@ -10637,14 +10637,11 @@ label{table:table12}
 The between input dealers model controls for observed input dealer heterogeneity
  such as input dealer education levels and observable characteristics that
  are likely to be correlated with seed quality sold by this dealer.
- Ideally, one would like to control for unobserved dealer heterogeneity
- as well, similar to how farmer fixed effects control for (unobserved) farmer
- heterogeneity.
- Dealer fixed effects estimator would remove dealer heterogeneity for all
- attributes that remain constant within the dealers and so any remaining
- difference between male and female agro-input dealers should have its source
- in the farmers who rate the input dealers.
- Such a fixed effects model is described in equation 
+ Ideally, one would like to control for all dealer level heterogeneity,
+ both observable and unobservable, such that any remaining difference can
+ be attributed to the gender of the agro-input dealer.
+ A within agro-input dealer approach, where different farmers rate the same
+ agro-input dealer such as the one described in equation 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:eight"
@@ -10654,7 +10651,11 @@ noprefix "false"
 
 \end_inset
 
- below
+ below would be ideal for that.
+ The fact that farmers rate the same agro-input dealer differently means
+ that the source of this difference lies in how the agro-input dealer is
+ perceived by the farmer.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -10684,11 +10685,25 @@ Unfortunately, including dealer fixed effects and dealer gender in one model
  is impossible because gender does not vary within the dealer, ie.
  the matrix of dealer fixed effects would be perfectly co-linear with the
  dealer's gender.
- Gender remains constant within the dealer, so that the within dealer average
+ This can also be seen in equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:eight"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+: As gender remains constant within the dealer, the within dealer average
  is always equal to the observation, thus cancels out and dealer's gender
  is removed from the equation above.
- While we cannot estimate the previous dealer fixed effects model, we can
- estimate a between farmers model.
+ 
+\end_layout
+
+\begin_layout Standard
+However, while we cannot estimate a dealer fixed effects model, we can estimate
+ a between farmers model.
  To this end, averages across all dealers 
 \emph on
 d
@@ -10697,7 +10712,7 @@ d
 \emph on
 f
 \emph default
- are computed, which results in data at the farmer level.
+ are computed, which results in data set at the farmer level.
 \end_layout
 
 \begin_layout Standard
@@ -10742,7 +10757,7 @@ In fact, if the panel was completely balanced (ie.
 
 \end_inset
 
-Hence, the variable of interest 
+ Hence, the variable of interest 
 \begin_inset Formula $\overline{g}_{f}$
 \end_inset
 
@@ -10761,7 +10776,7 @@ Hence, the variable of interest
  for farmer characteristics like education, marital status, remoteness and
  age
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 I think we should not control for farmer characteristics: Older farmers
@@ -10806,10 +10821,20 @@ gamma
 \color inherit
  to be positive and significant, then farmers who rate more male dealers
  give higher scores.
- In theory, one could assume that each farmer rates all (the same) dealers,
- so that any difference should be attributed to the farmers, and can be
- interpreted as discrimination.
- It is a good alternative to the coefficient we cannot estimate in 
+ 
+\end_layout
+
+\begin_layout Standard
+What is interesting about this last estimator is that each farmer rates
+ more than one agro-input dealers.
+ In the limiting case, each farmer rates all agro-input dealers.
+ As such, any difference found between farmers who rate the same agro-input
+ dealers should be attributed to the farmers.
+ If we are willing to assume that farmers rate a random subset of all agro-input
+ dealers, we can maintain the assumption that any difference found between
+ farmers who rate the same agro-input dealers should reflect farmer perceptions.
+ We would argue that is a good alternative to the coefficient we cannot
+ estimate in 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:eight"
