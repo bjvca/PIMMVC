@@ -694,7 +694,7 @@ begin{center}
 \backslash
 begin{tabular}{@{
 \backslash
-extracolsep{5pt}}lcccccccc}  
+extracolsep{5pt}}lccccccc}  
 \backslash
 
 \backslash
@@ -708,7 +708,7 @@ hline
 \backslash
 [-1.8ex]   & 
 \backslash
-multicolumn{8}{c}{
+multicolumn{7}{c}{
 \backslash
 textit{
 \backslash
@@ -724,57 +724,108 @@ footnotesize Dependent variable: Average of all the ratings received by
 
 
 \backslash
-cline{2-9} 
+cline{2-8} 
 \backslash
 
 \backslash
 [-1.8ex] & 
 \backslash
-multicolumn{1} {c} {Overall} &  
-\backslash
-multicolumn{1} {c} {Quality}  &
+multicolumn{1} {c} {Average}  &
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {General}&
+multicolumn{1} {c} {Seed's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Yield}&
+multicolumn{1} {c} {Seed's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Drought}&
+multicolumn{1} {c} {Seed's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Disease}&
+multicolumn{1} {c} {Seed's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Maturing}&
+multicolumn{1} {c} {Seed's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Germination}
+multicolumn{1} {c} {Seed's}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{1} {c} {seed rating}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {general rating}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {yield}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {drought tolerance}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {pest/disease tolerance}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {early maturing}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {germination}
 \backslash
 
 \backslash
@@ -787,7 +838,7 @@ multicolumn{1} {c} {Germination}
 \backslash
 
 \backslash
-[-1.8ex] & (1) & (2) & (3) & (4) & (5)& (6)& (7)& (8) 
+[-1.8ex] & (1) & (2) & (3) & (4) & (5)& (6)& (7) 
 \backslash
 
 \backslash
@@ -804,70 +855,39 @@ hline
 
 {Intercept}                  & $
 \backslash
-Sexpr{s5[1,1]}^{
+Sexpr{s5[1,1]}$ & $
 \backslash
-Sexpr{ifelse(s5[3,1]<.01,"***",ifelse(s5[3,1]<.05,"**",ifelse(s5[3,1]<.1,"*","")))}
-}$ & $
+Sexpr{s5[1,2]}$ & $
 \backslash
-Sexpr{s5[1,2]}^{
-\backslash
-Sexpr{ifelse(s5[3,2]<.01,"***",ifelse(s5[3,2]<.05,"**",ifelse(s5[3,2]<.1,"*","")))}
-}$  & $
-\backslash
-Sexpr{s5[1,3]}^{
-\backslash
-Sexpr{ifelse(s5[3,3]<.01,"***",ifelse(s5[3,3]<.05,"**",ifelse(s5[3,3]<.1,"*","")))}
-}$
+Sexpr{s5[1,3]}$
 \end_layout
 
 \begin_layout Plain Layout
 
  & $
 \backslash
-Sexpr{s5[1,4]}^{
-\backslash
-Sexpr{ifelse(s5[3,4]<.01,"***",ifelse(s5[3,4]<.05,"**",ifelse(s5[3,4]<.1,"*","")))}
-}$
+Sexpr{s5[1,4]}$
 \end_layout
 
 \begin_layout Plain Layout
 
 & $
 \backslash
-Sexpr{s5[1,5]}^{
-\backslash
-Sexpr{ifelse(s5[3,5]<.01,"***",ifelse(s5[3,5]<.05,"**",ifelse(s5[3,5]<.1,"*","")))}
-}$
+Sexpr{s5[1,5]}$
 \end_layout
 
 \begin_layout Plain Layout
 
 & $
 \backslash
-Sexpr{s5[1,6]}^{
-\backslash
-Sexpr{ifelse(s5[3,6]<.01,"***",ifelse(s5[3,6]<.05,"**",ifelse(s5[3,6]<.1,"*","")))}
-}$
+Sexpr{s5[1,6]}$
 \end_layout
 
 \begin_layout Plain Layout
 
 & $
 \backslash
-Sexpr{s5[1,7]}^{
-\backslash
-Sexpr{ifelse(s5[3,7]<.01,"***",ifelse(s5[3,7]<.05,"**",ifelse(s5[3,7]<.1,"*","")))}
-}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s5[1,8]}^{
-\backslash
-Sexpr{ifelse(s5[3,8]<.01,"***",ifelse(s5[3,8]<.05,"**",ifelse(s5[3,8]<.1,"*","")))}
-}$    
+Sexpr{s5[1,7]}$    
 \backslash
 
 \backslash
@@ -890,9 +910,7 @@ Sexpr{s5[2,5]})$ & $(
 \backslash
 Sexpr{s5[2,6]})$ & $(
 \backslash
-Sexpr{s5[2,7]})$ &$(
-\backslash
-Sexpr{s5[2,8]})$ 
+Sexpr{s5[2,7]})$  
 \backslash
 
 \backslash
@@ -956,17 +974,7 @@ Sexpr{ifelse(s5[6,6]<.01,"***",ifelse(s5[6,6]<.05,"**",ifelse(s5[6,6]<.1,"*","")
 Sexpr{s5[4,7]}^{
 \backslash
 Sexpr{ifelse(s5[6,7]<.01,"***",ifelse(s5[6,7]<.05,"**",ifelse(s5[6,7]<.1,"*","")))}
-}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s5[4,8]}^{
-\backslash
-Sexpr{ifelse(s5[6,8]<.01,"***",ifelse(s5[6,8]<.05,"**",ifelse(s5[6,8]<.1,"*","")))}
-}$    
+}$  
 \backslash
 
 \backslash
@@ -989,9 +997,7 @@ Sexpr{s5[5,5]})$ & $(
 \backslash
 Sexpr{s5[5,6]})$ & $(
 \backslash
-Sexpr{s5[5,7]})$ &$(
-\backslash
-Sexpr{s5[5,8]})$ 
+Sexpr{s5[5,7]})$ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -1021,9 +1027,7 @@ Sexpr{s5[7,5]}$ & $
 \backslash
 Sexpr{s5[7,6]}$ & $
 \backslash
-Sexpr{s5[7,7]}$ &$
-\backslash
-Sexpr{s5[7,8]}$ 
+Sexpr{s5[7,7]}$ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -1047,9 +1051,7 @@ Sexpr{s5[8,5]}$ & $
 \backslash
 Sexpr{s5[8,6]}$ & $
 \backslash
-Sexpr{s5[8,7]}$ &$
-\backslash
-Sexpr{s5[8,8]}$     
+Sexpr{s5[8,7]}$   
 \end_layout
 
 \begin_layout Plain Layout
@@ -1072,9 +1074,7 @@ Sexpr{s5[9,5]}$ & $
 \backslash
 Sexpr{s5[9,6]}$ & $
 \backslash
-Sexpr{s5[9,7]}$ &$
-\backslash
-Sexpr{s5[9,8]}$    
+Sexpr{s5[9,7]}$   
 \end_layout
 
 \begin_layout Plain Layout
@@ -1092,7 +1092,7 @@ hline
 
 
 \backslash
-multicolumn{9}{l}{ 
+multicolumn{8}{l}{ 
 \backslash
 scriptsize{$^{***}p<0.01$; $^{**}p<0.05$; $^{*}p<0.1$.}} 
 \end_layout
@@ -1125,10 +1125,6 @@ label{table:table5}
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -1181,7 +1177,7 @@ begin{center}
 \backslash
 begin{tabular}{@{
 \backslash
-extracolsep{5pt}}lcccccccc}  
+extracolsep{5pt}}lccccccc}  
 \backslash
 
 \backslash
@@ -1195,7 +1191,7 @@ hline
 \backslash
 [-1.8ex]   & 
 \backslash
-multicolumn{8}{c}{
+multicolumn{7}{c}{
 \backslash
 textit{
 \backslash
@@ -1211,15 +1207,13 @@ footnotesize Dependent variable: Average of all the ratings received by
 
 
 \backslash
-cline{2-9} 
+cline{2-8} 
 \backslash
 
 \backslash
 [-1.8ex] & 
 \backslash
-multicolumn{1} {c} {Overall} &  
-\backslash
-multicolumn{1} {c} {Quality}  &
+multicolumn{1} {c} {Overall}   &
 \end_layout
 
 \begin_layout Plain Layout
@@ -1274,7 +1268,7 @@ multicolumn{1} {c} {Germination}
 \backslash
 
 \backslash
-[-1.8ex] & (1) & (2) & (3) & (4) & (5)& (6)& (7)& (8) 
+[-1.8ex] & (1) & (2) & (3) & (4) & (5)& (6)& (7) 
 \backslash
 
 \backslash
@@ -1344,17 +1338,7 @@ Sexpr{ifelse(s6[3,6]<.01,"***",ifelse(s6[3,6]<.05,"**",ifelse(s6[3,6]<.1,"*","")
 Sexpr{s6[1,7]}^{
 \backslash
 Sexpr{ifelse(s6[3,7]<.01,"***",ifelse(s6[3,7]<.05,"**",ifelse(s6[3,7]<.1,"*","")))}
-}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s6[1,8]}^{
-\backslash
-Sexpr{ifelse(s6[3,8]<.01,"***",ifelse(s6[3,8]<.05,"**",ifelse(s6[3,8]<.1,"*","")))}
-}$    
+}$   
 \backslash
 
 \backslash
@@ -1377,9 +1361,7 @@ Sexpr{s6[2,5]})$ & $(
 \backslash
 Sexpr{s6[2,6]})$ & $(
 \backslash
-Sexpr{s6[2,7]})$ &$(
-\backslash
-Sexpr{s6[2,8]})$ 
+Sexpr{s6[2,7]})$  
 \backslash
 
 \backslash
@@ -1443,17 +1425,7 @@ Sexpr{ifelse(s6[6,6]<.01,"***",ifelse(s6[6,6]<.05,"**",ifelse(s6[6,6]<.1,"*","")
 Sexpr{s6[4,7]}^{
 \backslash
 Sexpr{ifelse(s6[6,7]<.01,"***",ifelse(s6[6,7]<.05,"**",ifelse(s6[6,7]<.1,"*","")))}
-}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s6[4,8]}^{
-\backslash
-Sexpr{ifelse(s6[6,8]<.01,"***",ifelse(s6[6,8]<.05,"**",ifelse(s6[6,8]<.1,"*","")))}
-}$    
+}$   
 \backslash
 
 \backslash
@@ -1476,9 +1448,7 @@ Sexpr{s6[5,5]})$ & $(
 \backslash
 Sexpr{s6[5,6]})$ & $(
 \backslash
-Sexpr{s6[5,7]})$ &$(
-\backslash
-Sexpr{s6[5,8]})$ 
+Sexpr{s6[5,7]})$ 
 \backslash
 
 \backslash
@@ -1542,17 +1512,7 @@ Sexpr{ifelse(s6[9,6]<.01,"***",ifelse(s6[9,6]<.05,"**",ifelse(s6[9,6]<.1,"*","")
 Sexpr{s6[7,7]}^{
 \backslash
 Sexpr{ifelse(s6[9,7]<.01,"***",ifelse(s6[9,7]<.05,"**",ifelse(s6[9,7]<.1,"*","")))}
-}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s6[7,8]}^{
-\backslash
-Sexpr{ifelse(s6[9,8]<.01,"***",ifelse(s6[9,8]<.05,"**",ifelse(s6[9,8]<.1,"*","")))}
-}$    
+}$  
 \backslash
 
 \backslash
@@ -1575,9 +1535,7 @@ Sexpr{s6[8,5]})$ & $(
 \backslash
 Sexpr{s6[8,6]})$ & $(
 \backslash
-Sexpr{s6[8,7]})$ &$(
-\backslash
-Sexpr{s6[8,8]})$
+Sexpr{s6[8,7]})$
 \backslash
 
 \backslash
@@ -1641,16 +1599,6 @@ Sexpr{ifelse(s6[12,6]<.01,"***",ifelse(s6[12,6]<.05,"**",ifelse(s6[12,6]<.1,"*",
 Sexpr{s6[10,7]}^{
 \backslash
 Sexpr{ifelse(s6[12,7]<.01,"***",ifelse(s6[12,7]<.05,"**",ifelse(s6[12,7]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s6[10,8]}^{
-\backslash
-Sexpr{ifelse(s6[12,8]<.01,"***",ifelse(s6[12,8]<.05,"**",ifelse(s6[12,8]<.1,"*","")
 ))}}$    
 \backslash
 
@@ -1674,9 +1622,7 @@ Sexpr{s6[11,5]})$ & $(
 \backslash
 Sexpr{s6[11,6]})$ & $(
 \backslash
-Sexpr{s6[11,7]})$ &$(
-\backslash
-Sexpr{s6[11,8]})$
+Sexpr{s6[11,7]})$ 
 \backslash
 
 \backslash
@@ -1740,17 +1686,7 @@ Sexpr{ifelse(s6[15,6]<.01,"***",ifelse(s6[15,6]<.05,"**",ifelse(s6[15,6]<.1,"*",
 Sexpr{s6[13,7]}^{
 \backslash
 Sexpr{ifelse(s6[15,7]<.01,"***",ifelse(s6[15,7]<.05,"**",ifelse(s6[15,7]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s6[13,8]}^{
-\backslash
-Sexpr{ifelse(s6[15,8]<.01,"***",ifelse(s6[15,8]<.05,"**",ifelse(s6[15,8]<.1,"*","")
-))}}$    
+))}}$   
 \backslash
 
 \backslash
@@ -1773,9 +1709,7 @@ Sexpr{s6[14,5]})$ & $(
 \backslash
 Sexpr{s6[14,6]})$ & $(
 \backslash
-Sexpr{s6[14,7]})$ &$(
-\backslash
-Sexpr{s6[14,8]})$
+Sexpr{s6[14,7]})$
 \backslash
 
 \backslash
@@ -1839,17 +1773,7 @@ Sexpr{ifelse(s6[18,6]<.01,"***",ifelse(s6[18,6]<.05,"**",ifelse(s6[18,6]<.1,"*",
 Sexpr{s6[16,7]}^{
 \backslash
 Sexpr{ifelse(s6[18,7]<.01,"***",ifelse(s6[18,7]<.05,"**",ifelse(s6[18,7]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s6[16,8]}^{
-\backslash
-Sexpr{ifelse(s6[18,8]<.01,"***",ifelse(s6[18,8]<.05,"**",ifelse(s6[18,8]<.1,"*","")
-))}}$    
+))}}$  
 \backslash
 
 \backslash
@@ -1872,9 +1796,7 @@ Sexpr{s6[17,5]})$ & $(
 \backslash
 Sexpr{s6[17,6]})$ & $(
 \backslash
-Sexpr{s6[17,7]})$ &$(
-\backslash
-Sexpr{s6[17,8]})$
+Sexpr{s6[17,7]})$ 
 \backslash
 
 \backslash
@@ -1938,17 +1860,7 @@ Sexpr{ifelse(s6[21,6]<.01,"***",ifelse(s6[21,6]<.05,"**",ifelse(s6[21,6]<.1,"*",
 Sexpr{s6[19,7]}^{
 \backslash
 Sexpr{ifelse(s6[21,7]<.01,"***",ifelse(s6[21,7]<.05,"**",ifelse(s6[21,7]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s6[19,8]}^{
-\backslash
-Sexpr{ifelse(s6[21,8]<.01,"***",ifelse(s6[21,8]<.05,"**",ifelse(s6[21,8]<.1,"*","")
-))}}$    
+))}}$  
 \backslash
 
 \backslash
@@ -1971,9 +1883,7 @@ Sexpr{s6[20,5]})$ & $(
 \backslash
 Sexpr{s6[20,6]})$ & $(
 \backslash
-Sexpr{s6[20,7]})$ &$(
-\backslash
-Sexpr{s6[20,8]})$
+Sexpr{s6[20,7]})$ 
 \backslash
 
 \backslash
@@ -2037,17 +1947,7 @@ Sexpr{ifelse(s6[24,6]<.01,"***",ifelse(s6[24,6]<.05,"**",ifelse(s6[24,6]<.1,"*",
 Sexpr{s6[22,7]}^{
 \backslash
 Sexpr{ifelse(s6[24,7]<.01,"***",ifelse(s6[24,7]<.05,"**",ifelse(s6[24,7]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s6[22,8]}^{
-\backslash
-Sexpr{ifelse(s6[24,8]<.01,"***",ifelse(s6[24,8]<.05,"**",ifelse(s6[24,8]<.1,"*","")
-))}}$    
+))}}$   
 \backslash
 
 \backslash
@@ -2070,9 +1970,7 @@ Sexpr{s6[23,5]})$ & $(
 \backslash
 Sexpr{s6[23,6]})$ & $(
 \backslash
-Sexpr{s6[23,7]})$ &$(
-\backslash
-Sexpr{s6[23,8]})$
+Sexpr{s6[23,7]})$ 
 \backslash
 
 \backslash
@@ -2136,17 +2034,7 @@ Sexpr{ifelse(s6[27,6]<.01,"***",ifelse(s6[27,6]<.05,"**",ifelse(s6[27,6]<.1,"*",
 Sexpr{s6[25,7]}^{
 \backslash
 Sexpr{ifelse(s6[27,7]<.01,"***",ifelse(s6[27,7]<.05,"**",ifelse(s6[27,7]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s6[25,8]}^{
-\backslash
-Sexpr{ifelse(s6[27,8]<.01,"***",ifelse(s6[27,8]<.05,"**",ifelse(s6[27,8]<.1,"*","")
-))}}$    
+))}}$   
 \backslash
 
 \backslash
@@ -2169,9 +2057,7 @@ Sexpr{s6[26,5]})$ & $(
 \backslash
 Sexpr{s6[26,6]})$ & $(
 \backslash
-Sexpr{s6[26,7]})$ &$(
-\backslash
-Sexpr{s6[26,8]})$
+Sexpr{s6[26,7]})$ 
 \backslash
 
 \backslash
@@ -2235,17 +2121,7 @@ Sexpr{ifelse(s6[30,6]<.01,"***",ifelse(s6[30,6]<.05,"**",ifelse(s6[30,6]<.1,"*",
 Sexpr{s6[28,7]}^{
 \backslash
 Sexpr{ifelse(s6[30,7]<.01,"***",ifelse(s6[30,7]<.05,"**",ifelse(s6[30,7]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s6[28,8]}^{
-\backslash
-Sexpr{ifelse(s6[30,8]<.01,"***",ifelse(s6[30,8]<.05,"**",ifelse(s6[30,8]<.1,"*","")
-))}}$    
+))}}$   
 \backslash
 
 \backslash
@@ -2268,9 +2144,7 @@ Sexpr{s6[29,5]})$ & $(
 \backslash
 Sexpr{s6[29,6]})$ & $(
 \backslash
-Sexpr{s6[29,7]})$ &$(
-\backslash
-Sexpr{s6[29,8]})$
+Sexpr{s6[29,7]})$ 
 \backslash
 
 \backslash
@@ -2334,17 +2208,7 @@ Sexpr{ifelse(s6[33,6]<.01,"***",ifelse(s6[33,6]<.05,"**",ifelse(s6[33,6]<.1,"*",
 Sexpr{s6[31,7]}^{
 \backslash
 Sexpr{ifelse(s6[33,7]<.01,"***",ifelse(s6[33,7]<.05,"**",ifelse(s6[33,7]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s6[31,8]}^{
-\backslash
-Sexpr{ifelse(s6[33,8]<.01,"***",ifelse(s6[33,8]<.05,"**",ifelse(s6[33,8]<.1,"*","")
-))}}$    
+))}}$   
 \backslash
 
 \backslash
@@ -2367,9 +2231,7 @@ Sexpr{s6[32,5]})$ & $(
 \backslash
 Sexpr{s6[32,6]})$ & $(
 \backslash
-Sexpr{s6[32,7]})$ &$(
-\backslash
-Sexpr{s6[32,8]})$
+Sexpr{s6[32,7]})$ 
 \backslash
 
 \backslash
@@ -2433,17 +2295,7 @@ Sexpr{ifelse(s6[36,6]<.01,"***",ifelse(s6[36,6]<.05,"**",ifelse(s6[36,6]<.1,"*",
 Sexpr{s6[34,7]}^{
 \backslash
 Sexpr{ifelse(s6[36,7]<.01,"***",ifelse(s6[36,7]<.05,"**",ifelse(s6[36,7]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s6[34,8]}^{
-\backslash
-Sexpr{ifelse(s6[36,8]<.01,"***",ifelse(s6[36,8]<.05,"**",ifelse(s6[36,8]<.1,"*","")
-))}}$    
+))}}$   
 \backslash
 
 \backslash
@@ -2466,9 +2318,7 @@ Sexpr{s6[35,5]})$ & $(
 \backslash
 Sexpr{s6[35,6]})$ & $(
 \backslash
-Sexpr{s6[35,7]})$ &$(
-\backslash
-Sexpr{s6[35,8]})$
+Sexpr{s6[35,7]})$ 
 \backslash
 
 \backslash
@@ -2532,17 +2382,7 @@ Sexpr{ifelse(s6[39,6]<.01,"***",ifelse(s6[39,6]<.05,"**",ifelse(s6[39,6]<.1,"*",
 Sexpr{s6[37,7]}^{
 \backslash
 Sexpr{ifelse(s6[39,7]<.01,"***",ifelse(s6[39,7]<.05,"**",ifelse(s6[39,7]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s6[37,8]}^{
-\backslash
-Sexpr{ifelse(s6[39,8]<.01,"***",ifelse(s6[39,8]<.05,"**",ifelse(s6[39,8]<.1,"*","")
-))}}$    
+))}}$   
 \backslash
 
 \backslash
@@ -2565,9 +2405,7 @@ Sexpr{s6[38,5]})$ & $(
 \backslash
 Sexpr{s6[38,6]})$ & $(
 \backslash
-Sexpr{s6[38,7]})$ &$(
-\backslash
-Sexpr{s6[38,8]})$
+Sexpr{s6[38,7]})$ 
 \backslash
 
 \backslash
@@ -2631,16 +2469,6 @@ Sexpr{ifelse(s6[42,6]<.01,"***",ifelse(s6[42,6]<.05,"**",ifelse(s6[42,6]<.1,"*",
 Sexpr{s6[40,7]}^{
 \backslash
 Sexpr{ifelse(s6[42,7]<.01,"***",ifelse(s6[42,7]<.05,"**",ifelse(s6[42,7]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s6[40,8]}^{
-\backslash
-Sexpr{ifelse(s6[42,8]<.01,"***",ifelse(s6[42,8]<.05,"**",ifelse(s6[42,8]<.1,"*","")
 ))}}$    
 \backslash
 
@@ -2664,9 +2492,7 @@ Sexpr{s6[41,5]})$ & $(
 \backslash
 Sexpr{s6[41,6]})$ & $(
 \backslash
-Sexpr{s6[41,7]})$ &$(
-\backslash
-Sexpr{s6[41,8]})$
+Sexpr{s6[41,7]})$ 
 \backslash
 
 \backslash
@@ -2730,17 +2556,7 @@ Sexpr{ifelse(s6[45,6]<.01,"***",ifelse(s6[45,6]<.05,"**",ifelse(s6[45,6]<.1,"*",
 Sexpr{s6[43,7]}^{
 \backslash
 Sexpr{ifelse(s6[45,7]<.01,"***",ifelse(s6[45,7]<.05,"**",ifelse(s6[45,7]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s6[43,8]}^{
-\backslash
-Sexpr{ifelse(s6[45,8]<.01,"***",ifelse(s6[45,8]<.05,"**",ifelse(s6[45,8]<.1,"*","")
-))}}$    
+))}}$  
 \backslash
 
 \backslash
@@ -2763,9 +2579,7 @@ Sexpr{s6[44,5]})$ & $(
 \backslash
 Sexpr{s6[44,6]})$ & $(
 \backslash
-Sexpr{s6[44,7]})$ &$(
-\backslash
-Sexpr{s6[44,8]})$
+Sexpr{s6[44,7]})$
 \backslash
 
 \backslash
@@ -2829,17 +2643,7 @@ Sexpr{ifelse(s6[48,6]<.01,"***",ifelse(s6[48,6]<.05,"**",ifelse(s6[48,6]<.1,"*",
 Sexpr{s6[46,7]}^{
 \backslash
 Sexpr{ifelse(s6[48,7]<.01,"***",ifelse(s6[48,7]<.05,"**",ifelse(s6[48,7]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s6[46,8]}^{
-\backslash
-Sexpr{ifelse(s6[48,8]<.01,"***",ifelse(s6[48,8]<.05,"**",ifelse(s6[48,8]<.1,"*","")
-))}}$    
+))}}$   
 \backslash
 
 \backslash
@@ -2862,9 +2666,7 @@ Sexpr{s6[47,5]})$ & $(
 \backslash
 Sexpr{s6[47,6]})$ & $(
 \backslash
-Sexpr{s6[47,7]})$ &$(
-\backslash
-Sexpr{s6[47,8]})$
+Sexpr{s6[47,7]})$ 
 \backslash
 
 \backslash
@@ -2928,17 +2730,7 @@ Sexpr{ifelse(s6[51,6]<.01,"***",ifelse(s6[51,6]<.05,"**",ifelse(s6[51,6]<.1,"*",
 Sexpr{s6[49,7]}^{
 \backslash
 Sexpr{ifelse(s6[51,7]<.01,"***",ifelse(s6[51,7]<.05,"**",ifelse(s6[51,7]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s6[49,8]}^{
-\backslash
-Sexpr{ifelse(s6[51,8]<.01,"***",ifelse(s6[51,8]<.05,"**",ifelse(s6[51,8]<.1,"*","")
-))}}$    
+))}}$  
 \backslash
 
 \backslash
@@ -2961,9 +2753,7 @@ Sexpr{s6[50,5]})$ & $(
 \backslash
 Sexpr{s6[50,6]})$ & $(
 \backslash
-Sexpr{s6[50,7]})$ &$(
-\backslash
-Sexpr{s6[50,8]})$
+Sexpr{s6[50,7]})$ 
 \backslash
 
 \backslash
@@ -3027,17 +2817,7 @@ Sexpr{ifelse(s6[54,6]<.01,"***",ifelse(s6[54,6]<.05,"**",ifelse(s6[54,6]<.1,"*",
 Sexpr{s6[52,7]}^{
 \backslash
 Sexpr{ifelse(s6[54,7]<.01,"***",ifelse(s6[54,7]<.05,"**",ifelse(s6[54,7]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s6[52,8]}^{
-\backslash
-Sexpr{ifelse(s6[54,8]<.01,"***",ifelse(s6[54,8]<.05,"**",ifelse(s6[54,8]<.1,"*","")
-))}}$    
+))}}$   
 \backslash
 
 \backslash
@@ -3060,9 +2840,7 @@ Sexpr{s6[53,5]})$ & $(
 \backslash
 Sexpr{s6[53,6]})$ & $(
 \backslash
-Sexpr{s6[53,7]})$ &$(
-\backslash
-Sexpr{s6[53,8]})$
+Sexpr{s6[53,7]})$ 
 \backslash
 
 \backslash
@@ -3126,17 +2904,7 @@ Sexpr{ifelse(s6[57,6]<.01,"***",ifelse(s6[57,6]<.05,"**",ifelse(s6[57,6]<.1,"*",
 Sexpr{s6[55,7]}^{
 \backslash
 Sexpr{ifelse(s6[57,7]<.01,"***",ifelse(s6[57,7]<.05,"**",ifelse(s6[57,7]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s6[55,8]}^{
-\backslash
-Sexpr{ifelse(s6[57,8]<.01,"***",ifelse(s6[57,8]<.05,"**",ifelse(s6[57,8]<.1,"*","")
-))}}$    
+))}}$   
 \backslash
 
 \backslash
@@ -3159,9 +2927,7 @@ Sexpr{s6[56,5]})$ & $(
 \backslash
 Sexpr{s6[56,6]})$ & $(
 \backslash
-Sexpr{s6[56,7]})$ &$(
-\backslash
-Sexpr{s6[56,8]})$
+Sexpr{s6[56,7]})$ 
 \backslash
 
 \backslash
@@ -3225,17 +2991,7 @@ Sexpr{ifelse(s6[60,6]<.01,"***",ifelse(s6[60,6]<.05,"**",ifelse(s6[60,6]<.1,"*",
 Sexpr{s6[58,7]}^{
 \backslash
 Sexpr{ifelse(s6[60,7]<.01,"***",ifelse(s6[60,7]<.05,"**",ifelse(s6[60,7]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s6[58,8]}^{
-\backslash
-Sexpr{ifelse(s6[60,8]<.01,"***",ifelse(s6[60,8]<.05,"**",ifelse(s6[60,8]<.1,"*","")
-))}}$    
+))}}$  
 \backslash
 
 \backslash
@@ -3258,9 +3014,7 @@ Sexpr{s6[59,5]})$ & $(
 \backslash
 Sexpr{s6[59,6]})$ & $(
 \backslash
-Sexpr{s6[59,7]})$ &$(
-\backslash
-Sexpr{s6[59,8]})$
+Sexpr{s6[59,7]})$ 
 \backslash
 
 \backslash
@@ -3324,17 +3078,7 @@ Sexpr{ifelse(s6[63,6]<.01,"***",ifelse(s6[63,6]<.05,"**",ifelse(s6[63,6]<.1,"*",
 Sexpr{s6[61,7]}^{
 \backslash
 Sexpr{ifelse(s6[63,7]<.01,"***",ifelse(s6[63,7]<.05,"**",ifelse(s6[63,7]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s6[61,8]}^{
-\backslash
-Sexpr{ifelse(s6[63,8]<.01,"***",ifelse(s6[63,8]<.05,"**",ifelse(s6[63,8]<.1,"*","")
-))}}$    
+))}}$  
 \backslash
 
 \backslash
@@ -3357,9 +3101,7 @@ Sexpr{s6[62,5]})$ & $(
 \backslash
 Sexpr{s6[62,6]})$ & $(
 \backslash
-Sexpr{s6[62,7]})$ &$(
-\backslash
-Sexpr{s6[62,8]})$
+Sexpr{s6[62,7]})$ 
 \backslash
 
 \backslash
@@ -3393,9 +3135,7 @@ Sexpr{s6[64,5]}$ & $
 \backslash
 Sexpr{s6[64,6]}$ & $
 \backslash
-Sexpr{s6[64,7]}$ &$
-\backslash
-Sexpr{s6[64,8]}$ 
+Sexpr{s6[64,7]}$ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -3419,9 +3159,7 @@ Sexpr{s6[65,5]}$ & $
 \backslash
 Sexpr{s6[65,6]}$ & $
 \backslash
-Sexpr{s6[65,7]}$ &$
-\backslash
-Sexpr{s6[65,8]}$     
+Sexpr{s6[65,7]}$     
 \end_layout
 
 \begin_layout Plain Layout
@@ -3444,9 +3182,7 @@ Sexpr{s6[66,5]}$ & $
 \backslash
 Sexpr{s6[66,6]}$ & $
 \backslash
-Sexpr{s6[66,7]}$ &$
-\backslash
-Sexpr{s6[66,8]}$    
+Sexpr{s6[66,7]}$  
 \end_layout
 
 \begin_layout Plain Layout
@@ -3464,7 +3200,7 @@ hline
 
 
 \backslash
-multicolumn{9}{l}{ 
+multicolumn{8}{l}{ 
 \backslash
 scriptsize{$^{***}p<0.01$; $^{**}p<0.05$; $^{*}p<0.1$.}} 
 \end_layout
@@ -6049,10 +5785,6 @@ label{table:table8}
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -6267,7 +5999,7 @@ begin{center}
 \backslash
 begin{tabular}{@{
 \backslash
-extracolsep{5pt}}lcccccccc}  
+extracolsep{5pt}}lccccccc}  
 \backslash
 
 \backslash
@@ -6281,7 +6013,7 @@ hline
 \backslash
 [-1.8ex]   & 
 \backslash
-multicolumn{8}{c}{
+multicolumn{7}{c}{
 \backslash
 textit{
 \backslash
@@ -6296,15 +6028,13 @@ footnotesize Dependent variable: Ratings given by the farmers}}
 
 
 \backslash
-cline{2-9} 
+cline{2-8} 
 \backslash
 
 \backslash
 [-1.8ex] & 
 \backslash
-multicolumn{1} {c} {Overall} &  
-\backslash
-multicolumn{1} {c} {Quality}  &
+multicolumn{1} {c} {Overall}  &
 \end_layout
 
 \begin_layout Plain Layout
@@ -6359,7 +6089,7 @@ multicolumn{1} {c} {Germination}
 \backslash
 
 \backslash
-[-1.8ex] & (1) & (2) & (3) & (4) & (5)& (6)& (7)& (8) 
+[-1.8ex] & (1) & (2) & (3) & (4) & (5)& (6)& (7) 
 \backslash
 
 \backslash
@@ -6393,9 +6123,7 @@ Sexpr{fe1[1,5]}$ & $
 \backslash
 Sexpr{fe1[1,6]}$ & $
 \backslash
-Sexpr{fe1[1,7]}$ & $
-\backslash
-Sexpr{fe1[1,8]}$    
+Sexpr{fe1[1,7]}$   
 \backslash
 
 \backslash
@@ -6459,17 +6187,7 @@ Sexpr{ifelse(fe1[4,6]<.01,"***",ifelse(fe1[4,6]<.03,"**",ifelse(fe1[4,6]<.1,"*",
 Sexpr{fe1[2,7]}^{
 \backslash
 Sexpr{ifelse(fe1[4,7]<.01,"***",ifelse(fe1[4,7]<.03,"**",ifelse(fe1[4,7]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{fe1[2,8]}^{
-\backslash
-Sexpr{ifelse(fe1[4,8]<.01,"***",ifelse(fe1[4,8]<.03,"**",ifelse(fe1[4,8]<.1,"*","")
-))}}$    
+))}}$   
 \backslash
 
 \backslash
@@ -6492,9 +6210,7 @@ Sexpr{fe1[3,5]})$ & $(
 \backslash
 Sexpr{fe1[3,6]})$ & $(
 \backslash
-Sexpr{fe1[3,7]})$ &$(
-\backslash
-Sexpr{fe1[3,8]})$ 
+Sexpr{fe1[3,7]})$ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -6524,9 +6240,7 @@ Sexpr{fe1[5,5]}$ & $
 \backslash
 Sexpr{fe1[5,6]}$ & $
 \backslash
-Sexpr{fe1[5,7]}$ &$
-\backslash
-Sexpr{fe1[5,8]}$ 
+Sexpr{fe1[5,7]}$
 \end_layout
 
 \begin_layout Plain Layout
@@ -6550,9 +6264,7 @@ Sexpr{fe1[6,5]}$ & $
 \backslash
 Sexpr{fe1[6,6]}$ & $
 \backslash
-Sexpr{fe1[6,7]}$ &$
-\backslash
-Sexpr{fe1[6,8]}$     
+Sexpr{fe1[6,7]}$ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -6575,9 +6287,7 @@ Sexpr{fe1[7,5]}$ & $
 \backslash
 Sexpr{fe1[7,6]}$ & $
 \backslash
-Sexpr{fe1[7,7]}$ &$
-\backslash
-Sexpr{fe1[7,8]}$    
+Sexpr{fe1[7,7]}$ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -6595,7 +6305,7 @@ hline
 
 
 \backslash
-multicolumn{9}{l}{ 
+multicolumn{8}{l}{ 
 \backslash
 scriptsize{$^{***}p<0.01$; $^{**}p<0.05$; $^{*}p<0.1$.}} 
 \end_layout
@@ -6631,10 +6341,6 @@ label{table:table9}
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -6646,7 +6352,6 @@ status open
 
 \begin_layout Plain Layout
 nobs: 12,003 in rating_dyads - 10981 NAs.
- 
 \end_layout
 
 \end_inset
@@ -6659,10 +6364,6 @@ nobs: 12,003 in rating_dyads - 10981 NAs.
 wide false
 sideways false
 status collapsed
-
-\begin_layout Plain Layout
-
-\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -6698,7 +6399,7 @@ begin{center}
 \backslash
 begin{tabular}{@{
 \backslash
-extracolsep{5pt}}lcccccccc}  
+extracolsep{5pt}}lccccccc}  
 \backslash
 
 \backslash
@@ -6712,7 +6413,7 @@ hline
 \backslash
 [-1.8ex]   & 
 \backslash
-multicolumn{8}{c}{
+multicolumn{7}{c}{
 \backslash
 textit{
 \backslash
@@ -6727,15 +6428,13 @@ footnotesize Dependent variable: Ratings given by the farmers}}
 
 
 \backslash
-cline{2-9} 
+cline{2-8} 
 \backslash
 
 \backslash
 [-1.8ex] & 
 \backslash
 multicolumn{1} {c} {Overall} &  
-\backslash
-multicolumn{1} {c} {Quality}  &
 \end_layout
 
 \begin_layout Plain Layout
@@ -6790,7 +6489,7 @@ multicolumn{1} {c} {Germination}
 \backslash
 
 \backslash
-[-1.8ex] & (1) & (2) & (3) & (4) & (5)& (6)& (7)& (8) 
+[-1.8ex] & (1) & (2) & (3) & (4) & (5)& (6)& (7) 
 \backslash
 
 \backslash
@@ -6824,9 +6523,7 @@ Sexpr{fe2[1,5]}$ & $
 \backslash
 Sexpr{fe2[1,6]}$ & $
 \backslash
-Sexpr{fe2[1,7]}$ & $
-\backslash
-Sexpr{fe2[1,8]}$    
+Sexpr{fe2[1,7]}$  
 \backslash
 
 \backslash
@@ -6890,17 +6587,7 @@ Sexpr{ifelse(fe2[4,6]<.01,"***",ifelse(fe2[4,6]<.03,"**",ifelse(fe2[4,6]<.1,"*",
 Sexpr{fe2[2,7]}^{
 \backslash
 Sexpr{ifelse(fe2[4,7]<.01,"***",ifelse(fe2[4,7]<.03,"**",ifelse(fe2[4,7]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{fe2[2,8]}^{
-\backslash
-Sexpr{ifelse(fe2[4,8]<.01,"***",ifelse(fe2[4,8]<.03,"**",ifelse(fe2[4,8]<.1,"*","")
-))}}$    
+))}}$ 
 \backslash
 
 \backslash
@@ -6923,9 +6610,7 @@ Sexpr{fe2[3,5]})$ & $(
 \backslash
 Sexpr{fe2[3,6]})$ & $(
 \backslash
-Sexpr{fe2[3,7]})$ &$(
-\backslash
-Sexpr{fe2[3,8]})$ 
+Sexpr{fe2[3,7]})$  
 \backslash
 
 \backslash
@@ -6989,16 +6674,6 @@ Sexpr{ifelse(fe2[7,6]<.01,"***",ifelse(fe2[7,6]<.05,"**",ifelse(fe2[7,6]<.1,"*",
 Sexpr{fe2[5,7]}^{
 \backslash
 Sexpr{ifelse(fe2[7,7]<.01,"***",ifelse(fe2[7,7]<.05,"**",ifelse(fe2[7,7]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{fe2[5,8]}^{
-\backslash
-Sexpr{ifelse(fe2[7,8]<.01,"***",ifelse(fe2[7,8]<.05,"**",ifelse(fe2[7,8]<.1,"*","")
 ))}}$    
 \backslash
 
@@ -7022,9 +6697,7 @@ Sexpr{fe2[6,5]})$ & $(
 \backslash
 Sexpr{fe2[6,6]})$ & $(
 \backslash
-Sexpr{fe2[6,7]})$ &$(
-\backslash
-Sexpr{fe2[6,8]})$
+Sexpr{fe2[6,7]})$ 
 \backslash
 
 \backslash
@@ -7088,17 +6761,7 @@ Sexpr{ifelse(fe2[10,6]<.01,"***",ifelse(fe2[10,6]<.05,"**",ifelse(fe2[10,6]<.1,"
 Sexpr{fe2[8,7]}^{
 \backslash
 Sexpr{ifelse(fe2[10,7]<.01,"***",ifelse(fe2[10,7]<.05,"**",ifelse(fe2[10,7]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{fe2[8,8]}^{
-\backslash
-Sexpr{ifelse(fe2[10,8]<.01,"***",ifelse(fe2[10,8]<.05,"**",ifelse(fe2[10,8]<.1,"*",
-"")))}}$    
+"")))}}$   
 \backslash
 
 \backslash
@@ -7121,9 +6784,7 @@ Sexpr{fe2[9,5]})$ & $(
 \backslash
 Sexpr{fe2[9,6]})$ & $(
 \backslash
-Sexpr{fe2[9,7]})$ &$(
-\backslash
-Sexpr{fe2[9,8]})$
+Sexpr{fe2[9,7]})$ 
 \backslash
 
 \backslash
@@ -7187,17 +6848,7 @@ Sexpr{ifelse(fe2[13,6]<.01,"***",ifelse(fe2[13,6]<.05,"**",ifelse(fe2[13,6]<.1,"
 Sexpr{fe2[11,7]}^{
 \backslash
 Sexpr{ifelse(fe2[13,7]<.01,"***",ifelse(fe2[13,7]<.05,"**",ifelse(fe2[13,7]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{fe2[11,8]}^{
-\backslash
-Sexpr{ifelse(fe2[13,8]<.01,"***",ifelse(fe2[13,8]<.05,"**",ifelse(fe2[13,8]<.1,"*",
-"")))}}$    
+"")))}}$   
 \backslash
 
 \backslash
@@ -7220,9 +6871,7 @@ Sexpr{fe2[12,5]})$ & $(
 \backslash
 Sexpr{fe2[12,6]})$ & $(
 \backslash
-Sexpr{fe2[12,7]})$ &$(
-\backslash
-Sexpr{fe2[12,8]})$
+Sexpr{fe2[12,7]})$ 
 \backslash
 
 \backslash
@@ -7286,17 +6935,7 @@ Sexpr{ifelse(fe2[16,6]<.01,"***",ifelse(fe2[16,6]<.05,"**",ifelse(fe2[16,6]<.1,"
 Sexpr{fe2[14,7]}^{
 \backslash
 Sexpr{ifelse(fe2[16,7]<.01,"***",ifelse(fe2[16,7]<.05,"**",ifelse(fe2[16,7]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{fe2[14,8]}^{
-\backslash
-Sexpr{ifelse(fe2[16,8]<.01,"***",ifelse(fe2[16,8]<.05,"**",ifelse(fe2[16,8]<.1,"*",
-"")))}}$    
+"")))}}$   
 \backslash
 
 \backslash
@@ -7319,9 +6958,7 @@ Sexpr{fe2[15,5]})$ & $(
 \backslash
 Sexpr{fe2[15,6]})$ & $(
 \backslash
-Sexpr{fe2[15,7]})$ &$(
-\backslash
-Sexpr{fe2[15,8]})$
+Sexpr{fe2[15,7]})$ 
 \backslash
 
 \backslash
@@ -7385,16 +7022,6 @@ Sexpr{ifelse(fe2[19,6]<.01,"***",ifelse(fe2[19,6]<.05,"**",ifelse(fe2[19,6]<.1,"
 Sexpr{fe2[17,7]}^{
 \backslash
 Sexpr{ifelse(fe2[19,7]<.01,"***",ifelse(fe2[19,7]<.05,"**",ifelse(fe2[19,7]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{fe2[17,8]}^{
-\backslash
-Sexpr{ifelse(fe2[19,8]<.01,"***",ifelse(fe2[19,8]<.05,"**",ifelse(fe2[19,8]<.1,"*",
 "")))}}$    
 \backslash
 
@@ -7418,9 +7045,7 @@ Sexpr{fe2[18,5]})$ & $(
 \backslash
 Sexpr{fe2[18,6]})$ & $(
 \backslash
-Sexpr{fe2[18,7]})$ &$(
-\backslash
-Sexpr{fe2[18,8]})$
+Sexpr{fe2[18,7]})$ 
 \backslash
 
 \backslash
@@ -7484,17 +7109,7 @@ Sexpr{ifelse(fe2[22,6]<.01,"***",ifelse(fe2[22,6]<.05,"**",ifelse(fe2[22,6]<.1,"
 Sexpr{fe2[20,7]}^{
 \backslash
 Sexpr{ifelse(fe2[22,7]<.01,"***",ifelse(fe2[22,7]<.05,"**",ifelse(fe2[22,7]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{fe2[20,8]}^{
-\backslash
-Sexpr{ifelse(fe2[22,8]<.01,"***",ifelse(fe2[22,8]<.05,"**",ifelse(fe2[22,8]<.1,"*",
-"")))}}$    
+"")))}}$  
 \backslash
 
 \backslash
@@ -7517,9 +7132,7 @@ Sexpr{fe2[21,5]})$ & $(
 \backslash
 Sexpr{fe2[21,6]})$ & $(
 \backslash
-Sexpr{fe2[21,7]})$ &$(
-\backslash
-Sexpr{fe2[21,8]})$
+Sexpr{fe2[21,7]})$
 \backslash
 
 \backslash
@@ -7583,16 +7196,6 @@ Sexpr{ifelse(fe2[25,6]<.01,"***",ifelse(fe2[25,6]<.05,"**",ifelse(fe2[25,6]<.1,"
 Sexpr{fe2[23,7]}^{
 \backslash
 Sexpr{ifelse(fe2[25,7]<.01,"***",ifelse(fe2[25,7]<.05,"**",ifelse(fe2[25,7]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{fe2[23,8]}^{
-\backslash
-Sexpr{ifelse(fe2[25,8]<.01,"***",ifelse(fe2[25,8]<.05,"**",ifelse(fe2[25,8]<.1,"*",
 "")))}}$    
 \backslash
 
@@ -7616,9 +7219,7 @@ Sexpr{fe2[24,5]})$ & $(
 \backslash
 Sexpr{fe2[24,6]})$ & $(
 \backslash
-Sexpr{fe2[24,7]})$ &$(
-\backslash
-Sexpr{fe2[24,8]})$
+Sexpr{fe2[24,7]})$ 
 \backslash
 
 \backslash
@@ -7682,17 +7283,7 @@ Sexpr{ifelse(fe2[28,6]<.01,"***",ifelse(fe2[28,6]<.05,"**",ifelse(fe2[28,6]<.1,"
 Sexpr{fe2[26,7]}^{
 \backslash
 Sexpr{ifelse(fe2[28,7]<.01,"***",ifelse(fe2[28,7]<.05,"**",ifelse(fe2[28,7]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{fe2[26,8]}^{
-\backslash
-Sexpr{ifelse(fe2[28,8]<.01,"***",ifelse(fe2[28,8]<.05,"**",ifelse(fe2[28,8]<.1,"*",
-"")))}}$    
+"")))}}$  
 \backslash
 
 \backslash
@@ -7715,9 +7306,7 @@ Sexpr{fe2[27,5]})$ & $(
 \backslash
 Sexpr{fe2[27,6]})$ & $(
 \backslash
-Sexpr{fe2[27,7]})$ &$(
-\backslash
-Sexpr{fe2[27,8]})$
+Sexpr{fe2[27,7]})$ 
 \backslash
 
 \backslash
@@ -7781,16 +7370,6 @@ Sexpr{ifelse(fe2[31,6]<.01,"***",ifelse(fe2[31,6]<.05,"**",ifelse(fe2[31,6]<.1,"
 Sexpr{fe2[29,7]}^{
 \backslash
 Sexpr{ifelse(fe2[31,7]<.01,"***",ifelse(fe2[31,7]<.05,"**",ifelse(fe2[31,7]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{fe2[29,8]}^{
-\backslash
-Sexpr{ifelse(fe2[31,8]<.01,"***",ifelse(fe2[31,8]<.05,"**",ifelse(fe2[31,8]<.1,"*",
 "")))}}$    
 \backslash
 
@@ -7814,9 +7393,7 @@ Sexpr{fe2[30,5]})$ & $(
 \backslash
 Sexpr{fe2[30,6]})$ & $(
 \backslash
-Sexpr{fe2[30,7]})$ &$(
-\backslash
-Sexpr{fe2[30,8]})$
+Sexpr{fe2[30,7]})$
 \backslash
 
 \backslash
@@ -7880,16 +7457,6 @@ Sexpr{ifelse(fe2[34,6]<.01,"***",ifelse(fe2[34,6]<.05,"**",ifelse(fe2[34,6]<.1,"
 Sexpr{fe2[32,7]}^{
 \backslash
 Sexpr{ifelse(fe2[34,7]<.01,"***",ifelse(fe2[34,7]<.05,"**",ifelse(fe2[34,7]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{fe2[32,8]}^{
-\backslash
-Sexpr{ifelse(fe2[34,8]<.01,"***",ifelse(fe2[34,8]<.05,"**",ifelse(fe2[34,8]<.1,"*",
 "")))}}$    
 \backslash
 
@@ -7913,9 +7480,7 @@ Sexpr{fe2[33,5]})$ & $(
 \backslash
 Sexpr{fe2[33,6]})$ & $(
 \backslash
-Sexpr{fe2[33,7]})$ &$(
-\backslash
-Sexpr{fe2[33,8]})$
+Sexpr{fe2[33,7]})$
 \backslash
 
 \backslash
@@ -7979,17 +7544,7 @@ Sexpr{ifelse(fe2[37,6]<.01,"***",ifelse(fe2[37,6]<.05,"**",ifelse(fe2[37,6]<.1,"
 Sexpr{fe2[35,7]}^{
 \backslash
 Sexpr{ifelse(fe2[37,7]<.01,"***",ifelse(fe2[37,7]<.05,"**",ifelse(fe2[37,7]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{fe2[35,8]}^{
-\backslash
-Sexpr{ifelse(fe2[37,8]<.01,"***",ifelse(fe2[37,8]<.05,"**",ifelse(fe2[37,8]<.1,"*",
-"")))}}$    
+"")))}}$   
 \backslash
 
 \backslash
@@ -8012,9 +7567,7 @@ Sexpr{fe2[36,5]})$ & $(
 \backslash
 Sexpr{fe2[36,6]})$ & $(
 \backslash
-Sexpr{fe2[36,7]})$ &$(
-\backslash
-Sexpr{fe2[36,8]})$
+Sexpr{fe2[36,7]})$ 
 \backslash
 
 \backslash
@@ -8078,17 +7631,7 @@ Sexpr{ifelse(fe2[40,6]<.01,"***",ifelse(fe2[40,6]<.05,"**",ifelse(fe2[40,6]<.1,"
 Sexpr{fe2[38,7]}^{
 \backslash
 Sexpr{ifelse(fe2[40,7]<.01,"***",ifelse(fe2[40,7]<.05,"**",ifelse(fe2[40,7]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{fe2[38,8]}^{
-\backslash
-Sexpr{ifelse(fe2[40,8]<.01,"***",ifelse(fe2[40,8]<.05,"**",ifelse(fe2[40,8]<.1,"*",
-"")))}}$    
+"")))}}$   
 \backslash
 
 \backslash
@@ -8111,9 +7654,7 @@ Sexpr{fe2[39,5]})$ & $(
 \backslash
 Sexpr{fe2[39,6]})$ & $(
 \backslash
-Sexpr{fe2[39,7]})$ &$(
-\backslash
-Sexpr{fe2[39,8]})$
+Sexpr{fe2[39,7]})$ 
 \backslash
 
 \backslash
@@ -8177,16 +7718,6 @@ Sexpr{ifelse(fe2[43,6]<.01,"***",ifelse(fe2[43,6]<.05,"**",ifelse(fe2[43,6]<.1,"
 Sexpr{fe2[41,7]}^{
 \backslash
 Sexpr{ifelse(fe2[43,7]<.01,"***",ifelse(fe2[43,7]<.05,"**",ifelse(fe2[43,7]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{fe2[41,8]}^{
-\backslash
-Sexpr{ifelse(fe2[43,8]<.01,"***",ifelse(fe2[43,8]<.05,"**",ifelse(fe2[43,8]<.1,"*",
 "")))}}$    
 \backslash
 
@@ -8210,9 +7741,7 @@ Sexpr{fe2[42,5]})$ & $(
 \backslash
 Sexpr{fe2[42,6]})$ & $(
 \backslash
-Sexpr{fe2[42,7]})$ &$(
-\backslash
-Sexpr{fe2[42,8]})$
+Sexpr{fe2[42,7]})$
 \backslash
 
 \backslash
@@ -8276,16 +7805,6 @@ Sexpr{ifelse(fe2[46,6]<.01,"***",ifelse(fe2[46,6]<.05,"**",ifelse(fe2[46,6]<.1,"
 Sexpr{fe2[44,7]}^{
 \backslash
 Sexpr{ifelse(fe2[46,7]<.01,"***",ifelse(fe2[46,7]<.05,"**",ifelse(fe2[46,7]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{fe2[44,8]}^{
-\backslash
-Sexpr{ifelse(fe2[46,8]<.01,"***",ifelse(fe2[46,8]<.05,"**",ifelse(fe2[46,8]<.1,"*",
 "")))}}$    
 \backslash
 
@@ -8309,9 +7828,7 @@ Sexpr{fe2[45,5]})$ & $(
 \backslash
 Sexpr{fe2[45,6]})$ & $(
 \backslash
-Sexpr{fe2[45,7]})$ &$(
-\backslash
-Sexpr{fe2[45,8]})$
+Sexpr{fe2[45,7]})$ 
 \backslash
 
 \backslash
@@ -8375,17 +7892,7 @@ Sexpr{ifelse(fe2[49,6]<.01,"***",ifelse(fe2[49,6]<.05,"**",ifelse(fe2[49,6]<.1,"
 Sexpr{fe2[47,7]}^{
 \backslash
 Sexpr{ifelse(fe2[49,7]<.01,"***",ifelse(fe2[49,7]<.05,"**",ifelse(fe2[49,7]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{fe2[47,8]}^{
-\backslash
-Sexpr{ifelse(fe2[49,8]<.01,"***",ifelse(fe2[49,8]<.05,"**",ifelse(fe2[49,8]<.1,"*",
-"")))}}$    
+"")))}}$  
 \backslash
 
 \backslash
@@ -8408,9 +7915,7 @@ Sexpr{fe2[48,5]})$ & $(
 \backslash
 Sexpr{fe2[48,6]})$ & $(
 \backslash
-Sexpr{fe2[48,7]})$ &$(
-\backslash
-Sexpr{fe2[48,8]})$
+Sexpr{fe2[48,7]})$
 \backslash
 
 \backslash
@@ -8474,16 +7979,6 @@ Sexpr{ifelse(fe2[52,6]<.01,"***",ifelse(fe2[52,6]<.05,"**",ifelse(fe2[52,6]<.1,"
 Sexpr{fe2[50,7]}^{
 \backslash
 Sexpr{ifelse(fe2[52,7]<.01,"***",ifelse(fe2[52,7]<.05,"**",ifelse(fe2[52,7]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{fe2[50,8]}^{
-\backslash
-Sexpr{ifelse(fe2[52,8]<.01,"***",ifelse(fe2[52,8]<.05,"**",ifelse(fe2[52,8]<.1,"*",
 "")))}}$    
 \backslash
 
@@ -8507,9 +8002,7 @@ Sexpr{fe2[51,5]})$ & $(
 \backslash
 Sexpr{fe2[51,6]})$ & $(
 \backslash
-Sexpr{fe2[51,7]})$ &$(
-\backslash
-Sexpr{fe2[51,8]})$
+Sexpr{fe2[51,7]})$ 
 \backslash
 
 \backslash
@@ -8573,17 +8066,7 @@ Sexpr{ifelse(fe2[55,6]<.01,"***",ifelse(fe2[55,6]<.05,"**",ifelse(fe2[55,6]<.1,"
 Sexpr{fe2[53,7]}^{
 \backslash
 Sexpr{ifelse(fe2[55,7]<.01,"***",ifelse(fe2[55,7]<.05,"**",ifelse(fe2[55,7]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{fe2[53,8]}^{
-\backslash
-Sexpr{ifelse(fe2[55,8]<.01,"***",ifelse(fe2[55,8]<.05,"**",ifelse(fe2[55,8]<.1,"*",
-"")))}}$    
+"")))}}$   
 \backslash
 
 \backslash
@@ -8606,9 +8089,7 @@ Sexpr{fe2[54,5]})$ & $(
 \backslash
 Sexpr{fe2[54,6]})$ & $(
 \backslash
-Sexpr{fe2[54,7]})$ &$(
-\backslash
-Sexpr{fe2[54,8]})$
+Sexpr{fe2[54,7]})$ 
 \backslash
 
 \backslash
@@ -8672,17 +8153,7 @@ Sexpr{ifelse(fe2[58,6]<.01,"***",ifelse(fe2[58,6]<.05,"**",ifelse(fe2[58,6]<.1,"
 Sexpr{fe2[56,7]}^{
 \backslash
 Sexpr{ifelse(fe2[58,7]<.01,"***",ifelse(fe2[58,7]<.05,"**",ifelse(fe2[58,7]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{fe2[56,8]}^{
-\backslash
-Sexpr{ifelse(fe2[58,8]<.01,"***",ifelse(fe2[58,8]<.05,"**",ifelse(fe2[58,8]<.1,"*",
-"")))}}$    
+"")))}}$  
 \backslash
 
 \backslash
@@ -8705,9 +8176,7 @@ Sexpr{fe2[57,5]})$ & $(
 \backslash
 Sexpr{fe2[57,6]})$ & $(
 \backslash
-Sexpr{fe2[57,7]})$ &$(
-\backslash
-Sexpr{fe2[57,8]})$
+Sexpr{fe2[57,7]})$ 
 \backslash
 
 \backslash
@@ -8771,17 +8240,7 @@ Sexpr{ifelse(fe2[61,6]<.01,"***",ifelse(fe2[61,6]<.05,"**",ifelse(fe2[61,6]<.1,"
 Sexpr{fe2[59,7]}^{
 \backslash
 Sexpr{ifelse(fe2[61,7]<.01,"***",ifelse(fe2[61,7]<.05,"**",ifelse(fe2[61,7]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{fe2[59,8]}^{
-\backslash
-Sexpr{ifelse(fe2[61,8]<.01,"***",ifelse(fe2[61,8]<.05,"**",ifelse(fe2[61,8]<.1,"*",
-"")))}}$    
+"")))}}$  
 \backslash
 
 \backslash
@@ -8804,9 +8263,7 @@ Sexpr{fe2[60,5]})$ & $(
 \backslash
 Sexpr{fe2[60,6]})$ & $(
 \backslash
-Sexpr{fe2[60,7]})$ &$(
-\backslash
-Sexpr{fe2[60,8]})$
+Sexpr{fe2[60,7]})$
 \backslash
 
 \backslash
@@ -8840,9 +8297,7 @@ Sexpr{fe2[62,5]}$ & $
 \backslash
 Sexpr{fe2[62,6]}$ & $
 \backslash
-Sexpr{fe2[62,7]}$ &$
-\backslash
-Sexpr{fe2[62,8]}$ 
+Sexpr{fe2[62,7]}$ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -8866,9 +8321,7 @@ Sexpr{fe2[63,5]}$ & $
 \backslash
 Sexpr{fe2[63,6]}$ & $
 \backslash
-Sexpr{fe2[63,7]}$ &$
-\backslash
-Sexpr{fe2[63,8]}$     
+Sexpr{fe2[63,7]}$    
 \end_layout
 
 \begin_layout Plain Layout
@@ -8891,9 +8344,7 @@ Sexpr{fe2[64,5]}$ & $
 \backslash
 Sexpr{fe2[64,6]}$ & $
 \backslash
-Sexpr{fe2[64,7]}$ &$
-\backslash
-Sexpr{fe2[64,8]}$    
+Sexpr{fe2[64,7]}$ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -8911,7 +8362,7 @@ hline
 
 
 \backslash
-multicolumn{9}{l}{ 
+multicolumn{7}{l}{ 
 \backslash
 scriptsize{$^{***}p<0.01$; $^{**}p<0.05$; $^{*}p<0.1$.}} 
 \end_layout
@@ -8947,10 +8398,6 @@ label{table:table10}
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -8961,10 +8408,6 @@ label{table:table10}
 wide false
 sideways false
 status collapsed
-
-\begin_layout Plain Layout
-
-\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -9352,10 +8795,6 @@ label{table:table11}
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -9366,10 +8805,6 @@ label{table:table11}
 wide false
 sideways false
 status collapsed
-
-\begin_layout Plain Layout
-
-\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -11399,10 +10834,6 @@ label{table:table12}
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -11670,7 +11101,7 @@ begin{center}
 \backslash
 begin{tabular}{@{
 \backslash
-extracolsep{5pt}}lcccccccc}  
+extracolsep{5pt}}lccccccc}  
 \backslash
 
 \backslash
@@ -11684,7 +11115,7 @@ hline
 \backslash
 [-1.8ex]   & 
 \backslash
-multicolumn{8}{c}{
+multicolumn{7}{c}{
 \backslash
 textit{
 \backslash
@@ -11700,15 +11131,13 @@ footnotesize Dependent variable: Ratings averaged at the farmer level}}
 
 
 \backslash
-cline{2-9} 
+cline{2-8} 
 \backslash
 
 \backslash
 [-1.8ex] & 
 \backslash
 multicolumn{1} {c} {Overall} &  
-\backslash
-multicolumn{1} {c} {Quality}  &
 \end_layout
 
 \begin_layout Plain Layout
@@ -11763,7 +11192,7 @@ multicolumn{1} {c} {Germination}
 \backslash
 
 \backslash
-[-1.8ex] & (1) & (2) & (3) & (4) & (5)& (6)& (7)& (8) 
+[-1.8ex] & (1) & (2) & (3) & (4) & (5)& (6)& (7)
 \backslash
 
 \backslash
@@ -11833,17 +11262,7 @@ Sexpr{ifelse(s1[3,6]<.01,"***",ifelse(s1[3,6]<.05,"**",ifelse(s1[3,6]<.1,"*","")
 Sexpr{s1[1,7]}^{
 \backslash
 Sexpr{ifelse(s1[3,7]<.01,"***",ifelse(s1[3,7]<.05,"**",ifelse(s1[3,7]<.1,"*","")))}
-}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s1[1,8]}^{
-\backslash
-Sexpr{ifelse(s1[3,8]<.01,"***",ifelse(s1[3,8]<.05,"**",ifelse(s1[3,8]<.1,"*","")))}
-}$    
+}$  
 \backslash
 
 \backslash
@@ -11866,9 +11285,7 @@ Sexpr{s1[2,5]})$ & $(
 \backslash
 Sexpr{s1[2,6]})$ & $(
 \backslash
-Sexpr{s1[2,7]})$ &$(
-\backslash
-Sexpr{s1[2,8]})$ 
+Sexpr{s1[2,7]})$ 
 \backslash
 
 \backslash
@@ -11932,17 +11349,7 @@ Sexpr{ifelse(s1[6,6]<.01,"***",ifelse(s1[6,6]<.05,"**",ifelse(s1[6,6]<.1,"*","")
 Sexpr{s1[4,7]}^{
 \backslash
 Sexpr{ifelse(s1[6,7]<.01,"***",ifelse(s1[6,7]<.05,"**",ifelse(s1[6,7]<.1,"*","")))}
-}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s1[4,8]}^{
-\backslash
-Sexpr{ifelse(s1[6,8]<.01,"***",ifelse(s1[6,8]<.05,"**",ifelse(s1[6,8]<.1,"*","")))}
-}$    
+}$   
 \backslash
 
 \backslash
@@ -11965,9 +11372,7 @@ Sexpr{s1[5,5]})$ & $(
 \backslash
 Sexpr{s1[5,6]})$ & $(
 \backslash
-Sexpr{s1[5,7]})$ &$(
-\backslash
-Sexpr{s1[5,8]})$ 
+Sexpr{s1[5,7]})$
 \end_layout
 
 \begin_layout Plain Layout
@@ -11997,9 +11402,7 @@ Sexpr{s1[7,5]}$ & $
 \backslash
 Sexpr{s1[7,6]}$ & $
 \backslash
-Sexpr{s1[7,7]}$ &$
-\backslash
-Sexpr{s1[7,8]}$ 
+Sexpr{s1[7,7]}$ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -12023,9 +11426,7 @@ Sexpr{s1[8,5]}$ & $
 \backslash
 Sexpr{s1[8,6]}$ & $
 \backslash
-Sexpr{s1[8,7]}$ &$
-\backslash
-Sexpr{s1[8,8]}$     
+Sexpr{s1[8,7]}$ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -12048,9 +11449,7 @@ Sexpr{s1[9,5]}$ & $
 \backslash
 Sexpr{s1[9,6]}$ & $
 \backslash
-Sexpr{s1[9,7]}$ &$
-\backslash
-Sexpr{s1[9,8]}$    
+Sexpr{s1[9,7]}$   
 \end_layout
 
 \begin_layout Plain Layout
@@ -12068,7 +11467,7 @@ hline
 
 
 \backslash
-multicolumn{9}{l}{ 
+multicolumn{8}{l}{ 
 \backslash
 scriptsize{$^{***}p<0.01$; $^{**}p<0.05$; $^{*}p<0.1$.}} 
 \end_layout
@@ -12165,7 +11564,7 @@ begin{center}
 \backslash
 begin{tabular}{@{
 \backslash
-extracolsep{5pt}}lcccccccc}  
+extracolsep{5pt}}lccccccc}  
 \backslash
 
 \backslash
@@ -12179,7 +11578,7 @@ hline
 \backslash
 [-1.8ex]   & 
 \backslash
-multicolumn{8}{c}{
+multicolumn{7}{c}{
 \backslash
 textit{
 \backslash
@@ -12195,15 +11594,13 @@ footnotesize Dependent variable: Ratings averaged at the farmer level}}
 
 
 \backslash
-cline{2-9} 
+cline{2-8} 
 \backslash
 
 \backslash
 [-1.8ex] & 
 \backslash
-multicolumn{1} {c} {Overall} &  
-\backslash
-multicolumn{1} {c} {Quality}  &
+multicolumn{1} {c} {Overall}  &
 \end_layout
 
 \begin_layout Plain Layout
@@ -12258,7 +11655,7 @@ multicolumn{1} {c} {Germination}
 \backslash
 
 \backslash
-[-1.8ex] & (1) & (2) & (3) & (4) & (5)& (6)& (7)& (8) 
+[-1.8ex] & (1) & (2) & (3) & (4) & (5)& (6)& (7) 
 \backslash
 
 \backslash
@@ -12328,17 +11725,7 @@ Sexpr{ifelse(s2[3,6]<.01,"***",ifelse(s2[3,6]<.05,"**",ifelse(s2[3,6]<.1,"*","")
 Sexpr{s2[1,7]}^{
 \backslash
 Sexpr{ifelse(s2[3,7]<.01,"***",ifelse(s2[3,7]<.05,"**",ifelse(s2[3,7]<.1,"*","")))}
-}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[1,8]}^{
-\backslash
-Sexpr{ifelse(s2[3,8]<.01,"***",ifelse(s2[3,8]<.05,"**",ifelse(s2[3,8]<.1,"*","")))}
-}$    
+}$ 
 \backslash
 
 \backslash
@@ -12361,9 +11748,7 @@ Sexpr{s2[2,5]})$ & $(
 \backslash
 Sexpr{s2[2,6]})$ & $(
 \backslash
-Sexpr{s2[2,7]})$ &$(
-\backslash
-Sexpr{s2[2,8]})$ 
+Sexpr{s2[2,7]})$  
 \backslash
 
 \backslash
@@ -12427,17 +11812,7 @@ Sexpr{ifelse(s2[6,6]<.01,"***",ifelse(s2[6,6]<.05,"**",ifelse(s2[6,6]<.1,"*","")
 Sexpr{s2[4,7]}^{
 \backslash
 Sexpr{ifelse(s2[6,7]<.01,"***",ifelse(s2[6,7]<.05,"**",ifelse(s2[6,7]<.1,"*","")))}
-}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[4,8]}^{
-\backslash
-Sexpr{ifelse(s2[6,8]<.01,"***",ifelse(s2[6,8]<.05,"**",ifelse(s2[6,8]<.1,"*","")))}
-}$    
+}$  
 \backslash
 
 \backslash
@@ -12460,9 +11835,7 @@ Sexpr{s2[5,5]})$ & $(
 \backslash
 Sexpr{s2[5,6]})$ & $(
 \backslash
-Sexpr{s2[5,7]})$ &$(
-\backslash
-Sexpr{s2[5,8]})$ 
+Sexpr{s2[5,7]})$  
 \backslash
 
 \backslash
@@ -12526,17 +11899,7 @@ Sexpr{ifelse(s2[9,6]<.01,"***",ifelse(s2[9,6]<.05,"**",ifelse(s2[9,6]<.1,"*","")
 Sexpr{s2[7,7]}^{
 \backslash
 Sexpr{ifelse(s2[9,7]<.01,"***",ifelse(s2[9,7]<.05,"**",ifelse(s2[9,7]<.1,"*","")))}
-}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[7,8]}^{
-\backslash
-Sexpr{ifelse(s2[9,8]<.01,"***",ifelse(s2[9,8]<.05,"**",ifelse(s2[9,8]<.1,"*","")))}
-}$    
+}$   
 \backslash
 
 \backslash
@@ -12559,9 +11922,7 @@ Sexpr{s2[8,5]})$ & $(
 \backslash
 Sexpr{s2[8,6]})$ & $(
 \backslash
-Sexpr{s2[8,7]})$ &$(
-\backslash
-Sexpr{s2[8,8]})$
+Sexpr{s2[8,7]})$ 
 \backslash
 
 \backslash
@@ -12625,17 +11986,7 @@ Sexpr{ifelse(s2[12,6]<.01,"***",ifelse(s2[12,6]<.05,"**",ifelse(s2[12,6]<.1,"*",
 Sexpr{s2[10,7]}^{
 \backslash
 Sexpr{ifelse(s2[12,7]<.01,"***",ifelse(s2[12,7]<.05,"**",ifelse(s2[12,7]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[10,8]}^{
-\backslash
-Sexpr{ifelse(s2[12,8]<.01,"***",ifelse(s2[12,8]<.05,"**",ifelse(s2[12,8]<.1,"*","")
-))}}$    
+))}}$  
 \backslash
 
 \backslash
@@ -12658,9 +12009,7 @@ Sexpr{s2[11,5]})$ & $(
 \backslash
 Sexpr{s2[11,6]})$ & $(
 \backslash
-Sexpr{s2[11,7]})$ &$(
-\backslash
-Sexpr{s2[11,8]})$
+Sexpr{s2[11,7]})$
 \backslash
 
 \backslash
@@ -12724,17 +12073,7 @@ Sexpr{ifelse(s2[15,6]<.01,"***",ifelse(s2[15,6]<.05,"**",ifelse(s2[15,6]<.1,"*",
 Sexpr{s2[13,7]}^{
 \backslash
 Sexpr{ifelse(s2[15,7]<.01,"***",ifelse(s2[15,7]<.05,"**",ifelse(s2[15,7]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[13,8]}^{
-\backslash
-Sexpr{ifelse(s2[15,8]<.01,"***",ifelse(s2[15,8]<.05,"**",ifelse(s2[15,8]<.1,"*","")
-))}}$    
+))}}$ 
 \backslash
 
 \backslash
@@ -12757,9 +12096,7 @@ Sexpr{s2[14,5]})$ & $(
 \backslash
 Sexpr{s2[14,6]})$ & $(
 \backslash
-Sexpr{s2[14,7]})$ &$(
-\backslash
-Sexpr{s2[14,8]})$
+Sexpr{s2[14,7]})$ 
 \backslash
 
 \backslash
@@ -12823,16 +12160,6 @@ Sexpr{ifelse(s2[18,6]<.01,"***",ifelse(s2[18,6]<.05,"**",ifelse(s2[18,6]<.1,"*",
 Sexpr{s2[16,7]}^{
 \backslash
 Sexpr{ifelse(s2[18,7]<.01,"***",ifelse(s2[18,7]<.05,"**",ifelse(s2[18,7]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[16,8]}^{
-\backslash
-Sexpr{ifelse(s2[18,8]<.01,"***",ifelse(s2[18,8]<.05,"**",ifelse(s2[18,8]<.1,"*","")
 ))}}$    
 \backslash
 
@@ -12856,9 +12183,7 @@ Sexpr{s2[17,5]})$ & $(
 \backslash
 Sexpr{s2[17,6]})$ & $(
 \backslash
-Sexpr{s2[17,7]})$ &$(
-\backslash
-Sexpr{s2[17,8]})$
+Sexpr{s2[17,7]})$
 \backslash
 
 \backslash
@@ -12922,17 +12247,7 @@ Sexpr{ifelse(s2[21,6]<.01,"***",ifelse(s2[21,6]<.05,"**",ifelse(s2[21,6]<.1,"*",
 Sexpr{s2[19,7]}^{
 \backslash
 Sexpr{ifelse(s2[21,7]<.01,"***",ifelse(s2[21,7]<.05,"**",ifelse(s2[21,7]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[19,8]}^{
-\backslash
-Sexpr{ifelse(s2[21,8]<.01,"***",ifelse(s2[21,8]<.05,"**",ifelse(s2[21,8]<.1,"*","")
-))}}$    
+))}}$  
 \backslash
 
 \backslash
@@ -12955,9 +12270,7 @@ Sexpr{s2[20,5]})$ & $(
 \backslash
 Sexpr{s2[20,6]})$ & $(
 \backslash
-Sexpr{s2[20,7]})$ &$(
-\backslash
-Sexpr{s2[20,8]})$
+Sexpr{s2[20,7]})$
 \backslash
 
 \backslash
@@ -13021,17 +12334,7 @@ Sexpr{ifelse(s2[24,6]<.01,"***",ifelse(s2[24,6]<.05,"**",ifelse(s2[24,6]<.1,"*",
 Sexpr{s2[22,7]}^{
 \backslash
 Sexpr{ifelse(s2[24,7]<.01,"***",ifelse(s2[24,7]<.05,"**",ifelse(s2[24,7]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[22,8]}^{
-\backslash
-Sexpr{ifelse(s2[24,8]<.01,"***",ifelse(s2[24,8]<.05,"**",ifelse(s2[24,8]<.1,"*","")
-))}}$    
+))}}$  
 \backslash
 
 \backslash
@@ -13054,9 +12357,7 @@ Sexpr{s2[23,5]})$ & $(
 \backslash
 Sexpr{s2[23,6]})$ & $(
 \backslash
-Sexpr{s2[23,7]})$ &$(
-\backslash
-Sexpr{s2[23,8]})$
+Sexpr{s2[23,7]})$ 
 \backslash
 
 \backslash
@@ -13120,17 +12421,7 @@ Sexpr{ifelse(s2[27,6]<.01,"***",ifelse(s2[27,6]<.05,"**",ifelse(s2[27,6]<.1,"*",
 Sexpr{s2[25,7]}^{
 \backslash
 Sexpr{ifelse(s2[27,7]<.01,"***",ifelse(s2[27,7]<.05,"**",ifelse(s2[27,7]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[25,8]}^{
-\backslash
-Sexpr{ifelse(s2[27,8]<.01,"***",ifelse(s2[27,8]<.05,"**",ifelse(s2[27,8]<.1,"*","")
-))}}$    
+))}}$  
 \backslash
 
 \backslash
@@ -13153,9 +12444,7 @@ Sexpr{s2[26,5]})$ & $(
 \backslash
 Sexpr{s2[26,6]})$ & $(
 \backslash
-Sexpr{s2[26,7]})$ &$(
-\backslash
-Sexpr{s2[26,8]})$
+Sexpr{s2[26,7]})$ 
 \backslash
 
 \backslash
@@ -13219,16 +12508,6 @@ Sexpr{ifelse(s2[30,6]<.01,"***",ifelse(s2[30,6]<.05,"**",ifelse(s2[30,6]<.1,"*",
 Sexpr{s2[28,7]}^{
 \backslash
 Sexpr{ifelse(s2[30,7]<.01,"***",ifelse(s2[30,7]<.05,"**",ifelse(s2[30,7]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[28,8]}^{
-\backslash
-Sexpr{ifelse(s2[30,8]<.01,"***",ifelse(s2[30,8]<.05,"**",ifelse(s2[30,8]<.1,"*","")
 ))}}$    
 \backslash
 
@@ -13252,9 +12531,7 @@ Sexpr{s2[29,5]})$ & $(
 \backslash
 Sexpr{s2[29,6]})$ & $(
 \backslash
-Sexpr{s2[29,7]})$ &$(
-\backslash
-Sexpr{s2[29,8]})$
+Sexpr{s2[29,7]})$ 
 \backslash
 
 \backslash
@@ -13318,17 +12595,7 @@ Sexpr{ifelse(s2[33,6]<.01,"***",ifelse(s2[33,6]<.05,"**",ifelse(s2[33,6]<.1,"*",
 Sexpr{s2[31,7]}^{
 \backslash
 Sexpr{ifelse(s2[33,7]<.01,"***",ifelse(s2[33,7]<.05,"**",ifelse(s2[33,7]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[31,8]}^{
-\backslash
-Sexpr{ifelse(s2[33,8]<.01,"***",ifelse(s2[33,8]<.05,"**",ifelse(s2[33,8]<.1,"*","")
-))}}$    
+))}}$   
 \backslash
 
 \backslash
@@ -13351,9 +12618,7 @@ Sexpr{s2[32,5]})$ & $(
 \backslash
 Sexpr{s2[32,6]})$ & $(
 \backslash
-Sexpr{s2[32,7]})$ &$(
-\backslash
-Sexpr{s2[32,8]})$
+Sexpr{s2[32,7]})$
 \backslash
 
 \backslash
@@ -13417,17 +12682,7 @@ Sexpr{ifelse(s2[36,6]<.01,"***",ifelse(s2[36,6]<.05,"**",ifelse(s2[36,6]<.1,"*",
 Sexpr{s2[34,7]}^{
 \backslash
 Sexpr{ifelse(s2[36,7]<.01,"***",ifelse(s2[36,7]<.05,"**",ifelse(s2[36,7]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[34,8]}^{
-\backslash
-Sexpr{ifelse(s2[36,8]<.01,"***",ifelse(s2[36,8]<.05,"**",ifelse(s2[36,8]<.1,"*","")
-))}}$    
+))}}$  
 \backslash
 
 \backslash
@@ -13450,9 +12705,7 @@ Sexpr{s2[35,5]})$ & $(
 \backslash
 Sexpr{s2[35,6]})$ & $(
 \backslash
-Sexpr{s2[35,7]})$ &$(
-\backslash
-Sexpr{s2[35,8]})$
+Sexpr{s2[35,7]})$ 
 \backslash
 
 \backslash
@@ -13516,17 +12769,7 @@ Sexpr{ifelse(s2[39,6]<.01,"***",ifelse(s2[39,6]<.05,"**",ifelse(s2[39,6]<.1,"*",
 Sexpr{s2[37,7]}^{
 \backslash
 Sexpr{ifelse(s2[39,7]<.01,"***",ifelse(s2[39,7]<.05,"**",ifelse(s2[39,7]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[37,8]}^{
-\backslash
-Sexpr{ifelse(s2[39,8]<.01,"***",ifelse(s2[39,8]<.05,"**",ifelse(s2[39,8]<.1,"*","")
-))}}$    
+))}}$   
 \backslash
 
 \backslash
@@ -13549,9 +12792,7 @@ Sexpr{s2[38,5]})$ & $(
 \backslash
 Sexpr{s2[38,6]})$ & $(
 \backslash
-Sexpr{s2[38,7]})$ &$(
-\backslash
-Sexpr{s2[38,8]})$
+Sexpr{s2[38,7]})$ 
 \backslash
 
 \backslash
@@ -13615,17 +12856,7 @@ Sexpr{ifelse(s2[42,6]<.01,"***",ifelse(s2[42,6]<.05,"**",ifelse(s2[42,6]<.1,"*",
 Sexpr{s2[40,7]}^{
 \backslash
 Sexpr{ifelse(s2[42,7]<.01,"***",ifelse(s2[42,7]<.05,"**",ifelse(s2[42,7]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[40,8]}^{
-\backslash
-Sexpr{ifelse(s2[42,8]<.01,"***",ifelse(s2[42,8]<.05,"**",ifelse(s2[42,8]<.1,"*","")
-))}}$    
+))}}$  
 \backslash
 
 \backslash
@@ -13648,9 +12879,7 @@ Sexpr{s2[41,5]})$ & $(
 \backslash
 Sexpr{s2[41,6]})$ & $(
 \backslash
-Sexpr{s2[41,7]})$ &$(
-\backslash
-Sexpr{s2[41,8]})$
+Sexpr{s2[41,7]})$ 
 \backslash
 
 \backslash
@@ -13714,17 +12943,7 @@ Sexpr{ifelse(s2[45,6]<.01,"***",ifelse(s2[45,6]<.05,"**",ifelse(s2[45,6]<.1,"*",
 Sexpr{s2[43,7]}^{
 \backslash
 Sexpr{ifelse(s2[45,7]<.01,"***",ifelse(s2[45,7]<.05,"**",ifelse(s2[45,7]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[43,8]}^{
-\backslash
-Sexpr{ifelse(s2[45,8]<.01,"***",ifelse(s2[45,8]<.05,"**",ifelse(s2[45,8]<.1,"*","")
-))}}$    
+))}}$   
 \backslash
 
 \backslash
@@ -13747,9 +12966,7 @@ Sexpr{s2[44,5]})$ & $(
 \backslash
 Sexpr{s2[44,6]})$ & $(
 \backslash
-Sexpr{s2[44,7]})$ &$(
-\backslash
-Sexpr{s2[44,8]})$
+Sexpr{s2[44,7]})$
 \backslash
 
 \backslash
@@ -13813,16 +13030,6 @@ Sexpr{ifelse(s2[48,6]<.01,"***",ifelse(s2[48,6]<.05,"**",ifelse(s2[48,6]<.1,"*",
 Sexpr{s2[46,7]}^{
 \backslash
 Sexpr{ifelse(s2[48,7]<.01,"***",ifelse(s2[48,7]<.05,"**",ifelse(s2[48,7]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[46,8]}^{
-\backslash
-Sexpr{ifelse(s2[48,8]<.01,"***",ifelse(s2[48,8]<.05,"**",ifelse(s2[48,8]<.1,"*","")
 ))}}$    
 \backslash
 
@@ -13846,9 +13053,7 @@ Sexpr{s2[47,5]})$ & $(
 \backslash
 Sexpr{s2[47,6]})$ & $(
 \backslash
-Sexpr{s2[47,7]})$ &$(
-\backslash
-Sexpr{s2[47,8]})$
+Sexpr{s2[47,7]})$ 
 \backslash
 
 \backslash
@@ -13912,17 +13117,7 @@ Sexpr{ifelse(s2[51,6]<.01,"***",ifelse(s2[51,6]<.05,"**",ifelse(s2[51,6]<.1,"*",
 Sexpr{s2[49,7]}^{
 \backslash
 Sexpr{ifelse(s2[51,7]<.01,"***",ifelse(s2[51,7]<.05,"**",ifelse(s2[51,7]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[49,8]}^{
-\backslash
-Sexpr{ifelse(s2[51,8]<.01,"***",ifelse(s2[51,8]<.05,"**",ifelse(s2[51,8]<.1,"*","")
-))}}$    
+))}}$  
 \backslash
 
 \backslash
@@ -13945,9 +13140,7 @@ Sexpr{s2[50,5]})$ & $(
 \backslash
 Sexpr{s2[50,6]})$ & $(
 \backslash
-Sexpr{s2[50,7]})$ &$(
-\backslash
-Sexpr{s2[50,8]})$
+Sexpr{s2[50,7]})$
 \backslash
 
 \backslash
@@ -14011,17 +13204,7 @@ Sexpr{ifelse(s2[54,6]<.01,"***",ifelse(s2[54,6]<.05,"**",ifelse(s2[54,6]<.1,"*",
 Sexpr{s2[52,7]}^{
 \backslash
 Sexpr{ifelse(s2[54,7]<.01,"***",ifelse(s2[54,7]<.05,"**",ifelse(s2[54,7]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[52,8]}^{
-\backslash
-Sexpr{ifelse(s2[54,8]<.01,"***",ifelse(s2[54,8]<.05,"**",ifelse(s2[54,8]<.1,"*","")
-))}}$    
+))}}$  
 \backslash
 
 \backslash
@@ -14044,9 +13227,7 @@ Sexpr{s2[53,5]})$ & $(
 \backslash
 Sexpr{s2[53,6]})$ & $(
 \backslash
-Sexpr{s2[53,7]})$ &$(
-\backslash
-Sexpr{s2[53,8]})$
+Sexpr{s2[53,7]})$ 
 \backslash
 
 \backslash
@@ -14110,17 +13291,7 @@ Sexpr{ifelse(s2[57,6]<.01,"***",ifelse(s2[57,6]<.05,"**",ifelse(s2[57,6]<.1,"*",
 Sexpr{s2[55,7]}^{
 \backslash
 Sexpr{ifelse(s2[57,7]<.01,"***",ifelse(s2[57,7]<.05,"**",ifelse(s2[57,7]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[55,8]}^{
-\backslash
-Sexpr{ifelse(s2[57,8]<.01,"***",ifelse(s2[57,8]<.05,"**",ifelse(s2[57,8]<.1,"*","")
-))}}$    
+))}}$   
 \backslash
 
 \backslash
@@ -14143,9 +13314,7 @@ Sexpr{s2[56,5]})$ & $(
 \backslash
 Sexpr{s2[56,6]})$ & $(
 \backslash
-Sexpr{s2[56,7]})$ &$(
-\backslash
-Sexpr{s2[56,8]})$
+Sexpr{s2[56,7]})$
 \backslash
 
 \backslash
@@ -14209,17 +13378,7 @@ Sexpr{ifelse(s2[60,6]<.01,"***",ifelse(s2[60,6]<.05,"**",ifelse(s2[60,6]<.1,"*",
 Sexpr{s2[58,7]}^{
 \backslash
 Sexpr{ifelse(s2[60,7]<.01,"***",ifelse(s2[60,7]<.05,"**",ifelse(s2[60,7]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[58,8]}^{
-\backslash
-Sexpr{ifelse(s2[60,8]<.01,"***",ifelse(s2[60,8]<.05,"**",ifelse(s2[60,8]<.1,"*","")
-))}}$    
+))}}$   
 \backslash
 
 \backslash
@@ -14242,9 +13401,7 @@ Sexpr{s2[59,5]})$ & $(
 \backslash
 Sexpr{s2[59,6]})$ & $(
 \backslash
-Sexpr{s2[59,7]})$ &$(
-\backslash
-Sexpr{s2[59,8]})$
+Sexpr{s2[59,7]})$ 
 \backslash
 
 \backslash
@@ -14308,17 +13465,7 @@ Sexpr{ifelse(s2[63,6]<.01,"***",ifelse(s2[63,6]<.05,"**",ifelse(s2[63,6]<.1,"*",
 Sexpr{s2[61,7]}^{
 \backslash
 Sexpr{ifelse(s2[63,7]<.01,"***",ifelse(s2[63,7]<.05,"**",ifelse(s2[63,7]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[61,8]}^{
-\backslash
-Sexpr{ifelse(s2[63,8]<.01,"***",ifelse(s2[63,8]<.05,"**",ifelse(s2[63,8]<.1,"*","")
-))}}$    
+))}}$   
 \backslash
 
 \backslash
@@ -14341,9 +13488,7 @@ Sexpr{s2[62,5]})$ & $(
 \backslash
 Sexpr{s2[62,6]})$ & $(
 \backslash
-Sexpr{s2[62,7]})$ &$(
-\backslash
-Sexpr{s2[62,8]})$
+Sexpr{s2[62,7]})$ 
 \backslash
 
 \backslash
@@ -14407,16 +13552,6 @@ Sexpr{ifelse(s2[66,6]<.01,"***",ifelse(s2[66,6]<.05,"**",ifelse(s2[66,6]<.1,"*",
 Sexpr{s2[64,7]}^{
 \backslash
 Sexpr{ifelse(s2[66,7]<.01,"***",ifelse(s2[66,7]<.05,"**",ifelse(s2[66,7]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[64,8]}^{
-\backslash
-Sexpr{ifelse(s2[66,8]<.01,"***",ifelse(s2[66,8]<.05,"**",ifelse(s2[66,8]<.1,"*","")
 ))}}$    
 \backslash
 
@@ -14440,9 +13575,7 @@ Sexpr{s2[65,5]})$ & $(
 \backslash
 Sexpr{s2[65,6]})$ & $(
 \backslash
-Sexpr{s2[65,7]})$ &$(
-\backslash
-Sexpr{s2[65,8]})$
+Sexpr{s2[65,7]})$ 
 \backslash
 
 \backslash
@@ -14506,16 +13639,6 @@ Sexpr{ifelse(s2[69,6]<.01,"***",ifelse(s2[69,6]<.05,"**",ifelse(s2[69,6]<.1,"*",
 Sexpr{s2[67,7]}^{
 \backslash
 Sexpr{ifelse(s2[69,7]<.01,"***",ifelse(s2[69,7]<.05,"**",ifelse(s2[69,7]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[67,8]}^{
-\backslash
-Sexpr{ifelse(s2[69,8]<.01,"***",ifelse(s2[69,8]<.05,"**",ifelse(s2[69,8]<.1,"*","")
 ))}}$    
 \backslash
 
@@ -14539,9 +13662,7 @@ Sexpr{s2[68,5]})$ & $(
 \backslash
 Sexpr{s2[68,6]})$ & $(
 \backslash
-Sexpr{s2[68,7]})$ &$(
-\backslash
-Sexpr{s2[68,8]})$
+Sexpr{s2[68,7]})$ 
 \backslash
 
 \backslash
@@ -14605,16 +13726,6 @@ Sexpr{ifelse(s2[72,6]<.01,"***",ifelse(s2[72,6]<.05,"**",ifelse(s2[72,6]<.1,"*",
 Sexpr{s2[70,7]}^{
 \backslash
 Sexpr{ifelse(s2[72,7]<.01,"***",ifelse(s2[72,7]<.05,"**",ifelse(s2[72,7]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[70,8]}^{
-\backslash
-Sexpr{ifelse(s2[72,8]<.01,"***",ifelse(s2[72,8]<.05,"**",ifelse(s2[72,8]<.1,"*","")
 ))}}$    
 \backslash
 
@@ -14638,9 +13749,7 @@ Sexpr{s2[71,5]})$ & $(
 \backslash
 Sexpr{s2[71,6]})$ & $(
 \backslash
-Sexpr{s2[71,7]})$ &$(
-\backslash
-Sexpr{s2[71,8]})$
+Sexpr{s2[71,7]})$ 
 \backslash
 
 \backslash
@@ -14704,17 +13813,7 @@ Sexpr{ifelse(s2[75,6]<.01,"***",ifelse(s2[75,6]<.05,"**",ifelse(s2[75,6]<.1,"*",
 Sexpr{s2[73,7]}^{
 \backslash
 Sexpr{ifelse(s2[75,7]<.01,"***",ifelse(s2[75,7]<.05,"**",ifelse(s2[75,7]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[73,8]}^{
-\backslash
-Sexpr{ifelse(s2[75,8]<.01,"***",ifelse(s2[75,8]<.05,"**",ifelse(s2[75,8]<.1,"*","")
-))}}$    
+))}}$  
 \backslash
 
 \backslash
@@ -14737,9 +13836,7 @@ Sexpr{s2[74,5]})$ & $(
 \backslash
 Sexpr{s2[74,6]})$ & $(
 \backslash
-Sexpr{s2[74,7]})$ &$(
-\backslash
-Sexpr{s2[74,8]})$
+Sexpr{s2[74,7]})$ 
 \backslash
 
 \backslash
@@ -14773,9 +13870,7 @@ Sexpr{s2[76,5]}$ & $
 \backslash
 Sexpr{s2[76,6]}$ & $
 \backslash
-Sexpr{s2[76,7]}$ &$
-\backslash
-Sexpr{s2[76,8]}$ 
+Sexpr{s2[76,7]}$ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -14799,9 +13894,7 @@ Sexpr{s2[77,5]}$ & $
 \backslash
 Sexpr{s2[77,6]}$ & $
 \backslash
-Sexpr{s2[77,7]}$ &$
-\backslash
-Sexpr{s2[77,8]}$     
+Sexpr{s2[77,7]}$     
 \end_layout
 
 \begin_layout Plain Layout
@@ -14824,9 +13917,7 @@ Sexpr{s2[78,5]}$ & $
 \backslash
 Sexpr{s2[78,6]}$ & $
 \backslash
-Sexpr{s2[78,7]}$ &$
-\backslash
-Sexpr{s2[78,8]}$    
+Sexpr{s2[78,7]}$   
 \end_layout
 
 \begin_layout Plain Layout
@@ -14844,7 +13935,7 @@ hline
 
 
 \backslash
-multicolumn{9}{l}{ 
+multicolumn{8}{l}{ 
 \backslash
 scriptsize{$^{***}p<0.01$; $^{**}p<0.05$; $^{*}p<0.1$.}} 
 \end_layout
@@ -17907,7 +16998,7 @@ begin{center}
 \backslash
 begin{tabular}{@{
 \backslash
-extracolsep{5pt}}lcccccccc}  
+extracolsep{5pt}}lccccccc}  
 \backslash
 
 \backslash
@@ -17921,7 +17012,7 @@ hline
 \backslash
 [-1.8ex]   & 
 \backslash
-multicolumn{8}{c}{
+multicolumn{7}{c}{
 \backslash
 textit{
 \backslash
@@ -17937,15 +17028,13 @@ footnotesize Dependent variable: Ratings averaged at the farmer level}}
 
 
 \backslash
-cline{2-9} 
+cline{2-8} 
 \backslash
 
 \backslash
 [-1.8ex] & 
 \backslash
-multicolumn{1} {c} {Overall} &  
-\backslash
-multicolumn{1} {c} {Quality}  &
+multicolumn{1} {c} {Overall}   &
 \end_layout
 
 \begin_layout Plain Layout
@@ -18000,7 +17089,7 @@ multicolumn{1} {c} {Germination}
 \backslash
 
 \backslash
-[-1.8ex] & (1) & (2) & (3) & (4) & (5)& (6)& (7)& (8) 
+[-1.8ex] & (1) & (2) & (3) & (4) & (5)& (6)& (7) 
 \backslash
 
 \backslash
@@ -18070,17 +17159,7 @@ Sexpr{ifelse(s_deal5[3,6]<.01,"***",ifelse(s_deal5[3,6]<.05,"**",ifelse(s_deal5[
 Sexpr{s_deal5[1,7]}^{
 \backslash
 Sexpr{ifelse(s_deal5[3,7]<.01,"***",ifelse(s_deal5[3,7]<.05,"**",ifelse(s_deal5[3,
-7]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s_deal5[1,8]}^{
-\backslash
-Sexpr{ifelse(s_deal5[3,8]<.01,"***",ifelse(s_deal5[3,8]<.05,"**",ifelse(s_deal5[3,
-8]<.1,"*","")))}}$    
+7]<.1,"*","")))}}$   
 \backslash
 
 \backslash
@@ -18103,9 +17182,7 @@ Sexpr{s_deal5[2,5]})$ & $(
 \backslash
 Sexpr{s_deal5[2,6]})$ & $(
 \backslash
-Sexpr{s_deal5[2,7]})$ &$(
-\backslash
-Sexpr{s_deal5[2,8]})$ 
+Sexpr{s_deal5[2,7]})$ 
 \backslash
 
 \backslash
@@ -18169,17 +17246,7 @@ Sexpr{ifelse(s_deal5[6,6]<.01,"***",ifelse(s_deal5[6,6]<.05,"**",ifelse(s_deal5[
 Sexpr{s_deal5[4,7]}^{
 \backslash
 Sexpr{ifelse(s_deal5[6,7]<.01,"***",ifelse(s_deal5[6,7]<.05,"**",ifelse(s_deal5[6,
-7]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s_deal5[4,8]}^{
-\backslash
-Sexpr{ifelse(s_deal5[6,8]<.01,"***",ifelse(s_deal5[6,8]<.05,"**",ifelse(s_deal5[6,
-8]<.1,"*","")))}}$    
+7]<.1,"*","")))}}$  
 \backslash
 
 \backslash
@@ -18202,9 +17269,7 @@ Sexpr{s_deal5[5,5]})$ & $(
 \backslash
 Sexpr{s_deal5[5,6]})$ & $(
 \backslash
-Sexpr{s_deal5[5,7]})$ &$(
-\backslash
-Sexpr{s_deal5[5,8]})$ 
+Sexpr{s_deal5[5,7]})$ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -18234,9 +17299,7 @@ Sexpr{s_deal5[7,5]}$ & $
 \backslash
 Sexpr{s_deal5[7,6]}$ & $
 \backslash
-Sexpr{s_deal5[7,7]}$ &$
-\backslash
-Sexpr{s_deal5[7,8]}$ 
+Sexpr{s_deal5[7,7]}$ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -18260,9 +17323,7 @@ Sexpr{s_deal5[8,5]}$ & $
 \backslash
 Sexpr{s_deal5[8,6]}$ & $
 \backslash
-Sexpr{s_deal5[8,7]}$ &$
-\backslash
-Sexpr{s_deal5[8,8]}$     
+Sexpr{s_deal5[8,7]}$ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -18285,9 +17346,7 @@ Sexpr{s_deal5[9,5]}$ & $
 \backslash
 Sexpr{s_deal5[9,6]}$ & $
 \backslash
-Sexpr{s_deal5[9,7]}$ &$
-\backslash
-Sexpr{s_deal5[9,8]}$    
+Sexpr{s_deal5[9,7]}$  
 \end_layout
 
 \begin_layout Plain Layout
@@ -18305,7 +17364,7 @@ hline
 
 
 \backslash
-multicolumn{9}{l}{ 
+multicolumn{8}{l}{ 
 \backslash
 scriptsize{$^{***}p<0.01$; $^{**}p<0.05$; $^{*}p<0.1$.}} 
 \end_layout
@@ -18384,7 +17443,7 @@ begin{center}
 \backslash
 begin{tabular}{@{
 \backslash
-extracolsep{5pt}}lcccccccc}  
+extracolsep{5pt}}lccccccc}  
 \backslash
 
 \backslash
@@ -18398,7 +17457,7 @@ hline
 \backslash
 [-1.8ex]   & 
 \backslash
-multicolumn{8}{c}{
+multicolumn{7}{c}{
 \backslash
 textit{
 \backslash
@@ -18414,15 +17473,13 @@ footnotesize Dependent variable: Ratings averaged at the farmer level}}
 
 
 \backslash
-cline{2-9} 
+cline{2-8} 
 \backslash
 
 \backslash
 [-1.8ex] & 
 \backslash
-multicolumn{1} {c} {Overall} &  
-\backslash
-multicolumn{1} {c} {Quality}  &
+multicolumn{1} {c} {Overall} & 
 \end_layout
 
 \begin_layout Plain Layout
@@ -18477,7 +17534,7 @@ multicolumn{1} {c} {Germination}
 \backslash
 
 \backslash
-[-1.8ex] & (1) & (2) & (3) & (4) & (5)& (6)& (7)& (8) 
+[-1.8ex] & (1) & (2) & (3) & (4) & (5)& (6)& (7) 
 \backslash
 
 \backslash
@@ -18547,17 +17604,7 @@ Sexpr{ifelse(s_deal6[3,6]<.01,"***",ifelse(s_deal6[3,6]<.05,"**",ifelse(s_deal6[
 Sexpr{s_deal6[1,7]}^{
 \backslash
 Sexpr{ifelse(s_deal6[3,7]<.01,"***",ifelse(s_deal6[3,7]<.05,"**",ifelse(s_deal6[3,
-7]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s_deal6[1,8]}^{
-\backslash
-Sexpr{ifelse(s_deal6[3,8]<.01,"***",ifelse(s_deal6[3,8]<.05,"**",ifelse(s_deal6[3,
-8]<.1,"*","")))}}$    
+7]<.1,"*","")))}}$    
 \backslash
 
 \backslash
@@ -18580,9 +17627,7 @@ Sexpr{s_deal6[2,5]})$ & $(
 \backslash
 Sexpr{s_deal6[2,6]})$ & $(
 \backslash
-Sexpr{s_deal6[2,7]})$ &$(
-\backslash
-Sexpr{s_deal6[2,8]})$ 
+Sexpr{s_deal6[2,7]})$ 
 \backslash
 
 \backslash
@@ -18646,17 +17691,7 @@ Sexpr{ifelse(s_deal6[6,6]<.01,"***",ifelse(s_deal6[6,6]<.05,"**",ifelse(s_deal6[
 Sexpr{s_deal6[4,7]}^{
 \backslash
 Sexpr{ifelse(s_deal6[6,7]<.01,"***",ifelse(s_deal6[6,7]<.05,"**",ifelse(s_deal6[6,
-7]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s_deal6[4,8]}^{
-\backslash
-Sexpr{ifelse(s_deal6[6,8]<.01,"***",ifelse(s_deal6[6,8]<.05,"**",ifelse(s_deal6[6,
-8]<.1,"*","")))}}$    
+7]<.1,"*","")))}}$    
 \backslash
 
 \backslash
@@ -18679,9 +17714,7 @@ Sexpr{s_deal6[5,5]})$ & $(
 \backslash
 Sexpr{s_deal6[5,6]})$ & $(
 \backslash
-Sexpr{s_deal6[5,7]})$ &$(
-\backslash
-Sexpr{s_deal6[5,8]})$ 
+Sexpr{s_deal6[5,7]})$
 \backslash
 
 \backslash
@@ -18749,17 +17782,7 @@ Sexpr{ifelse(s_deal6[9,6]<.01,"***",ifelse(s_deal6[9,6]<.05,"**",ifelse(s_deal6[
 Sexpr{s_deal6[7,7]}^{
 \backslash
 Sexpr{ifelse(s_deal6[9,7]<.01,"***",ifelse(s_deal6[9,7]<.05,"**",ifelse(s_deal6[9,
-7]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s_deal6[7,8]}^{
-\backslash
-Sexpr{ifelse(s_deal6[9,8]<.01,"***",ifelse(s_deal6[9,8]<.05,"**",ifelse(s_deal6[9,
-8]<.1,"*","")))}}$    
+7]<.1,"*","")))}}$    
 \backslash
 
 \backslash
@@ -18782,9 +17805,7 @@ Sexpr{s_deal6[8,5]})$ & $(
 \backslash
 Sexpr{s_deal6[8,6]})$ & $(
 \backslash
-Sexpr{s_deal6[8,7]})$ &$(
-\backslash
-Sexpr{s_deal6[8,8]})$ 
+Sexpr{s_deal6[8,7]})$  
 \backslash
 
 \backslash
@@ -18848,17 +17869,7 @@ Sexpr{ifelse(s_deal6[12,6]<.01,"***",ifelse(s_deal6[12,6]<.05,"**",ifelse(s_deal
 Sexpr{s_deal6[10,7]}^{
 \backslash
 Sexpr{ifelse(s_deal6[12,7]<.01,"***",ifelse(s_deal6[12,7]<.05,"**",ifelse(s_deal6[
-12,7]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s_deal6[10,8]}^{
-\backslash
-Sexpr{ifelse(s_deal6[12,8]<.01,"***",ifelse(s_deal6[12,8]<.05,"**",ifelse(s_deal6[
-12,8]<.1,"*","")))}}$    
+12,7]<.1,"*","")))}}$  
 \backslash
 
 \backslash
@@ -18881,9 +17892,7 @@ Sexpr{s_deal6[11,5]})$ & $(
 \backslash
 Sexpr{s_deal6[11,6]})$ & $(
 \backslash
-Sexpr{s_deal6[11,7]})$ &$(
-\backslash
-Sexpr{s_deal6[11,8]})$ 
+Sexpr{s_deal6[11,7]})$ 
 \backslash
 
 \backslash
@@ -18947,17 +17956,7 @@ Sexpr{ifelse(s_deal6[15,6]<.01,"***",ifelse(s_deal6[15,6]<.05,"**",ifelse(s_deal
 Sexpr{s_deal6[13,7]}^{
 \backslash
 Sexpr{ifelse(s_deal6[15,7]<.01,"***",ifelse(s_deal6[15,7]<.05,"**",ifelse(s_deal6[
-15,7]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s_deal6[13,8]}^{
-\backslash
-Sexpr{ifelse(s_deal6[15,8]<.01,"***",ifelse(s_deal6[15,8]<.05,"**",ifelse(s_deal6[
-15,8]<.1,"*","")))}}$    
+15,7]<.1,"*","")))}}$  
 \backslash
 
 \backslash
@@ -18980,9 +17979,7 @@ Sexpr{s_deal6[14,5]})$ & $(
 \backslash
 Sexpr{s_deal6[14,6]})$ & $(
 \backslash
-Sexpr{s_deal6[14,7]})$ &$(
-\backslash
-Sexpr{s_deal6[14,8]})$ 
+Sexpr{s_deal6[14,7]})$  
 \backslash
 
 \backslash
@@ -19046,17 +18043,7 @@ Sexpr{ifelse(s_deal6[18,6]<.01,"***",ifelse(s_deal6[18,6]<.05,"**",ifelse(s_deal
 Sexpr{s_deal6[16,7]}^{
 \backslash
 Sexpr{ifelse(s_deal6[18,7]<.01,"***",ifelse(s_deal6[18,7]<.05,"**",ifelse(s_deal6[
-18,7]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s_deal6[16,8]}^{
-\backslash
-Sexpr{ifelse(s_deal6[18,8]<.01,"***",ifelse(s_deal6[18,8]<.05,"**",ifelse(s_deal6[
-18,8]<.1,"*","")))}}$    
+18,7]<.1,"*","")))}}$   
 \backslash
 
 \backslash
@@ -19079,9 +18066,7 @@ Sexpr{s_deal6[17,5]})$ & $(
 \backslash
 Sexpr{s_deal6[17,6]})$ & $(
 \backslash
-Sexpr{s_deal6[17,7]})$ &$(
-\backslash
-Sexpr{s_deal6[17,8]})$ 
+Sexpr{s_deal6[17,7]})$ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -19111,9 +18096,7 @@ Sexpr{s_deal6[19,5]}$ & $
 \backslash
 Sexpr{s_deal6[19,6]}$ & $
 \backslash
-Sexpr{s_deal6[19,7]}$ &$
-\backslash
-Sexpr{s_deal6[19,8]}$ 
+Sexpr{s_deal6[19,7]}$ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -19137,9 +18120,7 @@ Sexpr{s_deal6[20,5]}$ & $
 \backslash
 Sexpr{s_deal6[20,6]}$ & $
 \backslash
-Sexpr{s_deal6[20,7]}$ &$
-\backslash
-Sexpr{s_deal6[20,8]}$     
+Sexpr{s_deal6[20,7]}$      
 \end_layout
 
 \begin_layout Plain Layout
@@ -19162,9 +18143,7 @@ Sexpr{s_deal6[21,5]}$ & $
 \backslash
 Sexpr{s_deal6[21,6]}$ & $
 \backslash
-Sexpr{s_deal6[21,7]}$ &$
-\backslash
-Sexpr{s_deal6[21,8]}$    
+Sexpr{s_deal6[21,7]}$    
 \end_layout
 
 \begin_layout Plain Layout
@@ -19182,7 +18161,7 @@ hline
 
 
 \backslash
-multicolumn{9}{l}{ 
+multicolumn{8}{l}{ 
 \backslash
 scriptsize{$^{***}p<0.01$; $^{**}p<0.05$; $^{*}p<0.1$.}} 
 \end_layout
@@ -20441,7 +19420,7 @@ begin{center}
 \backslash
 begin{tabular}{@{
 \backslash
-extracolsep{5pt}}lcccccccc}  
+extracolsep{5pt}}lccccccc}  
 \backslash
 
 \backslash
@@ -20455,7 +19434,7 @@ hline
 \backslash
 [-1.8ex]   & 
 \backslash
-multicolumn{8}{c}{
+multicolumn{7}{c}{
 \backslash
 textit{
 \backslash
@@ -20470,15 +19449,13 @@ footnotesize Dependent variable: Ratings given by farmers}}
 
 
 \backslash
-cline{2-9} 
+cline{2-8} 
 \backslash
 
 \backslash
 [-1.8ex] & 
 \backslash
 multicolumn{1} {c} {Overall} &  
-\backslash
-multicolumn{1} {c} {Quality}  &
 \end_layout
 
 \begin_layout Plain Layout
@@ -20533,7 +19510,7 @@ multicolumn{1} {c} {Germination}
 \backslash
 
 \backslash
-[-1.8ex] & (1) & (2) & (3) & (4) & (5)& (6)& (7)& (8) 
+[-1.8ex] & (1) & (2) & (3) & (4) & (5)& (6)& (7) 
 \backslash
 
 \backslash
@@ -20582,14 +19559,7 @@ Sexpr{fed1[1,6]}$
 
 & $
 \backslash
-Sexpr{fed1[1,7]}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{fed1[1,8]}$    
+Sexpr{fed1[1,7]}$   
 \backslash
 
 \backslash
@@ -20653,17 +19623,7 @@ Sexpr{ifelse(fed1[4,6]<.01,"***",ifelse(fed1[4,6]<.05,"**",ifelse(fed1[4,6]<.1,"
 Sexpr{fed1[2,7]}^{
 \backslash
 Sexpr{ifelse(fed1[4,7]<.01,"***",ifelse(fed1[4,7]<.05,"**",ifelse(fed1[4,7]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{fed1[2,8]}^{
-\backslash
-Sexpr{ifelse(fed1[4,8]<.01,"***",ifelse(fed1[4,8]<.05,"**",ifelse(fed1[4,8]<.1,"*",
-"")))}}$    
+"")))}}$   
 \backslash
 
 \backslash
@@ -20686,9 +19646,7 @@ Sexpr{fed1[3,5]})$ & $(
 \backslash
 Sexpr{fed1[3,6]})$ & $(
 \backslash
-Sexpr{fed1[3,7]})$ &$(
-\backslash
-Sexpr{fed1[3,8]})$ 
+Sexpr{fed1[3,7]})$ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -20718,9 +19676,7 @@ Sexpr{fed1[5,5]}$ & $
 \backslash
 Sexpr{fed1[5,6]}$ & $
 \backslash
-Sexpr{fed1[5,7]}$ &$
-\backslash
-Sexpr{fed1[5,8]}$ 
+Sexpr{fed1[5,7]}$ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -20744,9 +19700,7 @@ Sexpr{fed1[6,5]}$ & $
 \backslash
 Sexpr{fed1[6,6]}$ & $
 \backslash
-Sexpr{fed1[6,7]}$ &$
-\backslash
-Sexpr{fed1[6,8]}$     
+Sexpr{fed1[6,7]}$    
 \end_layout
 
 \begin_layout Plain Layout
@@ -20769,9 +19723,7 @@ Sexpr{fed1[7,5]}$ & $
 \backslash
 Sexpr{fed1[7,6]}$ & $
 \backslash
-Sexpr{fed1[7,7]}$ &$
-\backslash
-Sexpr{fed1[7,8]}$    
+Sexpr{fed1[7,7]}$   
 \end_layout
 
 \begin_layout Plain Layout
@@ -20789,7 +19741,7 @@ hline
 
 
 \backslash
-multicolumn{9}{l}{ 
+multicolumn{8}{l}{ 
 \backslash
 scriptsize{$^{***}p<0.01$; $^{**}p<0.05$; $^{*}p<0.1$.}} 
 \end_layout
@@ -20867,7 +19819,7 @@ begin{center}
 \backslash
 begin{tabular}{@{
 \backslash
-extracolsep{5pt}}lcccccccc}  
+extracolsep{5pt}}lccccccc}  
 \backslash
 
 \backslash
@@ -20881,7 +19833,7 @@ hline
 \backslash
 [-1.8ex]   & 
 \backslash
-multicolumn{8}{c}{
+multicolumn{7}{c}{
 \backslash
 textit{
 \backslash
@@ -20896,15 +19848,13 @@ footnotesize Dependent variable: Ratings given by farmers}}
 
 
 \backslash
-cline{2-9} 
+cline{2-8} 
 \backslash
 
 \backslash
 [-1.8ex] & 
 \backslash
-multicolumn{1} {c} {Overall} &  
-\backslash
-multicolumn{1} {c} {Quality}  &
+multicolumn{1} {c} {Overall}   &
 \end_layout
 
 \begin_layout Plain Layout
@@ -20959,7 +19909,7 @@ multicolumn{1} {c} {Germination}
 \backslash
 
 \backslash
-[-1.8ex] & (1) & (2) & (3) & (4) & (5)& (6)& (7)& (8) 
+[-1.8ex] & (1) & (2) & (3) & (4) & (5)& (6)& (7) 
 \backslash
 
 \backslash
@@ -21008,14 +19958,7 @@ Sexpr{fed2[1,6]}$
 
 & $
 \backslash
-Sexpr{fed2[1,7]}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{fed2[1,8]}$    
+Sexpr{fed2[1,7]}$   
 \backslash
 
 \backslash
@@ -21079,16 +20022,6 @@ Sexpr{ifelse(fed2[4,6]<.01,"***",ifelse(fed2[4,6]<.05,"**",ifelse(fed2[4,6]<.1,"
 Sexpr{fed2[2,7]}^{
 \backslash
 Sexpr{ifelse(fed2[4,7]<.01,"***",ifelse(fed2[4,7]<.05,"**",ifelse(fed2[4,7]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{fed2[2,8]}^{
-\backslash
-Sexpr{ifelse(fed2[4,8]<.01,"***",ifelse(fed2[4,8]<.05,"**",ifelse(fed2[4,8]<.1,"*",
 "")))}}$    
 \backslash
 
@@ -21112,9 +20045,7 @@ Sexpr{fed2[3,5]})$ & $(
 \backslash
 Sexpr{fed2[3,6]})$ & $(
 \backslash
-Sexpr{fed2[3,7]})$ &$(
-\backslash
-Sexpr{fed2[3,8]})$  
+Sexpr{fed2[3,7]})$   
 \backslash
 
 \backslash
@@ -21178,17 +20109,7 @@ Sexpr{ifelse(fed2[7,6]<.01,"***",ifelse(fed2[7,6]<.05,"**",ifelse(fed2[7,6]<.1,"
 Sexpr{fed2[5,7]}^{
 \backslash
 Sexpr{ifelse(fed2[7,7]<.01,"***",ifelse(fed2[7,7]<.05,"**",ifelse(fed2[7,7]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{fed2[5,8]}^{
-\backslash
-Sexpr{ifelse(fed2[7,8]<.01,"***",ifelse(fed2[7,8]<.05,"**",ifelse(fed2[7,8]<.1,"*",
-"")))}}$    
+"")))}}$   
 \backslash
 
 \backslash
@@ -21211,9 +20132,7 @@ Sexpr{fed2[6,5]})$ & $(
 \backslash
 Sexpr{fed2[6,6]})$ & $(
 \backslash
-Sexpr{fed2[6,7]})$ &$(
-\backslash
-Sexpr{fed2[6,8]})$  
+Sexpr{fed2[6,7]})$   
 \backslash
 
 \backslash
@@ -21277,17 +20196,7 @@ Sexpr{ifelse(fed2[10,6]<.01,"***",ifelse(fed2[10,6]<.05,"**",ifelse(fed2[10,6]<.
 Sexpr{fed2[8,7]}^{
 \backslash
 Sexpr{ifelse(fed2[10,7]<.01,"***",ifelse(fed2[10,7]<.05,"**",ifelse(fed2[10,7]<.1,"
-*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{fed2[8,8]}^{
-\backslash
-Sexpr{ifelse(fed2[10,8]<.01,"***",ifelse(fed2[10,8]<.05,"**",ifelse(fed2[10,8]<.1,"
-*","")))}}$    
+*","")))}}$   
 \backslash
 
 \backslash
@@ -21310,9 +20219,7 @@ Sexpr{fed2[9,5]})$ & $(
 \backslash
 Sexpr{fed2[9,6]})$ & $(
 \backslash
-Sexpr{fed2[9,7]})$ &$(
-\backslash
-Sexpr{fed2[9,8]})$ 
+Sexpr{fed2[9,7]})$  
 \backslash
 
 \backslash
@@ -21376,17 +20283,7 @@ Sexpr{ifelse(fed2[13,6]<.01,"***",ifelse(fed2[13,6]<.05,"**",ifelse(fed2[13,6]<.
 Sexpr{fed2[11,7]}^{
 \backslash
 Sexpr{ifelse(fed2[13,7]<.01,"***",ifelse(fed2[13,7]<.05,"**",ifelse(fed2[13,7]<.1,"
-*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{fed2[11,8]}^{
-\backslash
-Sexpr{ifelse(fed2[13,8]<.01,"***",ifelse(fed2[13,8]<.05,"**",ifelse(fed2[13,8]<.1,"
-*","")))}}$    
+*","")))}}$   
 \backslash
 
 \backslash
@@ -21409,9 +20306,7 @@ Sexpr{fed2[12,5]})$ & $(
 \backslash
 Sexpr{fed2[12,6]})$ & $(
 \backslash
-Sexpr{fed2[12,7]})$ &$(
-\backslash
-Sexpr{fed2[12,8]})$ 
+Sexpr{fed2[12,7]})$  
 \backslash
 
 \backslash
@@ -21475,17 +20370,7 @@ Sexpr{ifelse(fed2[16,6]<.01,"***",ifelse(fed2[16,6]<.05,"**",ifelse(fed2[16,6]<.
 Sexpr{fed2[14,7]}^{
 \backslash
 Sexpr{ifelse(fed2[16,7]<.01,"***",ifelse(fed2[16,7]<.05,"**",ifelse(fed2[16,7]<.1,"
-*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{fed2[14,8]}^{
-\backslash
-Sexpr{ifelse(fed2[16,8]<.01,"***",ifelse(fed2[16,8]<.05,"**",ifelse(fed2[16,8]<.1,"
-*","")))}}$    
+*","")))}}$  
 \backslash
 
 \backslash
@@ -21508,9 +20393,7 @@ Sexpr{fed2[15,5]})$ & $(
 \backslash
 Sexpr{fed2[15,6]})$ & $(
 \backslash
-Sexpr{fed2[15,7]})$ &$(
-\backslash
-Sexpr{fed2[15,8]})$ 
+Sexpr{fed2[15,7]})$
 \end_layout
 
 \begin_layout Plain Layout
@@ -21540,9 +20423,7 @@ Sexpr{fed2[17,5]}$ & $
 \backslash
 Sexpr{fed2[17,6]}$ & $
 \backslash
-Sexpr{fed2[17,7]}$ &$
-\backslash
-Sexpr{fed2[17,8]}$ 
+Sexpr{fed2[17,7]}$ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -21566,9 +20447,7 @@ Sexpr{fed2[18,5]}$ & $
 \backslash
 Sexpr{fed2[18,6]}$ & $
 \backslash
-Sexpr{fed2[18,7]}$ &$
-\backslash
-Sexpr{fed2[18,8]}$     
+Sexpr{fed2[18,7]}$   
 \end_layout
 
 \begin_layout Plain Layout
@@ -21591,9 +20470,7 @@ Sexpr{fed2[19,5]}$ & $
 \backslash
 Sexpr{fed2[19,6]}$ & $
 \backslash
-Sexpr{fed2[19,7]}$ &$
-\backslash
-Sexpr{fed2[19,8]}$    
+Sexpr{fed2[19,7]}$
 \end_layout
 
 \begin_layout Plain Layout
@@ -21611,7 +20488,7 @@ hline
 
 
 \backslash
-multicolumn{9}{l}{ 
+multicolumn{8}{l}{ 
 \backslash
 scriptsize{$^{***}p<0.01$; $^{**}p<0.05$; $^{*}p<0.1$.}} 
 \end_layout
@@ -22839,7 +21716,7 @@ begin{center}
 \backslash
 begin{tabular}{@{
 \backslash
-extracolsep{5pt}}lcccccccc}  
+extracolsep{5pt}}lccccccc}  
 \backslash
 
 \backslash
@@ -22853,7 +21730,7 @@ hline
 \backslash
 [-1.8ex]   & 
 \backslash
-multicolumn{8}{c}{
+multicolumn{7}{c}{
 \backslash
 textit{
 \backslash
@@ -22869,15 +21746,13 @@ footnotesize Dependent variable: Ratings averaged at the dealer level}}
 
 
 \backslash
-cline{2-9} 
+cline{2-8} 
 \backslash
 
 \backslash
 [-1.8ex] & 
 \backslash
 multicolumn{1} {c} {Overall} &  
-\backslash
-multicolumn{1} {c} {Quality}  &
 \end_layout
 
 \begin_layout Plain Layout
@@ -22932,7 +21807,7 @@ multicolumn{1} {c} {Germination}
 \backslash
 
 \backslash
-[-1.8ex] & (1) & (2) & (3) & (4) & (5)& (6)& (7)& (8) 
+[-1.8ex] & (1) & (2) & (3) & (4) & (5)& (6)& (7)
 \backslash
 
 \backslash
@@ -23002,17 +21877,7 @@ Sexpr{ifelse(s_deal1[3,6]<.01,"***",ifelse(s_deal1[3,6]<.05,"**",ifelse(s_deal1[
 Sexpr{s_deal1[1,7]}^{
 \backslash
 Sexpr{ifelse(s_deal1[3,7]<.01,"***",ifelse(s_deal1[3,7]<.05,"**",ifelse(s_deal1[3,
-7]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s_deal1[1,8]}^{
-\backslash
-Sexpr{ifelse(s_deal1[3,8]<.01,"***",ifelse(s_deal1[3,8]<.05,"**",ifelse(s_deal1[3,
-8]<.1,"*","")))}}$    
+7]<.1,"*","")))}}$  
 \backslash
 
 \backslash
@@ -23035,9 +21900,7 @@ Sexpr{s_deal1[2,5]})$ & $(
 \backslash
 Sexpr{s_deal1[2,6]})$ & $(
 \backslash
-Sexpr{s_deal1[2,7]})$ &$(
-\backslash
-Sexpr{s_deal1[2,8]})$ 
+Sexpr{s_deal1[2,7]})$  
 \backslash
 
 \backslash
@@ -23101,17 +21964,7 @@ Sexpr{ifelse(s_deal1[6,6]<.01,"***",ifelse(s_deal1[6,6]<.05,"**",ifelse(s_deal1[
 Sexpr{s_deal1[4,7]}^{
 \backslash
 Sexpr{ifelse(s_deal1[6,7]<.01,"***",ifelse(s_deal1[6,7]<.05,"**",ifelse(s_deal1[6,
-7]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s_deal1[4,8]}^{
-\backslash
-Sexpr{ifelse(s_deal1[6,8]<.01,"***",ifelse(s_deal1[6,8]<.05,"**",ifelse(s_deal1[6,
-8]<.1,"*","")))}}$    
+7]<.1,"*","")))}}$   
 \backslash
 
 \backslash
@@ -23134,9 +21987,7 @@ Sexpr{s_deal1[5,5]})$ & $(
 \backslash
 Sexpr{s_deal1[5,6]})$ & $(
 \backslash
-Sexpr{s_deal1[5,7]})$ &$(
-\backslash
-Sexpr{s_deal1[5,8]})$ 
+Sexpr{s_deal1[5,7]})$
 \end_layout
 
 \begin_layout Plain Layout
@@ -23166,9 +22017,7 @@ Sexpr{s_deal1[7,5]}$ & $
 \backslash
 Sexpr{s_deal1[7,6]}$ & $
 \backslash
-Sexpr{s_deal1[7,7]}$ &$
-\backslash
-Sexpr{s_deal1[7,8]}$ 
+Sexpr{s_deal1[7,7]}$ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -23192,9 +22041,7 @@ Sexpr{s_deal1[8,5]}$ & $
 \backslash
 Sexpr{s_deal1[8,6]}$ & $
 \backslash
-Sexpr{s_deal1[8,7]}$ &$
-\backslash
-Sexpr{s_deal1[8,8]}$     
+Sexpr{s_deal1[8,7]}$
 \end_layout
 
 \begin_layout Plain Layout
@@ -23217,9 +22064,7 @@ Sexpr{s_deal1[9,5]}$ & $
 \backslash
 Sexpr{s_deal1[9,6]}$ & $
 \backslash
-Sexpr{s_deal1[9,7]}$ &$
-\backslash
-Sexpr{s_deal1[9,8]}$    
+Sexpr{s_deal1[9,7]}$  
 \end_layout
 
 \begin_layout Plain Layout
@@ -23237,7 +22082,7 @@ hline
 
 
 \backslash
-multicolumn{9}{l}{ 
+multicolumn{8}{l}{ 
 \backslash
 scriptsize{$^{***}p<0.01$; $^{**}p<0.05$; $^{*}p<0.1$.}} 
 \end_layout
@@ -23274,10 +22119,6 @@ label{table:table13}
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -23288,10 +22129,6 @@ label{table:table13}
 wide false
 sideways false
 status collapsed
-
-\begin_layout Plain Layout
-
-\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -23327,7 +22164,7 @@ begin{center}
 \backslash
 begin{tabular}{@{
 \backslash
-extracolsep{5pt}}lcccccccc}  
+extracolsep{5pt}}lccccccc}  
 \backslash
 
 \backslash
@@ -23341,7 +22178,7 @@ hline
 \backslash
 [-1.8ex]   & 
 \backslash
-multicolumn{8}{c}{
+multicolumn{7}{c}{
 \backslash
 textit{
 \backslash
@@ -23357,15 +22194,13 @@ footnotesize Dependent variable: Ratings averaged at the dealer level}}
 
 
 \backslash
-cline{2-9} 
+cline{2-8} 
 \backslash
 
 \backslash
 [-1.8ex] & 
 \backslash
 multicolumn{1} {c} {Overall} &  
-\backslash
-multicolumn{1} {c} {Quality}  &
 \end_layout
 
 \begin_layout Plain Layout
@@ -23420,7 +22255,7 @@ multicolumn{1} {c} {Germination}
 \backslash
 
 \backslash
-[-1.8ex] & (1) & (2) & (3) & (4) & (5)& (6)& (7)& (8) 
+[-1.8ex] & (1) & (2) & (3) & (4) & (5)& (6)& (7) 
 \backslash
 
 \backslash
@@ -23490,17 +22325,7 @@ Sexpr{ifelse(s_deal2[3,6]<.01,"***",ifelse(s_deal2[3,6]<.05,"**",ifelse(s_deal2[
 Sexpr{s_deal2[1,7]}^{
 \backslash
 Sexpr{ifelse(s_deal2[3,7]<.01,"***",ifelse(s_deal2[3,7]<.05,"**",ifelse(s_deal2[3,
-7]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s_deal2[1,8]}^{
-\backslash
-Sexpr{ifelse(s_deal2[3,8]<.01,"***",ifelse(s_deal2[3,8]<.05,"**",ifelse(s_deal2[3,
-8]<.1,"*","")))}}$    
+7]<.1,"*","")))}}$    
 \backslash
 
 \backslash
@@ -23523,9 +22348,7 @@ Sexpr{s_deal2[2,5]})$ & $(
 \backslash
 Sexpr{s_deal2[2,6]})$ & $(
 \backslash
-Sexpr{s_deal2[2,7]})$ &$(
-\backslash
-Sexpr{s_deal2[2,8]})$ 
+Sexpr{s_deal2[2,7]})$ 
 \backslash
 
 \backslash
@@ -23589,17 +22412,7 @@ Sexpr{ifelse(s_deal2[6,6]<.01,"***",ifelse(s_deal2[6,6]<.05,"**",ifelse(s_deal2[
 Sexpr{s_deal2[4,7]}^{
 \backslash
 Sexpr{ifelse(s_deal2[6,7]<.01,"***",ifelse(s_deal2[6,7]<.05,"**",ifelse(s_deal2[6,
-7]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s_deal2[4,8]}^{
-\backslash
-Sexpr{ifelse(s_deal2[6,8]<.01,"***",ifelse(s_deal2[6,8]<.05,"**",ifelse(s_deal2[6,
-8]<.1,"*","")))}}$    
+7]<.1,"*","")))}}$    
 \backslash
 
 \backslash
@@ -23622,9 +22435,7 @@ Sexpr{s_deal2[5,5]})$ & $(
 \backslash
 Sexpr{s_deal2[5,6]})$ & $(
 \backslash
-Sexpr{s_deal2[5,7]})$ &$(
-\backslash
-Sexpr{s_deal2[5,8]})$ 
+Sexpr{s_deal2[5,7]})$
 \backslash
 
 \backslash
@@ -23688,17 +22499,7 @@ Sexpr{ifelse(s_deal2[9,6]<.01,"***",ifelse(s_deal2[9,6]<.05,"**",ifelse(s_deal2[
 Sexpr{s_deal2[7,7]}^{
 \backslash
 Sexpr{ifelse(s_deal2[9,7]<.01,"***",ifelse(s_deal2[9,7]<.05,"**",ifelse(s_deal2[9,
-7]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s_deal2[7,8]}^{
-\backslash
-Sexpr{ifelse(s_deal2[9,8]<.01,"***",ifelse(s_deal2[9,8]<.05,"**",ifelse(s_deal2[9,
-8]<.1,"*","")))}}$    
+7]<.1,"*","")))}}$    
 \backslash
 
 \backslash
@@ -23721,9 +22522,7 @@ Sexpr{s_deal2[8,5]})$ & $(
 \backslash
 Sexpr{s_deal2[8,6]})$ & $(
 \backslash
-Sexpr{s_deal2[8,7]})$ &$(
-\backslash
-Sexpr{s_deal2[8,8]})$
+Sexpr{s_deal2[8,7]})$ 
 \backslash
 
 \backslash
@@ -23787,17 +22586,7 @@ Sexpr{ifelse(s_deal2[12,6]<.01,"***",ifelse(s_deal2[12,6]<.05,"**",ifelse(s_deal
 Sexpr{s_deal2[10,7]}^{
 \backslash
 Sexpr{ifelse(s_deal2[12,7]<.01,"***",ifelse(s_deal2[12,7]<.05,"**",ifelse(s_deal2[
-12,7]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s_deal2[10,8]}^{
-\backslash
-Sexpr{ifelse(s_deal2[12,8]<.01,"***",ifelse(s_deal2[12,8]<.05,"**",ifelse(s_deal2[
-12,8]<.1,"*","")))}}$    
+12,7]<.1,"*","")))}}$  
 \backslash
 
 \backslash
@@ -23820,9 +22609,7 @@ Sexpr{s_deal2[11,5]})$ & $(
 \backslash
 Sexpr{s_deal2[11,6]})$ & $(
 \backslash
-Sexpr{s_deal2[11,7]})$ &$(
-\backslash
-Sexpr{s_deal2[11,8]})$
+Sexpr{s_deal2[11,7]})$
 \backslash
 
 \backslash
@@ -23886,17 +22673,7 @@ Sexpr{ifelse(s_deal2[15,6]<.01,"***",ifelse(s_deal2[15,6]<.05,"**",ifelse(s_deal
 Sexpr{s_deal2[13,7]}^{
 \backslash
 Sexpr{ifelse(s_deal2[15,7]<.01,"***",ifelse(s_deal2[15,7]<.05,"**",ifelse(s_deal2[
-15,7]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s_deal2[13,8]}^{
-\backslash
-Sexpr{ifelse(s_deal2[15,8]<.01,"***",ifelse(s_deal2[15,8]<.05,"**",ifelse(s_deal2[
-15,8]<.1,"*","")))}}$    
+15,7]<.1,"*","")))}}$   
 \backslash
 
 \backslash
@@ -23919,9 +22696,7 @@ Sexpr{s_deal2[14,5]})$ & $(
 \backslash
 Sexpr{s_deal2[14,6]})$ & $(
 \backslash
-Sexpr{s_deal2[14,7]})$ &$(
-\backslash
-Sexpr{s_deal2[14,8]})$
+Sexpr{s_deal2[14,7]})$
 \backslash
 
 \backslash
@@ -23985,17 +22760,7 @@ Sexpr{ifelse(s_deal2[18,6]<.01,"***",ifelse(s_deal2[18,6]<.05,"**",ifelse(s_deal
 Sexpr{s_deal2[16,7]}^{
 \backslash
 Sexpr{ifelse(s_deal2[18,7]<.01,"***",ifelse(s_deal2[18,7]<.05,"**",ifelse(s_deal2[
-18,7]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s_deal2[16,8]}^{
-\backslash
-Sexpr{ifelse(s_deal2[18,8]<.01,"***",ifelse(s_deal2[18,8]<.05,"**",ifelse(s_deal2[
-18,8]<.1,"*","")))}}$    
+18,7]<.1,"*","")))}}$   
 \backslash
 
 \backslash
@@ -24018,9 +22783,7 @@ Sexpr{s_deal2[17,5]})$ & $(
 \backslash
 Sexpr{s_deal2[17,6]})$ & $(
 \backslash
-Sexpr{s_deal2[17,7]})$ &$(
-\backslash
-Sexpr{s_deal2[17,8]})$
+Sexpr{s_deal2[17,7]})$ 
 \backslash
 
 \backslash
@@ -24084,17 +22847,7 @@ Sexpr{ifelse(s_deal2[21,6]<.01,"***",ifelse(s_deal2[21,6]<.05,"**",ifelse(s_deal
 Sexpr{s_deal2[19,7]}^{
 \backslash
 Sexpr{ifelse(s_deal2[21,7]<.01,"***",ifelse(s_deal2[21,7]<.05,"**",ifelse(s_deal2[
-21,7]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s_deal2[19,8]}^{
-\backslash
-Sexpr{ifelse(s_deal2[21,8]<.01,"***",ifelse(s_deal2[21,8]<.05,"**",ifelse(s_deal2[
-21,8]<.1,"*","")))}}$    
+21,7]<.1,"*","")))}}$   
 \backslash
 
 \backslash
@@ -24117,9 +22870,7 @@ Sexpr{s_deal2[20,5]})$ & $(
 \backslash
 Sexpr{s_deal2[20,6]})$ & $(
 \backslash
-Sexpr{s_deal2[20,7]})$ &$(
-\backslash
-Sexpr{s_deal2[20,8]})$
+Sexpr{s_deal2[20,7]})$ 
 \backslash
 
 \backslash
@@ -24183,17 +22934,7 @@ Sexpr{ifelse(s_deal2[24,6]<.01,"***",ifelse(s_deal2[24,6]<.05,"**",ifelse(s_deal
 Sexpr{s_deal2[22,7]}^{
 \backslash
 Sexpr{ifelse(s_deal2[24,7]<.01,"***",ifelse(s_deal2[24,7]<.05,"**",ifelse(s_deal2[
-24,7]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s_deal2[22,8]}^{
-\backslash
-Sexpr{ifelse(s_deal2[24,8]<.01,"***",ifelse(s_deal2[24,8]<.05,"**",ifelse(s_deal2[
-24,8]<.1,"*","")))}}$    
+24,7]<.1,"*","")))}}$   
 \backslash
 
 \backslash
@@ -24216,9 +22957,7 @@ Sexpr{s_deal2[23,5]})$ & $(
 \backslash
 Sexpr{s_deal2[23,6]})$ & $(
 \backslash
-Sexpr{s_deal2[23,7]})$ &$(
-\backslash
-Sexpr{s_deal2[23,8]})$
+Sexpr{s_deal2[23,7]})$
 \backslash
 
 \backslash
@@ -24282,17 +23021,7 @@ Sexpr{ifelse(s_deal2[27,6]<.01,"***",ifelse(s_deal2[27,6]<.05,"**",ifelse(s_deal
 Sexpr{s_deal2[25,7]}^{
 \backslash
 Sexpr{ifelse(s_deal2[27,7]<.01,"***",ifelse(s_deal2[27,7]<.05,"**",ifelse(s_deal2[
-27,7]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s_deal2[25,8]}^{
-\backslash
-Sexpr{ifelse(s_deal2[27,8]<.01,"***",ifelse(s_deal2[27,8]<.05,"**",ifelse(s_deal2[
-27,8]<.1,"*","")))}}$    
+27,7]<.1,"*","")))}}$    
 \backslash
 
 \backslash
@@ -24315,9 +23044,7 @@ Sexpr{s_deal2[26,5]})$ & $(
 \backslash
 Sexpr{s_deal2[26,6]})$ & $(
 \backslash
-Sexpr{s_deal2[26,7]})$ &$(
-\backslash
-Sexpr{s_deal2[26,8]})$
+Sexpr{s_deal2[26,7]})$ 
 \backslash
 
 \backslash
@@ -24381,17 +23108,7 @@ Sexpr{ifelse(s_deal2[30,6]<.01,"***",ifelse(s_deal2[30,6]<.05,"**",ifelse(s_deal
 Sexpr{s_deal2[28,7]}^{
 \backslash
 Sexpr{ifelse(s_deal2[30,7]<.01,"***",ifelse(s_deal2[30,7]<.05,"**",ifelse(s_deal2[
-30,7]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s_deal2[28,8]}^{
-\backslash
-Sexpr{ifelse(s_deal2[30,8]<.01,"***",ifelse(s_deal2[30,8]<.05,"**",ifelse(s_deal2[
-30,8]<.1,"*","")))}}$    
+30,7]<.1,"*","")))}}$  
 \backslash
 
 \backslash
@@ -24414,9 +23131,7 @@ Sexpr{s_deal2[29,5]})$ & $(
 \backslash
 Sexpr{s_deal2[29,6]})$ & $(
 \backslash
-Sexpr{s_deal2[29,7]})$ &$(
-\backslash
-Sexpr{s_deal2[29,8]})$
+Sexpr{s_deal2[29,7]})$ 
 \backslash
 
 \backslash
@@ -24480,17 +23195,7 @@ Sexpr{ifelse(s_deal2[33,6]<.01,"***",ifelse(s_deal2[33,6]<.05,"**",ifelse(s_deal
 Sexpr{s_deal2[31,7]}^{
 \backslash
 Sexpr{ifelse(s_deal2[33,7]<.01,"***",ifelse(s_deal2[33,7]<.05,"**",ifelse(s_deal2[
-33,7]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s_deal2[31,8]}^{
-\backslash
-Sexpr{ifelse(s_deal2[33,8]<.01,"***",ifelse(s_deal2[33,8]<.05,"**",ifelse(s_deal2[
-33,8]<.1,"*","")))}}$    
+33,7]<.1,"*","")))}}$  
 \backslash
 
 \backslash
@@ -24513,9 +23218,7 @@ Sexpr{s_deal2[32,5]})$ & $(
 \backslash
 Sexpr{s_deal2[32,6]})$ & $(
 \backslash
-Sexpr{s_deal2[32,7]})$ &$(
-\backslash
-Sexpr{s_deal2[32,8]})$
+Sexpr{s_deal2[32,7]})$
 \backslash
 
 \backslash
@@ -24579,17 +23282,7 @@ Sexpr{ifelse(s_deal2[36,6]<.01,"***",ifelse(s_deal2[36,6]<.05,"**",ifelse(s_deal
 Sexpr{s_deal2[34,7]}^{
 \backslash
 Sexpr{ifelse(s_deal2[36,7]<.01,"***",ifelse(s_deal2[36,7]<.05,"**",ifelse(s_deal2[
-36,7]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s_deal2[34,8]}^{
-\backslash
-Sexpr{ifelse(s_deal2[36,8]<.01,"***",ifelse(s_deal2[36,8]<.05,"**",ifelse(s_deal2[
-36,8]<.1,"*","")))}}$    
+36,7]<.1,"*","")))}}$ 
 \backslash
 
 \backslash
@@ -24612,9 +23305,7 @@ Sexpr{s_deal2[35,5]})$ & $(
 \backslash
 Sexpr{s_deal2[35,6]})$ & $(
 \backslash
-Sexpr{s_deal2[35,7]})$ &$(
-\backslash
-Sexpr{s_deal2[35,8]})$
+Sexpr{s_deal2[35,7]})$ 
 \backslash
 
 \backslash
@@ -24678,17 +23369,7 @@ Sexpr{ifelse(s_deal2[39,6]<.01,"***",ifelse(s_deal2[39,6]<.05,"**",ifelse(s_deal
 Sexpr{s_deal2[37,7]}^{
 \backslash
 Sexpr{ifelse(s_deal2[39,7]<.01,"***",ifelse(s_deal2[39,7]<.05,"**",ifelse(s_deal2[
-39,7]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s_deal2[37,8]}^{
-\backslash
-Sexpr{ifelse(s_deal2[39,8]<.01,"***",ifelse(s_deal2[39,8]<.05,"**",ifelse(s_deal2[
-39,8]<.1,"*","")))}}$    
+39,7]<.1,"*","")))}}$  
 \backslash
 
 \backslash
@@ -24711,9 +23392,7 @@ Sexpr{s_deal2[38,5]})$ & $(
 \backslash
 Sexpr{s_deal2[38,6]})$ & $(
 \backslash
-Sexpr{s_deal2[38,7]})$ &$(
-\backslash
-Sexpr{s_deal2[38,8]})$
+Sexpr{s_deal2[38,7]})$ 
 \backslash
 
 \backslash
@@ -24777,17 +23456,7 @@ Sexpr{ifelse(s_deal2[42,6]<.01,"***",ifelse(s_deal2[42,6]<.05,"**",ifelse(s_deal
 Sexpr{s_deal2[40,7]}^{
 \backslash
 Sexpr{ifelse(s_deal2[42,7]<.01,"***",ifelse(s_deal2[42,7]<.05,"**",ifelse(s_deal2[
-42,7]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s_deal2[40,8]}^{
-\backslash
-Sexpr{ifelse(s_deal2[42,8]<.01,"***",ifelse(s_deal2[42,8]<.05,"**",ifelse(s_deal2[
-42,8]<.1,"*","")))}}$    
+42,7]<.1,"*","")))}}$   
 \backslash
 
 \backslash
@@ -24810,9 +23479,7 @@ Sexpr{s_deal2[41,5]})$ & $(
 \backslash
 Sexpr{s_deal2[41,6]})$ & $(
 \backslash
-Sexpr{s_deal2[41,7]})$ &$(
-\backslash
-Sexpr{s_deal2[41,8]})$
+Sexpr{s_deal2[41,7]})$ 
 \backslash
 
 \backslash
@@ -24876,17 +23543,7 @@ Sexpr{ifelse(s_deal2[45,6]<.01,"***",ifelse(s_deal2[45,6]<.05,"**",ifelse(s_deal
 Sexpr{s_deal2[43,7]}^{
 \backslash
 Sexpr{ifelse(s_deal2[45,7]<.01,"***",ifelse(s_deal2[45,7]<.05,"**",ifelse(s_deal2[
-45,7]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s_deal2[43,8]}^{
-\backslash
-Sexpr{ifelse(s_deal2[45,8]<.01,"***",ifelse(s_deal2[45,8]<.05,"**",ifelse(s_deal2[
-45,8]<.1,"*","")))}}$    
+45,7]<.1,"*","")))}}$  
 \backslash
 
 \backslash
@@ -24909,9 +23566,7 @@ Sexpr{s_deal2[44,5]})$ & $(
 \backslash
 Sexpr{s_deal2[44,6]})$ & $(
 \backslash
-Sexpr{s_deal2[44,7]})$ &$(
-\backslash
-Sexpr{s_deal2[44,8]})$
+Sexpr{s_deal2[44,7]})$ 
 \backslash
 
 \backslash
@@ -24975,17 +23630,7 @@ Sexpr{ifelse(s_deal2[48,6]<.01,"***",ifelse(s_deal2[48,6]<.05,"**",ifelse(s_deal
 Sexpr{s_deal2[46,7]}^{
 \backslash
 Sexpr{ifelse(s_deal2[48,7]<.01,"***",ifelse(s_deal2[48,7]<.05,"**",ifelse(s_deal2[
-48,7]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s_deal2[46,8]}^{
-\backslash
-Sexpr{ifelse(s_deal2[48,8]<.01,"***",ifelse(s_deal2[48,8]<.05,"**",ifelse(s_deal2[
-48,8]<.1,"*","")))}}$    
+48,7]<.1,"*","")))}}$   
 \backslash
 
 \backslash
@@ -25008,9 +23653,7 @@ Sexpr{s_deal2[47,5]})$ & $(
 \backslash
 Sexpr{s_deal2[47,6]})$ & $(
 \backslash
-Sexpr{s_deal2[47,7]})$ &$(
-\backslash
-Sexpr{s_deal2[47,8]})$
+Sexpr{s_deal2[47,7]})$ 
 \backslash
 
 \backslash
@@ -25074,17 +23717,7 @@ Sexpr{ifelse(s_deal2[51,6]<.01,"***",ifelse(s_deal2[51,6]<.05,"**",ifelse(s_deal
 Sexpr{s_deal2[49,7]}^{
 \backslash
 Sexpr{ifelse(s_deal2[51,7]<.01,"***",ifelse(s_deal2[51,7]<.05,"**",ifelse(s_deal2[
-51,7]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s_deal2[49,8]}^{
-\backslash
-Sexpr{ifelse(s_deal2[51,8]<.01,"***",ifelse(s_deal2[51,8]<.05,"**",ifelse(s_deal2[
-51,8]<.1,"*","")))}}$    
+51,7]<.1,"*","")))}}$   
 \backslash
 
 \backslash
@@ -25107,9 +23740,7 @@ Sexpr{s_deal2[50,5]})$ & $(
 \backslash
 Sexpr{s_deal2[50,6]})$ & $(
 \backslash
-Sexpr{s_deal2[50,7]})$ &$(
-\backslash
-Sexpr{s_deal2[50,8]})$
+Sexpr{s_deal2[50,7]})$ 
 \backslash
 
 \backslash
@@ -25173,17 +23804,7 @@ Sexpr{ifelse(s_deal2[54,6]<.01,"***",ifelse(s_deal2[54,6]<.05,"**",ifelse(s_deal
 Sexpr{s_deal2[52,7]}^{
 \backslash
 Sexpr{ifelse(s_deal2[54,7]<.01,"***",ifelse(s_deal2[54,7]<.05,"**",ifelse(s_deal2[
-54,7]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s_deal2[52,8]}^{
-\backslash
-Sexpr{ifelse(s_deal2[54,8]<.01,"***",ifelse(s_deal2[54,8]<.05,"**",ifelse(s_deal2[
-54,8]<.1,"*","")))}}$    
+54,7]<.1,"*","")))}}$   
 \backslash
 
 \backslash
@@ -25206,9 +23827,7 @@ Sexpr{s_deal2[53,5]})$ & $(
 \backslash
 Sexpr{s_deal2[53,6]})$ & $(
 \backslash
-Sexpr{s_deal2[53,7]})$ &$(
-\backslash
-Sexpr{s_deal2[53,8]})$
+Sexpr{s_deal2[53,7]})$
 \backslash
 
 \backslash
@@ -25272,17 +23891,7 @@ Sexpr{ifelse(s_deal2[57,6]<.01,"***",ifelse(s_deal2[57,6]<.05,"**",ifelse(s_deal
 Sexpr{s_deal2[55,7]}^{
 \backslash
 Sexpr{ifelse(s_deal2[57,7]<.01,"***",ifelse(s_deal2[57,7]<.05,"**",ifelse(s_deal2[
-57,7]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s_deal2[55,8]}^{
-\backslash
-Sexpr{ifelse(s_deal2[57,8]<.01,"***",ifelse(s_deal2[57,8]<.05,"**",ifelse(s_deal2[
-57,8]<.1,"*","")))}}$    
+57,7]<.1,"*","")))}}$  
 \backslash
 
 \backslash
@@ -25305,9 +23914,7 @@ Sexpr{s_deal2[56,5]})$ & $(
 \backslash
 Sexpr{s_deal2[56,6]})$ & $(
 \backslash
-Sexpr{s_deal2[56,7]})$ &$(
-\backslash
-Sexpr{s_deal2[56,8]})$
+Sexpr{s_deal2[56,7]})$ 
 \backslash
 
 \backslash
@@ -25371,17 +23978,7 @@ Sexpr{ifelse(s_deal2[60,6]<.01,"***",ifelse(s_deal2[60,6]<.05,"**",ifelse(s_deal
 Sexpr{s_deal2[58,7]}^{
 \backslash
 Sexpr{ifelse(s_deal2[60,7]<.01,"***",ifelse(s_deal2[60,7]<.05,"**",ifelse(s_deal2[
-60,7]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s_deal2[58,8]}^{
-\backslash
-Sexpr{ifelse(s_deal2[60,8]<.01,"***",ifelse(s_deal2[60,8]<.05,"**",ifelse(s_deal2[
-60,8]<.1,"*","")))}}$    
+60,7]<.1,"*","")))}}$  
 \backslash
 
 \backslash
@@ -25404,9 +24001,7 @@ Sexpr{s_deal2[59,5]})$ & $(
 \backslash
 Sexpr{s_deal2[59,6]})$ & $(
 \backslash
-Sexpr{s_deal2[59,7]})$ &$(
-\backslash
-Sexpr{s_deal2[59,8]})$
+Sexpr{s_deal2[59,7]})$ 
 \backslash
 
 \backslash
@@ -25470,17 +24065,7 @@ Sexpr{ifelse(s_deal2[63,6]<.01,"***",ifelse(s_deal2[63,6]<.05,"**",ifelse(s_deal
 Sexpr{s_deal2[61,7]}^{
 \backslash
 Sexpr{ifelse(s_deal2[63,7]<.01,"***",ifelse(s_deal2[63,7]<.05,"**",ifelse(s_deal2[
-63,7]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s_deal2[61,8]}^{
-\backslash
-Sexpr{ifelse(s_deal2[63,8]<.01,"***",ifelse(s_deal2[63,8]<.05,"**",ifelse(s_deal2[
-63,8]<.1,"*","")))}}$    
+63,7]<.1,"*","")))}}$ 
 \backslash
 
 \backslash
@@ -25503,9 +24088,7 @@ Sexpr{s_deal2[62,5]})$ & $(
 \backslash
 Sexpr{s_deal2[62,6]})$ & $(
 \backslash
-Sexpr{s_deal2[62,7]})$ &$(
-\backslash
-Sexpr{s_deal2[62,8]})$
+Sexpr{s_deal2[62,7]})$ 
 \backslash
 
 \backslash
@@ -25569,17 +24152,7 @@ Sexpr{ifelse(s_deal2[66,6]<.01,"***",ifelse(s_deal2[66,6]<.05,"**",ifelse(s_deal
 Sexpr{s_deal2[64,7]}^{
 \backslash
 Sexpr{ifelse(s_deal2[66,7]<.01,"***",ifelse(s_deal2[66,7]<.05,"**",ifelse(s_deal2[
-66,7]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s_deal2[64,8]}^{
-\backslash
-Sexpr{ifelse(s_deal2[66,8]<.01,"***",ifelse(s_deal2[66,8]<.05,"**",ifelse(s_deal2[
-66,8]<.1,"*","")))}}$    
+66,7]<.1,"*","")))}}$   
 \backslash
 
 \backslash
@@ -25602,9 +24175,7 @@ Sexpr{s_deal2[65,5]})$ & $(
 \backslash
 Sexpr{s_deal2[65,6]})$ & $(
 \backslash
-Sexpr{s_deal2[65,7]})$ &$(
-\backslash
-Sexpr{s_deal2[65,8]})$
+Sexpr{s_deal2[65,7]})$ 
 \backslash
 
 \backslash
@@ -25668,17 +24239,7 @@ Sexpr{ifelse(s_deal2[69,6]<.01,"***",ifelse(s_deal2[69,6]<.05,"**",ifelse(s_deal
 Sexpr{s_deal2[67,7]}^{
 \backslash
 Sexpr{ifelse(s_deal2[69,7]<.01,"***",ifelse(s_deal2[69,7]<.05,"**",ifelse(s_deal2[
-69,7]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s_deal2[67,8]}^{
-\backslash
-Sexpr{ifelse(s_deal2[69,8]<.01,"***",ifelse(s_deal2[69,8]<.05,"**",ifelse(s_deal2[
-69,8]<.1,"*","")))}}$    
+69,7]<.1,"*","")))}}$   
 \backslash
 
 \backslash
@@ -25701,9 +24262,7 @@ Sexpr{s_deal2[68,5]})$ & $(
 \backslash
 Sexpr{s_deal2[68,6]})$ & $(
 \backslash
-Sexpr{s_deal2[68,7]})$ &$(
-\backslash
-Sexpr{s_deal2[68,8]})$
+Sexpr{s_deal2[68,7]})$ 
 \backslash
 
 \backslash
@@ -25767,17 +24326,7 @@ Sexpr{ifelse(s_deal2[72,6]<.01,"***",ifelse(s_deal2[72,6]<.05,"**",ifelse(s_deal
 Sexpr{s_deal2[70,7]}^{
 \backslash
 Sexpr{ifelse(s_deal2[72,7]<.01,"***",ifelse(s_deal2[72,7]<.05,"**",ifelse(s_deal2[
-72,7]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s_deal2[70,8]}^{
-\backslash
-Sexpr{ifelse(s_deal2[72,8]<.01,"***",ifelse(s_deal2[72,8]<.05,"**",ifelse(s_deal2[
-72,8]<.1,"*","")))}}$    
+72,7]<.1,"*","")))}}$  
 \backslash
 
 \backslash
@@ -25800,9 +24349,7 @@ Sexpr{s_deal2[71,5]})$ & $(
 \backslash
 Sexpr{s_deal2[71,6]})$ & $(
 \backslash
-Sexpr{s_deal2[71,7]})$ &$(
-\backslash
-Sexpr{s_deal2[71,8]})$
+Sexpr{s_deal2[71,7]})$ 
 \backslash
 
 \backslash
@@ -25866,17 +24413,7 @@ Sexpr{ifelse(s_deal2[75,6]<.01,"***",ifelse(s_deal2[75,6]<.05,"**",ifelse(s_deal
 Sexpr{s_deal2[73,7]}^{
 \backslash
 Sexpr{ifelse(s_deal2[75,7]<.01,"***",ifelse(s_deal2[75,7]<.05,"**",ifelse(s_deal2[
-75,7]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s_deal2[73,8]}^{
-\backslash
-Sexpr{ifelse(s_deal2[75,8]<.01,"***",ifelse(s_deal2[75,8]<.05,"**",ifelse(s_deal2[
-75,8]<.1,"*","")))}}$    
+75,7]<.1,"*","")))}}$  
 \backslash
 
 \backslash
@@ -25899,9 +24436,7 @@ Sexpr{s_deal2[74,5]})$ & $(
 \backslash
 Sexpr{s_deal2[74,6]})$ & $(
 \backslash
-Sexpr{s_deal2[74,7]})$ &$(
-\backslash
-Sexpr{s_deal2[74,8]})$
+Sexpr{s_deal2[74,7]})$ 
 \backslash
 
 \backslash
@@ -25935,9 +24470,7 @@ Sexpr{s_deal2[76,5]}$ & $
 \backslash
 Sexpr{s_deal2[76,6]}$ & $
 \backslash
-Sexpr{s_deal2[76,7]}$ &$
-\backslash
-Sexpr{s_deal2[76,8]}$ 
+Sexpr{s_deal2[76,7]}$
 \end_layout
 
 \begin_layout Plain Layout
@@ -25961,9 +24494,7 @@ Sexpr{s_deal2[77,5]}$ & $
 \backslash
 Sexpr{s_deal2[77,6]}$ & $
 \backslash
-Sexpr{s_deal2[77,7]}$ &$
-\backslash
-Sexpr{s_deal2[77,8]}$     
+Sexpr{s_deal2[77,7]}$      
 \end_layout
 
 \begin_layout Plain Layout
@@ -25986,9 +24517,7 @@ Sexpr{s_deal2[78,5]}$ & $
 \backslash
 Sexpr{s_deal2[78,6]}$ & $
 \backslash
-Sexpr{s_deal2[78,7]}$ &$
-\backslash
-Sexpr{s_deal2[78,8]}$    
+Sexpr{s_deal2[78,7]}$    
 \end_layout
 
 \begin_layout Plain Layout
@@ -26006,7 +24535,7 @@ hline
 
 
 \backslash
-multicolumn{9}{l}{ 
+multicolumn{8}{l}{ 
 \backslash
 scriptsize{$^{***}p<0.01$; $^{**}p<0.05$; $^{*}p<0.1$.}} 
 \end_layout
@@ -26041,10 +24570,6 @@ label{table:table14}
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -28939,10 +27464,6 @@ label{table:table16}
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
