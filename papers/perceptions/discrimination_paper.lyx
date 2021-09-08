@@ -258,7 +258,7 @@ Our empirical strategy exploits the particular nature of the data where
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-y_{f,d}=\alpha+\beta g_{f,d}+\gamma x_{f,d}+\varepsilon_{f,d}
+y_{f,d}=\alpha+\beta g_{f,d}+\gamma x_{f,d}+\varepsilon_{f,d}\label{eq:base}
 \end{equation}
 
 \end_inset
@@ -379,8 +379,8 @@ The fact that each farmer rates several agro-input dealers results in a
 Together, this leads to four ways to look at the data: differences within
  farmers, differences between farmers, differences within dealers, and differenc
 es between dealers.
- The different within and between dimensions can be exploited to answer
- our research questions.
+ The different within and between dimensions can be used to answer our research
+ questions.
  What can be learned from these different estimators depends on the research
  question.
  As such, this discussion is deferred to the results section (Section 
@@ -411,8 +411,8 @@ name "sec:Results"
 We now turn to the results of the analysis where we estimate a series of
  within and between models.
  We start with an analysis of the impact of the gender of the dealer who
- gets rated by the farmer followed by an analysis of the impact of the gender
- of the farmer who rates the dealer.
+ gets rated by the farmer, followed by an analysis of the impact of the
+ gender of the farmer who rates the dealer.
 \end_layout
 
 \begin_layout Subsection*
@@ -423,15 +423,36 @@ Question 1: Do farmers discriminate against female agro-input dealers? (Dealer's
 \begin_layout Standard
 A useful starting point to test for discrimination related to agro-input
  dealer's gender is to simply compare average ratings received by male agro-inpu
-t dealers to the average ratings received by female agro-input dealers.
+t dealers to average ratings received by female agro-input dealers.
  One can do the comparisons on the individual ratings 
 \begin_inset Formula $\left(y_{f,d}\right)$
 \end_inset
 
 .
- However, this means that agro-input dealers that are rated by more farmers
- will receive a higher weight.
- A better approach is to first compute averages scores at the agro-input
+ However, as some agro-input dealers are rated by more farmers than other
+ agro-input dealers, different agro-input dealers will receive different
+ weights
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Furthermore, error terms in equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:base"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+will be correlated within agro-input dealers
+\end_layout
+
+\end_inset
+
+.
+ A better approach is to first compute average scores at the agro-input
  dealer level and then compare male and female agro-input dealers, amounting
  to the between agro-input dealers estimator.
  Equation 
@@ -482,7 +503,8 @@ noprefix "false"
 
 \end_inset
 
- reports on such comparisons the seed quality related ratings.
+ compares average seed quality related ratings between male and female agro-inpu
+t dealers.
  For instance, we see that the average female agro-input dealer gets a score
  of 
 \begin_inset ERT
@@ -532,8 +554,8 @@ noprefix "false"
  reports similar comparisons but now for ratings that focus more on the
  agro-input dealer in general than specifically on the maize seed that input
  dealers sell.
- We now see that on all dimensions, men are rated higher than women, and
- the difference in rating is significant for three out of the seven comparisons.
+ We find that on all dimensions, men are rated higher than women, and the
+ difference in rating is significant for three out of the seven comparisons.
  The largest difference is found when farmers are asked to rate price competitiv
 eness of the agro-input dealers.
  Here, women are scored only 3.07 out of 5, while men receive a score of
@@ -551,22 +573,22 @@ The price competitive dimension seems to drive differences in overall rating.
 \end_inset
 
  The fact that differences in ratings become more outspoken when farmers
- are asked input dealers more generally as opposed to when they are asked
- to rate a particular item that agro-input dealers sell seems to suggest
- some degree of discrimination.
+ are asked to rate input dealers more generally as opposed to when they
+ are asked to rate a particular product that agro-input dealers sell may
+ suggest some degree of discrimination.
 \end_layout
 
 \begin_layout Standard
-The fact that female dealers get lower ratings than their male competitors
+The finding that female dealers get lower ratings than their male competitors
  on average does not necessarily mean that female dealers are discriminated
  against.
  Instead, female dealers could truly be poorer dealers, for example due
- to their lack of access to education or training or lack of access to credit
- to improve storage facilities.
+ to their lack of access to education or training, or lack of access to
+ credit to improve storage facilities.
  Therefore, it may be instructive to control for dealer level observable
  characteristics that may explain lower ratings received by women.
  We are particularly interested in testing if the coefficient on the gender
- of the input dealer changes after control for various observable input
+ of the input dealer changes after controlling for various observable input
  dealer characteristics that are directly related to quality, such as temperatur
 e measured in the shop, storage technology, infrastructure such as leak
  proof roof or insulation, etc.
@@ -613,8 +635,8 @@ noprefix "false"
  dealers.
  In fact, the addition of controls has increased the size of the gender
  effect, and we now find significant differences in ratings between male
- and female agro-input dealers for yield potential and maturing as advertised,
- as well as for the overall quality rating.
+ and female agro-input dealers for yield potential and the rating that inquires
+ if the seed matured as expected.
  For the more general ratings, things seem to be somewhat more complicated.
  First, controlling for quality has reduced the difference in ratings related
  to price competitiveness between male and female input dealers, suggesting
@@ -622,9 +644,9 @@ noprefix "false"
  At the same time, general satisfaction with the agro-input dealer does
  still seem to depend on gender even after controlling for observable quality
  related dealer characteristics.
- The fact that the discrimination effect becomes stronger after controlling
- for observable agro-input dealer characteristics suggests that women that
- are selling better quality are particularly discriminated against.
+ In general, the fact that the discrimination effect becomes stronger after
+ controlling for observable agro-input dealer characteristics suggests that
+ women are selling better quality yet receive lower ratings.
 \end_layout
 
 \begin_layout Standard
@@ -6179,28 +6201,14 @@ noprefix "false"
 \end_layout
 
 \begin_layout Standard
-In both cases, differences related to gender have disappeared.
- This means that 
-\end_layout
-
-\begin_layout Standard
 The fact that a within farmer model does not produce significant differences
- means 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-How should we interpret this finding? Something like that gender differentiated
- ratings is not some homogeneous trait inherent to all farmers, but that
- it is caused by a combination of factors that differ between farmers.
+ suggests that discrimination in itself is not some homogeneous trait inherent
+ to all farmers, but that it is caused by a combination of factors that
+ differ between farmers.
  This seems reasonable, as differences in ratings are probably caused by
  factors such as norms and values that are constant within a farmer but
  may differ between farmers.
-\end_layout
-
-\end_inset
-
-
+ 
 \end_layout
 
 \begin_layout Standard
@@ -11401,19 +11409,9 @@ label{table:table12}
 \end_layout
 
 \begin_layout Standard
-The between model from equation 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:six"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
- controls for observed input dealer heterogeneity such as input dealer education
- levels and observable characteristics that are likely to be correlated
- with seed quality sold by this dealer.
+The between input dealers model controls for observed input dealer heterogeneity
+ such as input dealer education levels and observable characteristics that
+ are likely to be correlated with seed quality sold by this dealer.
  Ideally, one would like to control for unobserved dealer heterogeneity
  as well, similar to how farmer fixed effects control for (unobserved) farmer
  heterogeneity.
