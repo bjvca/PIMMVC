@@ -17783,6 +17783,88 @@ Question 2: Do female farmers rate agro-input dealers differently? (Farmer's
  gender effect)
 \end_layout
 
+\begin_layout Standard
+The most straightforward way to answer this question is probably to compare
+ average ratings given by female farmers to average ratings given by male
+ farmers.
+ Also here, one could do this on the original data, but the fact that some
+ farmers rate more agro-input dealers than others will lead to differing
+ implied weights given to farmers.
+ To make sure each farmer gets that same weight, we thus again first compute
+ averages at the farmer level, leading to a between farmer model.
+ This model is essentially the model of equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:two"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, but the variable of interest 
+\begin_inset Formula $\overline{g}_{f}$
+\end_inset
+
+ is now a dummy indicating whether the farmer is a man 
+\begin_inset Formula $\left(\overline{g}_{f}=1\right)$
+\end_inset
+
+ or not 
+\begin_inset Formula $\left(\overline{g}_{f}=0\right)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+We can also add additional controls to this between model to explore alternative
+ mediating processes.
+ For instance, it may be that women farmers are lower educated, and that
+ lower educated farmers rate differently.
+ 
+\end_layout
+
+\begin_layout Standard
+But perhaps there are dealer level confounding variables.
+ For instance, it may be that female farmers are more likely to purchase
+ from agro-input dealer close to home, as opposed to the larger agro-input
+ shops in towns.
+ Shops in rural areas may suffer from poorer infrastructure and receive
+ lower ratings regardless of who rated them.
+ To account for agro-input dealer level heterogeneity, we may include dealer
+ level fixed effects to test if the gender difference is still there if
+ the same dealers are rated by farmers of different genders.
+ This would be equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:eight"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+We can also estimate between input dealer models, where we first average
+ over all farmers that rated a particular agro-input dealer.
+ Again, as not all farmers rated each input dealer, there is variation in
+ the gender composition of the subset of farmers that rated each agro input
+ dealer.
+ For instance, some agro input dealers will be rated only by male farmers,
+ some only by female farmers.
+ This variation can then be used to see if agro-input dealers that are rated
+ by relatively more women are scored differently than agro-input dealers
+ that were rated by relatively more men.
+ The model that we can not estimate is in this case the within farmer model,
+ since here there is no variation of farmer gender within farmers.
+\end_layout
+
 \begin_layout Subsection*
 Between farmers model
 \end_layout
