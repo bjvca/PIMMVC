@@ -174,16 +174,28 @@ Indicators
 \end_layout
 
 \begin_layout Standard
-The dependent variables in this analysis are dealer quality and seed quality,
- as rated by farmers.
- To measure the 
+Central to our analysis is the quantification of the quality of services
+ provided by agro-input dealers.
+ To do so we asked farmers in our sample to rate agro-input dealers in their
+ vicinity on a range of attributes.
+ We broadly categorized them into two families.
+ A first set of indicators attempts to measure overall quality of agro input
+ dealers and the services they provide, while a second set of indicators
+ has a much more narrow focus and asks about a particular product sold by
+ the agro-input dealer (maize seed).
+ 
+\end_layout
+
+\begin_layout Standard
+To measure the 
 \series bold
 (perceived) quality of agro-input dealers
 \series default
 , farmers were asked to rate these dealers on a scale of 1 to 5 on their
  general quality, location (convenience, accessibility, closeness to clients),
  price (competitive pricing, discounts), seed quality, stock (availability
- of seed), and reputation.
+ of seed), and reputation (what do other farmers think about the agro-input
+ dealer).
  We also compute an average of these six dealer ratings.
  Mind that for these indicators, farmers were asked to rate the shop and
  the person that sells seed.
@@ -196,10 +208,36 @@ To measure the
 \series default
 , farmers were asked to rate the maize seed that dealers sell on a scale
  of 1 to 5 on its general quality, yield, drought tolerance, pest/disease
- tolerance, early maturity, and germination.
+ tolerance, early maturity
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+early maturity sounds weird
+\end_layout
+
+\end_inset
+
+, and germination.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+we should add here that this was asked in relation to how it is advertised
+ (remember the conversation we had on how some varities are bred to be early
+ maturing but others not, or how some can be very drought tolerant but not
+ known for their high yields,...)
+\end_layout
+
+\end_inset
+
  We also compute an average of these six seed ratings.
  Note that for these variables, farmers were asked to rate seed, the product
  itself.
+ Farmers were also allowed to indicate that they could not rate seed on
+ a particular dimension (for instance because they never bought seed from
+ the agro-input dealer).
 \end_layout
 
 \begin_layout Part*
