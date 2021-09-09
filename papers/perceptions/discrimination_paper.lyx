@@ -169,6 +169,48 @@ parindent}{1cm}
 
 \end_layout
 
+\begin_layout Section*
+Introduction/Motivation of the study
+\end_layout
+
+\begin_layout Standard
+I would motivate this study as follows:
+\end_layout
+
+\begin_layout Itemize
+In traditions societies with strong gender norms and customs, small businesses
+ are often one of the few options that are available to women (as opposed
+ to commercial farming) - see literature on women in the informal sector.
+ Argue that markets are typically full with women...
+\end_layout
+
+\begin_layout Itemize
+the hole discussion about experience goods (or Naureen Karachiwala even
+ calls them credence goods) with the argument that ratings are very important
+ when making decisions under uncertainty.
+\end_layout
+
+\begin_layout Itemize
+explain how gender related bias in rating may affect inclusion.
+\end_layout
+
+\begin_layout Section*
+Research questions
+\end_layout
+
+\begin_layout Standard
+Is there an impact of the gender of the agro-input dealer on how they are
+ rated by farmers.
+ Refer here to the literature on how women are rated lower in male dominated
+ sectors.
+ What are the implications?
+\end_layout
+
+\begin_layout Standard
+Is there an impact of the gender of the farmer on how they rate agro-input
+ dealers
+\end_layout
+
 \begin_layout Part*
 Indicators
 \end_layout
@@ -333,7 +375,7 @@ d
 
  is an error term
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 what do we assume about distribution of the error term
@@ -360,18 +402,24 @@ what do we assume about distribution of the error term
 The fact that each farmer rates several agro-input dealers results in a
  data set that is reminiscent of panel data: there are repeated observations
  per farmer.
- These repeated observations for farmers can be used to exploit variation
- within farmers (and control for farmer level characteristics through fixed
- effects).
- Furthermore, if we first calculate farmer level averages, variation between
- farmers can be used to answer our research questions, leading to the standard
- between models we know from panel data analysis.
+ Different ratings given by the same farmer can be used to exploit variation
+ within farmers—in particular, the fact that the same farmer rates both
+ male and female agro-input dealers—while controlling for farmer level character
+istics that also may affect how agro-input dealers are rated (such as the
+ education level of the farmer experience with commercial farm inputs).
+ Furthermore, if we first calculate farmer level averages, differences between
+ farmers—such as the gender of the farmer—can be used to answer our research
+ questions, leading to the standard between models we know from panel data
+ analysis.
  However, each agro-input dealer is also rated by several farmers.
  As such, there are also repeated observations per agro-input dealer that
- can be used to exploit variation within agro-input dealers (and control
- for agro-input dealer fixed effects).
+ can be used to exploit variation within agro-input dealers — for instance,
+ the fact that an agro-input dealer is rated by both male and female farmers—and
+ control for agro-input dealer fixed effects such as the education level
+ or experience of the agro-input dealer.
  Similarly, first computing input dealer averages allows one to exploit
- differences between agro-input dealer.
+ differences between agro-input dealer, such as the gender of the agro-input
+ dealer.
  
 \end_layout
 
@@ -379,11 +427,11 @@ The fact that each farmer rates several agro-input dealers results in a
 Together, this leads to four ways to look at the data: differences within
  farmers, differences between farmers, differences within dealers, and differenc
 es between dealers.
- The different within and between dimensions can be used to answer our research
- questions.
- What can be learned from these different estimators depends on the research
- question.
- As such, this discussion is deferred to the results section (Section 
+ Depending on the research focus—the gender of the input dealer getting
+ rated or the gender of the farmer doing the rating—what exactly can be
+ learned from each of these models differs.
+ As such, this discussion on the identifying assumptions behind each model
+ is deferred to the results section (Section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Results"
@@ -446,7 +494,7 @@ noprefix "false"
 
 \end_inset
 
-will be correlated within agro-input dealers
+ will be correlated within agro-input dealers
 \end_layout
 
 \end_inset
@@ -467,7 +515,6 @@ noprefix "false"
 
  shows how this can be done using an simple OLS regression on input-dealer
  level averages.
- 
 \end_layout
 
 \begin_layout Standard
@@ -503,8 +550,8 @@ noprefix "false"
 
 \end_inset
 
- compares average seed quality related ratings between male and female agro-inpu
-t dealers.
+ compares seed quality related ratings between male and female agro-input
+ dealers using such a regression.
  For instance, we see that the average female agro-input dealer gets a score
  of 
 \begin_inset ERT
@@ -608,8 +655,8 @@ in a DAG G -> quality -> rating and we assume that if it is not quality
 \end_layout
 
 \begin_layout Standard
-Results of between regressions with added control variables are in Table
- 
+Results of between agro-input dealer regressions with added control variables
+ are in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:q1_betw_dealers_seed_controls"
@@ -5804,7 +5851,7 @@ noprefix "false"
 \end_inset
 
  shows parameter estimates for an indicator variable that takes the value
- of one if the agro-input dealer is male estimated using a model that includes
+ of one if the agro-input dealer is male, estimated using a model that includes
  farmer fixed effects (using the within transformation of equation 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -5875,8 +5922,9 @@ The fact that a within farmer model does not produce significant differences
  to all farmers, but that it is caused by a combination of factors that
  differ between farmers.
  This seems reasonable, as differences in ratings are probably caused by
- factors such as norms and values that are constant within a farmer but
- may differ between farmers.
+ factors such as education levels, or traits that are less easy to capture
+ such as norms and values held by the farmer.
+ These are typically constant within a farmer but may differ between farmers.
  
 \end_layout
 
@@ -5894,9 +5942,6 @@ s at the dealer level)
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float table
 wide false
 sideways false
@@ -10634,9 +10679,10 @@ label{table:table12}
 \end_layout
 
 \begin_layout Standard
-The between input dealers model controls for observed input dealer heterogeneity
- such as input dealer education levels and observable characteristics that
- are likely to be correlated with seed quality sold by this dealer.
+In the between input dealers model with additional controls, we control
+ for observed input dealer heterogeneity such as input dealer education
+ levels and observable characteristics that are likely to be correlated
+ with seed quality sold by this dealer.
  Ideally, one would like to control for all dealer level heterogeneity,
  both observable and unobservable, such that any remaining difference can
  be attributed to the gender of the agro-input dealer.
@@ -10655,7 +10701,6 @@ noprefix "false"
  The fact that farmers rate the same agro-input dealer differently means
  that the source of this difference lies in how the agro-input dealer is
  perceived by the farmer.
- 
 \end_layout
 
 \begin_layout Standard
@@ -10697,7 +10742,7 @@ noprefix "false"
 
 : As gender remains constant within the dealer, the within dealer average
  is always equal to the observation, thus cancels out and dealer's gender
- is removed from the equation above.
+ is removed from the equation.
  
 \end_layout
 
@@ -10738,7 +10783,7 @@ f
 \end_layout
 
 \begin_layout Standard
-Farmers did not rate all dealers, they rated only dealers they knew leading
+Farmers did not rate all dealers, they rated only dealers they knew, leading
  to an unbalanced panel.
 \begin_inset Foot
 status collapsed
@@ -10764,68 +10809,9 @@ In fact, if the panel was completely balanced (ie.
  is not a dummy but a variable between 0 and 1 indicating the share of female
  dealers in the total number of dealers that were rated by one particular
  farmer.
- For instance, farmer Naigaga's 
-\begin_inset Formula $\overline{g}_{f}$
-\end_inset
-
- would be 0.25 if she rated one female dealer and three male dealers.
- Then the farmers' average ratings are regressed on their share of rated
- female dealers.
- This model exploits differences between farmers to estimate the parameters.
- In addition to the previously described controls at dealer level, we control
- for farmer characteristics like education, marital status, remoteness and
- age
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-I think we should not control for farmer characteristics: Older farmers
- could indeed discriminate more but why should we control for that if we
- want to measure discrimination? Farmer characteristics should not be correlated
- to dealer/ seed quality.
-\end_layout
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-If we find the coefficient 
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-
-\backslash
-gamma
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
- to be positive and significant, then farmers who rate more male dealers
- give higher scores.
- 
-\end_layout
-
-\begin_layout Standard
-What is interesting about this last estimator is that each farmer rates
+ The fact that a particular farmer rated more relatively more women can
+ then be used to test if this also led to relatively lower scores.
+ What is interesting about this last estimator is that each farmer rates
  more than one agro-input dealers.
  In the limiting case, each farmer rates all agro-input dealers.
  As such, any difference found between farmers who rate the same agro-input
@@ -16542,6 +16528,34 @@ label{table:table4}
 
 \end_layout
 
+\begin_layout Standard
+Results for the between farmers model are in Tables 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:q1_betw_farmers_seed_no_controls"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ to 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:q1_betw_farmers_dealer_controls"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ In general, we find that male agro-input dealers are rated higher than
+ female agro-input dealers, especially for the more general agro-input dealer
+ ratings and particularly if we also explicitly control for observable dealer
+ level characteristics.
+\end_layout
+
 \begin_layout Section*
 Question 2: Do female farmers rate agro-input dealers differently? (Farmer's
  gender effect)
@@ -16580,26 +16594,89 @@ noprefix "false"
 
 .
  
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+As in model 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:two"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, we could argue that in the limit, each farmer rates the same set of agro-input
+ dealers (or at least a random sample of it), such that difference should
+ be attributed to the farmer.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-We can also add additional controls to this between model to explore alternative
- mediating processes.
+Results, reported in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:q2_betw_farmers_seed_no_controls"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ for seed quality ratings, shows that male farmers give significantly higher
+ scores than female farmers, albeit only for one dimension (drought tolerance
+ of the seed).
+ We can also add additional controls to this between model to explore alternativ
+e mediating processes.
  For instance, it may be that women farmers are lower educated, and that
  lower educated farmers rate differently.
- 
+ Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:q2_betw_farmers_seed_controls"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ shows that male farmers now also rate significantly higher with respect
+ to disease tolerance.
+ Interestingly, we do not find that male and female farmers rate differently
+ when we look at more general agro-input dealer ratings.
 \end_layout
 
 \begin_layout Standard
-But perhaps there are dealer level confounding variables.
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+While we argued above any difference likely should be attributed to the
+ farmer when using a between farmer estimator, we can not be certain that
+ the set of input dealers rated by a particular farmer are truly a random
+ sample and thus representative of the average farmer
+\end_layout
+
+\end_inset
+
+However, dealer level characteristics could confound the relationship between
+ a farmer's gender and the rating that an agro-input dealer receives.
  For instance, it may be that female farmers are more likely to purchase
  from agro-input dealer close to home, as opposed to the larger agro-input
  shops in towns.
  Shops in rural areas may suffer from poorer infrastructure and receive
  lower ratings regardless of who rated them.
- To account for agro-input dealer level heterogeneity, we may include dealer
- level fixed effects to test if the gender difference is still there if
- the same dealers are rated by farmers of different genders.
+ A a result, while it may seem that women rate lower on average, this is
+ actually caused by agro-input dealer level characteristics.
+ To explicitly account for agro-input dealer level heterogeneity, we can
+ include dealer level fixed effects to test if the gender difference is
+ still there if the same dealers are rated by farmers of different genders.
  This would be equation 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -16615,18 +16692,64 @@ noprefix "false"
 \end_layout
 
 \begin_layout Standard
-We can also estimate between input dealer models, where we first average
- over all farmers that rated a particular agro-input dealer.
+Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:q2_fe_seed_no_controls"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ shows that the fact that male farmers rate higher is not related to difference
+ in agro-input dealers.
+ 
+\end_layout
+
+\begin_layout Standard
+Arguably the best model would be model with farmer fixed effects, where
+ we control for all farmer level heterogeneity except his/her gender.
+ Unfortunately such as model can not be estimated since here there is no
+ variation of farmer gender within farmers.
+ But also here, we may be able to control for farmer heterogeneity by estimating
+ between input dealer models, where we first average over all farmers that
+ rated a particular agro-input dealer.
  Again, as not all farmers rated each input dealer, there is variation in
  the gender composition of the subset of farmers that rated each agro input
  dealer.
- For instance, some agro input dealers will be rated only by male farmers,
- some only by female farmers.
+ For instance, some agro input dealers will have been rated only by male
+ farmers, some only by female farmers.
  This variation can then be used to see if agro-input dealers that are rated
  by relatively more women are scored differently than agro-input dealers
  that were rated by relatively more men.
- The model that we can not estimate is in this case the within farmer model,
- since here there is no variation of farmer gender within farmers.
+ We again make the assumption that in the limit input dealers are rated
+ by the same farmers.
+\end_layout
+
+\begin_layout Standard
+Tables 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:q2_betw_dealers_seed_no_controls"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ to 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:q2_betw_dealers_dealer_controls"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ shows that, if relatively more men rate an agro input dealer, the agro-input
+ dealer gets a lower score.
 \end_layout
 
 \begin_layout Subsection*
@@ -16637,7 +16760,7 @@ Between farmers model
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
