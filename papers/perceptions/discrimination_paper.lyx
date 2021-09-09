@@ -783,14 +783,14 @@ multicolumn{1} {c} {Seed's}
 
 & 
 \backslash
-multicolumn{1} {c} {seed rating}  &
+multicolumn{1} {c} {seed}  &
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {general rating}&
+multicolumn{1} {c} {general}&
 \end_layout
 
 \begin_layout Plain Layout
@@ -804,21 +804,21 @@ multicolumn{1} {c} {yield}&
 
 
 \backslash
-multicolumn{1} {c} {drought tolerance}&
+multicolumn{1} {c} {drought}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {pest/disease tolerance}&
+multicolumn{1} {c} {pest/disease}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {early maturing}&
+multicolumn{1} {c} {early}&
 \end_layout
 
 \begin_layout Plain Layout
@@ -826,6 +826,59 @@ multicolumn{1} {c} {early maturing}&
 
 \backslash
 multicolumn{1} {c} {germination}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{1} {c} {rating}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {quality}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {tolerance}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {tolerance}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {maturing}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}
 \backslash
 
 \backslash
@@ -1211,51 +1264,157 @@ cline{2-8}
 \backslash
 
 \backslash
-[-1.8ex] & 
+[-1.8ex]  & 
 \backslash
-multicolumn{1} {c} {Overall}   &
+multicolumn{1} {c} {Average}  &
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {General}&
+multicolumn{1} {c} {Seed's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Yield}&
+multicolumn{1} {c} {Seed's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Drought}&
+multicolumn{1} {c} {Seed's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Disease}&
+multicolumn{1} {c} {Seed's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Maturing}&
+multicolumn{1} {c} {Seed's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Germination}
+multicolumn{1} {c} {Seed's}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{1} {c} {seed}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {general}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {yield}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {drought}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {pest/disease}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {early}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {germination}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{1} {c} {rating}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {quality}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {tolerance}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {tolerance}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {maturing}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}
 \backslash
 
 \backslash
@@ -3300,44 +3459,155 @@ cline{2-8}
 \backslash
 [-1.8ex] & 
 \backslash
-multicolumn{1} {c} {Overall} &  
-\backslash
-multicolumn{1} {c} {General}  &
+multicolumn{1} {c} {Average}  &
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Location}&
+multicolumn{1} {c} {Dealer's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Price}&
+multicolumn{1} {c} {Dealer's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Quality}&
+multicolumn{1} {c} {Dealer's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Stock}&
+multicolumn{1} {c} {Dealer's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Reputation} 
+multicolumn{1} {c} {Dealer's}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Dealer's}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{1} {c} {dealer}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {general}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {location}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {price}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {seed}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {stock}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {reputation}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{1} {c} {rating}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {quality}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {quality}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}
 \backslash
 
 \backslash
@@ -3723,46 +3993,157 @@ cline{2-8}
 \backslash
 
 \backslash
-[-1.8ex] & 
+[-1.8ex]  & 
 \backslash
-multicolumn{1} {c} {Overall} &  
-\backslash
-multicolumn{1} {c} {General}  &
+multicolumn{1} {c} {Average}  &
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Location}&
+multicolumn{1} {c} {Dealer's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Price}&
+multicolumn{1} {c} {Dealer's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Quality}&
+multicolumn{1} {c} {Dealer's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Stock}&
+multicolumn{1} {c} {Dealer's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Reputation}
+multicolumn{1} {c} {Dealer's}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Dealer's}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{1} {c} {dealer}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {general}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {location}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {price}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {seed}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {stock}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {reputation}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{1} {c} {rating}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {quality}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {quality}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}
 \backslash
 
 \backslash
@@ -5969,51 +6350,157 @@ cline{2-8}
 \backslash
 
 \backslash
-[-1.8ex] & 
+[-1.8ex]  & 
 \backslash
-multicolumn{1} {c} {Overall}  &
+multicolumn{1} {c} {Average}  &
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {General}&
+multicolumn{1} {c} {Seed's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Yield}&
+multicolumn{1} {c} {Seed's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Drought}&
+multicolumn{1} {c} {Seed's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Disease}&
+multicolumn{1} {c} {Seed's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Maturing}&
+multicolumn{1} {c} {Seed's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Germination}
+multicolumn{1} {c} {Seed's}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{1} {c} {seed}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {general}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {yield}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {drought}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {pest/disease}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {early}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {germination}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{1} {c} {rating}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {quality}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {tolerance}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {tolerance}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {maturing}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}
 \backslash
 
 \backslash
@@ -6337,51 +6824,157 @@ cline{2-8}
 \backslash
 
 \backslash
-[-1.8ex] & 
+[-1.8ex]  & 
 \backslash
-multicolumn{1} {c} {Overall} &  
+multicolumn{1} {c} {Average}  &
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {General}&
+multicolumn{1} {c} {Seed's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Yield}&
+multicolumn{1} {c} {Seed's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Drought}&
+multicolumn{1} {c} {Seed's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Disease}&
+multicolumn{1} {c} {Seed's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Maturing}&
+multicolumn{1} {c} {Seed's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Germination}
+multicolumn{1} {c} {Seed's}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{1} {c} {seed}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {general}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {yield}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {drought}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {pest/disease}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {early}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {germination}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{1} {c} {rating}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {quality}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {tolerance}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {tolerance}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {maturing}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}
 \backslash
 
 \backslash
@@ -8351,44 +8944,155 @@ cline{2-8}
 \backslash
 [-1.8ex] & 
 \backslash
-multicolumn{1} {c} {Overall} &  
-\backslash
-multicolumn{1} {c} {General}  &
+multicolumn{1} {c} {Average}  &
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Location}&
+multicolumn{1} {c} {Dealer's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Price}&
+multicolumn{1} {c} {Dealer's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Quality}&
+multicolumn{1} {c} {Dealer's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Stock}&
+multicolumn{1} {c} {Dealer's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Reputation} 
+multicolumn{1} {c} {Dealer's}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Dealer's}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{1} {c} {dealer}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {general}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {location}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {price}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {seed}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {stock}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {reputation}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{1} {c} {rating}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {quality}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {quality}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}
 \backslash
 
 \backslash
@@ -8699,46 +9403,157 @@ cline{2-8}
 \backslash
 
 \backslash
-[-1.8ex] & 
+[-1.8ex]  & 
 \backslash
-multicolumn{1} {c} {Overall} &  
-\backslash
-multicolumn{1} {c} {General}  &
+multicolumn{1} {c} {Average}  &
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Location}&
+multicolumn{1} {c} {Dealer's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Price}&
+multicolumn{1} {c} {Dealer's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Quality}&
+multicolumn{1} {c} {Dealer's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Stock}&
+multicolumn{1} {c} {Dealer's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Reputation}
+multicolumn{1} {c} {Dealer's}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Dealer's}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{1} {c} {dealer}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {general}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {location}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {price}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {seed}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {stock}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {reputation}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{1} {c} {rating}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {quality}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {quality}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}
 \backslash
 
 \backslash
@@ -10954,51 +11769,157 @@ cline{2-8}
 \backslash
 
 \backslash
-[-1.8ex] & 
+[-1.8ex]  & 
 \backslash
-multicolumn{1} {c} {Overall} &  
+multicolumn{1} {c} {Average}  &
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {General}&
+multicolumn{1} {c} {Seed's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Yield}&
+multicolumn{1} {c} {Seed's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Drought}&
+multicolumn{1} {c} {Seed's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Disease}&
+multicolumn{1} {c} {Seed's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Maturing}&
+multicolumn{1} {c} {Seed's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Germination}
+multicolumn{1} {c} {Seed's}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{1} {c} {seed}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {general}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {yield}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {drought}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {pest/disease}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {early}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {germination}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{1} {c} {rating}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {quality}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {tolerance}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {tolerance}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {maturing}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}
 \backslash
 
 \backslash
@@ -11381,51 +12302,157 @@ cline{2-8}
 \backslash
 
 \backslash
-[-1.8ex] & 
+[-1.8ex]  & 
 \backslash
-multicolumn{1} {c} {Overall}  &
+multicolumn{1} {c} {Average}  &
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {General}&
+multicolumn{1} {c} {Seed's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Yield}&
+multicolumn{1} {c} {Seed's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Drought}&
+multicolumn{1} {c} {Seed's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Disease}&
+multicolumn{1} {c} {Seed's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Maturing}&
+multicolumn{1} {c} {Seed's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Germination}
+multicolumn{1} {c} {Seed's}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{1} {c} {seed}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {general}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {yield}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {drought}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {pest/disease}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {early}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {germination}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{1} {c} {rating}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {quality}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {tolerance}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {tolerance}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {maturing}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}
 \backslash
 
 \backslash
@@ -13800,44 +14827,155 @@ cline{2-8}
 \backslash
 [-1.8ex] & 
 \backslash
-multicolumn{1} {c} {Overall} &  
-\backslash
-multicolumn{1} {c} {General}  &
+multicolumn{1} {c} {Average}  &
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Location}&
+multicolumn{1} {c} {Dealer's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Price}&
+multicolumn{1} {c} {Dealer's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Quality}&
+multicolumn{1} {c} {Dealer's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Stock}&
+multicolumn{1} {c} {Dealer's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Reputation} 
+multicolumn{1} {c} {Dealer's}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Dealer's}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{1} {c} {dealer}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {general}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {location}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {price}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {seed}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {stock}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {reputation}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{1} {c} {rating}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {quality}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {quality}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}
 \backslash
 
 \backslash
@@ -14204,46 +15342,157 @@ cline{2-8}
 \backslash
 
 \backslash
-[-1.8ex] & 
+[-1.8ex]  & 
 \backslash
-multicolumn{1} {c} {Overall} &  
-\backslash
-multicolumn{1} {c} {General}  &
+multicolumn{1} {c} {Average}  &
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Location}&
+multicolumn{1} {c} {Dealer's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Price}&
+multicolumn{1} {c} {Dealer's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Quality}&
+multicolumn{1} {c} {Dealer's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Stock}&
+multicolumn{1} {c} {Dealer's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Reputation}
+multicolumn{1} {c} {Dealer's}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Dealer's}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{1} {c} {dealer}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {general}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {location}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {price}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {seed}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {stock}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {reputation}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{1} {c} {rating}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {quality}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {quality}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}
 \backslash
 
 \backslash
@@ -16707,51 +17956,157 @@ cline{2-8}
 \backslash
 
 \backslash
-[-1.8ex] & 
+[-1.8ex]  & 
 \backslash
-multicolumn{1} {c} {Overall}   &
+multicolumn{1} {c} {Average}  &
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {General}&
+multicolumn{1} {c} {Seed's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Yield}&
+multicolumn{1} {c} {Seed's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Drought}&
+multicolumn{1} {c} {Seed's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Disease}&
+multicolumn{1} {c} {Seed's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Maturing}&
+multicolumn{1} {c} {Seed's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Germination}
+multicolumn{1} {c} {Seed's}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{1} {c} {seed}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {general}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {yield}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {drought}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {pest/disease}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {early}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {germination}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{1} {c} {rating}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {quality}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {tolerance}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {tolerance}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {maturing}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}
 \backslash
 
 \backslash
@@ -17046,7 +18401,7 @@ Note: Here, the gender of the farmer is a dummy variable having the value
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -17116,51 +18471,157 @@ cline{2-8}
 \backslash
 
 \backslash
-[-1.8ex] & 
+[-1.8ex]  & 
 \backslash
-multicolumn{1} {c} {Overall} & 
+multicolumn{1} {c} {Average}  &
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {General}&
+multicolumn{1} {c} {Seed's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Yield}&
+multicolumn{1} {c} {Seed's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Drought}&
+multicolumn{1} {c} {Seed's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Disease}&
+multicolumn{1} {c} {Seed's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Maturing}&
+multicolumn{1} {c} {Seed's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Germination}
+multicolumn{1} {c} {Seed's}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{1} {c} {seed}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {general}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {yield}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {drought}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {pest/disease}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {early}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {germination}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{1} {c} {rating}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {quality}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {tolerance}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {tolerance}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {maturing}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}
 \backslash
 
 \backslash
@@ -17879,44 +19340,155 @@ cline{2-8}
 \backslash
 [-1.8ex] & 
 \backslash
-multicolumn{1} {c} {Overall} &  
-\backslash
-multicolumn{1} {c} {General}  &
+multicolumn{1} {c} {Average}  &
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Location}&
+multicolumn{1} {c} {Dealer's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Price}&
+multicolumn{1} {c} {Dealer's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Quality}&
+multicolumn{1} {c} {Dealer's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Stock}&
+multicolumn{1} {c} {Dealer's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Reputation}
+multicolumn{1} {c} {Dealer's}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Dealer's}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{1} {c} {dealer}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {general}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {location}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {price}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {seed}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {stock}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {reputation}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{1} {c} {rating}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {quality}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {quality}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}
 \backslash
 
 \backslash
@@ -17946,60 +19518,39 @@ hline
 
 {Intercept}                  & $
 \backslash
-Sexpr{s_deal7[1,1]}^{
+Sexpr{s_deal7[1,1]}$ & $
 \backslash
-Sexpr{ifelse(s_deal7[3,1]<.01,"***",ifelse(s_deal7[3,1]<.05,"**",ifelse(s_deal7[3,
-1]<.1,"*","")))}}$ & $
+Sexpr{s_deal7[1,2]}$  & $
 \backslash
-Sexpr{s_deal7[1,2]}^{
-\backslash
-Sexpr{ifelse(s_deal7[3,2]<.01,"***",ifelse(s_deal7[3,2]<.05,"**",ifelse(s_deal7[3,
-2]<.1,"*","")))}}$  & $
-\backslash
-Sexpr{s_deal7[1,3]}^{
-\backslash
-Sexpr{ifelse(s_deal7[3,3]<.01,"***",ifelse(s_deal7[3,3]<.05,"**",ifelse(s_deal7[3,
-3]<.1,"*","")))}}$
+Sexpr{s_deal7[1,3]}$
 \end_layout
 
 \begin_layout Plain Layout
 
  & $
 \backslash
-Sexpr{s_deal7[1,4]}^{
-\backslash
-Sexpr{ifelse(s_deal7[3,4]<.01,"***",ifelse(s_deal7[3,4]<.05,"**",ifelse(s_deal7[3,
-4]<.1,"*","")))}}$
+Sexpr{s_deal7[1,4]}$
 \end_layout
 
 \begin_layout Plain Layout
 
 & $
 \backslash
-Sexpr{s_deal7[1,5]}^{
-\backslash
-Sexpr{ifelse(s_deal7[3,5]<.01,"***",ifelse(s_deal7[3,5]<.05,"**",ifelse(s_deal7[3,
-5]<.1,"*","")))}}$
+Sexpr{s_deal7[1,5]}$
 \end_layout
 
 \begin_layout Plain Layout
 
 & $
 \backslash
-Sexpr{s_deal7[1,6]}^{
-\backslash
-Sexpr{ifelse(s_deal7[3,6]<.01,"***",ifelse(s_deal7[3,6]<.05,"**",ifelse(s_deal7[3,
-6]<.1,"*","")))}}$
+Sexpr{s_deal7[1,6]}$
 \end_layout
 
 \begin_layout Plain Layout
 
 & $
 \backslash
-Sexpr{s_deal7[1,7]}^{
-\backslash
-Sexpr{ifelse(s_deal7[3,7]<.01,"***",ifelse(s_deal7[3,7]<.05,"**",ifelse(s_deal7[3,
-7]<.1,"*","")))}}$
+Sexpr{s_deal7[1,7]}$
 \end_layout
 
 \begin_layout Plain Layout
@@ -18327,46 +19878,157 @@ cline{2-8}
 \backslash
 
 \backslash
-[-1.8ex] & 
+[-1.8ex]  & 
 \backslash
-multicolumn{1} {c} {Overall} &  
-\backslash
-multicolumn{1} {c} {General}  &
+multicolumn{1} {c} {Average}  &
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Location}&
+multicolumn{1} {c} {Dealer's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Price}&
+multicolumn{1} {c} {Dealer's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Quality}&
+multicolumn{1} {c} {Dealer's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Stock}&
+multicolumn{1} {c} {Dealer's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Reputation}
+multicolumn{1} {c} {Dealer's}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Dealer's}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{1} {c} {dealer}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {general}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {location}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {price}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {seed}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {stock}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {reputation}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{1} {c} {rating}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {quality}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {quality}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}
 \backslash
 
 \backslash
@@ -18396,65 +20058,39 @@ hline
 
 {Intercept}                  & $
 \backslash
-Sexpr{s_deal8[1,1]}^{
+Sexpr{s_deal8[1,1]}$ & $
 \backslash
-Sexpr{ifelse(s_deal8[3,1]<.01,"***",ifelse(s_deal8[3,1]<.05,"**",ifelse(s_deal8[3,
-1]<.1,"*","")))}}$ & $
+Sexpr{s_deal8[1,2]}$  & $
 \backslash
-Sexpr{s_deal8[1,2]}^{
-\backslash
-Sexpr{ifelse(s_deal8[3,2]<.01,"***",ifelse(s_deal8[3,2]<.05,"**",ifelse(s_deal8[3,
-2]<.1,"*","")))}}$  & $
-\backslash
-Sexpr{s_deal8[1,3]}^{
-\backslash
-Sexpr{ifelse(s_deal8[3,3]<.01,"***",ifelse(s_deal8[3,3]<.05,"**",ifelse(s_deal8[3,
-3]<.1,"*","")))}}$
+Sexpr{s_deal8[1,3]}$
 \end_layout
 
 \begin_layout Plain Layout
 
  & $
 \backslash
-Sexpr{s_deal8[1,4]}^{
-\backslash
-Sexpr{ifelse(s_deal8[3,4]<.01,"***",ifelse(s_deal8[3,4]<.05,"**",ifelse(s_deal8[3,
-4]<.1,"*","")))}}$
+Sexpr{s_deal8[1,4]}$
 \end_layout
 
 \begin_layout Plain Layout
 
 & $
 \backslash
-Sexpr{s_deal8[1,5]}^{
-\backslash
-Sexpr{ifelse(s_deal8[3,5]<.01,"***",ifelse(s_deal8[3,5]<.05,"**",ifelse(s_deal8[3,
-5]<.1,"*","")))}}$
+Sexpr{s_deal8[1,5]}$
 \end_layout
 
 \begin_layout Plain Layout
 
 & $
 \backslash
-Sexpr{s_deal8[1,6]}^{
-\backslash
-Sexpr{ifelse(s_deal8[3,6]<.01,"***",ifelse(s_deal8[3,6]<.05,"**",ifelse(s_deal8[3,
-6]<.1,"*","")))}}$
+Sexpr{s_deal8[1,6]}$
 \end_layout
 
 \begin_layout Plain Layout
 
 & $
 \backslash
-Sexpr{s_deal8[1,7]}^{
-\backslash
-Sexpr{ifelse(s_deal8[3,7]<.01,"***",ifelse(s_deal8[3,7]<.05,"**",ifelse(s_deal8[3,
-7]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-    
+Sexpr{s_deal8[1,7]}$
 \backslash
 
 \backslash
@@ -19148,51 +20784,157 @@ cline{2-8}
 \backslash
 
 \backslash
-[-1.8ex] & 
+[-1.8ex]  & 
 \backslash
-multicolumn{1} {c} {Overall} &  
+multicolumn{1} {c} {Average}  &
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {General}&
+multicolumn{1} {c} {Seed's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Yield}&
+multicolumn{1} {c} {Seed's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Drought}&
+multicolumn{1} {c} {Seed's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Disease}&
+multicolumn{1} {c} {Seed's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Maturing}&
+multicolumn{1} {c} {Seed's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Germination}
+multicolumn{1} {c} {Seed's}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{1} {c} {seed}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {general}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {yield}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {drought}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {pest/disease}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {early}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {germination}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{1} {c} {rating}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {quality}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {tolerance}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {tolerance}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {maturing}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}
 \backslash
 
 \backslash
@@ -19500,51 +21242,157 @@ cline{2-8}
 \backslash
 
 \backslash
-[-1.8ex] & 
+[-1.8ex]  & 
 \backslash
-multicolumn{1} {c} {Overall}   &
+multicolumn{1} {c} {Average}  &
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {General}&
+multicolumn{1} {c} {Seed's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Yield}&
+multicolumn{1} {c} {Seed's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Drought}&
+multicolumn{1} {c} {Seed's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Disease}&
+multicolumn{1} {c} {Seed's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Maturing}&
+multicolumn{1} {c} {Seed's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Germination}
+multicolumn{1} {c} {Seed's}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{1} {c} {seed}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {general}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {yield}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {drought}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {pest/disease}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {early}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {germination}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{1} {c} {rating}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {quality}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {tolerance}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {tolerance}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {maturing}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}
 \backslash
 
 \backslash
@@ -20204,44 +22052,155 @@ cline{2-8}
 \backslash
 [-1.8ex] & 
 \backslash
-multicolumn{1} {c} {Overall} &  
-\backslash
-multicolumn{1} {c} {General}  &
+multicolumn{1} {c} {Average}  &
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Location}&
+multicolumn{1} {c} {Dealer's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Price}&
+multicolumn{1} {c} {Dealer's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Quality}&
+multicolumn{1} {c} {Dealer's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Stock}&
+multicolumn{1} {c} {Dealer's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Reputation} 
+multicolumn{1} {c} {Dealer's}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Dealer's}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{1} {c} {dealer}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {general}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {location}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {price}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {seed}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {stock}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {reputation}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{1} {c} {rating}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {quality}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {quality}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}
 \backslash
 
 \backslash
@@ -20554,44 +22513,155 @@ cline{2-8}
 \backslash
 [-1.8ex] & 
 \backslash
-multicolumn{1} {c} {Overall} &  
-\backslash
-multicolumn{1} {c} {General}  &
+multicolumn{1} {c} {Average}  &
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Location}&
+multicolumn{1} {c} {Dealer's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Price}&
+multicolumn{1} {c} {Dealer's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Quality}&
+multicolumn{1} {c} {Dealer's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Stock}&
+multicolumn{1} {c} {Dealer's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Reputation} 
+multicolumn{1} {c} {Dealer's}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Dealer's}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{1} {c} {dealer}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {general}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {location}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {price}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {seed}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {stock}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {reputation}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{1} {c} {rating}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {quality}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {quality}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}
 \backslash
 
 \backslash
@@ -21257,51 +23327,157 @@ cline{2-8}
 \backslash
 
 \backslash
-[-1.8ex] & 
+[-1.8ex]  & 
 \backslash
-multicolumn{1} {c} {Overall} &  
+multicolumn{1} {c} {Average}  &
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {General}&
+multicolumn{1} {c} {Seed's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Yield}&
+multicolumn{1} {c} {Seed's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Drought}&
+multicolumn{1} {c} {Seed's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Disease}&
+multicolumn{1} {c} {Seed's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Maturing}&
+multicolumn{1} {c} {Seed's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Germination}
+multicolumn{1} {c} {Seed's}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{1} {c} {seed}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {general}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {yield}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {drought}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {pest/disease}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {early}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {germination}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{1} {c} {rating}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {quality}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {tolerance}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {tolerance}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {maturing}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}
 \backslash
 
 \backslash
@@ -21331,60 +23507,39 @@ hline
 
 {Intercept}                  & $
 \backslash
-Sexpr{s_deal1[1,1]}^{
+Sexpr{s_deal1[1,1]}$ & $
 \backslash
-Sexpr{ifelse(s_deal1[3,1]<.01,"***",ifelse(s_deal1[3,1]<.05,"**",ifelse(s_deal1[3,
-1]<.1,"*","")))}}$ & $
+Sexpr{s_deal1[1,2]}$  & $
 \backslash
-Sexpr{s_deal1[1,2]}^{
-\backslash
-Sexpr{ifelse(s_deal1[3,2]<.01,"***",ifelse(s_deal1[3,2]<.05,"**",ifelse(s_deal1[3,
-2]<.1,"*","")))}}$  & $
-\backslash
-Sexpr{s_deal1[1,3]}^{
-\backslash
-Sexpr{ifelse(s_deal1[3,3]<.01,"***",ifelse(s_deal1[3,3]<.05,"**",ifelse(s_deal1[3,
-3]<.1,"*","")))}}$
+Sexpr{s_deal1[1,3]}$
 \end_layout
 
 \begin_layout Plain Layout
 
  & $
 \backslash
-Sexpr{s_deal1[1,4]}^{
-\backslash
-Sexpr{ifelse(s_deal1[3,4]<.01,"***",ifelse(s_deal1[3,4]<.05,"**",ifelse(s_deal1[3,
-4]<.1,"*","")))}}$
+Sexpr{s_deal1[1,4]}$
 \end_layout
 
 \begin_layout Plain Layout
 
 & $
 \backslash
-Sexpr{s_deal1[1,5]}^{
-\backslash
-Sexpr{ifelse(s_deal1[3,5]<.01,"***",ifelse(s_deal1[3,5]<.05,"**",ifelse(s_deal1[3,
-5]<.1,"*","")))}}$
+Sexpr{s_deal1[1,5]}$
 \end_layout
 
 \begin_layout Plain Layout
 
 & $
 \backslash
-Sexpr{s_deal1[1,6]}^{
-\backslash
-Sexpr{ifelse(s_deal1[3,6]<.01,"***",ifelse(s_deal1[3,6]<.05,"**",ifelse(s_deal1[3,
-6]<.1,"*","")))}}$
+Sexpr{s_deal1[1,6]}$
 \end_layout
 
 \begin_layout Plain Layout
 
 & $
 \backslash
-Sexpr{s_deal1[1,7]}^{
-\backslash
-Sexpr{ifelse(s_deal1[3,7]<.01,"***",ifelse(s_deal1[3,7]<.05,"**",ifelse(s_deal1[3,
-7]<.1,"*","")))}}$  
+Sexpr{s_deal1[1,7]}$  
 \backslash
 
 \backslash
@@ -21705,51 +23860,157 @@ cline{2-8}
 \backslash
 
 \backslash
-[-1.8ex] & 
+[-1.8ex]  & 
 \backslash
-multicolumn{1} {c} {Overall} &  
+multicolumn{1} {c} {Average}  &
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {General}&
+multicolumn{1} {c} {Seed's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Yield}&
+multicolumn{1} {c} {Seed's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Drought}&
+multicolumn{1} {c} {Seed's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Disease}&
+multicolumn{1} {c} {Seed's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Maturing}&
+multicolumn{1} {c} {Seed's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Germination}
+multicolumn{1} {c} {Seed's}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{1} {c} {seed}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {general}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {yield}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {drought}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {pest/disease}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {early}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {germination}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{1} {c} {rating}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {quality}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {tolerance}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {tolerance}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {maturing}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}
 \backslash
 
 \backslash
@@ -21779,60 +24040,39 @@ hline
 
 {Intercept}                  & $
 \backslash
-Sexpr{s_deal2[1,1]}^{
+Sexpr{s_deal2[1,1]}$ & $
 \backslash
-Sexpr{ifelse(s_deal2[3,1]<.01,"***",ifelse(s_deal2[3,1]<.05,"**",ifelse(s_deal2[3,
-1]<.1,"*","")))}}$ & $
+Sexpr{s_deal2[1,2]}$  & $
 \backslash
-Sexpr{s_deal2[1,2]}^{
-\backslash
-Sexpr{ifelse(s_deal2[3,2]<.01,"***",ifelse(s_deal2[3,2]<.05,"**",ifelse(s_deal2[3,
-2]<.1,"*","")))}}$  & $
-\backslash
-Sexpr{s_deal2[1,3]}^{
-\backslash
-Sexpr{ifelse(s_deal2[3,3]<.01,"***",ifelse(s_deal2[3,3]<.05,"**",ifelse(s_deal2[3,
-3]<.1,"*","")))}}$
+Sexpr{s_deal2[1,3]}$
 \end_layout
 
 \begin_layout Plain Layout
 
  & $
 \backslash
-Sexpr{s_deal2[1,4]}^{
-\backslash
-Sexpr{ifelse(s_deal2[3,4]<.01,"***",ifelse(s_deal2[3,4]<.05,"**",ifelse(s_deal2[3,
-4]<.1,"*","")))}}$
+Sexpr{s_deal2[1,4]}$
 \end_layout
 
 \begin_layout Plain Layout
 
 & $
 \backslash
-Sexpr{s_deal2[1,5]}^{
-\backslash
-Sexpr{ifelse(s_deal2[3,5]<.01,"***",ifelse(s_deal2[3,5]<.05,"**",ifelse(s_deal2[3,
-5]<.1,"*","")))}}$
+Sexpr{s_deal2[1,5]}$
 \end_layout
 
 \begin_layout Plain Layout
 
 & $
 \backslash
-Sexpr{s_deal2[1,6]}^{
-\backslash
-Sexpr{ifelse(s_deal2[3,6]<.01,"***",ifelse(s_deal2[3,6]<.05,"**",ifelse(s_deal2[3,
-6]<.1,"*","")))}}$
+Sexpr{s_deal2[1,6]}$
 \end_layout
 
 \begin_layout Plain Layout
 
 & $
 \backslash
-Sexpr{s_deal2[1,7]}^{
-\backslash
-Sexpr{ifelse(s_deal2[3,7]<.01,"***",ifelse(s_deal2[3,7]<.05,"**",ifelse(s_deal2[3,
-7]<.1,"*","")))}}$    
+Sexpr{s_deal2[1,7]}$    
 \backslash
 
 \backslash
@@ -24163,44 +26403,155 @@ cline{2-8}
 \backslash
 [-1.8ex] & 
 \backslash
-multicolumn{1} {c} {Overall} &  
-\backslash
-multicolumn{1} {c} {General}  &
+multicolumn{1} {c} {Average}  &
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Location}&
+multicolumn{1} {c} {Dealer's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Price}&
+multicolumn{1} {c} {Dealer's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Quality}&
+multicolumn{1} {c} {Dealer's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Stock}&
+multicolumn{1} {c} {Dealer's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Reputation} 
+multicolumn{1} {c} {Dealer's}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Dealer's}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{1} {c} {dealer}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {general}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {location}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {price}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {seed}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {stock}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {reputation}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{1} {c} {rating}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {quality}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {quality}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}
 \backslash
 
 \backslash
@@ -24230,60 +26581,39 @@ hline
 
 {Intercept}                  & $
 \backslash
-Sexpr{s_deal3[1,1]}^{
+Sexpr{s_deal3[1,1]}$ & $
 \backslash
-Sexpr{ifelse(s_deal3[3,1]<.01,"***",ifelse(s_deal3[3,1]<.05,"**",ifelse(s_deal3[3,
-1]<.1,"*","")))}}$ & $
+Sexpr{s_deal3[1,2]}$  & $
 \backslash
-Sexpr{s_deal3[1,2]}^{
-\backslash
-Sexpr{ifelse(s_deal3[3,2]<.01,"***",ifelse(s_deal3[3,2]<.05,"**",ifelse(s_deal3[3,
-2]<.1,"*","")))}}$  & $
-\backslash
-Sexpr{s_deal3[1,3]}^{
-\backslash
-Sexpr{ifelse(s_deal3[3,3]<.01,"***",ifelse(s_deal3[3,3]<.05,"**",ifelse(s_deal3[3,
-3]<.1,"*","")))}}$
+Sexpr{s_deal3[1,3]}$
 \end_layout
 
 \begin_layout Plain Layout
 
  & $
 \backslash
-Sexpr{s_deal3[1,4]}^{
-\backslash
-Sexpr{ifelse(s_deal3[3,4]<.01,"***",ifelse(s_deal3[3,4]<.05,"**",ifelse(s_deal3[3,
-4]<.1,"*","")))}}$
+Sexpr{s_deal3[1,4]}$
 \end_layout
 
 \begin_layout Plain Layout
 
 & $
 \backslash
-Sexpr{s_deal3[1,5]}^{
-\backslash
-Sexpr{ifelse(s_deal3[3,5]<.01,"***",ifelse(s_deal3[3,5]<.05,"**",ifelse(s_deal3[3,
-5]<.1,"*","")))}}$
+Sexpr{s_deal3[1,5]}$
 \end_layout
 
 \begin_layout Plain Layout
 
 & $
 \backslash
-Sexpr{s_deal3[1,6]}^{
-\backslash
-Sexpr{ifelse(s_deal3[3,6]<.01,"***",ifelse(s_deal3[3,6]<.05,"**",ifelse(s_deal3[3,
-6]<.1,"*","")))}}$
+Sexpr{s_deal3[1,6]}$
 \end_layout
 
 \begin_layout Plain Layout
 
 & $
 \backslash
-Sexpr{s_deal3[1,7]}^{
-\backslash
-Sexpr{ifelse(s_deal3[3,7]<.01,"***",ifelse(s_deal3[3,7]<.05,"**",ifelse(s_deal3[3,
-7]<.1,"*","")))}}$   
+Sexpr{s_deal3[1,7]}$   
 \backslash
 
 \backslash
@@ -24604,46 +26934,157 @@ cline{2-8}
 \backslash
 
 \backslash
-[-1.8ex] & 
+[-1.8ex]  & 
 \backslash
-multicolumn{1} {c} {Overall} &  
-\backslash
-multicolumn{1} {c} {General}  &
+multicolumn{1} {c} {Average}  &
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Location}&
+multicolumn{1} {c} {Dealer's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Price}&
+multicolumn{1} {c} {Dealer's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Quality}&
+multicolumn{1} {c} {Dealer's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Stock}&
+multicolumn{1} {c} {Dealer's}&
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-multicolumn{1} {c} {Reputation}
+multicolumn{1} {c} {Dealer's}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Dealer's}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{1} {c} {dealer}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {general}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {location}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {price}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {seed}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {stock}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {reputation}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{1} {c} {rating}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {quality}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {quality}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}
 \backslash
 
 \backslash
@@ -24673,60 +27114,39 @@ hline
 
 {Intercept}                  & $
 \backslash
-Sexpr{s_deal4[1,1]}^{
+Sexpr{s_deal4[1,1]}$ & $
 \backslash
-Sexpr{ifelse(s_deal4[3,1]<.01,"***",ifelse(s_deal4[3,1]<.05,"**",ifelse(s_deal4[3,
-1]<.1,"*","")))}}$ & $
+Sexpr{s_deal4[1,2]}$  & $
 \backslash
-Sexpr{s_deal4[1,2]}^{
-\backslash
-Sexpr{ifelse(s_deal4[3,2]<.01,"***",ifelse(s_deal4[3,2]<.05,"**",ifelse(s_deal4[3,
-2]<.1,"*","")))}}$  & $
-\backslash
-Sexpr{s_deal4[1,3]}^{
-\backslash
-Sexpr{ifelse(s_deal4[3,3]<.01,"***",ifelse(s_deal4[3,3]<.05,"**",ifelse(s_deal4[3,
-3]<.1,"*","")))}}$
+Sexpr{s_deal4[1,3]}$
 \end_layout
 
 \begin_layout Plain Layout
 
  & $
 \backslash
-Sexpr{s_deal4[1,4]}^{
-\backslash
-Sexpr{ifelse(s_deal4[3,4]<.01,"***",ifelse(s_deal4[3,4]<.05,"**",ifelse(s_deal4[3,
-4]<.1,"*","")))}}$
+Sexpr{s_deal4[1,4]}$
 \end_layout
 
 \begin_layout Plain Layout
 
 & $
 \backslash
-Sexpr{s_deal4[1,5]}^{
-\backslash
-Sexpr{ifelse(s_deal4[3,5]<.01,"***",ifelse(s_deal4[3,5]<.05,"**",ifelse(s_deal4[3,
-5]<.1,"*","")))}}$
+Sexpr{s_deal4[1,5]}$
 \end_layout
 
 \begin_layout Plain Layout
 
 & $
 \backslash
-Sexpr{s_deal4[1,6]}^{
-\backslash
-Sexpr{ifelse(s_deal4[3,6]<.01,"***",ifelse(s_deal4[3,6]<.05,"**",ifelse(s_deal4[3,
-6]<.1,"*","")))}}$
+Sexpr{s_deal4[1,6]}$
 \end_layout
 
 \begin_layout Plain Layout
 
 & $
 \backslash
-Sexpr{s_deal4[1,7]}^{
-\backslash
-Sexpr{ifelse(s_deal4[3,7]<.01,"***",ifelse(s_deal4[3,7]<.05,"**",ifelse(s_deal4[3,
-7]<.1,"*","")))}}$   
+Sexpr{s_deal4[1,7]}$   
 \backslash
 
 \backslash
