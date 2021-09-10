@@ -906,7 +906,7 @@ hline
 
 \begin_layout Plain Layout
 
-{Intercept}                  & $
+{Constant}                  & $
 \backslash
 Sexpr{s5[1,1]}$ & $
 \backslash
@@ -972,7 +972,7 @@ Sexpr{s5[2,7]})$
 
 \begin_layout Plain Layout
 
-{Male dealers}   & $
+{Dealer is male}   & $
 \backslash
 Sexpr{s5[4,1]}^{
 \backslash
@@ -1442,7 +1442,7 @@ hline
 
 \begin_layout Plain Layout
 
-{Intercept}                  & $
+{Constant}                  & $
 \backslash
 Sexpr{s6[1,1]}$ & $
 \backslash
@@ -1508,7 +1508,7 @@ Sexpr{s6[2,7]})$
 
 \begin_layout Plain Layout
 
-{Male dealers}   & $
+{Dealer is male}   & $
 \backslash
 Sexpr{s6[4,1]}^{
 \backslash
@@ -1659,7 +1659,7 @@ Sexpr{ifelse(s6[9,7]<.01,"***",ifelse(s6[9,7]<.05,"**",ifelse(s6[9,7]<.1,"*","")
 
 \begin_layout Plain Layout
 
-&  $(
+{(in years)} &  $(
 \backslash
 Sexpr{s6[8,1]})$   &  $(
 \backslash
@@ -1682,7 +1682,7 @@ Sexpr{s6[8,7]})$
 
 \begin_layout Plain Layout
 
-{Educated dealers}   & $
+{Dealer finished}   & $
 \backslash
 Sexpr{s6[10,1]}^{
 \backslash
@@ -1746,7 +1746,7 @@ Sexpr{ifelse(s6[12,7]<.01,"***",ifelse(s6[12,7]<.05,"**",ifelse(s6[12,7]<.1,"*",
 
 \begin_layout Plain Layout
 
-&  $(
+{secondary education}&  $(
 \backslash
 Sexpr{s6[11,1]})$   &  $(
 \backslash
@@ -1769,7 +1769,7 @@ Sexpr{s6[11,7]})$
 
 \begin_layout Plain Layout
 
-{Tarmac (dealer)}   & $
+{Shop's distance to}   & $
 \backslash
 Sexpr{s6[13,1]}^{
 \backslash
@@ -1833,7 +1833,7 @@ Sexpr{ifelse(s6[15,7]<.01,"***",ifelse(s6[15,7]<.05,"**",ifelse(s6[15,7]<.1,"*",
 
 \begin_layout Plain Layout
 
-&  $(
+{tarmac road (in km)} &  $(
 \backslash
 Sexpr{s6[14,1]})$   &  $(
 \backslash
@@ -1856,7 +1856,7 @@ Sexpr{s6[14,7]})$
 
 \begin_layout Plain Layout
 
-{Murram (dealer)}   & $
+{Shop's distance to}   & $
 \backslash
 Sexpr{s6[16,1]}^{
 \backslash
@@ -1920,7 +1920,7 @@ Sexpr{ifelse(s6[18,7]<.01,"***",ifelse(s6[18,7]<.05,"**",ifelse(s6[18,7]<.1,"*",
 
 \begin_layout Plain Layout
 
-&  $(
+{murram road (in km)} &  $(
 \backslash
 Sexpr{s6[17,1]})$   &  $(
 \backslash
@@ -1943,7 +1943,7 @@ Sexpr{s6[17,7]})$
 
 \begin_layout Plain Layout
 
-{Only farm inputs sold}   & $
+{Shop sells only}   & $
 \backslash
 Sexpr{s6[19,1]}^{
 \backslash
@@ -2007,7 +2007,7 @@ Sexpr{ifelse(s6[21,7]<.01,"***",ifelse(s6[21,7]<.05,"**",ifelse(s6[21,7]<.1,"*",
 
 \begin_layout Plain Layout
 
-&  $(
+{farm inputs} &  $(
 \backslash
 Sexpr{s6[20,1]})$   &  $(
 \backslash
@@ -2030,7 +2030,7 @@ Sexpr{s6[20,7]})$
 
 \begin_layout Plain Layout
 
-{Years in business}   & $
+{Shop's age}   & $
 \backslash
 Sexpr{s6[22,1]}^{
 \backslash
@@ -2094,7 +2094,7 @@ Sexpr{ifelse(s6[24,7]<.01,"***",ifelse(s6[24,7]<.05,"**",ifelse(s6[24,7]<.1,"*",
 
 \begin_layout Plain Layout
 
-&  $(
+{(in years)} &  $(
 \backslash
 Sexpr{s6[23,1]})$   &  $(
 \backslash
@@ -2117,7 +2117,7 @@ Sexpr{s6[23,7]})$
 
 \begin_layout Plain Layout
 
-{Dedicated area}   & $
+{Seed is stored in}   & $
 \backslash
 Sexpr{s6[25,1]}^{
 \backslash
@@ -2181,7 +2181,7 @@ Sexpr{ifelse(s6[27,7]<.01,"***",ifelse(s6[27,7]<.05,"**",ifelse(s6[27,7]<.1,"*",
 
 \begin_layout Plain Layout
 
-&  $(
+{dedicated area} &  $(
 \backslash
 Sexpr{s6[26,1]})$   &  $(
 \backslash
@@ -2204,7 +2204,7 @@ Sexpr{s6[26,7]})$
 
 \begin_layout Plain Layout
 
-{Pest problem}   & $
+{Shop has problem}   & $
 \backslash
 Sexpr{s6[28,1]}^{
 \backslash
@@ -2268,7 +2268,7 @@ Sexpr{ifelse(s6[30,7]<.01,"***",ifelse(s6[30,7]<.05,"**",ifelse(s6[30,7]<.1,"*",
 
 \begin_layout Plain Layout
 
-&  $(
+{with pests} &  $(
 \backslash
 Sexpr{s6[29,1]})$   &  $(
 \backslash
@@ -2291,7 +2291,7 @@ Sexpr{s6[29,7]})$
 
 \begin_layout Plain Layout
 
-{Insulated roof}   & $
+{Shop has}   & $
 \backslash
 Sexpr{s6[31,1]}^{
 \backslash
@@ -2355,7 +2355,7 @@ Sexpr{ifelse(s6[33,7]<.01,"***",ifelse(s6[33,7]<.05,"**",ifelse(s6[33,7]<.1,"*",
 
 \begin_layout Plain Layout
 
-&  $(
+{insulated roof} &  $(
 \backslash
 Sexpr{s6[32,1]})$   &  $(
 \backslash
@@ -2378,7 +2378,7 @@ Sexpr{s6[32,7]})$
 
 \begin_layout Plain Layout
 
-{Heatproof wall}   & $
+{Shop has}   & $
 \backslash
 Sexpr{s6[34,1]}^{
 \backslash
@@ -2442,7 +2442,7 @@ Sexpr{ifelse(s6[36,7]<.01,"***",ifelse(s6[36,7]<.05,"**",ifelse(s6[36,7]<.1,"*",
 
 \begin_layout Plain Layout
 
-&  $(
+{insulated walls} &  $(
 \backslash
 Sexpr{s6[35,1]})$   &  $(
 \backslash
@@ -2465,7 +2465,7 @@ Sexpr{s6[35,7]})$
 
 \begin_layout Plain Layout
 
-{Ventilated}   & $
+{Shop is}   & $
 \backslash
 Sexpr{s6[37,1]}^{
 \backslash
@@ -2529,6 +2529,11 @@ Sexpr{ifelse(s6[39,7]<.01,"***",ifelse(s6[39,7]<.05,"**",ifelse(s6[39,7]<.1,"*",
 
 \begin_layout Plain Layout
 
+{ventilated}
+\end_layout
+
+\begin_layout Plain Layout
+
 &  $(
 \backslash
 Sexpr{s6[38,1]})$   &  $(
@@ -2552,7 +2557,7 @@ Sexpr{s6[38,7]})$
 
 \begin_layout Plain Layout
 
-{Bad lighting}   & $
+{Seed is stored}   & $
 \backslash
 Sexpr{s6[40,1]}^{
 \backslash
@@ -2616,6 +2621,11 @@ Sexpr{ifelse(s6[42,7]<.01,"***",ifelse(s6[42,7]<.05,"**",ifelse(s6[42,7]<.1,"*",
 
 \begin_layout Plain Layout
 
+{in poor lighting}
+\end_layout
+
+\begin_layout Plain Layout
+
 &  $(
 \backslash
 Sexpr{s6[41,1]})$   &  $(
@@ -2639,7 +2649,7 @@ Sexpr{s6[41,7]})$
 
 \begin_layout Plain Layout
 
-{Stored badly}   & $
+{Seed is stored}   & $
 \backslash
 Sexpr{s6[43,1]}^{
 \backslash
@@ -2703,7 +2713,7 @@ Sexpr{ifelse(s6[45,7]<.01,"***",ifelse(s6[45,7]<.05,"**",ifelse(s6[45,7]<.1,"*",
 
 \begin_layout Plain Layout
 
-&  $(
+{on poor surface} &  $(
 \backslash
 Sexpr{s6[44,1]})$   &  $(
 \backslash
@@ -2726,7 +2736,7 @@ Sexpr{s6[44,7]})$
 
 \begin_layout Plain Layout
 
-{Open storage}   & $
+{Seed is stored}   & $
 \backslash
 Sexpr{s6[46,1]}^{
 \backslash
@@ -2790,6 +2800,11 @@ Sexpr{ifelse(s6[48,7]<.01,"***",ifelse(s6[48,7]<.05,"**",ifelse(s6[48,7]<.1,"*",
 
 \begin_layout Plain Layout
 
+{in open containers}
+\end_layout
+
+\begin_layout Plain Layout
+
 &  $(
 \backslash
 Sexpr{s6[47,1]})$   &  $(
@@ -2813,7 +2828,7 @@ Sexpr{s6[47,7]})$
 
 \begin_layout Plain Layout
 
-{Has certificate}   & $
+{Shop displays}   & $
 \backslash
 Sexpr{s6[49,1]}^{
 \backslash
@@ -2877,6 +2892,11 @@ Sexpr{ifelse(s6[51,7]<.01,"***",ifelse(s6[51,7]<.05,"**",ifelse(s6[51,7]<.1,"*",
 
 \begin_layout Plain Layout
 
+{official certificate}
+\end_layout
+
+\begin_layout Plain Layout
+
 &  $(
 \backslash
 Sexpr{s6[50,1]})$   &  $(
@@ -2900,7 +2920,7 @@ Sexpr{s6[50,7]})$
 
 \begin_layout Plain Layout
 
-{Shop rating}   & $
+{Shop's rating}   & $
 \backslash
 Sexpr{s6[52,1]}^{
 \backslash
@@ -2964,6 +2984,11 @@ Sexpr{ifelse(s6[54,7]<.01,"***",ifelse(s6[54,7]<.05,"**",ifelse(s6[54,7]<.1,"*",
 
 \begin_layout Plain Layout
 
+{by enumerator}
+\end_layout
+
+\begin_layout Plain Layout
+
 &  $(
 \backslash
 Sexpr{s6[53,1]})$   &  $(
@@ -2987,7 +3012,7 @@ Sexpr{s6[53,7]})$
 
 \begin_layout Plain Layout
 
-{Complaint}   & $
+{Shop's customer}   & $
 \backslash
 Sexpr{s6[55,1]}^{
 \backslash
@@ -3051,6 +3076,11 @@ Sexpr{ifelse(s6[57,7]<.01,"***",ifelse(s6[57,7]<.05,"**",ifelse(s6[57,7]<.1,"*",
 
 \begin_layout Plain Layout
 
+{complained about seed}
+\end_layout
+
+\begin_layout Plain Layout
+
 &  $(
 \backslash
 Sexpr{s6[56,1]})$   &  $(
@@ -3074,7 +3104,7 @@ Sexpr{s6[56,7]})$
 
 \begin_layout Plain Layout
 
-{Temperature}   & $
+{Shop's}   & $
 \backslash
 Sexpr{s6[58,1]}^{
 \backslash
@@ -3138,6 +3168,11 @@ Sexpr{ifelse(s6[60,7]<.01,"***",ifelse(s6[60,7]<.05,"**",ifelse(s6[60,7]<.1,"*",
 
 \begin_layout Plain Layout
 
+{temperature}  
+\end_layout
+
+\begin_layout Plain Layout
+
 &  $(
 \backslash
 Sexpr{s6[59,1]})$   &  $(
@@ -3161,7 +3196,7 @@ Sexpr{s6[59,7]})$
 
 \begin_layout Plain Layout
 
-{Leak proof}   & $
+{Shop has}   & $
 \backslash
 Sexpr{s6[61,1]}^{
 \backslash
@@ -3221,6 +3256,11 @@ Sexpr{ifelse(s6[63,7]<.01,"***",ifelse(s6[63,7]<.05,"**",ifelse(s6[63,7]<.1,"*",
 
 \backslash
 
+\end_layout
+
+\begin_layout Plain Layout
+
+{leak-proof roof}
 \end_layout
 
 \begin_layout Plain Layout
@@ -3635,7 +3675,7 @@ hline
 
 \begin_layout Plain Layout
 
-{Intercept}                  & $
+{Constant}                  & $
 \backslash
 Sexpr{s7[1,1]}$ & $
 \backslash
@@ -3701,7 +3741,7 @@ Sexpr{s7[2,7]})$
 
 \begin_layout Plain Layout
 
-{Male dealers}   & $
+{Dealer is male}   & $
 \backslash
 Sexpr{s7[4,1]}^{
 \backslash
@@ -3919,7 +3959,7 @@ label{table:table7}
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -4171,7 +4211,7 @@ hline
 
 \begin_layout Plain Layout
 
-{Intercept}                  & $
+{Constant}                  & $
 \backslash
 Sexpr{s8[1,1]}$ & $
 \backslash
@@ -4237,7 +4277,7 @@ Sexpr{s8[2,7]})$
 
 \begin_layout Plain Layout
 
-{Male dealers}   & $
+{Dealer is male}   & $
 \backslash
 Sexpr{s8[4,1]}^{
 \backslash
@@ -4388,6 +4428,11 @@ Sexpr{ifelse(s8[9,7]<.01,"***",ifelse(s8[9,7]<.05,"**",ifelse(s8[9,7]<.1,"*","")
 
 \begin_layout Plain Layout
 
+{(in years)}
+\end_layout
+
+\begin_layout Plain Layout
+
 &  $(
 \backslash
 Sexpr{s8[8,1]})$   &  $(
@@ -4411,7 +4456,7 @@ Sexpr{s8[8,7]})$
 
 \begin_layout Plain Layout
 
-{Educated dealers}   & $
+{Dealer finished}   & $
 \backslash
 Sexpr{s8[10,1]}^{
 \backslash
@@ -4475,6 +4520,11 @@ Sexpr{ifelse(s8[12,7]<.01,"***",ifelse(s8[12,7]<.05,"**",ifelse(s8[12,7]<.1,"*",
 
 \begin_layout Plain Layout
 
+{secondary education}
+\end_layout
+
+\begin_layout Plain Layout
+
 &  $(
 \backslash
 Sexpr{s8[11,1]})$   &  $(
@@ -4498,7 +4548,7 @@ Sexpr{s8[11,7]})$
 
 \begin_layout Plain Layout
 
-{Tarmac (dealer)}   & $
+{Shop's distance to}   & $
 \backslash
 Sexpr{s8[13,1]}^{
 \backslash
@@ -4562,6 +4612,11 @@ Sexpr{ifelse(s8[15,7]<.01,"***",ifelse(s8[15,7]<.05,"**",ifelse(s8[15,7]<.1,"*",
 
 \begin_layout Plain Layout
 
+{tarmac road (in km)} 
+\end_layout
+
+\begin_layout Plain Layout
+
 &  $(
 \backslash
 Sexpr{s8[14,1]})$   &  $(
@@ -4585,7 +4640,7 @@ Sexpr{s8[14,7]})$
 
 \begin_layout Plain Layout
 
-{Murram (dealer)}   & $
+{Shop's distance to}   & $
 \backslash
 Sexpr{s8[16,1]}^{
 \backslash
@@ -4645,6 +4700,11 @@ Sexpr{ifelse(s8[18,7]<.01,"***",ifelse(s8[18,7]<.05,"**",ifelse(s8[18,7]<.1,"*",
 
 \backslash
 
+\end_layout
+
+\begin_layout Plain Layout
+
+{murram road (in km)} 
 \end_layout
 
 \begin_layout Plain Layout
