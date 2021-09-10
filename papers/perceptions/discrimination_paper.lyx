@@ -182,6 +182,30 @@ In traditions societies with strong gender norms and customs, small businesses
  are often one of the few options that are available to women (as opposed
  to commercial farming) - see literature on women in the informal sector.
  Argue that markets are typically full with women...
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+this is cut & paste from this recent study (https://www.sciencedirect.com/science/
+article/pii/S0306919220302037?dgcid=raven_sd_via_email)
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+For the vendors themselves, there has been a range of studies (Anku and
+ Ahorbo, 2017, FAO, 2016a, Skinner and Haysom, 2016) that both illustrate
+ the diversity among vendors (e.g., in educational level, nationality, to
+ what degree vending is a survival strategy) and identify some general features
+ of them: they tend to be self-employed or owner-operators, female, and
+ crucial sources of employment, especially for women.
+\begin_inset Quotes erd
+\end_inset
+
+ 
 \end_layout
 
 \begin_layout Itemize
@@ -29667,8 +29691,17 @@ Conclusion
 
 \begin_layout Standard
 We find some evidence that female agro-input dealers are rated lower than
- their male counterparts, and that this difference can not be attributed
- to differences in quality.
+ their male counterparts.
+ We further find that these difference in ratings originate at the farmer
+ level: the differences in rating persist even after controlling for (quality
+ related) observables at the dealer level.
+ They are also not due to unobservable dealer level characteristics, such
+ as for instance dealer effort.
+ At the same time, we do not find that differences are due to discrimination,
+ but rather emanate from differences between farmers that confound the relations
+hip between dealer gender and how dealers are rated.
+ This could be both observable (eg education level of farmers) or unobservable
+ (conservative farmers rating lower).
  
 \end_layout
 
