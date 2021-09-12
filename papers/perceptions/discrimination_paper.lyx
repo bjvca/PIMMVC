@@ -216,6 +216,27 @@ the hole discussion about experience goods (or Naureen Karachiwala even
 
 \begin_layout Itemize
 explain how gender related bias in rating may affect inclusion.
+\begin_inset Note Note
+status open
+
+\begin_layout Itemize
+additional thoughts: often, the controls seems somewhat ad hoc.
+ Should we make a better plan (eg when only dealer level, when only farmer
+ level)
+\end_layout
+
+\begin_layout Itemize
+that last estimator if farmers rate (a random sample of) the same agro-input
+ dealers (or agro-input dealers rate the same (random sample of a) set of
+ farmers), can we maintain that observations are independent? furthermore,
+ is it realistic to assume that each farmer rates a random subset of the
+ set of all input dealers? Maybe we should drop this last estimator after
+ all? Does it add critical insights to the story?
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section*
