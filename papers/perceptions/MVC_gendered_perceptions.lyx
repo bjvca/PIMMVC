@@ -280,9 +280,7 @@ nt consequences for the entire supply chain, especially if perceptions do
 \begin_layout Standard
 Despite the importance of beliefs and perceptions for transactions within
  food supply chains, there are few studies that track perceptions throughout
- the chain.
- This is at least partly because perceptions are not always objectively
- measurable.
+ the chain, partly because perceptions are not always objectively measurable.
  However, we cannot ignore the importance of perceptions as a crossing node
  for operational psychological preferences and real economic mechanisms
  in the markets.
@@ -315,8 +313,8 @@ We study the case of maize value chains in Uganda where ratings are used
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-Ratings can be used as a tool to understand what factors determine widespread
- perceptions about certain actors in the food value chains.
+Ratings can be used as a tool to understand perceptions about certain actors
+ in the food value chains.
  The literature shows that ratings can be used as an instrument for identifying
  performance levels of various actors in markets and industries, for information
  transparency 
@@ -327,8 +325,31 @@ literal "true"
 
 \end_inset
 
- and for decision management.
- Various rating based decision management studies come from the financial
+ and for decision management (for instance, in the financial sector as discussed
+ by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Bolton2012"
+literal "true"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "karminsky2009ratings"
+literal "true"
+
+\end_inset
+
+).
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\paragraph_spacing onehalf
+Various rating based decision management studies come from the financial
  sector, like credit ratings explaining investment decisions (
 \begin_inset CommandInset citation
 LatexCommand citealp
@@ -362,7 +383,11 @@ literal "true"
 \end_inset
 
 ).
- In marketing research, ratings are the tool to identify demand (
+\end_layout
+
+\end_inset
+
+In marketing research, ratings are the tool to identify demand (
 \begin_inset CommandInset citation
 LatexCommand citealp
 key "Dhar2016"
@@ -378,8 +403,7 @@ literal "true"
 
 \end_inset
 
-) and helps the product manufacturer to improve quality and align the product
- features with consumer tastes (
+), quality improvement and product alignment with consumer tastes (
 \begin_inset CommandInset citation
 LatexCommand citealp
 key "Cheung2003,Barton2006"
@@ -397,7 +421,14 @@ literal "true"
 
 \end_inset
 
-), teaching and learning patterns (
+).
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\paragraph_spacing onehalf
+teaching and learning patterns (
 \begin_inset CommandInset citation
 LatexCommand citealp
 key "Feldman2007"
@@ -429,13 +460,17 @@ literal "true"
 
 \end_inset
 
-).
- Similarly, ratings can be used to study various agricultural aspects, providing
+)
+\end_layout
+
+\end_inset
+
+Similarly, ratings can be used to study various agricultural aspects, providing
  an understanding of the perceptions of the different value chain actors.
  Recently, the study of perceptions has also been applied to food supply
- chains where perceptions have been found to correlate to innovations in
- supply chains and indicate loopholes in the performance of involved actors
- (
+ chains where perceptions have been found to correlate with innovations
+ in supply chains and indicate loopholes in the performance of involved
+ actors (
 \begin_inset CommandInset citation
 LatexCommand citealp
 key "Ola2020,Odongo2016"
