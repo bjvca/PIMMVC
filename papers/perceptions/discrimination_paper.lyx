@@ -12,7 +12,7 @@ knitr
 \maintain_unincluded_children false
 \language english
 \language_package default
-\inputencoding auto
+\inputencoding utf8
 \fontencoding global
 \font_roman "default" "default"
 \font_sans "default" "default"
@@ -46,9 +46,9 @@ knitr
 \use_package stackrel 1
 \use_package stmaryrd 1
 \use_package undertilde 1
-\cite_engine basic
-\cite_engine_type default
-\biblio_style plain
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style plainnat
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
@@ -486,12 +486,56 @@ noprefix "false"
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-\varepsilon_{f,d}=\nu_{f}+\omega_{d}+\epsilon_{f,d}
+\varepsilon_{f,d}=\nu_{f}+\omega_{d}+\epsilon_{f,d}\label{eq:error-component}
 \end{equation}
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:error-component"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ shows that dyadic nature of our data leads to two-way clustering in the
+ error term.
+ As long as the error term is uncorrelated with the explanatory variables
+ included in equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:base"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, Ordinary Least Squares (OLS) remains consistent.
+ However, not taking into account within-cluster error correlation generally
+ leads to standard errors that are biased downward, leading to under-rejection
+ of the null of no effect.
+ In our case, it should be noted that clustering is non-nested.
+ As traditional cluster-robust inference can only deal with clustering in
+ one of the dimensions, our strategy will mostly consist of including sufficient
+ regressors to eliminate concern about error correlation in one dimension,
+ and then do cluster-robust inference for that remaining dimension 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Cameron2015b"
+literal "false"
+
+\end_inset
+
+.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -506,17 +550,16 @@ While the structure of our dataset leads to some practical problems due
  for farmer level characteristics that also may affect how agro-input dealers
  are rated (such as the education level of the farmer experience with commercial
  farm inputs).
- Furthermore, repeated observations per agro-input dealer that can be used
- to exploit variation within agro-input dealers—for instance, the fact that
+ Furthermore, repeated observations per agro-input dealer can be used to
+ exploit variation within agro-input dealers—for instance, the fact that
  an agro-input dealer is rated by both male and female farmers—and control
  for agro-input dealer fixed effects such as the education level or experience
  of the agro-input dealer.
  Depending on the research focus—the gender of the input dealer getting
  rated or the gender of the farmer doing the rating—what exactly can be
- learned from these different (mixed effects) models we estimate will differ
- as well.
- As such, the discussion on the exact models we will estimate is deferred
- to the results section (Section 
+ learned from the various models we estimate will differ as well.
+ As such, the discussion on the exact models we will estimate and why is
+ deferred to the results section (Section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Results"
@@ -548,37 +591,6 @@ We now turn to the results of the analysis where we estimate a series of
  gender of the farmer who rates the dealer.
 \end_layout
 
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-A Practitioner’s Guide to Cluster-Robust Inference:
-\end_layout
-
-\begin_layout Plain Layout
-The discussion to date has presumed that if there is more than one potential
- way to cluster, these ways are nested in each other, such as households
- within states.
- But when clusters are non-nested, traditional cluster-robust inference
- can only deal with one of the dimensions.
- In some applications it is possible to include sufficient regressors to
- eliminate concern about error correlation in all but one dimension, and
- then do cluster-robust inference for that remaining dimension.
- A leading example is that in a state-year panel there may be clustering
- both within years and within states.
- If the within-year clustering is due to shocks that are the same across
- all observations in a given year, then including year fixed effects as
- regressors will absorb within-year clustering, and inference then need
- only control for clustering on state.
- 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subsection*
 Question 1: Do farmers discriminate against female agro-input dealers? (Dealer's
  gender effect)
@@ -588,37 +600,9 @@ Question 1: Do farmers discriminate against female agro-input dealers? (Dealer's
 A useful starting point to test for discrimination related to agro-input
  dealer's gender is to simply compare average ratings received by male agro-inpu
 t dealers to average ratings received by female agro-input dealers.
- One can do the comparisons on the individual ratings 
-\begin_inset Formula $\left(y_{f,d}\right)$
-\end_inset
-
-.
- However, as some agro-input dealers are rated by more farmers than other
- agro-input dealers, different agro-input dealers will receive different
- weights
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-Furthermore, error terms in equation 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:base"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
- will be correlated within agro-input dealers
-\end_layout
-
-\end_inset
-
-.
- A better approach is to first compute average scores at the agro-input
- dealer level and then compare male and female agro-input dealers, amounting
- to the between agro-input dealers estimator.
+ To do so, we first compute average scores at the agro-input dealer level
+ and then compare male and female agro-input dealers, amounting to the between
+ agro-input dealers estimator.
  Equation 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -27750,7 +27734,7 @@ label{table:table15}
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -30543,6 +30527,18 @@ hip between dealer gender and how dealers are rated.
  This could be both observable (eg education level of farmers) or unobservable
  (conservative farmers rating lower).
  
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+btprint "btPrintCited"
+bibfiles "discrimination"
+options "chicago"
+
+\end_inset
+
+
 \end_layout
 
 \end_body
