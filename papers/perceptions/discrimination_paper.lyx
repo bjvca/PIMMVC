@@ -327,16 +327,12 @@ we should add here that this was asked in relation to how it is advertised
  the agro-input dealer).
 \end_layout
 
-\begin_layout Part*
-Models
-\end_layout
-
 \begin_layout Section*
 Empirical strategy
 \end_layout
 
 \begin_layout Standard
-Our empirical strategy exploits the particular nature of the data where
+Our empirical strategy starts from the particular nature of the data, where
  each farmer in our dataset rates several input dealers and each input dealer
  in our dataset is rated by several farmers.
  A useful starting point is the following specification:
@@ -358,7 +354,7 @@ Here,
 \begin_inset Formula $y_{f,d}$
 \end_inset
 
- represents the rating on a scale of 1 (poor) to 5 (excellent) given by
+ represents the rating, on a scale of 1 (poor) to 5 (excellent), given by
  farmer 
 \emph on
 f
@@ -409,26 +405,12 @@ d
 \begin_inset Formula $\left(x_{f}\right)$
 \end_inset
 
- and others who vary only at the input-dealer level 
+ and others that vary only at the input-dealer level 
 \begin_inset Formula $\left(x_{d}\right)$
 \end_inset
 
 .
  
-\begin_inset Formula $\varepsilon_{f,d}$
-\end_inset
-
- is an error term
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-what do we assume about distribution of the error term
-\end_layout
-
-\end_inset
-
- and 
 \begin_inset Formula $\alpha$
 \end_inset
 
@@ -440,10 +422,69 @@ what do we assume about distribution of the error term
 \begin_inset Formula $\gamma$
 \end_inset
 
- are parameters to be estimated.
+ are parameters to be estimated, and 
+\begin_inset Formula $\varepsilon_{f,d}$
+\end_inset
+
+ is a residual.
 \end_layout
 
 \begin_layout Standard
+Because the same farmer may rate several agro-input dealers, we can not
+ assume that the different observations in equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:base"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ are independent.
+ For example, the ratings that a farmer gives may be affected by an unobservable
+ characteristic of the farmer (eg.
+ a poor experience with an agro-input dealer in a previous year), which
+ will affect the ratings received by all agro-input dealers that were rate
+ by this particular farmer.
+ Furthermore, the same agro-input dealer may be rated by several farmers,
+ leading to interdependence in the other dimension.
+ For example, the ratings that an agro-input dealer receives my be affected
+ by an unobservable characteristic of the agro-input dealer (eg.
+ dealer effort), which will affect the ratings given by all farmers that
+ rated this particular agro-input dealer.
+ In equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:base"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, this leads to a composite error term, 
+\begin_inset Formula $\left(\varepsilon_{f,d}\right)$
+\end_inset
+
+ that can be decomposed into a farmer specific component 
+\begin_inset Formula $\left(\nu_{f}\right)$
+\end_inset
+
+, an input dealer specific component 
+\begin_inset Formula $\left(\omega_{d}\right)$
+\end_inset
+
+ and a residual 
+\begin_inset Formula $\left(\epsilon_{f,d}\right)$
+\end_inset
+
+ at the rater-ratee level.
+ 
+\end_layout
+
+\begin_layout Standard
+
 The fact that each farmer rates several agro-input dealers results in a
  data set that is reminiscent of panel data: there are repeated observations
  per farmer.
@@ -465,18 +506,32 @@ istics that also may affect how agro-input dealers are rated (such as the
  Similarly, first computing input dealer averages allows one to exploit
  differences between agro-input dealer, such as the gender of the agro-input
  dealer.
- 
+
 \end_layout
 
 \begin_layout Standard
-Together, this leads to four ways to look at the data: differences within
- farmers, differences between farmers, differences within dealers, and differenc
-es between dealers.
+While the structure of our dataset leads to some practical problems due
+ to the interdependence of observations, it also allows us to exploit the
+ error structure to generate more efficient estimators for the parameter
+ of interest and to control for (unobservable) characteristics that may
+ confound the relationship between the variable of interest and the outcome.
+ For example, different ratings given by the same farmer can be used to
+ exploit variation within farmers—in particular, the fact that the same
+ farmer rates both male and female agro-input dealers—while controlling
+ for farmer level characteristics that also may affect how agro-input dealers
+ are rated (such as the education level of the farmer experience with commercial
+ farm inputs).
+ Furthermore, repeated observations per agro-input dealer that can be used
+ to exploit variation within agro-input dealers—for instance, the fact that
+ an agro-input dealer is rated by both male and female farmers—and control
+ for agro-input dealer fixed effects such as the education level or experience
+ of the agro-input dealer.
  Depending on the research focus—the gender of the input dealer getting
  rated or the gender of the farmer doing the rating—what exactly can be
- learned from each of these models differs.
- As such, this discussion on the identifying assumptions behind each model
- is deferred to the results section (Section 
+ learned from these different (mixed effects) models we estimate will differ
+ as well.
+ As such, the discussion on the exact models we will estimate is deferred
+ to the results section (Section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Results"
@@ -506,6 +561,37 @@ We now turn to the results of the analysis where we estimate a series of
  We start with an analysis of the impact of the gender of the dealer who
  gets rated by the farmer, followed by an analysis of the impact of the
  gender of the farmer who rates the dealer.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+A Practitioner’s Guide to Cluster-Robust Inference:
+\end_layout
+
+\begin_layout Plain Layout
+The discussion to date has presumed that if there is more than one potential
+ way to cluster, these ways are nested in each other, such as households
+ within states.
+ But when clusters are non-nested, traditional cluster-robust inference
+ can only deal with one of the dimensions.
+ In some applications it is possible to include sufficient regressors to
+ eliminate concern about error correlation in all but one dimension, and
+ then do cluster-robust inference for that remaining dimension.
+ A leading example is that in a state-year panel there may be clustering
+ both within years and within states.
+ If the within-year clustering is due to shocks that are the same across
+ all observations in a given year, then including year fixed effects as
+ regressors will absorb within-year clustering, and inference then need
+ only control for clustering on state.
+ 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection*
@@ -565,7 +651,7 @@ noprefix "false"
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-\frac{1}{F}\underset{f}{\sum}y_{f,d}=\alpha+\gamma\frac{1}{F}\underset{f}{\sum}g_{f,d}+\frac{1}{F}\underset{f}{\sum}\varepsilon_{f,d}\label{eq:six-1}
+\frac{1}{F}\underset{f}{\sum}y_{f,d}=\alpha+\gamma\frac{1}{F}\underset{f}{\sum}g_{f,d}+\frac{1}{F}\underset{f}{\sum}\nu_{f}+\frac{1}{F}\underset{f}{\sum}\epsilon_{d}+\frac{1}{F}\underset{f}{\sum}\varepsilon_{f,d}\label{eq:six-1}
 \end{equation}
 
 \end_inset
