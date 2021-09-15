@@ -484,6 +484,7 @@ noprefix "false"
 \end_layout
 
 \begin_layout Standard
+
 \begin_inset Formula 
 \begin{equation}
 \varepsilon_{f,d}=\nu_{f}+\omega_{d}+\epsilon_{f,d}\label{eq:error-component}
@@ -491,6 +492,28 @@ noprefix "false"
 
 \end_inset
 
+
+The fact that each farmer rates several agro-input dealers results in a
+ data set that is reminiscent of panel data: there are repeated observations
+ per farmer.
+ Different ratings given by the same farmer can be used to exploit variation
+ within farmers—in particular, the fact that the same farmer rates both
+ male and female agro-input dealers—while controlling for farmer level character
+istics that also may affect how agro-input dealers are rated (such as the
+ education level of the farmer experience with commercial farm inputs).
+ Furthermore, if we first calculate farmer level averages, differences between
+ farmers—such as the gender of the farmer—can be used to answer our research
+ questions, leading to the standard between models we know from panel data
+ analysis.
+ However, each agro-input dealer is also rated by several farmers.
+ As such, there are also repeated observations per agro-input dealer that
+ can be used to exploit variation within agro-input dealers — for instance,
+ the fact that an agro-input dealer is rated by both male and feFarmer is
+ males—and control for agro-input dealer fixed effects such as the education
+ level or experience of the agro-input dealer.
+ Similarly, first computing input dealer averages allows one to exploit
+ differences between agro-input dealer, such as the gender of the agro-input
+ dealer.
 
 \end_layout
 
@@ -726,10 +749,10 @@ The price competitive dimension seems to drive differences in overall rating.
 \end_layout
 
 \begin_layout Standard
-The finding that female dealers get lower ratings than their male competitors
- on average does not necessarily mean that female dealers are discriminated
+The finding that feDealer is males get lower ratings than their male competitors
+ on average does not necessarily mean that feDealer is males are discriminated
  against.
- Instead, female dealers could truly be poorer dealers, for example due
+ Instead, feDealer is males could truly be poorer dealers, for example due
  to their lack of access to education or training, or lack of access to
  credit to improve storage facilities.
  Therefore, it may be instructive to control for dealer level observable
@@ -1119,7 +1142,7 @@ Sexpr{s5[2,7]})$
 
 \begin_layout Plain Layout
 
-{Male dealer}   & $
+{Dealer is male}   & $
 \backslash
 Sexpr{s5[4,1]}^{
 \backslash
@@ -1655,7 +1678,7 @@ Sexpr{s6[2,7]})$
 
 \begin_layout Plain Layout
 
-{Male dealer}   & $
+{Dealer is male}   & $
 \backslash
 Sexpr{s6[4,1]}^{
 \backslash
@@ -3884,7 +3907,7 @@ Sexpr{s7[2,7]})$
 
 \begin_layout Plain Layout
 
-{Male dealer}   & $
+{Dealer is male}   & $
 \backslash
 Sexpr{s7[4,1]}^{
 \backslash
@@ -4420,7 +4443,7 @@ Sexpr{s8[2,7]})$
 
 \begin_layout Plain Layout
 
-{Male dealer}   & $
+{Dealer is male}   & $
 \backslash
 Sexpr{s8[4,1]}^{
 \backslash
@@ -6397,8 +6420,8 @@ Although it should be noted that we do not control for everything – see
 \end_inset
 
 .
- Because quality is controlled for, female dealers would not be worse than
- their male competitors, and so discrimination against female agro-input
+ Because quality is controlled for, feDealer is males would not be worse
+ than their male competitors, and so discrimination against female agro-input
  dealers on the part of the farmers seems a reasonable explanation.
  However, farmer level characteristics could confound the relationship between
  an agro-input dealer's gender and the rating that the farmer provides.
@@ -6459,7 +6482,7 @@ noprefix "false"
 \end_inset
 
  shows parameter estimates for an indicator variable that takes the value
- of one if the agro-input Male dealer, estimated using a model that includes
+ of one if the agro-input Dealer is male, estimated using a model that includes
  farmer fixed effects (using the within transformation of equation 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -6796,7 +6819,7 @@ hline
 
 \begin_layout Plain Layout
 
-{Male dealer}   & $
+{Dealer is male}   & $
 \backslash
 Sexpr{fe1[2,1]}^{
 \backslash
@@ -7270,7 +7293,7 @@ hline
 
 \begin_layout Plain Layout
 
-{Male dealer}   & $
+{Dealer is male}   & $
 \backslash
 Sexpr{fe2[2,1]}^{
 \backslash
@@ -9479,7 +9502,7 @@ hline
 
 \begin_layout Plain Layout
 
-{Male dealer}   & $
+{Dealer is male}   & $
 \backslash
 Sexpr{fe3[2,1]}^{
 \backslash
@@ -9940,7 +9963,7 @@ hline
 
 \begin_layout Plain Layout
 
-{Male dealer}   & $
+{Dealer is male}   & $
 \backslash
 Sexpr{fe4[2,1]}^{
 \backslash
@@ -12018,8 +12041,8 @@ In fact, if the panel was completely balanced (ie.
 \begin_inset Formula $\frac{1}{D}\underset{d}{\sum}g_{f,d}$
 \end_inset
 
- would be the same for all farmers (the share of female dealers in the sample)
- and the dealer's gender effect would be absorbed by the constant.
+ would be the same for all farmers (the share of feDealer is males in the
+ sample) and the dealer's gender effect would be absorbed by the constant.
  We can estimate a dealer invariant effect like the dealer's gender effect
  in a between farmer model only because we have an incomplete panel.
 \end_layout
@@ -12030,8 +12053,8 @@ In fact, if the panel was completely balanced (ie.
 \begin_inset Formula $\overline{g}_{f}$
 \end_inset
 
- is not a dummy but a variable between 0 and 1 indicating the share of female
- dealers in the total number of dealers that were rated by one particular
+ is not a dummy but a variable between 0 and 1 indicating the share of feDealer
+ is males in the total number of dealers that were rated by one particular
  farmer.
  The fact that a particular farmer rated more relatively more women can
  then be used to test if this also led to relatively lower scores.
@@ -12062,12 +12085,12 @@ noprefix "false"
 status collapsed
 
 \begin_layout Plain Layout
-This model requires that the likelihood that a farmer rates a female dealer
- is uncorrelated with farmer specific unobservable effects eg.
+This model requires that the likelihood that a farmer rates a feDealer is
+ male is uncorrelated with farmer specific unobservable effects eg.
  discrimination.
  However, our panel/ incompleteness could be not random.
  Instead, there could be selection bias: discriminating farmers could be
- less likely to rate female dealers (but: farmers rate dealers they know,
+ less likely to rate feDealer is males (but: farmers rate dealers they know,
  not ony dealers they're customer of ...)
 \end_layout
 
@@ -12393,7 +12416,7 @@ Sexpr{s1[2,7]})$
 
 \begin_layout Plain Layout
 
-{Male dealer}   & $
+{Dealer is male}   & $
 \backslash
 Sexpr{s1[4,1]}^{
 \backslash
@@ -12600,22 +12623,6 @@ label{table:table1}
 \end_inset
 
 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-The number of obs.
- should be equal to the number of (clearinghouse) treated farmers (1931).
- However, there seem to be 1201 treated farmers who did not rate a single
- dealer (see reviews_bf), so that the nobs is 730 here.
 \end_layout
 
 \end_inset
@@ -12926,7 +12933,7 @@ Sexpr{s2[2,7]})$
 
 \begin_layout Plain Layout
 
-{Male dealer}   & $
+{Dealer is male}   & $
 \backslash
 Sexpr{s2[4,1]}^{
 \backslash
@@ -13373,1754 +13380,6 @@ Sexpr{s2[17,5]})$ & $(
 Sexpr{s2[17,6]})$ & $(
 \backslash
 Sexpr{s2[17,7]})$
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{Dealer's age}   & $
-\backslash
-Sexpr{s2[19,1]}^{
-\backslash
-Sexpr{ifelse(s2[21,1]<.01,"***",ifelse(s2[21,1]<.05,"**",ifelse(s2[21,1]<.1,"*","")
-))}}$ & $
-\backslash
-Sexpr{s2[19,2]}^{
-\backslash
-Sexpr{ifelse(s2[21,2]<.01,"***",ifelse(s2[21,2]<.05,"**",ifelse(s2[21,2]<.1,"*","")
-))}}$  & $
-\backslash
-Sexpr{s2[19,3]}^{
-\backslash
-Sexpr{ifelse(s2[21,3]<.01,"***",ifelse(s2[21,3]<.05,"**",ifelse(s2[21,3]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{s2[19,4]}^{
-\backslash
-Sexpr{ifelse(s2[21,4]<.01,"***",ifelse(s2[21,4]<.05,"**",ifelse(s2[21,4]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[19,5]}^{
-\backslash
-Sexpr{ifelse(s2[21,5]<.01,"***",ifelse(s2[21,5]<.05,"**",ifelse(s2[21,5]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[19,6]}^{
-\backslash
-Sexpr{ifelse(s2[21,6]<.01,"***",ifelse(s2[21,6]<.05,"**",ifelse(s2[21,6]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[19,7]}^{
-\backslash
-Sexpr{ifelse(s2[21,7]<.01,"***",ifelse(s2[21,7]<.05,"**",ifelse(s2[21,7]<.1,"*","")
-))}}$  
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{(in years)}
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $(
-\backslash
-Sexpr{s2[20,1]})$   &  $(
-\backslash
-Sexpr{s2[20,2]})$ & $(
-\backslash
-Sexpr{s2[20,3]})$ & $(
-\backslash
-Sexpr{s2[20,4]})$ & $(
-\backslash
-Sexpr{s2[20,5]})$ & $(
-\backslash
-Sexpr{s2[20,6]})$ & $(
-\backslash
-Sexpr{s2[20,7]})$
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{Dealer finished}   & $
-\backslash
-Sexpr{s2[22,1]}^{
-\backslash
-Sexpr{ifelse(s2[24,1]<.01,"***",ifelse(s2[24,1]<.05,"**",ifelse(s2[24,1]<.1,"*","")
-))}}$ & $
-\backslash
-Sexpr{s2[22,2]}^{
-\backslash
-Sexpr{ifelse(s2[24,2]<.01,"***",ifelse(s2[24,2]<.05,"**",ifelse(s2[24,2]<.1,"*","")
-))}}$  & $
-\backslash
-Sexpr{s2[22,3]}^{
-\backslash
-Sexpr{ifelse(s2[24,3]<.01,"***",ifelse(s2[24,3]<.05,"**",ifelse(s2[24,3]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{s2[22,4]}^{
-\backslash
-Sexpr{ifelse(s2[24,4]<.01,"***",ifelse(s2[24,4]<.05,"**",ifelse(s2[24,4]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[22,5]}^{
-\backslash
-Sexpr{ifelse(s2[24,5]<.01,"***",ifelse(s2[24,5]<.05,"**",ifelse(s2[24,5]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[22,6]}^{
-\backslash
-Sexpr{ifelse(s2[24,6]<.01,"***",ifelse(s2[24,6]<.05,"**",ifelse(s2[24,6]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[22,7]}^{
-\backslash
-Sexpr{ifelse(s2[24,7]<.01,"***",ifelse(s2[24,7]<.05,"**",ifelse(s2[24,7]<.1,"*","")
-))}}$  
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{secondary education} 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $(
-\backslash
-Sexpr{s2[23,1]})$   &  $(
-\backslash
-Sexpr{s2[23,2]})$ & $(
-\backslash
-Sexpr{s2[23,3]})$ & $(
-\backslash
-Sexpr{s2[23,4]})$ & $(
-\backslash
-Sexpr{s2[23,5]})$ & $(
-\backslash
-Sexpr{s2[23,6]})$ & $(
-\backslash
-Sexpr{s2[23,7]})$ 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{Shop's distance to}   & $
-\backslash
-Sexpr{s2[25,1]}^{
-\backslash
-Sexpr{ifelse(s2[27,1]<.01,"***",ifelse(s2[27,1]<.05,"**",ifelse(s2[27,1]<.1,"*","")
-))}}$ & $
-\backslash
-Sexpr{s2[25,2]}^{
-\backslash
-Sexpr{ifelse(s2[27,2]<.01,"***",ifelse(s2[27,2]<.05,"**",ifelse(s2[27,2]<.1,"*","")
-))}}$  & $
-\backslash
-Sexpr{s2[25,3]}^{
-\backslash
-Sexpr{ifelse(s2[27,3]<.01,"***",ifelse(s2[27,3]<.05,"**",ifelse(s2[27,3]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{s2[25,4]}^{
-\backslash
-Sexpr{ifelse(s2[27,4]<.01,"***",ifelse(s2[27,4]<.05,"**",ifelse(s2[27,4]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[25,5]}^{
-\backslash
-Sexpr{ifelse(s2[27,5]<.01,"***",ifelse(s2[27,5]<.05,"**",ifelse(s2[27,5]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[25,6]}^{
-\backslash
-Sexpr{ifelse(s2[27,6]<.01,"***",ifelse(s2[27,6]<.05,"**",ifelse(s2[27,6]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[25,7]}^{
-\backslash
-Sexpr{ifelse(s2[27,7]<.01,"***",ifelse(s2[27,7]<.05,"**",ifelse(s2[27,7]<.1,"*","")
-))}}$  
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{tarmac road (in km)}
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $(
-\backslash
-Sexpr{s2[26,1]})$   &  $(
-\backslash
-Sexpr{s2[26,2]})$ & $(
-\backslash
-Sexpr{s2[26,3]})$ & $(
-\backslash
-Sexpr{s2[26,4]})$ & $(
-\backslash
-Sexpr{s2[26,5]})$ & $(
-\backslash
-Sexpr{s2[26,6]})$ & $(
-\backslash
-Sexpr{s2[26,7]})$ 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{Shop's distance to}   & $
-\backslash
-Sexpr{s2[28,1]}^{
-\backslash
-Sexpr{ifelse(s2[30,1]<.01,"***",ifelse(s2[30,1]<.05,"**",ifelse(s2[30,1]<.1,"*","")
-))}}$ & $
-\backslash
-Sexpr{s2[28,2]}^{
-\backslash
-Sexpr{ifelse(s2[30,2]<.01,"***",ifelse(s2[30,2]<.05,"**",ifelse(s2[30,2]<.1,"*","")
-))}}$  & $
-\backslash
-Sexpr{s2[28,3]}^{
-\backslash
-Sexpr{ifelse(s2[30,3]<.01,"***",ifelse(s2[30,3]<.05,"**",ifelse(s2[30,3]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{s2[28,4]}^{
-\backslash
-Sexpr{ifelse(s2[30,4]<.01,"***",ifelse(s2[30,4]<.05,"**",ifelse(s2[30,4]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[28,5]}^{
-\backslash
-Sexpr{ifelse(s2[30,5]<.01,"***",ifelse(s2[30,5]<.05,"**",ifelse(s2[30,5]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[28,6]}^{
-\backslash
-Sexpr{ifelse(s2[30,6]<.01,"***",ifelse(s2[30,6]<.05,"**",ifelse(s2[30,6]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[28,7]}^{
-\backslash
-Sexpr{ifelse(s2[30,7]<.01,"***",ifelse(s2[30,7]<.05,"**",ifelse(s2[30,7]<.1,"*","")
-))}}$    
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{murram road (in km)}  
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $(
-\backslash
-Sexpr{s2[29,1]})$   &  $(
-\backslash
-Sexpr{s2[29,2]})$ & $(
-\backslash
-Sexpr{s2[29,3]})$ & $(
-\backslash
-Sexpr{s2[29,4]})$ & $(
-\backslash
-Sexpr{s2[29,5]})$ & $(
-\backslash
-Sexpr{s2[29,6]})$ & $(
-\backslash
-Sexpr{s2[29,7]})$ 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{Shop sells only}   & $
-\backslash
-Sexpr{s2[31,1]}^{
-\backslash
-Sexpr{ifelse(s2[33,1]<.01,"***",ifelse(s2[33,1]<.05,"**",ifelse(s2[33,1]<.1,"*","")
-))}}$ & $
-\backslash
-Sexpr{s2[31,2]}^{
-\backslash
-Sexpr{ifelse(s2[33,2]<.01,"***",ifelse(s2[33,2]<.05,"**",ifelse(s2[33,2]<.1,"*","")
-))}}$  & $
-\backslash
-Sexpr{s2[31,3]}^{
-\backslash
-Sexpr{ifelse(s2[33,3]<.01,"***",ifelse(s2[33,3]<.05,"**",ifelse(s2[33,3]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{s2[31,4]}^{
-\backslash
-Sexpr{ifelse(s2[33,4]<.01,"***",ifelse(s2[33,4]<.05,"**",ifelse(s2[33,4]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[31,5]}^{
-\backslash
-Sexpr{ifelse(s2[33,5]<.01,"***",ifelse(s2[33,5]<.05,"**",ifelse(s2[33,5]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[31,6]}^{
-\backslash
-Sexpr{ifelse(s2[33,6]<.01,"***",ifelse(s2[33,6]<.05,"**",ifelse(s2[33,6]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[31,7]}^{
-\backslash
-Sexpr{ifelse(s2[33,7]<.01,"***",ifelse(s2[33,7]<.05,"**",ifelse(s2[33,7]<.1,"*","")
-))}}$   
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{farm inputs} 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $(
-\backslash
-Sexpr{s2[32,1]})$   &  $(
-\backslash
-Sexpr{s2[32,2]})$ & $(
-\backslash
-Sexpr{s2[32,3]})$ & $(
-\backslash
-Sexpr{s2[32,4]})$ & $(
-\backslash
-Sexpr{s2[32,5]})$ & $(
-\backslash
-Sexpr{s2[32,6]})$ & $(
-\backslash
-Sexpr{s2[32,7]})$
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{Shop's age}   & $
-\backslash
-Sexpr{s2[34,1]}^{
-\backslash
-Sexpr{ifelse(s2[36,1]<.01,"***",ifelse(s2[36,1]<.05,"**",ifelse(s2[36,1]<.1,"*","")
-))}}$ & $
-\backslash
-Sexpr{s2[34,2]}^{
-\backslash
-Sexpr{ifelse(s2[36,2]<.01,"***",ifelse(s2[36,2]<.05,"**",ifelse(s2[36,2]<.1,"*","")
-))}}$  & $
-\backslash
-Sexpr{s2[34,3]}^{
-\backslash
-Sexpr{ifelse(s2[36,3]<.01,"***",ifelse(s2[36,3]<.05,"**",ifelse(s2[36,3]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{s2[34,4]}^{
-\backslash
-Sexpr{ifelse(s2[36,4]<.01,"***",ifelse(s2[36,4]<.05,"**",ifelse(s2[36,4]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[34,5]}^{
-\backslash
-Sexpr{ifelse(s2[36,5]<.01,"***",ifelse(s2[36,5]<.05,"**",ifelse(s2[36,5]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[34,6]}^{
-\backslash
-Sexpr{ifelse(s2[36,6]<.01,"***",ifelse(s2[36,6]<.05,"**",ifelse(s2[36,6]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[34,7]}^{
-\backslash
-Sexpr{ifelse(s2[36,7]<.01,"***",ifelse(s2[36,7]<.05,"**",ifelse(s2[36,7]<.1,"*","")
-))}}$  
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{(in years)} 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $(
-\backslash
-Sexpr{s2[35,1]})$   &  $(
-\backslash
-Sexpr{s2[35,2]})$ & $(
-\backslash
-Sexpr{s2[35,3]})$ & $(
-\backslash
-Sexpr{s2[35,4]})$ & $(
-\backslash
-Sexpr{s2[35,5]})$ & $(
-\backslash
-Sexpr{s2[35,6]})$ & $(
-\backslash
-Sexpr{s2[35,7]})$ 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{Seed is stored}   & $
-\backslash
-Sexpr{s2[37,1]}^{
-\backslash
-Sexpr{ifelse(s2[39,1]<.01,"***",ifelse(s2[39,1]<.05,"**",ifelse(s2[39,1]<.1,"*","")
-))}}$ & $
-\backslash
-Sexpr{s2[37,2]}^{
-\backslash
-Sexpr{ifelse(s2[39,2]<.01,"***",ifelse(s2[39,2]<.05,"**",ifelse(s2[39,2]<.1,"*","")
-))}}$  & $
-\backslash
-Sexpr{s2[37,3]}^{
-\backslash
-Sexpr{ifelse(s2[39,3]<.01,"***",ifelse(s2[39,3]<.05,"**",ifelse(s2[39,3]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{s2[37,4]}^{
-\backslash
-Sexpr{ifelse(s2[39,4]<.01,"***",ifelse(s2[39,4]<.05,"**",ifelse(s2[39,4]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[37,5]}^{
-\backslash
-Sexpr{ifelse(s2[39,5]<.01,"***",ifelse(s2[39,5]<.05,"**",ifelse(s2[39,5]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[37,6]}^{
-\backslash
-Sexpr{ifelse(s2[39,6]<.01,"***",ifelse(s2[39,6]<.05,"**",ifelse(s2[39,6]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[37,7]}^{
-\backslash
-Sexpr{ifelse(s2[39,7]<.01,"***",ifelse(s2[39,7]<.05,"**",ifelse(s2[39,7]<.1,"*","")
-))}}$   
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{in dedicated area}
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $(
-\backslash
-Sexpr{s2[38,1]})$   &  $(
-\backslash
-Sexpr{s2[38,2]})$ & $(
-\backslash
-Sexpr{s2[38,3]})$ & $(
-\backslash
-Sexpr{s2[38,4]})$ & $(
-\backslash
-Sexpr{s2[38,5]})$ & $(
-\backslash
-Sexpr{s2[38,6]})$ & $(
-\backslash
-Sexpr{s2[38,7]})$ 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{Shop has problem}   & $
-\backslash
-Sexpr{s2[40,1]}^{
-\backslash
-Sexpr{ifelse(s2[42,1]<.01,"***",ifelse(s2[42,1]<.05,"**",ifelse(s2[42,1]<.1,"*","")
-))}}$ & $
-\backslash
-Sexpr{s2[40,2]}^{
-\backslash
-Sexpr{ifelse(s2[42,2]<.01,"***",ifelse(s2[42,2]<.05,"**",ifelse(s2[42,2]<.1,"*","")
-))}}$  & $
-\backslash
-Sexpr{s2[40,3]}^{
-\backslash
-Sexpr{ifelse(s2[42,3]<.01,"***",ifelse(s2[42,3]<.05,"**",ifelse(s2[42,3]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{s2[40,4]}^{
-\backslash
-Sexpr{ifelse(s2[42,4]<.01,"***",ifelse(s2[42,4]<.05,"**",ifelse(s2[42,4]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[40,5]}^{
-\backslash
-Sexpr{ifelse(s2[42,5]<.01,"***",ifelse(s2[42,5]<.05,"**",ifelse(s2[42,5]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[40,6]}^{
-\backslash
-Sexpr{ifelse(s2[42,6]<.01,"***",ifelse(s2[42,6]<.05,"**",ifelse(s2[42,6]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[40,7]}^{
-\backslash
-Sexpr{ifelse(s2[42,7]<.01,"***",ifelse(s2[42,7]<.05,"**",ifelse(s2[42,7]<.1,"*","")
-))}}$  
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{with pests} 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $(
-\backslash
-Sexpr{s2[41,1]})$   &  $(
-\backslash
-Sexpr{s2[41,2]})$ & $(
-\backslash
-Sexpr{s2[41,3]})$ & $(
-\backslash
-Sexpr{s2[41,4]})$ & $(
-\backslash
-Sexpr{s2[41,5]})$ & $(
-\backslash
-Sexpr{s2[41,6]})$ & $(
-\backslash
-Sexpr{s2[41,7]})$ 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{Shop has}   & $
-\backslash
-Sexpr{s2[43,1]}^{
-\backslash
-Sexpr{ifelse(s2[45,1]<.01,"***",ifelse(s2[45,1]<.05,"**",ifelse(s2[45,1]<.1,"*","")
-))}}$ & $
-\backslash
-Sexpr{s2[43,2]}^{
-\backslash
-Sexpr{ifelse(s2[45,2]<.01,"***",ifelse(s2[45,2]<.05,"**",ifelse(s2[45,2]<.1,"*","")
-))}}$  & $
-\backslash
-Sexpr{s2[43,3]}^{
-\backslash
-Sexpr{ifelse(s2[45,3]<.01,"***",ifelse(s2[45,3]<.05,"**",ifelse(s2[45,3]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{s2[43,4]}^{
-\backslash
-Sexpr{ifelse(s2[45,4]<.01,"***",ifelse(s2[45,4]<.05,"**",ifelse(s2[45,4]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[43,5]}^{
-\backslash
-Sexpr{ifelse(s2[45,5]<.01,"***",ifelse(s2[45,5]<.05,"**",ifelse(s2[45,5]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[43,6]}^{
-\backslash
-Sexpr{ifelse(s2[45,6]<.01,"***",ifelse(s2[45,6]<.05,"**",ifelse(s2[45,6]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[43,7]}^{
-\backslash
-Sexpr{ifelse(s2[45,7]<.01,"***",ifelse(s2[45,7]<.05,"**",ifelse(s2[45,7]<.1,"*","")
-))}}$   
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{insulated roof} 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $(
-\backslash
-Sexpr{s2[44,1]})$   &  $(
-\backslash
-Sexpr{s2[44,2]})$ & $(
-\backslash
-Sexpr{s2[44,3]})$ & $(
-\backslash
-Sexpr{s2[44,4]})$ & $(
-\backslash
-Sexpr{s2[44,5]})$ & $(
-\backslash
-Sexpr{s2[44,6]})$ & $(
-\backslash
-Sexpr{s2[44,7]})$
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{Shop has}   & $
-\backslash
-Sexpr{s2[46,1]}^{
-\backslash
-Sexpr{ifelse(s2[48,1]<.01,"***",ifelse(s2[48,1]<.05,"**",ifelse(s2[48,1]<.1,"*","")
-))}}$ & $
-\backslash
-Sexpr{s2[46,2]}^{
-\backslash
-Sexpr{ifelse(s2[48,2]<.01,"***",ifelse(s2[48,2]<.05,"**",ifelse(s2[48,2]<.1,"*","")
-))}}$  & $
-\backslash
-Sexpr{s2[46,3]}^{
-\backslash
-Sexpr{ifelse(s2[48,3]<.01,"***",ifelse(s2[48,3]<.05,"**",ifelse(s2[48,3]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{s2[46,4]}^{
-\backslash
-Sexpr{ifelse(s2[48,4]<.01,"***",ifelse(s2[48,4]<.05,"**",ifelse(s2[48,4]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[46,5]}^{
-\backslash
-Sexpr{ifelse(s2[48,5]<.01,"***",ifelse(s2[48,5]<.05,"**",ifelse(s2[48,5]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[46,6]}^{
-\backslash
-Sexpr{ifelse(s2[48,6]<.01,"***",ifelse(s2[48,6]<.05,"**",ifelse(s2[48,6]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[46,7]}^{
-\backslash
-Sexpr{ifelse(s2[48,7]<.01,"***",ifelse(s2[48,7]<.05,"**",ifelse(s2[48,7]<.1,"*","")
-))}}$    
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{insulated walls} 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $(
-\backslash
-Sexpr{s2[47,1]})$   &  $(
-\backslash
-Sexpr{s2[47,2]})$ & $(
-\backslash
-Sexpr{s2[47,3]})$ & $(
-\backslash
-Sexpr{s2[47,4]})$ & $(
-\backslash
-Sexpr{s2[47,5]})$ & $(
-\backslash
-Sexpr{s2[47,6]})$ & $(
-\backslash
-Sexpr{s2[47,7]})$ 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{Shop is}   & $
-\backslash
-Sexpr{s2[49,1]}^{
-\backslash
-Sexpr{ifelse(s2[51,1]<.01,"***",ifelse(s2[51,1]<.05,"**",ifelse(s2[51,1]<.1,"*","")
-))}}$ & $
-\backslash
-Sexpr{s2[49,2]}^{
-\backslash
-Sexpr{ifelse(s2[51,2]<.01,"***",ifelse(s2[51,2]<.05,"**",ifelse(s2[51,2]<.1,"*","")
-))}}$  & $
-\backslash
-Sexpr{s2[49,3]}^{
-\backslash
-Sexpr{ifelse(s2[51,3]<.01,"***",ifelse(s2[51,3]<.05,"**",ifelse(s2[51,3]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{s2[49,4]}^{
-\backslash
-Sexpr{ifelse(s2[51,4]<.01,"***",ifelse(s2[51,4]<.05,"**",ifelse(s2[51,4]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[49,5]}^{
-\backslash
-Sexpr{ifelse(s2[51,5]<.01,"***",ifelse(s2[51,5]<.05,"**",ifelse(s2[51,5]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[49,6]}^{
-\backslash
-Sexpr{ifelse(s2[51,6]<.01,"***",ifelse(s2[51,6]<.05,"**",ifelse(s2[51,6]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[49,7]}^{
-\backslash
-Sexpr{ifelse(s2[51,7]<.01,"***",ifelse(s2[51,7]<.05,"**",ifelse(s2[51,7]<.1,"*","")
-))}}$  
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{ventilated}
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $(
-\backslash
-Sexpr{s2[50,1]})$   &  $(
-\backslash
-Sexpr{s2[50,2]})$ & $(
-\backslash
-Sexpr{s2[50,3]})$ & $(
-\backslash
-Sexpr{s2[50,4]})$ & $(
-\backslash
-Sexpr{s2[50,5]})$ & $(
-\backslash
-Sexpr{s2[50,6]})$ & $(
-\backslash
-Sexpr{s2[50,7]})$
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{Seed is stored}   & $
-\backslash
-Sexpr{s2[52,1]}^{
-\backslash
-Sexpr{ifelse(s2[54,1]<.01,"***",ifelse(s2[54,1]<.05,"**",ifelse(s2[54,1]<.1,"*","")
-))}}$ & $
-\backslash
-Sexpr{s2[52,2]}^{
-\backslash
-Sexpr{ifelse(s2[54,2]<.01,"***",ifelse(s2[54,2]<.05,"**",ifelse(s2[54,2]<.1,"*","")
-))}}$  & $
-\backslash
-Sexpr{s2[52,3]}^{
-\backslash
-Sexpr{ifelse(s2[54,3]<.01,"***",ifelse(s2[54,3]<.05,"**",ifelse(s2[54,3]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{s2[52,4]}^{
-\backslash
-Sexpr{ifelse(s2[54,4]<.01,"***",ifelse(s2[54,4]<.05,"**",ifelse(s2[54,4]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[52,5]}^{
-\backslash
-Sexpr{ifelse(s2[54,5]<.01,"***",ifelse(s2[54,5]<.05,"**",ifelse(s2[54,5]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[52,6]}^{
-\backslash
-Sexpr{ifelse(s2[54,6]<.01,"***",ifelse(s2[54,6]<.05,"**",ifelse(s2[54,6]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[52,7]}^{
-\backslash
-Sexpr{ifelse(s2[54,7]<.01,"***",ifelse(s2[54,7]<.05,"**",ifelse(s2[54,7]<.1,"*","")
-))}}$  
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{in poor lighting} 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $(
-\backslash
-Sexpr{s2[53,1]})$   &  $(
-\backslash
-Sexpr{s2[53,2]})$ & $(
-\backslash
-Sexpr{s2[53,3]})$ & $(
-\backslash
-Sexpr{s2[53,4]})$ & $(
-\backslash
-Sexpr{s2[53,5]})$ & $(
-\backslash
-Sexpr{s2[53,6]})$ & $(
-\backslash
-Sexpr{s2[53,7]})$ 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{Seed is stored}   & $
-\backslash
-Sexpr{s2[55,1]}^{
-\backslash
-Sexpr{ifelse(s2[57,1]<.01,"***",ifelse(s2[57,1]<.05,"**",ifelse(s2[57,1]<.1,"*","")
-))}}$ & $
-\backslash
-Sexpr{s2[55,2]}^{
-\backslash
-Sexpr{ifelse(s2[57,2]<.01,"***",ifelse(s2[57,2]<.05,"**",ifelse(s2[57,2]<.1,"*","")
-))}}$  & $
-\backslash
-Sexpr{s2[55,3]}^{
-\backslash
-Sexpr{ifelse(s2[57,3]<.01,"***",ifelse(s2[57,3]<.05,"**",ifelse(s2[57,3]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{s2[55,4]}^{
-\backslash
-Sexpr{ifelse(s2[57,4]<.01,"***",ifelse(s2[57,4]<.05,"**",ifelse(s2[57,4]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[55,5]}^{
-\backslash
-Sexpr{ifelse(s2[57,5]<.01,"***",ifelse(s2[57,5]<.05,"**",ifelse(s2[57,5]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[55,6]}^{
-\backslash
-Sexpr{ifelse(s2[57,6]<.01,"***",ifelse(s2[57,6]<.05,"**",ifelse(s2[57,6]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[55,7]}^{
-\backslash
-Sexpr{ifelse(s2[57,7]<.01,"***",ifelse(s2[57,7]<.05,"**",ifelse(s2[57,7]<.1,"*","")
-))}}$   
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{on poor surface} 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $(
-\backslash
-Sexpr{s2[56,1]})$   &  $(
-\backslash
-Sexpr{s2[56,2]})$ & $(
-\backslash
-Sexpr{s2[56,3]})$ & $(
-\backslash
-Sexpr{s2[56,4]})$ & $(
-\backslash
-Sexpr{s2[56,5]})$ & $(
-\backslash
-Sexpr{s2[56,6]})$ & $(
-\backslash
-Sexpr{s2[56,7]})$
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{Seed is stored}   & $
-\backslash
-Sexpr{s2[58,1]}^{
-\backslash
-Sexpr{ifelse(s2[60,1]<.01,"***",ifelse(s2[60,1]<.05,"**",ifelse(s2[60,1]<.1,"*","")
-))}}$ & $
-\backslash
-Sexpr{s2[58,2]}^{
-\backslash
-Sexpr{ifelse(s2[60,2]<.01,"***",ifelse(s2[60,2]<.05,"**",ifelse(s2[60,2]<.1,"*","")
-))}}$  & $
-\backslash
-Sexpr{s2[58,3]}^{
-\backslash
-Sexpr{ifelse(s2[60,3]<.01,"***",ifelse(s2[60,3]<.05,"**",ifelse(s2[60,3]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{s2[58,4]}^{
-\backslash
-Sexpr{ifelse(s2[60,4]<.01,"***",ifelse(s2[60,4]<.05,"**",ifelse(s2[60,4]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[58,5]}^{
-\backslash
-Sexpr{ifelse(s2[60,5]<.01,"***",ifelse(s2[60,5]<.05,"**",ifelse(s2[60,5]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[58,6]}^{
-\backslash
-Sexpr{ifelse(s2[60,6]<.01,"***",ifelse(s2[60,6]<.05,"**",ifelse(s2[60,6]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[58,7]}^{
-\backslash
-Sexpr{ifelse(s2[60,7]<.01,"***",ifelse(s2[60,7]<.05,"**",ifelse(s2[60,7]<.1,"*","")
-))}}$   
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{in open containers} 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $(
-\backslash
-Sexpr{s2[59,1]})$   &  $(
-\backslash
-Sexpr{s2[59,2]})$ & $(
-\backslash
-Sexpr{s2[59,3]})$ & $(
-\backslash
-Sexpr{s2[59,4]})$ & $(
-\backslash
-Sexpr{s2[59,5]})$ & $(
-\backslash
-Sexpr{s2[59,6]})$ & $(
-\backslash
-Sexpr{s2[59,7]})$ 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{Shop displays}   & $
-\backslash
-Sexpr{s2[61,1]}^{
-\backslash
-Sexpr{ifelse(s2[63,1]<.01,"***",ifelse(s2[63,1]<.05,"**",ifelse(s2[63,1]<.1,"*","")
-))}}$ & $
-\backslash
-Sexpr{s2[61,2]}^{
-\backslash
-Sexpr{ifelse(s2[63,2]<.01,"***",ifelse(s2[63,2]<.05,"**",ifelse(s2[63,2]<.1,"*","")
-))}}$  & $
-\backslash
-Sexpr{s2[61,3]}^{
-\backslash
-Sexpr{ifelse(s2[63,3]<.01,"***",ifelse(s2[63,3]<.05,"**",ifelse(s2[63,3]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{s2[61,4]}^{
-\backslash
-Sexpr{ifelse(s2[63,4]<.01,"***",ifelse(s2[63,4]<.05,"**",ifelse(s2[63,4]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[61,5]}^{
-\backslash
-Sexpr{ifelse(s2[63,5]<.01,"***",ifelse(s2[63,5]<.05,"**",ifelse(s2[63,5]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[61,6]}^{
-\backslash
-Sexpr{ifelse(s2[63,6]<.01,"***",ifelse(s2[63,6]<.05,"**",ifelse(s2[63,6]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[61,7]}^{
-\backslash
-Sexpr{ifelse(s2[63,7]<.01,"***",ifelse(s2[63,7]<.05,"**",ifelse(s2[63,7]<.1,"*","")
-))}}$   
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{official certificates}
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $(
-\backslash
-Sexpr{s2[62,1]})$   &  $(
-\backslash
-Sexpr{s2[62,2]})$ & $(
-\backslash
-Sexpr{s2[62,3]})$ & $(
-\backslash
-Sexpr{s2[62,4]})$ & $(
-\backslash
-Sexpr{s2[62,5]})$ & $(
-\backslash
-Sexpr{s2[62,6]})$ & $(
-\backslash
-Sexpr{s2[62,7]})$ 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{Shop's rating}   & $
-\backslash
-Sexpr{s2[64,1]}^{
-\backslash
-Sexpr{ifelse(s2[66,1]<.01,"***",ifelse(s2[66,1]<.05,"**",ifelse(s2[66,1]<.1,"*","")
-))}}$ & $
-\backslash
-Sexpr{s2[64,2]}^{
-\backslash
-Sexpr{ifelse(s2[66,2]<.01,"***",ifelse(s2[66,2]<.05,"**",ifelse(s2[66,2]<.1,"*","")
-))}}$  & $
-\backslash
-Sexpr{s2[64,3]}^{
-\backslash
-Sexpr{ifelse(s2[66,3]<.01,"***",ifelse(s2[66,3]<.05,"**",ifelse(s2[66,3]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{s2[64,4]}^{
-\backslash
-Sexpr{ifelse(s2[66,4]<.01,"***",ifelse(s2[66,4]<.05,"**",ifelse(s2[66,4]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[64,5]}^{
-\backslash
-Sexpr{ifelse(s2[66,5]<.01,"***",ifelse(s2[66,5]<.05,"**",ifelse(s2[66,5]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[64,6]}^{
-\backslash
-Sexpr{ifelse(s2[66,6]<.01,"***",ifelse(s2[66,6]<.05,"**",ifelse(s2[66,6]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[64,7]}^{
-\backslash
-Sexpr{ifelse(s2[66,7]<.01,"***",ifelse(s2[66,7]<.05,"**",ifelse(s2[66,7]<.1,"*","")
-))}}$    
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{by enumerator}
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $(
-\backslash
-Sexpr{s2[65,1]})$   &  $(
-\backslash
-Sexpr{s2[65,2]})$ & $(
-\backslash
-Sexpr{s2[65,3]})$ & $(
-\backslash
-Sexpr{s2[65,4]})$ & $(
-\backslash
-Sexpr{s2[65,5]})$ & $(
-\backslash
-Sexpr{s2[65,6]})$ & $(
-\backslash
-Sexpr{s2[65,7]})$ 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{Shop's customer}   & $
-\backslash
-Sexpr{s2[67,1]}^{
-\backslash
-Sexpr{ifelse(s2[69,1]<.01,"***",ifelse(s2[69,1]<.05,"**",ifelse(s2[69,1]<.1,"*","")
-))}}$ & $
-\backslash
-Sexpr{s2[67,2]}^{
-\backslash
-Sexpr{ifelse(s2[69,2]<.01,"***",ifelse(s2[69,2]<.05,"**",ifelse(s2[69,2]<.1,"*","")
-))}}$  & $
-\backslash
-Sexpr{s2[67,3]}^{
-\backslash
-Sexpr{ifelse(s2[69,3]<.01,"***",ifelse(s2[69,3]<.05,"**",ifelse(s2[69,3]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{s2[67,4]}^{
-\backslash
-Sexpr{ifelse(s2[69,4]<.01,"***",ifelse(s2[69,4]<.05,"**",ifelse(s2[69,4]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[67,5]}^{
-\backslash
-Sexpr{ifelse(s2[69,5]<.01,"***",ifelse(s2[69,5]<.05,"**",ifelse(s2[69,5]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[67,6]}^{
-\backslash
-Sexpr{ifelse(s2[69,6]<.01,"***",ifelse(s2[69,6]<.05,"**",ifelse(s2[69,6]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[67,7]}^{
-\backslash
-Sexpr{ifelse(s2[69,7]<.01,"***",ifelse(s2[69,7]<.05,"**",ifelse(s2[69,7]<.1,"*","")
-))}}$    
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{complained about seed} 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $(
-\backslash
-Sexpr{s2[68,1]})$   &  $(
-\backslash
-Sexpr{s2[68,2]})$ & $(
-\backslash
-Sexpr{s2[68,3]})$ & $(
-\backslash
-Sexpr{s2[68,4]})$ & $(
-\backslash
-Sexpr{s2[68,5]})$ & $(
-\backslash
-Sexpr{s2[68,6]})$ & $(
-\backslash
-Sexpr{s2[68,7]})$ 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{Shop's}   & $
-\backslash
-Sexpr{s2[70,1]}^{
-\backslash
-Sexpr{ifelse(s2[72,1]<.01,"***",ifelse(s2[72,1]<.05,"**",ifelse(s2[72,1]<.1,"*","")
-))}}$ & $
-\backslash
-Sexpr{s2[70,2]}^{
-\backslash
-Sexpr{ifelse(s2[72,2]<.01,"***",ifelse(s2[72,2]<.05,"**",ifelse(s2[72,2]<.1,"*","")
-))}}$  & $
-\backslash
-Sexpr{s2[70,3]}^{
-\backslash
-Sexpr{ifelse(s2[72,3]<.01,"***",ifelse(s2[72,3]<.05,"**",ifelse(s2[72,3]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{s2[70,4]}^{
-\backslash
-Sexpr{ifelse(s2[72,4]<.01,"***",ifelse(s2[72,4]<.05,"**",ifelse(s2[72,4]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[70,5]}^{
-\backslash
-Sexpr{ifelse(s2[72,5]<.01,"***",ifelse(s2[72,5]<.05,"**",ifelse(s2[72,5]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[70,6]}^{
-\backslash
-Sexpr{ifelse(s2[72,6]<.01,"***",ifelse(s2[72,6]<.05,"**",ifelse(s2[72,6]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[70,7]}^{
-\backslash
-Sexpr{ifelse(s2[72,7]<.01,"***",ifelse(s2[72,7]<.05,"**",ifelse(s2[72,7]<.1,"*","")
-))}}$    
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{temperature} 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $(
-\backslash
-Sexpr{s2[71,1]})$   &  $(
-\backslash
-Sexpr{s2[71,2]})$ & $(
-\backslash
-Sexpr{s2[71,3]})$ & $(
-\backslash
-Sexpr{s2[71,4]})$ & $(
-\backslash
-Sexpr{s2[71,5]})$ & $(
-\backslash
-Sexpr{s2[71,6]})$ & $(
-\backslash
-Sexpr{s2[71,7]})$ 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{Shop has}   & $
-\backslash
-Sexpr{s2[73,1]}^{
-\backslash
-Sexpr{ifelse(s2[75,1]<.01,"***",ifelse(s2[75,1]<.05,"**",ifelse(s2[75,1]<.1,"*","")
-))}}$ & $
-\backslash
-Sexpr{s2[73,2]}^{
-\backslash
-Sexpr{ifelse(s2[75,2]<.01,"***",ifelse(s2[75,2]<.05,"**",ifelse(s2[75,2]<.1,"*","")
-))}}$  & $
-\backslash
-Sexpr{s2[73,3]}^{
-\backslash
-Sexpr{ifelse(s2[75,3]<.01,"***",ifelse(s2[75,3]<.05,"**",ifelse(s2[75,3]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{s2[73,4]}^{
-\backslash
-Sexpr{ifelse(s2[75,4]<.01,"***",ifelse(s2[75,4]<.05,"**",ifelse(s2[75,4]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[73,5]}^{
-\backslash
-Sexpr{ifelse(s2[75,5]<.01,"***",ifelse(s2[75,5]<.05,"**",ifelse(s2[75,5]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[73,6]}^{
-\backslash
-Sexpr{ifelse(s2[75,6]<.01,"***",ifelse(s2[75,6]<.05,"**",ifelse(s2[75,6]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s2[73,7]}^{
-\backslash
-Sexpr{ifelse(s2[75,7]<.01,"***",ifelse(s2[75,7]<.05,"**",ifelse(s2[75,7]<.1,"*","")
-))}}$  
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{leak-proof roof}
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $(
-\backslash
-Sexpr{s2[74,1]})$   &  $(
-\backslash
-Sexpr{s2[74,2]})$ & $(
-\backslash
-Sexpr{s2[74,3]})$ & $(
-\backslash
-Sexpr{s2[74,4]})$ & $(
-\backslash
-Sexpr{s2[74,5]})$ & $(
-\backslash
-Sexpr{s2[74,6]})$ & $(
-\backslash
-Sexpr{s2[74,7]})$ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -15138,19 +13397,19 @@ hline
 
 {R$^2$ }                 &  $
 \backslash
-Sexpr{s2[76,1]}$   &  $
+Sexpr{s2[19,1]}$   &  $
 \backslash
-Sexpr{s2[76,2]}$ & $
+Sexpr{s2[19,2]}$ & $
 \backslash
-Sexpr{s2[76,3]}$ & $
+Sexpr{s2[19,3]}$ & $
 \backslash
-Sexpr{s2[76,4]}$ & $
+Sexpr{s2[19,4]}$ & $
 \backslash
-Sexpr{s2[76,5]}$ & $
+Sexpr{s2[19,5]}$ & $
 \backslash
-Sexpr{s2[76,6]}$ & $
+Sexpr{s2[19,6]}$ & $
 \backslash
-Sexpr{s2[76,7]}$ 
+Sexpr{s2[19,7]}$ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -15162,19 +13421,19 @@ Sexpr{s2[76,7]}$
 {Adj.
  R$^2$}                 &  $
 \backslash
-Sexpr{s2[77,1]}$   &  $
+Sexpr{s2[20,1]}$   &  $
 \backslash
-Sexpr{s2[77,2]}$ & $
+Sexpr{s2[20,2]}$ & $
 \backslash
-Sexpr{s2[77,3]}$ & $
+Sexpr{s2[20,3]}$ & $
 \backslash
-Sexpr{s2[77,4]}$ & $
+Sexpr{s2[20,4]}$ & $
 \backslash
-Sexpr{s2[77,5]}$ & $
+Sexpr{s2[20,5]}$ & $
 \backslash
-Sexpr{s2[77,6]}$ & $
+Sexpr{s2[20,6]}$ & $
 \backslash
-Sexpr{s2[77,7]}$     
+Sexpr{s2[20,7]}$     
 \end_layout
 
 \begin_layout Plain Layout
@@ -15185,19 +13444,19 @@ Sexpr{s2[77,7]}$
 \backslash
 {Number of obs.}                 &  $
 \backslash
-Sexpr{s2[78,1]}$   &  $
+Sexpr{s2[21,1]}$   &  $
 \backslash
-Sexpr{s2[78,2]}$ & $
+Sexpr{s2[21,2]}$ & $
 \backslash
-Sexpr{s2[78,3]}$ & $
+Sexpr{s2[21,3]}$ & $
 \backslash
-Sexpr{s2[78,4]}$ & $
+Sexpr{s2[21,4]}$ & $
 \backslash
-Sexpr{s2[78,5]}$ & $
+Sexpr{s2[21,5]}$ & $
 \backslash
-Sexpr{s2[78,6]}$ & $
+Sexpr{s2[21,6]}$ & $
 \backslash
-Sexpr{s2[78,7]}$   
+Sexpr{s2[21,7]}$   
 \end_layout
 
 \begin_layout Plain Layout
@@ -15240,7 +13499,6 @@ tiny
 
 Note: Here, the genders of the different input dealers that each farmer
  rated have been averaged.
- All the dealer characteristics are also averaged accordingly.
  The ratings given by the farmers also are averaged at the farmer level.
  
 \backslash
@@ -15250,6 +13508,22 @@ label{table:table2}
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+The number of obs.
+ should be equal to the number of (clearinghouse) treated farmers (1931).
+ However, there seem to be 1201 treated farmers who did not rate a single
+ dealer (see reviews_bf), so that the nobs is 730 here.
 \end_layout
 
 \end_inset
@@ -15560,7 +13834,7 @@ Sexpr{s3[2,7]})$
 
 \begin_layout Plain Layout
 
-{Male dealer}   & $
+{Dealer is male}   & $
 \backslash
 Sexpr{s3[4,1]}^{
 \backslash
@@ -16077,7 +14351,7 @@ Sexpr{s4[2,7]})$
 
 \begin_layout Plain Layout
 
-{Male dealer}   & $
+{Dealer is male}   & $
 \backslash
 Sexpr{s4[4,1]}^{
 \backslash
@@ -16519,1754 +14793,6 @@ Sexpr{s4[17,5]})$ & $(
 Sexpr{s4[17,6]})$ & $(
 \backslash
 Sexpr{s4[17,7]})$ 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{Dealer's age}   & $
-\backslash
-Sexpr{s4[19,1]}^{
-\backslash
-Sexpr{ifelse(s4[21,1]<.01,"***",ifelse(s4[21,1]<.05,"**",ifelse(s4[21,1]<.1,"*","")
-))}}$ & $
-\backslash
-Sexpr{s4[19,2]}^{
-\backslash
-Sexpr{ifelse(s4[21,2]<.01,"***",ifelse(s4[21,2]<.05,"**",ifelse(s4[21,2]<.1,"*","")
-))}}$  & $
-\backslash
-Sexpr{s4[19,3]}^{
-\backslash
-Sexpr{ifelse(s4[21,3]<.01,"***",ifelse(s4[21,3]<.05,"**",ifelse(s4[21,3]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{s4[19,4]}^{
-\backslash
-Sexpr{ifelse(s4[21,4]<.01,"***",ifelse(s4[21,4]<.05,"**",ifelse(s4[21,4]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s4[19,5]}^{
-\backslash
-Sexpr{ifelse(s4[21,5]<.01,"***",ifelse(s4[21,5]<.05,"**",ifelse(s4[21,5]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s4[19,6]}^{
-\backslash
-Sexpr{ifelse(s4[21,6]<.01,"***",ifelse(s4[21,6]<.05,"**",ifelse(s4[21,6]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s4[19,7]}^{
-\backslash
-Sexpr{ifelse(s4[21,7]<.01,"***",ifelse(s4[21,7]<.05,"**",ifelse(s4[21,7]<.1,"*","")
-))}}$ 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{(in years)} 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $(
-\backslash
-Sexpr{s4[20,1]})$   &  $(
-\backslash
-Sexpr{s4[20,2]})$ & $(
-\backslash
-Sexpr{s4[20,3]})$ & $(
-\backslash
-Sexpr{s4[20,4]})$ & $(
-\backslash
-Sexpr{s4[20,5]})$ & $(
-\backslash
-Sexpr{s4[20,6]})$ & $(
-\backslash
-Sexpr{s4[20,7]})$
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{Dealer finished}   & $
-\backslash
-Sexpr{s4[22,1]}^{
-\backslash
-Sexpr{ifelse(s4[24,1]<.01,"***",ifelse(s4[24,1]<.05,"**",ifelse(s4[24,1]<.1,"*","")
-))}}$ & $
-\backslash
-Sexpr{s4[22,2]}^{
-\backslash
-Sexpr{ifelse(s4[24,2]<.01,"***",ifelse(s4[24,2]<.05,"**",ifelse(s4[24,2]<.1,"*","")
-))}}$  & $
-\backslash
-Sexpr{s4[22,3]}^{
-\backslash
-Sexpr{ifelse(s4[24,3]<.01,"***",ifelse(s4[24,3]<.05,"**",ifelse(s4[24,3]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{s4[22,4]}^{
-\backslash
-Sexpr{ifelse(s4[24,4]<.01,"***",ifelse(s4[24,4]<.05,"**",ifelse(s4[24,4]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s4[22,5]}^{
-\backslash
-Sexpr{ifelse(s4[24,5]<.01,"***",ifelse(s4[24,5]<.05,"**",ifelse(s4[24,5]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s4[22,6]}^{
-\backslash
-Sexpr{ifelse(s4[24,6]<.01,"***",ifelse(s4[24,6]<.05,"**",ifelse(s4[24,6]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s4[22,7]}^{
-\backslash
-Sexpr{ifelse(s4[24,7]<.01,"***",ifelse(s4[24,7]<.05,"**",ifelse(s4[24,7]<.1,"*","")
-))}}$   
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{secondary education}
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $(
-\backslash
-Sexpr{s4[23,1]})$   &  $(
-\backslash
-Sexpr{s4[23,2]})$ & $(
-\backslash
-Sexpr{s4[23,3]})$ & $(
-\backslash
-Sexpr{s4[23,4]})$ & $(
-\backslash
-Sexpr{s4[23,5]})$ & $(
-\backslash
-Sexpr{s4[23,6]})$ & $(
-\backslash
-Sexpr{s4[23,7]})$ 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{Shop's distance to}   & $
-\backslash
-Sexpr{s4[25,1]}^{
-\backslash
-Sexpr{ifelse(s4[27,1]<.01,"***",ifelse(s4[27,1]<.05,"**",ifelse(s4[27,1]<.1,"*","")
-))}}$ & $
-\backslash
-Sexpr{s4[25,2]}^{
-\backslash
-Sexpr{ifelse(s4[27,2]<.01,"***",ifelse(s4[27,2]<.05,"**",ifelse(s4[27,2]<.1,"*","")
-))}}$  & $
-\backslash
-Sexpr{s4[25,3]}^{
-\backslash
-Sexpr{ifelse(s4[27,3]<.01,"***",ifelse(s4[27,3]<.05,"**",ifelse(s4[27,3]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{s4[25,4]}^{
-\backslash
-Sexpr{ifelse(s4[27,4]<.01,"***",ifelse(s4[27,4]<.05,"**",ifelse(s4[27,4]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s4[25,5]}^{
-\backslash
-Sexpr{ifelse(s4[27,5]<.01,"***",ifelse(s4[27,5]<.05,"**",ifelse(s4[27,5]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s4[25,6]}^{
-\backslash
-Sexpr{ifelse(s4[27,6]<.01,"***",ifelse(s4[27,6]<.05,"**",ifelse(s4[27,6]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s4[25,7]}^{
-\backslash
-Sexpr{ifelse(s4[27,7]<.01,"***",ifelse(s4[27,7]<.05,"**",ifelse(s4[27,7]<.1,"*","")
-))}}$  
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{tarmac road (in km)} 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $(
-\backslash
-Sexpr{s4[26,1]})$   &  $(
-\backslash
-Sexpr{s4[26,2]})$ & $(
-\backslash
-Sexpr{s4[26,3]})$ & $(
-\backslash
-Sexpr{s4[26,4]})$ & $(
-\backslash
-Sexpr{s4[26,5]})$ & $(
-\backslash
-Sexpr{s4[26,6]})$ & $(
-\backslash
-Sexpr{s4[26,7]})$
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{Shop's distance to}   & $
-\backslash
-Sexpr{s4[28,1]}^{
-\backslash
-Sexpr{ifelse(s4[30,1]<.01,"***",ifelse(s4[30,1]<.05,"**",ifelse(s4[30,1]<.1,"*","")
-))}}$ & $
-\backslash
-Sexpr{s4[28,2]}^{
-\backslash
-Sexpr{ifelse(s4[30,2]<.01,"***",ifelse(s4[30,2]<.05,"**",ifelse(s4[30,2]<.1,"*","")
-))}}$  & $
-\backslash
-Sexpr{s4[28,3]}^{
-\backslash
-Sexpr{ifelse(s4[30,3]<.01,"***",ifelse(s4[30,3]<.05,"**",ifelse(s4[30,3]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{s4[28,4]}^{
-\backslash
-Sexpr{ifelse(s4[30,4]<.01,"***",ifelse(s4[30,4]<.05,"**",ifelse(s4[30,4]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s4[28,5]}^{
-\backslash
-Sexpr{ifelse(s4[30,5]<.01,"***",ifelse(s4[30,5]<.05,"**",ifelse(s4[30,5]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s4[28,6]}^{
-\backslash
-Sexpr{ifelse(s4[30,6]<.01,"***",ifelse(s4[30,6]<.05,"**",ifelse(s4[30,6]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s4[28,7]}^{
-\backslash
-Sexpr{ifelse(s4[30,7]<.01,"***",ifelse(s4[30,7]<.05,"**",ifelse(s4[30,7]<.1,"*","")
-))}}$   
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{murram road (in km)} 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $(
-\backslash
-Sexpr{s4[29,1]})$   &  $(
-\backslash
-Sexpr{s4[29,2]})$ & $(
-\backslash
-Sexpr{s4[29,3]})$ & $(
-\backslash
-Sexpr{s4[29,4]})$ & $(
-\backslash
-Sexpr{s4[29,5]})$ & $(
-\backslash
-Sexpr{s4[29,6]})$ & $(
-\backslash
-Sexpr{s4[29,7]})$ 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{Shop sells only}   & $
-\backslash
-Sexpr{s4[31,1]}^{
-\backslash
-Sexpr{ifelse(s4[33,1]<.01,"***",ifelse(s4[33,1]<.05,"**",ifelse(s4[33,1]<.1,"*","")
-))}}$ & $
-\backslash
-Sexpr{s4[31,2]}^{
-\backslash
-Sexpr{ifelse(s4[33,2]<.01,"***",ifelse(s4[33,2]<.05,"**",ifelse(s4[33,2]<.1,"*","")
-))}}$  & $
-\backslash
-Sexpr{s4[31,3]}^{
-\backslash
-Sexpr{ifelse(s4[33,3]<.01,"***",ifelse(s4[33,3]<.05,"**",ifelse(s4[33,3]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{s4[31,4]}^{
-\backslash
-Sexpr{ifelse(s4[33,4]<.01,"***",ifelse(s4[33,4]<.05,"**",ifelse(s4[33,4]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s4[31,5]}^{
-\backslash
-Sexpr{ifelse(s4[33,5]<.01,"***",ifelse(s4[33,5]<.05,"**",ifelse(s4[33,5]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s4[31,6]}^{
-\backslash
-Sexpr{ifelse(s4[33,6]<.01,"***",ifelse(s4[33,6]<.05,"**",ifelse(s4[33,6]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s4[31,7]}^{
-\backslash
-Sexpr{ifelse(s4[33,7]<.01,"***",ifelse(s4[33,7]<.05,"**",ifelse(s4[33,7]<.1,"*","")
-))}}$   
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{farm inputs} 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $(
-\backslash
-Sexpr{s4[32,1]})$   &  $(
-\backslash
-Sexpr{s4[32,2]})$ & $(
-\backslash
-Sexpr{s4[32,3]})$ & $(
-\backslash
-Sexpr{s4[32,4]})$ & $(
-\backslash
-Sexpr{s4[32,5]})$ & $(
-\backslash
-Sexpr{s4[32,6]})$ & $(
-\backslash
-Sexpr{s4[32,7]})$ 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{Shop's age}   & $
-\backslash
-Sexpr{s4[34,1]}^{
-\backslash
-Sexpr{ifelse(s4[36,1]<.01,"***",ifelse(s4[36,1]<.05,"**",ifelse(s4[36,1]<.1,"*","")
-))}}$ & $
-\backslash
-Sexpr{s4[34,2]}^{
-\backslash
-Sexpr{ifelse(s4[36,2]<.01,"***",ifelse(s4[36,2]<.05,"**",ifelse(s4[36,2]<.1,"*","")
-))}}$  & $
-\backslash
-Sexpr{s4[34,3]}^{
-\backslash
-Sexpr{ifelse(s4[36,3]<.01,"***",ifelse(s4[36,3]<.05,"**",ifelse(s4[36,3]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{s4[34,4]}^{
-\backslash
-Sexpr{ifelse(s4[36,4]<.01,"***",ifelse(s4[36,4]<.05,"**",ifelse(s4[36,4]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s4[34,5]}^{
-\backslash
-Sexpr{ifelse(s4[36,5]<.01,"***",ifelse(s4[36,5]<.05,"**",ifelse(s4[36,5]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s4[34,6]}^{
-\backslash
-Sexpr{ifelse(s4[36,6]<.01,"***",ifelse(s4[36,6]<.05,"**",ifelse(s4[36,6]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s4[34,7]}^{
-\backslash
-Sexpr{ifelse(s4[36,7]<.01,"***",ifelse(s4[36,7]<.05,"**",ifelse(s4[36,7]<.1,"*","")
-))}}$  
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{(in years)} 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $(
-\backslash
-Sexpr{s4[35,1]})$   &  $(
-\backslash
-Sexpr{s4[35,2]})$ & $(
-\backslash
-Sexpr{s4[35,3]})$ & $(
-\backslash
-Sexpr{s4[35,4]})$ & $(
-\backslash
-Sexpr{s4[35,5]})$ & $(
-\backslash
-Sexpr{s4[35,6]})$ & $(
-\backslash
-Sexpr{s4[35,7]})$ 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{Seed is stored}   & $
-\backslash
-Sexpr{s4[37,1]}^{
-\backslash
-Sexpr{ifelse(s4[39,1]<.01,"***",ifelse(s4[39,1]<.05,"**",ifelse(s4[39,1]<.1,"*","")
-))}}$ & $
-\backslash
-Sexpr{s4[37,2]}^{
-\backslash
-Sexpr{ifelse(s4[39,2]<.01,"***",ifelse(s4[39,2]<.05,"**",ifelse(s4[39,2]<.1,"*","")
-))}}$  & $
-\backslash
-Sexpr{s4[37,3]}^{
-\backslash
-Sexpr{ifelse(s4[39,3]<.01,"***",ifelse(s4[39,3]<.05,"**",ifelse(s4[39,3]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{s4[37,4]}^{
-\backslash
-Sexpr{ifelse(s4[39,4]<.01,"***",ifelse(s4[39,4]<.05,"**",ifelse(s4[39,4]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s4[37,5]}^{
-\backslash
-Sexpr{ifelse(s4[39,5]<.01,"***",ifelse(s4[39,5]<.05,"**",ifelse(s4[39,5]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s4[37,6]}^{
-\backslash
-Sexpr{ifelse(s4[39,6]<.01,"***",ifelse(s4[39,6]<.05,"**",ifelse(s4[39,6]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s4[37,7]}^{
-\backslash
-Sexpr{ifelse(s4[39,7]<.01,"***",ifelse(s4[39,7]<.05,"**",ifelse(s4[39,7]<.1,"*","")
-))}}$    
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{in dedicated area}  
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $(
-\backslash
-Sexpr{s4[38,1]})$   &  $(
-\backslash
-Sexpr{s4[38,2]})$ & $(
-\backslash
-Sexpr{s4[38,3]})$ & $(
-\backslash
-Sexpr{s4[38,4]})$ & $(
-\backslash
-Sexpr{s4[38,5]})$ & $(
-\backslash
-Sexpr{s4[38,6]})$ & $(
-\backslash
-Sexpr{s4[38,7]})$
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{Shop has problem}   & $
-\backslash
-Sexpr{s4[40,1]}^{
-\backslash
-Sexpr{ifelse(s4[42,1]<.01,"***",ifelse(s4[42,1]<.05,"**",ifelse(s4[42,1]<.1,"*","")
-))}}$ & $
-\backslash
-Sexpr{s4[40,2]}^{
-\backslash
-Sexpr{ifelse(s4[42,2]<.01,"***",ifelse(s4[42,2]<.05,"**",ifelse(s4[42,2]<.1,"*","")
-))}}$  & $
-\backslash
-Sexpr{s4[40,3]}^{
-\backslash
-Sexpr{ifelse(s4[42,3]<.01,"***",ifelse(s4[42,3]<.05,"**",ifelse(s4[42,3]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{s4[40,4]}^{
-\backslash
-Sexpr{ifelse(s4[42,4]<.01,"***",ifelse(s4[42,4]<.05,"**",ifelse(s4[42,4]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s4[40,5]}^{
-\backslash
-Sexpr{ifelse(s4[42,5]<.01,"***",ifelse(s4[42,5]<.05,"**",ifelse(s4[42,5]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s4[40,6]}^{
-\backslash
-Sexpr{ifelse(s4[42,6]<.01,"***",ifelse(s4[42,6]<.05,"**",ifelse(s4[42,6]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s4[40,7]}^{
-\backslash
-Sexpr{ifelse(s4[42,7]<.01,"***",ifelse(s4[42,7]<.05,"**",ifelse(s4[42,7]<.1,"*","")
-))}}$   
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{with pests}  
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $(
-\backslash
-Sexpr{s4[41,1]})$   &  $(
-\backslash
-Sexpr{s4[41,2]})$ & $(
-\backslash
-Sexpr{s4[41,3]})$ & $(
-\backslash
-Sexpr{s4[41,4]})$ & $(
-\backslash
-Sexpr{s4[41,5]})$ & $(
-\backslash
-Sexpr{s4[41,6]})$ & $(
-\backslash
-Sexpr{s4[41,7]})$ 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{Shop has}   & $
-\backslash
-Sexpr{s4[43,1]}^{
-\backslash
-Sexpr{ifelse(s4[45,1]<.01,"***",ifelse(s4[45,1]<.05,"**",ifelse(s4[45,1]<.1,"*","")
-))}}$ & $
-\backslash
-Sexpr{s4[43,2]}^{
-\backslash
-Sexpr{ifelse(s4[45,2]<.01,"***",ifelse(s4[45,2]<.05,"**",ifelse(s4[45,2]<.1,"*","")
-))}}$  & $
-\backslash
-Sexpr{s4[43,3]}^{
-\backslash
-Sexpr{ifelse(s4[45,3]<.01,"***",ifelse(s4[45,3]<.05,"**",ifelse(s4[45,3]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{s4[43,4]}^{
-\backslash
-Sexpr{ifelse(s4[45,4]<.01,"***",ifelse(s4[45,4]<.05,"**",ifelse(s4[45,4]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s4[43,5]}^{
-\backslash
-Sexpr{ifelse(s4[45,5]<.01,"***",ifelse(s4[45,5]<.05,"**",ifelse(s4[45,5]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s4[43,6]}^{
-\backslash
-Sexpr{ifelse(s4[45,6]<.01,"***",ifelse(s4[45,6]<.05,"**",ifelse(s4[45,6]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s4[43,7]}^{
-\backslash
-Sexpr{ifelse(s4[45,7]<.01,"***",ifelse(s4[45,7]<.05,"**",ifelse(s4[45,7]<.1,"*","")
-))}}$   
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{insulated roof} 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $(
-\backslash
-Sexpr{s4[44,1]})$   &  $(
-\backslash
-Sexpr{s4[44,2]})$ & $(
-\backslash
-Sexpr{s4[44,3]})$ & $(
-\backslash
-Sexpr{s4[44,4]})$ & $(
-\backslash
-Sexpr{s4[44,5]})$ & $(
-\backslash
-Sexpr{s4[44,6]})$ & $(
-\backslash
-Sexpr{s4[44,7]})$
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{Shop has}   & $
-\backslash
-Sexpr{s4[46,1]}^{
-\backslash
-Sexpr{ifelse(s4[48,1]<.01,"***",ifelse(s4[48,1]<.05,"**",ifelse(s4[48,1]<.1,"*","")
-))}}$ & $
-\backslash
-Sexpr{s4[46,2]}^{
-\backslash
-Sexpr{ifelse(s4[48,2]<.01,"***",ifelse(s4[48,2]<.05,"**",ifelse(s4[48,2]<.1,"*","")
-))}}$  & $
-\backslash
-Sexpr{s4[46,3]}^{
-\backslash
-Sexpr{ifelse(s4[48,3]<.01,"***",ifelse(s4[48,3]<.05,"**",ifelse(s4[48,3]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{s4[46,4]}^{
-\backslash
-Sexpr{ifelse(s4[48,4]<.01,"***",ifelse(s4[48,4]<.05,"**",ifelse(s4[48,4]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s4[46,5]}^{
-\backslash
-Sexpr{ifelse(s4[48,5]<.01,"***",ifelse(s4[48,5]<.05,"**",ifelse(s4[48,5]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s4[46,6]}^{
-\backslash
-Sexpr{ifelse(s4[48,6]<.01,"***",ifelse(s4[48,6]<.05,"**",ifelse(s4[48,6]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s4[46,7]}^{
-\backslash
-Sexpr{ifelse(s4[48,7]<.01,"***",ifelse(s4[48,7]<.05,"**",ifelse(s4[48,7]<.1,"*","")
-))}}$   
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{insulated walls} 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $(
-\backslash
-Sexpr{s4[47,1]})$   &  $(
-\backslash
-Sexpr{s4[47,2]})$ & $(
-\backslash
-Sexpr{s4[47,3]})$ & $(
-\backslash
-Sexpr{s4[47,4]})$ & $(
-\backslash
-Sexpr{s4[47,5]})$ & $(
-\backslash
-Sexpr{s4[47,6]})$ & $(
-\backslash
-Sexpr{s4[47,7]})$ 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{Shop is}   & $
-\backslash
-Sexpr{s4[49,1]}^{
-\backslash
-Sexpr{ifelse(s4[51,1]<.01,"***",ifelse(s4[51,1]<.05,"**",ifelse(s4[51,1]<.1,"*","")
-))}}$ & $
-\backslash
-Sexpr{s4[49,2]}^{
-\backslash
-Sexpr{ifelse(s4[51,2]<.01,"***",ifelse(s4[51,2]<.05,"**",ifelse(s4[51,2]<.1,"*","")
-))}}$  & $
-\backslash
-Sexpr{s4[49,3]}^{
-\backslash
-Sexpr{ifelse(s4[51,3]<.01,"***",ifelse(s4[51,3]<.05,"**",ifelse(s4[51,3]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{s4[49,4]}^{
-\backslash
-Sexpr{ifelse(s4[51,4]<.01,"***",ifelse(s4[51,4]<.05,"**",ifelse(s4[51,4]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s4[49,5]}^{
-\backslash
-Sexpr{ifelse(s4[51,5]<.01,"***",ifelse(s4[51,5]<.05,"**",ifelse(s4[51,5]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s4[49,6]}^{
-\backslash
-Sexpr{ifelse(s4[51,6]<.01,"***",ifelse(s4[51,6]<.05,"**",ifelse(s4[51,6]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s4[49,7]}^{
-\backslash
-Sexpr{ifelse(s4[51,7]<.01,"***",ifelse(s4[51,7]<.05,"**",ifelse(s4[51,7]<.1,"*","")
-))}}$   
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{ventilated} 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $(
-\backslash
-Sexpr{s4[50,1]})$   &  $(
-\backslash
-Sexpr{s4[50,2]})$ & $(
-\backslash
-Sexpr{s4[50,3]})$ & $(
-\backslash
-Sexpr{s4[50,4]})$ & $(
-\backslash
-Sexpr{s4[50,5]})$ & $(
-\backslash
-Sexpr{s4[50,6]})$ & $(
-\backslash
-Sexpr{s4[50,7]})$
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{Seed is stored}   & $
-\backslash
-Sexpr{s4[52,1]}^{
-\backslash
-Sexpr{ifelse(s4[54,1]<.01,"***",ifelse(s4[54,1]<.05,"**",ifelse(s4[54,1]<.1,"*","")
-))}}$ & $
-\backslash
-Sexpr{s4[52,2]}^{
-\backslash
-Sexpr{ifelse(s4[54,2]<.01,"***",ifelse(s4[54,2]<.05,"**",ifelse(s4[54,2]<.1,"*","")
-))}}$  & $
-\backslash
-Sexpr{s4[52,3]}^{
-\backslash
-Sexpr{ifelse(s4[54,3]<.01,"***",ifelse(s4[54,3]<.05,"**",ifelse(s4[54,3]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{s4[52,4]}^{
-\backslash
-Sexpr{ifelse(s4[54,4]<.01,"***",ifelse(s4[54,4]<.05,"**",ifelse(s4[54,4]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s4[52,5]}^{
-\backslash
-Sexpr{ifelse(s4[54,5]<.01,"***",ifelse(s4[54,5]<.05,"**",ifelse(s4[54,5]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s4[52,6]}^{
-\backslash
-Sexpr{ifelse(s4[54,6]<.01,"***",ifelse(s4[54,6]<.05,"**",ifelse(s4[54,6]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s4[52,7]}^{
-\backslash
-Sexpr{ifelse(s4[54,7]<.01,"***",ifelse(s4[54,7]<.05,"**",ifelse(s4[54,7]<.1,"*","")
-))}}$   
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{in poor lighting} 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $(
-\backslash
-Sexpr{s4[53,1]})$   &  $(
-\backslash
-Sexpr{s4[53,2]})$ & $(
-\backslash
-Sexpr{s4[53,3]})$ & $(
-\backslash
-Sexpr{s4[53,4]})$ & $(
-\backslash
-Sexpr{s4[53,5]})$ & $(
-\backslash
-Sexpr{s4[53,6]})$ & $(
-\backslash
-Sexpr{s4[53,7]})$
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{Seed is stored}   & $
-\backslash
-Sexpr{s4[55,1]}^{
-\backslash
-Sexpr{ifelse(s4[57,1]<.01,"***",ifelse(s4[57,1]<.05,"**",ifelse(s4[57,1]<.1,"*","")
-))}}$ & $
-\backslash
-Sexpr{s4[55,2]}^{
-\backslash
-Sexpr{ifelse(s4[57,2]<.01,"***",ifelse(s4[57,2]<.05,"**",ifelse(s4[57,2]<.1,"*","")
-))}}$  & $
-\backslash
-Sexpr{s4[55,3]}^{
-\backslash
-Sexpr{ifelse(s4[57,3]<.01,"***",ifelse(s4[57,3]<.05,"**",ifelse(s4[57,3]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{s4[55,4]}^{
-\backslash
-Sexpr{ifelse(s4[57,4]<.01,"***",ifelse(s4[57,4]<.05,"**",ifelse(s4[57,4]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s4[55,5]}^{
-\backslash
-Sexpr{ifelse(s4[57,5]<.01,"***",ifelse(s4[57,5]<.05,"**",ifelse(s4[57,5]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s4[55,6]}^{
-\backslash
-Sexpr{ifelse(s4[57,6]<.01,"***",ifelse(s4[57,6]<.05,"**",ifelse(s4[57,6]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s4[55,7]}^{
-\backslash
-Sexpr{ifelse(s4[57,7]<.01,"***",ifelse(s4[57,7]<.05,"**",ifelse(s4[57,7]<.1,"*","")
-))}}$ 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{on poor surface} 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $(
-\backslash
-Sexpr{s4[56,1]})$   &  $(
-\backslash
-Sexpr{s4[56,2]})$ & $(
-\backslash
-Sexpr{s4[56,3]})$ & $(
-\backslash
-Sexpr{s4[56,4]})$ & $(
-\backslash
-Sexpr{s4[56,5]})$ & $(
-\backslash
-Sexpr{s4[56,6]})$ & $(
-\backslash
-Sexpr{s4[56,7]})$ 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{Seed is stored}   & $
-\backslash
-Sexpr{s4[58,1]}^{
-\backslash
-Sexpr{ifelse(s4[60,1]<.01,"***",ifelse(s4[60,1]<.05,"**",ifelse(s4[60,1]<.1,"*","")
-))}}$ & $
-\backslash
-Sexpr{s4[58,2]}^{
-\backslash
-Sexpr{ifelse(s4[60,2]<.01,"***",ifelse(s4[60,2]<.05,"**",ifelse(s4[60,2]<.1,"*","")
-))}}$  & $
-\backslash
-Sexpr{s4[58,3]}^{
-\backslash
-Sexpr{ifelse(s4[60,3]<.01,"***",ifelse(s4[60,3]<.05,"**",ifelse(s4[60,3]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{s4[58,4]}^{
-\backslash
-Sexpr{ifelse(s4[60,4]<.01,"***",ifelse(s4[60,4]<.05,"**",ifelse(s4[60,4]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s4[58,5]}^{
-\backslash
-Sexpr{ifelse(s4[60,5]<.01,"***",ifelse(s4[60,5]<.05,"**",ifelse(s4[60,5]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s4[58,6]}^{
-\backslash
-Sexpr{ifelse(s4[60,6]<.01,"***",ifelse(s4[60,6]<.05,"**",ifelse(s4[60,6]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s4[58,7]}^{
-\backslash
-Sexpr{ifelse(s4[60,7]<.01,"***",ifelse(s4[60,7]<.05,"**",ifelse(s4[60,7]<.1,"*","")
-))}}$  
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{in open containers}
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $(
-\backslash
-Sexpr{s4[59,1]})$   &  $(
-\backslash
-Sexpr{s4[59,2]})$ & $(
-\backslash
-Sexpr{s4[59,3]})$ & $(
-\backslash
-Sexpr{s4[59,4]})$ & $(
-\backslash
-Sexpr{s4[59,5]})$ & $(
-\backslash
-Sexpr{s4[59,6]})$ & $(
-\backslash
-Sexpr{s4[59,7]})$
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{Shop displays}   & $
-\backslash
-Sexpr{s4[61,1]}^{
-\backslash
-Sexpr{ifelse(s4[63,1]<.01,"***",ifelse(s4[63,1]<.05,"**",ifelse(s4[63,1]<.1,"*","")
-))}}$ & $
-\backslash
-Sexpr{s4[61,2]}^{
-\backslash
-Sexpr{ifelse(s4[63,2]<.01,"***",ifelse(s4[63,2]<.05,"**",ifelse(s4[63,2]<.1,"*","")
-))}}$  & $
-\backslash
-Sexpr{s4[61,3]}^{
-\backslash
-Sexpr{ifelse(s4[63,3]<.01,"***",ifelse(s4[63,3]<.05,"**",ifelse(s4[63,3]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{s4[61,4]}^{
-\backslash
-Sexpr{ifelse(s4[63,4]<.01,"***",ifelse(s4[63,4]<.05,"**",ifelse(s4[63,4]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s4[61,5]}^{
-\backslash
-Sexpr{ifelse(s4[63,5]<.01,"***",ifelse(s4[63,5]<.05,"**",ifelse(s4[63,5]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s4[61,6]}^{
-\backslash
-Sexpr{ifelse(s4[63,6]<.01,"***",ifelse(s4[63,6]<.05,"**",ifelse(s4[63,6]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s4[61,7]}^{
-\backslash
-Sexpr{ifelse(s4[63,7]<.01,"***",ifelse(s4[63,7]<.05,"**",ifelse(s4[63,7]<.1,"*","")
-))}}$   
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{official certificate}
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $(
-\backslash
-Sexpr{s4[62,1]})$   &  $(
-\backslash
-Sexpr{s4[62,2]})$ & $(
-\backslash
-Sexpr{s4[62,3]})$ & $(
-\backslash
-Sexpr{s4[62,4]})$ & $(
-\backslash
-Sexpr{s4[62,5]})$ & $(
-\backslash
-Sexpr{s4[62,6]})$ & $(
-\backslash
-Sexpr{s4[62,7]})$ 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{Shop's rating}   & $
-\backslash
-Sexpr{s4[64,1]}^{
-\backslash
-Sexpr{ifelse(s4[66,1]<.01,"***",ifelse(s4[66,1]<.05,"**",ifelse(s4[66,1]<.1,"*","")
-))}}$ & $
-\backslash
-Sexpr{s4[64,2]}^{
-\backslash
-Sexpr{ifelse(s4[66,2]<.01,"***",ifelse(s4[66,2]<.05,"**",ifelse(s4[66,2]<.1,"*","")
-))}}$  & $
-\backslash
-Sexpr{s4[64,3]}^{
-\backslash
-Sexpr{ifelse(s4[66,3]<.01,"***",ifelse(s4[66,3]<.05,"**",ifelse(s4[66,3]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{s4[64,4]}^{
-\backslash
-Sexpr{ifelse(s4[66,4]<.01,"***",ifelse(s4[66,4]<.05,"**",ifelse(s4[66,4]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s4[64,5]}^{
-\backslash
-Sexpr{ifelse(s4[66,5]<.01,"***",ifelse(s4[66,5]<.05,"**",ifelse(s4[66,5]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s4[64,6]}^{
-\backslash
-Sexpr{ifelse(s4[66,6]<.01,"***",ifelse(s4[66,6]<.05,"**",ifelse(s4[66,6]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s4[64,7]}^{
-\backslash
-Sexpr{ifelse(s4[66,7]<.01,"***",ifelse(s4[66,7]<.05,"**",ifelse(s4[66,7]<.1,"*","")
-))}}$   
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{by enumerator}
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $(
-\backslash
-Sexpr{s4[65,1]})$   &  $(
-\backslash
-Sexpr{s4[65,2]})$ & $(
-\backslash
-Sexpr{s4[65,3]})$ & $(
-\backslash
-Sexpr{s4[65,4]})$ & $(
-\backslash
-Sexpr{s4[65,5]})$ & $(
-\backslash
-Sexpr{s4[65,6]})$ & $(
-\backslash
-Sexpr{s4[65,7]})$ 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{Shop's customer}   & $
-\backslash
-Sexpr{s4[67,1]}^{
-\backslash
-Sexpr{ifelse(s4[69,1]<.01,"***",ifelse(s4[69,1]<.05,"**",ifelse(s4[69,1]<.1,"*","")
-))}}$ & $
-\backslash
-Sexpr{s4[67,2]}^{
-\backslash
-Sexpr{ifelse(s4[69,2]<.01,"***",ifelse(s4[69,2]<.05,"**",ifelse(s4[69,2]<.1,"*","")
-))}}$  & $
-\backslash
-Sexpr{s4[67,3]}^{
-\backslash
-Sexpr{ifelse(s4[69,3]<.01,"***",ifelse(s4[69,3]<.05,"**",ifelse(s4[69,3]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{s4[67,4]}^{
-\backslash
-Sexpr{ifelse(s4[69,4]<.01,"***",ifelse(s4[69,4]<.05,"**",ifelse(s4[69,4]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s4[67,5]}^{
-\backslash
-Sexpr{ifelse(s4[69,5]<.01,"***",ifelse(s4[69,5]<.05,"**",ifelse(s4[69,5]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s4[67,6]}^{
-\backslash
-Sexpr{ifelse(s4[69,6]<.01,"***",ifelse(s4[69,6]<.05,"**",ifelse(s4[69,6]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s4[67,7]}^{
-\backslash
-Sexpr{ifelse(s4[69,7]<.01,"***",ifelse(s4[69,7]<.05,"**",ifelse(s4[69,7]<.1,"*","")
-))}}$    
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{complained about seed}
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $(
-\backslash
-Sexpr{s4[68,1]})$   &  $(
-\backslash
-Sexpr{s4[68,2]})$ & $(
-\backslash
-Sexpr{s4[68,3]})$ & $(
-\backslash
-Sexpr{s4[68,4]})$ & $(
-\backslash
-Sexpr{s4[68,5]})$ & $(
-\backslash
-Sexpr{s4[68,6]})$ & $(
-\backslash
-Sexpr{s4[68,7]})$ 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{Shop's}   & $
-\backslash
-Sexpr{s4[70,1]}^{
-\backslash
-Sexpr{ifelse(s4[72,1]<.01,"***",ifelse(s4[72,1]<.05,"**",ifelse(s4[72,1]<.1,"*","")
-))}}$ & $
-\backslash
-Sexpr{s4[70,2]}^{
-\backslash
-Sexpr{ifelse(s4[72,2]<.01,"***",ifelse(s4[72,2]<.05,"**",ifelse(s4[72,2]<.1,"*","")
-))}}$  & $
-\backslash
-Sexpr{s4[70,3]}^{
-\backslash
-Sexpr{ifelse(s4[72,3]<.01,"***",ifelse(s4[72,3]<.05,"**",ifelse(s4[72,3]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{s4[70,4]}^{
-\backslash
-Sexpr{ifelse(s4[72,4]<.01,"***",ifelse(s4[72,4]<.05,"**",ifelse(s4[72,4]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s4[70,5]}^{
-\backslash
-Sexpr{ifelse(s4[72,5]<.01,"***",ifelse(s4[72,5]<.05,"**",ifelse(s4[72,5]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s4[70,6]}^{
-\backslash
-Sexpr{ifelse(s4[72,6]<.01,"***",ifelse(s4[72,6]<.05,"**",ifelse(s4[72,6]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s4[70,7]}^{
-\backslash
-Sexpr{ifelse(s4[72,7]<.01,"***",ifelse(s4[72,7]<.05,"**",ifelse(s4[72,7]<.1,"*","")
-))}}$    
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{temperature}  
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $(
-\backslash
-Sexpr{s4[71,1]})$   &  $(
-\backslash
-Sexpr{s4[71,2]})$ & $(
-\backslash
-Sexpr{s4[71,3]})$ & $(
-\backslash
-Sexpr{s4[71,4]})$ & $(
-\backslash
-Sexpr{s4[71,5]})$ & $(
-\backslash
-Sexpr{s4[71,6]})$ & $(
-\backslash
-Sexpr{s4[71,7]})$ 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{Shop has}   & $
-\backslash
-Sexpr{s4[73,1]}^{
-\backslash
-Sexpr{ifelse(s4[75,1]<.01,"***",ifelse(s4[75,1]<.05,"**",ifelse(s4[75,1]<.1,"*","")
-))}}$ & $
-\backslash
-Sexpr{s4[73,2]}^{
-\backslash
-Sexpr{ifelse(s4[75,2]<.01,"***",ifelse(s4[75,2]<.05,"**",ifelse(s4[75,2]<.1,"*","")
-))}}$  & $
-\backslash
-Sexpr{s4[73,3]}^{
-\backslash
-Sexpr{ifelse(s4[75,3]<.01,"***",ifelse(s4[75,3]<.05,"**",ifelse(s4[75,3]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{s4[73,4]}^{
-\backslash
-Sexpr{ifelse(s4[75,4]<.01,"***",ifelse(s4[75,4]<.05,"**",ifelse(s4[75,4]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s4[73,5]}^{
-\backslash
-Sexpr{ifelse(s4[75,5]<.01,"***",ifelse(s4[75,5]<.05,"**",ifelse(s4[75,5]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s4[73,6]}^{
-\backslash
-Sexpr{ifelse(s4[75,6]<.01,"***",ifelse(s4[75,6]<.05,"**",ifelse(s4[75,6]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s4[73,7]}^{
-\backslash
-Sexpr{ifelse(s4[75,7]<.01,"***",ifelse(s4[75,7]<.05,"**",ifelse(s4[75,7]<.1,"*","")
-))}}$   
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{leak-proof roof}  
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $(
-\backslash
-Sexpr{s4[74,1]})$   &  $(
-\backslash
-Sexpr{s4[74,2]})$ & $(
-\backslash
-Sexpr{s4[74,3]})$ & $(
-\backslash
-Sexpr{s4[74,4]})$ & $(
-\backslash
-Sexpr{s4[74,5]})$ & $(
-\backslash
-Sexpr{s4[74,6]})$ & $(
-\backslash
-Sexpr{s4[74,7]})$ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -18284,19 +14810,19 @@ hline
 
 {R$^2$ }                 &  $
 \backslash
-Sexpr{s4[76,1]}$   &  $
+Sexpr{s4[19,1]}$   &  $
 \backslash
-Sexpr{s4[76,2]}$ & $
+Sexpr{s4[19,2]}$ & $
 \backslash
-Sexpr{s4[76,3]}$ & $
+Sexpr{s4[19,3]}$ & $
 \backslash
-Sexpr{s4[76,4]}$ & $
+Sexpr{s4[19,4]}$ & $
 \backslash
-Sexpr{s4[76,5]}$ & $
+Sexpr{s4[19,5]}$ & $
 \backslash
-Sexpr{s4[76,6]}$ & $
+Sexpr{s4[19,6]}$ & $
 \backslash
-Sexpr{s4[76,7]}$ 
+Sexpr{s4[19,7]}$ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -18308,19 +14834,19 @@ Sexpr{s4[76,7]}$
 {Adj.
  R$^2$}                 &  $
 \backslash
-Sexpr{s4[77,1]}$   &  $
+Sexpr{s4[20,1]}$   &  $
 \backslash
-Sexpr{s4[77,2]}$ & $
+Sexpr{s4[20,2]}$ & $
 \backslash
-Sexpr{s4[77,3]}$ & $
+Sexpr{s4[20,3]}$ & $
 \backslash
-Sexpr{s4[77,4]}$ & $
+Sexpr{s4[20,4]}$ & $
 \backslash
-Sexpr{s4[77,5]}$ & $
+Sexpr{s4[20,5]}$ & $
 \backslash
-Sexpr{s4[77,6]}$ & $
+Sexpr{s4[20,6]}$ & $
 \backslash
-Sexpr{s4[77,7]}$    
+Sexpr{s4[20,7]}$    
 \end_layout
 
 \begin_layout Plain Layout
@@ -18331,19 +14857,19 @@ Sexpr{s4[77,7]}$
 \backslash
 {Number of obs.}                 &  $
 \backslash
-Sexpr{s4[78,1]}$   &  $
+Sexpr{s4[21,1]}$   &  $
 \backslash
-Sexpr{s4[78,2]}$ & $
+Sexpr{s4[21,2]}$ & $
 \backslash
-Sexpr{s4[78,3]}$ & $
+Sexpr{s4[21,3]}$ & $
 \backslash
-Sexpr{s4[78,4]}$ & $
+Sexpr{s4[21,4]}$ & $
 \backslash
-Sexpr{s4[78,5]}$ & $
+Sexpr{s4[21,5]}$ & $
 \backslash
-Sexpr{s4[78,6]}$ & $
+Sexpr{s4[21,6]}$ & $
 \backslash
-Sexpr{s4[78,7]}$    
+Sexpr{s4[21,7]}$    
 \end_layout
 
 \begin_layout Plain Layout
@@ -18386,7 +14912,6 @@ tiny
 
 Note: Here, the genders of the different input dealers that each farmer
  rated have been averaged.
- All the dealer characteristics are also averaged accordingly.
  The ratings given by the farmers also are averaged at the farmer level.
   
 \backslash
@@ -18432,14 +14957,14 @@ noprefix "false"
 \end_layout
 
 \begin_layout Section*
-Question 2: Do female farmers rate agro-input dealers differently? (Farmer's
+Question 2: Do feFarmer is males rate agro-input dealers differently? (Farmer's
  gender effect)
 \end_layout
 
 \begin_layout Standard
 The most straightforward way to answer this question is probably to compare
- average ratings given by female farmers to average ratings given by male
- farmers.
+ average ratings given by feFarmer is males to average ratings given by
+ Farmer is males.
  Also here, one could do this on the original data, but the fact that some
  farmers rate more agro-input dealers than others will lead to differing
  implied weights given to farmers.
@@ -18504,9 +15029,9 @@ noprefix "false"
 
 \end_inset
 
- for seed quality ratings, shows that male farmers give significantly higher
- scores than female farmers, albeit only for one dimension (drought tolerance
- of the seed).
+ for seed quality ratings, shows that Farmer is males give significantly
+ higher scores than feFarmer is males, albeit only for one dimension (drought
+ tolerance of the seed).
  We can also add additional controls to this between model to explore alternativ
 e mediating processes.
  For instance, it may be that women farmers are lower educated, and that
@@ -18521,9 +15046,9 @@ noprefix "false"
 
 \end_inset
 
- shows that male farmers now also rate significantly higher with respect
+ shows that Farmer is males now also rate significantly higher with respect
  to disease tolerance.
- Interestingly, we do not find that male and female farmers rate differently
+ Interestingly, we do not find that male and feFarmer is males rate differently
  when we look at more general agro-input dealer ratings.
 \end_layout
 
@@ -18542,7 +15067,7 @@ While we argued above any difference likely should be attributed to the
 
 However, dealer level characteristics could confound the relationship between
  a farmer's gender and the rating that an agro-input dealer receives.
- For instance, it may be that female farmers are more likely to purchase
+ For instance, it may be that feFarmer is males are more likely to purchase
  from agro-input dealer close to home, as opposed to the larger agro-input
  shops in towns.
  Shops in rural areas may suffer from poorer infrastructure and receive
@@ -18577,8 +15102,8 @@ noprefix "false"
 
 \end_inset
 
- shows that the fact that male farmers rate higher is not related to difference
- in agro-input dealers.
+ shows that the fact that Farmer is males rate higher is not related to
+ difference in agro-input dealers.
  
 \end_layout
 
@@ -18593,8 +15118,8 @@ Arguably the best model would be model with farmer fixed effects, where
  Again, as not all farmers rated each input dealer, there is variation in
  the gender composition of the subset of farmers that rated each agro input
  dealer.
- For instance, some agro input dealers will have been rated only by male
- farmers, some only by female farmers.
+ For instance, some agro input dealers will have been rated only by Farmer
+ is males, some only by feFarmer is males.
  This variation can then be used to see if agro-input dealers that are rated
  by relatively more women are scored differently than agro-input dealers
  that were rated by relatively more men.
@@ -18934,7 +15459,7 @@ Sexpr{s_deal5[2,7]})$
 
 \begin_layout Plain Layout
 
-{Male farmer}   & $
+{Farmer is male}   & $
 \backslash
 Sexpr{s_deal5[4,1]}^{
 \backslash
@@ -19131,7 +15656,7 @@ tiny
 \begin_layout Plain Layout
 
 Note: Here, the gender of the farmer is a dummy variable having the value
- of either 0 (female farmers) or 1 (male farmers).
+ of either 0 (feFarmer is males) or 1 (Farmer is males).
  The ratings given by the farmers are averaged at the farmer level.
  
 \end_layout
@@ -19449,7 +15974,7 @@ Sexpr{s_deal6[2,7]})$
 
 \begin_layout Plain Layout
 
-{Male farmer}   & $
+{Farmer is male}   & $
 \backslash
 Sexpr{s_deal6[4,1]}^{
 \backslash
@@ -19998,7 +16523,7 @@ tiny
 \begin_layout Plain Layout
 
 Note: Here, the gender of the farmer is a dummy variable having the value
- of either 0 (female farmers) or 1 (male farmers).
+ of either 0 (feFarmer is males) or 1 (Farmer is males).
  The ratings given by the farmers are averaged at the farmer level.
  
 \end_layout
@@ -20336,7 +16861,7 @@ Sexpr{s_deal7[2,7]})$
 
 \begin_layout Plain Layout
 
-{Male farmer}   & $
+{Farmer is male}   & $
 \backslash
 Sexpr{s_deal7[4,1]}^{
 \backslash
@@ -20538,7 +17063,7 @@ tiny
 \begin_layout Plain Layout
 
 Note: Here, the gender of the farmer is a dummy variable having the value
- of either 0 (female farmers) or 1 (male farmers).
+ of either 0 (feFarmer is males) or 1 (Farmer is males).
  The ratings given by the farmers are averaged at the farmer level.
  
 \end_layout
@@ -20871,7 +17396,7 @@ Sexpr{s_deal8[2,7]})$
 
 \begin_layout Plain Layout
 
-{Male farmer}   & $
+{Farmer is male}   & $
 \backslash
 Sexpr{s_deal7[4,1]}^{
 \backslash
@@ -21441,7 +17966,7 @@ tiny
 \begin_layout Plain Layout
 
 Note: Here, the gender of the farmer is a dummy variable having the value
- of either 0 (female farmers) or 1 (male farmers).
+ of either 0 (feFarmer is males) or 1 (Farmer is males).
  The ratings given by the farmers are averaged at the farmer level.
  
 \end_layout
@@ -21707,7 +18232,7 @@ hline
 
 \begin_layout Plain Layout
 
-{Male farmer}   & $
+{Farmer is male}   & $
 \backslash
 Sexpr{fed1[2,1]}^{
 \backslash
@@ -22165,7 +18690,7 @@ hline
 
 \begin_layout Plain Layout
 
-{Male farmer}   & $
+{Farmer is male}   & $
 \backslash
 Sexpr{fed2[2,1]}^{
 \backslash
@@ -22983,7 +19508,7 @@ hline
 
 \begin_layout Plain Layout
 
-{Male farmer}   & $
+{Farmer is male}   & $
 \backslash
 Sexpr{fed3[2,1]}^{
 \backslash
@@ -23444,7 +19969,7 @@ hline
 
 \begin_layout Plain Layout
 
-{Male farmer}   & $
+{Farmer is male}   & $
 \backslash
 Sexpr{fed4[2,1]}^{
 \backslash
@@ -24345,7 +20870,7 @@ Sexpr{s_deal1[2,7]})$
 
 \begin_layout Plain Layout
 
-{Male farmer}   & $
+{Farmer is male}   & $
 \backslash
 Sexpr{s_deal1[4,1]}^{
 \backslash
@@ -24878,7 +21403,11 @@ Sexpr{s_deal2[2,7]})$
 
 \begin_layout Plain Layout
 
-{Male farmer}   & $
+\end_layout
+
+\begin_layout Plain Layout
+
+{Farmer is male}   & $
 \backslash
 Sexpr{s_deal2[4,1]}^{
 \backslash
@@ -24933,11 +21462,11 @@ Sexpr{ifelse(s_deal2[6,6]<.01,"***",ifelse(s_deal2[6,6]<.05,"**",ifelse(s_deal2[
 Sexpr{s_deal2[4,7]}^{
 \backslash
 Sexpr{ifelse(s_deal2[6,7]<.01,"***",ifelse(s_deal2[6,7]<.05,"**",ifelse(s_deal2[6,
-7]<.1,"*","")))}}$    
+7]<.1,"*","")))}}$   
 \backslash
 
 \backslash
-
+ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -24956,7 +21485,7 @@ Sexpr{s_deal2[5,5]})$ & $(
 \backslash
 Sexpr{s_deal2[5,6]})$ & $(
 \backslash
-Sexpr{s_deal2[5,7]})$
+Sexpr{s_deal2[5,7]})$ 
 \backslash
 
 \backslash
@@ -24965,7 +21494,7 @@ Sexpr{s_deal2[5,7]})$
 
 \begin_layout Plain Layout
 
-{Farmer finished}   & $
+{Dealer's age}   & $
 \backslash
 Sexpr{s_deal2[7,1]}^{
 \backslash
@@ -25020,11 +21549,16 @@ Sexpr{ifelse(s_deal2[9,6]<.01,"***",ifelse(s_deal2[9,6]<.05,"**",ifelse(s_deal2[
 Sexpr{s_deal2[7,7]}^{
 \backslash
 Sexpr{ifelse(s_deal2[9,7]<.01,"***",ifelse(s_deal2[9,7]<.05,"**",ifelse(s_deal2[9,
-7]<.1,"*","")))}}$    
+7]<.1,"*","")))}}$   
 \backslash
 
 \backslash
- {primary education}
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{(in years)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -25043,7 +21577,7 @@ Sexpr{s_deal2[8,5]})$ & $(
 \backslash
 Sexpr{s_deal2[8,6]})$ & $(
 \backslash
-Sexpr{s_deal2[8,7]})$ 
+Sexpr{s_deal2[8,7]})$
 \backslash
 
 \backslash
@@ -25052,7 +21586,7 @@ Sexpr{s_deal2[8,7]})$
 
 \begin_layout Plain Layout
 
-{Farmer is married}   & $
+{Dealer finished}   & $
 \backslash
 Sexpr{s_deal2[10,1]}^{
 \backslash
@@ -25107,11 +21641,16 @@ Sexpr{ifelse(s_deal2[12,6]<.01,"***",ifelse(s_deal2[12,6]<.05,"**",ifelse(s_deal
 Sexpr{s_deal2[10,7]}^{
 \backslash
 Sexpr{ifelse(s_deal2[12,7]<.01,"***",ifelse(s_deal2[12,7]<.05,"**",ifelse(s_deal2[
-12,7]<.1,"*","")))}}$  
+12,7]<.1,"*","")))}}$    
 \backslash
 
 \backslash
 
+\end_layout
+
+\begin_layout Plain Layout
+
+{secondary education} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -25130,7 +21669,7 @@ Sexpr{s_deal2[11,5]})$ & $(
 \backslash
 Sexpr{s_deal2[11,6]})$ & $(
 \backslash
-Sexpr{s_deal2[11,7]})$
+Sexpr{s_deal2[11,7]})$ 
 \backslash
 
 \backslash
@@ -25139,7 +21678,7 @@ Sexpr{s_deal2[11,7]})$
 
 \begin_layout Plain Layout
 
-{Farmer's distance to}   & $
+{Shop's distance to}   & $
 \backslash
 Sexpr{s_deal2[13,1]}^{
 \backslash
@@ -25194,7 +21733,7 @@ Sexpr{ifelse(s_deal2[15,6]<.01,"***",ifelse(s_deal2[15,6]<.05,"**",ifelse(s_deal
 Sexpr{s_deal2[13,7]}^{
 \backslash
 Sexpr{ifelse(s_deal2[15,7]<.01,"***",ifelse(s_deal2[15,7]<.05,"**",ifelse(s_deal2[
-15,7]<.1,"*","")))}}$   
+15,7]<.1,"*","")))}}$  
 \backslash
 
 \backslash
@@ -25203,7 +21742,7 @@ Sexpr{ifelse(s_deal2[15,7]<.01,"***",ifelse(s_deal2[15,7]<.05,"**",ifelse(s_deal
 
 \begin_layout Plain Layout
 
-{tarmac road (in km)}  
+{tarmac road (in km)} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -25222,7 +21761,7 @@ Sexpr{s_deal2[14,5]})$ & $(
 \backslash
 Sexpr{s_deal2[14,6]})$ & $(
 \backslash
-Sexpr{s_deal2[14,7]})$
+Sexpr{s_deal2[14,7]})$ 
 \backslash
 
 \backslash
@@ -25231,7 +21770,7 @@ Sexpr{s_deal2[14,7]})$
 
 \begin_layout Plain Layout
 
-{Farmer's age}   & $
+{Shop's distance to}   & $
 \backslash
 Sexpr{s_deal2[16,1]}^{
 \backslash
@@ -25286,7 +21825,7 @@ Sexpr{ifelse(s_deal2[18,6]<.01,"***",ifelse(s_deal2[18,6]<.05,"**",ifelse(s_deal
 Sexpr{s_deal2[16,7]}^{
 \backslash
 Sexpr{ifelse(s_deal2[18,7]<.01,"***",ifelse(s_deal2[18,7]<.05,"**",ifelse(s_deal2[
-18,7]<.1,"*","")))}}$   
+18,7]<.1,"*","")))}}$  
 \backslash
 
 \backslash
@@ -25295,7 +21834,7 @@ Sexpr{ifelse(s_deal2[18,7]<.01,"***",ifelse(s_deal2[18,7]<.05,"**",ifelse(s_deal
 
 \begin_layout Plain Layout
 
-{(in years)}
+{murram road (in km)} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -25314,7 +21853,7 @@ Sexpr{s_deal2[17,5]})$ & $(
 \backslash
 Sexpr{s_deal2[17,6]})$ & $(
 \backslash
-Sexpr{s_deal2[17,7]})$ 
+Sexpr{s_deal2[17,7]})$
 \backslash
 
 \backslash
@@ -25323,7 +21862,7 @@ Sexpr{s_deal2[17,7]})$
 
 \begin_layout Plain Layout
 
-{Dealer's age}   & $
+{Shop sells only}   & $
 \backslash
 Sexpr{s_deal2[19,1]}^{
 \backslash
@@ -25378,16 +21917,16 @@ Sexpr{ifelse(s_deal2[21,6]<.01,"***",ifelse(s_deal2[21,6]<.05,"**",ifelse(s_deal
 Sexpr{s_deal2[19,7]}^{
 \backslash
 Sexpr{ifelse(s_deal2[21,7]<.01,"***",ifelse(s_deal2[21,7]<.05,"**",ifelse(s_deal2[
-21,7]<.1,"*","")))}}$   
+21,7]<.1,"*","")))}}$ 
 \backslash
 
 \backslash
- 
+
 \end_layout
 
 \begin_layout Plain Layout
 
-{(in years)}
+{farm inputs} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -25415,7 +21954,7 @@ Sexpr{s_deal2[20,7]})$
 
 \begin_layout Plain Layout
 
-{Dealer finished}   & $
+{Shop's age}   & $
 \backslash
 Sexpr{s_deal2[22,1]}^{
 \backslash
@@ -25470,7 +22009,7 @@ Sexpr{ifelse(s_deal2[24,6]<.01,"***",ifelse(s_deal2[24,6]<.05,"**",ifelse(s_deal
 Sexpr{s_deal2[22,7]}^{
 \backslash
 Sexpr{ifelse(s_deal2[24,7]<.01,"***",ifelse(s_deal2[24,7]<.05,"**",ifelse(s_deal2[
-24,7]<.1,"*","")))}}$   
+24,7]<.1,"*","")))}}$  
 \backslash
 
 \backslash
@@ -25479,7 +22018,7 @@ Sexpr{ifelse(s_deal2[24,7]<.01,"***",ifelse(s_deal2[24,7]<.05,"**",ifelse(s_deal
 
 \begin_layout Plain Layout
 
-{secondary education}
+{(in years)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -25498,7 +22037,7 @@ Sexpr{s_deal2[23,5]})$ & $(
 \backslash
 Sexpr{s_deal2[23,6]})$ & $(
 \backslash
-Sexpr{s_deal2[23,7]})$
+Sexpr{s_deal2[23,7]})$ 
 \backslash
 
 \backslash
@@ -25507,7 +22046,7 @@ Sexpr{s_deal2[23,7]})$
 
 \begin_layout Plain Layout
 
-{Shop's distance to}   & $
+{Seed is stored in}   & $
 \backslash
 Sexpr{s_deal2[25,1]}^{
 \backslash
@@ -25562,7 +22101,7 @@ Sexpr{ifelse(s_deal2[27,6]<.01,"***",ifelse(s_deal2[27,6]<.05,"**",ifelse(s_deal
 Sexpr{s_deal2[25,7]}^{
 \backslash
 Sexpr{ifelse(s_deal2[27,7]<.01,"***",ifelse(s_deal2[27,7]<.05,"**",ifelse(s_deal2[
-27,7]<.1,"*","")))}}$    
+27,7]<.1,"*","")))}}$   
 \backslash
 
 \backslash
@@ -25571,7 +22110,7 @@ Sexpr{ifelse(s_deal2[27,7]<.01,"***",ifelse(s_deal2[27,7]<.05,"**",ifelse(s_deal
 
 \begin_layout Plain Layout
 
-{tarmac road (in km)} 
+{dedicated area}
 \end_layout
 
 \begin_layout Plain Layout
@@ -25599,7 +22138,7 @@ Sexpr{s_deal2[26,7]})$
 
 \begin_layout Plain Layout
 
-{Shop's distance to}   & $
+{Shop has problem}   & $
 \backslash
 Sexpr{s_deal2[28,1]}^{
 \backslash
@@ -25663,7 +22202,7 @@ Sexpr{ifelse(s_deal2[30,7]<.01,"***",ifelse(s_deal2[30,7]<.05,"**",ifelse(s_deal
 
 \begin_layout Plain Layout
 
-{murram road (in km)} 
+{with pests} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -25691,7 +22230,7 @@ Sexpr{s_deal2[29,7]})$
 
 \begin_layout Plain Layout
 
-{Shop sells only}   & $
+{Shop has}   & $
 \backslash
 Sexpr{s_deal2[31,1]}^{
 \backslash
@@ -25746,7 +22285,7 @@ Sexpr{ifelse(s_deal2[33,6]<.01,"***",ifelse(s_deal2[33,6]<.05,"**",ifelse(s_deal
 Sexpr{s_deal2[31,7]}^{
 \backslash
 Sexpr{ifelse(s_deal2[33,7]<.01,"***",ifelse(s_deal2[33,7]<.05,"**",ifelse(s_deal2[
-33,7]<.1,"*","")))}}$  
+33,7]<.1,"*","")))}}$   
 \backslash
 
 \backslash
@@ -25755,7 +22294,7 @@ Sexpr{ifelse(s_deal2[33,7]<.01,"***",ifelse(s_deal2[33,7]<.05,"**",ifelse(s_deal
 
 \begin_layout Plain Layout
 
-{farm inputs} 
+{insulated roof} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -25774,7 +22313,7 @@ Sexpr{s_deal2[32,5]})$ & $(
 \backslash
 Sexpr{s_deal2[32,6]})$ & $(
 \backslash
-Sexpr{s_deal2[32,7]})$
+Sexpr{s_deal2[32,7]})$ 
 \backslash
 
 \backslash
@@ -25783,7 +22322,7 @@ Sexpr{s_deal2[32,7]})$
 
 \begin_layout Plain Layout
 
-{Shop's age}   & $
+{Shop has}   & $
 \backslash
 Sexpr{s_deal2[34,1]}^{
 \backslash
@@ -25838,7 +22377,7 @@ Sexpr{ifelse(s_deal2[36,6]<.01,"***",ifelse(s_deal2[36,6]<.05,"**",ifelse(s_deal
 Sexpr{s_deal2[34,7]}^{
 \backslash
 Sexpr{ifelse(s_deal2[36,7]<.01,"***",ifelse(s_deal2[36,7]<.05,"**",ifelse(s_deal2[
-36,7]<.1,"*","")))}}$ 
+36,7]<.1,"*","")))}}$   
 \backslash
 
 \backslash
@@ -25847,7 +22386,7 @@ Sexpr{ifelse(s_deal2[36,7]<.01,"***",ifelse(s_deal2[36,7]<.05,"**",ifelse(s_deal
 
 \begin_layout Plain Layout
 
-{(in years)} 
+{insulated walls} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -25875,7 +22414,7 @@ Sexpr{s_deal2[35,7]})$
 
 \begin_layout Plain Layout
 
-{Seed is stored}   & $
+{Shop is}   & $
 \backslash
 Sexpr{s_deal2[37,1]}^{
 \backslash
@@ -25930,7 +22469,7 @@ Sexpr{ifelse(s_deal2[39,6]<.01,"***",ifelse(s_deal2[39,6]<.05,"**",ifelse(s_deal
 Sexpr{s_deal2[37,7]}^{
 \backslash
 Sexpr{ifelse(s_deal2[39,7]<.01,"***",ifelse(s_deal2[39,7]<.05,"**",ifelse(s_deal2[
-39,7]<.1,"*","")))}}$  
+39,7]<.1,"*","")))}}$   
 \backslash
 
 \backslash
@@ -25939,7 +22478,7 @@ Sexpr{ifelse(s_deal2[39,7]<.01,"***",ifelse(s_deal2[39,7]<.05,"**",ifelse(s_deal
 
 \begin_layout Plain Layout
 
-{in dedicated area}
+{ventilated} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -25958,7 +22497,7 @@ Sexpr{s_deal2[38,5]})$ & $(
 \backslash
 Sexpr{s_deal2[38,6]})$ & $(
 \backslash
-Sexpr{s_deal2[38,7]})$ 
+Sexpr{s_deal2[38,7]})$
 \backslash
 
 \backslash
@@ -25967,7 +22506,7 @@ Sexpr{s_deal2[38,7]})$
 
 \begin_layout Plain Layout
 
-{Shop has problem}   & $
+{Seed is stored}   & $
 \backslash
 Sexpr{s_deal2[40,1]}^{
 \backslash
@@ -26022,7 +22561,7 @@ Sexpr{ifelse(s_deal2[42,6]<.01,"***",ifelse(s_deal2[42,6]<.05,"**",ifelse(s_deal
 Sexpr{s_deal2[40,7]}^{
 \backslash
 Sexpr{ifelse(s_deal2[42,7]<.01,"***",ifelse(s_deal2[42,7]<.05,"**",ifelse(s_deal2[
-42,7]<.1,"*","")))}}$   
+42,7]<.1,"*","")))}}$  
 \backslash
 
 \backslash
@@ -26031,7 +22570,7 @@ Sexpr{ifelse(s_deal2[42,7]<.01,"***",ifelse(s_deal2[42,7]<.05,"**",ifelse(s_deal
 
 \begin_layout Plain Layout
 
-{with pests}
+{in poor lighting} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -26059,7 +22598,7 @@ Sexpr{s_deal2[41,7]})$
 
 \begin_layout Plain Layout
 
-{Shop has}   & $
+{Seed is stored}   & $
 \backslash
 Sexpr{s_deal2[43,1]}^{
 \backslash
@@ -26123,7 +22662,7 @@ Sexpr{ifelse(s_deal2[45,7]<.01,"***",ifelse(s_deal2[45,7]<.05,"**",ifelse(s_deal
 
 \begin_layout Plain Layout
 
-{insulated roof} 
+{on poor surface} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -26151,7 +22690,7 @@ Sexpr{s_deal2[44,7]})$
 
 \begin_layout Plain Layout
 
-{Shop has}   & $
+{Seed is stored}   & $
 \backslash
 Sexpr{s_deal2[46,1]}^{
 \backslash
@@ -26206,7 +22745,7 @@ Sexpr{ifelse(s_deal2[48,6]<.01,"***",ifelse(s_deal2[48,6]<.05,"**",ifelse(s_deal
 Sexpr{s_deal2[46,7]}^{
 \backslash
 Sexpr{ifelse(s_deal2[48,7]<.01,"***",ifelse(s_deal2[48,7]<.05,"**",ifelse(s_deal2[
-48,7]<.1,"*","")))}}$   
+48,7]<.1,"*","")))}}$ 
 \backslash
 
 \backslash
@@ -26215,7 +22754,7 @@ Sexpr{ifelse(s_deal2[48,7]<.01,"***",ifelse(s_deal2[48,7]<.05,"**",ifelse(s_deal
 
 \begin_layout Plain Layout
 
-{insulated walls} 
+{in open containers}
 \end_layout
 
 \begin_layout Plain Layout
@@ -26243,7 +22782,7 @@ Sexpr{s_deal2[47,7]})$
 
 \begin_layout Plain Layout
 
-{Shop is}   & $
+{Shop displays}   & $
 \backslash
 Sexpr{s_deal2[49,1]}^{
 \backslash
@@ -26307,7 +22846,7 @@ Sexpr{ifelse(s_deal2[51,7]<.01,"***",ifelse(s_deal2[51,7]<.05,"**",ifelse(s_deal
 
 \begin_layout Plain Layout
 
-{ventilated} 
+{official certificate} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -26335,7 +22874,7 @@ Sexpr{s_deal2[50,7]})$
 
 \begin_layout Plain Layout
 
-{Seed is stored}   & $
+{Shop's rating}   & $
 \backslash
 Sexpr{s_deal2[52,1]}^{
 \backslash
@@ -26399,7 +22938,7 @@ Sexpr{ifelse(s_deal2[54,7]<.01,"***",ifelse(s_deal2[54,7]<.05,"**",ifelse(s_deal
 
 \begin_layout Plain Layout
 
-{in poor lighting} 
+{by enumerator} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -26418,7 +22957,7 @@ Sexpr{s_deal2[53,5]})$ & $(
 \backslash
 Sexpr{s_deal2[53,6]})$ & $(
 \backslash
-Sexpr{s_deal2[53,7]})$
+Sexpr{s_deal2[53,7]})$ 
 \backslash
 
 \backslash
@@ -26427,7 +22966,7 @@ Sexpr{s_deal2[53,7]})$
 
 \begin_layout Plain Layout
 
-{Seed is stored}   & $
+{Shop's customer}   & $
 \backslash
 Sexpr{s_deal2[55,1]}^{
 \backslash
@@ -26491,7 +23030,7 @@ Sexpr{ifelse(s_deal2[57,7]<.01,"***",ifelse(s_deal2[57,7]<.05,"**",ifelse(s_deal
 
 \begin_layout Plain Layout
 
-{on poor surface} 
+{complained about seed} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -26519,7 +23058,7 @@ Sexpr{s_deal2[56,7]})$
 
 \begin_layout Plain Layout
 
-{Seed is stored}   & $
+{Shop's}   & $
 \backslash
 Sexpr{s_deal2[58,1]}^{
 \backslash
@@ -26578,12 +23117,7 @@ Sexpr{ifelse(s_deal2[60,7]<.01,"***",ifelse(s_deal2[60,7]<.05,"**",ifelse(s_deal
 \backslash
 
 \backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{in open containers} 
+ {temperature}
 \end_layout
 
 \begin_layout Plain Layout
@@ -26602,7 +23136,7 @@ Sexpr{s_deal2[59,5]})$ & $(
 \backslash
 Sexpr{s_deal2[59,6]})$ & $(
 \backslash
-Sexpr{s_deal2[59,7]})$ 
+Sexpr{s_deal2[59,7]})$
 \backslash
 
 \backslash
@@ -26611,7 +23145,7 @@ Sexpr{s_deal2[59,7]})$
 
 \begin_layout Plain Layout
 
-{Shop displays}   & $
+{Shop has}   & $
 \backslash
 Sexpr{s_deal2[61,1]}^{
 \backslash
@@ -26666,16 +23200,11 @@ Sexpr{ifelse(s_deal2[63,6]<.01,"***",ifelse(s_deal2[63,6]<.05,"**",ifelse(s_deal
 Sexpr{s_deal2[61,7]}^{
 \backslash
 Sexpr{ifelse(s_deal2[63,7]<.01,"***",ifelse(s_deal2[63,7]<.05,"**",ifelse(s_deal2[
-63,7]<.1,"*","")))}}$ 
+63,7]<.1,"*","")))}}$  
 \backslash
 
 \backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{official certificate}
+ {leakproof roof}
 \end_layout
 
 \begin_layout Plain Layout
@@ -26694,370 +23223,7 @@ Sexpr{s_deal2[62,5]})$ & $(
 \backslash
 Sexpr{s_deal2[62,6]})$ & $(
 \backslash
-Sexpr{s_deal2[62,7]})$ 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{Shop's rating}   & $
-\backslash
-Sexpr{s_deal2[64,1]}^{
-\backslash
-Sexpr{ifelse(s_deal2[66,1]<.01,"***",ifelse(s_deal2[66,1]<.05,"**",ifelse(s_deal2[
-66,1]<.1,"*","")))}}$ & $
-\backslash
-Sexpr{s_deal2[64,2]}^{
-\backslash
-Sexpr{ifelse(s_deal2[66,2]<.01,"***",ifelse(s_deal2[66,2]<.05,"**",ifelse(s_deal2[
-66,2]<.1,"*","")))}}$  & $
-\backslash
-Sexpr{s_deal2[64,3]}^{
-\backslash
-Sexpr{ifelse(s_deal2[66,3]<.01,"***",ifelse(s_deal2[66,3]<.05,"**",ifelse(s_deal2[
-66,3]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{s_deal2[64,4]}^{
-\backslash
-Sexpr{ifelse(s_deal2[66,4]<.01,"***",ifelse(s_deal2[66,4]<.05,"**",ifelse(s_deal2[
-66,4]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s_deal2[64,5]}^{
-\backslash
-Sexpr{ifelse(s_deal2[66,5]<.01,"***",ifelse(s_deal2[66,5]<.05,"**",ifelse(s_deal2[
-66,5]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s_deal2[64,6]}^{
-\backslash
-Sexpr{ifelse(s_deal2[66,6]<.01,"***",ifelse(s_deal2[66,6]<.05,"**",ifelse(s_deal2[
-66,6]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s_deal2[64,7]}^{
-\backslash
-Sexpr{ifelse(s_deal2[66,7]<.01,"***",ifelse(s_deal2[66,7]<.05,"**",ifelse(s_deal2[
-66,7]<.1,"*","")))}}$   
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{by enumerator} 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $(
-\backslash
-Sexpr{s_deal2[65,1]})$   &  $(
-\backslash
-Sexpr{s_deal2[65,2]})$ & $(
-\backslash
-Sexpr{s_deal2[65,3]})$ & $(
-\backslash
-Sexpr{s_deal2[65,4]})$ & $(
-\backslash
-Sexpr{s_deal2[65,5]})$ & $(
-\backslash
-Sexpr{s_deal2[65,6]})$ & $(
-\backslash
-Sexpr{s_deal2[65,7]})$ 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{Shop's customer}   & $
-\backslash
-Sexpr{s_deal2[67,1]}^{
-\backslash
-Sexpr{ifelse(s_deal2[69,1]<.01,"***",ifelse(s_deal2[69,1]<.05,"**",ifelse(s_deal2[
-69,1]<.1,"*","")))}}$ & $
-\backslash
-Sexpr{s_deal2[67,2]}^{
-\backslash
-Sexpr{ifelse(s_deal2[69,2]<.01,"***",ifelse(s_deal2[69,2]<.05,"**",ifelse(s_deal2[
-69,2]<.1,"*","")))}}$  & $
-\backslash
-Sexpr{s_deal2[67,3]}^{
-\backslash
-Sexpr{ifelse(s_deal2[69,3]<.01,"***",ifelse(s_deal2[69,3]<.05,"**",ifelse(s_deal2[
-69,3]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{s_deal2[67,4]}^{
-\backslash
-Sexpr{ifelse(s_deal2[69,4]<.01,"***",ifelse(s_deal2[69,4]<.05,"**",ifelse(s_deal2[
-69,4]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s_deal2[67,5]}^{
-\backslash
-Sexpr{ifelse(s_deal2[69,5]<.01,"***",ifelse(s_deal2[69,5]<.05,"**",ifelse(s_deal2[
-69,5]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s_deal2[67,6]}^{
-\backslash
-Sexpr{ifelse(s_deal2[69,6]<.01,"***",ifelse(s_deal2[69,6]<.05,"**",ifelse(s_deal2[
-69,6]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s_deal2[67,7]}^{
-\backslash
-Sexpr{ifelse(s_deal2[69,7]<.01,"***",ifelse(s_deal2[69,7]<.05,"**",ifelse(s_deal2[
-69,7]<.1,"*","")))}}$   
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{complained about seed} 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $(
-\backslash
-Sexpr{s_deal2[68,1]})$   &  $(
-\backslash
-Sexpr{s_deal2[68,2]})$ & $(
-\backslash
-Sexpr{s_deal2[68,3]})$ & $(
-\backslash
-Sexpr{s_deal2[68,4]})$ & $(
-\backslash
-Sexpr{s_deal2[68,5]})$ & $(
-\backslash
-Sexpr{s_deal2[68,6]})$ & $(
-\backslash
-Sexpr{s_deal2[68,7]})$ 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{Shop's}   & $
-\backslash
-Sexpr{s_deal2[70,1]}^{
-\backslash
-Sexpr{ifelse(s_deal2[72,1]<.01,"***",ifelse(s_deal2[72,1]<.05,"**",ifelse(s_deal2[
-72,1]<.1,"*","")))}}$ & $
-\backslash
-Sexpr{s_deal2[70,2]}^{
-\backslash
-Sexpr{ifelse(s_deal2[72,2]<.01,"***",ifelse(s_deal2[72,2]<.05,"**",ifelse(s_deal2[
-72,2]<.1,"*","")))}}$  & $
-\backslash
-Sexpr{s_deal2[70,3]}^{
-\backslash
-Sexpr{ifelse(s_deal2[72,3]<.01,"***",ifelse(s_deal2[72,3]<.05,"**",ifelse(s_deal2[
-72,3]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{s_deal2[70,4]}^{
-\backslash
-Sexpr{ifelse(s_deal2[72,4]<.01,"***",ifelse(s_deal2[72,4]<.05,"**",ifelse(s_deal2[
-72,4]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s_deal2[70,5]}^{
-\backslash
-Sexpr{ifelse(s_deal2[72,5]<.01,"***",ifelse(s_deal2[72,5]<.05,"**",ifelse(s_deal2[
-72,5]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s_deal2[70,6]}^{
-\backslash
-Sexpr{ifelse(s_deal2[72,6]<.01,"***",ifelse(s_deal2[72,6]<.05,"**",ifelse(s_deal2[
-72,6]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s_deal2[70,7]}^{
-\backslash
-Sexpr{ifelse(s_deal2[72,7]<.01,"***",ifelse(s_deal2[72,7]<.05,"**",ifelse(s_deal2[
-72,7]<.1,"*","")))}}$  
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{temperature} 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $(
-\backslash
-Sexpr{s_deal2[71,1]})$   &  $(
-\backslash
-Sexpr{s_deal2[71,2]})$ & $(
-\backslash
-Sexpr{s_deal2[71,3]})$ & $(
-\backslash
-Sexpr{s_deal2[71,4]})$ & $(
-\backslash
-Sexpr{s_deal2[71,5]})$ & $(
-\backslash
-Sexpr{s_deal2[71,6]})$ & $(
-\backslash
-Sexpr{s_deal2[71,7]})$ 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{Shop has}   & $
-\backslash
-Sexpr{s_deal2[73,1]}^{
-\backslash
-Sexpr{ifelse(s_deal2[75,1]<.01,"***",ifelse(s_deal2[75,1]<.05,"**",ifelse(s_deal2[
-75,1]<.1,"*","")))}}$ & $
-\backslash
-Sexpr{s_deal2[73,2]}^{
-\backslash
-Sexpr{ifelse(s_deal2[75,2]<.01,"***",ifelse(s_deal2[75,2]<.05,"**",ifelse(s_deal2[
-75,2]<.1,"*","")))}}$  & $
-\backslash
-Sexpr{s_deal2[73,3]}^{
-\backslash
-Sexpr{ifelse(s_deal2[75,3]<.01,"***",ifelse(s_deal2[75,3]<.05,"**",ifelse(s_deal2[
-75,3]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{s_deal2[73,4]}^{
-\backslash
-Sexpr{ifelse(s_deal2[75,4]<.01,"***",ifelse(s_deal2[75,4]<.05,"**",ifelse(s_deal2[
-75,4]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s_deal2[73,5]}^{
-\backslash
-Sexpr{ifelse(s_deal2[75,5]<.01,"***",ifelse(s_deal2[75,5]<.05,"**",ifelse(s_deal2[
-75,5]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s_deal2[73,6]}^{
-\backslash
-Sexpr{ifelse(s_deal2[75,6]<.01,"***",ifelse(s_deal2[75,6]<.05,"**",ifelse(s_deal2[
-75,6]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s_deal2[73,7]}^{
-\backslash
-Sexpr{ifelse(s_deal2[75,7]<.01,"***",ifelse(s_deal2[75,7]<.05,"**",ifelse(s_deal2[
-75,7]<.1,"*","")))}}$  
-\backslash
-
-\backslash
- {leak-proof roof}
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $(
-\backslash
-Sexpr{s_deal2[74,1]})$   &  $(
-\backslash
-Sexpr{s_deal2[74,2]})$ & $(
-\backslash
-Sexpr{s_deal2[74,3]})$ & $(
-\backslash
-Sexpr{s_deal2[74,4]})$ & $(
-\backslash
-Sexpr{s_deal2[74,5]})$ & $(
-\backslash
-Sexpr{s_deal2[74,6]})$ & $(
-\backslash
-Sexpr{s_deal2[74,7]})$
+Sexpr{s_deal2[62,7]})$
 \end_layout
 
 \begin_layout Plain Layout
@@ -27073,21 +23239,26 @@ hline
 
 \begin_layout Plain Layout
 
+    
+\end_layout
+
+\begin_layout Plain Layout
+
 {R$^2$}                 &  $
 \backslash
-Sexpr{s_deal2[76,1]}$   &  $
+Sexpr{s_deal2[64,1]}$   &  $
 \backslash
-Sexpr{s_deal2[76,2]}$ & $
+Sexpr{s_deal2[64,2]}$ & $
 \backslash
-Sexpr{s_deal2[76,3]}$ & $
+Sexpr{s_deal2[64,3]}$ & $
 \backslash
-Sexpr{s_deal2[76,4]}$ & $
+Sexpr{s_deal2[64,4]}$ & $
 \backslash
-Sexpr{s_deal2[76,5]}$ & $
+Sexpr{s_deal2[64,5]}$ & $
 \backslash
-Sexpr{s_deal2[76,6]}$ & $
+Sexpr{s_deal2[64,6]}$ & $
 \backslash
-Sexpr{s_deal2[76,7]}$
+Sexpr{s_deal2[64,7]}$
 \end_layout
 
 \begin_layout Plain Layout
@@ -27099,19 +23270,19 @@ Sexpr{s_deal2[76,7]}$
 {Adj.
  R$^2$}                 &  $
 \backslash
-Sexpr{s_deal2[77,1]}$   &  $
+Sexpr{s_deal2[65,1]}$   &  $
 \backslash
-Sexpr{s_deal2[77,2]}$ & $
+Sexpr{s_deal2[65,2]}$ & $
 \backslash
-Sexpr{s_deal2[77,3]}$ & $
+Sexpr{s_deal2[65,3]}$ & $
 \backslash
-Sexpr{s_deal2[77,4]}$ & $
+Sexpr{s_deal2[65,4]}$ & $
 \backslash
-Sexpr{s_deal2[77,5]}$ & $
+Sexpr{s_deal2[65,5]}$ & $
 \backslash
-Sexpr{s_deal2[77,6]}$ & $
+Sexpr{s_deal2[65,6]}$ & $
 \backslash
-Sexpr{s_deal2[77,7]}$      
+Sexpr{s_deal2[65,7]}$      
 \end_layout
 
 \begin_layout Plain Layout
@@ -27122,19 +23293,19 @@ Sexpr{s_deal2[77,7]}$
 \backslash
 {Number of obs.}                 &  $
 \backslash
-Sexpr{s_deal2[78,1]}$   &  $
+Sexpr{s_deal2[66,1]}$   &  $
 \backslash
-Sexpr{s_deal2[78,2]}$ & $
+Sexpr{s_deal2[66,2]}$ & $
 \backslash
-Sexpr{s_deal2[78,3]}$ & $
+Sexpr{s_deal2[66,3]}$ & $
 \backslash
-Sexpr{s_deal2[78,4]}$ & $
+Sexpr{s_deal2[66,4]}$ & $
 \backslash
-Sexpr{s_deal2[78,5]}$ & $
+Sexpr{s_deal2[66,5]}$ & $
 \backslash
-Sexpr{s_deal2[78,6]}$ & $
+Sexpr{s_deal2[66,6]}$ & $
 \backslash
-Sexpr{s_deal2[78,7]}$    
+Sexpr{s_deal2[66,7]}$    
 \end_layout
 
 \begin_layout Plain Layout
@@ -27177,12 +23348,11 @@ tiny
 
 Note: Here, the genders of the different farmers that each input dealer
  got rated by have been averaged at the dealer level.
- All the farmer characteristics are also averaged accordingly.
  The ratings obtained by the input dealers are also averaged at the dealer
  level.
   
 \backslash
-label{table:table14} 
+label{table:table14}  
 \end_layout
 
 \end_inset
@@ -27199,7 +23369,7 @@ label{table:table14}
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -27515,7 +23685,7 @@ Sexpr{s_deal3[2,7]})$
 
 \begin_layout Plain Layout
 
-{Male farmer}   & $
+{Farmer is male}   & $
 \backslash
 Sexpr{s_deal3[4,1]}^{
 \backslash
@@ -28048,7 +24218,7 @@ Sexpr{s_deal4[2,7]})$
 
 \begin_layout Plain Layout
 
-{Male farmer}   & $
+{Farmer is male}   & $
 \backslash
 Sexpr{s_deal4[4,1]}^{
 \backslash
@@ -28135,7 +24305,7 @@ Sexpr{s_deal4[5,7]})$
 
 \begin_layout Plain Layout
 
-{Farmer finished}   & $
+{Dealer's age}   & $
 \backslash
 Sexpr{s_deal4[7,1]}^{
 \backslash
@@ -28194,7 +24364,7 @@ Sexpr{ifelse(s_deal4[9,7]<.01,"***",ifelse(s_deal4[9,7]<.05,"**",ifelse(s_deal4[
 \backslash
 
 \backslash
- {primary education}
+ {(in years)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -28222,7 +24392,7 @@ Sexpr{s_deal4[8,7]})$
 
 \begin_layout Plain Layout
 
-{Farmer is married}   & $
+{Dealer finished}   & $
 \backslash
 Sexpr{s_deal4[10,1]}^{
 \backslash
@@ -28286,6 +24456,11 @@ Sexpr{ifelse(s_deal4[12,7]<.01,"***",ifelse(s_deal4[12,7]<.05,"**",ifelse(s_deal
 
 \begin_layout Plain Layout
 
+{secondary education}
+\end_layout
+
+\begin_layout Plain Layout
+
 &  $(
 \backslash
 Sexpr{s_deal4[11,1]})$   &  $(
@@ -28309,7 +24484,7 @@ Sexpr{s_deal4[11,7]})$
 
 \begin_layout Plain Layout
 
-{Farmer's distance to}   & $
+{Shop's distance to}   & $
 \backslash
 Sexpr{s_deal4[13,1]}^{
 \backslash
@@ -28401,7 +24576,7 @@ Sexpr{s_deal4[14,7]})$
 
 \begin_layout Plain Layout
 
-{Farmer's age}   & $
+{Shop's distance to}   & $
 \backslash
 Sexpr{s_deal4[16,1]}^{
 \backslash
@@ -28465,7 +24640,7 @@ Sexpr{ifelse(s_deal4[18,7]<.01,"***",ifelse(s_deal4[18,7]<.05,"**",ifelse(s_deal
 
 \begin_layout Plain Layout
 
-{(in years)}
+{murram road (in km)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -28493,7 +24668,7 @@ Sexpr{s_deal4[17,7]})$
 
 \begin_layout Plain Layout
 
-{Dealer's age}   & $
+{Shop sells only}   & $
 \backslash
 Sexpr{s_deal4[19,1]}^{
 \backslash
@@ -28557,7 +24732,7 @@ Sexpr{ifelse(s_deal4[21,7]<.01,"***",ifelse(s_deal4[21,7]<.05,"**",ifelse(s_deal
 
 \begin_layout Plain Layout
 
-{(in years)}
+{farm inputs}
 \end_layout
 
 \begin_layout Plain Layout
@@ -28585,7 +24760,7 @@ Sexpr{s_deal4[20,7]})$
 
 \begin_layout Plain Layout
 
-{Dealer finished}   & $
+{Shop's age}   & $
 \backslash
 Sexpr{s_deal4[22,1]}^{
 \backslash
@@ -28649,7 +24824,7 @@ Sexpr{ifelse(s_deal4[24,7]<.01,"***",ifelse(s_deal4[24,7]<.05,"**",ifelse(s_deal
 
 \begin_layout Plain Layout
 
-{secondary education}  
+{(in years)}  
 \end_layout
 
 \begin_layout Plain Layout
@@ -28677,7 +24852,7 @@ Sexpr{s_deal4[23,7]})$
 
 \begin_layout Plain Layout
 
-{Shop's distance to}   & $
+{Seed is stored in}   & $
 \backslash
 Sexpr{s_deal4[25,1]}^{
 \backslash
@@ -28741,7 +24916,7 @@ Sexpr{ifelse(s_deal4[27,7]<.01,"***",ifelse(s_deal4[27,7]<.05,"**",ifelse(s_deal
 
 \begin_layout Plain Layout
 
-{tarmac road (in km)} 
+{dedicated area} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -28769,7 +24944,7 @@ Sexpr{s_deal4[26,7]})$
 
 \begin_layout Plain Layout
 
-{Shop's distance to}   & $
+{Shop has problem}   & $
 \backslash
 Sexpr{s_deal4[28,1]}^{
 \backslash
@@ -28833,7 +25008,7 @@ Sexpr{ifelse(s_deal4[30,7]<.01,"***",ifelse(s_deal4[30,7]<.05,"**",ifelse(s_deal
 
 \begin_layout Plain Layout
 
-{murram road (in km)} 
+{with pests} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -28861,7 +25036,7 @@ Sexpr{s_deal4[29,7]})$
 
 \begin_layout Plain Layout
 
-{Shop sells only}   & $
+{Shop has}   & $
 \backslash
 Sexpr{s_deal4[31,1]}^{
 \backslash
@@ -28925,7 +25100,7 @@ Sexpr{ifelse(s_deal4[33,7]<.01,"***",ifelse(s_deal4[33,7]<.05,"**",ifelse(s_deal
 
 \begin_layout Plain Layout
 
-{farm inputs} 
+{insulated roof} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -28953,7 +25128,7 @@ Sexpr{s_deal4[32,7]})$
 
 \begin_layout Plain Layout
 
-{Shop's age}   & $
+{Shop has}   & $
 \backslash
 Sexpr{s_deal4[34,1]}^{
 \backslash
@@ -29017,7 +25192,7 @@ Sexpr{ifelse(s_deal4[36,7]<.01,"***",ifelse(s_deal4[36,7]<.05,"**",ifelse(s_deal
 
 \begin_layout Plain Layout
 
-{(in years)} 
+{insulated walls} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -29045,7 +25220,7 @@ Sexpr{s_deal4[35,7]})$
 
 \begin_layout Plain Layout
 
-{Seed is stored}   & $
+{Shop is}   & $
 \backslash
 Sexpr{s_deal4[37,1]}^{
 \backslash
@@ -29109,7 +25284,7 @@ Sexpr{ifelse(s_deal4[39,7]<.01,"***",ifelse(s_deal4[39,7]<.05,"**",ifelse(s_deal
 
 \begin_layout Plain Layout
 
-{in dedicated area}
+{ventilated}
 \end_layout
 
 \begin_layout Plain Layout
@@ -29137,7 +25312,7 @@ Sexpr{s_deal4[38,7]})$
 
 \begin_layout Plain Layout
 
-{Shop has problem}   & $
+{Seed is stored}   & $
 \backslash
 Sexpr{s_deal4[40,1]}^{
 \backslash
@@ -29201,7 +25376,7 @@ Sexpr{ifelse(s_deal4[42,7]<.01,"***",ifelse(s_deal4[42,7]<.05,"**",ifelse(s_deal
 
 \begin_layout Plain Layout
 
-{with pests} 
+{in poor lighting} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -29229,7 +25404,7 @@ Sexpr{s_deal4[41,7]})$
 
 \begin_layout Plain Layout
 
-{Shop has}   & $
+{Seed is stored}   & $
 \backslash
 Sexpr{s_deal4[43,1]}^{
 \backslash
@@ -29293,7 +25468,7 @@ Sexpr{ifelse(s_deal4[45,7]<.01,"***",ifelse(s_deal4[45,7]<.05,"**",ifelse(s_deal
 
 \begin_layout Plain Layout
 
-{insulated roof} 
+{on poor surface} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -29321,7 +25496,7 @@ Sexpr{s_deal4[44,7]})$
 
 \begin_layout Plain Layout
 
-{Shop has}   & $
+{Seed is stored}   & $
 \backslash
 Sexpr{s_deal4[46,1]}^{
 \backslash
@@ -29385,7 +25560,7 @@ Sexpr{ifelse(s_deal4[48,7]<.01,"***",ifelse(s_deal4[48,7]<.05,"**",ifelse(s_deal
 
 \begin_layout Plain Layout
 
-{insulated walls} 
+{in open containers} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -29413,7 +25588,7 @@ Sexpr{s_deal4[47,7]})$
 
 \begin_layout Plain Layout
 
-{Shop is}   & $
+{Shop displays}   & $
 \backslash
 Sexpr{s_deal4[49,1]}^{
 \backslash
@@ -29477,7 +25652,7 @@ Sexpr{ifelse(s_deal4[51,7]<.01,"***",ifelse(s_deal4[51,7]<.05,"**",ifelse(s_deal
 
 \begin_layout Plain Layout
 
-{ventilated} 
+{official certificate} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -29505,7 +25680,7 @@ Sexpr{s_deal4[50,7]})$
 
 \begin_layout Plain Layout
 
-{Seed is stored}   & $
+{Shop's rating}   & $
 \backslash
 Sexpr{s_deal4[52,1]}^{
 \backslash
@@ -29569,7 +25744,7 @@ Sexpr{ifelse(s_deal4[54,7]<.01,"***",ifelse(s_deal4[54,7]<.05,"**",ifelse(s_deal
 
 \begin_layout Plain Layout
 
-{in poor lighting}
+{by enumerator}
 \end_layout
 
 \begin_layout Plain Layout
@@ -29597,7 +25772,7 @@ Sexpr{s_deal4[53,7]})$
 
 \begin_layout Plain Layout
 
-{Seed is stored}   & $
+{Shop's customer}   & $
 \backslash
 Sexpr{s_deal4[55,1]}^{
 \backslash
@@ -29661,7 +25836,7 @@ Sexpr{ifelse(s_deal4[57,7]<.01,"***",ifelse(s_deal4[57,7]<.05,"**",ifelse(s_deal
 
 \begin_layout Plain Layout
 
-{on poor surface}
+{complained about seed}
 \end_layout
 
 \begin_layout Plain Layout
@@ -29689,7 +25864,7 @@ Sexpr{s_deal4[56,7]})$
 
 \begin_layout Plain Layout
 
-{Seed is stored}   & $
+{Shop's}   & $
 \backslash
 Sexpr{s_deal4[58,1]}^{
 \backslash
@@ -29753,7 +25928,7 @@ Sexpr{ifelse(s_deal4[60,7]<.01,"***",ifelse(s_deal4[60,7]<.05,"**",ifelse(s_deal
 
 \begin_layout Plain Layout
 
-{in open containers} 
+{temperature} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -29781,7 +25956,7 @@ Sexpr{s_deal4[59,7]})$
 
 \begin_layout Plain Layout
 
-{Shop displays}   & $
+{Shop has}   & $
 \backslash
 Sexpr{s_deal4[61,1]}^{
 \backslash
@@ -29845,7 +26020,7 @@ Sexpr{ifelse(s_deal4[63,7]<.01,"***",ifelse(s_deal4[63,7]<.05,"**",ifelse(s_deal
 
 \begin_layout Plain Layout
 
-{official certificate}  
+{leakproof roof}  
 \end_layout
 
 \begin_layout Plain Layout
@@ -29865,374 +26040,6 @@ Sexpr{s_deal4[62,5]})$ & $(
 Sexpr{s_deal4[62,6]})$ & $(
 \backslash
 Sexpr{s_deal4[62,7]})$ 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{Shop's rating}   & $
-\backslash
-Sexpr{s_deal4[64,1]}^{
-\backslash
-Sexpr{ifelse(s_deal4[66,1]<.01,"***",ifelse(s_deal4[66,1]<.05,"**",ifelse(s_deal4[
-66,1]<.1,"*","")))}}$ & $
-\backslash
-Sexpr{s_deal4[64,2]}^{
-\backslash
-Sexpr{ifelse(s_deal4[66,2]<.01,"***",ifelse(s_deal4[66,2]<.05,"**",ifelse(s_deal4[
-66,2]<.1,"*","")))}}$  & $
-\backslash
-Sexpr{s_deal4[64,3]}^{
-\backslash
-Sexpr{ifelse(s_deal4[66,3]<.01,"***",ifelse(s_deal4[66,3]<.05,"**",ifelse(s_deal4[
-66,3]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{s_deal4[64,4]}^{
-\backslash
-Sexpr{ifelse(s_deal4[66,4]<.01,"***",ifelse(s_deal4[66,4]<.05,"**",ifelse(s_deal4[
-66,4]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s_deal4[64,5]}^{
-\backslash
-Sexpr{ifelse(s_deal4[66,5]<.01,"***",ifelse(s_deal4[66,5]<.05,"**",ifelse(s_deal4[
-66,5]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s_deal4[64,6]}^{
-\backslash
-Sexpr{ifelse(s_deal4[66,6]<.01,"***",ifelse(s_deal4[66,6]<.05,"**",ifelse(s_deal4[
-66,6]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s_deal4[64,7]}^{
-\backslash
-Sexpr{ifelse(s_deal4[66,7]<.01,"***",ifelse(s_deal4[66,7]<.05,"**",ifelse(s_deal4[
-66,7]<.1,"*","")))}}$   
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{by enumerator} 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $(
-\backslash
-Sexpr{s_deal4[65,1]})$   &  $(
-\backslash
-Sexpr{s_deal4[65,2]})$ & $(
-\backslash
-Sexpr{s_deal4[65,3]})$ & $(
-\backslash
-Sexpr{s_deal4[65,4]})$ & $(
-\backslash
-Sexpr{s_deal4[65,5]})$ & $(
-\backslash
-Sexpr{s_deal4[65,6]})$ & $(
-\backslash
-Sexpr{s_deal4[65,7]})$ 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{Shop's customer}   & $
-\backslash
-Sexpr{s_deal4[67,1]}^{
-\backslash
-Sexpr{ifelse(s_deal4[69,1]<.01,"***",ifelse(s_deal4[69,1]<.05,"**",ifelse(s_deal4[
-69,1]<.1,"*","")))}}$ & $
-\backslash
-Sexpr{s_deal4[67,2]}^{
-\backslash
-Sexpr{ifelse(s_deal4[69,2]<.01,"***",ifelse(s_deal4[69,2]<.05,"**",ifelse(s_deal4[
-69,2]<.1,"*","")))}}$  & $
-\backslash
-Sexpr{s_deal4[67,3]}^{
-\backslash
-Sexpr{ifelse(s_deal4[69,3]<.01,"***",ifelse(s_deal4[69,3]<.05,"**",ifelse(s_deal4[
-69,3]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{s_deal4[67,4]}^{
-\backslash
-Sexpr{ifelse(s_deal4[69,4]<.01,"***",ifelse(s_deal4[69,4]<.05,"**",ifelse(s_deal4[
-69,4]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s_deal4[67,5]}^{
-\backslash
-Sexpr{ifelse(s_deal4[69,5]<.01,"***",ifelse(s_deal4[69,5]<.05,"**",ifelse(s_deal4[
-69,5]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s_deal4[67,6]}^{
-\backslash
-Sexpr{ifelse(s_deal4[69,6]<.01,"***",ifelse(s_deal4[69,6]<.05,"**",ifelse(s_deal4[
-69,6]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s_deal4[67,7]}^{
-\backslash
-Sexpr{ifelse(s_deal4[69,7]<.01,"***",ifelse(s_deal4[69,7]<.05,"**",ifelse(s_deal4[
-69,7]<.1,"*","")))}}$    
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{complained about seed} 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $(
-\backslash
-Sexpr{s_deal4[68,1]})$   &  $(
-\backslash
-Sexpr{s_deal4[68,2]})$ & $(
-\backslash
-Sexpr{s_deal4[68,3]})$ & $(
-\backslash
-Sexpr{s_deal4[68,4]})$ & $(
-\backslash
-Sexpr{s_deal4[68,5]})$ & $(
-\backslash
-Sexpr{s_deal4[68,6]})$ & $(
-\backslash
-Sexpr{s_deal4[68,7]})$ 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{Shop's}   & $
-\backslash
-Sexpr{s_deal4[70,1]}^{
-\backslash
-Sexpr{ifelse(s_deal4[72,1]<.01,"***",ifelse(s_deal4[72,1]<.05,"**",ifelse(s_deal4[
-72,1]<.1,"*","")))}}$ & $
-\backslash
-Sexpr{s_deal4[70,2]}^{
-\backslash
-Sexpr{ifelse(s_deal4[72,2]<.01,"***",ifelse(s_deal4[72,2]<.05,"**",ifelse(s_deal4[
-72,2]<.1,"*","")))}}$  & $
-\backslash
-Sexpr{s_deal4[70,3]}^{
-\backslash
-Sexpr{ifelse(s_deal4[72,3]<.01,"***",ifelse(s_deal4[72,3]<.05,"**",ifelse(s_deal4[
-72,3]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{s_deal4[70,4]}^{
-\backslash
-Sexpr{ifelse(s_deal4[72,4]<.01,"***",ifelse(s_deal4[72,4]<.05,"**",ifelse(s_deal4[
-72,4]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s_deal4[70,5]}^{
-\backslash
-Sexpr{ifelse(s_deal4[72,5]<.01,"***",ifelse(s_deal4[72,5]<.05,"**",ifelse(s_deal4[
-72,5]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s_deal4[70,6]}^{
-\backslash
-Sexpr{ifelse(s_deal4[72,6]<.01,"***",ifelse(s_deal4[72,6]<.05,"**",ifelse(s_deal4[
-72,6]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s_deal4[70,7]}^{
-\backslash
-Sexpr{ifelse(s_deal4[72,7]<.01,"***",ifelse(s_deal4[72,7]<.05,"**",ifelse(s_deal4[
-72,7]<.1,"*","")))}}$    
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{temperature} 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $(
-\backslash
-Sexpr{s_deal4[71,1]})$   &  $(
-\backslash
-Sexpr{s_deal4[71,2]})$ & $(
-\backslash
-Sexpr{s_deal4[71,3]})$ & $(
-\backslash
-Sexpr{s_deal4[71,4]})$ & $(
-\backslash
-Sexpr{s_deal4[71,5]})$ & $(
-\backslash
-Sexpr{s_deal4[71,6]})$ & $(
-\backslash
-Sexpr{s_deal4[71,7]})$ 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{Shop has}   & $
-\backslash
-Sexpr{s_deal4[73,1]}^{
-\backslash
-Sexpr{ifelse(s_deal4[75,1]<.01,"***",ifelse(s_deal4[75,1]<.05,"**",ifelse(s_deal4[
-75,1]<.1,"*","")))}}$ & $
-\backslash
-Sexpr{s_deal4[73,2]}^{
-\backslash
-Sexpr{ifelse(s_deal4[75,2]<.01,"***",ifelse(s_deal4[75,2]<.05,"**",ifelse(s_deal4[
-75,2]<.1,"*","")))}}$  & $
-\backslash
-Sexpr{s_deal4[73,3]}^{
-\backslash
-Sexpr{ifelse(s_deal4[75,3]<.01,"***",ifelse(s_deal4[75,3]<.05,"**",ifelse(s_deal4[
-75,3]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{s_deal4[73,4]}^{
-\backslash
-Sexpr{ifelse(s_deal4[75,4]<.01,"***",ifelse(s_deal4[75,4]<.05,"**",ifelse(s_deal4[
-75,4]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s_deal4[73,5]}^{
-\backslash
-Sexpr{ifelse(s_deal4[75,5]<.01,"***",ifelse(s_deal4[75,5]<.05,"**",ifelse(s_deal4[
-75,5]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s_deal4[73,6]}^{
-\backslash
-Sexpr{ifelse(s_deal4[75,6]<.01,"***",ifelse(s_deal4[75,6]<.05,"**",ifelse(s_deal4[
-75,6]<.1,"*","")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s_deal4[73,7]}^{
-\backslash
-Sexpr{ifelse(s_deal4[75,7]<.01,"***",ifelse(s_deal4[75,7]<.05,"**",ifelse(s_deal4[
-75,7]<.1,"*","")))}}$   
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{leak-proof roof} 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $(
-\backslash
-Sexpr{s_deal4[74,1]})$   &  $(
-\backslash
-Sexpr{s_deal4[74,2]})$ & $(
-\backslash
-Sexpr{s_deal4[74,3]})$ & $(
-\backslash
-Sexpr{s_deal4[74,4]})$ & $(
-\backslash
-Sexpr{s_deal4[74,5]})$ & $(
-\backslash
-Sexpr{s_deal4[74,6]})$ & $(
-\backslash
-Sexpr{s_deal4[74,7]})$ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -30250,19 +26057,19 @@ hline
 
 {R$^2$ }                 &  $
 \backslash
-Sexpr{s_deal4[76,1]}$   &  $
+Sexpr{s_deal4[64,1]}$   &  $
 \backslash
-Sexpr{s_deal4[76,2]}$ & $
+Sexpr{s_deal4[64,2]}$ & $
 \backslash
-Sexpr{s_deal4[76,3]}$ & $
+Sexpr{s_deal4[64,3]}$ & $
 \backslash
-Sexpr{s_deal4[76,4]}$ & $
+Sexpr{s_deal4[64,4]}$ & $
 \backslash
-Sexpr{s_deal4[76,5]}$ & $
+Sexpr{s_deal4[64,5]}$ & $
 \backslash
-Sexpr{s_deal4[76,6]}$ & $
+Sexpr{s_deal4[64,6]}$ & $
 \backslash
-Sexpr{s_deal4[76,7]}$ 
+Sexpr{s_deal4[64,7]}$ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -30274,19 +26081,19 @@ Sexpr{s_deal4[76,7]}$
 {Adj.
  R$^2$}                 &  $
 \backslash
-Sexpr{s_deal4[77,1]}$   &  $
+Sexpr{s_deal4[65,1]}$   &  $
 \backslash
-Sexpr{s_deal4[77,2]}$ & $
+Sexpr{s_deal4[65,2]}$ & $
 \backslash
-Sexpr{s_deal4[77,3]}$ & $
+Sexpr{s_deal4[65,3]}$ & $
 \backslash
-Sexpr{s_deal4[77,4]}$ & $
+Sexpr{s_deal4[65,4]}$ & $
 \backslash
-Sexpr{s_deal4[77,5]}$ & $
+Sexpr{s_deal4[65,5]}$ & $
 \backslash
-Sexpr{s_deal4[77,6]}$ & $
+Sexpr{s_deal4[65,6]}$ & $
 \backslash
-Sexpr{s_deal4[77,7]}$    
+Sexpr{s_deal4[65,7]}$    
 \end_layout
 
 \begin_layout Plain Layout
@@ -30297,19 +26104,19 @@ Sexpr{s_deal4[77,7]}$
 \backslash
 {Number of obs.}                 &  $
 \backslash
-Sexpr{s_deal4[78,1]}$   &  $
+Sexpr{s_deal4[66,1]}$   &  $
 \backslash
-Sexpr{s_deal4[78,2]}$ & $
+Sexpr{s_deal4[66,2]}$ & $
 \backslash
-Sexpr{s_deal4[78,3]}$ & $
+Sexpr{s_deal4[66,3]}$ & $
 \backslash
-Sexpr{s_deal4[78,4]}$ & $
+Sexpr{s_deal4[66,4]}$ & $
 \backslash
-Sexpr{s_deal4[78,5]}$ & $
+Sexpr{s_deal4[66,5]}$ & $
 \backslash
-Sexpr{s_deal4[78,6]}$ & $
+Sexpr{s_deal4[66,6]}$ & $
 \backslash
-Sexpr{s_deal4[78,7]}$    
+Sexpr{s_deal4[66,7]}$    
 \end_layout
 
 \begin_layout Plain Layout
@@ -30352,7 +26159,6 @@ tiny
 
 Note: Here, the genders of the different farmers that each input dealer
  got rated by have been averaged at the dealer level.
- All the farmer characteristics are also averaged accordingly.
  The ratings obtained by the input dealers are also averaged at the dealer
  level.
  
