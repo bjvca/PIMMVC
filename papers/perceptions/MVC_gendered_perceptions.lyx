@@ -118,7 +118,7 @@ thanks{Development Strategy and Governance Division, International Food
 footnotemark[2], Anusha De
 \backslash
 thanks{LICOS Center for Institutions and Economic Performance, KULeuven,
- Belgium}, and Caroline Miehe
+ Belgium}
 \backslash
 footnotemark[2]}
 \end_layout
@@ -315,162 +315,9 @@ We study the case of maize value chains in Uganda where ratings are used
 \paragraph_spacing onehalf
 Ratings can be used as a tool to understand perceptions about certain actors
  in the food value chains.
- The literature shows that ratings can be used as an instrument for identifying
- performance levels of various actors in markets and industries, for information
- transparency 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Karminsky2016"
-literal "true"
-
-\end_inset
-
- and for decision management (for instance, in the financial sector as discussed
- by 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Bolton2012"
-literal "true"
-
-\end_inset
-
- and 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "karminsky2009ratings"
-literal "true"
-
-\end_inset
-
-).
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-\paragraph_spacing onehalf
-Various rating based decision management studies come from the financial
- sector, like credit ratings explaining investment decisions (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "Bolton2012"
-literal "true"
-
-\end_inset
-
-) and financial risk (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "karminsky2009ratings"
-literal "true"
-
-\end_inset
-
-), the link between corporate credit ratings and the financial crisis (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "deHaan2017"
-literal "true"
-
-\end_inset
-
-) and bond ratings' informational value (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "Kliger2000"
-literal "true"
-
-\end_inset
-
-).
-\end_layout
-
-\end_inset
-
-In marketing research, ratings are the tool to identify demand (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "Dhar2016"
-literal "true"
-
-\end_inset
-
-), sales and consumer preferences (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "Sun2012"
-literal "true"
-
-\end_inset
-
-), quality improvement and product alignment with consumer tastes (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "Cheung2003,Barton2006"
-literal "true"
-
-\end_inset
-
-).
- Social and psychological studies use ratings to analyse social behavior
- (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "Renk2004,Schofield2007"
-literal "true"
-
-\end_inset
-
-).
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-\paragraph_spacing onehalf
-teaching and learning patterns (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "Feldman2007"
-literal "true"
-
-\end_inset
-
-), child development (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "Bukowski2012"
-literal "true"
-
-\end_inset
-
-), parenting aspects (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "Kuppens2009"
-literal "true"
-
-\end_inset
-
-) and languages (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "Rudell1993,Cole2019"
-literal "true"
-
-\end_inset
-
-)
-\end_layout
-
-\end_inset
-
-Similarly, ratings can be used to study various agricultural aspects, providing
- an understanding of the perceptions of the different value chain actors.
- Recently, the study of perceptions has also been applied to food supply
- chains where perceptions have been found to correlate with innovations
- in supply chains and indicate loopholes in the performance of involved
- actors (
+ Recently, the study of perceptions has been applied to food supply chains
+ where perceptions have been found to correlate with innovations in supply
+ chains and indicate loopholes in the performance of involved actors (
 \begin_inset CommandInset citation
 LatexCommand citealp
 key "Ola2020,Odongo2016"
@@ -479,13 +326,9 @@ literal "true"
 \end_inset
 
 ).
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-Broadly, studying the rater's ratings and ratee's self-assessments can give
- insights about the deeper mechanisms of performance perceptions in the
- value chains.
+ Broadly, studying the rater's ratings and ratee's self-assessments can
+ give insights about the deeper mechanisms of performance perceptions in
+ the value chains.
  Higher ratings may motivate actors to sustain performance while lower ratings
  may lead actors to improve performance or at least induce increased effort.
  Although there are various other factors like competition, access to facilities

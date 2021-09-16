@@ -77,9 +77,10 @@ between_farmer$dedicated_area<- ifelse(between_farmer$dedarea== 'Yes', 1, 0)
 table(between_farmer$dedicated_area)
 
 #problem with rats or pests?
+#we try to formulate this as a good quality variable --- So, no problem with pests is good 
 between_farmer$maize.owner.agree.q71
 between_farmer$pest<-as.character(between_farmer$maize.owner.agree.temp.q71)
-between_farmer$pest_prob<- ifelse(between_farmer$pest== 'Yes', 1, 0)  
+between_farmer$pest_prob<- ifelse(between_farmer$pest== 'No', 1, 0)  
 table(between_farmer$pest_prob)
 
 #roof leak proof?  
@@ -121,20 +122,23 @@ table(between_farmer$ventilation)
 #99 PERCENT OF THE DEALERS HAVE CEMENT OR TILES AS THEIR FLOOR
 
 #Q78. Lighting conditions in area where seed is stored?
+#we try to formulate this as good quality variable --- 2 is good lighting 
 between_farmer$badlighting <- 0
-between_farmer$badlighting[between_farmer$maize.owner.agree.temp.q78=="1"|between_farmer$maize.owner.agree.temp.q78=="3"]<-1
+between_farmer$badlighting[between_farmer$maize.owner.agree.temp.q78=="2"]<-1
 table(between_farmer$badlighting)
 
 #Q79. On what surface are seed stored?
+#we try to formulate this as good quality variable ---- 3,4,5 are good storage surfaces 
 between_farmer$badstored <- 0
-between_farmer$badstored[between_farmer$maize.owner.agree.temp.q79=="1"|between_farmer$maize.owner.agree.temp.q79=="2"]<-1
+between_farmer$badstored[between_farmer$maize.owner.agree.temp.q79=="3"|between_farmer$maize.owner.agree.temp.q79=="4"|between_farmer$maize.owner.agree.temp.q79=="5"]<-1
 between_farmer$badstored[between_farmer$maize.owner.agree.temp.q79==96]<-NA
 table(between_farmer$badstored)
 
 #Q80. Do you see maize seed that is stored in open bags or containers?
+#we try to formulate this as good quality variable --- Not being stored in open containers is good 
 between_farmer$maize.owner.agree.q80
 between_farmer$open<-as.character(between_farmer$maize.owner.agree.temp.q80)
-between_farmer$open_storage<- ifelse(between_farmer$open== 'Yes', 1, 0)  
+between_farmer$open_storage<- ifelse(between_farmer$open== 'No', 1, 0)  
 table(between_farmer$open_storage)
 
 #Q81. Do you see any official certificates displayed in the store (eg that the shop was inspected ,that the owner attended trainings 
@@ -149,8 +153,9 @@ between_farmer$shop_rate<-as.numeric(as.character(between_farmer$maize.owner.agr
 table(between_farmer$shop_rate)
 
 #Q96. Since last season, did you receive any complaint from a customer that seed you sold was not good?
+#we try to formulate this as good quality variable, not getting any complaint is good 
 table(between_farmer$maize.owner.agree.q96)
-between_farmer$complaint<- ifelse(between_farmer$maize.owner.agree.q96== 'Yes', 1, 0)  
+between_farmer$complaint<- ifelse(between_farmer$maize.owner.agree.q96== 'No', 1, 0)  
 table(between_farmer$complaint)
 
 #Q70. Enter the temperature in the seed store (where seed is stored)
@@ -938,7 +943,7 @@ table(avg$dedicated_area)
 #problem with rats or pests?
 avg$maize.owner.agree.q71
 avg$pest<-as.character(avg$maize.owner.agree.temp.q71)
-avg$pest_prob<- ifelse(avg$pest== 'Yes', 1, 0)  
+avg$pest_prob<- ifelse(avg$pest== 'No', 1, 0)  
 table(avg$pest_prob)
 
 #roof leak proof?  
@@ -967,19 +972,19 @@ table(avg$ventilation)
 
 #Q78. Lighting conditions in area where seed is stored?
 avg$badlighting <- 0
-avg$badlighting[avg$maize.owner.agree.temp.q78=="1"|avg$maize.owner.agree.temp.q78=="3"]<-1
+avg$badlighting[avg$maize.owner.agree.temp.q78=="2"]<-1
 table(avg$badlighting)
 
 #Q79. On what surface are seed stored?
 avg$badstored <- 0
-avg$badstored[avg$maize.owner.agree.temp.q79=="1"|avg$maize.owner.agree.temp.q79=="2"]<-1
+avg$badstored[avg$maize.owner.agree.temp.q79=="3"|avg$maize.owner.agree.temp.q79=="4"|avg$maize.owner.agree.temp.q79=="5"]<-1
 avg$badstored[avg$maize.owner.agree.temp.q79==96]<-NA
 table(avg$badstored)
 
 #Q80. Do you see maize seed that is stored in open bags or containers?
 avg$maize.owner.agree.q80
 avg$open<-as.character(avg$maize.owner.agree.temp.q80)
-avg$open_storage<- ifelse(avg$open== 'Yes', 1, 0)  
+avg$open_storage<- ifelse(avg$open== 'No', 1, 0)  
 table(avg$open_storage)
 
 #Q81. Do you see any official certificates displayed in the store (eg that the shop was inspected ,that the owner attended trainings 
@@ -995,7 +1000,7 @@ table(avg$shop_rate)
 
 #Q96. Since last season, did you receive any complaint from a customer that seed you sold was not good?
 table(avg$maize.owner.agree.q96)
-avg$complaint<- ifelse(avg$maize.owner.agree.q96== 'Yes', 1, 0)  
+avg$complaint<- ifelse(avg$maize.owner.agree.q96== 'No', 1, 0)  
 table(avg$complaint)
 
 #Q70. Enter the temperature in the seed store (where seed is stored)
@@ -2399,7 +2404,7 @@ table(fedata$dedicated_area)
 #problem with rats or pests?
 fedata$maize.owner.agree.q71
 fedata$pest<-as.character(fedata$maize.owner.agree.temp.q71)
-fedata$pest_prob<- ifelse(fedata$pest== 'Yes', 1, 0)  
+fedata$pest_prob<- ifelse(fedata$pest== 'No', 1, 0)  
 table(fedata$pest_prob)
 
 #roof leak proof?  
@@ -2428,19 +2433,19 @@ table(fedata$ventilation)
 
 #Q78. Lighting conditions in area where seed is stored?
 fedata$badlighting <- 0
-fedata$badlighting[fedata$maize.owner.agree.temp.q78=="1"|fedata$maize.owner.agree.temp.q78=="3"]<-1
+fedata$badlighting[fedata$maize.owner.agree.temp.q78=="2"]<-1
 table(fedata$badlighting)
 
 #Q79. On what surface are seed stored?
 fedata$badstored <- 0
-fedata$badstored[fedata$maize.owner.agree.temp.q79=="1"|fedata$maize.owner.agree.temp.q79=="2"]<-1
+fedata$badstored[fedata$maize.owner.agree.temp.q79=="3"|fedata$maize.owner.agree.temp.q79=="4"|fedata$maize.owner.agree.temp.q79=="5"]<-1
 fedata$badstored[fedata$maize.owner.agree.temp.q79==96]<-NA
 table(fedata$badstored)
 
 #Q80. Do you see maize seed that is stored in open bags or containers?
 fedata$maize.owner.agree.q80
 fedata$open<-as.character(fedata$maize.owner.agree.temp.q80)
-fedata$open_storage<- ifelse(fedata$open== 'Yes', 1, 0)  
+fedata$open_storage<- ifelse(fedata$open== 'No', 1, 0)  
 table(fedata$open_storage)
 
 #Q81. Do you see any official certificates displayed in the store (eg that the shop was inspected ,that the owner attended trainings 
@@ -2456,7 +2461,7 @@ table(fedata$shop_rate)
 
 #Q96. Since last season, did you receive any complaint from a customer that seed you sold was not good?
 table(fedata$maize.owner.agree.q96)
-fedata$complaint<- ifelse(fedata$maize.owner.agree.q96== 'Yes', 1, 0)  
+fedata$complaint<- ifelse(fedata$maize.owner.agree.q96== 'No', 1, 0)  
 table(fedata$complaint)
 
 #Q70. Enter the temperature in the seed store (where seed is stored)
@@ -3391,9 +3396,7 @@ plmm9<-plm(general_rating_nonseed~genderdummy+ maize.owner.agree.age +prim +maiz
 im9<-mean(fixef(plmm9))
 seplmm9<- sqrt(diag(vcov(plmm9)))
 
-plmm10<-plm(location~genderdummy+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
+plmm10<-plm(location~genderdummy+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
 im10<-mean(fixef(plmm10))
 seplmm10<- sqrt(diag(vcov(plmm10)))
 
@@ -3409,9 +3412,7 @@ plmm12<-plm(quality~genderdummy+ maize.owner.agree.age +prim +maize.owner.agree.
 im12<-mean(fixef(plmm12))
 seplmm12<- sqrt(diag(vcov(plmm12)))
 
-plmm13<-plm(stock~genderdummy+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
+plmm13<-plm(stock~genderdummy+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
 im13<-mean(fixef(plmm13))    
 #4.332454
 seplmm13<- sqrt(diag(vcov(plmm13)))
@@ -3543,332 +3544,332 @@ fe4<- rbind(c((format(round(im8[1],digits=3),nsmall=0)),
             
             c((format(round(sum(plmm8$coefficients[6]),digits=3),nsmall=0)),
               (format(round(sum(plmm9$coefficients[6]),digits=3),nsmall=0)),
-              (format(round(sum(plmm10$coefficients[6]),digits=3),nsmall=0)),
+             0,
               (format(round(sum(plmm11$coefficients[6]),digits=3),nsmall=0)),
               (format(round(sum(plmm12$coefficients[6]),digits=3),nsmall=0)),
-              (format(round(sum(plmm13$coefficients[6]),digits=3),nsmall=0)),
+             0,
               (format(round(sum(plmm14$coefficients[6]),digits=3),nsmall=0))),
             c((format(round(seplmm8[6],digits=3),nsmall=0)),
               (format(round(seplmm9[6],digits=3),nsmall=0)),
-              (format(round(seplmm10[6],digits=3),nsmall=0)),
+             0,
               (format(round(seplmm11[6],digits=3),nsmall=0)),
               (format(round(seplmm12[6],digits=3),nsmall=0)),
-              (format(round(seplmm13[6],digits=3),nsmall=0)),
+             0,
               (format(round(seplmm14[6],digits=3),nsmall=0))),
             c((format(round(summary(plmm8)$coefficients[6,4],digits=3),nsmall=0)),
               (format(round(summary(plmm9)$coefficients[6,4],digits=3),nsmall=0)),
-              (format(round(summary(plmm10)$coefficients[6,4],digits=3),nsmall=0)),
+             0,
               (format(round(summary(plmm11)$coefficients[6,4],digits=3),nsmall=0)),
               (format(round(summary(plmm12)$coefficients[6,4],digits=3),nsmall=0)),
-              (format(round(summary(plmm13)$coefficients[6,4],digits=3),nsmall=0)),
+            0,
               (format(round(summary(plmm14)$coefficients[6,4],digits=3),nsmall=0))),
             
             c((format(round(sum(plmm8$coefficients[7]),digits=3),nsmall=0)),
               (format(round(sum(plmm9$coefficients[7]),digits=3),nsmall=0)),
-              (format(round(sum(plmm10$coefficients[7]),digits=3),nsmall=0)),
+           0,
               (format(round(sum(plmm11$coefficients[7]),digits=3),nsmall=0)),
               (format(round(sum(plmm12$coefficients[7]),digits=3),nsmall=0)),
-              (format(round(sum(plmm13$coefficients[7]),digits=3),nsmall=0)),
+            0,
               (format(round(sum(plmm14$coefficients[7]),digits=3),nsmall=0))),
             c((format(round(seplmm8[7],digits=3),nsmall=0)),
               (format(round(seplmm9[7],digits=3),nsmall=0)),
-              (format(round(seplmm10[7],digits=3),nsmall=0)),
+            0,
               (format(round(seplmm11[7],digits=3),nsmall=0)),
               (format(round(seplmm12[7],digits=3),nsmall=0)),
-              (format(round(seplmm13[7],digits=3),nsmall=0)),
+           0,
               (format(round(seplmm14[7],digits=3),nsmall=0))),
             c((format(round(summary(plmm8)$coefficients[7,4],digits=3),nsmall=0)),
               (format(round(summary(plmm9)$coefficients[7,4],digits=3),nsmall=0)),
-              (format(round(summary(plmm10)$coefficients[7,4],digits=3),nsmall=0)),
+             0,
               (format(round(summary(plmm11)$coefficients[7,4],digits=3),nsmall=0)),
               (format(round(summary(plmm12)$coefficients[7,4],digits=3),nsmall=0)),
-              (format(round(summary(plmm13)$coefficients[7,4],digits=3),nsmall=0)),
+             0,
               (format(round(summary(plmm14)$coefficients[7,4],digits=3),nsmall=0))),
             
             c((format(round(sum(plmm8$coefficients[8]),digits=3),nsmall=0)),
               (format(round(sum(plmm9$coefficients[8]),digits=3),nsmall=0)),
-              (format(round(sum(plmm10$coefficients[8]),digits=3),nsmall=0)),
+              0,
               (format(round(sum(plmm11$coefficients[8]),digits=3),nsmall=0)),
               (format(round(sum(plmm12$coefficients[8]),digits=3),nsmall=0)),
-              (format(round(sum(plmm13$coefficients[8]),digits=3),nsmall=0)),
+         0,
               (format(round(sum(plmm14$coefficients[8]),digits=3),nsmall=0))),
             c((format(round(seplmm8[8],digits=3),nsmall=0)),
               (format(round(seplmm9[8],digits=3),nsmall=0)),
-              (format(round(seplmm10[8],digits=3),nsmall=0)),
+            0,
               (format(round(seplmm11[8],digits=3),nsmall=0)),
               (format(round(seplmm12[8],digits=3),nsmall=0)),
-              (format(round(seplmm13[8],digits=3),nsmall=0)),
+             0,
               (format(round(seplmm14[8],digits=3),nsmall=0))),
             c((format(round(summary(plmm8)$coefficients[8,4],digits=3),nsmall=0)),
               (format(round(summary(plmm9)$coefficients[8,4],digits=3),nsmall=0)),
-              (format(round(summary(plmm10)$coefficients[8,4],digits=3),nsmall=0)),
+            0,
               (format(round(summary(plmm11)$coefficients[8,4],digits=3),nsmall=0)),
               (format(round(summary(plmm12)$coefficients[8,4],digits=3),nsmall=0)),
-              (format(round(summary(plmm13)$coefficients[8,4],digits=3),nsmall=0)),
+             0,
               (format(round(summary(plmm14)$coefficients[8,4],digits=3),nsmall=0))),
             
             c((format(round(sum(plmm8$coefficients[9]),digits=3),nsmall=0)),
               (format(round(sum(plmm9$coefficients[9]),digits=3),nsmall=0)),
-              (format(round(sum(plmm10$coefficients[9]),digits=3),nsmall=0)),
+            0,
               (format(round(sum(plmm11$coefficients[9]),digits=3),nsmall=0)),
               (format(round(sum(plmm12$coefficients[9]),digits=3),nsmall=0)),
-              (format(round(sum(plmm13$coefficients[9]),digits=3),nsmall=0)),
+             0,
               (format(round(sum(plmm14$coefficients[9]),digits=3),nsmall=0))),
             c((format(round(seplmm8[9],digits=3),nsmall=0)),
               (format(round(seplmm9[9],digits=3),nsmall=0)),
-              (format(round(seplmm10[9],digits=3),nsmall=0)),
+            0,
               (format(round(seplmm11[9],digits=3),nsmall=0)),
               (format(round(seplmm12[9],digits=3),nsmall=0)),
-              (format(round(seplmm13[9],digits=3),nsmall=0)),
+            0,
               (format(round(seplmm14[9],digits=3),nsmall=0))),
             c((format(round(summary(plmm8)$coefficients[9,4],digits=3),nsmall=0)),
               (format(round(summary(plmm9)$coefficients[9,4],digits=3),nsmall=0)),
-              (format(round(summary(plmm10)$coefficients[9,4],digits=3),nsmall=0)),
+            0,
               (format(round(summary(plmm11)$coefficients[9,4],digits=3),nsmall=0)),
               (format(round(summary(plmm12)$coefficients[9,4],digits=3),nsmall=0)),
-              (format(round(summary(plmm13)$coefficients[9,4],digits=3),nsmall=0)),
+             0,
               (format(round(summary(plmm14)$coefficients[9,4],digits=3),nsmall=0))),
             
             c((format(round(sum(plmm8$coefficients[10]),digits=3),nsmall=0)),
               (format(round(sum(plmm9$coefficients[10]),digits=3),nsmall=0)),
-              (format(round(sum(plmm10$coefficients[10]),digits=3),nsmall=0)),
+            0,
               (format(round(sum(plmm11$coefficients[10]),digits=3),nsmall=0)),
               (format(round(sum(plmm12$coefficients[10]),digits=3),nsmall=0)),
-              (format(round(sum(plmm13$coefficients[10]),digits=3),nsmall=0)),
+             0,
               (format(round(sum(plmm14$coefficients[10]),digits=3),nsmall=0))),
             c((format(round(seplmm8[10],digits=3),nsmall=0)),
               (format(round(seplmm9[10],digits=3),nsmall=0)),
-              (format(round(seplmm10[10],digits=3),nsmall=0)),
+             0,
               (format(round(seplmm11[10],digits=3),nsmall=0)),
               (format(round(seplmm12[10],digits=3),nsmall=0)),
-              (format(round(seplmm13[10],digits=3),nsmall=0)),
+              0,
               (format(round(seplmm14[10],digits=3),nsmall=0))),
             c((format(round(summary(plmm8)$coefficients[10,4],digits=3),nsmall=0)),
               (format(round(summary(plmm9)$coefficients[10,4],digits=3),nsmall=0)),
-              (format(round(summary(plmm10)$coefficients[10,4],digits=3),nsmall=0)),
+            0,
               (format(round(summary(plmm11)$coefficients[10,4],digits=3),nsmall=0)),
               (format(round(summary(plmm12)$coefficients[10,4],digits=3),nsmall=0)),
-              (format(round(summary(plmm13)$coefficients[10,4],digits=3),nsmall=0)),
+             0,
               (format(round(summary(plmm14)$coefficients[10,4],digits=3),nsmall=0))),
             
             c((format(round(sum(plmm8$coefficients[11]),digits=3),nsmall=0)),
               (format(round(sum(plmm9$coefficients[11]),digits=3),nsmall=0)),
-              (format(round(sum(plmm10$coefficients[11]),digits=3),nsmall=0)),
+             0,
               (format(round(sum(plmm11$coefficients[11]),digits=3),nsmall=0)),
               (format(round(sum(plmm12$coefficients[11]),digits=3),nsmall=0)),
-              (format(round(sum(plmm13$coefficients[11]),digits=3),nsmall=0)),
+              0,
               (format(round(sum(plmm14$coefficients[11]),digits=3),nsmall=0))),
             c((format(round(seplmm8[11],digits=3),nsmall=0)),
               (format(round(seplmm9[11],digits=3),nsmall=0)),
-              (format(round(seplmm10[11],digits=3),nsmall=0)),
+            0,
               (format(round(seplmm11[11],digits=3),nsmall=0)),
               (format(round(seplmm12[11],digits=3),nsmall=0)),
-              (format(round(seplmm13[11],digits=3),nsmall=0)),
+            0,
               (format(round(seplmm14[11],digits=3),nsmall=0))),
             c((format(round(summary(plmm8)$coefficients[11,4],digits=3),nsmall=0)),
               (format(round(summary(plmm9)$coefficients[11,4],digits=3),nsmall=0)),
-              (format(round(summary(plmm10)$coefficients[11,4],digits=3),nsmall=0)),
+             0,
               (format(round(summary(plmm11)$coefficients[11,4],digits=3),nsmall=0)),
               (format(round(summary(plmm12)$coefficients[11,4],digits=3),nsmall=0)),
-              (format(round(summary(plmm13)$coefficients[11,4],digits=3),nsmall=0)),
+           0,
               (format(round(summary(plmm14)$coefficients[11,4],digits=3),nsmall=0))),
             
             c((format(round(sum(plmm8$coefficients[12]),digits=3),nsmall=0)),
               (format(round(sum(plmm9$coefficients[12]),digits=3),nsmall=0)),
-              (format(round(sum(plmm10$coefficients[12]),digits=3),nsmall=0)),
+             0,
               (format(round(sum(plmm11$coefficients[12]),digits=3),nsmall=0)),
               (format(round(sum(plmm12$coefficients[12]),digits=3),nsmall=0)),
-              (format(round(sum(plmm13$coefficients[12]),digits=3),nsmall=0)),
+             0,
               (format(round(sum(plmm14$coefficients[12]),digits=3),nsmall=0))),
             c((format(round(seplmm8[12],digits=3),nsmall=0)),
               (format(round(seplmm9[12],digits=3),nsmall=0)),
-              (format(round(seplmm10[12],digits=3),nsmall=0)),
+          0,
               (format(round(seplmm11[12],digits=3),nsmall=0)),
               (format(round(seplmm12[12],digits=3),nsmall=0)),
-              (format(round(seplmm13[12],digits=3),nsmall=0)),
+             0,
               (format(round(seplmm14[12],digits=3),nsmall=0))),
             c((format(round(summary(plmm8)$coefficients[12,4],digits=3),nsmall=0)),
               (format(round(summary(plmm9)$coefficients[12,4],digits=3),nsmall=0)),
-              (format(round(summary(plmm10)$coefficients[12,4],digits=3),nsmall=0)),
+              0,
               (format(round(summary(plmm11)$coefficients[12,4],digits=3),nsmall=0)),
               (format(round(summary(plmm12)$coefficients[12,4],digits=3),nsmall=0)),
-              (format(round(summary(plmm13)$coefficients[12,4],digits=3),nsmall=0)),
+             0,
               (format(round(summary(plmm14)$coefficients[12,4],digits=3),nsmall=0))),
             
             c((format(round(sum(plmm8$coefficients[13]),digits=3),nsmall=0)),
               (format(round(sum(plmm9$coefficients[13]),digits=3),nsmall=0)),
-              (format(round(sum(plmm10$coefficients[13]),digits=3),nsmall=0)),
+             0,
               (format(round(sum(plmm11$coefficients[13]),digits=3),nsmall=0)),
               (format(round(sum(plmm12$coefficients[13]),digits=3),nsmall=0)),
-              (format(round(sum(plmm13$coefficients[13]),digits=3),nsmall=0)),
+            0,
               (format(round(sum(plmm14$coefficients[13]),digits=3),nsmall=0))),
             c((format(round(seplmm8[13],digits=3),nsmall=0)),
               (format(round(seplmm9[13],digits=3),nsmall=0)),
-              (format(round(seplmm10[13],digits=3),nsmall=0)),
+             0,
               (format(round(seplmm11[13],digits=3),nsmall=0)),
               (format(round(seplmm12[13],digits=3),nsmall=0)),
-              (format(round(seplmm13[13],digits=3),nsmall=0)),
+             0,
               (format(round(seplmm14[13],digits=3),nsmall=0))),
             c((format(round(summary(plmm8)$coefficients[13,4],digits=3),nsmall=0)),
               (format(round(summary(plmm9)$coefficients[13,4],digits=3),nsmall=0)),
-              (format(round(summary(plmm10)$coefficients[13,4],digits=3),nsmall=0)),
+             0,
               (format(round(summary(plmm11)$coefficients[13,4],digits=3),nsmall=0)),
               (format(round(summary(plmm12)$coefficients[13,4],digits=3),nsmall=0)),
-              (format(round(summary(plmm13)$coefficients[13,4],digits=3),nsmall=0)),
+            0,
               (format(round(summary(plmm14)$coefficients[13,4],digits=3),nsmall=0))),
             
             c((format(round(sum(plmm8$coefficients[14]),digits=3),nsmall=0)),
               (format(round(sum(plmm9$coefficients[14]),digits=3),nsmall=0)),
-              (format(round(sum(plmm10$coefficients[14]),digits=3),nsmall=0)),
+            0,
               (format(round(sum(plmm11$coefficients[14]),digits=3),nsmall=0)),
               (format(round(sum(plmm12$coefficients[14]),digits=3),nsmall=0)),
-              (format(round(sum(plmm13$coefficients[14]),digits=3),nsmall=0)),
+              0,
               (format(round(sum(plmm14$coefficients[14]),digits=3),nsmall=0))),
             c((format(round(seplmm8[14],digits=3),nsmall=0)),
               (format(round(seplmm9[14],digits=3),nsmall=0)),
-              (format(round(seplmm10[14],digits=3),nsmall=0)),
+             0,
               (format(round(seplmm11[14],digits=3),nsmall=0)),
               (format(round(seplmm12[14],digits=3),nsmall=0)),
-              (format(round(seplmm13[14],digits=3),nsmall=0)),
+            0,
               (format(round(seplmm14[14],digits=3),nsmall=0))),
             c((format(round(summary(plmm8)$coefficients[14,4],digits=3),nsmall=0)),
               (format(round(summary(plmm9)$coefficients[14,4],digits=3),nsmall=0)),
-              (format(round(summary(plmm10)$coefficients[14,4],digits=3),nsmall=0)),
+            0 ,
               (format(round(summary(plmm11)$coefficients[14,4],digits=3),nsmall=0)),
               (format(round(summary(plmm12)$coefficients[14,4],digits=3),nsmall=0)),
-              (format(round(summary(plmm13)$coefficients[14,4],digits=3),nsmall=0)),
+              0,
               (format(round(summary(plmm14)$coefficients[14,4],digits=3),nsmall=0))),
             
             c((format(round(sum(plmm8$coefficients[15]),digits=3),nsmall=0)),
               (format(round(sum(plmm9$coefficients[15]),digits=3),nsmall=0)),
-              (format(round(sum(plmm10$coefficients[15]),digits=3),nsmall=0)),
+             0,
               (format(round(sum(plmm11$coefficients[15]),digits=3),nsmall=0)),
               (format(round(sum(plmm12$coefficients[15]),digits=3),nsmall=0)),
-              (format(round(sum(plmm13$coefficients[15]),digits=3),nsmall=0)),
+            0,
               (format(round(sum(plmm14$coefficients[15]),digits=3),nsmall=0))),
             c((format(round(seplmm8[15],digits=3),nsmall=0)),
               (format(round(seplmm9[15],digits=3),nsmall=0)),
-              (format(round(seplmm10[15],digits=3),nsmall=0)),
+             0,
               (format(round(seplmm11[15],digits=3),nsmall=0)),
               (format(round(seplmm12[15],digits=3),nsmall=0)),
-              (format(round(seplmm13[15],digits=3),nsmall=0)),
+              0,
               (format(round(seplmm14[15],digits=3),nsmall=0))),
             c((format(round(summary(plmm8)$coefficients[15,4],digits=3),nsmall=0)),
               (format(round(summary(plmm9)$coefficients[15,4],digits=3),nsmall=0)),
-              (format(round(summary(plmm10)$coefficients[15,4],digits=3),nsmall=0)),
+             0,
               (format(round(summary(plmm11)$coefficients[15,4],digits=3),nsmall=0)),
               (format(round(summary(plmm12)$coefficients[15,4],digits=3),nsmall=0)),
-              (format(round(summary(plmm13)$coefficients[15,4],digits=3),nsmall=0)),
+              0,
               (format(round(summary(plmm14)$coefficients[15,4],digits=3),nsmall=0))),
             
             c((format(round(sum(plmm8$coefficients[16]),digits=3),nsmall=0)),
               (format(round(sum(plmm9$coefficients[16]),digits=3),nsmall=0)),
-              (format(round(sum(plmm10$coefficients[16]),digits=3),nsmall=0)),
+             0,
               (format(round(sum(plmm11$coefficients[16]),digits=3),nsmall=0)),
               (format(round(sum(plmm12$coefficients[16]),digits=3),nsmall=0)),
-              (format(round(sum(plmm13$coefficients[16]),digits=3),nsmall=0)),
+            0,
               (format(round(sum(plmm14$coefficients[16]),digits=3),nsmall=0))),
             c((format(round(seplmm8[16],digits=3),nsmall=0)),
               (format(round(seplmm9[16],digits=3),nsmall=0)),
-              (format(round(seplmm10[16],digits=3),nsmall=0)),
+             0,
               (format(round(seplmm11[16],digits=3),nsmall=0)),
               (format(round(seplmm12[16],digits=3),nsmall=0)),
-              (format(round(seplmm13[16],digits=3),nsmall=0)),
+             0,
               (format(round(seplmm14[16],digits=3),nsmall=0))),
             c((format(round(summary(plmm8)$coefficients[16,4],digits=3),nsmall=0)),
               (format(round(summary(plmm9)$coefficients[16,4],digits=3),nsmall=0)),
-              (format(round(summary(plmm10)$coefficients[16,4],digits=3),nsmall=0)),
+             0,
               (format(round(summary(plmm11)$coefficients[16,4],digits=3),nsmall=0)),
               (format(round(summary(plmm12)$coefficients[16,4],digits=3),nsmall=0)),
-              (format(round(summary(plmm13)$coefficients[16,4],digits=3),nsmall=0)),
+              0,
               (format(round(summary(plmm14)$coefficients[16,4],digits=3),nsmall=0))),
             
             c((format(round(sum(plmm8$coefficients[17]),digits=3),nsmall=0)),
               (format(round(sum(plmm9$coefficients[17]),digits=3),nsmall=0)),
-              (format(round(sum(plmm10$coefficients[17]),digits=3),nsmall=0)),
+             0,
               (format(round(sum(plmm11$coefficients[17]),digits=3),nsmall=0)),
               (format(round(sum(plmm12$coefficients[17]),digits=3),nsmall=0)),
-              (format(round(sum(plmm13$coefficients[17]),digits=3),nsmall=0)),
+           0,
               (format(round(sum(plmm14$coefficients[17]),digits=3),nsmall=0))),
             c((format(round(seplmm8[17],digits=3),nsmall=0)),
               (format(round(seplmm9[17],digits=3),nsmall=0)),
-              (format(round(seplmm10[17],digits=3),nsmall=0)),
+              0,
               (format(round(seplmm11[17],digits=3),nsmall=0)),
               (format(round(seplmm12[17],digits=3),nsmall=0)),
-              (format(round(seplmm13[17],digits=3),nsmall=0)),
+             0,
               (format(round(seplmm14[17],digits=3),nsmall=0))),
             c((format(round(summary(plmm8)$coefficients[17,4],digits=3),nsmall=0)),
               (format(round(summary(plmm9)$coefficients[17,4],digits=3),nsmall=0)),
-              (format(round(summary(plmm10)$coefficients[17,4],digits=3),nsmall=0)),
+            0,
               (format(round(summary(plmm11)$coefficients[17,4],digits=3),nsmall=0)),
               (format(round(summary(plmm12)$coefficients[17,4],digits=3),nsmall=0)),
-              (format(round(summary(plmm13)$coefficients[17,4],digits=3),nsmall=0)),
+             0,
               (format(round(summary(plmm14)$coefficients[17,4],digits=3),nsmall=0))),
             
             c((format(round(sum(plmm8$coefficients[18]),digits=3),nsmall=0)),
               (format(round(sum(plmm9$coefficients[18]),digits=3),nsmall=0)),
-              (format(round(sum(plmm10$coefficients[18]),digits=3),nsmall=0)),
+             0,
               (format(round(sum(plmm11$coefficients[18]),digits=3),nsmall=0)),
               (format(round(sum(plmm12$coefficients[18]),digits=3),nsmall=0)),
-              (format(round(sum(plmm13$coefficients[18]),digits=3),nsmall=0)),
+             0,
               (format(round(sum(plmm14$coefficients[18]),digits=3),nsmall=0))),
             c((format(round(seplmm8[18],digits=3),nsmall=0)),
               (format(round(seplmm9[18],digits=3),nsmall=0)),
-              (format(round(seplmm10[18],digits=3),nsmall=0)),
+             0,
               (format(round(seplmm11[18],digits=3),nsmall=0)),
               (format(round(seplmm12[18],digits=3),nsmall=0)),
-              (format(round(seplmm13[18],digits=3),nsmall=0)),
+             0,
               (format(round(seplmm14[18],digits=3),nsmall=0))),
             c((format(round(summary(plmm8)$coefficients[18,4],digits=3),nsmall=0)),
               (format(round(summary(plmm9)$coefficients[18,4],digits=3),nsmall=0)),
-              (format(round(summary(plmm10)$coefficients[18,4],digits=3),nsmall=0)),
+             0,
               (format(round(summary(plmm11)$coefficients[18,4],digits=3),nsmall=0)),
               (format(round(summary(plmm12)$coefficients[18,4],digits=3),nsmall=0)),
-              (format(round(summary(plmm13)$coefficients[18,4],digits=3),nsmall=0)),
+             0,
               (format(round(summary(plmm14)$coefficients[18,4],digits=3),nsmall=0))),
             
             c((format(round(sum(plmm8$coefficients[19]),digits=3),nsmall=0)),
               (format(round(sum(plmm9$coefficients[19]),digits=3),nsmall=0)),
-              (format(round(sum(plmm10$coefficients[19]),digits=3),nsmall=0)),
+             0,
               (format(round(sum(plmm11$coefficients[19]),digits=3),nsmall=0)),
               (format(round(sum(plmm12$coefficients[19]),digits=3),nsmall=0)),
-              (format(round(sum(plmm13$coefficients[19]),digits=3),nsmall=0)),
+             0,
               (format(round(sum(plmm14$coefficients[19]),digits=3),nsmall=0))),
             c((format(round(seplmm8[19],digits=3),nsmall=0)),
               (format(round(seplmm9[19],digits=3),nsmall=0)),
-              (format(round(seplmm10[19],digits=3),nsmall=0)),
+             0,
               (format(round(seplmm11[19],digits=3),nsmall=0)),
               (format(round(seplmm12[19],digits=3),nsmall=0)),
-              (format(round(seplmm13[19],digits=3),nsmall=0)),
+              0,
               (format(round(seplmm14[19],digits=3),nsmall=0))),
             c((format(round(summary(plmm8)$coefficients[19,4],digits=3),nsmall=0)),
               (format(round(summary(plmm9)$coefficients[19,4],digits=3),nsmall=0)),
-              (format(round(summary(plmm10)$coefficients[19,4],digits=3),nsmall=0)),
+            0,
               (format(round(summary(plmm11)$coefficients[19,4],digits=3),nsmall=0)),
               (format(round(summary(plmm12)$coefficients[19,4],digits=3),nsmall=0)),
-              (format(round(summary(plmm13)$coefficients[19,4],digits=3),nsmall=0)),
+             0,
               (format(round(summary(plmm14)$coefficients[19,4],digits=3),nsmall=0))),
             
             c((format(round(sum(plmm8$coefficients[20]),digits=3),nsmall=0)),
               (format(round(sum(plmm9$coefficients[20]),digits=3),nsmall=0)),
-              (format(round(sum(plmm10$coefficients[20]),digits=3),nsmall=0)),
+             0,
               (format(round(sum(plmm11$coefficients[20]),digits=3),nsmall=0)),
               (format(round(sum(plmm12$coefficients[20]),digits=3),nsmall=0)),
-              (format(round(sum(plmm13$coefficients[20]),digits=3),nsmall=0)),
+             0,
               (format(round(sum(plmm14$coefficients[20]),digits=3),nsmall=0))),
             c((format(round(seplmm8[20],digits=3),nsmall=0)),
               (format(round(seplmm9[20],digits=3),nsmall=0)),
-              (format(round(seplmm10[20],digits=3),nsmall=0)),
+            0,
               (format(round(seplmm11[20],digits=3),nsmall=0)),
               (format(round(seplmm12[20],digits=3),nsmall=0)),
-              (format(round(seplmm13[20],digits=3),nsmall=0)),
+             0,
               (format(round(seplmm14[20],digits=3),nsmall=0))),
             c((format(round(summary(plmm8)$coefficients[20,4],digits=3),nsmall=0)),
               (format(round(summary(plmm9)$coefficients[20,4],digits=3),nsmall=0)),
-              (format(round(summary(plmm10)$coefficients[20,4],digits=3),nsmall=0)),
+              0,
               (format(round(summary(plmm11)$coefficients[20,4],digits=3),nsmall=0)),
               (format(round(summary(plmm12)$coefficients[20,4],digits=3),nsmall=0)),
-              (format(round(summary(plmm13)$coefficients[20,4],digits=3),nsmall=0)),
+             0,
               (format(round(summary(plmm14)$coefficients[20,4],digits=3),nsmall=0))),
           
             
@@ -4015,7 +4016,7 @@ table(betwd$dedicated_area)
 #problem with rats or pests?
 betwd$maize.owner.agree.q71
 betwd$pest<-as.character(betwd$maize.owner.agree.temp.q71)
-betwd$pest_prob<- ifelse(betwd$pest== 'Yes', 1, 0)  
+betwd$pest_prob<- ifelse(betwd$pest== 'No', 1, 0)  
 table(betwd$pest_prob)
 
 #roof leak proof?  
@@ -4044,19 +4045,19 @@ table(betwd$ventilation)
 
 #Q78. Lighting conditions in area where seed is stored?
 betwd$badlighting <- 0
-betwd$badlighting[betwd$maize.owner.agree.temp.q78=="1"|betwd$maize.owner.agree.temp.q78=="3"]<-1
+betwd$badlighting[betwd$maize.owner.agree.temp.q78=="2"]<-1
 table(betwd$badlighting)
 
 #Q79. On what surface are seed stored?
 betwd$badstored <- 0
-betwd$badstored[betwd$maize.owner.agree.temp.q79=="1"|betwd$maize.owner.agree.temp.q79=="2"]<-1
+betwd$badstored[betwd$maize.owner.agree.temp.q79=="3"|betwd$maize.owner.agree.temp.q79=="4"|betwd$maize.owner.agree.temp.q79=="5"]<-1
 betwd$badstored[betwd$maize.owner.agree.temp.q79==96]<-NA
 table(betwd$badstored)
 
 #Q80. Do you see maize seed that is stored in open bags or containers?
 betwd$maize.owner.agree.q80
 betwd$open<-as.character(betwd$maize.owner.agree.temp.q80)
-betwd$open_storage<- ifelse(betwd$open== 'Yes', 1, 0)  
+betwd$open_storage<- ifelse(betwd$open== 'No', 1, 0)  
 table(betwd$open_storage)
 
 #Q81. Do you see any official certificates displayed in the store (eg that the shop was inspected ,that the owner attended trainings 
@@ -4072,7 +4073,7 @@ table(betwd$shop_rate)
 
 #Q96. Since last season, did you receive any complaint from a customer that seed you sold was not good?
 table(betwd$maize.owner.agree.q96)
-betwd$complaint<- ifelse(betwd$maize.owner.agree.q96== 'Yes', 1, 0)  
+betwd$complaint<- ifelse(betwd$maize.owner.agree.q96== 'No', 1, 0)  
 table(betwd$complaint)
 
 #Q70. Enter the temperature in the seed store (where seed is stored)
@@ -4978,9 +4979,7 @@ bdn10<-lm(general_nonseed~gender_avgf  +maize.owner.agree.age +prim +maize.owner
            + complaint + temp+leakproof, data = betwd)
 sebdn10<- sqrt(diag(vcov(bdn10)))
 
-bdn11<-lm(location~gender_avgf +maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob 
-           +roof_insu+ wall_heatproof +ventilation +badlighting +badstored+ open_storage+ cert+ shop_rate
-           + complaint + temp+leakproof, data = betwd)
+bdn11<-lm(location~gender_avgf +maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4, data = betwd)
 sebdn11<- sqrt(diag(vcov(bdn11)))
 
 bdn12<-lm(price~gender_avgf +maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob 
@@ -4993,9 +4992,7 @@ bdn13<-lm(quality~gender_avgf +maize.owner.agree.age +prim +maize.owner.agree.q3
            + complaint + temp+leakproof, data = betwd)
 sebdn13<- sqrt(diag(vcov(bdn13)))
 
-bdn14<-lm(stock~gender_avgf  +maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob 
-           +roof_insu+ wall_heatproof +ventilation +badlighting +badstored+ open_storage+ cert+ shop_rate
-           + complaint + temp+leakproof, data = betwd)
+bdn14<-lm(stock~gender_avgf  +maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4, data = betwd)
 sebdn14<- sqrt(diag(vcov(bdn14)))
 
 bdn15<-lm(reputation~gender_avgf  +maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob 
@@ -5138,332 +5135,332 @@ s_deal4<- rbind(c((format(round(sum(bdn9$coefficients[1]),digits=3),nsmall=0)),
                 
                 c((format(round(sum(bdn9$coefficients[7]),digits=3),nsmall=0)),
                   (format(round(sum(bdn10$coefficients[7]),digits=3),nsmall=0)),
-                  (format(round(sum(bdn11$coefficients[7]),digits=3),nsmall=0)),
+                  0,
                   (format(round(sum(bdn12$coefficients[7]),digits=3),nsmall=0)),
                   (format(round(sum(bdn13$coefficients[7]),digits=3),nsmall=0)),
-                  (format(round(sum(bdn14$coefficients[7]),digits=3),nsmall=0)),
+                 0,
                   (format(round(sum(bdn15$coefficients[7]),digits=3),nsmall=0))),
                 c((format(round(sebdn9[7],digits=3),nsmall=0)),
                   (format(round(sebdn10[7],digits=3),nsmall=0)),
-                  (format(round(sebdn11[7],digits=3),nsmall=0)),
+                 0,
                   (format(round(sebdn12[7],digits=3),nsmall=0)),
                   (format(round(sebdn13[7],digits=3),nsmall=0)),
-                  (format(round(sebdn14[7],digits=3),nsmall=0)),
+                 0,
                   (format(round(sebdn15[7],digits=3),nsmall=0))),
                 c((format(round(summary(bdn9)$coefficients[7,4],digits=3),nsmall=0)),
                   (format(round(summary(bdn10)$coefficients[7,4],digits=3),nsmall=0)),
-                  (format(round(summary(bdn11)$coefficients[7,4],digits=3),nsmall=0)),
+                 0,
                   (format(round(summary(bdn12)$coefficients[7,4],digits=3),nsmall=0)),
                   (format(round(summary(bdn13)$coefficients[7,4],digits=3),nsmall=0)),
-                  (format(round(summary(bdn14)$coefficients[7,4],digits=3),nsmall=0)),
+                0,
                   (format(round(summary(bdn15)$coefficients[7,4],digits=3),nsmall=0))),
                 
                 c((format(round(sum(bdn9$coefficients[8]),digits=3),nsmall=0)),
                   (format(round(sum(bdn10$coefficients[8]),digits=3),nsmall=0)),
-                  (format(round(sum(bdn11$coefficients[8]),digits=3),nsmall=0)),
+                 0,
                   (format(round(sum(bdn12$coefficients[8]),digits=3),nsmall=0)),
                   (format(round(sum(bdn13$coefficients[8]),digits=3),nsmall=0)),
-                  (format(round(sum(bdn14$coefficients[8]),digits=3),nsmall=0)),
+                 0,
                   (format(round(sum(bdn15$coefficients[8]),digits=3),nsmall=0))),
                 c((format(round(sebdn9[8],digits=3),nsmall=0)),
                   (format(round(sebdn10[8],digits=3),nsmall=0)),
-                  (format(round(sebdn11[8],digits=3),nsmall=0)),
+                0,
                   (format(round(sebdn12[8],digits=3),nsmall=0)),
                   (format(round(sebdn13[8],digits=3),nsmall=0)),
-                  (format(round(sebdn14[8],digits=3),nsmall=0)),
+                 0,
                   (format(round(sebdn15[8],digits=3),nsmall=0))),
                 c((format(round(summary(bdn9)$coefficients[8,4],digits=3),nsmall=0)),
                   (format(round(summary(bdn10)$coefficients[8,4],digits=3),nsmall=0)),
-                  (format(round(summary(bdn11)$coefficients[8,4],digits=3),nsmall=0)),
+                 0,
                   (format(round(summary(bdn12)$coefficients[8,4],digits=3),nsmall=0)),
                   (format(round(summary(bdn13)$coefficients[8,4],digits=3),nsmall=0)),
-                  (format(round(summary(bdn14)$coefficients[8,4],digits=3),nsmall=0)),
+                 0,
                   (format(round(summary(bdn15)$coefficients[8,4],digits=3),nsmall=0))),
                 
                 c((format(round(sum(bdn9$coefficients[9]),digits=3),nsmall=0)),
                   (format(round(sum(bdn10$coefficients[9]),digits=3),nsmall=0)),
-                  (format(round(sum(bdn11$coefficients[9]),digits=3),nsmall=0)),
+                 0,
                   (format(round(sum(bdn12$coefficients[9]),digits=3),nsmall=0)),
                   (format(round(sum(bdn13$coefficients[9]),digits=3),nsmall=0)),
-                  (format(round(sum(bdn14$coefficients[9]),digits=3),nsmall=0)),
+                 0,
                   (format(round(sum(bdn15$coefficients[9]),digits=3),nsmall=0))),
                 c((format(round(sebdn9[9],digits=3),nsmall=0)),
                   (format(round(sebdn10[9],digits=3),nsmall=0)),
-                  (format(round(sebdn11[9],digits=3),nsmall=0)),
+                 0,
                   (format(round(sebdn12[9],digits=3),nsmall=0)),
                   (format(round(sebdn13[9],digits=3),nsmall=0)),
-                  (format(round(sebdn14[9],digits=3),nsmall=0)),
+                 0,
                   (format(round(sebdn15[9],digits=3),nsmall=0))),
                 c((format(round(summary(bdn9)$coefficients[9,4],digits=3),nsmall=0)),
                   (format(round(summary(bdn10)$coefficients[9,4],digits=3),nsmall=0)),
-                  (format(round(summary(bdn11)$coefficients[9,4],digits=3),nsmall=0)),
+                  0,
                   (format(round(summary(bdn12)$coefficients[9,4],digits=3),nsmall=0)),
                   (format(round(summary(bdn13)$coefficients[9,4],digits=3),nsmall=0)),
-                  (format(round(summary(bdn14)$coefficients[9,4],digits=3),nsmall=0)),
+                 0,
                   (format(round(summary(bdn15)$coefficients[9,4],digits=3),nsmall=0))),
                 
                 c((format(round(sum(bdn9$coefficients[10]),digits=3),nsmall=0)),
                   (format(round(sum(bdn10$coefficients[10]),digits=3),nsmall=0)),
-                  (format(round(sum(bdn11$coefficients[10]),digits=3),nsmall=0)),
+                 0,
                   (format(round(sum(bdn12$coefficients[10]),digits=3),nsmall=0)),
                   (format(round(sum(bdn13$coefficients[10]),digits=3),nsmall=0)),
-                  (format(round(sum(bdn14$coefficients[10]),digits=3),nsmall=0)),
+                 0,
                   (format(round(sum(bdn15$coefficients[10]),digits=3),nsmall=0))),
                 c((format(round(sebdn9[10],digits=3),nsmall=0)),
                   (format(round(sebdn10[10],digits=3),nsmall=0)),
-                  (format(round(sebdn11[10],digits=3),nsmall=0)),
+                 0,
                   (format(round(sebdn12[10],digits=3),nsmall=0)),
                   (format(round(sebdn13[10],digits=3),nsmall=0)),
-                  (format(round(sebdn14[10],digits=3),nsmall=0)),
+                 0,
                   (format(round(sebdn15[10],digits=3),nsmall=0))),
                 c((format(round(summary(bdn9)$coefficients[10,4],digits=3),nsmall=0)),
                   (format(round(summary(bdn10)$coefficients[10,4],digits=3),nsmall=0)),
-                  (format(round(summary(bdn11)$coefficients[10,4],digits=3),nsmall=0)),
+                 0,
                   (format(round(summary(bdn12)$coefficients[10,4],digits=3),nsmall=0)),
                   (format(round(summary(bdn13)$coefficients[10,4],digits=3),nsmall=0)),
-                  (format(round(summary(bdn14)$coefficients[10,4],digits=3),nsmall=0)),
+                 0,
                   (format(round(summary(bdn15)$coefficients[10,4],digits=3),nsmall=0))),
                 
                 c((format(round(sum(bdn9$coefficients[11]),digits=3),nsmall=0)),
                   (format(round(sum(bdn10$coefficients[11]),digits=3),nsmall=0)),
-                  (format(round(sum(bdn11$coefficients[11]),digits=3),nsmall=0)),
+                 0,
                   (format(round(sum(bdn12$coefficients[11]),digits=3),nsmall=0)),
                   (format(round(sum(bdn13$coefficients[11]),digits=3),nsmall=0)),
-                  (format(round(sum(bdn14$coefficients[11]),digits=3),nsmall=0)),
+                 0,
                   (format(round(sum(bdn15$coefficients[11]),digits=3),nsmall=0))),
                 c((format(round(sebdn9[11],digits=3),nsmall=0)),
                   (format(round(sebdn10[11],digits=3),nsmall=0)),
-                  (format(round(sebdn11[11],digits=3),nsmall=0)),
+                 0,
                   (format(round(sebdn12[11],digits=3),nsmall=0)),
                   (format(round(sebdn13[11],digits=3),nsmall=0)),
-                  (format(round(sebdn14[11],digits=3),nsmall=0)),
+                 0,
                   (format(round(sebdn15[11],digits=3),nsmall=0))),
                 c((format(round(summary(bdn9)$coefficients[11,4],digits=3),nsmall=0)),
                   (format(round(summary(bdn10)$coefficients[11,4],digits=3),nsmall=0)),
-                  (format(round(summary(bdn11)$coefficients[11,4],digits=3),nsmall=0)),
+                 0,
                   (format(round(summary(bdn12)$coefficients[11,4],digits=3),nsmall=0)),
                   (format(round(summary(bdn13)$coefficients[11,4],digits=3),nsmall=0)),
-                  (format(round(summary(bdn14)$coefficients[11,4],digits=3),nsmall=0)),
+                 0,
                   (format(round(summary(bdn15)$coefficients[11,4],digits=3),nsmall=0))),
                 
                 c((format(round(sum(bdn9$coefficients[12]),digits=3),nsmall=0)),
                   (format(round(sum(bdn10$coefficients[12]),digits=3),nsmall=0)),
-                  (format(round(sum(bdn11$coefficients[12]),digits=3),nsmall=0)),
+                 0,
                   (format(round(sum(bdn12$coefficients[12]),digits=3),nsmall=0)),
                   (format(round(sum(bdn13$coefficients[12]),digits=3),nsmall=0)),
-                  (format(round(sum(bdn14$coefficients[12]),digits=3),nsmall=0)),
+                 0,
                   (format(round(sum(bdn15$coefficients[12]),digits=3),nsmall=0))),
                 c((format(round(sebdn9[12],digits=3),nsmall=0)),
                   (format(round(sebdn10[12],digits=3),nsmall=0)),
-                  (format(round(sebdn11[12],digits=3),nsmall=0)),
+               0,
                   (format(round(sebdn12[12],digits=3),nsmall=0)),
                   (format(round(sebdn13[12],digits=3),nsmall=0)),
-                  (format(round(sebdn14[12],digits=3),nsmall=0)),
+                 0,
                   (format(round(sebdn15[12],digits=3),nsmall=0))),
                 c((format(round(summary(bdn9)$coefficients[12,4],digits=3),nsmall=0)),
                   (format(round(summary(bdn10)$coefficients[12,4],digits=3),nsmall=0)),
-                  (format(round(summary(bdn11)$coefficients[12,4],digits=3),nsmall=0)),
+                 0,
                   (format(round(summary(bdn12)$coefficients[12,4],digits=3),nsmall=0)),
                   (format(round(summary(bdn13)$coefficients[12,4],digits=3),nsmall=0)),
-                  (format(round(summary(bdn14)$coefficients[12,4],digits=3),nsmall=0)),
+                 0,
                   (format(round(summary(bdn15)$coefficients[12,4],digits=3),nsmall=0))),
                 
                 c((format(round(sum(bdn9$coefficients[13]),digits=3),nsmall=0)),
                   (format(round(sum(bdn10$coefficients[13]),digits=3),nsmall=0)),
-                  (format(round(sum(bdn11$coefficients[13]),digits=3),nsmall=0)),
+                 0,
                   (format(round(sum(bdn12$coefficients[13]),digits=3),nsmall=0)),
                   (format(round(sum(bdn13$coefficients[13]),digits=3),nsmall=0)),
-                  (format(round(sum(bdn14$coefficients[13]),digits=3),nsmall=0)),
+                  0,
                   (format(round(sum(bdn15$coefficients[13]),digits=3),nsmall=0))),
                 c((format(round(sebdn9[13],digits=3),nsmall=0)),
                   (format(round(sebdn10[13],digits=3),nsmall=0)),
-                  (format(round(sebdn11[13],digits=3),nsmall=0)),
+                 0,
                   (format(round(sebdn12[13],digits=3),nsmall=0)),
                   (format(round(sebdn13[13],digits=3),nsmall=0)),
-                  (format(round(sebdn14[13],digits=3),nsmall=0)),
+                 0,
                   (format(round(sebdn15[13],digits=3),nsmall=0))),
                 c((format(round(summary(bdn9)$coefficients[13,4],digits=3),nsmall=0)),
                   (format(round(summary(bdn10)$coefficients[13,4],digits=3),nsmall=0)),
-                  (format(round(summary(bdn11)$coefficients[13,4],digits=3),nsmall=0)),
+                 0,
                   (format(round(summary(bdn12)$coefficients[13,4],digits=3),nsmall=0)),
                   (format(round(summary(bdn13)$coefficients[13,4],digits=3),nsmall=0)),
-                  (format(round(summary(bdn14)$coefficients[13,4],digits=3),nsmall=0)),
+                 0,
                   (format(round(summary(bdn15)$coefficients[13,4],digits=3),nsmall=0))),
                 
                 c((format(round(sum(bdn9$coefficients[14]),digits=3),nsmall=0)),
                   (format(round(sum(bdn10$coefficients[14]),digits=3),nsmall=0)),
-                  (format(round(sum(bdn11$coefficients[14]),digits=3),nsmall=0)),
+                 0,
                   (format(round(sum(bdn12$coefficients[14]),digits=3),nsmall=0)),
                   (format(round(sum(bdn13$coefficients[14]),digits=3),nsmall=0)),
-                  (format(round(sum(bdn14$coefficients[14]),digits=3),nsmall=0)),
+                0,
                   (format(round(sum(bdn15$coefficients[14]),digits=3),nsmall=0))),
                 c((format(round(sebdn9[14],digits=3),nsmall=0)),
                   (format(round(sebdn10[14],digits=3),nsmall=0)),
-                  (format(round(sebdn11[14],digits=3),nsmall=0)),
+                 0,
                   (format(round(sebdn12[14],digits=3),nsmall=0)),
                   (format(round(sebdn13[14],digits=3),nsmall=0)),
-                  (format(round(sebdn14[14],digits=3),nsmall=0)),
+                  0,
                   (format(round(sebdn15[14],digits=3),nsmall=0))),
                 c((format(round(summary(bdn9)$coefficients[14,4],digits=3),nsmall=0)),
                   (format(round(summary(bdn10)$coefficients[14,4],digits=3),nsmall=0)),
-                  (format(round(summary(bdn11)$coefficients[14,4],digits=3),nsmall=0)),
+                 0,
                   (format(round(summary(bdn12)$coefficients[14,4],digits=3),nsmall=0)),
                   (format(round(summary(bdn13)$coefficients[14,4],digits=3),nsmall=0)),
-                  (format(round(summary(bdn14)$coefficients[14,4],digits=3),nsmall=0)),
+                  0,
                   (format(round(summary(bdn15)$coefficients[14,4],digits=3),nsmall=0))),
                 
                 c((format(round(sum(bdn9$coefficients[15]),digits=3),nsmall=0)),
                   (format(round(sum(bdn10$coefficients[15]),digits=3),nsmall=0)),
-                  (format(round(sum(bdn11$coefficients[15]),digits=3),nsmall=0)),
+                0,
                   (format(round(sum(bdn12$coefficients[15]),digits=3),nsmall=0)),
                   (format(round(sum(bdn13$coefficients[15]),digits=3),nsmall=0)),
-                  (format(round(sum(bdn14$coefficients[15]),digits=3),nsmall=0)),
+                 0,
                   (format(round(sum(bdn15$coefficients[15]),digits=3),nsmall=0))),
                 c((format(round(sebdn9[15],digits=3),nsmall=0)),
                   (format(round(sebdn10[15],digits=3),nsmall=0)),
-                  (format(round(sebdn11[15],digits=3),nsmall=0)),
+                  0,
                   (format(round(sebdn12[15],digits=3),nsmall=0)),
                   (format(round(sebdn13[15],digits=3),nsmall=0)),
-                  (format(round(sebdn14[15],digits=3),nsmall=0)),
+                 0,
                   (format(round(sebdn15[15],digits=3),nsmall=0))),
                 c((format(round(summary(bdn9)$coefficients[15,4],digits=3),nsmall=0)),
                   (format(round(summary(bdn10)$coefficients[15,4],digits=3),nsmall=0)),
-                  (format(round(summary(bdn11)$coefficients[15,4],digits=3),nsmall=0)),
+                 0,
                   (format(round(summary(bdn12)$coefficients[15,4],digits=3),nsmall=0)),
                   (format(round(summary(bdn13)$coefficients[15,4],digits=3),nsmall=0)),
-                  (format(round(summary(bdn14)$coefficients[15,4],digits=3),nsmall=0)),
+                 0,
                   (format(round(summary(bdn15)$coefficients[15,4],digits=3),nsmall=0))),
                 
                 c((format(round(sum(bdn9$coefficients[16]),digits=3),nsmall=0)),
                   (format(round(sum(bdn10$coefficients[16]),digits=3),nsmall=0)),
-                  (format(round(sum(bdn11$coefficients[16]),digits=3),nsmall=0)),
+                 0,
                   (format(round(sum(bdn12$coefficients[16]),digits=3),nsmall=0)),
                   (format(round(sum(bdn13$coefficients[16]),digits=3),nsmall=0)),
-                  (format(round(sum(bdn14$coefficients[16]),digits=3),nsmall=0)),
+                 0,
                   (format(round(sum(bdn15$coefficients[16]),digits=3),nsmall=0))),
                 c((format(round(sebdn9[16],digits=3),nsmall=0)),
                   (format(round(sebdn10[16],digits=3),nsmall=0)),
-                  (format(round(sebdn11[16],digits=3),nsmall=0)),
+                 0,
                   (format(round(sebdn12[16],digits=3),nsmall=0)),
                   (format(round(sebdn13[16],digits=3),nsmall=0)),
-                  (format(round(sebdn14[16],digits=3),nsmall=0)),
+                 0,
                   (format(round(sebdn15[16],digits=3),nsmall=0))),
                 c((format(round(summary(bdn9)$coefficients[16,4],digits=3),nsmall=0)),
                   (format(round(summary(bdn10)$coefficients[16,4],digits=3),nsmall=0)),
-                  (format(round(summary(bdn11)$coefficients[16,4],digits=3),nsmall=0)),
+                 0,
                   (format(round(summary(bdn12)$coefficients[16,4],digits=3),nsmall=0)),
                   (format(round(summary(bdn13)$coefficients[16,4],digits=3),nsmall=0)),
-                  (format(round(summary(bdn14)$coefficients[16,4],digits=3),nsmall=0)),
+                  0,
                   (format(round(summary(bdn15)$coefficients[16,4],digits=3),nsmall=0))),
                 
                 c((format(round(sum(bdn9$coefficients[17]),digits=3),nsmall=0)),
                   (format(round(sum(bdn10$coefficients[17]),digits=3),nsmall=0)),
-                  (format(round(sum(bdn11$coefficients[17]),digits=3),nsmall=0)),
+                 0,
                   (format(round(sum(bdn12$coefficients[17]),digits=3),nsmall=0)),
                   (format(round(sum(bdn13$coefficients[17]),digits=3),nsmall=0)),
-                  (format(round(sum(bdn14$coefficients[17]),digits=3),nsmall=0)),
+                 0,
                   (format(round(sum(bdn15$coefficients[17]),digits=3),nsmall=0))),
                 c((format(round(sebdn9[17],digits=3),nsmall=0)),
                   (format(round(sebdn10[17],digits=3),nsmall=0)),
-                  (format(round(sebdn11[17],digits=3),nsmall=0)),
+                 0,
                   (format(round(sebdn12[17],digits=3),nsmall=0)),
                   (format(round(sebdn13[17],digits=3),nsmall=0)),
-                  (format(round(sebdn14[17],digits=3),nsmall=0)),
+                 0,
                   (format(round(sebdn15[17],digits=3),nsmall=0))),
                 c((format(round(summary(bdn9)$coefficients[17,4],digits=3),nsmall=0)),
                   (format(round(summary(bdn10)$coefficients[17,4],digits=3),nsmall=0)),
-                  (format(round(summary(bdn11)$coefficients[17,4],digits=3),nsmall=0)),
+                 0,
                   (format(round(summary(bdn12)$coefficients[17,4],digits=3),nsmall=0)),
                   (format(round(summary(bdn13)$coefficients[17,4],digits=3),nsmall=0)),
-                  (format(round(summary(bdn14)$coefficients[17,4],digits=3),nsmall=0)),
+                 0,
                   (format(round(summary(bdn15)$coefficients[17,4],digits=3),nsmall=0))),
                 
                 c((format(round(sum(bdn9$coefficients[18]),digits=3),nsmall=0)),
                   (format(round(sum(bdn10$coefficients[18]),digits=3),nsmall=0)),
-                  (format(round(sum(bdn11$coefficients[18]),digits=3),nsmall=0)),
+                 0,
                   (format(round(sum(bdn12$coefficients[18]),digits=3),nsmall=0)),
                   (format(round(sum(bdn13$coefficients[18]),digits=3),nsmall=0)),
-                  (format(round(sum(bdn14$coefficients[18]),digits=3),nsmall=0)),
+                 0,
                   (format(round(sum(bdn15$coefficients[18]),digits=3),nsmall=0))),
                 c((format(round(sebdn9[18],digits=3),nsmall=0)),
                   (format(round(sebdn10[18],digits=3),nsmall=0)),
-                  (format(round(sebdn11[18],digits=3),nsmall=0)),
+                 0,
                   (format(round(sebdn12[18],digits=3),nsmall=0)),
                   (format(round(sebdn13[18],digits=3),nsmall=0)),
-                  (format(round(sebdn14[18],digits=3),nsmall=0)),
+                  0,
                   (format(round(sebdn15[18],digits=3),nsmall=0))),
                 c((format(round(summary(bdn9)$coefficients[18,4],digits=3),nsmall=0)),
                   (format(round(summary(bdn10)$coefficients[18,4],digits=3),nsmall=0)),
-                  (format(round(summary(bdn11)$coefficients[18,4],digits=3),nsmall=0)),
+                 0,
                   (format(round(summary(bdn12)$coefficients[18,4],digits=3),nsmall=0)),
                   (format(round(summary(bdn13)$coefficients[18,4],digits=3),nsmall=0)),
-                  (format(round(summary(bdn14)$coefficients[18,4],digits=3),nsmall=0)),
+                 0,
                   (format(round(summary(bdn15)$coefficients[18,4],digits=3),nsmall=0))),
                 
                 c((format(round(sum(bdn9$coefficients[19]),digits=3),nsmall=0)),
                   (format(round(sum(bdn10$coefficients[19]),digits=3),nsmall=0)),
-                  (format(round(sum(bdn11$coefficients[19]),digits=3),nsmall=0)),
+                 0,
                   (format(round(sum(bdn12$coefficients[19]),digits=3),nsmall=0)),
                   (format(round(sum(bdn13$coefficients[19]),digits=3),nsmall=0)),
-                  (format(round(sum(bdn14$coefficients[19]),digits=3),nsmall=0)),
+                 0,
                   (format(round(sum(bdn15$coefficients[19]),digits=3),nsmall=0))),
                 c((format(round(sebdn9[19],digits=3),nsmall=0)),
                   (format(round(sebdn10[19],digits=3),nsmall=0)),
-                  (format(round(sebdn11[19],digits=3),nsmall=0)),
+                 0,
                   (format(round(sebdn12[19],digits=3),nsmall=0)),
                   (format(round(sebdn13[19],digits=3),nsmall=0)),
-                  (format(round(sebdn14[19],digits=3),nsmall=0)),
+                 0,
                   (format(round(sebdn15[19],digits=3),nsmall=0))),
                 c((format(round(summary(bdn9)$coefficients[19,4],digits=3),nsmall=0)),
                   (format(round(summary(bdn10)$coefficients[19,4],digits=3),nsmall=0)),
-                  (format(round(summary(bdn11)$coefficients[19,4],digits=3),nsmall=0)),
+                 0,
                   (format(round(summary(bdn12)$coefficients[19,4],digits=3),nsmall=0)),
                   (format(round(summary(bdn13)$coefficients[19,4],digits=3),nsmall=0)),
-                  (format(round(summary(bdn14)$coefficients[19,4],digits=3),nsmall=0)),
+                  0,
                   (format(round(summary(bdn15)$coefficients[19,4],digits=3),nsmall=0))),
                 
                 c((format(round(sum(bdn9$coefficients[20]),digits=3),nsmall=0)),
                   (format(round(sum(bdn10$coefficients[20]),digits=3),nsmall=0)),
-                  (format(round(sum(bdn11$coefficients[20]),digits=3),nsmall=0)),
+                 0,
                   (format(round(sum(bdn12$coefficients[20]),digits=3),nsmall=0)),
                   (format(round(sum(bdn13$coefficients[20]),digits=3),nsmall=0)),
-                  (format(round(sum(bdn14$coefficients[20]),digits=3),nsmall=0)),
+                 0,
                   (format(round(sum(bdn15$coefficients[20]),digits=3),nsmall=0))),
                 c((format(round(sebdn9[20],digits=3),nsmall=0)),
                   (format(round(sebdn10[20],digits=3),nsmall=0)),
-                  (format(round(sebdn11[20],digits=3),nsmall=0)),
+                 0,
                   (format(round(sebdn12[20],digits=3),nsmall=0)),
                   (format(round(sebdn13[20],digits=3),nsmall=0)),
-                  (format(round(sebdn14[20],digits=3),nsmall=0)),
+                 0,
                   (format(round(sebdn15[20],digits=3),nsmall=0))),
                 c((format(round(summary(bdn9)$coefficients[20,4],digits=3),nsmall=0)),
                   (format(round(summary(bdn10)$coefficients[20,4],digits=3),nsmall=0)),
-                  (format(round(summary(bdn11)$coefficients[20,4],digits=3),nsmall=0)),
+                 0,
                   (format(round(summary(bdn12)$coefficients[20,4],digits=3),nsmall=0)),
                   (format(round(summary(bdn13)$coefficients[20,4],digits=3),nsmall=0)),
-                  (format(round(summary(bdn14)$coefficients[20,4],digits=3),nsmall=0)),
+                 0,
                   (format(round(summary(bdn15)$coefficients[20,4],digits=3),nsmall=0))),
                 
                 c((format(round(sum(bdn9$coefficients[21]),digits=3),nsmall=0)),
                   (format(round(sum(bdn10$coefficients[21]),digits=3),nsmall=0)),
-                  (format(round(sum(bdn11$coefficients[21]),digits=3),nsmall=0)),
+                 0,
                   (format(round(sum(bdn12$coefficients[21]),digits=3),nsmall=0)),
                   (format(round(sum(bdn13$coefficients[21]),digits=3),nsmall=0)),
-                  (format(round(sum(bdn14$coefficients[21]),digits=3),nsmall=0)),
+                 0,
                   (format(round(sum(bdn15$coefficients[21]),digits=3),nsmall=0))),
                 c((format(round(sebdn9[21],digits=3),nsmall=0)),
                   (format(round(sebdn10[21],digits=3),nsmall=0)),
-                  (format(round(sebdn11[21],digits=3),nsmall=0)),
+                 0,
                   (format(round(sebdn12[21],digits=3),nsmall=0)),
                   (format(round(sebdn13[21],digits=3),nsmall=0)),
-                  (format(round(sebdn14[21],digits=3),nsmall=0)),
+                 0,
                   (format(round(sebdn15[21],digits=3),nsmall=0))),
                 c((format(round(summary(bdn9)$coefficients[21,4],digits=3),nsmall=0)),
                   (format(round(summary(bdn10)$coefficients[21,4],digits=3),nsmall=0)),
-                  (format(round(summary(bdn11)$coefficients[21,4],digits=3),nsmall=0)),
+                 0,
                   (format(round(summary(bdn12)$coefficients[21,4],digits=3),nsmall=0)),
                   (format(round(summary(bdn13)$coefficients[21,4],digits=3),nsmall=0)),
-                  (format(round(summary(bdn14)$coefficients[21,4],digits=3),nsmall=0)),
+                  0,
                   (format(round(summary(bdn15)$coefficients[21,4],digits=3),nsmall=0))),
               
                 
