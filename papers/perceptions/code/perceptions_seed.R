@@ -2516,11 +2516,8 @@ summary(lm(germination~genderdummy+farmer_ID , data = fedata))
 
 plm1<-plm(score~genderdummy, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
 
-G1 <- length(unique(fedata$shop_ID))
-c1 <- G1/(G1 - 1)
 
-coef1<-coeftest(plm1, vcovHC(plm1, type = "HC0", cluster = "group"))
-coef1<-coeftest(plm1,c1 * vcovHC(plm1, type = "HC1", cluster = "time"))
+coef1<-coeftest(plm1, vcovHC(plm1, type = "HC0", cluster = "time"))
 
 
 i1<-mean(fixef(plm1))
