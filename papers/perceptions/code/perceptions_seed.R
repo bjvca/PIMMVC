@@ -2514,6 +2514,12 @@ summary(lm(germination~genderdummy+farmer_ID , data = fedata))
 ############# plm method 
 
 plm1<-plm(score~genderdummy, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
+
+G1 <- length(unique(fedata$shop_ID))
+c1 <- G1/(G1 - 1)
+coef1<-coeftest(plm1,c1 * vcovHC(plm1, type = "HC1", cluster = "group"))
+
+
 i1<-mean(fixef(plm1))
 seplm1<- sqrt(diag(vcov(plm1)))
 
@@ -2525,25 +2531,48 @@ plm3<-plm(general~genderdummy, data = fedata, index=c("farmer_ID","shop_ID"), mo
 i3<-mean(fixef(plm3))
 seplm3<- sqrt(diag(vcov(plm3)))
 
+coef3<-coeftest(plm3,c1 * vcovHC(plm3, type = "HC1", cluster = "group"))
+
+
+
 plm4<-plm(yield~genderdummy, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
 i4<-mean(fixef(plm4))
 seplm4<- sqrt(diag(vcov(plm4)))
+
+coef4<-coeftest(plm4,c1 * vcovHC(plm4, type = "HC1", cluster = "group"))
+
+
 
 plm5<-plm(drought_resistent~genderdummy, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
 i5<-mean(fixef(plm5))
 seplm5<- sqrt(diag(vcov(plm5)))
 
+coef5<-coeftest(plm5,c1 * vcovHC(plm5, type = "HC1", cluster = "group"))
+
 plm6<-plm(disease_resistent~genderdummy, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
 i6<-mean(fixef(plm6))
 seplm6<- sqrt(diag(vcov(plm6)))
+
+coef5<-coeftest(plm6,c1 * vcovHC(plm6, type = "HC1", cluster = "group"))
+
 
 plm7<-plm(early_maturing~genderdummy, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
 i7<-mean(fixef(plm7))
 seplm7<- sqrt(diag(vcov(plm7)))
 
+coef7<-coeftest(plm7,c1 * vcovHC(plm7,type = "HC1", cluster = "group"))
+
+
+
+
 plm8<-plm(germination~genderdummy, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
 i8<-mean(fixef(plm8))
 seplm8<- sqrt(diag(vcov(plm8)))
+
+coef8<-coeftest(plm8,c1 * vcovHC(plm8, type = "HC1", cluster = "group"))
+
+
+
 
 fe1<- rbind( c((format(round(i1[1],digits=3),nsmall=0)),
               # (format(round(i2[1],digits=3),nsmall=0)),
@@ -2655,6 +2684,9 @@ plm9<-plm(score~genderdummy+ maize.owner.agree.age +prim +maize.owner.agree.q3 +
             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
 i9<-mean(fixef(plm9))
 seplm9<- sqrt(diag(vcov(plm9)))
+
+#coef9<-coeftest(plm9,c1 * vcovHC(plm9, type = "HC1", cluster = "group"))
+
 
 ############## if we want to check the overall intercept --- only works when controls are also included
 #fx_level <- fixef(plm9, type = "level")

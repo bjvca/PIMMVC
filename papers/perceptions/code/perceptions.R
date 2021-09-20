@@ -21,8 +21,9 @@ farmers[farmers=="999"] <- NA
 farmers$gender <- 0
 farmers$gender [farmers$hh.maize.q25=="Female"] <- 1 #female farmers
 farmers$educ <- 0
-farmers$educ[farmers$hh.maize.q27=="b" | farmers$hh.maize.q27=="c" | farmers$hh.maize.q27=="d" | farmers$hh.maize.q27=="e" | 
-               farmers$hh.maize.q27=="f" | farmers$hh.maize.q27=="g" ] <- 1 #educated farmers
+farmers$educ[farmers$hh.maize.q27=="c" | farmers$hh.maize.q27=="d" | farmers$hh.maize.q27=="e" | 
+               farmers$hh.maize.q27=="f" ] <- 1 #educated farmers
+farmers$educ[ farmers$hh.maize.q27=="g" ] <- NA
 farmers$married <- ifelse(farmers$hh.maize.q26 == 'a', 1, 0)  #married farmers 
 
 ################# INPUT DEALERS ######################
@@ -148,8 +149,9 @@ dealers$client_service[dealers$hh.maize.q67=="2" | dealers$hh.maize.q67=="3" |
                          dealers$hh.maize.q68=="2" | dealers$hh.maize.q68=="3"] <- 1 #providing client service =1
 dealers$gender <- ifelse(dealers$hh.maize.q7 == 'Female', 1, 0) #female dealers
 dealers$educ <- 0
-dealers$educ[dealers$hh.maize.q9=="b" | dealers$hh.maize.q9=="c" | dealers$hh.maize.q9=="d" | dealers$hh.maize.q9=="e" | 
-               dealers$hh.maize.q9=="f" | dealers$hh.maize.q9=="g" ] <- 1 #educated dealers 
+dealers$educ[dealers$hh.maize.q9=="c" | dealers$hh.maize.q9=="d" | dealers$hh.maize.q9=="e" | 
+               dealers$hh.maize.q9=="f" ] <- 1 #educated dealers 
+dealers$educ[dealers$hh.maize.q9=="g" ] <- NA
 dealers$married <- ifelse(dealers$hh.maize.q8 == 'a', 1, 0)  #married dealers
 
 #subset for merging 
@@ -223,8 +225,9 @@ traders$client_service <- 1
 traders$client_service [traders$hh.maize.q30.g=="TRUE"]<- 0 #providing client service=1
 traders$gender <- ifelse(traders$hh.maize.q7 == 'Female', 1, 0) #female traders 
 traders$educ <- 0
-traders$educ[traders$hh.maize.q9=="b" | traders$hh.maize.q9=="c" | traders$hh.maize.q9=="d" | traders$hh.maize.q9=="e" | 
-               traders$hh.maize.q9=="f" | traders$hh.maize.q9=="g" ] <- 1  #educated traders 
+traders$educ[ traders$hh.maize.q9=="c" | traders$hh.maize.q9=="d" | traders$hh.maize.q9=="e" | 
+               traders$hh.maize.q9=="f" ] <- 1  #educated traders 
+traders$educ[ traders$hh.maize.q9=="g" ] <- NA 
 traders$married <- ifelse(traders$hh.maize.q8 == 'a', 1, 0) #married traders 
 
 #subset for merging 
@@ -298,8 +301,9 @@ millers$client_service <- 1
 millers$client_service [millers$hh.maize.q25.k=="TRUE"] <- 0 #providing client service =1 
 millers$gender <- ifelse(millers$hh.maize.q7 == 'Female', 1, 0) #female millers
 millers$educ <- 0
-millers$educ[millers$hh.maize.q9=="b" | millers$hh.maize.q9=="c" | millers$hh.maize.q9=="d" | millers$hh.maize.q9=="e" | 
-               millers$hh.maize.q9=="f" | millers$hh.maize.q9=="g" ] <- 1 #educated millers 
+millers$educ[ millers$hh.maize.q9=="c" | millers$hh.maize.q9=="d" | millers$hh.maize.q9=="e" | 
+               millers$hh.maize.q9=="f"  ] <- 1 #educated millers 
+millers$educ[  millers$hh.maize.q9=="g" ] <- NA
 millers$married <- ifelse(millers$hh.maize.q8 == 'a', 1, 0)   #married millers 
 
 #subset for merging 
@@ -336,8 +340,9 @@ farmers_pool <-rbind(ratings_d,ratings_t,ratings_m)
 farmers_pool$farmer_fem <- ifelse(farmers_pool$farmer_gender == 'Female', 1, 0) #gender dummy for farmers 
 farmers_pool$interaction_yes <- ifelse(farmers_pool$interaction == 'Yes', 1, 0) #dummy for interaction between rater and ratee 
 farmers_pool$educ <- 0
-farmers_pool$educ[farmers_pool$education=="b" | farmers_pool$education=="c" | farmers_pool$education=="d" | farmers_pool$education=="e"
-          | farmers_pool$education=="f" | farmers_pool$education=="g" ] <- 1
+farmers_pool$educ[ farmers_pool$education=="c" | farmers_pool$education=="d" | farmers_pool$education=="e"
+          | farmers_pool$education=="f" ] <- 1
+farmers_pool$educ[ farmers_pool$education=="g" ] <- NA
 #MARITAL STATUS
 #a	Married /b	Widowed / c	Divorced / d	Separated / e	Single
 farmers_pool$married <- ifelse(farmers_pool$marital_status == 'a', 1, 0) #dummy = 1 if married---- farmers 
@@ -366,8 +371,9 @@ ratee_pool <-rbind(dealers_pool,millers_pool,traders_pool)
 ratee_pool$ratee_fem <- ifelse(ratee_pool$gender_ratee == 'Female', 1, 0)   #gender dummy for ratees 
 
 ratee_pool$educ <- 0
-ratee_pool$educ[ratee_pool$education_ratee=="b" | ratee_pool$education_ratee=="c" | ratee_pool$education_ratee=="d" | ratee_pool$education_ratee=="e"
-          | ratee_pool$education_ratee=="f" | ratee_pool$education_ratee=="g" ] <- 1
+ratee_pool$educ[ ratee_pool$education_ratee=="c" | ratee_pool$education_ratee=="d" | ratee_pool$education_ratee=="e"
+          | ratee_pool$education_ratee=="f"  ] <- 1
+ratee_pool$educ[  ratee_pool$education_ratee=="g" ] <- NA
 
 #MARITAL STATUS
 #a	Married /b	Widowed / c	Divorced / d	Separated / e	Single
@@ -393,15 +399,17 @@ pool$ratee_fem <- ifelse(pool$gender_ratee == 'Female', 1, 0)   #gender dummy fo
 pool$interaction_yes <- ifelse(pool$interaction == 'Yes', 1, 0) #dummy for interaction between rater and ratee 
 
 #a	No formal education / b	Some primary / c	Finished primary / d	Some secondary / e	Finished secondary / f	Higher than secondary / g Other
-### Some level of education --- dummy = 1 if some level of education, 0 if no formal education
+### Finished primary educ --- dummy == 1, otherwise 0
 #farmers
 pool$educ <- 0
-pool$educ[pool$education=="b" | pool$education=="c" | pool$education=="d" | pool$education=="e"
-          | pool$education=="f" | pool$education=="g" ] <- 1
+pool$educ[pool$education=="c" | pool$education=="d" | pool$education=="e" | pool$education=="f" ] <- 1
+pool$educ[ pool$education=="g" ] <- NA
 #ratees
 pool$educ_ratee <- 0
-pool$educ_ratee[pool$education_ratee=="b" | pool$education_ratee=="c" | pool$education_ratee=="d" | 
-                  pool$education_ratee=="e" | pool$education_ratee=="f" | pool$education_ratee=="g" ] <- 1
+pool$educ_ratee[ pool$education_ratee=="c" | pool$education_ratee=="d" | 
+                  pool$education_ratee=="e" | pool$education_ratee=="f" ] <- 1
+pool$educ_ratee[  pool$education_ratee=="g" ] <- NA
+
 
 #MARITAL STATUS
 #a	Married /b	Widowed / c	Divorced / d	Separated / e	Single
@@ -730,13 +738,13 @@ pool$ratingrepu_diff <- pool$rating_reputation - pool$rating_reputation_ratee ##
 ################# OVERALL RATING ###########################
 
 #all variables 
-mod71_gender<- lm.cluster(data = pool, formula = ratingoverall_diff ~  farmer_fem + ratee_fem + age + interaction_yes + educ + tarmac
+mod71_gender<- lm.cluster(data = pool, formula = ratingoverall_diff ~  farmer_fem + ratee_fem + age + educ + tarmac
                           + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy , cluster = "id.ratee") 
 se71 <- sqrt(diag(vcov(mod71_gender)))
 lm_res71<-mod71_gender$lm_res
 
 ##Interaction between sex of farmer and ratee
-mod75_gender <- lm.cluster(data = pool, formula = ratingoverall_diff ~  farmer_fem*ratee_fem + educ + interaction_yes + age + tarmac
+mod75_gender <- lm.cluster(data = pool, formula = ratingoverall_diff ~  farmer_fem*ratee_fem + educ + age + tarmac
                            + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy, cluster = "id.ratee") 
 se75 <- sqrt(diag(vcov(mod75_gender)))
 lm_res75<-mod75_gender$lm_res
@@ -748,13 +756,13 @@ lm_res75<-mod75_gender$lm_res
 ################# LOCATION RATING ###########################
 
 #all variables 
-mod78_gender<- lm.cluster(data = pool, formula = ratingloc_diff ~  farmer_fem + ratee_fem + age + interaction_yes + educ + tarmac
+mod78_gender<- lm.cluster(data = pool, formula = ratingloc_diff ~  farmer_fem + ratee_fem + age +  educ + tarmac
                           + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy , cluster = "id.ratee") 
 se78 <- sqrt(diag(vcov(mod78_gender)))
 lm_res78<-mod78_gender$lm_res
 
 ##Interaction between sex of farmer and ratee
-mod82_gender <- lm.cluster(data = pool, formula = ratingloc_diff ~  farmer_fem*ratee_fem + educ + interaction_yes + age + tarmac
+mod82_gender <- lm.cluster(data = pool, formula = ratingloc_diff ~  farmer_fem*ratee_fem + educ + age + tarmac
                            + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy, cluster = "id.ratee") 
 se82 <- sqrt(diag(vcov(mod82_gender)))
 lm_res82<-mod82_gender$lm_res
@@ -767,13 +775,13 @@ lm_res82<-mod82_gender$lm_res
 ################# PRICE RATING ###########################
 
 #all variables 
-mod85_gender<- lm.cluster(data = pool, formula = ratingprice_diff ~  farmer_fem + ratee_fem + age + interaction_yes + educ + tarmac
+mod85_gender<- lm.cluster(data = pool, formula = ratingprice_diff ~  farmer_fem + ratee_fem + age + educ + tarmac
                           + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy , cluster = "id.ratee") 
 se85 <- sqrt(diag(vcov(mod85_gender)))
 lm_res85<-mod85_gender$lm_res
 
 ##Interaction between sex of farmer and ratee
-mod89_gender <- lm.cluster(data = pool, formula = ratingprice_diff ~  farmer_fem*ratee_fem + educ + interaction_yes + age + tarmac
+mod89_gender <- lm.cluster(data = pool, formula = ratingprice_diff ~  farmer_fem*ratee_fem + educ + age + tarmac
                            + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy , cluster = "id.ratee") 
 se89 <- sqrt(diag(vcov(mod89_gender)))
 lm_res89<-mod89_gender$lm_res
@@ -786,13 +794,13 @@ lm_res89<-mod89_gender$lm_res
 ################# QUALITY RATING ###########################
 
 #all variables 
-mod92_gender<- lm.cluster(data = pool, formula = ratingqual_diff ~  farmer_fem + ratee_fem + age + interaction_yes + educ + tarmac
+mod92_gender<- lm.cluster(data = pool, formula = ratingqual_diff ~  farmer_fem + ratee_fem + age  + educ + tarmac
                           + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy , cluster = "id.ratee") 
 se92 <- sqrt(diag(vcov(mod92_gender)))
 lm_res92<-mod92_gender$lm_res
 
 ##Interaction between sex of farmer and ratee
-mod96_gender <- lm.cluster(data = pool, formula = ratingqual_diff ~  farmer_fem*ratee_fem + educ + interaction_yes + age + tarmac
+mod96_gender <- lm.cluster(data = pool, formula = ratingqual_diff ~  farmer_fem*ratee_fem + educ + age + tarmac
                            + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy, cluster = "id.ratee") 
 se96 <- sqrt(diag(vcov(mod96_gender)))
 lm_res96<-mod96_gender$lm_res
@@ -805,13 +813,13 @@ lm_res96<-mod96_gender$lm_res
 ###################### REPUTATION RATING #########################
 
 #all variables 
-mod99_gender<- lm.cluster(data = pool, formula = ratingrepu_diff ~  farmer_fem + ratee_fem + age + interaction_yes + educ + tarmac
+mod99_gender<- lm.cluster(data = pool, formula = ratingrepu_diff ~  farmer_fem + ratee_fem + age + educ + tarmac
                           + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy , cluster = "id.ratee") 
 se99 <- sqrt(diag(vcov(mod99_gender)))
 lm_res99<-mod99_gender$lm_res
 
 ##Interaction between sex of farmer and ratee
-mod103_gender <- lm.cluster(data = pool, formula = ratingrepu_diff ~  farmer_fem*ratee_fem + educ + interaction_yes + age + tarmac
+mod103_gender <- lm.cluster(data = pool, formula = ratingrepu_diff ~  farmer_fem*ratee_fem + educ + age + tarmac
                             + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy , cluster = "id.ratee") 
 se103 <- sqrt(diag(vcov(mod103_gender)))
 lm_res103<-mod103_gender$lm_res
@@ -2588,7 +2596,8 @@ round(se89[4],digits=4)
 round(se99[4],digits=4)
 round(se103[4],digits=4)
 
-#interaction
+
+#education - farmer 
 round(sum(lm_res71$coefficients[5]),digits=4) #overall
 ifelse(summary(lm_res71)$coefficients[5,4]<.01,"***",ifelse(summary(lm_res71)$coefficients[5,4]<.05,
                                                             "**",ifelse(summary(lm_res71)$coefficients[5,4]<.1,"*","")))
@@ -2630,7 +2639,7 @@ round(se89[5],digits=4)
 round(se99[5],digits=4)
 round(se103[5],digits=4)
 
-#education - farmer 
+#tarmac
 round(sum(lm_res71$coefficients[6]),digits=4) #overall
 ifelse(summary(lm_res71)$coefficients[6,4]<.01,"***",ifelse(summary(lm_res71)$coefficients[6,4]<.05,
                                                             "**",ifelse(summary(lm_res71)$coefficients[6,4]<.1,"*","")))
@@ -2672,7 +2681,7 @@ round(se89[6],digits=4)
 round(se99[6],digits=4)
 round(se103[6],digits=4)
 
-#tarmac
+#murram
 round(sum(lm_res71$coefficients[7]),digits=4) #overall
 ifelse(summary(lm_res71)$coefficients[7,4]<.01,"***",ifelse(summary(lm_res71)$coefficients[7,4]<.05,
                                                             "**",ifelse(summary(lm_res71)$coefficients[7,4]<.1,"*","")))
@@ -2714,7 +2723,8 @@ round(se89[7],digits=4)
 round(se99[7],digits=4)
 round(se103[7],digits=4)
 
-#murram
+#farmer marital status 
+
 round(sum(lm_res71$coefficients[8]),digits=4) #overall
 ifelse(summary(lm_res71)$coefficients[8,4]<.01,"***",ifelse(summary(lm_res71)$coefficients[8,4]<.05,
                                                             "**",ifelse(summary(lm_res71)$coefficients[8,4]<.1,"*","")))
@@ -2756,8 +2766,7 @@ round(se89[8],digits=4)
 round(se99[8],digits=4)
 round(se103[8],digits=4)
 
-#farmer marital status 
-
+#age of ratee 
 round(sum(lm_res71$coefficients[9]),digits=4) #overall
 ifelse(summary(lm_res71)$coefficients[9,4]<.01,"***",ifelse(summary(lm_res71)$coefficients[9,4]<.05,
                                                             "**",ifelse(summary(lm_res71)$coefficients[9,4]<.1,"*","")))
@@ -2799,7 +2808,7 @@ round(se89[9],digits=4)
 round(se99[9],digits=4)
 round(se103[9],digits=4)
 
-#age of ratee 
+#ratee marital status 
 round(sum(lm_res71$coefficients[10]),digits=4) #overall
 ifelse(summary(lm_res71)$coefficients[10,4]<.01,"***",ifelse(summary(lm_res71)$coefficients[10,4]<.05,
                                                              "**",ifelse(summary(lm_res71)$coefficients[10,4]<.1,"*","")))
@@ -2841,7 +2850,7 @@ round(se89[10],digits=4)
 round(se99[10],digits=4)
 round(se103[10],digits=4)
 
-#ratee marital status 
+#education - ratee 
 round(sum(lm_res71$coefficients[11]),digits=4) #overall
 ifelse(summary(lm_res71)$coefficients[11,4]<.01,"***",ifelse(summary(lm_res71)$coefficients[11,4]<.05,
                                                              "**",ifelse(summary(lm_res71)$coefficients[11,4]<.1,"*","")))
@@ -2883,7 +2892,7 @@ round(se89[11],digits=4)
 round(se99[11],digits=4)
 round(se103[11],digits=4)
 
-#education - ratee 
+#dealer dummy 
 round(sum(lm_res71$coefficients[12]),digits=4) #overall
 ifelse(summary(lm_res71)$coefficients[12,4]<.01,"***",ifelse(summary(lm_res71)$coefficients[12,4]<.05,
                                                              "**",ifelse(summary(lm_res71)$coefficients[12,4]<.1,"*","")))
@@ -2925,7 +2934,7 @@ round(se89[12],digits=4)
 round(se99[12],digits=4)
 round(se103[12],digits=4)
 
-#dealer dummy 
+#trader dummy 
 round(sum(lm_res71$coefficients[13]),digits=4) #overall
 ifelse(summary(lm_res71)$coefficients[13,4]<.01,"***",ifelse(summary(lm_res71)$coefficients[13,4]<.05,
                                                              "**",ifelse(summary(lm_res71)$coefficients[13,4]<.1,"*","")))
@@ -2967,70 +2976,28 @@ round(se89[13],digits=4)
 round(se99[13],digits=4)
 round(se103[13],digits=4)
 
-#trader dummy 
-round(sum(lm_res71$coefficients[14]),digits=4) #overall
-ifelse(summary(lm_res71)$coefficients[14,4]<.01,"***",ifelse(summary(lm_res71)$coefficients[14,4]<.05,
-                                                             "**",ifelse(summary(lm_res71)$coefficients[14,4]<.1,"*","")))
-round(sum(lm_res75$coefficients[14]),digits=4)  #with interaction
+#gender - farmer: gender - ratee 
+round(sum(lm_res75$coefficients[14]),digits=4)  #overall with interaction
 ifelse(summary(lm_res75)$coefficients[14,4]<.01,"***",ifelse(summary(lm_res75)$coefficients[14,4]<.05,
                                                              "**",ifelse(summary(lm_res75)$coefficients[14,4]<.1,"*","")))
-round(sum(lm_res78$coefficients[14]),digits=4) #location
-ifelse(summary(lm_res78)$coefficients[14,4]<.01,"***",ifelse(summary(lm_res78)$coefficients[14,4]<.05,
-                                                             "**",ifelse(summary(lm_res78)$coefficients[14,4]<.1,"*","")))
-round(sum(lm_res82$coefficients[14]),digits=4)#with interaction
+round(sum(lm_res82$coefficients[14]),digits=4)#location with interaction
 ifelse(summary(lm_res82)$coefficients[14,4]<.01,"***",ifelse(summary(lm_res82)$coefficients[14,4]<.05,
                                                              "**",ifelse(summary(lm_res82)$coefficients[14,4]<.1,"*","")))
-round(sum(lm_res92$coefficients[14]),digits=4) #quality
-ifelse(summary(lm_res92)$coefficients[14,4]<.01,"***",ifelse(summary(lm_res92)$coefficients[14,4]<.05,
-                                                             "**",ifelse(summary(lm_res92)$coefficients[14,4]<.1,"*",""))) 
-round(sum(lm_res96$coefficients[14]),digits=4)#with interaction
+round(sum(lm_res96$coefficients[14]),digits=4)#quality with interaction
 ifelse(summary(lm_res96)$coefficients[14,4]<.01,"***",ifelse(summary(lm_res96)$coefficients[14,4]<.05,
                                                              "**",ifelse(summary(lm_res96)$coefficients[14,4]<.1,"*","")))
-round(sum(lm_res85$coefficients[14]),digits=4) #price
-ifelse(summary(lm_res85)$coefficients[14,4]<.01,"***",ifelse(summary(lm_res85)$coefficients[14,4]<.05,
-                                                             "**",ifelse(summary(lm_res85)$coefficients[14,4]<.1,"*","")))
-round(sum(lm_res89$coefficients[14]),digits=4)#with interaction
+round(sum(lm_res89$coefficients[14]),digits=4)#price with interaction
 ifelse(summary(lm_res89)$coefficients[14,4]<.01,"***",ifelse(summary(lm_res89)$coefficients[14,4]<.05,
                                                              "**",ifelse(summary(lm_res89)$coefficients[14,4]<.1,"*",""))) 
-round(sum(lm_res99$coefficients[14]),digits=4) #reputation
-ifelse(summary(lm_res99)$coefficients[14,4]<.01,"***",ifelse(summary(lm_res99)$coefficients[14,4]<.05,
-                                                             "**",ifelse(summary(lm_res99)$coefficients[14,4]<.1,"*","")))
-round(sum(lm_res103$coefficients[14]),digits=4)#with interaction
+round(sum(lm_res103$coefficients[14]),digits=4)#reputation with interaction
 ifelse(summary(lm_res103)$coefficients[14,4]<.01,"***",ifelse(summary(lm_res103)$coefficients[14,4]<.05,
                                                               "**",ifelse(summary(lm_res103)$coefficients[14,4]<.1,"*","")))
-round(se71[14],digits=4)
+
 round(se75[14],digits=4)
-round(se78[14],digits=4)
 round(se82[14],digits=4)
-round(se92[14],digits=4)
 round(se96[14],digits=4)
-round(se85[14],digits=4)
 round(se89[14],digits=4)
-round(se99[14],digits=4)
 round(se103[14],digits=4)
-
-#gender - farmer: gender - ratee 
-round(sum(lm_res75$coefficients[15]),digits=4)  #overall with interaction
-ifelse(summary(lm_res75)$coefficients[15,4]<.01,"***",ifelse(summary(lm_res75)$coefficients[15,4]<.05,
-                                                             "**",ifelse(summary(lm_res75)$coefficients[15,4]<.1,"*","")))
-round(sum(lm_res82$coefficients[15]),digits=4)#location with interaction
-ifelse(summary(lm_res82)$coefficients[15,4]<.01,"***",ifelse(summary(lm_res82)$coefficients[15,4]<.05,
-                                                             "**",ifelse(summary(lm_res82)$coefficients[15,4]<.1,"*","")))
-round(sum(lm_res96$coefficients[15]),digits=4)#quality with interaction
-ifelse(summary(lm_res96)$coefficients[15,4]<.01,"***",ifelse(summary(lm_res96)$coefficients[15,4]<.05,
-                                                             "**",ifelse(summary(lm_res96)$coefficients[15,4]<.1,"*","")))
-round(sum(lm_res89$coefficients[15]),digits=4)#price with interaction
-ifelse(summary(lm_res89)$coefficients[15,4]<.01,"***",ifelse(summary(lm_res89)$coefficients[15,4]<.05,
-                                                             "**",ifelse(summary(lm_res89)$coefficients[15,4]<.1,"*",""))) 
-round(sum(lm_res103$coefficients[15]),digits=4)#reputation with interaction
-ifelse(summary(lm_res103)$coefficients[15,4]<.01,"***",ifelse(summary(lm_res103)$coefficients[15,4]<.05,
-                                                              "**",ifelse(summary(lm_res103)$coefficients[15,4]<.1,"*","")))
-
-round(se75[15],digits=4)
-round(se82[15],digits=4)
-round(se96[15],digits=4)
-round(se89[15],digits=4)
-round(se103[15],digits=4)
 
 #R^2              
 round(summary(lm_res71)$r.squared,digits=4) #overall 
