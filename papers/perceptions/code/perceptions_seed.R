@@ -6,6 +6,7 @@ library(miceadds)
 library(texreg)
 library(plyr)
 library(plm)
+library(lmtest)
 
 options(scipen=999)
 path_2 <- strsplit(path, "/papers/perceptions")[[1]]
@@ -38,16 +39,16 @@ between_farmer$genderdummy <- ifelse(between_farmer$maize.owner.agree.gender == 
 
 ###dealer characteristics for  controls
 
-#education of dealers 
+#education of dealers
 table(between_farmer$maize.owner.agree.educ) #430 are g which is Other
 between_farmer$prim <- 0
 #between_farmer$prim[between_farmer$maize.owner.agree.educ=="c"|between_farmer$maize.owner.agree.educ=="d"|between_farmer$maize.owner.agree.educ=="e"|between_farmer$maize.owner.agree.educ=="f"]<- 1
 
-#finished secondary educ --- e and f ; a,b,c,d --- did not finish secondary educ 
+#finished secondary educ --- e and f ; a,b,c,d --- did not finish secondary educ
 between_farmer$prim[between_farmer$maize.owner.agree.educ=="e"|between_farmer$maize.owner.agree.educ=="f"] <- 1
 between_farmer$prim[between_farmer$maize.owner.agree.educ=="g"]<- NA
 table(between_farmer$prim)
-#5208 ARE 1 --- 45 percent 
+#5208 ARE 1 --- 45 percent
 
 
 #age of dealer
@@ -60,12 +61,12 @@ table(between_farmer$maize.owner.agree.q3)
 between_farmer$maize.owner.agree.q3[between_farmer$maize.owner.agree.q3==999] <- NA
 summary(between_farmer$maize.owner.agree.q3)
 
-#distance of shop to nearest murram road 
+#distance of shop to nearest murram road
 table(between_farmer$maize.owner.agree.q4)
 
-#selling only farm inputs 
+#selling only farm inputs
 table(between_farmer$maize.owner.agree.q5)
-between_farmer$inputsale<- ifelse(between_farmer$maize.owner.agree.q5== 'Yes', 1, 0)  
+between_farmer$inputsale<- ifelse(between_farmer$maize.owner.agree.q5== 'Yes', 1, 0)
 
 #Q8. When was this agro-input shop established? (year)
 between_farmer$years_shop <- 2020 - as.numeric(as.character(substr(between_farmer$maize.owner.agree.q8, start=1, stop=4)))
@@ -73,47 +74,47 @@ between_farmer$years_shop <- 2020 - as.numeric(as.character(substr(between_farme
 #seed stored in dedicated area?
 between_farmer$maize.owner.agree.q69
 between_farmer$dedarea<-as.character(between_farmer$maize.owner.agree.temp.q69)
-between_farmer$dedicated_area<- ifelse(between_farmer$dedarea== 'Yes', 1, 0)  
+between_farmer$dedicated_area<- ifelse(between_farmer$dedarea== 'Yes', 1, 0)
 table(between_farmer$dedicated_area)
 
 #problem with rats or pests?
-#we try to formulate this as a good quality variable --- So, no problem with pests is good 
+#we try to formulate this as a good quality variable --- So, no problem with pests is good
 between_farmer$maize.owner.agree.q71
 between_farmer$pest<-as.character(between_farmer$maize.owner.agree.temp.q71)
-between_farmer$pest_prob<- ifelse(between_farmer$pest== 'No', 1, 0)  
+between_farmer$pest_prob<- ifelse(between_farmer$pest== 'No', 1, 0)
 table(between_farmer$pest_prob)
 
-#roof leak proof?  
+#roof leak proof?
 between_farmer$maize.owner.agree.q72
 between_farmer$roof<-as.character(between_farmer$maize.owner.agree.temp.q72)
-between_farmer$leakproof<- ifelse(between_farmer$roof== 'Yes', 1, 0)  
+between_farmer$leakproof<- ifelse(between_farmer$roof== 'Yes', 1, 0)
 table(between_farmer$leakproof)
 
 #roof insulated?
 between_farmer$maize.owner.agree.q73
 between_farmer$roof_insu<-as.character(between_farmer$maize.owner.agree.temp.q73)
-between_farmer$insulated<- ifelse(between_farmer$roof_insu== 'Yes', 1, 0)  
+between_farmer$insulated<- ifelse(between_farmer$roof_insu== 'Yes', 1, 0)
 table(between_farmer$insulated)
 
 #walls insulated?
 between_farmer$maize.owner.agree.q74
 between_farmer$wall_insu<-as.character(between_farmer$maize.owner.agree.temp.q74)
-between_farmer$wall_heatproof<- ifelse(between_farmer$wall_insu== 'Yes', 1, 0)  
+between_farmer$wall_heatproof<- ifelse(between_farmer$wall_insu== 'Yes', 1, 0)
 table(between_farmer$wall_heatproof)
 
 #area ventilated?
 between_farmer$maize.owner.agree.q75
 between_farmer$vent<-as.character(between_farmer$maize.owner.agree.temp.q75)
-between_farmer$ventilation<- ifelse(between_farmer$vent== 'Yes', 1, 0)  
+between_farmer$ventilation<- ifelse(between_farmer$vent== 'Yes', 1, 0)
 table(between_farmer$ventilation)
 
 #plastered walls? ---- DROP
 #between_farmer$plas<-as.character(between_farmer$maize.owner.agree.temp.q76)
-#between_farmer$wall_plastered<- ifelse(between_farmer$plas== 'Yes', 1, 0)  
+#between_farmer$wall_plastered<- ifelse(between_farmer$plas== 'Yes', 1, 0)
 #table(between_farmer$wall_plastered)
 
 #Q77. Material of floor in areas where seed is stored? ---- DROP
-#between_farmer$goodfloor<- ifelse(between_farmer$maize.owner.agree.temp.q77=="Tiles", 1, 0) 
+#between_farmer$goodfloor<- ifelse(between_farmer$maize.owner.agree.temp.q77=="Tiles", 1, 0)
 #between_farmer$goodfloor <- 0
 #between_farmer$goodfloor[between_farmer$maize.owner.agree.temp.q77=="Cement"|between_farmer$maize.owner.agree.temp.q77=="Tiles"] <-1
 #between_farmer$goodfloor[between_farmer$maize.owner.agree.temp.q77==96]<- NA
@@ -122,30 +123,30 @@ table(between_farmer$ventilation)
 #99 PERCENT OF THE DEALERS HAVE CEMENT OR TILES AS THEIR FLOOR
 
 #Q78. Lighting conditions in area where seed is stored?
-#we try to formulate this as good quality variable --- 2 is good lighting 
+#we try to formulate this as good quality variable --- 2 is good lighting
 between_farmer$badlighting <- 0
 between_farmer$badlighting[between_farmer$maize.owner.agree.temp.q78=="2"]<-1
 table(between_farmer$badlighting)
 
 #Q79. On what surface are seed stored?
-#we try to formulate this as good quality variable ---- 3,4,5 are good storage surfaces 
+#we try to formulate this as good quality variable ---- 3,4,5 are good storage surfaces
 between_farmer$badstored <- 0
 between_farmer$badstored[between_farmer$maize.owner.agree.temp.q79=="3"|between_farmer$maize.owner.agree.temp.q79=="4"|between_farmer$maize.owner.agree.temp.q79=="5"]<-1
 between_farmer$badstored[between_farmer$maize.owner.agree.temp.q79==96]<-NA
 table(between_farmer$badstored)
 
 #Q80. Do you see maize seed that is stored in open bags or containers?
-#we try to formulate this as good quality variable --- Not being stored in open containers is good 
+#we try to formulate this as good quality variable --- Not being stored in open containers is good
 between_farmer$maize.owner.agree.q80
 between_farmer$open<-as.character(between_farmer$maize.owner.agree.temp.q80)
-between_farmer$open_storage<- ifelse(between_farmer$open== 'No', 1, 0)  
+between_farmer$open_storage<- ifelse(between_farmer$open== 'No', 1, 0)
 table(between_farmer$open_storage)
 
-#Q81. Do you see any official certificates displayed in the store (eg that the shop was inspected ,that the owner attended trainings 
+#Q81. Do you see any official certificates displayed in the store (eg that the shop was inspected ,that the owner attended trainings
 #or that the business is registered with some association)
 between_farmer$maize.owner.agree.q81
 between_farmer$cert<-as.character(between_farmer$maize.owner.agree.temp.q81)
-between_farmer$cert_yes<- ifelse(between_farmer$cert== 'Yes', 1, 0)  
+between_farmer$cert_yes<- ifelse(between_farmer$cert== 'Yes', 1, 0)
 table(between_farmer$cert_yes)
 
 #Q82. On a scale of 1 to 5, rate this shop in terms of cleanness and professionality 1 poor 5 excellent
@@ -153,9 +154,9 @@ between_farmer$shop_rate<-as.numeric(as.character(between_farmer$maize.owner.agr
 table(between_farmer$shop_rate)
 
 #Q96. Since last season, did you receive any complaint from a customer that seed you sold was not good?
-#we try to formulate this as good quality variable, not getting any complaint is good 
+#we try to formulate this as good quality variable, not getting any complaint is good
 table(between_farmer$maize.owner.agree.q96)
-between_farmer$complaint<- ifelse(between_farmer$maize.owner.agree.q96== 'No', 1, 0)  
+between_farmer$complaint<- ifelse(between_farmer$maize.owner.agree.q96== 'No', 1, 0)
 table(between_farmer$complaint)
 
 #Q70. Enter the temperature in the seed store (where seed is stored)
@@ -223,20 +224,20 @@ farmers_seed <- read.csv(paste(path_2,"/papers/perceptions/data_seed_systems/dat
 #extracting variables from the baseline data
 farmers_seedsub <- farmers_seed[ , c("Check2.check.maize.q15", "Check2.check.maize.q14",
                                      "Check2.check.maize.q16", "Check2.check.maize.q17",
-                                     "Check2.check.maize.q8", "farmer_ID")]  
+                                     "Check2.check.maize.q8", "farmer_ID")]
 
-######## merge to get farmer characteristics 
+######## merge to get farmer characteristics
 bfm <- merge(reviews_bf, farmers_seedsub, by="farmer_ID")
 
 bfm$educ_f <- 0
-bfm$educ_f[bfm$Check2.check.maize.q17=="c" | bfm$Check2.check.maize.q17=="d" | bfm$Check2.check.maize.q17=="e" | 
-         bfm$Check2.check.maize.q17=="f"  ] <- 1 #educated farmers -- finished primary educ 
-bfm$educ_f[ bfm$Check2.check.maize.q17=="g" ] <- NA 
-table(bfm$educ_f) #52.5 percent have finished primary educ 
+bfm$educ_f[bfm$Check2.check.maize.q17=="c" | bfm$Check2.check.maize.q17=="d" | bfm$Check2.check.maize.q17=="e" |
+         bfm$Check2.check.maize.q17=="f"  ] <- 1 #educated farmers -- finished primary educ
+bfm$educ_f[ bfm$Check2.check.maize.q17=="g" ] <- NA
+table(bfm$educ_f) #52.5 percent have finished primary educ
 
-bfm$married <- ifelse(bfm$Check2.check.maize.q16 == 'a', 1, 0)  #married farmers -- 88 percent 
+bfm$married <- ifelse(bfm$Check2.check.maize.q16 == 'a', 1, 0)  #married farmers -- 88 percent
 
-#age of farmers 
+#age of farmers
 bfm$Check2.check.maize.q14[ bfm$Check2.check.maize.q14==999 ] <- NA
 summary(bfm$Check2.check.maize.q14 )
 
@@ -246,7 +247,7 @@ summary(bfm$Check2.check.maize.q8 )
 
 #### SEED RELATED RATINGS ####
 
-#### regressions without controls - seed related ratings 
+#### regressions without controls - seed related ratings
 
 m1<-lm(score~gender_avg , data = bfm)
 se1 <- sqrt(diag(vcov(m1)))
@@ -294,7 +295,7 @@ s1<- rbind(c((format(round(sum(m1$coefficients[1]),digits=3),nsmall=0)),
              (format(round(summary(m6)$coefficients[1,4],digits=3),nsmall=0)),
              (format(round(summary(m7)$coefficients[1,4],digits=3),nsmall=0)),
              (format(round(summary(m8)$coefficients[1,4],digits=3),nsmall=0))),
-           
+
            c((format(round(sum(m1$coefficients[2]),digits=3),nsmall=0)),
              (format(round(sum(m3$coefficients[2]),digits=3),nsmall=0)),
              (format(round(sum(m4$coefficients[2]),digits=3),nsmall=0)),
@@ -316,7 +317,7 @@ s1<- rbind(c((format(round(sum(m1$coefficients[1]),digits=3),nsmall=0)),
              (format(round(summary(m6)$coefficients[2,4],digits=3),nsmall=0)),
              (format(round(summary(m7)$coefficients[2,4],digits=3),nsmall=0)),
              (format(round(summary(m8)$coefficients[2,4],digits=3),nsmall=0))),
-           
+
            c((format(round(summary(m1)$r.squared,digits=3),nsmall=0)),
              (format(round(summary(m3)$r.squared,digits=3),nsmall=0)),
              (format(round(summary(m4)$r.squared,digits=3),nsmall=0)),
@@ -353,7 +354,7 @@ summary(lm(early_maturing~gender_avg , data = bfm))
 summary(lm(germination~gender_avg , data = bfm))
 
 
-#### regressions with dealer's gender (averaged) and farmer characteristics  --- seed related ratings 
+#### regressions with dealer's gender (averaged) and farmer characteristics  --- seed related ratings
 
 summary(lm(score~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14, data = bfm))
 #summary(lm(quality~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14, data = bfm))
@@ -365,7 +366,7 @@ summary(lm(early_maturing~gender_avg + educ_f + married + Check2.check.maize.q8 
 summary(lm(germination~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14, data = bfm))
 
 
-#### regressions with dealer's gender (averaged) and farmer characteristics  --- seed related ratings 
+#### regressions with dealer's gender (averaged) and farmer characteristics  --- seed related ratings
 
 m9<-lm(score~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14, data = bfm)
 se9 <- sqrt(diag(vcov(m9)))
@@ -415,7 +416,7 @@ s2<- rbind(c((format(round(sum(m9$coefficients[1]),digits=3),nsmall=0)),
              (format(round(summary(m14)$coefficients[1,4],digits=3),nsmall=0)),
              (format(round(summary(m15)$coefficients[1,4],digits=3),nsmall=0)),
              (format(round(summary(m16)$coefficients[1,4],digits=3),nsmall=0))),
-           
+
            c((format(round(sum(m9$coefficients[2]),digits=3),nsmall=0)),
             # (format(round(sum(m10$coefficients[2]),digits=3),nsmall=0)),
              (format(round(sum(m11$coefficients[2]),digits=3),nsmall=0)),
@@ -440,7 +441,7 @@ s2<- rbind(c((format(round(sum(m9$coefficients[1]),digits=3),nsmall=0)),
              (format(round(summary(m14)$coefficients[2,4],digits=3),nsmall=0)),
              (format(round(summary(m15)$coefficients[2,4],digits=3),nsmall=0)),
              (format(round(summary(m16)$coefficients[2,4],digits=3),nsmall=0))),
-           
+
            c((format(round(sum(m9$coefficients[3]),digits=3),nsmall=0)),
             # (format(round(sum(m10$coefficients[3]),digits=3),nsmall=0)),
              (format(round(sum(m11$coefficients[3]),digits=3),nsmall=0)),
@@ -465,7 +466,7 @@ s2<- rbind(c((format(round(sum(m9$coefficients[1]),digits=3),nsmall=0)),
              (format(round(summary(m14)$coefficients[3,4],digits=3),nsmall=0)),
              (format(round(summary(m15)$coefficients[3,4],digits=3),nsmall=0)),
              (format(round(summary(m16)$coefficients[3,4],digits=3),nsmall=0))),
-           
+
            c((format(round(sum(m9$coefficients[4]),digits=3),nsmall=0)),
              #(format(round(sum(m10$coefficients[4]),digits=3),nsmall=0)),
              (format(round(sum(m11$coefficients[4]),digits=3),nsmall=0)),
@@ -490,7 +491,7 @@ s2<- rbind(c((format(round(sum(m9$coefficients[1]),digits=3),nsmall=0)),
              (format(round(summary(m14)$coefficients[4,4],digits=3),nsmall=0)),
              (format(round(summary(m15)$coefficients[4,4],digits=3),nsmall=0)),
              (format(round(summary(m16)$coefficients[4,4],digits=3),nsmall=0))),
-           
+
            c((format(round(sum(m9$coefficients[5]),digits=3),nsmall=0)),
              #(format(round(sum(m10$coefficients[5]),digits=3),nsmall=0)),
              (format(round(sum(m11$coefficients[5]),digits=3),nsmall=0)),
@@ -515,7 +516,7 @@ s2<- rbind(c((format(round(sum(m9$coefficients[1]),digits=3),nsmall=0)),
              (format(round(summary(m14)$coefficients[5,4],digits=3),nsmall=0)),
              (format(round(summary(m15)$coefficients[5,4],digits=3),nsmall=0)),
              (format(round(summary(m16)$coefficients[5,4],digits=3),nsmall=0))),
-           
+
            c((format(round(sum(m9$coefficients[6]),digits=3),nsmall=0)),
              #(format(round(sum(m10$coefficients[6]),digits=3),nsmall=0)),
              (format(round(sum(m11$coefficients[6]),digits=3),nsmall=0)),
@@ -540,9 +541,9 @@ s2<- rbind(c((format(round(sum(m9$coefficients[1]),digits=3),nsmall=0)),
              (format(round(summary(m14)$coefficients[6,4],digits=3),nsmall=0)),
              (format(round(summary(m15)$coefficients[6,4],digits=3),nsmall=0)),
              (format(round(summary(m16)$coefficients[6,4],digits=3),nsmall=0))),
-           
-         
-           
+
+
+
            c((format(round(summary(m9)$r.squared,digits=3),nsmall=0)),
           #   (format(round(summary(m10)$r.squared,digits=3),nsmall=0)),
              (format(round(summary(m11)$r.squared,digits=3),nsmall=0)),
@@ -574,7 +575,7 @@ s2<- rbind(c((format(round(sum(m9$coefficients[1]),digits=3),nsmall=0)),
 
 #### NON-SEED RELATED RATINGS ####
 
-#### regressions without controls - non-seed related ratings 
+#### regressions without controls - non-seed related ratings
 
 n1 <- lm(overall_rating~gender_avg , data = bfm)
 sen1<- sqrt(diag(vcov(n1)))
@@ -635,7 +636,7 @@ s3<- rbind(c((format(round(sum(n1$coefficients[1]),digits=3),nsmall=0)),
              (format(round(summary(n5)$coefficients[2,4],digits=3),nsmall=0)),
              (format(round(summary(n6)$coefficients[2,4],digits=3),nsmall=0)),
              (format(round(summary(n7)$coefficients[2,4],digits=3),nsmall=0))),
-           
+
            c((format(round(summary(n1)$r.squared,digits=3),nsmall=0)),
              (format(round(summary(n2)$r.squared,digits=3),nsmall=0)),
              (format(round(summary(n3)$r.squared,digits=3),nsmall=0)),
@@ -670,7 +671,7 @@ summary(lm(stock ~gender_avg , data = bfm))
 summary(lm(reputation ~gender_avg , data = bfm))
 
 
-#### regressions with dealer's gender (averaged) and farmer characteristics  --- non-seed related ratings 
+#### regressions with dealer's gender (averaged) and farmer characteristics  --- non-seed related ratings
 
 summary(lm(overall_rating~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14, data = bfm))
 summary(lm(general_rating_nonseed~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14, data = bfm))
@@ -681,7 +682,7 @@ summary(lm(stock~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.
 summary(lm(reputation~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14, data = bfm))
 
 
-#### regressions with dealer's gender (averaged) and farmer characteristics  --- non-seed related ratings 
+#### regressions with dealer's gender (averaged) and farmer characteristics  --- non-seed related ratings
 
 n9<-lm(overall_rating~gender_avg + educ_f + married + Check2.check.maize.q8 + Check2.check.maize.q14, data = bfm)
 sen9 <- sqrt(diag(vcov(n9)))
@@ -726,7 +727,7 @@ s4<- rbind(c((format(round(sum(n9$coefficients[1]),digits=3),nsmall=0)),
              (format(round(summary(n13)$coefficients[1,4],digits=3),nsmall=0)),
              (format(round(summary(n14)$coefficients[1,4],digits=3),nsmall=0)),
              (format(round(summary(n15)$coefficients[1,4],digits=3),nsmall=0))),
-             
+
              c((format(round(sum(n9$coefficients[2]),digits=3),nsmall=0)),
                (format(round(sum(n10$coefficients[2]),digits=3),nsmall=0)),
                (format(round(sum(n11$coefficients[2]),digits=3),nsmall=0)),
@@ -748,7 +749,7 @@ s4<- rbind(c((format(round(sum(n9$coefficients[1]),digits=3),nsmall=0)),
                (format(round(summary(n13)$coefficients[2,4],digits=3),nsmall=0)),
                (format(round(summary(n14)$coefficients[2,4],digits=3),nsmall=0)),
                (format(round(summary(n15)$coefficients[2,4],digits=3),nsmall=0))),
-             
+
              c((format(round(sum(n9$coefficients[3]),digits=3),nsmall=0)),
                (format(round(sum(n10$coefficients[3]),digits=3),nsmall=0)),
                (format(round(sum(n11$coefficients[3]),digits=3),nsmall=0)),
@@ -770,7 +771,7 @@ s4<- rbind(c((format(round(sum(n9$coefficients[1]),digits=3),nsmall=0)),
                (format(round(summary(n13)$coefficients[3,4],digits=3),nsmall=0)),
                (format(round(summary(n14)$coefficients[3,4],digits=3),nsmall=0)),
                (format(round(summary(n15)$coefficients[3,4],digits=3),nsmall=0))),
-             
+
              c((format(round(sum(n9$coefficients[4]),digits=3),nsmall=0)),
                (format(round(sum(n10$coefficients[4]),digits=3),nsmall=0)),
                (format(round(sum(n11$coefficients[4]),digits=3),nsmall=0)),
@@ -792,7 +793,7 @@ s4<- rbind(c((format(round(sum(n9$coefficients[1]),digits=3),nsmall=0)),
                (format(round(summary(n13)$coefficients[4,4],digits=3),nsmall=0)),
                (format(round(summary(n14)$coefficients[4,4],digits=3),nsmall=0)),
                (format(round(summary(n15)$coefficients[4,4],digits=3),nsmall=0))),
-             
+
              c((format(round(sum(n9$coefficients[5]),digits=3),nsmall=0)),
                (format(round(sum(n10$coefficients[5]),digits=3),nsmall=0)),
                (format(round(sum(n11$coefficients[5]),digits=3),nsmall=0)),
@@ -814,7 +815,7 @@ s4<- rbind(c((format(round(sum(n9$coefficients[1]),digits=3),nsmall=0)),
                (format(round(summary(n13)$coefficients[5,4],digits=3),nsmall=0)),
                (format(round(summary(n14)$coefficients[5,4],digits=3),nsmall=0)),
                (format(round(summary(n15)$coefficients[5,4],digits=3),nsmall=0))),
-             
+
              c((format(round(sum(n9$coefficients[6]),digits=3),nsmall=0)),
                (format(round(sum(n10$coefficients[6]),digits=3),nsmall=0)),
                (format(round(sum(n11$coefficients[6]),digits=3),nsmall=0)),
@@ -836,8 +837,8 @@ s4<- rbind(c((format(round(sum(n9$coefficients[1]),digits=3),nsmall=0)),
                (format(round(summary(n13)$coefficients[6,4],digits=3),nsmall=0)),
                (format(round(summary(n14)$coefficients[6,4],digits=3),nsmall=0)),
                (format(round(summary(n15)$coefficients[6,4],digits=3),nsmall=0))),
-         
-             
+
+
              c((format(round(summary(n9)$r.squared,digits=3),nsmall=0)),
                (format(round(summary(n10)$r.squared,digits=3),nsmall=0)),
                (format(round(summary(n11)$r.squared,digits=3),nsmall=0)),
@@ -887,31 +888,31 @@ avg$shop_ID <- rownames(avg)
 avg$score <-  rowMeans(avg[c("general","yield","drought_resistent","disease_resistent","early_maturing","germination")],na.rm=T)
 avg$overall_rating <-  rowMeans(avg[c("general_rating_nonseed", "location","price","quality","stock","reputation")],na.rm=T)
 
-avg <- merge(avg, baseline_dealer, by="shop_ID") #merging with baseline dealer data to get the controls and gender 
+avg <- merge(avg, baseline_dealer, by="shop_ID") #merging with baseline dealer data to get the controls and gender
 
 #create gender dummy
 avg$genderdummy <- ifelse(avg$maize.owner.agree.gender == "Male", 1, 0)
 
-mean(avg$score[avg$genderdummy==1], na.rm=TRUE) #3.40848 -- seed avg quality, male 
-mean(avg$score[avg$genderdummy==0], na.rm=TRUE) #3.326955 -- seed avg quality, female 
+mean(avg$score[avg$genderdummy==1], na.rm=TRUE) #3.40848 -- seed avg quality, male
+mean(avg$score[avg$genderdummy==0], na.rm=TRUE) #3.326955 -- seed avg quality, female
 
-mean(avg$overall_rating[avg$genderdummy==1], na.rm=TRUE) #3.802201 -- non-seed avg rating , male 
-mean(avg$overall_rating[avg$genderdummy==0], na.rm=TRUE) #3.674769 -- non-seed avg rating , female 
+mean(avg$overall_rating[avg$genderdummy==1], na.rm=TRUE) #3.802201 -- non-seed avg rating , male
+mean(avg$overall_rating[avg$genderdummy==0], na.rm=TRUE) #3.674769 -- non-seed avg rating , female
 
 
 
 ###dealer characteristics for  controls
 
-#education of dealers 
+#education of dealers
 table(avg$maize.owner.agree.educ) #5 are g which is Other
 avg$prim <- 0
 #avg$prim[avg$maize.owner.agree.educ=="c"|avg$maize.owner.agree.educ=="d"|avg$maize.owner.agree.educ=="e"|avg$maize.owner.agree.educ=="f"]<- 1
 
-#finished secondary educ --- e and f ; a,b,c,d --- did not finish secondary educ 
+#finished secondary educ --- e and f ; a,b,c,d --- did not finish secondary educ
 avg$prim[avg$maize.owner.agree.educ=="e"|avg$maize.owner.agree.educ=="f"] <- 1
 avg$prim[avg$maize.owner.agree.educ=="g"]<- NA
 table(avg$prim)
-#73 ARE 1 --- 38.83 percent 
+#73 ARE 1 --- 38.83 percent
 
 
 #age of dealer
@@ -924,12 +925,12 @@ table(avg$maize.owner.agree.q3)
 avg$maize.owner.agree.q3[avg$maize.owner.agree.q3==999] <- NA
 summary(avg$maize.owner.agree.q3)
 
-#distance of shop to nearest murram road 
+#distance of shop to nearest murram road
 table(avg$maize.owner.agree.q4)
 
-#selling only farm inputs 
+#selling only farm inputs
 table(avg$maize.owner.agree.q5)
-avg$inputsale<- ifelse(avg$maize.owner.agree.q5== 'Yes', 1, 0)  
+avg$inputsale<- ifelse(avg$maize.owner.agree.q5== 'Yes', 1, 0)
 
 #Q8. When was this agro-input shop established? (year)
 avg$years_shop <- 2020 - as.numeric(as.character(substr(avg$maize.owner.agree.q8, start=1, stop=4)))
@@ -937,37 +938,37 @@ avg$years_shop <- 2020 - as.numeric(as.character(substr(avg$maize.owner.agree.q8
 #seed stored in dedicated area?
 avg$maize.owner.agree.q69
 avg$dedarea<-as.character(avg$maize.owner.agree.temp.q69)
-avg$dedicated_area<- ifelse(avg$dedarea== 'Yes', 1, 0)  
+avg$dedicated_area<- ifelse(avg$dedarea== 'Yes', 1, 0)
 table(avg$dedicated_area)
 
 #problem with rats or pests?
 avg$maize.owner.agree.q71
 avg$pest<-as.character(avg$maize.owner.agree.temp.q71)
-avg$pest_prob<- ifelse(avg$pest== 'No', 1, 0)  
+avg$pest_prob<- ifelse(avg$pest== 'No', 1, 0)
 table(avg$pest_prob)
 
-#roof leak proof?  
+#roof leak proof?
 avg$maize.owner.agree.q72
 avg$roof<-as.character(avg$maize.owner.agree.temp.q72)
-avg$leakproof<- ifelse(avg$roof== 'Yes', 1, 0)  
+avg$leakproof<- ifelse(avg$roof== 'Yes', 1, 0)
 table(avg$leakproof)
 
 #roof insulated?
 avg$maize.owner.agree.q73
 avg$roof_insu<-as.character(avg$maize.owner.agree.temp.q73)
-avg$insulated<- ifelse(avg$roof_insu== 'Yes', 1, 0)  
+avg$insulated<- ifelse(avg$roof_insu== 'Yes', 1, 0)
 table(avg$insulated)
 
 #walls insulated?
 avg$maize.owner.agree.q74
 avg$wall_insu<-as.character(avg$maize.owner.agree.temp.q74)
-avg$wall_heatproof<- ifelse(avg$wall_insu== 'Yes', 1, 0)  
+avg$wall_heatproof<- ifelse(avg$wall_insu== 'Yes', 1, 0)
 table(avg$wall_heatproof)
 
 #area ventilated?
 avg$maize.owner.agree.q75
 avg$vent<-as.character(avg$maize.owner.agree.temp.q75)
-avg$ventilation<- ifelse(avg$vent== 'Yes', 1, 0)  
+avg$ventilation<- ifelse(avg$vent== 'Yes', 1, 0)
 table(avg$ventilation)
 
 #Q78. Lighting conditions in area where seed is stored?
@@ -984,14 +985,14 @@ table(avg$badstored)
 #Q80. Do you see maize seed that is stored in open bags or containers?
 avg$maize.owner.agree.q80
 avg$open<-as.character(avg$maize.owner.agree.temp.q80)
-avg$open_storage<- ifelse(avg$open== 'No', 1, 0)  
+avg$open_storage<- ifelse(avg$open== 'No', 1, 0)
 table(avg$open_storage)
 
-#Q81. Do you see any official certificates displayed in the store (eg that the shop was inspected ,that the owner attended trainings 
+#Q81. Do you see any official certificates displayed in the store (eg that the shop was inspected ,that the owner attended trainings
 #or that the business is registered with some association)
 avg$maize.owner.agree.q81
 avg$cert<-as.character(avg$maize.owner.agree.temp.q81)
-avg$cert_yes<- ifelse(avg$cert== 'Yes', 1, 0)  
+avg$cert_yes<- ifelse(avg$cert== 'Yes', 1, 0)
 table(avg$cert_yes)
 
 #Q82. On a scale of 1 to 5, rate this shop in terms of cleanness and professionality 1 poor 5 excellent
@@ -1000,7 +1001,7 @@ table(avg$shop_rate)
 
 #Q96. Since last season, did you receive any complaint from a customer that seed you sold was not good?
 table(avg$maize.owner.agree.q96)
-avg$complaint<- ifelse(avg$maize.owner.agree.q96== 'No', 1, 0)  
+avg$complaint<- ifelse(avg$maize.owner.agree.q96== 'No', 1, 0)
 table(avg$complaint)
 
 #Q70. Enter the temperature in the seed store (where seed is stored)
@@ -1012,7 +1013,7 @@ avg$maize.owner.agree.q70[avg$maize.owner.agree.q70==999] <- NA
 
 ## SEED RELATED RATINGS ##
 
-#### regressions without controls - seed related ratings 
+#### regressions without controls - seed related ratings
 
 mm1<-lm(score~genderdummy, data = avg)
 sem1<- sqrt(diag(vcov(mm1)))
@@ -1055,7 +1056,7 @@ s5<- rbind(c((format(round(sum(mm1$coefficients[1]),digits=3),nsmall=0)),
              (format(round(summary(mm6)$coefficients[1,4],digits=3),nsmall=0)),
              (format(round(summary(mm7)$coefficients[1,4],digits=3),nsmall=0)),
              (format(round(summary(mm8)$coefficients[1,4],digits=3),nsmall=0))),
-           
+
            c((format(round(sum(mm1$coefficients[2]),digits=3),nsmall=0)),
             # (format(round(sum(mm2$coefficients[2]),digits=3),nsmall=0)),
              (format(round(sum(mm3$coefficients[2]),digits=3),nsmall=0)),
@@ -1080,7 +1081,7 @@ s5<- rbind(c((format(round(sum(mm1$coefficients[1]),digits=3),nsmall=0)),
              (format(round(summary(mm6)$coefficients[2,4],digits=3),nsmall=0)),
              (format(round(summary(mm7)$coefficients[2,4],digits=3),nsmall=0)),
              (format(round(summary(mm8)$coefficients[2,4],digits=3),nsmall=0))),
-           
+
            c((format(round(summary(mm1)$r.squared,digits=3),nsmall=0)),
             # (format(round(summary(mm2)$r.squared,digits=3),nsmall=0)),
              (format(round(summary(mm3)$r.squared,digits=3),nsmall=0)),
@@ -1117,20 +1118,20 @@ summary(lm(disease_resistent~genderdummy , data = avg))
 summary(lm(early_maturing~genderdummy , data = avg))
 summary(lm(germination~genderdummy , data = avg))
 
-#### regressions with dealer's gender + dealer characteristics  --- seed related ratings 
+#### regressions with dealer's gender + dealer characteristics  --- seed related ratings
 
 mm9<- lm(score~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
              +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = avg)
 sem9<- sqrt(diag(vcov(mm9)))
 
-#### TO CHECK THE COEFF WITH QUALITY CONTROLS AND WITHOUT ANY CONTROL 
+#### TO CHECK THE COEFF WITH QUALITY CONTROLS AND WITHOUT ANY CONTROL
 #myvars <- names(avg) %in% c("score", "genderdummy", "inputsale",
-           #                   "years_shop", "dedicated_area", "pest_prob", "ventilation", "insulated", "wall_heatproof", 
+           #                   "years_shop", "dedicated_area", "pest_prob", "ventilation", "insulated", "wall_heatproof",
               #                "badlighting", "badstored",  "open_storage", "cert_yes", "shop_rate", "complaint", "maize.owner.agree.q70", "leakproof")
 #newdata <- avg[myvars]
 #new <- na.omit(newdata)
-#summary(lm(score~genderdummy , data = new)) # 0.08674 
+#summary(lm(score~genderdummy , data = new)) # 0.08674
 #summary(lm(score~genderdummy + inputsale+
          #    +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
          #    badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = new)) #  0.1189104**
@@ -1200,7 +1201,7 @@ sem15<- sqrt(diag(vcov(mm15)))
                          (format(round(summary(mm13)$coefficients[1,4],digits=3),nsmall=0)),
                          (format(round(summary(mm14)$coefficients[1,4],digits=3),nsmall=0)),
                          (format(round(summary(mm15)$coefficients[1,4],digits=3),nsmall=0))),
-                       
+
                        c((format(round(sum(mm9$coefficients[2]),digits=3),nsmall=0)),
                          (format(round(sum(mm10$coefficients[2]),digits=3),nsmall=0)),
                          (format(round(sum(mm11$coefficients[2]),digits=3),nsmall=0)),
@@ -1222,7 +1223,7 @@ sem15<- sqrt(diag(vcov(mm15)))
                          (format(round(summary(mm13)$coefficients[2,4],digits=3),nsmall=0)),
                          (format(round(summary(mm14)$coefficients[2,4],digits=3),nsmall=0)),
                          (format(round(summary(mm15)$coefficients[2,4],digits=3),nsmall=0))),
-                       
+
                        c((format(round(sum(mm9$coefficients[3]),digits=3),nsmall=0)),
                          (format(round(sum(mm10$coefficients[3]),digits=3),nsmall=0)),
                          (format(round(sum(mm11$coefficients[3]),digits=3),nsmall=0)),
@@ -1244,7 +1245,7 @@ sem15<- sqrt(diag(vcov(mm15)))
                          (format(round(summary(mm13)$coefficients[3,4],digits=3),nsmall=0)),
                          (format(round(summary(mm14)$coefficients[3,4],digits=3),nsmall=0)),
                          (format(round(summary(mm15)$coefficients[3,4],digits=3),nsmall=0))),
-                       
+
                        c((format(round(sum(mm9$coefficients[4]),digits=3),nsmall=0)),
                          (format(round(sum(mm10$coefficients[4]),digits=3),nsmall=0)),
                          (format(round(sum(mm11$coefficients[4]),digits=3),nsmall=0)),
@@ -1266,7 +1267,7 @@ sem15<- sqrt(diag(vcov(mm15)))
                          (format(round(summary(mm13)$coefficients[4,4],digits=3),nsmall=0)),
                          (format(round(summary(mm14)$coefficients[4,4],digits=3),nsmall=0)),
                          (format(round(summary(mm15)$coefficients[4,4],digits=3),nsmall=0))),
-                       
+
                        c((format(round(sum(mm9$coefficients[5]),digits=3),nsmall=0)),
                          (format(round(sum(mm10$coefficients[5]),digits=3),nsmall=0)),
                          (format(round(sum(mm11$coefficients[5]),digits=3),nsmall=0)),
@@ -1288,7 +1289,7 @@ sem15<- sqrt(diag(vcov(mm15)))
                          (format(round(summary(mm13)$coefficients[5,4],digits=3),nsmall=0)),
                          (format(round(summary(mm14)$coefficients[5,4],digits=3),nsmall=0)),
                          (format(round(summary(mm15)$coefficients[5,4],digits=3),nsmall=0))),
-                       
+
                        c((format(round(sum(mm9$coefficients[6]),digits=3),nsmall=0)),
                          (format(round(sum(mm10$coefficients[6]),digits=3),nsmall=0)),
                          (format(round(sum(mm11$coefficients[6]),digits=3),nsmall=0)),
@@ -1310,7 +1311,7 @@ sem15<- sqrt(diag(vcov(mm15)))
                          (format(round(summary(mm13)$coefficients[6,4],digits=3),nsmall=0)),
                          (format(round(summary(mm14)$coefficients[6,4],digits=3),nsmall=0)),
                          (format(round(summary(mm15)$coefficients[6,4],digits=3),nsmall=0))),
-                       
+
                        c((format(round(sum(mm9$coefficients[7]),digits=3),nsmall=0)),
                          (format(round(sum(mm10$coefficients[7]),digits=3),nsmall=0)),
                          (format(round(sum(mm11$coefficients[7]),digits=3),nsmall=0)),
@@ -1332,7 +1333,7 @@ sem15<- sqrt(diag(vcov(mm15)))
                          (format(round(summary(mm13)$coefficients[7,4],digits=3),nsmall=0)),
                          (format(round(summary(mm14)$coefficients[7,4],digits=3),nsmall=0)),
                          (format(round(summary(mm15)$coefficients[7,4],digits=3),nsmall=0))),
-                       
+
                        c((format(round(sum(mm9$coefficients[8]),digits=3),nsmall=0)),
                          (format(round(sum(mm10$coefficients[8]),digits=3),nsmall=0)),
                          (format(round(sum(mm11$coefficients[8]),digits=3),nsmall=0)),
@@ -1354,7 +1355,7 @@ sem15<- sqrt(diag(vcov(mm15)))
                          (format(round(summary(mm13)$coefficients[8,4],digits=3),nsmall=0)),
                          (format(round(summary(mm14)$coefficients[8,4],digits=3),nsmall=0)),
                          (format(round(summary(mm15)$coefficients[8,4],digits=3),nsmall=0))),
-                       
+
                        c((format(round(sum(mm9$coefficients[9]),digits=3),nsmall=0)),
                          (format(round(sum(mm10$coefficients[9]),digits=3),nsmall=0)),
                          (format(round(sum(mm11$coefficients[9]),digits=3),nsmall=0)),
@@ -1376,7 +1377,7 @@ sem15<- sqrt(diag(vcov(mm15)))
                          (format(round(summary(mm13)$coefficients[9,4],digits=3),nsmall=0)),
                          (format(round(summary(mm14)$coefficients[9,4],digits=3),nsmall=0)),
                          (format(round(summary(mm15)$coefficients[9,4],digits=3),nsmall=0))),
-                       
+
                        c((format(round(sum(mm9$coefficients[10]),digits=3),nsmall=0)),
                          (format(round(sum(mm10$coefficients[10]),digits=3),nsmall=0)),
                          (format(round(sum(mm11$coefficients[10]),digits=3),nsmall=0)),
@@ -1398,7 +1399,7 @@ sem15<- sqrt(diag(vcov(mm15)))
                          (format(round(summary(mm13)$coefficients[10,4],digits=3),nsmall=0)),
                          (format(round(summary(mm14)$coefficients[10,4],digits=3),nsmall=0)),
                          (format(round(summary(mm15)$coefficients[10,4],digits=3),nsmall=0))),
-                       
+
                        c((format(round(sum(mm9$coefficients[11]),digits=3),nsmall=0)),
                          (format(round(sum(mm10$coefficients[11]),digits=3),nsmall=0)),
                          (format(round(sum(mm11$coefficients[11]),digits=3),nsmall=0)),
@@ -1420,7 +1421,7 @@ sem15<- sqrt(diag(vcov(mm15)))
                          (format(round(summary(mm13)$coefficients[11,4],digits=3),nsmall=0)),
                          (format(round(summary(mm14)$coefficients[11,4],digits=3),nsmall=0)),
                          (format(round(summary(mm15)$coefficients[11,4],digits=3),nsmall=0))),
-                       
+
                        c((format(round(sum(mm9$coefficients[12]),digits=3),nsmall=0)),
                          (format(round(sum(mm10$coefficients[12]),digits=3),nsmall=0)),
                          (format(round(sum(mm11$coefficients[12]),digits=3),nsmall=0)),
@@ -1442,7 +1443,7 @@ sem15<- sqrt(diag(vcov(mm15)))
                          (format(round(summary(mm13)$coefficients[12,4],digits=3),nsmall=0)),
                          (format(round(summary(mm14)$coefficients[12,4],digits=3),nsmall=0)),
                          (format(round(summary(mm15)$coefficients[12,4],digits=3),nsmall=0))),
-                       
+
                        c((format(round(sum(mm9$coefficients[13]),digits=3),nsmall=0)),
                          (format(round(sum(mm10$coefficients[13]),digits=3),nsmall=0)),
                          (format(round(sum(mm11$coefficients[13]),digits=3),nsmall=0)),
@@ -1464,7 +1465,7 @@ sem15<- sqrt(diag(vcov(mm15)))
                          (format(round(summary(mm13)$coefficients[13,4],digits=3),nsmall=0)),
                          (format(round(summary(mm14)$coefficients[13,4],digits=3),nsmall=0)),
                          (format(round(summary(mm15)$coefficients[13,4],digits=3),nsmall=0))),
-                       
+
                        c((format(round(sum(mm9$coefficients[14]),digits=3),nsmall=0)),
                          (format(round(sum(mm10$coefficients[14]),digits=3),nsmall=0)),
                          (format(round(sum(mm11$coefficients[14]),digits=3),nsmall=0)),
@@ -1486,7 +1487,7 @@ sem15<- sqrt(diag(vcov(mm15)))
                          (format(round(summary(mm13)$coefficients[14,4],digits=3),nsmall=0)),
                          (format(round(summary(mm14)$coefficients[14,4],digits=3),nsmall=0)),
                          (format(round(summary(mm15)$coefficients[14,4],digits=3),nsmall=0))),
-                       
+
                        c((format(round(sum(mm9$coefficients[15]),digits=3),nsmall=0)),
                          (format(round(sum(mm10$coefficients[15]),digits=3),nsmall=0)),
                          (format(round(sum(mm11$coefficients[15]),digits=3),nsmall=0)),
@@ -1508,7 +1509,7 @@ sem15<- sqrt(diag(vcov(mm15)))
                          (format(round(summary(mm13)$coefficients[15,4],digits=3),nsmall=0)),
                          (format(round(summary(mm14)$coefficients[15,4],digits=3),nsmall=0)),
                          (format(round(summary(mm15)$coefficients[15,4],digits=3),nsmall=0))),
-                       
+
                        c((format(round(sum(mm9$coefficients[16]),digits=3),nsmall=0)),
                          (format(round(sum(mm10$coefficients[16]),digits=3),nsmall=0)),
                          (format(round(sum(mm11$coefficients[16]),digits=3),nsmall=0)),
@@ -1530,7 +1531,7 @@ sem15<- sqrt(diag(vcov(mm15)))
                          (format(round(summary(mm13)$coefficients[16,4],digits=3),nsmall=0)),
                          (format(round(summary(mm14)$coefficients[16,4],digits=3),nsmall=0)),
                          (format(round(summary(mm15)$coefficients[16,4],digits=3),nsmall=0))),
-                       
+
                        c((format(round(sum(mm9$coefficients[17]),digits=3),nsmall=0)),
                          (format(round(sum(mm10$coefficients[17]),digits=3),nsmall=0)),
                          (format(round(sum(mm11$coefficients[17]),digits=3),nsmall=0)),
@@ -1552,7 +1553,7 @@ sem15<- sqrt(diag(vcov(mm15)))
                          (format(round(summary(mm13)$coefficients[17,4],digits=3),nsmall=0)),
                          (format(round(summary(mm14)$coefficients[17,4],digits=3),nsmall=0)),
                          (format(round(summary(mm15)$coefficients[17,4],digits=3),nsmall=0))),
-                       
+
                        c((format(round(sum(mm9$coefficients[18]),digits=3),nsmall=0)),
                          (format(round(sum(mm10$coefficients[18]),digits=3),nsmall=0)),
                          (format(round(sum(mm11$coefficients[18]),digits=3),nsmall=0)),
@@ -1574,7 +1575,7 @@ sem15<- sqrt(diag(vcov(mm15)))
                          (format(round(summary(mm13)$coefficients[18,4],digits=3),nsmall=0)),
                          (format(round(summary(mm14)$coefficients[18,4],digits=3),nsmall=0)),
                          (format(round(summary(mm15)$coefficients[18,4],digits=3),nsmall=0))),
-                       
+
                        c((format(round(sum(mm9$coefficients[19]),digits=3),nsmall=0)),
                          (format(round(sum(mm10$coefficients[19]),digits=3),nsmall=0)),
                          (format(round(sum(mm11$coefficients[19]),digits=3),nsmall=0)),
@@ -1596,7 +1597,7 @@ sem15<- sqrt(diag(vcov(mm15)))
                          (format(round(summary(mm13)$coefficients[19,4],digits=3),nsmall=0)),
                          (format(round(summary(mm14)$coefficients[19,4],digits=3),nsmall=0)),
                          (format(round(summary(mm15)$coefficients[19,4],digits=3),nsmall=0))),
-                       
+
                        c((format(round(sum(mm9$coefficients[20]),digits=3),nsmall=0)),
                          (format(round(sum(mm10$coefficients[20]),digits=3),nsmall=0)),
                          (format(round(sum(mm11$coefficients[20]),digits=3),nsmall=0)),
@@ -1618,7 +1619,7 @@ sem15<- sqrt(diag(vcov(mm15)))
                          (format(round(summary(mm13)$coefficients[20,4],digits=3),nsmall=0)),
                          (format(round(summary(mm14)$coefficients[20,4],digits=3),nsmall=0)),
                          (format(round(summary(mm15)$coefficients[20,4],digits=3),nsmall=0))),
-                       
+
                        c((format(round(sum(mm9$coefficients[21]),digits=3),nsmall=0)),
                          (format(round(sum(mm10$coefficients[21]),digits=3),nsmall=0)),
                          (format(round(sum(mm11$coefficients[21]),digits=3),nsmall=0)),
@@ -1640,8 +1641,8 @@ sem15<- sqrt(diag(vcov(mm15)))
                          (format(round(summary(mm13)$coefficients[21,4],digits=3),nsmall=0)),
                          (format(round(summary(mm14)$coefficients[21,4],digits=3),nsmall=0)),
                          (format(round(summary(mm15)$coefficients[21,4],digits=3),nsmall=0))),
-                       
-                       
+
+
                        c((format(round(summary(mm9)$r.squared,digits=3),nsmall=0)),
                          (format(round(summary(mm10)$r.squared,digits=3),nsmall=0)),
                          (format(round(summary(mm11)$r.squared,digits=3),nsmall=0)),
@@ -1664,9 +1665,9 @@ sem15<- sqrt(diag(vcov(mm15)))
                          (format(round(nobs(mm14),digits=3),nsmall=0)),
                          (format(round(nobs(mm15),digits=3),nsmall=0)))
             )
-            
-            
-            
+
+
+
 
 summary(lm(score~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
              +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation+
@@ -1704,7 +1705,7 @@ summary(lm(germination~genderdummy + maize.owner.agree.age +prim +maize.owner.ag
 
 ## NON SEED RELATED RATINGS ##
 
-#### regressions without controls - non-seed related ratings 
+#### regressions without controls - non-seed related ratings
 
 nn1<- lm(overall_rating~genderdummy , data = avg)
 senn1<- sqrt(diag(vcov(nn1)))
@@ -1742,7 +1743,7 @@ s7<- rbind(c((format(round(sum(nn1$coefficients[1]),digits=3),nsmall=0)),
              (format(round(summary(nn5)$coefficients[1,4],digits=3),nsmall=0)),
              (format(round(summary(nn6)$coefficients[1,4],digits=3),nsmall=0)),
              (format(round(summary(nn7)$coefficients[1,4],digits=3),nsmall=0))),
-           
+
            c((format(round(sum(nn1$coefficients[2]),digits=3),nsmall=0)),
              (format(round(sum(nn2$coefficients[2]),digits=3),nsmall=0)),
              (format(round(sum(nn3$coefficients[2]),digits=3),nsmall=0)),
@@ -1764,7 +1765,7 @@ s7<- rbind(c((format(round(sum(nn1$coefficients[1]),digits=3),nsmall=0)),
              (format(round(summary(nn5)$coefficients[2,4],digits=3),nsmall=0)),
              (format(round(summary(nn6)$coefficients[2,4],digits=3),nsmall=0)),
              (format(round(summary(nn7)$coefficients[2,4],digits=3),nsmall=0))),
-           
+
            c((format(round(summary(nn1)$r.squared,digits=3),nsmall=0)),
              (format(round(summary(nn2)$r.squared,digits=3),nsmall=0)),
              (format(round(summary(nn3)$r.squared,digits=3),nsmall=0)),
@@ -1797,7 +1798,7 @@ summary(lm(quality~genderdummy , data = avg))
 summary(lm(stock ~genderdummy , data = avg))
 summary(lm(reputation ~genderdummy , data = avg))
 
-#### regressions with dealer's gender + dealer characteristics  --- non-seed related ratings 
+#### regressions with dealer's gender + dealer characteristics  --- non-seed related ratings
 
 nn9<- lm(overall_rating~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
            +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
@@ -1852,7 +1853,7 @@ s8<- rbind(c((format(round(sum(nn9$coefficients[1]),digits=3),nsmall=0)),
              (format(round(summary(nn13)$coefficients[1,4],digits=3),nsmall=0)),
              (format(round(summary(nn14)$coefficients[1,4],digits=3),nsmall=0)),
              (format(round(summary(nn15)$coefficients[1,4],digits=3),nsmall=0))),
-           
+
            c((format(round(sum(nn9$coefficients[2]),digits=3),nsmall=0)),
              (format(round(sum(nn10$coefficients[2]),digits=3),nsmall=0)),
              (format(round(sum(nn11$coefficients[2]),digits=3),nsmall=0)),
@@ -1874,7 +1875,7 @@ s8<- rbind(c((format(round(sum(nn9$coefficients[1]),digits=3),nsmall=0)),
              (format(round(summary(nn13)$coefficients[2,4],digits=3),nsmall=0)),
              (format(round(summary(nn14)$coefficients[2,4],digits=3),nsmall=0)),
              (format(round(summary(nn15)$coefficients[2,4],digits=3),nsmall=0))),
-           
+
            c((format(round(sum(nn9$coefficients[3]),digits=3),nsmall=0)),
              (format(round(sum(nn10$coefficients[3]),digits=3),nsmall=0)),
              (format(round(sum(nn11$coefficients[3]),digits=3),nsmall=0)),
@@ -1896,7 +1897,7 @@ s8<- rbind(c((format(round(sum(nn9$coefficients[1]),digits=3),nsmall=0)),
              (format(round(summary(nn13)$coefficients[3,4],digits=3),nsmall=0)),
              (format(round(summary(nn14)$coefficients[3,4],digits=3),nsmall=0)),
              (format(round(summary(nn15)$coefficients[3,4],digits=3),nsmall=0))),
-           
+
            c((format(round(sum(nn9$coefficients[4]),digits=3),nsmall=0)),
              (format(round(sum(nn10$coefficients[4]),digits=3),nsmall=0)),
              (format(round(sum(nn11$coefficients[4]),digits=3),nsmall=0)),
@@ -1918,7 +1919,7 @@ s8<- rbind(c((format(round(sum(nn9$coefficients[1]),digits=3),nsmall=0)),
              (format(round(summary(nn13)$coefficients[4,4],digits=3),nsmall=0)),
              (format(round(summary(nn14)$coefficients[4,4],digits=3),nsmall=0)),
              (format(round(summary(nn15)$coefficients[4,4],digits=3),nsmall=0))),
-           
+
            c((format(round(sum(nn9$coefficients[5]),digits=3),nsmall=0)),
              (format(round(sum(nn10$coefficients[5]),digits=3),nsmall=0)),
              (format(round(sum(nn11$coefficients[5]),digits=3),nsmall=0)),
@@ -1940,7 +1941,7 @@ s8<- rbind(c((format(round(sum(nn9$coefficients[1]),digits=3),nsmall=0)),
              (format(round(summary(nn13)$coefficients[5,4],digits=3),nsmall=0)),
              (format(round(summary(nn14)$coefficients[5,4],digits=3),nsmall=0)),
              (format(round(summary(nn15)$coefficients[5,4],digits=3),nsmall=0))),
-           
+
            c((format(round(sum(nn9$coefficients[6]),digits=3),nsmall=0)),
              (format(round(sum(nn10$coefficients[6]),digits=3),nsmall=0)),
              (format(round(sum(nn11$coefficients[6]),digits=3),nsmall=0)),
@@ -1962,7 +1963,7 @@ s8<- rbind(c((format(round(sum(nn9$coefficients[1]),digits=3),nsmall=0)),
              (format(round(summary(nn13)$coefficients[6,4],digits=3),nsmall=0)),
              (format(round(summary(nn14)$coefficients[6,4],digits=3),nsmall=0)),
              (format(round(summary(nn15)$coefficients[6,4],digits=3),nsmall=0))),
-           
+
            c((format(round(sum(nn9$coefficients[7]),digits=3),nsmall=0)),
              (format(round(sum(nn10$coefficients[7]),digits=3),nsmall=0)),
              0,
@@ -1984,7 +1985,7 @@ s8<- rbind(c((format(round(sum(nn9$coefficients[1]),digits=3),nsmall=0)),
              (format(round(summary(nn13)$coefficients[7,4],digits=3),nsmall=0)),
             0,
              (format(round(summary(nn15)$coefficients[7,4],digits=3),nsmall=0))),
-           
+
            c((format(round(sum(nn9$coefficients[8]),digits=3),nsmall=0)),
              (format(round(sum(nn10$coefficients[8]),digits=3),nsmall=0)),
             0,
@@ -2006,7 +2007,7 @@ s8<- rbind(c((format(round(sum(nn9$coefficients[1]),digits=3),nsmall=0)),
              (format(round(summary(nn13)$coefficients[8,4],digits=3),nsmall=0)),
             0,
              (format(round(summary(nn15)$coefficients[8,4],digits=3),nsmall=0))),
-           
+
            c((format(round(sum(nn9$coefficients[9]),digits=3),nsmall=0)),
              (format(round(sum(nn10$coefficients[9]),digits=3),nsmall=0)),
             0,
@@ -2028,7 +2029,7 @@ s8<- rbind(c((format(round(sum(nn9$coefficients[1]),digits=3),nsmall=0)),
              (format(round(summary(nn13)$coefficients[9,4],digits=3),nsmall=0)),
            0,
              (format(round(summary(nn15)$coefficients[9,4],digits=3),nsmall=0))),
-           
+
            c((format(round(sum(nn9$coefficients[10]),digits=3),nsmall=0)),
              (format(round(sum(nn10$coefficients[10]),digits=3),nsmall=0)),
             0,
@@ -2050,7 +2051,7 @@ s8<- rbind(c((format(round(sum(nn9$coefficients[1]),digits=3),nsmall=0)),
              (format(round(summary(nn13)$coefficients[10,4],digits=3),nsmall=0)),
            0,
              (format(round(summary(nn15)$coefficients[10,4],digits=3),nsmall=0))),
-           
+
            c((format(round(sum(nn9$coefficients[11]),digits=3),nsmall=0)),
              (format(round(sum(nn10$coefficients[11]),digits=3),nsmall=0)),
            0,
@@ -2072,7 +2073,7 @@ s8<- rbind(c((format(round(sum(nn9$coefficients[1]),digits=3),nsmall=0)),
              (format(round(summary(nn13)$coefficients[11,4],digits=3),nsmall=0)),
            0,
              (format(round(summary(nn15)$coefficients[11,4],digits=3),nsmall=0))),
-           
+
            c((format(round(sum(nn9$coefficients[12]),digits=3),nsmall=0)),
              (format(round(sum(nn10$coefficients[12]),digits=3),nsmall=0)),
           0,
@@ -2094,7 +2095,7 @@ s8<- rbind(c((format(round(sum(nn9$coefficients[1]),digits=3),nsmall=0)),
              (format(round(summary(nn13)$coefficients[12,4],digits=3),nsmall=0)),
             0,
              (format(round(summary(nn15)$coefficients[12,4],digits=3),nsmall=0))),
-           
+
            c((format(round(sum(nn9$coefficients[13]),digits=3),nsmall=0)),
              (format(round(sum(nn10$coefficients[13]),digits=3),nsmall=0)),
             0,
@@ -2116,7 +2117,7 @@ s8<- rbind(c((format(round(sum(nn9$coefficients[1]),digits=3),nsmall=0)),
              (format(round(summary(nn13)$coefficients[13,4],digits=3),nsmall=0)),
             0,
              (format(round(summary(nn15)$coefficients[13,4],digits=3),nsmall=0))),
-           
+
            c((format(round(sum(nn9$coefficients[14]),digits=3),nsmall=0)),
              (format(round(sum(nn10$coefficients[14]),digits=3),nsmall=0)),
             0,
@@ -2138,7 +2139,7 @@ s8<- rbind(c((format(round(sum(nn9$coefficients[1]),digits=3),nsmall=0)),
              (format(round(summary(nn13)$coefficients[14,4],digits=3),nsmall=0)),
            0,
              (format(round(summary(nn15)$coefficients[14,4],digits=3),nsmall=0))),
-           
+
            c((format(round(sum(nn9$coefficients[15]),digits=3),nsmall=0)),
              (format(round(sum(nn10$coefficients[15]),digits=3),nsmall=0)),
             0,
@@ -2160,7 +2161,7 @@ s8<- rbind(c((format(round(sum(nn9$coefficients[1]),digits=3),nsmall=0)),
              (format(round(summary(nn13)$coefficients[15,4],digits=3),nsmall=0)),
             0,
              (format(round(summary(nn15)$coefficients[15,4],digits=3),nsmall=0))),
-           
+
            c((format(round(sum(nn9$coefficients[16]),digits=3),nsmall=0)),
              (format(round(sum(nn10$coefficients[16]),digits=3),nsmall=0)),
             0,
@@ -2182,7 +2183,7 @@ s8<- rbind(c((format(round(sum(nn9$coefficients[1]),digits=3),nsmall=0)),
              (format(round(summary(nn13)$coefficients[16,4],digits=3),nsmall=0)),
             0,
              (format(round(summary(nn15)$coefficients[16,4],digits=3),nsmall=0))),
-           
+
            c((format(round(sum(nn9$coefficients[17]),digits=3),nsmall=0)),
              (format(round(sum(nn10$coefficients[17]),digits=3),nsmall=0)),
              0,
@@ -2204,7 +2205,7 @@ s8<- rbind(c((format(round(sum(nn9$coefficients[1]),digits=3),nsmall=0)),
              (format(round(summary(nn13)$coefficients[17,4],digits=3),nsmall=0)),
             0,
              (format(round(summary(nn15)$coefficients[17,4],digits=3),nsmall=0))),
-           
+
            c((format(round(sum(nn9$coefficients[18]),digits=3),nsmall=0)),
              (format(round(sum(nn10$coefficients[18]),digits=3),nsmall=0)),
             0,
@@ -2226,7 +2227,7 @@ s8<- rbind(c((format(round(sum(nn9$coefficients[1]),digits=3),nsmall=0)),
              (format(round(summary(nn13)$coefficients[18,4],digits=3),nsmall=0)),
            0,
              (format(round(summary(nn15)$coefficients[18,4],digits=3),nsmall=0))),
-           
+
            c((format(round(sum(nn9$coefficients[19]),digits=3),nsmall=0)),
              (format(round(sum(nn10$coefficients[19]),digits=3),nsmall=0)),
             0,
@@ -2248,7 +2249,7 @@ s8<- rbind(c((format(round(sum(nn9$coefficients[1]),digits=3),nsmall=0)),
              (format(round(summary(nn13)$coefficients[19,4],digits=3),nsmall=0)),
             0,
              (format(round(summary(nn15)$coefficients[19,4],digits=3),nsmall=0))),
-           
+
            c((format(round(sum(nn9$coefficients[20]),digits=3),nsmall=0)),
              (format(round(sum(nn10$coefficients[20]),digits=3),nsmall=0)),
             0,
@@ -2270,7 +2271,7 @@ s8<- rbind(c((format(round(sum(nn9$coefficients[1]),digits=3),nsmall=0)),
              (format(round(summary(nn13)$coefficients[20,4],digits=3),nsmall=0)),
             0,
              (format(round(summary(nn15)$coefficients[20,4],digits=3),nsmall=0))),
-           
+
            c((format(round(sum(nn9$coefficients[21]),digits=3),nsmall=0)),
              (format(round(sum(nn10$coefficients[21]),digits=3),nsmall=0)),
             0,
@@ -2292,8 +2293,8 @@ s8<- rbind(c((format(round(sum(nn9$coefficients[1]),digits=3),nsmall=0)),
              (format(round(summary(nn13)$coefficients[21,4],digits=3),nsmall=0)),
             0,
              (format(round(summary(nn15)$coefficients[21,4],digits=3),nsmall=0))),
-      
-           
+
+
            c((format(round(summary(nn9)$r.squared,digits=3),nsmall=0)),
              (format(round(summary(nn10)$r.squared,digits=3),nsmall=0)),
              (format(round(summary(nn11)$r.squared,digits=3),nsmall=0)),
@@ -2363,16 +2364,16 @@ fedata$genderdummy <- ifelse(fedata$maize.owner.agree.gender == "Male", 1, 0)
 
 ###dealer characteristics for  controls
 
-#education of dealers 
+#education of dealers
 table(fedata$maize.owner.agree.educ) #430 are g which is Other
 fedata$prim <- 0
 #fedata$prim[fedata$maize.owner.agree.educ=="c"|fedata$maize.owner.agree.educ=="d"|fedata$maize.owner.agree.educ=="e"|fedata$maize.owner.agree.educ=="f"]<- 1
 
-#finished secondary educ --- e and f ; a,b,c,d --- did not finish secondary educ 
+#finished secondary educ --- e and f ; a,b,c,d --- did not finish secondary educ
 fedata$prim[fedata$maize.owner.agree.educ=="e"|fedata$maize.owner.agree.educ=="f"] <- 1
 fedata$prim[fedata$maize.owner.agree.educ=="g"]<- NA
 table(fedata$prim)
-#5208 ARE 1 --- 45 percent 
+#5208 ARE 1 --- 45 percent
 
 
 #age of dealer
@@ -2385,12 +2386,12 @@ table(fedata$maize.owner.agree.q3)
 fedata$maize.owner.agree.q3[fedata$maize.owner.agree.q3==999] <- NA
 summary(fedata$maize.owner.agree.q3)
 
-#distance of shop to nearest murram road 
+#distance of shop to nearest murram road
 table(fedata$maize.owner.agree.q4)
 
-#selling only farm inputs 
+#selling only farm inputs
 table(fedata$maize.owner.agree.q5)
-fedata$inputsale<- ifelse(fedata$maize.owner.agree.q5== 'Yes', 1, 0)  
+fedata$inputsale<- ifelse(fedata$maize.owner.agree.q5== 'Yes', 1, 0)
 
 #Q8. When was this agro-input shop established? (year)
 fedata$years_shop <- 2020 - as.numeric(as.character(substr(fedata$maize.owner.agree.q8, start=1, stop=4)))
@@ -2398,37 +2399,37 @@ fedata$years_shop <- 2020 - as.numeric(as.character(substr(fedata$maize.owner.ag
 #seed stored in dedicated area?
 fedata$maize.owner.agree.q69
 fedata$dedarea<-as.character(fedata$maize.owner.agree.temp.q69)
-fedata$dedicated_area<- ifelse(fedata$dedarea== 'Yes', 1, 0)  
+fedata$dedicated_area<- ifelse(fedata$dedarea== 'Yes', 1, 0)
 table(fedata$dedicated_area)
 
 #problem with rats or pests?
 fedata$maize.owner.agree.q71
 fedata$pest<-as.character(fedata$maize.owner.agree.temp.q71)
-fedata$pest_prob<- ifelse(fedata$pest== 'No', 1, 0)  
+fedata$pest_prob<- ifelse(fedata$pest== 'No', 1, 0)
 table(fedata$pest_prob)
 
-#roof leak proof?  
+#roof leak proof?
 fedata$maize.owner.agree.q72
 fedata$roof<-as.character(fedata$maize.owner.agree.temp.q72)
-fedata$leakproof<- ifelse(fedata$roof== 'Yes', 1, 0)  
+fedata$leakproof<- ifelse(fedata$roof== 'Yes', 1, 0)
 table(fedata$leakproof)
 
 #roof insulated?
 fedata$maize.owner.agree.q73
 fedata$roof_insu<-as.character(fedata$maize.owner.agree.temp.q73)
-fedata$insulated<- ifelse(fedata$roof_insu== 'Yes', 1, 0)  
+fedata$insulated<- ifelse(fedata$roof_insu== 'Yes', 1, 0)
 table(fedata$insulated)
 
 #walls insulated?
 fedata$maize.owner.agree.q74
 fedata$wall_insu<-as.character(fedata$maize.owner.agree.temp.q74)
-fedata$wall_heatproof<- ifelse(fedata$wall_insu== 'Yes', 1, 0)  
+fedata$wall_heatproof<- ifelse(fedata$wall_insu== 'Yes', 1, 0)
 table(fedata$wall_heatproof)
 
 #area ventilated?
 fedata$maize.owner.agree.q75
 fedata$vent<-as.character(fedata$maize.owner.agree.temp.q75)
-fedata$ventilation<- ifelse(fedata$vent== 'Yes', 1, 0)  
+fedata$ventilation<- ifelse(fedata$vent== 'Yes', 1, 0)
 table(fedata$ventilation)
 
 #Q78. Lighting conditions in area where seed is stored?
@@ -2445,14 +2446,14 @@ table(fedata$badstored)
 #Q80. Do you see maize seed that is stored in open bags or containers?
 fedata$maize.owner.agree.q80
 fedata$open<-as.character(fedata$maize.owner.agree.temp.q80)
-fedata$open_storage<- ifelse(fedata$open== 'No', 1, 0)  
+fedata$open_storage<- ifelse(fedata$open== 'No', 1, 0)
 table(fedata$open_storage)
 
-#Q81. Do you see any official certificates displayed in the store (eg that the shop was inspected ,that the owner attended trainings 
+#Q81. Do you see any official certificates displayed in the store (eg that the shop was inspected ,that the owner attended trainings
 #or that the business is registered with some association)
 fedata$maize.owner.agree.q81
 fedata$cert<-as.character(fedata$maize.owner.agree.temp.q81)
-fedata$cert_yes<- ifelse(fedata$cert== 'Yes', 1, 0)  
+fedata$cert_yes<- ifelse(fedata$cert== 'Yes', 1, 0)
 table(fedata$cert_yes)
 
 #Q82. On a scale of 1 to 5, rate this shop in terms of cleanness and professionality 1 poor 5 excellent
@@ -2461,14 +2462,14 @@ table(fedata$shop_rate)
 
 #Q96. Since last season, did you receive any complaint from a customer that seed you sold was not good?
 table(fedata$maize.owner.agree.q96)
-fedata$complaint<- ifelse(fedata$maize.owner.agree.q96== 'No', 1, 0)  
+fedata$complaint<- ifelse(fedata$maize.owner.agree.q96== 'No', 1, 0)
 table(fedata$complaint)
 
 #Q70. Enter the temperature in the seed store (where seed is stored)
 table(fedata$maize.owner.agree.q70)
 fedata$maize.owner.agree.q70[fedata$maize.owner.agree.q70==999] <- NA
 
-###AVERAGE RATINGS 
+###AVERAGE RATINGS
 fedata$quality<- as.numeric(fedata$quality_rating)
 fedata$general<- as.numeric(fedata$seed_quality_general_rating)
 fedata$yield <- as.numeric(fedata$seed_yield_rating)
@@ -2494,15 +2495,15 @@ write.csv(fedata, file = "fedata.csv")
 
 ## SEED RELATED RATINGS ##
 
-#### regressions without controls - seed related ratings 
+#### regressions without controls - seed related ratings
 
 summary(lm(score~genderdummy +farmer_ID, data = fedata))
-#if you want to remove intercept 
+#if you want to remove intercept
 #summary(lm(score~genderdummy-1 +farmer_ID, data = fedata))
 #the intercept without -1 is the intercept of the first farmerID
 
 #reg1<-summary(lm(quality~genderdummy+farmer_ID , data = fedata))
-#intercept --- 5.066 
+#intercept --- 5.066
 #with(fedata, plot(genderdummy,quality))
 #abline(reg1)
 summary(lm(yield~genderdummy +farmer_ID, data = fedata))
@@ -2511,15 +2512,15 @@ summary(lm(disease_resistent~genderdummy+farmer_ID , data = fedata))
 summary(lm(early_maturing~genderdummy+farmer_ID , data = fedata))
 summary(lm(germination~genderdummy+farmer_ID , data = fedata))
 
-############# plm method 
+############# plm method
 
 plm1<-plm(score~genderdummy, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
 i1<-mean(fixef(plm1))
 seplm1<- sqrt(diag(vcov(plm1)))
 
-#G1 <- length(unique(fedata$shop_ID))
-#c1 <- G1/(G1 - 1)
-#coef1<-coeftest(plm1,c1 * vcovHC(plm1, type = "HC1", cluster = "group"))
+
+
+coef1<-coeftest(plm1, vcovHC(plm1, type = "HC0", cluster = "time"))
 
 
 
@@ -2606,8 +2607,8 @@ fe1<- rbind( c((format(round(i1[1],digits=3),nsmall=0)),
              (format(round(summary(plm6)$coefficients[1,4],digits=3),nsmall=0)),
              (format(round(summary(plm7)$coefficients[1,4],digits=3),nsmall=0)),
              (format(round(summary(plm8)$coefficients[1,4],digits=3),nsmall=0))),
-           
-           
+
+
            c((format(round(summary(plm1)$r.squared[1],digits=3),nsmall=0)),
           #   (format(round(summary(plm2)$r.squared[1],digits=3),nsmall=0)),
              (format(round(summary(plm3)$r.squared[1],digits=3),nsmall=0)),
@@ -2638,7 +2639,7 @@ fe1<- rbind( c((format(round(i1[1],digits=3),nsmall=0)),
 
 
 
-#### regressions with dealer's gender + dealer characteristics  --- seed related ratings 
+#### regressions with dealer's gender + dealer characteristics  --- seed related ratings
 
 summary(lm(score~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
              +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
@@ -2678,7 +2679,7 @@ summary(lm(germination~genderdummy + maize.owner.agree.age +prim +maize.owner.ag
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof+farmer_ID, data = fedata))
 
 
-####### plm method 
+####### plm method
 
 plm9<-plm(score~genderdummy+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
@@ -2748,7 +2749,7 @@ fe2<- rbind(c((format(round(i9[1],digits=3),nsmall=0)),
               (format(round(i14[1],digits=3),nsmall=0)),
               (format(round(i15[1],digits=3),nsmall=0)),
               (format(round(i16[1],digits=3),nsmall=0))),
-            
+
             c((format(round(sum(plm9$coefficients[1]),digits=3),nsmall=0)),
            #  (format(round(sum(plm10$coefficients[1]),digits=3),nsmall=0)),
              (format(round(sum(plm11$coefficients[1]),digits=3),nsmall=0)),
@@ -2773,7 +2774,7 @@ fe2<- rbind(c((format(round(i9[1],digits=3),nsmall=0)),
              (format(round(summary(plm14)$coefficients[1,4],digits=3),nsmall=0)),
              (format(round(summary(plm15)$coefficients[1,4],digits=3),nsmall=0)),
              (format(round(summary(plm16)$coefficients[1,4],digits=3),nsmall=0))),
-           
+
            c((format(round(sum(plm9$coefficients[2]),digits=3),nsmall=0)),
            #  (format(round(sum(plm10$coefficients[2]),digits=3),nsmall=0)),
              (format(round(sum(plm11$coefficients[2]),digits=3),nsmall=0)),
@@ -2798,7 +2799,7 @@ fe2<- rbind(c((format(round(i9[1],digits=3),nsmall=0)),
              (format(round(summary(plm14)$coefficients[2,4],digits=3),nsmall=0)),
              (format(round(summary(plm15)$coefficients[2,4],digits=3),nsmall=0)),
              (format(round(summary(plm16)$coefficients[2,4],digits=3),nsmall=0))),
-           
+
            c((format(round(sum(plm9$coefficients[3]),digits=3),nsmall=0)),
            #  (format(round(sum(plm10$coefficients[3]),digits=3),nsmall=0)),
              (format(round(sum(plm11$coefficients[3]),digits=3),nsmall=0)),
@@ -2823,7 +2824,7 @@ fe2<- rbind(c((format(round(i9[1],digits=3),nsmall=0)),
              (format(round(summary(plm14)$coefficients[3,4],digits=3),nsmall=0)),
              (format(round(summary(plm15)$coefficients[3,4],digits=3),nsmall=0)),
              (format(round(summary(plm16)$coefficients[3,4],digits=3),nsmall=0))),
-           
+
            c((format(round(sum(plm9$coefficients[4]),digits=3),nsmall=0)),
             # (format(round(sum(plm10$coefficients[4]),digits=3),nsmall=0)),
              (format(round(sum(plm11$coefficients[4]),digits=3),nsmall=0)),
@@ -2848,7 +2849,7 @@ fe2<- rbind(c((format(round(i9[1],digits=3),nsmall=0)),
              (format(round(summary(plm14)$coefficients[4,4],digits=3),nsmall=0)),
              (format(round(summary(plm15)$coefficients[4,4],digits=3),nsmall=0)),
              (format(round(summary(plm16)$coefficients[4,4],digits=3),nsmall=0))),
-           
+
            c((format(round(sum(plm9$coefficients[5]),digits=3),nsmall=0)),
             # (format(round(sum(plm10$coefficients[5]),digits=3),nsmall=0)),
              (format(round(sum(plm11$coefficients[5]),digits=3),nsmall=0)),
@@ -2873,7 +2874,7 @@ fe2<- rbind(c((format(round(i9[1],digits=3),nsmall=0)),
              (format(round(summary(plm14)$coefficients[5,4],digits=3),nsmall=0)),
              (format(round(summary(plm15)$coefficients[5,4],digits=3),nsmall=0)),
              (format(round(summary(plm16)$coefficients[5,4],digits=3),nsmall=0))),
-           
+
            c((format(round(sum(plm9$coefficients[6]),digits=3),nsmall=0)),
             # (format(round(sum(plm10$coefficients[6]),digits=3),nsmall=0)),
              (format(round(sum(plm11$coefficients[6]),digits=3),nsmall=0)),
@@ -2898,7 +2899,7 @@ fe2<- rbind(c((format(round(i9[1],digits=3),nsmall=0)),
              (format(round(summary(plm14)$coefficients[6,4],digits=3),nsmall=0)),
              (format(round(summary(plm15)$coefficients[6,4],digits=3),nsmall=0)),
              (format(round(summary(plm16)$coefficients[6,4],digits=3),nsmall=0))),
-           
+
            c((format(round(sum(plm9$coefficients[7]),digits=3),nsmall=0)),
             # (format(round(sum(plm10$coefficients[7]),digits=3),nsmall=0)),
              (format(round(sum(plm11$coefficients[7]),digits=3),nsmall=0)),
@@ -2923,7 +2924,7 @@ fe2<- rbind(c((format(round(i9[1],digits=3),nsmall=0)),
              (format(round(summary(plm14)$coefficients[7,4],digits=3),nsmall=0)),
              (format(round(summary(plm15)$coefficients[7,4],digits=3),nsmall=0)),
              (format(round(summary(plm16)$coefficients[7,4],digits=3),nsmall=0))),
-           
+
            c((format(round(sum(plm9$coefficients[8]),digits=3),nsmall=0)),
             # (format(round(sum(plm10$coefficients[8]),digits=3),nsmall=0)),
              (format(round(sum(plm11$coefficients[8]),digits=3),nsmall=0)),
@@ -2948,7 +2949,7 @@ fe2<- rbind(c((format(round(i9[1],digits=3),nsmall=0)),
              (format(round(summary(plm14)$coefficients[8,4],digits=3),nsmall=0)),
              (format(round(summary(plm15)$coefficients[8,4],digits=3),nsmall=0)),
              (format(round(summary(plm16)$coefficients[8,4],digits=3),nsmall=0))),
-           
+
            c((format(round(sum(plm9$coefficients[9]),digits=3),nsmall=0)),
             # (format(round(sum(plm10$coefficients[9]),digits=3),nsmall=0)),
              (format(round(sum(plm11$coefficients[9]),digits=3),nsmall=0)),
@@ -2973,7 +2974,7 @@ fe2<- rbind(c((format(round(i9[1],digits=3),nsmall=0)),
              (format(round(summary(plm14)$coefficients[9,4],digits=3),nsmall=0)),
              (format(round(summary(plm15)$coefficients[9,4],digits=3),nsmall=0)),
              (format(round(summary(plm16)$coefficients[9,4],digits=3),nsmall=0))),
-           
+
            c((format(round(sum(plm9$coefficients[10]),digits=3),nsmall=0)),
             # (format(round(sum(plm10$coefficients[10]),digits=3),nsmall=0)),
              (format(round(sum(plm11$coefficients[10]),digits=3),nsmall=0)),
@@ -2998,7 +2999,7 @@ fe2<- rbind(c((format(round(i9[1],digits=3),nsmall=0)),
              (format(round(summary(plm14)$coefficients[10,4],digits=3),nsmall=0)),
              (format(round(summary(plm15)$coefficients[10,4],digits=3),nsmall=0)),
              (format(round(summary(plm16)$coefficients[10,4],digits=3),nsmall=0))),
-           
+
            c((format(round(sum(plm9$coefficients[11]),digits=3),nsmall=0)),
             # (format(round(sum(plm10$coefficients[11]),digits=3),nsmall=0)),
              (format(round(sum(plm11$coefficients[11]),digits=3),nsmall=0)),
@@ -3023,7 +3024,7 @@ fe2<- rbind(c((format(round(i9[1],digits=3),nsmall=0)),
              (format(round(summary(plm14)$coefficients[11,4],digits=3),nsmall=0)),
              (format(round(summary(plm15)$coefficients[11,4],digits=3),nsmall=0)),
              (format(round(summary(plm16)$coefficients[11,4],digits=3),nsmall=0))),
-           
+
            c((format(round(sum(plm9$coefficients[12]),digits=3),nsmall=0)),
             # (format(round(sum(plm10$coefficients[12]),digits=3),nsmall=0)),
              (format(round(sum(plm11$coefficients[12]),digits=3),nsmall=0)),
@@ -3048,7 +3049,7 @@ fe2<- rbind(c((format(round(i9[1],digits=3),nsmall=0)),
              (format(round(summary(plm14)$coefficients[12,4],digits=3),nsmall=0)),
              (format(round(summary(plm15)$coefficients[12,4],digits=3),nsmall=0)),
              (format(round(summary(plm16)$coefficients[12,4],digits=3),nsmall=0))),
-           
+
            c((format(round(sum(plm9$coefficients[13]),digits=3),nsmall=0)),
             # (format(round(sum(plm10$coefficients[13]),digits=3),nsmall=0)),
              (format(round(sum(plm11$coefficients[13]),digits=3),nsmall=0)),
@@ -3073,7 +3074,7 @@ fe2<- rbind(c((format(round(i9[1],digits=3),nsmall=0)),
              (format(round(summary(plm14)$coefficients[13,4],digits=3),nsmall=0)),
              (format(round(summary(plm15)$coefficients[13,4],digits=3),nsmall=0)),
              (format(round(summary(plm16)$coefficients[13,4],digits=3),nsmall=0))),
-           
+
            c((format(round(sum(plm9$coefficients[14]),digits=3),nsmall=0)),
            #  (format(round(sum(plm10$coefficients[14]),digits=3),nsmall=0)),
              (format(round(sum(plm11$coefficients[14]),digits=3),nsmall=0)),
@@ -3098,7 +3099,7 @@ fe2<- rbind(c((format(round(i9[1],digits=3),nsmall=0)),
              (format(round(summary(plm14)$coefficients[14,4],digits=3),nsmall=0)),
              (format(round(summary(plm15)$coefficients[14,4],digits=3),nsmall=0)),
              (format(round(summary(plm16)$coefficients[14,4],digits=3),nsmall=0))),
-           
+
            c((format(round(sum(plm9$coefficients[15]),digits=3),nsmall=0)),
            #  (format(round(sum(plm10$coefficients[15]),digits=3),nsmall=0)),
              (format(round(sum(plm11$coefficients[15]),digits=3),nsmall=0)),
@@ -3123,7 +3124,7 @@ fe2<- rbind(c((format(round(i9[1],digits=3),nsmall=0)),
              (format(round(summary(plm14)$coefficients[15,4],digits=3),nsmall=0)),
              (format(round(summary(plm15)$coefficients[15,4],digits=3),nsmall=0)),
              (format(round(summary(plm16)$coefficients[15,4],digits=3),nsmall=0))),
-           
+
            c((format(round(sum(plm9$coefficients[16]),digits=3),nsmall=0)),
           #   (format(round(sum(plm10$coefficients[16]),digits=3),nsmall=0)),
              (format(round(sum(plm11$coefficients[16]),digits=3),nsmall=0)),
@@ -3148,7 +3149,7 @@ fe2<- rbind(c((format(round(i9[1],digits=3),nsmall=0)),
              (format(round(summary(plm14)$coefficients[16,4],digits=3),nsmall=0)),
              (format(round(summary(plm15)$coefficients[16,4],digits=3),nsmall=0)),
              (format(round(summary(plm16)$coefficients[16,4],digits=3),nsmall=0))),
-           
+
            c((format(round(sum(plm9$coefficients[17]),digits=3),nsmall=0)),
            #  (format(round(sum(plm10$coefficients[17]),digits=3),nsmall=0)),
              (format(round(sum(plm11$coefficients[17]),digits=3),nsmall=0)),
@@ -3173,7 +3174,7 @@ fe2<- rbind(c((format(round(i9[1],digits=3),nsmall=0)),
              (format(round(summary(plm14)$coefficients[17,4],digits=3),nsmall=0)),
              (format(round(summary(plm15)$coefficients[17,4],digits=3),nsmall=0)),
              (format(round(summary(plm16)$coefficients[17,4],digits=3),nsmall=0))),
-           
+
            c((format(round(sum(plm9$coefficients[18]),digits=3),nsmall=0)),
             # (format(round(sum(plm10$coefficients[18]),digits=3),nsmall=0)),
              (format(round(sum(plm11$coefficients[18]),digits=3),nsmall=0)),
@@ -3198,7 +3199,7 @@ fe2<- rbind(c((format(round(i9[1],digits=3),nsmall=0)),
              (format(round(summary(plm14)$coefficients[18,4],digits=3),nsmall=0)),
              (format(round(summary(plm15)$coefficients[18,4],digits=3),nsmall=0)),
              (format(round(summary(plm16)$coefficients[18,4],digits=3),nsmall=0))),
-           
+
            c((format(round(sum(plm9$coefficients[19]),digits=3),nsmall=0)),
            #  (format(round(sum(plm10$coefficients[19]),digits=3),nsmall=0)),
              (format(round(sum(plm11$coefficients[19]),digits=3),nsmall=0)),
@@ -3223,7 +3224,7 @@ fe2<- rbind(c((format(round(i9[1],digits=3),nsmall=0)),
              (format(round(summary(plm14)$coefficients[19,4],digits=3),nsmall=0)),
              (format(round(summary(plm15)$coefficients[19,4],digits=3),nsmall=0)),
              (format(round(summary(plm16)$coefficients[19,4],digits=3),nsmall=0))),
-           
+
            c((format(round(sum(plm9$coefficients[20]),digits=3),nsmall=0)),
          #    (format(round(sum(plm10$coefficients[20]),digits=3),nsmall=0)),
              (format(round(sum(plm11$coefficients[20]),digits=3),nsmall=0)),
@@ -3249,7 +3250,7 @@ fe2<- rbind(c((format(round(i9[1],digits=3),nsmall=0)),
              (format(round(summary(plm15)$coefficients[20,4],digits=3),nsmall=0)),
              (format(round(summary(plm16)$coefficients[20,4],digits=3),nsmall=0))),
 
-           
+
            c((format(round(summary(plm9)$r.squared[1],digits=3),nsmall=0)),
            #  (format(round(summary(plm10)$r.squared[1],digits=3),nsmall=0)),
              (format(round(summary(plm11)$r.squared[1],digits=3),nsmall=0)),
@@ -3282,7 +3283,7 @@ fe2<- rbind(c((format(round(i9[1],digits=3),nsmall=0)),
 
 ## NON SEED RELATED RATINGS ##
 
-#### regressions without controls - non-seed related ratings 
+#### regressions without controls - non-seed related ratings
 
 summary(lm(overall_rating~genderdummy +farmer_ID, data = fedata))
 summary(lm(general_rating_nonseed~genderdummy +farmer_ID, data = fedata))
@@ -3349,8 +3350,8 @@ fe3<- rbind( c((format(round(im1[1],digits=3),nsmall=0)),
                (format(round(summary(plmm5)$coefficients[1,4],digits=3),nsmall=0)),
                (format(round(summary(plmm6)$coefficients[1,4],digits=3),nsmall=0)),
                (format(round(summary(plmm7)$coefficients[1,4],digits=3),nsmall=0))),
-             
-             
+
+
              c((format(round(summary(plmm1)$r.squared[1],digits=3),nsmall=0)),
                (format(round(summary(plmm2)$r.squared[1],digits=3),nsmall=0)),
                (format(round(summary(plmm3)$r.squared[1],digits=3),nsmall=0)),
@@ -3377,7 +3378,7 @@ fe3<- rbind( c((format(round(im1[1],digits=3),nsmall=0)),
 
 
 
-#### regressions with dealer's gender + dealer characteristics  --- non-seed related ratings 
+#### regressions with dealer's gender + dealer characteristics  --- non-seed related ratings
 
 summary(lm(overall_rating~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
              +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
@@ -3388,7 +3389,7 @@ plm1<-plm(overall_rating~genderdummy + maize.owner.agree.age +prim +maize.owner.
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
 mean(fixef(plm1))
 within_intercept(plm1)
-#https://stat.ethz.ch/pipermail/r-help/2012-December/344338.html 
+#https://stat.ethz.ch/pipermail/r-help/2012-December/344338.html
 
 summary(lm(general_rating_nonseed~genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
              +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
@@ -3415,7 +3416,7 @@ summary(lm(reputation~genderdummy + maize.owner.agree.age +prim +maize.owner.agr
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof+farmer_ID, data = fedata))
 
 
-########## plm method 
+########## plm method
 
 plmm8<-plm(overall_rating~genderdummy+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
              +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
@@ -3446,7 +3447,7 @@ im12<-mean(fixef(plmm12))
 seplmm12<- sqrt(diag(vcov(plmm12)))
 
 plmm13<-plm(stock~genderdummy+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
-im13<-mean(fixef(plmm13))    
+im13<-mean(fixef(plmm13))
 #4.332454
 seplmm13<- sqrt(diag(vcov(plmm13)))
 
@@ -3486,7 +3487,7 @@ fe4<- rbind(c((format(round(im8[1],digits=3),nsmall=0)),
               (format(round(summary(plmm12)$coefficients[1,4],digits=3),nsmall=0)),
               (format(round(summary(plmm13)$coefficients[1,4],digits=3),nsmall=0)),
               (format(round(summary(plmm14)$coefficients[1,4],digits=3),nsmall=0))),
-            
+
             c((format(round(sum(plmm8$coefficients[2]),digits=3),nsmall=0)),
               (format(round(sum(plmm9$coefficients[2]),digits=3),nsmall=0)),
               (format(round(sum(plmm10$coefficients[2]),digits=3),nsmall=0)),
@@ -3508,7 +3509,7 @@ fe4<- rbind(c((format(round(im8[1],digits=3),nsmall=0)),
               (format(round(summary(plmm12)$coefficients[2,4],digits=3),nsmall=0)),
               (format(round(summary(plmm13)$coefficients[2,4],digits=3),nsmall=0)),
               (format(round(summary(plmm14)$coefficients[2,4],digits=3),nsmall=0))),
-            
+
             c((format(round(sum(plmm8$coefficients[3]),digits=3),nsmall=0)),
               (format(round(sum(plmm9$coefficients[3]),digits=3),nsmall=0)),
               (format(round(sum(plmm10$coefficients[3]),digits=3),nsmall=0)),
@@ -3530,7 +3531,7 @@ fe4<- rbind(c((format(round(im8[1],digits=3),nsmall=0)),
               (format(round(summary(plmm12)$coefficients[3,4],digits=3),nsmall=0)),
               (format(round(summary(plmm13)$coefficients[3,4],digits=3),nsmall=0)),
               (format(round(summary(plmm14)$coefficients[3,4],digits=3),nsmall=0))),
-            
+
             c((format(round(sum(plmm8$coefficients[4]),digits=3),nsmall=0)),
               (format(round(sum(plmm9$coefficients[4]),digits=3),nsmall=0)),
               (format(round(sum(plmm10$coefficients[4]),digits=3),nsmall=0)),
@@ -3552,7 +3553,7 @@ fe4<- rbind(c((format(round(im8[1],digits=3),nsmall=0)),
               (format(round(summary(plmm12)$coefficients[4,4],digits=3),nsmall=0)),
               (format(round(summary(plmm13)$coefficients[4,4],digits=3),nsmall=0)),
               (format(round(summary(plmm14)$coefficients[4,4],digits=3),nsmall=0))),
-            
+
             c((format(round(sum(plmm8$coefficients[5]),digits=3),nsmall=0)),
               (format(round(sum(plmm9$coefficients[5]),digits=3),nsmall=0)),
               (format(round(sum(plmm10$coefficients[5]),digits=3),nsmall=0)),
@@ -3574,7 +3575,7 @@ fe4<- rbind(c((format(round(im8[1],digits=3),nsmall=0)),
               (format(round(summary(plmm12)$coefficients[5,4],digits=3),nsmall=0)),
               (format(round(summary(plmm13)$coefficients[5,4],digits=3),nsmall=0)),
               (format(round(summary(plmm14)$coefficients[5,4],digits=3),nsmall=0))),
-            
+
             c((format(round(sum(plmm8$coefficients[6]),digits=3),nsmall=0)),
               (format(round(sum(plmm9$coefficients[6]),digits=3),nsmall=0)),
              0,
@@ -3596,7 +3597,7 @@ fe4<- rbind(c((format(round(im8[1],digits=3),nsmall=0)),
               (format(round(summary(plmm12)$coefficients[6,4],digits=3),nsmall=0)),
             0,
               (format(round(summary(plmm14)$coefficients[6,4],digits=3),nsmall=0))),
-            
+
             c((format(round(sum(plmm8$coefficients[7]),digits=3),nsmall=0)),
               (format(round(sum(plmm9$coefficients[7]),digits=3),nsmall=0)),
            0,
@@ -3618,7 +3619,7 @@ fe4<- rbind(c((format(round(im8[1],digits=3),nsmall=0)),
               (format(round(summary(plmm12)$coefficients[7,4],digits=3),nsmall=0)),
              0,
               (format(round(summary(plmm14)$coefficients[7,4],digits=3),nsmall=0))),
-            
+
             c((format(round(sum(plmm8$coefficients[8]),digits=3),nsmall=0)),
               (format(round(sum(plmm9$coefficients[8]),digits=3),nsmall=0)),
               0,
@@ -3640,7 +3641,7 @@ fe4<- rbind(c((format(round(im8[1],digits=3),nsmall=0)),
               (format(round(summary(plmm12)$coefficients[8,4],digits=3),nsmall=0)),
              0,
               (format(round(summary(plmm14)$coefficients[8,4],digits=3),nsmall=0))),
-            
+
             c((format(round(sum(plmm8$coefficients[9]),digits=3),nsmall=0)),
               (format(round(sum(plmm9$coefficients[9]),digits=3),nsmall=0)),
             0,
@@ -3662,7 +3663,7 @@ fe4<- rbind(c((format(round(im8[1],digits=3),nsmall=0)),
               (format(round(summary(plmm12)$coefficients[9,4],digits=3),nsmall=0)),
              0,
               (format(round(summary(plmm14)$coefficients[9,4],digits=3),nsmall=0))),
-            
+
             c((format(round(sum(plmm8$coefficients[10]),digits=3),nsmall=0)),
               (format(round(sum(plmm9$coefficients[10]),digits=3),nsmall=0)),
             0,
@@ -3684,7 +3685,7 @@ fe4<- rbind(c((format(round(im8[1],digits=3),nsmall=0)),
               (format(round(summary(plmm12)$coefficients[10,4],digits=3),nsmall=0)),
              0,
               (format(round(summary(plmm14)$coefficients[10,4],digits=3),nsmall=0))),
-            
+
             c((format(round(sum(plmm8$coefficients[11]),digits=3),nsmall=0)),
               (format(round(sum(plmm9$coefficients[11]),digits=3),nsmall=0)),
              0,
@@ -3706,7 +3707,7 @@ fe4<- rbind(c((format(round(im8[1],digits=3),nsmall=0)),
               (format(round(summary(plmm12)$coefficients[11,4],digits=3),nsmall=0)),
            0,
               (format(round(summary(plmm14)$coefficients[11,4],digits=3),nsmall=0))),
-            
+
             c((format(round(sum(plmm8$coefficients[12]),digits=3),nsmall=0)),
               (format(round(sum(plmm9$coefficients[12]),digits=3),nsmall=0)),
              0,
@@ -3728,7 +3729,7 @@ fe4<- rbind(c((format(round(im8[1],digits=3),nsmall=0)),
               (format(round(summary(plmm12)$coefficients[12,4],digits=3),nsmall=0)),
              0,
               (format(round(summary(plmm14)$coefficients[12,4],digits=3),nsmall=0))),
-            
+
             c((format(round(sum(plmm8$coefficients[13]),digits=3),nsmall=0)),
               (format(round(sum(plmm9$coefficients[13]),digits=3),nsmall=0)),
              0,
@@ -3750,7 +3751,7 @@ fe4<- rbind(c((format(round(im8[1],digits=3),nsmall=0)),
               (format(round(summary(plmm12)$coefficients[13,4],digits=3),nsmall=0)),
             0,
               (format(round(summary(plmm14)$coefficients[13,4],digits=3),nsmall=0))),
-            
+
             c((format(round(sum(plmm8$coefficients[14]),digits=3),nsmall=0)),
               (format(round(sum(plmm9$coefficients[14]),digits=3),nsmall=0)),
             0,
@@ -3772,7 +3773,7 @@ fe4<- rbind(c((format(round(im8[1],digits=3),nsmall=0)),
               (format(round(summary(plmm12)$coefficients[14,4],digits=3),nsmall=0)),
               0,
               (format(round(summary(plmm14)$coefficients[14,4],digits=3),nsmall=0))),
-            
+
             c((format(round(sum(plmm8$coefficients[15]),digits=3),nsmall=0)),
               (format(round(sum(plmm9$coefficients[15]),digits=3),nsmall=0)),
              0,
@@ -3794,7 +3795,7 @@ fe4<- rbind(c((format(round(im8[1],digits=3),nsmall=0)),
               (format(round(summary(plmm12)$coefficients[15,4],digits=3),nsmall=0)),
               0,
               (format(round(summary(plmm14)$coefficients[15,4],digits=3),nsmall=0))),
-            
+
             c((format(round(sum(plmm8$coefficients[16]),digits=3),nsmall=0)),
               (format(round(sum(plmm9$coefficients[16]),digits=3),nsmall=0)),
              0,
@@ -3816,7 +3817,7 @@ fe4<- rbind(c((format(round(im8[1],digits=3),nsmall=0)),
               (format(round(summary(plmm12)$coefficients[16,4],digits=3),nsmall=0)),
               0,
               (format(round(summary(plmm14)$coefficients[16,4],digits=3),nsmall=0))),
-            
+
             c((format(round(sum(plmm8$coefficients[17]),digits=3),nsmall=0)),
               (format(round(sum(plmm9$coefficients[17]),digits=3),nsmall=0)),
              0,
@@ -3838,7 +3839,7 @@ fe4<- rbind(c((format(round(im8[1],digits=3),nsmall=0)),
               (format(round(summary(plmm12)$coefficients[17,4],digits=3),nsmall=0)),
              0,
               (format(round(summary(plmm14)$coefficients[17,4],digits=3),nsmall=0))),
-            
+
             c((format(round(sum(plmm8$coefficients[18]),digits=3),nsmall=0)),
               (format(round(sum(plmm9$coefficients[18]),digits=3),nsmall=0)),
              0,
@@ -3860,7 +3861,7 @@ fe4<- rbind(c((format(round(im8[1],digits=3),nsmall=0)),
               (format(round(summary(plmm12)$coefficients[18,4],digits=3),nsmall=0)),
              0,
               (format(round(summary(plmm14)$coefficients[18,4],digits=3),nsmall=0))),
-            
+
             c((format(round(sum(plmm8$coefficients[19]),digits=3),nsmall=0)),
               (format(round(sum(plmm9$coefficients[19]),digits=3),nsmall=0)),
              0,
@@ -3882,7 +3883,7 @@ fe4<- rbind(c((format(round(im8[1],digits=3),nsmall=0)),
               (format(round(summary(plmm12)$coefficients[19,4],digits=3),nsmall=0)),
              0,
               (format(round(summary(plmm14)$coefficients[19,4],digits=3),nsmall=0))),
-            
+
             c((format(round(sum(plmm8$coefficients[20]),digits=3),nsmall=0)),
               (format(round(sum(plmm9$coefficients[20]),digits=3),nsmall=0)),
              0,
@@ -3904,8 +3905,8 @@ fe4<- rbind(c((format(round(im8[1],digits=3),nsmall=0)),
               (format(round(summary(plmm12)$coefficients[20,4],digits=3),nsmall=0)),
              0,
               (format(round(summary(plmm14)$coefficients[20,4],digits=3),nsmall=0))),
-          
-            
+
+
             c((format(round(summary(plmm8)$r.squared[1],digits=3),nsmall=0)),
               (format(round(summary(plmm9)$r.squared[1],digits=3),nsmall=0)),
               (format(round(summary(plmm10)$r.squared[1],digits=3),nsmall=0)),
@@ -3932,7 +3933,7 @@ fe4<- rbind(c((format(round(im8[1],digits=3),nsmall=0)),
 
 ##################################################################################################################
 ####################### BETWEEN DEALER --- FOCUS ON FARMER'S GENDER ##############################################
-###  Question 2 
+###  Question 2
 
 rating_dyads <- read.csv(paste(path_2,"/papers/perceptions/data_seed_systems/data/farmer/rating_dyads.csv", sep = "/"))
 ##Farmers' dataset
@@ -3947,16 +3948,16 @@ between_dealer <- merge(rating_dyads, farmers_seed, by="shop_ID")
 #create gender dummy
 between_dealer$farmergen <- ifelse(between_dealer$Check2.check.maize.q15 == "Male", 1, 0)
 
-###farmer characteristics for controls 
+###farmer characteristics for controls
 between_dealer$educ_f <- 0
-between_dealer$educ_f[between_dealer$Check2.check.maize.q17=="c" | between_dealer$Check2.check.maize.q17=="d" | between_dealer$Check2.check.maize.q17=="e" | 
-                        between_dealer$Check2.check.maize.q17=="f"  ] <- 1 #educated farmers -- finished primary educ 
-between_dealer$educ_f[ between_dealer$Check2.check.maize.q17=="g" ] <- NA 
-table(between_dealer$educ_f) 
+between_dealer$educ_f[between_dealer$Check2.check.maize.q17=="c" | between_dealer$Check2.check.maize.q17=="d" | between_dealer$Check2.check.maize.q17=="e" |
+                        between_dealer$Check2.check.maize.q17=="f"  ] <- 1 #educated farmers -- finished primary educ
+between_dealer$educ_f[ between_dealer$Check2.check.maize.q17=="g" ] <- NA
+table(between_dealer$educ_f)
 
-between_dealer$married <- ifelse(between_dealer$Check2.check.maize.q16 == 'a', 1, 0)  #married farmers 
+between_dealer$married <- ifelse(between_dealer$Check2.check.maize.q16 == 'a', 1, 0)  #married farmers
 
-#age of farmers 
+#age of farmers
 between_dealer$Check2.check.maize.q14[ between_dealer$Check2.check.maize.q14==999 ] <- NA
 summary(between_dealer$Check2.check.maize.q14 )
 
@@ -4009,16 +4010,16 @@ betwd <- merge(reviews_bd, baseline_dealer, by="shop_ID")
 
 ###dealer characteristics for  controls
 
-#education of dealers 
+#education of dealers
 table(betwd$maize.owner.agree.educ) #5 are g which is Other
 betwd$prim <- 0
 #betwd$prim[betwd$maize.owner.agree.educ=="c"|betwd$maize.owner.agree.educ=="d"|betwd$maize.owner.agree.educ=="e"|betwd$maize.owner.agree.educ=="f"]<- 1
 
-#finished secondary educ --- e and f ; a,b,c,d --- did not finish secondary educ 
+#finished secondary educ --- e and f ; a,b,c,d --- did not finish secondary educ
 betwd$prim[betwd$maize.owner.agree.educ=="e"|betwd$maize.owner.agree.educ=="f"] <- 1
 betwd$prim[betwd$maize.owner.agree.educ=="g"]<- NA
 table(betwd$prim)
-#73 ARE 1 --- 38.8 percent 
+#73 ARE 1 --- 38.8 percent
 
 #age of dealer
 summary(betwd$maize.owner.agree.age)
@@ -4030,12 +4031,12 @@ table(betwd$maize.owner.agree.q3)
 betwd$maize.owner.agree.q3[betwd$maize.owner.agree.q3==999] <- NA
 summary(betwd$maize.owner.agree.q3)
 
-#distance of shop to nearest murram road 
+#distance of shop to nearest murram road
 table(betwd$maize.owner.agree.q4)
 
-#selling only farm inputs 
+#selling only farm inputs
 table(betwd$maize.owner.agree.q5)
-betwd$inputsale<- ifelse(betwd$maize.owner.agree.q5== 'Yes', 1, 0)  
+betwd$inputsale<- ifelse(betwd$maize.owner.agree.q5== 'Yes', 1, 0)
 
 #Q8. When was this agro-input shop established? (year)
 betwd$years_shop <- 2020 - as.numeric(as.character(substr(betwd$maize.owner.agree.q8, start=1, stop=4)))
@@ -4043,37 +4044,37 @@ betwd$years_shop <- 2020 - as.numeric(as.character(substr(betwd$maize.owner.agre
 #seed stored in dedicated area?
 betwd$maize.owner.agree.q69
 betwd$dedarea<-as.character(betwd$maize.owner.agree.temp.q69)
-betwd$dedicated_area<- ifelse(betwd$dedarea== 'Yes', 1, 0)  
+betwd$dedicated_area<- ifelse(betwd$dedarea== 'Yes', 1, 0)
 table(betwd$dedicated_area)
 
 #problem with rats or pests?
 betwd$maize.owner.agree.q71
 betwd$pest<-as.character(betwd$maize.owner.agree.temp.q71)
-betwd$pest_prob<- ifelse(betwd$pest== 'No', 1, 0)  
+betwd$pest_prob<- ifelse(betwd$pest== 'No', 1, 0)
 table(betwd$pest_prob)
 
-#roof leak proof?  
+#roof leak proof?
 betwd$maize.owner.agree.q72
 betwd$roof<-as.character(betwd$maize.owner.agree.temp.q72)
-betwd$leakproof<- ifelse(betwd$roof== 'Yes', 1, 0)  
+betwd$leakproof<- ifelse(betwd$roof== 'Yes', 1, 0)
 table(betwd$leakproof)
 
 #roof insulated?
 betwd$maize.owner.agree.q73
 betwd$roof_insu<-as.character(betwd$maize.owner.agree.temp.q73)
-betwd$roof_insu<- ifelse(betwd$roof_insu== 'Yes', 1, 0)  
+betwd$roof_insu<- ifelse(betwd$roof_insu== 'Yes', 1, 0)
 table(betwd$roof_insu)
 
 #walls insulated?
 betwd$maize.owner.agree.q74
 betwd$wall_insu<-as.character(betwd$maize.owner.agree.temp.q74)
-betwd$wall_heatproof<- ifelse(betwd$wall_insu== 'Yes', 1, 0)  
+betwd$wall_heatproof<- ifelse(betwd$wall_insu== 'Yes', 1, 0)
 table(betwd$wall_heatproof)
 
 #area ventilated?
 betwd$maize.owner.agree.q75
 betwd$vent<-as.character(betwd$maize.owner.agree.temp.q75)
-betwd$ventilation<- ifelse(betwd$vent== 'Yes', 1, 0)  
+betwd$ventilation<- ifelse(betwd$vent== 'Yes', 1, 0)
 table(betwd$ventilation)
 
 #Q78. Lighting conditions in area where seed is stored?
@@ -4090,14 +4091,14 @@ table(betwd$badstored)
 #Q80. Do you see maize seed that is stored in open bags or containers?
 betwd$maize.owner.agree.q80
 betwd$open<-as.character(betwd$maize.owner.agree.temp.q80)
-betwd$open_storage<- ifelse(betwd$open== 'No', 1, 0)  
+betwd$open_storage<- ifelse(betwd$open== 'No', 1, 0)
 table(betwd$open_storage)
 
-#Q81. Do you see any official certificates displayed in the store (eg that the shop was inspected ,that the owner attended trainings 
+#Q81. Do you see any official certificates displayed in the store (eg that the shop was inspected ,that the owner attended trainings
 #or that the business is registered with some association)
 betwd$maize.owner.agree.q81
 betwd$cert<-as.character(betwd$maize.owner.agree.temp.q81)
-betwd$cert<- ifelse(betwd$cert== 'Yes', 1, 0)  
+betwd$cert<- ifelse(betwd$cert== 'Yes', 1, 0)
 table(betwd$cert)
 
 #Q82. On a scale of 1 to 5, rate this shop in terms of cleanness and professionality 1 poor 5 excellent
@@ -4106,7 +4107,7 @@ table(betwd$shop_rate)
 
 #Q96. Since last season, did you receive any complaint from a customer that seed you sold was not good?
 table(betwd$maize.owner.agree.q96)
-betwd$complaint<- ifelse(betwd$maize.owner.agree.q96== 'No', 1, 0)  
+betwd$complaint<- ifelse(betwd$maize.owner.agree.q96== 'No', 1, 0)
 table(betwd$complaint)
 
 #Q70. Enter the temperature in the seed store (where seed is stored)
@@ -4115,7 +4116,7 @@ betwd$maize.owner.agree.q70[betwd$maize.owner.agree.q70==999] <- NA
 betwd$temp<-betwd$maize.owner.agree.q70
 
 
-#### regressions without controls - seed related ratings 
+#### regressions without controls - seed related ratings
 
 bd1<-lm(score_bd~gender_avgf , data = betwd)
 sebd1<- sqrt(diag(vcov(bd1)))
@@ -4166,7 +4167,7 @@ s_deal1<- rbind(c((format(round(sum(bd1$coefficients[1]),digits=3),nsmall=0)),
              (format(round(summary(bd6)$coefficients[1,4],digits=3),nsmall=0)),
              (format(round(summary(bd7)$coefficients[1,4],digits=3),nsmall=0)),
              (format(round(summary(bd8)$coefficients[1,4],digits=3),nsmall=0))),
-           
+
            c((format(round(sum(bd1$coefficients[2]),digits=3),nsmall=0)),
              #(format(round(sum(bd2$coefficients[2]),digits=3),nsmall=0)),
              (format(round(sum(bd3$coefficients[2]),digits=3),nsmall=0)),
@@ -4191,7 +4192,7 @@ s_deal1<- rbind(c((format(round(sum(bd1$coefficients[1]),digits=3),nsmall=0)),
              (format(round(summary(bd6)$coefficients[2,4],digits=3),nsmall=0)),
              (format(round(summary(bd7)$coefficients[2,4],digits=3),nsmall=0)),
              (format(round(summary(bd8)$coefficients[2,4],digits=3),nsmall=0))),
-           
+
            c((format(round(summary(bd1)$r.squared,digits=3),nsmall=0)),
              #(format(round(summary(bd2)$r.squared,digits=3),nsmall=0)),
              (format(round(summary(bd3)$r.squared,digits=3),nsmall=0)),
@@ -4229,79 +4230,79 @@ summary(lm(disease_resistent~gender_avgf , data = betwd))
 summary(lm(early_maturing~gender_avgf , data = betwd))
 summary(lm(germination~gender_avgf , data = betwd))
 
-#### regressions with farmer's gender (averaged) and dealer characteristics  --- seed related ratings 
+#### regressions with farmer's gender (averaged) and dealer characteristics  --- seed related ratings
 
-summary(lm(score_bd~gender_avgf +maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob 
+summary(lm(score_bd~gender_avgf +maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob
            +roof_insu+ wall_heatproof +ventilation +badlighting +badstored+ open_storage+ cert+ shop_rate
            + complaint + temp+leakproof, data = betwd))
 
-#summary(lm(quality~gender_avgf + maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob 
+#summary(lm(quality~gender_avgf + maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob
  #          +roof_insu+ wall_heatproof +ventilation +badlighting +badstored+ open_storage+ cert+ shop_rate
   #         + complaint + temp+leakproof, data = betwd))
 
-summary(lm(general~gender_avgf + maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob 
+summary(lm(general~gender_avgf + maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob
            +roof_insu+ wall_heatproof +ventilation +badlighting +badstored+ open_storage+ cert+ shop_rate
            + complaint + temp+leakproof, data = betwd))
 
-summary(lm(yield~gender_avgf + maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob 
+summary(lm(yield~gender_avgf + maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob
            +roof_insu+ wall_heatproof +ventilation +badlighting +badstored+ open_storage+ cert+ shop_rate
            + complaint + temp+leakproof, data = betwd))
 
-summary(lm(drought_resistent~gender_avgf + maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob 
+summary(lm(drought_resistent~gender_avgf + maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob
            +roof_insu+ wall_heatproof +ventilation +badlighting +badstored+ open_storage+ cert+ shop_rate
            + complaint + temp+leakproof, data = betwd))
 
-summary(lm(disease_resistent~gender_avgf + maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob 
+summary(lm(disease_resistent~gender_avgf + maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob
            +roof_insu+ wall_heatproof +ventilation +badlighting +badstored+ open_storage+ cert+ shop_rate
            + complaint + temp+leakproof, data = betwd))
 
-summary(lm(early_maturing~gender_avgf + maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob 
+summary(lm(early_maturing~gender_avgf + maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob
            +roof_insu+ wall_heatproof +ventilation +badlighting +badstored+ open_storage+ cert+ shop_rate
            + complaint + temp+leakproof, data = betwd))
 
-summary(lm(germination~gender_avgf + maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob 
+summary(lm(germination~gender_avgf + maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob
            +roof_insu+ wall_heatproof +ventilation +badlighting +badstored+ open_storage+ cert+ shop_rate
            + complaint + temp+leakproof, data = betwd))
 
 
-#### regressions with farmer's gender (averaged) + dealer characteristics  --- seed related ratings 
+#### regressions with farmer's gender (averaged) + dealer characteristics  --- seed related ratings
 
-bd9<-lm(score_bd~gender_avgf +maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob 
+bd9<-lm(score_bd~gender_avgf +maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob
         +roof_insu+ wall_heatproof +ventilation +badlighting +badstored+ open_storage+ cert+ shop_rate
         + complaint + temp+leakproof, data = betwd)
 sebd9<- sqrt(diag(vcov(bd9)))
 
-#bd10<-lm(quality~gender_avgf +  farmer_educ+farmer_married+farmer_age+farmer_tarmac +maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob 
+#bd10<-lm(quality~gender_avgf +  farmer_educ+farmer_married+farmer_age+farmer_tarmac +maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob
  #          +roof_insu+ wall_heatproof +ventilation +badlighting +badstored+ open_storage+ cert+ shop_rate
   #         + complaint + temp+leakproof, data = betwd)
 #sebd10<- sqrt(diag(vcov(bd10)))
 
-bd11<- lm(general~gender_avgf  +maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob 
+bd11<- lm(general~gender_avgf  +maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob
            +roof_insu+ wall_heatproof +ventilation +badlighting +badstored+ open_storage+ cert+ shop_rate
            + complaint + temp+leakproof, data = betwd)
 sebd11<- sqrt(diag(vcov(bd11)))
 
-bd12<-lm(yield~gender_avgf + maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob 
+bd12<-lm(yield~gender_avgf + maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob
            +roof_insu+ wall_heatproof +ventilation +badlighting +badstored+ open_storage+ cert+ shop_rate
            + complaint + temp+leakproof, data = betwd)
 sebd12<- sqrt(diag(vcov(bd12)))
 
-bd13<-lm(drought_resistent~gender_avgf +  maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob 
+bd13<-lm(drought_resistent~gender_avgf +  maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob
            +roof_insu+ wall_heatproof +ventilation +badlighting +badstored+ open_storage+ cert+ shop_rate
            + complaint + temp+leakproof, data = betwd)
 sebd13<- sqrt(diag(vcov(bd13)))
 
-bd14<-lm(disease_resistent~gender_avgf  +maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob 
+bd14<-lm(disease_resistent~gender_avgf  +maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob
            +roof_insu+ wall_heatproof +ventilation +badlighting +badstored+ open_storage+ cert+ shop_rate
            + complaint + temp+leakproof, data = betwd)
 sebd14<- sqrt(diag(vcov(bd14)))
 
-bd15<-lm(early_maturing~gender_avgf + maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob 
+bd15<-lm(early_maturing~gender_avgf + maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob
            +roof_insu+ wall_heatproof +ventilation +badlighting +badstored+ open_storage+ cert+ shop_rate
            + complaint + temp+leakproof, data = betwd)
 sebd15<- sqrt(diag(vcov(bd15)))
 
-bd16<-lm(germination~gender_avgf+maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob 
+bd16<-lm(germination~gender_avgf+maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob
            +roof_insu+ wall_heatproof +ventilation +badlighting +badstored+ open_storage+ cert+ shop_rate
            + complaint + temp+leakproof, data = betwd)
 sebd16<- sqrt(diag(vcov(bd16)))
@@ -4331,7 +4332,7 @@ s_deal2<- rbind(c((format(round(sum(bd9$coefficients[1]),digits=3),nsmall=0)),
                   (format(round(summary(bd14)$coefficients[1,4],digits=3),nsmall=0)),
                   (format(round(summary(bd15)$coefficients[1,4],digits=3),nsmall=0)),
                   (format(round(summary(bd16)$coefficients[1,4],digits=3),nsmall=0))),
-                
+
                 c((format(round(sum(bd9$coefficients[2]),digits=3),nsmall=0)),
                 #  (format(round(sum(bd10$coefficients[2]),digits=3),nsmall=0)),
                   (format(round(sum(bd11$coefficients[2]),digits=3),nsmall=0)),
@@ -4356,7 +4357,7 @@ s_deal2<- rbind(c((format(round(sum(bd9$coefficients[1]),digits=3),nsmall=0)),
                   (format(round(summary(bd14)$coefficients[2,4],digits=3),nsmall=0)),
                   (format(round(summary(bd15)$coefficients[2,4],digits=3),nsmall=0)),
                   (format(round(summary(bd16)$coefficients[2,4],digits=3),nsmall=0))),
-                
+
                 c((format(round(sum(bd9$coefficients[3]),digits=3),nsmall=0)),
                  # (format(round(sum(bd10$coefficients[3]),digits=3),nsmall=0)),
                   (format(round(sum(bd11$coefficients[3]),digits=3),nsmall=0)),
@@ -4381,7 +4382,7 @@ s_deal2<- rbind(c((format(round(sum(bd9$coefficients[1]),digits=3),nsmall=0)),
                   (format(round(summary(bd14)$coefficients[3,4],digits=3),nsmall=0)),
                   (format(round(summary(bd15)$coefficients[3,4],digits=3),nsmall=0)),
                   (format(round(summary(bd16)$coefficients[3,4],digits=3),nsmall=0))),
-                
+
                 c((format(round(sum(bd9$coefficients[4]),digits=3),nsmall=0)),
                   #(format(round(sum(bd10$coefficients[4]),digits=3),nsmall=0)),
                   (format(round(sum(bd11$coefficients[4]),digits=3),nsmall=0)),
@@ -4406,7 +4407,7 @@ s_deal2<- rbind(c((format(round(sum(bd9$coefficients[1]),digits=3),nsmall=0)),
                   (format(round(summary(bd14)$coefficients[4,4],digits=3),nsmall=0)),
                   (format(round(summary(bd15)$coefficients[4,4],digits=3),nsmall=0)),
                   (format(round(summary(bd16)$coefficients[4,4],digits=3),nsmall=0))),
-                
+
                 c((format(round(sum(bd9$coefficients[5]),digits=3),nsmall=0)),
                  # (format(round(sum(bd10$coefficients[5]),digits=3),nsmall=0)),
                   (format(round(sum(bd11$coefficients[5]),digits=3),nsmall=0)),
@@ -4431,7 +4432,7 @@ s_deal2<- rbind(c((format(round(sum(bd9$coefficients[1]),digits=3),nsmall=0)),
                   (format(round(summary(bd14)$coefficients[5,4],digits=3),nsmall=0)),
                   (format(round(summary(bd15)$coefficients[5,4],digits=3),nsmall=0)),
                   (format(round(summary(bd16)$coefficients[5,4],digits=3),nsmall=0))),
-                
+
                 c((format(round(sum(bd9$coefficients[6]),digits=3),nsmall=0)),
                  # (format(round(sum(bd10$coefficients[6]),digits=3),nsmall=0)),
                   (format(round(sum(bd11$coefficients[6]),digits=3),nsmall=0)),
@@ -4456,7 +4457,7 @@ s_deal2<- rbind(c((format(round(sum(bd9$coefficients[1]),digits=3),nsmall=0)),
                   (format(round(summary(bd14)$coefficients[6,4],digits=3),nsmall=0)),
                   (format(round(summary(bd15)$coefficients[6,4],digits=3),nsmall=0)),
                   (format(round(summary(bd16)$coefficients[6,4],digits=3),nsmall=0))),
-                
+
                 c((format(round(sum(bd9$coefficients[7]),digits=3),nsmall=0)),
                  # (format(round(sum(bd10$coefficients[7]),digits=3),nsmall=0)),
                   (format(round(sum(bd11$coefficients[7]),digits=3),nsmall=0)),
@@ -4481,7 +4482,7 @@ s_deal2<- rbind(c((format(round(sum(bd9$coefficients[1]),digits=3),nsmall=0)),
                   (format(round(summary(bd14)$coefficients[7,4],digits=3),nsmall=0)),
                   (format(round(summary(bd15)$coefficients[7,4],digits=3),nsmall=0)),
                   (format(round(summary(bd16)$coefficients[7,4],digits=3),nsmall=0))),
-                
+
                 c((format(round(sum(bd9$coefficients[8]),digits=3),nsmall=0)),
                  # (format(round(sum(bd10$coefficients[8]),digits=3),nsmall=0)),
                   (format(round(sum(bd11$coefficients[8]),digits=3),nsmall=0)),
@@ -4506,7 +4507,7 @@ s_deal2<- rbind(c((format(round(sum(bd9$coefficients[1]),digits=3),nsmall=0)),
                   (format(round(summary(bd14)$coefficients[8,4],digits=3),nsmall=0)),
                   (format(round(summary(bd15)$coefficients[8,4],digits=3),nsmall=0)),
                   (format(round(summary(bd16)$coefficients[8,4],digits=3),nsmall=0))),
-                
+
                 c((format(round(sum(bd9$coefficients[9]),digits=3),nsmall=0)),
                  # (format(round(sum(bd10$coefficients[9]),digits=3),nsmall=0)),
                   (format(round(sum(bd11$coefficients[9]),digits=3),nsmall=0)),
@@ -4531,7 +4532,7 @@ s_deal2<- rbind(c((format(round(sum(bd9$coefficients[1]),digits=3),nsmall=0)),
                   (format(round(summary(bd14)$coefficients[9,4],digits=3),nsmall=0)),
                   (format(round(summary(bd15)$coefficients[9,4],digits=3),nsmall=0)),
                   (format(round(summary(bd16)$coefficients[9,4],digits=3),nsmall=0))),
-                
+
                 c((format(round(sum(bd9$coefficients[10]),digits=3),nsmall=0)),
                  # (format(round(sum(bd10$coefficients[10]),digits=3),nsmall=0)),
                   (format(round(sum(bd11$coefficients[10]),digits=3),nsmall=0)),
@@ -4556,7 +4557,7 @@ s_deal2<- rbind(c((format(round(sum(bd9$coefficients[1]),digits=3),nsmall=0)),
                   (format(round(summary(bd14)$coefficients[10,4],digits=3),nsmall=0)),
                   (format(round(summary(bd15)$coefficients[10,4],digits=3),nsmall=0)),
                   (format(round(summary(bd16)$coefficients[10,4],digits=3),nsmall=0))),
-                
+
                 c((format(round(sum(bd9$coefficients[11]),digits=3),nsmall=0)),
                  # (format(round(sum(bd10$coefficients[11]),digits=3),nsmall=0)),
                   (format(round(sum(bd11$coefficients[11]),digits=3),nsmall=0)),
@@ -4581,7 +4582,7 @@ s_deal2<- rbind(c((format(round(sum(bd9$coefficients[1]),digits=3),nsmall=0)),
                   (format(round(summary(bd14)$coefficients[11,4],digits=3),nsmall=0)),
                   (format(round(summary(bd15)$coefficients[11,4],digits=3),nsmall=0)),
                   (format(round(summary(bd16)$coefficients[11,4],digits=3),nsmall=0))),
-                
+
                 c((format(round(sum(bd9$coefficients[12]),digits=3),nsmall=0)),
                 #  (format(round(sum(bd10$coefficients[12]),digits=3),nsmall=0)),
                   (format(round(sum(bd11$coefficients[12]),digits=3),nsmall=0)),
@@ -4606,7 +4607,7 @@ s_deal2<- rbind(c((format(round(sum(bd9$coefficients[1]),digits=3),nsmall=0)),
                   (format(round(summary(bd14)$coefficients[12,4],digits=3),nsmall=0)),
                   (format(round(summary(bd15)$coefficients[12,4],digits=3),nsmall=0)),
                   (format(round(summary(bd16)$coefficients[12,4],digits=3),nsmall=0))),
-                
+
                 c((format(round(sum(bd9$coefficients[13]),digits=3),nsmall=0)),
                  # (format(round(sum(bd10$coefficients[13]),digits=3),nsmall=0)),
                   (format(round(sum(bd11$coefficients[13]),digits=3),nsmall=0)),
@@ -4631,7 +4632,7 @@ s_deal2<- rbind(c((format(round(sum(bd9$coefficients[1]),digits=3),nsmall=0)),
                   (format(round(summary(bd14)$coefficients[13,4],digits=3),nsmall=0)),
                   (format(round(summary(bd15)$coefficients[13,4],digits=3),nsmall=0)),
                   (format(round(summary(bd16)$coefficients[13,4],digits=3),nsmall=0))),
-                
+
                 c((format(round(sum(bd9$coefficients[14]),digits=3),nsmall=0)),
                 #  (format(round(sum(bd10$coefficients[14]),digits=3),nsmall=0)),
                   (format(round(sum(bd11$coefficients[14]),digits=3),nsmall=0)),
@@ -4656,7 +4657,7 @@ s_deal2<- rbind(c((format(round(sum(bd9$coefficients[1]),digits=3),nsmall=0)),
                   (format(round(summary(bd14)$coefficients[14,4],digits=3),nsmall=0)),
                   (format(round(summary(bd15)$coefficients[14,4],digits=3),nsmall=0)),
                   (format(round(summary(bd16)$coefficients[14,4],digits=3),nsmall=0))),
-                
+
                 c((format(round(sum(bd9$coefficients[15]),digits=3),nsmall=0)),
                  # (format(round(sum(bd10$coefficients[15]),digits=3),nsmall=0)),
                   (format(round(sum(bd11$coefficients[15]),digits=3),nsmall=0)),
@@ -4681,7 +4682,7 @@ s_deal2<- rbind(c((format(round(sum(bd9$coefficients[1]),digits=3),nsmall=0)),
                   (format(round(summary(bd14)$coefficients[15,4],digits=3),nsmall=0)),
                   (format(round(summary(bd15)$coefficients[15,4],digits=3),nsmall=0)),
                   (format(round(summary(bd16)$coefficients[15,4],digits=3),nsmall=0))),
-                
+
                 c((format(round(sum(bd9$coefficients[16]),digits=3),nsmall=0)),
                  # (format(round(sum(bd10$coefficients[16]),digits=3),nsmall=0)),
                   (format(round(sum(bd11$coefficients[16]),digits=3),nsmall=0)),
@@ -4706,7 +4707,7 @@ s_deal2<- rbind(c((format(round(sum(bd9$coefficients[1]),digits=3),nsmall=0)),
                   (format(round(summary(bd14)$coefficients[16,4],digits=3),nsmall=0)),
                   (format(round(summary(bd15)$coefficients[16,4],digits=3),nsmall=0)),
                   (format(round(summary(bd16)$coefficients[16,4],digits=3),nsmall=0))),
-                
+
                 c((format(round(sum(bd9$coefficients[17]),digits=3),nsmall=0)),
                  # (format(round(sum(bd10$coefficients[17]),digits=3),nsmall=0)),
                   (format(round(sum(bd11$coefficients[17]),digits=3),nsmall=0)),
@@ -4731,7 +4732,7 @@ s_deal2<- rbind(c((format(round(sum(bd9$coefficients[1]),digits=3),nsmall=0)),
                   (format(round(summary(bd14)$coefficients[17,4],digits=3),nsmall=0)),
                   (format(round(summary(bd15)$coefficients[17,4],digits=3),nsmall=0)),
                   (format(round(summary(bd16)$coefficients[17,4],digits=3),nsmall=0))),
-                
+
                 c((format(round(sum(bd9$coefficients[18]),digits=3),nsmall=0)),
                 #  (format(round(sum(bd10$coefficients[18]),digits=3),nsmall=0)),
                   (format(round(sum(bd11$coefficients[18]),digits=3),nsmall=0)),
@@ -4756,7 +4757,7 @@ s_deal2<- rbind(c((format(round(sum(bd9$coefficients[1]),digits=3),nsmall=0)),
                   (format(round(summary(bd14)$coefficients[18,4],digits=3),nsmall=0)),
                   (format(round(summary(bd15)$coefficients[18,4],digits=3),nsmall=0)),
                   (format(round(summary(bd16)$coefficients[18,4],digits=3),nsmall=0))),
-                
+
                 c((format(round(sum(bd9$coefficients[19]),digits=3),nsmall=0)),
                  # (format(round(sum(bd10$coefficients[19]),digits=3),nsmall=0)),
                   (format(round(sum(bd11$coefficients[19]),digits=3),nsmall=0)),
@@ -4781,7 +4782,7 @@ s_deal2<- rbind(c((format(round(sum(bd9$coefficients[1]),digits=3),nsmall=0)),
                   (format(round(summary(bd14)$coefficients[19,4],digits=3),nsmall=0)),
                   (format(round(summary(bd15)$coefficients[19,4],digits=3),nsmall=0)),
                   (format(round(summary(bd16)$coefficients[19,4],digits=3),nsmall=0))),
-                
+
                 c((format(round(sum(bd9$coefficients[20]),digits=3),nsmall=0)),
                 #  (format(round(sum(bd10$coefficients[20]),digits=3),nsmall=0)),
                   (format(round(sum(bd11$coefficients[20]),digits=3),nsmall=0)),
@@ -4806,7 +4807,7 @@ s_deal2<- rbind(c((format(round(sum(bd9$coefficients[1]),digits=3),nsmall=0)),
                   (format(round(summary(bd14)$coefficients[20,4],digits=3),nsmall=0)),
                   (format(round(summary(bd15)$coefficients[20,4],digits=3),nsmall=0)),
                   (format(round(summary(bd16)$coefficients[20,4],digits=3),nsmall=0))),
-                
+
                 c((format(round(sum(bd9$coefficients[21]),digits=3),nsmall=0)),
                  # (format(round(sum(bd10$coefficients[21]),digits=3),nsmall=0)),
                   (format(round(sum(bd11$coefficients[21]),digits=3),nsmall=0)),
@@ -4831,9 +4832,9 @@ s_deal2<- rbind(c((format(round(sum(bd9$coefficients[1]),digits=3),nsmall=0)),
                   (format(round(summary(bd14)$coefficients[21,4],digits=3),nsmall=0)),
                   (format(round(summary(bd15)$coefficients[21,4],digits=3),nsmall=0)),
                   (format(round(summary(bd16)$coefficients[21,4],digits=3),nsmall=0))),
-              
-                
-               
+
+
+
                 c((format(round(summary(bd9)$r.squared,digits=3),nsmall=0)),
                 #  (format(round(summary(bd10)$r.squared,digits=3),nsmall=0)),
                   (format(round(summary(bd11)$r.squared,digits=3),nsmall=0)),
@@ -4862,11 +4863,11 @@ s_deal2<- rbind(c((format(round(sum(bd9$coefficients[1]),digits=3),nsmall=0)),
 
 
 
-#NON-SEED RELATED RATINGS 
+#NON-SEED RELATED RATINGS
 ##########################################
 
 
-#### regressions without controls - non-seed related ratings 
+#### regressions without controls - non-seed related ratings
 bdn1<-lm(avg_rating~gender_avgf , data = betwd)
 sebdn1<- sqrt(diag(vcov(bdn1)))
 
@@ -4935,7 +4936,7 @@ s_deal3<- rbind(c((format(round(sum(bdn1$coefficients[1]),digits=3),nsmall=0)),
                   (format(round(summary(bdn5)$coefficients[2,4],digits=3),nsmall=0)),
                   (format(round(summary(bdn6)$coefficients[2,4],digits=3),nsmall=0)),
                   (format(round(summary(bdn7)$coefficients[2,4],digits=3),nsmall=0))),
-                
+
                 c((format(round(summary(bdn1)$r.squared,digits=3),nsmall=0)),
                   (format(round(summary(bdn2)$r.squared,digits=3),nsmall=0)),
                   (format(round(summary(bdn3)$r.squared,digits=3),nsmall=0)),
@@ -4969,45 +4970,45 @@ summary(lm(stock~gender_avgf , data = betwd))
 summary(lm(reputation~gender_avgf , data = betwd))
 
 
-#### regressions with farmer's gender (averaged) and dealer characteristics  --- non-seed related ratings 
+#### regressions with farmer's gender (averaged) and dealer characteristics  --- non-seed related ratings
 
-summary(lm(avg_rating~gender_avgf +maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob 
+summary(lm(avg_rating~gender_avgf +maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob
            +roof_insu+ wall_heatproof +ventilation +badlighting +badstored+ open_storage+ cert+ shop_rate
            + complaint + temp+leakproof, data = betwd))
 
-summary(lm(general_nonseed~gender_avgf + maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob 
+summary(lm(general_nonseed~gender_avgf + maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob
            +roof_insu+ wall_heatproof +ventilation +badlighting +badstored+ open_storage+ cert+ shop_rate
            + complaint + temp+leakproof, data = betwd))
 
-summary(lm(location~gender_avgf + maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob 
+summary(lm(location~gender_avgf + maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob
            +roof_insu+ wall_heatproof +ventilation +badlighting +badstored+ open_storage+ cert+ shop_rate
            + complaint + temp+leakproof, data = betwd))
 
-summary(lm(price~gender_avgf + maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob 
+summary(lm(price~gender_avgf + maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob
            +roof_insu+ wall_heatproof +ventilation +badlighting +badstored+ open_storage+ cert+ shop_rate
            + complaint + temp+leakproof, data = betwd))
 
-summary(lm(quality~gender_avgf + maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob 
+summary(lm(quality~gender_avgf + maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob
            +roof_insu+ wall_heatproof +ventilation +badlighting +badstored+ open_storage+ cert+ shop_rate
            + complaint + temp+leakproof, data = betwd))
 
-summary(lm(stock~gender_avgf + maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob 
+summary(lm(stock~gender_avgf + maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob
            +roof_insu+ wall_heatproof +ventilation +badlighting +badstored+ open_storage+ cert+ shop_rate
            + complaint + temp+leakproof, data = betwd))
 
-summary(lm(reputation~gender_avgf + maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob 
+summary(lm(reputation~gender_avgf + maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob
            +roof_insu+ wall_heatproof +ventilation+badlighting +badstored+ open_storage+ cert+ shop_rate
            + complaint + temp+leakproof, data = betwd))
 
 
-#### regressions with farmer's gender (averaged) +dealer characteristics  --- non-seed related ratings 
+#### regressions with farmer's gender (averaged) +dealer characteristics  --- non-seed related ratings
 
-bdn9<-lm(avg_rating~gender_avgf  +maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob 
+bdn9<-lm(avg_rating~gender_avgf  +maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob
            +roof_insu+ wall_heatproof +ventilation +badlighting +badstored+ open_storage+ cert+ shop_rate
            + complaint + temp+leakproof, data = betwd)
 sebdn9<- sqrt(diag(vcov(bdn9)))
 
-bdn10<-lm(general_nonseed~gender_avgf  +maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob 
+bdn10<-lm(general_nonseed~gender_avgf  +maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob
            +roof_insu+ wall_heatproof +ventilation +badlighting +badstored+ open_storage+ cert+ shop_rate
            + complaint + temp+leakproof, data = betwd)
 sebdn10<- sqrt(diag(vcov(bdn10)))
@@ -5015,12 +5016,12 @@ sebdn10<- sqrt(diag(vcov(bdn10)))
 bdn11<-lm(location~gender_avgf +maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4, data = betwd)
 sebdn11<- sqrt(diag(vcov(bdn11)))
 
-bdn12<-lm(price~gender_avgf +maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob 
+bdn12<-lm(price~gender_avgf +maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob
            +roof_insu+ wall_heatproof +ventilation +badlighting +badstored+ open_storage+ cert+ shop_rate
            + complaint + temp+leakproof, data = betwd)
 sebdn12<- sqrt(diag(vcov(bdn12)))
 
-bdn13<-lm(quality~gender_avgf +maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob 
+bdn13<-lm(quality~gender_avgf +maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob
            +roof_insu+ wall_heatproof +ventilation +badlighting +badstored+ open_storage+ cert+ shop_rate
            + complaint + temp+leakproof, data = betwd)
 sebdn13<- sqrt(diag(vcov(bdn13)))
@@ -5028,7 +5029,7 @@ sebdn13<- sqrt(diag(vcov(bdn13)))
 bdn14<-lm(stock~gender_avgf  +maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4, data = betwd)
 sebdn14<- sqrt(diag(vcov(bdn14)))
 
-bdn15<-lm(reputation~gender_avgf  +maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob 
+bdn15<-lm(reputation~gender_avgf  +maize.owner.agree.age +prim +maize.owner.agree.q3 + maize.owner.agree.q4+ inputsale+years_shop +dedicated_area +pest_prob
            +roof_insu+ wall_heatproof +ventilation +badlighting +badstored+ open_storage+ cert+ shop_rate
            + complaint + temp+leakproof, data = betwd)
 sebdn15<- sqrt(diag(vcov(bdn15)))
@@ -5055,7 +5056,7 @@ s_deal4<- rbind(c((format(round(sum(bdn9$coefficients[1]),digits=3),nsmall=0)),
                   (format(round(summary(bdn13)$coefficients[1,4],digits=3),nsmall=0)),
                   (format(round(summary(bdn14)$coefficients[1,4],digits=3),nsmall=0)),
                   (format(round(summary(bdn15)$coefficients[1,4],digits=3),nsmall=0))),
-                
+
                 c((format(round(sum(bdn9$coefficients[2]),digits=3),nsmall=0)),
                   (format(round(sum(bdn10$coefficients[2]),digits=3),nsmall=0)),
                   (format(round(sum(bdn11$coefficients[2]),digits=3),nsmall=0)),
@@ -5077,7 +5078,7 @@ s_deal4<- rbind(c((format(round(sum(bdn9$coefficients[1]),digits=3),nsmall=0)),
                   (format(round(summary(bdn13)$coefficients[2,4],digits=3),nsmall=0)),
                   (format(round(summary(bdn14)$coefficients[2,4],digits=3),nsmall=0)),
                   (format(round(summary(bdn15)$coefficients[2,4],digits=3),nsmall=0))),
-                
+
                 c((format(round(sum(bdn9$coefficients[3]),digits=3),nsmall=0)),
                   (format(round(sum(bdn10$coefficients[3]),digits=3),nsmall=0)),
                   (format(round(sum(bdn11$coefficients[3]),digits=3),nsmall=0)),
@@ -5099,7 +5100,7 @@ s_deal4<- rbind(c((format(round(sum(bdn9$coefficients[1]),digits=3),nsmall=0)),
                   (format(round(summary(bdn13)$coefficients[3,4],digits=3),nsmall=0)),
                   (format(round(summary(bdn14)$coefficients[3,4],digits=3),nsmall=0)),
                   (format(round(summary(bdn15)$coefficients[3,4],digits=3),nsmall=0))),
-                
+
                 c((format(round(sum(bdn9$coefficients[4]),digits=3),nsmall=0)),
                   (format(round(sum(bdn10$coefficients[4]),digits=3),nsmall=0)),
                   (format(round(sum(bdn11$coefficients[4]),digits=3),nsmall=0)),
@@ -5121,7 +5122,7 @@ s_deal4<- rbind(c((format(round(sum(bdn9$coefficients[1]),digits=3),nsmall=0)),
                   (format(round(summary(bdn13)$coefficients[4,4],digits=3),nsmall=0)),
                   (format(round(summary(bdn14)$coefficients[4,4],digits=3),nsmall=0)),
                   (format(round(summary(bdn15)$coefficients[4,4],digits=3),nsmall=0))),
-                
+
                 c((format(round(sum(bdn9$coefficients[5]),digits=3),nsmall=0)),
                   (format(round(sum(bdn10$coefficients[5]),digits=3),nsmall=0)),
                   (format(round(sum(bdn11$coefficients[5]),digits=3),nsmall=0)),
@@ -5143,7 +5144,7 @@ s_deal4<- rbind(c((format(round(sum(bdn9$coefficients[1]),digits=3),nsmall=0)),
                   (format(round(summary(bdn13)$coefficients[5,4],digits=3),nsmall=0)),
                   (format(round(summary(bdn14)$coefficients[5,4],digits=3),nsmall=0)),
                   (format(round(summary(bdn15)$coefficients[5,4],digits=3),nsmall=0))),
-                
+
                 c((format(round(sum(bdn9$coefficients[6]),digits=3),nsmall=0)),
                   (format(round(sum(bdn10$coefficients[6]),digits=3),nsmall=0)),
                   (format(round(sum(bdn11$coefficients[6]),digits=3),nsmall=0)),
@@ -5165,7 +5166,7 @@ s_deal4<- rbind(c((format(round(sum(bdn9$coefficients[1]),digits=3),nsmall=0)),
                   (format(round(summary(bdn13)$coefficients[6,4],digits=3),nsmall=0)),
                   (format(round(summary(bdn14)$coefficients[6,4],digits=3),nsmall=0)),
                   (format(round(summary(bdn15)$coefficients[6,4],digits=3),nsmall=0))),
-                
+
                 c((format(round(sum(bdn9$coefficients[7]),digits=3),nsmall=0)),
                   (format(round(sum(bdn10$coefficients[7]),digits=3),nsmall=0)),
                   0,
@@ -5187,7 +5188,7 @@ s_deal4<- rbind(c((format(round(sum(bdn9$coefficients[1]),digits=3),nsmall=0)),
                   (format(round(summary(bdn13)$coefficients[7,4],digits=3),nsmall=0)),
                 0,
                   (format(round(summary(bdn15)$coefficients[7,4],digits=3),nsmall=0))),
-                
+
                 c((format(round(sum(bdn9$coefficients[8]),digits=3),nsmall=0)),
                   (format(round(sum(bdn10$coefficients[8]),digits=3),nsmall=0)),
                  0,
@@ -5209,7 +5210,7 @@ s_deal4<- rbind(c((format(round(sum(bdn9$coefficients[1]),digits=3),nsmall=0)),
                   (format(round(summary(bdn13)$coefficients[8,4],digits=3),nsmall=0)),
                  0,
                   (format(round(summary(bdn15)$coefficients[8,4],digits=3),nsmall=0))),
-                
+
                 c((format(round(sum(bdn9$coefficients[9]),digits=3),nsmall=0)),
                   (format(round(sum(bdn10$coefficients[9]),digits=3),nsmall=0)),
                  0,
@@ -5231,7 +5232,7 @@ s_deal4<- rbind(c((format(round(sum(bdn9$coefficients[1]),digits=3),nsmall=0)),
                   (format(round(summary(bdn13)$coefficients[9,4],digits=3),nsmall=0)),
                  0,
                   (format(round(summary(bdn15)$coefficients[9,4],digits=3),nsmall=0))),
-                
+
                 c((format(round(sum(bdn9$coefficients[10]),digits=3),nsmall=0)),
                   (format(round(sum(bdn10$coefficients[10]),digits=3),nsmall=0)),
                  0,
@@ -5253,7 +5254,7 @@ s_deal4<- rbind(c((format(round(sum(bdn9$coefficients[1]),digits=3),nsmall=0)),
                   (format(round(summary(bdn13)$coefficients[10,4],digits=3),nsmall=0)),
                  0,
                   (format(round(summary(bdn15)$coefficients[10,4],digits=3),nsmall=0))),
-                
+
                 c((format(round(sum(bdn9$coefficients[11]),digits=3),nsmall=0)),
                   (format(round(sum(bdn10$coefficients[11]),digits=3),nsmall=0)),
                  0,
@@ -5275,7 +5276,7 @@ s_deal4<- rbind(c((format(round(sum(bdn9$coefficients[1]),digits=3),nsmall=0)),
                   (format(round(summary(bdn13)$coefficients[11,4],digits=3),nsmall=0)),
                  0,
                   (format(round(summary(bdn15)$coefficients[11,4],digits=3),nsmall=0))),
-                
+
                 c((format(round(sum(bdn9$coefficients[12]),digits=3),nsmall=0)),
                   (format(round(sum(bdn10$coefficients[12]),digits=3),nsmall=0)),
                  0,
@@ -5297,7 +5298,7 @@ s_deal4<- rbind(c((format(round(sum(bdn9$coefficients[1]),digits=3),nsmall=0)),
                   (format(round(summary(bdn13)$coefficients[12,4],digits=3),nsmall=0)),
                  0,
                   (format(round(summary(bdn15)$coefficients[12,4],digits=3),nsmall=0))),
-                
+
                 c((format(round(sum(bdn9$coefficients[13]),digits=3),nsmall=0)),
                   (format(round(sum(bdn10$coefficients[13]),digits=3),nsmall=0)),
                  0,
@@ -5319,7 +5320,7 @@ s_deal4<- rbind(c((format(round(sum(bdn9$coefficients[1]),digits=3),nsmall=0)),
                   (format(round(summary(bdn13)$coefficients[13,4],digits=3),nsmall=0)),
                  0,
                   (format(round(summary(bdn15)$coefficients[13,4],digits=3),nsmall=0))),
-                
+
                 c((format(round(sum(bdn9$coefficients[14]),digits=3),nsmall=0)),
                   (format(round(sum(bdn10$coefficients[14]),digits=3),nsmall=0)),
                  0,
@@ -5341,7 +5342,7 @@ s_deal4<- rbind(c((format(round(sum(bdn9$coefficients[1]),digits=3),nsmall=0)),
                   (format(round(summary(bdn13)$coefficients[14,4],digits=3),nsmall=0)),
                   0,
                   (format(round(summary(bdn15)$coefficients[14,4],digits=3),nsmall=0))),
-                
+
                 c((format(round(sum(bdn9$coefficients[15]),digits=3),nsmall=0)),
                   (format(round(sum(bdn10$coefficients[15]),digits=3),nsmall=0)),
                 0,
@@ -5363,7 +5364,7 @@ s_deal4<- rbind(c((format(round(sum(bdn9$coefficients[1]),digits=3),nsmall=0)),
                   (format(round(summary(bdn13)$coefficients[15,4],digits=3),nsmall=0)),
                  0,
                   (format(round(summary(bdn15)$coefficients[15,4],digits=3),nsmall=0))),
-                
+
                 c((format(round(sum(bdn9$coefficients[16]),digits=3),nsmall=0)),
                   (format(round(sum(bdn10$coefficients[16]),digits=3),nsmall=0)),
                  0,
@@ -5385,7 +5386,7 @@ s_deal4<- rbind(c((format(round(sum(bdn9$coefficients[1]),digits=3),nsmall=0)),
                   (format(round(summary(bdn13)$coefficients[16,4],digits=3),nsmall=0)),
                   0,
                   (format(round(summary(bdn15)$coefficients[16,4],digits=3),nsmall=0))),
-                
+
                 c((format(round(sum(bdn9$coefficients[17]),digits=3),nsmall=0)),
                   (format(round(sum(bdn10$coefficients[17]),digits=3),nsmall=0)),
                  0,
@@ -5407,7 +5408,7 @@ s_deal4<- rbind(c((format(round(sum(bdn9$coefficients[1]),digits=3),nsmall=0)),
                   (format(round(summary(bdn13)$coefficients[17,4],digits=3),nsmall=0)),
                  0,
                   (format(round(summary(bdn15)$coefficients[17,4],digits=3),nsmall=0))),
-                
+
                 c((format(round(sum(bdn9$coefficients[18]),digits=3),nsmall=0)),
                   (format(round(sum(bdn10$coefficients[18]),digits=3),nsmall=0)),
                  0,
@@ -5429,7 +5430,7 @@ s_deal4<- rbind(c((format(round(sum(bdn9$coefficients[1]),digits=3),nsmall=0)),
                   (format(round(summary(bdn13)$coefficients[18,4],digits=3),nsmall=0)),
                  0,
                   (format(round(summary(bdn15)$coefficients[18,4],digits=3),nsmall=0))),
-                
+
                 c((format(round(sum(bdn9$coefficients[19]),digits=3),nsmall=0)),
                   (format(round(sum(bdn10$coefficients[19]),digits=3),nsmall=0)),
                  0,
@@ -5451,7 +5452,7 @@ s_deal4<- rbind(c((format(round(sum(bdn9$coefficients[1]),digits=3),nsmall=0)),
                   (format(round(summary(bdn13)$coefficients[19,4],digits=3),nsmall=0)),
                   0,
                   (format(round(summary(bdn15)$coefficients[19,4],digits=3),nsmall=0))),
-                
+
                 c((format(round(sum(bdn9$coefficients[20]),digits=3),nsmall=0)),
                   (format(round(sum(bdn10$coefficients[20]),digits=3),nsmall=0)),
                  0,
@@ -5473,7 +5474,7 @@ s_deal4<- rbind(c((format(round(sum(bdn9$coefficients[1]),digits=3),nsmall=0)),
                   (format(round(summary(bdn13)$coefficients[20,4],digits=3),nsmall=0)),
                  0,
                   (format(round(summary(bdn15)$coefficients[20,4],digits=3),nsmall=0))),
-                
+
                 c((format(round(sum(bdn9$coefficients[21]),digits=3),nsmall=0)),
                   (format(round(sum(bdn10$coefficients[21]),digits=3),nsmall=0)),
                  0,
@@ -5495,9 +5496,9 @@ s_deal4<- rbind(c((format(round(sum(bdn9$coefficients[1]),digits=3),nsmall=0)),
                   (format(round(summary(bdn13)$coefficients[21,4],digits=3),nsmall=0)),
                   0,
                   (format(round(summary(bdn15)$coefficients[21,4],digits=3),nsmall=0))),
-              
-                
-                
+
+
+
                 c((format(round(summary(bdn9)$r.squared,digits=3),nsmall=0)),
                   (format(round(summary(bdn10)$r.squared,digits=3),nsmall=0)),
                   (format(round(summary(bdn11)$r.squared,digits=3),nsmall=0)),
@@ -5547,7 +5548,7 @@ avg_q$score <-  rowMeans(avg_q[c("general","yield","drought_resistent","disease_
 avg_q$overall_rating <-  rowMeans(avg_q[c("general_rating_nonseed", "location","price","quality","stock","reputation")],na.rm=T)
 
 colnames(avg_q)[14] <- "farmer_ID"
-avg_q <- merge(avg_q, farmers_seedsub, by="farmer_ID") #merging with baseline farmers data to get the controls and gender 
+avg_q <- merge(avg_q, farmers_seedsub, by="farmer_ID") #merging with baseline farmers data to get the controls and gender
 
 #create gender dummy
 avg_q$farmergen <- ifelse(avg_q$Check2.check.maize.q15 == "Male", 1, 0)
@@ -5555,14 +5556,14 @@ avg_q$farmergen <- ifelse(avg_q$Check2.check.maize.q15 == "Male", 1, 0)
 
 ###farmer characteristics for  controls
 avg_q$educ_f <- 0
-avg_q$educ_f[avg_q$Check2.check.maize.q17=="c" | avg_q$Check2.check.maize.q17=="d" | avg_q$Check2.check.maize.q17=="e" | 
-               avg_q$Check2.check.maize.q17=="f"  ] <- 1 #educated farmers -- finished primary educ 
-avg_q$educ_f[ avg_q$Check2.check.maize.q17=="g" ] <- NA 
-table(avg_q$educ_f) 
+avg_q$educ_f[avg_q$Check2.check.maize.q17=="c" | avg_q$Check2.check.maize.q17=="d" | avg_q$Check2.check.maize.q17=="e" |
+               avg_q$Check2.check.maize.q17=="f"  ] <- 1 #educated farmers -- finished primary educ
+avg_q$educ_f[ avg_q$Check2.check.maize.q17=="g" ] <- NA
+table(avg_q$educ_f)
 
 avg_q$married <- ifelse(avg_q$Check2.check.maize.q16 == 'a', 1, 0)  #married farmers
 
-#age of farmers 
+#age of farmers
 avg_q$Check2.check.maize.q14[ avg_q$Check2.check.maize.q14==999 ] <- NA
 summary(avg_q$Check2.check.maize.q14 )
 
@@ -5573,7 +5574,7 @@ summary(avg_q$Check2.check.maize.q8 )
 
 ## SEED RELATED RATINGS ##
 
-#### regressions without controls - seed related ratings 
+#### regressions without controls - seed related ratings
 
 mm_q1<-lm(score~farmergen, data = avg_q)
 semq1<- sqrt(diag(vcov(mm_q1)))
@@ -5616,7 +5617,7 @@ s_deal5<- rbind(c((format(round(sum(mm_q1$coefficients[1]),digits=3),nsmall=0)),
                   (format(round(summary(mm_q6)$coefficients[1,4],digits=3),nsmall=0)),
                   (format(round(summary(mm_q7)$coefficients[1,4],digits=3),nsmall=0)),
                   (format(round(summary(mm_q8)$coefficients[1,4],digits=3),nsmall=0))),
-                
+
                 c((format(round(sum(mm_q1$coefficients[2]),digits=3),nsmall=0)),
                  # (format(round(sum(mm_q2$coefficients[2]),digits=3),nsmall=0)),
                   (format(round(sum(mm_q3$coefficients[2]),digits=3),nsmall=0)),
@@ -5641,7 +5642,7 @@ s_deal5<- rbind(c((format(round(sum(mm_q1$coefficients[1]),digits=3),nsmall=0)),
                   (format(round(summary(mm_q6)$coefficients[2,4],digits=3),nsmall=0)),
                   (format(round(summary(mm_q7)$coefficients[2,4],digits=3),nsmall=0)),
                   (format(round(summary(mm_q8)$coefficients[2,4],digits=3),nsmall=0))),
-                
+
                 c((format(round(summary(mm_q1)$r.squared,digits=3),nsmall=0)),
               #    (format(round(summary(mm_q2)$r.squared,digits=3),nsmall=0)),
                   (format(round(summary(mm_q3)$r.squared,digits=3),nsmall=0)),
@@ -5671,7 +5672,7 @@ s_deal5<- rbind(c((format(round(sum(mm_q1$coefficients[1]),digits=3),nsmall=0)),
 
 
 
-#### regressions with FARMER's gender + FARMER characteristics  --- seed related ratings 
+#### regressions with FARMER's gender + FARMER characteristics  --- seed related ratings
 
 mm_q9<- lm(score~farmergen +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8, data = avg_q)
 semq9<- sqrt(diag(vcov(mm_q9)))
@@ -5714,7 +5715,7 @@ s_deal6<- rbind(c((format(round(sum(mm_q9$coefficients[1]),digits=3),nsmall=0)),
                   (format(round(summary(mm_q14)$coefficients[1,4],digits=3),nsmall=0)),
                   (format(round(summary(mm_q15)$coefficients[1,4],digits=3),nsmall=0)),
                   (format(round(summary(mm_q16)$coefficients[1,4],digits=3),nsmall=0))),
-                
+
                 c((format(round(sum(mm_q9$coefficients[2]),digits=3),nsmall=0)),
              #     (format(round(sum(mm_q10$coefficients[2]),digits=3),nsmall=0)),
                   (format(round(sum(mm_q11$coefficients[2]),digits=3),nsmall=0)),
@@ -5739,7 +5740,7 @@ s_deal6<- rbind(c((format(round(sum(mm_q9$coefficients[1]),digits=3),nsmall=0)),
                   (format(round(summary(mm_q14)$coefficients[2,4],digits=3),nsmall=0)),
                   (format(round(summary(mm_q15)$coefficients[2,4],digits=3),nsmall=0)),
                   (format(round(summary(mm_q16)$coefficients[2,4],digits=3),nsmall=0))),
-                
+
                 c((format(round(sum(mm_q9$coefficients[3]),digits=3),nsmall=0)),
                  # (format(round(sum(mm_q10$coefficients[3]),digits=3),nsmall=0)),
                   (format(round(sum(mm_q11$coefficients[3]),digits=3),nsmall=0)),
@@ -5764,7 +5765,7 @@ s_deal6<- rbind(c((format(round(sum(mm_q9$coefficients[1]),digits=3),nsmall=0)),
                   (format(round(summary(mm_q14)$coefficients[3,4],digits=3),nsmall=0)),
                   (format(round(summary(mm_q15)$coefficients[3,4],digits=3),nsmall=0)),
                   (format(round(summary(mm_q16)$coefficients[3,4],digits=3),nsmall=0))),
-                
+
                 c((format(round(sum(mm_q9$coefficients[4]),digits=3),nsmall=0)),
                  # (format(round(sum(mm_q10$coefficients[4]),digits=3),nsmall=0)),
                   (format(round(sum(mm_q11$coefficients[4]),digits=3),nsmall=0)),
@@ -5789,7 +5790,7 @@ s_deal6<- rbind(c((format(round(sum(mm_q9$coefficients[1]),digits=3),nsmall=0)),
                   (format(round(summary(mm_q14)$coefficients[4,4],digits=3),nsmall=0)),
                   (format(round(summary(mm_q15)$coefficients[4,4],digits=3),nsmall=0)),
                   (format(round(summary(mm_q16)$coefficients[4,4],digits=3),nsmall=0))),
-                
+
                 c((format(round(sum(mm_q9$coefficients[5]),digits=3),nsmall=0)),
                  # (format(round(sum(mm_q10$coefficients[5]),digits=3),nsmall=0)),
                   (format(round(sum(mm_q11$coefficients[5]),digits=3),nsmall=0)),
@@ -5814,7 +5815,7 @@ s_deal6<- rbind(c((format(round(sum(mm_q9$coefficients[1]),digits=3),nsmall=0)),
                   (format(round(summary(mm_q14)$coefficients[5,4],digits=3),nsmall=0)),
                   (format(round(summary(mm_q15)$coefficients[5,4],digits=3),nsmall=0)),
                   (format(round(summary(mm_q16)$coefficients[5,4],digits=3),nsmall=0))),
-                
+
                 c((format(round(sum(mm_q9$coefficients[6]),digits=3),nsmall=0)),
                  # (format(round(sum(mm_q10$coefficients[6]),digits=3),nsmall=0)),
                   (format(round(sum(mm_q11$coefficients[6]),digits=3),nsmall=0)),
@@ -5839,8 +5840,8 @@ s_deal6<- rbind(c((format(round(sum(mm_q9$coefficients[1]),digits=3),nsmall=0)),
                   (format(round(summary(mm_q14)$coefficients[6,4],digits=3),nsmall=0)),
                   (format(round(summary(mm_q15)$coefficients[6,4],digits=3),nsmall=0)),
                   (format(round(summary(mm_q16)$coefficients[6,4],digits=3),nsmall=0))),
-                
-                
+
+
                 c((format(round(summary(mm_q9)$r.squared,digits=3),nsmall=0)),
              #     (format(round(summary(mm_q10)$r.squared,digits=3),nsmall=0)),
                   (format(round(summary(mm_q11)$r.squared,digits=3),nsmall=0)),
@@ -5871,7 +5872,7 @@ s_deal6<- rbind(c((format(round(sum(mm_q9$coefficients[1]),digits=3),nsmall=0)),
 
 #### NON-SEED RELATED RATINGS ####
 
-#### regressions without controls - non-seed related ratings 
+#### regressions without controls - non-seed related ratings
 
 mn_q1 <- lm(overall_rating~farmergen , data =avg_q)
 senm1<- sqrt(diag(vcov(mn_q1)))
@@ -5910,7 +5911,7 @@ s_deal7<- rbind(c((format(round(sum(mn_q1$coefficients[1]),digits=3),nsmall=0)),
                   (format(round(summary(mn_q5)$coefficients[1,4],digits=3),nsmall=0)),
                   (format(round(summary(mn_q6)$coefficients[1,4],digits=3),nsmall=0)),
                   (format(round(summary(mn_q7)$coefficients[1,4],digits=3),nsmall=0))),
-                
+
                 c((format(round(sum(mn_q1$coefficients[2]),digits=3),nsmall=0)),
                   (format(round(sum(mn_q2$coefficients[2]),digits=3),nsmall=0)),
                   (format(round(sum(mn_q3$coefficients[2]),digits=3),nsmall=0)),
@@ -5932,7 +5933,7 @@ s_deal7<- rbind(c((format(round(sum(mn_q1$coefficients[1]),digits=3),nsmall=0)),
                   (format(round(summary(mn_q5)$coefficients[2,4],digits=3),nsmall=0)),
                   (format(round(summary(mn_q6)$coefficients[2,4],digits=3),nsmall=0)),
                   (format(round(summary(mn_q7)$coefficients[2,4],digits=3),nsmall=0))),
-                
+
                 c((format(round(summary(mn_q1)$r.squared,digits=3),nsmall=0)),
                   (format(round(summary(mn_q2)$r.squared,digits=3),nsmall=0)),
                   (format(round(summary(mn_q3)$r.squared,digits=3),nsmall=0)),
@@ -5957,7 +5958,7 @@ s_deal7<- rbind(c((format(round(sum(mn_q1$coefficients[1]),digits=3),nsmall=0)),
 )
 
 
-#### regressions with controls - non-seed related ratings 
+#### regressions with controls - non-seed related ratings
 
 
 mn_q8 <- lm(overall_rating~farmergen+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8 , data =avg_q)
@@ -5996,7 +5997,7 @@ s_deal8<- rbind(c((format(round(sum(mn_q8$coefficients[1]),digits=3),nsmall=0)),
                   (format(round(summary(mn_q12)$coefficients[1,4],digits=3),nsmall=0)),
                   (format(round(summary(mn_q13)$coefficients[1,4],digits=3),nsmall=0)),
                   (format(round(summary(mn_q14)$coefficients[1,4],digits=3),nsmall=0))),
-                
+
                 c((format(round(sum(mn_q8$coefficients[2]),digits=3),nsmall=0)),
                   (format(round(sum(mn_q9$coefficients[2]),digits=3),nsmall=0)),
                   (format(round(sum(mn_q10$coefficients[2]),digits=3),nsmall=0)),
@@ -6018,7 +6019,7 @@ s_deal8<- rbind(c((format(round(sum(mn_q8$coefficients[1]),digits=3),nsmall=0)),
                   (format(round(summary(mn_q12)$coefficients[2,4],digits=3),nsmall=0)),
                   (format(round(summary(mn_q13)$coefficients[2,4],digits=3),nsmall=0)),
                   (format(round(summary(mn_q14)$coefficients[2,4],digits=3),nsmall=0))),
-                
+
                 c((format(round(sum(mn_q8$coefficients[3]),digits=3),nsmall=0)),
                   (format(round(sum(mn_q9$coefficients[3]),digits=3),nsmall=0)),
                   (format(round(sum(mn_q10$coefficients[3]),digits=3),nsmall=0)),
@@ -6040,7 +6041,7 @@ s_deal8<- rbind(c((format(round(sum(mn_q8$coefficients[1]),digits=3),nsmall=0)),
                   (format(round(summary(mn_q12)$coefficients[3,4],digits=3),nsmall=0)),
                   (format(round(summary(mn_q13)$coefficients[3,4],digits=3),nsmall=0)),
                   (format(round(summary(mn_q14)$coefficients[3,4],digits=3),nsmall=0))),
-                
+
                 c((format(round(sum(mn_q8$coefficients[4]),digits=3),nsmall=0)),
                   (format(round(sum(mn_q9$coefficients[4]),digits=3),nsmall=0)),
                   (format(round(sum(mn_q10$coefficients[4]),digits=3),nsmall=0)),
@@ -6062,7 +6063,7 @@ s_deal8<- rbind(c((format(round(sum(mn_q8$coefficients[1]),digits=3),nsmall=0)),
                   (format(round(summary(mn_q12)$coefficients[4,4],digits=3),nsmall=0)),
                   (format(round(summary(mn_q13)$coefficients[4,4],digits=3),nsmall=0)),
                   (format(round(summary(mn_q14)$coefficients[4,4],digits=3),nsmall=0))),
-                
+
                 c((format(round(sum(mn_q8$coefficients[5]),digits=3),nsmall=0)),
                   (format(round(sum(mn_q9$coefficients[5]),digits=3),nsmall=0)),
                   (format(round(sum(mn_q10$coefficients[5]),digits=3),nsmall=0)),
@@ -6084,7 +6085,7 @@ s_deal8<- rbind(c((format(round(sum(mn_q8$coefficients[1]),digits=3),nsmall=0)),
                   (format(round(summary(mn_q12)$coefficients[5,4],digits=3),nsmall=0)),
                   (format(round(summary(mn_q13)$coefficients[5,4],digits=3),nsmall=0)),
                   (format(round(summary(mn_q14)$coefficients[5,4],digits=3),nsmall=0))),
-                
+
                 c((format(round(sum(mn_q8$coefficients[6]),digits=3),nsmall=0)),
                   (format(round(sum(mn_q9$coefficients[6]),digits=3),nsmall=0)),
                   (format(round(sum(mn_q10$coefficients[6]),digits=3),nsmall=0)),
@@ -6106,8 +6107,8 @@ s_deal8<- rbind(c((format(round(sum(mn_q8$coefficients[1]),digits=3),nsmall=0)),
                   (format(round(summary(mn_q12)$coefficients[6,4],digits=3),nsmall=0)),
                   (format(round(summary(mn_q13)$coefficients[6,4],digits=3),nsmall=0)),
                   (format(round(summary(mn_q14)$coefficients[6,4],digits=3),nsmall=0))),
-                
-                
+
+
                 c((format(round(summary(mn_q8)$r.squared,digits=3),nsmall=0)),
                   (format(round(summary(mn_q9)$r.squared,digits=3),nsmall=0)),
                   (format(round(summary(mn_q10)$r.squared,digits=3),nsmall=0)),
@@ -6147,16 +6148,16 @@ fedatad[fedatad=="999"]<- NA
 #create farmer's gender dummy
 fedatad$farmergen <- ifelse(fedatad$Check2.check.maize.q15 == "Male", 1, 0)
 
-###farmer characteristics for controls 
+###farmer characteristics for controls
 fedatad$educ_f <- 0
-fedatad$educ_f[fedatad$Check2.check.maize.q17=="c" | fedatad$Check2.check.maize.q17=="d" | fedatad$Check2.check.maize.q17=="e" | 
-                 fedatad$Check2.check.maize.q17=="f"  ] <- 1 #educated farmers -- finished primary educ 
-fedatad$educ_f[ fedatad$Check2.check.maize.q17=="g" ] <- NA 
-table(fedatad$educ_f) 
+fedatad$educ_f[fedatad$Check2.check.maize.q17=="c" | fedatad$Check2.check.maize.q17=="d" | fedatad$Check2.check.maize.q17=="e" |
+                 fedatad$Check2.check.maize.q17=="f"  ] <- 1 #educated farmers -- finished primary educ
+fedatad$educ_f[ fedatad$Check2.check.maize.q17=="g" ] <- NA
+table(fedatad$educ_f)
 
-fedatad$married <- ifelse(fedatad$Check2.check.maize.q16 == 'a', 1, 0)  #married farmers 
+fedatad$married <- ifelse(fedatad$Check2.check.maize.q16 == 'a', 1, 0)  #married farmers
 
-#age of farmers 
+#age of farmers
 fedatad$Check2.check.maize.q14[ fedatad$Check2.check.maize.q14==999 ] <- NA
 summary(fedatad$Check2.check.maize.q14 )
 
@@ -6165,7 +6166,7 @@ fedatad$Check2.check.maize.q8[ fedatad$Check2.check.maize.q8==999 ] <- NA
 summary(fedatad$Check2.check.maize.q8 )
 
 
-###AVERAGE RATINGS 
+###AVERAGE RATINGS
 fedatad$quality<- as.numeric(fedatad$quality_rating)
 fedatad$general<- as.numeric(fedatad$seed_quality_general_rating)
 fedatad$yield <- as.numeric(fedatad$seed_yield_rating)
@@ -6187,7 +6188,7 @@ fedatad$overall_rating <-  rowMeans(fedatad[c("general_rating_nonseed", "locatio
 
 ## SEED RELATED RATINGS ##
 
-#### regressions without controls - seed related ratings 
+#### regressions without controls - seed related ratings
 
 summary(lm(score~farmergen +shop_ID.x, data = fedatad))
 #summary(lm(quality~farmergen+shop_ID.x , data = fedatad))
@@ -6199,7 +6200,7 @@ summary(lm(early_maturing~farmergen+shop_ID.x , data = fedatad))
 summary(lm(germination~farmergen+shop_ID.x , data = fedatad))
 
 
-############# plm method 
+############# plm method
 
 plmd1<-plm(score~farmergen, data = fedatad, index=c("shop_ID.x","farmer_ID"), model="within")
 id1<-mean(fixef(plmd1))
@@ -6265,8 +6266,8 @@ fed1<- rbind( c((format(round(id1[1],digits=3),nsmall=0)),
                 (format(round(summary(plmd6)$coefficients[1,4],digits=3),nsmall=0)),
                 (format(round(summary(plmd7)$coefficients[1,4],digits=3),nsmall=0)),
                 (format(round(summary(plmd8)$coefficients[1,4],digits=3),nsmall=0))),
-              
-              
+
+
               c((format(round(summary(plmd1)$r.squared[1],digits=3),nsmall=0)),
                # (format(round(summary(plmd2)$r.squared[1],digits=3),nsmall=0)),
                 (format(round(summary(plmd3)$r.squared[1],digits=3),nsmall=0)),
@@ -6294,7 +6295,7 @@ fed1<- rbind( c((format(round(id1[1],digits=3),nsmall=0)),
 )
 
 
-#### regressions with controls - seed related ratings 
+#### regressions with controls - seed related ratings
 
 summary(lm(score~farmergen +shop_ID.x+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8, data = fedatad))
 #summary(lm(quality~farmergen+shop_ID.x +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8, data = fedatad))
@@ -6306,7 +6307,7 @@ summary(lm(early_maturing~farmergen+shop_ID.x +educ_f+married+Check2.check.maize
 summary(lm(germination~farmergen+shop_ID.x+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8 , data = fedatad))
 
 
-############# plm method 
+############# plm method
 
 plmd9<-plm(score~farmergen+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8, data = fedatad, index=c("shop_ID.x","farmer_ID"), model="within")
 id9<-mean(fixef(plmd9))
@@ -6372,7 +6373,7 @@ fed2<- rbind( c((format(round(id9[1],digits=3),nsmall=0)),
                 (format(round(summary(plmd14)$coefficients[1,4],digits=3),nsmall=0)),
                 (format(round(summary(plmd15)$coefficients[1,4],digits=3),nsmall=0)),
                 (format(round(summary(plmd16)$coefficients[1,4],digits=3),nsmall=0))),
-              
+
               c((format(round(sum(plmd9$coefficients[2]),digits=3),nsmall=0)),
               #  (format(round(sum(plmd10$coefficients[2]),digits=3),nsmall=0)),
                 (format(round(sum(plmd11$coefficients[2]),digits=3),nsmall=0)),
@@ -6397,7 +6398,7 @@ fed2<- rbind( c((format(round(id9[1],digits=3),nsmall=0)),
                 (format(round(summary(plmd14)$coefficients[2,4],digits=3),nsmall=0)),
                 (format(round(summary(plmd15)$coefficients[2,4],digits=3),nsmall=0)),
                 (format(round(summary(plmd16)$coefficients[2,4],digits=3),nsmall=0))),
-              
+
               c((format(round(sum(plmd9$coefficients[3]),digits=3),nsmall=0)),
               #  (format(round(sum(plmd10$coefficients[3]),digits=3),nsmall=0)),
                 (format(round(sum(plmd11$coefficients[3]),digits=3),nsmall=0)),
@@ -6422,7 +6423,7 @@ fed2<- rbind( c((format(round(id9[1],digits=3),nsmall=0)),
                 (format(round(summary(plmd14)$coefficients[3,4],digits=3),nsmall=0)),
                 (format(round(summary(plmd15)$coefficients[3,4],digits=3),nsmall=0)),
                 (format(round(summary(plmd16)$coefficients[3,4],digits=3),nsmall=0))),
-              
+
               c((format(round(sum(plmd9$coefficients[4]),digits=3),nsmall=0)),
            #     (format(round(sum(plmd10$coefficients[4]),digits=3),nsmall=0)),
                 (format(round(sum(plmd11$coefficients[4]),digits=3),nsmall=0)),
@@ -6447,7 +6448,7 @@ fed2<- rbind( c((format(round(id9[1],digits=3),nsmall=0)),
                 (format(round(summary(plmd14)$coefficients[4,4],digits=3),nsmall=0)),
                 (format(round(summary(plmd15)$coefficients[4,4],digits=3),nsmall=0)),
                 (format(round(summary(plmd16)$coefficients[4,4],digits=3),nsmall=0))),
-              
+
               c((format(round(sum(plmd9$coefficients[5]),digits=3),nsmall=0)),
               #  (format(round(sum(plmd10$coefficients[5]),digits=3),nsmall=0)),
                 (format(round(sum(plmd11$coefficients[5]),digits=3),nsmall=0)),
@@ -6472,7 +6473,7 @@ fed2<- rbind( c((format(round(id9[1],digits=3),nsmall=0)),
                 (format(round(summary(plmd14)$coefficients[5,4],digits=3),nsmall=0)),
                 (format(round(summary(plmd15)$coefficients[5,4],digits=3),nsmall=0)),
                 (format(round(summary(plmd16)$coefficients[5,4],digits=3),nsmall=0))),
-              
+
               c((format(round(summary(plmd9)$r.squared[1],digits=3),nsmall=0)),
                # (format(round(summary(plmd10)$r.squared[1],digits=3),nsmall=0)),
                 (format(round(summary(plmd11)$r.squared[1],digits=3),nsmall=0)),
@@ -6504,7 +6505,7 @@ fed2<- rbind( c((format(round(id9[1],digits=3),nsmall=0)),
 
 ## NON-SEED RELATED RATINGS ##
 
-#### regressions without controls - non-seed related ratings 
+#### regressions without controls - non-seed related ratings
 
 summary(lm(overall_rating~farmergen +shop_ID.x, data = fedatad))
 summary(lm(general_rating_nonseed~farmergen+shop_ID.x , data = fedatad))
@@ -6515,7 +6516,7 @@ summary(lm(stock~farmergen+shop_ID.x , data = fedatad))
 summary(lm(reputation~farmergen+shop_ID.x , data = fedatad))
 
 
-############# plm method 
+############# plm method
 
 plmdn1<-plm(overall_rating~farmergen, data = fedatad, index=c("shop_ID.x","farmer_ID"), model="within")
 idn1<-mean(fixef(plmdn1))
@@ -6574,8 +6575,8 @@ fed3<- rbind( c((format(round(idn1[1],digits=3),nsmall=0)),
                 (format(round(summary(plmdn5)$coefficients[1,4],digits=3),nsmall=0)),
                 (format(round(summary(plmdn6)$coefficients[1,4],digits=3),nsmall=0)),
                 (format(round(summary(plmdn7)$coefficients[1,4],digits=3),nsmall=0))),
-              
-              
+
+
               c((format(round(summary(plmdn1)$r.squared[1],digits=3),nsmall=0)),
                 (format(round(summary(plmdn2)$r.squared[1],digits=3),nsmall=0)),
                 (format(round(summary(plmdn3)$r.squared[1],digits=3),nsmall=0)),
@@ -6600,7 +6601,7 @@ fed3<- rbind( c((format(round(idn1[1],digits=3),nsmall=0)),
 )
 
 
-#### regressions with controls - non-seed related ratings 
+#### regressions with controls - non-seed related ratings
 
 summary(lm(overall_rating~farmergen +shop_ID.x+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8, data = fedatad))
 summary(lm(general_rating_nonseed~farmergen+shop_ID.x+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8 , data = fedatad))
@@ -6611,7 +6612,7 @@ summary(lm(stock~farmergen+shop_ID.x+educ_f+married+Check2.check.maize.q14+Check
 summary(lm(reputation~farmergen+shop_ID.x+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8 , data = fedatad))
 
 
-############# plm method 
+############# plm method
 
 plmdn9<-plm(overall_rating~farmergen+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8, data = fedatad, index=c("shop_ID.x","farmer_ID"), model="within")
 idn9<-mean(fixef(plmdn9))
@@ -6670,7 +6671,7 @@ fed4<- rbind( c((format(round(idn9[1],digits=3),nsmall=0)),
                 (format(round(summary(plmdn13)$coefficients[1,4],digits=3),nsmall=0)),
                 (format(round(summary(plmdn14)$coefficients[1,4],digits=3),nsmall=0)),
                 (format(round(summary(plmdn15)$coefficients[1,4],digits=3),nsmall=0))),
-              
+
               c((format(round(sum(plmdn9$coefficients[2]),digits=3),nsmall=0)),
                 (format(round(sum(plmdn10$coefficients[2]),digits=3),nsmall=0)),
                 (format(round(sum(plmdn11$coefficients[2]),digits=3),nsmall=0)),
@@ -6692,7 +6693,7 @@ fed4<- rbind( c((format(round(idn9[1],digits=3),nsmall=0)),
                 (format(round(summary(plmdn13)$coefficients[2,4],digits=3),nsmall=0)),
                 (format(round(summary(plmdn14)$coefficients[2,4],digits=3),nsmall=0)),
                 (format(round(summary(plmdn15)$coefficients[2,4],digits=3),nsmall=0))),
-              
+
               c((format(round(sum(plmdn9$coefficients[3]),digits=3),nsmall=0)),
                 (format(round(sum(plmdn10$coefficients[3]),digits=3),nsmall=0)),
                 (format(round(sum(plmdn11$coefficients[3]),digits=3),nsmall=0)),
@@ -6714,7 +6715,7 @@ fed4<- rbind( c((format(round(idn9[1],digits=3),nsmall=0)),
                 (format(round(summary(plmdn13)$coefficients[3,4],digits=3),nsmall=0)),
                 (format(round(summary(plmdn14)$coefficients[3,4],digits=3),nsmall=0)),
                 (format(round(summary(plmdn15)$coefficients[3,4],digits=3),nsmall=0))),
-              
+
               c((format(round(sum(plmdn9$coefficients[4]),digits=3),nsmall=0)),
                 (format(round(sum(plmdn10$coefficients[4]),digits=3),nsmall=0)),
                 (format(round(sum(plmdn11$coefficients[4]),digits=3),nsmall=0)),
@@ -6736,7 +6737,7 @@ fed4<- rbind( c((format(round(idn9[1],digits=3),nsmall=0)),
                 (format(round(summary(plmdn13)$coefficients[4,4],digits=3),nsmall=0)),
                 (format(round(summary(plmdn14)$coefficients[4,4],digits=3),nsmall=0)),
                 (format(round(summary(plmdn15)$coefficients[4,4],digits=3),nsmall=0))),
-              
+
               c((format(round(sum(plmdn9$coefficients[5]),digits=3),nsmall=0)),
                 (format(round(sum(plmdn10$coefficients[5]),digits=3),nsmall=0)),
                 (format(round(sum(plmdn11$coefficients[5]),digits=3),nsmall=0)),
@@ -6758,7 +6759,7 @@ fed4<- rbind( c((format(round(idn9[1],digits=3),nsmall=0)),
                 (format(round(summary(plmdn13)$coefficients[5,4],digits=3),nsmall=0)),
                 (format(round(summary(plmdn14)$coefficients[5,4],digits=3),nsmall=0)),
                 (format(round(summary(plmdn15)$coefficients[5,4],digits=3),nsmall=0))),
-              
+
               c((format(round(summary(plmdn9)$r.squared[1],digits=3),nsmall=0)),
                 (format(round(summary(plmdn10)$r.squared[1],digits=3),nsmall=0)),
                 (format(round(summary(plmdn11)$r.squared[1],digits=3),nsmall=0)),
@@ -6781,4 +6782,3 @@ fed4<- rbind( c((format(round(idn9[1],digits=3),nsmall=0)),
                 (format(round(nobs(plmdn14),digits=3),nsmall=0)),
                 (format(round(nobs(plmdn15),digits=3),nsmall=0)))
 )
-
