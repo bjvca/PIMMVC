@@ -2518,8 +2518,6 @@ plm1<-plm(score~genderdummy, data = fedata, index=c("farmer_ID","shop_ID"), mode
 i1<-mean(fixef(plm1))
 seplm1<- sqrt(diag(vcov(plm1)))
 
-
-
 coef1<-coeftest(plm1, vcovHC(plm1, type = "HC0", cluster = "time"))
 
 
@@ -2532,46 +2530,39 @@ plm3<-plm(general~genderdummy, data = fedata, index=c("farmer_ID","shop_ID"), mo
 i3<-mean(fixef(plm3))
 seplm3<- sqrt(diag(vcov(plm3)))
 
-#coef3<-coeftest(plm3,c1 * vcovHC(plm3, type = "HC1", cluster = "group"))
-
+coef3<-coeftest(plm3, vcovHC(plm3, type = "HC0", cluster = "time"))
 
 
 plm4<-plm(yield~genderdummy, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
 i4<-mean(fixef(plm4))
 seplm4<- sqrt(diag(vcov(plm4)))
 
-#coef4<-coeftest(plm4,c1 * vcovHC(plm4, type = "HC1", cluster = "group"))
-
+coef4<-coeftest(plm4, vcovHC(plm4, type = "HC0", cluster = "time"))
 
 
 plm5<-plm(drought_resistent~genderdummy, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
 i5<-mean(fixef(plm5))
 seplm5<- sqrt(diag(vcov(plm5)))
 
-#coef5<-coeftest(plm5,c1 * vcovHC(plm5, type = "HC1", cluster = "group"))
+coef5<-coeftest(plm5, vcovHC(plm5, type = "HC0", cluster = "time"))
 
 plm6<-plm(disease_resistent~genderdummy, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
 i6<-mean(fixef(plm6))
 seplm6<- sqrt(diag(vcov(plm6)))
 
-#coef6<-coeftest(plm6,c1 * vcovHC(plm6, type = "HC1", cluster = "group"))
-
+coef6<-coeftest(plm6, vcovHC(plm6, type = "HC0", cluster = "time"))
 
 plm7<-plm(early_maturing~genderdummy, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
 i7<-mean(fixef(plm7))
 seplm7<- sqrt(diag(vcov(plm7)))
 
-#coef7<-coeftest(plm7,c1 * vcovHC(plm7,type = "HC1", cluster = "group"))
-
-
-
+coef7<-coeftest(plm7, vcovHC(plm7, type = "HC0", cluster = "time"))
 
 plm8<-plm(germination~genderdummy, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
 i8<-mean(fixef(plm8))
 seplm8<- sqrt(diag(vcov(plm8)))
 
-#coef8<-coeftest(plm8,c1 * vcovHC(plm8, type = "HC1", cluster = "group"))
-
+coef8<-coeftest(plm8, vcovHC(plm8, type = "HC0", cluster = "time"))
 
 
 
@@ -2687,8 +2678,7 @@ plm9<-plm(score~genderdummy+ maize.owner.agree.age +prim +maize.owner.agree.q3 +
 i9<-mean(fixef(plm9))
 seplm9<- sqrt(diag(vcov(plm9)))
 
-#coef9<-coeftest(plm9,c1 * vcovHC(plm9, type = "HC1", cluster = "group"))
-
+coef9<-coeftest(plm9, vcovHC(plm9, type = "HC0", cluster = "time"))
 
 ############## if we want to check the overall intercept --- only works when controls are also included
 #fx_level <- fixef(plm9, type = "level")
@@ -2709,11 +2699,15 @@ plm11<-plm(general~genderdummy+ maize.owner.agree.age +prim +maize.owner.agree.q
 i11<-mean(fixef(plm11))
 seplm11<- sqrt(diag(vcov(plm11)))
 
+coef11<-coeftest(plm11, vcovHC(plm11, type = "HC0", cluster = "time"))
+
 plm12<-plm(yield~genderdummy+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
              +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
 i12<-mean(fixef(plm12))
 seplm12<- sqrt(diag(vcov(plm12)))
+
+coef12<-coeftest(plm12, vcovHC(plm12, type = "HC0", cluster = "time"))
 
 plm13<-plm(drought_resistent~genderdummy+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
              +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
@@ -2721,11 +2715,16 @@ plm13<-plm(drought_resistent~genderdummy+ maize.owner.agree.age +prim +maize.own
 i13<-mean(fixef(plm13))
 seplm13<- sqrt(diag(vcov(plm13)))
 
+coef13<-coeftest(plm13, vcovHC(plm13, type = "HC0", cluster = "time"))
+
 plm14<-plm(disease_resistent~genderdummy+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
              +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
 i14<-mean(fixef(plm14))
 seplm14<- sqrt(diag(vcov(plm14)))
+
+coef14<-coeftest(plm14, vcovHC(plm14, type = "HC0", cluster = "time"))
+
 
 plm15<-plm(early_maturing~genderdummy+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
              +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
@@ -2733,11 +2732,16 @@ plm15<-plm(early_maturing~genderdummy+ maize.owner.agree.age +prim +maize.owner.
 i15<-mean(fixef(plm15))
 seplm15<- sqrt(diag(vcov(plm15)))
 
+coef15<-coeftest(plm15, vcovHC(plm15, type = "HC0", cluster = "time"))
+
+
 plm16<-plm(germination~genderdummy+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
              +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
 i16<-mean(fixef(plm16))
 seplm16<- sqrt(diag(vcov(plm16)))
+
+coef16<-coeftest(plm16, vcovHC(plm16, type = "HC0", cluster = "time"))
 
 
 
@@ -3298,29 +3302,43 @@ plmm1<-plm(overall_rating~genderdummy, data = fedata, index=c("farmer_ID","shop_
 im1<- mean(fixef(plmm1))
 seplmm1<- sqrt(diag(vcov(plmm1)))
 
+coefm1<-coeftest(plmm1, vcovHC(plmm1, type = "HC0", cluster = "time"))
+
 plmm2<-plm(general_rating_nonseed~genderdummy, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
 im2<-mean(fixef(plmm2))
 seplmm2<- sqrt(diag(vcov(plmm2)))
+
+coefm2<-coeftest(plmm2, vcovHC(plmm2, type = "HC0", cluster = "time"))
 
 plmm3<-plm(location~genderdummy, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
 im3<-mean(fixef(plmm3))
 seplmm3<- sqrt(diag(vcov(plmm3)))
 
+coefm3<-coeftest(plmm3, vcovHC(plmm3, type = "HC0", cluster = "time"))
+
 plmm4<-plm(price~genderdummy, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
 im4<-mean(fixef(plmm4))
 seplmm4<- sqrt(diag(vcov(plmm4)))
+
+coefm4<-coeftest(plmm4, vcovHC(plmm4, type = "HC0", cluster = "time"))
 
 plmm5<-plm(quality~genderdummy, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
 im5<-mean(fixef(plmm5))
 seplmm5<- sqrt(diag(vcov(plmm5)))
 
+coefm5<-coeftest(plmm5, vcovHC(plmm5, type = "HC0", cluster = "time"))
+
 plmm6<-plm(stock~genderdummy, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
 im6<-mean(fixef(plmm6))
 seplmm6<- sqrt(diag(vcov(plmm6)))
 
+coefm6<-coeftest(plmm6, vcovHC(plmm6, type = "HC0", cluster = "time"))
+
 plmm7<-plm(reputation~genderdummy, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
 im7<-mean(fixef(plmm7))
 seplmm7<- sqrt(diag(vcov(plmm7)))
+
+coefm7<-coeftest(plmm7, vcovHC(plmm7, type = "HC0", cluster = "time"))
 
 fe3<- rbind( c((format(round(im1[1],digits=3),nsmall=0)),
                (format(round(im2[1],digits=3),nsmall=0)),
@@ -3424,15 +3442,22 @@ plmm8<-plm(overall_rating~genderdummy+ maize.owner.agree.age +prim +maize.owner.
 im8<-mean(fixef(plmm8))
 seplmm8<- sqrt(diag(vcov(plmm8)))
 
+coefm8<-coeftest(plmm8, vcovHC(plmm8, type = "HC0", cluster = "time"))
+
 plmm9<-plm(general_rating_nonseed~genderdummy+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
              +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
 im9<-mean(fixef(plmm9))
 seplmm9<- sqrt(diag(vcov(plmm9)))
 
+coefm9<-coeftest(plmm9, vcovHC(plmm9, type = "HC0", cluster = "time"))
+
 plmm10<-plm(location~genderdummy+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
 im10<-mean(fixef(plmm10))
 seplmm10<- sqrt(diag(vcov(plmm10)))
+
+coefm10<-coeftest(plmm10, vcovHC(plmm10, type = "HC0", cluster = "time"))
+
 
 plmm11<-plm(price~genderdummy+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
              +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
@@ -3440,22 +3465,34 @@ plmm11<-plm(price~genderdummy+ maize.owner.agree.age +prim +maize.owner.agree.q3
 im11<-mean(fixef(plmm11))
 seplmm11<- sqrt(diag(vcov(plmm11)))
 
+coefm11<-coeftest(plmm11, vcovHC(plmm11, type = "HC0", cluster = "time"))
+
+
 plmm12<-plm(quality~genderdummy+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
              +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
 im12<-mean(fixef(plmm12))
 seplmm12<- sqrt(diag(vcov(plmm12)))
 
+coefm12<-coeftest(plmm12, vcovHC(plmm12, type = "HC0", cluster = "time"))
+
+
 plmm13<-plm(stock~genderdummy+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
 im13<-mean(fixef(plmm13))
 #4.332454
 seplmm13<- sqrt(diag(vcov(plmm13)))
+
+coefm13<-coeftest(plmm13, vcovHC(plmm13, type = "HC0", cluster = "time"))
+
 
 plmm14<-plm(reputation~genderdummy+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
              +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedata, index=c("farmer_ID","shop_ID"), model="within")
 im14<-mean(fixef(plmm14))
 seplmm14<- sqrt(diag(vcov(plmm14)))
+
+coefm14<-coeftest(plmm14, vcovHC(plmm14, type = "HC0", cluster = "time"))
+
 
 
 
