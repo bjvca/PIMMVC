@@ -2257,6 +2257,7 @@ Sexpr{s6[2,7]})$
 \begin_layout Plain Layout
 
 {Dealer is male}   & $
+
 \backslash
 Sexpr{s6[4,1]}^{
 \backslash
@@ -2344,6 +2345,7 @@ Sexpr{s6[5,7]})$
 \begin_layout Plain Layout
 
 {Dealer's age}   & $
+
 \backslash
 Sexpr{s6[7,1]}^{
 \backslash
@@ -2691,7 +2693,9 @@ Sexpr{s6[17,7]})$
 
 \begin_layout Plain Layout
 
+
 {Shop sells only}   & $
+
 \backslash
 Sexpr{s6[19,1]}^{
 \backslash
@@ -2756,6 +2760,7 @@ Sexpr{ifelse(s6[21,7]<.01,"***",ifelse(s6[21,7]<.05,"**",ifelse(s6[21,7]<.1,"*",
 \begin_layout Plain Layout
 
 {farm inputs} &  $(
+
 \backslash
 Sexpr{s6[20,1]})$   &  $(
 \backslash
@@ -2779,6 +2784,7 @@ Sexpr{s6[20,7]})$
 \begin_layout Plain Layout
 
 {Shop's age}   & $
+
 \backslash
 Sexpr{s6[22,1]}^{
 \backslash
@@ -2843,6 +2849,7 @@ Sexpr{ifelse(s6[24,7]<.01,"***",ifelse(s6[24,7]<.05,"**",ifelse(s6[24,7]<.1,"*",
 \begin_layout Plain Layout
 
 {(in years)} &  $(
+
 \backslash
 Sexpr{s6[23,1]})$   &  $(
 \backslash
@@ -2866,6 +2873,7 @@ Sexpr{s6[23,7]})$
 \begin_layout Plain Layout
 
 {Seed is stored in}   & $
+
 \backslash
 Sexpr{s6[25,1]}^{
 \backslash
@@ -2928,6 +2936,7 @@ Sexpr{ifelse(s6[27,7]<.01,"***",ifelse(s6[27,7]<.05,"**",ifelse(s6[27,7]<.1,"*",
 \end_layout
 
 \begin_layout Plain Layout
+
 
 {dedicated area} &  $(
 \backslash
@@ -3191,6 +3200,7 @@ Sexpr{ifelse(s6[36,7]<.01,"***",ifelse(s6[36,7]<.05,"**",ifelse(s6[36,7]<.1,"*",
 \begin_layout Plain Layout
 
 {insulated walls} &  $(
+
 \backslash
 Sexpr{s6[35,1]})$   &  $(
 \backslash
@@ -4950,12 +4960,7 @@ Sexpr{ifelse(s8[21,1]<.01,"***",ifelse(s8[21,1]<.05,"**",ifelse(s8[21,1]<.1,"*",
 Sexpr{s8[19,2]}^{
 \backslash
 Sexpr{ifelse(s8[21,2]<.01,"***",ifelse(s8[21,2]<.05,"**",ifelse(s8[21,2]<.1,"*","")
-))}}$  & $
-\backslash
-Sexpr{s8[19,3]}^{
-\backslash
-Sexpr{ifelse(s8[21,3]<.01,"***",ifelse(s8[21,3]<.05,"**",ifelse(s8[21,3]<.1,"*","")
-))}}$
+))}}$  & 
 \end_layout
 
 \begin_layout Plain Layout
@@ -4980,12 +4985,7 @@ Sexpr{ifelse(s8[21,5]<.01,"***",ifelse(s8[21,5]<.05,"**",ifelse(s8[21,5]<.1,"*",
 
 \begin_layout Plain Layout
 
-& $
-\backslash
-Sexpr{s8[19,6]}^{
-\backslash
-Sexpr{ifelse(s8[21,6]<.01,"***",ifelse(s8[21,6]<.05,"**",ifelse(s8[21,6]<.1,"*","")
-))}}$
+&
 \end_layout
 
 \begin_layout Plain Layout
@@ -5013,15 +5013,11 @@ Sexpr{ifelse(s8[21,7]<.01,"***",ifelse(s8[21,7]<.05,"**",ifelse(s8[21,7]<.1,"*",
 \backslash
 Sexpr{s8[20,1]})$   &  $(
 \backslash
-Sexpr{s8[20,2]})$ & $(
-\backslash
-Sexpr{s8[20,3]})$ & $(
+Sexpr{s8[20,2]})$ &  & $(
 \backslash
 Sexpr{s8[20,4]})$ & $(
 \backslash
-Sexpr{s8[20,5]})$ & $(
-\backslash
-Sexpr{s8[20,6]})$ & $(
+Sexpr{s8[20,5]})$ &  & $(
 \backslash
 Sexpr{s8[20,7]})$ 
 \backslash
@@ -5042,12 +5038,7 @@ Sexpr{ifelse(s8[24,1]<.01,"***",ifelse(s8[24,1]<.05,"**",ifelse(s8[24,1]<.1,"*",
 Sexpr{s8[22,2]}^{
 \backslash
 Sexpr{ifelse(s8[24,2]<.01,"***",ifelse(s8[24,2]<.05,"**",ifelse(s8[24,2]<.1,"*","")
-))}}$  & $
-\backslash
-Sexpr{s8[22,3]}^{
-\backslash
-Sexpr{ifelse(s8[24,3]<.01,"***",ifelse(s8[24,3]<.05,"**",ifelse(s8[24,3]<.1,"*","")
-))}}$
+))}}$  & 
 \end_layout
 
 \begin_layout Plain Layout
@@ -5072,12 +5063,7 @@ Sexpr{ifelse(s8[24,5]<.01,"***",ifelse(s8[24,5]<.05,"**",ifelse(s8[24,5]<.1,"*",
 
 \begin_layout Plain Layout
 
-& $
-\backslash
-Sexpr{s8[22,6]}^{
-\backslash
-Sexpr{ifelse(s8[24,6]<.01,"***",ifelse(s8[24,6]<.05,"**",ifelse(s8[24,6]<.1,"*","")
-))}}$
+& 
 \end_layout
 
 \begin_layout Plain Layout
@@ -5105,15 +5091,11 @@ Sexpr{ifelse(s8[24,7]<.01,"***",ifelse(s8[24,7]<.05,"**",ifelse(s8[24,7]<.1,"*",
 \backslash
 Sexpr{s8[23,1]})$   &  $(
 \backslash
-Sexpr{s8[23,2]})$ & $(
-\backslash
-Sexpr{s8[23,3]})$ & $(
+Sexpr{s8[23,2]})$ & & $(
 \backslash
 Sexpr{s8[23,4]})$ & $(
 \backslash
-Sexpr{s8[23,5]})$ & $(
-\backslash
-Sexpr{s8[23,6]})$ & $(
+Sexpr{s8[23,5]})$ &  & $(
 \backslash
 Sexpr{s8[23,7]})$ 
 \backslash
@@ -5124,7 +5106,7 @@ Sexpr{s8[23,7]})$
 
 \begin_layout Plain Layout
 
-{Seed is stored}   & $
+{Shop stores seed}   & $
 \backslash
 Sexpr{s8[25,1]}^{
 \backslash
@@ -5134,12 +5116,7 @@ Sexpr{ifelse(s8[27,1]<.01,"***",ifelse(s8[27,1]<.05,"**",ifelse(s8[27,1]<.1,"*",
 Sexpr{s8[25,2]}^{
 \backslash
 Sexpr{ifelse(s8[27,2]<.01,"***",ifelse(s8[27,2]<.05,"**",ifelse(s8[27,2]<.1,"*","")
-))}}$  & $
-\backslash
-Sexpr{s8[25,3]}^{
-\backslash
-Sexpr{ifelse(s8[27,3]<.01,"***",ifelse(s8[27,3]<.05,"**",ifelse(s8[27,3]<.1,"*","")
-))}}$
+))}}$  & 
 \end_layout
 
 \begin_layout Plain Layout
@@ -5164,12 +5141,7 @@ Sexpr{ifelse(s8[27,5]<.01,"***",ifelse(s8[27,5]<.05,"**",ifelse(s8[27,5]<.1,"*",
 
 \begin_layout Plain Layout
 
-& $
-\backslash
-Sexpr{s8[25,6]}^{
-\backslash
-Sexpr{ifelse(s8[27,6]<.01,"***",ifelse(s8[27,6]<.05,"**",ifelse(s8[27,6]<.1,"*","")
-))}}$
+& 
 \end_layout
 
 \begin_layout Plain Layout
@@ -5197,15 +5169,11 @@ Sexpr{ifelse(s8[27,7]<.01,"***",ifelse(s8[27,7]<.05,"**",ifelse(s8[27,7]<.1,"*",
 \backslash
 Sexpr{s8[26,1]})$   &  $(
 \backslash
-Sexpr{s8[26,2]})$ & $(
-\backslash
-Sexpr{s8[26,3]})$ & $(
+Sexpr{s8[26,2]})$ &  & $(
 \backslash
 Sexpr{s8[26,4]})$ & $(
 \backslash
-Sexpr{s8[26,5]})$ & $(
-\backslash
-Sexpr{s8[26,6]})$ & $(
+Sexpr{s8[26,5]})$ &  & $(
 \backslash
 Sexpr{s8[26,7]})$ 
 \backslash
@@ -5216,7 +5184,7 @@ Sexpr{s8[26,7]})$
 
 \begin_layout Plain Layout
 
-{Shop has problem}   & $
+{Shop has no problem}   & $
 \backslash
 Sexpr{s8[28,1]}^{
 \backslash
@@ -5226,12 +5194,7 @@ Sexpr{ifelse(s8[30,1]<.01,"***",ifelse(s8[30,1]<.05,"**",ifelse(s8[30,1]<.1,"*",
 Sexpr{s8[28,2]}^{
 \backslash
 Sexpr{ifelse(s8[30,2]<.01,"***",ifelse(s8[30,2]<.05,"**",ifelse(s8[30,2]<.1,"*","")
-))}}$  & $
-\backslash
-Sexpr{s8[28,3]}^{
-\backslash
-Sexpr{ifelse(s8[30,3]<.01,"***",ifelse(s8[30,3]<.05,"**",ifelse(s8[30,3]<.1,"*","")
-))}}$
+))}}$  & 
 \end_layout
 
 \begin_layout Plain Layout
@@ -5256,12 +5219,7 @@ Sexpr{ifelse(s8[30,5]<.01,"***",ifelse(s8[30,5]<.05,"**",ifelse(s8[30,5]<.1,"*",
 
 \begin_layout Plain Layout
 
-& $
-\backslash
-Sexpr{s8[28,6]}^{
-\backslash
-Sexpr{ifelse(s8[30,6]<.01,"***",ifelse(s8[30,6]<.05,"**",ifelse(s8[30,6]<.1,"*","")
-))}}$
+& 
 \end_layout
 
 \begin_layout Plain Layout
@@ -5289,15 +5247,11 @@ Sexpr{ifelse(s8[30,7]<.01,"***",ifelse(s8[30,7]<.05,"**",ifelse(s8[30,7]<.1,"*",
 \backslash
 Sexpr{s8[29,1]})$   &  $(
 \backslash
-Sexpr{s8[29,2]})$ & $(
-\backslash
-Sexpr{s8[29,3]})$ & $(
+Sexpr{s8[29,2]})$ &  & $(
 \backslash
 Sexpr{s8[29,4]})$ & $(
 \backslash
-Sexpr{s8[29,5]})$ & $(
-\backslash
-Sexpr{s8[29,6]})$ & $(
+Sexpr{s8[29,5]})$ &  & $(
 \backslash
 Sexpr{s8[29,7]})$ 
 \backslash
@@ -5318,12 +5272,7 @@ Sexpr{ifelse(s8[33,1]<.01,"***",ifelse(s8[33,1]<.05,"**",ifelse(s8[33,1]<.1,"*",
 Sexpr{s8[31,2]}^{
 \backslash
 Sexpr{ifelse(s8[33,2]<.01,"***",ifelse(s8[33,2]<.05,"**",ifelse(s8[33,2]<.1,"*","")
-))}}$  & $
-\backslash
-Sexpr{s8[31,3]}^{
-\backslash
-Sexpr{ifelse(s8[33,3]<.01,"***",ifelse(s8[33,3]<.05,"**",ifelse(s8[33,3]<.1,"*","")
-))}}$
+))}}$  & 
 \end_layout
 
 \begin_layout Plain Layout
@@ -5348,12 +5297,7 @@ Sexpr{ifelse(s8[33,5]<.01,"***",ifelse(s8[33,5]<.05,"**",ifelse(s8[33,5]<.1,"*",
 
 \begin_layout Plain Layout
 
-& $
-\backslash
-Sexpr{s8[31,6]}^{
-\backslash
-Sexpr{ifelse(s8[33,6]<.01,"***",ifelse(s8[33,6]<.05,"**",ifelse(s8[33,6]<.1,"*","")
-))}}$
+& 
 \end_layout
 
 \begin_layout Plain Layout
@@ -5381,15 +5325,11 @@ Sexpr{ifelse(s8[33,7]<.01,"***",ifelse(s8[33,7]<.05,"**",ifelse(s8[33,7]<.1,"*",
 \backslash
 Sexpr{s8[32,1]})$   &  $(
 \backslash
-Sexpr{s8[32,2]})$ & $(
-\backslash
-Sexpr{s8[32,3]})$ & $(
+Sexpr{s8[32,2]})$ &  & $(
 \backslash
 Sexpr{s8[32,4]})$ & $(
 \backslash
-Sexpr{s8[32,5]})$ & $(
-\backslash
-Sexpr{s8[32,6]})$ & $(
+Sexpr{s8[32,5]})$ & & $(
 \backslash
 Sexpr{s8[32,7]})$
 \backslash
@@ -5410,12 +5350,7 @@ Sexpr{ifelse(s8[36,1]<.01,"***",ifelse(s8[36,1]<.05,"**",ifelse(s8[36,1]<.1,"*",
 Sexpr{s8[34,2]}^{
 \backslash
 Sexpr{ifelse(s8[36,2]<.01,"***",ifelse(s8[36,2]<.05,"**",ifelse(s8[36,2]<.1,"*","")
-))}}$  & $
-\backslash
-Sexpr{s8[34,3]}^{
-\backslash
-Sexpr{ifelse(s8[36,3]<.01,"***",ifelse(s8[36,3]<.05,"**",ifelse(s8[36,3]<.1,"*","")
-))}}$
+))}}$  & 
 \end_layout
 
 \begin_layout Plain Layout
@@ -5440,12 +5375,7 @@ Sexpr{ifelse(s8[36,5]<.01,"***",ifelse(s8[36,5]<.05,"**",ifelse(s8[36,5]<.1,"*",
 
 \begin_layout Plain Layout
 
-& $
-\backslash
-Sexpr{s8[34,6]}^{
-\backslash
-Sexpr{ifelse(s8[36,6]<.01,"***",ifelse(s8[36,6]<.05,"**",ifelse(s8[36,6]<.1,"*","")
-))}}$
+& 
 \end_layout
 
 \begin_layout Plain Layout
@@ -5473,15 +5403,11 @@ Sexpr{ifelse(s8[36,7]<.01,"***",ifelse(s8[36,7]<.05,"**",ifelse(s8[36,7]<.1,"*",
 \backslash
 Sexpr{s8[35,1]})$   &  $(
 \backslash
-Sexpr{s8[35,2]})$ & $(
-\backslash
-Sexpr{s8[35,3]})$ & $(
+Sexpr{s8[35,2]})$ &  & $(
 \backslash
 Sexpr{s8[35,4]})$ & $(
 \backslash
-Sexpr{s8[35,5]})$ & $(
-\backslash
-Sexpr{s8[35,6]})$ & $(
+Sexpr{s8[35,5]})$ & & $(
 \backslash
 Sexpr{s8[35,7]})$ 
 \backslash
@@ -5502,12 +5428,7 @@ Sexpr{ifelse(s8[39,1]<.01,"***",ifelse(s8[39,1]<.05,"**",ifelse(s8[39,1]<.1,"*",
 Sexpr{s8[37,2]}^{
 \backslash
 Sexpr{ifelse(s8[39,2]<.01,"***",ifelse(s8[39,2]<.05,"**",ifelse(s8[39,2]<.1,"*","")
-))}}$  & $
-\backslash
-Sexpr{s8[37,3]}^{
-\backslash
-Sexpr{ifelse(s8[39,3]<.01,"***",ifelse(s8[39,3]<.05,"**",ifelse(s8[39,3]<.1,"*","")
-))}}$
+))}}$  & 
 \end_layout
 
 \begin_layout Plain Layout
@@ -5532,12 +5453,7 @@ Sexpr{ifelse(s8[39,5]<.01,"***",ifelse(s8[39,5]<.05,"**",ifelse(s8[39,5]<.1,"*",
 
 \begin_layout Plain Layout
 
-& $
-\backslash
-Sexpr{s8[37,6]}^{
-\backslash
-Sexpr{ifelse(s8[39,6]<.01,"***",ifelse(s8[39,6]<.05,"**",ifelse(s8[39,6]<.1,"*","")
-))}}$
+& 
 \end_layout
 
 \begin_layout Plain Layout
@@ -5565,15 +5481,11 @@ Sexpr{ifelse(s8[39,7]<.01,"***",ifelse(s8[39,7]<.05,"**",ifelse(s8[39,7]<.1,"*",
 \backslash
 Sexpr{s8[38,1]})$   &  $(
 \backslash
-Sexpr{s8[38,2]})$ & $(
-\backslash
-Sexpr{s8[38,3]})$ & $(
+Sexpr{s8[38,2]})$ &  & $(
 \backslash
 Sexpr{s8[38,4]})$ & $(
 \backslash
-Sexpr{s8[38,5]})$ & $(
-\backslash
-Sexpr{s8[38,6]})$ & $(
+Sexpr{s8[38,5]})$ &  & $(
 \backslash
 Sexpr{s8[38,7]})$
 \backslash
@@ -5584,7 +5496,7 @@ Sexpr{s8[38,7]})$
 
 \begin_layout Plain Layout
 
-{Seed is stored}   & $
+{Shop stores seed}   & $
 \backslash
 Sexpr{s8[40,1]}^{
 \backslash
@@ -5594,12 +5506,7 @@ Sexpr{ifelse(s8[42,1]<.01,"***",ifelse(s8[42,1]<.05,"**",ifelse(s8[42,1]<.1,"*",
 Sexpr{s8[40,2]}^{
 \backslash
 Sexpr{ifelse(s8[42,2]<.01,"***",ifelse(s8[42,2]<.05,"**",ifelse(s8[42,2]<.1,"*","")
-))}}$  & $
-\backslash
-Sexpr{s8[40,3]}^{
-\backslash
-Sexpr{ifelse(s8[42,3]<.01,"***",ifelse(s8[42,3]<.05,"**",ifelse(s8[42,3]<.1,"*","")
-))}}$
+))}}$  & 
 \end_layout
 
 \begin_layout Plain Layout
@@ -5624,12 +5531,7 @@ Sexpr{ifelse(s8[42,5]<.01,"***",ifelse(s8[42,5]<.05,"**",ifelse(s8[42,5]<.1,"*",
 
 \begin_layout Plain Layout
 
-& $
-\backslash
-Sexpr{s8[40,6]}^{
-\backslash
-Sexpr{ifelse(s8[42,6]<.01,"***",ifelse(s8[42,6]<.05,"**",ifelse(s8[42,6]<.1,"*","")
-))}}$
+& 
 \end_layout
 
 \begin_layout Plain Layout
@@ -5648,7 +5550,7 @@ Sexpr{ifelse(s8[42,7]<.01,"***",ifelse(s8[42,7]<.05,"**",ifelse(s8[42,7]<.1,"*",
 
 \begin_layout Plain Layout
 
-{in poor lighting}
+{in correct lighting}
 \end_layout
 
 \begin_layout Plain Layout
@@ -5657,15 +5559,11 @@ Sexpr{ifelse(s8[42,7]<.01,"***",ifelse(s8[42,7]<.05,"**",ifelse(s8[42,7]<.1,"*",
 \backslash
 Sexpr{s8[41,1]})$   &  $(
 \backslash
-Sexpr{s8[41,2]})$ & $(
-\backslash
-Sexpr{s8[41,3]})$ & $(
+Sexpr{s8[41,2]})$ &  & $(
 \backslash
 Sexpr{s8[41,4]})$ & $(
 \backslash
-Sexpr{s8[41,5]})$ & $(
-\backslash
-Sexpr{s8[41,6]})$ & $(
+Sexpr{s8[41,5]})$ &  & $(
 \backslash
 Sexpr{s8[41,7]})$ 
 \backslash
@@ -5676,7 +5574,7 @@ Sexpr{s8[41,7]})$
 
 \begin_layout Plain Layout
 
-{Seed is stored}   & $
+{Shop stores seed}   & $
 \backslash
 Sexpr{s8[43,1]}^{
 \backslash
@@ -5686,12 +5584,7 @@ Sexpr{ifelse(s8[45,1]<.01,"***",ifelse(s8[45,1]<.05,"**",ifelse(s8[45,1]<.1,"*",
 Sexpr{s8[43,2]}^{
 \backslash
 Sexpr{ifelse(s8[45,2]<.01,"***",ifelse(s8[45,2]<.05,"**",ifelse(s8[45,2]<.1,"*","")
-))}}$  & $
-\backslash
-Sexpr{s8[43,3]}^{
-\backslash
-Sexpr{ifelse(s8[45,3]<.01,"***",ifelse(s8[45,3]<.05,"**",ifelse(s8[45,3]<.1,"*","")
-))}}$
+))}}$  & 
 \end_layout
 
 \begin_layout Plain Layout
@@ -5716,12 +5609,7 @@ Sexpr{ifelse(s8[45,5]<.01,"***",ifelse(s8[45,5]<.05,"**",ifelse(s8[45,5]<.1,"*",
 
 \begin_layout Plain Layout
 
-& $
-\backslash
-Sexpr{s8[43,6]}^{
-\backslash
-Sexpr{ifelse(s8[45,6]<.01,"***",ifelse(s8[45,6]<.05,"**",ifelse(s8[45,6]<.1,"*","")
-))}}$
+&
 \end_layout
 
 \begin_layout Plain Layout
@@ -5740,7 +5628,7 @@ Sexpr{ifelse(s8[45,7]<.01,"***",ifelse(s8[45,7]<.05,"**",ifelse(s8[45,7]<.1,"*",
 
 \begin_layout Plain Layout
 
-{on poor surface}
+{on correct surface}
 \end_layout
 
 \begin_layout Plain Layout
@@ -5749,15 +5637,11 @@ Sexpr{ifelse(s8[45,7]<.01,"***",ifelse(s8[45,7]<.05,"**",ifelse(s8[45,7]<.1,"*",
 \backslash
 Sexpr{s8[44,1]})$   &  $(
 \backslash
-Sexpr{s8[44,2]})$ & $(
-\backslash
-Sexpr{s8[44,3]})$ & $(
+Sexpr{s8[44,2]})$ &  & $(
 \backslash
 Sexpr{s8[44,4]})$ & $(
 \backslash
-Sexpr{s8[44,5]})$ & $(
-\backslash
-Sexpr{s8[44,6]})$ & $(
+Sexpr{s8[44,5]})$ &  & $(
 \backslash
 Sexpr{s8[44,7]})$ 
 \backslash
@@ -5768,7 +5652,7 @@ Sexpr{s8[44,7]})$
 
 \begin_layout Plain Layout
 
-{Seed is stored}   & $
+{Shop does not store maize}   & $
 \backslash
 Sexpr{s8[46,1]}^{
 \backslash
@@ -5778,12 +5662,7 @@ Sexpr{ifelse(s8[48,1]<.01,"***",ifelse(s8[48,1]<.05,"**",ifelse(s8[48,1]<.1,"*",
 Sexpr{s8[46,2]}^{
 \backslash
 Sexpr{ifelse(s8[48,2]<.01,"***",ifelse(s8[48,2]<.05,"**",ifelse(s8[48,2]<.1,"*","")
-))}}$  & $
-\backslash
-Sexpr{s8[46,3]}^{
-\backslash
-Sexpr{ifelse(s8[48,3]<.01,"***",ifelse(s8[48,3]<.05,"**",ifelse(s8[48,3]<.1,"*","")
-))}}$
+))}}$  & 
 \end_layout
 
 \begin_layout Plain Layout
@@ -5808,12 +5687,7 @@ Sexpr{ifelse(s8[48,5]<.01,"***",ifelse(s8[48,5]<.05,"**",ifelse(s8[48,5]<.1,"*",
 
 \begin_layout Plain Layout
 
-& $
-\backslash
-Sexpr{s8[46,6]}^{
-\backslash
-Sexpr{ifelse(s8[48,6]<.01,"***",ifelse(s8[48,6]<.05,"**",ifelse(s8[48,6]<.1,"*","")
-))}}$
+& 
 \end_layout
 
 \begin_layout Plain Layout
@@ -5832,7 +5706,7 @@ Sexpr{ifelse(s8[48,7]<.01,"***",ifelse(s8[48,7]<.05,"**",ifelse(s8[48,7]<.1,"*",
 
 \begin_layout Plain Layout
 
-{in open containers}
+{seed in open containers}
 \end_layout
 
 \begin_layout Plain Layout
@@ -5841,15 +5715,11 @@ Sexpr{ifelse(s8[48,7]<.01,"***",ifelse(s8[48,7]<.05,"**",ifelse(s8[48,7]<.1,"*",
 \backslash
 Sexpr{s8[47,1]})$   &  $(
 \backslash
-Sexpr{s8[47,2]})$ & $(
-\backslash
-Sexpr{s8[47,3]})$ & $(
+Sexpr{s8[47,2]})$ &  & $(
 \backslash
 Sexpr{s8[47,4]})$ & $(
 \backslash
-Sexpr{s8[47,5]})$ & $(
-\backslash
-Sexpr{s8[47,6]})$ & $(
+Sexpr{s8[47,5]})$ &  & $(
 \backslash
 Sexpr{s8[47,7]})$
 \backslash
@@ -5870,12 +5740,7 @@ Sexpr{ifelse(s8[51,1]<.01,"***",ifelse(s8[51,1]<.05,"**",ifelse(s8[51,1]<.1,"*",
 Sexpr{s8[49,2]}^{
 \backslash
 Sexpr{ifelse(s8[51,2]<.01,"***",ifelse(s8[51,2]<.05,"**",ifelse(s8[51,2]<.1,"*","")
-))}}$  & $
-\backslash
-Sexpr{s8[49,3]}^{
-\backslash
-Sexpr{ifelse(s8[51,3]<.01,"***",ifelse(s8[51,3]<.05,"**",ifelse(s8[51,3]<.1,"*","")
-))}}$
+))}}$  & 
 \end_layout
 
 \begin_layout Plain Layout
@@ -5900,12 +5765,7 @@ Sexpr{ifelse(s8[51,5]<.01,"***",ifelse(s8[51,5]<.05,"**",ifelse(s8[51,5]<.1,"*",
 
 \begin_layout Plain Layout
 
-& $
-\backslash
-Sexpr{s8[49,6]}^{
-\backslash
-Sexpr{ifelse(s8[51,6]<.01,"***",ifelse(s8[51,6]<.05,"**",ifelse(s8[51,6]<.1,"*","")
-))}}$
+& 
 \end_layout
 
 \begin_layout Plain Layout
@@ -5933,15 +5793,11 @@ Sexpr{ifelse(s8[51,7]<.01,"***",ifelse(s8[51,7]<.05,"**",ifelse(s8[51,7]<.1,"*",
 \backslash
 Sexpr{s8[50,1]})$   &  $(
 \backslash
-Sexpr{s8[50,2]})$ & $(
-\backslash
-Sexpr{s8[50,3]})$ & $(
+Sexpr{s8[50,2]})$ &  & $(
 \backslash
 Sexpr{s8[50,4]})$ & $(
 \backslash
-Sexpr{s8[50,5]})$ & $(
-\backslash
-Sexpr{s8[50,6]})$ & $(
+Sexpr{s8[50,5]})$ & & $(
 \backslash
 Sexpr{s8[50,7]})$
 \backslash
@@ -5962,12 +5818,7 @@ Sexpr{ifelse(s8[54,1]<.01,"***",ifelse(s8[54,1]<.05,"**",ifelse(s8[54,1]<.1,"*",
 Sexpr{s8[52,2]}^{
 \backslash
 Sexpr{ifelse(s8[54,2]<.01,"***",ifelse(s8[54,2]<.05,"**",ifelse(s8[54,2]<.1,"*","")
-))}}$  & $
-\backslash
-Sexpr{s8[52,3]}^{
-\backslash
-Sexpr{ifelse(s8[54,3]<.01,"***",ifelse(s8[54,3]<.05,"**",ifelse(s8[54,3]<.1,"*","")
-))}}$
+))}}$  & 
 \end_layout
 
 \begin_layout Plain Layout
@@ -5992,12 +5843,7 @@ Sexpr{ifelse(s8[54,5]<.01,"***",ifelse(s8[54,5]<.05,"**",ifelse(s8[54,5]<.1,"*",
 
 \begin_layout Plain Layout
 
-& $
-\backslash
-Sexpr{s8[52,6]}^{
-\backslash
-Sexpr{ifelse(s8[54,6]<.01,"***",ifelse(s8[54,6]<.05,"**",ifelse(s8[54,6]<.1,"*","")
-))}}$
+& 
 \end_layout
 
 \begin_layout Plain Layout
@@ -6025,15 +5871,11 @@ Sexpr{ifelse(s8[54,7]<.01,"***",ifelse(s8[54,7]<.05,"**",ifelse(s8[54,7]<.1,"*",
 \backslash
 Sexpr{s8[53,1]})$   &  $(
 \backslash
-Sexpr{s8[53,2]})$ & $(
-\backslash
-Sexpr{s8[53,3]})$ & $(
+Sexpr{s8[53,2]})$ &  & $(
 \backslash
 Sexpr{s8[53,4]})$ & $(
 \backslash
-Sexpr{s8[53,5]})$ & $(
-\backslash
-Sexpr{s8[53,6]})$ & $(
+Sexpr{s8[53,5]})$ & & $(
 \backslash
 Sexpr{s8[53,7]})$ 
 \backslash
@@ -6044,7 +5886,7 @@ Sexpr{s8[53,7]})$
 
 \begin_layout Plain Layout
 
-{Shop's customer}   & $
+{Shop's customers did not}   & $
 \backslash
 Sexpr{s8[55,1]}^{
 \backslash
@@ -6054,12 +5896,7 @@ Sexpr{ifelse(s8[57,1]<.01,"***",ifelse(s8[57,1]<.05,"**",ifelse(s8[57,1]<.1,"*",
 Sexpr{s8[55,2]}^{
 \backslash
 Sexpr{ifelse(s8[57,2]<.01,"***",ifelse(s8[57,2]<.05,"**",ifelse(s8[57,2]<.1,"*","")
-))}}$  & $
-\backslash
-Sexpr{s8[55,3]}^{
-\backslash
-Sexpr{ifelse(s8[57,3]<.01,"***",ifelse(s8[57,3]<.05,"**",ifelse(s8[57,3]<.1,"*","")
-))}}$
+))}}$  & 
 \end_layout
 
 \begin_layout Plain Layout
@@ -6084,12 +5921,7 @@ Sexpr{ifelse(s8[57,5]<.01,"***",ifelse(s8[57,5]<.05,"**",ifelse(s8[57,5]<.1,"*",
 
 \begin_layout Plain Layout
 
-& $
-\backslash
-Sexpr{s8[55,6]}^{
-\backslash
-Sexpr{ifelse(s8[57,6]<.01,"***",ifelse(s8[57,6]<.05,"**",ifelse(s8[57,6]<.1,"*","")
-))}}$
+& 
 \end_layout
 
 \begin_layout Plain Layout
@@ -6108,7 +5940,7 @@ Sexpr{ifelse(s8[57,7]<.01,"***",ifelse(s8[57,7]<.05,"**",ifelse(s8[57,7]<.1,"*",
 
 \begin_layout Plain Layout
 
-{complained about seed}
+{complain about seed}
 \end_layout
 
 \begin_layout Plain Layout
@@ -6117,15 +5949,11 @@ Sexpr{ifelse(s8[57,7]<.01,"***",ifelse(s8[57,7]<.05,"**",ifelse(s8[57,7]<.1,"*",
 \backslash
 Sexpr{s8[56,1]})$   &  $(
 \backslash
-Sexpr{s8[56,2]})$ & $(
-\backslash
-Sexpr{s8[56,3]})$ & $(
+Sexpr{s8[56,2]})$ &  & $(
 \backslash
 Sexpr{s8[56,4]})$ & $(
 \backslash
-Sexpr{s8[56,5]})$ & $(
-\backslash
-Sexpr{s8[56,6]})$ & $(
+Sexpr{s8[56,5]})$ &  & $(
 \backslash
 Sexpr{s8[56,7]})$ 
 \backslash
@@ -6146,12 +5974,7 @@ Sexpr{ifelse(s8[60,1]<.01,"***",ifelse(s8[60,1]<.05,"**",ifelse(s8[60,1]<.1,"*",
 Sexpr{s8[58,2]}^{
 \backslash
 Sexpr{ifelse(s8[60,2]<.01,"***",ifelse(s8[60,2]<.05,"**",ifelse(s8[60,2]<.1,"*","")
-))}}$  & $
-\backslash
-Sexpr{s8[58,3]}^{
-\backslash
-Sexpr{ifelse(s8[60,3]<.01,"***",ifelse(s8[60,3]<.05,"**",ifelse(s8[60,3]<.1,"*","")
-))}}$
+))}}$  & 
 \end_layout
 
 \begin_layout Plain Layout
@@ -6176,12 +5999,7 @@ Sexpr{ifelse(s8[60,5]<.01,"***",ifelse(s8[60,5]<.05,"**",ifelse(s8[60,5]<.1,"*",
 
 \begin_layout Plain Layout
 
-& $
-\backslash
-Sexpr{s8[58,6]}^{
-\backslash
-Sexpr{ifelse(s8[60,6]<.01,"***",ifelse(s8[60,6]<.05,"**",ifelse(s8[60,6]<.1,"*","")
-))}}$
+& 
 \end_layout
 
 \begin_layout Plain Layout
@@ -6209,15 +6027,11 @@ Sexpr{ifelse(s8[60,7]<.01,"***",ifelse(s8[60,7]<.05,"**",ifelse(s8[60,7]<.1,"*",
 \backslash
 Sexpr{s8[59,1]})$   &  $(
 \backslash
-Sexpr{s8[59,2]})$ & $(
-\backslash
-Sexpr{s8[59,3]})$ & $(
+Sexpr{s8[59,2]})$ & & $(
 \backslash
 Sexpr{s8[59,4]})$ & $(
 \backslash
-Sexpr{s8[59,5]})$ & $(
-\backslash
-Sexpr{s8[59,6]})$ & $(
+Sexpr{s8[59,5]})$ &  & $(
 \backslash
 Sexpr{s8[59,7]})$ 
 \backslash
@@ -6238,12 +6052,7 @@ Sexpr{ifelse(s8[63,1]<.01,"***",ifelse(s8[63,1]<.05,"**",ifelse(s8[63,1]<.1,"*",
 Sexpr{s8[61,2]}^{
 \backslash
 Sexpr{ifelse(s8[63,2]<.01,"***",ifelse(s8[63,2]<.05,"**",ifelse(s8[63,2]<.1,"*","")
-))}}$  & $
-\backslash
-Sexpr{s8[61,3]}^{
-\backslash
-Sexpr{ifelse(s8[63,3]<.01,"***",ifelse(s8[63,3]<.05,"**",ifelse(s8[63,3]<.1,"*","")
-))}}$
+))}}$  & 
 \end_layout
 
 \begin_layout Plain Layout
@@ -6268,12 +6077,7 @@ Sexpr{ifelse(s8[63,5]<.01,"***",ifelse(s8[63,5]<.05,"**",ifelse(s8[63,5]<.1,"*",
 
 \begin_layout Plain Layout
 
-& $
-\backslash
-Sexpr{s8[61,6]}^{
-\backslash
-Sexpr{ifelse(s8[63,6]<.01,"***",ifelse(s8[63,6]<.05,"**",ifelse(s8[63,6]<.1,"*","")
-))}}$
+& 
 \end_layout
 
 \begin_layout Plain Layout
@@ -6301,15 +6105,11 @@ Sexpr{ifelse(s8[63,7]<.01,"***",ifelse(s8[63,7]<.05,"**",ifelse(s8[63,7]<.1,"*",
 \backslash
 Sexpr{s8[62,1]})$   &  $(
 \backslash
-Sexpr{s8[62,2]})$ & $(
-\backslash
-Sexpr{s8[62,3]})$ & $(
+Sexpr{s8[62,2]})$ &  & $(
 \backslash
 Sexpr{s8[62,4]})$ & $(
 \backslash
-Sexpr{s8[62,5]})$ & $(
-\backslash
-Sexpr{s8[62,6]})$ & $(
+Sexpr{s8[62,5]})$ &  & $(
 \backslash
 Sexpr{s8[62,7]})$
 \end_layout
@@ -7975,7 +7775,7 @@ Sexpr{fe2[21,7]})$
 
 \begin_layout Plain Layout
 
-{Seed is stored}   & $
+{Shop stores seed}   & $
 \backslash
 Sexpr{fe2[23,1]}^{
 \backslash
@@ -8067,7 +7867,7 @@ Sexpr{fe2[24,7]})$
 
 \begin_layout Plain Layout
 
-{Shop has problem}   & $
+{Shop has no problem}   & $
 \backslash
 Sexpr{fe2[26,1]}^{
 \backslash
@@ -8435,7 +8235,7 @@ Sexpr{fe2[36,7]})$
 
 \begin_layout Plain Layout
 
-{Seed is stored}   & $
+{Shop stores seed}   & $
 \backslash
 Sexpr{fe2[38,1]}^{
 \backslash
@@ -8499,7 +8299,7 @@ Sexpr{ifelse(fe2[40,7]<.01,"***",ifelse(fe2[40,7]<.05,"**",ifelse(fe2[40,7]<.1,"
 
 \begin_layout Plain Layout
 
-{in poor lighting}
+{in correct lighting}
 \end_layout
 
 \begin_layout Plain Layout
@@ -8527,7 +8327,7 @@ Sexpr{fe2[39,7]})$
 
 \begin_layout Plain Layout
 
-{Seed is stored}   & $
+{Shop stores seed}   & $
 \backslash
 Sexpr{fe2[41,1]}^{
 \backslash
@@ -8591,7 +8391,7 @@ Sexpr{ifelse(fe2[43,7]<.01,"***",ifelse(fe2[43,7]<.05,"**",ifelse(fe2[43,7]<.1,"
 
 \begin_layout Plain Layout
 
-{on poor surface} 
+{on correct surface} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -8619,7 +8419,7 @@ Sexpr{fe2[42,7]})$
 
 \begin_layout Plain Layout
 
-{Seed is stored}   & $
+{Shop does not store maize}   & $
 \backslash
 Sexpr{fe2[44,1]}^{
 \backslash
@@ -8683,7 +8483,7 @@ Sexpr{ifelse(fe2[46,7]<.01,"***",ifelse(fe2[46,7]<.05,"**",ifelse(fe2[46,7]<.1,"
 
 \begin_layout Plain Layout
 
-{in open containers}
+{seed in open containers}
 \end_layout
 
 \begin_layout Plain Layout
@@ -8895,7 +8695,7 @@ Sexpr{fe2[51,7]})$
 
 \begin_layout Plain Layout
 
-{Shop's customer}   & $
+{Shop's customers did not}   & $
 \backslash
 Sexpr{fe2[53,1]}^{
 \backslash
@@ -8959,7 +8759,7 @@ Sexpr{ifelse(fe2[55,7]<.01,"***",ifelse(fe2[55,7]<.05,"**",ifelse(fe2[55,7]<.1,"
 
 \begin_layout Plain Layout
 
-{complained about seed} 
+{complain about seed} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -10471,12 +10271,7 @@ Sexpr{ifelse(fe4[19,1]<.01,"***",ifelse(fe4[19,1]<.05,"**",ifelse(fe4[19,1]<.1,"
 Sexpr{fe4[17,2]}^{
 \backslash
 Sexpr{ifelse(fe4[19,2]<.01,"***",ifelse(fe4[19,2]<.05,"**",ifelse(fe4[19,2]<.1,"*",
-"")))}}$  & $
-\backslash
-Sexpr{fe4[17,3]}^{
-\backslash
-Sexpr{ifelse(fe4[19,3]<.01,"***",ifelse(fe4[19,3]<.05,"**",ifelse(fe4[19,3]<.1,"*",
-"")))}}$
+"")))}}$  &
 \end_layout
 
 \begin_layout Plain Layout
@@ -10501,12 +10296,7 @@ Sexpr{ifelse(fe4[19,5]<.01,"***",ifelse(fe4[19,5]<.05,"**",ifelse(fe4[19,5]<.1,"
 
 \begin_layout Plain Layout
 
-& $
-\backslash
-Sexpr{fe4[17,6]}^{
-\backslash
-Sexpr{ifelse(fe4[19,6]<.01,"***",ifelse(fe4[19,6]<.05,"**",ifelse(fe4[19,6]<.1,"*",
-"")))}}$
+&
 \end_layout
 
 \begin_layout Plain Layout
@@ -10534,15 +10324,11 @@ Sexpr{ifelse(fe4[19,7]<.01,"***",ifelse(fe4[19,7]<.05,"**",ifelse(fe4[19,7]<.1,"
 \backslash
 Sexpr{fe4[18,1]})$   &  $(
 \backslash
-Sexpr{fe4[18,2]})$ & $(
-\backslash
-Sexpr{fe4[18,3]})$ & $(
+Sexpr{fe4[18,2]})$ &  & $(
 \backslash
 Sexpr{fe4[18,4]})$ & $(
 \backslash
-Sexpr{fe4[18,5]})$ & $(
-\backslash
-Sexpr{fe4[18,6]})$ & $(
+Sexpr{fe4[18,5]})$ & & $(
 \backslash
 Sexpr{fe4[18,7]})$ 
 \backslash
@@ -10563,12 +10349,7 @@ Sexpr{ifelse(fe4[22,1]<.01,"***",ifelse(fe4[22,1]<.05,"**",ifelse(fe4[22,1]<.1,"
 Sexpr{fe4[20,2]}^{
 \backslash
 Sexpr{ifelse(fe4[22,2]<.01,"***",ifelse(fe4[22,2]<.05,"**",ifelse(fe4[22,2]<.1,"*",
-"")))}}$  & $
-\backslash
-Sexpr{fe4[20,3]}^{
-\backslash
-Sexpr{ifelse(fe4[22,3]<.01,"***",ifelse(fe4[22,3]<.05,"**",ifelse(fe4[22,3]<.1,"*",
-"")))}}$
+"")))}}$  & 
 \end_layout
 
 \begin_layout Plain Layout
@@ -10593,12 +10374,7 @@ Sexpr{ifelse(fe4[22,5]<.01,"***",ifelse(fe4[22,5]<.05,"**",ifelse(fe4[22,5]<.1,"
 
 \begin_layout Plain Layout
 
-& $
-\backslash
-Sexpr{fe4[20,6]}^{
-\backslash
-Sexpr{ifelse(fe4[22,6]<.01,"***",ifelse(fe4[22,6]<.05,"**",ifelse(fe4[22,6]<.1,"*",
-"")))}}$
+& 
 \end_layout
 
 \begin_layout Plain Layout
@@ -10626,15 +10402,11 @@ Sexpr{ifelse(fe4[22,7]<.01,"***",ifelse(fe4[22,7]<.05,"**",ifelse(fe4[22,7]<.1,"
 \backslash
 Sexpr{fe4[21,1]})$   &  $(
 \backslash
-Sexpr{fe4[21,2]})$ & $(
-\backslash
-Sexpr{fe4[21,3]})$ & $(
+Sexpr{fe4[21,2]})$ &  & $(
 \backslash
 Sexpr{fe4[21,4]})$ & $(
 \backslash
-Sexpr{fe4[21,5]})$ & $(
-\backslash
-Sexpr{fe4[21,6]})$ & $(
+Sexpr{fe4[21,5]})$ &  & $(
 \backslash
 Sexpr{fe4[21,7]})$
 \backslash
@@ -10645,7 +10417,7 @@ Sexpr{fe4[21,7]})$
 
 \begin_layout Plain Layout
 
-{Seed is stored}   & $
+{Shop stores seed}   & $
 \backslash
 Sexpr{fe4[23,1]}^{
 \backslash
@@ -10655,12 +10427,7 @@ Sexpr{ifelse(fe4[25,1]<.01,"***",ifelse(fe4[25,1]<.05,"**",ifelse(fe4[25,1]<.1,"
 Sexpr{fe4[23,2]}^{
 \backslash
 Sexpr{ifelse(fe4[25,2]<.01,"***",ifelse(fe4[25,2]<.05,"**",ifelse(fe4[25,2]<.1,"*",
-"")))}}$  & $
-\backslash
-Sexpr{fe4[23,3]}^{
-\backslash
-Sexpr{ifelse(fe4[25,3]<.01,"***",ifelse(fe4[25,3]<.05,"**",ifelse(fe4[25,3]<.1,"*",
-"")))}}$
+"")))}}$  & 
 \end_layout
 
 \begin_layout Plain Layout
@@ -10685,12 +10452,7 @@ Sexpr{ifelse(fe4[25,5]<.01,"***",ifelse(fe4[25,5]<.05,"**",ifelse(fe4[25,5]<.1,"
 
 \begin_layout Plain Layout
 
-& $
-\backslash
-Sexpr{fe4[23,6]}^{
-\backslash
-Sexpr{ifelse(fe4[25,6]<.01,"***",ifelse(fe4[25,6]<.05,"**",ifelse(fe4[25,6]<.1,"*",
-"")))}}$
+& 
 \end_layout
 
 \begin_layout Plain Layout
@@ -10718,15 +10480,11 @@ Sexpr{ifelse(fe4[25,7]<.01,"***",ifelse(fe4[25,7]<.05,"**",ifelse(fe4[25,7]<.1,"
 \backslash
 Sexpr{fe4[24,1]})$   &  $(
 \backslash
-Sexpr{fe4[24,2]})$ & $(
-\backslash
-Sexpr{fe4[24,3]})$ & $(
+Sexpr{fe4[24,2]})$ &  & $(
 \backslash
 Sexpr{fe4[24,4]})$ & $(
 \backslash
-Sexpr{fe4[24,5]})$ & $(
-\backslash
-Sexpr{fe4[24,6]})$ & $(
+Sexpr{fe4[24,5]})$ &  & $(
 \backslash
 Sexpr{fe4[24,7]})$
 \backslash
@@ -10737,7 +10495,7 @@ Sexpr{fe4[24,7]})$
 
 \begin_layout Plain Layout
 
-{Shop has problem}   & $
+{Shop has no problem}   & $
 \backslash
 Sexpr{fe4[26,1]}^{
 \backslash
@@ -10747,12 +10505,7 @@ Sexpr{ifelse(fe4[28,1]<.01,"***",ifelse(fe4[28,1]<.05,"**",ifelse(fe4[28,1]<.1,"
 Sexpr{fe4[26,2]}^{
 \backslash
 Sexpr{ifelse(fe4[28,2]<.01,"***",ifelse(fe4[28,2]<.05,"**",ifelse(fe4[28,2]<.1,"*",
-"")))}}$  & $
-\backslash
-Sexpr{fe4[26,3]}^{
-\backslash
-Sexpr{ifelse(fe4[28,3]<.01,"***",ifelse(fe4[28,3]<.05,"**",ifelse(fe4[28,3]<.1,"*",
-"")))}}$
+"")))}}$  & 
 \end_layout
 
 \begin_layout Plain Layout
@@ -10777,12 +10530,7 @@ Sexpr{ifelse(fe4[28,5]<.01,"***",ifelse(fe4[28,5]<.05,"**",ifelse(fe4[28,5]<.1,"
 
 \begin_layout Plain Layout
 
-& $
-\backslash
-Sexpr{fe4[26,6]}^{
-\backslash
-Sexpr{ifelse(fe4[28,6]<.01,"***",ifelse(fe4[28,6]<.05,"**",ifelse(fe4[28,6]<.1,"*",
-"")))}}$
+&
 \end_layout
 
 \begin_layout Plain Layout
@@ -10810,15 +10558,11 @@ Sexpr{ifelse(fe4[28,7]<.01,"***",ifelse(fe4[28,7]<.05,"**",ifelse(fe4[28,7]<.1,"
 \backslash
 Sexpr{fe4[27,1]})$   &  $(
 \backslash
-Sexpr{fe4[27,2]})$ & $(
-\backslash
-Sexpr{fe4[27,3]})$ & $(
+Sexpr{fe4[27,2]})$ &  & $(
 \backslash
 Sexpr{fe4[27,4]})$ & $(
 \backslash
-Sexpr{fe4[27,5]})$ & $(
-\backslash
-Sexpr{fe4[27,6]})$ & $(
+Sexpr{fe4[27,5]})$ & & $(
 \backslash
 Sexpr{fe4[27,7]})$ 
 \backslash
@@ -10839,12 +10583,7 @@ Sexpr{ifelse(fe4[31,1]<.01,"***",ifelse(fe4[31,1]<.05,"**",ifelse(fe4[31,1]<.1,"
 Sexpr{fe4[29,2]}^{
 \backslash
 Sexpr{ifelse(fe4[31,2]<.01,"***",ifelse(fe4[31,2]<.05,"**",ifelse(fe4[31,2]<.1,"*",
-"")))}}$  & $
-\backslash
-Sexpr{fe4[29,3]}^{
-\backslash
-Sexpr{ifelse(fe4[31,3]<.01,"***",ifelse(fe4[31,3]<.05,"**",ifelse(fe4[31,3]<.1,"*",
-"")))}}$
+"")))}}$  & 
 \end_layout
 
 \begin_layout Plain Layout
@@ -10869,12 +10608,7 @@ Sexpr{ifelse(fe4[31,5]<.01,"***",ifelse(fe4[31,5]<.05,"**",ifelse(fe4[31,5]<.1,"
 
 \begin_layout Plain Layout
 
-& $
-\backslash
-Sexpr{fe4[29,6]}^{
-\backslash
-Sexpr{ifelse(fe4[31,6]<.01,"***",ifelse(fe4[31,6]<.05,"**",ifelse(fe4[31,6]<.1,"*",
-"")))}}$
+& 
 \end_layout
 
 \begin_layout Plain Layout
@@ -10902,15 +10636,11 @@ Sexpr{ifelse(fe4[31,7]<.01,"***",ifelse(fe4[31,7]<.05,"**",ifelse(fe4[31,7]<.1,"
 \backslash
 Sexpr{fe4[30,1]})$   &  $(
 \backslash
-Sexpr{fe4[30,2]})$ & $(
-\backslash
-Sexpr{fe4[30,3]})$ & $(
+Sexpr{fe4[30,2]})$ & & $(
 \backslash
 Sexpr{fe4[30,4]})$ & $(
 \backslash
-Sexpr{fe4[30,5]})$ & $(
-\backslash
-Sexpr{fe4[30,6]})$ & $(
+Sexpr{fe4[30,5]})$ & & $(
 \backslash
 Sexpr{fe4[30,7]})$ 
 \backslash
@@ -10931,12 +10661,7 @@ Sexpr{ifelse(fe4[34,1]<.01,"***",ifelse(fe4[34,1]<.05,"**",ifelse(fe4[34,1]<.1,"
 Sexpr{fe4[32,2]}^{
 \backslash
 Sexpr{ifelse(fe4[34,2]<.01,"***",ifelse(fe4[34,2]<.05,"**",ifelse(fe4[34,2]<.1,"*",
-"")))}}$  & $
-\backslash
-Sexpr{fe4[32,3]}^{
-\backslash
-Sexpr{ifelse(fe4[34,3]<.01,"***",ifelse(fe4[34,3]<.05,"**",ifelse(fe4[34,3]<.1,"*",
-"")))}}$
+"")))}}$  &
 \end_layout
 
 \begin_layout Plain Layout
@@ -10961,12 +10686,7 @@ Sexpr{ifelse(fe4[34,5]<.01,"***",ifelse(fe4[34,5]<.05,"**",ifelse(fe4[34,5]<.1,"
 
 \begin_layout Plain Layout
 
-& $
-\backslash
-Sexpr{fe4[32,6]}^{
-\backslash
-Sexpr{ifelse(fe4[34,6]<.01,"***",ifelse(fe4[34,6]<.05,"**",ifelse(fe4[34,6]<.1,"*",
-"")))}}$
+&
 \end_layout
 
 \begin_layout Plain Layout
@@ -10994,15 +10714,11 @@ Sexpr{ifelse(fe4[34,7]<.01,"***",ifelse(fe4[34,7]<.05,"**",ifelse(fe4[34,7]<.1,"
 \backslash
 Sexpr{fe4[33,1]})$   &  $(
 \backslash
-Sexpr{fe4[33,2]})$ & $(
-\backslash
-Sexpr{fe4[33,3]})$ & $(
+Sexpr{fe4[33,2]})$ &  & $(
 \backslash
 Sexpr{fe4[33,4]})$ & $(
 \backslash
-Sexpr{fe4[33,5]})$ & $(
-\backslash
-Sexpr{fe4[33,6]})$ & $(
+Sexpr{fe4[33,5]})$ &  & $(
 \backslash
 Sexpr{fe4[33,7]})$
 \backslash
@@ -11023,12 +10739,7 @@ Sexpr{ifelse(fe4[37,1]<.01,"***",ifelse(fe4[37,1]<.05,"**",ifelse(fe4[37,1]<.1,"
 Sexpr{fe4[35,2]}^{
 \backslash
 Sexpr{ifelse(fe4[37,2]<.01,"***",ifelse(fe4[37,2]<.05,"**",ifelse(fe4[37,2]<.1,"*",
-"")))}}$  & $
-\backslash
-Sexpr{fe4[35,3]}^{
-\backslash
-Sexpr{ifelse(fe4[37,3]<.01,"***",ifelse(fe4[37,3]<.05,"**",ifelse(fe4[37,3]<.1,"*",
-"")))}}$
+"")))}}$  &
 \end_layout
 
 \begin_layout Plain Layout
@@ -11053,12 +10764,7 @@ Sexpr{ifelse(fe4[37,5]<.01,"***",ifelse(fe4[37,5]<.05,"**",ifelse(fe4[37,5]<.1,"
 
 \begin_layout Plain Layout
 
-& $
-\backslash
-Sexpr{fe4[35,6]}^{
-\backslash
-Sexpr{ifelse(fe4[37,6]<.01,"***",ifelse(fe4[37,6]<.05,"**",ifelse(fe4[37,6]<.1,"*",
-"")))}}$
+& 
 \end_layout
 
 \begin_layout Plain Layout
@@ -11086,15 +10792,11 @@ Sexpr{ifelse(fe4[37,7]<.01,"***",ifelse(fe4[37,7]<.05,"**",ifelse(fe4[37,7]<.1,"
 \backslash
 Sexpr{fe4[36,1]})$   &  $(
 \backslash
-Sexpr{fe4[36,2]})$ & $(
-\backslash
-Sexpr{fe4[36,3]})$ & $(
+Sexpr{fe4[36,2]})$ &  & $(
 \backslash
 Sexpr{fe4[36,4]})$ & $(
 \backslash
-Sexpr{fe4[36,5]})$ & $(
-\backslash
-Sexpr{fe4[36,6]})$ & $(
+Sexpr{fe4[36,5]})$ & & $(
 \backslash
 Sexpr{fe4[36,7]})$ 
 \backslash
@@ -11105,7 +10807,7 @@ Sexpr{fe4[36,7]})$
 
 \begin_layout Plain Layout
 
-{Seed is stored}   & $
+{Shop stores seed}   & $
 \backslash
 Sexpr{fe4[38,1]}^{
 \backslash
@@ -11115,12 +10817,7 @@ Sexpr{ifelse(fe4[40,1]<.01,"***",ifelse(fe4[40,1]<.05,"**",ifelse(fe4[40,1]<.1,"
 Sexpr{fe4[38,2]}^{
 \backslash
 Sexpr{ifelse(fe4[40,2]<.01,"***",ifelse(fe4[40,2]<.05,"**",ifelse(fe4[40,2]<.1,"*",
-"")))}}$  & $
-\backslash
-Sexpr{fe4[38,3]}^{
-\backslash
-Sexpr{ifelse(fe4[40,3]<.01,"***",ifelse(fe4[40,3]<.05,"**",ifelse(fe4[40,3]<.1,"*",
-"")))}}$
+"")))}}$  & 
 \end_layout
 
 \begin_layout Plain Layout
@@ -11145,12 +10842,7 @@ Sexpr{ifelse(fe4[40,5]<.01,"***",ifelse(fe4[40,5]<.05,"**",ifelse(fe4[40,5]<.1,"
 
 \begin_layout Plain Layout
 
-& $
-\backslash
-Sexpr{fe4[38,6]}^{
-\backslash
-Sexpr{ifelse(fe4[40,6]<.01,"***",ifelse(fe4[40,6]<.05,"**",ifelse(fe4[40,6]<.1,"*",
-"")))}}$
+&
 \end_layout
 
 \begin_layout Plain Layout
@@ -11169,7 +10861,7 @@ Sexpr{ifelse(fe4[40,7]<.01,"***",ifelse(fe4[40,7]<.05,"**",ifelse(fe4[40,7]<.1,"
 
 \begin_layout Plain Layout
 
-{in poor lighting}  
+{in correct lighting}  
 \end_layout
 
 \begin_layout Plain Layout
@@ -11178,15 +10870,11 @@ Sexpr{ifelse(fe4[40,7]<.01,"***",ifelse(fe4[40,7]<.05,"**",ifelse(fe4[40,7]<.1,"
 \backslash
 Sexpr{fe4[39,1]})$   &  $(
 \backslash
-Sexpr{fe4[39,2]})$ & $(
-\backslash
-Sexpr{fe4[39,3]})$ & $(
+Sexpr{fe4[39,2]})$ &  & $(
 \backslash
 Sexpr{fe4[39,4]})$ & $(
 \backslash
-Sexpr{fe4[39,5]})$ & $(
-\backslash
-Sexpr{fe4[39,6]})$ & $(
+Sexpr{fe4[39,5]})$ & & $(
 \backslash
 Sexpr{fe4[39,7]})$
 \backslash
@@ -11197,7 +10885,7 @@ Sexpr{fe4[39,7]})$
 
 \begin_layout Plain Layout
 
-{Seed is stored}   & $
+{Shop stores seed}   & $
 \backslash
 Sexpr{fe4[41,1]}^{
 \backslash
@@ -11207,12 +10895,7 @@ Sexpr{ifelse(fe4[43,1]<.01,"***",ifelse(fe4[43,1]<.05,"**",ifelse(fe4[43,1]<.1,"
 Sexpr{fe4[41,2]}^{
 \backslash
 Sexpr{ifelse(fe4[43,2]<.01,"***",ifelse(fe4[43,2]<.05,"**",ifelse(fe4[43,2]<.1,"*",
-"")))}}$  & $
-\backslash
-Sexpr{fe4[41,3]}^{
-\backslash
-Sexpr{ifelse(fe4[43,3]<.01,"***",ifelse(fe4[43,3]<.05,"**",ifelse(fe4[43,3]<.1,"*",
-"")))}}$
+"")))}}$  & 
 \end_layout
 
 \begin_layout Plain Layout
@@ -11237,12 +10920,7 @@ Sexpr{ifelse(fe4[43,5]<.01,"***",ifelse(fe4[43,5]<.05,"**",ifelse(fe4[43,5]<.1,"
 
 \begin_layout Plain Layout
 
-& $
-\backslash
-Sexpr{fe4[41,6]}^{
-\backslash
-Sexpr{ifelse(fe4[43,6]<.01,"***",ifelse(fe4[43,6]<.05,"**",ifelse(fe4[43,6]<.1,"*",
-"")))}}$
+& 
 \end_layout
 
 \begin_layout Plain Layout
@@ -11261,7 +10939,7 @@ Sexpr{ifelse(fe4[43,7]<.01,"***",ifelse(fe4[43,7]<.05,"**",ifelse(fe4[43,7]<.1,"
 
 \begin_layout Plain Layout
 
-{on poor surface} 
+{on correct surface} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -11270,15 +10948,11 @@ Sexpr{ifelse(fe4[43,7]<.01,"***",ifelse(fe4[43,7]<.05,"**",ifelse(fe4[43,7]<.1,"
 \backslash
 Sexpr{fe4[42,1]})$   &  $(
 \backslash
-Sexpr{fe4[42,2]})$ & $(
-\backslash
-Sexpr{fe4[42,3]})$ & $(
+Sexpr{fe4[42,2]})$ &  & $(
 \backslash
 Sexpr{fe4[42,4]})$ & $(
 \backslash
-Sexpr{fe4[42,5]})$ & $(
-\backslash
-Sexpr{fe4[42,6]})$ & $(
+Sexpr{fe4[42,5]})$ & & $(
 \backslash
 Sexpr{fe4[42,7]})$ 
 \backslash
@@ -11289,7 +10963,7 @@ Sexpr{fe4[42,7]})$
 
 \begin_layout Plain Layout
 
-{Seed is stored}   & $
+{Shop does not store maize}   & $
 \backslash
 Sexpr{fe4[44,1]}^{
 \backslash
@@ -11299,12 +10973,7 @@ Sexpr{ifelse(fe4[46,1]<.01,"***",ifelse(fe4[46,1]<.05,"**",ifelse(fe4[46,1]<.1,"
 Sexpr{fe4[44,2]}^{
 \backslash
 Sexpr{ifelse(fe4[46,2]<.01,"***",ifelse(fe4[46,2]<.05,"**",ifelse(fe4[46,2]<.1,"*",
-"")))}}$  & $
-\backslash
-Sexpr{fe4[44,3]}^{
-\backslash
-Sexpr{ifelse(fe4[46,3]<.01,"***",ifelse(fe4[46,3]<.05,"**",ifelse(fe4[46,3]<.1,"*",
-"")))}}$
+"")))}}$  & 
 \end_layout
 
 \begin_layout Plain Layout
@@ -11329,12 +10998,7 @@ Sexpr{ifelse(fe4[46,5]<.01,"***",ifelse(fe4[46,5]<.05,"**",ifelse(fe4[46,5]<.1,"
 
 \begin_layout Plain Layout
 
-& $
-\backslash
-Sexpr{fe4[44,6]}^{
-\backslash
-Sexpr{ifelse(fe4[46,6]<.01,"***",ifelse(fe4[46,6]<.05,"**",ifelse(fe4[46,6]<.1,"*",
-"")))}}$
+& 
 \end_layout
 
 \begin_layout Plain Layout
@@ -11353,7 +11017,7 @@ Sexpr{ifelse(fe4[46,7]<.01,"***",ifelse(fe4[46,7]<.05,"**",ifelse(fe4[46,7]<.1,"
 
 \begin_layout Plain Layout
 
-{in open containers}  
+{seed in open containers}  
 \end_layout
 
 \begin_layout Plain Layout
@@ -11362,15 +11026,11 @@ Sexpr{ifelse(fe4[46,7]<.01,"***",ifelse(fe4[46,7]<.05,"**",ifelse(fe4[46,7]<.1,"
 \backslash
 Sexpr{fe4[45,1]})$   &  $(
 \backslash
-Sexpr{fe4[45,2]})$ & $(
-\backslash
-Sexpr{fe4[45,3]})$ & $(
+Sexpr{fe4[45,2]})$ &  & $(
 \backslash
 Sexpr{fe4[45,4]})$ & $(
 \backslash
-Sexpr{fe4[45,5]})$ & $(
-\backslash
-Sexpr{fe4[45,6]})$ & $(
+Sexpr{fe4[45,5]})$ &  & $(
 \backslash
 Sexpr{fe4[45,7]})$ 
 \backslash
@@ -11391,12 +11051,7 @@ Sexpr{ifelse(fe4[49,1]<.01,"***",ifelse(fe4[49,1]<.05,"**",ifelse(fe4[49,1]<.1,"
 Sexpr{fe4[47,2]}^{
 \backslash
 Sexpr{ifelse(fe4[49,2]<.01,"***",ifelse(fe4[49,2]<.05,"**",ifelse(fe4[49,2]<.1,"*",
-"")))}}$  & $
-\backslash
-Sexpr{fe4[47,3]}^{
-\backslash
-Sexpr{ifelse(fe4[49,3]<.01,"***",ifelse(fe4[49,3]<.05,"**",ifelse(fe4[49,3]<.1,"*",
-"")))}}$
+"")))}}$  &
 \end_layout
 
 \begin_layout Plain Layout
@@ -11421,12 +11076,7 @@ Sexpr{ifelse(fe4[49,5]<.01,"***",ifelse(fe4[49,5]<.05,"**",ifelse(fe4[49,5]<.1,"
 
 \begin_layout Plain Layout
 
-& $
-\backslash
-Sexpr{fe4[47,6]}^{
-\backslash
-Sexpr{ifelse(fe4[49,6]<.01,"***",ifelse(fe4[49,6]<.05,"**",ifelse(fe4[49,6]<.1,"*",
-"")))}}$
+& 
 \end_layout
 
 \begin_layout Plain Layout
@@ -11454,15 +11104,11 @@ Sexpr{ifelse(fe4[49,7]<.01,"***",ifelse(fe4[49,7]<.05,"**",ifelse(fe4[49,7]<.1,"
 \backslash
 Sexpr{fe4[48,1]})$   &  $(
 \backslash
-Sexpr{fe4[48,2]})$ & $(
-\backslash
-Sexpr{fe4[48,3]})$ & $(
+Sexpr{fe4[48,2]})$ & & $(
 \backslash
 Sexpr{fe4[48,4]})$ & $(
 \backslash
-Sexpr{fe4[48,5]})$ & $(
-\backslash
-Sexpr{fe4[48,6]})$ & $(
+Sexpr{fe4[48,5]})$ &  & $(
 \backslash
 Sexpr{fe4[48,7]})$
 \backslash
@@ -11483,12 +11129,7 @@ Sexpr{ifelse(fe4[52,1]<.01,"***",ifelse(fe4[52,1]<.05,"**",ifelse(fe4[52,1]<.1,"
 Sexpr{fe4[50,2]}^{
 \backslash
 Sexpr{ifelse(fe4[52,2]<.01,"***",ifelse(fe4[52,2]<.05,"**",ifelse(fe4[52,2]<.1,"*",
-"")))}}$  & $
-\backslash
-Sexpr{fe4[50,3]}^{
-\backslash
-Sexpr{ifelse(fe4[52,3]<.01,"***",ifelse(fe4[52,3]<.05,"**",ifelse(fe4[52,3]<.1,"*",
-"")))}}$
+"")))}}$  & 
 \end_layout
 
 \begin_layout Plain Layout
@@ -11513,12 +11154,7 @@ Sexpr{ifelse(fe4[52,5]<.01,"***",ifelse(fe4[52,5]<.05,"**",ifelse(fe4[52,5]<.1,"
 
 \begin_layout Plain Layout
 
-& $
-\backslash
-Sexpr{fe4[50,6]}^{
-\backslash
-Sexpr{ifelse(fe4[52,6]<.01,"***",ifelse(fe4[52,6]<.05,"**",ifelse(fe4[52,6]<.1,"*",
-"")))}}$
+& 
 \end_layout
 
 \begin_layout Plain Layout
@@ -11546,15 +11182,11 @@ Sexpr{ifelse(fe4[52,7]<.01,"***",ifelse(fe4[52,7]<.05,"**",ifelse(fe4[52,7]<.1,"
 \backslash
 Sexpr{fe4[51,1]})$   &  $(
 \backslash
-Sexpr{fe4[51,2]})$ & $(
-\backslash
-Sexpr{fe4[51,3]})$ & $(
+Sexpr{fe4[51,2]})$ &  & $(
 \backslash
 Sexpr{fe4[51,4]})$ & $(
 \backslash
-Sexpr{fe4[51,5]})$ & $(
-\backslash
-Sexpr{fe4[51,6]})$ & $(
+Sexpr{fe4[51,5]})$ &  & $(
 \backslash
 Sexpr{fe4[51,7]})$ 
 \backslash
@@ -11565,7 +11197,7 @@ Sexpr{fe4[51,7]})$
 
 \begin_layout Plain Layout
 
-{Shop's customer}   & $
+{Shop's customers did not}   & $
 \backslash
 Sexpr{fe4[53,1]}^{
 \backslash
@@ -11575,12 +11207,7 @@ Sexpr{ifelse(fe4[55,1]<.01,"***",ifelse(fe4[55,1]<.05,"**",ifelse(fe4[55,1]<.1,"
 Sexpr{fe4[53,2]}^{
 \backslash
 Sexpr{ifelse(fe4[55,2]<.01,"***",ifelse(fe4[55,2]<.05,"**",ifelse(fe4[55,2]<.1,"*",
-"")))}}$  & $
-\backslash
-Sexpr{fe4[53,3]}^{
-\backslash
-Sexpr{ifelse(fe4[55,3]<.01,"***",ifelse(fe4[55,3]<.05,"**",ifelse(fe4[55,3]<.1,"*",
-"")))}}$
+"")))}}$  & 
 \end_layout
 
 \begin_layout Plain Layout
@@ -11605,12 +11232,7 @@ Sexpr{ifelse(fe4[55,5]<.01,"***",ifelse(fe4[55,5]<.05,"**",ifelse(fe4[55,5]<.1,"
 
 \begin_layout Plain Layout
 
-& $
-\backslash
-Sexpr{fe4[53,6]}^{
-\backslash
-Sexpr{ifelse(fe4[55,6]<.01,"***",ifelse(fe4[55,6]<.05,"**",ifelse(fe4[55,6]<.1,"*",
-"")))}}$
+& 
 \end_layout
 
 \begin_layout Plain Layout
@@ -11629,7 +11251,7 @@ Sexpr{ifelse(fe4[55,7]<.01,"***",ifelse(fe4[55,7]<.05,"**",ifelse(fe4[55,7]<.1,"
 
 \begin_layout Plain Layout
 
-{complained about seed}
+{complain about seed}
 \end_layout
 
 \begin_layout Plain Layout
@@ -11638,15 +11260,11 @@ Sexpr{ifelse(fe4[55,7]<.01,"***",ifelse(fe4[55,7]<.05,"**",ifelse(fe4[55,7]<.1,"
 \backslash
 Sexpr{fe4[54,1]})$   &  $(
 \backslash
-Sexpr{fe4[54,2]})$ & $(
-\backslash
-Sexpr{fe4[54,3]})$ & $(
+Sexpr{fe4[54,2]})$ &  & $(
 \backslash
 Sexpr{fe4[54,4]})$ & $(
 \backslash
-Sexpr{fe4[54,5]})$ & $(
-\backslash
-Sexpr{fe4[54,6]})$ & $(
+Sexpr{fe4[54,5]})$ &  & $(
 \backslash
 Sexpr{fe4[54,7]})$ 
 \backslash
@@ -11667,12 +11285,7 @@ Sexpr{ifelse(fe4[58,1]<.01,"***",ifelse(fe4[58,1]<.05,"**",ifelse(fe4[58,1]<.1,"
 Sexpr{fe4[56,2]}^{
 \backslash
 Sexpr{ifelse(fe4[58,2]<.01,"***",ifelse(fe4[58,2]<.05,"**",ifelse(fe4[58,2]<.1,"*",
-"")))}}$  & $
-\backslash
-Sexpr{fe4[56,3]}^{
-\backslash
-Sexpr{ifelse(fe4[58,3]<.01,"***",ifelse(fe4[58,3]<.05,"**",ifelse(fe4[58,3]<.1,"*",
-"")))}}$
+"")))}}$  & 
 \end_layout
 
 \begin_layout Plain Layout
@@ -11697,12 +11310,7 @@ Sexpr{ifelse(fe4[58,5]<.01,"***",ifelse(fe4[58,5]<.05,"**",ifelse(fe4[58,5]<.1,"
 
 \begin_layout Plain Layout
 
-& $
-\backslash
-Sexpr{fe4[56,6]}^{
-\backslash
-Sexpr{ifelse(fe4[58,6]<.01,"***",ifelse(fe4[58,6]<.05,"**",ifelse(fe4[58,6]<.1,"*",
-"")))}}$
+& 
 \end_layout
 
 \begin_layout Plain Layout
@@ -11730,15 +11338,11 @@ Sexpr{ifelse(fe4[58,7]<.01,"***",ifelse(fe4[58,7]<.05,"**",ifelse(fe4[58,7]<.1,"
 \backslash
 Sexpr{fe4[57,1]})$   &  $(
 \backslash
-Sexpr{fe4[57,2]})$ & $(
-\backslash
-Sexpr{fe4[57,3]})$ & $(
+Sexpr{fe4[57,2]})$ &  & $(
 \backslash
 Sexpr{fe4[57,4]})$ & $(
 \backslash
-Sexpr{fe4[57,5]})$ & $(
-\backslash
-Sexpr{fe4[57,6]})$ & $(
+Sexpr{fe4[57,5]})$ & & $(
 \backslash
 Sexpr{fe4[57,7]})$
 \backslash
@@ -11759,12 +11363,7 @@ Sexpr{ifelse(fe4[61,1]<.01,"***",ifelse(fe4[61,1]<.05,"**",ifelse(fe4[61,1]<.1,"
 Sexpr{fe4[59,2]}^{
 \backslash
 Sexpr{ifelse(fe4[61,2]<.01,"***",ifelse(fe4[61,2]<.05,"**",ifelse(fe4[61,2]<.1,"*",
-"")))}}$  & $
-\backslash
-Sexpr{fe4[59,3]}^{
-\backslash
-Sexpr{ifelse(fe4[61,3]<.01,"***",ifelse(fe4[61,3]<.05,"**",ifelse(fe4[61,3]<.1,"*",
-"")))}}$
+"")))}}$  & 
 \end_layout
 
 \begin_layout Plain Layout
@@ -11789,12 +11388,7 @@ Sexpr{ifelse(fe4[61,5]<.01,"***",ifelse(fe4[61,5]<.05,"**",ifelse(fe4[61,5]<.1,"
 
 \begin_layout Plain Layout
 
-& $
-\backslash
-Sexpr{fe4[59,6]}^{
-\backslash
-Sexpr{ifelse(fe4[61,6]<.01,"***",ifelse(fe4[61,6]<.05,"**",ifelse(fe4[61,6]<.1,"*",
-"")))}}$
+& 
 \end_layout
 
 \begin_layout Plain Layout
@@ -11822,15 +11416,11 @@ Sexpr{ifelse(fe4[61,7]<.01,"***",ifelse(fe4[61,7]<.05,"**",ifelse(fe4[61,7]<.1,"
 \backslash
 Sexpr{fe4[60,1]})$   &  $(
 \backslash
-Sexpr{fe4[60,2]})$ & $(
-\backslash
-Sexpr{fe4[60,3]})$ & $(
+Sexpr{fe4[60,2]})$ &  & $(
 \backslash
 Sexpr{fe4[60,4]})$ & $(
 \backslash
-Sexpr{fe4[60,5]})$ & $(
-\backslash
-Sexpr{fe4[60,6]})$ & $(
+Sexpr{fe4[60,5]})$ &  & $(
 \backslash
 Sexpr{fe4[60,7]})$
 \end_layout
@@ -15009,7 +14599,7 @@ noprefix "false"
 \end_layout
 
 \begin_layout Section*
-Question 2: Do feFarmer is males rate agro-input dealers differently? (Farmer's
+Question 2: Do female Farmers rate agro-input dealers differently? (Farmer's
  gender effect)
 \end_layout
 
@@ -22098,7 +21688,7 @@ Sexpr{s_deal2[23,7]})$
 
 \begin_layout Plain Layout
 
-{Seed is stored in}   & $
+{Shop stores seed in}   & $
 \backslash
 Sexpr{s_deal2[25,1]}^{
 \backslash
@@ -22190,7 +21780,7 @@ Sexpr{s_deal2[26,7]})$
 
 \begin_layout Plain Layout
 
-{Shop has problem}   & $
+{Shop has no problem}   & $
 \backslash
 Sexpr{s_deal2[28,1]}^{
 \backslash
@@ -22558,7 +22148,7 @@ Sexpr{s_deal2[38,7]})$
 
 \begin_layout Plain Layout
 
-{Seed is stored}   & $
+{Shop stores seed}   & $
 \backslash
 Sexpr{s_deal2[40,1]}^{
 \backslash
@@ -22622,7 +22212,7 @@ Sexpr{ifelse(s_deal2[42,7]<.01,"***",ifelse(s_deal2[42,7]<.05,"**",ifelse(s_deal
 
 \begin_layout Plain Layout
 
-{in poor lighting} 
+{in correct lighting} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -22650,7 +22240,7 @@ Sexpr{s_deal2[41,7]})$
 
 \begin_layout Plain Layout
 
-{Seed is stored}   & $
+{Shop stores seed}   & $
 \backslash
 Sexpr{s_deal2[43,1]}^{
 \backslash
@@ -22714,7 +22304,7 @@ Sexpr{ifelse(s_deal2[45,7]<.01,"***",ifelse(s_deal2[45,7]<.05,"**",ifelse(s_deal
 
 \begin_layout Plain Layout
 
-{on poor surface} 
+{on correct surface} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -22742,7 +22332,7 @@ Sexpr{s_deal2[44,7]})$
 
 \begin_layout Plain Layout
 
-{Seed is stored}   & $
+{Shop does not store maize}   & $
 \backslash
 Sexpr{s_deal2[46,1]}^{
 \backslash
@@ -22806,7 +22396,7 @@ Sexpr{ifelse(s_deal2[48,7]<.01,"***",ifelse(s_deal2[48,7]<.05,"**",ifelse(s_deal
 
 \begin_layout Plain Layout
 
-{in open containers}
+{seed in open containers}
 \end_layout
 
 \begin_layout Plain Layout
@@ -23018,7 +22608,7 @@ Sexpr{s_deal2[53,7]})$
 
 \begin_layout Plain Layout
 
-{Shop's customer}   & $
+{Shop's customers did not}   & $
 \backslash
 Sexpr{s_deal2[55,1]}^{
 \backslash
@@ -23082,7 +22672,7 @@ Sexpr{ifelse(s_deal2[57,7]<.01,"***",ifelse(s_deal2[57,7]<.05,"**",ifelse(s_deal
 
 \begin_layout Plain Layout
 
-{complained about seed} 
+{complain about seed} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -23421,7 +23011,7 @@ label{table:table14}
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -24730,12 +24320,7 @@ Sexpr{ifelse(s_deal4[21,1]<.01,"***",ifelse(s_deal4[21,1]<.05,"**",ifelse(s_deal
 Sexpr{s_deal4[19,2]}^{
 \backslash
 Sexpr{ifelse(s_deal4[21,2]<.01,"***",ifelse(s_deal4[21,2]<.05,"**",ifelse(s_deal4[
-21,2]<.1,"*","")))}}$  & $
-\backslash
-Sexpr{s_deal4[19,3]}^{
-\backslash
-Sexpr{ifelse(s_deal4[21,3]<.01,"***",ifelse(s_deal4[21,3]<.05,"**",ifelse(s_deal4[
-21,3]<.1,"*","")))}}$
+21,2]<.1,"*","")))}}$  & 
 \end_layout
 
 \begin_layout Plain Layout
@@ -24760,12 +24345,7 @@ Sexpr{ifelse(s_deal4[21,5]<.01,"***",ifelse(s_deal4[21,5]<.05,"**",ifelse(s_deal
 
 \begin_layout Plain Layout
 
-& $
-\backslash
-Sexpr{s_deal4[19,6]}^{
-\backslash
-Sexpr{ifelse(s_deal4[21,6]<.01,"***",ifelse(s_deal4[21,6]<.05,"**",ifelse(s_deal4[
-21,6]<.1,"*","")))}}$
+& 
 \end_layout
 
 \begin_layout Plain Layout
@@ -24793,15 +24373,11 @@ Sexpr{ifelse(s_deal4[21,7]<.01,"***",ifelse(s_deal4[21,7]<.05,"**",ifelse(s_deal
 \backslash
 Sexpr{s_deal4[20,1]})$   &  $(
 \backslash
-Sexpr{s_deal4[20,2]})$ & $(
-\backslash
-Sexpr{s_deal4[20,3]})$ & $(
+Sexpr{s_deal4[20,2]})$ &  & $(
 \backslash
 Sexpr{s_deal4[20,4]})$ & $(
 \backslash
-Sexpr{s_deal4[20,5]})$ & $(
-\backslash
-Sexpr{s_deal4[20,6]})$ & $(
+Sexpr{s_deal4[20,5]})$ &  & $(
 \backslash
 Sexpr{s_deal4[20,7]})$
 \backslash
@@ -24822,12 +24398,7 @@ Sexpr{ifelse(s_deal4[24,1]<.01,"***",ifelse(s_deal4[24,1]<.05,"**",ifelse(s_deal
 Sexpr{s_deal4[22,2]}^{
 \backslash
 Sexpr{ifelse(s_deal4[24,2]<.01,"***",ifelse(s_deal4[24,2]<.05,"**",ifelse(s_deal4[
-24,2]<.1,"*","")))}}$  & $
-\backslash
-Sexpr{s_deal4[22,3]}^{
-\backslash
-Sexpr{ifelse(s_deal4[24,3]<.01,"***",ifelse(s_deal4[24,3]<.05,"**",ifelse(s_deal4[
-24,3]<.1,"*","")))}}$
+24,2]<.1,"*","")))}}$  & 
 \end_layout
 
 \begin_layout Plain Layout
@@ -24852,12 +24423,7 @@ Sexpr{ifelse(s_deal4[24,5]<.01,"***",ifelse(s_deal4[24,5]<.05,"**",ifelse(s_deal
 
 \begin_layout Plain Layout
 
-& $
-\backslash
-Sexpr{s_deal4[22,6]}^{
-\backslash
-Sexpr{ifelse(s_deal4[24,6]<.01,"***",ifelse(s_deal4[24,6]<.05,"**",ifelse(s_deal4[
-24,6]<.1,"*","")))}}$
+& 
 \end_layout
 
 \begin_layout Plain Layout
@@ -24885,15 +24451,11 @@ Sexpr{ifelse(s_deal4[24,7]<.01,"***",ifelse(s_deal4[24,7]<.05,"**",ifelse(s_deal
 \backslash
 Sexpr{s_deal4[23,1]})$   &  $(
 \backslash
-Sexpr{s_deal4[23,2]})$ & $(
-\backslash
-Sexpr{s_deal4[23,3]})$ & $(
+Sexpr{s_deal4[23,2]})$ &  & $(
 \backslash
 Sexpr{s_deal4[23,4]})$ & $(
 \backslash
-Sexpr{s_deal4[23,5]})$ & $(
-\backslash
-Sexpr{s_deal4[23,6]})$ & $(
+Sexpr{s_deal4[23,5]})$ &  & $(
 \backslash
 Sexpr{s_deal4[23,7]})$ 
 \backslash
@@ -24904,7 +24466,7 @@ Sexpr{s_deal4[23,7]})$
 
 \begin_layout Plain Layout
 
-{Seed is stored in}   & $
+{Shop stores seed}   & $
 \backslash
 Sexpr{s_deal4[25,1]}^{
 \backslash
@@ -24914,12 +24476,7 @@ Sexpr{ifelse(s_deal4[27,1]<.01,"***",ifelse(s_deal4[27,1]<.05,"**",ifelse(s_deal
 Sexpr{s_deal4[25,2]}^{
 \backslash
 Sexpr{ifelse(s_deal4[27,2]<.01,"***",ifelse(s_deal4[27,2]<.05,"**",ifelse(s_deal4[
-27,2]<.1,"*","")))}}$  & $
-\backslash
-Sexpr{s_deal4[25,3]}^{
-\backslash
-Sexpr{ifelse(s_deal4[27,3]<.01,"***",ifelse(s_deal4[27,3]<.05,"**",ifelse(s_deal4[
-27,3]<.1,"*","")))}}$
+27,2]<.1,"*","")))}}$  & 
 \end_layout
 
 \begin_layout Plain Layout
@@ -24944,12 +24501,7 @@ Sexpr{ifelse(s_deal4[27,5]<.01,"***",ifelse(s_deal4[27,5]<.05,"**",ifelse(s_deal
 
 \begin_layout Plain Layout
 
-& $
-\backslash
-Sexpr{s_deal4[25,6]}^{
-\backslash
-Sexpr{ifelse(s_deal4[27,6]<.01,"***",ifelse(s_deal4[27,6]<.05,"**",ifelse(s_deal4[
-27,6]<.1,"*","")))}}$
+& 
 \end_layout
 
 \begin_layout Plain Layout
@@ -24968,7 +24520,7 @@ Sexpr{ifelse(s_deal4[27,7]<.01,"***",ifelse(s_deal4[27,7]<.05,"**",ifelse(s_deal
 
 \begin_layout Plain Layout
 
-{dedicated area} 
+{in dedicated area} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -24977,15 +24529,11 @@ Sexpr{ifelse(s_deal4[27,7]<.01,"***",ifelse(s_deal4[27,7]<.05,"**",ifelse(s_deal
 \backslash
 Sexpr{s_deal4[26,1]})$   &  $(
 \backslash
-Sexpr{s_deal4[26,2]})$ & $(
-\backslash
-Sexpr{s_deal4[26,3]})$ & $(
+Sexpr{s_deal4[26,2]})$ &  & $(
 \backslash
 Sexpr{s_deal4[26,4]})$ & $(
 \backslash
-Sexpr{s_deal4[26,5]})$ & $(
-\backslash
-Sexpr{s_deal4[26,6]})$ & $(
+Sexpr{s_deal4[26,5]})$ &  & $(
 \backslash
 Sexpr{s_deal4[26,7]})$
 \backslash
@@ -24996,7 +24544,7 @@ Sexpr{s_deal4[26,7]})$
 
 \begin_layout Plain Layout
 
-{Shop has problem}   & $
+{Shop has no problem}   & $
 \backslash
 Sexpr{s_deal4[28,1]}^{
 \backslash
@@ -25006,12 +24554,7 @@ Sexpr{ifelse(s_deal4[30,1]<.01,"***",ifelse(s_deal4[30,1]<.05,"**",ifelse(s_deal
 Sexpr{s_deal4[28,2]}^{
 \backslash
 Sexpr{ifelse(s_deal4[30,2]<.01,"***",ifelse(s_deal4[30,2]<.05,"**",ifelse(s_deal4[
-30,2]<.1,"*","")))}}$  & $
-\backslash
-Sexpr{s_deal4[28,3]}^{
-\backslash
-Sexpr{ifelse(s_deal4[30,3]<.01,"***",ifelse(s_deal4[30,3]<.05,"**",ifelse(s_deal4[
-30,3]<.1,"*","")))}}$
+30,2]<.1,"*","")))}}$  & 
 \end_layout
 
 \begin_layout Plain Layout
@@ -25036,12 +24579,7 @@ Sexpr{ifelse(s_deal4[30,5]<.01,"***",ifelse(s_deal4[30,5]<.05,"**",ifelse(s_deal
 
 \begin_layout Plain Layout
 
-& $
-\backslash
-Sexpr{s_deal4[28,6]}^{
-\backslash
-Sexpr{ifelse(s_deal4[30,6]<.01,"***",ifelse(s_deal4[30,6]<.05,"**",ifelse(s_deal4[
-30,6]<.1,"*","")))}}$
+& 
 \end_layout
 
 \begin_layout Plain Layout
@@ -25069,15 +24607,11 @@ Sexpr{ifelse(s_deal4[30,7]<.01,"***",ifelse(s_deal4[30,7]<.05,"**",ifelse(s_deal
 \backslash
 Sexpr{s_deal4[29,1]})$   &  $(
 \backslash
-Sexpr{s_deal4[29,2]})$ & $(
-\backslash
-Sexpr{s_deal4[29,3]})$ & $(
+Sexpr{s_deal4[29,2]})$ & & $(
 \backslash
 Sexpr{s_deal4[29,4]})$ & $(
 \backslash
-Sexpr{s_deal4[29,5]})$ & $(
-\backslash
-Sexpr{s_deal4[29,6]})$ & $(
+Sexpr{s_deal4[29,5]})$ &  & $(
 \backslash
 Sexpr{s_deal4[29,7]})$ 
 \backslash
@@ -25098,12 +24632,7 @@ Sexpr{ifelse(s_deal4[33,1]<.01,"***",ifelse(s_deal4[33,1]<.05,"**",ifelse(s_deal
 Sexpr{s_deal4[31,2]}^{
 \backslash
 Sexpr{ifelse(s_deal4[33,2]<.01,"***",ifelse(s_deal4[33,2]<.05,"**",ifelse(s_deal4[
-33,2]<.1,"*","")))}}$  & $
-\backslash
-Sexpr{s_deal4[31,3]}^{
-\backslash
-Sexpr{ifelse(s_deal4[33,3]<.01,"***",ifelse(s_deal4[33,3]<.05,"**",ifelse(s_deal4[
-33,3]<.1,"*","")))}}$
+33,2]<.1,"*","")))}}$  & 
 \end_layout
 
 \begin_layout Plain Layout
@@ -25128,12 +24657,7 @@ Sexpr{ifelse(s_deal4[33,5]<.01,"***",ifelse(s_deal4[33,5]<.05,"**",ifelse(s_deal
 
 \begin_layout Plain Layout
 
-& $
-\backslash
-Sexpr{s_deal4[31,6]}^{
-\backslash
-Sexpr{ifelse(s_deal4[33,6]<.01,"***",ifelse(s_deal4[33,6]<.05,"**",ifelse(s_deal4[
-33,6]<.1,"*","")))}}$
+& 
 \end_layout
 
 \begin_layout Plain Layout
@@ -25161,15 +24685,11 @@ Sexpr{ifelse(s_deal4[33,7]<.01,"***",ifelse(s_deal4[33,7]<.05,"**",ifelse(s_deal
 \backslash
 Sexpr{s_deal4[32,1]})$   &  $(
 \backslash
-Sexpr{s_deal4[32,2]})$ & $(
-\backslash
-Sexpr{s_deal4[32,3]})$ & $(
+Sexpr{s_deal4[32,2]})$ &  & $(
 \backslash
 Sexpr{s_deal4[32,4]})$ & $(
 \backslash
-Sexpr{s_deal4[32,5]})$ & $(
-\backslash
-Sexpr{s_deal4[32,6]})$ & $(
+Sexpr{s_deal4[32,5]})$ & & $(
 \backslash
 Sexpr{s_deal4[32,7]})$ 
 \backslash
@@ -25190,12 +24710,7 @@ Sexpr{ifelse(s_deal4[36,1]<.01,"***",ifelse(s_deal4[36,1]<.05,"**",ifelse(s_deal
 Sexpr{s_deal4[34,2]}^{
 \backslash
 Sexpr{ifelse(s_deal4[36,2]<.01,"***",ifelse(s_deal4[36,2]<.05,"**",ifelse(s_deal4[
-36,2]<.1,"*","")))}}$  & $
-\backslash
-Sexpr{s_deal4[34,3]}^{
-\backslash
-Sexpr{ifelse(s_deal4[36,3]<.01,"***",ifelse(s_deal4[36,3]<.05,"**",ifelse(s_deal4[
-36,3]<.1,"*","")))}}$
+36,2]<.1,"*","")))}}$  & 
 \end_layout
 
 \begin_layout Plain Layout
@@ -25220,12 +24735,7 @@ Sexpr{ifelse(s_deal4[36,5]<.01,"***",ifelse(s_deal4[36,5]<.05,"**",ifelse(s_deal
 
 \begin_layout Plain Layout
 
-& $
-\backslash
-Sexpr{s_deal4[34,6]}^{
-\backslash
-Sexpr{ifelse(s_deal4[36,6]<.01,"***",ifelse(s_deal4[36,6]<.05,"**",ifelse(s_deal4[
-36,6]<.1,"*","")))}}$
+& 
 \end_layout
 
 \begin_layout Plain Layout
@@ -25253,15 +24763,11 @@ Sexpr{ifelse(s_deal4[36,7]<.01,"***",ifelse(s_deal4[36,7]<.05,"**",ifelse(s_deal
 \backslash
 Sexpr{s_deal4[35,1]})$   &  $(
 \backslash
-Sexpr{s_deal4[35,2]})$ & $(
-\backslash
-Sexpr{s_deal4[35,3]})$ & $(
+Sexpr{s_deal4[35,2]})$ &  & $(
 \backslash
 Sexpr{s_deal4[35,4]})$ & $(
 \backslash
-Sexpr{s_deal4[35,5]})$ & $(
-\backslash
-Sexpr{s_deal4[35,6]})$ & $(
+Sexpr{s_deal4[35,5]})$ &  & $(
 \backslash
 Sexpr{s_deal4[35,7]})$ 
 \backslash
@@ -25282,12 +24788,7 @@ Sexpr{ifelse(s_deal4[39,1]<.01,"***",ifelse(s_deal4[39,1]<.05,"**",ifelse(s_deal
 Sexpr{s_deal4[37,2]}^{
 \backslash
 Sexpr{ifelse(s_deal4[39,2]<.01,"***",ifelse(s_deal4[39,2]<.05,"**",ifelse(s_deal4[
-39,2]<.1,"*","")))}}$  & $
-\backslash
-Sexpr{s_deal4[37,3]}^{
-\backslash
-Sexpr{ifelse(s_deal4[39,3]<.01,"***",ifelse(s_deal4[39,3]<.05,"**",ifelse(s_deal4[
-39,3]<.1,"*","")))}}$
+39,2]<.1,"*","")))}}$  & 
 \end_layout
 
 \begin_layout Plain Layout
@@ -25312,12 +24813,7 @@ Sexpr{ifelse(s_deal4[39,5]<.01,"***",ifelse(s_deal4[39,5]<.05,"**",ifelse(s_deal
 
 \begin_layout Plain Layout
 
-& $
-\backslash
-Sexpr{s_deal4[37,6]}^{
-\backslash
-Sexpr{ifelse(s_deal4[39,6]<.01,"***",ifelse(s_deal4[39,6]<.05,"**",ifelse(s_deal4[
-39,6]<.1,"*","")))}}$
+& 
 \end_layout
 
 \begin_layout Plain Layout
@@ -25345,15 +24841,11 @@ Sexpr{ifelse(s_deal4[39,7]<.01,"***",ifelse(s_deal4[39,7]<.05,"**",ifelse(s_deal
 \backslash
 Sexpr{s_deal4[38,1]})$   &  $(
 \backslash
-Sexpr{s_deal4[38,2]})$ & $(
-\backslash
-Sexpr{s_deal4[38,3]})$ & $(
+Sexpr{s_deal4[38,2]})$ &  & $(
 \backslash
 Sexpr{s_deal4[38,4]})$ & $(
 \backslash
-Sexpr{s_deal4[38,5]})$ & $(
-\backslash
-Sexpr{s_deal4[38,6]})$ & $(
+Sexpr{s_deal4[38,5]})$ & & $(
 \backslash
 Sexpr{s_deal4[38,7]})$
 \backslash
@@ -25364,7 +24856,7 @@ Sexpr{s_deal4[38,7]})$
 
 \begin_layout Plain Layout
 
-{Seed is stored}   & $
+{Shop stores seed}   & $
 \backslash
 Sexpr{s_deal4[40,1]}^{
 \backslash
@@ -25374,12 +24866,7 @@ Sexpr{ifelse(s_deal4[42,1]<.01,"***",ifelse(s_deal4[42,1]<.05,"**",ifelse(s_deal
 Sexpr{s_deal4[40,2]}^{
 \backslash
 Sexpr{ifelse(s_deal4[42,2]<.01,"***",ifelse(s_deal4[42,2]<.05,"**",ifelse(s_deal4[
-42,2]<.1,"*","")))}}$  & $
-\backslash
-Sexpr{s_deal4[40,3]}^{
-\backslash
-Sexpr{ifelse(s_deal4[42,3]<.01,"***",ifelse(s_deal4[42,3]<.05,"**",ifelse(s_deal4[
-42,3]<.1,"*","")))}}$
+42,2]<.1,"*","")))}}$  & 
 \end_layout
 
 \begin_layout Plain Layout
@@ -25404,12 +24891,7 @@ Sexpr{ifelse(s_deal4[42,5]<.01,"***",ifelse(s_deal4[42,5]<.05,"**",ifelse(s_deal
 
 \begin_layout Plain Layout
 
-& $
-\backslash
-Sexpr{s_deal4[40,6]}^{
-\backslash
-Sexpr{ifelse(s_deal4[42,6]<.01,"***",ifelse(s_deal4[42,6]<.05,"**",ifelse(s_deal4[
-42,6]<.1,"*","")))}}$
+& 
 \end_layout
 
 \begin_layout Plain Layout
@@ -25428,7 +24910,7 @@ Sexpr{ifelse(s_deal4[42,7]<.01,"***",ifelse(s_deal4[42,7]<.05,"**",ifelse(s_deal
 
 \begin_layout Plain Layout
 
-{in poor lighting} 
+{in correct lighting} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -25437,15 +24919,11 @@ Sexpr{ifelse(s_deal4[42,7]<.01,"***",ifelse(s_deal4[42,7]<.05,"**",ifelse(s_deal
 \backslash
 Sexpr{s_deal4[41,1]})$   &  $(
 \backslash
-Sexpr{s_deal4[41,2]})$ & $(
-\backslash
-Sexpr{s_deal4[41,3]})$ & $(
+Sexpr{s_deal4[41,2]})$ & & $(
 \backslash
 Sexpr{s_deal4[41,4]})$ & $(
 \backslash
-Sexpr{s_deal4[41,5]})$ & $(
-\backslash
-Sexpr{s_deal4[41,6]})$ & $(
+Sexpr{s_deal4[41,5]})$ &  & $(
 \backslash
 Sexpr{s_deal4[41,7]})$ 
 \backslash
@@ -25456,7 +24934,7 @@ Sexpr{s_deal4[41,7]})$
 
 \begin_layout Plain Layout
 
-{Seed is stored}   & $
+{Shop stores seed}   & $
 \backslash
 Sexpr{s_deal4[43,1]}^{
 \backslash
@@ -25466,12 +24944,7 @@ Sexpr{ifelse(s_deal4[45,1]<.01,"***",ifelse(s_deal4[45,1]<.05,"**",ifelse(s_deal
 Sexpr{s_deal4[43,2]}^{
 \backslash
 Sexpr{ifelse(s_deal4[45,2]<.01,"***",ifelse(s_deal4[45,2]<.05,"**",ifelse(s_deal4[
-45,2]<.1,"*","")))}}$  & $
-\backslash
-Sexpr{s_deal4[43,3]}^{
-\backslash
-Sexpr{ifelse(s_deal4[45,3]<.01,"***",ifelse(s_deal4[45,3]<.05,"**",ifelse(s_deal4[
-45,3]<.1,"*","")))}}$
+45,2]<.1,"*","")))}}$  & 
 \end_layout
 
 \begin_layout Plain Layout
@@ -25496,12 +24969,7 @@ Sexpr{ifelse(s_deal4[45,5]<.01,"***",ifelse(s_deal4[45,5]<.05,"**",ifelse(s_deal
 
 \begin_layout Plain Layout
 
-& $
-\backslash
-Sexpr{s_deal4[43,6]}^{
-\backslash
-Sexpr{ifelse(s_deal4[45,6]<.01,"***",ifelse(s_deal4[45,6]<.05,"**",ifelse(s_deal4[
-45,6]<.1,"*","")))}}$
+& 
 \end_layout
 
 \begin_layout Plain Layout
@@ -25520,7 +24988,7 @@ Sexpr{ifelse(s_deal4[45,7]<.01,"***",ifelse(s_deal4[45,7]<.05,"**",ifelse(s_deal
 
 \begin_layout Plain Layout
 
-{on poor surface} 
+{on correct surface} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -25529,15 +24997,11 @@ Sexpr{ifelse(s_deal4[45,7]<.01,"***",ifelse(s_deal4[45,7]<.05,"**",ifelse(s_deal
 \backslash
 Sexpr{s_deal4[44,1]})$   &  $(
 \backslash
-Sexpr{s_deal4[44,2]})$ & $(
-\backslash
-Sexpr{s_deal4[44,3]})$ & $(
+Sexpr{s_deal4[44,2]})$ &  & $(
 \backslash
 Sexpr{s_deal4[44,4]})$ & $(
 \backslash
-Sexpr{s_deal4[44,5]})$ & $(
-\backslash
-Sexpr{s_deal4[44,6]})$ & $(
+Sexpr{s_deal4[44,5]})$ &  & $(
 \backslash
 Sexpr{s_deal4[44,7]})$
 \backslash
@@ -25548,7 +25012,7 @@ Sexpr{s_deal4[44,7]})$
 
 \begin_layout Plain Layout
 
-{Seed is stored}   & $
+{Shop does not store maize}   & $
 \backslash
 Sexpr{s_deal4[46,1]}^{
 \backslash
@@ -25558,12 +25022,7 @@ Sexpr{ifelse(s_deal4[48,1]<.01,"***",ifelse(s_deal4[48,1]<.05,"**",ifelse(s_deal
 Sexpr{s_deal4[46,2]}^{
 \backslash
 Sexpr{ifelse(s_deal4[48,2]<.01,"***",ifelse(s_deal4[48,2]<.05,"**",ifelse(s_deal4[
-48,2]<.1,"*","")))}}$  & $
-\backslash
-Sexpr{s_deal4[46,3]}^{
-\backslash
-Sexpr{ifelse(s_deal4[48,3]<.01,"***",ifelse(s_deal4[48,3]<.05,"**",ifelse(s_deal4[
-48,3]<.1,"*","")))}}$
+48,2]<.1,"*","")))}}$  & 
 \end_layout
 
 \begin_layout Plain Layout
@@ -25588,12 +25047,7 @@ Sexpr{ifelse(s_deal4[48,5]<.01,"***",ifelse(s_deal4[48,5]<.05,"**",ifelse(s_deal
 
 \begin_layout Plain Layout
 
-& $
-\backslash
-Sexpr{s_deal4[46,6]}^{
-\backslash
-Sexpr{ifelse(s_deal4[48,6]<.01,"***",ifelse(s_deal4[48,6]<.05,"**",ifelse(s_deal4[
-48,6]<.1,"*","")))}}$
+& 
 \end_layout
 
 \begin_layout Plain Layout
@@ -25612,7 +25066,7 @@ Sexpr{ifelse(s_deal4[48,7]<.01,"***",ifelse(s_deal4[48,7]<.05,"**",ifelse(s_deal
 
 \begin_layout Plain Layout
 
-{in open containers} 
+{seed in open containers} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -25621,15 +25075,11 @@ Sexpr{ifelse(s_deal4[48,7]<.01,"***",ifelse(s_deal4[48,7]<.05,"**",ifelse(s_deal
 \backslash
 Sexpr{s_deal4[47,1]})$   &  $(
 \backslash
-Sexpr{s_deal4[47,2]})$ & $(
-\backslash
-Sexpr{s_deal4[47,3]})$ & $(
+Sexpr{s_deal4[47,2]})$ &  & $(
 \backslash
 Sexpr{s_deal4[47,4]})$ & $(
 \backslash
-Sexpr{s_deal4[47,5]})$ & $(
-\backslash
-Sexpr{s_deal4[47,6]})$ & $(
+Sexpr{s_deal4[47,5]})$ &  & $(
 \backslash
 Sexpr{s_deal4[47,7]})$ 
 \backslash
@@ -25650,12 +25100,7 @@ Sexpr{ifelse(s_deal4[51,1]<.01,"***",ifelse(s_deal4[51,1]<.05,"**",ifelse(s_deal
 Sexpr{s_deal4[49,2]}^{
 \backslash
 Sexpr{ifelse(s_deal4[51,2]<.01,"***",ifelse(s_deal4[51,2]<.05,"**",ifelse(s_deal4[
-51,2]<.1,"*","")))}}$  & $
-\backslash
-Sexpr{s_deal4[49,3]}^{
-\backslash
-Sexpr{ifelse(s_deal4[51,3]<.01,"***",ifelse(s_deal4[51,3]<.05,"**",ifelse(s_deal4[
-51,3]<.1,"*","")))}}$
+51,2]<.1,"*","")))}}$  & 
 \end_layout
 
 \begin_layout Plain Layout
@@ -25680,12 +25125,7 @@ Sexpr{ifelse(s_deal4[51,5]<.01,"***",ifelse(s_deal4[51,5]<.05,"**",ifelse(s_deal
 
 \begin_layout Plain Layout
 
-& $
-\backslash
-Sexpr{s_deal4[49,6]}^{
-\backslash
-Sexpr{ifelse(s_deal4[51,6]<.01,"***",ifelse(s_deal4[51,6]<.05,"**",ifelse(s_deal4[
-51,6]<.1,"*","")))}}$
+& 
 \end_layout
 
 \begin_layout Plain Layout
@@ -25713,15 +25153,11 @@ Sexpr{ifelse(s_deal4[51,7]<.01,"***",ifelse(s_deal4[51,7]<.05,"**",ifelse(s_deal
 \backslash
 Sexpr{s_deal4[50,1]})$   &  $(
 \backslash
-Sexpr{s_deal4[50,2]})$ & $(
-\backslash
-Sexpr{s_deal4[50,3]})$ & $(
+Sexpr{s_deal4[50,2]})$ & & $(
 \backslash
 Sexpr{s_deal4[50,4]})$ & $(
 \backslash
-Sexpr{s_deal4[50,5]})$ & $(
-\backslash
-Sexpr{s_deal4[50,6]})$ & $(
+Sexpr{s_deal4[50,5]})$ & & $(
 \backslash
 Sexpr{s_deal4[50,7]})$
 \backslash
@@ -25742,12 +25178,7 @@ Sexpr{ifelse(s_deal4[54,1]<.01,"***",ifelse(s_deal4[54,1]<.05,"**",ifelse(s_deal
 Sexpr{s_deal4[52,2]}^{
 \backslash
 Sexpr{ifelse(s_deal4[54,2]<.01,"***",ifelse(s_deal4[54,2]<.05,"**",ifelse(s_deal4[
-54,2]<.1,"*","")))}}$  & $
-\backslash
-Sexpr{s_deal4[52,3]}^{
-\backslash
-Sexpr{ifelse(s_deal4[54,3]<.01,"***",ifelse(s_deal4[54,3]<.05,"**",ifelse(s_deal4[
-54,3]<.1,"*","")))}}$
+54,2]<.1,"*","")))}}$  & 
 \end_layout
 
 \begin_layout Plain Layout
@@ -25772,12 +25203,7 @@ Sexpr{ifelse(s_deal4[54,5]<.01,"***",ifelse(s_deal4[54,5]<.05,"**",ifelse(s_deal
 
 \begin_layout Plain Layout
 
-& $
-\backslash
-Sexpr{s_deal4[52,6]}^{
-\backslash
-Sexpr{ifelse(s_deal4[54,6]<.01,"***",ifelse(s_deal4[54,6]<.05,"**",ifelse(s_deal4[
-54,6]<.1,"*","")))}}$
+& 
 \end_layout
 
 \begin_layout Plain Layout
@@ -25805,15 +25231,11 @@ Sexpr{ifelse(s_deal4[54,7]<.01,"***",ifelse(s_deal4[54,7]<.05,"**",ifelse(s_deal
 \backslash
 Sexpr{s_deal4[53,1]})$   &  $(
 \backslash
-Sexpr{s_deal4[53,2]})$ & $(
-\backslash
-Sexpr{s_deal4[53,3]})$ & $(
+Sexpr{s_deal4[53,2]})$ &  & $(
 \backslash
 Sexpr{s_deal4[53,4]})$ & $(
 \backslash
-Sexpr{s_deal4[53,5]})$ & $(
-\backslash
-Sexpr{s_deal4[53,6]})$ & $(
+Sexpr{s_deal4[53,5]})$ &  & $(
 \backslash
 Sexpr{s_deal4[53,7]})$
 \backslash
@@ -25824,7 +25246,7 @@ Sexpr{s_deal4[53,7]})$
 
 \begin_layout Plain Layout
 
-{Shop's customer}   & $
+{Shop's customers did not}   & $
 \backslash
 Sexpr{s_deal4[55,1]}^{
 \backslash
@@ -25834,12 +25256,7 @@ Sexpr{ifelse(s_deal4[57,1]<.01,"***",ifelse(s_deal4[57,1]<.05,"**",ifelse(s_deal
 Sexpr{s_deal4[55,2]}^{
 \backslash
 Sexpr{ifelse(s_deal4[57,2]<.01,"***",ifelse(s_deal4[57,2]<.05,"**",ifelse(s_deal4[
-57,2]<.1,"*","")))}}$  & $
-\backslash
-Sexpr{s_deal4[55,3]}^{
-\backslash
-Sexpr{ifelse(s_deal4[57,3]<.01,"***",ifelse(s_deal4[57,3]<.05,"**",ifelse(s_deal4[
-57,3]<.1,"*","")))}}$
+57,2]<.1,"*","")))}}$  & 
 \end_layout
 
 \begin_layout Plain Layout
@@ -25864,12 +25281,7 @@ Sexpr{ifelse(s_deal4[57,5]<.01,"***",ifelse(s_deal4[57,5]<.05,"**",ifelse(s_deal
 
 \begin_layout Plain Layout
 
-& $
-\backslash
-Sexpr{s_deal4[55,6]}^{
-\backslash
-Sexpr{ifelse(s_deal4[57,6]<.01,"***",ifelse(s_deal4[57,6]<.05,"**",ifelse(s_deal4[
-57,6]<.1,"*","")))}}$
+&
 \end_layout
 
 \begin_layout Plain Layout
@@ -25888,7 +25300,7 @@ Sexpr{ifelse(s_deal4[57,7]<.01,"***",ifelse(s_deal4[57,7]<.05,"**",ifelse(s_deal
 
 \begin_layout Plain Layout
 
-{complained about seed}
+{complain about seed}
 \end_layout
 
 \begin_layout Plain Layout
@@ -25897,15 +25309,11 @@ Sexpr{ifelse(s_deal4[57,7]<.01,"***",ifelse(s_deal4[57,7]<.05,"**",ifelse(s_deal
 \backslash
 Sexpr{s_deal4[56,1]})$   &  $(
 \backslash
-Sexpr{s_deal4[56,2]})$ & $(
-\backslash
-Sexpr{s_deal4[56,3]})$ & $(
+Sexpr{s_deal4[56,2]})$ &  & $(
 \backslash
 Sexpr{s_deal4[56,4]})$ & $(
 \backslash
-Sexpr{s_deal4[56,5]})$ & $(
-\backslash
-Sexpr{s_deal4[56,6]})$ & $(
+Sexpr{s_deal4[56,5]})$ &  & $(
 \backslash
 Sexpr{s_deal4[56,7]})$ 
 \backslash
@@ -25926,12 +25334,7 @@ Sexpr{ifelse(s_deal4[60,1]<.01,"***",ifelse(s_deal4[60,1]<.05,"**",ifelse(s_deal
 Sexpr{s_deal4[58,2]}^{
 \backslash
 Sexpr{ifelse(s_deal4[60,2]<.01,"***",ifelse(s_deal4[60,2]<.05,"**",ifelse(s_deal4[
-60,2]<.1,"*","")))}}$  & $
-\backslash
-Sexpr{s_deal4[58,3]}^{
-\backslash
-Sexpr{ifelse(s_deal4[60,3]<.01,"***",ifelse(s_deal4[60,3]<.05,"**",ifelse(s_deal4[
-60,3]<.1,"*","")))}}$
+60,2]<.1,"*","")))}}$  & 
 \end_layout
 
 \begin_layout Plain Layout
@@ -25956,12 +25359,7 @@ Sexpr{ifelse(s_deal4[60,5]<.01,"***",ifelse(s_deal4[60,5]<.05,"**",ifelse(s_deal
 
 \begin_layout Plain Layout
 
-& $
-\backslash
-Sexpr{s_deal4[58,6]}^{
-\backslash
-Sexpr{ifelse(s_deal4[60,6]<.01,"***",ifelse(s_deal4[60,6]<.05,"**",ifelse(s_deal4[
-60,6]<.1,"*","")))}}$
+&
 \end_layout
 
 \begin_layout Plain Layout
@@ -25989,15 +25387,11 @@ Sexpr{ifelse(s_deal4[60,7]<.01,"***",ifelse(s_deal4[60,7]<.05,"**",ifelse(s_deal
 \backslash
 Sexpr{s_deal4[59,1]})$   &  $(
 \backslash
-Sexpr{s_deal4[59,2]})$ & $(
-\backslash
-Sexpr{s_deal4[59,3]})$ & $(
+Sexpr{s_deal4[59,2]})$ &  & $(
 \backslash
 Sexpr{s_deal4[59,4]})$ & $(
 \backslash
-Sexpr{s_deal4[59,5]})$ & $(
-\backslash
-Sexpr{s_deal4[59,6]})$ & $(
+Sexpr{s_deal4[59,5]})$ &  & $(
 \backslash
 Sexpr{s_deal4[59,7]})$
 \backslash
@@ -26018,12 +25412,7 @@ Sexpr{ifelse(s_deal4[63,1]<.01,"***",ifelse(s_deal4[63,1]<.05,"**",ifelse(s_deal
 Sexpr{s_deal4[61,2]}^{
 \backslash
 Sexpr{ifelse(s_deal4[63,2]<.01,"***",ifelse(s_deal4[63,2]<.05,"**",ifelse(s_deal4[
-63,2]<.1,"*","")))}}$  & $
-\backslash
-Sexpr{s_deal4[61,3]}^{
-\backslash
-Sexpr{ifelse(s_deal4[63,3]<.01,"***",ifelse(s_deal4[63,3]<.05,"**",ifelse(s_deal4[
-63,3]<.1,"*","")))}}$
+63,2]<.1,"*","")))}}$  & 
 \end_layout
 
 \begin_layout Plain Layout
@@ -26048,12 +25437,7 @@ Sexpr{ifelse(s_deal4[63,5]<.01,"***",ifelse(s_deal4[63,5]<.05,"**",ifelse(s_deal
 
 \begin_layout Plain Layout
 
-& $
-\backslash
-Sexpr{s_deal4[61,6]}^{
-\backslash
-Sexpr{ifelse(s_deal4[63,6]<.01,"***",ifelse(s_deal4[63,6]<.05,"**",ifelse(s_deal4[
-63,6]<.1,"*","")))}}$
+& 
 \end_layout
 
 \begin_layout Plain Layout
@@ -26081,15 +25465,11 @@ Sexpr{ifelse(s_deal4[63,7]<.01,"***",ifelse(s_deal4[63,7]<.05,"**",ifelse(s_deal
 \backslash
 Sexpr{s_deal4[62,1]})$   &  $(
 \backslash
-Sexpr{s_deal4[62,2]})$ & $(
-\backslash
-Sexpr{s_deal4[62,3]})$ & $(
+Sexpr{s_deal4[62,2]})$ & & $(
 \backslash
 Sexpr{s_deal4[62,4]})$ & $(
 \backslash
-Sexpr{s_deal4[62,5]})$ & $(
-\backslash
-Sexpr{s_deal4[62,6]})$ & $(
+Sexpr{s_deal4[62,5]})$ &  & $(
 \backslash
 Sexpr{s_deal4[62,7]})$ 
 \end_layout

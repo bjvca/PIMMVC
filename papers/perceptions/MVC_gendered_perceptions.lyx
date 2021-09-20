@@ -118,7 +118,7 @@ thanks{Development Strategy and Governance Division, International Food
 footnotemark[2], Anusha De
 \backslash
 thanks{LICOS Center for Institutions and Economic Performance, KULeuven,
- Belgium}, and Caroline Miehe
+ Belgium}
 \backslash
 footnotemark[2]}
 \end_layout
@@ -292,7 +292,7 @@ Despite the importance of beliefs and perceptions for transactions within
 \paragraph_spacing onehalf
 We study the case of maize value chains in Uganda where ratings are used
  as a proxy measure for perceptions and beliefs.
- We use data from 1,500 maize farmers, 78 input (seed) dealers, 341 assembly
+ We use data from 1,526 maize farmers, 78 input (seed) dealers, 341 assembly
  traders, and 174 millers from Eastern Uganda to document (in)consistency
  in farmer's, input (seed) dealer's, trader's, and miller's perceived attribute
  ratings of these actors.
@@ -302,175 +302,19 @@ We study the case of maize value chains in Uganda where ratings are used
  trader(s) and miller(s).
  Then these dealers, traders and millers were traced and asked to assess
  themselves in a similar way.
- We use input dealer, trader, and miller attributes, such as perceived ease
- of access to the dealer, trader, or miller, perceived quality of the seed
- sold by the dealer or the quality of service provided by the trader or
- the miller, and reputation of the dealer, trader, or miller, to assess
- how such perceived input-dealer, trader, or miller attributes align between
- value chain actors, and how (non-)alignment is mediated by sex of the farmer
- (rater) or the ratee (dealer, trader, or miller).
+ We use input dealer, trader, and miller attributes to assess how such perceived
+ attributes align between value chain actors, and how (non-)alignment is
+ mediated by sex of the farmer (rater) or the ratee (dealer, trader, or
+ miller).
 \end_layout
 
 \begin_layout Standard
 \paragraph_spacing onehalf
 Ratings can be used as a tool to understand perceptions about certain actors
  in the food value chains.
- The literature shows that ratings can be used as an instrument for identifying
- performance levels of various actors in markets and industries, for information
- transparency 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Karminsky2016"
-literal "true"
-
-\end_inset
-
- and for decision management (for instance, in the financial sector as discussed
- by 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Bolton2012"
-literal "true"
-
-\end_inset
-
- and 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "karminsky2009ratings"
-literal "true"
-
-\end_inset
-
-).
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-\paragraph_spacing onehalf
-Various rating based decision management studies come from the financial
- sector, like credit ratings explaining investment decisions (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "Bolton2012"
-literal "true"
-
-\end_inset
-
-) and financial risk (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "karminsky2009ratings"
-literal "true"
-
-\end_inset
-
-), the link between corporate credit ratings and the financial crisis (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "deHaan2017"
-literal "true"
-
-\end_inset
-
-) and bond ratings' informational value (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "Kliger2000"
-literal "true"
-
-\end_inset
-
-).
-\end_layout
-
-\end_inset
-
-In marketing research, ratings are the tool to identify demand (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "Dhar2016"
-literal "true"
-
-\end_inset
-
-), sales and consumer preferences (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "Sun2012"
-literal "true"
-
-\end_inset
-
-), quality improvement and product alignment with consumer tastes (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "Cheung2003,Barton2006"
-literal "true"
-
-\end_inset
-
-).
- Social and psychological studies use ratings to analyse social behavior
- (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "Renk2004,Schofield2007"
-literal "true"
-
-\end_inset
-
-).
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-\paragraph_spacing onehalf
-teaching and learning patterns (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "Feldman2007"
-literal "true"
-
-\end_inset
-
-), child development (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "Bukowski2012"
-literal "true"
-
-\end_inset
-
-), parenting aspects (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "Kuppens2009"
-literal "true"
-
-\end_inset
-
-) and languages (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "Rudell1993,Cole2019"
-literal "true"
-
-\end_inset
-
-)
-\end_layout
-
-\end_inset
-
-Similarly, ratings can be used to study various agricultural aspects, providing
- an understanding of the perceptions of the different value chain actors.
- Recently, the study of perceptions has also been applied to food supply
- chains where perceptions have been found to correlate with innovations
- in supply chains and indicate loopholes in the performance of involved
- actors (
+ Recently, the study of perceptions has been applied to food supply chains
+ where perceptions have been found to correlate with innovations in supply
+ chains and indicate loopholes in the performance of involved actors (
 \begin_inset CommandInset citation
 LatexCommand citealp
 key "Ola2020,Odongo2016"
@@ -479,13 +323,9 @@ literal "true"
 \end_inset
 
 ).
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-Broadly, studying the rater's ratings and ratee's self-assessments can give
- insights about the deeper mechanisms of performance perceptions in the
- value chains.
+ Broadly, studying the rater's ratings and ratee's self-assessments can
+ give insights about the deeper mechanisms of performance perceptions in
+ the value chains.
  Higher ratings may motivate actors to sustain performance while lower ratings
  may lead actors to improve performance or at least induce increased effort.
  Although there are various other factors like competition, access to facilities
@@ -556,8 +396,7 @@ Traditionally, women have not been playing a significant role in the input
  Thus, analysing how the sex of each actor impacts the ratings from farmers
  and the self-ratings is crucial in the Ugandan maize value chain.
  Systemic gender bias in perceptions can demotivate the entry of women in
- the food supply chains, creating better opportunities for men to flourish
- in these industries.
+ the food supply chains.
  Issues like discrimination against women, barriers to market access for
  women, mistrust, lower credit availabilities, etc.
  are some of the consequences of such gender bias in perceptions.
@@ -879,20 +718,8 @@ literal "true"
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-Common explanations advanced in the literature are that: farmers are risk
- averse, or are not aware of existing technologies, or lack knowledge about
- their proper use, or are financially constrained, or lack information about
- profitability 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Porteous2020,Mbowa2016,Fisher2014,Minten2013"
-literal "true"
-
-\end_inset
-
-.
- Literature also hints on the limited availability of improved input technologie
-s in developing countries 
+Literature also hints on the limited availability of improved input technologies
+ in developing countries 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Asfaw2012,Maredia2000"
@@ -920,17 +747,6 @@ literal "true"
 \end_inset
 
 , is emerging as an additional explanation for the limited adoption.
- Poor quality inputs pose a major disincentive to the adoption of improved
- inputs as use of low-quality inputs result in low average returns to farmers
- 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Bold2015"
-literal "true"
-
-\end_inset
-
-.
  
 \end_layout
 
@@ -966,56 +782,8 @@ literal "true"
 \end_inset
 
 .
- 
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-Several qualitative and experimental studies 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Ashour2019,Boef2019,Barriga2018,Bold2017"
-literal "true"
-
-\end_inset
-
- provide insights into the actual (poor) quality of agricultural inputs
- in selected African countries, including Uganda.
- Drop in the quality of seeds after leaving the breeders 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Barriga2018"
-literal "true"
-
-\end_inset
-
-, low levels of authentic seeds in locally retailed hybrid seeds 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Bold2017"
-literal "true"
-
-\end_inset
-
-, counterfeiting/adulteration of inputs 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Ashour2019,Boef2019"
-literal "true"
-
-\end_inset
-
- and high levels of deceptive marketing 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Ashour2019"
-literal "true"
-
-\end_inset
-
- are some common phenomena.
- Henceforth, input dealers dealing in these agricultural inputs are an important
- node for the sustenance of the maize value chains.
+ Input dealers dealing in these agricultural inputs are an important node
+ for the sustenance of the maize value chains.
  Although their role has already been studied with respect to the agricultural
  innovation processes 
 \begin_inset CommandInset citation
@@ -1107,18 +875,15 @@ literal "true"
 \begin_layout Standard
 \paragraph_spacing onehalf
 Interestingly, the type of maize being milled can be influenced by consumer
- preferences.
- An example of this can be obtained from 
+ preferences 
 \begin_inset CommandInset citation
-LatexCommand citet
+LatexCommand citep
 key "omueti2006comparison"
 literal "true"
 
 \end_inset
 
- where the authors mention that soft endosperm varieties of maize are preferred
- in Western Africa because they are easier to process and thus, finer final
- products can be achieved from such varieties.
+.
  Thus, maize millers or processors can act as a connection between the supply
  and the demand chains because consumer preferences can be rooted into the
  supply chains through the decisions of the maize millers in the types of
@@ -1136,165 +901,6 @@ literal "true"
  maize value chain mechanisms.
  These arguments help in explaining why studying the perceptions of milling
  performances are important to get better insights about the supply chain.
- 
-\end_layout
-
-\begin_layout Subsection
-\paragraph_spacing onehalf
-Perceived Attributes of Supply Chain Actors
-\begin_inset CommandInset label
-LatexCommand label
-name "subsec:Perceived-Attributes"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-Due to limited knowledge and information asymmetries, it is often hard for
- farmers to assess the quality of products and services offered by input
- dealers.
- Products sold by agro-input dealers such as improved seed varieties, inorganic
- fertilizer, and pesticides or herbicides are considered 
-\begin_inset Quotes eld
-\end_inset
-
-experience goods
-\begin_inset Quotes erd
-\end_inset
-
-.
- The quality of these goods is hard to assess ex-ante, and the information
- advantage of the input dealer may lead to a lemons market 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Bold2017"
-literal "false"
-
-\end_inset
-
-.
- Based on limited knowledge, own experience, and the dealer's reputation
- (information that other buyers have about the seller), a farmer may form
- his or her own perceptions about quality of inputs and services provided
- by the input dealer.
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-In addition to the quality attribute, farmers may use perceptions and beliefs
- related to a range of other attributes of the input dealer.
- For instance, price considerations and the relative competitiveness of
- the dealer will be important when a farmer decides to transact with a particula
-r input dealer.
- Primarily, ease of access to an input dealer determines transaction costs
- and subsequently farmer's access to and use of improved inputs 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Alene2008"
-literal "true"
-
-\end_inset
-
-.
- Secondly, ease of access to input dealers may increase interaction between
- farmers and the input dealers, thereby increasing farmers' learning about
- improved seed.
- The theoretical framework motivating a possible link between input dealer
- attributes and use of improved seed can be located in the literature on
- customer perceived value and consumption behavior 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Jayashankar2018,Chiu2014"
-literal "true"
-
-\end_inset
-
-.
- This literature suggests that (continued) usage of a given product or service
- is accompanied by not just a customer’s perceived value (price or quality)
- of that product/service, but also the perceived value (e.g.
- trust/reputation, accessibility) of the provider of the product.
- Thus, the perceptions formed based on price competitiveness, quality of
- seeds, ease of access and reputation can determine the use of improved
- inputs to some extent.
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-Next, we turn to the perceived attributes of traders.
- In remote locations, if the traders are easily accessible, that would mean
- that the farmers have greater exposure to selling opportunities, might
- reduce wastage of harvest, ensure constant income for the farmer and increase
- availability of maize harvests at the buying points.
- Thus, ease of access is likely to be more important than for instance,
- quality when assessing traders.
- Traders having better reputation will influence the perceived reputation
- attributes, i.e., if a farmer hears something good about a trader from another
- farmer, he or she will perceive that trader to be well-reputed.
- Reputation of the trader may also be motivated by trustworthiness and higher
- number of business interactions.
- Traders in greater demand are likely to be well-reputed.
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-The perceived quality of service can be driven by many aspects like behavior
- of the trader, flexibility of the trader, risks taken by the trader for
- the transportation of the harvest, etc.
- The price paid by traders while buying the harvest is an essential part
- of the interaction between the trader and the farmer.
- It is very important to know how accurately the farmers perceive the prices
- being paid by the traders and how accurately the traders perceive the prices
- they are paying themselves.
- This is an observable attribute of the trader, so most farmers should agree
- on their perceptions.
- However, these perceptions can have some underlying factors like length
- of the relationship between the trader and farmer.
- For instance, if a trader has been buying maize from a farmer for a long
- period of time, the farmer might agree at a lower price because he or she
- will be ensured that the harvest will always be sold on time without any
- hassle.
- Therefore, these perceived attributes about the traders can give better
- insights about access to maize marketing channels.
- 
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-Millers or processors are scored by the farmers based on similar factors
- or attributes.
- The location of the mill is necessary to understand how easy it is for
- the traders or farmers to take the harvest to the processing points since
- in Uganda, both farmers and traders can take the harvests to the mills.
- For farmers living in remote areas, it may be hard to transport their harvest
- for milling or processing.
- Thus, location of the mills can influence perceptions of the farmers about
- the millers.
- In addition, perceptions are formed based on the quality of service and
- the quality of end product provided by these mills.
- Better milling technologies, cleanliness of the mills, transparency at
- the mills and flexibility provided by the mill staff can result in good
- perceived performance levels.
- Similarly, friendly behavior and shorter waiting times at the mills can
- ensure good perceived reputation of the processors.
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-Perceived prices cannot directly indicate the actual price charged at the
- mills because perceptions are not objectively measured or directly observed.
- High prices may not always be perceived as bad as they can be coupled with
- the quality of processing and the quality of the end product ensured by
- the mill.
- This may point towards the provision of price competitiveness among the
- processors.
- Finer end products can improve the perceived quality of end product along
- with the perceived reputation of the mill or the processor.
- Thus, the quality of processed maize available for the consumers can be
- partially explained by the perceived attributes of the maize millers.
  
 \end_layout
 
@@ -1400,69 +1006,17 @@ noprefix "false"
 
  determines how the agro-input dealers, processors and traders rate themselves
  (self-assessments) compared to the ratings from the farmers.
- Self-ratings have been criticized largely and checked for validity by many
- researchers in different fields of research (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "Heneman1974,Lowman1987,Horwood2021"
-literal "true"
-
-\end_inset
-
-).
- This study does not claim that the self-ratings determine the actual performanc
-e levels of the agro-input dealers, processors, and traders in the Ugandan
- maize value chain.
- This is because self-ratings can be a victim of self-bias (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "Sui2017"
-literal "true"
-
-\end_inset
-
-), self-deception (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "von2011evolution"
-literal "true"
-
-\end_inset
-
-), self-enhancement (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "Sedikides2008,Alicke2009"
-literal "true"
-
-\end_inset
-
-) and impression management (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "Wayne1995"
-literal "true"
-
-\end_inset
-
-).
- However, the self-ratings indicate the perceived level of performance by
- the service and input providers which is the main motivation towards the
- inclusion of this hypothesis in the study.
- 
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-Perceptions in this regard can explain a lot about the sector and could
+ Self-ratings indicate the perceived level of performance by the service
+ and input providers which is the main motivation towards the inclusion
+ of this hypothesis.
+ Perceptions in this regard can explain a lot about the sector and could
  also explain slower technological change and advancements.
  If these service and input providers perceive themselves to be performing
  better than they actually are, then there will be lesser efforts to improve
  their professional stance in the industry.
  If the farmers rate the input dealers, traders, and millers lower than
- their self-ratings, it shows that the agro-input dealers, processors and
- traders are not meeting the expectations of the farmers without even realising
- their perceived low performance levels.
+ their self-ratings, it shows that these actors are not meeting the expectations
+ of the farmers without even realising their perceived low performance levels.
  This non-realisation is emanated through their more favourable self-ratings.
  
 \begin_inset CommandInset citation
@@ -1493,8 +1047,7 @@ noprefix "false"
 
 ).
  There is evidence from various areas of research that women generally rate
- more favourably than men.
- 
+ more favourably than men (
 \begin_inset CommandInset citation
 LatexCommand citet
 key "Furnham2005"
@@ -1502,20 +1055,7 @@ literal "true"
 
 \end_inset
 
- discussed ratings from men and women on business intelligence where women
- rated boss's overall, emotional and organizational IQ more favourably than
- the male subordinates.
- Interestingly, 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Rappoport1993"
-literal "true"
-
-\end_inset
-
- showed that women tended to assess healthy meals more favourably based
- on factors like health, pleasure and convenience compared to men.
- 
+; 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "Winquist1998"
@@ -1523,22 +1063,10 @@ literal "true"
 
 \end_inset
 
- argues that women have a tendency to score higher because perceptions of
- women are more positive than perceptions of men.
- 
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-In this study, it is expected that female farmers will more favourably rate
- the input dealers, processors and traders on average compared to the male
- farmers, i.e., perceptions of female farmers will be more positive about
- the service and input providers.
- This can indicate various interesting and unknown attributes of the maize
- value chain.
- There are possibilities that female farmers are given better services and
- inputs by the input dealers, maize processors and traders, leading to more
- favourable ratings from the women.
+).
+ More favourable ratings from female farmers can indicate that there are
+ possibilities that female farmers are given better services and inputs
+ by the input dealers, maize processors and traders.
  This can be culturally linked for a prominent gender bias in the provision
  of services and sale of goods.
  Another reason for this can be minimal stringency and greater leniency
@@ -1554,7 +1082,7 @@ literal "true"
 \end_inset
 
 ).
- Validating this in the research of food value chains can be an interesting
+ Validating this in the context of food value chains can be an interesting
  contribution to the existing studies.
  
 \end_layout
@@ -1617,9 +1145,8 @@ literal "true"
  Such gendered ideas of self-assessment can partially explain why lesser
  number of female agro-input dealers, processors and traders get involved
  in the maize markets in Uganda.
- Since they underestimate their ability and do not think themselves to be
- performing well enough as the men, women could be less willing to be involved
- in these kind of business activities.
+ Since they underestimate their ability, women could be less willing to
+ be involved in these kind of business activities.
  Thus, the maize value chain remains dominated by the male service and input
  providers, pointing towards the need for important policy implications
  in this sector to encourage greater involvement of women.
@@ -1691,9 +1218,6 @@ literal "true"
 
  found that female managers received lower performance ratings compared
  to male managers.
- Particularly, women involved in line jobs (jobs involving physical strain
- like installation of transmission systems, etc.) received lower ratings
- compared to women involved in staff jobs.
  
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -1742,29 +1266,8 @@ In the context of this study, bias against women can aid the explanation
  to avoid criticisms and performance obstacles at a later stage.
  Social stringency and family practices might limit the women from performing
  better or being equally competitive as the men.
- Another compelling reason for the lower ratings received by women could
- be that their actual performance levels are worse than the men.
- Lower access to facilities, finance and business guidance can be the drivers
- of worse performance for the female dealers, traders, and processors alongside
- the underlying societal aspects.
- These arguments can be supported by the claims of 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "niethammer2013"
-literal "true"
-
-\end_inset
-
-, mentioning the significant gender differences in the access to finance
- for the development of businesses and the lower formal bank account penetration
- for women when compared to men in the developing nations.
- 
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-A study done on the women entrepreneurs in the Kigali region of Rwanda by
- 
+ A study done on the women entrepreneurs in the Kigali region of Rwanda
+ by 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "Nsengimana2017"
@@ -1772,10 +1275,7 @@ literal "true"
 
 \end_inset
 
- reported many challenges for the success of their businesses like the lack
- of collateral, lack of information technology access, high interest rates
- for loans, lack of skill development opportunities, cultural imperatives
- and psychological factors induced by the families and the society.
+ reported many challenges for the success of women's businesses.
  Similarly, 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -1786,13 +1286,11 @@ literal "true"
 
  discusses the barriers faced by women entrepreneurs in Uganda.
  Some of the prominent issues faced by women are gender-related stereotypes
- (risk-taking behavior, higher levels of empathy and lower aggressiveness),
- under-capitalization (credit access limits, availability of collateral),
- balance across multiple responsibilities (childcare, family responsibilities,
- inter-role conflict), inadequate skills and business knowledge, disapproval
- from societal standards, lack of respect from the male-dominated business
- community, lack of support, time investment constraints, reputation and
- work credibility challenges.
+ (risk-taking behavior and lower aggressiveness), under-capitalization (credit
+ access limits, availability of collateral), balance across multiple responsibil
+ities (childcare, family responsibilities), inadequate skills and business
+ knowledge, lack of respect from the male-dominated business community,
+ time investment constraints, reputation and work credibility challenges.
  These can significantly impact the ratings received by the female input
  and service providers in the supply chain and can undermine their perceived
  performance in the sector.
@@ -2011,29 +1509,23 @@ name "subsec:Variables"
 \begin_layout Standard
 \paragraph_spacing onehalf
 The summary statistics for the main variables used in this study are presented
- in tables
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-~
-\backslash
-ref{table:table1}
-\end_layout
+ in tables 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:table1"
+plural "false"
+caps "false"
+noprefix "false"
 
 \end_inset
 
- and
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-~
-\backslash
-ref{table:table2}
-\end_layout
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:table2"
+plural "false"
+caps "false"
+noprefix "false"
 
 \end_inset
 
@@ -2083,16 +1575,13 @@ The farmer ratings are assumed to be not exposed to the input and service
 \end_layout
 
 \begin_layout Standard
-Table
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-~
-\backslash
-ref{table:table1}
-\end_layout
+Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:table1"
+plural "false"
+caps "false"
+noprefix "false"
 
 \end_inset
 
@@ -2319,6 +1808,12 @@ Sexpr{format(round(table(pool$interaction_yes)[2]/sum(table(pool$interaction_yes
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
 \paragraph_spacing single
 \noindent
 \begin_inset ERT
@@ -2326,9 +1821,7 @@ status open
 
 \begin_layout Plain Layout
 
-
-\backslash
-begin{table} 
+ 
 \backslash
 footnotesize 
 \backslash
@@ -3158,23 +2651,33 @@ end{center}
 
 \begin_layout Plain Layout
 
-
-\backslash
-caption{Summary Statistics of the variables related to the farmers.} 
-\end_layout
-
-\begin_layout Plain Layout
-
  
 \backslash
 label{table:table1} 
 \end_layout
 
-\begin_layout Plain Layout
+\end_inset
 
- 
-\backslash
-end{table} 
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Summary Statistics of the variables related to the farmers.
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:table1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -3187,14 +2690,18 @@ end{table}
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
 \begin_layout Plain Layout
 
 
-\backslash
-begin{table} 
 \backslash
 footnotesize 
 \backslash
@@ -3985,24 +3492,42 @@ hline
 \backslash
 end{tabular} 
 \backslash
-end{center}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-caption{Summary Statistics of the variables related to the ratees (dealers,
- traders, and millers).} 
+end{center} 
 \backslash
 label{table:table2} 
 \end_layout
 
 \begin_layout Plain Layout
 
- 
-\backslash
-end{table} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Summary Statistics of the variables related to the ratees (dealers, traders,
+ and millers).
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:table2"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \end_inset
@@ -4011,16 +3536,13 @@ end{table}
 \end_layout
 
 \begin_layout Standard
-Table
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-~
-\backslash
-ref{table:table2}
-\end_layout
+Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:table2"
+plural "false"
+caps "false"
+noprefix "false"
 
 \end_inset
 
@@ -4317,16 +3839,13 @@ Intra-class correlation coefficient can range between 0 and 1.
 \end_layout
 
 \begin_layout Standard
-Table
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-~
-\backslash
-ref{table:table3}
-\end_layout
+Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:table3"
+plural "false"
+caps "false"
+noprefix "false"
 
 \end_inset
 
@@ -4427,16 +3946,13 @@ Sexpr{format(round(icc1b.fn(icc_recast_overall6)$icc1b,digits=2),nsmall=0)}
 
 \end_inset
 
- (table
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-~
-\backslash
-ref{table:table3}
-\end_layout
+ (table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:table3"
+plural "false"
+caps "false"
+noprefix "false"
 
 \end_inset
 
@@ -4472,6 +3988,12 @@ Sexpr{format(round(icc1b.fn(icc_recast_rep)$icc1b,digits=2),nsmall=0)}
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
 \paragraph_spacing onehalf
 \begin_inset ERT
 status open
@@ -4479,8 +4001,6 @@ status open
 \begin_layout Plain Layout
 
 
-\backslash
-begin{table} 
 \backslash
 small 
 \backslash
@@ -4711,23 +4231,36 @@ Note - The sample consists of all the raters and ratees (agro-input dealers,
  The farmer who has rated more than 6 times is constant during the comparison
  of the ratings.
  
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-caption{ICC coefficients for inter-rater reliability and intra-rater reliability.
-} 
 \backslash
 label{table:table3} 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+ICC coefficients for inter-rater reliability and intra-rater reliability.
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:table3"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Plain Layout
 
- 
-\backslash
-end{table} 
 \end_layout
 
 \end_inset
@@ -5372,16 +4905,13 @@ Average scores are obtained for the ratings given by the farmers (raters)
  to the ratees (agro-input dealers, processors, and traders) and for the
  self-ratings by the ratees themselves.
  The primary goal of this section is to check whether the mean ratings obtained
- from the dataset (presented in table
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-~
-\backslash
-ref{table:table4}
-\end_layout
+ from the dataset (presented in table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:table4"
+plural "false"
+caps "false"
+noprefix "false"
 
 \end_inset
 
@@ -5401,6 +4931,12 @@ The results for traders and millers may suffer from small sample share of
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float table
+wide false
+sideways true
+status collapsed
+
+\begin_layout Plain Layout
 \paragraph_spacing onehalf
 \begin_inset ERT
 status open
@@ -5410,13 +4946,6 @@ status open
 
 \backslash
 begin{landscape}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{table}
 \end_layout
 
 \begin_layout Plain Layout
@@ -7811,23 +7340,7 @@ end{center}
 
 
 \backslash
-caption{Average ratings (all dimensions) from farmers and average self-ratings
- (all dimensions) from dealers, traders, and processors, grouped by gender.}
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
 label{table:table4} 
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-end{table}
 \end_layout
 
 \begin_layout Plain Layout
@@ -7839,16 +7352,47 @@ end{landscape}
 
 \end_inset
 
-Table
-\begin_inset ERT
-status open
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Average ratings (all dimensions) from farmers and average self-ratings (all
+ dimensions) from dealers, traders, and processors, grouped by gender.
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:table4"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 
-~
-\backslash
-ref{table:table4}
 \end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:table4"
+plural "false"
+caps "false"
+noprefix "false"
 
 \end_inset
 
@@ -7881,16 +7425,13 @@ Sexpr{format(round(mean(pool$rating_overall, na.rm=T),digits=2),nsmall=0)}
 ).
  This phenomenon is consistent across all the different rating dimensions.
  Looking at individual groups of input dealers, traders, and millers in
- table
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-~
-\backslash
-ref{table:table4}
-\end_layout
+ table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:table4"
+plural "false"
+caps "false"
+noprefix "false"
 
 \end_inset
 
@@ -8059,16 +7600,13 @@ noprefix "false"
 
 \end_inset
 
- does not entirely align with these findings from table
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-~
-\backslash
-ref{table:table4}
-\end_layout
+ does not entirely align with these findings from table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:table4"
+plural "false"
+caps "false"
+noprefix "false"
 
 \end_inset
 
@@ -8218,16 +7756,13 @@ Sexpr{format(round(lm_res1$coefficients[2],digits=2),nsmall=0)}
 
  higher.
  Thus, female farmers give more favourable ratings when compared to male
- farmers, consistent with the results from table
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-~
-\backslash
-ref{table:table4}
-\end_layout
+ farmers, consistent with the results from table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:table4"
+plural "false"
+caps "false"
+noprefix "false"
 
 \end_inset
 
@@ -8307,16 +7842,13 @@ Sexpr{format(round(lm_res1$coefficients[14],digits=2),nsmall=0)}
 
 \end_inset
 
- point (consistent with table
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-~
-\backslash
-ref{table:table4}
-\end_layout
+ point (consistent with table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:table4"
+plural "false"
+caps "false"
+noprefix "false"
 
 \end_inset
 
@@ -8369,16 +7901,13 @@ noprefix "false"
  The positive relationship between sex of the farmer and the farmer's ratings
  is significantly consistent for location-based and price-based ratings
  (models 3, 4, 7 and 8).
- This is consistent with the results from table
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-~
-\backslash
-ref{table:table4}
-\end_layout
+ This is consistent with the results from table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:table4"
+plural "false"
+caps "false"
+noprefix "false"
 
 \end_inset
 
@@ -8388,16 +7917,13 @@ ref{table:table4}
  Interestingly, for quality- and reputation-based ratings, if the ratee
  is a woman, the farmer's rating increases significantly.
  However, the ratings decline for location-based ratings if the ratee is
- a woman (similar findings in table
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-~
-\backslash
-ref{table:table4}
-\end_layout
+ a woman (similar findings in table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:table4"
+plural "false"
+caps "false"
+noprefix "false"
 
 \end_inset
 
@@ -9176,7 +8702,7 @@ Sexpr{format(round(se45[4],digits=4),nsmall=0)})$
 \backslash
 
 \backslash
- {Interaction}                & $
+ {Education(F)}                & $
 \backslash
 Sexpr{format(round(sum(lm_res1$coefficients[5]),digits=4),nsmall=0)}^{
 \backslash
@@ -9324,7 +8850,7 @@ Sexpr{format(round(se45[5],digits=4),nsmall=0)})$
 \backslash
 
 \backslash
- {Education(F)}
+ {Tarmac}
 \end_layout
 
 \begin_layout Plain Layout
@@ -9477,7 +9003,7 @@ Sexpr{format(round(se45[6],digits=4),nsmall=0)})$
 \backslash
 
 \backslash
-   {Tarmac}
+   {Murram}
 \end_layout
 
 \begin_layout Plain Layout
@@ -9630,7 +9156,7 @@ Sexpr{format(round(se45[7],digits=4),nsmall=0)})$
 \backslash
 
 \backslash
-  {Murram}
+  {Farmer marital status}
 \end_layout
 
 \begin_layout Plain Layout
@@ -9783,7 +9309,7 @@ Sexpr{format(round(se45[8],digits=4),nsmall=0)})$
 \backslash
 
 \backslash
-    {Farmer marital status}
+    {Age of ratee}
 \end_layout
 
 \begin_layout Plain Layout
@@ -9936,7 +9462,7 @@ Sexpr{format(round(se45[9],digits=4),nsmall=0)})$
 \backslash
 
 \backslash
-   {Age of ratee}
+   {Ratee marital status}
 \end_layout
 
 \begin_layout Plain Layout
@@ -10089,7 +9615,7 @@ Sexpr{format(round(se45[10],digits=4),nsmall=0)})$
 \backslash
 
 \backslash
- {Ratee marital status} 
+ {Education(R)} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -10242,7 +9768,7 @@ Sexpr{format(round(se45[11],digits=4),nsmall=0)})$
 \backslash
 
 \backslash
- {Education(R)}
+ {Dealer dummy}
 \end_layout
 
 \begin_layout Plain Layout
@@ -10395,7 +9921,7 @@ Sexpr{format(round(se45[12],digits=4),nsmall=0)})$
 \backslash
 
 \backslash
- {Dealer dummy} 
+ {Trader dummy} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -10548,18 +10074,12 @@ Sexpr{format(round(se45[13],digits=4),nsmall=0)})$
 \backslash
 
 \backslash
- {Trader dummy} 
+ {Gender(F):Gender(R)} 
 \end_layout
 
 \begin_layout Plain Layout
 
-                       & $
-\backslash
-Sexpr{format(round(sum(lm_res1$coefficients[14]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(lm_res1)$coefficients[14,4]<.01,"***",ifelse(summary(lm_res1
-)$coefficients[14,4]<.05,"**",ifelse(summary(lm_res1)$coefficients[14,4]<.1,"*",""
-)))}}$ 
+                       & 
 \end_layout
 
 \begin_layout Plain Layout
@@ -10575,13 +10095,7 @@ Sexpr{ifelse(summary(lm_res5)$coefficients[14,4]<.01,"***",ifelse(summary(lm_res
 
 \begin_layout Plain Layout
 
- & $
-\backslash
-Sexpr{format(round(sum(lm_res11$coefficients[14]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(lm_res11)$coefficients[14,4]<.01,"***",ifelse(summary(lm_res
-11)$coefficients[14,4]<.05,"**",ifelse(summary(lm_res11)$coefficients[14,4]<.1,"*"
-,"")))}}$ 
+ & 
 \end_layout
 
 \begin_layout Plain Layout
@@ -10597,13 +10111,7 @@ Sexpr{ifelse(summary(lm_res15)$coefficients[14,4]<.01,"***",ifelse(summary(lm_re
 
 \begin_layout Plain Layout
 
- & $
-\backslash
-Sexpr{format(round(sum(lm_res21$coefficients[14]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(lm_res21)$coefficients[14,4]<.01,"***",ifelse(summary(lm_res
-21)$coefficients[14,4]<.05,"**",ifelse(summary(lm_res21)$coefficients[14,4]<.1,"*"
-,"")))}}$   
+ & 
 \end_layout
 
 \begin_layout Plain Layout
@@ -10619,13 +10127,7 @@ Sexpr{ifelse(summary(lm_res25)$coefficients[14,4]<.01,"***",ifelse(summary(lm_re
 
 \begin_layout Plain Layout
 
-& $
-\backslash
-Sexpr{format(round(sum(lm_res31$coefficients[14]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(lm_res31)$coefficients[14,4]<.01,"***",ifelse(summary(lm_res
-31)$coefficients[14,4]<.05,"**",ifelse(summary(lm_res31)$coefficients[14,4]<.1,"*"
-,"")))}}$ 
+&  
 \end_layout
 
 \begin_layout Plain Layout
@@ -10641,13 +10143,7 @@ Sexpr{ifelse(summary(lm_res35)$coefficients[14,4]<.01,"***",ifelse(summary(lm_re
 
 \begin_layout Plain Layout
 
-& $
-\backslash
-Sexpr{format(round(sum(lm_res41$coefficients[14]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(lm_res41)$coefficients[14,4]<.01,"***",ifelse(summary(lm_res
-41)$coefficients[14,4]<.05,"**",ifelse(summary(lm_res41)$coefficients[14,4]<.1,"*"
-,"")))}}$ 
+& 
 \end_layout
 
 \begin_layout Plain Layout
@@ -10667,145 +10163,22 @@ Sexpr{ifelse(summary(lm_res45)$coefficients[14,4]<.01,"***",ifelse(summary(lm_re
 \backslash
 
 \backslash
-                              & $(
-\backslash
-Sexpr{format(round(se1[14],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se5[14],digits=4),nsmall=0)})$   & $(
-\backslash
-Sexpr{format(round(se11[14],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se15[14],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se21[14],digits=4),nsmall=0)})$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-             & $(
-\backslash
-Sexpr{format(round(se25[14],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se31[14],digits=4),nsmall=0)})$   & $(
-\backslash
-Sexpr{format(round(se35[14],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se41[14],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se45[14],digits=4),nsmall=0)})$            
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
- {Gender(F):Gender(R)} 
-\end_layout
-
-\begin_layout Plain Layout
-
-               & 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format(round(sum(lm_res5$coefficients[15]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(lm_res5)$coefficients[15,4]<.01,"***",ifelse(summary(lm_res5
-)$coefficients[15,4]<.05,"**",ifelse(summary(lm_res5)$coefficients[15,4]<.1,"*",""
-)))}}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
- & 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format(round(sum(lm_res15$coefficients[15]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(lm_res15)$coefficients[15,4]<.01,"***",ifelse(summary(lm_res
-15)$coefficients[15,4]<.05,"**",ifelse(summary(lm_res15)$coefficients[15,4]<.1,"*"
-,"")))}}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
- &    
-\end_layout
-
-\begin_layout Plain Layout
-
-      & $
-\backslash
-Sexpr{format(round(sum(lm_res25$coefficients[15]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(lm_res25)$coefficients[15,4]<.01,"***",ifelse(summary(lm_res
-25)$coefficients[15,4]<.05,"**",ifelse(summary(lm_res25)$coefficients[15,4]<.1,"*"
-,"")))}}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-& 
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{format(round(sum(lm_res35$coefficients[15]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(lm_res35)$coefficients[15,4]<.01,"***",ifelse(summary(lm_res
-35)$coefficients[15,4]<.05,"**",ifelse(summary(lm_res35)$coefficients[15,4]<.1,"*"
-,"")))}}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-& 
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{format(round(sum(lm_res45$coefficients[15]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(lm_res45)$coefficients[15,4]<.01,"***",ifelse(summary(lm_res
-45)$coefficients[15,4]<.05,"**",ifelse(summary(lm_res45)$coefficients[15,4]<.1,"*"
-,"")))}}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
                               &     & $(
 \backslash
-Sexpr{format(round(se5[15],digits=4),nsmall=0)})$   &      & $(
+Sexpr{format(round(se5[14],digits=4),nsmall=0)})$   &   & $(
 \backslash
-Sexpr{format(round(se15[15],digits=4),nsmall=0)})$     & 
+Sexpr{format(round(se15[14],digits=4),nsmall=0)})$     & 
 \end_layout
 
 \begin_layout Plain Layout
 
              & $(
 \backslash
-Sexpr{format(round(se25[15],digits=4),nsmall=0)})$     &    & $(
+Sexpr{format(round(se25[14],digits=4),nsmall=0)})$     &   & $(
 \backslash
-Sexpr{format(round(se35[15],digits=4),nsmall=0)})$     &    & $(
+Sexpr{format(round(se35[14],digits=4),nsmall=0)})$     &   & $(
 \backslash
-Sexpr{format(round(se45[15],digits=4),nsmall=0)})$          
+Sexpr{format(round(se45[14],digits=4),nsmall=0)})$                  
 \end_layout
 
 \begin_layout Plain Layout
@@ -11013,16 +10386,13 @@ ref{table:table6}
  If the ratee is a woman, she significantly self-assesses herself higher
  than the male ratees for quality and price.
  However, for reputation, she rates herself lower (significant).
- These results are consistent with the findings from table
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-~
-\backslash
-ref{table:table4}
-\end_layout
+ These results are consistent with the findings from table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:table4"
+plural "false"
+caps "false"
+noprefix "false"
 
 \end_inset
 
@@ -11030,16 +10400,13 @@ ref{table:table4}
  Looking at model 1, it can be noted that older and educated ratees self-assess
  themselves higher significantly and married ratees self-assess themselves
  lower significantly.
- Consistent with table
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-~
-\backslash
-ref{table:table4}
-\end_layout
+ Consistent with table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:table4"
+plural "false"
+caps "false"
+noprefix "false"
 
 \end_inset
 
@@ -15420,7 +14787,7 @@ Sexpr{format(round(se_farm5[3],digits=4),nsmall=0)})$
 \backslash
 
 \backslash
- {Interaction}                & $
+ {Education(F)}                & $
 \backslash
 Sexpr{format(round(sum(res_farm1$coefficients[4]),digits=4),nsmall=0)}^{
 \backslash
@@ -15498,7 +14865,7 @@ Sexpr{format(round(se_farm5[4],digits=4),nsmall=0)})$
 \backslash
 
 \backslash
- {Education(F)}
+ {Tarmac}
 \end_layout
 
 \begin_layout Plain Layout
@@ -15581,7 +14948,7 @@ Sexpr{format(round(se_farm5[5],digits=4),nsmall=0)})$
 \backslash
 
 \backslash
-   {Tarmac}
+   {Murram}
 \end_layout
 
 \begin_layout Plain Layout
@@ -15664,7 +15031,7 @@ Sexpr{format(round(se_farm5[6],digits=4),nsmall=0)})$
 \backslash
 
 \backslash
-   {Murram}
+   {Farmer marital status}
 \end_layout
 
 \begin_layout Plain Layout
@@ -15747,7 +15114,7 @@ Sexpr{format(round(se_farm5[7],digits=4),nsmall=0)})$
 \backslash
 
 \backslash
-  {Farmer marital status}
+  {Dealer dummy}
 \end_layout
 
 \begin_layout Plain Layout
@@ -15830,7 +15197,7 @@ Sexpr{format(round(se_farm5[8],digits=4),nsmall=0)})$
 \backslash
 
 \backslash
-    {Dealer dummy}
+    {Trader dummy}
 \end_layout
 
 \begin_layout Plain Layout
@@ -15904,90 +15271,7 @@ Sexpr{format(round(se_farm3[9],digits=4),nsmall=0)})$     & $(
 \backslash
 Sexpr{format(round(se_farm4[9],digits=4),nsmall=0)})$     & $(
 \backslash
-Sexpr{format(round(se_farm5[9],digits=4),nsmall=0)})$         
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-   {Trader dummy}
-\end_layout
-
-\begin_layout Plain Layout
-
-               & $
-\backslash
-Sexpr{format(round(sum(res_farm1$coefficients[10]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(res_farm1)$coefficients[10,4]<.01,"***",ifelse(summary(res_f
-arm1)$coefficients[10,4]<.05,"**",ifelse(summary(res_farm1)$coefficients[10,4]<.1,
-"*","")))}}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format(round(sum(res_farm2$coefficients[10]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(res_farm2)$coefficients[10,4]<.01,"***",ifelse(summary(res_f
-arm2)$coefficients[10,4]<.05,"**",ifelse(summary(res_farm2)$coefficients[10,4]<.1,
-"*","")))}}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{format(round(sum(res_farm3$coefficients[10]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(res_farm3)$coefficients[10,4]<.01,"***",ifelse(summary(res_f
-arm3)$coefficients[10,4]<.05,"**",ifelse(summary(res_farm3)$coefficients[10,4]<.1,
-"*","")))}}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format(round(sum(res_farm4$coefficients[10]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(res_farm4)$coefficients[10,4]<.01,"***",ifelse(summary(res_f
-arm4)$coefficients[10,4]<.05,"**",ifelse(summary(res_farm4)$coefficients[10,4]<.1,
-"*","")))}}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{format(round(sum(res_farm5$coefficients[10]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(res_farm5)$coefficients[10,4]<.01,"***",ifelse(summary(res_f
-arm5)$coefficients[10,4]<.05,"**",ifelse(summary(res_farm5)$coefficients[10,4]<.1,
-"*","")))}}$   
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-                              & $(
-\backslash
-Sexpr{format(round(se_farm1[10],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_farm2[10],digits=4),nsmall=0)})$   & $(
-\backslash
-Sexpr{format(round(se_farm3[10],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_farm4[10],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_farm5[10],digits=4),nsmall=0)})$        
+Sexpr{format(round(se_farm5[9],digits=4),nsmall=0)})$              
 \end_layout
 
 \begin_layout Plain Layout
