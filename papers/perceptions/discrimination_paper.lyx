@@ -85,7 +85,50 @@ knitr
 \begin_body
 
 \begin_layout Title
-Discrimination Paper
+\begin_inset Preview
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+author{Anusha De
+\backslash
+thanks{LICOS Center for Institutions and Economic Performance, KULeuven,
+ Belgium}, Caroline Miehe 
+\backslash
+footnotemark[1] , and Bjorn Van Campenhout
+\backslash
+thanks{Development Strategy and Governance Division, International Food
+ Policy Research Institute, United States} 
+\backslash
+footnotemark[1]}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Gender bias in agro-input dealer quality perceptions
+\end_layout
+
+\begin_layout Abstract
+In the context of imperfect information, economic actors rely predominantly
+ on perceptions and often base decisions on heuristics.
+ We study interactions between smallholder farmers and agro-input dealers
+ in Uganda, and test if farmers perceive male agro-input dealers differently
+ than female agro-input dealers on a number of dimensions.
+ Furthermore, we explore if male farmers rate agro-input dealers systematically
+ different than female farmers rate agro-input dealers.
+ Gender bias in ratings has been find in a wide variety of settings and
+ may be an important reason why gender gaps persist.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -332,7 +375,7 @@ Empirical strategy
 \end_layout
 
 \begin_layout Standard
-Our empirical strategy starts from the particular nature of the data, where
+Our empirical strategy exploits the particular nature of the data, where
  each farmer in our dataset rates several input dealers and each input dealer
  in our dataset is rated by several farmers.
  A useful starting point is the following specification:
@@ -484,7 +527,6 @@ noprefix "false"
 \end_layout
 
 \begin_layout Standard
-
 \begin_inset Formula 
 \begin{equation}
 \varepsilon_{f,d}=\nu_{f}+\omega_{d}+\epsilon_{f,d}\label{eq:error-component}
@@ -492,28 +534,6 @@ noprefix "false"
 
 \end_inset
 
-
-The fact that each farmer rates several agro-input dealers results in a
- data set that is reminiscent of panel data: there are repeated observations
- per farmer.
- Different ratings given by the same farmer can be used to exploit variation
- within farmers—in particular, the fact that the same farmer rates both
- male and female agro-input dealers—while controlling for farmer level character
-istics that also may affect how agro-input dealers are rated (such as the
- education level of the farmer experience with commercial farm inputs).
- Furthermore, if we first calculate farmer level averages, differences between
- farmers—such as the gender of the farmer—can be used to answer our research
- questions, leading to the standard between models we know from panel data
- analysis.
- However, each agro-input dealer is also rated by several farmers.
- As such, there are also repeated observations per agro-input dealer that
- can be used to exploit variation within agro-input dealers — for instance,
- the fact that an agro-input dealer is rated by both male and feFarmer is
- males—and control for agro-input dealer fixed effects such as the education
- level or experience of the agro-input dealer.
- Similarly, first computing input dealer averages allows one to exploit
- differences between agro-input dealer, such as the gender of the agro-input
- dealer.
 
 \end_layout
 
@@ -620,12 +640,9 @@ Question 1: Do farmers discriminate against female agro-input dealers? (Dealer's
 \end_layout
 
 \begin_layout Standard
-A useful starting point to test for discrimination related to agro-input
- dealer's gender is to simply compare average ratings received by male agro-inpu
-t dealers to average ratings received by female agro-input dealers.
- To do so, we first compute average scores at the agro-input dealer level
- and then compare male and female agro-input dealers, amounting to the between
- agro-input dealers estimator.
+A useful starting point to test for an agro-input dealer gender effect is
+ to simply compare average ratings received by male agro-input dealers to
+ average ratings received by female agro-input dealers.
  Equation 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -643,7 +660,7 @@ noprefix "false"
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-\frac{1}{F}\underset{f}{\sum}y_{f,d}=\alpha+\gamma\frac{1}{F}\underset{f}{\sum}g_{f,d}+\frac{1}{F}\underset{f}{\sum}\nu_{f}+\frac{1}{F}\underset{f}{\sum}\epsilon_{d}+\frac{1}{F}\underset{f}{\sum}\varepsilon_{f,d}\label{eq:six-1}
+\frac{1}{F}\underset{f}{\sum}y_{f,d}=\alpha+\gamma\frac{1}{F}\underset{f}{\sum}g_{d}+\frac{1}{F}\underset{f}{\sum}\nu_{f}+\frac{1}{F}\underset{f}{\sum}\omega{}_{d}+\frac{1}{F}\underset{f}{\sum}\epsilon_{f,d}\label{eq:six-1}
 \end{equation}
 
 \end_inset
@@ -654,7 +671,7 @@ noprefix "false"
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-\overline{y}_{d}=\mu+\gamma\overline{g}_{d}+\overline{e}_{d}
+\overline{y}_{d}=\mu+\gamma\overline{g}_{d}+\overline{\varepsilon}_{d}\label{eq:four-1}
 \end{equation}
 
 \end_inset
@@ -746,77 +763,6 @@ The price competitive dimension seems to drive differences in overall rating.
  are asked to rate input dealers more generally as opposed to when they
  are asked to rate a particular product that agro-input dealers sell may
  suggest some degree of discrimination.
-\end_layout
-
-\begin_layout Standard
-The finding that feDealer is males get lower ratings than their male competitors
- on average does not necessarily mean that feDealer is males are discriminated
- against.
- Instead, feDealer is males could truly be poorer dealers, for example due
- to their lack of access to education or training, or lack of access to
- credit to improve storage facilities.
- Therefore, it may be instructive to control for dealer level observable
- characteristics that may explain lower ratings received by women.
- We are particularly interested in testing if the coefficient on the gender
- of the input dealer changes after controlling for various observable input
- dealer characteristics that are directly related to quality, such as temperatur
-e measured in the shop, storage technology, infrastructure such as leak
- proof roof or insulation, etc.
- In other words, we want to test if the difference in rating is mediated
- by differences in quality
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-in a DAG G -> quality -> rating and we assume that if it is not quality
- than it must be discrimination
-\end_layout
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-Results of between agro-input dealer regressions with added control variables
- are in Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:q1_betw_dealers_seed_controls"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
- for ratings directly related to seed quality and Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:q1_betw_dealers_dealer_controls"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
- for the more general ratings of dealer characteristics.
- Interestingly, conditioning on observable characteristics at the dealer
- level did not reduce the difference between male and female agro-input
- dealers.
- In fact, the addition of controls has increased the size of the gender
- effect, and we now find significant differences in ratings between male
- and female agro-input dealers for yield potential and the rating that inquires
- if the seed matured as expected.
- For the more general ratings, things seem to be somewhat more complicated.
- First, controlling for quality has reduced the difference in ratings related
- to price competitiveness between male and female input dealers, suggesting
- that this difference is partly driven by differences in quality.
- At the same time, general satisfaction with the agro-input dealer does
- still seem to depend on gender even after controlling for observable quality
- related dealer characteristics.
- In general, the fact that the discrimination effect becomes stronger after
- controlling for observable agro-input dealer characteristics suggests that
- women are selling better quality yet receive lower ratings.
 \end_layout
 
 \begin_layout Standard
@@ -1354,6 +1300,638 @@ label{table:table5}
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Between dealers model focusing on dealer ratings (control variables not
+ included, Q1).
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:q1_betw_dealers_dealer_no_controls"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize 
+\backslash
+begin{center} 
+\backslash
+begin{tabular}{@{
+\backslash
+extracolsep{5pt}}lccccccc}  
+\backslash
+
+\backslash
+[-1.8ex]
+\backslash
+hline  
+\backslash
+hline 
+\backslash
+
+\backslash
+[-1.8ex]   & 
+\backslash
+multicolumn{7}{c}{
+\backslash
+textit{
+\backslash
+footnotesize Dependent variable: Average of all the ratings received by
+ dealers}} 
+\backslash
+
+\backslash
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-8} 
+\backslash
+
+\backslash
+[-1.8ex] & 
+\backslash
+multicolumn{1} {c} {Average}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Dealer's}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Dealer's}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Dealer's}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Dealer's}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Dealer's}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Dealer's}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{1} {c} {dealer}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {general}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {location}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {price}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {seed}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {stock}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {reputation}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{1} {c} {rating}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {quality}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {quality}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+[-1.8ex] & (1) & (2) & (3) & (4) & (5)& (6)& (7) 
+\backslash
+
+\backslash
+  
+\backslash
+hline 
+\backslash
+
+\backslash
+[-1.8ex]  
+\end_layout
+
+\begin_layout Plain Layout
+
+{Constant}                  & $
+\backslash
+Sexpr{s7[1,1]}$ & $
+\backslash
+Sexpr{s7[1,2]}$  & $
+\backslash
+Sexpr{s7[1,3]}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{s7[1,4]}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s7[1,5]}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s7[1,6]}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s7[1,7]}$   
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  &  $(
+\backslash
+Sexpr{s7[2,1]})$   &  $(
+\backslash
+Sexpr{s7[2,2]})$ & $(
+\backslash
+Sexpr{s7[2,3]})$ & $(
+\backslash
+Sexpr{s7[2,4]})$ & $(
+\backslash
+Sexpr{s7[2,5]})$ & $(
+\backslash
+Sexpr{s7[2,6]})$ & $(
+\backslash
+Sexpr{s7[2,7]})$  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{Dealer is male}   & $
+\backslash
+Sexpr{s7[4,1]}^{
+\backslash
+Sexpr{ifelse(s7[6,1]<.01,"***",ifelse(s7[6,1]<.05,"**",ifelse(s7[6,1]<.1,"*","")))}
+}$ & $
+\backslash
+Sexpr{s7[4,2]}^{
+\backslash
+Sexpr{ifelse(s7[6,2]<.01,"***",ifelse(s7[6,2]<.05,"**",ifelse(s7[6,2]<.1,"*","")))}
+}$  & $
+\backslash
+Sexpr{s7[4,3]}^{
+\backslash
+Sexpr{ifelse(s7[6,3]<.01,"***",ifelse(s7[6,3]<.05,"**",ifelse(s7[6,3]<.1,"*","")))}
+}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{s7[4,4]}^{
+\backslash
+Sexpr{ifelse(s7[6,4]<.01,"***",ifelse(s7[6,4]<.05,"**",ifelse(s7[6,4]<.1,"*","")))}
+}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s7[4,5]}^{
+\backslash
+Sexpr{ifelse(s7[6,5]<.01,"***",ifelse(s7[6,5]<.05,"**",ifelse(s7[6,5]<.1,"*","")))}
+}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s7[4,6]}^{
+\backslash
+Sexpr{ifelse(s7[6,6]<.01,"***",ifelse(s7[6,6]<.05,"**",ifelse(s7[6,6]<.1,"*","")))}
+}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s7[4,7]}^{
+\backslash
+Sexpr{ifelse(s7[6,7]<.01,"***",ifelse(s7[6,7]<.05,"**",ifelse(s7[6,7]<.1,"*","")))}
+}$   
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $(
+\backslash
+Sexpr{s7[5,1]})$   &  $(
+\backslash
+Sexpr{s7[5,2]})$ & $(
+\backslash
+Sexpr{s7[5,3]})$ & $(
+\backslash
+Sexpr{s7[5,4]})$ & $(
+\backslash
+Sexpr{s7[5,5]})$ & $(
+\backslash
+Sexpr{s7[5,6]})$ & $(
+\backslash
+Sexpr{s7[5,7]})$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+     
+\backslash
+
+\backslash
+ 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+{R$^2$ }                 &  $
+\backslash
+Sexpr{s7[7,1]}$   &  $
+\backslash
+Sexpr{s7[7,2]}$ & $
+\backslash
+Sexpr{s7[7,3]}$ & $
+\backslash
+Sexpr{s7[7,4]}$ & $
+\backslash
+Sexpr{s7[7,5]}$ & $
+\backslash
+Sexpr{s7[7,6]}$ & $
+\backslash
+Sexpr{s7[7,7]}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+{Adj.
+ R$^2$}                 &  $
+\backslash
+Sexpr{s7[8,1]}$   &  $
+\backslash
+Sexpr{s7[8,2]}$ & $
+\backslash
+Sexpr{s7[8,3]}$ & $
+\backslash
+Sexpr{s7[8,4]}$ & $
+\backslash
+Sexpr{s7[8,5]}$ & $
+\backslash
+Sexpr{s7[8,6]}$ & $
+\backslash
+Sexpr{s7[8,7]}$     
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+{Number of obs.}                 &  $
+\backslash
+Sexpr{s7[9,1]}$   &  $
+\backslash
+Sexpr{s7[9,2]}$ & $
+\backslash
+Sexpr{s7[9,3]}$ & $
+\backslash
+Sexpr{s7[9,4]}$ & $
+\backslash
+Sexpr{s7[9,5]}$ & $
+\backslash
+Sexpr{s7[9,6]}$ & $
+\backslash
+Sexpr{s7[9,7]}$   
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{8}{l}{ 
+\backslash
+scriptsize{$^{***}p<0.01$; $^{**}p<0.05$; $^{*}p<0.1$.}} 
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tabular} 
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: Here, the gender of the dealer is a dummy variable where 1 is male
+ and 0 is female.
+ The ratings received by the dealers are averaged at the dealer level.
+  
+\backslash
+label{table:table7} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It is important to note that in equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:four-1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, the error component 
+\begin_inset Formula $\frac{1}{F}\underset{f}{\sum}\omega{}_{d}$
+\end_inset
+
+ in the error term 
+\begin_inset Formula $\overline{\varepsilon}_{d}$
+\end_inset
+
+ is likely to be correlated to the independent variable 
+\begin_inset Formula $\overline{g}_{d}$
+\end_inset
+
+.
+ To address this problem, we will control for observable agro-input dealer
+ level characteristics.
+ As a result, the finding that women get lower ratings than their male competito
+rs on average does not necessarily mean that women are discriminated against.
+ Instead, female agro-input dealers could truly be poorer dealers, for example
+ due to their lack of access to education or training, or lack of access
+ to credit to improve storage facilities.
+ In equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:six-1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, these effects will be reflected in the error term as unobserved dealer
+ level heterogeneity.
+ Therefore, it may be instructive to control for dealer level observable
+ characteristics that may explain lower ratings received by women.
+ We are particularly interested in testing if the coefficient on the gender
+ of the input dealer changes after controlling for various observable input
+ dealer characteristics that are directly related to quality, such as temperatur
+e measured in the shop, storage technology, infrastructure such as leak
+ proof roof or insulation, etc.
+ In other words, we want to test if the difference in rating is mediated
+ by differences in quality.
+\end_layout
+
+\begin_layout Standard
+Results of between agro-input dealer regressions with added control variables
+ are in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:q1_betw_dealers_seed_controls"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ for ratings directly related to seed quality and Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:q1_betw_dealers_dealer_controls"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ for the more general ratings of dealer characteristics.
+ Interestingly, conditioning on observable characteristics at the dealer
+ level did not reduce the difference between male and female agro-input
+ dealers.
+ In fact, the addition of controls has increased the size of the gender
+ effect, and we now find significant differences in ratings between male
+ and female agro-input dealers for yield potential and the rating that inquires
+ if the seed matured as expected.
+ For the more general ratings, things seem to be somewhat more complicated.
+ First, controlling for quality has reduced the difference in ratings related
+ to price competitiveness between male and female input dealers, suggesting
+ that this difference is partly driven by differences in quality.
+ At the same time, general satisfaction with the agro-input dealer does
+ still seem to depend on gender even after controlling for observable quality
+ related dealer characteristics.
+ In general, the fact that the discrimination effect becomes stronger after
+ controlling for observable agro-input dealer characteristics suggests that
+ women are selling better quality yet receive lower ratings.
 \end_layout
 
 \begin_layout Standard
@@ -3573,542 +4151,6 @@ Note: Here, the gender of the dealer is a dummy variable where 1 is male
  
 \backslash
 label{table:table6} 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float table
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Between dealers model focusing on dealer ratings (control variables not
- included, Q1).
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:q1_betw_dealers_dealer_no_controls"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-scriptsize 
-\backslash
-begin{center} 
-\backslash
-begin{tabular}{@{
-\backslash
-extracolsep{5pt}}lccccccc}  
-\backslash
-
-\backslash
-[-1.8ex]
-\backslash
-hline  
-\backslash
-hline 
-\backslash
-
-\backslash
-[-1.8ex]   & 
-\backslash
-multicolumn{7}{c}{
-\backslash
-textit{
-\backslash
-footnotesize Dependent variable: Average of all the ratings received by
- dealers}} 
-\backslash
-
-\backslash
-  
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-cline{2-8} 
-\backslash
-
-\backslash
-[-1.8ex] & 
-\backslash
-multicolumn{1} {c} {Average}  &
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-multicolumn{1} {c} {Dealer's}&
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-multicolumn{1} {c} {Dealer's}&
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-multicolumn{1} {c} {Dealer's}&
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-multicolumn{1} {c} {Dealer's}&
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-multicolumn{1} {c} {Dealer's}&
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-multicolumn{1} {c} {Dealer's}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-& 
-\backslash
-multicolumn{1} {c} {dealer}  &
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-multicolumn{1} {c} {general}&
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-multicolumn{1} {c} {location}&
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-multicolumn{1} {c} {price}&
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-multicolumn{1} {c} {seed}&
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-multicolumn{1} {c} {stock}&
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-multicolumn{1} {c} {reputation}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-& 
-\backslash
-multicolumn{1} {c} {rating}  &
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-multicolumn{1} {c} {quality}&
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-multicolumn{1} {c} {}&
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-multicolumn{1} {c} {}&
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-multicolumn{1} {c} {quality}&
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-multicolumn{1} {c} {}&
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-multicolumn{1} {c} {}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-[-1.8ex] & (1) & (2) & (3) & (4) & (5)& (6)& (7) 
-\backslash
-
-\backslash
-  
-\backslash
-hline 
-\backslash
-
-\backslash
-[-1.8ex]  
-\end_layout
-
-\begin_layout Plain Layout
-
-{Constant}                  & $
-\backslash
-Sexpr{s7[1,1]}$ & $
-\backslash
-Sexpr{s7[1,2]}$  & $
-\backslash
-Sexpr{s7[1,3]}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{s7[1,4]}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s7[1,5]}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s7[1,6]}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s7[1,7]}$   
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-  &  $(
-\backslash
-Sexpr{s7[2,1]})$   &  $(
-\backslash
-Sexpr{s7[2,2]})$ & $(
-\backslash
-Sexpr{s7[2,3]})$ & $(
-\backslash
-Sexpr{s7[2,4]})$ & $(
-\backslash
-Sexpr{s7[2,5]})$ & $(
-\backslash
-Sexpr{s7[2,6]})$ & $(
-\backslash
-Sexpr{s7[2,7]})$  
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{Dealer is male}   & $
-\backslash
-Sexpr{s7[4,1]}^{
-\backslash
-Sexpr{ifelse(s7[6,1]<.01,"***",ifelse(s7[6,1]<.05,"**",ifelse(s7[6,1]<.1,"*","")))}
-}$ & $
-\backslash
-Sexpr{s7[4,2]}^{
-\backslash
-Sexpr{ifelse(s7[6,2]<.01,"***",ifelse(s7[6,2]<.05,"**",ifelse(s7[6,2]<.1,"*","")))}
-}$  & $
-\backslash
-Sexpr{s7[4,3]}^{
-\backslash
-Sexpr{ifelse(s7[6,3]<.01,"***",ifelse(s7[6,3]<.05,"**",ifelse(s7[6,3]<.1,"*","")))}
-}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{s7[4,4]}^{
-\backslash
-Sexpr{ifelse(s7[6,4]<.01,"***",ifelse(s7[6,4]<.05,"**",ifelse(s7[6,4]<.1,"*","")))}
-}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s7[4,5]}^{
-\backslash
-Sexpr{ifelse(s7[6,5]<.01,"***",ifelse(s7[6,5]<.05,"**",ifelse(s7[6,5]<.1,"*","")))}
-}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s7[4,6]}^{
-\backslash
-Sexpr{ifelse(s7[6,6]<.01,"***",ifelse(s7[6,6]<.05,"**",ifelse(s7[6,6]<.1,"*","")))}
-}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{s7[4,7]}^{
-\backslash
-Sexpr{ifelse(s7[6,7]<.01,"***",ifelse(s7[6,7]<.05,"**",ifelse(s7[6,7]<.1,"*","")))}
-}$   
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $(
-\backslash
-Sexpr{s7[5,1]})$   &  $(
-\backslash
-Sexpr{s7[5,2]})$ & $(
-\backslash
-Sexpr{s7[5,3]})$ & $(
-\backslash
-Sexpr{s7[5,4]})$ & $(
-\backslash
-Sexpr{s7[5,5]})$ & $(
-\backslash
-Sexpr{s7[5,6]})$ & $(
-\backslash
-Sexpr{s7[5,7]})$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-     
-\backslash
-
-\backslash
- 
-\backslash
-hline 
-\end_layout
-
-\begin_layout Plain Layout
-
-{R$^2$ }                 &  $
-\backslash
-Sexpr{s7[7,1]}$   &  $
-\backslash
-Sexpr{s7[7,2]}$ & $
-\backslash
-Sexpr{s7[7,3]}$ & $
-\backslash
-Sexpr{s7[7,4]}$ & $
-\backslash
-Sexpr{s7[7,5]}$ & $
-\backslash
-Sexpr{s7[7,6]}$ & $
-\backslash
-Sexpr{s7[7,7]}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-{Adj.
- R$^2$}                 &  $
-\backslash
-Sexpr{s7[8,1]}$   &  $
-\backslash
-Sexpr{s7[8,2]}$ & $
-\backslash
-Sexpr{s7[8,3]}$ & $
-\backslash
-Sexpr{s7[8,4]}$ & $
-\backslash
-Sexpr{s7[8,5]}$ & $
-\backslash
-Sexpr{s7[8,6]}$ & $
-\backslash
-Sexpr{s7[8,7]}$     
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-{Number of obs.}                 &  $
-\backslash
-Sexpr{s7[9,1]}$   &  $
-\backslash
-Sexpr{s7[9,2]}$ & $
-\backslash
-Sexpr{s7[9,3]}$ & $
-\backslash
-Sexpr{s7[9,4]}$ & $
-\backslash
-Sexpr{s7[9,5]}$ & $
-\backslash
-Sexpr{s7[9,6]}$ & $
-\backslash
-Sexpr{s7[9,7]}$   
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
- 
-\backslash
-hline
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-multicolumn{8}{l}{ 
-\backslash
-scriptsize{$^{***}p<0.01$; $^{**}p<0.05$; $^{*}p<0.1$.}} 
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-end{tabular} 
-\backslash
-end{center}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-tiny
-\end_layout
-
-\begin_layout Plain Layout
-
-Note: Here, the gender of the dealer is a dummy variable where 1 is male
- and 0 is female.
- The ratings received by the dealers are averaged at the dealer level.
-  
-\backslash
-label{table:table7} 
 \end_layout
 
 \end_inset
@@ -6420,8 +6462,8 @@ Although it should be noted that we do not control for everything – see
 \end_inset
 
 .
- Because quality is controlled for, feDealer is males would not be worse
- than their male competitors, and so discrimination against female agro-input
+ Because quality is controlled for, female dealers would not be worse than
+ their male competitors, and so discrimination against female agro-input
  dealers on the part of the farmers seems a reasonable explanation.
  However, farmer level characteristics could confound the relationship between
  an agro-input dealer's gender and the rating that the farmer provides.
@@ -6446,6 +6488,7 @@ Fortunately, we often have instances where the same farmer rates both male
  The farmer fixed effects estimator removes farmer level heterogeneity for
  all attributes that remain constant within the farmer, regardless of which
  dealer is rated.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -11991,6 +12034,15 @@ noprefix "false"
  is always equal to the observation, thus cancels out and dealer's gender
  is removed from the equation.
  
+\end_layout
+
+\begin_layout Standard
+In addition, error component 
+\begin_inset Formula $\frac{1}{F}\underset{f}{\sum}\nu_{f}$
+\end_inset
+
+ means that we can not assume that errors are uncorrelated.
+ Therefore we will estimate random effects models here.
 \end_layout
 
 \begin_layout Standard
