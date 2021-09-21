@@ -6844,7 +6844,8 @@ tiny
 Note: Here, the gender of the input dealer is a dummy variable carrying
  the value of either 0 or 1.
  Fixed effects or within estimation has been used at the farmer level.
-  
+ Cluster-robust SE are obtained by clustering at the dealer level.
+ 
 \backslash
 label{table:table9} 
 \end_layout
@@ -9066,6 +9067,7 @@ tiny
 Note: Here, the gender of the input dealer is a dummy variable carrying
  the value of either 0 or 1.
  Fixed effects or within estimation has been used at the farmer level.
+ Cluster-robust SE are obtained by clustering at the dealer level.
    
 \backslash
 label{table:table10} 
@@ -9527,7 +9529,8 @@ tiny
 Note: Here, the gender of the input dealer is a dummy variable carrying
  the value of either 0 or 1.
  Fixed effects or within estimation has been used at the farmer level.
-   
+ Cluster-robust SE are obtained by clustering at the dealer level.
+  
 \backslash
 label{table:table11} 
 \end_layout
@@ -11526,6 +11529,7 @@ tiny
 Note: Here, the gender of the input dealer is a dummy variable carrying
  the value of either 0 or 1.
  Fixed effects or within estimation has been used at the farmer level.
+ Cluster-robust SE are obtained by clustering at the dealer level.
   
 \backslash
 label{table:table12} 
@@ -18071,6 +18075,7 @@ tiny
 Note: Here, the gender of the farmer is a dummy variable carrying the value
  of either 0 or 1.
  Fixed effects or within estimation has been used at the dealer level.
+ Cluster-robust SE are obtained by clustering at the farmer level.
 \end_layout
 
 \end_inset
@@ -18887,6 +18892,7 @@ tiny
 Note: Here, the gender of the farmer is a dummy variable carrying the value
  of either 0 or 1.
  Fixed effects or within estimation has been used at the dealer level.
+ Cluster-robust SE are obtained by clustering at the farmer level.
 \end_layout
 
 \end_inset
@@ -19347,7 +19353,7 @@ tiny
 Note: Here, the gender of the farmer is a dummy variable carrying the value
  of either 0 or 1.
  Fixed effects or within estimation has been used at the dealer level.
- 
+ Cluster-robust SE are obtained by clustering at the farmer level.
 \end_layout
 
 \end_inset
@@ -20171,7 +20177,7 @@ tiny
 Note: Here, the gender of the farmer is a dummy variable carrying the value
  of either 0 or 1.
  Fixed effects or within estimation has been used at the dealer level.
- 
+ Cluster-robust SE are obtained by clustering at the farmer level.
 \end_layout
 
 \end_inset
