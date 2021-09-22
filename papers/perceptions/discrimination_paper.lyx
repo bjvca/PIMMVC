@@ -6259,6 +6259,18 @@ The fact that, even after controlling for observable dealer characteristics,
  This makes it difficult to differentiate the pure gender discrimination
  effect from the effect arising from differences in education.
  
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Should we add here that differentiating between these cases is very important
+ for policy? Eg behavioural change communication campaigns addressing discrimina
+tion may have little impact if the effect comes from education.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -6333,8 +6345,6 @@ As errors are also correlated within agro-input dealers, we report standard
 \end_inset
 
  The outcome variables are the seed quality ratings.
- After controlling for farmer heterogeneity, we do not find any significant
- differences anymore.
  Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -11546,20 +11556,97 @@ label{table:table12}
 \end_layout
 
 \begin_layout Standard
-The fact that a within farmer model does not produce significant differences
- suggests that discrimination in itself is not some homogeneous trait inherent
- to all farmers, but that it is caused by a combination of factors that
- differ between farmers.
+Overall, we see that, after controlling for farmer heterogeneity, the difference
+s in ratings between male and female agro-input dealers disappears.
+ The fact that a within-farmer model does not lead the same patterns as
+ regressions on dealer averages suggests that the difference in itself is
+ not some homogeneous trait inherent to all farmers, but that it is caused
+ by a combination of factors that differ between farmers.
  This seems reasonable, as differences in ratings are probably caused by
  factors such as education levels, or traits that are less easy to capture
  such as norms and values held by the farmer.
  These are typically constant within a farmer but may differ between farmers.
+ Hence, controlling for such farmer level heterogeneity also removes the
+ gender dealer effect.
 \end_layout
 
 \begin_layout Standard
-To investigate this further, we can explore differences in ratings between
- farmers.
- To this end, averages across all dealers 
+A closer look at Tables 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:q1_farmer_FE_seed_no_controls"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:q1_farmer_FE_dealer_no_controls"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ reveals large negative coefficients on the gender indicator when farmers
+ are asked to focus on the seed quality dimension.
+ This means that, once farmer level heterogeneity is accounted for, female
+ agro-input dealers are actually rated higher than men on this dimension.
+ Interestingly, the difference becomes stronger after controlling for observable
+ agro-input dealer characteristics, suggesting that event though female
+ agro-input dealers perform worse on observable indicators, they are still
+ ranked higher than their male counterparts (see Tables 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:q1_farmer_FE_seed_controls"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:q1_farmer_FE_dealer_controls"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Standard
+Model 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:four"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ relies on within-farmer variation to estimate the parameter of interest.
+ We can also estimate the between-farmer variant.
+ This is again a simple OLS regression on averages such as model 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:six-1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, but in this case averages are first computed at the farmer level, averages
+ across all dealers 
 \emph on
 d
 \emph default
@@ -11567,7 +11654,7 @@ d
 \emph on
 f
 \emph default
- are computed, which results in data set at the farmer level.
+ are computed, resulting in a data set at the farmer level:
 \end_layout
 
 \begin_layout Standard
@@ -11604,8 +11691,8 @@ In fact, if the panel was completely balanced (ie.
 \begin_inset Formula $\frac{1}{D}\underset{d}{\sum}g_{f,d}$
 \end_inset
 
- would be the same for all farmers (the share of feDealer is males in the
- sample) and the dealer's gender effect would be absorbed by the constant.
+ would be the same for all farmers (the share of dealers that is males in
+ the sample) and the dealer's gender effect would be absorbed by the constant.
  We can estimate a dealer invariant effect like the dealer's gender effect
  in a between farmer model only because we have an incomplete panel.
 \end_layout
@@ -11621,31 +11708,12 @@ In fact, if the panel was completely balanced (ie.
  farmer.
  The fact that one farmer rated relatively more women than another farmer
  can then be used to test if this also led to relatively different scores.
- What is interesting about this last estimator is that each farmer rates
- more than one agro-input dealers.
- In the limiting case, each farmer rates all agro-input dealers.
- As such, any difference found between farmers who rate the same agro-input
- dealers should be attributed to the farmers.
- If we are willing to assume that farmers rate a random subset of all agro-input
- dealers, we can maintain the assumption that any difference found between
- farmers who rate the same agro-input dealers should reflect farmer perceptions.
- We would argue that is a good alternative to the coefficient we cannot
- estimate in 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:eight"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
- and our best guess at measuring discrimination.
+ 
 \end_layout
 
 \begin_layout Standard
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Plain Layout
 This model requires that the likelihood that a farmer rates a feDealer is

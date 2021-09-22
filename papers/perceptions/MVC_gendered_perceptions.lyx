@@ -139,22 +139,45 @@ Gendered Perceptions in Maize Supply Chains: Evidence from Uganda
 
 \begin_layout Abstract
 \paragraph_spacing onehalf
-Faced with imperfect information, economic actors use judgment and perceptions
- in decision making.
- Inaccurate perceptions or false beliefs may result in inefficient value
- chains and systematic bias in perceptions may affect inclusiveness.
+Faced with imperfect information and guided by heuristics prone to cognitive
+ bias, the way in which value chain actors perceive each other—in terms
+ of ease of access, quality or services rendered, price competitiveness,
+ and overall reputation—is an important determinant of the value chain structure
+ and its performance.
+ Inaccurate perceptions may result in inefficient value chains and systematic
+ bias in perceptions may affect inclusiveness.
  In this paper, we study perceptions in Ugandan maize supply chains.
- A random sample of maize farmers were asked to rate other value chain actors—ag
-ro-input dealers, assembly traders and maize millers—on a set of important
- attributes such as service quality, price competitiveness, ease of access,
- and overall reputation.
- These other value chain actors are tracked and asked to assess themselves
- on the same attributes.
+ A random sample of maize farmers were asked to rate upstream and downstream
+ value chain actors—agro-input dealers, assembly traders and maize millers—on
+ a set of important attributes.
+ These value chain actors were then tracked and asked to assess themselves
+ on the same set of attributes.
  We find that input dealers, traders and millers assess themselves more
  favourably than farmers do.
- We also zoom in on heterogeneity in perceptions related to gender but do
+ MORE RESULTS HERE? 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\paragraph_spacing onehalf
+We also zoom in on heterogeneity in perceptions related to gender but do
  not find enough evidence to support the claim.
  The sex of the actor being rated does not affect the rating.
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+can be longer
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -247,15 +270,16 @@ name "sec:General-Introduction"
 \end_layout
 
 \begin_layout Standard
-Neoclassical economic theory assumes rational agents to be interacting in
- a context of full information.
+Neoclassical economic theory assumes rational agents interact in a context
+ of full information.
  However, in the real world, both consumers and producers face substantial
  information frictions.
  Sometimes agents lack skills to correctly assess information about the
  counterpart.
  In other cases, one actor may strategically decide to hide valuable information.
- As a result, economic agents often rely predominantly on perceptions to
- inform transaction decisions.
+ As a result, when decisions need to be made, economic agents usually rely
+ on incomplete information that is combined with heuristic techniques and
+ updated as new information becomes available.
  Similarly in commodity supply chains, information frictions may exist,
  especially in informal value chains where quality is hard to track and
  agreements difficult to enforce.
@@ -264,57 +288,45 @@ s and beliefs about actors up- and downstream.
 \end_layout
 
 \begin_layout Standard
-Although perceptions provide information to the other actors about the attribute
-s of an individual seller or buyer in the supply chain, these can have significa
-nt consequences for the entire supply chain, especially if perceptions do
- not align with reality.
- False beliefs and incorrect preference may lead to inefficient supply chains
- and hamper value chain innovations.
+Perceptions that do not align with reality can have significant consequences
+ for the entire supply chain.
+ False erroneous perceptions may lead to inefficient supply chains and can
+ hamper value chain innovations.
  More importantly, systematically biased perceptions may hamper inclusiveness
  of value chains.
  For instance, if traders of a certain clan or tribe are traditionally regarded
- as good traders, other actors may hold inflated perceptions.
- This may result in barriers to entry for other traders.
-\end_layout
-
-\begin_layout Standard
-Despite the importance of beliefs and perceptions for transactions within
+ as good traders, other actors may experience barriers to entry.
+ Despite the importance of beliefs and perceptions for transactions within
  food supply chains, there are few studies that track perceptions throughout
  the chain, partly because perceptions are not always objectively measurable.
- However, we cannot ignore the importance of perceptions as a crossing node
- for operational psychological preferences and real economic mechanisms
- in the markets.
- These arguments necessitate the study of perceptions in the agricultural
- supply chains in detail.
+ 
 \end_layout
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-We study the case of maize value chains in Uganda where ratings are used
- as a proxy measure for perceptions and beliefs.
- We use data from 1,526 maize farmers, 78 input (seed) dealers, 341 assembly
- traders, and 174 millers from Eastern Uganda to document (in)consistency
- in farmer's, input (seed) dealer's, trader's, and miller's perceived attribute
- ratings of these actors.
+In this paper, we study the case of maize value chains in Uganda where ratings
+ are used as a proxy measure for perceptions and beliefs.
+ A representative sample of 1,526 maize farmers were asked to rate up to
+ three agro-input (seed) dealers, maize traders, and maize millers, on dimension
+s such as ease of access, quality or services rendered, price competitiveness,
+ and overall reputation.
+ These dealers, traders and millers were then traced and asked to assess
+ themselves in on the same dimensions.
+ This led to self-assessments of 78 input dealers, 341 assembly traders,
+ and 174 millers.
+ This information is then used to document (in)consistency between how farmers
+ perceive input dealers, traders, and millers, and how these actors perceive
+ themselves.
  To investigate systemic bias along gender lines, we further test if the
- sex of the rater or the ratee has any impact on the ratings (perceptions).
- A representative sample of farmers were asked to rate up to three dealer(s),
- trader(s) and miller(s).
- Then these dealers, traders and millers were traced and asked to assess
- themselves in a similar way.
- We use input dealer, trader, and miller attributes to assess how such perceived
- attributes align between value chain actors, and how (non-)alignment is
- mediated by sex of the farmer (rater) or the ratee (dealer, trader, or
- miller).
+ sex of the farmer or the actor that is being rated has an impact on the
+ ratings.
+ 
 \end_layout
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-Ratings can be used as a tool to understand perceptions about certain actors
- in the food value chains.
- Recently, the study of perceptions has been applied to food supply chains
- where perceptions have been found to correlate with innovations in supply
- chains and indicate loopholes in the performance of involved actors (
+Perceptions have been found to correlate with innovations in food supply
+ chains and identify performance issues of involved actors (
 \begin_inset CommandInset citation
 LatexCommand citealp
 key "Ola2020,Odongo2016"
@@ -323,25 +335,9 @@ literal "true"
 \end_inset
 
 ).
- Broadly, studying the rater's ratings and ratee's self-assessments can
- give insights about the deeper mechanisms of performance perceptions in
- the value chains.
- Higher ratings may motivate actors to sustain performance while lower ratings
- may lead actors to improve performance or at least induce increased effort.
- Although there are various other factors like competition, access to facilities
-, knowledge of the business, etc.
- which can influence the performance levels directly, the fact that ratings
- can also drive these factors directly or indirectly cannot be ignored.
- Ratings can be assumed as a method of assessment which does not couple
- with direct repercussions but do successfully indicate indirect repercussions
- which impact the rated subjects (in the present or in the future).
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-Systematic differences in ratings related to gender have been studied extensivel
-y and the literature shows a wide range of studies in different fields on
- gender-based rating patterns (
+ Systematic differences in ratings related to gender have been studied extensive
+ly and the literature shows a wide range of studies in different fields
+ on gender-based rating patterns (
 \begin_inset CommandInset citation
 LatexCommand citealp
 key "Mitchell2018,Furnham2005,Patiar2008"
@@ -387,6 +383,17 @@ ty gap in Uganda.
  These motivate the aim to understand the alignment of perceptions based
  on the sex of the farmer, agro-input dealer, trader, and miller in the
  case of maize value chains in Uganda.
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+I am not happy with this: This should be rewritten with a focus on: studies
+ that use ratings as a proxy of
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1756,7 +1763,7 @@ Sexpr{format(round(mean(farmers$hh.maize.q14, na.rm=T),digits=2),nsmall=0)}
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \paragraph_spacing single
