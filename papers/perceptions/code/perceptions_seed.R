@@ -7,6 +7,8 @@ library(texreg)
 library(plyr)
 library(plm)
 library(lmtest)
+library(lme4)
+library(Rcpp)
 
 options(scipen=999)
 path_2 <- strsplit(path, "/papers/perceptions")[[1]]
@@ -3538,6 +3540,34 @@ seplm8<- sqrt(diag(vcov(plm8)))
 
 coef8<-coeftest(plm8, vcovHC(plm8, type = "HC0", cluster = "time"))
 
+#### One way random effect at the farmer level 
+lmer1<-lmer(score ~ genderdummy  + (1 | farmer_ID) , data = fedata)
+coefr1<-coeftest(lmer1, vcovHC(lmer1, type = "HC0", cluster = "time"))
+summary(lmer1)
+coefr1
+
+#Is plm result same as lmer?
+plmr1<-plm(score ~ genderdummy, data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
+                   effect = "individual")
+coefrplm1<-coeftest(plmr1, vcovHC(plmr1, type = "HC0", cluster = "time"))
+summary(plmr1)
+coefrplm1
+
+lmer2<-lmer(general ~ genderdummy  + (1 | farmer_ID) , data = fedata)
+lmer3<-lmer(yield ~ genderdummy  + (1 | farmer_ID) , data = fedata)
+lmer4<-lmer(drought_resistent ~ genderdummy  + (1 | farmer_ID), data = fedata)
+lmer5<-lmer(disease_resistent ~ genderdummy  + (1 | farmer_ID) , data = fedata)
+lmer6<-lmer(early_maturing ~ genderdummy  + (1 | farmer_ID) , data = fedata)
+lmer7<-lmer(germination ~ genderdummy  + (1 | farmer_ID) , data = fedata)
+
+#### Two way random effect at the farmer level and dealer level 
+lmer8<-lmer(score ~ genderdummy  + (1 | farmer_ID)+(1 | shop_ID) , data = fedata)
+lmer9<-lmer(general ~ genderdummy  + (1 | farmer_ID) +(1 | shop_ID), data = fedata)
+lmer10<-lmer(yield ~ genderdummy  + (1 | farmer_ID) +(1 | shop_ID), data = fedata)
+lmer11<-lmer(drought_resistent ~ genderdummy  + (1 | farmer_ID)+(1 | shop_ID), data = fedata)
+lmer12<-lmer(disease_resistent ~ genderdummy  + (1 | farmer_ID)+(1 | shop_ID) , data = fedata)
+lmer13<-lmer(early_maturing ~ genderdummy  + (1 | farmer_ID)+(1 | shop_ID) , data = fedata)
+lmer14<-lmer(germination ~ genderdummy  + (1 | farmer_ID)+(1 | shop_ID) , data = fedata)
 
 
 fe1<- rbind( c((format(round(i1[1],digits=3),nsmall=0)),
