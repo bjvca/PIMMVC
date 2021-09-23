@@ -3540,7 +3540,7 @@ seplm8<- sqrt(diag(vcov(plm8)))
 
 coef8<-coeftest(plm8, vcovHC(plm8, type = "HC0", cluster = "time"))
 
-#### One way random effect at the farmer level 
+#### One way random effect at the farmer level - no controls 
 lmer1<-lmer(score ~ genderdummy  + (1 | farmer_ID) , data = fedata)
 coefr1<-coeftest(lmer1, vcovHC(lmer1, type = "HC0", cluster = "time"))
 summary(lmer1)
@@ -3560,7 +3560,7 @@ lmer5<-lmer(disease_resistent ~ genderdummy  + (1 | farmer_ID) , data = fedata)
 lmer6<-lmer(early_maturing ~ genderdummy  + (1 | farmer_ID) , data = fedata)
 lmer7<-lmer(germination ~ genderdummy  + (1 | farmer_ID) , data = fedata)
 
-#### Two way random effect at the farmer level and dealer level 
+#### Two way random effect at the farmer level and dealer level -- no controls 
 lmer8<-lmer(score ~ genderdummy  + (1 | farmer_ID)+(1 | shop_ID) , data = fedata)
 lmer9<-lmer(general ~ genderdummy  + (1 | farmer_ID) +(1 | shop_ID), data = fedata)
 lmer10<-lmer(yield ~ genderdummy  + (1 | farmer_ID) +(1 | shop_ID), data = fedata)
@@ -3568,6 +3568,68 @@ lmer11<-lmer(drought_resistent ~ genderdummy  + (1 | farmer_ID)+(1 | shop_ID), d
 lmer12<-lmer(disease_resistent ~ genderdummy  + (1 | farmer_ID)+(1 | shop_ID) , data = fedata)
 lmer13<-lmer(early_maturing ~ genderdummy  + (1 | farmer_ID)+(1 | shop_ID) , data = fedata)
 lmer14<-lmer(germination ~ genderdummy  + (1 | farmer_ID)+(1 | shop_ID) , data = fedata)
+
+#### One way random effect at the farmer level -- with controls --- controls are only dealer characteristics 
+lmerc1<-lmer(score ~ genderdummy  + (1 | farmer_ID) + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+               +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof , data = fedata)
+lmerc2<-lmer(general ~ genderdummy  + (1 | farmer_ID)+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+               +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof , data = fedata)
+lmerc3<-lmer(yield ~ genderdummy  + (1 | farmer_ID)+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+               +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof , data = fedata)
+lmerc4<-lmer(drought_resistent ~ genderdummy  + (1 | farmer_ID)+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+               +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedata)
+lmerc5<-lmer(disease_resistent ~ genderdummy  + (1 | farmer_ID)+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+               +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof , data = fedata)
+lmerc6<-lmer(early_maturing ~ genderdummy  + (1 | farmer_ID)+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+               +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof , data = fedata)
+lmerc7<-lmer(germination ~ genderdummy  + (1 | farmer_ID)+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+               +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof , data = fedata)
+
+
+### NON SEED
+#### One way random effect at the farmer level  -- no controls 
+lmern1<-lmer(overall_rating ~ genderdummy  + (1 | farmer_ID) , data = fedata)
+lmern2<-lmer(general_rating ~ genderdummy  + (1 | farmer_ID) , data = fedata)
+lmern3<-lmer(location ~ genderdummy  + (1 | farmer_ID) , data = fedata)
+lmern4<-lmer(price ~ genderdummy  + (1 | farmer_ID), data = fedata)
+lmern5<-lmer(quality~ genderdummy  + (1 | farmer_ID), data = fedata)
+lmern6<-lmer(stock ~ genderdummy  + (1 | farmer_ID) , data = fedata)
+lmern7<-lmer(reputation~ genderdummy  + (1 | farmer_ID) , data = fedata)
+
+#### two way random effects at the farmer level and dealer level  -- no controls 
+lmern8<-lmer(overall_rating ~ genderdummy  + (1 | farmer_ID)+ (1 | shop_ID) , data = fedata)
+lmern9<-lmer(general_rating ~ genderdummy  + (1 | farmer_ID) + (1 | shop_ID), data = fedata)
+lmern10<-lmer(location ~ genderdummy  + (1 | farmer_ID) + (1 | shop_ID), data = fedata)
+lmern11<-lmer(price ~ genderdummy  + (1 | farmer_ID)+ (1 | shop_ID), data = fedata)
+lmern12<-lmer(quality~ genderdummy  + (1 | farmer_ID)+ (1 | shop_ID), data = fedata)
+lmern13<-lmer(stock ~ genderdummy  + (1 | farmer_ID) + (1 | shop_ID), data = fedata)
+lmern14<-lmer(reputation~ genderdummy  + (1 | farmer_ID)+ (1 | shop_ID) , data = fedata)
+
+#### One way random effect at the farmer level  -- with controls -- controls are only dealer characteristics 
+lmernc1<-lmer(overall_rating ~ genderdummy  + (1 | farmer_ID) +maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+               +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedata)
+lmernc2<-lmer(general_rating ~ genderdummy  + (1 | farmer_ID) +maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+               +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedata)
+lmernc3<-lmer(location ~ genderdummy  + (1 | farmer_ID) +maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4, data = fedata)
+lmernc4<-lmer(price ~ genderdummy  + (1 | farmer_ID)+maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+               +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedata)
+lmernc5<-lmer(quality~ genderdummy  + (1 | farmer_ID)+maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+               +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedata)
+lmernc6<-lmer(stock ~ genderdummy  + (1 | farmer_ID)+maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4 , data = fedata)
+lmernc7<-lmer(reputation~ genderdummy  + (1 | farmer_ID)+maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+               +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof , data = fedata)
 
 
 fe1<- rbind( c((format(round(i1[1],digits=3),nsmall=0)),
@@ -7529,6 +7591,66 @@ id8<-mean(fixef(plmd8))
 sed8<- sqrt(diag(vcov(plmd8)))
 
 coefd8<-coeftest(plmd8, vcovHC(plmd8, type = "HC0", cluster = "time"))
+
+
+#### One way random effect at the dealer level  -- no controls 
+lmerb1<-lmer(score~farmergen  + (1 | shop_ID.x) , data = fedatad)
+lmerb2<-lmer(general~farmergen  + (1 | shop_ID.x) , data = fedatad)
+lmerb3<-lmer(yield ~farmergen  + (1 | shop_ID.x) , data = fedatad)
+lmerb4<-lmer(drought_resistent ~farmergen  + (1 | shop_ID.x) , data = fedatad)
+lmerb5<-lmer(disease_resistent ~farmergen  + (1 | shop_ID.x) , data = fedatad)
+lmerb6<-lmer(early_maturing ~farmergen  + (1 | shop_ID.x) , data = fedatad)
+lmerb7<-lmer(germination ~farmergen  + (1 | shop_ID.x) , data = fedatad)
+
+
+#### Two way random effect at the dealer level and farmer level   -- no controls 
+lmerb8<-lmer(score~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) , data = fedatad)
+lmerb9<-lmer(general~farmergen  + (1 | shop_ID.x) + (1 | farmer_ID), data = fedatad)
+lmerb10<-lmer(yield ~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) , data = fedatad)
+lmerb11<-lmer(drought_resistent ~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) , data = fedatad)
+lmerb12<-lmer(disease_resistent ~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) , data = fedatad)
+lmerb13<-lmer(early_maturing ~farmergen  + (1 | shop_ID.x) + (1 | farmer_ID), data = fedatad)
+lmerb14<-lmer(germination ~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) , data = fedatad)
+
+
+#### One way random effect at the dealer level  -- with controls -- controls are only farmer characteristics 
+lmerbc1<-lmer(score~farmergen  + (1 | shop_ID.x)+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8 , data = fedatad)
+lmerbc2<-lmer(general~farmergen  + (1 | shop_ID.x) +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8, data = fedatad)
+lmerbc3<-lmer(yield ~farmergen  + (1 | shop_ID.x)+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8 , data = fedatad)
+lmerbc4<-lmer(drought_resistent ~farmergen  + (1 | shop_ID.x) +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8, data = fedatad)
+lmerbc5<-lmer(disease_resistent ~farmergen  + (1 | shop_ID.x)+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8 , data = fedatad)
+lmerbc6<-lmer(early_maturing ~farmergen  + (1 | shop_ID.x)+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8 , data = fedatad)
+lmerbc7<-lmer(germination ~farmergen  + (1 | shop_ID.x)+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8 , data = fedatad)
+
+
+######### NON SEED
+#### One way random effect at the dealer level  -- no controls 
+lmerbn1<-lmer(overall_rating~farmergen  + (1 | shop_ID.x) , data = fedatad)
+lmerbn2<-lmer(general_rating~farmergen  + (1 | shop_ID.x) , data = fedatad)
+lmerbn3<-lmer(location ~farmergen  + (1 | shop_ID.x) , data = fedatad)
+lmerbn4<-lmer(price ~farmergen  + (1 | shop_ID.x) , data = fedatad)
+lmerbn5<-lmer(quality ~farmergen  + (1 | shop_ID.x) , data = fedatad)
+lmerbn6<-lmer(stock ~farmergen  + (1 | shop_ID.x) , data = fedatad)
+lmerbn7<-lmer(reputation ~farmergen  + (1 | shop_ID.x) , data = fedatad)
+
+#### Two way random effect at the dealer level and farmer level  -- no controls 
+lmerbn8<-lmer(overall_rating~farmergen  + (1 | shop_ID.x) + (1 | farmer_ID), data = fedatad)
+lmerbn9<-lmer(general_rating~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) , data = fedatad)
+lmerbn10<-lmer(location ~farmergen  + (1 | shop_ID.x) + (1 | farmer_ID), data = fedatad)
+lmerbn11<-lmer(price ~farmergen  + (1 | shop_ID.x) + (1 | farmer_ID), data = fedatad)
+lmerbn12<-lmer(quality ~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) , data = fedatad)
+lmerbn13<-lmer(stock ~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) , data = fedatad)
+lmerbn14<-lmer(reputation ~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) , data = fedatad)
+
+#### One way random effect at the dealer level  -- with controls -- controls are farmer characteristics 
+lmerbnc1<-lmer(overall_rating~farmergen  + (1 | shop_ID.x) +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8 , data = fedatad)
+lmerbnc2<-lmer(general_rating~farmergen  + (1 | shop_ID.x) +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8 , data = fedatad)
+lmerbnc3<-lmer(location ~farmergen  + (1 | shop_ID.x)+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8  , data = fedatad)
+lmerbnc4<-lmer(price ~farmergen  + (1 | shop_ID.x)+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8  , data = fedatad)
+lmerbnc5<-lmer(quality ~farmergen  + (1 | shop_ID.x) +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8 , data = fedatad)
+lmerbnc6<-lmer(stock ~farmergen  + (1 | shop_ID.x) +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8 , data = fedatad)
+lmerbnc7<-lmer(reputation ~farmergen  + (1 | shop_ID.x) +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8 , data = fedatad)
+
 
 
 fed1<- rbind( c((format(round(id1[1],digits=3),nsmall=0)),
