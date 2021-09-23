@@ -17865,9 +17865,9 @@ noprefix "false"
  For the assessment of general seed quality in particular, male agro-input
  dealers now get significantly higher scores.
  Men are also rated higher when the focus is on seed germination.
- When we model perceptions related to agro-input dealers more general, men
- are rated higher in most dimensions, but again, differences are not significant
- 
+ When we model perceptions related to agro-input dealers more generally,
+ men are rated higher in most dimensions, but again, differences are not
+ significant 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:q1_betw_farmers_dealer_no_controls"
@@ -18033,32 +18033,68 @@ noprefix "false"
  The fact that farmers rate the same agro-input dealer differently would
  lend support to the hypothesis that the source of this difference lies
  in how the agro-input dealer is perceived by the farmer.
+ Unfortunately, including dealer fixed effects and dealer gender in one
+ model is impossible because gender does not vary within the dealer, ie.
+ the matrix of dealer fixed effects would be perfectly co-linear with the
+ dealer's gender.
+ 
 \end_layout
 
 \begin_layout Standard
-Unfortunately, including dealer fixed effects and dealer gender in one model
- is impossible because gender does not vary within the dealer, ie.
- the matrix of dealer fixed effects would be perfectly co-linear with the
- dealer's gender.
- However, random effects models will estimate the effects of time-invariant
- variables.
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-At the same time, dealer level random effects will be correlated to included
- dealer level independent variables...
-\end_layout
+The random effects model that corresponds to between model of equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:six-1"
+plural "false"
+caps "false"
+noprefix "false"
 
 \end_inset
 
+ will provide an estimate of the gender of the dealer.
+ Furthermore, as it uses both within dealer and between dealer variation
+ (as a random effects model is essentially a matrix weighted linear combination
+ of the between and within models estimated using Generalized Least Squares)
+ it is more efficient than the between estimator of equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:six-1"
+plural "false"
+caps "false"
+noprefix "false"
 
+\end_inset
+
+.
+ At the same time, it should be noted that we still face the same problem
+ as in equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:six-1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, which is the concern that residual (unobserved) dealer level heterogeneity
+ may be correlated to dealer level explanatory variables.
+ 
+\end_layout
+
+\begin_layout Standard
+Table XXX reports results for input dealer random effects models.
 \end_layout
 
 \begin_layout Standard
 Finally, we can estimate a two-way random effects model (this is also referred
  to as a multiple membership or crossed design random effects model).
+ 
+\end_layout
+
+\begin_layout Standard
+Table XXX reports results for models with random effects for both agro-input
+ dealers and farmers.
 \end_layout
 
 \begin_layout Section*
