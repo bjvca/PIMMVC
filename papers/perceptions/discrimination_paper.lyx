@@ -659,7 +659,7 @@ noprefix "false"
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-\frac{1}{F}\underset{f}{\sum}y_{f,d}=\alpha+\gamma\frac{1}{F}\underset{f}{\sum}g_{d}+\frac{1}{F}\underset{f}{\sum}\nu_{f}+\frac{1}{F}\underset{f}{\sum}\omega{}_{d}+\frac{1}{F}\underset{f}{\sum}\epsilon_{f,d}\label{eq:six-1}
+\frac{1}{F}\underset{f}{\sum}y_{f,d}=\alpha+\beta\frac{1}{F}\underset{f}{\sum}g_{d}+\frac{1}{F}\underset{f}{\sum}\nu_{f}+\frac{1}{F}\underset{f}{\sum}\omega{}_{d}+\frac{1}{F}\underset{f}{\sum}\epsilon_{f,d}\label{eq:six-1}
 \end{equation}
 
 \end_inset
@@ -6291,7 +6291,7 @@ Fortunately, we often have instances where the same farmer rates both male
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-y_{f,d}-\frac{1}{D}\underset{d}{\sum}y_{f,d}=\alpha+\gamma\left(g_{f,d}-\frac{1}{D}\underset{d}{\sum}g_{fd}\right)+\left(\varepsilon_{f,d}-\frac{1}{D}\underset{d}{\sum}\varepsilon_{f,d}\right)\label{eq:four}
+y_{f,d}-\frac{1}{D}\underset{d}{\sum}y_{f,d}=\beta\left(g_{f,d}-\frac{1}{D}\underset{d}{\sum}g_{fd}\right)+\left(\varepsilon_{f,d}-\frac{1}{D}\underset{d}{\sum}\varepsilon_{f,d}\right)\label{eq:four}
 \end{equation}
 
 \end_inset
@@ -11660,7 +11660,7 @@ f
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-\frac{1}{D}\underset{d}{\sum}y_{f,d}=\alpha+\beta\frac{1}{D}\underset{d}{\sum}x_{f,d}+\gamma\frac{1}{D}\underset{d}{\sum}g_{f,d}+\frac{1}{D}\underset{d}{\sum}\varepsilon_{f,d}\label{eq:two}
+\frac{1}{D}\underset{d}{\sum}y_{f,d}=\alpha+\beta\frac{1}{D}\underset{d}{\sum}g_{f,d}+\frac{1}{D}\underset{d}{\sum}\nu_{f}+\frac{1}{D}\underset{d}{\sum}\omega{}_{d}+\frac{1}{D}\underset{d}{\sum}\epsilon_{f,d}\label{eq:two}
 \end{equation}
 
 \end_inset
@@ -11671,7 +11671,7 @@ f
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-\overline{y}_{f}=\mu+\beta\overline{x}_{f}+\gamma\overline{g}_{f}+\overline{e}_{f}
+\overline{y}_{f}=\mu+\gamma\overline{g}_{f}+\overline{\varepsilon}_{f}
 \end{equation}
 
 \end_inset
@@ -14581,41 +14581,127 @@ noprefix "false"
 \end_inset
 
 .
- In general, we find that male agro-input dealers are rated higher than
- female agro-input dealers, especially for the more general agro-input dealer
- ratings and particularly if we also explicitly control for observable dealer
- level characteristics.
-\end_layout
-
-\begin_layout Standard
-In the between input dealers model with additional controls, we control
- for observed input dealer heterogeneity such as input dealer education
- levels and observable characteristics that are likely to be correlated
- with seed quality sold by this dealer.
- Ideally, one would like to control for all dealer level heterogeneity,
- both observable and unobservable, such that any remaining difference can
- be attributed to the gender of the agro-input dealer.
- A within agro-input dealer approach, where different farmers rate the same
- agro-input dealer such as the one described in equation 
+ Results are mixed for the models that focus seed ratings and no controls
+ are included (Table 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "eq:eight"
+reference "tab:q1_betw_farmers_seed_no_controls"
 plural "false"
 caps "false"
 noprefix "false"
 
 \end_inset
 
- below would be ideal for that.
- The fact that farmers rate the same agro-input dealer differently means
- that the source of this difference lies in how the agro-input dealer is
- perceived by the farmer.
+).
+ However, once we control for a range of dealer and farmer level characteristics
+, we see that coefficients turn more positive.
+ For the assessment of general seed quality in particular, male agro-input
+ dealers now get significantly higher scores.
+ Men are also rated higher when the focus is on seed germination.
+ When we model perceptions related to agro-input dealers more general, men
+ are rated higher in most dimensions, but again, differences are not significant
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:q1_betw_farmers_dealer_no_controls"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ Also here, differences become clearer when we control for a range of observable
+ characteristics of the actors 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:q1_betw_farmers_dealer_controls"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The between-farmer model in equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:two"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ exploits only the between dimension of the data, while the model in equation
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:four"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ only uses the within farmer dimension.
+ A one-way error components or random effects model such as equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:randeff"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ that combines the between-farmer and within-farmer information in an efficient
+ way, may be preferable to models 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:four"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:two"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+although it should be noted that random effects models also assume that
+ farmer level component in the error term is not correlated to the independent
+ variables.
+ This could be argued to be that case if the variable of interest is the
+ gender of the dealer, but is probably not the case anymore if also farmer
+ level controls are included.
+\end_layout
+
+\end_inset
+
+.
+ 
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-y_{f,d}-\frac{1}{F}\underset{f}{\sum}y_{f,d}=\alpha+\gamma\left(g_{f,d}-\frac{1}{F}\underset{f}{\sum}g_{fd}\right)+\left(\varepsilon_{f,d}-\frac{1}{F}\underset{f}{\sum}\varepsilon_{f,d}\right)\label{eq:eight}
+y_{f,d}=\alpha+\beta g_{f,d}+\nu_{f}+\mu_{f,d}\label{eq:randeff}
 \end{equation}
 
 \end_inset
@@ -14625,13 +14711,61 @@ y_{f,d}-\frac{1}{F}\underset{f}{\sum}y_{f,d}=\alpha+\gamma\left(g_{f,d}-\frac{1}
 
 \begin_layout Standard
 \begin_inset Formula 
-\begin{equation}
-y_{f,d}-\overline{y}_{d}=\gamma\left(g_{f,d}-\overline{g}_{d}\right)+\varepsilon_{f,d}
-\end{equation}
+\[
+\mu_{f,d}=\omega_{d}+\epsilon_{f,d}
+\]
 
 \end_inset
 
+Table X reports result for such a model with farmer random effects.
+\begin_inset Foot
+status collapsed
 
+\begin_layout Plain Layout
+As different farmers potentially rate the same agro-input dealers, we cluster
+ on agro-input dealers to account for clustered error terms in that dimension.
+ 
+\end_layout
+
+\end_inset
+
+ In table XXX, we add agro-input dealer level controls.
+\end_layout
+
+\begin_layout Standard
+The first model we estimated, equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:six-1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, is also a between effects model.
+ That model exploited difference between agro-input dealers rather than
+ farmers.
+ In that model with additional controls, we control for observed input dealer
+ heterogeneity such as input dealer education levels and observable characterist
+ics that are likely to be correlated with seed quality sold by this dealer.
+ Ideally, one would like to control for all dealer level heterogeneity,
+ both observable and unobservable, such that any remaining difference can
+ be attributed to the gender of the agro-input dealer.
+ The corresponding fixed effects model for model 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:six-1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, a within agro-input dealer model would be ideal for that.
+ The fact that farmers rate the same agro-input dealer differently would
+ lend support to the hypothesis that the source of this difference lies
+ in how the agro-input dealer is perceived by the farmer.
 \end_layout
 
 \begin_layout Standard
@@ -14639,33 +14773,13 @@ Unfortunately, including dealer fixed effects and dealer gender in one model
  is impossible because gender does not vary within the dealer, ie.
  the matrix of dealer fixed effects would be perfectly co-linear with the
  dealer's gender.
- This can also be seen in equation 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:eight"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
-: As gender remains constant within the dealer, the within dealer average
- is always equal to the observation, thus cancels out and dealer's gender
- is removed from the equation.
- 
+ However, random effects models will estimate the effects of time-invariant
+ variables.
 \end_layout
 
 \begin_layout Standard
-In addition, error component 
-\begin_inset Formula $\frac{1}{F}\underset{f}{\sum}\nu_{f}$
-\end_inset
-
- means that we can not assume that errors are uncorrelated.
- Therefore we will estimate random effects models here.
-\end_layout
-
-\begin_layout Standard
-However, while we cannot estimate a dealer fixed effects model, 
+Finally, we can estimate a two-way random effects model (this is also referred
+ to as a multiple membership or crossed design random effects model).
 \end_layout
 
 \begin_layout Section*
