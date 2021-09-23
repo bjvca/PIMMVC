@@ -154,30 +154,16 @@ Faced with imperfect information and guided by heuristics prone to cognitive
  on the same set of attributes.
  We find that input dealers, traders and millers assess themselves more
  favourably than farmers do.
- MORE RESULTS HERE? 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-\paragraph_spacing onehalf
-We also zoom in on heterogeneity in perceptions related to gender but do
- not find enough evidence to support the claim.
- The sex of the actor being rated does not affect the rating.
-\end_layout
-
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-can be longer
-\end_layout
-
-\end_inset
-
-
+ We also zoom in on heterogeneity in perceptions related to gender and find
+ that while self-assessing, the gender of the individual does not matter.
+ However, ratings from female farmers are more different from the self-ratings
+ compared to the ratings from the male farmers.
+ Also, women rate the dealers, traders and millers significantly higher
+ for ease of access and price competitiveness.
+ The sex of the actor being rated does not affect the rating and gender-based
+ homophily is not present in the preferences of the farmers while rating.
+ Interestingly, price competitiveness is always scored the lowest.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -324,8 +310,38 @@ s such as ease of access, quality or services rendered, price competitiveness,
 \end_layout
 
 \begin_layout Standard
-\paragraph_spacing onehalf
-Perceptions have been found to correlate with innovations in food supply
+Various studies have used ratings to understand perceptions.
+ For instance, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Campbell2007"
+literal "true"
+
+\end_inset
+
+ investigated student ratings to understand the perceptions of students
+ about teaching.
+ To study social competence and depression, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "lewinsohn1980social"
+literal "true"
+
+\end_inset
+
+ obtained self-ratings to identify self-perceptions.
+ Ratings from teachers have also been very useful in understanding preschool
+ teachers' perceptions about the students, linking to student academic achieveme
+nt in the future (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Alvidrez1999"
+literal "true"
+
+\end_inset
+
+).
+ Perceptions have been found to correlate with innovations in food supply
  chains and identify performance issues of involved actors (
 \begin_inset CommandInset citation
 LatexCommand citealp
@@ -383,8 +399,9 @@ ty gap in Uganda.
  These motivate the aim to understand the alignment of perceptions based
  on the sex of the farmer, agro-input dealer, trader, and miller in the
  case of maize value chains in Uganda.
+ 
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Plain Layout
 I am not happy with this: This should be rewritten with a focus on: studies
