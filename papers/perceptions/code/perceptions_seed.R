@@ -9,7 +9,7 @@ library(plm)
 library(lmtest)
 library(lme4)
 library(Rcpp)
-
+library(sjPlot)
 options(scipen=999)
 path_2 <- strsplit(path, "/papers/perceptions")[[1]]
 
@@ -8246,3 +8246,26 @@ fed4<- rbind( c((format(round(idn9[1],digits=3),nsmall=0)),
                 (format(round(nobs(plmdn14),digits=3),nsmall=0)),
                 (format(round(nobs(plmdn15),digits=3),nsmall=0)))
 )
+
+
+#Q1
+#Seed
+tab_model(lmer1,lmer2,lmer3,lmer4,lmer5,lmer6,lmer7) #one way without controls at farmer level 
+tab_model(lmer8,lmer9,lmer10,lmer11,lmer12,lmer13,lmer14)   #two way without controls 
+tab_model(lmerc1,lmerc2,lmerc3,lmerc4,lmerc5,lmerc6,lmerc7) # one way with controls at farmer level 
+#non-seed
+tab_model(lmern1,lmern2,lmern3,lmern4,lmern5,lmern6,lmern7) #one way without controls at farmer level 
+tab_model(lmern8,lmern9,lmern10,lmern11,lmern12,lmern13,lmern14)    #two way without controls 
+tab_model(lmernc1,lmernc2,lmernc3,lmernc4,lmernc5,lmernc6,lmernc7)   # one way with controls at farmer level 
+
+
+
+#Q2
+#Seed
+tab_model(lmerb1,lmerb2,lmerb3,lmerb4,lmerb5,lmerb6,lmerb7) #one way without controls at dealer level 
+tab_model(lmerb8,lmerb9,lmerb10,lmerb11,lmerb12,lmerb13,lmerb14)   #two way without controls 
+tab_model(lmerbc1,lmerbc2,lmerbc3,lmerbc4,lmerbc5,lmerbc6,lmerbc7) # one way with controls at dealer level 
+#non-seed
+tab_model(lmerbn1,lmerbn2,lmerbn3,lmerbn4,lmerbn5,lmerbn6,lmerbn7) #one way without controls at dealer level 
+tab_model(lmerbn8,lmerbn9,lmerbn10,lmerbn11,lmerbn12,lmerbn13,lmerbn14)    #two way without controls 
+tab_model(lmerbnc1,lmerbnc2,lmerbnc3,lmerbnc4,lmerbnc5,lmerbnc6,lmerbnc7)   # one way with controls at dealer level 
