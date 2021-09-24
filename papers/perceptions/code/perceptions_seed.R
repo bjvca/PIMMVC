@@ -3328,8 +3328,9 @@ summary(lm(reputation~genderdummy + maize.owner.agree.age +prim +maize.owner.agr
 
 
 ################### MODEL 5 (FE) #########################
+fedata_base <- merge(farmers_seedsub, rating_dyads, by="farmer_ID")
 
-fedata <- merge(rating_dyads, baseline_dealer, by="shop_ID")
+fedata <- merge(fedata_base, baseline_dealer, by="shop_ID")
 
 fedata[fedata=="n/a"]<- NA
 fedata[fedata=="98"]<- NA
@@ -3468,6 +3469,26 @@ fedata$overall_rating <-  rowMeans(fedata[c("general_rating_nonseed", "location"
 #fedata$score <-  rowMeans(fedata[c("quality_rating","seed_quality_general_rating","seed_yield_rating","seed_drought_rating","seed_disease_rating","seed_maturing_rating","seed_germinate_rating")],na.rm=T)
 #fedata$overall_rating <-  rowMeans(fedata[c("general_rating", "location_rating","price_rating","quality_rating","stock_rating","reputation_rating")],na.rm=T)
 
+
+###farmer characteristics for controls
+fedata$educ_f <- 0
+fedata$educ_f[fedata$Check2.check.maize.q17=="c" | fedata$Check2.check.maize.q17=="d" |fedata$Check2.check.maize.q17=="e" |
+                        fedata$Check2.check.maize.q17=="f"  ] <- 1 #educated farmers -- finished primary educ
+fedata$educ_f[ fedata$Check2.check.maize.q17=="g" ] <- NA
+table(fedata$educ_f)
+
+fedata$married <- ifelse(fedata$Check2.check.maize.q16 == 'a', 1, 0)  #married farmers
+
+#age of farmers
+fedata$Check2.check.maize.q14[fedata$Check2.check.maize.q14==999 ] <- NA
+summary(fedata$Check2.check.maize.q14 )
+
+#distance from tarmac road
+fedata$Check2.check.maize.q8[ fedata$Check2.check.maize.q8==999 ] <- NA
+summary(fedata$Check2.check.maize.q8 )
+
+
+
 write.csv(fedata, file = "fedata.csv")
 
 ## SEED RELATED RATINGS ##
@@ -3539,97 +3560,6 @@ i8<-mean(fixef(plm8))
 seplm8<- sqrt(diag(vcov(plm8)))
 
 coef8<-coeftest(plm8, vcovHC(plm8, type = "HC0", cluster = "time"))
-
-#### One way random effect at the farmer level - no controls 
-lmer1<-lmer(score ~ genderdummy  + (1 | farmer_ID) , data = fedata)
-coefr1<-coeftest(lmer1, vcovHC(lmer1, type = "HC0", cluster = "time"))
-summary(lmer1)
-coefr1
-
-#Is plm result same as lmer?
-plmr1<-plm(score ~ genderdummy, data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
-                   effect = "individual")
-coefrplm1<-coeftest(plmr1, vcovHC(plmr1, type = "HC0", cluster = "time"))
-summary(plmr1)
-coefrplm1
-
-lmer2<-lmer(general ~ genderdummy  + (1 | farmer_ID) , data = fedata)
-lmer3<-lmer(yield ~ genderdummy  + (1 | farmer_ID) , data = fedata)
-lmer4<-lmer(drought_resistent ~ genderdummy  + (1 | farmer_ID), data = fedata)
-lmer5<-lmer(disease_resistent ~ genderdummy  + (1 | farmer_ID) , data = fedata)
-lmer6<-lmer(early_maturing ~ genderdummy  + (1 | farmer_ID) , data = fedata)
-lmer7<-lmer(germination ~ genderdummy  + (1 | farmer_ID) , data = fedata)
-
-#### Two way random effect at the farmer level and dealer level -- no controls 
-lmer8<-lmer(score ~ genderdummy  + (1 | farmer_ID)+(1 | shop_ID) , data = fedata)
-lmer9<-lmer(general ~ genderdummy  + (1 | farmer_ID) +(1 | shop_ID), data = fedata)
-lmer10<-lmer(yield ~ genderdummy  + (1 | farmer_ID) +(1 | shop_ID), data = fedata)
-lmer11<-lmer(drought_resistent ~ genderdummy  + (1 | farmer_ID)+(1 | shop_ID), data = fedata)
-lmer12<-lmer(disease_resistent ~ genderdummy  + (1 | farmer_ID)+(1 | shop_ID) , data = fedata)
-lmer13<-lmer(early_maturing ~ genderdummy  + (1 | farmer_ID)+(1 | shop_ID) , data = fedata)
-lmer14<-lmer(germination ~ genderdummy  + (1 | farmer_ID)+(1 | shop_ID) , data = fedata)
-
-#### One way random effect at the farmer level -- with controls --- controls are only dealer characteristics 
-lmerc1<-lmer(score ~ genderdummy  + (1 | farmer_ID) + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-               +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof , data = fedata)
-lmerc2<-lmer(general ~ genderdummy  + (1 | farmer_ID)+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-               +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof , data = fedata)
-lmerc3<-lmer(yield ~ genderdummy  + (1 | farmer_ID)+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-               +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof , data = fedata)
-lmerc4<-lmer(drought_resistent ~ genderdummy  + (1 | farmer_ID)+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-               +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedata)
-lmerc5<-lmer(disease_resistent ~ genderdummy  + (1 | farmer_ID)+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-               +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof , data = fedata)
-lmerc6<-lmer(early_maturing ~ genderdummy  + (1 | farmer_ID)+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-               +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof , data = fedata)
-lmerc7<-lmer(germination ~ genderdummy  + (1 | farmer_ID)+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-               +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof , data = fedata)
-
-
-### NON SEED
-#### One way random effect at the farmer level  -- no controls 
-lmern1<-lmer(overall_rating ~ genderdummy  + (1 | farmer_ID) , data = fedata)
-lmern2<-lmer(general_rating ~ genderdummy  + (1 | farmer_ID) , data = fedata)
-lmern3<-lmer(location ~ genderdummy  + (1 | farmer_ID) , data = fedata)
-lmern4<-lmer(price ~ genderdummy  + (1 | farmer_ID), data = fedata)
-lmern5<-lmer(quality~ genderdummy  + (1 | farmer_ID), data = fedata)
-lmern6<-lmer(stock ~ genderdummy  + (1 | farmer_ID) , data = fedata)
-lmern7<-lmer(reputation~ genderdummy  + (1 | farmer_ID) , data = fedata)
-
-#### two way random effects at the farmer level and dealer level  -- no controls 
-lmern8<-lmer(overall_rating ~ genderdummy  + (1 | farmer_ID)+ (1 | shop_ID) , data = fedata)
-lmern9<-lmer(general_rating ~ genderdummy  + (1 | farmer_ID) + (1 | shop_ID), data = fedata)
-lmern10<-lmer(location ~ genderdummy  + (1 | farmer_ID) + (1 | shop_ID), data = fedata)
-lmern11<-lmer(price ~ genderdummy  + (1 | farmer_ID)+ (1 | shop_ID), data = fedata)
-lmern12<-lmer(quality~ genderdummy  + (1 | farmer_ID)+ (1 | shop_ID), data = fedata)
-lmern13<-lmer(stock ~ genderdummy  + (1 | farmer_ID) + (1 | shop_ID), data = fedata)
-lmern14<-lmer(reputation~ genderdummy  + (1 | farmer_ID)+ (1 | shop_ID) , data = fedata)
-
-#### One way random effect at the farmer level  -- with controls -- controls are only dealer characteristics 
-lmernc1<-lmer(overall_rating ~ genderdummy  + (1 | farmer_ID) +maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-               +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedata)
-lmernc2<-lmer(general_rating ~ genderdummy  + (1 | farmer_ID) +maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-               +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedata)
-lmernc3<-lmer(location ~ genderdummy  + (1 | farmer_ID) +maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4, data = fedata)
-lmernc4<-lmer(price ~ genderdummy  + (1 | farmer_ID)+maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-               +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedata)
-lmernc5<-lmer(quality~ genderdummy  + (1 | farmer_ID)+maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-               +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedata)
-lmernc6<-lmer(stock ~ genderdummy  + (1 | farmer_ID)+maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4 , data = fedata)
-lmernc7<-lmer(reputation~ genderdummy  + (1 | farmer_ID)+maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-               +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof , data = fedata)
 
 
 fe1<- rbind( c((format(round(i1[1],digits=3),nsmall=0)),
@@ -5004,6 +4934,1441 @@ fe4<- rbind(c((format(round(im8[1],digits=3),nsmall=0)),
               (format(round(nobs(plmm13),digits=3),nsmall=0)),
               (format(round(nobs(plmm14),digits=3),nsmall=0)))
 )
+
+
+
+#################################################################################################################
+#################################################################################################################
+###################                             RANDOM EFFECTS                    ###############################
+#################################################################################################################
+#################################################################################################################
+
+### SEED RATINGS 
+
+
+#### One way random effect at the farmer level - no controls 
+plmr1<-plm(score ~ genderdummy, data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
+           effect = "individual")
+coefr1<-coeftest(plmr1, vcovHC(plmr1, type = "HC0", cluster = "time"))
+summary(plmr1)
+coefr1
+
+plmr2<-plm(general ~ genderdummy, data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
+           effect = "individual")
+coefr2<-coeftest(plmr2, vcovHC(plmr2, type = "HC0", cluster = "time"))
+summary(plmr2)
+coefr2
+
+plmr3<-plm(yield ~ genderdummy, data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
+           effect = "individual")
+coefr3<-coeftest(plmr3, vcovHC(plmr3, type = "HC0", cluster = "time"))
+summary(plmr3)
+coefr3
+
+plmr4<-plm(drought_resistent ~ genderdummy, data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
+           effect = "individual")
+coefr4<-coeftest(plmr4, vcovHC(plmr4, type = "HC0", cluster = "time"))
+summary(plmr4)
+coefr4
+
+plmr5<-plm(disease_resistent ~ genderdummy, data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
+           effect = "individual")
+coefr5<-coeftest(plmr5, vcovHC(plmr5, type = "HC0", cluster = "time"))
+summary(plmr5)
+coefr5
+
+plmr6<-plm(early_maturing ~ genderdummy, data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
+           effect = "individual")
+coefr6<-coeftest(plmr6, vcovHC(plmr6, type = "HC0", cluster = "time"))
+summary(plmr6)
+coefr6
+
+plmr7<-plm(germination ~ genderdummy, data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
+           effect = "individual")
+coefr7<-coeftest(plmr7, vcovHC(plmr7, type = "HC0", cluster = "time"))
+summary(plmr7)
+coefr7
+
+tab_model(plmr1, plmr2,plmr3, plmr4, plmr5, plmr6, plmr7, p.style = c("stars"), p.threshold = c(0.1, 0.05, 0.01), collapse.ci=TRUE)
+
+ranr1<- rbind( c((format(round(sum(coefr1[1,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefr2[1,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefr3[1,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefr4[1,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefr5[1,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefr6[1,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefr7[1,1]),digits=3),nsmall=0))),
+               c((format(round(coefr1[1,2],digits=3),nsmall=0)),
+                 (format(round(coefr2[1,2],digits=3),nsmall=0)),
+                 (format(round(coefr3[1,2],digits=3),nsmall=0)),
+                 (format(round(coefr4[1,2],digits=3),nsmall=0)),
+                 (format(round(coefr5[1,2],digits=3),nsmall=0)),
+                 (format(round(coefr6[1,2],digits=3),nsmall=0)),
+                 (format(round(coefr7[1,2],digits=3),nsmall=0))),
+               c((format(round(coefr1[1,4],digits=3),nsmall=0)),
+                 (format(round(coefr2[1,4],digits=3),nsmall=0)),
+                 (format(round(coefr3[1,4],digits=3),nsmall=0)),
+                 (format(round(coefr4[1,4],digits=3),nsmall=0)),
+                 (format(round(coefr5[1,4],digits=3),nsmall=0)),
+                 (format(round(coefr6[1,4],digits=3),nsmall=0)),
+                 (format(round(coefr7[1,4],digits=3),nsmall=0))),
+               
+               c((format(round(sum(coefr1[2,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefr2[2,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefr3[2,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefr4[2,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefr5[2,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefr6[2,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefr7[2,1]),digits=3),nsmall=0))),
+               c((format(round(coefr1[2,2],digits=3),nsmall=0)),
+                 (format(round(coefr2[2,2],digits=3),nsmall=0)),
+                 (format(round(coefr3[2,2],digits=3),nsmall=0)),
+                 (format(round(coefr4[2,2],digits=3),nsmall=0)),
+                 (format(round(coefr5[2,2],digits=3),nsmall=0)),
+                 (format(round(coefr6[2,2],digits=3),nsmall=0)),
+                 (format(round(coefr7[2,2],digits=3),nsmall=0))),
+               c((format(round(coefr1[2,4],digits=3),nsmall=0)),
+                 (format(round(coefr2[2,4],digits=3),nsmall=0)),
+                 (format(round(coefr3[2,4],digits=3),nsmall=0)),
+                 (format(round(coefr4[2,4],digits=3),nsmall=0)),
+                 (format(round(coefr5[2,4],digits=3),nsmall=0)),
+                 (format(round(coefr6[2,4],digits=3),nsmall=0)),
+                 (format(round(coefr7[2,4],digits=3),nsmall=0))),
+               
+               
+               c((format(round(summary(plmr1)$r.squared[1],digits=3),nsmall=0)),
+                 (format(round(summary(plmr2)$r.squared[1],digits=3),nsmall=0)),
+                 (format(round(summary(plmr3)$r.squared[1],digits=3),nsmall=0)),
+                 (format(round(summary(plmr4)$r.squared[1],digits=3),nsmall=0)),
+                 (format(round(summary(plmr5)$r.squared[1],digits=3),nsmall=0)),
+                 (format(round(summary(plmr6)$r.squared[1],digits=3),nsmall=0)),
+                 (format(round(summary(plmr7)$r.squared[1],digits=3),nsmall=0))),
+               c((format(round(summary(plmr1)$r.squared[2],digits=3),nsmall=0)),
+                 (format(round(summary(plmr2)$r.squared[2],digits=3),nsmall=0)),
+                 (format(round(summary(plmr3)$r.squared[2],digits=3),nsmall=0)),
+                 (format(round(summary(plmr4)$r.squared[2],digits=3),nsmall=0)),
+                 (format(round(summary(plmr5)$r.squared[2],digits=3),nsmall=0)),
+                 (format(round(summary(plmr6)$r.squared[2],digits=3),nsmall=0)),
+                 (format(round(summary(plmr7)$r.squared[2],digits=3),nsmall=0))),
+               c((format(round(nobs(plmr1),digits=3),nsmall=0)),
+                 (format(round(nobs(plmr2),digits=3),nsmall=0)),
+                 (format(round(nobs(plmr3),digits=3),nsmall=0)),
+                 (format(round(nobs(plmr4),digits=3),nsmall=0)),
+                 (format(round(nobs(plmr5),digits=3),nsmall=0)),
+                 (format(round(nobs(plmr6),digits=3),nsmall=0)),
+                 (format(round(nobs(plmr7),digits=3),nsmall=0)))
+)
+
+
+
+#### One way random effect at the dealer level - no controls 
+#plmr8<-plm(score ~ genderdummy, data =fedata,  model = "random", index = c("shop_ID","farmer_ID"),
+     #      effect = "individual")
+#coefr8<-coeftest(plmr8, vcovHC(plmr8, type = "HC0", cluster = "time"))
+#summary(plmr8)
+#coefr8
+
+
+#### Two way random effect at the farmer level and dealer level -- no controls 
+
+#lmer8<-lmer(score ~ genderdummy  + (1 | farmer_ID)+(1 | shop_ID) , data = fedata)
+#lmer9<-lmer(general ~ genderdummy  + (1 | farmer_ID) +(1 | shop_ID), data = fedata)
+#lmer10<-lmer(yield ~ genderdummy  + (1 | farmer_ID) +(1 | shop_ID), data = fedata)
+#lmer11<-lmer(drought_resistent ~ genderdummy  + (1 | farmer_ID)+(1 | shop_ID), data = fedata)
+#lmer12<-lmer(disease_resistent ~ genderdummy  + (1 | farmer_ID)+(1 | shop_ID) , data = fedata)
+#lmer13<-lmer(early_maturing ~ genderdummy  + (1 | farmer_ID)+(1 | shop_ID) , data = fedata)
+#lmer14<-lmer(germination ~ genderdummy  + (1 | farmer_ID)+(1 | shop_ID) , data = fedata)
+
+#tab_model(lmer8,lmer9,lmer10,lmer11,lmer12,lmer13,lmer14, p.style = c("stars"), p.threshold = c(0.1, 0.05, 0.01), collapse.ci=TRUE)
+
+#### Two way random effect at the farmer level and dealer level -- with controls -- controls are both farmer and dealer characteristics 
+
+#lmerc8<-lmer(score ~ genderdummy  + (1 | farmer_ID)+(1 | shop_ID) +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8  +maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale
+# +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+# badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof  , data = fedata)
+
+#lmerc9<-lmer(general ~ genderdummy  + (1 | farmer_ID)+(1 | shop_ID) +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8  +maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale
+# +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+# badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof  , data = fedata)
+
+#lmerc10<-lmer(yield ~ genderdummy  + (1 | farmer_ID)+(1 | shop_ID) +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8  +maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale
+# +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+# badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof  , data = fedata)
+
+#lmerc11<-lmer(drought_resistent ~ genderdummy  + (1 | farmer_ID)+(1 | shop_ID) +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8  +maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale
+# +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+# badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof  , data = fedata)
+
+#lmerc12<-lmer(disease_resistent ~ genderdummy  + (1 | farmer_ID)+(1 | shop_ID) +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8  +maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale
+# +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+# badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof  , data = fedata)
+
+#lmerc13<-lmer(early_maturing ~ genderdummy  + (1 | farmer_ID)+(1 | shop_ID) +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8  +maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale
+# +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+# badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof  , data = fedata)
+
+#lmerc14<-lmer(germination ~ genderdummy  + (1 | farmer_ID)+(1 | shop_ID) +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8  +maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale
+# +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+# badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof  , data = fedata)
+
+#tab_model(lmerc8,lmerc9,lmerc10,lmerc11,lmerc12,lmerc13,lmerc14, p.style = c("stars"), p.threshold = c(0.1, 0.05, 0.01), collapse.ci=TRUE)
+
+#### One way random effect at the farmer level -- with controls --- controls are only dealer characteristics 
+
+plmrc1<-plm(score ~ genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale
+            +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof , data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
+            effect = "individual")
+coefrc1<-coeftest(plmrc1, vcovHC(plmrc1, type = "HC0", cluster = "time"))
+summary(plmrc1)
+coefrc1
+
+plmrc2<-plm(general ~ genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale
+            +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof , data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
+            effect = "individual")
+coefrc2<-coeftest(plmrc2, vcovHC(plmrc2, type = "HC0", cluster = "time"))
+summary(plmrc2)
+coefrc2
+
+plmrc3<-plm(yield ~ genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale
+            +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof , data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
+            effect = "individual")
+coefrc3<-coeftest(plmrc3, vcovHC(plmrc3, type = "HC0", cluster = "time"))
+summary(plmrc3)
+coefrc3
+
+plmrc4<-plm(drought_resistent ~ genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale
+            +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof , data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
+            effect = "individual")
+coefrc4<-coeftest(plmrc4, vcovHC(plmrc4, type = "HC0", cluster = "time"))
+summary(plmrc4)
+coefrc4
+
+plmrc5<-plm(disease_resistent ~ genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale
+            +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof , data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
+            effect = "individual")
+coefrc5<-coeftest(plmrc5, vcovHC(plmrc5, type = "HC0", cluster = "time"))
+summary(plmrc5)
+coefrc5
+
+plmrc6<-plm(early_maturing ~ genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale
+            +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof , data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
+            effect = "individual")
+coefrc6<-coeftest(plmrc6, vcovHC(plmrc6, type = "HC0", cluster = "time"))
+summary(plmrc6)
+coefrc6
+
+plmrc7<-plm(germination ~ genderdummy + maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale
+            +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof , data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
+            effect = "individual")
+coefrc7<-coeftest(plmrc7, vcovHC(plmrc7, type = "HC0", cluster = "time"))
+summary(plmrc7)
+coefrc7
+
+tab_model(plmrc1, plmrc2,plmrc3, plmrc4, plmrc5, plmrc6, plmrc7, p.style = c("stars"), p.threshold = c(0.1, 0.05, 0.01), collapse.ci=TRUE)
+
+ranrc1<- rbind( c((format(round(sum(coefrc1[1,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc2[1,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc3[1,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc4[1,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc5[1,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc6[1,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc7[1,1]),digits=3),nsmall=0))),
+                c((format(round(coefrc1[1,2],digits=3),nsmall=0)),
+                  (format(round(coefrc2[1,2],digits=3),nsmall=0)),
+                  (format(round(coefrc3[1,2],digits=3),nsmall=0)),
+                  (format(round(coefrc4[1,2],digits=3),nsmall=0)),
+                  (format(round(coefrc5[1,2],digits=3),nsmall=0)),
+                  (format(round(coefrc6[1,2],digits=3),nsmall=0)),
+                  (format(round(coefrc7[1,2],digits=3),nsmall=0))),
+                c((format(round(coefrc1[1,4],digits=3),nsmall=0)),
+                  (format(round(coefrc2[1,4],digits=3),nsmall=0)),
+                  (format(round(coefrc3[1,4],digits=3),nsmall=0)),
+                  (format(round(coefrc4[1,4],digits=3),nsmall=0)),
+                  (format(round(coefrc5[1,4],digits=3),nsmall=0)),
+                  (format(round(coefrc6[1,4],digits=3),nsmall=0)),
+                  (format(round(coefrc7[1,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefrc1[2,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc2[2,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc3[2,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc4[2,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc5[2,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc6[2,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc7[2,1]),digits=3),nsmall=0))),
+                c((format(round(coefrc1[2,2],digits=3),nsmall=0)),
+                  (format(round(coefrc2[2,2],digits=3),nsmall=0)),
+                  (format(round(coefrc3[2,2],digits=3),nsmall=0)),
+                  (format(round(coefrc4[2,2],digits=3),nsmall=0)),
+                  (format(round(coefrc5[2,2],digits=3),nsmall=0)),
+                  (format(round(coefrc6[2,2],digits=3),nsmall=0)),
+                  (format(round(coefrc7[2,2],digits=3),nsmall=0))),
+                c((format(round(coefrc1[2,4],digits=3),nsmall=0)),
+                  (format(round(coefrc2[2,4],digits=3),nsmall=0)),
+                  (format(round(coefrc3[2,4],digits=3),nsmall=0)),
+                  (format(round(coefrc4[2,4],digits=3),nsmall=0)),
+                  (format(round(coefrc5[2,4],digits=3),nsmall=0)),
+                  (format(round(coefrc6[2,4],digits=3),nsmall=0)),
+                  (format(round(coefrc7[2,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefrc1[3,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc2[3,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc3[3,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc4[3,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc5[3,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc6[3,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc7[3,1]),digits=3),nsmall=0))),
+                c((format(round(coefrc1[3,2],digits=3),nsmall=0)),
+                  (format(round(coefrc2[3,2],digits=3),nsmall=0)),
+                  (format(round(coefrc3[3,2],digits=3),nsmall=0)),
+                  (format(round(coefrc4[3,2],digits=3),nsmall=0)),
+                  (format(round(coefrc5[3,2],digits=3),nsmall=0)),
+                  (format(round(coefrc6[3,2],digits=3),nsmall=0)),
+                  (format(round(coefrc7[3,2],digits=3),nsmall=0))),
+                c((format(round(coefrc1[3,4],digits=3),nsmall=0)),
+                  (format(round(coefrc2[3,4],digits=3),nsmall=0)),
+                  (format(round(coefrc3[3,4],digits=3),nsmall=0)),
+                  (format(round(coefrc4[3,4],digits=3),nsmall=0)),
+                  (format(round(coefrc5[3,4],digits=3),nsmall=0)),
+                  (format(round(coefrc6[3,4],digits=3),nsmall=0)),
+                  (format(round(coefrc7[3,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefrc1[4,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc2[4,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc3[4,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc4[4,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc5[4,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc6[4,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc7[4,1]),digits=3),nsmall=0))),
+                c((format(round(coefrc1[4,2],digits=3),nsmall=0)),
+                  (format(round(coefrc2[4,2],digits=3),nsmall=0)),
+                  (format(round(coefrc3[4,2],digits=3),nsmall=0)),
+                  (format(round(coefrc4[4,2],digits=3),nsmall=0)),
+                  (format(round(coefrc5[4,2],digits=3),nsmall=0)),
+                  (format(round(coefrc6[4,2],digits=3),nsmall=0)),
+                  (format(round(coefrc7[4,2],digits=3),nsmall=0))),
+                c((format(round(coefrc1[4,4],digits=3),nsmall=0)),
+                  (format(round(coefrc2[4,4],digits=3),nsmall=0)),
+                  (format(round(coefrc3[4,4],digits=3),nsmall=0)),
+                  (format(round(coefrc4[4,4],digits=3),nsmall=0)),
+                  (format(round(coefrc5[4,4],digits=3),nsmall=0)),
+                  (format(round(coefrc6[4,4],digits=3),nsmall=0)),
+                  (format(round(coefrc7[4,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefrc1[5,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc2[5,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc3[5,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc4[5,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc5[5,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc6[5,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc7[5,1]),digits=3),nsmall=0))),
+                c((format(round(coefrc1[5,2],digits=3),nsmall=0)),
+                  (format(round(coefrc2[5,2],digits=3),nsmall=0)),
+                  (format(round(coefrc3[5,2],digits=3),nsmall=0)),
+                  (format(round(coefrc4[5,2],digits=3),nsmall=0)),
+                  (format(round(coefrc5[5,2],digits=3),nsmall=0)),
+                  (format(round(coefrc6[5,2],digits=3),nsmall=0)),
+                  (format(round(coefrc7[5,2],digits=3),nsmall=0))),
+                c((format(round(coefrc1[5,4],digits=3),nsmall=0)),
+                  (format(round(coefrc2[5,4],digits=3),nsmall=0)),
+                  (format(round(coefrc3[5,4],digits=3),nsmall=0)),
+                  (format(round(coefrc4[5,4],digits=3),nsmall=0)),
+                  (format(round(coefrc5[5,4],digits=3),nsmall=0)),
+                  (format(round(coefrc6[5,4],digits=3),nsmall=0)),
+                  (format(round(coefrc7[5,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefrc1[6,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc2[6,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc3[6,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc4[6,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc5[6,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc6[6,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc7[6,1]),digits=3),nsmall=0))),
+                c((format(round(coefrc1[6,2],digits=3),nsmall=0)),
+                  (format(round(coefrc2[6,2],digits=3),nsmall=0)),
+                  (format(round(coefrc3[6,2],digits=3),nsmall=0)),
+                  (format(round(coefrc4[6,2],digits=3),nsmall=0)),
+                  (format(round(coefrc5[6,2],digits=3),nsmall=0)),
+                  (format(round(coefrc6[6,2],digits=3),nsmall=0)),
+                  (format(round(coefrc7[6,2],digits=3),nsmall=0))),
+                c((format(round(coefrc1[6,4],digits=3),nsmall=0)),
+                  (format(round(coefrc2[6,4],digits=3),nsmall=0)),
+                  (format(round(coefrc3[6,4],digits=3),nsmall=0)),
+                  (format(round(coefrc4[6,4],digits=3),nsmall=0)),
+                  (format(round(coefrc5[6,4],digits=3),nsmall=0)),
+                  (format(round(coefrc6[6,4],digits=3),nsmall=0)),
+                  (format(round(coefrc7[6,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefrc1[7,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc2[7,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc3[7,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc4[7,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc5[7,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc6[7,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc7[7,1]),digits=3),nsmall=0))),
+                c((format(round(coefrc1[7,2],digits=3),nsmall=0)),
+                  (format(round(coefrc2[7,2],digits=3),nsmall=0)),
+                  (format(round(coefrc3[7,2],digits=3),nsmall=0)),
+                  (format(round(coefrc4[7,2],digits=3),nsmall=0)),
+                  (format(round(coefrc5[7,2],digits=3),nsmall=0)),
+                  (format(round(coefrc6[7,2],digits=3),nsmall=0)),
+                  (format(round(coefrc7[7,2],digits=3),nsmall=0))),
+                c((format(round(coefrc1[7,4],digits=3),nsmall=0)),
+                  (format(round(coefrc2[7,4],digits=3),nsmall=0)),
+                  (format(round(coefrc3[7,4],digits=3),nsmall=0)),
+                  (format(round(coefrc4[7,4],digits=3),nsmall=0)),
+                  (format(round(coefrc5[7,4],digits=3),nsmall=0)),
+                  (format(round(coefrc6[7,4],digits=3),nsmall=0)),
+                  (format(round(coefrc7[7,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefrc1[8,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc2[8,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc3[8,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc4[8,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc5[8,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc6[8,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc7[8,1]),digits=3),nsmall=0))),
+                c((format(round(coefrc1[8,2],digits=3),nsmall=0)),
+                  (format(round(coefrc2[8,2],digits=3),nsmall=0)),
+                  (format(round(coefrc3[8,2],digits=3),nsmall=0)),
+                  (format(round(coefrc4[8,2],digits=3),nsmall=0)),
+                  (format(round(coefrc5[8,2],digits=3),nsmall=0)),
+                  (format(round(coefrc6[8,2],digits=3),nsmall=0)),
+                  (format(round(coefrc7[8,2],digits=3),nsmall=0))),
+                c((format(round(coefrc1[8,4],digits=3),nsmall=0)),
+                  (format(round(coefrc2[8,4],digits=3),nsmall=0)),
+                  (format(round(coefrc3[8,4],digits=3),nsmall=0)),
+                  (format(round(coefrc4[8,4],digits=3),nsmall=0)),
+                  (format(round(coefrc5[8,4],digits=3),nsmall=0)),
+                  (format(round(coefrc6[8,4],digits=3),nsmall=0)),
+                  (format(round(coefrc7[8,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefrc1[9,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc2[9,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc3[9,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc4[9,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc5[9,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc6[9,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc7[9,1]),digits=3),nsmall=0))),
+                c((format(round(coefrc1[9,2],digits=3),nsmall=0)),
+                  (format(round(coefrc2[9,2],digits=3),nsmall=0)),
+                  (format(round(coefrc3[9,2],digits=3),nsmall=0)),
+                  (format(round(coefrc4[9,2],digits=3),nsmall=0)),
+                  (format(round(coefrc5[9,2],digits=3),nsmall=0)),
+                  (format(round(coefrc6[9,2],digits=3),nsmall=0)),
+                  (format(round(coefrc7[9,2],digits=3),nsmall=0))),
+                c((format(round(coefrc1[9,4],digits=3),nsmall=0)),
+                  (format(round(coefrc2[9,4],digits=3),nsmall=0)),
+                  (format(round(coefrc3[9,4],digits=3),nsmall=0)),
+                  (format(round(coefrc4[9,4],digits=3),nsmall=0)),
+                  (format(round(coefrc5[9,4],digits=3),nsmall=0)),
+                  (format(round(coefrc6[9,4],digits=3),nsmall=0)),
+                  (format(round(coefrc7[9,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefrc1[10,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc2[10,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc3[10,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc4[10,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc5[10,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc6[10,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc7[10,1]),digits=3),nsmall=0))),
+                c((format(round(coefrc1[10,2],digits=3),nsmall=0)),
+                  (format(round(coefrc2[10,2],digits=3),nsmall=0)),
+                  (format(round(coefrc3[10,2],digits=3),nsmall=0)),
+                  (format(round(coefrc4[10,2],digits=3),nsmall=0)),
+                  (format(round(coefrc5[10,2],digits=3),nsmall=0)),
+                  (format(round(coefrc6[10,2],digits=3),nsmall=0)),
+                  (format(round(coefrc7[10,2],digits=3),nsmall=0))),
+                c((format(round(coefrc1[10,4],digits=3),nsmall=0)),
+                  (format(round(coefrc2[10,4],digits=3),nsmall=0)),
+                  (format(round(coefrc3[10,4],digits=3),nsmall=0)),
+                  (format(round(coefrc4[10,4],digits=3),nsmall=0)),
+                  (format(round(coefrc5[10,4],digits=3),nsmall=0)),
+                  (format(round(coefrc6[10,4],digits=3),nsmall=0)),
+                  (format(round(coefrc7[10,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefrc1[11,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc2[11,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc3[11,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc4[11,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc5[11,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc6[11,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc7[11,1]),digits=3),nsmall=0))),
+                c((format(round(coefrc1[11,2],digits=3),nsmall=0)),
+                  (format(round(coefrc2[11,2],digits=3),nsmall=0)),
+                  (format(round(coefrc3[11,2],digits=3),nsmall=0)),
+                  (format(round(coefrc4[11,2],digits=3),nsmall=0)),
+                  (format(round(coefrc5[11,2],digits=3),nsmall=0)),
+                  (format(round(coefrc6[11,2],digits=3),nsmall=0)),
+                  (format(round(coefrc7[11,2],digits=3),nsmall=0))),
+                c((format(round(coefrc1[11,4],digits=3),nsmall=0)),
+                  (format(round(coefrc2[11,4],digits=3),nsmall=0)),
+                  (format(round(coefrc3[11,4],digits=3),nsmall=0)),
+                  (format(round(coefrc4[11,4],digits=3),nsmall=0)),
+                  (format(round(coefrc5[11,4],digits=3),nsmall=0)),
+                  (format(round(coefrc6[11,4],digits=3),nsmall=0)),
+                  (format(round(coefrc7[11,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefrc1[12,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc2[12,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc3[12,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc4[12,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc5[12,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc6[12,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc7[12,1]),digits=3),nsmall=0))),
+                c((format(round(coefrc1[12,2],digits=3),nsmall=0)),
+                  (format(round(coefrc2[12,2],digits=3),nsmall=0)),
+                  (format(round(coefrc3[12,2],digits=3),nsmall=0)),
+                  (format(round(coefrc4[12,2],digits=3),nsmall=0)),
+                  (format(round(coefrc5[12,2],digits=3),nsmall=0)),
+                  (format(round(coefrc6[12,2],digits=3),nsmall=0)),
+                  (format(round(coefrc7[12,2],digits=3),nsmall=0))),
+                c((format(round(coefrc1[12,4],digits=3),nsmall=0)),
+                  (format(round(coefrc2[12,4],digits=3),nsmall=0)),
+                  (format(round(coefrc3[12,4],digits=3),nsmall=0)),
+                  (format(round(coefrc4[12,4],digits=3),nsmall=0)),
+                  (format(round(coefrc5[12,4],digits=3),nsmall=0)),
+                  (format(round(coefrc6[12,4],digits=3),nsmall=0)),
+                  (format(round(coefrc7[12,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefrc1[13,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc2[13,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc3[13,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc4[13,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc5[13,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc6[13,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc7[13,1]),digits=3),nsmall=0))),
+                c((format(round(coefrc1[13,2],digits=3),nsmall=0)),
+                  (format(round(coefrc2[13,2],digits=3),nsmall=0)),
+                  (format(round(coefrc3[13,2],digits=3),nsmall=0)),
+                  (format(round(coefrc4[13,2],digits=3),nsmall=0)),
+                  (format(round(coefrc5[13,2],digits=3),nsmall=0)),
+                  (format(round(coefrc6[13,2],digits=3),nsmall=0)),
+                  (format(round(coefrc7[13,2],digits=3),nsmall=0))),
+                c((format(round(coefrc1[13,4],digits=3),nsmall=0)),
+                  (format(round(coefrc2[13,4],digits=3),nsmall=0)),
+                  (format(round(coefrc3[13,4],digits=3),nsmall=0)),
+                  (format(round(coefrc4[13,4],digits=3),nsmall=0)),
+                  (format(round(coefrc5[13,4],digits=3),nsmall=0)),
+                  (format(round(coefrc6[13,4],digits=3),nsmall=0)),
+                  (format(round(coefrc7[13,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefrc1[14,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc2[14,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc3[14,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc4[14,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc5[14,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc6[14,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc7[14,1]),digits=3),nsmall=0))),
+                c((format(round(coefrc1[14,2],digits=3),nsmall=0)),
+                  (format(round(coefrc2[14,2],digits=3),nsmall=0)),
+                  (format(round(coefrc3[14,2],digits=3),nsmall=0)),
+                  (format(round(coefrc4[14,2],digits=3),nsmall=0)),
+                  (format(round(coefrc5[14,2],digits=3),nsmall=0)),
+                  (format(round(coefrc6[14,2],digits=3),nsmall=0)),
+                  (format(round(coefrc7[14,2],digits=3),nsmall=0))),
+                c((format(round(coefrc1[14,4],digits=3),nsmall=0)),
+                  (format(round(coefrc2[14,4],digits=3),nsmall=0)),
+                  (format(round(coefrc3[14,4],digits=3),nsmall=0)),
+                  (format(round(coefrc4[14,4],digits=3),nsmall=0)),
+                  (format(round(coefrc5[14,4],digits=3),nsmall=0)),
+                  (format(round(coefrc6[14,4],digits=3),nsmall=0)),
+                  (format(round(coefrc7[14,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefrc1[15,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc2[15,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc3[15,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc4[15,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc5[15,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc6[15,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc7[15,1]),digits=3),nsmall=0))),
+                c((format(round(coefrc1[15,2],digits=3),nsmall=0)),
+                  (format(round(coefrc2[15,2],digits=3),nsmall=0)),
+                  (format(round(coefrc3[15,2],digits=3),nsmall=0)),
+                  (format(round(coefrc4[15,2],digits=3),nsmall=0)),
+                  (format(round(coefrc5[15,2],digits=3),nsmall=0)),
+                  (format(round(coefrc6[15,2],digits=3),nsmall=0)),
+                  (format(round(coefrc7[15,2],digits=3),nsmall=0))),
+                c((format(round(coefrc1[15,4],digits=3),nsmall=0)),
+                  (format(round(coefrc2[15,4],digits=3),nsmall=0)),
+                  (format(round(coefrc3[15,4],digits=3),nsmall=0)),
+                  (format(round(coefrc4[15,4],digits=3),nsmall=0)),
+                  (format(round(coefrc5[15,4],digits=3),nsmall=0)),
+                  (format(round(coefrc6[15,4],digits=3),nsmall=0)),
+                  (format(round(coefrc7[15,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefrc1[16,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc2[16,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc3[16,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc4[16,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc5[16,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc6[16,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc7[16,1]),digits=3),nsmall=0))),
+                c((format(round(coefrc1[16,2],digits=3),nsmall=0)),
+                  (format(round(coefrc2[16,2],digits=3),nsmall=0)),
+                  (format(round(coefrc3[16,2],digits=3),nsmall=0)),
+                  (format(round(coefrc4[16,2],digits=3),nsmall=0)),
+                  (format(round(coefrc5[16,2],digits=3),nsmall=0)),
+                  (format(round(coefrc6[16,2],digits=3),nsmall=0)),
+                  (format(round(coefrc7[16,2],digits=3),nsmall=0))),
+                c((format(round(coefrc1[16,4],digits=3),nsmall=0)),
+                  (format(round(coefrc2[16,4],digits=3),nsmall=0)),
+                  (format(round(coefrc3[16,4],digits=3),nsmall=0)),
+                  (format(round(coefrc4[16,4],digits=3),nsmall=0)),
+                  (format(round(coefrc5[16,4],digits=3),nsmall=0)),
+                  (format(round(coefrc6[16,4],digits=3),nsmall=0)),
+                  (format(round(coefrc7[16,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefrc1[17,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc2[17,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc3[17,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc4[17,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc5[17,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc6[17,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc7[17,1]),digits=3),nsmall=0))),
+                c((format(round(coefrc1[17,2],digits=3),nsmall=0)),
+                  (format(round(coefrc2[17,2],digits=3),nsmall=0)),
+                  (format(round(coefrc3[17,2],digits=3),nsmall=0)),
+                  (format(round(coefrc4[17,2],digits=3),nsmall=0)),
+                  (format(round(coefrc5[17,2],digits=3),nsmall=0)),
+                  (format(round(coefrc6[17,2],digits=3),nsmall=0)),
+                  (format(round(coefrc7[17,2],digits=3),nsmall=0))),
+                c((format(round(coefrc1[17,4],digits=3),nsmall=0)),
+                  (format(round(coefrc2[17,4],digits=3),nsmall=0)),
+                  (format(round(coefrc3[17,4],digits=3),nsmall=0)),
+                  (format(round(coefrc4[17,4],digits=3),nsmall=0)),
+                  (format(round(coefrc5[17,4],digits=3),nsmall=0)),
+                  (format(round(coefrc6[17,4],digits=3),nsmall=0)),
+                  (format(round(coefrc7[17,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefrc1[18,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc2[18,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc3[18,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc4[18,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc5[18,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc6[18,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc7[18,1]),digits=3),nsmall=0))),
+                c((format(round(coefrc1[18,2],digits=3),nsmall=0)),
+                  (format(round(coefrc2[18,2],digits=3),nsmall=0)),
+                  (format(round(coefrc3[18,2],digits=3),nsmall=0)),
+                  (format(round(coefrc4[18,2],digits=3),nsmall=0)),
+                  (format(round(coefrc5[18,2],digits=3),nsmall=0)),
+                  (format(round(coefrc6[18,2],digits=3),nsmall=0)),
+                  (format(round(coefrc7[18,2],digits=3),nsmall=0))),
+                c((format(round(coefrc1[18,4],digits=3),nsmall=0)),
+                  (format(round(coefrc2[18,4],digits=3),nsmall=0)),
+                  (format(round(coefrc3[18,4],digits=3),nsmall=0)),
+                  (format(round(coefrc4[18,4],digits=3),nsmall=0)),
+                  (format(round(coefrc5[18,4],digits=3),nsmall=0)),
+                  (format(round(coefrc6[18,4],digits=3),nsmall=0)),
+                  (format(round(coefrc7[18,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefrc1[19,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc2[19,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc3[19,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc4[19,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc5[19,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc6[19,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc7[19,1]),digits=3),nsmall=0))),
+                c((format(round(coefrc1[19,2],digits=3),nsmall=0)),
+                  (format(round(coefrc2[19,2],digits=3),nsmall=0)),
+                  (format(round(coefrc3[19,2],digits=3),nsmall=0)),
+                  (format(round(coefrc4[19,2],digits=3),nsmall=0)),
+                  (format(round(coefrc5[19,2],digits=3),nsmall=0)),
+                  (format(round(coefrc6[19,2],digits=3),nsmall=0)),
+                  (format(round(coefrc7[19,2],digits=3),nsmall=0))),
+                c((format(round(coefrc1[19,4],digits=3),nsmall=0)),
+                  (format(round(coefrc2[19,4],digits=3),nsmall=0)),
+                  (format(round(coefrc3[19,4],digits=3),nsmall=0)),
+                  (format(round(coefrc4[19,4],digits=3),nsmall=0)),
+                  (format(round(coefrc5[19,4],digits=3),nsmall=0)),
+                  (format(round(coefrc6[19,4],digits=3),nsmall=0)),
+                  (format(round(coefrc7[19,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefrc1[20,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc2[20,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc3[20,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc4[20,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc5[20,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc6[20,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc7[20,1]),digits=3),nsmall=0))),
+                c((format(round(coefrc1[20,2],digits=3),nsmall=0)),
+                  (format(round(coefrc2[20,2],digits=3),nsmall=0)),
+                  (format(round(coefrc3[20,2],digits=3),nsmall=0)),
+                  (format(round(coefrc4[20,2],digits=3),nsmall=0)),
+                  (format(round(coefrc5[20,2],digits=3),nsmall=0)),
+                  (format(round(coefrc6[20,2],digits=3),nsmall=0)),
+                  (format(round(coefrc7[20,2],digits=3),nsmall=0))),
+                c((format(round(coefrc1[20,4],digits=3),nsmall=0)),
+                  (format(round(coefrc2[20,4],digits=3),nsmall=0)),
+                  (format(round(coefrc3[20,4],digits=3),nsmall=0)),
+                  (format(round(coefrc4[20,4],digits=3),nsmall=0)),
+                  (format(round(coefrc5[20,4],digits=3),nsmall=0)),
+                  (format(round(coefrc6[20,4],digits=3),nsmall=0)),
+                  (format(round(coefrc7[20,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefrc1[21,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc2[21,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc3[21,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc4[21,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc5[21,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc6[21,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefrc7[21,1]),digits=3),nsmall=0))),
+                c((format(round(coefrc1[21,2],digits=3),nsmall=0)),
+                  (format(round(coefrc2[21,2],digits=3),nsmall=0)),
+                  (format(round(coefrc3[21,2],digits=3),nsmall=0)),
+                  (format(round(coefrc4[21,2],digits=3),nsmall=0)),
+                  (format(round(coefrc5[21,2],digits=3),nsmall=0)),
+                  (format(round(coefrc6[21,2],digits=3),nsmall=0)),
+                  (format(round(coefrc7[21,2],digits=3),nsmall=0))),
+                c((format(round(coefrc1[21,4],digits=3),nsmall=0)),
+                  (format(round(coefrc2[21,4],digits=3),nsmall=0)),
+                  (format(round(coefrc3[21,4],digits=3),nsmall=0)),
+                  (format(round(coefrc4[21,4],digits=3),nsmall=0)),
+                  (format(round(coefrc5[21,4],digits=3),nsmall=0)),
+                  (format(round(coefrc6[21,4],digits=3),nsmall=0)),
+                  (format(round(coefrc7[21,4],digits=3),nsmall=0))),
+                
+                
+                c((format(round(summary(plmrc1)$r.squared[1],digits=3),nsmall=0)),
+                  (format(round(summary(plmrc2)$r.squared[1],digits=3),nsmall=0)),
+                  (format(round(summary(plmrc3)$r.squared[1],digits=3),nsmall=0)),
+                  (format(round(summary(plmrc4)$r.squared[1],digits=3),nsmall=0)),
+                  (format(round(summary(plmrc5)$r.squared[1],digits=3),nsmall=0)),
+                  (format(round(summary(plmrc6)$r.squared[1],digits=3),nsmall=0)),
+                  (format(round(summary(plmrc7)$r.squared[1],digits=3),nsmall=0))),
+                c((format(round(summary(plmrc1)$r.squared[2],digits=3),nsmall=0)),
+                  (format(round(summary(plmrc2)$r.squared[2],digits=3),nsmall=0)),
+                  (format(round(summary(plmrc3)$r.squared[2],digits=3),nsmall=0)),
+                  (format(round(summary(plmrc4)$r.squared[2],digits=3),nsmall=0)),
+                  (format(round(summary(plmrc5)$r.squared[2],digits=3),nsmall=0)),
+                  (format(round(summary(plmrc6)$r.squared[2],digits=3),nsmall=0)),
+                  (format(round(summary(plmrc7)$r.squared[2],digits=3),nsmall=0))),
+                c((format(round(nobs(plmrc1),digits=3),nsmall=0)),
+                  (format(round(nobs(plmrc2),digits=3),nsmall=0)),
+                  (format(round(nobs(plmrc3),digits=3),nsmall=0)),
+                  (format(round(nobs(plmrc4),digits=3),nsmall=0)),
+                  (format(round(nobs(plmrc5),digits=3),nsmall=0)),
+                  (format(round(nobs(plmrc6),digits=3),nsmall=0)),
+                  (format(round(nobs(plmrc7),digits=3),nsmall=0)))
+)
+
+
+
+### NON SEED RATINGS
+
+#### One way random effect at the farmer level  -- no controls 
+
+plmn1<-plm(overall_rating ~ genderdummy , data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
+           effect = "individual")
+coefn1<-coeftest(plmn1, vcovHC(plmn1, type = "HC0", cluster = "time"))
+summary(plmn1)
+coefn1
+
+plmn2<-plm(general_rating_nonseed ~ genderdummy , data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
+           effect = "individual")
+coefn2<-coeftest(plmn2, vcovHC(plmn2, type = "HC0", cluster = "time"))
+summary(plmn2)
+coefn2
+
+plmn3<-plm(location ~ genderdummy , data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
+           effect = "individual")
+coefn3<-coeftest(plmn3, vcovHC(plmn3, type = "HC0", cluster = "time"))
+summary(plmn3)
+coefn3
+
+plmn4<-plm(price ~ genderdummy , data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
+           effect = "individual")
+coefn4<-coeftest(plmn4, vcovHC(plmn4, type = "HC0", cluster = "time"))
+summary(plmn4)
+coefn4
+
+plmn5<-plm(quality ~ genderdummy , data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
+           effect = "individual")
+coefn5<-coeftest(plmn5, vcovHC(plmn5, type = "HC0", cluster = "time"))
+summary(plmn5)
+coefn5
+
+plmn6<-plm(stock ~ genderdummy , data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
+           effect = "individual")
+coefn6<-coeftest(plmn6, vcovHC(plmn6, type = "HC0", cluster = "time"))
+summary(plmn6)
+coefn6
+
+plmn7<-plm(reputation ~ genderdummy , data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
+           effect = "individual")
+coefn7<-coeftest(plmn7, vcovHC(plmn7, type = "HC0", cluster = "time"))
+summary(plmn7)
+coefn7
+
+tab_model(plmn1, plmn2,plmn3, plmn4, plmn5, plmn6, plmn7, p.style = c("stars"), p.threshold = c(0.1, 0.05, 0.01), collapse.ci=TRUE)
+
+rann1<- rbind( c((format(round(sum(coefn1[1,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefn2[1,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefn3[1,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefn4[1,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefn5[1,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefn6[1,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefn7[1,1]),digits=3),nsmall=0))),
+               c((format(round(coefn1[1,2],digits=3),nsmall=0)),
+                 (format(round(coefn2[1,2],digits=3),nsmall=0)),
+                 (format(round(coefn3[1,2],digits=3),nsmall=0)),
+                 (format(round(coefn4[1,2],digits=3),nsmall=0)),
+                 (format(round(coefn5[1,2],digits=3),nsmall=0)),
+                 (format(round(coefn6[1,2],digits=3),nsmall=0)),
+                 (format(round(coefn7[1,2],digits=3),nsmall=0))),
+               c((format(round(coefn1[1,4],digits=3),nsmall=0)),
+                 (format(round(coefn2[1,4],digits=3),nsmall=0)),
+                 (format(round(coefn3[1,4],digits=3),nsmall=0)),
+                 (format(round(coefn4[1,4],digits=3),nsmall=0)),
+                 (format(round(coefn5[1,4],digits=3),nsmall=0)),
+                 (format(round(coefn6[1,4],digits=3),nsmall=0)),
+                 (format(round(coefn7[1,4],digits=3),nsmall=0))),
+               
+               c((format(round(sum(coefn1[2,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefn2[2,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefn3[2,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefn4[2,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefn5[2,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefn6[2,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefn7[2,1]),digits=3),nsmall=0))),
+               c((format(round(coefn1[2,2],digits=3),nsmall=0)),
+                 (format(round(coefn2[2,2],digits=3),nsmall=0)),
+                 (format(round(coefn3[2,2],digits=3),nsmall=0)),
+                 (format(round(coefn4[2,2],digits=3),nsmall=0)),
+                 (format(round(coefn5[2,2],digits=3),nsmall=0)),
+                 (format(round(coefn6[2,2],digits=3),nsmall=0)),
+                 (format(round(coefn7[2,2],digits=3),nsmall=0))),
+               c((format(round(coefn1[2,4],digits=3),nsmall=0)),
+                 (format(round(coefn2[2,4],digits=3),nsmall=0)),
+                 (format(round(coefn3[2,4],digits=3),nsmall=0)),
+                 (format(round(coefn4[2,4],digits=3),nsmall=0)),
+                 (format(round(coefn5[2,4],digits=3),nsmall=0)),
+                 (format(round(coefn6[2,4],digits=3),nsmall=0)),
+                 (format(round(coefn7[2,4],digits=3),nsmall=0))),
+               
+               
+               c((format(round(summary(plmn1)$r.squared[1],digits=3),nsmall=0)),
+                 (format(round(summary(plmn2)$r.squared[1],digits=3),nsmall=0)),
+                 (format(round(summary(plmn3)$r.squared[1],digits=3),nsmall=0)),
+                 (format(round(summary(plmn4)$r.squared[1],digits=3),nsmall=0)),
+                 (format(round(summary(plmn5)$r.squared[1],digits=3),nsmall=0)),
+                 (format(round(summary(plmn6)$r.squared[1],digits=3),nsmall=0)),
+                 (format(round(summary(plmn7)$r.squared[1],digits=3),nsmall=0))),
+               c((format(round(summary(plmn1)$r.squared[2],digits=3),nsmall=0)),
+                 (format(round(summary(plmn2)$r.squared[2],digits=3),nsmall=0)),
+                 (format(round(summary(plmn3)$r.squared[2],digits=3),nsmall=0)),
+                 (format(round(summary(plmn4)$r.squared[2],digits=3),nsmall=0)),
+                 (format(round(summary(plmn5)$r.squared[2],digits=3),nsmall=0)),
+                 (format(round(summary(plmn6)$r.squared[2],digits=3),nsmall=0)),
+                 (format(round(summary(plmn7)$r.squared[2],digits=3),nsmall=0))),
+               c((format(round(nobs(plmn1),digits=3),nsmall=0)),
+                 (format(round(nobs(plmn2),digits=3),nsmall=0)),
+                 (format(round(nobs(plmn3),digits=3),nsmall=0)),
+                 (format(round(nobs(plmn4),digits=3),nsmall=0)),
+                 (format(round(nobs(plmn5),digits=3),nsmall=0)),
+                 (format(round(nobs(plmn6),digits=3),nsmall=0)),
+                 (format(round(nobs(plmn7),digits=3),nsmall=0)))
+)
+
+
+
+
+#### two way random effects at the farmer level and dealer level  -- no controls 
+
+#lmern8<-lmer(overall_rating ~ genderdummy  + (1 | farmer_ID)+ (1 | shop_ID) , data = fedata)
+#lmern9<-lmer(general_rating_nonseed ~ genderdummy  + (1 | farmer_ID) + (1 | shop_ID), data = fedata)
+#lmern10<-lmer(location ~ genderdummy  + (1 | farmer_ID) + (1 | shop_ID), data = fedata)
+#lmern11<-lmer(price ~ genderdummy  + (1 | farmer_ID)+ (1 | shop_ID), data = fedata)
+#lmern12<-lmer(quality~ genderdummy  + (1 | farmer_ID)+ (1 | shop_ID), data = fedata)
+#lmern13<-lmer(stock ~ genderdummy  + (1 | farmer_ID) + (1 | shop_ID), data = fedata)
+#lmern14<-lmer(reputation~ genderdummy  + (1 | farmer_ID)+ (1 | shop_ID) , data = fedata)
+
+#tab_model(lmern8,lmern9,lmern10,lmern11,lmern12,lmern13,lmern14, p.style = c("stars"), p.threshold = c(0.1, 0.05, 0.01), collapse.ci=TRUE)
+
+#### two way random effects at the farmer level and dealer level  -- with controls -- controls are farmer and dealer characteristics 
+
+#lmernc8<-lmer(overall_rating ~ genderdummy  + (1 | farmer_ID)+ (1 | shop_ID)  +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8  +maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale
+# +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+# badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedata)
+
+#lmernc9<-lmer(general_rating_nonseed ~ genderdummy  + (1 | farmer_ID)+ (1 | shop_ID)  +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8  +maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale
+# +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+# badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedata)
+
+#lmernc10<-lmer(location ~ genderdummy  + (1 | farmer_ID)+ (1 | shop_ID)  +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8  +maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4, data = fedata)
+
+#lmernc11<-lmer(price ~ genderdummy  + (1 | farmer_ID)+ (1 | shop_ID)  +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8  +maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale
+# +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+# badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedata)
+
+#lmernc12<-lmer(quality ~ genderdummy  + (1 | farmer_ID)+ (1 | shop_ID)  +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8  +maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale
+# +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+# badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedata)
+
+#lmernc13<-lmer(stock ~ genderdummy  + (1 | farmer_ID)+ (1 | shop_ID)  +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8  +maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4, data = fedata)
+
+#lmernc14<-lmer(reputation ~ genderdummy  + (1 | farmer_ID)+ (1 | shop_ID)  +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8  +maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale
+# +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+# badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedata)
+
+#tab_model(lmernc8,lmernc9,lmernc10,lmernc11,lmernc12,lmernc13,lmernc14, p.style = c("stars"), p.threshold = c(0.1, 0.05, 0.01), collapse.ci=TRUE)
+
+#### One way random effect at the farmer level  -- with controls -- controls are only dealer characteristics 
+
+plmnc1<-plm(overall_rating ~ genderdummy +maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale
+            +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
+            effect = "individual")
+coefnc1<-coeftest(plmnc1, vcovHC(plmnc1, type = "HC0", cluster = "time"))
+summary(plmnc1)
+coefnc1
+
+plmnc2<-plm(general_rating_nonseed ~ genderdummy +maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale
+            +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
+            effect = "individual")
+coefnc2<-coeftest(plmnc2, vcovHC(plmnc2, type = "HC0", cluster = "time"))
+summary(plmnc2)
+coefnc2
+
+plmnc3<-plm(location ~ genderdummy +maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4, data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
+            effect = "individual")
+coefnc3<-coeftest(plmnc3, vcovHC(plmnc3, type = "HC0", cluster = "time"))
+summary(plmnc3)
+coefnc3
+
+plmnc4<-plm(price ~ genderdummy +maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale
+            +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
+            effect = "individual")
+coefnc4<-coeftest(plmnc4, vcovHC(plmnc4, type = "HC0", cluster = "time"))
+summary(plmnc4)
+coefnc4
+
+plmnc5<-plm(quality ~ genderdummy +maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale
+            +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
+            effect = "individual")
+coefnc5<-coeftest(plmnc5, vcovHC(plmnc5, type = "HC0", cluster = "time"))
+summary(plmnc5)
+coefnc5
+
+plmnc6<-plm(stock ~ genderdummy +maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4, data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
+            effect = "individual")
+coefnc6<-coeftest(plmnc6, vcovHC(plmnc6, type = "HC0", cluster = "time"))
+summary(plmnc6)
+coefnc6
+
+plmnc7<-plm(reputation ~ genderdummy +maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale
+            +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
+            effect = "individual")
+coefnc7<-coeftest(plmnc7, vcovHC(plmnc7, type = "HC0", cluster = "time"))
+summary(plmnc7)
+coefnc7
+
+tab_model(plmnc1, plmnc2,plmnc3, plmnc4, plmnc5, plmnc6, plmnc7, p.style = c("stars"), p.threshold = c(0.1, 0.05, 0.01), collapse.ci=TRUE)
+
+rannc1<- rbind( c((format(round(sum(coefnc1[1,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc2[1,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc3[1,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc4[1,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc5[1,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc6[1,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc7[1,1]),digits=3),nsmall=0))),
+                c((format(round(coefnc1[1,2],digits=3),nsmall=0)),
+                  (format(round(coefnc2[1,2],digits=3),nsmall=0)),
+                  (format(round(coefnc3[1,2],digits=3),nsmall=0)),
+                  (format(round(coefnc4[1,2],digits=3),nsmall=0)),
+                  (format(round(coefnc5[1,2],digits=3),nsmall=0)),
+                  (format(round(coefnc6[1,2],digits=3),nsmall=0)),
+                  (format(round(coefnc7[1,2],digits=3),nsmall=0))),
+                c((format(round(coefnc1[1,4],digits=3),nsmall=0)),
+                  (format(round(coefnc2[1,4],digits=3),nsmall=0)),
+                  (format(round(coefnc3[1,4],digits=3),nsmall=0)),
+                  (format(round(coefnc4[1,4],digits=3),nsmall=0)),
+                  (format(round(coefnc5[1,4],digits=3),nsmall=0)),
+                  (format(round(coefnc6[1,4],digits=3),nsmall=0)),
+                  (format(round(coefnc7[1,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefnc1[2,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc2[2,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc3[2,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc4[2,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc5[2,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc6[2,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc7[2,1]),digits=3),nsmall=0))),
+                c((format(round(coefnc1[2,2],digits=3),nsmall=0)),
+                  (format(round(coefnc2[2,2],digits=3),nsmall=0)),
+                  (format(round(coefnc3[2,2],digits=3),nsmall=0)),
+                  (format(round(coefnc4[2,2],digits=3),nsmall=0)),
+                  (format(round(coefnc5[2,2],digits=3),nsmall=0)),
+                  (format(round(coefnc6[2,2],digits=3),nsmall=0)),
+                  (format(round(coefnc7[2,2],digits=3),nsmall=0))),
+                c((format(round(coefnc1[2,4],digits=3),nsmall=0)),
+                  (format(round(coefnc2[2,4],digits=3),nsmall=0)),
+                  (format(round(coefnc3[2,4],digits=3),nsmall=0)),
+                  (format(round(coefnc4[2,4],digits=3),nsmall=0)),
+                  (format(round(coefnc5[2,4],digits=3),nsmall=0)),
+                  (format(round(coefnc6[2,4],digits=3),nsmall=0)),
+                  (format(round(coefnc7[2,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefnc1[3,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc2[3,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc3[3,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc4[3,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc5[3,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc6[3,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc7[3,1]),digits=3),nsmall=0))),
+                c((format(round(coefnc1[3,2],digits=3),nsmall=0)),
+                  (format(round(coefnc2[3,2],digits=3),nsmall=0)),
+                  (format(round(coefnc3[3,2],digits=3),nsmall=0)),
+                  (format(round(coefnc4[3,2],digits=3),nsmall=0)),
+                  (format(round(coefnc5[3,2],digits=3),nsmall=0)),
+                  (format(round(coefnc6[3,2],digits=3),nsmall=0)),
+                  (format(round(coefnc7[3,2],digits=3),nsmall=0))),
+                c((format(round(coefnc1[3,4],digits=3),nsmall=0)),
+                  (format(round(coefnc2[3,4],digits=3),nsmall=0)),
+                  (format(round(coefnc3[3,4],digits=3),nsmall=0)),
+                  (format(round(coefnc4[3,4],digits=3),nsmall=0)),
+                  (format(round(coefnc5[3,4],digits=3),nsmall=0)),
+                  (format(round(coefnc6[3,4],digits=3),nsmall=0)),
+                  (format(round(coefnc7[3,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefnc1[4,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc2[4,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc3[4,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc4[4,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc5[4,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc6[4,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc7[4,1]),digits=3),nsmall=0))),
+                c((format(round(coefnc1[4,2],digits=3),nsmall=0)),
+                  (format(round(coefnc2[4,2],digits=3),nsmall=0)),
+                  (format(round(coefnc3[4,2],digits=3),nsmall=0)),
+                  (format(round(coefnc4[4,2],digits=3),nsmall=0)),
+                  (format(round(coefnc5[4,2],digits=3),nsmall=0)),
+                  (format(round(coefnc6[4,2],digits=3),nsmall=0)),
+                  (format(round(coefnc7[4,2],digits=3),nsmall=0))),
+                c((format(round(coefnc1[4,4],digits=3),nsmall=0)),
+                  (format(round(coefnc2[4,4],digits=3),nsmall=0)),
+                  (format(round(coefnc3[4,4],digits=3),nsmall=0)),
+                  (format(round(coefnc4[4,4],digits=3),nsmall=0)),
+                  (format(round(coefnc5[4,4],digits=3),nsmall=0)),
+                  (format(round(coefnc6[4,4],digits=3),nsmall=0)),
+                  (format(round(coefnc7[4,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefnc1[5,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc2[5,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc3[5,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc4[5,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc5[5,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc6[5,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc7[5,1]),digits=3),nsmall=0))),
+                c((format(round(coefnc1[5,2],digits=3),nsmall=0)),
+                  (format(round(coefnc2[5,2],digits=3),nsmall=0)),
+                  (format(round(coefnc3[5,2],digits=3),nsmall=0)),
+                  (format(round(coefnc4[5,2],digits=3),nsmall=0)),
+                  (format(round(coefnc5[5,2],digits=3),nsmall=0)),
+                  (format(round(coefnc6[5,2],digits=3),nsmall=0)),
+                  (format(round(coefnc7[5,2],digits=3),nsmall=0))),
+                c((format(round(coefnc1[5,4],digits=3),nsmall=0)),
+                  (format(round(coefnc2[5,4],digits=3),nsmall=0)),
+                  (format(round(coefnc3[5,4],digits=3),nsmall=0)),
+                  (format(round(coefnc4[5,4],digits=3),nsmall=0)),
+                  (format(round(coefnc5[5,4],digits=3),nsmall=0)),
+                  (format(round(coefnc6[5,4],digits=3),nsmall=0)),
+                  (format(round(coefnc7[5,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefnc1[6,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc2[6,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc3[6,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc4[6,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc5[6,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc6[6,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc7[6,1]),digits=3),nsmall=0))),
+                c((format(round(coefnc1[6,2],digits=3),nsmall=0)),
+                  (format(round(coefnc2[6,2],digits=3),nsmall=0)),
+                  (format(round(coefnc3[6,2],digits=3),nsmall=0)),
+                  (format(round(coefnc4[6,2],digits=3),nsmall=0)),
+                  (format(round(coefnc5[6,2],digits=3),nsmall=0)),
+                  (format(round(coefnc6[6,2],digits=3),nsmall=0)),
+                  (format(round(coefnc7[6,2],digits=3),nsmall=0))),
+                c((format(round(coefnc1[6,4],digits=3),nsmall=0)),
+                  (format(round(coefnc2[6,4],digits=3),nsmall=0)),
+                  (format(round(coefnc3[6,4],digits=3),nsmall=0)),
+                  (format(round(coefnc4[6,4],digits=3),nsmall=0)),
+                  (format(round(coefnc5[6,4],digits=3),nsmall=0)),
+                  (format(round(coefnc6[6,4],digits=3),nsmall=0)),
+                  (format(round(coefnc7[6,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefnc1[7,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc2[7,1]),digits=3),nsmall=0)),
+                  0,
+                  (format(round(sum(coefnc4[7,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc5[7,1]),digits=3),nsmall=0)),
+                  0,
+                  (format(round(sum(coefnc7[7,1]),digits=3),nsmall=0))),
+                c((format(round(coefnc1[7,2],digits=3),nsmall=0)),
+                  (format(round(coefnc2[7,2],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefnc4[7,2],digits=3),nsmall=0)),
+                  (format(round(coefnc5[7,2],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefnc7[7,2],digits=3),nsmall=0))),
+                c((format(round(coefnc1[7,4],digits=3),nsmall=0)),
+                  (format(round(coefnc2[7,4],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefnc4[7,4],digits=3),nsmall=0)),
+                  (format(round(coefnc5[7,4],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefnc7[7,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefnc1[8,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc2[8,1]),digits=3),nsmall=0)),
+                  0,
+                  (format(round(sum(coefnc4[8,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc5[8,1]),digits=3),nsmall=0)),
+                  0,
+                  (format(round(sum(coefnc7[8,1]),digits=3),nsmall=0))),
+                c((format(round(coefnc1[8,2],digits=3),nsmall=0)),
+                  (format(round(coefnc2[8,2],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefnc4[8,2],digits=3),nsmall=0)),
+                  (format(round(coefnc5[8,2],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefnc7[8,2],digits=3),nsmall=0))),
+                c((format(round(coefnc1[8,4],digits=3),nsmall=0)),
+                  (format(round(coefnc2[8,4],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefnc4[8,4],digits=3),nsmall=0)),
+                  (format(round(coefnc5[8,4],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefnc7[8,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefnc1[9,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc2[9,1]),digits=3),nsmall=0)),
+                  0,
+                  (format(round(sum(coefnc4[9,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc5[9,1]),digits=3),nsmall=0)),
+                  0,
+                  (format(round(sum(coefnc7[9,1]),digits=3),nsmall=0))),
+                c((format(round(coefnc1[9,2],digits=3),nsmall=0)),
+                  (format(round(coefnc2[9,2],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefnc4[9,2],digits=3),nsmall=0)),
+                  (format(round(coefnc5[9,2],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefnc7[9,2],digits=3),nsmall=0))),
+                c((format(round(coefnc1[9,4],digits=3),nsmall=0)),
+                  (format(round(coefnc2[9,4],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefnc4[9,4],digits=3),nsmall=0)),
+                  (format(round(coefnc5[9,4],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefnc7[9,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefnc1[10,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc2[10,1]),digits=3),nsmall=0)),
+                  0,
+                  (format(round(sum(coefnc4[10,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc5[10,1]),digits=3),nsmall=0)),
+                  0,
+                  (format(round(sum(coefnc7[10,1]),digits=3),nsmall=0))),
+                c((format(round(coefnc1[10,2],digits=3),nsmall=0)),
+                  (format(round(coefnc2[10,2],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefnc4[10,2],digits=3),nsmall=0)),
+                  (format(round(coefnc5[10,2],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefnc7[10,2],digits=3),nsmall=0))),
+                c((format(round(coefnc1[10,4],digits=3),nsmall=0)),
+                  (format(round(coefnc2[10,4],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefnc4[10,4],digits=3),nsmall=0)),
+                  (format(round(coefnc5[10,4],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefnc7[10,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefnc1[11,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc2[11,1]),digits=3),nsmall=0)),
+                  0,
+                  (format(round(sum(coefnc4[11,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc5[11,1]),digits=3),nsmall=0)),
+                  0,
+                  (format(round(sum(coefnc7[11,1]),digits=3),nsmall=0))),
+                c((format(round(coefnc1[11,2],digits=3),nsmall=0)),
+                  (format(round(coefnc2[11,2],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefnc4[11,2],digits=3),nsmall=0)),
+                  (format(round(coefnc5[11,2],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefnc7[11,2],digits=3),nsmall=0))),
+                c((format(round(coefnc1[11,4],digits=3),nsmall=0)),
+                  (format(round(coefnc2[11,4],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefnc4[11,4],digits=3),nsmall=0)),
+                  (format(round(coefnc5[11,4],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefnc7[11,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefnc1[12,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc2[12,1]),digits=3),nsmall=0)),
+                  0,
+                  (format(round(sum(coefnc4[12,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc5[12,1]),digits=3),nsmall=0)),
+                  0,
+                  (format(round(sum(coefnc7[12,1]),digits=3),nsmall=0))),
+                c((format(round(coefnc1[12,2],digits=3),nsmall=0)),
+                  (format(round(coefnc2[12,2],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefnc4[12,2],digits=3),nsmall=0)),
+                  (format(round(coefnc5[12,2],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefnc7[12,2],digits=3),nsmall=0))),
+                c((format(round(coefnc1[12,4],digits=3),nsmall=0)),
+                  (format(round(coefnc2[12,4],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefnc4[12,4],digits=3),nsmall=0)),
+                  (format(round(coefnc5[12,4],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefnc7[12,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefnc1[13,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc2[13,1]),digits=3),nsmall=0)),
+                  0,
+                  (format(round(sum(coefnc4[13,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc5[13,1]),digits=3),nsmall=0)),
+                  0,
+                  (format(round(sum(coefnc7[13,1]),digits=3),nsmall=0))),
+                c((format(round(coefnc1[13,2],digits=3),nsmall=0)),
+                  (format(round(coefnc2[13,2],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefnc4[13,2],digits=3),nsmall=0)),
+                  (format(round(coefnc5[13,2],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefnc7[13,2],digits=3),nsmall=0))),
+                c((format(round(coefnc1[13,4],digits=3),nsmall=0)),
+                  (format(round(coefnc2[13,4],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefnc4[13,4],digits=3),nsmall=0)),
+                  (format(round(coefnc5[13,4],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefnc7[13,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefnc1[14,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc2[14,1]),digits=3),nsmall=0)),
+                  0,
+                  (format(round(sum(coefnc4[14,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc5[14,1]),digits=3),nsmall=0)),
+                  0,
+                  (format(round(sum(coefnc7[14,1]),digits=3),nsmall=0))),
+                c((format(round(coefnc1[14,2],digits=3),nsmall=0)),
+                  (format(round(coefnc2[14,2],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefnc4[14,2],digits=3),nsmall=0)),
+                  (format(round(coefnc5[14,2],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefnc7[14,2],digits=3),nsmall=0))),
+                c((format(round(coefnc1[14,4],digits=3),nsmall=0)),
+                  (format(round(coefnc2[14,4],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefnc4[14,4],digits=3),nsmall=0)),
+                  (format(round(coefnc5[14,4],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefnc7[14,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefnc1[15,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc2[15,1]),digits=3),nsmall=0)),
+                  0,
+                  (format(round(sum(coefnc4[15,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc5[15,1]),digits=3),nsmall=0)),
+                  0,
+                  (format(round(sum(coefnc7[15,1]),digits=3),nsmall=0))),
+                c((format(round(coefnc1[15,2],digits=3),nsmall=0)),
+                  (format(round(coefnc2[15,2],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefnc4[15,2],digits=3),nsmall=0)),
+                  (format(round(coefnc5[15,2],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefnc7[15,2],digits=3),nsmall=0))),
+                c((format(round(coefnc1[15,4],digits=3),nsmall=0)),
+                  (format(round(coefnc2[15,4],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefnc4[15,4],digits=3),nsmall=0)),
+                  (format(round(coefnc5[15,4],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefnc7[15,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefnc1[16,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc2[16,1]),digits=3),nsmall=0)),
+                  0,
+                  (format(round(sum(coefnc4[16,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc5[16,1]),digits=3),nsmall=0)),
+                  0,
+                  (format(round(sum(coefnc7[16,1]),digits=3),nsmall=0))),
+                c((format(round(coefnc1[16,2],digits=3),nsmall=0)),
+                  (format(round(coefnc2[16,2],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefnc4[16,2],digits=3),nsmall=0)),
+                  (format(round(coefnc5[16,2],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefnc7[16,2],digits=3),nsmall=0))),
+                c((format(round(coefnc1[16,4],digits=3),nsmall=0)),
+                  (format(round(coefnc2[16,4],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefnc4[16,4],digits=3),nsmall=0)),
+                  (format(round(coefnc5[16,4],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefnc7[16,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefnc1[17,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc2[17,1]),digits=3),nsmall=0)),
+                  0,
+                  (format(round(sum(coefnc4[17,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc5[17,1]),digits=3),nsmall=0)),
+                  0,
+                  (format(round(sum(coefnc7[17,1]),digits=3),nsmall=0))),
+                c((format(round(coefnc1[17,2],digits=3),nsmall=0)),
+                  (format(round(coefnc2[17,2],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefnc4[17,2],digits=3),nsmall=0)),
+                  (format(round(coefnc5[17,2],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefnc7[17,2],digits=3),nsmall=0))),
+                c((format(round(coefnc1[17,4],digits=3),nsmall=0)),
+                  (format(round(coefnc2[17,4],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefnc4[17,4],digits=3),nsmall=0)),
+                  (format(round(coefnc5[17,4],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefnc7[17,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefnc1[18,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc2[18,1]),digits=3),nsmall=0)),
+                  0,
+                  (format(round(sum(coefnc4[18,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc5[18,1]),digits=3),nsmall=0)),
+                  0,
+                  (format(round(sum(coefnc7[18,1]),digits=3),nsmall=0))),
+                c((format(round(coefnc1[18,2],digits=3),nsmall=0)),
+                  (format(round(coefnc2[18,2],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefnc4[18,2],digits=3),nsmall=0)),
+                  (format(round(coefnc5[18,2],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefnc7[18,2],digits=3),nsmall=0))),
+                c((format(round(coefnc1[18,4],digits=3),nsmall=0)),
+                  (format(round(coefnc2[18,4],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefnc4[18,4],digits=3),nsmall=0)),
+                  (format(round(coefnc5[18,4],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefnc7[18,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefnc1[19,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc2[19,1]),digits=3),nsmall=0)),
+                  0,
+                  (format(round(sum(coefnc4[19,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc5[19,1]),digits=3),nsmall=0)),
+                  0,
+                  (format(round(sum(coefnc7[19,1]),digits=3),nsmall=0))),
+                c((format(round(coefnc1[19,2],digits=3),nsmall=0)),
+                  (format(round(coefnc2[19,2],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefnc4[19,2],digits=3),nsmall=0)),
+                  (format(round(coefnc5[19,2],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefnc7[19,2],digits=3),nsmall=0))),
+                c((format(round(coefnc1[19,4],digits=3),nsmall=0)),
+                  (format(round(coefnc2[19,4],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefnc4[19,4],digits=3),nsmall=0)),
+                  (format(round(coefnc5[19,4],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefnc7[19,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefnc1[20,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc2[20,1]),digits=3),nsmall=0)),
+                  0,
+                  (format(round(sum(coefnc4[20,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc5[20,1]),digits=3),nsmall=0)),
+                  0,
+                  (format(round(sum(coefnc7[20,1]),digits=3),nsmall=0))),
+                c((format(round(coefnc1[20,2],digits=3),nsmall=0)),
+                  (format(round(coefnc2[20,2],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefnc4[20,2],digits=3),nsmall=0)),
+                  (format(round(coefnc5[20,2],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefnc7[20,2],digits=3),nsmall=0))),
+                c((format(round(coefnc1[20,4],digits=3),nsmall=0)),
+                  (format(round(coefnc2[20,4],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefnc4[20,4],digits=3),nsmall=0)),
+                  (format(round(coefnc5[20,4],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefnc7[20,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefnc1[21,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc2[21,1]),digits=3),nsmall=0)),
+                  0,
+                  (format(round(sum(coefnc4[21,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnc5[21,1]),digits=3),nsmall=0)),
+                  0,
+                  (format(round(sum(coefnc7[21,1]),digits=3),nsmall=0))),
+                c((format(round(coefnc1[21,2],digits=3),nsmall=0)),
+                  (format(round(coefnc2[21,2],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefnc4[21,2],digits=3),nsmall=0)),
+                  (format(round(coefnc5[21,2],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefnc7[21,2],digits=3),nsmall=0))),
+                c((format(round(coefnc1[21,4],digits=3),nsmall=0)),
+                  (format(round(coefnc2[21,4],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefnc4[21,4],digits=3),nsmall=0)),
+                  (format(round(coefnc5[21,4],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefnc7[21,4],digits=3),nsmall=0))),
+                
+                
+                c((format(round(summary(plmnc1)$r.squared[1],digits=3),nsmall=0)),
+                  (format(round(summary(plmnc2)$r.squared[1],digits=3),nsmall=0)),
+                  (format(round(summary(plmnc3)$r.squared[1],digits=3),nsmall=0)),
+                  (format(round(summary(plmnc4)$r.squared[1],digits=3),nsmall=0)),
+                  (format(round(summary(plmnc5)$r.squared[1],digits=3),nsmall=0)),
+                  (format(round(summary(plmnc6)$r.squared[1],digits=3),nsmall=0)),
+                  (format(round(summary(plmnc7)$r.squared[1],digits=3),nsmall=0))),
+                c((format(round(summary(plmnc1)$r.squared[2],digits=3),nsmall=0)),
+                  (format(round(summary(plmnc2)$r.squared[2],digits=3),nsmall=0)),
+                  (format(round(summary(plmnc3)$r.squared[2],digits=3),nsmall=0)),
+                  (format(round(summary(plmnc4)$r.squared[2],digits=3),nsmall=0)),
+                  (format(round(summary(plmnc5)$r.squared[2],digits=3),nsmall=0)),
+                  (format(round(summary(plmnc6)$r.squared[2],digits=3),nsmall=0)),
+                  (format(round(summary(plmnc7)$r.squared[2],digits=3),nsmall=0))),
+                c((format(round(nobs(plmnc1),digits=3),nsmall=0)),
+                  (format(round(nobs(plmnc2),digits=3),nsmall=0)),
+                  (format(round(nobs(plmnc3),digits=3),nsmall=0)),
+                  (format(round(nobs(plmnc4),digits=3),nsmall=0)),
+                  (format(round(nobs(plmnc5),digits=3),nsmall=0)),
+                  (format(round(nobs(plmnc6),digits=3),nsmall=0)),
+                  (format(round(nobs(plmnc7),digits=3),nsmall=0)))
+)
+
+
+
+############################################################################################################################################
+
+
+
+
 
 
 ##################################################################################################################
@@ -7481,7 +8846,9 @@ s_deal8<- rbind(c((format(round(sum(mn_q8$coefficients[1]),digits=3),nsmall=0)),
 ################### FE at the dealer level #########################
 ####################################################################
 
-fedatad <- merge(rating_dyads, farmers_seed, by="farmer_ID")
+fedatad_base <- merge(rating_dyads, baseline_dealer, by="shop_ID")
+
+fedatad <- merge(fedatad_base, farmers_seed, by="farmer_ID")
 
 fedatad[fedatad=="n/a"]<- NA
 fedatad[fedatad=="98"]<- NA
@@ -7506,6 +8873,115 @@ summary(fedatad$Check2.check.maize.q14 )
 #distance from tarmac road
 fedatad$Check2.check.maize.q8[ fedatad$Check2.check.maize.q8==999 ] <- NA
 summary(fedatad$Check2.check.maize.q8 )
+
+
+###dealer characteristics for  controls
+
+#education of dealers
+table(fedatad$maize.owner.agree.educ) 
+fedatad$prim <- 0
+#finished secondary educ --- e and f ; a,b,c,d --- did not finish secondary educ
+fedatad$prim[fedatad$maize.owner.agree.educ=="e"|fedatad$maize.owner.agree.educ=="f"] <- 1
+fedatad$prim[fedatad$maize.owner.agree.educ=="g"]<- NA
+table(fedatad$prim)
+
+#age of dealer
+summary(fedatad$maize.owner.agree.age)
+fedatad$maize.owner.agree.age[fedatad$maize.owner.agree.age==999] <- NA
+table(fedatad$maize.owner.agree.age)
+
+#distance of shop to nearest tarmac road
+table(fedatad$maize.owner.agree.q3)
+fedatad$maize.owner.agree.q3[fedatad$maize.owner.agree.q3==999] <- NA
+summary(fedatad$maize.owner.agree.q3)
+
+#distance of shop to nearest murram road
+table(fedatad$maize.owner.agree.q4)
+
+#selling only farm inputs
+table(fedatad$maize.owner.agree.q5)
+fedatad$inputsale<- ifelse(fedatad$maize.owner.agree.q5== 'Yes', 1, 0)
+
+#Q8. When was this agro-input shop established? (year)
+fedatad$years_shop <- 2020 - as.numeric(as.character(substr(fedatad$maize.owner.agree.q8, start=1, stop=4)))
+
+#seed stored in dedicated area?
+fedatad$maize.owner.agree.q69
+fedatad$dedarea<-as.character(fedatad$maize.owner.agree.temp.q69)
+fedatad$dedicated_area<- ifelse(fedatad$dedarea== 'Yes', 1, 0)
+table(fedatad$dedicated_area)
+
+#problem with rats or pests?
+#we try to formulate this as a good quality variable --- So, no problem with pests is good
+fedatad$maize.owner.agree.q71
+fedatad$pest<-as.character(fedatad$maize.owner.agree.temp.q71)
+fedatad$pest_prob<- ifelse(fedatad$pest== 'No', 1, 0)
+table(fedatad$pest_prob)
+
+#roof leak proof?
+fedatad$maize.owner.agree.q72
+fedatad$roof<-as.character(fedatad$maize.owner.agree.temp.q72)
+fedatad$leakproof<- ifelse(fedatad$roof== 'Yes', 1, 0)
+table(fedatad$leakproof)
+
+#roof insulated?
+fedatad$maize.owner.agree.q73
+fedatad$roof_insu<-as.character(fedatad$maize.owner.agree.temp.q73)
+fedatad$insulated<- ifelse(fedatad$roof_insu== 'Yes', 1, 0)
+table(fedatad$insulated)
+
+#walls insulated?
+fedatad$maize.owner.agree.q74
+fedatad$wall_insu<-as.character(fedatad$maize.owner.agree.temp.q74)
+fedatad$wall_heatproof<- ifelse(fedatad$wall_insu== 'Yes', 1, 0)
+table(fedatad$wall_heatproof)
+
+#area ventilated?
+fedatad$maize.owner.agree.q75
+fedatad$vent<-as.character(fedatad$maize.owner.agree.temp.q75)
+fedatad$ventilation<- ifelse(fedatad$vent== 'Yes', 1, 0)
+table(fedatad$ventilation)
+
+#Q78. Lighting conditions in area where seed is stored?
+#we try to formulate this as good quality variable --- 2 is good lighting
+fedatad$badlighting <- 0
+fedatad$badlighting[fedatad$maize.owner.agree.temp.q78=="2"]<-1
+table(fedatad$badlighting)
+
+#Q79. On what surface are seed stored?
+#we try to formulate this as good quality variable ---- 3,4,5 are good storage surfaces
+fedatad$badstored <- 0
+fedatad$badstored[fedatad$maize.owner.agree.temp.q79=="3"|fedatad$maize.owner.agree.temp.q79=="4"|fedatad$maize.owner.agree.temp.q79=="5"]<-1
+fedatad$badstored[fedatad$maize.owner.agree.temp.q79==96]<-NA
+table(fedatad$badstored)
+
+#Q80. Do you see maize seed that is stored in open bags or containers?
+#we try to formulate this as good quality variable --- Not being stored in open containers is good
+fedatad$maize.owner.agree.q80
+fedatad$open<-as.character(fedatad$maize.owner.agree.temp.q80)
+fedatad$open_storage<- ifelse(fedatad$open== 'No', 1, 0)
+table(fedatad$open_storage)
+
+#Q81. Do you see any official certificates displayed in the store (eg that the shop was inspected ,that the owner attended trainings
+#or that the business is registered with some association)
+fedatad$maize.owner.agree.q81
+fedatad$cert<-as.character(fedatad$maize.owner.agree.temp.q81)
+fedatad$cert_yes<- ifelse(fedatad$cert== 'Yes', 1, 0)
+table(fedatad$cert_yes)
+
+#Q82. On a scale of 1 to 5, rate this shop in terms of cleanness and professionality 1 poor 5 excellent
+fedatad$shop_rate<-as.numeric(as.character(fedatad$maize.owner.agree.temp.q82))
+table(fedatad$shop_rate)
+
+#Q96. Since last season, did you receive any complaint from a customer that seed you sold was not good?
+#we try to formulate this as good quality variable, not getting any complaint is good
+table(fedatad$maize.owner.agree.q96)
+fedatad$complaint<- ifelse(fedatad$maize.owner.agree.q96== 'No', 1, 0)
+table(fedatad$complaint)
+
+#Q70. Enter the temperature in the seed store (where seed is stored)
+table(fedatad$maize.owner.agree.q70)
+fedatad$maize.owner.agree.q70[fedatad$maize.owner.agree.q70==999] <- NA
 
 
 ###AVERAGE RATINGS
@@ -7591,65 +9067,6 @@ id8<-mean(fixef(plmd8))
 sed8<- sqrt(diag(vcov(plmd8)))
 
 coefd8<-coeftest(plmd8, vcovHC(plmd8, type = "HC0", cluster = "time"))
-
-
-#### One way random effect at the dealer level  -- no controls 
-lmerb1<-lmer(score~farmergen  + (1 | shop_ID.x) , data = fedatad)
-lmerb2<-lmer(general~farmergen  + (1 | shop_ID.x) , data = fedatad)
-lmerb3<-lmer(yield ~farmergen  + (1 | shop_ID.x) , data = fedatad)
-lmerb4<-lmer(drought_resistent ~farmergen  + (1 | shop_ID.x) , data = fedatad)
-lmerb5<-lmer(disease_resistent ~farmergen  + (1 | shop_ID.x) , data = fedatad)
-lmerb6<-lmer(early_maturing ~farmergen  + (1 | shop_ID.x) , data = fedatad)
-lmerb7<-lmer(germination ~farmergen  + (1 | shop_ID.x) , data = fedatad)
-
-
-#### Two way random effect at the dealer level and farmer level   -- no controls 
-lmerb8<-lmer(score~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) , data = fedatad)
-lmerb9<-lmer(general~farmergen  + (1 | shop_ID.x) + (1 | farmer_ID), data = fedatad)
-lmerb10<-lmer(yield ~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) , data = fedatad)
-lmerb11<-lmer(drought_resistent ~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) , data = fedatad)
-lmerb12<-lmer(disease_resistent ~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) , data = fedatad)
-lmerb13<-lmer(early_maturing ~farmergen  + (1 | shop_ID.x) + (1 | farmer_ID), data = fedatad)
-lmerb14<-lmer(germination ~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) , data = fedatad)
-
-
-#### One way random effect at the dealer level  -- with controls -- controls are only farmer characteristics 
-lmerbc1<-lmer(score~farmergen  + (1 | shop_ID.x)+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8 , data = fedatad)
-lmerbc2<-lmer(general~farmergen  + (1 | shop_ID.x) +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8, data = fedatad)
-lmerbc3<-lmer(yield ~farmergen  + (1 | shop_ID.x)+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8 , data = fedatad)
-lmerbc4<-lmer(drought_resistent ~farmergen  + (1 | shop_ID.x) +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8, data = fedatad)
-lmerbc5<-lmer(disease_resistent ~farmergen  + (1 | shop_ID.x)+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8 , data = fedatad)
-lmerbc6<-lmer(early_maturing ~farmergen  + (1 | shop_ID.x)+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8 , data = fedatad)
-lmerbc7<-lmer(germination ~farmergen  + (1 | shop_ID.x)+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8 , data = fedatad)
-
-
-######### NON SEED
-#### One way random effect at the dealer level  -- no controls 
-lmerbn1<-lmer(overall_rating~farmergen  + (1 | shop_ID.x) , data = fedatad)
-lmerbn2<-lmer(general_rating~farmergen  + (1 | shop_ID.x) , data = fedatad)
-lmerbn3<-lmer(location ~farmergen  + (1 | shop_ID.x) , data = fedatad)
-lmerbn4<-lmer(price ~farmergen  + (1 | shop_ID.x) , data = fedatad)
-lmerbn5<-lmer(quality ~farmergen  + (1 | shop_ID.x) , data = fedatad)
-lmerbn6<-lmer(stock ~farmergen  + (1 | shop_ID.x) , data = fedatad)
-lmerbn7<-lmer(reputation ~farmergen  + (1 | shop_ID.x) , data = fedatad)
-
-#### Two way random effect at the dealer level and farmer level  -- no controls 
-lmerbn8<-lmer(overall_rating~farmergen  + (1 | shop_ID.x) + (1 | farmer_ID), data = fedatad)
-lmerbn9<-lmer(general_rating~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) , data = fedatad)
-lmerbn10<-lmer(location ~farmergen  + (1 | shop_ID.x) + (1 | farmer_ID), data = fedatad)
-lmerbn11<-lmer(price ~farmergen  + (1 | shop_ID.x) + (1 | farmer_ID), data = fedatad)
-lmerbn12<-lmer(quality ~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) , data = fedatad)
-lmerbn13<-lmer(stock ~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) , data = fedatad)
-lmerbn14<-lmer(reputation ~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) , data = fedatad)
-
-#### One way random effect at the dealer level  -- with controls -- controls are farmer characteristics 
-lmerbnc1<-lmer(overall_rating~farmergen  + (1 | shop_ID.x) +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8 , data = fedatad)
-lmerbnc2<-lmer(general_rating~farmergen  + (1 | shop_ID.x) +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8 , data = fedatad)
-lmerbnc3<-lmer(location ~farmergen  + (1 | shop_ID.x)+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8  , data = fedatad)
-lmerbnc4<-lmer(price ~farmergen  + (1 | shop_ID.x)+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8  , data = fedatad)
-lmerbnc5<-lmer(quality ~farmergen  + (1 | shop_ID.x) +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8 , data = fedatad)
-lmerbnc6<-lmer(stock ~farmergen  + (1 | shop_ID.x) +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8 , data = fedatad)
-lmerbnc7<-lmer(reputation ~farmergen  + (1 | shop_ID.x) +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8 , data = fedatad)
 
 
 
@@ -8248,24 +9665,744 @@ fed4<- rbind( c((format(round(idn9[1],digits=3),nsmall=0)),
 )
 
 
-#Q1
-#Seed
-tab_model(lmer1,lmer2,lmer3,lmer4,lmer5,lmer6,lmer7) #one way without controls at farmer level 
-tab_model(lmer8,lmer9,lmer10,lmer11,lmer12,lmer13,lmer14)   #two way without controls 
-tab_model(lmerc1,lmerc2,lmerc3,lmerc4,lmerc5,lmerc6,lmerc7) # one way with controls at farmer level 
-#non-seed
-tab_model(lmern1,lmern2,lmern3,lmern4,lmern5,lmern6,lmern7) #one way without controls at farmer level 
-tab_model(lmern8,lmern9,lmern10,lmern11,lmern12,lmern13,lmern14)    #two way without controls 
-tab_model(lmernc1,lmernc2,lmernc3,lmernc4,lmernc5,lmernc6,lmernc7)   # one way with controls at farmer level 
+
+#################################################################################################################
+#################################################################################################################
+###################                             RANDOM EFFECTS                    ###############################
+#################################################################################################################
+#################################################################################################################
+
+########## SEED RATINGS 
+
+#### One way random effect at the dealer level  -- no controls 
+plmb1<-plm(score ~ farmergen, data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
+           effect = "individual")
+coefb1<-coeftest(plmb1, vcovHC(plmb1, type = "HC0", cluster = "time"))
+summary(plmb1)
+coefb1
+
+plmb2<-plm(general ~ farmergen, data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
+           effect = "individual")
+coefb2<-coeftest(plmb2, vcovHC(plmb2, type = "HC0", cluster = "time"))
+summary(plmb2)
+coefb2
+
+plmb3<-plm(yield ~ farmergen, data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
+           effect = "individual")
+coefb3<-coeftest(plmb3, vcovHC(plmb3, type = "HC0", cluster = "time"))
+summary(plmb3)
+coefb3
+
+plmb4<-plm(drought_resistent~ farmergen, data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
+           effect = "individual")
+coefb4<-coeftest(plmb4, vcovHC(plmb4, type = "HC0", cluster = "time"))
+summary(plmb4)
+coefb4
+
+plmb5<-plm(disease_resistent~ farmergen, data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
+           effect = "individual")
+coefb5<-coeftest(plmb5, vcovHC(plmb5, type = "HC0", cluster = "time"))
+summary(plmb5)
+coefb5
+
+plmb6<-plm(early_maturing ~ farmergen, data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
+           effect = "individual")
+coefb6<-coeftest(plmb6, vcovHC(plmb6, type = "HC0", cluster = "time"))
+summary(plmb6)
+coefb6
+
+plmb7<-plm(germination ~ farmergen, data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
+           effect = "individual")
+coefb7<-coeftest(plmb7, vcovHC(plmb7, type = "HC0", cluster = "time"))
+summary(plmb7)
+coefb7
 
 
+tab_model(plmb1, plmb2,plmb3, plmb4, plmb5, plmb6, plmb7, p.style = c("stars"), p.threshold = c(0.1, 0.05, 0.01), collapse.ci=TRUE)
 
-#Q2
-#Seed
-tab_model(lmerb1,lmerb2,lmerb3,lmerb4,lmerb5,lmerb6,lmerb7) #one way without controls at dealer level 
-tab_model(lmerb8,lmerb9,lmerb10,lmerb11,lmerb12,lmerb13,lmerb14)   #two way without controls 
-tab_model(lmerbc1,lmerbc2,lmerbc3,lmerbc4,lmerbc5,lmerbc6,lmerbc7) # one way with controls at dealer level 
-#non-seed
-tab_model(lmerbn1,lmerbn2,lmerbn3,lmerbn4,lmerbn5,lmerbn6,lmerbn7) #one way without controls at dealer level 
-tab_model(lmerbn8,lmerbn9,lmerbn10,lmerbn11,lmerbn12,lmerbn13,lmerbn14)    #two way without controls 
-tab_model(lmerbnc1,lmerbnc2,lmerbnc3,lmerbnc4,lmerbnc5,lmerbnc6,lmerbnc7)   # one way with controls at dealer level 
+
+ranb1<- rbind( c((format(round(sum(coefb1[1,1]),digits=3),nsmall=0)),
+                (format(round(sum(coefb2[1,1]),digits=3),nsmall=0)),
+                (format(round(sum(coefb3[1,1]),digits=3),nsmall=0)),
+                (format(round(sum(coefb4[1,1]),digits=3),nsmall=0)),
+                (format(round(sum(coefb5[1,1]),digits=3),nsmall=0)),
+                (format(round(sum(coefb6[1,1]),digits=3),nsmall=0)),
+                (format(round(sum(coefb7[1,1]),digits=3),nsmall=0))),
+              c((format(round(coefb1[1,2],digits=3),nsmall=0)),
+                (format(round(coefb2[1,2],digits=3),nsmall=0)),
+                (format(round(coefb3[1,2],digits=3),nsmall=0)),
+                (format(round(coefb4[1,2],digits=3),nsmall=0)),
+                (format(round(coefb5[1,2],digits=3),nsmall=0)),
+                (format(round(coefb6[1,2],digits=3),nsmall=0)),
+                (format(round(coefb7[1,2],digits=3),nsmall=0))),
+              c((format(round(coefb1[1,4],digits=3),nsmall=0)),
+                (format(round(coefb2[1,4],digits=3),nsmall=0)),
+                (format(round(coefb3[1,4],digits=3),nsmall=0)),
+                (format(round(coefb4[1,4],digits=3),nsmall=0)),
+                (format(round(coefb5[1,4],digits=3),nsmall=0)),
+                (format(round(coefb6[1,4],digits=3),nsmall=0)),
+                (format(round(coefb7[1,4],digits=3),nsmall=0))),
+              
+              c((format(round(sum(coefb1[2,1]),digits=3),nsmall=0)),
+                (format(round(sum(coefb2[2,1]),digits=3),nsmall=0)),
+                (format(round(sum(coefb3[2,1]),digits=3),nsmall=0)),
+                (format(round(sum(coefb4[2,1]),digits=3),nsmall=0)),
+                (format(round(sum(coefb5[2,1]),digits=3),nsmall=0)),
+                (format(round(sum(coefb6[2,1]),digits=3),nsmall=0)),
+                (format(round(sum(coefb7[2,1]),digits=3),nsmall=0))),
+              c((format(round(coefb1[2,2],digits=3),nsmall=0)),
+                (format(round(coefb2[2,2],digits=3),nsmall=0)),
+                (format(round(coefb3[2,2],digits=3),nsmall=0)),
+                (format(round(coefb4[2,2],digits=3),nsmall=0)),
+                (format(round(coefb5[2,2],digits=3),nsmall=0)),
+                (format(round(coefb6[2,2],digits=3),nsmall=0)),
+                (format(round(coefb7[2,2],digits=3),nsmall=0))),
+              c((format(round(coefb1[2,4],digits=3),nsmall=0)),
+                (format(round(coefb2[2,4],digits=3),nsmall=0)),
+                (format(round(coefb3[2,4],digits=3),nsmall=0)),
+                (format(round(coefb4[2,4],digits=3),nsmall=0)),
+                (format(round(coefb5[2,4],digits=3),nsmall=0)),
+                (format(round(coefb6[2,4],digits=3),nsmall=0)),
+                (format(round(coefb7[2,4],digits=3),nsmall=0))),
+              
+            
+              c((format(round(summary(plmb1)$r.squared[1],digits=3),nsmall=0)),
+                (format(round(summary(plmb2)$r.squared[1],digits=3),nsmall=0)),
+                (format(round(summary(plmb3)$r.squared[1],digits=3),nsmall=0)),
+                (format(round(summary(plmb4)$r.squared[1],digits=3),nsmall=0)),
+                (format(round(summary(plmb5)$r.squared[1],digits=3),nsmall=0)),
+                (format(round(summary(plmb6)$r.squared[1],digits=3),nsmall=0)),
+                (format(round(summary(plmb7)$r.squared[1],digits=3),nsmall=0))),
+              c((format(round(summary(plmb1)$r.squared[2],digits=3),nsmall=0)),
+                (format(round(summary(plmb2)$r.squared[2],digits=3),nsmall=0)),
+                (format(round(summary(plmb3)$r.squared[2],digits=3),nsmall=0)),
+                (format(round(summary(plmb4)$r.squared[2],digits=3),nsmall=0)),
+                (format(round(summary(plmb5)$r.squared[2],digits=3),nsmall=0)),
+                (format(round(summary(plmb6)$r.squared[2],digits=3),nsmall=0)),
+                (format(round(summary(plmb7)$r.squared[2],digits=3),nsmall=0))),
+              c((format(round(nobs(plmb1),digits=3),nsmall=0)),
+                (format(round(nobs(plmb2),digits=3),nsmall=0)),
+                (format(round(nobs(plmb3),digits=3),nsmall=0)),
+                (format(round(nobs(plmb4),digits=3),nsmall=0)),
+                (format(round(nobs(plmb5),digits=3),nsmall=0)),
+                (format(round(nobs(plmb6),digits=3),nsmall=0)),
+                (format(round(nobs(plmb7),digits=3),nsmall=0)))
+)
+
+
+#### One way random effect at the farmer level  -- no controls 
+#plmb8<-plm(score ~ farmergen, data =fedatad,  model = "random", index = c("farmer_ID","shop_ID.x"),
+        #   effect = "individual")
+
+
+#### Two way random effect at the dealer level and farmer level   -- no controls
+
+#lmerb8<-lmer(score~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) , data = fedatad)
+#lmerb9<-lmer(general~farmergen  + (1 | shop_ID.x) + (1 | farmer_ID), data = fedatad)
+#lmerb10<-lmer(yield ~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) , data = fedatad)
+#lmerb11<-lmer(drought_resistent ~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) , data = fedatad)
+#lmerb12<-lmer(disease_resistent ~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) , data = fedatad)
+#lmerb13<-lmer(early_maturing ~farmergen  + (1 | shop_ID.x) + (1 | farmer_ID), data = fedatad)
+#lmerb14<-lmer(germination ~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) , data = fedatad)
+
+#tab_model(lmerb8, lmerb9, lmerb10, lmerb11, lmerb12, lmerb13, lmerb14, p.style = c("stars"), p.threshold = c(0.1, 0.05, 0.01), collapse.ci=TRUE)
+
+
+#### Two way random effect at the dealer level and farmer level --- with controls --- controls are farmer and dealer characteristics 
+
+#lmerbc8<-lmer(score~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+#+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+ # badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedatad)
+
+#lmerbc9<-lmer(general~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+#+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+# badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedatad)
+
+#lmerbc10<-lmer(yield~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+#+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+# badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedatad)
+
+#lmerbc11<-lmer(drought_resistent ~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+#+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+# badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedatad)
+
+#lmerbc12<-lmer(disease_resistent~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+#+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+# badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedatad)
+
+#lmerbc13<-lmer(early_maturing~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+#+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+# badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedatad)
+
+#lmerbc14<-lmer(germination~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+#+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+# badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedatad)
+
+#tab_model(lmerbc8, lmerbc9, lmerbc10, lmerbc11, lmerbc12, lmerbc13, lmerbc14, p.style = c("stars"), p.threshold = c(0.1, 0.05, 0.01), collapse.ci=TRUE)
+
+
+#### One way random effect at the dealer level  -- with controls -- controls are only farmer characteristics 
+plmbc1<-plm(score ~ farmergen+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8 , data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
+            effect = "individual")
+coefbc1<-coeftest(plmbc1, vcovHC(plmbc1, type = "HC0", cluster = "time"))
+summary(plmbc1)
+coefbc1
+
+plmbc2<-plm(general ~ farmergen+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8 , data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
+            effect = "individual")
+coefbc2<-coeftest(plmbc2, vcovHC(plmbc2, type = "HC0", cluster = "time"))
+summary(plmbc2)
+coefbc2
+
+plmbc3<-plm(yield ~ farmergen+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8 , data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
+            effect = "individual")
+coefbc3<-coeftest(plmbc3, vcovHC(plmbc3, type = "HC0", cluster = "time"))
+summary(plmbc3)
+coefbc3
+
+plmbc4<-plm(drought_resistent ~ farmergen+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8 , data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
+            effect = "individual")
+coefbc4<-coeftest(plmbc4,  vcovHC(plmbc4, type = "HC0", cluster = "time"))
+summary(plmbc4)
+coefbc4
+
+plmbc5<-plm(disease_resistent ~ farmergen+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8 , data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
+            effect = "individual")
+coefbc5<-coeftest(plmbc5,  vcovHC(plmbc5, type = "HC0", cluster = "time"))
+summary(plmbc5)
+coefbc5
+
+plmbc6<-plm(early_maturing ~ farmergen+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8 , data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
+            effect = "individual")
+coefbc6<-coeftest(plmbc6,  vcovHC(plmbc6, type = "HC0", cluster = "time"))
+summary(plmbc6)
+coefbc6
+
+plmbc7<-plm(germination ~ farmergen+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8 , data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
+            effect = "individual")
+coefbc7<-coeftest(plmbc7,  vcovHC(plmbc7, type = "HC0", cluster = "time"))
+summary(plmbc7)
+coefbc7
+
+tab_model(plmbc1, plmbc2,plmbc3, plmbc4, plmbc5, plmbc6, plmbc7, p.style = c("stars"), p.threshold = c(0.1, 0.05, 0.01), collapse.ci=TRUE)
+
+ranbc1<- rbind( c((format(round(sum(coefbc1[1,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefbc2[1,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefbc3[1,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefbc4[1,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefbc5[1,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefbc6[1,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefbc7[1,1]),digits=3),nsmall=0))),
+               c((format(round(coefbc1[1,2],digits=3),nsmall=0)),
+                 (format(round(coefbc2[1,2],digits=3),nsmall=0)),
+                 (format(round(coefbc3[1,2],digits=3),nsmall=0)),
+                 (format(round(coefbc4[1,2],digits=3),nsmall=0)),
+                 (format(round(coefbc5[1,2],digits=3),nsmall=0)),
+                 (format(round(coefbc6[1,2],digits=3),nsmall=0)),
+                 (format(round(coefbc7[1,2],digits=3),nsmall=0))),
+               c((format(round(coefbc1[1,4],digits=3),nsmall=0)),
+                 (format(round(coefbc2[1,4],digits=3),nsmall=0)),
+                 (format(round(coefbc3[1,4],digits=3),nsmall=0)),
+                 (format(round(coefbc4[1,4],digits=3),nsmall=0)),
+                 (format(round(coefbc5[1,4],digits=3),nsmall=0)),
+                 (format(round(coefbc6[1,4],digits=3),nsmall=0)),
+                 (format(round(coefbc7[1,4],digits=3),nsmall=0))),
+              
+               c((format(round(sum(coefbc1[2,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefbc2[2,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefbc3[2,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefbc4[2,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefbc5[2,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefbc6[2,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefbc7[2,1]),digits=3),nsmall=0))),
+               c((format(round(coefbc1[2,2],digits=3),nsmall=0)),
+                 (format(round(coefbc2[2,2],digits=3),nsmall=0)),
+                 (format(round(coefbc3[2,2],digits=3),nsmall=0)),
+                 (format(round(coefbc4[2,2],digits=3),nsmall=0)),
+                 (format(round(coefbc5[2,2],digits=3),nsmall=0)),
+                 (format(round(coefbc6[2,2],digits=3),nsmall=0)),
+                 (format(round(coefbc7[2,2],digits=3),nsmall=0))),
+               c((format(round(coefbc1[2,4],digits=3),nsmall=0)),
+                 (format(round(coefbc2[2,4],digits=3),nsmall=0)),
+                 (format(round(coefbc3[2,4],digits=3),nsmall=0)),
+                 (format(round(coefbc4[2,4],digits=3),nsmall=0)),
+                 (format(round(coefbc5[2,4],digits=3),nsmall=0)),
+                 (format(round(coefbc6[2,4],digits=3),nsmall=0)),
+                 (format(round(coefbc7[2,4],digits=3),nsmall=0))),
+               
+               c((format(round(sum(coefbc1[3,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefbc2[3,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefbc3[3,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefbc4[3,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefbc5[3,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefbc6[3,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefbc7[3,1]),digits=3),nsmall=0))),
+               c((format(round(coefbc1[3,2],digits=3),nsmall=0)),
+                 (format(round(coefbc2[3,2],digits=3),nsmall=0)),
+                 (format(round(coefbc3[3,2],digits=3),nsmall=0)),
+                 (format(round(coefbc4[3,2],digits=3),nsmall=0)),
+                 (format(round(coefbc5[3,2],digits=3),nsmall=0)),
+                 (format(round(coefbc6[3,2],digits=3),nsmall=0)),
+                 (format(round(coefbc7[3,2],digits=3),nsmall=0))),
+               c((format(round(coefbc1[3,4],digits=3),nsmall=0)),
+                 (format(round(coefbc2[3,4],digits=3),nsmall=0)),
+                 (format(round(coefbc3[3,4],digits=3),nsmall=0)),
+                 (format(round(coefbc4[3,4],digits=3),nsmall=0)),
+                 (format(round(coefbc5[3,4],digits=3),nsmall=0)),
+                 (format(round(coefbc6[3,4],digits=3),nsmall=0)),
+                 (format(round(coefbc7[3,4],digits=3),nsmall=0))),
+               
+               c((format(round(sum(coefbc1[4,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefbc2[4,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefbc3[4,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefbc4[4,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefbc5[4,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefbc6[4,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefbc7[4,1]),digits=3),nsmall=0))),
+               c((format(round(coefbc1[4,2],digits=3),nsmall=0)),
+                 (format(round(coefbc2[4,2],digits=3),nsmall=0)),
+                 (format(round(coefbc3[4,2],digits=3),nsmall=0)),
+                 (format(round(coefbc4[4,2],digits=3),nsmall=0)),
+                 (format(round(coefbc5[4,2],digits=3),nsmall=0)),
+                 (format(round(coefbc6[4,2],digits=3),nsmall=0)),
+                 (format(round(coefbc7[4,2],digits=3),nsmall=0))),
+               c((format(round(coefbc1[4,4],digits=3),nsmall=0)),
+                 (format(round(coefbc2[4,4],digits=3),nsmall=0)),
+                 (format(round(coefbc3[4,4],digits=3),nsmall=0)),
+                 (format(round(coefbc4[4,4],digits=3),nsmall=0)),
+                 (format(round(coefbc5[4,4],digits=3),nsmall=0)),
+                 (format(round(coefbc6[4,4],digits=3),nsmall=0)),
+                 (format(round(coefbc7[4,4],digits=3),nsmall=0))),
+               
+               c((format(round(sum(coefbc1[5,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefbc2[5,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefbc3[5,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefbc4[5,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefbc5[5,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefbc6[5,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefbc7[5,1]),digits=3),nsmall=0))),
+               c((format(round(coefbc1[5,2],digits=3),nsmall=0)),
+                 (format(round(coefbc2[5,2],digits=3),nsmall=0)),
+                 (format(round(coefbc3[5,2],digits=3),nsmall=0)),
+                 (format(round(coefbc4[5,2],digits=3),nsmall=0)),
+                 (format(round(coefbc5[5,2],digits=3),nsmall=0)),
+                 (format(round(coefbc6[5,2],digits=3),nsmall=0)),
+                 (format(round(coefbc7[5,2],digits=3),nsmall=0))),
+               c((format(round(coefbc1[5,4],digits=3),nsmall=0)),
+                 (format(round(coefbc2[5,4],digits=3),nsmall=0)),
+                 (format(round(coefbc3[5,4],digits=3),nsmall=0)),
+                 (format(round(coefbc4[5,4],digits=3),nsmall=0)),
+                 (format(round(coefbc5[5,4],digits=3),nsmall=0)),
+                 (format(round(coefbc6[5,4],digits=3),nsmall=0)),
+                 (format(round(coefbc7[5,4],digits=3),nsmall=0))),
+               
+               c((format(round(sum(coefbc1[6,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefbc2[6,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefbc3[6,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefbc4[6,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefbc5[6,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefbc6[6,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefbc7[6,1]),digits=3),nsmall=0))),
+               c((format(round(coefbc1[6,2],digits=3),nsmall=0)),
+                 (format(round(coefbc2[6,2],digits=3),nsmall=0)),
+                 (format(round(coefbc3[6,2],digits=3),nsmall=0)),
+                 (format(round(coefbc4[6,2],digits=3),nsmall=0)),
+                 (format(round(coefbc5[6,2],digits=3),nsmall=0)),
+                 (format(round(coefbc6[6,2],digits=3),nsmall=0)),
+                 (format(round(coefbc7[6,2],digits=3),nsmall=0))),
+               c((format(round(coefbc1[6,4],digits=3),nsmall=0)),
+                 (format(round(coefbc2[6,4],digits=3),nsmall=0)),
+                 (format(round(coefbc3[6,4],digits=3),nsmall=0)),
+                 (format(round(coefbc4[6,4],digits=3),nsmall=0)),
+                 (format(round(coefbc5[6,4],digits=3),nsmall=0)),
+                 (format(round(coefbc6[6,4],digits=3),nsmall=0)),
+                 (format(round(coefbc7[6,4],digits=3),nsmall=0))),
+              
+              
+               c((format(round(summary(plmbc1)$r.squared[1],digits=3),nsmall=0)),
+                 (format(round(summary(plmbc2)$r.squared[1],digits=3),nsmall=0)),
+                 (format(round(summary(plmbc3)$r.squared[1],digits=3),nsmall=0)),
+                 (format(round(summary(plmbc4)$r.squared[1],digits=3),nsmall=0)),
+                 (format(round(summary(plmbc5)$r.squared[1],digits=3),nsmall=0)),
+                 (format(round(summary(plmbc6)$r.squared[1],digits=3),nsmall=0)),
+                 (format(round(summary(plmbc7)$r.squared[1],digits=3),nsmall=0))),
+               c((format(round(summary(plmbc1)$r.squared[2],digits=3),nsmall=0)),
+                 (format(round(summary(plmbc2)$r.squared[2],digits=3),nsmall=0)),
+                 (format(round(summary(plmbc3)$r.squared[2],digits=3),nsmall=0)),
+                 (format(round(summary(plmbc4)$r.squared[2],digits=3),nsmall=0)),
+                 (format(round(summary(plmbc5)$r.squared[2],digits=3),nsmall=0)),
+                 (format(round(summary(plmbc6)$r.squared[2],digits=3),nsmall=0)),
+                 (format(round(summary(plmbc7)$r.squared[2],digits=3),nsmall=0))),
+               c((format(round(nobs(plmbc1),digits=3),nsmall=0)),
+                 (format(round(nobs(plmbc2),digits=3),nsmall=0)),
+                 (format(round(nobs(plmbc3),digits=3),nsmall=0)),
+                 (format(round(nobs(plmbc4),digits=3),nsmall=0)),
+                 (format(round(nobs(plmbc5),digits=3),nsmall=0)),
+                 (format(round(nobs(plmbc6),digits=3),nsmall=0)),
+                 (format(round(nobs(plmbc7),digits=3),nsmall=0)))
+)
+
+
+######### NON SEED
+
+#### One way random effect at the dealer level  -- no controls 
+
+plmbn1<-plm(overall_rating ~ farmergen , data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
+            effect = "individual")
+coefbn1<-coeftest(plmbn1,  vcovHC(plmbn1, type = "HC0", cluster = "time"))
+summary(plmbn1)
+coefbn1
+
+plmbn2<-plm(general_rating_nonseed ~ farmergen , data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
+            effect = "individual")
+coefbn2<-coeftest(plmbn2,  vcovHC(plmbn2, type = "HC0", cluster = "time"))
+summary(plmbn2)
+coefbn2
+
+plmbn3<-plm(location ~ farmergen , data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
+            effect = "individual")
+coefbn3<-coeftest(plmbn3,  vcovHC(plmbn3, type = "HC0", cluster = "time"))
+summary(plmbn3)
+coefbn3
+
+plmbn4<-plm(price ~ farmergen , data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
+            effect = "individual")
+coefbn4<-coeftest(plmbn4,  vcovHC(plmbn4, type = "HC0", cluster = "time"))
+summary(plmbn4)
+coefbn4
+
+plmbn5<-plm(quality ~ farmergen , data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
+            effect = "individual")
+coefbn5<-coeftest(plmbn5,  vcovHC(plmbn5, type = "HC0", cluster = "time"))
+summary(plmbn5)
+coefbn5
+
+plmbn6<-plm(stock ~ farmergen , data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
+            effect = "individual")
+coefbn6<-coeftest(plmbn6,  vcovHC(plmbn6, type = "HC0", cluster = "time"))
+summary(plmbn6)
+coefbn6
+
+plmbn7<-plm(reputation ~ farmergen , data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
+            effect = "individual")
+coefbn7<-coeftest(plmbn7,  vcovHC(plmbn7, type = "HC0", cluster = "time"))
+summary(plmbn7)
+coefbn7
+
+tab_model(plmbn1, plmbn2,plmbn3, plmbn4, plmbn5, plmbn6, plmbn7, p.style = c("stars"), p.threshold = c(0.1, 0.05, 0.01), collapse.ci=TRUE)
+
+
+ranbn1<- rbind( c((format(round(sum(coefbn1[1,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefbn2[1,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefbn3[1,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefbn4[1,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefbn5[1,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefbn6[1,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefbn7[1,1]),digits=3),nsmall=0))),
+               c((format(round(coefbn1[1,2],digits=3),nsmall=0)),
+                 (format(round(coefbn2[1,2],digits=3),nsmall=0)),
+                 (format(round(coefbn3[1,2],digits=3),nsmall=0)),
+                 (format(round(coefbn4[1,2],digits=3),nsmall=0)),
+                 (format(round(coefbn5[1,2],digits=3),nsmall=0)),
+                 (format(round(coefbn6[1,2],digits=3),nsmall=0)),
+                 (format(round(coefbn7[1,2],digits=3),nsmall=0))),
+               c((format(round(coefbn1[1,4],digits=3),nsmall=0)),
+                 (format(round(coefbn2[1,4],digits=3),nsmall=0)),
+                 (format(round(coefbn3[1,4],digits=3),nsmall=0)),
+                 (format(round(coefbn4[1,4],digits=3),nsmall=0)),
+                 (format(round(coefbn5[1,4],digits=3),nsmall=0)),
+                 (format(round(coefbn6[1,4],digits=3),nsmall=0)),
+                 (format(round(coefbn7[1,4],digits=3),nsmall=0))),
+               
+               c((format(round(sum(coefbn1[2,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefbn2[2,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefbn3[2,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefbn4[2,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefbn5[2,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefbn6[2,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefbn7[2,1]),digits=3),nsmall=0))),
+               c((format(round(coefbn1[2,2],digits=3),nsmall=0)),
+                 (format(round(coefbn2[2,2],digits=3),nsmall=0)),
+                 (format(round(coefbn3[2,2],digits=3),nsmall=0)),
+                 (format(round(coefbn4[2,2],digits=3),nsmall=0)),
+                 (format(round(coefbn5[2,2],digits=3),nsmall=0)),
+                 (format(round(coefbn6[2,2],digits=3),nsmall=0)),
+                 (format(round(coefbn7[2,2],digits=3),nsmall=0))),
+               c((format(round(coefbn1[2,4],digits=3),nsmall=0)),
+                 (format(round(coefbn2[2,4],digits=3),nsmall=0)),
+                 (format(round(coefbn3[2,4],digits=3),nsmall=0)),
+                 (format(round(coefbn4[2,4],digits=3),nsmall=0)),
+                 (format(round(coefbn5[2,4],digits=3),nsmall=0)),
+                 (format(round(coefbn6[2,4],digits=3),nsmall=0)),
+                 (format(round(coefbn7[2,4],digits=3),nsmall=0))),
+               
+               
+               c((format(round(summary(plmbn1)$r.squared[1],digits=3),nsmall=0)),
+                 (format(round(summary(plmbn2)$r.squared[1],digits=3),nsmall=0)),
+                 (format(round(summary(plmbn3)$r.squared[1],digits=3),nsmall=0)),
+                 (format(round(summary(plmbn4)$r.squared[1],digits=3),nsmall=0)),
+                 (format(round(summary(plmbn5)$r.squared[1],digits=3),nsmall=0)),
+                 (format(round(summary(plmbn6)$r.squared[1],digits=3),nsmall=0)),
+                 (format(round(summary(plmbn7)$r.squared[1],digits=3),nsmall=0))),
+               c((format(round(summary(plmbn1)$r.squared[2],digits=3),nsmall=0)),
+                 (format(round(summary(plmbn2)$r.squared[2],digits=3),nsmall=0)),
+                 (format(round(summary(plmbn3)$r.squared[2],digits=3),nsmall=0)),
+                 (format(round(summary(plmbn4)$r.squared[2],digits=3),nsmall=0)),
+                 (format(round(summary(plmbn5)$r.squared[2],digits=3),nsmall=0)),
+                 (format(round(summary(plmbn6)$r.squared[2],digits=3),nsmall=0)),
+                 (format(round(summary(plmbn7)$r.squared[2],digits=3),nsmall=0))),
+               c((format(round(nobs(plmbn1),digits=3),nsmall=0)),
+                 (format(round(nobs(plmbn2),digits=3),nsmall=0)),
+                 (format(round(nobs(plmbn3),digits=3),nsmall=0)),
+                 (format(round(nobs(plmbn4),digits=3),nsmall=0)),
+                 (format(round(nobs(plmbn5),digits=3),nsmall=0)),
+                 (format(round(nobs(plmbn6),digits=3),nsmall=0)),
+                 (format(round(nobs(plmbn7),digits=3),nsmall=0)))
+)
+
+
+#### Two way random effect at the dealer level and farmer level  -- no controls 
+
+#lmerbn8<-lmer(overall_rating~farmergen  + (1 | shop_ID.x) + (1 | farmer_ID), data = fedatad)
+#lmerbn9<-lmer(general_rating_nonseed ~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) , data = fedatad)
+#lmerbn10<-lmer(location ~farmergen  + (1 | shop_ID.x) + (1 | farmer_ID), data = fedatad)
+#lmerbn11<-lmer(price ~farmergen  + (1 | shop_ID.x) + (1 | farmer_ID), data = fedatad)
+#lmerbn12<-lmer(quality ~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) , data = fedatad)
+#lmerbn13<-lmer(stock ~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) , data = fedatad)
+#lmerbn14<-lmer(reputation ~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) , data = fedatad)
+
+#tab_model(lmerbn8, lmerbn9,lmerbn10,lmerbn11,lmerbn12,lmerbn13,lmerbn14, p.style = c("stars"), p.threshold = c(0.1, 0.05, 0.01), collapse.ci=TRUE)
+
+#### Two way random effect at the dealer level and farmer level --- with controls --- controls are farmer and dealer characteristics 
+
+#lmerbnc8<-lmer(overall_rating~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+#+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+# badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedatad)
+
+#lmerbnc9<-lmer(general_rating_nonseed~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+#+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+# badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedatad)
+
+#lmerbnc10<-lmer(location~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4, data = fedatad)
+
+#lmerbnc11<-lmer(price~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+#+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+# badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedatad)
+
+#lmerbnc12<-lmer(quality~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+#+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+# badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedatad)
+
+#lmerbnc13<-lmer(stock~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4, data = fedatad)
+
+#lmerbnc14<-lmer(reputation ~ farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+#+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+# badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedatad)
+
+#tab_model(lmerbnc8, lmerbnc9,lmerbnc10,lmerbnc11,lmerbnc12,lmerbnc13,lmerbnc14, p.style = c("stars"), p.threshold = c(0.1, 0.05, 0.01), collapse.ci=TRUE)
+
+
+#### One way random effect at the dealer level  -- with controls -- controls are farmer characteristics 
+
+plmbnc1<-plm(overall_rating ~ farmergen+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8 , data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
+             effect = "individual")
+coefbnc1<-coeftest(plmbnc1,  vcovHC(plmbnc1, type = "HC0", cluster = "time"))
+summary(plmbnc1)
+coefbnc1
+
+plmbnc2<-plm(general_rating_nonseed ~ farmergen+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8 , data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
+             effect = "individual")
+coefbnc2<-coeftest(plmbnc2,  vcovHC(plmbnc2, type = "HC0", cluster = "time"))
+summary(plmbnc2)
+coefbnc2
+
+plmbnc3<-plm(location ~ farmergen+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8 , data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
+             effect = "individual")
+coefbnc3<-coeftest(plmbnc3,  vcovHC(plmbnc3, type = "HC0", cluster = "time"))
+summary(plmbnc3)
+coefbnc3
+
+plmbnc4<-plm(price ~ farmergen+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8 , data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
+             effect = "individual")
+coefbnc4<-coeftest(plmbnc4,  vcovHC(plmbnc4, type = "HC0", cluster = "time"))
+summary(plmbnc4)
+coefbnc4
+
+plmbnc5<-plm(quality ~ farmergen+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8 , data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
+             effect = "individual")
+coefbnc5<-coeftest(plmbnc5,  vcovHC(plmbnc5, type = "HC0", cluster = "time"))
+summary(plmbnc5)
+coefbnc5
+
+plmbnc6<-plm(stock ~ farmergen+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8 , data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
+             effect = "individual")
+coefbnc6<-coeftest(plmbnc6,  vcovHC(plmbnc6, type = "HC0", cluster = "time"))
+summary(plmbnc6)
+coefbnc6
+
+plmbnc7<-plm(reputation ~ farmergen+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8 , data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
+             effect = "individual")
+coefbnc7<-coeftest(plmbnc7,  vcovHC(plmbnc7, type = "HC0", cluster = "time"))
+summary(plmbnc7)
+coefbnc7
+
+tab_model(plmbnc1, plmbnc2,plmbnc3, plmbnc4, plmbnc5, plmbnc6, plmbnc7, p.style = c("stars"), p.threshold = c(0.1, 0.05, 0.01), collapse.ci=TRUE)
+
+ranbnc1<- rbind( c((format(round(sum(coefbnc1[1,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnc2[1,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnc3[1,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnc4[1,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnc5[1,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnc6[1,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnc7[1,1]),digits=3),nsmall=0))),
+                c((format(round(coefbnc1[1,2],digits=3),nsmall=0)),
+                  (format(round(coefbnc2[1,2],digits=3),nsmall=0)),
+                  (format(round(coefbnc3[1,2],digits=3),nsmall=0)),
+                  (format(round(coefbnc4[1,2],digits=3),nsmall=0)),
+                  (format(round(coefbnc5[1,2],digits=3),nsmall=0)),
+                  (format(round(coefbnc6[1,2],digits=3),nsmall=0)),
+                  (format(round(coefbnc7[1,2],digits=3),nsmall=0))),
+                c((format(round(coefbnc1[1,4],digits=3),nsmall=0)),
+                  (format(round(coefbnc2[1,4],digits=3),nsmall=0)),
+                  (format(round(coefbnc3[1,4],digits=3),nsmall=0)),
+                  (format(round(coefbnc4[1,4],digits=3),nsmall=0)),
+                  (format(round(coefbnc5[1,4],digits=3),nsmall=0)),
+                  (format(round(coefbnc6[1,4],digits=3),nsmall=0)),
+                  (format(round(coefbnc7[1,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefbnc1[2,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnc2[2,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnc3[2,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnc4[2,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnc5[2,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnc6[2,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnc7[2,1]),digits=3),nsmall=0))),
+                c((format(round(coefbnc1[2,2],digits=3),nsmall=0)),
+                  (format(round(coefbnc2[2,2],digits=3),nsmall=0)),
+                  (format(round(coefbnc3[2,2],digits=3),nsmall=0)),
+                  (format(round(coefbnc4[2,2],digits=3),nsmall=0)),
+                  (format(round(coefbnc5[2,2],digits=3),nsmall=0)),
+                  (format(round(coefbnc6[2,2],digits=3),nsmall=0)),
+                  (format(round(coefbnc7[2,2],digits=3),nsmall=0))),
+                c((format(round(coefbnc1[2,4],digits=3),nsmall=0)),
+                  (format(round(coefbnc2[2,4],digits=3),nsmall=0)),
+                  (format(round(coefbnc3[2,4],digits=3),nsmall=0)),
+                  (format(round(coefbnc4[2,4],digits=3),nsmall=0)),
+                  (format(round(coefbnc5[2,4],digits=3),nsmall=0)),
+                  (format(round(coefbnc6[2,4],digits=3),nsmall=0)),
+                  (format(round(coefbnc7[2,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefbnc1[3,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnc2[3,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnc3[3,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnc4[3,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnc5[3,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnc6[3,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnc7[3,1]),digits=3),nsmall=0))),
+                c((format(round(coefbnc1[3,2],digits=3),nsmall=0)),
+                  (format(round(coefbnc2[3,2],digits=3),nsmall=0)),
+                  (format(round(coefbnc3[3,2],digits=3),nsmall=0)),
+                  (format(round(coefbnc4[3,2],digits=3),nsmall=0)),
+                  (format(round(coefbnc5[3,2],digits=3),nsmall=0)),
+                  (format(round(coefbnc6[3,2],digits=3),nsmall=0)),
+                  (format(round(coefbnc7[3,2],digits=3),nsmall=0))),
+                c((format(round(coefbnc1[3,4],digits=3),nsmall=0)),
+                  (format(round(coefbnc2[3,4],digits=3),nsmall=0)),
+                  (format(round(coefbnc3[3,4],digits=3),nsmall=0)),
+                  (format(round(coefbnc4[3,4],digits=3),nsmall=0)),
+                  (format(round(coefbnc5[3,4],digits=3),nsmall=0)),
+                  (format(round(coefbnc6[3,4],digits=3),nsmall=0)),
+                  (format(round(coefbnc7[3,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefbnc1[4,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnc2[4,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnc3[4,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnc4[4,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnc5[4,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnc6[4,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnc7[4,1]),digits=3),nsmall=0))),
+                c((format(round(coefbnc1[4,2],digits=3),nsmall=0)),
+                  (format(round(coefbnc2[4,2],digits=3),nsmall=0)),
+                  (format(round(coefbnc3[4,2],digits=3),nsmall=0)),
+                  (format(round(coefbnc4[4,2],digits=3),nsmall=0)),
+                  (format(round(coefbnc5[4,2],digits=3),nsmall=0)),
+                  (format(round(coefbnc6[4,2],digits=3),nsmall=0)),
+                  (format(round(coefbnc7[4,2],digits=3),nsmall=0))),
+                c((format(round(coefbnc1[4,4],digits=3),nsmall=0)),
+                  (format(round(coefbnc2[4,4],digits=3),nsmall=0)),
+                  (format(round(coefbnc3[4,4],digits=3),nsmall=0)),
+                  (format(round(coefbnc4[4,4],digits=3),nsmall=0)),
+                  (format(round(coefbnc5[4,4],digits=3),nsmall=0)),
+                  (format(round(coefbnc6[4,4],digits=3),nsmall=0)),
+                  (format(round(coefbnc7[4,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefbnc1[5,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnc2[5,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnc3[5,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnc4[5,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnc5[5,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnc6[5,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnc7[5,1]),digits=3),nsmall=0))),
+                c((format(round(coefbnc1[5,2],digits=3),nsmall=0)),
+                  (format(round(coefbnc2[5,2],digits=3),nsmall=0)),
+                  (format(round(coefbnc3[5,2],digits=3),nsmall=0)),
+                  (format(round(coefbnc4[5,2],digits=3),nsmall=0)),
+                  (format(round(coefbnc5[5,2],digits=3),nsmall=0)),
+                  (format(round(coefbnc6[5,2],digits=3),nsmall=0)),
+                  (format(round(coefbnc7[5,2],digits=3),nsmall=0))),
+                c((format(round(coefbnc1[5,4],digits=3),nsmall=0)),
+                  (format(round(coefbnc2[5,4],digits=3),nsmall=0)),
+                  (format(round(coefbnc3[5,4],digits=3),nsmall=0)),
+                  (format(round(coefbnc4[5,4],digits=3),nsmall=0)),
+                  (format(round(coefbnc5[5,4],digits=3),nsmall=0)),
+                  (format(round(coefbnc6[5,4],digits=3),nsmall=0)),
+                  (format(round(coefbnc7[5,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefbnc1[6,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnc2[6,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnc3[6,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnc4[6,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnc5[6,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnc6[6,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnc7[6,1]),digits=3),nsmall=0))),
+                c((format(round(coefbnc1[6,2],digits=3),nsmall=0)),
+                  (format(round(coefbnc2[6,2],digits=3),nsmall=0)),
+                  (format(round(coefbnc3[6,2],digits=3),nsmall=0)),
+                  (format(round(coefbnc4[6,2],digits=3),nsmall=0)),
+                  (format(round(coefbnc5[6,2],digits=3),nsmall=0)),
+                  (format(round(coefbnc6[6,2],digits=3),nsmall=0)),
+                  (format(round(coefbnc7[6,2],digits=3),nsmall=0))),
+                c((format(round(coefbnc1[6,4],digits=3),nsmall=0)),
+                  (format(round(coefbnc2[6,4],digits=3),nsmall=0)),
+                  (format(round(coefbnc3[6,4],digits=3),nsmall=0)),
+                  (format(round(coefbnc4[6,4],digits=3),nsmall=0)),
+                  (format(round(coefbnc5[6,4],digits=3),nsmall=0)),
+                  (format(round(coefbnc6[6,4],digits=3),nsmall=0)),
+                  (format(round(coefbnc7[6,4],digits=3),nsmall=0))),
+                
+                
+                c((format(round(summary(plmbnc1)$r.squared[1],digits=3),nsmall=0)),
+                  (format(round(summary(plmbnc2)$r.squared[1],digits=3),nsmall=0)),
+                  (format(round(summary(plmbnc3)$r.squared[1],digits=3),nsmall=0)),
+                  (format(round(summary(plmbnc4)$r.squared[1],digits=3),nsmall=0)),
+                  (format(round(summary(plmbnc5)$r.squared[1],digits=3),nsmall=0)),
+                  (format(round(summary(plmbnc6)$r.squared[1],digits=3),nsmall=0)),
+                  (format(round(summary(plmbnc7)$r.squared[1],digits=3),nsmall=0))),
+                c((format(round(summary(plmbnc1)$r.squared[2],digits=3),nsmall=0)),
+                  (format(round(summary(plmbnc2)$r.squared[2],digits=3),nsmall=0)),
+                  (format(round(summary(plmbnc3)$r.squared[2],digits=3),nsmall=0)),
+                  (format(round(summary(plmbnc4)$r.squared[2],digits=3),nsmall=0)),
+                  (format(round(summary(plmbnc5)$r.squared[2],digits=3),nsmall=0)),
+                  (format(round(summary(plmbnc6)$r.squared[2],digits=3),nsmall=0)),
+                  (format(round(summary(plmbnc7)$r.squared[2],digits=3),nsmall=0))),
+                c((format(round(nobs(plmbnc1),digits=3),nsmall=0)),
+                  (format(round(nobs(plmbnc2),digits=3),nsmall=0)),
+                  (format(round(nobs(plmbnc3),digits=3),nsmall=0)),
+                  (format(round(nobs(plmbnc4),digits=3),nsmall=0)),
+                  (format(round(nobs(plmbnc5),digits=3),nsmall=0)),
+                  (format(round(nobs(plmbnc6),digits=3),nsmall=0)),
+                  (format(round(nobs(plmbnc7),digits=3),nsmall=0)))
+)
+
+
+###########################################################################################################################################
