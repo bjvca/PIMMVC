@@ -139,16 +139,15 @@ Gendered Perceptions in Maize Supply Chains: Evidence from Uganda
 
 \begin_layout Abstract
 \paragraph_spacing onehalf
-Faced with imperfect information and guided by heuristics prone to cognitive
- bias, the way in which value chain actors perceive each other is an important
- determinant of the value chain structure and its performance.
+Faced with imperfect information, how value chain actors perceive each other
+ is an important determinant of its structure and performance.
  Inaccurate perceptions may result in inefficient value chains and systematic
  bias in perceptions may affect inclusiveness.
  In a case study on perceptions in Ugandan maize supply chains, a random
- sample of maize farmers were asked to rate upstream and downstream value
- chain actors—agro-input dealers, assembly traders and maize millers—on
- a set of important attributes—ease of access, quality or services rendered,
- price competitiveness, and overall reputation.
+ sample of farmers were asked to rate upstream and downstream value chain
+ actors—agro-input dealers, traders and processors—on a set of important
+ attributes—ease of access, quality or services rendered, price competitiveness,
+ and overall reputation.
  These value chain actors were then tracked and asked to assess themselves
  on the same set of attributes.
  We find that input dealers, traders and millers assess themselves more
@@ -160,9 +159,7 @@ Faced with imperfect information and guided by heuristics prone to cognitive
  as women appear to rate the dealers, traders and millers significantly
  higher on several characteristics.
  The sex of the actor being rated does not affect the rating and gender-based
- homophily is not present in the preferences of the farmers while rating.
- Interestingly, price competitiveness is always scored the lowest.
- 
+ homophily is not present rating behaviour.
 \end_layout
 
 \begin_layout Standard
@@ -181,10 +178,6 @@ path <- getwd()
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\begin_layout Plain Layout
-
 source(paste(path,"code/perceptions.R
 \begin_inset Quotes erd
 \end_inset
@@ -194,15 +187,7 @@ source(paste(path,"code/perceptions.R
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\begin_layout Plain Layout
-
 @
-\end_layout
-
-\begin_layout Plain Layout
-
 \end_layout
 
 \end_inset
@@ -263,8 +248,8 @@ Neoclassical economic theory is built on the premise that rational agents
  counterpart.
  In other cases, one actor may strategically decide to hide valuable information.
  As a result, when decisions need to be made, economic agents usually rely
- on incomplete information that is combined with heuristic techniques and
- updated as new information becomes available.
+ on incomplete information that is combined with heuristic techniques prone
+ to bias, and updated as new information becomes available.
  Similarly in commodity supply chains, information frictions may exist,
  especially in informal value chains where quality is hard to track and
  agreements difficult to enforce.
@@ -483,20 +468,19 @@ name "sec:Study-Context"
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-This section discusses the context and background of the study.
- The case for this investigation is the maize value chain in Uganda.
+We focus on the maize value chain in Uganda.
  Maize is a staple crop in Uganda, prioritized by the government for food
  security and household income.
  By land area, maize is the most cultivated crop in Uganda, covering 30%
  of the total cropped land, followed by beans, covering 15% of cropped land.
  Maize and beans are often intercropped.
  Government’s interventions in the maize sub-sector over the past decade
- have targeted increasing on-farm productivity and production, yet productivity
- remains very low.
- On-farm maize data from 2018 agricultural year reports (Uganda Annual Agricultu
-ral Survey) yield figures of 596 kg per acre (or 1.49mt/ha); a figure that
- falls almost midway the yield range of 270 and 995 kg per acre, as reported
- by 
+ have focused on increasing on-farm productivity and production, yet productivit
+y remains very low.
+ On-farm maize production data from 2018 agricultural year reports (Uganda
+ Annual Agricultural Survey) yield figures of 596 kg per acre (or 1.49mt/ha),
+ a figure that falls almost midway the yield range of 270 and 995 kg per
+ acre, as reported by 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "Gourlay2019"
@@ -537,75 +521,35 @@ literal "true"
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-Improved maize seed (hybrid and open pollinated varieties) is among the
- top agricultural inputs promoted by the government, development partners
- and private sector to increase maize yields in Uganda.
- But, just like the other improved agricultural inputs, the proportion of
- households using improved maize seed in Uganda is still low, estimated
- to range between 27% and 37%, compared to between 30% and 50% in Tanzania
- and Malawi 
+Various factors constrain the development of efficient and inclusive value
+ chains in Uganda.
+ Limited use of improved inputs by producers, especially improved seed,
+ constitutes a key supply side constraint 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "VanCampenhout2020"
-literal "true"
+key "doi:10.1086/714444"
+literal "false"
 
 \end_inset
 
 .
- When measured using the percentage of land under improved maize seed, the
- use rates in Uganda slightly increase to 54% 
+ Other important demand side constraints include access to markets, due
+ to the fact that farmers are generally located in remote areas linked by
+ poor roads that become impassable during the rainy season 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "Sheahan2017"
-literal "true"
+key "stifel2008isolation"
+literal "false"
 
 \end_inset
 
 .
- 
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-Limited use of improved maize seed is just one among the many factors constraini
-ng maize yields in Uganda.
- In addition, insubstantial access to markets for harvested maize for farmers
- living in remote areas, slow advancement in milling technologies, price
- discrimination at all levels of the supply chain, issues of trust amongst
- the supply chain actors, lower selling prices of the harvest, quality of
- services provided by the various supply chain actors and business ethics
- in the sector during selling, trading, or milling influence maize yields
- at large.
- For instance, several factors at household, market and policy levels constrain
- the use of improved maize seed and generally improved agricultural inputs
- by Ugandan farmers.
- Like any other industry, the maize supply chains need to maximize yield
- gains, ensure cost-effective sale, storage and production, adhere to improved
- technologies and increase the usage of improved inputs to increase the
- profits for all the actors in the sector.
- 
-\end_layout
-
-\begin_layout Standard
-Not only input usage is important in the context of maize supply chains,
- trading and processing of maize are equally essential to meet consumption
- needs across Sub-Saharan Africa.
- For instance, 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Ekpa2019"
-literal "true"
-
-\end_inset
-
- discusses the importance of promoting processing techniques reducing the
- loss of nutrients, improving nutritional, and baking properties and increasing
- shelf life.
- Traders and processors should be aware of the high potential in localized
- maize foods, ensuring effective ways to preserve the nutritional components
- of the maize crops and fair prices for the maize farmers.
- A better understanding of these aspects can be obtained from the perceptions
- of these value chain actors about their performance attributes.
+ Limited processing capacity also leads to issues related to quality and
+ shelf life, further depressing demand for the commodity.
+ Input dealers, farmers, maize traders and maize processors are intricately
+ relate in Ugandan maize supply chains.
+ Performance issues in one node can have major impacts for the entire value
+ chain.
  
 \end_layout
 
@@ -622,15 +566,10 @@ name "subsec:Supply-Chain-Actors"
 \end_layout
 
 \begin_layout Standard
-\paragraph_spacing onehalf
-The roles of input dealers, maize traders and maize processors in the maize
- supply chain are intricate.
- Their performance can have major impacts on the entire value chain leading
- to food security issues.
- There is ample evidence of the essential role of improved agricultural
- inputs, especially improved seed, inorganic fertilizers and agro-chemicals,
- in enhancing agricultural productivity, poverty reduction, and generally
- economic transformation 
+There is ample evidence of the essential role of improved agricultural inputs,
+ especially improved seed, inorganic fertilizers and agro-chemicals, in
+ enhancing agricultural productivity, poverty reduction, and generally economic
+ transformation 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "McArthur2017,Zeng2015,Evenson2003"
@@ -640,16 +579,8 @@ literal "true"
 
 .
  Yet, despite decades of policy and institutional reforms to promote their
- use in developing countries 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Erenstein2018,Swinnen2010,Jayne2013"
-literal "true"
-
-\end_inset
-
-, adoption levels of such improved inputs remain extremely low, especially
- in sub-Saharan Africa 
+ use in developing countries, adoption levels of such improved inputs remain
+ low, especially in sub-Saharan Africa 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Sheahan2017,Benin2016"
@@ -658,12 +589,7 @@ literal "true"
 \end_inset
 
 .
- 
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-Literature also hints on the limited availability of improved input technologies
+ Some studies point out the limited availability of improved input technologies
  in developing countries 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -673,17 +599,20 @@ literal "true"
 \end_inset
 
 .
- However, as improved inputs become more available in developing countries
- (due to increased research and breeding, privatization/liberalization of
- the inputs market, and input subsidy programs) 
+ However, due to increased government action in the area of research and
+ breeding, privatization/liberalization of the inputs market, and in some
+ cases input subsidy programs, over time, improved inputs become more available
+ in developing countries 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "Sheahan2017,Fisher2014,Minten2013,Jayne2013,Jayne2013a"
+key "Minten2013,Jayne2013a"
 literal "true"
 
 \end_inset
 
-, poor quality inputs, especially of purchased inputs 
+.
+ These days, poor quality inputs, especially of purchased inputs, is emerging
+ as an additional explanation for the limited adoption 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Ashour2019,Bold2017"
@@ -691,7 +620,7 @@ literal "true"
 
 \end_inset
 
-, is emerging as an additional explanation for the limited adoption.
+.
  
 \end_layout
 
@@ -702,23 +631,23 @@ Research and policy have focused on two main explanations for low quality
  and (ii) poor storage processes along the supply chain 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "Omotilewa2018,Barriga2018"
+key "BARRIGA2020104928,Omotilewa2018"
 literal "true"
 
 \end_inset
 
 .
- Although some studies find inaccuracy in farmer's perceptions that purchased
+ Although some studies found inaccuracy in farmer's perceptions that purchased
  inputs are of poor quality 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "Ashour2019,michelson2018misperceived"
+key "MICHELSON2021102579"
 literal "true"
 
 \end_inset
 
-, the (mis)perceptions have been found to be fairly right and correlated
- with actual quality in the local markets 
+, other studies found perceptions are fairly right and correlated with actual
+ quality in the local markets 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Ashour2019,UrreaHernandez2016"
@@ -727,20 +656,20 @@ literal "true"
 \end_inset
 
 .
- Input dealers dealing in these agricultural inputs are an important node
- for the sustenance of the maize value chains.
- Although their role has already been studied with respect to the agricultural
- innovation processes 
+ Even though most value chain studies focus on actors downstream of producers
+ (like traders, processors and consumers), input dealers (and other actors
+ providing services to the core value chain actors more in general), agro-input
+ dealers are an important node in the maize value chain 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "Etyang2014,Odame2011,Chinsinga2011,Feder2011,Adhiguru2009"
+key "Odame2011,Feder2011"
 literal "true"
 
 \end_inset
 
-, it is essential to realise the perceptions of their performance in the
- maize supply chain.
- 
+.
+ As such, perceptions related to the conduct and performance of these actors
+ will be an important determinant of value chain structure and performance.
 \end_layout
 
 \begin_layout Standard
@@ -760,9 +689,9 @@ Trading of maize is an essential part of the maize value chain.
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-The assembly traders even play a major role in the storage of the harvest.
+The assembly traders also play an important role in the storage of the harvest.
  This can impact the quality of maize in the supply chain as there can be
- incidences of contamination and mould 
+ incidences of aflatoxin contamination and mould 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Kaaya2006"
