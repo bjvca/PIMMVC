@@ -437,7 +437,7 @@ literal "true"
 
 \end_inset
 
-).
+.
  
 \end_layout
 
@@ -456,7 +456,7 @@ We find that agro-input dealers, traders and processors consistently rate
 
 \begin_layout Section
 \paragraph_spacing onehalf
-Study Context
+The structure of the maize supply chain
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Study-Context"
@@ -468,6 +468,18 @@ name "sec:Study-Context"
 
 \begin_layout Standard
 \paragraph_spacing onehalf
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+I have reorganized this a bit to focus more on the context, with separate
+ headings for the four actors.
+ Maybe we should consider adding some more descriptive statistics like volumes
+ produced, processed, traded, average seeds quantities sold, etc...? 
+\end_layout
+
+\end_inset
+
 We focus on the maize value chain in Uganda.
  Maize is a staple crop in Uganda, prioritized by the government for food
  security and household income.
@@ -489,26 +501,8 @@ literal "true"
 \end_inset
 
 .
- While there is some ambiguity in the on-farm yield figures, partly due
- to errors in farmer-reported production 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Gourlay2019"
-literal "true"
-
-\end_inset
-
- and differences in the climatic conditions between different agricultural
- years 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "VanCampenhout2020"
-literal "true"
-
-\end_inset
-
-, they are still considerably lower than the research station yield figures
- which range between 730 kg per acre and 1,820 kg per acre 
+ This is considerably lower than the research station yield figures which
+ range between 730 kg per acre and 1,820 kg per acre 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Fermont2011"
@@ -517,6 +511,9 @@ literal "true"
 \end_inset
 
 .
+ Maize is also widely consumed in Uganda, particularly in the southwest
+ where our study was conducted.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -555,7 +552,7 @@ literal "false"
 
 \begin_layout Subsection
 \paragraph_spacing onehalf
-Supply Chain Actors
+Agro-input dealers
 \begin_inset CommandInset label
 LatexCommand label
 name "subsec:Supply-Chain-Actors"
@@ -626,9 +623,9 @@ literal "true"
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-Research and policy have focused on two main explanations for low quality
- inputs: (i) sellers deliberately counterfeiting or adulterating inputs;
- and (ii) poor storage processes along the supply chain 
+In Uganda, research and policy have focused on two main explanations for
+ low quality inputs: (i) sellers deliberately counterfeiting or adulterating
+ inputs; and (ii) poor storage processes along the supply chain 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "BARRIGA2020104928,Omotilewa2018"
@@ -637,8 +634,8 @@ literal "true"
 \end_inset
 
 .
- Although some studies found inaccuracy in farmer's perceptions that purchased
- inputs are of poor quality 
+ Although an important study found inaccuracy in farmer's perceptions that
+ purchased inputs are of poor quality 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "MICHELSON2021102579"
@@ -650,7 +647,7 @@ literal "true"
  quality in the local markets 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "Ashour2019,UrreaHernandez2016"
+key "Ashour2019"
 literal "true"
 
 \end_inset
@@ -673,34 +670,93 @@ literal "true"
 \end_layout
 
 \begin_layout Standard
-\paragraph_spacing onehalf
-Trading of maize is an essential part of the maize value chain.
- Assembly traders help in the marketing of maize and thus, are a bridge
- between the farmers and the markets (or the millers in particular).
- Local assembly traders reach the remote locations to collect maize harvests
- mostly directly from the farmers at the farm gate, the small rural storage
- facilities, or the markets.
- These traders take the responsibility of transportation in general so that
- the harvested maize can reach the essential marketing destinations, starting
- from small retailers, millers or processors, bigger regional markets to
- export centers.
+There is significant heterogeneity in agro-input dealers in our sample.
+ Some are large shops located in town centers with several branches that
+ specialize in farm inputs and implements.
+ Others are small shops in villages that only stock seed during planting
+ season, but generally sell food and other consumables.
+ Agro-input shops are often clustered in towns or trading centers.
+ Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:table2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ shows that dealers are generally well educated and are younger than other
+ actors in the value chain.
+ About 30 percent of dealers are women.
+\end_layout
+
+\begin_layout Subsection
+Traders
+\end_layout
+
+\begin_layout Standard
+Maize traders link producers to processors and consumers.
+ Local assembly traders, using bicycles of light motorbikes, visit several
+ farmers in a day to buy maize at the farm gate.
+ These traders then aggregate and sell further to larger traders or large
+ scale processors.
+ Larger traders also often use (shared) storage facilities to engage in
+ arbitrage over time, as maize prices are know to display significant seasonalit
+y 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "10.1093/jae/ejv002"
+literal "false"
+
+\end_inset
+
+.
+ Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:table2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ show that virtually all traders in our sample are men.
+ Generally, they are not merely service providers offering transport services,
+ but become owner of the commodity during trading, hence also internalizing
+ the risks inherent to trading.
  
 \end_layout
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-The assembly traders also play an important role in the storage of the harvest.
- This can impact the quality of maize in the supply chain as there can be
- incidences of aflatoxin contamination and mould 
+Assembly trader performance has important consequences for quality downstream.
+ Bulking and mixing of smallholder supply dilutes incentives to supply high
+ quality 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "Kaaya2006"
-literal "true"
+key "10.1093/erae/jbab018"
+literal "false"
 
 \end_inset
 
 .
- While studying market access in Southern and Eastern Africa, 
+ Procuring sufficiently dried maize and proper storage are important to
+ reduce aflatoxin contamination 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "bauchet2021improved"
+literal "false"
+
+\end_inset
+
+.
+ Furthermore, while small traders are often cast in a negative light and
+ many development interventions attempt to bypass middlemen, most studies
+ find that (large numbers of) small traders are essential for economic developme
+nt.
+ For example, studying market access in Southern and Eastern Africa, 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "Mather2013"
@@ -708,10 +764,10 @@ literal "true"
 
 \end_inset
 
- commented that access to assembly traders have increased over time and
- this has given greater opportunities to the remote areas in terms of access
- to maize markets.
- This claim is supported by 
+ note that access to assembly traders has increased over time and argue
+ that this has created important opportunities to remote areas in terms
+ of access to maize markets.
+ 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "Sitko2014"
@@ -719,63 +775,114 @@ literal "true"
 
 \end_inset
 
- with the mention of trading being highly competitive in Eastern and Southern
- Africa in terms of the marketing margins and the number of traders operating.
+ find that trading is highly competitive in Eastern and Southern Africa
+ in terms of the marketing margins and the number of traders operating.
  Studying the perceptions of and about these important actors can aid in
  the understanding of the marketing linkages, maintenance of quality during
  trading activities (storage and transportation) and sustenance of trading
  relationships in these rural markets.
- 
+\end_layout
+
+\begin_layout Subsection
+Processors
 \end_layout
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-Another necessary actor of the maize supply chain is the millers or processors
- who produce the final product from the harvested maize.
- For instance, the profit-efficiency of the maize mills has been studied
- by 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Abu2009"
-literal "true"
+Other important actors of the maize supply chain are the processors who
+ produce the final product from the harvested maize.
+ In general, these take the form of maize mills that remove the bran from
+ the maize kernels and mill the maize.
+ There are again large differences between these processors.
+ Some maize mills located in remote rural areas are combustion engine powered
+ mills that are only able to produce low grade maize meal for home consumption.
+ However, larger processors use machines powered by three phase electric
+ power and mill multiple times to obtain find export grade maize meal.
+ Some processors also have packing facilities to produce maize meal for
+ supermarkets and export.
+ The smaller mills often only provide milling as a service, whereby farmers
+ come with bags of maize for milling against a fee.
+ Larger mills also often buy maize for processing.
+ In our sample, we see that only 7 percent of processors is a women (Table
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:table2"
+plural "false"
+caps "false"
+noprefix "false"
 
 \end_inset
 
- in South Africa where the researchers indicated the unexplored potential
- of the mills due to the deregulation of the maize markets in the country.
+).
  
 \end_layout
 
+\begin_layout Subsection
+Farmers
+\end_layout
+
 \begin_layout Standard
-\paragraph_spacing onehalf
-Interestingly, the type of maize being milled can be influenced by consumer
- preferences 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "omueti2006comparison"
-literal "true"
+Central in our study of the maize value chains are farmers, who buy inputs
+ such as seed and fertilizer from agro-input dealers, sell to traders and/or
+ use milers to process their maize for own consumption.
+ These are generally small farmers, cultivating maize on 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+X
+\end_layout
 
 \end_inset
 
-.
- Thus, maize millers or processors can act as a connection between the supply
- and the demand chains because consumer preferences can be rooted into the
- supply chains through the decisions of the maize millers in the types of
- maize they buy to process for selling purposes.
- At the same time, large scale processors can influence government actions
- for the sustenance of food value chains 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "omueti2006comparison"
-literal "true"
+ plots, corresponding to 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+X
+\end_layout
 
 \end_inset
 
-, indicating the extent to which maize millers hold a prime role in the
- maize value chain mechanisms.
- These arguments help in explaining why studying the perceptions of milling
- performances are important to get better insights about the supply chain.
- 
+ acres.
+ Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:table1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ show that about half of the farmers we interviewed were women.
+ About 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+X
+\end_layout
+
+\end_inset
+
+percent of farmers used improved seed on their plot, while 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+x
+\end_layout
+
+\end_inset
+
+ percent used inorganic fertilizer (q59 or q60).
+ Yields in our sample amount to X kg/acre.
+ In terms of market participation, we find that q101 percent of farmers
+ sold at least part of their crop.
+ Those who reported selling sold on average X kg.
 \end_layout
 
 \begin_layout Section
@@ -794,10 +901,12 @@ name "sec:Study-Hypotheses"
 \begin_layout Standard
 \paragraph_spacing single
 \noindent
-This section describes the hypotheses that are analysed which are as follows:
+This section describes the hypotheses that we will test, and the theory
+ in which these hypotheses are grounded.
+ We will test 5 hypotheses:
 \end_layout
 
-\begin_layout Enumerate
+\begin_layout Itemize
 \paragraph_spacing single
 \noindent
 Self-ratings are higher than ratings given by raters (farmers) to ratees
@@ -811,75 +920,11 @@ name "Hypothesis 1"
  
 \end_layout
 
-\begin_layout Enumerate
-\paragraph_spacing single
-\noindent
-Ratings from women are more favourable than ratings from men
-\begin_inset CommandInset label
-LatexCommand label
-name "Hypothesis 2"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Enumerate
-\paragraph_spacing single
-\noindent
-Self-ratings from women are less favourable than self-ratings from men
-\begin_inset CommandInset label
-LatexCommand label
-name "Hypothesis 3"
-
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_layout Enumerate
-\paragraph_spacing single
-\noindent
-Men receive more favourable ratings than women
-\begin_inset CommandInset label
-LatexCommand label
-name "Hypothesis 4"
-
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_layout Enumerate
-\paragraph_spacing single
-\noindent
-The impact of both rater (farmer) and ratee being a woman is significant
- on the ratings
-\begin_inset CommandInset label
-LatexCommand label
-name "Hypothesis 5"
-
-\end_inset
-
-.
-\end_layout
-
 \begin_layout Standard
 \paragraph_spacing onehalf
-Hypothesis 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "Hypothesis 1"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
- determines how the agro-input dealers, processors and traders rate themselves
- (self-assessments) compared to the ratings from the farmers.
+The first hypothesis revolves around how the agro-input dealers, processors
+ and traders rate themselves (self-assessments) compared to the ratings
+ from the farmers.
  Self-ratings indicate the perceived level of performance by the service
  and input providers which is the main motivation towards the inclusion
  of this hypothesis.
@@ -905,6 +950,19 @@ literal "true"
  Such a leniency creates a gap between the input and service providers'
  perceived performance levels from the farmers and the perceived self-performanc
 e levels of the input and service providers.
+\end_layout
+
+\begin_layout Itemize
+\paragraph_spacing single
+\noindent
+Ratings from women are more favourable than ratings from men
+\begin_inset CommandInset label
+LatexCommand label
+name "Hypothesis 2"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -959,6 +1017,48 @@ literal "true"
  Validating this in the context of food value chains can be an interesting
  contribution to the existing studies.
  
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing single
+\noindent
+Self-ratings from women are less favourable than self-ratings from men
+\begin_inset CommandInset label
+LatexCommand label
+name "Hypothesis 3"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing single
+\noindent
+Men receive more favourable ratings than women
+\begin_inset CommandInset label
+LatexCommand label
+name "Hypothesis 4"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing single
+\noindent
+The impact of both rater (farmer) and ratee being a woman is significant
+ on the ratings
+\begin_inset CommandInset label
+LatexCommand label
+name "Hypothesis 5"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -1453,9 +1553,8 @@ noprefix "false"
 \end_inset
 
  presents the variables related to the farmers in the dataset.
- The summary statistics for ratings based on all the dimensions and the
- overall ratings are presented.
- Some interesting trends are present in the ratings.
+ The summary statistics for ratings based on all thestrends are present
+ in the ratings.
  For example, it is seen that about 
 \begin_inset ERT
 status open
@@ -2860,1298 +2959,7 @@ name "tab:table1"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float table
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-footnotesize 
-\backslash
-begin{center} 
-\backslash
-begin{tabular}{@{
-\backslash
-extracolsep{5pt}}lcccccc}  
-\backslash
-
-\backslash
-[-1.8ex]
-\backslash
-hline  
-\backslash
-hline 
-\backslash
-
-\backslash
-[-1.8ex]   & 
-\backslash
-multicolumn{6}{c}{
-\backslash
-textit{Summary Statistics (Ratees)}} 
-\backslash
-
-\backslash
-  
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-cline{2-7} 
-\backslash
-
-\backslash
-[-1.8ex] 
-\end_layout
-
-\begin_layout Plain Layout
-
-& 
-\backslash
-multicolumn{6} {c} {
-\backslash
-textit{Agro-Input Dealers}}  
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-cline{2-7} 
-\backslash
-
-\backslash
-[-1.8ex]   
-\end_layout
-
-\begin_layout Plain Layout
-
- & 
-\backslash
-multicolumn{1} {c} {Mean} &  
-\backslash
-multicolumn{1} {c} {Standard} &  
-\backslash
-multicolumn{1} {c} {Minimum} &  
-\backslash
-multicolumn{1} {c} {Maximum}&  
-\backslash
-multicolumn{1} {c} {First} &  
-\backslash
-multicolumn{1} {c} {Third} 
-\backslash
-
-\backslash
-  & 
-\backslash
-multicolumn{1} {c} {} &  
-\backslash
-multicolumn{1} {c} {Deviation} &  
-\backslash
-multicolumn{1} {c} {} &  
-\backslash
-multicolumn{1} {c} {}&  
-\backslash
-multicolumn{1} {c} {Quartile} &  
-\backslash
-multicolumn{1} {c} {Quartile} 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-hline 
-\backslash
-
-\backslash
-[-1.8ex]  
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\backslash
-textit{Overall self-ratings}}       & $
-\backslash
-Sexpr{format( round(mean(dealers$ratee_rating_overall, na.rm=T), digits=2),nsmall
-=0)}$        & $
-\backslash
-Sexpr{format( round(sd(dealers$ratee_rating_overall, na.rm=T), digits=2),nsmall=0
-)}$        & $
-\backslash
-Sexpr{format( round(min(dealers$ratee_rating_overall, na.rm=T), digits=2),nsmall=
-0)}$        & $
-\backslash
-Sexpr{format( round(max(dealers$ratee_rating_overall, na.rm=T), digits=2),nsmall=
-0)}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(dealers$ratee_rating_overall, na.rm=T, 0.25),
- digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(dealers$ratee_rating_overall, na.rm=T, 0.75),
- digits=2),nsmall=0)}$
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\backslash
-textit{Location self-ratings}}       & $
-\backslash
-Sexpr{format( round(mean(dealers$hh.maize.q79, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(sd(dealers$hh.maize.q79, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(min(dealers$hh.maize.q79, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(max(dealers$hh.maize.q79, na.rm=T), digits=2),nsmall=0)}$
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(dealers$hh.maize.q79, na.rm=T, 0.25), digits=2),nsmall=
-0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(dealers$hh.maize.q79, na.rm=T, 0.75), digits=2),nsmall=
-0)}$
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\backslash
-textit{Quality self-ratings}}       & $
-\backslash
-Sexpr{format( round(mean(dealers$hh.maize.q81, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(sd(dealers$hh.maize.q81, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(min(dealers$hh.maize.q81, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(max(dealers$hh.maize.q81, na.rm=T), digits=2),nsmall=0)}$
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(dealers$hh.maize.q81, na.rm=T, 0.25), digits=2),nsmall=
-0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(dealers$hh.maize.q81, na.rm=T, 0.75), digits=2),nsmall=
-0)}$
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\backslash
-textit{Price self-ratings}}       & $
-\backslash
-Sexpr{format( round(mean(dealers$hh.maize.q80, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(sd(dealers$hh.maize.q80, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(min(dealers$hh.maize.q80, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(max(dealers$hh.maize.q80, na.rm=T), digits=2),nsmall=0)}$
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(dealers$hh.maize.q80, na.rm=T, 0.25), digits=2),nsmall=
-0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(dealers$hh.maize.q80, na.rm=T, 0.75), digits=2),nsmall=
-0)}$
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\backslash
-textit{Reputation self-ratings}}       & $
-\backslash
-Sexpr{format( round(mean(dealers$hh.maize.q83, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(sd(dealers$hh.maize.q83, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(min(dealers$hh.maize.q83, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(max(dealers$hh.maize.q83, na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(dealers$hh.maize.q83, na.rm=T, 0.25), digits=2),nsmall=
-0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(dealers$hh.maize.q83, na.rm=T, 0.75), digits=2),nsmall=
-0)}$
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\backslash
-textit{Dealer is female}}       & $
-\backslash
-Sexpr{format( round(mean(dealers$gender, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(sd(dealers$gender, na.rm=T), digits=2),nsmall=0)}$  
-      & $
-\backslash
-Sexpr{format( round(min(dealers$gender, na.rm=T), digits=2),nsmall=0)}$ 
-       & $
-\backslash
-Sexpr{format( round(max(dealers$gender, na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(dealers$gender, na.rm=T, 0.25), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(dealers$gender, na.rm=T, 0.75), digits=2),nsmall=0)}$
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\backslash
-textit{Dealer's age (in years)}}       & $
-\backslash
-Sexpr{format( round(mean(dealers$hh.maize.q6g, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(sd(dealers$hh.maize.q6g, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(min(dealers$hh.maize.q6g, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(max(dealers$hh.maize.q6g, na.rm=T), digits=2),nsmall=0)}$
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(dealers$hh.maize.q6g, na.rm=T, 0.25), digits=2),nsmall=
-0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(dealers$hh.maize.q6g, na.rm=T, 0.75), digits=2),nsmall=
-0)}$
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\backslash
-textit{Dealer has finished primary education}}       & $
-\backslash
-Sexpr{format( round(mean(dealers$educ, na.rm=T), digits=2),nsmall=0)}$  
-      & $
-\backslash
-Sexpr{format( round(sd(dealers$educ, na.rm=T), digits=2),nsmall=0)}$    
-    & $
-\backslash
-Sexpr{format( round(min(dealers$educ, na.rm=T), digits=2),nsmall=0)}$   
-     & $
-\backslash
-Sexpr{format( round(max(dealers$educ, na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(dealers$educ, na.rm=T, 0.25), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(dealers$educ, na.rm=T, 0.75), digits=2),nsmall=0)}$
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\backslash
-textit{Dealer is married}}       & $
-\backslash
-Sexpr{format( round(mean(dealers$married, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(sd(dealers$married, na.rm=T), digits=2),nsmall=0)}$ 
-       & $
-\backslash
-Sexpr{format( round(min(dealers$married, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(max(dealers$married, na.rm=T), digits=2),nsmall=0)}$
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(dealers$married, na.rm=T, 0.25), digits=2),nsmall=0)}
-$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(dealers$married, na.rm=T, 0.75), digits=2),nsmall=0)}
-$
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-cline{2-7} 
-\backslash
-
-\backslash
-[-1.8ex] 
-\end_layout
-
-\begin_layout Plain Layout
-
-& 
-\backslash
-multicolumn{6} {c} {
-\backslash
-textit{Assembly Traders}}  
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-cline{2-7} 
-\backslash
-
-\backslash
-[-1.8ex]  
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\backslash
-textit{Overall self-ratings}}       & $
-\backslash
-Sexpr{format( round(mean(traders$ratee_rating_overall, na.rm=T), digits=2),nsmall
-=0)}$        & $
-\backslash
-Sexpr{format( round(sd(traders$ratee_rating_overall, na.rm=T), digits=2),nsmall=0
-)}$        & $
-\backslash
-Sexpr{format( round(min(traders$ratee_rating_overall, na.rm=T), digits=2),nsmall=
-0)}$        & $
-\backslash
-Sexpr{format( round(max(traders$ratee_rating_overall, na.rm=T), digits=2),nsmall=
-0)}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(traders$ratee_rating_overall, na.rm=T, 0.25),
- digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(traders$ratee_rating_overall, na.rm=T, 0.75),
- digits=2),nsmall=0)}$
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\backslash
-textit{Location self-ratings}}       & $
-\backslash
-Sexpr{format( round(mean(traders$hh.maize.q40a, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(sd(traders$hh.maize.q40a, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(min(traders$hh.maize.q40a, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(max(traders$hh.maize.q40a, na.rm=T), digits=2),nsmall=0)}$
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(traders$hh.maize.q40a, na.rm=T, 0.25), digits=2),nsmall
-=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(traders$hh.maize.q40a, na.rm=T, 0.75), digits=2),nsmall
-=0)}$ 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\backslash
-textit{Quality self-ratings}}       & $
-\backslash
-Sexpr{format( round(mean(traders$hh.maize.q40c, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(sd(traders$hh.maize.q40c, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(min(traders$hh.maize.q40c, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(max(traders$hh.maize.q40c, na.rm=T), digits=2),nsmall=0)}$
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(traders$hh.maize.q40c, na.rm=T, 0.25), digits=2),nsmall
-=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(traders$hh.maize.q40c, na.rm=T, 0.75), digits=2),nsmall
-=0)}$
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\backslash
-textit{Price self-ratings}}       & $
-\backslash
-Sexpr{format( round(mean(traders$hh.maize.q40b, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(sd(traders$hh.maize.q40b, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(min(traders$hh.maize.q40b, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(max(traders$hh.maize.q40b, na.rm=T), digits=2),nsmall=0)}$
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(traders$hh.maize.q40b, na.rm=T, 0.25), digits=2),nsmall
-=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(traders$hh.maize.q40b, na.rm=T, 0.75), digits=2),nsmall
-=0)}$
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\backslash
-textit{Reputation self-ratings}}       & $
-\backslash
-Sexpr{format( round(mean(traders$hh.maize.q40e, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(sd(traders$hh.maize.q40e, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(min(traders$hh.maize.q40e, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(max(traders$hh.maize.q40e, na.rm=T), digits=2),nsmall=0)}$
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(traders$hh.maize.q40e, na.rm=T, 0.25), digits=2),nsmall
-=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(traders$hh.maize.q40e, na.rm=T, 0.75), digits=2),nsmall
-=0)}$
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\backslash
-textit{Trader is female}}       & $
-\backslash
-Sexpr{format( round(mean(traders$gender, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(sd(traders$gender, na.rm=T), digits=2),nsmall=0)}$  
-      & $
-\backslash
-Sexpr{format( round(min(traders$gender, na.rm=T), digits=2),nsmall=0)}$ 
-       & $
-\backslash
-Sexpr{format( round(max(traders$gender, na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(traders$gender, na.rm=T, 0.25), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(traders$gender, na.rm=T, 0.75), digits=2),nsmall=0)}$
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\backslash
-textit{Trader's age (in years)}}       & $
-\backslash
-Sexpr{format( round(mean(traders$hh.maize.q6, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(sd(traders$hh.maize.q6, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(min(traders$hh.maize.q6, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(max(traders$hh.maize.q6, na.rm=T), digits=2),nsmall=0)}$
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(traders$hh.maize.q6, na.rm=T, 0.25), digits=2),nsmall=0
-)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(traders$hh.maize.q6, na.rm=T, 0.75), digits=2),nsmall=0
-)}$
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\backslash
-textit{Trader has finished primary education}}       & $
-\backslash
-Sexpr{format( round(mean(traders$educ, na.rm=T), digits=2),nsmall=0)}$  
-      & $
-\backslash
-Sexpr{format( round(sd(traders$educ, na.rm=T), digits=2),nsmall=0)}$    
-    & $
-\backslash
-Sexpr{format( round(min(traders$educ, na.rm=T), digits=2),nsmall=0)}$   
-     & $
-\backslash
-Sexpr{format( round(max(traders$educ, na.rm=T), digits=2),nsmall=0)}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(traders$educ, na.rm=T, 0.25), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(traders$educ, na.rm=T, 0.75), digits=2),nsmall=0)}$
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\backslash
-textit{Trader is married}}       & $
-\backslash
-Sexpr{format( round(mean(traders$married, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(sd(traders$married, na.rm=T), digits=2),nsmall=0)}$ 
-       & $
-\backslash
-Sexpr{format( round(min(traders$married, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(max(traders$married, na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(traders$married, na.rm=T, 0.25), digits=2),nsmall=0)}
-$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(traders$married, na.rm=T, 0.75), digits=2),nsmall=0)}
-$
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-cline{2-7} 
-\backslash
-
-\backslash
-[-1.8ex] 
-\end_layout
-
-\begin_layout Plain Layout
-
-& 
-\backslash
-multicolumn{6} {c} {
-\backslash
-textit{Millers}}  
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-cline{2-7} 
-\backslash
-
-\backslash
-[-1.8ex] 
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\backslash
-textit{Overall self-ratings}}       & $
-\backslash
-Sexpr{format( round(mean(millers$ratee_rating_overall, na.rm=T), digits=2),nsmall
-=0)}$        & $
-\backslash
-Sexpr{format( round(sd(millers$ratee_rating_overall, na.rm=T), digits=2),nsmall=0
-)}$        & $
-\backslash
-Sexpr{format( round(min(millers$ratee_rating_overall, na.rm=T), digits=2),nsmall=
-0)}$        & $
-\backslash
-Sexpr{format( round(max(millers$ratee_rating_overall, na.rm=T), digits=2),nsmall=
-0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(millers$ratee_rating_overall, na.rm=T, 0.25),
- digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(millers$ratee_rating_overall, na.rm=T, 0.75),
- digits=2),nsmall=0)}$
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\backslash
-textit{Location self-ratings}}       & $
-\backslash
-Sexpr{format( round(mean(millers$hh.maize.q36, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(sd(millers$hh.maize.q36, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(min(millers$hh.maize.q36, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(max(millers$hh.maize.q36, na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(millers$hh.maize.q36, na.rm=T, 0.25), digits=2),nsmall=
-0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(millers$hh.maize.q36, na.rm=T, 0.75), digits=2),nsmall=
-0)}$
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\backslash
-textit{Quality self-ratings}}       & $
-\backslash
-Sexpr{format( round(mean(millers$hh.maize.q38, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(sd(millers$hh.maize.q38, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(min(millers$hh.maize.q38, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(max(millers$hh.maize.q38, na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(millers$hh.maize.q38, na.rm=T, 0.25), digits=2),nsmall=
-0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(millers$hh.maize.q38, na.rm=T, 0.75), digits=2),nsmall=
-0)}$
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\backslash
-textit{Price self-ratings}}       & $
-\backslash
-Sexpr{format( round(mean(millers$hh.maize.q37, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(sd(millers$hh.maize.q37, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(min(millers$hh.maize.q37, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(max(millers$hh.maize.q37, na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(millers$hh.maize.q37, na.rm=T, 0.25), digits=2),nsmall=
-0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(millers$hh.maize.q37, na.rm=T, 0.75), digits=2),nsmall=
-0)}$
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\backslash
-textit{Reputation self-ratings}}       & $
-\backslash
-Sexpr{format( round(mean(millers$hh.maize.q40, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(sd(millers$hh.maize.q40, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(min(millers$hh.maize.q40, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(max(millers$hh.maize.q40, na.rm=T), digits=2),nsmall=0)}$
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(millers$hh.maize.q40, na.rm=T, 0.25), digits=2),nsmall=
-0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(millers$hh.maize.q40, na.rm=T, 0.75), digits=2),nsmall=
-0)}$
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\backslash
-textit{Miller is female}}       & $
-\backslash
-Sexpr{format( round(mean(millers$gender, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(sd(millers$gender, na.rm=T), digits=2),nsmall=0)}$  
-      & $
-\backslash
-Sexpr{format( round(min(millers$gender, na.rm=T), digits=2),nsmall=0)}$ 
-       & $
-\backslash
-Sexpr{format( round(max(millers$gender, na.rm=T), digits=2),nsmall=0)}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(millers$gender, na.rm=T, 0.25), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(millers$gender, na.rm=T, 0.75), digits=2),nsmall=0)}$
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\backslash
-textit{Miller's age (in years)}}       & $
-\backslash
-Sexpr{format( round(mean(millers$hh.maize.q6g, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(sd(millers$hh.maize.q6g, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(min(millers$hh.maize.q6g, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(max(millers$hh.maize.q6g, na.rm=T), digits=2),nsmall=0)}$
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(millers$hh.maize.q6g, na.rm=T, 0.25), digits=2),nsmall=
-0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(millers$hh.maize.q6g, na.rm=T, 0.75), digits=2),nsmall=
-0)}$
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\backslash
-textit{Miller has finished primary education}}       & $
-\backslash
-Sexpr{format( round(mean(millers$educ, na.rm=T), digits=2),nsmall=0)}$  
-      & $
-\backslash
-Sexpr{format( round(sd(millers$educ, na.rm=T), digits=2),nsmall=0)}$    
-    & $
-\backslash
-Sexpr{format( round(min(millers$educ, na.rm=T), digits=2),nsmall=0)}$   
-     & $
-\backslash
-Sexpr{format( round(max(millers$educ, na.rm=T), digits=2),nsmall=0)}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(millers$educ, na.rm=T, 0.25), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(millers$educ, na.rm=T, 0.75), digits=2),nsmall=0)}$
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\backslash
-textit{Miller is married}}       & $
-\backslash
-Sexpr{format( round(mean(millers$married, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(sd(millers$married, na.rm=T), digits=2),nsmall=0)}$ 
-       & $
-\backslash
-Sexpr{format( round(min(millers$married, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(max(millers$married, na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(millers$married, na.rm=T, 0.25), digits=2),nsmall=0)}
-$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(millers$married, na.rm=T, 0.75), digits=2),nsmall=0)}
-$
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
- 
-\backslash
-hline   
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-end{tabular} 
-\backslash
-end{center} 
-\backslash
-label{table:table2} 
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Summary Statistics of the variables related to the ratees (dealers, traders,
- and millers).
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:table2"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:table2"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
- shows summary statistics for the self-ratings from agro-input dealers,
+Table shows summary statistics for the self-ratings from agro-input dealers,
  traders, and maize processors.
  The ratees (dealers, traders, and millers) seem to be very confident about
  their reputation as among all the dimensions, the highest percentage give
@@ -14300,6 +13108,22 @@ Future research should focus on perceptions of the input and service providers
  
 \end_layout
 
+\begin_layout Section*
+Acknowledgments
+\end_layout
+
+\begin_layout Standard
+This research was funded by the CGIAR Research Program on Policies, Institutions
+, and Markets (PIM), led by the International Food Policy Research Institute
+ (IFPRI) and carried out with support from the CGIAR Fund contributors (https://
+www.cgiar.org/funders/).
+ We thank Richard Ariong, Leocardia Nabwire, Wilberforce Walukano and Marc
+ Charles Wanume for excellent field support.
+ The analysis contained here is the sole responsibility of the authors,
+ and does not reflect the views of any funding agency or organization mentioned
+ here.
+\end_layout
+
 \begin_layout Standard
 \paragraph_spacing onehalf
 \begin_inset CommandInset bibtex
@@ -14307,6 +13131,1290 @@ LatexCommand bibtex
 btprint "btPrintCited"
 bibfiles "amsj,MVC_perceptions"
 options "bibtotoc,apalike"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+Tables
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize 
+\backslash
+begin{center} 
+\backslash
+begin{tabular}{@{
+\backslash
+extracolsep{5pt}}lcccccc}  
+\backslash
+
+\backslash
+[-1.8ex]
+\backslash
+hline  
+\backslash
+hline 
+\backslash
+
+\backslash
+[-1.8ex]   & 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Summary Statistics (Ratees)}} 
+\backslash
+
+\backslash
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\backslash
+
+\backslash
+[-1.8ex] 
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6} {c} {
+\backslash
+textit{Agro-Input Dealers}}  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\backslash
+
+\backslash
+[-1.8ex]   
+\end_layout
+
+\begin_layout Plain Layout
+
+ & 
+\backslash
+multicolumn{1} {c} {Mean} &  
+\backslash
+multicolumn{1} {c} {Standard} &  
+\backslash
+multicolumn{1} {c} {Minimum} &  
+\backslash
+multicolumn{1} {c} {Maximum}&  
+\backslash
+multicolumn{1} {c} {First} &  
+\backslash
+multicolumn{1} {c} {Third} 
+\backslash
+
+\backslash
+  & 
+\backslash
+multicolumn{1} {c} {} &  
+\backslash
+multicolumn{1} {c} {Deviation} &  
+\backslash
+multicolumn{1} {c} {} &  
+\backslash
+multicolumn{1} {c} {}&  
+\backslash
+multicolumn{1} {c} {Quartile} &  
+\backslash
+multicolumn{1} {c} {Quartile} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+
+\backslash
+[-1.8ex]  
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Overall self-ratings}}       & $
+\backslash
+Sexpr{format( round(mean(dealers$ratee_rating_overall, na.rm=T), digits=2),nsmall
+=0)}$        & $
+\backslash
+Sexpr{format( round(sd(dealers$ratee_rating_overall, na.rm=T), digits=2),nsmall=0
+)}$        & $
+\backslash
+Sexpr{format( round(min(dealers$ratee_rating_overall, na.rm=T), digits=2),nsmall=
+0)}$        & $
+\backslash
+Sexpr{format( round(max(dealers$ratee_rating_overall, na.rm=T), digits=2),nsmall=
+0)}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(dealers$ratee_rating_overall, na.rm=T, 0.25),
+ digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(dealers$ratee_rating_overall, na.rm=T, 0.75),
+ digits=2),nsmall=0)}$
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Location self-ratings}}       & $
+\backslash
+Sexpr{format( round(mean(dealers$hh.maize.q79, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(sd(dealers$hh.maize.q79, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(min(dealers$hh.maize.q79, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(max(dealers$hh.maize.q79, na.rm=T), digits=2),nsmall=0)}$
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(dealers$hh.maize.q79, na.rm=T, 0.25), digits=2),nsmall=
+0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(dealers$hh.maize.q79, na.rm=T, 0.75), digits=2),nsmall=
+0)}$
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Quality self-ratings}}       & $
+\backslash
+Sexpr{format( round(mean(dealers$hh.maize.q81, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(sd(dealers$hh.maize.q81, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(min(dealers$hh.maize.q81, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(max(dealers$hh.maize.q81, na.rm=T), digits=2),nsmall=0)}$
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(dealers$hh.maize.q81, na.rm=T, 0.25), digits=2),nsmall=
+0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(dealers$hh.maize.q81, na.rm=T, 0.75), digits=2),nsmall=
+0)}$
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Price self-ratings}}       & $
+\backslash
+Sexpr{format( round(mean(dealers$hh.maize.q80, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(sd(dealers$hh.maize.q80, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(min(dealers$hh.maize.q80, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(max(dealers$hh.maize.q80, na.rm=T), digits=2),nsmall=0)}$
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(dealers$hh.maize.q80, na.rm=T, 0.25), digits=2),nsmall=
+0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(dealers$hh.maize.q80, na.rm=T, 0.75), digits=2),nsmall=
+0)}$
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Reputation self-ratings}}       & $
+\backslash
+Sexpr{format( round(mean(dealers$hh.maize.q83, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(sd(dealers$hh.maize.q83, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(min(dealers$hh.maize.q83, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(max(dealers$hh.maize.q83, na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(dealers$hh.maize.q83, na.rm=T, 0.25), digits=2),nsmall=
+0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(dealers$hh.maize.q83, na.rm=T, 0.75), digits=2),nsmall=
+0)}$
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Dealer is female}}       & $
+\backslash
+Sexpr{format( round(mean(dealers$gender, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(sd(dealers$gender, na.rm=T), digits=2),nsmall=0)}$  
+      & $
+\backslash
+Sexpr{format( round(min(dealers$gender, na.rm=T), digits=2),nsmall=0)}$ 
+       & $
+\backslash
+Sexpr{format( round(max(dealers$gender, na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(dealers$gender, na.rm=T, 0.25), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(dealers$gender, na.rm=T, 0.75), digits=2),nsmall=0)}$
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Dealer's age (in years)}}       & $
+\backslash
+Sexpr{format( round(mean(dealers$hh.maize.q6g, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(sd(dealers$hh.maize.q6g, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(min(dealers$hh.maize.q6g, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(max(dealers$hh.maize.q6g, na.rm=T), digits=2),nsmall=0)}$
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(dealers$hh.maize.q6g, na.rm=T, 0.25), digits=2),nsmall=
+0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(dealers$hh.maize.q6g, na.rm=T, 0.75), digits=2),nsmall=
+0)}$
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Dealer has finished primary education}}       & $
+\backslash
+Sexpr{format( round(mean(dealers$educ, na.rm=T), digits=2),nsmall=0)}$  
+      & $
+\backslash
+Sexpr{format( round(sd(dealers$educ, na.rm=T), digits=2),nsmall=0)}$    
+    & $
+\backslash
+Sexpr{format( round(min(dealers$educ, na.rm=T), digits=2),nsmall=0)}$   
+     & $
+\backslash
+Sexpr{format( round(max(dealers$educ, na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(dealers$educ, na.rm=T, 0.25), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(dealers$educ, na.rm=T, 0.75), digits=2),nsmall=0)}$
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Dealer is married}}       & $
+\backslash
+Sexpr{format( round(mean(dealers$married, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(sd(dealers$married, na.rm=T), digits=2),nsmall=0)}$ 
+       & $
+\backslash
+Sexpr{format( round(min(dealers$married, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(max(dealers$married, na.rm=T), digits=2),nsmall=0)}$
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(dealers$married, na.rm=T, 0.25), digits=2),nsmall=0)}
+$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(dealers$married, na.rm=T, 0.75), digits=2),nsmall=0)}
+$
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\backslash
+
+\backslash
+[-1.8ex] 
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6} {c} {
+\backslash
+textit{Assembly Traders}}  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\backslash
+
+\backslash
+[-1.8ex]  
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Overall self-ratings}}       & $
+\backslash
+Sexpr{format( round(mean(traders$ratee_rating_overall, na.rm=T), digits=2),nsmall
+=0)}$        & $
+\backslash
+Sexpr{format( round(sd(traders$ratee_rating_overall, na.rm=T), digits=2),nsmall=0
+)}$        & $
+\backslash
+Sexpr{format( round(min(traders$ratee_rating_overall, na.rm=T), digits=2),nsmall=
+0)}$        & $
+\backslash
+Sexpr{format( round(max(traders$ratee_rating_overall, na.rm=T), digits=2),nsmall=
+0)}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(traders$ratee_rating_overall, na.rm=T, 0.25),
+ digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(traders$ratee_rating_overall, na.rm=T, 0.75),
+ digits=2),nsmall=0)}$
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Location self-ratings}}       & $
+\backslash
+Sexpr{format( round(mean(traders$hh.maize.q40a, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(sd(traders$hh.maize.q40a, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(min(traders$hh.maize.q40a, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(max(traders$hh.maize.q40a, na.rm=T), digits=2),nsmall=0)}$
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(traders$hh.maize.q40a, na.rm=T, 0.25), digits=2),nsmall
+=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(traders$hh.maize.q40a, na.rm=T, 0.75), digits=2),nsmall
+=0)}$ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Quality self-ratings}}       & $
+\backslash
+Sexpr{format( round(mean(traders$hh.maize.q40c, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(sd(traders$hh.maize.q40c, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(min(traders$hh.maize.q40c, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(max(traders$hh.maize.q40c, na.rm=T), digits=2),nsmall=0)}$
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(traders$hh.maize.q40c, na.rm=T, 0.25), digits=2),nsmall
+=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(traders$hh.maize.q40c, na.rm=T, 0.75), digits=2),nsmall
+=0)}$
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Price self-ratings}}       & $
+\backslash
+Sexpr{format( round(mean(traders$hh.maize.q40b, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(sd(traders$hh.maize.q40b, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(min(traders$hh.maize.q40b, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(max(traders$hh.maize.q40b, na.rm=T), digits=2),nsmall=0)}$
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(traders$hh.maize.q40b, na.rm=T, 0.25), digits=2),nsmall
+=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(traders$hh.maize.q40b, na.rm=T, 0.75), digits=2),nsmall
+=0)}$
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Reputation self-ratings}}       & $
+\backslash
+Sexpr{format( round(mean(traders$hh.maize.q40e, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(sd(traders$hh.maize.q40e, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(min(traders$hh.maize.q40e, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(max(traders$hh.maize.q40e, na.rm=T), digits=2),nsmall=0)}$
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(traders$hh.maize.q40e, na.rm=T, 0.25), digits=2),nsmall
+=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(traders$hh.maize.q40e, na.rm=T, 0.75), digits=2),nsmall
+=0)}$
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Trader is female}}       & $
+\backslash
+Sexpr{format( round(mean(traders$gender, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(sd(traders$gender, na.rm=T), digits=2),nsmall=0)}$  
+      & $
+\backslash
+Sexpr{format( round(min(traders$gender, na.rm=T), digits=2),nsmall=0)}$ 
+       & $
+\backslash
+Sexpr{format( round(max(traders$gender, na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(traders$gender, na.rm=T, 0.25), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(traders$gender, na.rm=T, 0.75), digits=2),nsmall=0)}$
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Trader's age (in years)}}       & $
+\backslash
+Sexpr{format( round(mean(traders$hh.maize.q6, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(sd(traders$hh.maize.q6, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(min(traders$hh.maize.q6, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(max(traders$hh.maize.q6, na.rm=T), digits=2),nsmall=0)}$
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(traders$hh.maize.q6, na.rm=T, 0.25), digits=2),nsmall=0
+)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(traders$hh.maize.q6, na.rm=T, 0.75), digits=2),nsmall=0
+)}$
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Trader has finished primary education}}       & $
+\backslash
+Sexpr{format( round(mean(traders$educ, na.rm=T), digits=2),nsmall=0)}$  
+      & $
+\backslash
+Sexpr{format( round(sd(traders$educ, na.rm=T), digits=2),nsmall=0)}$    
+    & $
+\backslash
+Sexpr{format( round(min(traders$educ, na.rm=T), digits=2),nsmall=0)}$   
+     & $
+\backslash
+Sexpr{format( round(max(traders$educ, na.rm=T), digits=2),nsmall=0)}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(traders$educ, na.rm=T, 0.25), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(traders$educ, na.rm=T, 0.75), digits=2),nsmall=0)}$
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Trader is married}}       & $
+\backslash
+Sexpr{format( round(mean(traders$married, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(sd(traders$married, na.rm=T), digits=2),nsmall=0)}$ 
+       & $
+\backslash
+Sexpr{format( round(min(traders$married, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(max(traders$married, na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(traders$married, na.rm=T, 0.25), digits=2),nsmall=0)}
+$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(traders$married, na.rm=T, 0.75), digits=2),nsmall=0)}
+$
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\backslash
+
+\backslash
+[-1.8ex] 
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6} {c} {
+\backslash
+textit{Millers}}  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\backslash
+
+\backslash
+[-1.8ex] 
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Overall self-ratings}}       & $
+\backslash
+Sexpr{format( round(mean(millers$ratee_rating_overall, na.rm=T), digits=2),nsmall
+=0)}$        & $
+\backslash
+Sexpr{format( round(sd(millers$ratee_rating_overall, na.rm=T), digits=2),nsmall=0
+)}$        & $
+\backslash
+Sexpr{format( round(min(millers$ratee_rating_overall, na.rm=T), digits=2),nsmall=
+0)}$        & $
+\backslash
+Sexpr{format( round(max(millers$ratee_rating_overall, na.rm=T), digits=2),nsmall=
+0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(millers$ratee_rating_overall, na.rm=T, 0.25),
+ digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(millers$ratee_rating_overall, na.rm=T, 0.75),
+ digits=2),nsmall=0)}$
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Location self-ratings}}       & $
+\backslash
+Sexpr{format( round(mean(millers$hh.maize.q36, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(sd(millers$hh.maize.q36, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(min(millers$hh.maize.q36, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(max(millers$hh.maize.q36, na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(millers$hh.maize.q36, na.rm=T, 0.25), digits=2),nsmall=
+0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(millers$hh.maize.q36, na.rm=T, 0.75), digits=2),nsmall=
+0)}$
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Quality self-ratings}}       & $
+\backslash
+Sexpr{format( round(mean(millers$hh.maize.q38, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(sd(millers$hh.maize.q38, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(min(millers$hh.maize.q38, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(max(millers$hh.maize.q38, na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(millers$hh.maize.q38, na.rm=T, 0.25), digits=2),nsmall=
+0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(millers$hh.maize.q38, na.rm=T, 0.75), digits=2),nsmall=
+0)}$
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Price self-ratings}}       & $
+\backslash
+Sexpr{format( round(mean(millers$hh.maize.q37, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(sd(millers$hh.maize.q37, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(min(millers$hh.maize.q37, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(max(millers$hh.maize.q37, na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(millers$hh.maize.q37, na.rm=T, 0.25), digits=2),nsmall=
+0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(millers$hh.maize.q37, na.rm=T, 0.75), digits=2),nsmall=
+0)}$
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Reputation self-ratings}}       & $
+\backslash
+Sexpr{format( round(mean(millers$hh.maize.q40, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(sd(millers$hh.maize.q40, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(min(millers$hh.maize.q40, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(max(millers$hh.maize.q40, na.rm=T), digits=2),nsmall=0)}$
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(millers$hh.maize.q40, na.rm=T, 0.25), digits=2),nsmall=
+0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(millers$hh.maize.q40, na.rm=T, 0.75), digits=2),nsmall=
+0)}$
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Miller is female}}       & $
+\backslash
+Sexpr{format( round(mean(millers$gender, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(sd(millers$gender, na.rm=T), digits=2),nsmall=0)}$  
+      & $
+\backslash
+Sexpr{format( round(min(millers$gender, na.rm=T), digits=2),nsmall=0)}$ 
+       & $
+\backslash
+Sexpr{format( round(max(millers$gender, na.rm=T), digits=2),nsmall=0)}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(millers$gender, na.rm=T, 0.25), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(millers$gender, na.rm=T, 0.75), digits=2),nsmall=0)}$
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Miller's age (in years)}}       & $
+\backslash
+Sexpr{format( round(mean(millers$hh.maize.q6g, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(sd(millers$hh.maize.q6g, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(min(millers$hh.maize.q6g, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(max(millers$hh.maize.q6g, na.rm=T), digits=2),nsmall=0)}$
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(millers$hh.maize.q6g, na.rm=T, 0.25), digits=2),nsmall=
+0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(millers$hh.maize.q6g, na.rm=T, 0.75), digits=2),nsmall=
+0)}$
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Miller has finished primary education}}       & $
+\backslash
+Sexpr{format( round(mean(millers$educ, na.rm=T), digits=2),nsmall=0)}$  
+      & $
+\backslash
+Sexpr{format( round(sd(millers$educ, na.rm=T), digits=2),nsmall=0)}$    
+    & $
+\backslash
+Sexpr{format( round(min(millers$educ, na.rm=T), digits=2),nsmall=0)}$   
+     & $
+\backslash
+Sexpr{format( round(max(millers$educ, na.rm=T), digits=2),nsmall=0)}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(millers$educ, na.rm=T, 0.25), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(millers$educ, na.rm=T, 0.75), digits=2),nsmall=0)}$
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Miller is married}}       & $
+\backslash
+Sexpr{format( round(mean(millers$married, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(sd(millers$married, na.rm=T), digits=2),nsmall=0)}$ 
+       & $
+\backslash
+Sexpr{format( round(min(millers$married, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(max(millers$married, na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(millers$married, na.rm=T, 0.25), digits=2),nsmall=0)}
+$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(millers$married, na.rm=T, 0.75), digits=2),nsmall=0)}
+$
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ 
+\backslash
+hline   
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tabular} 
+\backslash
+end{center} 
+\backslash
+label{table:table2} 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Summary Statistics of the variables related to the ratees (dealers, traders,
+ and millers).
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:table2"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
