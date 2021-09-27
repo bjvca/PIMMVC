@@ -904,12 +904,25 @@ name "sec:Study-Hypotheses"
 This section describes the hypotheses that we will test, and the theory
  in which these hypotheses are grounded.
  We will test 5 hypotheses:
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Let's structure this a bit better: For each hypothesis say what is tested
+ (the comparison)? Why we choose (related literature) and what the implications
+ are (why should we care)
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
 \paragraph_spacing single
 \noindent
-Self-ratings are higher than ratings given by raters (farmers) to ratees
+Hypothesis 1: Self-ratings of dealers, traders and processors are higher
+ than ratings given by raters (farmers) to them
 \begin_inset CommandInset label
 LatexCommand label
 name "Hypothesis 1"
@@ -923,20 +936,51 @@ name "Hypothesis 1"
 \begin_layout Standard
 \paragraph_spacing onehalf
 The first hypothesis revolves around how the agro-input dealers, processors
- and traders rate themselves (self-assessments) compared to the ratings
- from the farmers.
- Self-ratings indicate the perceived level of performance by the service
- and input providers which is the main motivation towards the inclusion
- of this hypothesis.
- Perceptions in this regard can explain a lot about the sector and could
- also explain slower technological change and advancements.
- If these service and input providers perceive themselves to be performing
- better than they actually are, then there will be lesser efforts to improve
- their professional stance in the industry.
- If the farmers rate the input dealers, traders, and millers lower than
- their self-ratings, it shows that these actors are not meeting the expectations
- of the farmers without even realising their perceived low performance levels.
- This non-realisation is emanated through their more favourable self-ratings.
+ and traders rate themselves (self-assessments) as compared to the scores
+ that are give to them by the farmers.
+ A significant (positive) difference could mean that agro-input dealer systemati
+cally overestimate their own performance, perhaps as a result of an overconfiden
+ce effect.
+ However, research has shown that agents are generally pretty good at assessing
+ own performance 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "10.1111/j.1468-0297.2008.02211.x"
+literal "false"
+
+\end_inset
+
+.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+The results reported in the influential paper of 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "kruger1999unskilled"
+literal "false"
+
+\end_inset
+
+ that first described this bias among students have been discarded as a
+ statistical fallacy.
+\end_layout
+
+\end_inset
+
+ At the same time, the difference can also increase if farmers systematically
+ underestimate the performance of other value chain actors.
+ 
+\end_layout
+
+\begin_layout Standard
+Perceptions in this regard may lead to inefficient value chains and slower
+ value chain upgrading.
+ If service and input providers perceive themselves to be performing better
+ than they actually are, there may be no incentive to improve.
+ Farmers rating input dealers, traders, and millers lower than their self-rating
+s indicates actors are not meeting the expectations of the farmers.
  
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -950,12 +994,22 @@ literal "true"
  Such a leniency creates a gap between the input and service providers'
  perceived performance levels from the farmers and the perceived self-performanc
 e levels of the input and service providers.
+ If farmers underestimate service quality of other value chain actors, this
+ may lead to depressed demand for the services 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "MICHELSON2021102579"
+literal "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Itemize
 \paragraph_spacing single
 \noindent
-Ratings from women are more favourable than ratings from men
+Hypothesis 2: Ratings by women are more favourable than ratings by men
 \begin_inset CommandInset label
 LatexCommand label
 name "Hypothesis 2"
@@ -967,43 +1021,22 @@ name "Hypothesis 2"
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-Then, we turn to the variations in ratings based on gender (hypothesis 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "Hypothesis 2"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
-).
- There is evidence from various areas of research that women generally rate
- more favourably than men (
+In a second hypothesis, we test if female farmers rate input dealers, traders
+ and processors systematically higher than male farmers do.
+ There is some evidence that women generally rate more favourably than men
+ 
 \begin_inset CommandInset citation
-LatexCommand citealp
-key "Furnham2005"
+LatexCommand citep
+key "Furnham2005,Winquist1998"
 literal "true"
 
 \end_inset
 
-; 
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "Winquist1998"
-literal "true"
-
-\end_inset
-
-).
- More favourable ratings from female farmers can indicate that there are
- possibilities that female farmers are given better services and inputs
- by the input dealers, maize processors and traders.
- This can be culturally linked for a prominent gender bias in the provision
- of services and sale of goods.
- Another reason for this can be minimal stringency and greater leniency
- from women while rating the service and input providers they are involved
- with in their income-generating activities.
+.
+ More favourable ratings from female farmers may reflect that they received
+ better services and inputs by the input dealers, maize processors and traders.
+ Alternatively, there may be greater leniency from women while rating the
+ service and input providers.
  However, the literature does not mention statistically significant presence
  of leniency for ratings provided by female raters (
 \begin_inset CommandInset citation
@@ -1014,15 +1047,27 @@ literal "true"
 \end_inset
 
 ).
- Validating this in the context of food value chains can be an interesting
- contribution to the existing studies.
  
 \end_layout
 
-\begin_layout Enumerate
+\begin_layout Standard
+Women who are more forgiving towards other value chain actors may backfire
+ if these other value chain actors feel less compelled to live up to the
+ standards.
+ At the same time, relatively more positive feedback from women may mean
+ that service providers also exert more effort when dealing with women.
+ The fact that female farmer rate relatively higher also provides more scope
+ for disappointment.
+ This may lead to a higher likelihood of women exiting the value chain if
+ reality does not match up with higher (perceived) quality of services and
+ inputs.
+\end_layout
+
+\begin_layout Itemize
 \paragraph_spacing single
 \noindent
-Self-ratings from women are less favourable than self-ratings from men
+Hypothesis 3: Self-ratings from women are less favourable than self-ratings
+ from men
 \begin_inset CommandInset label
 LatexCommand label
 name "Hypothesis 3"
@@ -1033,51 +1078,15 @@ name "Hypothesis 3"
  
 \end_layout
 
-\begin_layout Enumerate
-\paragraph_spacing single
-\noindent
-Men receive more favourable ratings than women
-\begin_inset CommandInset label
-LatexCommand label
-name "Hypothesis 4"
-
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_layout Enumerate
-\paragraph_spacing single
-\noindent
-The impact of both rater (farmer) and ratee being a woman is significant
- on the ratings
-\begin_inset CommandInset label
-LatexCommand label
-name "Hypothesis 5"
-
-\end_inset
-
-.
-\end_layout
-
 \begin_layout Standard
 \paragraph_spacing onehalf
-Hypothesis 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "Hypothesis 3"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
- essentially compares the self-ratings (assessments) given by female and
- male agro-input dealers, processors, and traders.
- Women generally tend to underrate themselves, i.e., women perceive their
- potentials to be limited.
- 
+The third hypothesis compares the self-ratings given of female agro-input
+ dealers, processors, and traders to the self-rating of their male counterparts.
+ While we saw in hypothesis 1 that actors tend to overestimate own performance
+ and in hypothesis 2 that women tend to rate others higher than men do,
+ studies suggest that women generally tend to underrate themselves (relative
+ to men).
+ For instance, 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "Patiar2008"
@@ -1085,22 +1094,14 @@ literal "true"
 
 \end_inset
 
- saw a similar pattern for female Department Managers in the hotel industry.
- Male Department Managers always inflated their self-assessments while the
- women refrained from doing so.
- Gendered differences in self-perceptions do exist and this induces women
- and men to rate themselves differently, as argued by 
+ find that in the hotel industry, male department managers tend to hold
+ inflated self-assessments, while the women assessed themselves lower.
+ Similar patterns have consistently been found in a variety of contexts
+ 
 \begin_inset CommandInset citation
-LatexCommand citet
-key "Beyer1990,WOHLERS1989"
-literal "true"
-
-\end_inset
-
- and 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "rosenkrantz1968"
+LatexCommand citep
+before "eg."
+key "BENGTSSON2005199,Beyer1990,rosenkrantz1968"
 literal "true"
 
 \end_inset
@@ -1116,73 +1117,53 @@ literal "true"
 
  found that women tend to experience harsher consequences than men when
  they overrate themselves.
- Such gendered ideas of self-assessment can partially explain why lesser
- number of female agro-input dealers, processors and traders get involved
- in the maize markets in Uganda.
- Since they underestimate their ability, women could be less willing to
- be involved in these kind of business activities.
- Thus, the maize value chain remains dominated by the male service and input
- providers, pointing towards the need for important policy implications
- in this sector to encourage greater involvement of women.
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-Another important reason or consequence of less favourable self-perceptions
- can be the lack of confidence to strive in the business.
- In the developing economies, women generally have low confidence levels
- and face a lot of obstacles due to the standard cultural norms, societal
- expectations, gender discrimination and job-family conflicts (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "Izhar2006"
-literal "true"
-
-\end_inset
-
-).
- 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "brown1996"
-literal "true"
-
-\end_inset
-
- illustrated this phenomenon for Ugandan women describing how socialization
- effects, cultural validation of male dominance and gender stereotyping
- hinders the advancement of these women in educational management roles.
- As a result of social imposition of family roles, Ugandan women tend to
- have lower self-esteem and confidence in their potential to succeed outside
- domestic roles (
-\begin_inset CommandInset citation
-LatexCommand citealp
-key "Izhar2006,brown1996"
-literal "true"
-
-\end_inset
-
-).
  
 \end_layout
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-The goal for hypothesis 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "Hypothesis 4"
-plural "false"
-caps "false"
-noprefix "false"
+Lower self-ratings of women as compared to men may signal a lack of confidence
+ which may hamper aspirations and refrain women from thriving in business.
+ Cultural norms, societal expectations, and gender stereotyping will also
+ be reflected in self-ratings.
+ Such gendered ideas of self-assessment can thus be an important barrier
+ to entry of women, leading to exclusive value chains.
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+The references here are not good.
+ One is from 1996! Both are also from questionable publishers.
+ 
+\end_layout
 
 \end_inset
 
- is to study the differences in ratings received by male and female agro-input
- dealers, traders, and processors from maize farmers.
- One of the reasons behind lower ratings for women may be that women are
- generally perceived to be performing worse than men.
- For instance, 
+
+\end_layout
+
+\begin_layout Itemize
+\paragraph_spacing single
+\noindent
+Hypothesis 4: Men receive more favourable ratings than women
+\begin_inset CommandInset label
+LatexCommand label
+name "Hypothesis 4"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+In hypothesis 4, ratings received from farmers by female agro-input dealers,
+ traders, and processors are compared to rating received from farmers by
+ their male counterparts.
+ The fact that women are held to more stringent standards than men has been
+ repeatedly established over time.
+ 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "lyness2006"
@@ -1200,20 +1181,17 @@ literal "true"
 
 \end_inset
 
- presented similar findings for female professors who were rated by both
- male and female students.
- Bias against female professors has been very prominent in the literature
- in the past decades (
+ find that students rate female professors lower than male professors.
+ Bias against female professors has been replicated numerous times 
 \begin_inset CommandInset citation
-LatexCommand citealp
+LatexCommand citep
+before "eg."
 key "Feldman1993,Mengel2018,miller2000"
 literal "true"
 
 \end_inset
 
-).
- This evident bias against women can be the root for lower ratings received
- by female input and service providers.
+.
  A recent study by 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -1223,23 +1201,35 @@ literal "true"
 \end_inset
 
  found that there is a gender bias in how women are perceived in professional
- circumstances, i.e., perceptions about women mostly are less about their
- professional success and more about their physical or family factors.
- This can be a major driving factor for why women are always rated lower
- than men.
+ circumstances, i.e., perceptions about women are generally lower in the professio
+nal sphere and higher in the domestic sphere or when physical appearance
+ is judged.
+ The fact that bias is more present in male dominated sectors suggests,
+ at least in part, cultural factors play an important role in its creation.
  
 \end_layout
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-In the context of this study, bias against women can aid the explanation
- for the minimal involvement of women in agro-input dealing, trading, and
- processing of maize.
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Why should we care?
+\end_layout
+
+\end_inset
+
+In the context of this study, bias against women may again provide a barrier
+ of entry for women in agro-input dealing, trading, and processing of maize.
  When women are aware that they are perceived to be less capable for these
  business activities, they might not enter the sector in the first place
  to avoid criticisms and performance obstacles at a later stage.
- Social stringency and family practices might limit the women from performing
- better or being equally competitive as the men.
+ However, a bias in rating may also lead to actual differences in the quality
+ of service, as women who are perceived to be inferior struggle to attract
+ credit to invest in their activities.
+ More in general, the cultural context might limit women from performing
+ better and being equally competitive as the men.
  A study done on the women entrepreneurs in the Kigali region of Rwanda
  by 
 \begin_inset CommandInset citation
@@ -1271,24 +1261,33 @@ ities (childcare, family responsibilities), inadequate skills and business
  
 \end_layout
 
-\begin_layout Standard
-Finally, the primary goal of hypothesis 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "Hypothesis 5"
-plural "false"
-caps "false"
-noprefix "false"
+\begin_layout Itemize
+\paragraph_spacing single
+\noindent
+Hypothesis 5: The impact of both rater and ratee being a woman (man) is
+ significant on the ratings
+\begin_inset CommandInset label
+LatexCommand label
+name "Hypothesis 5"
 
 \end_inset
 
- is to study the interaction between the sex of the rater (farmer) and the
- ratee in order to investigate if there is some significant impact of both
- being of the same sex on the ratings.
- This is mainly motivated by the literature studying homophily in social
- networks.
+.
+\end_layout
+
+\begin_layout Standard
+Finally, in hypothesis 5 we test the interaction between the sex of the
+ rater (farmer) and the ratee in order to investigate if there is some significa
+nt impact of both being of the same sex on the ratings.
+ This hypothesis is motivated by the literature on homophily in social networks.
  The homophily principle essentially focuses on network ties based on relationsh
 ips and characteristics of the actors involved.
+ In the context of this study, gender homophily effects in rating would
+ exist if ratings in matched gender rater-ratee pairs (eg female farmers
+ rating female agro-input dealers or male farmers rating male processors)
+ are consistently higher than ratings in mixed gender rater-ratiee linkages
+ (eg a female farmer rating a male agro-input dealer or a male farmer rating
+ a female processor).
  
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -1297,27 +1296,41 @@ literal "true"
 
 \end_inset
 
- discussed the consequences of such preferences like limitations in the
- social world, biased information, attitudes influenced by the characteristics
- of the ties formed and interactions limited to these homogeneous networks,
+ discusses the causes and consequences of such preferences like limitations
+ in the social world, biased information, attitudes influenced by the characteri
+stics of the ties formed and interactions limited to these homogeneous networks,
  arguing that gender based homophily can strongly divide personal environments.
  
 \end_layout
 
 \begin_layout Standard
-Gender based homophily in food value chains can mean bias towards certain
- actors.
- For instance, if a female farmer has higher preference for a female trader,
- she may always interact with traders of the same sex.
- Other traders of opposite sex might be providing better services which
- this female farmer will be deprived of.
- While rating if the farmers intentionally rate the input and service providers
- of the same sex more or less favourably, incorrect performance perceptions
- will be exposed within the value chain.
- This may impact the performance of these actors and make business worse
- for some of the actors who received lower scores because of gender based
- homophily in preferences.
- 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Why should we care?
+\end_layout
+
+\end_inset
+
+Gender based homophily in food value chains may lead to several co-existing
+ value chains aligned by gender.
+ If a female farmer gives higher ratings to a female trader, she may always
+ interact with traders of the same sex (the same holds for men).
+ The higher ratings an lower levels of competition enjoyed by dealers, trader
+ and processors may reduce effort and delay innovations.
+ However, recent research suggests that increased competition in value chains
+ characterized by relational contracts is not always good 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "10.1093/qje/qjaa048"
+literal "false"
+
+\end_inset
+
+.
+ Indeed, the increased trust in relationships mediated by gender homophily
+ may make it easier for women to enter into business.
 \end_layout
 
 \begin_layout Section
