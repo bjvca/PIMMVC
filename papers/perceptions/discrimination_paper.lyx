@@ -1248,6 +1248,7 @@ tiny
 Note: Here, the gender of the dealer is a dummy variable where 1 is male
  and 0 is female.
  The ratings received by the dealers are averaged at the dealer level.
+ Standard errors are presented in ().
  
 \backslash
 label{table:table5} 
@@ -1823,7 +1824,8 @@ tiny
 Note: Here, the gender of the dealer is a dummy variable where 1 is male
  and 0 is female.
  The ratings received by the dealers are averaged at the dealer level.
-  
+ Standard errors are presented in ().
+ 
 \backslash
 label{table:table7} 
 \end_layout
@@ -4157,6 +4159,7 @@ tiny
 Note: Here, the gender of the dealer is a dummy variable where 1 is male
  and 0 is female.
  The ratings received by the dealers are averaged at the dealer level.
+ Standard errors are presented in ().
  
 \backslash
 label{table:table6} 
@@ -6231,9 +6234,1226 @@ tiny
 Note: Here, the gender of the dealer is a dummy variable where 1 is male
  and 0 is female.
  The ratings received by the dealers are averaged at the dealer level.
+ Standard errors are presented in ().
  
 \backslash
 label{table:table8} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Between dealers model focusing on seed and dealer ratings (with and without
+ control variables, Q1).
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Between-dealers-model_q1_coef"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize 
+\backslash
+begin{center} 
+\backslash
+begin{tabular}{@{
+\backslash
+extracolsep{5pt}}lccccccc}  
+\backslash
+
+\backslash
+[-1.8ex]
+\backslash
+hline  
+\backslash
+hline 
+\backslash
+
+\backslash
+[-1.8ex]   & 
+\backslash
+multicolumn{7}{c}{
+\backslash
+textit{
+\backslash
+footnotesize Dependent variable: Average of all the ratings received by
+ dealers}} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ 
+\backslash
+cline{2-8}  
+\backslash
+
+\backslash
+ & 
+\backslash
+multicolumn{7} {c} {
+\backslash
+textit{
+\backslash
+footnotesize Seed ratings}} 
+\backslash
+
+\backslash
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+cline{2-8} 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & 
+\backslash
+multicolumn{1} {c} {Average}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Seed's}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Seed's}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Seed's}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Seed's}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Seed's}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Seed's}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{1} {c} {seed}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {general}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {yield}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {drought}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {pest/disease}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {early}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {germination}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{1} {c} {rating}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {quality}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {tolerance}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {tolerance}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {maturing}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+[-1.8ex] & (1) & (2) & (3) & (4) & (5)& (6)& (7) 
+\backslash
+
+\backslash
+  
+\backslash
+hline 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+{Constant}                  & $
+\backslash
+Sexpr{s5[1,1]}$ & $
+\backslash
+Sexpr{s5[1,2]}$ & $
+\backslash
+Sexpr{s5[1,3]}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{s5[1,4]}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s5[1,5]}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s5[1,6]}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s5[1,7]}$    
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  &  $(
+\backslash
+Sexpr{s5[2,1]})$   &  $(
+\backslash
+Sexpr{s5[2,2]})$ & $(
+\backslash
+Sexpr{s5[2,3]})$ & $(
+\backslash
+Sexpr{s5[2,4]})$ & $(
+\backslash
+Sexpr{s5[2,5]})$ & $(
+\backslash
+Sexpr{s5[2,6]})$ & $(
+\backslash
+Sexpr{s5[2,7]})$  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{Dealer is male}   & $
+\backslash
+Sexpr{s5[4,1]}^{
+\backslash
+Sexpr{ifelse(s5[6,1]<.01,"***",ifelse(s5[6,1]<.05,"**",ifelse(s5[6,1]<.1,"*","")))}
+}$ & $
+\backslash
+Sexpr{s5[4,2]}^{
+\backslash
+Sexpr{ifelse(s5[6,2]<.01,"***",ifelse(s5[6,2]<.05,"**",ifelse(s5[6,2]<.1,"*","")))}
+}$  & $
+\backslash
+Sexpr{s5[4,3]}^{
+\backslash
+Sexpr{ifelse(s5[6,3]<.01,"***",ifelse(s5[6,3]<.05,"**",ifelse(s5[6,3]<.1,"*","")))}
+}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{s5[4,4]}^{
+\backslash
+Sexpr{ifelse(s5[6,4]<.01,"***",ifelse(s5[6,4]<.05,"**",ifelse(s5[6,4]<.1,"*","")))}
+}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s5[4,5]}^{
+\backslash
+Sexpr{ifelse(s5[6,5]<.01,"***",ifelse(s5[6,5]<.05,"**",ifelse(s5[6,5]<.1,"*","")))}
+}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s5[4,6]}^{
+\backslash
+Sexpr{ifelse(s5[6,6]<.01,"***",ifelse(s5[6,6]<.05,"**",ifelse(s5[6,6]<.1,"*","")))}
+}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s5[4,7]}^{
+\backslash
+Sexpr{ifelse(s5[6,7]<.01,"***",ifelse(s5[6,7]<.05,"**",ifelse(s5[6,7]<.1,"*","")))}
+}$  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $(
+\backslash
+Sexpr{s5[5,1]})$   &  $(
+\backslash
+Sexpr{s5[5,2]})$ & $(
+\backslash
+Sexpr{s5[5,3]})$ & $(
+\backslash
+Sexpr{s5[5,4]})$ & $(
+\backslash
+Sexpr{s5[5,5]})$ & $(
+\backslash
+Sexpr{s5[5,6]})$ & $(
+\backslash
+Sexpr{s5[5,7]})$ 
+\backslash
+
+\backslash
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-8} 
+\backslash
+
+\backslash
+[-1.8ex] & 
+\backslash
+multicolumn{7} {c} {Control variables included}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ 
+\backslash
+cline{2-8} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{Constant}                  & $
+\backslash
+Sexpr{s6[1,1]}$ & $
+\backslash
+Sexpr{s6[1,2]}$  & $
+\backslash
+Sexpr{s6[1,3]}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{s6[1,4]}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s6[1,5]}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s6[1,6]}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s6[1,7]}$   
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  &  $(
+\backslash
+Sexpr{s6[2,1]})$   &  $(
+\backslash
+Sexpr{s6[2,2]})$ & $(
+\backslash
+Sexpr{s6[2,3]})$ & $(
+\backslash
+Sexpr{s6[2,4]})$ & $(
+\backslash
+Sexpr{s6[2,5]})$ & $(
+\backslash
+Sexpr{s6[2,6]})$ & $(
+\backslash
+Sexpr{s6[2,7]})$  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{Dealer is male}   & $
+\backslash
+Sexpr{s6[4,1]}^{
+\backslash
+Sexpr{ifelse(s6[6,1]<.01,"***",ifelse(s6[6,1]<.05,"**",ifelse(s6[6,1]<.1,"*","")))}
+}$ & $
+\backslash
+Sexpr{s6[4,2]}^{
+\backslash
+Sexpr{ifelse(s6[6,2]<.01,"***",ifelse(s6[6,2]<.05,"**",ifelse(s6[6,2]<.1,"*","")))}
+}$  & $
+\backslash
+Sexpr{s6[4,3]}^{
+\backslash
+Sexpr{ifelse(s6[6,3]<.01,"***",ifelse(s6[6,3]<.05,"**",ifelse(s6[6,3]<.1,"*","")))}
+}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{s6[4,4]}^{
+\backslash
+Sexpr{ifelse(s6[6,4]<.01,"***",ifelse(s6[6,4]<.05,"**",ifelse(s6[6,4]<.1,"*","")))}
+}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s6[4,5]}^{
+\backslash
+Sexpr{ifelse(s6[6,5]<.01,"***",ifelse(s6[6,5]<.05,"**",ifelse(s6[6,5]<.1,"*","")))}
+}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s6[4,6]}^{
+\backslash
+Sexpr{ifelse(s6[6,6]<.01,"***",ifelse(s6[6,6]<.05,"**",ifelse(s6[6,6]<.1,"*","")))}
+}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s6[4,7]}^{
+\backslash
+Sexpr{ifelse(s6[6,7]<.01,"***",ifelse(s6[6,7]<.05,"**",ifelse(s6[6,7]<.1,"*","")))}
+}$   
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $(
+\backslash
+Sexpr{s6[5,1]})$   &  $(
+\backslash
+Sexpr{s6[5,2]})$ & $(
+\backslash
+Sexpr{s6[5,3]})$ & $(
+\backslash
+Sexpr{s6[5,4]})$ & $(
+\backslash
+Sexpr{s6[5,5]})$ & $(
+\backslash
+Sexpr{s6[5,6]})$ & $(
+\backslash
+Sexpr{s6[5,7]})$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ 
+\backslash
+cline{2-8}  
+\backslash
+
+\backslash
+ & 
+\backslash
+multicolumn{7} {c} {
+\backslash
+textit{
+\backslash
+footnotesize Dealer ratings}} 
+\backslash
+
+\backslash
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+cline{2-8}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{1} {c} {Average}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Dealer's}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Dealer's}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Dealer's}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Dealer's}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Dealer's}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Dealer's}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{1} {c} {dealer}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {general}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {location}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {price}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {seed}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {stock}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {reputation}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{1} {c} {rating}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {quality}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {quality}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+[-1.8ex] & (1) & (2) & (3) & (4) & (5)& (6)& (7) 
+\backslash
+
+\backslash
+  
+\backslash
+hline 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+{Constant}                  & $
+\backslash
+Sexpr{s7[1,1]}$ & $
+\backslash
+Sexpr{s7[1,2]}$  & $
+\backslash
+Sexpr{s7[1,3]}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{s7[1,4]}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s7[1,5]}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s7[1,6]}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s7[1,7]}$   
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  &  $(
+\backslash
+Sexpr{s7[2,1]})$   &  $(
+\backslash
+Sexpr{s7[2,2]})$ & $(
+\backslash
+Sexpr{s7[2,3]})$ & $(
+\backslash
+Sexpr{s7[2,4]})$ & $(
+\backslash
+Sexpr{s7[2,5]})$ & $(
+\backslash
+Sexpr{s7[2,6]})$ & $(
+\backslash
+Sexpr{s7[2,7]})$  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{Dealer is male}   & $
+\backslash
+Sexpr{s7[4,1]}^{
+\backslash
+Sexpr{ifelse(s7[6,1]<.01,"***",ifelse(s7[6,1]<.05,"**",ifelse(s7[6,1]<.1,"*","")))}
+}$ & $
+\backslash
+Sexpr{s7[4,2]}^{
+\backslash
+Sexpr{ifelse(s7[6,2]<.01,"***",ifelse(s7[6,2]<.05,"**",ifelse(s7[6,2]<.1,"*","")))}
+}$  & $
+\backslash
+Sexpr{s7[4,3]}^{
+\backslash
+Sexpr{ifelse(s7[6,3]<.01,"***",ifelse(s7[6,3]<.05,"**",ifelse(s7[6,3]<.1,"*","")))}
+}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{s7[4,4]}^{
+\backslash
+Sexpr{ifelse(s7[6,4]<.01,"***",ifelse(s7[6,4]<.05,"**",ifelse(s7[6,4]<.1,"*","")))}
+}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s7[4,5]}^{
+\backslash
+Sexpr{ifelse(s7[6,5]<.01,"***",ifelse(s7[6,5]<.05,"**",ifelse(s7[6,5]<.1,"*","")))}
+}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s7[4,6]}^{
+\backslash
+Sexpr{ifelse(s7[6,6]<.01,"***",ifelse(s7[6,6]<.05,"**",ifelse(s7[6,6]<.1,"*","")))}
+}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s7[4,7]}^{
+\backslash
+Sexpr{ifelse(s7[6,7]<.01,"***",ifelse(s7[6,7]<.05,"**",ifelse(s7[6,7]<.1,"*","")))}
+}$   
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $(
+\backslash
+Sexpr{s7[5,1]})$   &  $(
+\backslash
+Sexpr{s7[5,2]})$ & $(
+\backslash
+Sexpr{s7[5,3]})$ & $(
+\backslash
+Sexpr{s7[5,4]})$ & $(
+\backslash
+Sexpr{s7[5,5]})$ & $(
+\backslash
+Sexpr{s7[5,6]})$ & $(
+\backslash
+Sexpr{s7[5,7]})$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-8} 
+\backslash
+
+\backslash
+[-1.8ex] & 
+\backslash
+multicolumn{7} {c} {Control variables included}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ 
+\backslash
+cline{2-8} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{Constant}                  & $
+\backslash
+Sexpr{s8[1,1]}$ & $
+\backslash
+Sexpr{s8[1,2]}$  & $
+\backslash
+Sexpr{s8[1,3]}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{s8[1,4]}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s8[1,5]}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s8[1,6]}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s8[1,7]}$  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  &  $(
+\backslash
+Sexpr{s8[2,1]})$   &  $(
+\backslash
+Sexpr{s8[2,2]})$ & $(
+\backslash
+Sexpr{s8[2,3]})$ & $(
+\backslash
+Sexpr{s8[2,4]})$ & $(
+\backslash
+Sexpr{s8[2,5]})$ & $(
+\backslash
+Sexpr{s8[2,6]})$ & $(
+\backslash
+Sexpr{s8[2,7]})$  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{Dealer is male}   & $
+\backslash
+Sexpr{s8[4,1]}^{
+\backslash
+Sexpr{ifelse(s8[6,1]<.01,"***",ifelse(s8[6,1]<.05,"**",ifelse(s8[6,1]<.1,"*","")))}
+}$ & $
+\backslash
+Sexpr{s8[4,2]}^{
+\backslash
+Sexpr{ifelse(s8[6,2]<.01,"***",ifelse(s8[6,2]<.05,"**",ifelse(s8[6,2]<.1,"*","")))}
+}$  & $
+\backslash
+Sexpr{s8[4,3]}^{
+\backslash
+Sexpr{ifelse(s8[6,3]<.01,"***",ifelse(s8[6,3]<.05,"**",ifelse(s8[6,3]<.1,"*","")))}
+}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{s8[4,4]}^{
+\backslash
+Sexpr{ifelse(s8[6,4]<.01,"***",ifelse(s8[6,4]<.05,"**",ifelse(s8[6,4]<.1,"*","")))}
+}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s8[4,5]}^{
+\backslash
+Sexpr{ifelse(s8[6,5]<.01,"***",ifelse(s8[6,5]<.05,"**",ifelse(s8[6,5]<.1,"*","")))}
+}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s8[4,6]}^{
+\backslash
+Sexpr{ifelse(s8[6,6]<.01,"***",ifelse(s8[6,6]<.05,"**",ifelse(s8[6,6]<.1,"*","")))}
+}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{s8[4,7]}^{
+\backslash
+Sexpr{ifelse(s8[6,7]<.01,"***",ifelse(s8[6,7]<.05,"**",ifelse(s8[6,7]<.1,"*","")))}
+}$  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $(
+\backslash
+Sexpr{s8[5,1]})$   &  $(
+\backslash
+Sexpr{s8[5,2]})$ & $(
+\backslash
+Sexpr{s8[5,3]})$ & $(
+\backslash
+Sexpr{s8[5,4]})$ & $(
+\backslash
+Sexpr{s8[5,5]})$ & $(
+\backslash
+Sexpr{s8[5,6]})$ & $(
+\backslash
+Sexpr{s8[5,7]})$  
+\end_layout
+
+\begin_layout Plain Layout
+
+     
+\backslash
+
+\backslash
+ 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{8}{l}{ 
+\backslash
+scriptsize{$^{***}p<0.01$; $^{**}p<0.05$; $^{*}p<0.1$.}} 
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tabular} 
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: Here, the gender of the dealer is a dummy variable where 1 is male
+ and 0 is female.
+ The ratings received by the dealers are averaged at the dealer level.
+ Standard errors are presented in ().
+ 
+\backslash
+label{table:table5} 
 \end_layout
 
 \end_inset
@@ -6854,7 +8074,8 @@ tiny
 Note: Here, the gender of the input dealer is a dummy variable carrying
  the value of either 0 or 1.
  Fixed effects or within estimation has been used at the farmer level.
- Cluster-robust SE are obtained by clustering at the dealer level.
+ Cluster-robust SE are obtained by clustering at the dealer level (presented
+ in ()).
  
 \backslash
 label{table:table9} 
@@ -9077,7 +10298,8 @@ tiny
 Note: Here, the gender of the input dealer is a dummy variable carrying
  the value of either 0 or 1.
  Fixed effects or within estimation has been used at the farmer level.
- Cluster-robust SE are obtained by clustering at the dealer level.
+ Cluster-robust SE are obtained by clustering at the dealer level (presented
+ in ()).
    
 \backslash
 label{table:table10} 
@@ -9539,7 +10761,8 @@ tiny
 Note: Here, the gender of the input dealer is a dummy variable carrying
  the value of either 0 or 1.
  Fixed effects or within estimation has been used at the farmer level.
- Cluster-robust SE are obtained by clustering at the dealer level.
+ Cluster-robust SE are obtained by clustering at the dealer level (presented
+ in ()).
   
 \backslash
 label{table:table11} 
@@ -11539,10 +12762,967 @@ tiny
 Note: Here, the gender of the input dealer is a dummy variable carrying
  the value of either 0 or 1.
  Fixed effects or within estimation has been used at the farmer level.
- Cluster-robust SE are obtained by clustering at the dealer level.
+ Cluster-robust SE are obtained by clustering at the dealer level (presented
+ in ()).
   
 \backslash
 label{table:table12} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Farmer fixed effects model focusing on seed and dealer ratings (with and
+ without controls, Q1).
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Farmer-fixed-effects_q1_coef"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize 
+\backslash
+begin{center} 
+\backslash
+begin{tabular}{@{
+\backslash
+extracolsep{5pt}}lccccccc}  
+\backslash
+
+\backslash
+[-1.8ex]
+\backslash
+hline  
+\backslash
+hline 
+\backslash
+
+\backslash
+[-1.8ex]   & 
+\backslash
+multicolumn{7}{c}{
+\backslash
+textit{
+\backslash
+footnotesize Dependent variable: Ratings given by the farmers}} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ 
+\backslash
+cline{2-8}  
+\backslash
+
+\backslash
+ & 
+\backslash
+multicolumn{7} {c} {
+\backslash
+textit{
+\backslash
+footnotesize Seed ratings}} 
+\backslash
+
+\backslash
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+cline{2-8} 
+\end_layout
+
+\begin_layout Plain Layout
+
+ & 
+\backslash
+multicolumn{1} {c} {Average}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Seed's}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Seed's}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Seed's}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Seed's}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Seed's}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Seed's}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{1} {c} {seed}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {general}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {yield}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {drought}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {pest/disease}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {early}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {germination}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{1} {c} {rating}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {quality}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {tolerance}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {tolerance}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {maturing}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+[-1.8ex] & (1) & (2) & (3) & (4) & (5)& (6)& (7) 
+\backslash
+
+\backslash
+  
+\backslash
+hline 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+{Dealer is male}   & $
+\backslash
+Sexpr{fe1[2,1]}^{
+\backslash
+Sexpr{ifelse(fe1[4,1]<.01,"***",ifelse(fe1[4,1]<.03,"**",ifelse(fe1[4,1]<.1,"*","")
+))}}$ & $
+\backslash
+Sexpr{fe1[2,2]}^{
+\backslash
+Sexpr{ifelse(fe1[4,2]<.01,"***",ifelse(fe1[4,2]<.03,"**",ifelse(fe1[4,2]<.1,"*","")
+))}}$  & $
+\backslash
+Sexpr{fe1[2,3]}^{
+\backslash
+Sexpr{ifelse(fe1[4,3]<.01,"***",ifelse(fe1[4,3]<.03,"**",ifelse(fe1[4,3]<.1,"*","")
+))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{fe1[2,4]}^{
+\backslash
+Sexpr{ifelse(fe1[4,4]<.01,"***",ifelse(fe1[4,4]<.03,"**",ifelse(fe1[4,4]<.1,"*","")
+))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{fe1[2,5]}^{
+\backslash
+Sexpr{ifelse(fe1[4,5]<.01,"***",ifelse(fe1[4,5]<.03,"**",ifelse(fe1[4,5]<.1,"*","")
+))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{fe1[2,6]}^{
+\backslash
+Sexpr{ifelse(fe1[4,6]<.01,"***",ifelse(fe1[4,6]<.03,"**",ifelse(fe1[4,6]<.1,"*","")
+))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{fe1[2,7]}^{
+\backslash
+Sexpr{ifelse(fe1[4,7]<.01,"***",ifelse(fe1[4,7]<.03,"**",ifelse(fe1[4,7]<.1,"*","")
+))}}$   
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $(
+\backslash
+Sexpr{fe1[3,1]})$   &  $(
+\backslash
+Sexpr{fe1[3,2]})$ & $(
+\backslash
+Sexpr{fe1[3,3]})$ & $(
+\backslash
+Sexpr{fe1[3,4]})$ & $(
+\backslash
+Sexpr{fe1[3,5]})$ & $(
+\backslash
+Sexpr{fe1[3,6]})$ & $(
+\backslash
+Sexpr{fe1[3,7]})$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-8} 
+\backslash
+
+\backslash
+[-1.8ex] & 
+\backslash
+multicolumn{7} {c} {Control variables included}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ 
+\backslash
+cline{2-8} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{Dealer is male}   & $
+\backslash
+Sexpr{fe2[2,1]}^{
+\backslash
+Sexpr{ifelse(fe2[4,1]<.01,"***",ifelse(fe2[4,1]<.03,"**",ifelse(fe2[4,1]<.1,"*","")
+))}}$ & $
+\backslash
+Sexpr{fe2[2,2]}^{
+\backslash
+Sexpr{ifelse(fe2[4,2]<.01,"***",ifelse(fe2[4,2]<.03,"**",ifelse(fe2[4,2]<.1,"*","")
+))}}$  & $
+\backslash
+Sexpr{fe2[2,3]}^{
+\backslash
+Sexpr{ifelse(fe2[4,3]<.01,"***",ifelse(fe2[4,3]<.03,"**",ifelse(fe2[4,3]<.1,"*","")
+))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{fe2[2,4]}^{
+\backslash
+Sexpr{ifelse(fe2[4,4]<.01,"***",ifelse(fe2[4,4]<.03,"**",ifelse(fe2[4,4]<.1,"*","")
+))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{fe2[2,5]}^{
+\backslash
+Sexpr{ifelse(fe2[4,5]<.01,"***",ifelse(fe2[4,5]<.03,"**",ifelse(fe2[4,5]<.1,"*","")
+))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{fe2[2,6]}^{
+\backslash
+Sexpr{ifelse(fe2[4,6]<.01,"***",ifelse(fe2[4,6]<.03,"**",ifelse(fe2[4,6]<.1,"*","")
+))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{fe2[2,7]}^{
+\backslash
+Sexpr{ifelse(fe2[4,7]<.01,"***",ifelse(fe2[4,7]<.03,"**",ifelse(fe2[4,7]<.1,"*","")
+))}}$ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $(
+\backslash
+Sexpr{fe2[3,1]})$   &  $(
+\backslash
+Sexpr{fe2[3,2]})$ & $(
+\backslash
+Sexpr{fe2[3,3]})$ & $(
+\backslash
+Sexpr{fe2[3,4]})$ & $(
+\backslash
+Sexpr{fe2[3,5]})$ & $(
+\backslash
+Sexpr{fe2[3,6]})$ & $(
+\backslash
+Sexpr{fe2[3,7]})$  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ 
+\backslash
+cline{2-8}  
+\backslash
+
+\backslash
+ & 
+\backslash
+multicolumn{7} {c} {
+\backslash
+textit{
+\backslash
+footnotesize Dealer ratings}} 
+\backslash
+
+\backslash
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+cline{2-8}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{1} {c} {Average}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Dealer's}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Dealer's}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Dealer's}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Dealer's}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Dealer's}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Dealer's}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{1} {c} {dealer}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {general}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {location}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {price}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {seed}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {stock}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {reputation}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{1} {c} {rating}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {quality}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {quality}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+[-1.8ex] & (1) & (2) & (3) & (4) & (5)& (6)& (7) 
+\backslash
+
+\backslash
+  
+\backslash
+hline 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+{Dealer is male}   & $
+\backslash
+Sexpr{fe3[2,1]}^{
+\backslash
+Sexpr{ifelse(fe3[4,1]<.01,"***",ifelse(fe3[4,1]<.03,"**",ifelse(fe3[4,1]<.1,"*","")
+))}}$ & $
+\backslash
+Sexpr{fe3[2,2]}^{
+\backslash
+Sexpr{ifelse(fe3[4,2]<.01,"***",ifelse(fe3[4,2]<.03,"**",ifelse(fe3[4,2]<.1,"*","")
+))}}$  & $
+\backslash
+Sexpr{fe3[2,3]}^{
+\backslash
+Sexpr{ifelse(fe3[4,3]<.01,"***",ifelse(fe3[4,3]<.03,"**",ifelse(fe3[4,3]<.1,"*","")
+))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{fe3[2,4]}^{
+\backslash
+Sexpr{ifelse(fe3[4,4]<.01,"***",ifelse(fe3[4,4]<.03,"**",ifelse(fe3[4,4]<.1,"*","")
+))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{fe3[2,5]}^{
+\backslash
+Sexpr{ifelse(fe3[4,5]<.01,"***",ifelse(fe3[4,5]<.03,"**",ifelse(fe3[4,5]<.1,"*","")
+))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{fe3[2,6]}^{
+\backslash
+Sexpr{ifelse(fe3[4,6]<.01,"***",ifelse(fe3[4,6]<.03,"**",ifelse(fe3[4,6]<.1,"*","")
+))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{fe3[2,7]}^{
+\backslash
+Sexpr{ifelse(fe3[4,7]<.01,"***",ifelse(fe3[4,7]<.03,"**",ifelse(fe3[4,7]<.1,"*","")
+))}}$   
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $(
+\backslash
+Sexpr{fe3[3,1]})$   &  $(
+\backslash
+Sexpr{fe3[3,2]})$ & $(
+\backslash
+Sexpr{fe3[3,3]})$ & $(
+\backslash
+Sexpr{fe3[3,4]})$ & $(
+\backslash
+Sexpr{fe3[3,5]})$ & $(
+\backslash
+Sexpr{fe3[3,6]})$ & $(
+\backslash
+Sexpr{fe3[3,7]})$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-8} 
+\backslash
+
+\backslash
+[-1.8ex] & 
+\backslash
+multicolumn{7} {c} {Control variables included}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ 
+\backslash
+cline{2-8} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{Dealer is male}   & $
+\backslash
+Sexpr{fe4[2,1]}^{
+\backslash
+Sexpr{ifelse(fe4[4,1]<.01,"***",ifelse(fe4[4,1]<.03,"**",ifelse(fe4[4,1]<.1,"*","")
+))}}$ & $
+\backslash
+Sexpr{fe4[2,2]}^{
+\backslash
+Sexpr{ifelse(fe4[4,2]<.01,"***",ifelse(fe4[4,2]<.03,"**",ifelse(fe4[4,2]<.1,"*","")
+))}}$  & $
+\backslash
+Sexpr{fe4[2,3]}^{
+\backslash
+Sexpr{ifelse(fe4[4,3]<.01,"***",ifelse(fe4[4,3]<.03,"**",ifelse(fe4[4,3]<.1,"*","")
+))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{fe4[2,4]}^{
+\backslash
+Sexpr{ifelse(fe4[4,4]<.01,"***",ifelse(fe4[4,4]<.03,"**",ifelse(fe4[4,4]<.1,"*","")
+))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{fe4[2,5]}^{
+\backslash
+Sexpr{ifelse(fe4[4,5]<.01,"***",ifelse(fe4[4,5]<.03,"**",ifelse(fe4[4,5]<.1,"*","")
+))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{fe4[2,6]}^{
+\backslash
+Sexpr{ifelse(fe4[4,6]<.01,"***",ifelse(fe4[4,6]<.03,"**",ifelse(fe4[4,6]<.1,"*","")
+))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{fe4[2,7]}^{
+\backslash
+Sexpr{ifelse(fe4[4,7]<.01,"***",ifelse(fe4[4,7]<.03,"**",ifelse(fe4[4,7]<.1,"*","")
+))}}$   
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $(
+\backslash
+Sexpr{fe4[3,1]})$   &  $(
+\backslash
+Sexpr{fe4[3,2]})$ & $(
+\backslash
+Sexpr{fe4[3,3]})$ & $(
+\backslash
+Sexpr{fe4[3,4]})$ & $(
+\backslash
+Sexpr{fe4[3,5]})$ & $(
+\backslash
+Sexpr{fe4[3,6]})$ & $(
+\backslash
+Sexpr{fe4[3,7]})$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+     
+\backslash
+
+\backslash
+ 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{8}{l}{ 
+\backslash
+scriptsize{$^{***}p<0.01$; $^{**}p<0.05$; $^{*}p<0.1$.}} 
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tabular} 
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: Here, the gender of the input dealer is a dummy variable carrying
+ the value of either 0 or 1.
+ Fixed effects or within estimation has been used at the farmer level.
+ Cluster-robust SE are obtained by clustering at the dealer level (presented
+ in ()).
+ 
 \end_layout
 
 \end_inset
@@ -12246,7 +14426,8 @@ tiny
 Note: Here, the genders of the different input dealers that each farmer
  rated have been averaged.
  The ratings given by the farmers also are averaged at the farmer level.
-  
+ Standard errors are presented in ().
+ 
 \backslash
 label{table:table1} 
 \end_layout
@@ -14880,7 +17061,8 @@ Note: Here, the genders of the different input dealers that each farmer
  rated have been averaged.
  All the dealer characteristics are also averaged accordingly.
  The ratings given by the farmers also are averaged at the farmer level.
- 
+ Standard errors are presented in ().
+    
 \backslash
 label{table:table2} 
 \end_layout
@@ -15413,6 +17595,7 @@ tiny
 Note: Here, the genders of the different input dealers that each farmer
  rated have been averaged.
  The ratings given by the farmers also are averaged at the farmer level.
+ Standard errors are presented in ().
  
 \backslash
 label{table:table3} 
@@ -17832,6 +20015,7 @@ Note: Here, the genders of the different input dealers that each farmer
  rated have been averaged.
  All the dealer characteristics are also averaged accordingly.
  The ratings given by the farmers also are averaged at the farmer level.
+ Standard errors are presented in ().
   
 \backslash
 label{table:table4} 
@@ -18602,7 +20786,8 @@ tiny
 Note: Here, the gender of the dealer is a dummy variable where 1 is male
  and 0 is female.
  Random effects are included at the farmer level.
-    
+ Cluster-robust standard errors at the dealer level are presented in ().
+     
 \end_layout
 
 \end_inset
@@ -19139,8 +21324,9 @@ Sexpr{ifelse(ranrc1[12,3]<.01,"***",ifelse(ranrc1[12,3]<.05,"**",ifelse(ranrc1[1
 \backslash
 Sexpr{ranrc1[10,4]}^{
 \backslash
-Sexpr{ifelse(ranrc1[12,4]<.01,"***",ifelse(ranrc1[12,4]<.05,"**",ifelse(ranrc1[12,
-4]<.1,"*","")))}}$
+Sexpr{ifelse(ranrc1[12,4]<.01,"***",Cluster-robust standard errors at the
+ dealer level are presented in ().
+  ifelse(ranrc1[12,4]<.05,"**",ifelse(ranrc1[12,4]<.1,"*","")))}}$
 \end_layout
 
 \begin_layout Plain Layout
@@ -20833,7 +23019,8 @@ tiny
 Note: Here, the gender of the dealer is a dummy variable where 1 is male
  and 0 is female.
  Random effects are included at the farmer level.
- 
+ Cluster-robust standard errors at the dealer level are presented in ().
+   
 \end_layout
 
 \end_inset
@@ -21356,7 +23543,8 @@ tiny
 Note: Here, the gender of the dealer is a dummy variable where 1 is male
  and 0 is female.
  Random effects are included at the farmer level.
-    
+ Cluster-robust standard errors at the dealer level are presented in ().
+      
 \end_layout
 
 \end_inset
@@ -23432,6 +25620,8 @@ tiny
 Note: Here, the gender of the dealer is a dummy variable where 1 is male
  and 0 is female.
  Random effects are included at the farmer level.
+ Cluster-robust standard errors at the dealer level are presented in ().
+  
 \end_layout
 
 \end_inset
@@ -23449,6 +25639,10 @@ Note: Here, the gender of the dealer is a dummy variable where 1 is male
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 \begin_inset Float table
 wide false
 sideways false
@@ -23954,7 +26148,13 @@ tiny
 Note: Here, the gender of the dealer is a dummy variable where 1 is male
  and 0 is female.
  Random effects are included at the farmer level and the dealer level.
-    
+ Standard errors are presented in ().
+   
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -23963,15 +26163,6 @@ Note: Here, the gender of the dealer is a dummy variable where 1 is male
 \end_layout
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float table
 wide false
 sideways false
@@ -26605,7 +28796,13 @@ tiny
 Note: Here, the gender of the dealer is a dummy variable where 1 is male
  and 0 is female.
  Random effects are included at the farmer level and the dealer level.
- 
+ Standard errors are presented in ().
+  
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -26614,15 +28811,6 @@ Note: Here, the gender of the dealer is a dummy variable where 1 is male
 \end_layout
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float table
 wide false
 sideways false
@@ -27128,7 +29316,13 @@ tiny
 Note: Here, the gender of the dealer is a dummy variable where 1 is male
  and 0 is female.
  Random effects are included at the farmer level and the dealer level.
-    
+ Standard errors are presented in ().
+   
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -27137,15 +29331,6 @@ Note: Here, the gender of the dealer is a dummy variable where 1 is male
 \end_layout
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float table
 wide false
 sideways false
@@ -29609,6 +31794,7 @@ tiny
 Note: Here, the gender of the dealer is a dummy variable where 1 is male
  and 0 is female.
  Random effects are included at the farmer level and the dealer level.
+ Standard errors are presented in ().
  
 \end_layout
 
@@ -29617,7 +31803,8 @@ Note: Here, the gender of the dealer is a dummy variable where 1 is male
 
 \end_layout
 
-\begin_layout Plain Layout
+\end_inset
+
 
 \end_layout
 
@@ -30328,6 +32515,7 @@ tiny
 Note: Here, the gender of the farmer is a dummy variable having the value
  of either 0 (farmer is female) or 1 (farmer is male).
  The ratings given by the farmers are averaged at the farmer level.
+ Standard errors are presented in ().
  
 \end_layout
 
@@ -31195,7 +33383,7 @@ tiny
 Note: Here, the gender of the farmer is a dummy variable having the value
  of either 0 (farmer is female) or 1 (farmer is male).
  The ratings given by the farmers are averaged at the farmer level.
- 
+ Standard errors are presented in ().
 \end_layout
 
 \end_inset
@@ -31735,7 +33923,7 @@ tiny
 Note: Here, the gender of the farmer is a dummy variable having the value
  of either 0 (farmer is female) or 1 (farmer is male).
  The ratings given by the farmers are averaged at the farmer level.
- 
+ Standard errors are presented in ().
 \end_layout
 
 \end_inset
@@ -32638,7 +34826,7 @@ tiny
 Note: Here, the gender of the farmer is a dummy variable having the value
  of either 0 (farmer is female) or 1 (farmer is male).
  The ratings given by the farmers are averaged at the farmer level.
- 
+ Standard errors are presented in ().
 \end_layout
 
 \end_inset
@@ -33101,7 +35289,8 @@ tiny
 Note: Here, the gender of the farmer is a dummy variable carrying the value
  of either 0 or 1.
  Fixed effects or within estimation has been used at the dealer level.
- Cluster-robust SE are obtained by clustering at the farmer level.
+ Cluster-robust SE are obtained by clustering at the farmer level (presented
+ in ()).
 \end_layout
 
 \end_inset
@@ -33918,7 +36107,8 @@ tiny
 Note: Here, the gender of the farmer is a dummy variable carrying the value
  of either 0 or 1.
  Fixed effects or within estimation has been used at the dealer level.
- Cluster-robust SE are obtained by clustering at the farmer level.
+ Cluster-robust SE are obtained by clustering at the farmer level (presented
+ in ()).
 \end_layout
 
 \end_inset
@@ -34379,7 +36569,8 @@ tiny
 Note: Here, the gender of the farmer is a dummy variable carrying the value
  of either 0 or 1.
  Fixed effects or within estimation has been used at the dealer level.
- Cluster-robust SE are obtained by clustering at the farmer level.
+ Cluster-robust SE are obtained by clustering at the farmer level (presented
+ in ()).
 \end_layout
 
 \end_inset
@@ -35203,7 +37394,8 @@ tiny
 Note: Here, the gender of the farmer is a dummy variable carrying the value
  of either 0 or 1.
  Fixed effects or within estimation has been used at the dealer level.
- Cluster-robust SE are obtained by clustering at the farmer level.
+ Cluster-robust SE are obtained by clustering at the farmer level (presented
+ in ()).
 \end_layout
 
 \end_inset
@@ -35742,6 +37934,7 @@ Note: Here, the genders of the different farmers that each input dealer
  got rated by have been averaged at the dealer level.
  The ratings obtained by the input dealers are also averaged at the dealer
  level.
+ Standard errors are presented in ().
  
 \backslash
 label{table:table13} 
@@ -38377,7 +40570,8 @@ Note: Here, the genders of the different farmers that each input dealer
  All the farmer characteristics are also averaged accordingly.
  The ratings obtained by the input dealers are also averaged at the dealer
  level.
-  
+ Standard errors are presented in ().
+   
 \backslash
 label{table:table14} 
 \end_layout
@@ -38912,6 +41106,7 @@ Note: Here, the genders of the different farmers that each input dealer
  got rated by have been averaged at the dealer level.
  The ratings obtained by the input dealers are also averaged at the dealer
  level.
+ Standard errors are presented in ().
  
 \backslash
 label{table:table15} 
@@ -41342,6 +43537,7 @@ Note: Here, the genders of the different farmers that each input dealer
  All the farmer characteristics are also averaged accordingly.
  The ratings obtained by the input dealers are also averaged at the dealer
  level.
+ Standard errors are presented in ().
  
 \backslash
 label{table:table16} 
@@ -41862,6 +44058,7 @@ tiny
 Note: Here, the gender of the farmer is a dummy variable having the value
  of either 0 (farmer is female) or 1 (farmer is male).
  Random effects are included at the dealer level.
+ Cluster-robust standard errors at the farmer level are presented in ().
  
 \end_layout
 
@@ -42733,7 +44930,7 @@ tiny
 Note: Here, the gender of the farmer is a dummy variable having the value
  of either 0 (farmer is female) or 1 (farmer is male).
  Random effects are included at the dealer level.
- 
+ Cluster-robust standard errors at the farmer level are presented in ().
 \end_layout
 
 \end_inset
@@ -43277,7 +45474,7 @@ tiny
 Note: Here, the gender of the farmer is a dummy variable having the value
  of either 0 (farmer is female) or 1 (farmer is male).
  Random effects are included at the dealer level.
- 
+ Cluster-robust standard errors at the farmer level are presented in ().
 \end_layout
 
 \end_inset
@@ -44180,7 +46377,7 @@ tiny
 Note: Here, the gender of the farmer is a dummy variable having the value
  of either 0 (farmer is female) or 1 (farmer is male).
  Random effects are included at the dealer level.
- 
+ Cluster-robust standard errors at the farmer level are presented in ().
 \end_layout
 
 \end_inset
@@ -44198,6 +46395,10 @@ Note: Here, the gender of the farmer is a dummy variable having the value
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 \begin_inset Float table
 wide false
 sideways false
@@ -44703,7 +46904,13 @@ tiny
 Note: Here, the gender of the dealer is a dummy variable where 1 is male
  and 0 is female.
  Random effects are included at the farmer level and the dealer level.
-    
+ Standard errors are presented in ().
+  
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -44712,15 +46919,6 @@ Note: Here, the gender of the dealer is a dummy variable where 1 is male
 \end_layout
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float table
 wide false
 sideways false
@@ -47354,7 +49552,13 @@ tiny
 Note: Here, the gender of the dealer is a dummy variable where 1 is male
  and 0 is female.
  Random effects are included at the farmer level and the dealer level.
- 
+ Standard errors are presented in ().
+  
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -47363,15 +49567,6 @@ Note: Here, the gender of the dealer is a dummy variable where 1 is male
 \end_layout
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float table
 wide false
 sideways false
@@ -47877,7 +50072,8 @@ tiny
 Note: Here, the gender of the dealer is a dummy variable where 1 is male
  and 0 is female.
  Random effects are included at the farmer level and the dealer level.
-    
+ Standard errors are presented in ().
+   
 \end_layout
 
 \end_inset
@@ -47890,15 +50086,11 @@ Note: Here, the gender of the dealer is a dummy variable where 1 is male
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Float table
 wide false
 sideways false
 status collapsed
-
-\begin_layout Plain Layout
-
-\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -50358,7 +52550,8 @@ tiny
 Note: Here, the gender of the dealer is a dummy variable where 1 is male
  and 0 is female.
  Random effects are included at the farmer level and the dealer level.
- 
+ Standard errors are presented in ().
+  
 \end_layout
 
 \end_inset
@@ -50366,7 +52559,8 @@ Note: Here, the gender of the dealer is a dummy variable where 1 is male
 
 \end_layout
 
-\begin_layout Plain Layout
+\end_inset
+
 
 \end_layout
 
