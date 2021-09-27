@@ -10522,37 +10522,35 @@ noprefix "false"
 \end_inset
 
  studies the relationship between farmer's and ratee's gender and the difference
-s between the farmer's ratings and ratee's self-ratings.
+s between ratee's self-ratings and the farmer's ratings.
  Here, again the standard errors are clustered at the ratee level.
- The differences increase significantly for the overall average ratings,
- location- and price-based ratings if the farmer is female.
- This means female farmers give significantly more different ratings compared
+ The differences reduce significantly for the overall average ratings, location-
+ and price-based ratings if the farmer is female.
+ This means female farmers give significantly less different ratings compared
  to the self-assessments by the ratees themselves.
  The impact of the sex of the ratee on the differences is interesting as
- the differences in ratings decline significantly for quality and price
- if the ratee is a woman while the differences increase in the case of reputatio
-n-based ratings.
+ the differences in ratings increase significantly for quality and price
+ if the ratee is a woman while the differences reduce in the case of reputation-
+based ratings.
  Thus, it can be argued that if the ratee is a woman, the quality- and price-bas
-ed ratings from the farmers are more similar to the self-assessments of
+ed ratings from the farmers are less similar to the self-assessments of
  these female ratees.
- However, the reputation-based ratings from the farmers are further away
- from the self-ratings if the ratee is a woman which could indicate that
- female ratees have worse reputation compared to their self-perceptions
- about their reputations.
- These findings can also support the argument that although female input
- and service providers provide good quality and feasible price levels, their
- reputation is still affected because of their gender.
+ However, the reputation-based ratings from the farmers are closer to the
+ self-ratings if the ratee is a woman which could indicate that female ratees'
+ self-perception about their reputation is similar to the perceptions of
+ the farmers.
+ 
 \end_layout
 
 \begin_layout Standard
 The interaction between sex of the farmer and the ratee (gender based homophily)
  is insignificant.
  If the distance between the farmer's homestead and nearest tarmac road
- rises, the differences in the ratings decline.
- Similarly, if the farmer is married, the differences also reduce between
- the farmers' ratings and self-assessments.
- Therefore, it can be stated that women give more different ratings than
- self-assessments, particularly in the case of location and price.
+ rises, the differences in the ratings increase.
+ Similarly, if the farmer is married, the differences also rise between
+ the self-assessments and the farmers' ratings.
+ Therefore, it can be stated that women give more similar ratings compared
+ to self-assessments, particularly in the case of location and price.
  The gender of the ratee only matters significantly when differences in
  ratings based on quality, price and reputation are considered.
  From these inferences, it can be derived that indeed self-assessments can
@@ -10582,7 +10580,7 @@ noprefix "false"
 
 \end_inset
 
-, it can be noted that the coefficients are significantly negative for overall
+, it can be noted that the coefficients are significantly positive for overall
  average rating differences, quality-, price- and reputation-based rating
  differences.
  This indicates that self-ratings are always higher than the farmers' ratings
@@ -10604,7 +10602,7 @@ noprefix "false"
 \begin_inset Float table
 wide false
 sideways true
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \paragraph_spacing onehalf
@@ -10639,8 +10637,8 @@ multicolumn{10}{c}{
 \backslash
 textit{
 \backslash
-footnotesize Dependent variable: Differences between farmer ratings and
- ratee self-ratings}} 
+footnotesize Dependent variable: Differences between ratee self-ratings
+ and farmer ratings}} 
 \backslash
 
 \backslash
@@ -12934,9 +12932,9 @@ tiny
 
 Note: Standard errors are clustered at the ratee level (agro-input dealers,
  traders, and millers).
- The dependent variable is the  differences between ratings given by the
- farmers and the ratee self-ratings and the main independent variables are
- farmer's and ratee's gender.
+ The dependent variable is the  differences between the ratee self-ratings
+ and the ratings given by the farmers and the main independent variables
+ are farmer's and ratee's gender.
  The dimensions based on which the ratings are given by farmers and ratees
  are overall average (models 1, 2), location (models 3, 4), quality (models
  5, 6), price (models 7, 8) and reputation (models 9, 10).
@@ -12957,7 +12955,7 @@ label{table:table7}
 
 \begin_layout Plain Layout
 Regression results for the impact of farmer's (rater's) and ratee's gender
- on the differences between farmer ratings and ratee self-ratings.
+ on the differences between ratee self-ratings and farmer ratings.
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:table7"
@@ -13028,8 +13026,10 @@ Self-assessments are always significantly more positive than the ratings
  In other words, input dealers, traders and processors have more positive
  perceptions about themselves compared to the perceptions (ratings) of the
  farmers.
- In particular, women's ratings are noticeably different from the self-assessmen
-ts obtained (quality- and reputation-based scores are exceptions).
+ In particular, women's ratings are noticeably similar to the self-assessments
+ obtained (quality- and reputation-based scores are exceptions).
+ Consequently, men's ratings are more different from the self-assessments
+ obtained.
  This indicates a gap between the farmers and the input and service providers.
  The interactions between these actors need to be structured in a way where
  perceived performance information can be conveyed easily, creating the

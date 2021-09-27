@@ -729,11 +729,17 @@ se67 <- sqrt(diag(vcov(mod67_gender)))
 #################################################################################################
 
 #differences in ratings 
-pool$ratingoverall_diff <- pool$rating_overall - pool$ratee_rating_overall #difference in overall ratings 
-pool$ratingloc_diff <- pool$rating_location - pool$rating_location_ratee ##difference in location ratings 
-pool$ratingprice_diff <- pool$rating_price - pool$rating_price_ratee ##difference in price ratings 
-pool$ratingqual_diff <- pool$rating_quality - pool$rating_quality_ratee ##difference in quality ratings 
-pool$ratingrepu_diff <- pool$rating_reputation - pool$rating_reputation_ratee ##difference in reputation ratings 
+# pool$ratingoverall_diff <- pool$rating_overall - pool$ratee_rating_overall #difference in overall ratings
+# pool$ratingloc_diff <- pool$rating_location - pool$rating_location_ratee ##difference in location ratings
+# pool$ratingprice_diff <- pool$rating_price - pool$rating_price_ratee ##difference in price ratings
+# pool$ratingqual_diff <- pool$rating_quality - pool$rating_quality_ratee ##difference in quality ratings
+# pool$ratingrepu_diff <- pool$rating_reputation - pool$rating_reputation_ratee ##difference in reputation ratings
+
+pool$ratingoverall_diff <- pool$ratee_rating_overall - pool$rating_overall #difference in overall ratings
+pool$ratingloc_diff <- pool$rating_location_ratee - pool$rating_location ##difference in location ratings
+pool$ratingprice_diff <- pool$rating_price_ratee - pool$rating_price ##difference in price ratings
+pool$ratingqual_diff <- pool$rating_quality_ratee - pool$rating_quality  ##difference in quality ratings
+pool$ratingrepu_diff <- pool$rating_reputation_ratee - pool$rating_reputation ##difference in reputation ratings
 
 ################# OVERALL RATING ###########################
 
