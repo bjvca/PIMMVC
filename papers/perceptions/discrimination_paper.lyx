@@ -20808,7 +20808,7 @@ Note: Here, the gender of the dealer is a dummy variable where 1 is male
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -21324,9 +21324,8 @@ Sexpr{ifelse(ranrc1[12,3]<.01,"***",ifelse(ranrc1[12,3]<.05,"**",ifelse(ranrc1[1
 \backslash
 Sexpr{ranrc1[10,4]}^{
 \backslash
-Sexpr{ifelse(ranrc1[12,4]<.01,"***",Cluster-robust standard errors at the
- dealer level are presented in ().
-  ifelse(ranrc1[12,4]<.05,"**",ifelse(ranrc1[12,4]<.1,"*","")))}}$
+Sexpr{ifelse(ranrc1[12,4]<.01,"***",ifelse(ranrc1[12,4]<.05,"**",ifelse(ranrc1[12,
+4]<.1,"*","")))}}$
 \end_layout
 
 \begin_layout Plain Layout
@@ -23552,10 +23551,6 @@ Note: Here, the gender of the dealer is a dummy variable where 1 is male
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -25626,10 +25621,6 @@ Note: Here, the gender of the dealer is a dummy variable where 1 is male
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -44067,10 +44058,6 @@ Note: Here, the gender of the farmer is a dummy variable having the value
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -44935,10 +44922,6 @@ Note: Here, the gender of the farmer is a dummy variable having the value
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -46382,10 +46365,6 @@ Note: Here, the gender of the farmer is a dummy variable having the value
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
