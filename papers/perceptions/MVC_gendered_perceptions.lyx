@@ -1531,7 +1531,7 @@ name "sec:Data"
 
 \begin_layout Standard
 This section explains the characteristics of the sample, describes the data
- collection, gives information about the variables, and discusses the validity
+ collection, gives information about the variables, and discusses reliability
  of the ratings for the analysis.
 \end_layout
 
@@ -1557,21 +1557,8 @@ The data for this study come from a survey of 1,526 farming households,
  The farmer household sample is drawn from 64 villages in the three districts.
  Using the 2012 sampling frame of Uganda National Bureau of Statistics (UBoS),
  the household sample per village was randomly allocated, proportionate
- to the village population
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-A random sample of farmers were interviewed in each village.
- The number of farmers to be sampled in a village was proportional to the
- size of the village.
- So, in larger villages, more farmers were interviewed.
-\end_layout
-
-\end_inset
-
-.
- The villages were selected through a process of stratified random sampling
+ to the village population.
+ The villages were selected through a process stratified random sampling
  at sub-county level.
  In each of the three districts, the sub-counties from which the villages
  were sampled were purposely selected based on their distance (km) from
@@ -1635,29 +1622,6 @@ name "fig:Map-of-the-study-area"
 
 \end_layout
 
-\begin_layout Standard
-\paragraph_spacing onehalf
-A key question that may arise is the degree to which results for the three
- study districts can be generalized to Uganda as a whole.
- The representativeness of the study area is examined using maize production
- figures.
- The Eastern region, where the three districts fall, accounted for the highest
- share (47%) of the roughly 2.3 million tons of maize harvested in 2009 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Daly2016"
-literal "true"
-
-\end_inset
-
-.
- The district of Iganga was the largest producer in the region and country,
- contributing 13.1%, followed by Mubende (7.4%) in Central Uganda and Soroti
- (5.9%) in Eastern Uganda.
- The remaining districts contributed less than 4%, including Bugiri (2.7%)
- which is part of this study.
-\end_layout
-
 \begin_layout Subsection
 \paragraph_spacing onehalf
 Variables
@@ -1672,7 +1636,7 @@ name "subsec:Variables"
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-The summary statistics for the main variables used in this study are presented
+Summary statistics for the main variables used in this study are presented
  in tables 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1697,8 +1661,8 @@ noprefix "false"
  Each farmer rates a minimum of one input dealer, trader, or miller to a
  maximum of three input dealers, traders, or millers (ratees).
  Farmer's perceptions about the ratees and ratee's perceptions about themselves
- are understood from the ratings given on four dimensions of location, quality,
- price, and reputation.
+ are derived from scores given on four dimensions: location, quality, price,
+ and reputation.
  The averages of these dimension-based ratings are obtained to get the overall
  average ratings (for both ratings from farmers and self-ratings).
  
@@ -1721,20 +1685,9 @@ literal "true"
  questions, elicitation of the ‘most likely’ outcome, and a full elicitation
  of the distribution of beliefs, most often conducted with visual aids.
  The ratings in this study reflect Likert style assessment where the scores
- range from 1 to 5, 5 being the best score and 1 being the worst score.
+ range from 1 to 5, 1 being the worst score and 5 being the best.
  This is the case for both farmer ratings and self-ratings from the agro-input
- dealers, traders, and millers
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-The farmer ratings are assumed to be not exposed to the input and service
- providers before their self-ratings were collected.
-\end_layout
-
-\end_inset
-
-.
+ dealers, traders, and millers.
  
 \end_layout
 
@@ -3390,7 +3343,7 @@ s) from farmers (raters), self-ratings (perceived self-attributes) from
 
 \begin_layout Subsection
 \paragraph_spacing onehalf
-Validity of ratings
+Reliabilty of ratings
 \begin_inset CommandInset label
 LatexCommand label
 name "subsec:Validity-of-ratings"
@@ -3401,9 +3354,8 @@ name "subsec:Validity-of-ratings"
 \end_layout
 
 \begin_layout Standard
-Testing whether the ratings are actually meaningful (instead of just noise)
- is important.
- This will give better insights about the validity of the perceptions.
+Testing whether the ratings are actually meaningful (as opposed to just
+ noise) is important.
  We look at intra-class correlation (ICC)
 \series bold
  
@@ -10799,7 +10751,7 @@ noprefix "false"
 \begin_inset Float table
 wide false
 sideways true
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \paragraph_spacing onehalf
