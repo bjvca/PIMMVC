@@ -5062,11 +5062,11 @@ ranr1<- rbind( c((format(round(sum(coefr1[1,1]),digits=3),nsmall=0)),
 
 
 #### One way random effect at the dealer level - no controls 
-#plmr8<-plm(score ~ genderdummy, data =fedata,  model = "random", index = c("shop_ID","farmer_ID"),
-     #      effect = "individual")
-#coefr8<-coeftest(plmr8, vcovHC(plmr8, type = "HC0", cluster = "time"))
-#summary(plmr8)
-#coefr8
+# plmr_another<-plm(score ~ genderdummy, data =fedata,  model = "random", index = c("shop_ID","farmer_ID"),
+#          effect = "individual", random.method="walhus")
+# coefr8<-coeftest(plmr_another, vcovHC(plmr_another, type = "HC0", cluster = "time"))
+# summary(plmr8)
+# coefr8
 
 
 # #### Two way random effect at the farmer level and dealer level -- no controls 
