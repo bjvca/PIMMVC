@@ -702,8 +702,8 @@ Maize traders link producers to processors and consumers.
  These traders then aggregate and sell further to larger traders or large
  scale processors.
  Larger traders also often use (shared) storage facilities to engage in
- arbitrage over time, as maize prices are know to display significant seasonalit
-y 
+ arbitrage over time, as maize prices are known to display significant seasonali
+ty 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "10.1093/jae/ejv002"
@@ -726,6 +726,87 @@ noprefix "false"
  Generally, they are not merely service providers offering transport services,
  but become owner of the commodity during trading, hence also internalizing
  the risks inherent to trading.
+ On an average, on a typical day after harvest, traders visit 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(as.numeric(traders$hh.maize.q22a), na.rm=TRUE)),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ sellers to collect 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(as.numeric(traders$hh.maize.q22b), na.rm=TRUE)),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ kgs of maize which reduces to 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(as.numeric(traders$hh.maize.q23a), na.rm=TRUE)),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ sellers and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(as.numeric(traders$hh.maize.q23b), na.rm=TRUE)),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ kgs of maize during the planting and growing season.
+ The average number of buyers the traders deliver to is 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(as.numeric(traders$hh.maize.q22d), na.rm=TRUE)),nsmall=0)}
+\end_layout
+
+\end_inset
+
+.
+ The average storage capacity that a typical trader has is 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(as.numeric(traders$hh.maize.q28), na.rm=TRUE)),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ kgs.
  
 \end_layout
 
@@ -792,18 +873,121 @@ Processors
 Other important actors of the maize supply chain are the processors who
  produce the final product from the harvested maize.
  In general, these take the form of maize mills that remove the bran from
- the maize kernels and mill the maize.
- There are again large differences between these processors.
+ the maize kernels (the average number of debranning machines owned is 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(as.numeric(millers$hh.maize.q27), na.rm=TRUE)),nsmall=0)}
+\end_layout
+
+\end_inset
+
+) and mill the maize (the average number of milling machines owned is 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(as.numeric(millers$hh.maize.q26), na.rm=TRUE)),nsmall=0)}
+\end_layout
+
+\end_inset
+
+).
+ On an average, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(as.numeric(millers$hh.maize.q14.1)*100, na.rm=TRUE)),nsmall=0
+)}
+\end_layout
+
+\end_inset
+
+ percent produce grade I flour, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(as.numeric(millers$hh.maize.q14.2)*100, na.rm=TRUE)),nsmall=0
+)}
+\end_layout
+
+\end_inset
+
+ percent produce grade II and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(as.numeric(millers$hh.maize.q14.3)*100, na.rm=TRUE)),nsmall=0
+)}
+\end_layout
+
+\end_inset
+
+ percent produce grade III.
+ 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+There are again large differences between these processors.
  Some maize mills located in remote rural areas are combustion engine powered
  mills that are only able to produce low grade maize meal for home consumption.
  However, larger processors use machines powered by three phase electric
- power and mill multiple times to obtain find export grade maize meal.
+ power and mill multiple times to obtain fine export grade maize meal.
+ We observe that on an average,  
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(table(millers$hh.maize.q28)[1]/sum(table(millers$hh.maize.q28))*1
+00,digits=0),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ percent of the millers use machines powered by three phase electric power.
+ The average minimum quantity milled by these processors is 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(as.numeric(millers$hh.maize.q23a), na.rm=TRUE)),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ kgs.
  Some processors also have packing facilities to produce maize meal for
  supermarkets and export.
  The smaller mills often only provide milling as a service, whereby farmers
  come with bags of maize for milling against a fee.
  Larger mills also often buy maize for processing.
- In our sample, we see that only 7 percent of processors is a women (Table
+ In our sample, we see that only 7 percent of processors is a woman (Table
  
 \begin_inset CommandInset ref
 LatexCommand ref

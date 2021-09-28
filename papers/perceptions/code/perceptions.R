@@ -48,6 +48,40 @@ summary(dealers$ratee_rating_overall)
 
 ###Getting traders' data 
 traders <- read.csv(paste(path_2,"data/public/traders.csv", sep = "/"))
+traders[traders=="n/a"] <- NA
+traders[traders=="999"] <- NA
+
+#### SUMMARY STATS 
+#22a. On a typical day after harvest, when maize prices have reached their lowest levels, how many sellers (farmers, assemblers,...) do you visit to collect maize from?
+table(as.numeric(traders$hh.maize.q22a))
+mean(as.numeric(traders$hh.maize.q22a), na.rm=TRUE)
+sd(as.numeric(traders$hh.maize.q22a), na.rm=TRUE)
+min(as.numeric(traders$hh.maize.q22a), na.rm=TRUE)
+max(as.numeric(traders$hh.maize.q22a), na.rm=TRUE)
+quantile(as.numeric(traders$hh.maize.q22a), na.rm=TRUE, 0.25)
+quantile(as.numeric(traders$hh.maize.q22a), na.rm=TRUE, 0.75)
+
+#22b. On a typical day after harvest, when maize prices have reached their lowest levels, how much maize do you collect in total. (in kg)
+table(traders$hh.maize.q22b)
+mean(traders$hh.maize.q22b)
+#22d. On a typical day after harvest, when maize prices have reached their lowest levels, how many buyers do you deliver to
+table(traders$hh.maize.q22d)
+mean(as.numeric(traders$hh.maize.q22d), na.rm=TRUE)
+
+#23a. During planting and growing season of second season of 2018 when maize prices have reached their highest levels, how many sellers (farmers, assemblers,...) do you visit to collect maize from?
+table(traders$hh.maize.q23a)
+mean(as.numeric(traders$hh.maize.q23a), na.rm=TRUE)  
+#23b. On a typical day during planting and growing season of second season of 2018 when maize prices have reached their highest levels, how much maize do you collect in total.
+table(traders$hh.maize.q23b)
+mean(as.numeric(traders$hh.maize.q23b), na.rm=TRUE)
+#23d. On a typical day during planting and growing season of second season of 2018 when maize prices have reached their highest levels, how many buyers do you deliver to (integer between 0 and 100)
+table(traders$hh.maize.q23d)
+mean(as.numeric(traders$hh.maize.q23d), na.rm=TRUE)
+
+#28. What is your storage capacity (kgs)? 
+table(traders$hh.maize.q28)
+mean(as.numeric(traders$hh.maize.q28), na.rm=TRUE)
+
 
 traders1<-traders 
 
@@ -66,6 +100,24 @@ summary(traders$ratee_rating_overall)
 
 ###Getting MILLERS' data 
 millers <- read.csv(paste(path_2,"data/public/millers.csv", sep = "/"))
+millers[millers=="n/a"] <- NA
+millers[millers=="999"] <- NA
+
+#### SUMMARY STATS
+#14. What grades of flour do you produce? 
+mean(as.numeric(millers$hh.maize.q14.1), na.rm=TRUE)
+mean(as.numeric(millers$hh.maize.q14.2), na.rm=TRUE)
+mean(as.numeric(millers$hh.maize.q14.3), na.rm=TRUE)
+#What minimum quantity do you mill
+mean(as.numeric(millers$hh.maize.q23a), na.rm=TRUE)
+#26. How many milling machines do you have? 
+mean(as.numeric(millers$hh.maize.q26), na.rm=TRUE)
+#27. How many debranning machines do you have? 
+mean(as.numeric(millers$hh.maize.q27), na.rm=TRUE)
+#28. How is your milling machine powered?
+mean(as.numeric(millers$hh.maize.q28), na.rm=TRUE)
+millers$elec <- ifelse(millers$hh.maize.q28 == 'a', 1, 0)  #a=three phase electricity
+mean(millers$elec)
 
 millers1 <- millers
 
