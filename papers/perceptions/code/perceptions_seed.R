@@ -25,7 +25,7 @@ path_2 <- strsplit(path, "/papers/perceptions")[[1]]
 ##################################################################################################################
 
 
-rating_dyads <- read.csv(paste(path_2,"/papers/perceptions/data_seed_systems/data/farmer/rating_dyads.csv", sep = "/"))
+rating_dyads <- read.csv(paste(path_2,"/papers/perceptions/data_seed_systems/data/farmer/rating_dyads.csv", sep = "/"), stringsAsFactors = FALSE)
 baseline_dealer <- read.csv(paste(path_2,"papers/perceptions/data_seed_systems/data/input_dealer/baseline_dealer.csv", sep="/"), stringsAsFactors = FALSE)
 
 #how many farmers have rated at least one agro-input dealers (i.e. how many unique farmerIDs are in the dyads dataset)?
@@ -222,7 +222,7 @@ reviews_bf$score <-  rowMeans(reviews_bf[c("general","yield","drought_resistent"
 reviews_bf$overall_rating <-  rowMeans(reviews_bf[c("general_rating_nonseed", "location","price","quality","stock","reputation")],na.rm=T)
 
 ##Farmers' dataset
-farmers_seed <- read.csv(paste(path_2,"/papers/perceptions/data_seed_systems/data/farmer/baseline_farmers.csv", sep = "/"))
+farmers_seed <- read.csv(paste(path_2,"/papers/perceptions/data_seed_systems/data/farmer/baseline_farmers.csv", sep = "/"), stringsAsFactors = FALSE)
 #extracting variables from the baseline data
 farmers_seedsub <- farmers_seed[ , c("Check2.check.maize.q15", "Check2.check.maize.q14",
                                      "Check2.check.maize.q16", "Check2.check.maize.q17",
@@ -8850,10 +8850,9 @@ rannc1<- rbind( c((format(round(sum(coefnc1[1,1]),digits=3),nsmall=0)),
 ####################### BETWEEN DEALER --- FOCUS ON FARMER'S GENDER ##############################################
 ###  Question 2
 
-rating_dyads <- read.csv(paste(path_2,"/papers/perceptions/data_seed_systems/data/farmer/rating_dyads.csv", sep = "/"))
+rating_dyads <- read.csv(paste(path_2,"/papers/perceptions/data_seed_systems/data/farmer/rating_dyads.csv", sep = "/"), stringsAsFactors = FALSE)
 ##Farmers' dataset
-farmers_seed <- read.csv(paste(path_2,"/papers/perceptions/data_seed_systems/data/farmer/baseline_farmers.csv", sep = "/"))
-
+farmers_seed <- read.csv(paste(path_2,"/papers/perceptions/data_seed_systems/data/farmer/baseline_farmers.csv", sep = "/"), stringsAsFactors = FALSE)
 #how many dealers have been rated (i.e. how many unique shopIDs are in the dyads dataset)?
 #print(length(table(rating_dyads$shop_ID)))
 
