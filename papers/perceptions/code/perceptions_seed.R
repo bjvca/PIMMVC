@@ -7479,6 +7479,121 @@ rann1<- rbind( c((format(round(sum(coefn1[1,1]),digits=3),nsmall=0)),
 
 
 
+#### One way random effect at the dealer level  -- no controls 
+
+plmnn1<-plm(overall_rating ~ genderdummy , data =fedata,  model = "random", index = c( "shop_ID", "farmer_ID"),
+           effect = "individual", random.method = "walhus")
+coefnn1<-coeftest(plmnn1, vcovHC(plmnn1, type = "HC0", cluster = "time"))
+summary(plmnn1)
+coefnn1
+
+plmnn2<-plm(general_rating_nonseed ~ genderdummy , data =fedata,  model = "random", index = c( "shop_ID", "farmer_ID"),
+            effect = "individual", random.method = "walhus")
+coefnn2<-coeftest(plmnn2, vcovHC(plmnn2, type = "HC0", cluster = "time"))
+summary(plmnn2)
+coefnn2
+
+plmnn3<-plm(location ~ genderdummy , data =fedata,  model = "random", index = c( "shop_ID", "farmer_ID"),
+            effect = "individual", random.method = "walhus")
+coefnn3<-coeftest(plmnn3, vcovHC(plmnn3, type = "HC0", cluster = "time"))
+summary(plmnn3)
+coefnn3
+
+plmnn4<-plm(price ~ genderdummy , data =fedata,  model = "random", index = c( "shop_ID", "farmer_ID"),
+            effect = "individual", random.method = "walhus")
+coefnn4<-coeftest(plmnn4, vcovHC(plmnn4, type = "HC0", cluster = "time"))
+summary(plmnn4)
+coefnn4
+
+plmnn5<-plm(quality ~ genderdummy , data =fedata,  model = "random", index = c( "shop_ID", "farmer_ID"),
+            effect = "individual", random.method = "walhus")
+coefnn5<-coeftest(plmnn5, vcovHC(plmnn5, type = "HC0", cluster = "time"))
+summary(plmnn5)
+coefnn5
+
+plmnn6<-plm(stock ~ genderdummy , data =fedata,  model = "random", index = c( "shop_ID", "farmer_ID"),
+            effect = "individual", random.method = "walhus")
+coefnn6<-coeftest(plmnn6, vcovHC(plmnn6, type = "HC0", cluster = "time"))
+summary(plmnn6)
+coefnn6
+
+plmnn7<-plm(reputation ~ genderdummy , data =fedata,  model = "random", index = c( "shop_ID", "farmer_ID"),
+            effect = "individual", random.method = "walhus")
+coefnn7<-coeftest(plmnn7, vcovHC(plmnn7, type = "HC0", cluster = "time"))
+summary(plmnn7)
+coefnn7
+
+
+
+#tab_model(plmn1, plmn2,plmn3, plmn4, plmn5, plmn6, plmn7, p.style = c("stars"), p.threshold = c(0.1, 0.05, 0.01), collapse.ci=TRUE)
+
+rannd1<- rbind( c((format(round(sum(coefnn1[1,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnn2[1,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnn3[1,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnn4[1,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnn5[1,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnn6[1,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnn7[1,1]),digits=3),nsmall=0))),
+                c((format(round(coefnn1[1,2],digits=3),nsmall=0)),
+                  (format(round(coefnn2[1,2],digits=3),nsmall=0)),
+                  (format(round(coefnn3[1,2],digits=3),nsmall=0)),
+                  (format(round(coefnn4[1,2],digits=3),nsmall=0)),
+                  (format(round(coefnn5[1,2],digits=3),nsmall=0)),
+                  (format(round(coefnn6[1,2],digits=3),nsmall=0)),
+                  (format(round(coefnn7[1,2],digits=3),nsmall=0))),
+                c((format(round(coefnn1[1,4],digits=3),nsmall=0)),
+                  (format(round(coefnn2[1,4],digits=3),nsmall=0)),
+                  (format(round(coefnn3[1,4],digits=3),nsmall=0)),
+                  (format(round(coefnn4[1,4],digits=3),nsmall=0)),
+                  (format(round(coefnn5[1,4],digits=3),nsmall=0)),
+                  (format(round(coefnn6[1,4],digits=3),nsmall=0)),
+                  (format(round(coefnn7[1,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefnn1[2,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnn2[2,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnn3[2,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnn4[2,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnn5[2,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnn6[2,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefnn7[2,1]),digits=3),nsmall=0))),
+                c((format(round(coefnn1[2,2],digits=3),nsmall=0)),
+                  (format(round(coefnn2[2,2],digits=3),nsmall=0)),
+                  (format(round(coefnn3[2,2],digits=3),nsmall=0)),
+                  (format(round(coefnn4[2,2],digits=3),nsmall=0)),
+                  (format(round(coefnn5[2,2],digits=3),nsmall=0)),
+                  (format(round(coefnn6[2,2],digits=3),nsmall=0)),
+                  (format(round(coefnn7[2,2],digits=3),nsmall=0))),
+                c((format(round(coefnn1[2,4],digits=3),nsmall=0)),
+                  (format(round(coefnn2[2,4],digits=3),nsmall=0)),
+                  (format(round(coefnn3[2,4],digits=3),nsmall=0)),
+                  (format(round(coefnn4[2,4],digits=3),nsmall=0)),
+                  (format(round(coefnn5[2,4],digits=3),nsmall=0)),
+                  (format(round(coefnn6[2,4],digits=3),nsmall=0)),
+                  (format(round(coefnn7[2,4],digits=3),nsmall=0))),
+                
+                
+                c((format(round(summary(plmnn1)$r.squared[1],digits=3),nsmall=0)),
+                  (format(round(summary(plmnn2)$r.squared[1],digits=3),nsmall=0)),
+                  (format(round(summary(plmnn3)$r.squared[1],digits=3),nsmall=0)),
+                  (format(round(summary(plmnn4)$r.squared[1],digits=3),nsmall=0)),
+                  (format(round(summary(plmnn5)$r.squared[1],digits=3),nsmall=0)),
+                  (format(round(summary(plmnn6)$r.squared[1],digits=3),nsmall=0)),
+                  (format(round(summary(plmnn7)$r.squared[1],digits=3),nsmall=0))),
+                c((format(round(summary(plmnn1)$r.squared[2],digits=3),nsmall=0)),
+                  (format(round(summary(plmnn2)$r.squared[2],digits=3),nsmall=0)),
+                  (format(round(summary(plmnn3)$r.squared[2],digits=3),nsmall=0)),
+                  (format(round(summary(plmnn4)$r.squared[2],digits=3),nsmall=0)),
+                  (format(round(summary(plmnn5)$r.squared[2],digits=3),nsmall=0)),
+                  (format(round(summary(plmnn6)$r.squared[2],digits=3),nsmall=0)),
+                  (format(round(summary(plmnn7)$r.squared[2],digits=3),nsmall=0))),
+                c((format(round(nobs(plmnn1),digits=3),nsmall=0)),
+                  (format(round(nobs(plmnn2),digits=3),nsmall=0)),
+                  (format(round(nobs(plmnn3),digits=3),nsmall=0)),
+                  (format(round(nobs(plmnn4),digits=3),nsmall=0)),
+                  (format(round(nobs(plmnn5),digits=3),nsmall=0)),
+                  (format(round(nobs(plmnn6),digits=3),nsmall=0)),
+                  (format(round(nobs(plmnn7),digits=3),nsmall=0)))
+)
 
 # #### two way random effects at the farmer level and dealer level  -- no controls 
 
@@ -7740,7 +7855,583 @@ summary(plmn_two14)
 coefn_two14
 
 # tab_model(lmernc8,lmernc9,lmernc10,lmernc11,lmernc12,lmernc13,lmernc14, p.style = c("stars"), p.threshold = c(0.1, 0.05, 0.01), collapse.ci=TRUE)
-# 
+
+
+rann_two2<- rbind( c((format(round(sum(coefn_two8[1,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two9[1,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two10[1,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two11[1,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two12[1,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two13[1,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two14[1,1]),digits=3),nsmall=0))),
+                   c((format(round(coefn_two8[1,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two9[1,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two10[1,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two11[1,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two12[1,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two13[1,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two14[1,2],digits=3),nsmall=0))),
+                   c((format(round(coefn_two8[1,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two9[1,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two10[1,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two11[1,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two12[1,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two13[1,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two14[1,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefn_two8[2,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two9[2,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two10[2,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two11[2,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two12[2,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two13[2,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two14[2,1]),digits=3),nsmall=0))),
+                   c((format(round(coefn_two8[2,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two9[2,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two10[2,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two11[2,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two12[2,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two13[2,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two14[2,2],digits=3),nsmall=0))),
+                   c((format(round(coefn_two8[2,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two9[2,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two10[2,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two11[2,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two12[2,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two13[2,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two14[2,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefn_two8[3,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two9[3,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two10[3,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two11[3,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two12[3,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two13[3,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two14[3,1]),digits=3),nsmall=0))),
+                   c((format(round(coefn_two8[3,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two9[3,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two10[3,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two11[3,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two12[3,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two13[3,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two14[3,2],digits=3),nsmall=0))),
+                   c((format(round(coefn_two8[3,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two9[3,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two10[3,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two11[3,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two12[3,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two13[3,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two14[3,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefn_two8[4,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two9[4,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two10[4,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two11[4,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two12[4,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two13[4,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two14[4,1]),digits=3),nsmall=0))),
+                   c((format(round(coefn_two8[4,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two9[4,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two10[4,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two11[4,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two12[4,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two13[4,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two14[4,2],digits=3),nsmall=0))),
+                   c((format(round(coefn_two8[4,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two9[4,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two10[4,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two11[4,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two12[4,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two13[4,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two14[4,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefn_two8[5,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two9[5,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two10[5,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two11[5,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two12[5,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two13[5,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two14[5,1]),digits=3),nsmall=0))),
+                   c((format(round(coefn_two8[5,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two9[5,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two10[5,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two11[5,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two12[5,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two13[5,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two14[5,2],digits=3),nsmall=0))),
+                   c((format(round(coefn_two8[5,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two9[5,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two10[5,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two11[5,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two12[5,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two13[5,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two14[5,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefn_two8[6,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two9[6,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two10[6,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two11[6,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two12[6,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two13[6,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two14[6,1]),digits=3),nsmall=0))),
+                   c((format(round(coefn_two8[6,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two9[6,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two10[6,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two11[6,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two12[6,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two13[6,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two14[6,2],digits=3),nsmall=0))),
+                   c((format(round(coefn_two8[6,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two9[6,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two10[6,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two11[6,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two12[6,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two13[6,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two14[6,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefn_two8[7,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two9[7,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two10[7,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two11[7,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two12[7,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two13[7,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two14[7,1]),digits=3),nsmall=0))),
+                   c((format(round(coefn_two8[7,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two9[7,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two10[7,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two11[7,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two12[7,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two13[7,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two14[7,2],digits=3),nsmall=0))),
+                   c((format(round(coefn_two8[7,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two9[7,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two10[7,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two11[7,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two12[7,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two13[7,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two14[7,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefn_two8[8,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two9[8,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two10[8,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two11[8,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two12[8,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two13[8,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two14[8,1]),digits=3),nsmall=0))),
+                   c((format(round(coefn_two8[8,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two9[8,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two10[8,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two11[8,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two12[8,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two13[8,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two14[8,2],digits=3),nsmall=0))),
+                   c((format(round(coefn_two8[8,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two9[8,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two10[8,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two11[8,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two12[8,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two13[8,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two14[8,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefn_two8[9,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two9[9,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two10[9,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two11[9,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two12[9,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two13[9,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two14[9,1]),digits=3),nsmall=0))),
+                   c((format(round(coefn_two8[9,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two9[9,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two10[9,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two11[9,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two12[9,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two13[9,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two14[9,2],digits=3),nsmall=0))),
+                   c((format(round(coefn_two8[9,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two9[9,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two10[9,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two11[9,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two12[9,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two13[9,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two14[9,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefn_two8[10,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two9[10,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two10[10,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two11[10,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two12[10,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two13[10,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two14[10,1]),digits=3),nsmall=0))),
+                   c((format(round(coefn_two8[10,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two9[10,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two10[10,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two11[10,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two12[10,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two13[10,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two14[10,2],digits=3),nsmall=0))),
+                   c((format(round(coefn_two8[10,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two9[10,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two10[10,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two11[10,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two12[10,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two13[10,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two14[10,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefn_two8[11,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two9[11,1]),digits=3),nsmall=0)),
+                     0,
+                     (format(round(sum(coefn_two11[11,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two12[11,1]),digits=3),nsmall=0)),
+                     0,
+                     (format(round(sum(coefn_two14[11,1]),digits=3),nsmall=0))),
+                   c((format(round(coefn_two8[11,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two9[11,2],digits=3),nsmall=0)),
+                     0,
+                     (format(round(coefn_two11[11,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two12[11,2],digits=3),nsmall=0)),
+                     0,
+                     (format(round(coefn_two14[11,2],digits=3),nsmall=0))),
+                   c((format(round(coefn_two8[11,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two9[11,4],digits=3),nsmall=0)),
+                     0,
+                     (format(round(coefn_two11[11,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two12[11,4],digits=3),nsmall=0)),
+                     0,
+                     (format(round(coefn_two14[11,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefn_two8[12,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two9[12,1]),digits=3),nsmall=0)),
+                     0,
+                     (format(round(sum(coefn_two11[12,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two12[12,1]),digits=3),nsmall=0)),
+                     0,
+                     (format(round(sum(coefn_two14[12,1]),digits=3),nsmall=0))),
+                   c((format(round(coefn_two8[12,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two9[12,2],digits=3),nsmall=0)),
+                     0,
+                     (format(round(coefn_two11[12,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two12[12,2],digits=3),nsmall=0)),
+                     0,
+                     (format(round(coefn_two14[12,2],digits=3),nsmall=0))),
+                   c((format(round(coefn_two8[12,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two9[12,4],digits=3),nsmall=0)),
+                     0,
+                     (format(round(coefn_two11[12,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two12[12,4],digits=3),nsmall=0)),
+                     0,
+                     (format(round(coefn_two14[12,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefn_two8[13,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two9[13,1]),digits=3),nsmall=0)),
+                     0,
+                     (format(round(sum(coefn_two11[13,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two12[13,1]),digits=3),nsmall=0)),
+                     0,
+                     (format(round(sum(coefn_two14[13,1]),digits=3),nsmall=0))),
+                   c((format(round(coefn_two8[13,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two9[13,2],digits=3),nsmall=0)),
+                     0,
+                     (format(round(coefn_two11[13,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two12[13,2],digits=3),nsmall=0)),
+                     0,
+                     (format(round(coefn_two14[13,2],digits=3),nsmall=0))),
+                   c((format(round(coefn_two8[13,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two9[13,4],digits=3),nsmall=0)),
+                     0,
+                     (format(round(coefn_two11[13,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two12[13,4],digits=3),nsmall=0)),
+                     0,
+                     (format(round(coefn_two14[13,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefn_two8[14,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two9[14,1]),digits=3),nsmall=0)),
+                     0,
+                     (format(round(sum(coefn_two11[14,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two12[14,1]),digits=3),nsmall=0)),
+                     0,
+                     (format(round(sum(coefn_two14[14,1]),digits=3),nsmall=0))),
+                   c((format(round(coefn_two8[14,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two9[14,2],digits=3),nsmall=0)),
+                     0,
+                     (format(round(coefn_two11[14,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two12[14,2],digits=3),nsmall=0)),
+                     0,
+                     (format(round(coefn_two14[14,2],digits=3),nsmall=0))),
+                   c((format(round(coefn_two8[14,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two9[14,4],digits=3),nsmall=0)),
+                     0,
+                     (format(round(coefn_two11[14,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two12[14,4],digits=3),nsmall=0)),
+                     0,
+                     (format(round(coefn_two14[14,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefn_two8[15,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two9[15,1]),digits=3),nsmall=0)),
+                     0,
+                     (format(round(sum(coefn_two11[15,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two12[15,1]),digits=3),nsmall=0)),
+                     0,
+                     (format(round(sum(coefn_two14[15,1]),digits=3),nsmall=0))),
+                   c((format(round(coefn_two8[15,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two9[15,2],digits=3),nsmall=0)),
+                     0,
+                     (format(round(coefn_two11[15,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two12[15,2],digits=3),nsmall=0)),
+                     0,
+                     (format(round(coefn_two14[15,2],digits=3),nsmall=0))),
+                   c((format(round(coefn_two8[15,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two9[15,4],digits=3),nsmall=0)),
+                     0,
+                     (format(round(coefn_two11[15,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two12[15,4],digits=3),nsmall=0)),
+                     0,
+                     (format(round(coefn_two14[15,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefn_two8[16,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two9[16,1]),digits=3),nsmall=0)),
+                     0,
+                     (format(round(sum(coefn_two11[16,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two12[16,1]),digits=3),nsmall=0)),
+                     0,
+                     (format(round(sum(coefn_two14[16,1]),digits=3),nsmall=0))),
+                   c((format(round(coefn_two8[16,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two9[16,2],digits=3),nsmall=0)),
+                     0,
+                     (format(round(coefn_two11[16,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two12[16,2],digits=3),nsmall=0)),
+                     0,
+                     (format(round(coefn_two14[16,2],digits=3),nsmall=0))),
+                   c((format(round(coefn_two8[16,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two9[16,4],digits=3),nsmall=0)),
+                     0,
+                     (format(round(coefn_two11[16,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two12[16,4],digits=3),nsmall=0)),
+                     0,
+                     (format(round(coefn_two14[16,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefn_two8[17,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two9[17,1]),digits=3),nsmall=0)),
+                     0,
+                     (format(round(sum(coefn_two11[17,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two12[17,1]),digits=3),nsmall=0)),
+                     0,
+                     (format(round(sum(coefn_two14[17,1]),digits=3),nsmall=0))),
+                   c((format(round(coefn_two8[17,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two9[17,2],digits=3),nsmall=0)),
+                     0,
+                     (format(round(coefn_two11[17,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two12[17,2],digits=3),nsmall=0)),
+                     0,
+                     (format(round(coefn_two14[17,2],digits=3),nsmall=0))),
+                   c((format(round(coefn_two8[17,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two9[17,4],digits=3),nsmall=0)),
+                     0,
+                     (format(round(coefn_two11[17,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two12[17,4],digits=3),nsmall=0)),
+                     0,
+                     (format(round(coefn_two14[17,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefn_two8[18,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two9[18,1]),digits=3),nsmall=0)),
+                     0,
+                     (format(round(sum(coefn_two11[18,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two12[18,1]),digits=3),nsmall=0)),
+                     0,
+                     (format(round(sum(coefn_two14[18,1]),digits=3),nsmall=0))),
+                   c((format(round(coefn_two8[18,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two9[18,2],digits=3),nsmall=0)),
+                     0,
+                     (format(round(coefn_two11[18,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two12[18,2],digits=3),nsmall=0)),
+                     0,
+                     (format(round(coefn_two14[18,2],digits=3),nsmall=0))),
+                   c((format(round(coefn_two8[18,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two9[18,4],digits=3),nsmall=0)),
+                     0,
+                     (format(round(coefn_two11[18,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two12[18,4],digits=3),nsmall=0)),
+                     0,
+                     (format(round(coefn_two14[18,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefn_two8[19,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two9[19,1]),digits=3),nsmall=0)),
+                     0,
+                     (format(round(sum(coefn_two11[19,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two12[19,1]),digits=3),nsmall=0)),
+                     0,
+                     (format(round(sum(coefn_two14[19,1]),digits=3),nsmall=0))),
+                   c((format(round(coefn_two8[19,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two9[19,2],digits=3),nsmall=0)),
+                     0,
+                     (format(round(coefn_two11[19,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two12[19,2],digits=3),nsmall=0)),
+                     0,
+                     (format(round(coefn_two14[19,2],digits=3),nsmall=0))),
+                   c((format(round(coefn_two8[19,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two9[19,4],digits=3),nsmall=0)),
+                     0,
+                     (format(round(coefn_two11[19,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two12[19,4],digits=3),nsmall=0)),
+                     0,
+                     (format(round(coefn_two14[19,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefn_two8[20,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two9[20,1]),digits=3),nsmall=0)),
+                     0,
+                     (format(round(sum(coefn_two11[20,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two12[20,1]),digits=3),nsmall=0)),
+                     0,
+                     (format(round(sum(coefn_two14[20,1]),digits=3),nsmall=0))),
+                   c((format(round(coefn_two8[20,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two9[20,2],digits=3),nsmall=0)),
+                     0,
+                     (format(round(coefn_two11[20,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two12[20,2],digits=3),nsmall=0)),
+                     0,
+                     (format(round(coefn_two14[20,2],digits=3),nsmall=0))),
+                   c((format(round(coefn_two8[20,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two9[20,4],digits=3),nsmall=0)),
+                     0,
+                     (format(round(coefn_two11[20,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two12[20,4],digits=3),nsmall=0)),
+                     0,
+                     (format(round(coefn_two14[20,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefn_two8[21,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two9[21,1]),digits=3),nsmall=0)),
+                     0,
+                     (format(round(sum(coefn_two11[21,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two12[21,1]),digits=3),nsmall=0)),
+                     0,
+                     (format(round(sum(coefn_two14[21,1]),digits=3),nsmall=0))),
+                   c((format(round(coefn_two8[21,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two9[21,2],digits=3),nsmall=0)),
+                     0,
+                     (format(round(coefn_two11[21,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two12[21,2],digits=3),nsmall=0)),
+                     0,
+                     (format(round(coefn_two14[21,2],digits=3),nsmall=0))),
+                   c((format(round(coefn_two8[21,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two9[21,4],digits=3),nsmall=0)),
+                     0,
+                     (format(round(coefn_two11[21,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two12[21,4],digits=3),nsmall=0)),
+                     0,
+                     (format(round(coefn_two14[21,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefn_two8[22,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two9[22,1]),digits=3),nsmall=0)),
+                     0,
+                     (format(round(sum(coefn_two11[22,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two12[22,1]),digits=3),nsmall=0)),
+                     0,
+                     (format(round(sum(coefn_two14[22,1]),digits=3),nsmall=0))),
+                   c((format(round(coefn_two8[22,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two9[22,2],digits=3),nsmall=0)),
+                     0,
+                     (format(round(coefn_two11[22,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two12[22,2],digits=3),nsmall=0)),
+                     0,
+                     (format(round(coefn_two14[22,2],digits=3),nsmall=0))),
+                   c((format(round(coefn_two8[22,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two9[22,4],digits=3),nsmall=0)),
+                     0,
+                     (format(round(coefn_two11[22,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two12[22,4],digits=3),nsmall=0)),
+                     0,
+                     (format(round(coefn_two14[22,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefn_two8[23,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two9[23,1]),digits=3),nsmall=0)),
+                     0,
+                     (format(round(sum(coefn_two11[23,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two12[23,1]),digits=3),nsmall=0)),
+                     0,
+                     (format(round(sum(coefn_two14[23,1]),digits=3),nsmall=0))),
+                   c((format(round(coefn_two8[23,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two9[23,2],digits=3),nsmall=0)),
+                     0,
+                     (format(round(coefn_two11[23,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two12[23,2],digits=3),nsmall=0)),
+                     0,
+                     (format(round(coefn_two14[23,2],digits=3),nsmall=0))),
+                   c((format(round(coefn_two8[23,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two9[23,4],digits=3),nsmall=0)),
+                     0,
+                     (format(round(coefn_two11[23,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two12[23,4],digits=3),nsmall=0)),
+                     0,
+                     (format(round(coefn_two14[23,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefn_two8[24,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two9[24,1]),digits=3),nsmall=0)),
+                     0,
+                     (format(round(sum(coefn_two11[24,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two12[24,1]),digits=3),nsmall=0)),
+                     0,
+                     (format(round(sum(coefn_two14[24,1]),digits=3),nsmall=0))),
+                   c((format(round(coefn_two8[24,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two9[24,2],digits=3),nsmall=0)),
+                     0,
+                     (format(round(coefn_two11[24,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two12[24,2],digits=3),nsmall=0)),
+                     0,
+                     (format(round(coefn_two14[24,2],digits=3),nsmall=0))),
+                   c((format(round(coefn_two8[24,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two9[24,4],digits=3),nsmall=0)),
+                     0,
+                     (format(round(coefn_two11[24,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two12[24,4],digits=3),nsmall=0)),
+                     0,
+                     (format(round(coefn_two14[24,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefn_two8[25,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two9[25,1]),digits=3),nsmall=0)),
+                     0,
+                     (format(round(sum(coefn_two11[25,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefn_two12[25,1]),digits=3),nsmall=0)),
+                     0,
+                     (format(round(sum(coefn_two14[25,1]),digits=3),nsmall=0))),
+                   c((format(round(coefn_two8[25,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two9[25,2],digits=3),nsmall=0)),
+                     0,
+                     (format(round(coefn_two11[25,2],digits=3),nsmall=0)),
+                     (format(round(coefn_two12[25,2],digits=3),nsmall=0)),
+                     0,
+                     (format(round(coefn_two14[25,2],digits=3),nsmall=0))),
+                   c((format(round(coefn_two8[25,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two9[25,4],digits=3),nsmall=0)),
+                     0,
+                     (format(round(coefn_two11[25,4],digits=3),nsmall=0)),
+                     (format(round(coefn_two12[25,4],digits=3),nsmall=0)),
+                     0,
+                     (format(round(coefn_two14[25,4],digits=3),nsmall=0))),
+                   
+                   
+                   c((format(round(summary(plmn_two8)$r.squared[1],digits=3),nsmall=0)),
+                     (format(round(summary(plmn_two9)$r.squared[1],digits=3),nsmall=0)),
+                     (format(round(summary(plmn_two10)$r.squared[1],digits=3),nsmall=0)),
+                     (format(round(summary(plmn_two11)$r.squared[1],digits=3),nsmall=0)),
+                     (format(round(summary(plmn_two12)$r.squared[1],digits=3),nsmall=0)),
+                     (format(round(summary(plmn_two13)$r.squared[1],digits=3),nsmall=0)),
+                     (format(round(summary(plmn_two14)$r.squared[1],digits=3),nsmall=0))),
+                   c((format(round(summary(plmn_two8)$r.squared[2],digits=3),nsmall=0)),
+                     (format(round(summary(plmn_two9)$r.squared[2],digits=3),nsmall=0)),
+                     (format(round(summary(plmn_two10)$r.squared[2],digits=3),nsmall=0)),
+                     (format(round(summary(plmn_two11)$r.squared[2],digits=3),nsmall=0)),
+                     (format(round(summary(plmn_two12)$r.squared[2],digits=3),nsmall=0)),
+                     (format(round(summary(plmn_two13)$r.squared[2],digits=3),nsmall=0)),
+                     (format(round(summary(plmn_two14)$r.squared[2],digits=3),nsmall=0))),
+                   c((format(round(nobs(plmn_two8),digits=3),nsmall=0)),
+                     (format(round(nobs(plmn_two9),digits=3),nsmall=0)),
+                     (format(round(nobs(plmn_two10),digits=3),nsmall=0)),
+                     (format(round(nobs(plmn_two11),digits=3),nsmall=0)),
+                     (format(round(nobs(plmn_two12),digits=3),nsmall=0)),
+                     (format(round(nobs(plmn_two13),digits=3),nsmall=0)),
+                     (format(round(nobs(plmn_two14),digits=3),nsmall=0))))
+
+
+
 # 
  # lmer_two4<- rbind( c((format(round(sum(coef(summary(lmernc8))[1,1]),digits=3),nsmall=0)),
  #                      (format(round(sum(coef(summary(lmernc9))[1,1]),digits=3),nsmall=0)),
@@ -8300,7 +8991,7 @@ coefn_two14
 plmnc1<-plm(overall_rating ~ genderdummy +maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale
             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
-            effect = "individual")
+            effect = "individual", random.method = "walhus")
 coefnc1<-coeftest(plmnc1, vcovHC(plmnc1, type = "HC0", cluster = "time"))
 summary(plmnc1)
 coefnc1
@@ -8308,13 +8999,13 @@ coefnc1
 plmnc2<-plm(general_rating_nonseed ~ genderdummy +maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale
             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
-            effect = "individual")
+            effect = "individual", random.method = "walhus")
 coefnc2<-coeftest(plmnc2, vcovHC(plmnc2, type = "HC0", cluster = "time"))
 summary(plmnc2)
 coefnc2
 
 plmnc3<-plm(location ~ genderdummy +maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4, data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
-            effect = "individual")
+            effect = "individual", random.method = "walhus")
 coefnc3<-coeftest(plmnc3, vcovHC(plmnc3, type = "HC0", cluster = "time"))
 summary(plmnc3)
 coefnc3
@@ -8322,7 +9013,7 @@ coefnc3
 plmnc4<-plm(price ~ genderdummy +maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale
             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
-            effect = "individual")
+            effect = "individual", random.method = "walhus")
 coefnc4<-coeftest(plmnc4, vcovHC(plmnc4, type = "HC0", cluster = "time"))
 summary(plmnc4)
 coefnc4
@@ -8330,13 +9021,13 @@ coefnc4
 plmnc5<-plm(quality ~ genderdummy +maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale
             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
-            effect = "individual")
+            effect = "individual", random.method = "walhus")
 coefnc5<-coeftest(plmnc5, vcovHC(plmnc5, type = "HC0", cluster = "time"))
 summary(plmnc5)
 coefnc5
 
 plmnc6<-plm(stock ~ genderdummy +maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4, data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
-            effect = "individual")
+            effect = "individual", random.method = "walhus")
 coefnc6<-coeftest(plmnc6, vcovHC(plmnc6, type = "HC0", cluster = "time"))
 summary(plmnc6)
 coefnc6
@@ -8344,12 +9035,12 @@ coefnc6
 plmnc7<-plm(reputation ~ genderdummy +maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale
             +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
-            effect = "individual")
+            effect = "individual", random.method = "walhus")
 coefnc7<-coeftest(plmnc7, vcovHC(plmnc7, type = "HC0", cluster = "time"))
 summary(plmnc7)
 coefnc7
 
-tab_model(plmnc1, plmnc2,plmnc3, plmnc4, plmnc5, plmnc6, plmnc7, p.style = c("stars"), p.threshold = c(0.1, 0.05, 0.01), collapse.ci=TRUE)
+#tab_model(plmnc1, plmnc2,plmnc3, plmnc4, plmnc5, plmnc6, plmnc7, p.style = c("stars"), p.threshold = c(0.1, 0.05, 0.01), collapse.ci=TRUE)
 
 rannc1<- rbind( c((format(round(sum(coefnc1[1,1]),digits=3),nsmall=0)),
                   (format(round(sum(coefnc2[1,1]),digits=3),nsmall=0)),
@@ -8838,6 +9529,207 @@ rannc1<- rbind( c((format(round(sum(coefnc1[1,1]),digits=3),nsmall=0)),
 )
 
 
+
+#### One way random effect at the dealer level  -- with controls -- controls are farmer characteristics 
+
+plmnn8<-plm(overall_rating ~ genderdummy+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8  , data =fedata,  model = "random", index = c( "shop_ID", "farmer_ID"),
+            effect = "individual", random.method = "walhus")
+coefnn8<-coeftest(plmnn8, vcovHC(plmnn8, type = "HC0", cluster = "time"))
+summary(plmnn8)
+coefnn8
+
+plmnn9<-plm(general_rating_nonseed~genderdummy+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8  ~ genderdummy , data =fedata,  model = "random", index = c( "shop_ID", "farmer_ID"),
+            effect = "individual", random.method = "walhus")
+coefnn9<-coeftest(plmnn9, vcovHC(plmnn9, type = "HC0", cluster = "time"))
+summary(plmnn9)
+coefnn9
+
+plmnn10<-plm(location ~ genderdummy+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8  , data =fedata,  model = "random", index = c( "shop_ID", "farmer_ID"),
+            effect = "individual", random.method = "walhus")
+coefnn10<-coeftest(plmnn10, vcovHC(plmnn10, type = "HC0", cluster = "time"))
+summary(plmnn10)
+coefnn10
+
+plmnn11<-plm(price ~ genderdummy+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8 , data =fedata,  model = "random", index = c( "shop_ID", "farmer_ID"),
+            effect = "individual", random.method = "walhus")
+coefnn11<-coeftest(plmnn11, vcovHC(plmnn11, type = "HC0", cluster = "time"))
+summary(plmnn11)
+coefnn11
+
+plmnn12<-plm(quality ~ genderdummy+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8  , data =fedata,  model = "random", index = c( "shop_ID", "farmer_ID"),
+            effect = "individual", random.method = "walhus")
+coefnn12<-coeftest(plmnn12, vcovHC(plmnn12, type = "HC0", cluster = "time"))
+summary(plmnn12)
+coefnn12
+
+plmnn13<-plm(stock ~ genderdummy+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8  , data =fedata,  model = "random", index = c( "shop_ID", "farmer_ID"),
+            effect = "individual", random.method = "walhus")
+coefnn13<-coeftest(plmnn13, vcovHC(plmnn13, type = "HC0", cluster = "time"))
+summary(plmnn13)
+coefnn13
+
+plmnn14<-plm(reputation ~ genderdummy+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8  , data =fedata,  model = "random", index = c( "shop_ID", "farmer_ID"),
+            effect = "individual", random.method = "walhus")
+coefnn14<-coeftest(plmnn14, vcovHC(plmnn14, type = "HC0", cluster = "time"))
+summary(plmnn14)
+coefnn14
+
+rann2<- rbind( c((format(round(sum(coefnn8[1,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefnn9[1,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefnn10[1,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefnn11[1,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefnn12[1,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefnn13[1,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefnn14[1,1]),digits=3),nsmall=0))),
+               c((format(round(coefnn8[1,2],digits=3),nsmall=0)),
+                 (format(round(coefnn9[1,2],digits=3),nsmall=0)),
+                 (format(round(coefnn10[1,2],digits=3),nsmall=0)),
+                 (format(round(coefnn11[1,2],digits=3),nsmall=0)),
+                 (format(round(coefnn12[1,2],digits=3),nsmall=0)),
+                 (format(round(coefnn13[1,2],digits=3),nsmall=0)),
+                 (format(round(coefnn14[1,2],digits=3),nsmall=0))),
+               c((format(round(coefnn8[1,4],digits=3),nsmall=0)),
+                 (format(round(coefnn9[1,4],digits=3),nsmall=0)),
+                 (format(round(coefnn10[1,4],digits=3),nsmall=0)),
+                 (format(round(coefnn11[1,4],digits=3),nsmall=0)),
+                 (format(round(coefnn12[1,4],digits=3),nsmall=0)),
+                 (format(round(coefnn13[1,4],digits=3),nsmall=0)),
+                 (format(round(coefnn14[1,4],digits=3),nsmall=0))),
+               
+               c((format(round(sum(coefnn8[2,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefnn9[2,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefnn10[2,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefnn11[2,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefnn12[2,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefnn13[2,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefnn14[2,1]),digits=3),nsmall=0))),
+               c((format(round(coefnn8[2,2],digits=3),nsmall=0)),
+                 (format(round(coefnn9[2,2],digits=3),nsmall=0)),
+                 (format(round(coefnn10[2,2],digits=3),nsmall=0)),
+                 (format(round(coefnn11[2,2],digits=3),nsmall=0)),
+                 (format(round(coefnn12[2,2],digits=3),nsmall=0)),
+                 (format(round(coefnn13[2,2],digits=3),nsmall=0)),
+                 (format(round(coefnn14[2,2],digits=3),nsmall=0))),
+               c((format(round(coefnn8[2,4],digits=3),nsmall=0)),
+                 (format(round(coefnn9[2,4],digits=3),nsmall=0)),
+                 (format(round(coefnn10[2,4],digits=3),nsmall=0)),
+                 (format(round(coefnn11[2,4],digits=3),nsmall=0)),
+                 (format(round(coefnn12[2,4],digits=3),nsmall=0)),
+                 (format(round(coefnn13[2,4],digits=3),nsmall=0)),
+                 (format(round(coefnn14[2,4],digits=3),nsmall=0))),
+               
+               c((format(round(sum(coefnn8[3,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefnn9[3,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefnn10[3,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefnn11[3,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefnn12[3,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefnn13[3,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefnn14[3,1]),digits=3),nsmall=0))),
+               c((format(round(coefnn8[3,2],digits=3),nsmall=0)),
+                 (format(round(coefnn9[3,2],digits=3),nsmall=0)),
+                 (format(round(coefnn10[3,2],digits=3),nsmall=0)),
+                 (format(round(coefnn11[3,2],digits=3),nsmall=0)),
+                 (format(round(coefnn12[3,2],digits=3),nsmall=0)),
+                 (format(round(coefnn13[3,2],digits=3),nsmall=0)),
+                 (format(round(coefnn14[3,2],digits=3),nsmall=0))),
+               c((format(round(coefnn8[3,4],digits=3),nsmall=0)),
+                 (format(round(coefnn9[3,4],digits=3),nsmall=0)),
+                 (format(round(coefnn10[3,4],digits=3),nsmall=0)),
+                 (format(round(coefnn11[3,4],digits=3),nsmall=0)),
+                 (format(round(coefnn12[3,4],digits=3),nsmall=0)),
+                 (format(round(coefnn13[3,4],digits=3),nsmall=0)),
+                 (format(round(coefnn14[3,4],digits=3),nsmall=0))),
+               
+               c((format(round(sum(coefnn8[4,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefnn9[4,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefnn10[4,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefnn11[4,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefnn12[4,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefnn13[4,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefnn14[4,1]),digits=3),nsmall=0))),
+               c((format(round(coefnn8[4,2],digits=3),nsmall=0)),
+                 (format(round(coefnn9[4,2],digits=3),nsmall=0)),
+                 (format(round(coefnn10[4,2],digits=3),nsmall=0)),
+                 (format(round(coefnn11[4,2],digits=3),nsmall=0)),
+                 (format(round(coefnn12[4,2],digits=3),nsmall=0)),
+                 (format(round(coefnn13[4,2],digits=3),nsmall=0)),
+                 (format(round(coefnn14[4,2],digits=3),nsmall=0))),
+               c((format(round(coefnn8[4,4],digits=3),nsmall=0)),
+                 (format(round(coefnn9[4,4],digits=3),nsmall=0)),
+                 (format(round(coefnn10[4,4],digits=3),nsmall=0)),
+                 (format(round(coefnn11[4,4],digits=3),nsmall=0)),
+                 (format(round(coefnn12[4,4],digits=3),nsmall=0)),
+                 (format(round(coefnn13[4,4],digits=3),nsmall=0)),
+                 (format(round(coefnn14[4,4],digits=3),nsmall=0))),
+               
+               c((format(round(sum(coefnn8[5,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefnn9[5,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefnn10[5,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefnn11[5,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefnn12[5,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefnn13[5,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefnn14[5,1]),digits=3),nsmall=0))),
+               c((format(round(coefnn8[5,2],digits=3),nsmall=0)),
+                 (format(round(coefnn9[5,2],digits=3),nsmall=0)),
+                 (format(round(coefnn10[5,2],digits=3),nsmall=0)),
+                 (format(round(coefnn11[5,2],digits=3),nsmall=0)),
+                 (format(round(coefnn12[5,2],digits=3),nsmall=0)),
+                 (format(round(coefnn13[5,2],digits=3),nsmall=0)),
+                 (format(round(coefnn14[5,2],digits=3),nsmall=0))),
+               c((format(round(coefnn8[5,4],digits=3),nsmall=0)),
+                 (format(round(coefnn9[5,4],digits=3),nsmall=0)),
+                 (format(round(coefnn10[5,4],digits=3),nsmall=0)),
+                 (format(round(coefnn11[5,4],digits=3),nsmall=0)),
+                 (format(round(coefnn12[5,4],digits=3),nsmall=0)),
+                 (format(round(coefnn13[5,4],digits=3),nsmall=0)),
+                 (format(round(coefnn14[5,4],digits=3),nsmall=0))),
+               
+               c((format(round(sum(coefnn8[6,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefnn9[6,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefnn10[6,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefnn11[6,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefnn12[6,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefnn13[6,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefnn14[6,1]),digits=3),nsmall=0))),
+               c((format(round(coefnn8[6,2],digits=3),nsmall=0)),
+                 (format(round(coefnn9[6,2],digits=3),nsmall=0)),
+                 (format(round(coefnn10[6,2],digits=3),nsmall=0)),
+                 (format(round(coefnn11[6,2],digits=3),nsmall=0)),
+                 (format(round(coefnn12[6,2],digits=3),nsmall=0)),
+                 (format(round(coefnn13[6,2],digits=3),nsmall=0)),
+                 (format(round(coefnn14[6,2],digits=3),nsmall=0))),
+               c((format(round(coefnn8[6,4],digits=3),nsmall=0)),
+                 (format(round(coefnn9[6,4],digits=3),nsmall=0)),
+                 (format(round(coefnn10[6,4],digits=3),nsmall=0)),
+                 (format(round(coefnn11[6,4],digits=3),nsmall=0)),
+                 (format(round(coefnn12[6,4],digits=3),nsmall=0)),
+                 (format(round(coefnn13[6,4],digits=3),nsmall=0)),
+                 (format(round(coefnn14[6,4],digits=3),nsmall=0))),
+               
+               
+               
+               c((format(round(summary(plmnn8)$r.squared[1],digits=3),nsmall=0)),
+                 (format(round(summary(plmnn9)$r.squared[1],digits=3),nsmall=0)),
+                 (format(round(summary(plmnn10)$r.squared[1],digits=3),nsmall=0)),
+                 (format(round(summary(plmnn11)$r.squared[1],digits=3),nsmall=0)),
+                 (format(round(summary(plmnn12)$r.squared[1],digits=3),nsmall=0)),
+                 (format(round(summary(plmnn13)$r.squared[1],digits=3),nsmall=0)),
+                 (format(round(summary(plmnn14)$r.squared[1],digits=3),nsmall=0))),
+               c((format(round(summary(plmnn8)$r.squared[2],digits=3),nsmall=0)),
+                 (format(round(summary(plmnn9)$r.squared[2],digits=3),nsmall=0)),
+                 (format(round(summary(plmnn10)$r.squared[2],digits=3),nsmall=0)),
+                 (format(round(summary(plmnn11)$r.squared[2],digits=3),nsmall=0)),
+                 (format(round(summary(plmnn12)$r.squared[2],digits=3),nsmall=0)),
+                 (format(round(summary(plmnn13)$r.squared[2],digits=3),nsmall=0)),
+                 (format(round(summary(plmnn14)$r.squared[2],digits=3),nsmall=0))),
+               c((format(round(nobs(plmnn8),digits=3),nsmall=0)),
+                 (format(round(nobs(plmnn9),digits=3),nsmall=0)),
+                 (format(round(nobs(plmnn10),digits=3),nsmall=0)),
+                 (format(round(nobs(plmnn11),digits=3),nsmall=0)),
+                 (format(round(nobs(plmnn12),digits=3),nsmall=0)),
+                 (format(round(nobs(plmnn13),digits=3),nsmall=0)),
+                 (format(round(nobs(plmnn14),digits=3),nsmall=0)))
+)
 
 ############################################################################################################################################
 
@@ -12150,49 +13042,49 @@ fed4<- rbind( c((format(round(idn9[1],digits=3),nsmall=0)),
 
 #### One way random effect at the dealer level  -- no controls 
 plmb1<-plm(score ~ farmergen, data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
-           effect = "individual")
+           effect = "individual", random.method = "walhus")
 coefb1<-coeftest(plmb1, vcovHC(plmb1, type = "HC0", cluster = "time"))
 summary(plmb1)
 coefb1
 
 plmb2<-plm(general ~ farmergen, data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
-           effect = "individual")
+           effect = "individual", random.method = "walhus")
 coefb2<-coeftest(plmb2, vcovHC(plmb2, type = "HC0", cluster = "time"))
 summary(plmb2)
 coefb2
 
 plmb3<-plm(yield ~ farmergen, data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
-           effect = "individual")
+           effect = "individual", random.method = "walhus")
 coefb3<-coeftest(plmb3, vcovHC(plmb3, type = "HC0", cluster = "time"))
 summary(plmb3)
 coefb3
 
 plmb4<-plm(drought_resistent~ farmergen, data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
-           effect = "individual")
+           effect = "individual", random.method = "walhus")
 coefb4<-coeftest(plmb4, vcovHC(plmb4, type = "HC0", cluster = "time"))
 summary(plmb4)
 coefb4
 
 plmb5<-plm(disease_resistent~ farmergen, data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
-           effect = "individual")
+           effect = "individual", random.method = "walhus")
 coefb5<-coeftest(plmb5, vcovHC(plmb5, type = "HC0", cluster = "time"))
 summary(plmb5)
 coefb5
 
 plmb6<-plm(early_maturing ~ farmergen, data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
-           effect = "individual")
+           effect = "individual", random.method = "walhus")
 coefb6<-coeftest(plmb6, vcovHC(plmb6, type = "HC0", cluster = "time"))
 summary(plmb6)
 coefb6
 
 plmb7<-plm(germination ~ farmergen, data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
-           effect = "individual")
+           effect = "individual", random.method = "walhus")
 coefb7<-coeftest(plmb7, vcovHC(plmb7, type = "HC0", cluster = "time"))
 summary(plmb7)
 coefb7
 
 
-tab_model(plmb1, plmb2,plmb3, plmb4, plmb5, plmb6, plmb7, p.style = c("stars"), p.threshold = c(0.1, 0.05, 0.01), collapse.ci=TRUE)
+#tab_model(plmb1, plmb2,plmb3, plmb4, plmb5, plmb6, plmb7, p.style = c("stars"), p.threshold = c(0.1, 0.05, 0.01), collapse.ci=TRUE)
 
 
 ranb1<- rbind( c((format(round(sum(coefb1[1,1]),digits=3),nsmall=0)),
@@ -12265,704 +13157,1547 @@ ranb1<- rbind( c((format(round(sum(coefb1[1,1]),digits=3),nsmall=0)),
 
 
 #### One way random effect at the farmer level  -- no controls 
-#plmb8<-plm(score ~ farmergen, data =fedatad,  model = "random", index = c("farmer_ID","shop_ID.x"),
-        #   effect = "individual")
+plmb8<-plm(score ~ farmergen, data =fedatad,  model = "random", index = c("farmer_ID","shop_ID.x"), effect = "individual", random.method = "walhus")
+coefb8<-coeftest(plmb8, vcovHC(plmb8, type = "HC0", cluster = "time"))
+summary(plmb8)
+coefb8
+
+plmb9<-plm(general ~ farmergen, data =fedatad,  model = "random", index = c("farmer_ID","shop_ID.x"), effect = "individual", random.method = "walhus")
+coefb9<-coeftest(plmb9, vcovHC(plmb9, type = "HC0", cluster = "time"))
+summary(plmb9)
+coefb9
+
+plmb10<-plm(yield ~ farmergen, data =fedatad,  model = "random", index = c("farmer_ID","shop_ID.x"), effect = "individual", random.method = "walhus")
+coefb10<-coeftest(plmb10, vcovHC(plmb10, type = "HC0", cluster = "time"))
+summary(plmb10)
+coefb10
+
+plmb11<-plm(drought_resistent ~ farmergen, data =fedatad,  model = "random", index = c("farmer_ID","shop_ID.x"), effect = "individual", random.method = "walhus")
+coefb11<-coeftest(plmb11, vcovHC(plmb11, type = "HC0", cluster = "time"))
+summary(plmb11)
+coefb11
+
+plmb12<-plm(disease_resistent ~ farmergen, data =fedatad,  model = "random", index = c("farmer_ID","shop_ID.x"), effect = "individual", random.method = "walhus")
+coefb12<-coeftest(plmb12, vcovHC(plmb12, type = "HC0", cluster = "time"))
+summary(plmb12)
+coefb12
+
+plmb13<-plm(early_maturing ~ farmergen, data =fedatad,  model = "random", index = c("farmer_ID","shop_ID.x"), effect = "individual", random.method = "walhus")
+coefb13<-coeftest(plmb13, vcovHC(plmb13, type = "HC0", cluster = "time"))
+summary(plmb13)
+coefb13
+
+plmb14<-plm(germination ~ farmergen, data =fedatad,  model = "random", index = c("farmer_ID","shop_ID.x"), effect = "individual", random.method = "walhus")
+coefb14<-coeftest(plmb14, vcovHC(plmb14, type = "HC0", cluster = "time"))
+summary(plmb14)
+coefb14
+
+ranb2<- rbind( c((format(round(sum(coefb8[1,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefb9[1,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefb10[1,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefb11[1,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefb12[1,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefb13[1,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefb14[1,1]),digits=3),nsmall=0))),
+               c((format(round(coefb8[1,2],digits=3),nsmall=0)),
+                 (format(round(coefb9[1,2],digits=3),nsmall=0)),
+                 (format(round(coefb10[1,2],digits=3),nsmall=0)),
+                 (format(round(coefb11[1,2],digits=3),nsmall=0)),
+                 (format(round(coefb12[1,2],digits=3),nsmall=0)),
+                 (format(round(coefb13[1,2],digits=3),nsmall=0)),
+                 (format(round(coefb14[1,2],digits=3),nsmall=0))),
+               c((format(round(coefb8[1,4],digits=3),nsmall=0)),
+                 (format(round(coefb9[1,4],digits=3),nsmall=0)),
+                 (format(round(coefb10[1,4],digits=3),nsmall=0)),
+                 (format(round(coefb11[1,4],digits=3),nsmall=0)),
+                 (format(round(coefb12[1,4],digits=3),nsmall=0)),
+                 (format(round(coefb13[1,4],digits=3),nsmall=0)),
+                 (format(round(coefb14[1,4],digits=3),nsmall=0))),
+               
+               c((format(round(sum(coefb8[2,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefb9[2,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefb10[2,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefb11[2,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefb12[2,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefb13[2,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefb14[2,1]),digits=3),nsmall=0))),
+               c((format(round(coefb8[2,2],digits=3),nsmall=0)),
+                 (format(round(coefb9[2,2],digits=3),nsmall=0)),
+                 (format(round(coefb10[2,2],digits=3),nsmall=0)),
+                 (format(round(coefb11[2,2],digits=3),nsmall=0)),
+                 (format(round(coefb12[2,2],digits=3),nsmall=0)),
+                 (format(round(coefb13[2,2],digits=3),nsmall=0)),
+                 (format(round(coefb14[2,2],digits=3),nsmall=0))),
+               c((format(round(coefb8[2,4],digits=3),nsmall=0)),
+                 (format(round(coefb9[2,4],digits=3),nsmall=0)),
+                 (format(round(coefb10[2,4],digits=3),nsmall=0)),
+                 (format(round(coefb11[2,4],digits=3),nsmall=0)),
+                 (format(round(coefb12[2,4],digits=3),nsmall=0)),
+                 (format(round(coefb13[2,4],digits=3),nsmall=0)),
+                 (format(round(coefb14[2,4],digits=3),nsmall=0))),
+               
+               
+               c((format(round(summary(plmb8)$r.squared[1],digits=3),nsmall=0)),
+                 (format(round(summary(plmb9)$r.squared[1],digits=3),nsmall=0)),
+                 (format(round(summary(plmb10)$r.squared[1],digits=3),nsmall=0)),
+                 (format(round(summary(plmb11)$r.squared[1],digits=3),nsmall=0)),
+                 (format(round(summary(plmb12)$r.squared[1],digits=3),nsmall=0)),
+                 (format(round(summary(plmb13)$r.squared[1],digits=3),nsmall=0)),
+                 (format(round(summary(plmb14)$r.squared[1],digits=3),nsmall=0))),
+               c((format(round(summary(plmb8)$r.squared[2],digits=3),nsmall=0)),
+                 (format(round(summary(plmb9)$r.squared[2],digits=3),nsmall=0)),
+                 (format(round(summary(plmb10)$r.squared[2],digits=3),nsmall=0)),
+                 (format(round(summary(plmb11)$r.squared[2],digits=3),nsmall=0)),
+                 (format(round(summary(plmb12)$r.squared[2],digits=3),nsmall=0)),
+                 (format(round(summary(plmb13)$r.squared[2],digits=3),nsmall=0)),
+                 (format(round(summary(plmb14)$r.squared[2],digits=3),nsmall=0))),
+               c((format(round(nobs(plmb8),digits=3),nsmall=0)),
+                 (format(round(nobs(plmb9),digits=3),nsmall=0)),
+                 (format(round(nobs(plmb10),digits=3),nsmall=0)),
+                 (format(round(nobs(plmb11),digits=3),nsmall=0)),
+                 (format(round(nobs(plmb12),digits=3),nsmall=0)),
+                 (format(round(nobs(plmb13),digits=3),nsmall=0)),
+                 (format(round(nobs(plmb14),digits=3),nsmall=0)))
+)
 
 
 # #### Two way random effect at the dealer level and farmer level   -- no controls
 # 
-lmerb8<-lmer(score~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) , data = fedatad)
-lmerb9<-lmer(general~farmergen  + (1 | shop_ID.x) + (1 | farmer_ID), data = fedatad)
-lmerb10<-lmer(yield ~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) , data = fedatad)
-lmerb11<-lmer(drought_resistent ~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) , data = fedatad)
-lmerb12<-lmer(disease_resistent ~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) , data = fedatad)
-lmerb13<-lmer(early_maturing ~farmergen  + (1 | shop_ID.x) + (1 | farmer_ID), data = fedatad)
-lmerb14<-lmer(germination ~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) , data = fedatad)
+
+plmbb1<-plm(score ~ farmergen, data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
+           effect = "twoway", random.method = "walhus")
+coefbb1<-coeftest(plmbb1, vcovHC(plmbb1, type = "HC0", cluster = "time"))
+summary(plmbb1)
+coefbb1
+
+plmbb2<-plm(general ~ farmergen, data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
+            effect = "twoway", random.method = "walhus")
+coefbb2<-coeftest(plmbb2, vcovHC(plmbb2, type = "HC0", cluster = "time"))
+summary(plmbb2)
+coefbb2
+
+plmbb3<-plm(yield ~ farmergen, data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
+            effect = "twoway", random.method = "walhus")
+coefbb3<-coeftest(plmbb3, vcovHC(plmbb3, type = "HC0", cluster = "time"))
+summary(plmbb3)
+coefbb3
+
+plmbb4<-plm(drought_resistent ~ farmergen, data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
+            effect = "twoway", random.method = "walhus")
+coefbb4<-coeftest(plmbb4, vcovHC(plmbb4, type = "HC0", cluster = "time"))
+summary(plmbb4)
+coefbb4
+
+plmbb5<-plm(disease_resistent ~ farmergen, data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
+            effect = "twoway", random.method = "walhus")
+coefbb5<-coeftest(plmbb5, vcovHC(plmbb5, type = "HC0", cluster = "time"))
+summary(plmbb5)
+coefbb5
+
+plmbb6<-plm(early_maturing ~ farmergen, data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
+            effect = "twoway", random.method = "walhus")
+coefbb6<-coeftest(plmbb6, vcovHC(plmbb6, type = "HC0", cluster = "time"))
+summary(plmbb6)
+coefbb6
+
+plmbb7<-plm(germination ~ farmergen, data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
+            effect = "twoway", random.method = "walhus")
+coefbb7<-coeftest(plmbb7, vcovHC(plmbb7, type = "HC0", cluster = "time"))
+summary(plmbb7)
+coefbb7
+
+ranb_two1<- rbind( c((format(round(sum(coefbb1[1,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefbb2[1,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefbb3[1,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefbb4[1,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefbb5[1,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefbb6[1,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefbb7[1,1]),digits=3),nsmall=0))),
+               c((format(round(coefbb1[1,2],digits=3),nsmall=0)),
+                 (format(round(coefbb2[1,2],digits=3),nsmall=0)),
+                 (format(round(coefbb3[1,2],digits=3),nsmall=0)),
+                 (format(round(coefbb4[1,2],digits=3),nsmall=0)),
+                 (format(round(coefbb5[1,2],digits=3),nsmall=0)),
+                 (format(round(coefbb6[1,2],digits=3),nsmall=0)),
+                 (format(round(coefbb7[1,2],digits=3),nsmall=0))),
+               c((format(round(coefbb1[1,4],digits=3),nsmall=0)),
+                 (format(round(coefbb2[1,4],digits=3),nsmall=0)),
+                 (format(round(coefbb3[1,4],digits=3),nsmall=0)),
+                 (format(round(coefbb4[1,4],digits=3),nsmall=0)),
+                 (format(round(coefbb5[1,4],digits=3),nsmall=0)),
+                 (format(round(coefbb6[1,4],digits=3),nsmall=0)),
+                 (format(round(coefbb7[1,4],digits=3),nsmall=0))),
+               
+               c((format(round(sum(coefbb1[2,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefbb2[2,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefbb3[2,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefbb4[2,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefbb5[2,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefbb6[2,1]),digits=3),nsmall=0)),
+                 (format(round(sum(coefbb7[2,1]),digits=3),nsmall=0))),
+               c((format(round(coefbb1[2,2],digits=3),nsmall=0)),
+                 (format(round(coefbb2[2,2],digits=3),nsmall=0)),
+                 (format(round(coefbb3[2,2],digits=3),nsmall=0)),
+                 (format(round(coefbb4[2,2],digits=3),nsmall=0)),
+                 (format(round(coefbb5[2,2],digits=3),nsmall=0)),
+                 (format(round(coefbb6[2,2],digits=3),nsmall=0)),
+                 (format(round(coefbb7[2,2],digits=3),nsmall=0))),
+               c((format(round(coefbb1[2,4],digits=3),nsmall=0)),
+                 (format(round(coefbb2[2,4],digits=3),nsmall=0)),
+                 (format(round(coefbb3[2,4],digits=3),nsmall=0)),
+                 (format(round(coefbb4[2,4],digits=3),nsmall=0)),
+                 (format(round(coefbb5[2,4],digits=3),nsmall=0)),
+                 (format(round(coefbb6[2,4],digits=3),nsmall=0)),
+                 (format(round(coefbb7[2,4],digits=3),nsmall=0))),
+               
+               
+               c((format(round(summary(plmbb1)$r.squared[1],digits=3),nsmall=0)),
+                 (format(round(summary(plmbb2)$r.squared[1],digits=3),nsmall=0)),
+                 (format(round(summary(plmbb3)$r.squared[1],digits=3),nsmall=0)),
+                 (format(round(summary(plmbb4)$r.squared[1],digits=3),nsmall=0)),
+                 (format(round(summary(plmbb5)$r.squared[1],digits=3),nsmall=0)),
+                 (format(round(summary(plmbb6)$r.squared[1],digits=3),nsmall=0)),
+                 (format(round(summary(plmbb7)$r.squared[1],digits=3),nsmall=0))),
+               c((format(round(summary(plmbb1)$r.squared[2],digits=3),nsmall=0)),
+                 (format(round(summary(plmbb2)$r.squared[2],digits=3),nsmall=0)),
+                 (format(round(summary(plmbb3)$r.squared[2],digits=3),nsmall=0)),
+                 (format(round(summary(plmbb4)$r.squared[2],digits=3),nsmall=0)),
+                 (format(round(summary(plmbb5)$r.squared[2],digits=3),nsmall=0)),
+                 (format(round(summary(plmbb6)$r.squared[2],digits=3),nsmall=0)),
+                 (format(round(summary(plmbb7)$r.squared[2],digits=3),nsmall=0))),
+               c((format(round(nobs(plmbb1),digits=3),nsmall=0)),
+                 (format(round(nobs(plmbb2),digits=3),nsmall=0)),
+                 (format(round(nobs(plmbb3),digits=3),nsmall=0)),
+                 (format(round(nobs(plmbb4),digits=3),nsmall=0)),
+                 (format(round(nobs(plmbb5),digits=3),nsmall=0)),
+                 (format(round(nobs(plmbb6),digits=3),nsmall=0)),
+                 (format(round(nobs(plmbb7),digits=3),nsmall=0)))
+)
+
+
+# lmerb8<-lmer(score~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) , data = fedatad)
+# lmerb9<-lmer(general~farmergen  + (1 | shop_ID.x) + (1 | farmer_ID), data = fedatad)
+# lmerb10<-lmer(yield ~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) , data = fedatad)
+# lmerb11<-lmer(drought_resistent ~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) , data = fedatad)
+# lmerb12<-lmer(disease_resistent ~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) , data = fedatad)
+# lmerb13<-lmer(early_maturing ~farmergen  + (1 | shop_ID.x) + (1 | farmer_ID), data = fedatad)
+# lmerb14<-lmer(germination ~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) , data = fedatad)
 # 
 # #tab_model(lmerb8, lmerb9, lmerb10, lmerb11, lmerb12, lmerb13, lmerb14, p.style = c("stars"), p.threshold = c(0.1, 0.05, 0.01), collapse.ci=TRUE)
 # 
 # 
- lmer_two5<- rbind( c((format(round(sum(coef(summary(lmerb8))[1,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerb9))[1,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerb10))[1,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerb11))[1,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerb12))[1,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerb13))[1,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerb14))[1,1]),digits=3),nsmall=0))),
-                    c((format(round(coef(summary(lmerb8))[1,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerb9))[1,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerb10))[1,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerb11))[1,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerb12))[1,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerb13))[1,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerb14))[1,2],digits=3),nsmall=0))),
-                    c((format(round(coef(summary(lmerb8))[1,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerb9))[1,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerb10))[1,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerb11))[1,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerb12))[1,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerb13))[1,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerb14))[1,3],digits=3),nsmall=0))),
- 
-                    c((format(round(sum(coef(summary(lmerb8))[2,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerb9))[2,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerb10))[2,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerb11))[2,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerb12))[2,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerb13))[2,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerb14))[2,1]),digits=3),nsmall=0))),
-                    c((format(round(coef(summary(lmerb8))[2,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerb9))[2,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerb10))[2,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerb11))[2,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerb12))[2,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerb13))[2,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerb14))[2,2],digits=3),nsmall=0))),
-                    c((format(round(coef(summary(lmerb8))[2,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerb9))[2,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerb10))[2,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerb11))[2,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerb12))[2,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerb13))[2,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerb14))[2,3],digits=3),nsmall=0)))
- 
- 
-
- )
+ # lmer_two5<- rbind( c((format(round(sum(coef(summary(lmerb8))[1,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerb9))[1,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerb10))[1,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerb11))[1,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerb12))[1,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerb13))[1,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerb14))[1,1]),digits=3),nsmall=0))),
+ #                    c((format(round(coef(summary(lmerb8))[1,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerb9))[1,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerb10))[1,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerb11))[1,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerb12))[1,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerb13))[1,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerb14))[1,2],digits=3),nsmall=0))),
+ #                    c((format(round(coef(summary(lmerb8))[1,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerb9))[1,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerb10))[1,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerb11))[1,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerb12))[1,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerb13))[1,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerb14))[1,3],digits=3),nsmall=0))),
+ # 
+ #                    c((format(round(sum(coef(summary(lmerb8))[2,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerb9))[2,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerb10))[2,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerb11))[2,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerb12))[2,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerb13))[2,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerb14))[2,1]),digits=3),nsmall=0))),
+ #                    c((format(round(coef(summary(lmerb8))[2,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerb9))[2,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerb10))[2,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerb11))[2,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerb12))[2,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerb13))[2,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerb14))[2,2],digits=3),nsmall=0))),
+ #                    c((format(round(coef(summary(lmerb8))[2,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerb9))[2,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerb10))[2,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerb11))[2,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerb12))[2,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerb13))[2,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerb14))[2,3],digits=3),nsmall=0)))
+ # 
+ # 
+ # 
+ # )
 # 
 # 
 # 
 # #### Two way random effect at the dealer level and farmer level --- with controls --- controls are farmer and dealer characteristics 
+
+plmbb8<-plm(score ~ farmergen+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+               +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+            badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
+            effect = "twoway", random.method = "walhus")
+coefbb8<-coeftest(plmbb8, vcovHC(plmbb8, type = "HC0", cluster = "time"))
+summary(plmbb8)
+coefbb8
+
+plmbb9<-plm(general ~ farmergen+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+              +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
+            effect = "twoway", random.method = "walhus")
+coefbb9<-coeftest(plmbb9, vcovHC(plmbb9, type = "HC0", cluster = "time"))
+summary(plmbb9)
+coefbb9
+
+plmbb10<-plm(yield ~ farmergen+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+               +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
+            effect = "twoway", random.method = "walhus")
+coefbb10<-coeftest(plmbb10, vcovHC(plmbb10, type = "HC0", cluster = "time"))
+summary(plmbb10)
+coefbb10
+
+plmbb11<-plm(drought_resistent ~ farmergen+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+              +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
+            effect = "twoway", random.method = "walhus")
+coefbb11<-coeftest(plmbb11, vcovHC(plmbb11, type = "HC0", cluster = "time"))
+summary(plmbb11)
+coefbb11
+
+plmbb12<-plm(disease_resistent ~ farmergen+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+               +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
+            effect = "twoway", random.method = "walhus")
+coefbb12<-coeftest(plmbb12, vcovHC(plmbb12, type = "HC0", cluster = "time"))
+summary(plmbb12)
+coefbb12
+
+plmbb13<-plm(early_maturing ~ farmergen+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+               +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
+            effect = "twoway", random.method = "walhus")
+coefbb13<-coeftest(plmbb13, vcovHC(plmbb13, type = "HC0", cluster = "time"))
+summary(plmbb13)
+coefbb13
+
+plmbb14<-plm(germination ~ farmergen+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+               +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
+            effect = "twoway", random.method = "walhus")
+coefbb14<-coeftest(plmbb14, vcovHC(plmbb14, type = "HC0", cluster = "time"))
+summary(plmbb14)
+coefbb14
+
+
+ranb_two2<- rbind( c((format(round(sum(coefbb8[1,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb9[1,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb10[1,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb11[1,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb12[1,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb13[1,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb14[1,1]),digits=3),nsmall=0))),
+                   c((format(round(coefbb8[1,2],digits=3),nsmall=0)),
+                     (format(round(coefbb9[1,2],digits=3),nsmall=0)),
+                     (format(round(coefbb10[1,2],digits=3),nsmall=0)),
+                     (format(round(coefbb11[1,2],digits=3),nsmall=0)),
+                     (format(round(coefbb12[1,2],digits=3),nsmall=0)),
+                     (format(round(coefbb13[1,2],digits=3),nsmall=0)),
+                     (format(round(coefbb14[1,2],digits=3),nsmall=0))),
+                   c((format(round(coefbb8[1,4],digits=3),nsmall=0)),
+                     (format(round(coefbb9[1,4],digits=3),nsmall=0)),
+                     (format(round(coefbb10[1,4],digits=3),nsmall=0)),
+                     (format(round(coefbb11[1,4],digits=3),nsmall=0)),
+                     (format(round(coefbb12[1,4],digits=3),nsmall=0)),
+                     (format(round(coefbb13[1,4],digits=3),nsmall=0)),
+                     (format(round(coefbb14[1,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefbb8[2,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb9[2,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb10[2,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb11[2,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb12[2,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb13[2,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb14[2,1]),digits=3),nsmall=0))),
+                   c((format(round(coefbb8[2,2],digits=3),nsmall=0)),
+                     (format(round(coefbb9[2,2],digits=3),nsmall=0)),
+                     (format(round(coefbb10[2,2],digits=3),nsmall=0)),
+                     (format(round(coefbb11[2,2],digits=3),nsmall=0)),
+                     (format(round(coefbb12[2,2],digits=3),nsmall=0)),
+                     (format(round(coefbb13[2,2],digits=3),nsmall=0)),
+                     (format(round(coefbb14[2,2],digits=3),nsmall=0))),
+                   c((format(round(coefbb8[2,4],digits=3),nsmall=0)),
+                     (format(round(coefbb9[2,4],digits=3),nsmall=0)),
+                     (format(round(coefbb10[2,4],digits=3),nsmall=0)),
+                     (format(round(coefbb11[2,4],digits=3),nsmall=0)),
+                     (format(round(coefbb12[2,4],digits=3),nsmall=0)),
+                     (format(round(coefbb13[2,4],digits=3),nsmall=0)),
+                     (format(round(coefbb14[2,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefbb8[3,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb9[3,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb10[3,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb11[3,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb12[3,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb13[3,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb14[3,1]),digits=3),nsmall=0))),
+                   c((format(round(coefbb8[3,2],digits=3),nsmall=0)),
+                     (format(round(coefbb9[3,2],digits=3),nsmall=0)),
+                     (format(round(coefbb10[3,2],digits=3),nsmall=0)),
+                     (format(round(coefbb11[3,2],digits=3),nsmall=0)),
+                     (format(round(coefbb12[3,2],digits=3),nsmall=0)),
+                     (format(round(coefbb13[3,2],digits=3),nsmall=0)),
+                     (format(round(coefbb14[3,2],digits=3),nsmall=0))),
+                   c((format(round(coefbb8[3,4],digits=3),nsmall=0)),
+                     (format(round(coefbb9[3,4],digits=3),nsmall=0)),
+                     (format(round(coefbb10[3,4],digits=3),nsmall=0)),
+                     (format(round(coefbb11[3,4],digits=3),nsmall=0)),
+                     (format(round(coefbb12[3,4],digits=3),nsmall=0)),
+                     (format(round(coefbb13[3,4],digits=3),nsmall=0)),
+                     (format(round(coefbb14[3,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefbb8[4,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb9[4,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb10[4,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb11[4,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb12[4,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb13[4,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb14[4,1]),digits=3),nsmall=0))),
+                   c((format(round(coefbb8[4,2],digits=3),nsmall=0)),
+                     (format(round(coefbb9[4,2],digits=3),nsmall=0)),
+                     (format(round(coefbb10[4,2],digits=3),nsmall=0)),
+                     (format(round(coefbb11[4,2],digits=3),nsmall=0)),
+                     (format(round(coefbb12[4,2],digits=3),nsmall=0)),
+                     (format(round(coefbb13[4,2],digits=3),nsmall=0)),
+                     (format(round(coefbb14[4,2],digits=3),nsmall=0))),
+                   c((format(round(coefbb8[4,4],digits=3),nsmall=0)),
+                     (format(round(coefbb9[4,4],digits=3),nsmall=0)),
+                     (format(round(coefbb10[4,4],digits=3),nsmall=0)),
+                     (format(round(coefbb11[4,4],digits=3),nsmall=0)),
+                     (format(round(coefbb12[4,4],digits=3),nsmall=0)),
+                     (format(round(coefbb13[4,4],digits=3),nsmall=0)),
+                     (format(round(coefbb14[4,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefbb8[5,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb9[5,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb10[5,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb11[5,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb12[5,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb13[5,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb14[5,1]),digits=3),nsmall=0))),
+                   c((format(round(coefbb8[5,2],digits=3),nsmall=0)),
+                     (format(round(coefbb9[5,2],digits=3),nsmall=0)),
+                     (format(round(coefbb10[5,2],digits=3),nsmall=0)),
+                     (format(round(coefbb11[5,2],digits=3),nsmall=0)),
+                     (format(round(coefbb12[5,2],digits=3),nsmall=0)),
+                     (format(round(coefbb13[5,2],digits=3),nsmall=0)),
+                     (format(round(coefbb14[5,2],digits=3),nsmall=0))),
+                   c((format(round(coefbb8[5,4],digits=3),nsmall=0)),
+                     (format(round(coefbb9[5,4],digits=3),nsmall=0)),
+                     (format(round(coefbb10[5,4],digits=3),nsmall=0)),
+                     (format(round(coefbb11[5,4],digits=3),nsmall=0)),
+                     (format(round(coefbb12[5,4],digits=3),nsmall=0)),
+                     (format(round(coefbb13[5,4],digits=3),nsmall=0)),
+                     (format(round(coefbb14[5,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefbb8[6,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb9[6,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb10[6,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb11[6,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb12[6,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb13[6,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb14[6,1]),digits=3),nsmall=0))),
+                   c((format(round(coefbb8[6,2],digits=3),nsmall=0)),
+                     (format(round(coefbb9[6,2],digits=3),nsmall=0)),
+                     (format(round(coefbb10[6,2],digits=3),nsmall=0)),
+                     (format(round(coefbb11[6,2],digits=3),nsmall=0)),
+                     (format(round(coefbb12[6,2],digits=3),nsmall=0)),
+                     (format(round(coefbb13[6,2],digits=3),nsmall=0)),
+                     (format(round(coefbb14[6,2],digits=3),nsmall=0))),
+                   c((format(round(coefbb8[6,4],digits=3),nsmall=0)),
+                     (format(round(coefbb9[6,4],digits=3),nsmall=0)),
+                     (format(round(coefbb10[6,4],digits=3),nsmall=0)),
+                     (format(round(coefbb11[6,4],digits=3),nsmall=0)),
+                     (format(round(coefbb12[6,4],digits=3),nsmall=0)),
+                     (format(round(coefbb13[6,4],digits=3),nsmall=0)),
+                     (format(round(coefbb14[6,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefbb8[7,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb9[7,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb10[7,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb11[7,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb12[7,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb13[7,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb14[7,1]),digits=3),nsmall=0))),
+                   c((format(round(coefbb8[7,2],digits=3),nsmall=0)),
+                     (format(round(coefbb9[7,2],digits=3),nsmall=0)),
+                     (format(round(coefbb10[7,2],digits=3),nsmall=0)),
+                     (format(round(coefbb11[7,2],digits=3),nsmall=0)),
+                     (format(round(coefbb12[7,2],digits=3),nsmall=0)),
+                     (format(round(coefbb13[7,2],digits=3),nsmall=0)),
+                     (format(round(coefbb14[7,2],digits=3),nsmall=0))),
+                   c((format(round(coefbb8[7,4],digits=3),nsmall=0)),
+                     (format(round(coefbb9[7,4],digits=3),nsmall=0)),
+                     (format(round(coefbb10[7,4],digits=3),nsmall=0)),
+                     (format(round(coefbb11[7,4],digits=3),nsmall=0)),
+                     (format(round(coefbb12[7,4],digits=3),nsmall=0)),
+                     (format(round(coefbb13[7,4],digits=3),nsmall=0)),
+                     (format(round(coefbb14[7,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefbb8[8,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb9[8,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb10[8,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb11[8,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb12[8,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb13[8,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb14[8,1]),digits=3),nsmall=0))),
+                   c((format(round(coefbb8[8,2],digits=3),nsmall=0)),
+                     (format(round(coefbb9[8,2],digits=3),nsmall=0)),
+                     (format(round(coefbb10[8,2],digits=3),nsmall=0)),
+                     (format(round(coefbb11[8,2],digits=3),nsmall=0)),
+                     (format(round(coefbb12[8,2],digits=3),nsmall=0)),
+                     (format(round(coefbb13[8,2],digits=3),nsmall=0)),
+                     (format(round(coefbb14[8,2],digits=3),nsmall=0))),
+                   c((format(round(coefbb8[8,4],digits=3),nsmall=0)),
+                     (format(round(coefbb9[8,4],digits=3),nsmall=0)),
+                     (format(round(coefbb10[8,4],digits=3),nsmall=0)),
+                     (format(round(coefbb11[8,4],digits=3),nsmall=0)),
+                     (format(round(coefbb12[8,4],digits=3),nsmall=0)),
+                     (format(round(coefbb13[8,4],digits=3),nsmall=0)),
+                     (format(round(coefbb14[8,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefbb8[9,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb9[9,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb10[9,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb11[9,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb12[9,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb13[9,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb14[9,1]),digits=3),nsmall=0))),
+                   c((format(round(coefbb8[9,2],digits=3),nsmall=0)),
+                     (format(round(coefbb9[9,2],digits=3),nsmall=0)),
+                     (format(round(coefbb10[9,2],digits=3),nsmall=0)),
+                     (format(round(coefbb11[9,2],digits=3),nsmall=0)),
+                     (format(round(coefbb12[9,2],digits=3),nsmall=0)),
+                     (format(round(coefbb13[9,2],digits=3),nsmall=0)),
+                     (format(round(coefbb14[9,2],digits=3),nsmall=0))),
+                   c((format(round(coefbb8[9,4],digits=3),nsmall=0)),
+                     (format(round(coefbb9[9,4],digits=3),nsmall=0)),
+                     (format(round(coefbb10[9,4],digits=3),nsmall=0)),
+                     (format(round(coefbb11[9,4],digits=3),nsmall=0)),
+                     (format(round(coefbb12[9,4],digits=3),nsmall=0)),
+                     (format(round(coefbb13[9,4],digits=3),nsmall=0)),
+                     (format(round(coefbb14[9,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefbb8[10,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb9[10,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb10[10,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb11[10,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb12[10,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb13[10,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb14[10,1]),digits=3),nsmall=0))),
+                   c((format(round(coefbb8[10,2],digits=3),nsmall=0)),
+                     (format(round(coefbb9[10,2],digits=3),nsmall=0)),
+                     (format(round(coefbb10[10,2],digits=3),nsmall=0)),
+                     (format(round(coefbb11[10,2],digits=3),nsmall=0)),
+                     (format(round(coefbb12[10,2],digits=3),nsmall=0)),
+                     (format(round(coefbb13[10,2],digits=3),nsmall=0)),
+                     (format(round(coefbb14[10,2],digits=3),nsmall=0))),
+                   c((format(round(coefbb8[10,4],digits=3),nsmall=0)),
+                     (format(round(coefbb9[10,4],digits=3),nsmall=0)),
+                     (format(round(coefbb10[10,4],digits=3),nsmall=0)),
+                     (format(round(coefbb11[10,4],digits=3),nsmall=0)),
+                     (format(round(coefbb12[10,4],digits=3),nsmall=0)),
+                     (format(round(coefbb13[10,4],digits=3),nsmall=0)),
+                     (format(round(coefbb14[10,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefbb8[11,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb9[11,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb10[11,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb11[11,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb12[11,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb13[11,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb14[11,1]),digits=3),nsmall=0))),
+                   c((format(round(coefbb8[11,2],digits=3),nsmall=0)),
+                     (format(round(coefbb9[11,2],digits=3),nsmall=0)),
+                     (format(round(coefbb10[11,2],digits=3),nsmall=0)),
+                     (format(round(coefbb11[11,2],digits=3),nsmall=0)),
+                     (format(round(coefbb12[11,2],digits=3),nsmall=0)),
+                     (format(round(coefbb13[11,2],digits=3),nsmall=0)),
+                     (format(round(coefbb14[11,2],digits=3),nsmall=0))),
+                   c((format(round(coefbb8[11,4],digits=3),nsmall=0)),
+                     (format(round(coefbb9[11,4],digits=3),nsmall=0)),
+                     (format(round(coefbb10[11,4],digits=3),nsmall=0)),
+                     (format(round(coefbb11[11,4],digits=3),nsmall=0)),
+                     (format(round(coefbb12[11,4],digits=3),nsmall=0)),
+                     (format(round(coefbb13[11,4],digits=3),nsmall=0)),
+                     (format(round(coefbb14[11,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefbb8[12,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb9[12,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb10[12,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb11[12,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb12[12,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb13[12,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb14[12,1]),digits=3),nsmall=0))),
+                   c((format(round(coefbb8[12,2],digits=3),nsmall=0)),
+                     (format(round(coefbb9[12,2],digits=3),nsmall=0)),
+                     (format(round(coefbb10[12,2],digits=3),nsmall=0)),
+                     (format(round(coefbb11[12,2],digits=3),nsmall=0)),
+                     (format(round(coefbb12[12,2],digits=3),nsmall=0)),
+                     (format(round(coefbb13[12,2],digits=3),nsmall=0)),
+                     (format(round(coefbb14[12,2],digits=3),nsmall=0))),
+                   c((format(round(coefbb8[12,4],digits=3),nsmall=0)),
+                     (format(round(coefbb9[12,4],digits=3),nsmall=0)),
+                     (format(round(coefbb10[12,4],digits=3),nsmall=0)),
+                     (format(round(coefbb11[12,4],digits=3),nsmall=0)),
+                     (format(round(coefbb12[12,4],digits=3),nsmall=0)),
+                     (format(round(coefbb13[12,4],digits=3),nsmall=0)),
+                     (format(round(coefbb14[12,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefbb8[13,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb9[13,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb10[13,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb11[13,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb12[13,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb13[13,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb14[13,1]),digits=3),nsmall=0))),
+                   c((format(round(coefbb8[13,2],digits=3),nsmall=0)),
+                     (format(round(coefbb9[13,2],digits=3),nsmall=0)),
+                     (format(round(coefbb10[13,2],digits=3),nsmall=0)),
+                     (format(round(coefbb11[13,2],digits=3),nsmall=0)),
+                     (format(round(coefbb12[13,2],digits=3),nsmall=0)),
+                     (format(round(coefbb13[13,2],digits=3),nsmall=0)),
+                     (format(round(coefbb14[13,2],digits=3),nsmall=0))),
+                   c((format(round(coefbb8[13,4],digits=3),nsmall=0)),
+                     (format(round(coefbb9[13,4],digits=3),nsmall=0)),
+                     (format(round(coefbb10[13,4],digits=3),nsmall=0)),
+                     (format(round(coefbb11[13,4],digits=3),nsmall=0)),
+                     (format(round(coefbb12[13,4],digits=3),nsmall=0)),
+                     (format(round(coefbb13[13,4],digits=3),nsmall=0)),
+                     (format(round(coefbb14[13,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefbb8[14,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb9[14,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb10[14,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb11[14,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb12[14,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb13[14,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb14[14,1]),digits=3),nsmall=0))),
+                   c((format(round(coefbb8[14,2],digits=3),nsmall=0)),
+                     (format(round(coefbb9[14,2],digits=3),nsmall=0)),
+                     (format(round(coefbb10[14,2],digits=3),nsmall=0)),
+                     (format(round(coefbb11[14,2],digits=3),nsmall=0)),
+                     (format(round(coefbb12[14,2],digits=3),nsmall=0)),
+                     (format(round(coefbb13[14,2],digits=3),nsmall=0)),
+                     (format(round(coefbb14[14,2],digits=3),nsmall=0))),
+                   c((format(round(coefbb8[14,4],digits=3),nsmall=0)),
+                     (format(round(coefbb9[14,4],digits=3),nsmall=0)),
+                     (format(round(coefbb10[14,4],digits=3),nsmall=0)),
+                     (format(round(coefbb11[14,4],digits=3),nsmall=0)),
+                     (format(round(coefbb12[14,4],digits=3),nsmall=0)),
+                     (format(round(coefbb13[14,4],digits=3),nsmall=0)),
+                     (format(round(coefbb14[14,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefbb8[15,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb9[15,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb10[15,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb11[15,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb12[15,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb13[15,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb14[15,1]),digits=3),nsmall=0))),
+                   c((format(round(coefbb8[15,2],digits=3),nsmall=0)),
+                     (format(round(coefbb9[15,2],digits=3),nsmall=0)),
+                     (format(round(coefbb10[15,2],digits=3),nsmall=0)),
+                     (format(round(coefbb11[15,2],digits=3),nsmall=0)),
+                     (format(round(coefbb12[15,2],digits=3),nsmall=0)),
+                     (format(round(coefbb13[15,2],digits=3),nsmall=0)),
+                     (format(round(coefbb14[15,2],digits=3),nsmall=0))),
+                   c((format(round(coefbb8[15,4],digits=3),nsmall=0)),
+                     (format(round(coefbb9[15,4],digits=3),nsmall=0)),
+                     (format(round(coefbb10[15,4],digits=3),nsmall=0)),
+                     (format(round(coefbb11[15,4],digits=3),nsmall=0)),
+                     (format(round(coefbb12[15,4],digits=3),nsmall=0)),
+                     (format(round(coefbb13[15,4],digits=3),nsmall=0)),
+                     (format(round(coefbb14[15,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefbb8[16,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb9[16,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb10[16,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb11[16,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb12[16,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb13[16,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb14[16,1]),digits=3),nsmall=0))),
+                   c((format(round(coefbb8[16,2],digits=3),nsmall=0)),
+                     (format(round(coefbb9[16,2],digits=3),nsmall=0)),
+                     (format(round(coefbb10[16,2],digits=3),nsmall=0)),
+                     (format(round(coefbb11[16,2],digits=3),nsmall=0)),
+                     (format(round(coefbb12[16,2],digits=3),nsmall=0)),
+                     (format(round(coefbb13[16,2],digits=3),nsmall=0)),
+                     (format(round(coefbb14[16,2],digits=3),nsmall=0))),
+                   c((format(round(coefbb8[16,4],digits=3),nsmall=0)),
+                     (format(round(coefbb9[16,4],digits=3),nsmall=0)),
+                     (format(round(coefbb10[16,4],digits=3),nsmall=0)),
+                     (format(round(coefbb11[16,4],digits=3),nsmall=0)),
+                     (format(round(coefbb12[16,4],digits=3),nsmall=0)),
+                     (format(round(coefbb13[16,4],digits=3),nsmall=0)),
+                     (format(round(coefbb14[16,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefbb8[17,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb9[17,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb10[17,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb11[17,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb12[17,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb13[17,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb14[17,1]),digits=3),nsmall=0))),
+                   c((format(round(coefbb8[17,2],digits=3),nsmall=0)),
+                     (format(round(coefbb9[17,2],digits=3),nsmall=0)),
+                     (format(round(coefbb10[17,2],digits=3),nsmall=0)),
+                     (format(round(coefbb11[17,2],digits=3),nsmall=0)),
+                     (format(round(coefbb12[17,2],digits=3),nsmall=0)),
+                     (format(round(coefbb13[17,2],digits=3),nsmall=0)),
+                     (format(round(coefbb14[17,2],digits=3),nsmall=0))),
+                   c((format(round(coefbb8[17,4],digits=3),nsmall=0)),
+                     (format(round(coefbb9[17,4],digits=3),nsmall=0)),
+                     (format(round(coefbb10[17,4],digits=3),nsmall=0)),
+                     (format(round(coefbb11[17,4],digits=3),nsmall=0)),
+                     (format(round(coefbb12[17,4],digits=3),nsmall=0)),
+                     (format(round(coefbb13[17,4],digits=3),nsmall=0)),
+                     (format(round(coefbb14[17,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefbb8[18,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb9[18,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb10[18,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb11[18,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb12[18,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb13[18,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb14[18,1]),digits=3),nsmall=0))),
+                   c((format(round(coefbb8[18,2],digits=3),nsmall=0)),
+                     (format(round(coefbb9[18,2],digits=3),nsmall=0)),
+                     (format(round(coefbb10[18,2],digits=3),nsmall=0)),
+                     (format(round(coefbb11[18,2],digits=3),nsmall=0)),
+                     (format(round(coefbb12[18,2],digits=3),nsmall=0)),
+                     (format(round(coefbb13[18,2],digits=3),nsmall=0)),
+                     (format(round(coefbb14[18,2],digits=3),nsmall=0))),
+                   c((format(round(coefbb8[18,4],digits=3),nsmall=0)),
+                     (format(round(coefbb9[18,4],digits=3),nsmall=0)),
+                     (format(round(coefbb10[18,4],digits=3),nsmall=0)),
+                     (format(round(coefbb11[18,4],digits=3),nsmall=0)),
+                     (format(round(coefbb12[18,4],digits=3),nsmall=0)),
+                     (format(round(coefbb13[18,4],digits=3),nsmall=0)),
+                     (format(round(coefbb14[18,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefbb8[19,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb9[19,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb10[19,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb11[19,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb12[19,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb13[19,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb14[19,1]),digits=3),nsmall=0))),
+                   c((format(round(coefbb8[19,2],digits=3),nsmall=0)),
+                     (format(round(coefbb9[19,2],digits=3),nsmall=0)),
+                     (format(round(coefbb10[19,2],digits=3),nsmall=0)),
+                     (format(round(coefbb11[19,2],digits=3),nsmall=0)),
+                     (format(round(coefbb12[19,2],digits=3),nsmall=0)),
+                     (format(round(coefbb13[19,2],digits=3),nsmall=0)),
+                     (format(round(coefbb14[19,2],digits=3),nsmall=0))),
+                   c((format(round(coefbb8[19,4],digits=3),nsmall=0)),
+                     (format(round(coefbb9[19,4],digits=3),nsmall=0)),
+                     (format(round(coefbb10[19,4],digits=3),nsmall=0)),
+                     (format(round(coefbb11[19,4],digits=3),nsmall=0)),
+                     (format(round(coefbb12[19,4],digits=3),nsmall=0)),
+                     (format(round(coefbb13[19,4],digits=3),nsmall=0)),
+                     (format(round(coefbb14[19,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefbb8[20,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb9[20,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb10[20,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb11[20,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb12[20,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb13[20,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb14[20,1]),digits=3),nsmall=0))),
+                   c((format(round(coefbb8[20,2],digits=3),nsmall=0)),
+                     (format(round(coefbb9[20,2],digits=3),nsmall=0)),
+                     (format(round(coefbb10[20,2],digits=3),nsmall=0)),
+                     (format(round(coefbb11[20,2],digits=3),nsmall=0)),
+                     (format(round(coefbb12[20,2],digits=3),nsmall=0)),
+                     (format(round(coefbb13[20,2],digits=3),nsmall=0)),
+                     (format(round(coefbb14[20,2],digits=3),nsmall=0))),
+                   c((format(round(coefbb8[20,4],digits=3),nsmall=0)),
+                     (format(round(coefbb9[20,4],digits=3),nsmall=0)),
+                     (format(round(coefbb10[20,4],digits=3),nsmall=0)),
+                     (format(round(coefbb11[20,4],digits=3),nsmall=0)),
+                     (format(round(coefbb12[20,4],digits=3),nsmall=0)),
+                     (format(round(coefbb13[20,4],digits=3),nsmall=0)),
+                     (format(round(coefbb14[20,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefbb8[21,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb9[21,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb10[21,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb11[21,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb12[21,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb13[21,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb14[21,1]),digits=3),nsmall=0))),
+                   c((format(round(coefbb8[21,2],digits=3),nsmall=0)),
+                     (format(round(coefbb9[21,2],digits=3),nsmall=0)),
+                     (format(round(coefbb10[21,2],digits=3),nsmall=0)),
+                     (format(round(coefbb11[21,2],digits=3),nsmall=0)),
+                     (format(round(coefbb12[21,2],digits=3),nsmall=0)),
+                     (format(round(coefbb13[21,2],digits=3),nsmall=0)),
+                     (format(round(coefbb14[21,2],digits=3),nsmall=0))),
+                   c((format(round(coefbb8[21,4],digits=3),nsmall=0)),
+                     (format(round(coefbb9[21,4],digits=3),nsmall=0)),
+                     (format(round(coefbb10[21,4],digits=3),nsmall=0)),
+                     (format(round(coefbb11[21,4],digits=3),nsmall=0)),
+                     (format(round(coefbb12[21,4],digits=3),nsmall=0)),
+                     (format(round(coefbb13[21,4],digits=3),nsmall=0)),
+                     (format(round(coefbb14[21,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefbb8[22,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb9[22,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb10[22,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb11[22,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb12[22,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb13[22,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb14[22,1]),digits=3),nsmall=0))),
+                   c((format(round(coefbb8[22,2],digits=3),nsmall=0)),
+                     (format(round(coefbb9[22,2],digits=3),nsmall=0)),
+                     (format(round(coefbb10[22,2],digits=3),nsmall=0)),
+                     (format(round(coefbb11[22,2],digits=3),nsmall=0)),
+                     (format(round(coefbb12[22,2],digits=3),nsmall=0)),
+                     (format(round(coefbb13[22,2],digits=3),nsmall=0)),
+                     (format(round(coefbb14[22,2],digits=3),nsmall=0))),
+                   c((format(round(coefbb8[22,4],digits=3),nsmall=0)),
+                     (format(round(coefbb9[22,4],digits=3),nsmall=0)),
+                     (format(round(coefbb10[22,4],digits=3),nsmall=0)),
+                     (format(round(coefbb11[22,4],digits=3),nsmall=0)),
+                     (format(round(coefbb12[22,4],digits=3),nsmall=0)),
+                     (format(round(coefbb13[22,4],digits=3),nsmall=0)),
+                     (format(round(coefbb14[22,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefbb8[23,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb9[23,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb10[23,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb11[23,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb12[23,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb13[23,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb14[23,1]),digits=3),nsmall=0))),
+                   c((format(round(coefbb8[23,2],digits=3),nsmall=0)),
+                     (format(round(coefbb9[23,2],digits=3),nsmall=0)),
+                     (format(round(coefbb10[23,2],digits=3),nsmall=0)),
+                     (format(round(coefbb11[23,2],digits=3),nsmall=0)),
+                     (format(round(coefbb12[23,2],digits=3),nsmall=0)),
+                     (format(round(coefbb13[23,2],digits=3),nsmall=0)),
+                     (format(round(coefbb14[23,2],digits=3),nsmall=0))),
+                   c((format(round(coefbb8[23,4],digits=3),nsmall=0)),
+                     (format(round(coefbb9[23,4],digits=3),nsmall=0)),
+                     (format(round(coefbb10[23,4],digits=3),nsmall=0)),
+                     (format(round(coefbb11[23,4],digits=3),nsmall=0)),
+                     (format(round(coefbb12[23,4],digits=3),nsmall=0)),
+                     (format(round(coefbb13[23,4],digits=3),nsmall=0)),
+                     (format(round(coefbb14[23,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefbb8[24,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb9[24,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb10[24,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb11[24,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb12[24,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb13[24,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb14[24,1]),digits=3),nsmall=0))),
+                   c((format(round(coefbb8[24,2],digits=3),nsmall=0)),
+                     (format(round(coefbb9[24,2],digits=3),nsmall=0)),
+                     (format(round(coefbb10[24,2],digits=3),nsmall=0)),
+                     (format(round(coefbb11[24,2],digits=3),nsmall=0)),
+                     (format(round(coefbb12[24,2],digits=3),nsmall=0)),
+                     (format(round(coefbb13[24,2],digits=3),nsmall=0)),
+                     (format(round(coefbb14[24,2],digits=3),nsmall=0))),
+                   c((format(round(coefbb8[24,4],digits=3),nsmall=0)),
+                     (format(round(coefbb9[24,4],digits=3),nsmall=0)),
+                     (format(round(coefbb10[24,4],digits=3),nsmall=0)),
+                     (format(round(coefbb11[24,4],digits=3),nsmall=0)),
+                     (format(round(coefbb12[24,4],digits=3),nsmall=0)),
+                     (format(round(coefbb13[24,4],digits=3),nsmall=0)),
+                     (format(round(coefbb14[24,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefbb8[25,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb9[25,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb10[25,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb11[25,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb12[25,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb13[25,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbb14[25,1]),digits=3),nsmall=0))),
+                   c((format(round(coefbb8[25,2],digits=3),nsmall=0)),
+                     (format(round(coefbb9[25,2],digits=3),nsmall=0)),
+                     (format(round(coefbb10[25,2],digits=3),nsmall=0)),
+                     (format(round(coefbb11[25,2],digits=3),nsmall=0)),
+                     (format(round(coefbb12[25,2],digits=3),nsmall=0)),
+                     (format(round(coefbb13[25,2],digits=3),nsmall=0)),
+                     (format(round(coefbb14[25,2],digits=3),nsmall=0))),
+                   c((format(round(coefbb8[25,4],digits=3),nsmall=0)),
+                     (format(round(coefbb9[25,4],digits=3),nsmall=0)),
+                     (format(round(coefbb10[25,4],digits=3),nsmall=0)),
+                     (format(round(coefbb11[25,4],digits=3),nsmall=0)),
+                     (format(round(coefbb12[25,4],digits=3),nsmall=0)),
+                     (format(round(coefbb13[25,4],digits=3),nsmall=0)),
+                     (format(round(coefbb14[25,4],digits=3),nsmall=0))),
+                   
+                   
+                   c((format(round(summary(plmbb8)$r.squared[1],digits=3),nsmall=0)),
+                     (format(round(summary(plmbb9)$r.squared[1],digits=3),nsmall=0)),
+                     (format(round(summary(plmbb10)$r.squared[1],digits=3),nsmall=0)),
+                     (format(round(summary(plmbb11)$r.squared[1],digits=3),nsmall=0)),
+                     (format(round(summary(plmbb12)$r.squared[1],digits=3),nsmall=0)),
+                     (format(round(summary(plmbb13)$r.squared[1],digits=3),nsmall=0)),
+                     (format(round(summary(plmbb14)$r.squared[1],digits=3),nsmall=0))),
+                   c((format(round(summary(plmbb8)$r.squared[2],digits=3),nsmall=0)),
+                     (format(round(summary(plmbb9)$r.squared[2],digits=3),nsmall=0)),
+                     (format(round(summary(plmbb10)$r.squared[2],digits=3),nsmall=0)),
+                     (format(round(summary(plmbb11)$r.squared[2],digits=3),nsmall=0)),
+                     (format(round(summary(plmbb12)$r.squared[2],digits=3),nsmall=0)),
+                     (format(round(summary(plmbb13)$r.squared[2],digits=3),nsmall=0)),
+                     (format(round(summary(plmbb14)$r.squared[2],digits=3),nsmall=0))),
+                   c((format(round(nobs(plmbb8),digits=3),nsmall=0)),
+                     (format(round(nobs(plmbb9),digits=3),nsmall=0)),
+                     (format(round(nobs(plmbb10),digits=3),nsmall=0)),
+                     (format(round(nobs(plmbb11),digits=3),nsmall=0)),
+                     (format(round(nobs(plmbb12),digits=3),nsmall=0)),
+                     (format(round(nobs(plmbb13),digits=3),nsmall=0)),
+                     (format(round(nobs(plmbb14),digits=3),nsmall=0))))
+
+
+# lmerbc8<-lmer(score~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+# +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+# badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedatad)
 # 
-lmerbc8<-lmer(score~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedatad)
-
-lmerbc9<-lmer(general~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedatad)
-
-lmerbc10<-lmer(yield~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedatad)
-
-lmerbc11<-lmer(drought_resistent ~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedatad)
-
-lmerbc12<-lmer(disease_resistent~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedatad)
-
-lmerbc13<-lmer(early_maturing~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedatad)
-
-lmerbc14<-lmer(germination~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
-+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedatad)
+# lmerbc9<-lmer(general~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+# +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+# badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedatad)
+# 
+# lmerbc10<-lmer(yield~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+# +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+# badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedatad)
+# 
+# lmerbc11<-lmer(drought_resistent ~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+# +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+# badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedatad)
+# 
+# lmerbc12<-lmer(disease_resistent~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+# +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+# badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedatad)
+# 
+# lmerbc13<-lmer(early_maturing~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+# +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+# badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedatad)
+# 
+# lmerbc14<-lmer(germination~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+# +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+# badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = fedatad)
 # 
 # #tab_model(lmerbc8, lmerbc9, lmerbc10, lmerbc11, lmerbc12, lmerbc13, lmerbc14, p.style = c("stars"), p.threshold = c(0.1, 0.05, 0.01), collapse.ci=TRUE)
 # 
- lmer_two6<- rbind( c((format(round(sum(coef(summary(lmerbc8))[1,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc9))[1,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc10))[1,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc11))[1,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc12))[1,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc13))[1,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc14))[1,1]),digits=3),nsmall=0))),
-                    c((format(round(coef(summary(lmerbc8))[1,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc9))[1,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc10))[1,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc11))[1,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc12))[1,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc13))[1,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc14))[1,2],digits=3),nsmall=0))),
-                    c((format(round(coef(summary(lmerbc8))[1,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc9))[1,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc10))[1,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc11))[1,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc12))[1,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc13))[1,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc14))[1,3],digits=3),nsmall=0))),
- 
-                    c((format(round(sum(coef(summary(lmerbc8))[2,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc9))[2,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc10))[2,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc11))[2,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc12))[2,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc13))[2,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc14))[2,1]),digits=3),nsmall=0))),
-                    c((format(round(coef(summary(lmerbc8))[2,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc9))[2,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc10))[2,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc11))[2,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc12))[2,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc13))[2,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc14))[2,2],digits=3),nsmall=0))),
-                    c((format(round(coef(summary(lmerbc8))[2,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc9))[2,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc10))[2,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc11))[2,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc12))[2,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc13))[2,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc14))[2,3],digits=3),nsmall=0))),
- 
-                    c((format(round(sum(coef(summary(lmerbc8))[3,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc9))[3,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc10))[3,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc11))[3,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc12))[3,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc13))[3,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc14))[3,1]),digits=3),nsmall=0))),
-                    c((format(round(coef(summary(lmerbc8))[3,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc9))[3,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc10))[3,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc11))[3,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc12))[3,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc13))[3,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc14))[3,2],digits=3),nsmall=0))),
-                    c((format(round(coef(summary(lmerbc8))[3,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc9))[3,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc10))[3,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc11))[3,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc12))[3,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc13))[3,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc14))[3,3],digits=3),nsmall=0))),
- 
-                    c((format(round(sum(coef(summary(lmerbc8))[4,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc9))[4,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc10))[4,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc11))[4,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc12))[4,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc13))[4,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc14))[4,1]),digits=3),nsmall=0))),
-                    c((format(round(coef(summary(lmerbc8))[4,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc9))[4,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc10))[4,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc11))[4,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc12))[4,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc13))[4,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc14))[4,2],digits=3),nsmall=0))),
-                    c((format(round(coef(summary(lmerbc8))[4,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc9))[4,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc10))[4,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc11))[4,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc12))[4,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc13))[4,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc14))[4,3],digits=3),nsmall=0))),
- 
-                    c((format(round(sum(coef(summary(lmerbc8))[5,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc9))[5,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc10))[5,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc11))[5,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc12))[5,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc13))[5,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc14))[5,1]),digits=3),nsmall=0))),
-                    c((format(round(coef(summary(lmerbc8))[5,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc9))[5,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc10))[5,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc11))[5,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc12))[5,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc13))[5,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc14))[5,2],digits=3),nsmall=0))),
-                    c((format(round(coef(summary(lmerbc8))[5,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc9))[5,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc10))[5,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc11))[5,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc12))[5,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc13))[5,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc14))[5,3],digits=3),nsmall=0))),
- 
-                    c((format(round(sum(coef(summary(lmerbc8))[6,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc9))[6,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc10))[6,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc11))[6,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc12))[6,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc13))[6,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc14))[6,1]),digits=3),nsmall=0))),
-                    c((format(round(coef(summary(lmerbc8))[6,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc9))[6,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc10))[6,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc11))[6,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc12))[6,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc13))[6,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc14))[6,2],digits=3),nsmall=0))),
-                    c((format(round(coef(summary(lmerbc8))[6,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc9))[6,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc10))[6,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc11))[6,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc12))[6,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc13))[6,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc14))[6,3],digits=3),nsmall=0))),
- 
-                    c((format(round(sum(coef(summary(lmerbc8))[7,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc9))[7,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc10))[7,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc11))[7,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc12))[7,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc13))[7,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc14))[7,1]),digits=3),nsmall=0))),
-                    c((format(round(coef(summary(lmerbc8))[7,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc9))[7,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc10))[7,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc11))[7,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc12))[7,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc13))[7,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc14))[7,2],digits=3),nsmall=0))),
-                    c((format(round(coef(summary(lmerbc8))[7,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc9))[7,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc10))[7,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc11))[7,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc12))[7,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc13))[7,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc14))[7,3],digits=3),nsmall=0))),
- 
-                    c((format(round(sum(coef(summary(lmerbc8))[8,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc9))[8,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc10))[8,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc11))[8,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc12))[8,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc13))[8,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc14))[8,1]),digits=3),nsmall=0))),
-                    c((format(round(coef(summary(lmerbc8))[8,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc9))[8,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc10))[8,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc11))[8,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc12))[8,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc13))[8,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc14))[8,2],digits=3),nsmall=0))),
-                    c((format(round(coef(summary(lmerbc8))[8,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc9))[8,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc10))[8,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc11))[8,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc12))[8,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc13))[8,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc14))[8,3],digits=3),nsmall=0))),
- 
-                    c((format(round(sum(coef(summary(lmerbc8))[9,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc9))[9,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc10))[9,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc11))[9,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc12))[9,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc13))[9,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc14))[9,1]),digits=3),nsmall=0))),
-                    c((format(round(coef(summary(lmerbc8))[9,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc9))[9,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc10))[9,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc11))[9,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc12))[9,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc13))[9,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc14))[9,2],digits=3),nsmall=0))),
-                    c((format(round(coef(summary(lmerbc8))[9,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc9))[9,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc10))[9,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc11))[9,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc12))[9,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc13))[9,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc14))[9,3],digits=3),nsmall=0))),
- 
-                    c((format(round(sum(coef(summary(lmerbc8))[10,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc9))[10,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc10))[10,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc11))[10,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc12))[10,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc13))[10,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc14))[10,1]),digits=3),nsmall=0))),
-                    c((format(round(coef(summary(lmerbc8))[10,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc9))[10,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc10))[10,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc11))[10,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc12))[10,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc13))[10,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc14))[10,2],digits=3),nsmall=0))),
-                    c((format(round(coef(summary(lmerbc8))[10,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc9))[10,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc10))[10,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc11))[10,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc12))[10,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc13))[10,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc14))[10,3],digits=3),nsmall=0))),
- 
-                    c((format(round(sum(coef(summary(lmerbc8))[11,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc9))[11,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc10))[11,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc11))[11,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc12))[11,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc13))[11,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc14))[11,1]),digits=3),nsmall=0))),
-                    c((format(round(coef(summary(lmerbc8))[11,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc9))[11,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc10))[11,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc11))[11,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc12))[11,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc13))[11,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc14))[11,2],digits=3),nsmall=0))),
-                    c((format(round(coef(summary(lmerbc8))[11,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc9))[11,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc10))[11,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc11))[11,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc12))[11,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc13))[11,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc14))[11,3],digits=3),nsmall=0))),
- 
-                    c((format(round(sum(coef(summary(lmerbc8))[12,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc9))[12,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc10))[12,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc11))[12,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc12))[12,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc13))[12,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc14))[12,1]),digits=3),nsmall=0))),
-                    c((format(round(coef(summary(lmerbc8))[12,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc9))[12,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc10))[12,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc11))[12,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc12))[12,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc13))[12,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc14))[12,2],digits=3),nsmall=0))),
-                    c((format(round(coef(summary(lmerbc8))[12,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc9))[12,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc10))[12,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc11))[12,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc12))[12,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc13))[12,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc14))[12,3],digits=3),nsmall=0))),
- 
-                    c((format(round(sum(coef(summary(lmerbc8))[13,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc9))[13,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc10))[13,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc11))[13,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc12))[13,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc13))[13,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc14))[13,1]),digits=3),nsmall=0))),
-                    c((format(round(coef(summary(lmerbc8))[13,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc9))[13,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc10))[13,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc11))[13,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc12))[13,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc13))[13,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc14))[13,2],digits=3),nsmall=0))),
-                    c((format(round(coef(summary(lmerbc8))[13,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc9))[13,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc10))[13,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc11))[13,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc12))[13,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc13))[13,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc14))[13,3],digits=3),nsmall=0))),
- 
-                    c((format(round(sum(coef(summary(lmerbc8))[14,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc9))[14,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc10))[14,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc11))[14,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc12))[14,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc13))[14,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc14))[14,1]),digits=3),nsmall=0))),
-                    c((format(round(coef(summary(lmerbc8))[14,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc9))[14,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc10))[14,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc11))[14,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc12))[14,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc13))[14,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc14))[14,2],digits=3),nsmall=0))),
-                    c((format(round(coef(summary(lmerbc8))[14,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc9))[14,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc10))[14,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc11))[14,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc12))[14,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc13))[14,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc14))[14,3],digits=3),nsmall=0))),
- 
-                    c((format(round(sum(coef(summary(lmerbc8))[15,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc9))[15,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc10))[15,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc11))[15,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc12))[15,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc13))[15,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc14))[15,1]),digits=3),nsmall=0))),
-                    c((format(round(coef(summary(lmerbc8))[15,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc9))[15,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc10))[15,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc11))[15,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc12))[15,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc13))[15,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc14))[15,2],digits=3),nsmall=0))),
-                    c((format(round(coef(summary(lmerbc8))[15,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc9))[15,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc10))[15,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc11))[15,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc12))[15,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc13))[15,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc14))[15,3],digits=3),nsmall=0))),
- 
-                    c((format(round(sum(coef(summary(lmerbc8))[16,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc9))[16,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc10))[16,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc11))[16,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc12))[16,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc13))[16,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc14))[16,1]),digits=3),nsmall=0))),
-                    c((format(round(coef(summary(lmerbc8))[16,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc9))[16,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc10))[16,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc11))[16,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc12))[16,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc13))[16,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc14))[16,2],digits=3),nsmall=0))),
-                    c((format(round(coef(summary(lmerbc8))[16,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc9))[16,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc10))[16,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc11))[16,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc12))[16,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc13))[16,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc14))[16,3],digits=3),nsmall=0))),
- 
-                    c((format(round(sum(coef(summary(lmerbc8))[17,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc9))[17,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc10))[17,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc11))[17,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc12))[17,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc13))[17,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc14))[17,1]),digits=3),nsmall=0))),
-                    c((format(round(coef(summary(lmerbc8))[17,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc9))[17,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc10))[17,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc11))[17,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc12))[17,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc13))[17,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc14))[17,2],digits=3),nsmall=0))),
-                    c((format(round(coef(summary(lmerbc8))[17,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc9))[17,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc10))[17,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc11))[17,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc12))[17,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc13))[17,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc14))[17,3],digits=3),nsmall=0))),
- 
-                    c((format(round(sum(coef(summary(lmerbc8))[18,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc9))[18,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc10))[18,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc11))[18,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc12))[18,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc13))[18,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc14))[18,1]),digits=3),nsmall=0))),
-                    c((format(round(coef(summary(lmerbc8))[18,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc9))[18,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc10))[18,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc11))[18,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc12))[18,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc13))[18,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc14))[18,2],digits=3),nsmall=0))),
-                    c((format(round(coef(summary(lmerbc8))[18,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc9))[18,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc10))[18,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc11))[18,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc12))[18,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc13))[18,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc14))[18,3],digits=3),nsmall=0))),
- 
-                    c((format(round(sum(coef(summary(lmerbc8))[19,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc9))[19,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc10))[19,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc11))[19,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc12))[19,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc13))[19,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc14))[19,1]),digits=3),nsmall=0))),
-                    c((format(round(coef(summary(lmerbc8))[19,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc9))[19,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc10))[19,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc11))[19,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc12))[19,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc13))[19,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc14))[19,2],digits=3),nsmall=0))),
-                    c((format(round(coef(summary(lmerbc8))[19,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc9))[19,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc10))[19,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc11))[19,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc12))[19,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc13))[19,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc14))[19,3],digits=3),nsmall=0))),
- 
-                    c((format(round(sum(coef(summary(lmerbc8))[20,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc9))[20,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc10))[20,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc11))[20,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc12))[20,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc13))[20,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc14))[20,1]),digits=3),nsmall=0))),
-                    c((format(round(coef(summary(lmerbc8))[20,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc9))[20,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc10))[20,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc11))[20,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc12))[20,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc13))[20,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc14))[20,2],digits=3),nsmall=0))),
-                    c((format(round(coef(summary(lmerbc8))[20,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc9))[20,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc10))[20,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc11))[20,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc12))[20,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc13))[20,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc14))[20,3],digits=3),nsmall=0))),
- 
-                    c((format(round(sum(coef(summary(lmerbc8))[21,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc9))[21,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc10))[21,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc11))[21,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc12))[21,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc13))[21,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc14))[21,1]),digits=3),nsmall=0))),
-                    c((format(round(coef(summary(lmerbc8))[21,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc9))[21,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc10))[21,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc11))[21,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc12))[21,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc13))[21,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc14))[21,2],digits=3),nsmall=0))),
-                    c((format(round(coef(summary(lmerbc8))[21,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc9))[21,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc10))[21,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc11))[21,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc12))[21,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc13))[21,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc14))[21,3],digits=3),nsmall=0))),
- 
-                    c((format(round(sum(coef(summary(lmerbc8))[22,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc9))[22,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc10))[22,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc11))[22,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc12))[22,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc13))[22,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc14))[22,1]),digits=3),nsmall=0))),
-                    c((format(round(coef(summary(lmerbc8))[22,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc9))[22,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc10))[22,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc11))[22,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc12))[22,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc13))[22,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc14))[22,2],digits=3),nsmall=0))),
-                    c((format(round(coef(summary(lmerbc8))[22,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc9))[22,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc10))[22,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc11))[22,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc12))[22,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc13))[22,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc14))[22,3],digits=3),nsmall=0))),
- 
-                    c((format(round(sum(coef(summary(lmerbc8))[23,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc9))[23,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc10))[23,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc11))[23,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc12))[23,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc13))[23,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc14))[23,1]),digits=3),nsmall=0))),
-                    c((format(round(coef(summary(lmerbc8))[23,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc9))[23,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc10))[23,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc11))[23,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc12))[23,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc13))[23,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc14))[23,2],digits=3),nsmall=0))),
-                    c((format(round(coef(summary(lmerbc8))[23,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc9))[23,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc10))[23,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc11))[23,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc12))[23,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc13))[23,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc14))[23,3],digits=3),nsmall=0))),
- 
-                    c((format(round(sum(coef(summary(lmerbc8))[24,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc9))[24,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc10))[24,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc11))[24,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc12))[24,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc13))[24,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc14))[24,1]),digits=3),nsmall=0))),
-                    c((format(round(coef(summary(lmerbc8))[24,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc9))[24,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc10))[24,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc11))[24,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc12))[24,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc13))[24,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc14))[24,2],digits=3),nsmall=0))),
-                    c((format(round(coef(summary(lmerbc8))[24,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc9))[24,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc10))[24,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc11))[24,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc12))[24,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc13))[24,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc14))[24,3],digits=3),nsmall=0))),
- 
-                    c((format(round(sum(coef(summary(lmerbc8))[25,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc9))[25,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc10))[25,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc11))[25,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc12))[25,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc13))[25,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbc14))[25,1]),digits=3),nsmall=0))),
-                    c((format(round(coef(summary(lmerbc8))[25,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc9))[25,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc10))[25,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc11))[25,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc12))[25,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc13))[25,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc14))[25,2],digits=3),nsmall=0))),
-                    c((format(round(coef(summary(lmerbc8))[25,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc9))[25,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc10))[25,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc11))[25,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc12))[25,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc13))[25,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbc14))[25,3],digits=3),nsmall=0)))
- 
- 
-
- )
+ # lmer_two6<- rbind( c((format(round(sum(coef(summary(lmerbc8))[1,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc9))[1,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc10))[1,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc11))[1,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc12))[1,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc13))[1,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc14))[1,1]),digits=3),nsmall=0))),
+ #                    c((format(round(coef(summary(lmerbc8))[1,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc9))[1,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc10))[1,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc11))[1,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc12))[1,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc13))[1,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc14))[1,2],digits=3),nsmall=0))),
+ #                    c((format(round(coef(summary(lmerbc8))[1,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc9))[1,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc10))[1,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc11))[1,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc12))[1,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc13))[1,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc14))[1,3],digits=3),nsmall=0))),
+ # 
+ #                    c((format(round(sum(coef(summary(lmerbc8))[2,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc9))[2,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc10))[2,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc11))[2,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc12))[2,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc13))[2,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc14))[2,1]),digits=3),nsmall=0))),
+ #                    c((format(round(coef(summary(lmerbc8))[2,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc9))[2,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc10))[2,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc11))[2,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc12))[2,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc13))[2,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc14))[2,2],digits=3),nsmall=0))),
+ #                    c((format(round(coef(summary(lmerbc8))[2,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc9))[2,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc10))[2,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc11))[2,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc12))[2,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc13))[2,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc14))[2,3],digits=3),nsmall=0))),
+ # 
+ #                    c((format(round(sum(coef(summary(lmerbc8))[3,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc9))[3,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc10))[3,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc11))[3,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc12))[3,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc13))[3,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc14))[3,1]),digits=3),nsmall=0))),
+ #                    c((format(round(coef(summary(lmerbc8))[3,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc9))[3,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc10))[3,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc11))[3,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc12))[3,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc13))[3,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc14))[3,2],digits=3),nsmall=0))),
+ #                    c((format(round(coef(summary(lmerbc8))[3,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc9))[3,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc10))[3,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc11))[3,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc12))[3,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc13))[3,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc14))[3,3],digits=3),nsmall=0))),
+ # 
+ #                    c((format(round(sum(coef(summary(lmerbc8))[4,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc9))[4,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc10))[4,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc11))[4,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc12))[4,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc13))[4,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc14))[4,1]),digits=3),nsmall=0))),
+ #                    c((format(round(coef(summary(lmerbc8))[4,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc9))[4,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc10))[4,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc11))[4,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc12))[4,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc13))[4,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc14))[4,2],digits=3),nsmall=0))),
+ #                    c((format(round(coef(summary(lmerbc8))[4,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc9))[4,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc10))[4,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc11))[4,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc12))[4,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc13))[4,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc14))[4,3],digits=3),nsmall=0))),
+ # 
+ #                    c((format(round(sum(coef(summary(lmerbc8))[5,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc9))[5,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc10))[5,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc11))[5,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc12))[5,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc13))[5,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc14))[5,1]),digits=3),nsmall=0))),
+ #                    c((format(round(coef(summary(lmerbc8))[5,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc9))[5,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc10))[5,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc11))[5,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc12))[5,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc13))[5,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc14))[5,2],digits=3),nsmall=0))),
+ #                    c((format(round(coef(summary(lmerbc8))[5,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc9))[5,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc10))[5,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc11))[5,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc12))[5,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc13))[5,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc14))[5,3],digits=3),nsmall=0))),
+ # 
+ #                    c((format(round(sum(coef(summary(lmerbc8))[6,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc9))[6,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc10))[6,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc11))[6,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc12))[6,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc13))[6,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc14))[6,1]),digits=3),nsmall=0))),
+ #                    c((format(round(coef(summary(lmerbc8))[6,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc9))[6,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc10))[6,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc11))[6,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc12))[6,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc13))[6,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc14))[6,2],digits=3),nsmall=0))),
+ #                    c((format(round(coef(summary(lmerbc8))[6,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc9))[6,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc10))[6,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc11))[6,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc12))[6,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc13))[6,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc14))[6,3],digits=3),nsmall=0))),
+ # 
+ #                    c((format(round(sum(coef(summary(lmerbc8))[7,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc9))[7,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc10))[7,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc11))[7,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc12))[7,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc13))[7,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc14))[7,1]),digits=3),nsmall=0))),
+ #                    c((format(round(coef(summary(lmerbc8))[7,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc9))[7,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc10))[7,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc11))[7,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc12))[7,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc13))[7,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc14))[7,2],digits=3),nsmall=0))),
+ #                    c((format(round(coef(summary(lmerbc8))[7,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc9))[7,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc10))[7,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc11))[7,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc12))[7,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc13))[7,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc14))[7,3],digits=3),nsmall=0))),
+ # 
+ #                    c((format(round(sum(coef(summary(lmerbc8))[8,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc9))[8,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc10))[8,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc11))[8,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc12))[8,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc13))[8,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc14))[8,1]),digits=3),nsmall=0))),
+ #                    c((format(round(coef(summary(lmerbc8))[8,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc9))[8,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc10))[8,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc11))[8,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc12))[8,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc13))[8,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc14))[8,2],digits=3),nsmall=0))),
+ #                    c((format(round(coef(summary(lmerbc8))[8,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc9))[8,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc10))[8,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc11))[8,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc12))[8,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc13))[8,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc14))[8,3],digits=3),nsmall=0))),
+ # 
+ #                    c((format(round(sum(coef(summary(lmerbc8))[9,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc9))[9,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc10))[9,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc11))[9,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc12))[9,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc13))[9,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc14))[9,1]),digits=3),nsmall=0))),
+ #                    c((format(round(coef(summary(lmerbc8))[9,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc9))[9,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc10))[9,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc11))[9,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc12))[9,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc13))[9,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc14))[9,2],digits=3),nsmall=0))),
+ #                    c((format(round(coef(summary(lmerbc8))[9,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc9))[9,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc10))[9,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc11))[9,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc12))[9,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc13))[9,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc14))[9,3],digits=3),nsmall=0))),
+ # 
+ #                    c((format(round(sum(coef(summary(lmerbc8))[10,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc9))[10,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc10))[10,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc11))[10,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc12))[10,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc13))[10,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc14))[10,1]),digits=3),nsmall=0))),
+ #                    c((format(round(coef(summary(lmerbc8))[10,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc9))[10,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc10))[10,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc11))[10,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc12))[10,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc13))[10,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc14))[10,2],digits=3),nsmall=0))),
+ #                    c((format(round(coef(summary(lmerbc8))[10,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc9))[10,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc10))[10,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc11))[10,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc12))[10,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc13))[10,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc14))[10,3],digits=3),nsmall=0))),
+ # 
+ #                    c((format(round(sum(coef(summary(lmerbc8))[11,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc9))[11,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc10))[11,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc11))[11,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc12))[11,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc13))[11,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc14))[11,1]),digits=3),nsmall=0))),
+ #                    c((format(round(coef(summary(lmerbc8))[11,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc9))[11,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc10))[11,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc11))[11,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc12))[11,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc13))[11,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc14))[11,2],digits=3),nsmall=0))),
+ #                    c((format(round(coef(summary(lmerbc8))[11,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc9))[11,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc10))[11,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc11))[11,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc12))[11,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc13))[11,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc14))[11,3],digits=3),nsmall=0))),
+ # 
+ #                    c((format(round(sum(coef(summary(lmerbc8))[12,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc9))[12,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc10))[12,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc11))[12,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc12))[12,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc13))[12,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc14))[12,1]),digits=3),nsmall=0))),
+ #                    c((format(round(coef(summary(lmerbc8))[12,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc9))[12,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc10))[12,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc11))[12,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc12))[12,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc13))[12,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc14))[12,2],digits=3),nsmall=0))),
+ #                    c((format(round(coef(summary(lmerbc8))[12,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc9))[12,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc10))[12,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc11))[12,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc12))[12,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc13))[12,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc14))[12,3],digits=3),nsmall=0))),
+ # 
+ #                    c((format(round(sum(coef(summary(lmerbc8))[13,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc9))[13,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc10))[13,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc11))[13,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc12))[13,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc13))[13,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc14))[13,1]),digits=3),nsmall=0))),
+ #                    c((format(round(coef(summary(lmerbc8))[13,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc9))[13,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc10))[13,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc11))[13,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc12))[13,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc13))[13,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc14))[13,2],digits=3),nsmall=0))),
+ #                    c((format(round(coef(summary(lmerbc8))[13,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc9))[13,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc10))[13,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc11))[13,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc12))[13,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc13))[13,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc14))[13,3],digits=3),nsmall=0))),
+ # 
+ #                    c((format(round(sum(coef(summary(lmerbc8))[14,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc9))[14,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc10))[14,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc11))[14,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc12))[14,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc13))[14,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc14))[14,1]),digits=3),nsmall=0))),
+ #                    c((format(round(coef(summary(lmerbc8))[14,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc9))[14,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc10))[14,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc11))[14,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc12))[14,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc13))[14,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc14))[14,2],digits=3),nsmall=0))),
+ #                    c((format(round(coef(summary(lmerbc8))[14,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc9))[14,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc10))[14,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc11))[14,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc12))[14,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc13))[14,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc14))[14,3],digits=3),nsmall=0))),
+ # 
+ #                    c((format(round(sum(coef(summary(lmerbc8))[15,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc9))[15,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc10))[15,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc11))[15,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc12))[15,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc13))[15,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc14))[15,1]),digits=3),nsmall=0))),
+ #                    c((format(round(coef(summary(lmerbc8))[15,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc9))[15,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc10))[15,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc11))[15,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc12))[15,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc13))[15,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc14))[15,2],digits=3),nsmall=0))),
+ #                    c((format(round(coef(summary(lmerbc8))[15,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc9))[15,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc10))[15,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc11))[15,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc12))[15,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc13))[15,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc14))[15,3],digits=3),nsmall=0))),
+ # 
+ #                    c((format(round(sum(coef(summary(lmerbc8))[16,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc9))[16,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc10))[16,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc11))[16,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc12))[16,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc13))[16,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc14))[16,1]),digits=3),nsmall=0))),
+ #                    c((format(round(coef(summary(lmerbc8))[16,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc9))[16,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc10))[16,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc11))[16,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc12))[16,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc13))[16,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc14))[16,2],digits=3),nsmall=0))),
+ #                    c((format(round(coef(summary(lmerbc8))[16,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc9))[16,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc10))[16,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc11))[16,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc12))[16,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc13))[16,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc14))[16,3],digits=3),nsmall=0))),
+ # 
+ #                    c((format(round(sum(coef(summary(lmerbc8))[17,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc9))[17,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc10))[17,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc11))[17,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc12))[17,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc13))[17,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc14))[17,1]),digits=3),nsmall=0))),
+ #                    c((format(round(coef(summary(lmerbc8))[17,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc9))[17,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc10))[17,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc11))[17,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc12))[17,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc13))[17,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc14))[17,2],digits=3),nsmall=0))),
+ #                    c((format(round(coef(summary(lmerbc8))[17,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc9))[17,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc10))[17,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc11))[17,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc12))[17,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc13))[17,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc14))[17,3],digits=3),nsmall=0))),
+ # 
+ #                    c((format(round(sum(coef(summary(lmerbc8))[18,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc9))[18,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc10))[18,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc11))[18,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc12))[18,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc13))[18,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc14))[18,1]),digits=3),nsmall=0))),
+ #                    c((format(round(coef(summary(lmerbc8))[18,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc9))[18,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc10))[18,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc11))[18,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc12))[18,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc13))[18,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc14))[18,2],digits=3),nsmall=0))),
+ #                    c((format(round(coef(summary(lmerbc8))[18,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc9))[18,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc10))[18,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc11))[18,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc12))[18,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc13))[18,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc14))[18,3],digits=3),nsmall=0))),
+ # 
+ #                    c((format(round(sum(coef(summary(lmerbc8))[19,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc9))[19,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc10))[19,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc11))[19,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc12))[19,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc13))[19,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc14))[19,1]),digits=3),nsmall=0))),
+ #                    c((format(round(coef(summary(lmerbc8))[19,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc9))[19,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc10))[19,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc11))[19,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc12))[19,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc13))[19,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc14))[19,2],digits=3),nsmall=0))),
+ #                    c((format(round(coef(summary(lmerbc8))[19,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc9))[19,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc10))[19,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc11))[19,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc12))[19,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc13))[19,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc14))[19,3],digits=3),nsmall=0))),
+ # 
+ #                    c((format(round(sum(coef(summary(lmerbc8))[20,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc9))[20,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc10))[20,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc11))[20,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc12))[20,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc13))[20,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc14))[20,1]),digits=3),nsmall=0))),
+ #                    c((format(round(coef(summary(lmerbc8))[20,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc9))[20,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc10))[20,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc11))[20,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc12))[20,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc13))[20,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc14))[20,2],digits=3),nsmall=0))),
+ #                    c((format(round(coef(summary(lmerbc8))[20,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc9))[20,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc10))[20,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc11))[20,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc12))[20,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc13))[20,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc14))[20,3],digits=3),nsmall=0))),
+ # 
+ #                    c((format(round(sum(coef(summary(lmerbc8))[21,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc9))[21,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc10))[21,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc11))[21,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc12))[21,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc13))[21,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc14))[21,1]),digits=3),nsmall=0))),
+ #                    c((format(round(coef(summary(lmerbc8))[21,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc9))[21,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc10))[21,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc11))[21,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc12))[21,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc13))[21,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc14))[21,2],digits=3),nsmall=0))),
+ #                    c((format(round(coef(summary(lmerbc8))[21,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc9))[21,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc10))[21,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc11))[21,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc12))[21,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc13))[21,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc14))[21,3],digits=3),nsmall=0))),
+ # 
+ #                    c((format(round(sum(coef(summary(lmerbc8))[22,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc9))[22,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc10))[22,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc11))[22,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc12))[22,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc13))[22,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc14))[22,1]),digits=3),nsmall=0))),
+ #                    c((format(round(coef(summary(lmerbc8))[22,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc9))[22,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc10))[22,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc11))[22,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc12))[22,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc13))[22,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc14))[22,2],digits=3),nsmall=0))),
+ #                    c((format(round(coef(summary(lmerbc8))[22,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc9))[22,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc10))[22,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc11))[22,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc12))[22,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc13))[22,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc14))[22,3],digits=3),nsmall=0))),
+ # 
+ #                    c((format(round(sum(coef(summary(lmerbc8))[23,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc9))[23,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc10))[23,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc11))[23,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc12))[23,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc13))[23,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc14))[23,1]),digits=3),nsmall=0))),
+ #                    c((format(round(coef(summary(lmerbc8))[23,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc9))[23,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc10))[23,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc11))[23,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc12))[23,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc13))[23,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc14))[23,2],digits=3),nsmall=0))),
+ #                    c((format(round(coef(summary(lmerbc8))[23,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc9))[23,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc10))[23,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc11))[23,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc12))[23,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc13))[23,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc14))[23,3],digits=3),nsmall=0))),
+ # 
+ #                    c((format(round(sum(coef(summary(lmerbc8))[24,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc9))[24,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc10))[24,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc11))[24,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc12))[24,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc13))[24,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc14))[24,1]),digits=3),nsmall=0))),
+ #                    c((format(round(coef(summary(lmerbc8))[24,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc9))[24,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc10))[24,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc11))[24,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc12))[24,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc13))[24,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc14))[24,2],digits=3),nsmall=0))),
+ #                    c((format(round(coef(summary(lmerbc8))[24,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc9))[24,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc10))[24,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc11))[24,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc12))[24,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc13))[24,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc14))[24,3],digits=3),nsmall=0))),
+ # 
+ #                    c((format(round(sum(coef(summary(lmerbc8))[25,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc9))[25,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc10))[25,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc11))[25,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc12))[25,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc13))[25,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbc14))[25,1]),digits=3),nsmall=0))),
+ #                    c((format(round(coef(summary(lmerbc8))[25,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc9))[25,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc10))[25,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc11))[25,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc12))[25,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc13))[25,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc14))[25,2],digits=3),nsmall=0))),
+ #                    c((format(round(coef(summary(lmerbc8))[25,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc9))[25,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc10))[25,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc11))[25,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc12))[25,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc13))[25,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbc14))[25,3],digits=3),nsmall=0)))
+ # 
+ # 
+ # 
+ # )
 
 
 #### One way random effect at the dealer level  -- with controls -- controls are only farmer characteristics 
 plmbc1<-plm(score ~ farmergen+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8 , data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
-            effect = "individual")
+            effect = "individual", random.method = "walhus")
 coefbc1<-coeftest(plmbc1, vcovHC(plmbc1, type = "HC0", cluster = "time"))
 summary(plmbc1)
 coefbc1
 
 plmbc2<-plm(general ~ farmergen+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8 , data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
-            effect = "individual")
+            effect = "individual", random.method = "walhus")
 coefbc2<-coeftest(plmbc2, vcovHC(plmbc2, type = "HC0", cluster = "time"))
 summary(plmbc2)
 coefbc2
 
 plmbc3<-plm(yield ~ farmergen+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8 , data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
-            effect = "individual")
+            effect = "individual", random.method = "walhus")
 coefbc3<-coeftest(plmbc3, vcovHC(plmbc3, type = "HC0", cluster = "time"))
 summary(plmbc3)
 coefbc3
 
 plmbc4<-plm(drought_resistent ~ farmergen+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8 , data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
-            effect = "individual")
+            effect = "individual", random.method = "walhus")
 coefbc4<-coeftest(plmbc4,  vcovHC(plmbc4, type = "HC0", cluster = "time"))
 summary(plmbc4)
 coefbc4
 
 plmbc5<-plm(disease_resistent ~ farmergen+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8 , data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
-            effect = "individual")
+            effect = "individual", random.method = "walhus")
 coefbc5<-coeftest(plmbc5,  vcovHC(plmbc5, type = "HC0", cluster = "time"))
 summary(plmbc5)
 coefbc5
 
 plmbc6<-plm(early_maturing ~ farmergen+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8 , data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
-            effect = "individual")
+            effect = "individual", random.method = "walhus")
 coefbc6<-coeftest(plmbc6,  vcovHC(plmbc6, type = "HC0", cluster = "time"))
 summary(plmbc6)
 coefbc6
 
 plmbc7<-plm(germination ~ farmergen+educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8 , data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
-            effect = "individual")
+            effect = "individual", random.method = "walhus")
 coefbc7<-coeftest(plmbc7,  vcovHC(plmbc7, type = "HC0", cluster = "time"))
 summary(plmbc7)
 coefbc7
 
-tab_model(plmbc1, plmbc2,plmbc3, plmbc4, plmbc5, plmbc6, plmbc7, p.style = c("stars"), p.threshold = c(0.1, 0.05, 0.01), collapse.ci=TRUE)
+#tab_model(plmbc1, plmbc2,plmbc3, plmbc4, plmbc5, plmbc6, plmbc7, p.style = c("stars"), p.threshold = c(0.1, 0.05, 0.01), collapse.ci=TRUE)
 
 ranbc1<- rbind( c((format(round(sum(coefbc1[1,1]),digits=3),nsmall=0)),
                  (format(round(sum(coefbc2[1,1]),digits=3),nsmall=0)),
@@ -13121,53 +14856,600 @@ ranbc1<- rbind( c((format(round(sum(coefbc1[1,1]),digits=3),nsmall=0)),
 )
 
 
+#### One way random effect at the farmer level  -- with controls -- controls are only dealer characteristics 
+plmbcc1<-plm(score ~ farmergen+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+               +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof , data =fedatad,  model = "random", index = c( "farmer_ID", "shop_ID.x"),
+            effect = "individual", random.method = "walhus")
+coefbcc1<-coeftest(plmbcc1, vcovHC(plmbcc1, type = "HC0", cluster = "time"))
+summary(plmbcc1)
+coefbcc1
+
+plmbcc2<-plm(general ~ farmergen+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+               +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof , data =fedatad,  model = "random", index = c( "farmer_ID", "shop_ID.x"),
+             effect = "individual", random.method = "walhus")
+coefbcc2<-coeftest(plmbcc2, vcovHC(plmbcc2, type = "HC0", cluster = "time"))
+summary(plmbcc2)
+coefbcc2
+
+plmbcc3<-plm(yield ~ farmergen+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+               +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof , data =fedatad,  model = "random", index = c( "farmer_ID", "shop_ID.x"),
+             effect = "individual", random.method = "walhus")
+coefbcc3<-coeftest(plmbcc3, vcovHC(plmbcc3, type = "HC0", cluster = "time"))
+summary(plmbcc3)
+coefbcc3
+
+plmbcc4<-plm(drought_resistent ~ farmergen+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+               +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof , data =fedatad,  model = "random", index = c( "farmer_ID", "shop_ID.x"),
+             effect = "individual", random.method = "walhus")
+coefbcc4<-coeftest(plmbcc4, vcovHC(plmbcc4, type = "HC0", cluster = "time"))
+summary(plmbcc4)
+coefbcc4
+
+plmbcc5<-plm(disease_resistent ~ farmergen+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+               +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof , data =fedatad,  model = "random", index = c( "farmer_ID", "shop_ID.x"),
+             effect = "individual", random.method = "walhus")
+coefbcc5<-coeftest(plmbcc5, vcovHC(plmbcc5, type = "HC0", cluster = "time"))
+summary(plmbcc5)
+coefbcc5
+
+plmbcc6<-plm(early_maturing ~ farmergen+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+               +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof , data =fedatad,  model = "random", index = c( "farmer_ID", "shop_ID.x"),
+             effect = "individual", random.method = "walhus")
+coefbcc6<-coeftest(plmbcc6, vcovHC(plmbcc6, type = "HC0", cluster = "time"))
+summary(plmbcc6)
+coefbcc6
+
+plmbcc7<-plm(germination ~ farmergen+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+
+               +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof , data =fedatad,  model = "random", index = c( "farmer_ID", "shop_ID.x"),
+             effect = "individual", random.method = "walhus")
+coefbcc7<-coeftest(plmbcc7, vcovHC(plmbcc7, type = "HC0", cluster = "time"))
+summary(plmbcc7)
+coefbcc7
+
+
+ranb_two3<- rbind( c((format(round(sum(coefbcc1[1,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc2[1,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc3[1,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc4[1,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc5[1,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc6[1,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc7[1,1]),digits=3),nsmall=0))),
+                   c((format(round(coefbcc1[1,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc2[1,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc3[1,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc4[1,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc5[1,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc6[1,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc7[1,2],digits=3),nsmall=0))),
+                   c((format(round(coefbcc1[1,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc2[1,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc3[1,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc4[1,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc5[1,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc6[1,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc7[1,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefbcc1[2,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc2[2,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc3[2,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc4[2,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc5[2,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc6[2,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc7[2,1]),digits=3),nsmall=0))),
+                   c((format(round(coefbcc1[2,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc2[2,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc3[2,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc4[2,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc5[2,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc6[2,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc7[2,2],digits=3),nsmall=0))),
+                   c((format(round(coefbcc1[2,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc2[2,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc3[2,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc4[2,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc5[2,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc6[2,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc7[2,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefbcc1[3,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc2[3,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc3[3,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc4[3,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc5[3,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc6[3,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc7[3,1]),digits=3),nsmall=0))),
+                   c((format(round(coefbcc1[3,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc2[3,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc3[3,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc4[3,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc5[3,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc6[3,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc7[3,2],digits=3),nsmall=0))),
+                   c((format(round(coefbcc1[3,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc2[3,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc3[3,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc4[3,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc5[3,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc6[3,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc7[3,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefbcc1[4,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc2[4,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc3[4,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc4[4,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc5[4,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc6[4,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc7[4,1]),digits=3),nsmall=0))),
+                   c((format(round(coefbcc1[4,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc2[4,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc3[4,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc4[4,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc5[4,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc6[4,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc7[4,2],digits=3),nsmall=0))),
+                   c((format(round(coefbcc1[4,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc2[4,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc3[4,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc4[4,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc5[4,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc6[4,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc7[4,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefbcc1[5,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc2[5,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc3[5,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc4[5,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc5[5,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc6[5,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc7[5,1]),digits=3),nsmall=0))),
+                   c((format(round(coefbcc1[5,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc2[5,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc3[5,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc4[5,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc5[5,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc6[5,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc7[5,2],digits=3),nsmall=0))),
+                   c((format(round(coefbcc1[5,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc2[5,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc3[5,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc4[5,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc5[5,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc6[5,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc7[5,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefbcc1[6,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc2[6,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc3[6,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc4[6,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc5[6,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc6[6,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc7[6,1]),digits=3),nsmall=0))),
+                   c((format(round(coefbcc1[6,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc2[6,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc3[6,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc4[6,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc5[6,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc6[6,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc7[6,2],digits=3),nsmall=0))),
+                   c((format(round(coefbcc1[6,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc2[6,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc3[6,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc4[6,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc5[6,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc6[6,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc7[6,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefbcc1[7,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc2[7,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc3[7,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc4[7,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc5[7,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc6[7,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc7[7,1]),digits=3),nsmall=0))),
+                   c((format(round(coefbcc1[7,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc2[7,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc3[7,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc4[7,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc5[7,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc6[7,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc7[7,2],digits=3),nsmall=0))),
+                   c((format(round(coefbcc1[7,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc2[7,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc3[7,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc4[7,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc5[7,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc6[7,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc7[7,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefbcc1[8,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc2[8,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc3[8,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc4[8,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc5[8,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc6[8,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc7[8,1]),digits=3),nsmall=0))),
+                   c((format(round(coefbcc1[8,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc2[8,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc3[8,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc4[8,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc5[8,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc6[8,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc7[8,2],digits=3),nsmall=0))),
+                   c((format(round(coefbcc1[8,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc2[8,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc3[8,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc4[8,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc5[8,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc6[8,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc7[8,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefbcc1[9,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc2[9,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc3[9,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc4[9,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc5[9,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc6[9,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc7[9,1]),digits=3),nsmall=0))),
+                   c((format(round(coefbcc1[9,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc2[9,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc3[9,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc4[9,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc5[9,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc6[9,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc7[9,2],digits=3),nsmall=0))),
+                   c((format(round(coefbcc1[9,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc2[9,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc3[9,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc4[9,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc5[9,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc6[9,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc7[9,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefbcc1[10,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc2[10,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc3[10,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc4[10,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc5[10,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc6[10,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc7[10,1]),digits=3),nsmall=0))),
+                   c((format(round(coefbcc1[10,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc2[10,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc3[10,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc4[10,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc5[10,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc6[10,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc7[10,2],digits=3),nsmall=0))),
+                   c((format(round(coefbcc1[10,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc2[10,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc3[10,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc4[10,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc5[10,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc6[10,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc7[10,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefbcc1[11,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc2[11,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc3[11,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc4[11,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc5[11,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc6[11,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc7[11,1]),digits=3),nsmall=0))),
+                   c((format(round(coefbcc1[11,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc2[11,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc3[11,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc4[11,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc5[11,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc6[11,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc7[11,2],digits=3),nsmall=0))),
+                   c((format(round(coefbcc1[11,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc2[11,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc3[11,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc4[11,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc5[11,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc6[11,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc7[11,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefbcc1[12,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc2[12,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc3[12,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc4[12,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc5[12,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc6[12,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc7[12,1]),digits=3),nsmall=0))),
+                   c((format(round(coefbcc1[12,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc2[12,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc3[12,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc4[12,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc5[12,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc6[12,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc7[12,2],digits=3),nsmall=0))),
+                   c((format(round(coefbcc1[12,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc2[12,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc3[12,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc4[12,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc5[12,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc6[12,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc7[12,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefbcc1[13,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc2[13,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc3[13,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc4[13,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc5[13,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc6[13,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc7[13,1]),digits=3),nsmall=0))),
+                   c((format(round(coefbcc1[13,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc2[13,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc3[13,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc4[13,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc5[13,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc6[13,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc7[13,2],digits=3),nsmall=0))),
+                   c((format(round(coefbcc1[13,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc2[13,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc3[13,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc4[13,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc5[13,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc6[13,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc7[13,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefbcc1[14,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc2[14,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc3[14,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc4[14,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc5[14,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc6[14,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc7[14,1]),digits=3),nsmall=0))),
+                   c((format(round(coefbcc1[14,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc2[14,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc3[14,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc4[14,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc5[14,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc6[14,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc7[14,2],digits=3),nsmall=0))),
+                   c((format(round(coefbcc1[14,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc2[14,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc3[14,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc4[14,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc5[14,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc6[14,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc7[14,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefbcc1[15,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc2[15,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc3[15,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc4[15,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc5[15,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc6[15,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc7[15,1]),digits=3),nsmall=0))),
+                   c((format(round(coefbcc1[15,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc2[15,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc3[15,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc4[15,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc5[15,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc6[15,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc7[15,2],digits=3),nsmall=0))),
+                   c((format(round(coefbcc1[15,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc2[15,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc3[15,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc4[15,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc5[15,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc6[15,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc7[15,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefbcc1[16,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc2[16,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc3[16,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc4[16,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc5[16,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc6[16,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc7[16,1]),digits=3),nsmall=0))),
+                   c((format(round(coefbcc1[16,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc2[16,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc3[16,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc4[16,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc5[16,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc6[16,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc7[16,2],digits=3),nsmall=0))),
+                   c((format(round(coefbcc1[16,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc2[16,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc3[16,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc4[16,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc5[16,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc6[16,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc7[16,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefbcc1[17,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc2[17,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc3[17,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc4[17,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc5[17,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc6[17,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc7[17,1]),digits=3),nsmall=0))),
+                   c((format(round(coefbcc1[17,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc2[17,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc3[17,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc4[17,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc5[17,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc6[17,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc7[17,2],digits=3),nsmall=0))),
+                   c((format(round(coefbcc1[17,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc2[17,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc3[17,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc4[17,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc5[17,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc6[17,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc7[17,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefbcc1[18,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc2[18,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc3[18,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc4[18,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc5[18,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc6[18,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc7[18,1]),digits=3),nsmall=0))),
+                   c((format(round(coefbcc1[18,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc2[18,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc3[18,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc4[18,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc5[18,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc6[18,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc7[18,2],digits=3),nsmall=0))),
+                   c((format(round(coefbcc1[18,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc2[18,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc3[18,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc4[18,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc5[18,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc6[18,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc7[18,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefbcc1[19,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc2[19,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc3[19,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc4[19,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc5[19,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc6[19,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc7[19,1]),digits=3),nsmall=0))),
+                   c((format(round(coefbcc1[19,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc2[19,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc3[19,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc4[19,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc5[19,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc6[19,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc7[19,2],digits=3),nsmall=0))),
+                   c((format(round(coefbcc1[19,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc2[19,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc3[19,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc4[19,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc5[19,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc6[19,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc7[19,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefbcc1[20,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc2[20,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc3[20,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc4[20,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc5[20,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc6[20,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc7[20,1]),digits=3),nsmall=0))),
+                   c((format(round(coefbcc1[20,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc2[20,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc3[20,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc4[20,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc5[20,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc6[20,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc7[20,2],digits=3),nsmall=0))),
+                   c((format(round(coefbcc1[20,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc2[20,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc3[20,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc4[20,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc5[20,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc6[20,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc7[20,4],digits=3),nsmall=0))),
+                   
+                   c((format(round(sum(coefbcc1[21,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc2[21,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc3[21,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc4[21,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc5[21,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc6[21,1]),digits=3),nsmall=0)),
+                     (format(round(sum(coefbcc7[21,1]),digits=3),nsmall=0))),
+                   c((format(round(coefbcc1[21,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc2[21,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc3[21,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc4[21,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc5[21,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc6[21,2],digits=3),nsmall=0)),
+                     (format(round(coefbcc7[21,2],digits=3),nsmall=0))),
+                   c((format(round(coefbcc1[21,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc2[21,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc3[21,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc4[21,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc5[21,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc6[21,4],digits=3),nsmall=0)),
+                     (format(round(coefbcc7[21,4],digits=3),nsmall=0))),
+                   
+                   
+                   
+                   c((format(round(summary(plmbcc1)$r.squared[1],digits=3),nsmall=0)),
+                     (format(round(summary(plmbcc2)$r.squared[1],digits=3),nsmall=0)),
+                     (format(round(summary(plmbcc3)$r.squared[1],digits=3),nsmall=0)),
+                     (format(round(summary(plmbcc4)$r.squared[1],digits=3),nsmall=0)),
+                     (format(round(summary(plmbcc5)$r.squared[1],digits=3),nsmall=0)),
+                     (format(round(summary(plmbcc6)$r.squared[1],digits=3),nsmall=0)),
+                     (format(round(summary(plmbcc7)$r.squared[1],digits=3),nsmall=0))),
+                   c((format(round(summary(plmbcc1)$r.squared[2],digits=3),nsmall=0)),
+                     (format(round(summary(plmbcc2)$r.squared[2],digits=3),nsmall=0)),
+                     (format(round(summary(plmbcc3)$r.squared[2],digits=3),nsmall=0)),
+                     (format(round(summary(plmbcc4)$r.squared[2],digits=3),nsmall=0)),
+                     (format(round(summary(plmbcc5)$r.squared[2],digits=3),nsmall=0)),
+                     (format(round(summary(plmbcc6)$r.squared[2],digits=3),nsmall=0)),
+                     (format(round(summary(plmbcc7)$r.squared[2],digits=3),nsmall=0))),
+                   c((format(round(nobs(plmbcc1),digits=3),nsmall=0)),
+                     (format(round(nobs(plmbcc2),digits=3),nsmall=0)),
+                     (format(round(nobs(plmbcc3),digits=3),nsmall=0)),
+                     (format(round(nobs(plmbcc4),digits=3),nsmall=0)),
+                     (format(round(nobs(plmbcc5),digits=3),nsmall=0)),
+                     (format(round(nobs(plmbcc6),digits=3),nsmall=0)),
+                     (format(round(nobs(plmbcc7),digits=3),nsmall=0))))
+
+
+
+
 ######### NON SEED
 
 #### One way random effect at the dealer level  -- no controls 
 
 plmbn1<-plm(overall_rating ~ farmergen , data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
-            effect = "individual")
+            effect = "individual", random.method = "walhus")
 coefbn1<-coeftest(plmbn1,  vcovHC(plmbn1, type = "HC0", cluster = "time"))
 summary(plmbn1)
 coefbn1
 
 plmbn2<-plm(general_rating_nonseed ~ farmergen , data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
-            effect = "individual")
+            effect = "individual", random.method = "walhus")
 coefbn2<-coeftest(plmbn2,  vcovHC(plmbn2, type = "HC0", cluster = "time"))
 summary(plmbn2)
 coefbn2
 
 plmbn3<-plm(location ~ farmergen , data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
-            effect = "individual")
+            effect = "individual", random.method = "walhus")
 coefbn3<-coeftest(plmbn3,  vcovHC(plmbn3, type = "HC0", cluster = "time"))
 summary(plmbn3)
 coefbn3
 
 plmbn4<-plm(price ~ farmergen , data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
-            effect = "individual")
+            effect = "individual", random.method = "walhus")
 coefbn4<-coeftest(plmbn4,  vcovHC(plmbn4, type = "HC0", cluster = "time"))
 summary(plmbn4)
 coefbn4
 
 plmbn5<-plm(quality ~ farmergen , data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
-            effect = "individual")
+            effect = "individual", random.method = "walhus")
 coefbn5<-coeftest(plmbn5,  vcovHC(plmbn5, type = "HC0", cluster = "time"))
 summary(plmbn5)
 coefbn5
 
 plmbn6<-plm(stock ~ farmergen , data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
-            effect = "individual")
+            effect = "individual", random.method = "walhus")
 coefbn6<-coeftest(plmbn6,  vcovHC(plmbn6, type = "HC0", cluster = "time"))
 summary(plmbn6)
 coefbn6
 
 plmbn7<-plm(reputation ~ farmergen , data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
-            effect = "individual")
+            effect = "individual", random.method = "walhus")
 coefbn7<-coeftest(plmbn7,  vcovHC(plmbn7, type = "HC0", cluster = "time"))
 summary(plmbn7)
 coefbn7
 
-tab_model(plmbn1, plmbn2,plmbn3, plmbn4, plmbn5, plmbn6, plmbn7, p.style = c("stars"), p.threshold = c(0.1, 0.05, 0.01), collapse.ci=TRUE)
+#tab_model(plmbn1, plmbn2,plmbn3, plmbn4, plmbn5, plmbn6, plmbn7, p.style = c("stars"), p.threshold = c(0.1, 0.05, 0.01), collapse.ci=TRUE)
 
 
 ranbn1<- rbind( c((format(round(sum(coefbn1[1,1]),digits=3),nsmall=0)),
@@ -13239,66 +15521,299 @@ ranbn1<- rbind( c((format(round(sum(coefbn1[1,1]),digits=3),nsmall=0)),
 )
 
 
+
+
+
+#### One way random effect at the farmer level  -- no controls 
+
+plmbnr1<-plm(overall_rating ~ farmergen , data =fedatad,  model = "random", index = c("farmer_ID", "shop_ID.x"),
+            effect = "individual", random.method = "walhus")
+coefbnr1<-coeftest(plmbnr1,  vcovHC(plmbnr1, type = "HC0", cluster = "time"))
+summary(plmbnr1)
+coefbnr1
+
+plmbnr2<-plm(general_rating_nonseed ~ farmergen , data =fedatad,  model = "random", index = c("farmer_ID", "shop_ID.x"),
+             effect = "individual", random.method = "walhus")
+coefbnr2<-coeftest(plmbnr2,  vcovHC(plmbnr2, type = "HC0", cluster = "time"))
+summary(plmbnr2)
+coefbnr2
+
+plmbnr3<-plm(location ~ farmergen , data =fedatad,  model = "random", index = c("farmer_ID", "shop_ID.x"),
+             effect = "individual", random.method = "walhus")
+coefbnr3<-coeftest(plmbnr3,  vcovHC(plmbnr3, type = "HC0", cluster = "time"))
+summary(plmbnr3)
+coefbnr3
+
+plmbnr4<-plm(price ~ farmergen , data =fedatad,  model = "random", index = c("farmer_ID", "shop_ID.x"),
+             effect = "individual", random.method = "walhus")
+coefbnr4<-coeftest(plmbnr4,  vcovHC(plmbnr4, type = "HC0", cluster = "time"))
+summary(plmbnr4)
+coefbnr4
+
+plmbnr5<-plm(quality ~ farmergen , data =fedatad,  model = "random", index = c("farmer_ID", "shop_ID.x"),
+             effect = "individual", random.method = "walhus")
+coefbnr5<-coeftest(plmbnr5,  vcovHC(plmbnr5, type = "HC0", cluster = "time"))
+summary(plmbnr5)
+coefbnr5
+
+plmbnr6<-plm(stock ~ farmergen , data =fedatad,  model = "random", index = c("farmer_ID", "shop_ID.x"),
+             effect = "individual", random.method = "walhus")
+coefbnr6<-coeftest(plmbnr6,  vcovHC(plmbnr6, type = "HC0", cluster = "time"))
+summary(plmbnr6)
+coefbnr6
+
+plmbnr7<-plm(reputation ~ farmergen , data =fedatad,  model = "random", index = c("farmer_ID", "shop_ID.x"),
+             effect = "individual", random.method = "walhus")
+coefbnr7<-coeftest(plmbnr7,  vcovHC(plmbnr7, type = "HC0", cluster = "time"))
+summary(plmbnr7)
+coefbnr7
+
+ranbn2<- rbind( c((format(round(sum(coefbnr1[1,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnr2[1,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnr3[1,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnr4[1,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnr5[1,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnr6[1,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnr7[1,1]),digits=3),nsmall=0))),
+                c((format(round(coefbnr1[1,2],digits=3),nsmall=0)),
+                  (format(round(coefbnr2[1,2],digits=3),nsmall=0)),
+                  (format(round(coefbnr3[1,2],digits=3),nsmall=0)),
+                  (format(round(coefbnr4[1,2],digits=3),nsmall=0)),
+                  (format(round(coefbnr5[1,2],digits=3),nsmall=0)),
+                  (format(round(coefbnr6[1,2],digits=3),nsmall=0)),
+                  (format(round(coefbnr7[1,2],digits=3),nsmall=0))),
+                c((format(round(coefbnr1[1,4],digits=3),nsmall=0)),
+                  (format(round(coefbnr2[1,4],digits=3),nsmall=0)),
+                  (format(round(coefbnr3[1,4],digits=3),nsmall=0)),
+                  (format(round(coefbnr4[1,4],digits=3),nsmall=0)),
+                  (format(round(coefbnr5[1,4],digits=3),nsmall=0)),
+                  (format(round(coefbnr6[1,4],digits=3),nsmall=0)),
+                  (format(round(coefbnr7[1,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefbnr1[2,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnr2[2,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnr3[2,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnr4[2,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnr5[2,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnr6[2,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnr7[2,1]),digits=3),nsmall=0))),
+                c((format(round(coefbnr1[2,2],digits=3),nsmall=0)),
+                  (format(round(coefbnr2[2,2],digits=3),nsmall=0)),
+                  (format(round(coefbnr3[2,2],digits=3),nsmall=0)),
+                  (format(round(coefbnr4[2,2],digits=3),nsmall=0)),
+                  (format(round(coefbnr5[2,2],digits=3),nsmall=0)),
+                  (format(round(coefbnr6[2,2],digits=3),nsmall=0)),
+                  (format(round(coefbnr7[2,2],digits=3),nsmall=0))),
+                c((format(round(coefbnr1[2,4],digits=3),nsmall=0)),
+                  (format(round(coefbnr2[2,4],digits=3),nsmall=0)),
+                  (format(round(coefbnr3[2,4],digits=3),nsmall=0)),
+                  (format(round(coefbnr4[2,4],digits=3),nsmall=0)),
+                  (format(round(coefbnr5[2,4],digits=3),nsmall=0)),
+                  (format(round(coefbnr6[2,4],digits=3),nsmall=0)),
+                  (format(round(coefbnr7[2,4],digits=3),nsmall=0))),
+                
+                
+                c((format(round(summary(plmbnr1)$r.squared[1],digits=3),nsmall=0)),
+                  (format(round(summary(plmbnr2)$r.squared[1],digits=3),nsmall=0)),
+                  (format(round(summary(plmbnr3)$r.squared[1],digits=3),nsmall=0)),
+                  (format(round(summary(plmbnr4)$r.squared[1],digits=3),nsmall=0)),
+                  (format(round(summary(plmbnr5)$r.squared[1],digits=3),nsmall=0)),
+                  (format(round(summary(plmbnr6)$r.squared[1],digits=3),nsmall=0)),
+                  (format(round(summary(plmbnr7)$r.squared[1],digits=3),nsmall=0))),
+                c((format(round(summary(plmbnr1)$r.squared[2],digits=3),nsmall=0)),
+                  (format(round(summary(plmbnr2)$r.squared[2],digits=3),nsmall=0)),
+                  (format(round(summary(plmbnr3)$r.squared[2],digits=3),nsmall=0)),
+                  (format(round(summary(plmbnr4)$r.squared[2],digits=3),nsmall=0)),
+                  (format(round(summary(plmbnr5)$r.squared[2],digits=3),nsmall=0)),
+                  (format(round(summary(plmbnr6)$r.squared[2],digits=3),nsmall=0)),
+                  (format(round(summary(plmbnr7)$r.squared[2],digits=3),nsmall=0))),
+                c((format(round(nobs(plmbnr1),digits=3),nsmall=0)),
+                  (format(round(nobs(plmbnr2),digits=3),nsmall=0)),
+                  (format(round(nobs(plmbnr3),digits=3),nsmall=0)),
+                  (format(round(nobs(plmbnr4),digits=3),nsmall=0)),
+                  (format(round(nobs(plmbnr5),digits=3),nsmall=0)),
+                  (format(round(nobs(plmbnr6),digits=3),nsmall=0)),
+                  (format(round(nobs(plmbnr7),digits=3),nsmall=0)))
+)
+
+
+
+
 # #### Two way random effect at the dealer level and farmer level  -- no controls 
-# 
-lmerbn8<-lmer(overall_rating~farmergen  + (1 | shop_ID.x) + (1 | farmer_ID), data = fedatad)
-lmerbn9<-lmer(general_rating_nonseed ~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) , data = fedatad)
-lmerbn10<-lmer(location ~farmergen  + (1 | shop_ID.x) + (1 | farmer_ID), data = fedatad)
-lmerbn11<-lmer(price ~farmergen  + (1 | shop_ID.x) + (1 | farmer_ID), data = fedatad)
-lmerbn12<-lmer(quality ~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) , data = fedatad)
-lmerbn13<-lmer(stock ~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) , data = fedatad)
-lmerbn14<-lmer(reputation ~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) , data = fedatad)
+plmbn_two1<-plm(overall_rating ~ farmergen , data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
+            effect = "twoway", random.method = "walhus")
+coefbn_two1<-coeftest(plmbn_two1,  vcovHC(plmbn_two1, type = "HC0", cluster = "time"))
+summary(plmbn_two1)
+coefbn_two1
+
+plmbn_two2<-plm(general_rating_nonseed ~ farmergen , data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
+                effect = "twoway", random.method = "walhus")
+coefbn_two2<-coeftest(plmbn_two2,  vcovHC(plmbn_two2, type = "HC0", cluster = "time"))
+summary(plmbn_two2)
+coefbn_two2
+
+plmbn_two3<-plm(location ~ farmergen , data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
+                effect = "twoway", random.method = "walhus")
+coefbn_two3<-coeftest(plmbn_two3,  vcovHC(plmbn_two3, type = "HC0", cluster = "time"))
+summary(plmbn_two3)
+coefbn_two3
+
+plmbn_two4<-plm(price ~ farmergen , data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
+                effect = "twoway", random.method = "walhus")
+coefbn_two4<-coeftest(plmbn_two4,  vcovHC(plmbn_two4, type = "HC0", cluster = "time"))
+summary(plmbn_two4)
+coefbn_two4
+
+plmbn_two5<-plm(quality ~ farmergen , data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
+                effect = "twoway", random.method = "walhus")
+coefbn_two5<-coeftest(plmbn_two5,  vcovHC(plmbn_two5, type = "HC0", cluster = "time"))
+summary(plmbn_two5)
+coefbn_two5
+
+plmbn_two6<-plm(stock ~ farmergen , data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
+                effect = "twoway", random.method = "walhus")
+coefbn_two6<-coeftest(plmbn_two6,  vcovHC(plmbn_two6, type = "HC0", cluster = "time"))
+summary(plmbn_two6)
+coefbn_two6
+
+plmbn_two7<-plm(reputation ~ farmergen , data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
+                effect = "twoway", random.method = "walhus")
+coefbn_two7<-coeftest(plmbn_two7,  vcovHC(plmbn_two7, type = "HC0", cluster = "time"))
+summary(plmbn_two7)
+coefbn_two7
+
+ranbn3<- rbind( c((format(round(sum(coefbn_two1[1,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbn_two2[1,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbn_two3[1,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbn_two4[1,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbn_two5[1,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbn_two6[1,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbn_two7[1,1]),digits=3),nsmall=0))),
+                c((format(round(coefbn_two1[1,2],digits=3),nsmall=0)),
+                  (format(round(coefbn_two2[1,2],digits=3),nsmall=0)),
+                  (format(round(coefbn_two3[1,2],digits=3),nsmall=0)),
+                  (format(round(coefbn_two4[1,2],digits=3),nsmall=0)),
+                  (format(round(coefbn_two5[1,2],digits=3),nsmall=0)),
+                  (format(round(coefbn_two6[1,2],digits=3),nsmall=0)),
+                  (format(round(coefbn_two7[1,2],digits=3),nsmall=0))),
+                c((format(round(coefbn_two1[1,4],digits=3),nsmall=0)),
+                  (format(round(coefbn_two2[1,4],digits=3),nsmall=0)),
+                  (format(round(coefbn_two3[1,4],digits=3),nsmall=0)),
+                  (format(round(coefbn_two4[1,4],digits=3),nsmall=0)),
+                  (format(round(coefbn_two5[1,4],digits=3),nsmall=0)),
+                  (format(round(coefbn_two6[1,4],digits=3),nsmall=0)),
+                  (format(round(coefbn_two7[1,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefbn_two1[2,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbn_two2[2,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbn_two3[2,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbn_two4[2,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbn_two5[2,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbn_two6[2,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbn_two7[2,1]),digits=3),nsmall=0))),
+                c((format(round(coefbn_two1[2,2],digits=3),nsmall=0)),
+                  (format(round(coefbn_two2[2,2],digits=3),nsmall=0)),
+                  (format(round(coefbn_two3[2,2],digits=3),nsmall=0)),
+                  (format(round(coefbn_two4[2,2],digits=3),nsmall=0)),
+                  (format(round(coefbn_two5[2,2],digits=3),nsmall=0)),
+                  (format(round(coefbn_two6[2,2],digits=3),nsmall=0)),
+                  (format(round(coefbn_two7[2,2],digits=3),nsmall=0))),
+                c((format(round(coefbn_two1[2,4],digits=3),nsmall=0)),
+                  (format(round(coefbn_two2[2,4],digits=3),nsmall=0)),
+                  (format(round(coefbn_two3[2,4],digits=3),nsmall=0)),
+                  (format(round(coefbn_two4[2,4],digits=3),nsmall=0)),
+                  (format(round(coefbn_two5[2,4],digits=3),nsmall=0)),
+                  (format(round(coefbn_two6[2,4],digits=3),nsmall=0)),
+                  (format(round(coefbn_two7[2,4],digits=3),nsmall=0))),
+                
+                
+                c((format(round(summary(plmbn_two1)$r.squared[1],digits=3),nsmall=0)),
+                  (format(round(summary(plmbn_two2)$r.squared[1],digits=3),nsmall=0)),
+                  (format(round(summary(plmbn_two3)$r.squared[1],digits=3),nsmall=0)),
+                  (format(round(summary(plmbn_two4)$r.squared[1],digits=3),nsmall=0)),
+                  (format(round(summary(plmbn_two5)$r.squared[1],digits=3),nsmall=0)),
+                  (format(round(summary(plmbn_two6)$r.squared[1],digits=3),nsmall=0)),
+                  (format(round(summary(plmbn_two7)$r.squared[1],digits=3),nsmall=0))),
+                c((format(round(summary(plmbn_two1)$r.squared[2],digits=3),nsmall=0)),
+                  (format(round(summary(plmbn_two2)$r.squared[2],digits=3),nsmall=0)),
+                  (format(round(summary(plmbn_two3)$r.squared[2],digits=3),nsmall=0)),
+                  (format(round(summary(plmbn_two4)$r.squared[2],digits=3),nsmall=0)),
+                  (format(round(summary(plmbn_two5)$r.squared[2],digits=3),nsmall=0)),
+                  (format(round(summary(plmbn_two6)$r.squared[2],digits=3),nsmall=0)),
+                  (format(round(summary(plmbn_two7)$r.squared[2],digits=3),nsmall=0))),
+                c((format(round(nobs(plmbn_two1),digits=3),nsmall=0)),
+                  (format(round(nobs(plmbn_two2),digits=3),nsmall=0)),
+                  (format(round(nobs(plmbn_two3),digits=3),nsmall=0)),
+                  (format(round(nobs(plmbn_two4),digits=3),nsmall=0)),
+                  (format(round(nobs(plmbn_two5),digits=3),nsmall=0)),
+                  (format(round(nobs(plmbn_two6),digits=3),nsmall=0)),
+                  (format(round(nobs(plmbn_two7),digits=3),nsmall=0)))
+)
+
+
+
+
+
+
+
+# lmerbn8<-lmer(overall_rating~farmergen  + (1 | shop_ID.x) + (1 | farmer_ID), data = fedatad)
+# lmerbn9<-lmer(general_rating_nonseed ~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) , data = fedatad)
+# lmerbn10<-lmer(location ~farmergen  + (1 | shop_ID.x) + (1 | farmer_ID), data = fedatad)
+# lmerbn11<-lmer(price ~farmergen  + (1 | shop_ID.x) + (1 | farmer_ID), data = fedatad)
+# lmerbn12<-lmer(quality ~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) , data = fedatad)
+# lmerbn13<-lmer(stock ~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) , data = fedatad)
+# lmerbn14<-lmer(reputation ~farmergen  + (1 | shop_ID.x)+ (1 | farmer_ID) , data = fedatad)
 # 
 # #tab_model(lmerbn8, lmerbn9,lmerbn10,lmerbn11,lmerbn12,lmerbn13,lmerbn14, p.style = c("stars"), p.threshold = c(0.1, 0.05, 0.01), collapse.ci=TRUE)
 # 
 # 
- lmer_two7<- rbind( c((format(round(sum(coef(summary(lmerbn8))[1,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbn9))[1,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbn10))[1,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbn11))[1,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbn12))[1,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbn13))[1,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbn14))[1,1]),digits=3),nsmall=0))),
-                    c((format(round(coef(summary(lmerbn8))[1,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbn9))[1,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbn10))[1,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbn11))[1,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbn12))[1,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbn13))[1,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbn14))[1,2],digits=3),nsmall=0))),
-                    c((format(round(coef(summary(lmerbn8))[1,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbn9))[1,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbn10))[1,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbn11))[1,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbn12))[1,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbn13))[1,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbn14))[1,3],digits=3),nsmall=0))),
- 
-                    c((format(round(sum(coef(summary(lmerbn8))[2,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbn9))[2,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbn10))[2,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbn11))[2,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbn12))[2,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbn13))[2,1]),digits=3),nsmall=0)),
-                      (format(round(sum(coef(summary(lmerbn14))[2,1]),digits=3),nsmall=0))),
-                    c((format(round(coef(summary(lmerbn8))[2,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbn9))[2,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbn10))[2,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbn11))[2,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbn12))[2,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbn13))[2,2],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbn14))[2,2],digits=3),nsmall=0))),
-                    c((format(round(coef(summary(lmerbn8))[2,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbn9))[2,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbn10))[2,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbn11))[2,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbn12))[2,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbn13))[2,3],digits=3),nsmall=0)),
-                      (format(round(coef(summary(lmerbn14))[2,3],digits=3),nsmall=0)))
- 
- 
-
- )
+ # lmer_two7<- rbind( c((format(round(sum(coef(summary(lmerbn8))[1,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbn9))[1,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbn10))[1,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbn11))[1,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbn12))[1,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbn13))[1,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbn14))[1,1]),digits=3),nsmall=0))),
+ #                    c((format(round(coef(summary(lmerbn8))[1,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbn9))[1,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbn10))[1,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbn11))[1,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbn12))[1,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbn13))[1,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbn14))[1,2],digits=3),nsmall=0))),
+ #                    c((format(round(coef(summary(lmerbn8))[1,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbn9))[1,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbn10))[1,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbn11))[1,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbn12))[1,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbn13))[1,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbn14))[1,3],digits=3),nsmall=0))),
+ # 
+ #                    c((format(round(sum(coef(summary(lmerbn8))[2,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbn9))[2,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbn10))[2,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbn11))[2,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbn12))[2,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbn13))[2,1]),digits=3),nsmall=0)),
+ #                      (format(round(sum(coef(summary(lmerbn14))[2,1]),digits=3),nsmall=0))),
+ #                    c((format(round(coef(summary(lmerbn8))[2,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbn9))[2,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbn10))[2,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbn11))[2,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbn12))[2,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbn13))[2,2],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbn14))[2,2],digits=3),nsmall=0))),
+ #                    c((format(round(coef(summary(lmerbn8))[2,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbn9))[2,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbn10))[2,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbn11))[2,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbn12))[2,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbn13))[2,3],digits=3),nsmall=0)),
+ #                      (format(round(coef(summary(lmerbn14))[2,3],digits=3),nsmall=0)))
+ # 
+ # 
+ # 
+ # )
 # 
 # 
 # #### Two way random effect at the dealer level and farmer level --- with controls --- controls are farmer and dealer characteristics 
