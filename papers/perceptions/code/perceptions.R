@@ -7,10 +7,11 @@ library(miceadds)
 options(scipen=999)
 path_2 <- strsplit(path, "/papers/perceptions")[[1]]
 
+desc <- array(NA, 100)
 ################# FARMERS ######################
 
 ##Farmers' dataset
-farmers <- read.csv(paste(path_2,"data/public/farmers.csv", sep = "/"))
+farmers <- read.csv(paste(path_2,"data/public/farmers.csv", sep = "/"),stringsAsFactors=FALSE )
 
 farmers1 <- farmers
 farmers1[farmers1=="n/a"] <- NA 
@@ -29,7 +30,7 @@ farmers$married <- ifelse(farmers$hh.maize.q26 == 'a', 1, 0)  #married farmers
 ################# INPUT DEALERS ######################
 
 ## Getting Dealers' data
-dealers <- read.csv(paste(path_2,"data/public/agro_input_dealers.csv", sep = "/"))
+dealers <- read.csv(paste(path_2,"data/public/agro_input_dealers.csv", sep = "/"),stringsAsFactors=FALSE)
 
 dealers1 <- dealers 
 
@@ -42,19 +43,43 @@ dealers1[dealers1=="n/a"] <- NA
 ##Index for overall rating by dealers for themselves 
 dealers$ratee_rating_overall <- rowSums(dealers[c("hh.maize.q79","hh.maize.q80","hh.maize.q81","hh.maize.q82","hh.maize.q83")])/5
 summary(dealers$ratee_rating_overall)
+#### SUMMARY STATS
+dealers$hh.maize.q19[dealers$hh.maize.q19==999] <- NA
+dealers$hh.maize.q35[dealers$hh.maize.q35==999] <- NA
+dealers$hh.maize.q19 + dealers$hh.maize.q35
+dealers$hh.maize.seed.1..q22 <- as.numeric(as.character(dealers$hh.maize.seed.1..q22))
+dealers$hh.maize.seed.1..q22[dealers$hh.maize.seed.1..q22==999] <- NA
 
+dealers$hh.maize.seed.2..q22 <- as.numeric(as.character(dealers$hh.maize.seed.2..q22))
+dealers$hh.maize.seed.2..q22[dealers$hh.maize.seed.2..q22==999] <- NA
+dealers$hh.maize.seed.3..q22 <- as.numeric(as.character(dealers$hh.maize.seed.3..q22))
+dealers$hh.maize.seed.3..q22[dealers$hh.maize.seed.3..q22==999] <- NA
+
+desc[1] <- format( round(mean(rowSums(dealers[c("hh.maize.seed.1..q22","hh.maize.seed.2..q22","hh.maize.seed.3..q22")], na.rm=T)), digits=0),nsmall=0)
+
+dealers$hh.maize.opv.1..q38 <- as.numeric(as.character(dealers$hh.maize.opv.1..q38))
+dealers$hh.maize.opv.1..q38[dealers$hh.maize.opv.1..q22==999] <- NA
+
+dealers$hh.maize.opv.2..q38 <- as.numeric(as.character(dealers$hh.maize.opv.2..q38))
+dealers$hh.maize.opv.2..q38[dealers$hh.maize.opv.2..q38==999] <- NA
+dealers$hh.maize.opv.3..q38 <- as.numeric(as.character(dealers$hh.maize.opv.3..q38))
+dealers$hh.maize.opv.3..q38[dealers$hh.maize.opv.3..q38==999] <- NA
+
+desc[2] <- res_opv <-format( round(mean(rowSums(dealers[c("hh.maize.opv.1..q38","hh.maize.opv.2..q38","hh.maize.opv.3..q38")], na.rm=T)), digits=0),nsmall=0)
 
 ################# TRADERS ######################
 
 ###Getting traders' data 
-traders <- read.csv(paste(path_2,"data/public/traders.csv", sep = "/"))
+traders <- read.csv(paste(path_2,"data/public/traders.csv", sep = "/"),stringsAsFactors=FALSE)
 traders[traders=="n/a"] <- NA
 traders[traders=="999"] <- NA
 
 #### SUMMARY STATS 
 #22a. On a typical day after harvest, when maize prices have reached their lowest levels, how many sellers (farmers, assemblers,...) do you visit to collect maize from?
 table(as.numeric(traders$hh.maize.q22a))
-mean(as.numeric(traders$hh.maize.q22a), na.rm=TRUE)
+#drop 10 percent top quantile 
+traders$hh.maize.q22a[traders$hh.maize.q22a > quantile(as.numeric(traders$hh.maize.q22a), na.rm=TRUE, 0.90)] <- NA
+desc[3] <- format(round( mean(as.numeric(traders$hh.maize.q22a), na.rm=TRUE),digits=0),nsmall=0)
 sd(as.numeric(traders$hh.maize.q22a), na.rm=TRUE)
 min(as.numeric(traders$hh.maize.q22a), na.rm=TRUE)
 max(as.numeric(traders$hh.maize.q22a), na.rm=TRUE)
@@ -62,8 +87,11 @@ quantile(as.numeric(traders$hh.maize.q22a), na.rm=TRUE, 0.25)
 quantile(as.numeric(traders$hh.maize.q22a), na.rm=TRUE, 0.75)
 
 #22b. On a typical day after harvest, when maize prices have reached their lowest levels, how much maize do you collect in total. (in kg)
+
+traders$hh.maize.q22b[traders$hh.maize.q22b > quantile(as.numeric(traders$hh.maize.q22b), na.rm=TRUE, 0.90)] <- NA
+traders$hh.maize.q22b[traders$hh.maize.q22b < quantile(as.numeric(traders$hh.maize.q22b), na.rm=TRUE, 0.10)] <- NA
 table(traders$hh.maize.q22b)
-mean(traders$hh.maize.q22b)
+desc[4] <- format(round( mean(traders$hh.maize.q22b, na.rm=T),digits=0),nsmall=0)
 #22d. On a typical day after harvest, when maize prices have reached their lowest levels, how many buyers do you deliver to
 table(traders$hh.maize.q22d)
 mean(as.numeric(traders$hh.maize.q22d), na.rm=TRUE)
@@ -82,6 +110,7 @@ mean(as.numeric(traders$hh.maize.q23d), na.rm=TRUE)
 table(traders$hh.maize.q28)
 mean(as.numeric(traders$hh.maize.q28), na.rm=TRUE)
 
+table(traders$hh.maize.q21)
 
 traders1<-traders 
 
@@ -99,7 +128,7 @@ summary(traders$ratee_rating_overall)
 ################# MILLERS ######################
 
 ###Getting MILLERS' data 
-millers <- read.csv(paste(path_2,"data/public/millers.csv", sep = "/"))
+millers <- read.csv(paste(path_2,"data/public/millers.csv", sep = "/"),stringsAsFactors=FALSE)
 millers[millers=="n/a"] <- NA
 millers[millers=="999"] <- NA
 
@@ -188,7 +217,7 @@ summary(ratings$rating_overall)
 ratings$interaction_yes <- ifelse(ratings$interaction == 'Yes', 1, 0) 
 
 ## Getting Dealers' data
-dealers <- read.csv(paste(path_2,"data/public/agro_input_dealers.csv", sep = "/"))
+dealers <- read.csv(paste(path_2,"data/public/agro_input_dealers.csv", sep = "/"),stringsAsFactors=FALSE)
 ##Index for overall rating by dealers for themselves 
 dealers$ratee_rating_overall <- rowSums(dealers[c("hh.maize.q79","hh.maize.q80","hh.maize.q81","hh.maize.q82","hh.maize.q83")])/5
 summary(dealers$ratee_rating_overall)
@@ -264,7 +293,7 @@ summary(ratings_trader$rating_overall)
 ratings_trader$interaction_yes <- ifelse(ratings_trader$interaction == 'Yes', 1, 0)
 
 ###Getting traders' data 
-traders <- read.csv(paste(path_2,"data/public/traders.csv", sep = "/"))
+traders <- read.csv(paste(path_2,"data/public/traders.csv", sep = "/"),stringsAsFactors=FALSE)
 
 ###Index for overall rating from traders
 traders$ratee_rating_overall <- rowSums(traders[c("hh.maize.q40a","hh.maize.q40b","hh.maize.q40c","hh.maize.q40d","hh.maize.q40e")])/5
@@ -340,7 +369,7 @@ summary(ratings_mill$rating_overall)
 ratings_mill$interaction_yes <- ifelse(ratings_mill$interaction == 'Yes', 1, 0)
 
 ###Getting millers' data 
-millers <- read.csv(paste(path_2,"data/public/millers.csv", sep = "/"))
+millers <- read.csv(paste(path_2,"data/public/millers.csv", sep = "/"),stringsAsFactors=FALSE)
 
 ###Index for overall rating from millers
 millers$ratee_rating_overall <- rowSums(millers[c("hh.maize.q36","hh.maize.q37","hh.maize.q38","hh.maize.q39","hh.maize.q40")])/5
