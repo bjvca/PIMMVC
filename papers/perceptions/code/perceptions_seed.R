@@ -4948,48 +4948,48 @@ fe4<- rbind(c((format(round(im8[1],digits=3),nsmall=0)),
 
 #### One way random effect at the farmer level - no controls 
 plmr1<-plm(score ~ genderdummy, data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
-           effect = "individual")
+           effect = "individual", random.method="walhus")
 coefr1<-coeftest(plmr1, vcovHC(plmr1, type = "HC0", cluster = "time"))
 summary(plmr1)
 coefr1
 
 plmr2<-plm(general ~ genderdummy, data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
-           effect = "individual")
+           effect = "individual", random.method="walhus")
 coefr2<-coeftest(plmr2, vcovHC(plmr2, type = "HC0", cluster = "time"))
 summary(plmr2)
 coefr2
 
 plmr3<-plm(yield ~ genderdummy, data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
-           effect = "individual")
+           effect = "individual", random.method="walhus")
 coefr3<-coeftest(plmr3, vcovHC(plmr3, type = "HC0", cluster = "time"))
 summary(plmr3)
 coefr3
 
 plmr4<-plm(drought_resistent ~ genderdummy, data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
-           effect = "individual")
+           effect = "individual", random.method="walhus")
 coefr4<-coeftest(plmr4, vcovHC(plmr4, type = "HC0", cluster = "time"))
 summary(plmr4)
 coefr4
 
 plmr5<-plm(disease_resistent ~ genderdummy, data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
-           effect = "individual")
+           effect = "individual", random.method="walhus")
 coefr5<-coeftest(plmr5, vcovHC(plmr5, type = "HC0", cluster = "time"))
 summary(plmr5)
 coefr5
 
 plmr6<-plm(early_maturing ~ genderdummy, data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
-           effect = "individual")
+           effect = "individual", random.method="walhus")
 coefr6<-coeftest(plmr6, vcovHC(plmr6, type = "HC0", cluster = "time"))
 summary(plmr6)
 coefr6
 
 plmr7<-plm(germination ~ genderdummy, data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
-           effect = "individual")
+           effect = "individual", random.method="walhus")
 coefr7<-coeftest(plmr7, vcovHC(plmr7, type = "HC0", cluster = "time"))
 summary(plmr7)
 coefr7
 
-tab_model(plmr1, plmr2,plmr3, plmr4, plmr5, plmr6, plmr7, p.style = c("stars"), p.threshold = c(0.1, 0.05, 0.01), collapse.ci=TRUE)
+#tab_model(plmr1, plmr2,plmr3, plmr4, plmr5, plmr6, plmr7, p.style = c("stars"), p.threshold = c(0.1, 0.05, 0.01), collapse.ci=TRUE)
 
 ranr1<- rbind( c((format(round(sum(coefr1[1,1]),digits=3),nsmall=0)),
                  (format(round(sum(coefr2[1,1]),digits=3),nsmall=0)),
@@ -5062,95 +5062,179 @@ ranr1<- rbind( c((format(round(sum(coefr1[1,1]),digits=3),nsmall=0)),
 
 
 #### One way random effect at the dealer level - no controls 
-#plmr8<-plm(score ~ genderdummy, data =fedata,  model = "random", index = c("shop_ID","farmer_ID"),
-     #      effect = "individual")
-#coefr8<-coeftest(plmr8, vcovHC(plmr8, type = "HC0", cluster = "time"))
-#summary(plmr8)
-#coefr8
+
+plmrd1<-plm(score ~ genderdummy, data =fedata,  model = "random", index = c("shop_ID","farmer_ID"),
+          effect = "individual", random.method="walhus")
+coefrd1<-coeftest(plmrd1, vcovHC(plmrd1, type = "HC0", cluster = "time"))
+summary(plmrd1)
+coefrd1
+
+plmrd2<-plm(general ~ genderdummy, data =fedata,  model = "random", index = c("shop_ID","farmer_ID"),
+            effect = "individual", random.method="walhus")
+coefrd2<-coeftest(plmrd2, vcovHC(plmrd2, type = "HC0", cluster = "time"))
+summary(plmrd2)
+coefrd2
+
+plmrd3<-plm(yield ~ genderdummy, data =fedata,  model = "random", index = c("shop_ID","farmer_ID"),
+            effect = "individual", random.method="walhus")
+coefrd3<-coeftest(plmrd3, vcovHC(plmrd3, type = "HC0", cluster = "time"))
+summary(plmrd3)
+coefrd3
+
+plmrd4<-plm(drought_resistent ~ genderdummy, data =fedata,  model = "random", index = c("shop_ID","farmer_ID"),
+            effect = "individual", random.method="walhus")
+coefrd4<-coeftest(plmrd4, vcovHC(plmrd4, type = "HC0", cluster = "time"))
+summary(plmrd4)
+coefrd4
+
+plmrd5<-plm(disease_resistent ~ genderdummy, data =fedata,  model = "random", index = c("shop_ID","farmer_ID"),
+            effect = "individual", random.method="walhus")
+coefrd5<-coeftest(plmrd5, vcovHC(plmrd5, type = "HC0", cluster = "time"))
+summary(plmrd5)
+coefrd5
+
+plmrd6<-plm(early_maturing ~ genderdummy, data =fedata,  model = "random", index = c("shop_ID","farmer_ID"),
+            effect = "individual", random.method="walhus")
+coefrd6<-coeftest(plmrd6, vcovHC(plmrd6, type = "HC0", cluster = "time"))
+summary(plmrd6)
+coefrd6
+
+plmrd7<-plm(germination ~ genderdummy, data =fedata,  model = "random", index = c("shop_ID","farmer_ID"),
+            effect = "individual", random.method="walhus")
+coefrd7<-coeftest(plmrd7, vcovHC(plmrd7, type = "HC0", cluster = "time"))
+summary(plmrd7)
+coefrd7
+
 
 
 # #### Two way random effect at the farmer level and dealer level -- no controls 
-# 
-lmer8<-lmer(score ~ genderdummy  + (1 | farmer_ID)+(1 | shop_ID) , data = fedata)
-lmer9<-lmer(general ~ genderdummy  + (1 | farmer_ID) +(1 | shop_ID), data = fedata)
-lmer10<-lmer(yield ~ genderdummy  + (1 | farmer_ID) +(1 | shop_ID), data = fedata)
-lmer11<-lmer(drought_resistent ~ genderdummy  + (1 | farmer_ID)+(1 | shop_ID), data = fedata)
-lmer12<-lmer(disease_resistent ~ genderdummy  + (1 | farmer_ID)+(1 | shop_ID) , data = fedata)
-lmer13<-lmer(early_maturing ~ genderdummy  + (1 | farmer_ID)+(1 | shop_ID) , data = fedata)
-lmer14<-lmer(germination ~ genderdummy  + (1 | farmer_ID)+(1 | shop_ID) , data = fedata)
+
+
+plmr_two1<-plm(score ~ genderdummy, data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
+           effect = "twoway", random.method="walhus")
+coefr_two1<-coeftest(plmr_two1, vcovHC(plmr_two1, type = "HC0", cluster = "time"))
+summary(plmr_two1)
+coefr_two1
+
+plmr_two2<-plm(general ~ genderdummy, data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
+           effect = "twoway", random.method="walhus")
+coefr_two2<-coeftest(plmr_two2, vcovHC(plmr_two2, type = "HC0", cluster = "time"))
+summary(plmr_two2)
+coefr_two2
+
+plmr_two3<-plm(yield ~ genderdummy, data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
+           effect = "twoway", random.method="walhus")
+coefr_two3<-coeftest(plmr_two3, vcovHC(plmr_two3, type = "HC0", cluster = "time"))
+summary(plmr_two3)
+coefr_two3
+
+plmr_two4<-plm(drought_resistent ~ genderdummy, data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
+           effect = "twoway", random.method="walhus")
+coefr_two4<-coeftest(plmr_two4, vcovHC(plmr_two4, type = "HC0", cluster = "time"))
+summary(plmr_two4)
+coefr_two4
+
+plmr_two5<-plm(disease_resistent ~ genderdummy, data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
+           effect = "twoway", random.method="walhus")
+coefr_two5<-coeftest(plmr_two5, vcovHC(plmr_two5, type = "HC0", cluster = "time"))
+summary(plmr_two5)
+coefr_two5
+
+plmr_two6<-plm(early_maturing ~ genderdummy, data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
+           effect = "twoway", random.method="walhus")
+coefr_two6<-coeftest(plmr_two6, vcovHC(plmr_two6, type = "HC0", cluster = "time"))
+summary(plmr_two6)
+coefr_two6
+
+plmr_two7<-plm(germination ~ genderdummy, data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
+           effect = "twoway", random.method="walhus")
+coefr_two7<-coeftest(plmr_two7, vcovHC(plmr_two7, type = "HC0", cluster = "time"))
+summary(plmr_two7)
+coefr_two7
+
+# lmer8<-lmer(score ~ genderdummy  + (1 | farmer_ID)+(1 | shop_ID) , data = fedata)
+# lmer9<-lmer(general ~ genderdummy  + (1 | farmer_ID) +(1 | shop_ID), data = fedata)
+# lmer10<-lmer(yield ~ genderdummy  + (1 | farmer_ID) +(1 | shop_ID), data = fedata)
+# lmer11<-lmer(drought_resistent ~ genderdummy  + (1 | farmer_ID)+(1 | shop_ID), data = fedata)
+# lmer12<-lmer(disease_resistent ~ genderdummy  + (1 | farmer_ID)+(1 | shop_ID) , data = fedata)
+# lmer13<-lmer(early_maturing ~ genderdummy  + (1 | farmer_ID)+(1 | shop_ID) , data = fedata)
+# lmer14<-lmer(germination ~ genderdummy  + (1 | farmer_ID)+(1 | shop_ID) , data = fedata)
 # 
 # #tab_model(lmer8,lmer9,lmer10,lmer11,lmer12,lmer13,lmer14, p.style = c("stars"), p.threshold = c(0.1, 0.05, 0.01), collapse.ci=TRUE)
 # 
 # 
 # 
- lmer_two1<- rbind( c((format(round(sum(coef(summary(lmer8))[1,1]),digits=3),nsmall=0)),
-                  (format(round(sum(coef(summary(lmer9))[1,1]),digits=3),nsmall=0)),
-                  (format(round(sum(coef(summary(lmer10))[1,1]),digits=3),nsmall=0)),
-                  (format(round(sum(coef(summary(lmer11))[1,1]),digits=3),nsmall=0)),
-                  (format(round(sum(coef(summary(lmer12))[1,1]),digits=3),nsmall=0)),
-                  (format(round(sum(coef(summary(lmer13))[1,1]),digits=3),nsmall=0)),
-                  (format(round(sum(coef(summary(lmer14))[1,1]),digits=3),nsmall=0))),
-                c((format(round(coef(summary(lmer8))[1,2],digits=3),nsmall=0)),
-                  (format(round(coef(summary(lmer9))[1,2],digits=3),nsmall=0)),
-                  (format(round(coef(summary(lmer10))[1,2],digits=3),nsmall=0)),
-                  (format(round(coef(summary(lmer11))[1,2],digits=3),nsmall=0)),
-                  (format(round(coef(summary(lmer12))[1,2],digits=3),nsmall=0)),
-                  (format(round(coef(summary(lmer13))[1,2],digits=3),nsmall=0)),
-                  (format(round(coef(summary(lmer14))[1,2],digits=3),nsmall=0))),
-                c((format(round(coef(summary(lmer8))[1,3],digits=3),nsmall=0)),
-                  (format(round(coef(summary(lmer9))[1,3],digits=3),nsmall=0)),
-                  (format(round(coef(summary(lmer10))[1,3],digits=3),nsmall=0)),
-                  (format(round(coef(summary(lmer11))[1,3],digits=3),nsmall=0)),
-                  (format(round(coef(summary(lmer12))[1,3],digits=3),nsmall=0)),
-                  (format(round(coef(summary(lmer13))[1,3],digits=3),nsmall=0)),
-                  (format(round(coef(summary(lmer14))[1,3],digits=3),nsmall=0))),
- 
-                c((format(round(sum(coef(summary(lmer8))[2,1]),digits=3),nsmall=0)),
-                  (format(round(sum(coef(summary(lmer9))[2,1]),digits=3),nsmall=0)),
-                  (format(round(sum(coef(summary(lmer10))[2,1]),digits=3),nsmall=0)),
-                  (format(round(sum(coef(summary(lmer11))[2,1]),digits=3),nsmall=0)),
-                  (format(round(sum(coef(summary(lmer12))[2,1]),digits=3),nsmall=0)),
-                  (format(round(sum(coef(summary(lmer13))[2,1]),digits=3),nsmall=0)),
-                  (format(round(sum(coef(summary(lmer14))[2,1]),digits=3),nsmall=0))),
-                c((format(round(coef(summary(lmer8))[2,2],digits=3),nsmall=0)),
-                  (format(round(coef(summary(lmer9))[2,2],digits=3),nsmall=0)),
-                  (format(round(coef(summary(lmer10))[2,2],digits=3),nsmall=0)),
-                  (format(round(coef(summary(lmer11))[2,2],digits=3),nsmall=0)),
-                  (format(round(coef(summary(lmer12))[2,2],digits=3),nsmall=0)),
-                  (format(round(coef(summary(lmer13))[2,2],digits=3),nsmall=0)),
-                  (format(round(coef(summary(lmer14))[2,2],digits=3),nsmall=0))),
-                c((format(round(coef(summary(lmer8))[2,3],digits=3),nsmall=0)),
-                  (format(round(coef(summary(lmer9))[2,3],digits=3),nsmall=0)),
-                  (format(round(coef(summary(lmer10))[2,3],digits=3),nsmall=0)),
-                  (format(round(coef(summary(lmer11))[2,3],digits=3),nsmall=0)),
-                  (format(round(coef(summary(lmer12))[2,3],digits=3),nsmall=0)),
-                  (format(round(coef(summary(lmer13))[2,3],digits=3),nsmall=0)),
-                  (format(round(coef(summary(lmer14))[2,3],digits=3),nsmall=0)))
+#  lmer_two1<- rbind( c((format(round(sum(coef(summary(lmer8))[1,1]),digits=3),nsmall=0)),
+#                   (format(round(sum(coef(summary(lmer9))[1,1]),digits=3),nsmall=0)),
+#                   (format(round(sum(coef(summary(lmer10))[1,1]),digits=3),nsmall=0)),
+#                   (format(round(sum(coef(summary(lmer11))[1,1]),digits=3),nsmall=0)),
+#                   (format(round(sum(coef(summary(lmer12))[1,1]),digits=3),nsmall=0)),
+#                   (format(round(sum(coef(summary(lmer13))[1,1]),digits=3),nsmall=0)),
+#                   (format(round(sum(coef(summary(lmer14))[1,1]),digits=3),nsmall=0))),
+#                 c((format(round(coef(summary(lmer8))[1,2],digits=3),nsmall=0)),
+#                   (format(round(coef(summary(lmer9))[1,2],digits=3),nsmall=0)),
+#                   (format(round(coef(summary(lmer10))[1,2],digits=3),nsmall=0)),
+#                   (format(round(coef(summary(lmer11))[1,2],digits=3),nsmall=0)),
+#                   (format(round(coef(summary(lmer12))[1,2],digits=3),nsmall=0)),
+#                   (format(round(coef(summary(lmer13))[1,2],digits=3),nsmall=0)),
+#                   (format(round(coef(summary(lmer14))[1,2],digits=3),nsmall=0))),
+#                 c((format(round(coef(summary(lmer8))[1,3],digits=3),nsmall=0)),
+#                   (format(round(coef(summary(lmer9))[1,3],digits=3),nsmall=0)),
+#                   (format(round(coef(summary(lmer10))[1,3],digits=3),nsmall=0)),
+#                   (format(round(coef(summary(lmer11))[1,3],digits=3),nsmall=0)),
+#                   (format(round(coef(summary(lmer12))[1,3],digits=3),nsmall=0)),
+#                   (format(round(coef(summary(lmer13))[1,3],digits=3),nsmall=0)),
+#                   (format(round(coef(summary(lmer14))[1,3],digits=3),nsmall=0))),
+#  
+#                 c((format(round(sum(coef(summary(lmer8))[2,1]),digits=3),nsmall=0)),
+#                   (format(round(sum(coef(summary(lmer9))[2,1]),digits=3),nsmall=0)),
+#                   (format(round(sum(coef(summary(lmer10))[2,1]),digits=3),nsmall=0)),
+#                   (format(round(sum(coef(summary(lmer11))[2,1]),digits=3),nsmall=0)),
+#                   (format(round(sum(coef(summary(lmer12))[2,1]),digits=3),nsmall=0)),
+#                   (format(round(sum(coef(summary(lmer13))[2,1]),digits=3),nsmall=0)),
+#                   (format(round(sum(coef(summary(lmer14))[2,1]),digits=3),nsmall=0))),
+#                 c((format(round(coef(summary(lmer8))[2,2],digits=3),nsmall=0)),
+#                   (format(round(coef(summary(lmer9))[2,2],digits=3),nsmall=0)),
+#                   (format(round(coef(summary(lmer10))[2,2],digits=3),nsmall=0)),
+#                   (format(round(coef(summary(lmer11))[2,2],digits=3),nsmall=0)),
+#                   (format(round(coef(summary(lmer12))[2,2],digits=3),nsmall=0)),
+#                   (format(round(coef(summary(lmer13))[2,2],digits=3),nsmall=0)),
+#                   (format(round(coef(summary(lmer14))[2,2],digits=3),nsmall=0))),
+#                 c((format(round(coef(summary(lmer8))[2,3],digits=3),nsmall=0)),
+#                   (format(round(coef(summary(lmer9))[2,3],digits=3),nsmall=0)),
+#                   (format(round(coef(summary(lmer10))[2,3],digits=3),nsmall=0)),
+#                   (format(round(coef(summary(lmer11))[2,3],digits=3),nsmall=0)),
+#                   (format(round(coef(summary(lmer12))[2,3],digits=3),nsmall=0)),
+#                   (format(round(coef(summary(lmer13))[2,3],digits=3),nsmall=0)),
+#                   (format(round(coef(summary(lmer14))[2,3],digits=3),nsmall=0)))
+# # 
+# # 
+# #                c((format(round(summary(lmer8)$r.squared[1],digits=3),nsmall=0)),
+# #                  (format(round(summary(lmer9)$r.squared[1],digits=3),nsmall=0)),
+# #                  (format(round(summary(lmer10)$r.squared[1],digits=3),nsmall=0)),
+# #                  (format(round(summary(lmer11)$r.squared[1],digits=3),nsmall=0)),
+# #                  (format(round(summary(lmer12)$r.squared[1],digits=3),nsmall=0)),
+# #                  (format(round(summary(lmer13)$r.squared[1],digits=3),nsmall=0)),
+# #                  (format(round(summary(lmer14)$r.squared[1],digits=3),nsmall=0))),
+# #                c((format(round(summary(lmer8)$r.squared[2],digits=3),nsmall=0)),
+# #                  (format(round(summary(lmer9)$r.squared[2],digits=3),nsmall=0)),
+# #                  (format(round(summary(lmer10)$r.squared[2],digits=3),nsmall=0)),
+# #                  (format(round(summary(lmer11)$r.squared[2],digits=3),nsmall=0)),
+# #                  (format(round(summary(lmer12)$r.squared[2],digits=3),nsmall=0)),
+# #                  (format(round(summary(lmer13)$r.squared[2],digits=3),nsmall=0)),
+# #                  (format(round(summary(lmer14)$r.squared[2],digits=3),nsmall=0))),
+# #                c((format(round(nobs(lmer8),digits=3),nsmall=0)),
+# #                  (format(round(nobs(lmer9),digits=3),nsmall=0)),
+# #                  (format(round(nobs(lmer10),digits=3),nsmall=0)),
+# #                  (format(round(nobs(lmer11),digits=3),nsmall=0)),
+# #                  (format(round(nobs(lmer12),digits=3),nsmall=0)),
+# #                  (format(round(nobs(lmer13),digits=3),nsmall=0)),
+# #                  (format(round(nobs(lmer14),digits=3),nsmall=0)))
+#  )
 # 
-# 
-#                c((format(round(summary(lmer8)$r.squared[1],digits=3),nsmall=0)),
-#                  (format(round(summary(lmer9)$r.squared[1],digits=3),nsmall=0)),
-#                  (format(round(summary(lmer10)$r.squared[1],digits=3),nsmall=0)),
-#                  (format(round(summary(lmer11)$r.squared[1],digits=3),nsmall=0)),
-#                  (format(round(summary(lmer12)$r.squared[1],digits=3),nsmall=0)),
-#                  (format(round(summary(lmer13)$r.squared[1],digits=3),nsmall=0)),
-#                  (format(round(summary(lmer14)$r.squared[1],digits=3),nsmall=0))),
-#                c((format(round(summary(lmer8)$r.squared[2],digits=3),nsmall=0)),
-#                  (format(round(summary(lmer9)$r.squared[2],digits=3),nsmall=0)),
-#                  (format(round(summary(lmer10)$r.squared[2],digits=3),nsmall=0)),
-#                  (format(round(summary(lmer11)$r.squared[2],digits=3),nsmall=0)),
-#                  (format(round(summary(lmer12)$r.squared[2],digits=3),nsmall=0)),
-#                  (format(round(summary(lmer13)$r.squared[2],digits=3),nsmall=0)),
-#                  (format(round(summary(lmer14)$r.squared[2],digits=3),nsmall=0))),
-#                c((format(round(nobs(lmer8),digits=3),nsmall=0)),
-#                  (format(round(nobs(lmer9),digits=3),nsmall=0)),
-#                  (format(round(nobs(lmer10),digits=3),nsmall=0)),
-#                  (format(round(nobs(lmer11),digits=3),nsmall=0)),
-#                  (format(round(nobs(lmer12),digits=3),nsmall=0)),
-#                  (format(round(nobs(lmer13),digits=3),nsmall=0)),
-#                  (format(round(nobs(lmer14),digits=3),nsmall=0)))
- )
-# 
+
+
+
 # #### Two way random effect at the farmer level and dealer level -- with controls -- controls are both farmer and dealer characteristics 
 # 
 lmerc8<-lmer(score ~ genderdummy  + (1 | farmer_ID)+(1 | shop_ID) +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8  +maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale
