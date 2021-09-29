@@ -27,6 +27,32 @@ farmers$educ[farmers$hh.maize.q27=="c" | farmers$hh.maize.q27=="d" | farmers$hh.
 farmers$educ[ farmers$hh.maize.q27=="g" ] <- NA
 farmers$married <- ifelse(farmers$hh.maize.q26 == 'a', 1, 0)  #married farmers 
 
+farmers$plot1 <- as.numeric(farmers$hh.maize.plot.1..q42)
+farmers$plot2 <- as.numeric(farmers$hh.maize.plot.2..q42)
+farmers$plot3 <- as.numeric(farmers$hh.maize.plot.3..q42)
+farmers$plot4 <- as.numeric(farmers$hh.maize.plot.4..q42)
+farmers$plot5 <- as.numeric(farmers$hh.maize.plot.5..q42)
+farmers$plot6 <- as.numeric(farmers$hh.maize.plot.6..q42)
+
+desc[10] <- format(round( mean(rowSums(farmers[c("plot1","plot2","plot3","plot4","plot5","plot6")], na.rm=T)),digits=2),nsmall=2)
+desc[11] <- format(round(mean(farmers$educ, na.rm=T)*100,digits=0),nsmall=0)
+desc[12] <- format(round(mean(farmers$hh.maize.maizen.q48 %in% letters[1:10])*100,digits=0),nsmall=0)
+desc[13] <- format(round(mean(farmers$hh.maize.maizen.q59 == "Yes" | farmers$hh.maize.maizen.q60 == "Yes")*100,digits=0),nsmall=0)
+
+farmers$hh.maize.plot_select_area <- as.numeric(farmers$hh.maize.plot_select_area)
+farmers$yield <- farmers$hh.maize.maizen.q64*farmers$hh.maize.maizen.q65/farmers$hh.maize.plot_select_area
+#drop 10 percent top - bottom quantile 
+farmers$yield[farmers$yield > quantile(as.numeric(farmers$yield), na.rm=TRUE, 0.90)] <- NA
+farmers$yield[farmers$yield < quantile(as.numeric(farmers$yield), na.rm=TRUE, 0.10)] <- NA
+desc[14] <- format(round(mean(farmers$yield, na.rm=T),digits=0),nsmall=0)
+
+desc[15]<- format(round(mean(as.numeric(farmers$hh.maize.q101=="Yes"))*100,digits=0),nsmall=0)
+
+desc[16]<- format(round(mean(as.numeric(farmers$hh.maize.q101a)*farmers$hh.maize.q96, na.rm=T),digits=0),nsmall=0)
+
+farmers$selshare <- as.numeric(farmers$hh.maize.q101a)*farmers$hh.maize.q96/(farmers$hh.maize.q95*farmers$hh.maize.q96)
+farmers$selshare[farmers$selshare>1] <- NA 
+desc[17]<- format(round(mean(farmers$selshare, na.rm=T)*100,digits=0),nsmall=0)
 ################# INPUT DEALERS ######################
 
 ## Getting Dealers' data
@@ -91,10 +117,12 @@ quantile(as.numeric(traders$hh.maize.q22a), na.rm=TRUE, 0.75)
 traders$hh.maize.q22b[traders$hh.maize.q22b > quantile(as.numeric(traders$hh.maize.q22b), na.rm=TRUE, 0.90)] <- NA
 traders$hh.maize.q22b[traders$hh.maize.q22b < quantile(as.numeric(traders$hh.maize.q22b), na.rm=TRUE, 0.10)] <- NA
 table(traders$hh.maize.q22b)
-desc[4] <- format(round( mean(traders$hh.maize.q22b, na.rm=T),digits=0),nsmall=0)
+desc[4] <- format(round( mean(traders$hh.maize.q22b, na.rm=T),digits=0),nsmall=0,big.mark=",")
 #22d. On a typical day after harvest, when maize prices have reached their lowest levels, how many buyers do you deliver to
 table(traders$hh.maize.q22d)
-mean(as.numeric(traders$hh.maize.q22d), na.rm=TRUE)
+traders$hh.maize.q22d[traders$hh.maize.q22d > quantile(as.numeric(traders$hh.maize.q22d), na.rm=TRUE, 0.90)] <- NA
+desc[5] <- format(round( mean(as.numeric(traders$hh.maize.q22d), na.rm=TRUE),digits=0),nsmall=0)
+
 
 #23a. During planting and growing season of second season of 2018 when maize prices have reached their highest levels, how many sellers (farmers, assemblers,...) do you visit to collect maize from?
 table(traders$hh.maize.q23a)
@@ -107,9 +135,11 @@ table(traders$hh.maize.q23d)
 mean(as.numeric(traders$hh.maize.q23d), na.rm=TRUE)
 
 #28. What is your storage capacity (kgs)? 
-table(traders$hh.maize.q28)
-mean(as.numeric(traders$hh.maize.q28), na.rm=TRUE)
+traders$hh.maize.q28 <- as.numeric(traders$hh.maize.q28)
+traders$hh.maize.q28[traders$hh.maize.q28 > quantile(as.numeric(traders$hh.maize.q28), na.rm=TRUE, 0.90)] <- NA
+traders$hh.maize.q28[traders$hh.maize.q28 < quantile(as.numeric(traders$hh.maize.q28), na.rm=TRUE, 0.10)] <- NA
 
+desc[6] <- format(round( mean(traders$hh.maize.q28, na.rm=T),digits=-3),nsmall=0,big.mark=",")
 table(traders$hh.maize.q21)
 
 traders1<-traders 
@@ -123,6 +153,7 @@ traders1[traders1=="n/a"] <- NA
 ###Index for overall rating from traders
 traders$ratee_rating_overall <- rowSums(traders[c("hh.maize.q40a","hh.maize.q40b","hh.maize.q40c","hh.maize.q40d","hh.maize.q40e")])/5
 summary(traders$ratee_rating_overall)
+desc[7] <-  format(round(as.numeric(prop.table(table(traders$hh.maize.q12))[2]*100),digits=0),nsmall=0)
 
 
 ################# MILLERS ######################
@@ -148,6 +179,8 @@ mean(as.numeric(millers$hh.maize.q28), na.rm=TRUE)
 millers$elec <- ifelse(millers$hh.maize.q28 == 'a', 1, 0)  #a=three phase electricity
 mean(millers$elec)
 
+desc[8] <- format(round(mean(ifelse(millers$hh.maize.q28 == 'c', 1, 0), na.rm=T)*100,digits=0),nsmall=0)
+desc[9] <- format(round(mean(ifelse(millers$hh.maize.q28 == 'a', 1, 0), na.rm=T)*100,digits=0),nsmall=0)
 millers1 <- millers
 
 ###Index for overall rating from millers

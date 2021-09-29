@@ -495,7 +495,7 @@ literal "true"
 \end_inset
 
 .
- Stil, this is considerably lower than what research stations report, which
+ Still, this is considerably lower than what research stations report, which
  range between 730 kg per acre and 1,820 kg per acre 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -839,7 +839,7 @@ Sexpr{desc[4]}
 \end_inset
 
  kgs of maize.
- Downstream, we see that the average trader deliver to about 
+ Downstream, we see that the average trader delivers to about 
 \begin_inset ERT
 status open
 
@@ -847,13 +847,13 @@ status open
 
 
 \backslash
-Sexpr{format(round(mean(as.numeric(traders$hh.maize.q22d), na.rm=TRUE)),nsmall=0)}
+Sexpr{desc[5]}
 \end_layout
 
 \end_inset
 
-.
- The average storage capacity that a typical trader has is 
+ different buyers during peak season.
+ The average storage capacity that a typical trader has is about 
 \begin_inset ERT
 status open
 
@@ -861,12 +861,28 @@ status open
 
 
 \backslash
-Sexpr{format(round(mean(as.numeric(traders$hh.maize.q28), na.rm=TRUE)),nsmall=0)}
+Sexpr{desc[6]}
 \end_layout
 
 \end_inset
 
  kgs.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{desc[7]}
+\end_layout
+
+\end_inset
+
+ percent of traders indicate that they also trade in other agricultural
+ commodities aside from maize.
+ 
 \end_layout
 
 \begin_layout Subsection
@@ -875,10 +891,25 @@ Processors
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-Other important actors of the maize supply chain are the processors who
- produce the final product from the harvested maize.
- In general, these take the form of maize mills that remove the bran from
- the maize kernels (the average number of debranning machines owned is 
+A third important actor in the maize supply chain is the processor.
+ In general, processors take the form of maize mills that remove the bran
+ from the maize kernels and mill the maize into maize flour for direct conumptio
+n.
+ Some processors also have packing facilities to produce maize flour for
+ supermarkets and export.
+ The smaller mills often provide milling as a service, whereby farmers come
+ with bags of maize for milling against a fee.
+ 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+There are again large differences between these processors.
+ Some maize mills located in remote rural areas are diesel engine powered
+ mills that are only able to produce low grade maize meal for home consumption.
+ However, larger processors use machines powered by three phase electric
+ power and mill multiple times to obtain fine export grade maize meal.
+ In our sample, we find that about 
 \begin_inset ERT
 status open
 
@@ -886,12 +917,12 @@ status open
 
 
 \backslash
-Sexpr{format(round(mean(as.numeric(millers$hh.maize.q27), na.rm=TRUE)),nsmall=0)}
+Sexpr{desc[8]}
 \end_layout
 
 \end_inset
 
-) and mill the maize (the average number of milling machines owned is 
+ percent of the millers use diesel mills, while 
 \begin_inset ERT
 status open
 
@@ -899,13 +930,18 @@ status open
 
 
 \backslash
-Sexpr{format(round(mean(as.numeric(millers$hh.maize.q26), na.rm=TRUE)),nsmall=0)}
+Sexpr{desc[9]}
 \end_layout
 
 \end_inset
 
-).
- On an average, 
+ percent rely on three phase electric power.
+ The quality of end product is indicated in grades, from highest (grade
+ 1) to lowest (grade 3).
+ The grade that can be obtained depends on a variety of factors, including
+ the number of times the product is passed through the mill, the quality
+ of the grain used and the type of mill.
+ About 
 \begin_inset ERT
 status open
 
@@ -919,7 +955,8 @@ Sexpr{format(round(mean(as.numeric(millers$hh.maize.q14.1)*100, na.rm=TRUE)),nsm
 
 \end_inset
 
- percent produce grade I flour, 
+ percent of processors indicate that they can also produce grade 1 flour.
+ In our sample, we see that only 
 \begin_inset ERT
 status open
 
@@ -927,83 +964,12 @@ status open
 
 
 \backslash
-Sexpr{format(round(mean(as.numeric(millers$hh.maize.q14.2)*100, na.rm=TRUE)),nsmall=0
-)}
+Sexpr{format( round(mean(millers$gender, na.rm=T)*100, digits=2),nsmall=0)}
 \end_layout
 
 \end_inset
 
- percent produce grade II and 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(mean(as.numeric(millers$hh.maize.q14.3)*100, na.rm=TRUE)),nsmall=0
-)}
-\end_layout
-
-\end_inset
-
- percent produce grade III.
- 
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-There are again large differences between these processors.
- Some maize mills located in remote rural areas are combustion engine powered
- mills that are only able to produce low grade maize meal for home consumption.
- However, larger processors use machines powered by three phase electric
- power and mill multiple times to obtain fine export grade maize meal.
- We observe that on an average,  
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(table(millers$hh.maize.q28)[1]/sum(table(millers$hh.maize.q28))*1
-00,digits=0),nsmall=0)}
-\end_layout
-
-\end_inset
-
- percent of the millers use machines powered by three phase electric power.
- The average minimum quantity milled by these processors is 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(mean(as.numeric(millers$hh.maize.q23a), na.rm=TRUE)),nsmall=0)}
-\end_layout
-
-\end_inset
-
- kgs.
- Some processors also have packing facilities to produce maize meal for
- supermarkets and export.
- The smaller mills often only provide milling as a service, whereby farmers
- come with bags of maize for milling against a fee.
- Larger mills also often buy maize for processing.
- In our sample, we see that only 7 percent of processors is a woman (Table
- 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:table2"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
-).
+ percent of processors are woman.
  
 \end_layout
 
@@ -1012,30 +978,166 @@ Farmers
 \end_layout
 
 \begin_layout Standard
-Central in our study of the maize value chains are farmers, who buy inputs
- such as seed and fertilizer from agro-input dealers, sell to traders and/or
+Central in our study are smallholder maize farmers, who buy inputs such
+ as seed and fertilizer from agro-input dealers, sell to traders and/or
  use milers to process their maize for own consumption.
- These are generally small farmers, cultivating maize on 
-\begin_inset Note Note
+ These are generally small farmers, cultivating maize on one or two plots,
+ corresponding to 
+\begin_inset ERT
 status open
 
 \begin_layout Plain Layout
-X
-\end_layout
 
-\end_inset
 
- plots, corresponding to 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-X
+\backslash
+Sexpr{desc[10]}
 \end_layout
 
 \end_inset
 
  acres.
+ The average age of the farmers is 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(farmers$hh.maize.q24, na.rm=T),digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{desc[11]}
+\end_layout
+
+\end_inset
+
+ percent finished only primary education.
+ The average distance of farmers' homestead to tarmac road is 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(farmers$hh.maize.q13, na.rm=T),digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ km and to an all weather feeder road is 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{format(round(mean(farmers$hh.maize.q14, na.rm=T),digits=2),nsmall=0)}
+\end_layout
+
+\end_inset
+
+ km.
+ 
+\end_layout
+
+\begin_layout Standard
+About 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{desc[12]}
+\end_layout
+
+\end_inset
+
+ percent of farmers used improved seed on their plot, while 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{desc[13]}
+\end_layout
+
+\end_inset
+
+ percent used inorganic fertilizer.
+ Yields in our sample amount to 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{desc[14]}
+\end_layout
+
+\end_inset
+
+ kg/acre.
+ More than 95 percent of farmers in our sample report that they took part
+ of the maize to a miller.
+ In terms of market participation, we find that 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{desc[15]}
+\end_layout
+
+\end_inset
+
+ percent of farmers sold at least part of their crop.
+ Those who reported selling sold on average 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{desc[16]}
+\end_layout
+
+\end_inset
+
+ kg, which corresponds to about 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{desc[17]}
+\end_layout
+
+\end_inset
+
+ percent of the total maize harvest.
  In our sample, 
 \begin_inset ERT
 status open
@@ -1051,72 +1153,7 @@ Sexpr{format(round(table(farmers$hh.maize.q25)[1]/sum(table(farmers$hh.maize.q25
 \end_inset
 
  percent of the farmers are women.
- The average age of the farmers is 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(mean(farmers$hh.maize.q24, na.rm=T),digits=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
-.
- The average distance of farmers' homestead to tarmac road is 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(mean(farmers$hh.maize.q13, na.rm=T),digits=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
- kms and to murram road is 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(mean(farmers$hh.maize.q14, na.rm=T),digits=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
- km.
- About 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-X
-\end_layout
-
-\end_inset
-
-percent of farmers used improved seed on their plot, while 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-x
-\end_layout
-
-\end_inset
-
- percent used inorganic fertilizer (q59 or q60).
- Yields in our sample amount to X kg/acre.
- In terms of market participation, we find that q101 percent of farmers
- sold at least part of their crop.
- Those who reported selling sold on average X kg.
+ 
 \end_layout
 
 \begin_layout Section
@@ -1330,8 +1367,8 @@ literal "true"
 
  find that in the hotel industry, male department managers tend to hold
  inflated self-assessments, while the women assessed themselves lower.
- Similar patterns have consistently been found in a variety of contexts
- 
+ Similar patterns have consistently beenas among all the dimensions, the
+ highest percentage adhere to a score found in a variety of contexts 
 \begin_inset CommandInset citation
 LatexCommand citep
 before "eg."
@@ -1673,42 +1710,22 @@ name "subsec:Variables"
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-Summary statistics for the main variables used in this study are presented
- in tables 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:table1"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
- and 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:table2"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
-.
- Each farmer rates a minimum of one input dealer, trader, or miller to a
- maximum of three input dealers, traders, or millers (ratees).
- Farmer's perceptions about the ratees and ratee's perceptions about themselves
- are derived from scores given on four dimensions: location, quality, price,
- and reputation.
- The averages of these dimension-based ratings are obtained to get the overall
- average ratings (for both ratings from farmers and self-ratings).
+This section focuses on the central indicators used in this study—the ratings.
+ To obtain the ratings, each farmer was asked to rate between one and three
+ of each of the three actors (input dealers, traders, and millers).
+ Farmer's perceptions about the other value chain actors and the other value
+ chain actors' perceptions about themselves are derived from scores given
+ on four dimensions: location, quality, price, and reputation.
+ The averages of these dimension-based ratings are obtained to get an overall
+ ratings (for both ratings from farmers of other value chain actors and
+ self-ratings of other value chain actors).
  
 \end_layout
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-Several methods have been proposed and used to measure respondents’ perceptions,
- attitudes, or beliefs in social science research.
+Several methods have been proposed to measure perceptions, attitudes, or
+ beliefs in social science research.
  
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -1739,19 +1756,7 @@ noprefix "false"
 
 \end_inset
 
- presents the variables obtained from the farmers.
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-I would focus these table on ratings only and remove all characteristics
- of the farmers and actors and put this in the descriptive part (not as
- a table).
- 
-\end_layout
-
-\end_inset
-
+ presents the ratings obtained from the farmers.
  It shows average scores over all value chain actors (top panel), and average
  scores for each actor separately in the four dimensions.
  Farmers are generally positive about dealers, traders and processors.
@@ -1769,8 +1774,8 @@ pool$farmerID))*100,digits=0),nsmall=0)}
 
 \end_inset
 
- percent of the farmers rated the ratees in the lowest category on the location
- dimension (score of 1), while about 
+ percent of all the ratings that were given by the farmers were the lowest
+ score of 1, while about 
 \begin_inset ERT
 status open
 
@@ -1784,9 +1789,10 @@ pool$farmerID))*100,digits=0),nsmall=0)}
 
 \end_inset
 
- percent gave the highest rating for ease of reaching the ratee (score of
- 5).
- 
+ percent of the rating were a five.
+ Interestingly, traders seem to get slightly better ratings.
+ Ratings are lowest when farmers are asked to consider price competitiveness
+ of the actors.
 \end_layout
 
 \begin_layout Standard
@@ -1802,9 +1808,9 @@ noprefix "false"
 
  shows summary statistics for the self-ratings from agro-input dealers,
  traders, and maize processors.
- The ratees (dealers, traders, and millers) seem to be very confident about
- their reputation as among all the dimensions, the highest percentage give
- a self-score of 5 for reputation (
+ These actors seem to be very confident about their reputation as among
+ all the dimensions, the highest percentage give a self-score of 5 for reputatio
+n (
 \begin_inset ERT
 status open
 
@@ -1821,99 +1827,6 @@ Sexpr{format(round(sum(table(pool$id.ratee[pool$rating_reputation_ratee>=5]))/su
  percent).
  They seem to be the least confident about their location as among all the
  dimensions, the highest percentage adhere to a score of at most 2 for location.
- 
-\end_layout
-
-\begin_layout Standard
-Gender, education, and marital status of these supply chain actors are dummy
- variables.
- Women consist of 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(table(dealers$hh.maize.q7)[1]/sum(table(dealers$hh.maize.q7))*100
-,digits=0),nsmall=0)}
-\end_layout
-
-\end_inset
-
- percent of the input dealers, only 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(table(traders$hh.maize.q7)[1]/sum(table(traders$hh.maize.q7))*100
-,digits=0),nsmall=0)}
-\end_layout
-
-\end_inset
-
- percent of the traders and only 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(table(millers$hh.maize.q7)[1]/sum(table(millers$hh.maize.q7))*100
-,digits=0),nsmall=0)}
-\end_layout
-
-\end_inset
-
- percent of the millers.
- A good share of these supply chain actors have finished primary education
- and are married.
- Although the average age of the dealers, traders and millers is between
- 35 and 40 years, there is noticeable variation in the oldest actor observed.
- The oldest input dealer is 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(max(dealers$hh.maize.q6g, na.rm=T),digits=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
- years old; the oldest trader is 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(max(traders$hh.maize.q6, na.rm=T),digits=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
- years old while the oldest miller is 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(max(millers$hh.maize.q6g, na.rm=T),digits=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
- years old.
  
 \end_layout
 
@@ -11991,7 +11904,7 @@ Tables
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \paragraph_spacing single
@@ -13269,156 +13182,6 @@ Sexpr{format( round(quantile(dealers$hh.maize.q83, na.rm=T, 0.75), digits=2),nsm
 
 \begin_layout Plain Layout
 
-{
-\backslash
-textit{Dealer is female}}       & $
-\backslash
-Sexpr{format( round(mean(dealers$gender, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(sd(dealers$gender, na.rm=T), digits=2),nsmall=0)}$  
-      & $
-\backslash
-Sexpr{format( round(min(dealers$gender, na.rm=T), digits=2),nsmall=0)}$ 
-       & $
-\backslash
-Sexpr{format( round(max(dealers$gender, na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(dealers$gender, na.rm=T, 0.25), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(dealers$gender, na.rm=T, 0.75), digits=2),nsmall=0)}$
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\backslash
-textit{Dealer's age (in years)}}       & $
-\backslash
-Sexpr{format( round(mean(dealers$hh.maize.q6g, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(sd(dealers$hh.maize.q6g, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(min(dealers$hh.maize.q6g, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(max(dealers$hh.maize.q6g, na.rm=T), digits=2),nsmall=0)}$
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(dealers$hh.maize.q6g, na.rm=T, 0.25), digits=2),nsmall=
-0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(dealers$hh.maize.q6g, na.rm=T, 0.75), digits=2),nsmall=
-0)}$
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\backslash
-textit{Dealer has finished primary education}}       & $
-\backslash
-Sexpr{format( round(mean(dealers$educ, na.rm=T), digits=2),nsmall=0)}$  
-      & $
-\backslash
-Sexpr{format( round(sd(dealers$educ, na.rm=T), digits=2),nsmall=0)}$    
-    & $
-\backslash
-Sexpr{format( round(min(dealers$educ, na.rm=T), digits=2),nsmall=0)}$   
-     & $
-\backslash
-Sexpr{format( round(max(dealers$educ, na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(dealers$educ, na.rm=T, 0.25), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(dealers$educ, na.rm=T, 0.75), digits=2),nsmall=0)}$
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\backslash
-textit{Dealer is married}}       & $
-\backslash
-Sexpr{format( round(mean(dealers$married, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(sd(dealers$married, na.rm=T), digits=2),nsmall=0)}$ 
-       & $
-\backslash
-Sexpr{format( round(min(dealers$married, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(max(dealers$married, na.rm=T), digits=2),nsmall=0)}$
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(dealers$married, na.rm=T, 0.25), digits=2),nsmall=0)}
-$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(dealers$married, na.rm=T, 0.75), digits=2),nsmall=0)}
-$
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
 
 \backslash
 cline{2-7} 
@@ -13641,155 +13404,6 @@ Sexpr{format( round(quantile(traders$hh.maize.q40e, na.rm=T, 0.25), digits=2),ns
 \backslash
 Sexpr{format( round(quantile(traders$hh.maize.q40e, na.rm=T, 0.75), digits=2),nsmall
 =0)}$
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\backslash
-textit{Trader is female}}       & $
-\backslash
-Sexpr{format( round(mean(traders$gender, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(sd(traders$gender, na.rm=T), digits=2),nsmall=0)}$  
-      & $
-\backslash
-Sexpr{format( round(min(traders$gender, na.rm=T), digits=2),nsmall=0)}$ 
-       & $
-\backslash
-Sexpr{format( round(max(traders$gender, na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(traders$gender, na.rm=T, 0.25), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(traders$gender, na.rm=T, 0.75), digits=2),nsmall=0)}$
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\backslash
-textit{Trader's age (in years)}}       & $
-\backslash
-Sexpr{format( round(mean(traders$hh.maize.q6, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(sd(traders$hh.maize.q6, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(min(traders$hh.maize.q6, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(max(traders$hh.maize.q6, na.rm=T), digits=2),nsmall=0)}$
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(traders$hh.maize.q6, na.rm=T, 0.25), digits=2),nsmall=0
-)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(traders$hh.maize.q6, na.rm=T, 0.75), digits=2),nsmall=0
-)}$
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\backslash
-textit{Trader has finished primary education}}       & $
-\backslash
-Sexpr{format( round(mean(traders$educ, na.rm=T), digits=2),nsmall=0)}$  
-      & $
-\backslash
-Sexpr{format( round(sd(traders$educ, na.rm=T), digits=2),nsmall=0)}$    
-    & $
-\backslash
-Sexpr{format( round(min(traders$educ, na.rm=T), digits=2),nsmall=0)}$   
-     & $
-\backslash
-Sexpr{format( round(max(traders$educ, na.rm=T), digits=2),nsmall=0)}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(traders$educ, na.rm=T, 0.25), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(traders$educ, na.rm=T, 0.75), digits=2),nsmall=0)}$
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\backslash
-textit{Trader is married}}       & $
-\backslash
-Sexpr{format( round(mean(traders$married, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(sd(traders$married, na.rm=T), digits=2),nsmall=0)}$ 
-       & $
-\backslash
-Sexpr{format( round(min(traders$married, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(max(traders$married, na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(traders$married, na.rm=T, 0.25), digits=2),nsmall=0)}
-$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(traders$married, na.rm=T, 0.75), digits=2),nsmall=0)}
-$
 \backslash
 
 \backslash
@@ -14021,151 +13635,6 @@ Sexpr{format( round(quantile(millers$hh.maize.q40, na.rm=T, 0.75), digits=2),nsm
 
 \backslash
 
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\backslash
-textit{Miller is female}}       & $
-\backslash
-Sexpr{format( round(mean(millers$gender, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(sd(millers$gender, na.rm=T), digits=2),nsmall=0)}$  
-      & $
-\backslash
-Sexpr{format( round(min(millers$gender, na.rm=T), digits=2),nsmall=0)}$ 
-       & $
-\backslash
-Sexpr{format( round(max(millers$gender, na.rm=T), digits=2),nsmall=0)}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(millers$gender, na.rm=T, 0.25), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(millers$gender, na.rm=T, 0.75), digits=2),nsmall=0)}$
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\backslash
-textit{Miller's age (in years)}}       & $
-\backslash
-Sexpr{format( round(mean(millers$hh.maize.q6g, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(sd(millers$hh.maize.q6g, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(min(millers$hh.maize.q6g, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(max(millers$hh.maize.q6g, na.rm=T), digits=2),nsmall=0)}$
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(millers$hh.maize.q6g, na.rm=T, 0.25), digits=2),nsmall=
-0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(millers$hh.maize.q6g, na.rm=T, 0.75), digits=2),nsmall=
-0)}$
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\backslash
-textit{Miller has finished primary education}}       & $
-\backslash
-Sexpr{format( round(mean(millers$educ, na.rm=T), digits=2),nsmall=0)}$  
-      & $
-\backslash
-Sexpr{format( round(sd(millers$educ, na.rm=T), digits=2),nsmall=0)}$    
-    & $
-\backslash
-Sexpr{format( round(min(millers$educ, na.rm=T), digits=2),nsmall=0)}$   
-     & $
-\backslash
-Sexpr{format( round(max(millers$educ, na.rm=T), digits=2),nsmall=0)}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(millers$educ, na.rm=T, 0.25), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(millers$educ, na.rm=T, 0.75), digits=2),nsmall=0)}$
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\backslash
-textit{Miller is married}}       & $
-\backslash
-Sexpr{format( round(mean(millers$married, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(sd(millers$married, na.rm=T), digits=2),nsmall=0)}$ 
-       & $
-\backslash
-Sexpr{format( round(min(millers$married, na.rm=T), digits=2),nsmall=0)}$
-        & $
-\backslash
-Sexpr{format( round(max(millers$married, na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(millers$married, na.rm=T, 0.25), digits=2),nsmall=0)}
-$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format( round(quantile(millers$married, na.rm=T, 0.75), digits=2),nsmall=0)}
-$
 \end_layout
 
 \begin_layout Plain Layout
