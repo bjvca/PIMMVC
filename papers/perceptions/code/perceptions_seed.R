@@ -5179,43 +5179,43 @@ ranrd1<- rbind( c((format(round(sum(coefrd1[1,1]),digits=3),nsmall=0)),
 
 plmr_two1<-plm(score ~ genderdummy, data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
            effect = "twoway", random.method="walhus")
-coefr_two1<-coeftest(plmr_two1, vcovHC(plmr_two1, type = "HC0", cluster = "time"))
+coefr_two1<-coeftest(plmr_two1)
 summary(plmr_two1)
 coefr_two1
 
 plmr_two2<-plm(general ~ genderdummy, data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
            effect = "twoway", random.method="walhus")
-coefr_two2<-coeftest(plmr_two2, vcovHC(plmr_two2, type = "HC0", cluster = "time"))
+coefr_two2<-coeftest(plmr_two2)
 summary(plmr_two2)
 coefr_two2
 
 plmr_two3<-plm(yield ~ genderdummy, data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
            effect = "twoway", random.method="walhus")
-coefr_two3<-coeftest(plmr_two3, vcovHC(plmr_two3, type = "HC0", cluster = "time"))
+coefr_two3<-coeftest(plmr_two3)
 summary(plmr_two3)
 coefr_two3
 
 plmr_two4<-plm(drought_resistent ~ genderdummy, data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
            effect = "twoway", random.method="walhus")
-coefr_two4<-coeftest(plmr_two4, vcovHC(plmr_two4, type = "HC0", cluster = "time"))
+coefr_two4<-coeftest(plmr_two4)
 summary(plmr_two4)
 coefr_two4
 
 plmr_two5<-plm(disease_resistent ~ genderdummy, data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
            effect = "twoway", random.method="walhus")
-coefr_two5<-coeftest(plmr_two5, vcovHC(plmr_two5, type = "HC0", cluster = "time"))
+coefr_two5<-coeftest(plmr_two5)
 summary(plmr_two5)
 coefr_two5
 
 plmr_two6<-plm(early_maturing ~ genderdummy, data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
            effect = "twoway", random.method="walhus")
-coefr_two6<-coeftest(plmr_two6, vcovHC(plmr_two6, type = "HC0", cluster = "time"))
+coefr_two6<-coeftest(plmr_two6)
 summary(plmr_two6)
 coefr_two6
 
 plmr_two7<-plm(germination ~ genderdummy, data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
            effect = "twoway", random.method="walhus")
-coefr_two7<-coeftest(plmr_two7, vcovHC(plmr_two7, type = "HC0", cluster = "time"))
+coefr_two7<-coeftest(plmr_two7)
 summary(plmr_two7)
 coefr_two7
 
@@ -5377,7 +5377,7 @@ plmr_two8<-plm(score ~ genderdummy +educ_f+married+Check2.check.maize.q14+Check2
                +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
                  badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
                effect = "twoway", random.method="walhus")
-coefr_two8<-coeftest(plmr_two8, vcovHC(plmr_two8, type = "HC0", cluster = "time"))
+coefr_two8<-coeftest(plmr_two8)
 summary(plmr_two8)
 coefr_two8
 
@@ -5385,7 +5385,7 @@ plmr_two9<-plm(general ~ genderdummy +educ_f+married+Check2.check.maize.q14+Chec
                +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
                  badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
                effect = "twoway", random.method="walhus")
-coefr_two9<-coeftest(plmr_two9, vcovHC(plmr_two9, type = "HC0", cluster = "time"))
+coefr_two9<-coeftest(plmr_two9)
 summary(plmr_two9)
 coefr_two9
 
@@ -5393,7 +5393,7 @@ plmr_two10<-plm(yield ~ genderdummy +educ_f+married+Check2.check.maize.q14+Check
                +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
                  badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
                effect = "twoway", random.method="walhus")
-coefr_two10<-coeftest(plmr_two10, vcovHC(plmr_two10, type = "HC0", cluster = "time"))
+coefr_two10<-coeftest(plmr_two10)
 summary(plmr_two10)
 coefr_two10
 
@@ -5401,7 +5401,7 @@ plmr_two11<-plm(drought_resistent ~ genderdummy +educ_f+married+Check2.check.mai
                 +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
                   badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
                 effect = "twoway", random.method="walhus")
-coefr_two11<-coeftest(plmr_two11, vcovHC(plmr_two11, type = "HC0", cluster = "time"))
+coefr_two11<-coeftest(plmr_two11)
 summary(plmr_two11)
 coefr_two11
 
@@ -5409,7 +5409,7 @@ plmr_two12<-plm(disease_resistent ~ genderdummy +educ_f+married+Check2.check.mai
                 +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
                   badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
                 effect = "twoway", random.method="walhus")
-coefr_two12<-coeftest(plmr_two12, vcovHC(plmr_two12, type = "HC0", cluster = "time"))
+coefr_two12<-coeftest(plmr_two12)
 summary(plmr_two12)
 coefr_two12
 
@@ -5417,7 +5417,7 @@ plmr_two13<-plm(early_maturing ~ genderdummy +educ_f+married+Check2.check.maize.
                 +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
                   badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
                 effect = "twoway", random.method="walhus")
-coefr_two13<-coeftest(plmr_two13, vcovHC(plmr_two13, type = "HC0", cluster = "time"))
+coefr_two13<-coeftest(plmr_two13)
 summary(plmr_two13)
 coefr_two13
 
@@ -5425,7 +5425,7 @@ plmr_two14<-plm(germination ~ genderdummy +educ_f+married+Check2.check.maize.q14
                 +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
                   badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
                 effect = "twoway", random.method="walhus")
-coefr_two14<-coeftest(plmr_two14, vcovHC(plmr_two14, type = "HC0", cluster = "time"))
+coefr_two14<-coeftest(plmr_two14)
 summary(plmr_two14)
 coefr_two14
 
@@ -7599,44 +7599,44 @@ rannd1<- rbind( c((format(round(sum(coefnn1[1,1]),digits=3),nsmall=0)),
 
 plmn_two1<-plm(overall_rating ~ genderdummy , data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
            effect = "twoway", random.method = "walhus")
-coefn_two1<-coeftest(plmn_two1, vcovHC(plmn_two1, type = "HC0", cluster = "time"))
+coefn_two1<-coeftest(plmn_two1)
 summary(plmn_two1)
 coefn_two1
 
 
 plmn_two2<-plm(general_rating_nonseed ~ genderdummy , data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
                effect = "twoway", random.method = "walhus")
-coefn_two2<-coeftest(plmn_two2, vcovHC(plmn_two2, type = "HC0", cluster = "time"))
+coefn_two2<-coeftest(plmn_two2)
 summary(plmn_two2)
 coefn_two2
 
 plmn_two3<-plm(location ~ genderdummy , data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
                effect = "twoway", random.method = "walhus")
-coefn_two3<-coeftest(plmn_two3, vcovHC(plmn_two3, type = "HC0", cluster = "time"))
+coefn_two3<-coeftest(plmn_two3)
 summary(plmn_two3)
 coefn_two3
 
 plmn_two4<-plm(price ~ genderdummy , data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
                effect = "twoway", random.method = "walhus")
-coefn_two4<-coeftest(plmn_two4, vcovHC(plmn_two4, type = "HC0", cluster = "time"))
+coefn_two4<-coeftest(plmn_two4)
 summary(plmn_two4)
 coefn_two4
 
 plmn_two5<-plm(quality ~ genderdummy , data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
                effect = "twoway", random.method = "walhus")
-coefn_two5<-coeftest(plmn_two5, vcovHC(plmn_two5, type = "HC0", cluster = "time"))
+coefn_two5<-coeftest(plmn_two5)
 summary(plmn_two5)
 coefn_two5
 
 plmn_two6<-plm(stock ~ genderdummy , data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
                effect = "twoway", random.method = "walhus")
-coefn_two6<-coeftest(plmn_two6, vcovHC(plmn_two6, type = "HC0", cluster = "time"))
+coefn_two6<-coeftest(plmn_two6)
 summary(plmn_two6)
 coefn_two6
 
 plmn_two7<-plm(reputation ~ genderdummy , data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
                effect = "twoway", random.method = "walhus")
-coefn_two7<-coeftest(plmn_two7, vcovHC(plmn_two7, type = "HC0", cluster = "time"))
+coefn_two7<-coeftest(plmn_two7)
 summary(plmn_two7)
 coefn_two7
 
@@ -7801,7 +7801,7 @@ plmn_two8<-plm(overall_rating ~ genderdummy +educ_f+married+Check2.check.maize.q
                +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
                  badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
                effect = "twoway", random.method = "walhus")
-coefn_two8<-coeftest(plmn_two8, vcovHC(plmn_two8, type = "HC0", cluster = "time"))
+coefn_two8<-coeftest(plmn_two8)
 summary(plmn_two8)
 coefn_two8
 
@@ -7809,14 +7809,14 @@ plmn_two9<-plm(general_rating_nonseed ~ genderdummy +educ_f+married+Check2.check
                +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
                  badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
                effect = "twoway", random.method = "walhus")
-coefn_two9<-coeftest(plmn_two9, vcovHC(plmn_two9, type = "HC0", cluster = "time"))
+coefn_two9<-coeftest(plmn_two9)
 summary(plmn_two9)
 coefn_two9
 
 plmn_two10<-plm(location ~ genderdummy +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8  +maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4
                , data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
                effect = "twoway", random.method = "walhus")
-coefn_two10<-coeftest(plmn_two10, vcovHC(plmn_two10, type = "HC0", cluster = "time"))
+coefn_two10<-coeftest(plmn_two10)
 summary(plmn_two10)
 coefn_two10
 
@@ -7825,7 +7825,7 @@ plmn_two11<-plm(price ~ genderdummy +educ_f+married+Check2.check.maize.q14+Check
                   badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof
                 , data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
                 effect = "twoway", random.method = "walhus")
-coefn_two11<-coeftest(plmn_two11, vcovHC(plmn_two11, type = "HC0", cluster = "time"))
+coefn_two11<-coeftest(plmn_two11)
 summary(plmn_two11)
 coefn_two11
 
@@ -7834,14 +7834,14 @@ plmn_two12<-plm(quality~ genderdummy +educ_f+married+Check2.check.maize.q14+Chec
                   badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof
                 , data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
                 effect = "twoway", random.method = "walhus")
-coefn_two12<-coeftest(plmn_two12, vcovHC(plmn_two12, type = "HC0", cluster = "time"))
+coefn_two12<-coeftest(plmn_two12)
 summary(plmn_two12)
 coefn_two12
 
 plmn_two13<-plm(stock~ genderdummy +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8  +maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4
                 , data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
                 effect = "twoway", random.method = "walhus")
-coefn_two13<-coeftest(plmn_two13, vcovHC(plmn_two13, type = "HC0", cluster = "time"))
+coefn_two13<-coeftest(plmn_two13)
 summary(plmn_two13)
 coefn_two13
 
@@ -7850,7 +7850,7 @@ plmn_two14<-plm(reputation ~ genderdummy +educ_f+married+Check2.check.maize.q14+
                   badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof
                 , data =fedata,  model = "random", index = c( "farmer_ID", "shop_ID"),
                 effect = "twoway", random.method = "walhus")
-coefn_two14<-coeftest(plmn_two14, vcovHC(plmn_two14, type = "HC0", cluster = "time"))
+coefn_two14<-coeftest(plmn_two14)
 summary(plmn_two14)
 coefn_two14
 
@@ -13266,43 +13266,43 @@ ranb2<- rbind( c((format(round(sum(coefb8[1,1]),digits=3),nsmall=0)),
 
 plmbb1<-plm(score ~ farmergen, data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
            effect = "twoway", random.method = "walhus")
-coefbb1<-coeftest(plmbb1, vcovHC(plmbb1, type = "HC0", cluster = "time"))
+coefbb1<-coeftest(plmbb1)
 summary(plmbb1)
 coefbb1
 
 plmbb2<-plm(general ~ farmergen, data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
             effect = "twoway", random.method = "walhus")
-coefbb2<-coeftest(plmbb2, vcovHC(plmbb2, type = "HC0", cluster = "time"))
+coefbb2<-coeftest(plmbb2)
 summary(plmbb2)
 coefbb2
 
 plmbb3<-plm(yield ~ farmergen, data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
             effect = "twoway", random.method = "walhus")
-coefbb3<-coeftest(plmbb3, vcovHC(plmbb3, type = "HC0", cluster = "time"))
+coefbb3<-coeftest(plmbb3)
 summary(plmbb3)
 coefbb3
 
 plmbb4<-plm(drought_resistent ~ farmergen, data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
             effect = "twoway", random.method = "walhus")
-coefbb4<-coeftest(plmbb4, vcovHC(plmbb4, type = "HC0", cluster = "time"))
+coefbb4<-coeftest(plmbb4)
 summary(plmbb4)
 coefbb4
 
 plmbb5<-plm(disease_resistent ~ farmergen, data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
             effect = "twoway", random.method = "walhus")
-coefbb5<-coeftest(plmbb5, vcovHC(plmbb5, type = "HC0", cluster = "time"))
+coefbb5<-coeftest(plmbb5)
 summary(plmbb5)
 coefbb5
 
 plmbb6<-plm(early_maturing ~ farmergen, data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
             effect = "twoway", random.method = "walhus")
-coefbb6<-coeftest(plmbb6, vcovHC(plmbb6, type = "HC0", cluster = "time"))
+coefbb6<-coeftest(plmbb6)
 summary(plmbb6)
 coefbb6
 
 plmbb7<-plm(germination ~ farmergen, data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
             effect = "twoway", random.method = "walhus")
-coefbb7<-coeftest(plmbb7, vcovHC(plmbb7, type = "HC0", cluster = "time"))
+coefbb7<-coeftest(plmbb7)
 summary(plmbb7)
 coefbb7
 
@@ -13442,7 +13442,7 @@ plmbb8<-plm(score ~ farmergen+educ_f+married+Check2.check.maize.q14+Check2.check
                +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
             effect = "twoway", random.method = "walhus")
-coefbb8<-coeftest(plmbb8, vcovHC(plmbb8, type = "HC0", cluster = "time"))
+coefbb8<-coeftest(plmbb8)
 summary(plmbb8)
 coefbb8
 
@@ -13450,7 +13450,7 @@ plmbb9<-plm(general ~ farmergen+educ_f+married+Check2.check.maize.q14+Check2.che
               +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
             effect = "twoway", random.method = "walhus")
-coefbb9<-coeftest(plmbb9, vcovHC(plmbb9, type = "HC0", cluster = "time"))
+coefbb9<-coeftest(plmbb9)
 summary(plmbb9)
 coefbb9
 
@@ -13458,7 +13458,7 @@ plmbb10<-plm(yield ~ farmergen+educ_f+married+Check2.check.maize.q14+Check2.chec
                +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
                badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
             effect = "twoway", random.method = "walhus")
-coefbb10<-coeftest(plmbb10, vcovHC(plmbb10, type = "HC0", cluster = "time"))
+coefbb10<-coeftest(plmbb10)
 summary(plmbb10)
 coefbb10
 
@@ -13466,7 +13466,7 @@ plmbb11<-plm(drought_resistent ~ farmergen+educ_f+married+Check2.check.maize.q14
               +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
             effect = "twoway", random.method = "walhus")
-coefbb11<-coeftest(plmbb11, vcovHC(plmbb11, type = "HC0", cluster = "time"))
+coefbb11<-coeftest(plmbb11)
 summary(plmbb11)
 coefbb11
 
@@ -13474,7 +13474,7 @@ plmbb12<-plm(disease_resistent ~ farmergen+educ_f+married+Check2.check.maize.q14
                +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
                badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
             effect = "twoway", random.method = "walhus")
-coefbb12<-coeftest(plmbb12, vcovHC(plmbb12, type = "HC0", cluster = "time"))
+coefbb12<-coeftest(plmbb12)
 summary(plmbb12)
 coefbb12
 
@@ -13482,7 +13482,7 @@ plmbb13<-plm(early_maturing ~ farmergen+educ_f+married+Check2.check.maize.q14+Ch
                +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
                badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
             effect = "twoway", random.method = "walhus")
-coefbb13<-coeftest(plmbb13, vcovHC(plmbb13, type = "HC0", cluster = "time"))
+coefbb13<-coeftest(plmbb13)
 summary(plmbb13)
 coefbb13
 
@@ -13490,7 +13490,7 @@ plmbb14<-plm(germination ~ farmergen+educ_f+married+Check2.check.maize.q14+Check
                +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
                badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
             effect = "twoway", random.method = "walhus")
-coefbb14<-coeftest(plmbb14, vcovHC(plmbb14, type = "HC0", cluster = "time"))
+coefbb14<-coeftest(plmbb14)
 summary(plmbb14)
 coefbb14
 
@@ -15642,43 +15642,43 @@ ranbn2<- rbind( c((format(round(sum(coefbnr1[1,1]),digits=3),nsmall=0)),
 # #### Two way random effect at the dealer level and farmer level  -- no controls 
 plmbn_two1<-plm(overall_rating ~ farmergen , data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
             effect = "twoway", random.method = "walhus")
-coefbn_two1<-coeftest(plmbn_two1,  vcovHC(plmbn_two1, type = "HC0", cluster = "time"))
+coefbn_two1<-coeftest(plmbn_two1)
 summary(plmbn_two1)
 coefbn_two1
 
 plmbn_two2<-plm(general_rating_nonseed ~ farmergen , data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
                 effect = "twoway", random.method = "walhus")
-coefbn_two2<-coeftest(plmbn_two2,  vcovHC(plmbn_two2, type = "HC0", cluster = "time"))
+coefbn_two2<-coeftest(plmbn_two2)
 summary(plmbn_two2)
 coefbn_two2
 
 plmbn_two3<-plm(location ~ farmergen , data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
                 effect = "twoway", random.method = "walhus")
-coefbn_two3<-coeftest(plmbn_two3,  vcovHC(plmbn_two3, type = "HC0", cluster = "time"))
+coefbn_two3<-coeftest(plmbn_two3)
 summary(plmbn_two3)
 coefbn_two3
 
 plmbn_two4<-plm(price ~ farmergen , data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
                 effect = "twoway", random.method = "walhus")
-coefbn_two4<-coeftest(plmbn_two4,  vcovHC(plmbn_two4, type = "HC0", cluster = "time"))
+coefbn_two4<-coeftest(plmbn_two4)
 summary(plmbn_two4)
 coefbn_two4
 
 plmbn_two5<-plm(quality ~ farmergen , data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
                 effect = "twoway", random.method = "walhus")
-coefbn_two5<-coeftest(plmbn_two5,  vcovHC(plmbn_two5, type = "HC0", cluster = "time"))
+coefbn_two5<-coeftest(plmbn_two5)
 summary(plmbn_two5)
 coefbn_two5
 
 plmbn_two6<-plm(stock ~ farmergen , data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
                 effect = "twoway", random.method = "walhus")
-coefbn_two6<-coeftest(plmbn_two6,  vcovHC(plmbn_two6, type = "HC0", cluster = "time"))
+coefbn_two6<-coeftest(plmbn_two6)
 summary(plmbn_two6)
 coefbn_two6
 
 plmbn_two7<-plm(reputation ~ farmergen , data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
                 effect = "twoway", random.method = "walhus")
-coefbn_two7<-coeftest(plmbn_two7,  vcovHC(plmbn_two7, type = "HC0", cluster = "time"))
+coefbn_two7<-coeftest(plmbn_two7)
 summary(plmbn_two7)
 coefbn_two7
 
@@ -15823,7 +15823,7 @@ plmbn_two8<-plm(overall_rating ~ farmergen +educ_f+married+Check2.check.maize.q1
                   +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
                   badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof , data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
                 effect = "twoway", random.method = "walhus")
-coefbn_two8<-coeftest(plmbn_two8,  vcovHC(plmbn_two8, type = "HC0", cluster = "time"))
+coefbn_two8<-coeftest(plmbn_two8)
 summary(plmbn_two8)
 coefbn_two8
 
@@ -15831,13 +15831,13 @@ plmbn_two9<-plm(general_rating_nonseed ~ farmergen +educ_f+married+Check2.check.
                   +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
                   badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof , data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
                 effect = "twoway", random.method = "walhus")
-coefbn_two9<-coeftest(plmbn_two9,  vcovHC(plmbn_two9, type = "HC0", cluster = "time"))
+coefbn_two9<-coeftest(plmbn_two9)
 summary(plmbn_two9)
 coefbn_two9
 
 plmbn_two10<-plm(location ~ farmergen +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4 , data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
                 effect = "twoway", random.method = "walhus")
-coefbn_two10<-coeftest(plmbn_two10,  vcovHC(plmbn_two10, type = "HC0", cluster = "time"))
+coefbn_two10<-coeftest(plmbn_two10)
 summary(plmbn_two10)
 coefbn_two10
 
@@ -15845,7 +15845,7 @@ plmbn_two11<-plm(price ~ farmergen +educ_f+married+Check2.check.maize.q14+Check2
                    +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
                    badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof , data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
                 effect = "twoway", random.method = "walhus")
-coefbn_two11<-coeftest(plmbn_two11,  vcovHC(plmbn_two11, type = "HC0", cluster = "time"))
+coefbn_two11<-coeftest(plmbn_two11)
 summary(plmbn_two11)
 coefbn_two11
 
@@ -15853,13 +15853,13 @@ plmbn_two12<-plm(quality ~ farmergen  +educ_f+married+Check2.check.maize.q14+Che
                    +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
                    badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
                 effect = "twoway", random.method = "walhus")
-coefbn_two12<-coeftest(plmbn_two12,  vcovHC(plmbn_two12, type = "HC0", cluster = "time"))
+coefbn_two12<-coeftest(plmbn_two12)
 summary(plmbn_two12)
 coefbn_two12
 
 plmbn_two13<-plm(stock ~ farmergen +educ_f+married+Check2.check.maize.q14+Check2.check.maize.q8+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4, data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
                 effect = "twoway", random.method = "walhus")
-coefbn_two13<-coeftest(plmbn_two13,  vcovHC(plmbn_two13, type = "HC0", cluster = "time"))
+coefbn_two13<-coeftest(plmbn_two13)
 summary(plmbn_two13)
 coefbn_two13
 
@@ -15867,7 +15867,7 @@ plmbn_two14<-plm(reputation ~ farmergen +educ_f+married+Check2.check.maize.q14+C
                    +years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
                    badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof , data =fedatad,  model = "random", index = c("shop_ID.x", "farmer_ID"),
                 effect = "twoway", random.method = "walhus")
-coefbn_two14<-coeftest(plmbn_two14,  vcovHC(plmbn_two14, type = "HC0", cluster = "time"))
+coefbn_two14<-coeftest(plmbn_two14)
 summary(plmbn_two14)
 coefbn_two14
 
@@ -17285,6 +17285,494 @@ coefbnn_two14<-coeftest(plmbnn_two14,  vcovHC(plmbnn_two14, type = "HC0", cluste
 summary(plmbnn_two14)
 coefbnn_two14
 
+
+
+
+ranbn5<- rbind( c((format(round(sum(coefbnn_two8[1,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two9[1,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two10[1,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two11[1,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two12[1,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two13[1,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two14[1,1]),digits=3),nsmall=0))),
+                c((format(round(coefbnn_two8[1,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two9[1,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two10[1,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two11[1,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two12[1,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two13[1,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two14[1,2],digits=3),nsmall=0))),
+                c((format(round(coefbnn_two8[1,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two9[1,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two10[1,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two11[1,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two12[1,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two13[1,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two14[1,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefbnn_two8[2,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two9[2,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two10[2,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two11[2,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two12[2,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two13[2,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two14[2,1]),digits=3),nsmall=0))),
+                c((format(round(coefbnn_two8[2,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two9[2,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two10[2,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two11[2,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two12[2,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two13[2,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two14[2,2],digits=3),nsmall=0))),
+                c((format(round(coefbnn_two8[2,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two9[2,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two10[2,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two11[2,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two12[2,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two13[2,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two14[2,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefbnn_two8[3,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two9[3,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two10[3,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two11[3,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two12[3,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two13[3,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two14[3,1]),digits=3),nsmall=0))),
+                c((format(round(coefbnn_two8[3,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two9[3,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two10[3,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two11[3,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two12[3,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two13[3,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two14[3,2],digits=3),nsmall=0))),
+                c((format(round(coefbnn_two8[3,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two9[3,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two10[3,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two11[3,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two12[3,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two13[3,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two14[3,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefbnn_two8[4,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two9[4,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two10[4,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two11[4,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two12[4,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two13[4,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two14[4,1]),digits=3),nsmall=0))),
+                c((format(round(coefbnn_two8[4,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two9[4,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two10[4,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two11[4,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two12[4,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two13[4,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two14[4,2],digits=3),nsmall=0))),
+                c((format(round(coefbnn_two8[4,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two9[4,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two10[4,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two11[4,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two12[4,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two13[4,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two14[4,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefbnn_two8[5,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two9[5,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two10[5,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two11[5,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two12[5,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two13[5,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two14[5,1]),digits=3),nsmall=0))),
+                c((format(round(coefbnn_two8[5,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two9[5,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two10[5,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two11[5,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two12[5,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two13[5,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two14[5,2],digits=3),nsmall=0))),
+                c((format(round(coefbnn_two8[5,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two9[5,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two10[5,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two11[5,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two12[5,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two13[5,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two14[5,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefbnn_two8[6,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two9[6,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two10[6,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two11[6,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two12[6,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two13[6,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two14[6,1]),digits=3),nsmall=0))),
+                c((format(round(coefbnn_two8[6,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two9[6,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two10[6,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two11[6,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two12[6,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two13[6,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two14[6,2],digits=3),nsmall=0))),
+                c((format(round(coefbnn_two8[6,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two9[6,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two10[6,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two11[6,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two12[6,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two13[6,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two14[6,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefbnn_two8[7,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two9[7,1]),digits=3),nsmall=0)),
+                  0,
+                  (format(round(sum(coefbnn_two11[7,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two12[7,1]),digits=3),nsmall=0)),
+                  0,
+                  (format(round(sum(coefbnn_two14[7,1]),digits=3),nsmall=0))),
+                c((format(round(coefbnn_two8[7,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two9[7,2],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefbnn_two11[7,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two12[7,2],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefbnn_two14[7,2],digits=3),nsmall=0))),
+                c((format(round(coefbnn_two8[7,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two9[7,4],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefbnn_two11[7,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two12[7,4],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefbnn_two14[7,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefbnn_two8[8,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two9[8,1]),digits=3),nsmall=0)),
+                  0,
+                  (format(round(sum(coefbnn_two11[8,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two12[8,1]),digits=3),nsmall=0)),
+                  0,
+                  (format(round(sum(coefbnn_two14[8,1]),digits=3),nsmall=0))),
+                c((format(round(coefbnn_two8[8,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two9[8,2],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefbnn_two11[8,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two12[8,2],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefbnn_two14[8,2],digits=3),nsmall=0))),
+                c((format(round(coefbnn_two8[8,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two9[8,4],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefbnn_two11[8,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two12[8,4],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefbnn_two14[8,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefbnn_two8[9,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two9[9,1]),digits=3),nsmall=0)),
+                  0,
+                  (format(round(sum(coefbnn_two11[9,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two12[9,1]),digits=3),nsmall=0)),
+                  0,
+                  (format(round(sum(coefbnn_two14[9,1]),digits=3),nsmall=0))),
+                c((format(round(coefbnn_two8[9,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two9[9,2],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefbnn_two11[9,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two12[9,2],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefbnn_two14[9,2],digits=3),nsmall=0))),
+                c((format(round(coefbnn_two8[9,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two9[9,4],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefbnn_two11[9,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two12[9,4],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefbnn_two14[9,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefbnn_two8[10,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two9[10,1]),digits=3),nsmall=0)),
+                  0,
+                  (format(round(sum(coefbnn_two11[10,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two12[10,1]),digits=3),nsmall=0)),
+                  0,
+                  (format(round(sum(coefbnn_two14[10,1]),digits=3),nsmall=0))),
+                c((format(round(coefbnn_two8[10,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two9[10,2],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefbnn_two11[10,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two12[10,2],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefbnn_two14[10,2],digits=3),nsmall=0))),
+                c((format(round(coefbnn_two8[10,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two9[10,4],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefbnn_two11[10,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two12[10,4],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefbnn_two14[10,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefbnn_two8[11,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two9[11,1]),digits=3),nsmall=0)),
+                  0,
+                  (format(round(sum(coefbnn_two11[11,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two12[11,1]),digits=3),nsmall=0)),
+                  0,
+                  (format(round(sum(coefbnn_two14[11,1]),digits=3),nsmall=0))),
+                c((format(round(coefbnn_two8[11,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two9[11,2],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefbnn_two11[11,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two12[11,2],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefbnn_two14[11,2],digits=3),nsmall=0))),
+                c((format(round(coefbnn_two8[11,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two9[11,4],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefbnn_two11[11,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two12[11,4],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefbnn_two14[11,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefbnn_two8[12,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two9[12,1]),digits=3),nsmall=0)),
+                  0,
+                  (format(round(sum(coefbnn_two11[12,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two12[12,1]),digits=3),nsmall=0)),
+                  0,
+                  (format(round(sum(coefbnn_two14[12,1]),digits=3),nsmall=0))),
+                c((format(round(coefbnn_two8[12,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two9[12,2],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefbnn_two11[12,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two12[12,2],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefbnn_two14[12,2],digits=3),nsmall=0))),
+                c((format(round(coefbnn_two8[12,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two9[12,4],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefbnn_two11[12,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two12[12,4],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefbnn_two14[12,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefbnn_two8[13,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two9[13,1]),digits=3),nsmall=0)),
+                  0,
+                  (format(round(sum(coefbnn_two11[13,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two12[13,1]),digits=3),nsmall=0)),
+                  0,
+                  (format(round(sum(coefbnn_two14[13,1]),digits=3),nsmall=0))),
+                c((format(round(coefbnn_two8[13,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two9[13,2],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefbnn_two11[13,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two12[13,2],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefbnn_two14[13,2],digits=3),nsmall=0))),
+                c((format(round(coefbnn_two8[13,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two9[13,4],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefbnn_two11[13,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two12[13,4],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefbnn_two14[13,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefbnn_two8[14,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two9[14,1]),digits=3),nsmall=0)),
+                  0,
+                  (format(round(sum(coefbnn_two11[14,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two12[14,1]),digits=3),nsmall=0)),
+                  0,
+                  (format(round(sum(coefbnn_two14[14,1]),digits=3),nsmall=0))),
+                c((format(round(coefbnn_two8[14,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two9[14,2],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefbnn_two11[14,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two12[14,2],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefbnn_two14[14,2],digits=3),nsmall=0))),
+                c((format(round(coefbnn_two8[14,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two9[14,4],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefbnn_two11[14,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two12[14,4],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefbnn_two14[14,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefbnn_two8[15,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two9[15,1]),digits=3),nsmall=0)),
+                  0,
+                  (format(round(sum(coefbnn_two11[15,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two12[15,1]),digits=3),nsmall=0)),
+                  0,
+                  (format(round(sum(coefbnn_two14[15,1]),digits=3),nsmall=0))),
+                c((format(round(coefbnn_two8[15,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two9[15,2],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefbnn_two11[15,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two12[15,2],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefbnn_two14[15,2],digits=3),nsmall=0))),
+                c((format(round(coefbnn_two8[15,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two9[15,4],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefbnn_two11[15,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two12[15,4],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefbnn_two14[15,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefbnn_two8[16,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two9[16,1]),digits=3),nsmall=0)),
+                  0,
+                  (format(round(sum(coefbnn_two11[16,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two12[16,1]),digits=3),nsmall=0)),
+                  0,
+                  (format(round(sum(coefbnn_two14[16,1]),digits=3),nsmall=0))),
+                c((format(round(coefbnn_two8[16,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two9[16,2],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefbnn_two11[16,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two12[16,2],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefbnn_two14[16,2],digits=3),nsmall=0))),
+                c((format(round(coefbnn_two8[16,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two9[16,4],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefbnn_two11[16,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two12[16,4],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefbnn_two14[16,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefbnn_two8[17,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two9[17,1]),digits=3),nsmall=0)),
+                  0,
+                  (format(round(sum(coefbnn_two11[17,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two12[17,1]),digits=3),nsmall=0)),
+                  0,
+                  (format(round(sum(coefbnn_two14[17,1]),digits=3),nsmall=0))),
+                c((format(round(coefbnn_two8[17,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two9[17,2],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefbnn_two11[17,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two12[17,2],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefbnn_two14[17,2],digits=3),nsmall=0))),
+                c((format(round(coefbnn_two8[17,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two9[17,4],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefbnn_two11[17,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two12[17,4],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefbnn_two14[17,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefbnn_two8[18,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two9[18,1]),digits=3),nsmall=0)),
+                  0,
+                  (format(round(sum(coefbnn_two11[18,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two12[18,1]),digits=3),nsmall=0)),
+                  0,
+                  (format(round(sum(coefbnn_two14[18,1]),digits=3),nsmall=0))),
+                c((format(round(coefbnn_two8[18,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two9[18,2],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefbnn_two11[18,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two12[18,2],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefbnn_two14[18,2],digits=3),nsmall=0))),
+                c((format(round(coefbnn_two8[18,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two9[18,4],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefbnn_two11[18,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two12[18,4],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefbnn_two14[18,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefbnn_two8[19,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two9[19,1]),digits=3),nsmall=0)),
+                  0,
+                  (format(round(sum(coefbnn_two11[19,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two12[19,1]),digits=3),nsmall=0)),
+                  0,
+                  (format(round(sum(coefbnn_two14[19,1]),digits=3),nsmall=0))),
+                c((format(round(coefbnn_two8[19,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two9[19,2],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefbnn_two11[19,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two12[19,2],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefbnn_two14[19,2],digits=3),nsmall=0))),
+                c((format(round(coefbnn_two8[19,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two9[19,4],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefbnn_two11[19,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two12[19,4],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefbnn_two14[19,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefbnn_two8[20,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two9[20,1]),digits=3),nsmall=0)),
+                  0,
+                  (format(round(sum(coefbnn_two11[20,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two12[20,1]),digits=3),nsmall=0)),
+                  0,
+                  (format(round(sum(coefbnn_two14[20,1]),digits=3),nsmall=0))),
+                c((format(round(coefbnn_two8[20,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two9[20,2],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefbnn_two11[20,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two12[20,2],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefbnn_two14[20,2],digits=3),nsmall=0))),
+                c((format(round(coefbnn_two8[20,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two9[20,4],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefbnn_two11[20,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two12[20,4],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefbnn_two14[20,4],digits=3),nsmall=0))),
+                
+                c((format(round(sum(coefbnn_two8[21,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two9[21,1]),digits=3),nsmall=0)),
+                  0,
+                  (format(round(sum(coefbnn_two11[21,1]),digits=3),nsmall=0)),
+                  (format(round(sum(coefbnn_two12[21,1]),digits=3),nsmall=0)),
+                  0,
+                  (format(round(sum(coefbnn_two14[21,1]),digits=3),nsmall=0))),
+                c((format(round(coefbnn_two8[21,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two9[21,2],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefbnn_two11[21,2],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two12[21,2],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefbnn_two14[21,2],digits=3),nsmall=0))),
+                c((format(round(coefbnn_two8[21,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two9[21,4],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefbnn_two11[21,4],digits=3),nsmall=0)),
+                  (format(round(coefbnn_two12[21,4],digits=3),nsmall=0)),
+                  0,
+                  (format(round(coefbnn_two14[21,4],digits=3),nsmall=0))),
+                
+                
+                
+                c((format(round(summary(plmbnn_two8)$r.squared[1],digits=3),nsmall=0)),
+                  (format(round(summary(plmbnn_two9)$r.squared[1],digits=3),nsmall=0)),
+                  (format(round(summary(plmbnn_two10)$r.squared[1],digits=3),nsmall=0)),
+                  (format(round(summary(plmbnn_two11)$r.squared[1],digits=3),nsmall=0)),
+                  (format(round(summary(plmbnn_two12)$r.squared[1],digits=3),nsmall=0)),
+                  (format(round(summary(plmbnn_two13)$r.squared[1],digits=3),nsmall=0)),
+                  (format(round(summary(plmbnn_two14)$r.squared[1],digits=3),nsmall=0))),
+                c((format(round(summary(plmbnn_two8)$r.squared[2],digits=3),nsmall=0)),
+                  (format(round(summary(plmbnn_two9)$r.squared[2],digits=3),nsmall=0)),
+                  (format(round(summary(plmbnn_two10)$r.squared[2],digits=3),nsmall=0)),
+                  (format(round(summary(plmbnn_two11)$r.squared[2],digits=3),nsmall=0)),
+                  (format(round(summary(plmbnn_two12)$r.squared[2],digits=3),nsmall=0)),
+                  (format(round(summary(plmbnn_two13)$r.squared[2],digits=3),nsmall=0)),
+                  (format(round(summary(plmbnn_two14)$r.squared[2],digits=3),nsmall=0))),
+                c((format(round(nobs(plmbnn_two8),digits=3),nsmall=0)),
+                  (format(round(nobs(plmbnn_two9),digits=3),nsmall=0)),
+                  (format(round(nobs(plmbnn_two10),digits=3),nsmall=0)),
+                  (format(round(nobs(plmbnn_two11),digits=3),nsmall=0)),
+                  (format(round(nobs(plmbnn_two12),digits=3),nsmall=0)),
+                  (format(round(nobs(plmbnn_two13),digits=3),nsmall=0)),
+                  (format(round(nobs(plmbnn_two14),digits=3),nsmall=0))))
 
 
 ###########################################################################################################################################
