@@ -3,11 +3,13 @@ path <- getwd()
 library(irrICC)
 library(reshape2)
 library(miceadds)
+library(tseries)
 
 options(scipen=999)
 path_2 <- strsplit(path, "/papers/perceptions")[[1]]
 
 desc <- array(NA, 100)
+
 ################# FARMERS ######################
 
 ##Farmers' dataset
@@ -564,15 +566,6 @@ mod5_gender <- lm.cluster(data = pool, formula = rating_overall ~  farmer_fem*ra
                           + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy, cluster="id.ratee") 
 se5 <- sqrt(diag(vcov(mod5_gender)))
 lm_res5<-mod5_gender$lm_res
-
-
-### test two way clustering
-library(multiwayvcov)
-library(lmtest)
-test <- lm(rating_overall ~  farmer_fem*ratee_fem + educ  + age + tarmac
-                          + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy, data=pool)
-test_se <- cluster.boot(test,c(pool$id.ratee,pool$farmerID))                        
-coeftest(test,test_se)
 
 
 #saving regression
@@ -3278,3 +3271,4 @@ fe_modrep <- lm(rating_reputation ~ farmerID, data = pool)
 summary(fe_modrep)
 #reject null at 5% -- significant 
 
+x <- read.matrix("test")
