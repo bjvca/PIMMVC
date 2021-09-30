@@ -1927,41 +1927,29 @@ name "sec:Econometric-Analysis"
 \end_layout
 
 \begin_layout Standard
-This section deals with the methodologies and estimation models used for
- the analysis.
- In order to understand the rating patterns, mean ratings from farmers and
- mean self-ratings are described in detail in the next section.
- Ratings from farmers and self-ratings are compared based on the sex of
- the farmers and the ratees, and differences in how women rate other women
- and how men rate other men are presented in section 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:Results"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
-.
+We start the analysis with a descriptive section based on simple averages
+ in subgroups of the data.
+ This is followed by a section that uses regression analysis for formal
+ testing of the hypotheses.
+ In this section, we elaborate on the specification of the models we will
+ estimate.
+ The regressions will be particularly useful to understand gender based
+ differences in the ratings 
 \end_layout
 
 \begin_layout Standard
-Next, we turn to the regression models to test the hypotheses laid out in
- section 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:Study-Hypotheses"
-plural "false"
-caps "false"
-noprefix "false"
+We start from the following multivariate regression specification:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+y_{f,a}=\alpha+\beta_{1}g_{f}^{F}+\beta_{2}g_{a}^{A}+\beta_{3}g_{f}^{F}*g_{a}^{A}+\gamma x_{f,a}+\varepsilon_{f,a}
+\end{equation}
 
 \end_inset
 
-.
- In order to understand gender-based impacts on the ratings from the farmers,
- the following multivariate regression specification is used where the standard
- errors are clustered at the ratee level:
+
 \end_layout
 
 \begin_layout Standard
@@ -2147,9 +2135,19 @@ a
 
 \emph default
 .
- The dataset used in the regression analyses is pooled, i.e., ratings for
- dealers, traders and processors (millers) are contained in the same dataset.
- 
+ As the number of women in some actor categories are very low, we decided
+ to run the analysis on the pooled dataset and include three fixed effects
+ for the actor type (dealer, trader, processor).
+ We use the approach proposed by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "doi:10.1198/jbes.2010.07136"
+literal "false"
+
+\end_inset
+
+ to allow for two-way non-nested clustering at the farmer and the ratee
+ level.
 \end_layout
 
 \begin_layout Standard
@@ -5165,7 +5163,18 @@ noprefix "false"
 \end_layout
 
 \begin_layout Standard
-Next, we focus on the comparison of self-ratings from women and men.
+Next, we focus on the comparison of self-ratings from women and men (hypothesis
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Hypothesis 3"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
  For overall average self-rating, women (
 \begin_inset ERT
 status open

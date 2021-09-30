@@ -566,6 +566,15 @@ se5 <- sqrt(diag(vcov(mod5_gender)))
 lm_res5<-mod5_gender$lm_res
 
 
+### test two way clustering
+library(multiwayvcov)
+library(lmtest)
+test <- lm(rating_overall ~  farmer_fem*ratee_fem + educ  + age + tarmac
+                          + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy, data=pool)
+test_se <- cluster.boot(test,c(pool$id.ratee,pool$farmerID))                        
+coeftest(test,test_se)
+
+
 #saving regression
 #screenreg(list(mod1_gender,mod5_gender), file="gen_overall_farmer", stars = c(0.01, 0.05, 0.1), digits=4)
 #texreg(list(mod1_gender,mod5_gender), file="gen_overall_farmer_latex", stars = c(0.01, 0.05, 0.1), digits=4)
