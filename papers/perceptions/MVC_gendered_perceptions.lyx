@@ -1843,124 +1843,9 @@ Check in this para all the statements.
 
 \end_layout
 
-\begin_layout Standard
-Looking at self-ratings based on the sex of the ratee, it is noticed that
- among all the different dimensions, the greatest percentage of female ratees
- rate themselves 5 for quality (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(sum(table(pool$id.ratee[pool$rating_quality_ratee>=5 &
- pool$ratee_fem==
-\begin_inset Quotes erd
-\end_inset
-
-1
-\begin_inset Quotes erd
-\end_inset
-
-]))/sum(table(pool$id.ratee[pool$ratee_fem==
-\begin_inset Quotes erd
-\end_inset
-
-1
-\begin_inset Quotes erd
-\end_inset
-
-]))*100,digits=0),nsmall=0)}
-\end_layout
-
-\end_inset
-
- percent) and the highest percentage of male ratees rate themselves 5 for
- reputation (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(sum(table(pool$id.ratee[pool$rating_reputation_ratee>=5
- & pool$ratee_fem==
-\begin_inset Quotes erd
-\end_inset
-
-0
-\begin_inset Quotes erd
-\end_inset
-
-]))/sum(table(pool$id.ratee[pool$ratee_fem==
-\begin_inset Quotes erd
-\end_inset
-
-0
-\begin_inset Quotes erd
-\end_inset
-
-]))*100,digits=0),nsmall=0)}
-\end_layout
-
-\end_inset
-
- percent).
- Giving self-scores of 5 is more common in women for location, price, and
- quality.
- However, male ratees think themselves to be more well reputed.
- Indeed, women think the quality of their services or products are way better
- as they never rate themselves below 3 and men think they are well reputed
- as only 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(sum(table(pool$id.ratee[pool$rating_reputation_ratee<=2
- & pool$ratee_fem==
-\begin_inset Quotes erd
-\end_inset
-
-0
-\begin_inset Quotes erd
-\end_inset
-
-]))/sum(table(pool$id.ratee[pool$ratee_fem==
-\begin_inset Quotes erd
-\end_inset
-
-0
-\begin_inset Quotes erd
-\end_inset
-
-]))*100,digits=0),nsmall=0)}
-\end_layout
-
-\end_inset
-
- percent of them rate themselves below 3.
- 
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-The primary variables of interest in this study are ratings (perceived attribute
-s) from farmers (raters), self-ratings (perceived self-attributes) from
- ratees, the sex of the farmer and the ratee.
- In order to identify the ratees as input dealers, traders or processors,
- unique identifiers were attached to them.
- Similarly, unique identifiers were also assigned to each farmer.
- 
-\end_layout
-
 \begin_layout Subsection
 \paragraph_spacing onehalf
-Reliabilty of ratings
+Reliability of ratings
 \begin_inset CommandInset label
 LatexCommand label
 name "subsec:Validity-of-ratings"
@@ -1971,17 +1856,14 @@ name "subsec:Validity-of-ratings"
 \end_layout
 
 \begin_layout Standard
-Testing whether the ratings are actually meaningful (as opposed to just
- noise) is important.
- We look at intra-class correlation (ICC)
+In this section we test whether the ratings are actually meaningful (as
+ opposed to just noise).
+ To do so, we look at intra-class correlation (ICC)
 \series bold
  
 \series default
 coefficients determining the level of agreement between the ratings.
- In other words, ICC coefficients are a measure of inter or intra rater
- reliability.
- Inter or intra rater reliability in the ratings literature means levels
- of agreement between the ratings from different raters 
+ We look at both inter-rater agreement and intra-rater agreement 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "gwet2014handbook"
@@ -1990,29 +1872,12 @@ literal "true"
 \end_inset
 
 .
- Inter rater reliability (agreement) looks at how close the ratings from
- different farmers are for an individual ratee while intra rater reliability
- (agreement) looks at how close the different ratings from an individual
- farmer are.
- 
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-Intra-class correlation coefficient can range between 0 and 1.
- The lower it is, the poorer is the agreement and the higher it is, the
- better is the agreement level.
- In this context, inter and intra-rater reliability (agreement) is studied
- for all the ratings given by the raters (farmers).
- Only farmers who rated more than 6 times are considered for this analysis
- (to reduce loss of observations during the analysis).
- The ICC coefficients indicating inter-rater reliability (agreement) compare
- the ratings for each ratee from different farmers (raters).
- This helps to understand the level of agreement among the farmers on the
- different attributes of a particular ratee.
- The ICC coefficients indicating intra-rater reliability (agreement) compare
- the various ratings given by each individual farmer.
- This shows how similar or different the farmer rates the various ratees.
+ Inter-rater agreement looks at the correlation between ratings from different
+ farmers for a single actor, while intra-rater agreement is judged by the
+ correlation between ratings of different actors given by a single farmer.
+ Intra-class correlation coefficients range between 0 and 1, with 0 being
+ low agreement and one being total agreement.
+ Only farmers who rated more than 6 times are considered for this analysis.
  
 \end_layout
 
@@ -2028,79 +1893,10 @@ noprefix "false"
 \end_inset
 
  presents the ICC coefficients.
- Firstly, it can be inferred that raters (farmers) agree decently on overall
- ratings given to ratees.
- The ICC coefficient being 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(icc1a.fn(icc_recast_overall6)$icc1a,digits=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
-, it can be deduced that the ratings captured in the survey are not entirely
- random or untrue.
- However, the level of agreement among the raters (farmers) drops majorly
- for quality (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(icc1a.fn(icc_recast_qual)$icc1a,digits=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
-) and reputation (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(icc1a.fn(icc_recast_rep)$icc1a,digits=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
-).
- For location- and price-based ratings, the agreement levels are higher
- (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(icc1a.fn(icc_recast_loc)$icc1a,digits=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
-, 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(icc1a.fn(icc_recast_price)$icc1a,digits=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
-).
+ In the left panel, results for inter-rater agreement are shown.
+ Judged by average ratings, farmer rate fairly consistent within actors.
+ However, farmers disagree more with each other when quality is assessed,
+ or when reputation needs to be rated.
  This is expected as location and prices are observable factors and hence,
  ratings for these factors should be more similar compared to non-observable
  attributes like quality and reputation.
@@ -2108,23 +1904,7 @@ Sexpr{format(round(icc1a.fn(icc_recast_price)$icc1a,digits=2),nsmall=0)}
 \end_layout
 
 \begin_layout Standard
-\paragraph_spacing onehalf
-Secondly, analysing the overall averaged rating pattern, it can be derived
- that every farmer rate in a similar way every dealer, trader or miller.
- This is because the ICC coefficient is 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(icc1b.fn(icc_recast_overall6)$icc1b,digits=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
- (table 
+The right panel of Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:table3"
@@ -2134,316 +1914,17 @@ noprefix "false"
 
 \end_inset
 
-), indicating a very decent level of agreement.
- Similarly high levels of agreements are noticed for location (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(icc1b.fn(icc_recast_loc)$icc1b,digits=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
-) and reputation (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(icc1b.fn(icc_recast_rep)$icc1b,digits=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
-) based ratings.
- 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float table
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\paragraph_spacing onehalf
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-small 
-\backslash
-begin{center} 
-\backslash
-begin{tabular}{@{
-\backslash
-extracolsep{5pt}}lcc}  
-\backslash
-
-\backslash
-[-1.8ex]
-\backslash
-hline  
-\backslash
-hline 
-\backslash
-
-\backslash
-[-1.8ex]   & 
-\backslash
-multicolumn{2}{c}{
-\backslash
-textit{Intraclass correlation coefficients}} 
-\backslash
-
-\backslash
-  
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-cline{2-3} 
-\backslash
-
-\backslash
-[-1.8ex] & 
-\backslash
-multicolumn{1} {c} {
-\backslash
-textit{Inter-Rater Reliability (Agreement)}} &  
-\backslash
-multicolumn{1} {c} {
-\backslash
-textit{Intra-Rater Reliability (Agreement)}}  
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-  
-\backslash
-hline 
-\backslash
-
-\backslash
-[-1.8ex]  
-\end_layout
-
-\begin_layout Plain Layout
-
-{Overall}                 
-\end_layout
-
-\begin_layout Plain Layout
-
-&   $
-\backslash
-Sexpr{format(round(icc1a.fn(icc_recast_overall6)$icc1a,digits=2),nsmall=0)}$
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format(round(icc1b.fn(icc_recast_overall6)$icc1b,digits=2),nsmall=0)}$
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{Location}                
-\end_layout
-
-\begin_layout Plain Layout
-
-&   $
-\backslash
-Sexpr{format(round(icc1a.fn(icc_recast_loc)$icc1a,digits=2),nsmall=0)}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format(round(icc1b.fn(icc_recast_loc)$icc1b,digits=2),nsmall=0)}$ 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{Quality}                 
-\end_layout
-
-\begin_layout Plain Layout
-
-&   $
-\backslash
-Sexpr{format(round(icc1a.fn(icc_recast_qual)$icc1a,digits=2),nsmall=0)}$
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format(round(icc1b.fn(icc_recast_qual)$icc1b,digits=2),nsmall=0)}$
- 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{Price}             
-\end_layout
-
-\begin_layout Plain Layout
-
-&   $
-\backslash
-Sexpr{format(round(icc1a.fn(icc_recast_price)$icc1a,digits=2),nsmall=0)}$
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format(round(icc1b.fn(icc_recast_price)$icc1b,digits=2),nsmall=0)}$
- 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{Reputation}                
-\end_layout
-
-\begin_layout Plain Layout
-
-&   $
-\backslash
-Sexpr{format(round(icc1a.fn(icc_recast_rep)$icc1a,digits=2),nsmall=0)}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format(round(icc1b.fn(icc_recast_rep)$icc1b,digits=2),nsmall=0)}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-
-\backslash
-    
-\backslash
-hline
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-end{tabular} 
-\backslash
-end{center}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-scriptsize
-\end_layout
-
-\begin_layout Plain Layout
-
-Note - The sample consists of all the raters and ratees (agro-input dealers,
- traders, and processors).
- The averaged overall ratings, ratings based on location, quality, price,
- and reputation are taken into account.
- ICC for Inter-Rater Reliability : Inter-rater reliability indicates the
- level of agreement between the ratings given by different individual farmer
- (rater) for the same ratee.
- The ratee being rated is constant during the comparison of the ratings.
- The sample consists of only the farmers who have rated more than 6 times.
- ICC for Intra-Rater Reliability : Intra-rater reliability focuses on the
- agreement between the different ratings given by each individual rater
- for different ratees.
- The farmer who has rated more than 6 times is constant during the comparison
- of the ratings.
- 
-\backslash
-label{table:table3} 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-ICC coefficients for inter-rater reliability and intra-rater reliability.
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:table3"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
+ shows results for intra-rater agreement.
+ Results also show that ratings for the different actors are consistent
+ within farmers.
+ The fact that intra-rater agreement is higher than inter-rater agreement
+ may indicate that quality aligns within the chain (that is, farmers who
+ select better performing agro-input dealers also tend to go to better processor
+s and sell to better traders).
+ However, it may also be that farmer level heterogeneity is driving rating,
+ whereby farmers consistently rate high or low.
+ At the same time, as farmers rate different actors, it also seems reasonable
+ that there is not complete intra-rater agreement.
 \end_layout
 
 \begin_layout Section
@@ -8439,7 +7920,7 @@ noprefix "false"
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -11906,7 +11387,7 @@ options "bibtotoc,apalike"
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Section*
 \begin_inset Newpage newpage
 \end_inset
 
@@ -11915,9 +11396,10 @@ Tables
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \paragraph_spacing single
@@ -12875,9 +12357,10 @@ name "tab:table1"
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -13690,6 +13173,284 @@ Summary Statistics of the variables related to the ratees (dealers, traders,
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:table2"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\paragraph_spacing onehalf
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+small 
+\backslash
+begin{center} 
+\backslash
+begin{tabular}{@{
+\backslash
+extracolsep{5pt}}lcc}  
+\backslash
+
+\backslash
+[-1.8ex]
+\backslash
+hline  
+\backslash
+hline 
+\backslash
+
+\backslash
+[-1.8ex]   & 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{Intraclass correlation coefficients}} 
+\backslash
+
+\backslash
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-3} 
+\backslash
+
+\backslash
+[-1.8ex] & 
+\backslash
+multicolumn{1} {c} {
+\backslash
+textit{Inter-Rater Reliability (Agreement)}} &  
+\backslash
+multicolumn{1} {c} {
+\backslash
+textit{Intra-Rater Reliability (Agreement)}}  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+hline 
+\backslash
+
+\backslash
+[-1.8ex]  
+\end_layout
+
+\begin_layout Plain Layout
+
+{Overall}                 
+\end_layout
+
+\begin_layout Plain Layout
+
+&   $
+\backslash
+Sexpr{format(round(icc1a.fn(icc_recast_overall6)$icc1a,digits=2),nsmall=0)}$
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format(round(icc1b.fn(icc_recast_overall6)$icc1b,digits=2),nsmall=0)}$
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{Location}                
+\end_layout
+
+\begin_layout Plain Layout
+
+&   $
+\backslash
+Sexpr{format(round(icc1a.fn(icc_recast_loc)$icc1a,digits=2),nsmall=0)}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format(round(icc1b.fn(icc_recast_loc)$icc1b,digits=2),nsmall=0)}$ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{Quality}                 
+\end_layout
+
+\begin_layout Plain Layout
+
+&   $
+\backslash
+Sexpr{format(round(icc1a.fn(icc_recast_qual)$icc1a,digits=2),nsmall=0)}$
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format(round(icc1b.fn(icc_recast_qual)$icc1b,digits=2),nsmall=0)}$
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{Price}             
+\end_layout
+
+\begin_layout Plain Layout
+
+&   $
+\backslash
+Sexpr{format(round(icc1a.fn(icc_recast_price)$icc1a,digits=2),nsmall=0)}$
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format(round(icc1b.fn(icc_recast_price)$icc1b,digits=2),nsmall=0)}$
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{Reputation}                
+\end_layout
+
+\begin_layout Plain Layout
+
+&   $
+\backslash
+Sexpr{format(round(icc1a.fn(icc_recast_rep)$icc1a,digits=2),nsmall=0)}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format(round(icc1b.fn(icc_recast_rep)$icc1b,digits=2),nsmall=0)}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+    
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tabular} 
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+Note - The sample consists of all the raters and ratees (agro-input dealers,
+ traders, and processors).
+ The averaged overall ratings, ratings based on location, quality, price,
+ and reputation are taken into account.
+ ICC for Inter-Rater Reliability : Inter-rater reliability indicates the
+ level of agreement between the ratings given by different individual farmer
+ (rater) for the same ratee.
+ The ratee being rated is constant during the comparison of the ratings.
+ The sample consists of only the farmers who have rated more than 6 times.
+ ICC for Intra-Rater Reliability : Intra-rater reliability focuses on the
+ agreement between the different ratings given by each individual rater
+ for different ratees.
+ The farmer who has rated more than 6 times is constant during the comparison
+ of the ratings.
+ 
+\backslash
+label{table:table3} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+ICC coefficients for inter-rater reliability and intra-rater reliability.
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:table3"
 
 \end_inset
 
