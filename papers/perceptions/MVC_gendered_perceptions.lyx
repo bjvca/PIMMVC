@@ -1828,6 +1828,19 @@ Sexpr{format(round(sum(table(pool$id.ratee[pool$rating_reputation_ratee>=5]))/su
  They seem to be the least confident about their location as among all the
  dimensions, the highest percentage adhere to a score of at most 2 for location.
  
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Check in this para all the statements.
+ Include results after using ratee_pool dataset.
+ Compare with the table of averages.
+ Price is generally scored the lowest by the ratees.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
