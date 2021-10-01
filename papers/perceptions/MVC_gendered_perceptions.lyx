@@ -2244,11 +2244,7 @@ As we rely on observational data, we control for confounding bias through
  informed.
  One does have to control for this impact pathway as otherwise, the gender
  and education effects will be conflated.
- 
-\end_layout
-
-\begin_layout Standard
-The age of the farmer may also affect ratings in some way.
+ The age of the farmer may also affect ratings in some way.
  At the same time, as we sample households, women are likely to be younger
  than men 
 \begin_inset CommandInset citation
@@ -2266,7 +2262,14 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-Distance to murram and tarmac roads are proxies of remoteness.
+Marital status of the person interviewed may also be correlated with ratings.
+ It may be that single household heads are more likely to interact with
+ lower rated agents (for instance predatory traders who target households
+ with only one head).
+ At the same time, the women we interviewed in our sample are also more
+ likely to be unmarried, so we need to control for the effect of marital
+ status on ratings that works through gender.
+ Distance to murram and tarmac roads are proxies of remoteness.
  In remote areas, input and service providers face many challenges such
  as larger transaction costs and poor access to services such as power.
  For instance, in semi-urban areas, mills often run on 3-phase electricity,
@@ -2277,53 +2280,20 @@ Distance to murram and tarmac roads are proxies of remoteness.
 \end_layout
 
 \begin_layout Standard
-These differences will be reflected in the ratings because farmers in remote
- areas tend to reach out to the input and service providers operating in
- those same areas.
- Thus, by controlling for distance of farmer's homestead to murram and tarmac
- roads, these differences are accounted for.
-\end_layout
-
-\begin_layout Standard
-Men in farming activities tend to be married.
- On the other hand, it can be expected that women in farming are mostly
- not married as married women get involved more in household activities.
- Being married could mean that these farmers have been longer in maize productio
-n and thus, have more experience with service and input providers.
- This might make their ratings more or less favourable which makes it important
- to control for marital status of the farmer.
- 
-\end_layout
-
-\begin_layout Standard
-The arguments can be similar in the case of ratees.
+Similar arguments can be made for the gender of the dealers, traders and
+ processors.
  Since men are likely to be more educated than women, the education and
  knowledge might define what kind of service and inputs they provide to
- their customers (better or worse knowledge of improved services or inputs).
- This would lead to more or less favourable ratings from farmers and self-rating
-s, justifying the need to control for education of ratees.
+ their customers.
+ This would lead to more or less favourable ratings from farmers, so we
+ need to control for education to disentangle the effect of actor gender
+ and actor education levels.
  Men are likely to be older because of longer active periods in service
  providing and input dealing.
- Older individuals might have better experience in the business.
- This can impact the ratings.
- Farmers may rate older ratees with more experience more favourably while
- self-ratings are likely to be higher from older individuals because of
- their greater awareness about their performance in the sector.
- Hence, we control for age of the ratee (input dealer, trader, or miller).
- 
-\end_layout
-
-\begin_layout Standard
-Controlling for marital status of ratees is necessary as married service
- and input providers mostly tend to be men.
- This would mean they would have better knowledge and experience (more time
- spent in business as the chances of being married increases with age) which
- might lead to more favourable ratings from farmers.
- At the same time, women who are not married might be rating themselves
- lower because of minimal experience, knowledge, connections, and support
- in their businesses.
- Therefore, purging marital status effects of the ratees from the model
- is essential.
+ Older individuals might have better experience in the business, which can
+ impact the ratings.
+ Controlling for marital status of input dealers, trader and processors
+ is necessary, as female value chain actors are more likely to be single.
  
 \end_layout
 
@@ -2336,14 +2306,7 @@ name "sec:Results"
 
 \end_inset
 
- 
-\end_layout
 
-\begin_layout Standard
-This section focuses on the results obtained from the analysis of average
- ratings from farmers and average self-ratings given by ratees to themselves.
- Furthermore, the regression results are  presented and discussed below.
- 
 \end_layout
 
 \begin_layout Subsection
@@ -2360,11 +2323,18 @@ name "subsec:Average-ratings"
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-Average scores are obtained for the ratings given by the farmers (raters)
- to the ratees (agro-input dealers, processors, and traders) and for the
- self-ratings by the ratees themselves.
- The primary goal of this section is to check whether the mean ratings obtained
- from the dataset (presented in table 
+In this section, we provide a descriptive account of the hypotheses outline
+ in section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Study-Hypotheses"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ based on subgroup averages reported in 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:table4"
@@ -2374,19 +2344,33 @@ noprefix "false"
 
 \end_inset
 
-) reiterate the hypotheses of the study
+.
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
-The results for traders and millers may suffer from small sample share of
- women.
+It should be noted that averages may not be very representative in some
+ subgroups due to the low number of ratings.
+ For example, average self-rating for female traders is was based on only
+ 7 ratings.
 \end_layout
 
 \end_inset
 
-.
+ The table shows scores aggregated over all input dealers (first three columns
+ on the left), but also for each actor type separately (columns 4-6 for
+ agro-input dealers, columns 7-9 for traders, and columns 10-12 for processors).
+ We further differentiate between scores received by male and female actors.
  
+\end_layout
+
+\begin_layout Standard
+The rows represent the different dimensions on which raters were scored
+ (or were asked to rate themselves).
+ We again start with an overall rating (rows 1-4) and then provide separate
+ ratings for location (5-8), quality (9-12), and reputation (rows 13-16).
+ We also differentiate between the gender of the farmer, and also add a
+ line for self ratings.
 \end_layout
 
 \begin_layout Standard
@@ -4845,7 +4829,17 @@ name "tab:table4"
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-Table 
+In line with hypothesis 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Hypothesis 1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:table4"
@@ -4855,7 +4849,7 @@ noprefix "false"
 
 \end_inset
 
- shows that the mean overall self-rating given by the ratees (
+ shows that the mean overall self-rating given by the actors (
 \begin_inset ERT
 status open
 
@@ -4868,7 +4862,8 @@ Sexpr{format(round(mean(pool$ratee_rating_overall, na.rm=T),digits=2),nsmall=0)}
 
 \end_inset
 
-) is higher than the mean rating from the farmers (
+) is substantially higher than the mean overall rating that farmers give
+ (
 \begin_inset ERT
 status open
 
@@ -4882,7 +4877,7 @@ Sexpr{format(round(mean(pool$rating_overall, na.rm=T),digits=2),nsmall=0)}
 \end_inset
 
 ).
- This phenomenon is consistent across all the different rating dimensions.
+ This pattern is consistent across all the different rating dimensions.
  Looking at individual groups of input dealers, traders, and millers in
  table 
 \begin_inset CommandInset ref
@@ -4894,24 +4889,12 @@ noprefix "false"
 
 \end_inset
 
-, the same inference can be made that self-ratings are always higher.
- These findings support hypothesis 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "Hypothesis 1"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
-.
- 
+, self-ratings are also always higher.
 \end_layout
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-In order to validate hypothesis 
+In line with hypothesis 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "Hypothesis 2"
@@ -4921,9 +4904,7 @@ noprefix "false"
 
 \end_inset
 
- from the trends in the dataset, we will first look at the entire group
- of ratees.
- The mean overall rating from female farmers is 
+ we find that the mean overall rating from female farmers is 
 \begin_inset ERT
 status open
 
@@ -4937,7 +4918,8 @@ ts=2),nsmall=0)}
 
 \end_inset
 
- which is higher than the mean overall rating given by male farmers (
+ which is slightly higher than the mean overall rating given by male farmers
+ (
 \begin_inset ERT
 status open
 
@@ -4952,17 +4934,21 @@ ts=2),nsmall=0)}
 \end_inset
 
 ).
- Similar pattern is noticed for location-, price- and reputation-based ratings.
+ We similarly see that location-, price- and reputation-based ratings are
+ higher among female farmers than among male farmers.
  However, for quality-based rating, male farmers give a higher rating.
- Interestingly, these patterns vary across the groups of input dealers,
- traders, and millers.
- For overall average ratings, location- and price-based ratings, female
- farmers always give better scores to dealers, traders, and processors.
- Male farmers give better scores for quality to dealers while lower scores
- for quality to traders and millers when compared to their female counterparts.
- More favourable scores for reputation of dealers and millers come from
- men while for traders, come from women.
- Thus, hypothesis 
+ 
+\end_layout
+
+\begin_layout Standard
+Looking across actor types, if all dimensions are aggregated, we again find
+ that women consistently rate higher than men, but the margin is small.
+ For traders, women rate more favourable in all dimensions.
+ For millers, women also generally rate more favorable, except for reputation
+ where ratings between men and women are virtually the same.
+ Female farmers rate dealers lower on both reputation and price competitiveness
+ than male farmers.
+ In all, out of 20 comparisons, 16 are in line with hypothesis 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "Hypothesis 2"
@@ -4972,9 +4958,7 @@ noprefix "false"
 
 \end_inset
 
- is generally true with some exceptions across the different dimensions
- and ratee groups.
- 
+.
 \end_layout
 
 \begin_layout Standard
