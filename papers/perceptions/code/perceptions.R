@@ -3419,5 +3419,3 @@ summary(fe_modrep)
 #reject null at 5% -- significant 
 #
 
-library(tseries)
-x <- read.table("test")

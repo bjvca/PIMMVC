@@ -188,6 +188,15 @@ source(paste(path,"code/perceptions.R
 
 \begin_layout Plain Layout
 
+load(paste(path,"results/res_clust.Rd
+\begin_inset Quotes erd
+\end_inset
+
+, sep = "/"))
+\end_layout
+
+\begin_layout Plain Layout
+
 @
 \end_layout
 
@@ -7726,7 +7735,7 @@ noprefix "false"
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset ERT
