@@ -837,6 +837,154 @@ se67 <- sqrt(diag(vcov(mod67_gender)))
 #screenreg(list(mod67_gender), file="gen_reputation_ratee", stars = c(0.01, 0.05, 0.1), digits=4)
 #texreg(list(mod67_gender), file="gen_reputation_ratee_latex", stars = c(0.01, 0.05, 0.1), digits=4)
 
+
+s1<- rbind(c((format(round(sum(ratee1$coefficients[1]),digits=3),nsmall=0)), #coefficient 
+             (format(round(sum(ratee2$coefficients[1]),digits=3),nsmall=0)),
+             (format(round(sum(ratee3$coefficients[1]),digits=3),nsmall=0)),
+             (format(round(sum(ratee3$coefficients[1]),digits=3),nsmall=0)),
+             (format(round(sum(ratee5$coefficients[1]),digits=3),nsmall=0))),
+            
+           c((format(round(se_ratee1[1],digits=3),nsmall=0)), #standard error 
+             (format(round(se_ratee2[1],digits=3),nsmall=0)),
+             (format(round(se_ratee3[1],digits=3),nsmall=0)),
+             (format(round(se_ratee4[1],digits=3),nsmall=0)),
+             (format(round(se_ratee5[1],digits=3),nsmall=0))),
+            
+           c((format(round(summary(ratee1)$coefficients[1,4],digits=3),nsmall=0)),  #p value 
+             (format(round(summary(ratee2)$coefficients[1,4],digits=3),nsmall=0)),
+             (format(round(summary(ratee3)$coefficients[1,4],digits=3),nsmall=0)),
+             (format(round(summary(ratee4)$coefficients[1,4],digits=3),nsmall=0)),
+             (format(round(summary(ratee5)$coefficients[1,4],digits=3),nsmall=0))),
+           
+           c((format(round(sum(ratee1$coefficients[2]),digits=3),nsmall=0)),
+             (format(round(sum(ratee2$coefficients[2]),digits=3),nsmall=0)),
+             (format(round(sum(ratee3$coefficients[2]),digits=3),nsmall=0)),
+             (format(round(sum(ratee3$coefficients[2]),digits=3),nsmall=0)),
+             (format(round(sum(ratee5$coefficients[2]),digits=3),nsmall=0))),
+           
+           c((format(round(se_ratee1[2],digits=3),nsmall=0)),
+             (format(round(se_ratee2[2],digits=3),nsmall=0)),
+             (format(round(se_ratee3[2],digits=3),nsmall=0)),
+             (format(round(se_ratee4[2],digits=3),nsmall=0)),
+             (format(round(se_ratee5[2],digits=3),nsmall=0))),
+           
+           c((format(round(summary(ratee1)$coefficients[2,4],digits=3),nsmall=0)),
+             (format(round(summary(ratee2)$coefficients[2,4],digits=3),nsmall=0)),
+             (format(round(summary(ratee3)$coefficients[2,4],digits=3),nsmall=0)),
+             (format(round(summary(ratee4)$coefficients[2,4],digits=3),nsmall=0)),
+             (format(round(summary(ratee5)$coefficients[2,4],digits=3),nsmall=0))),
+          
+           c((format(round(sum(ratee1$coefficients[3]),digits=3),nsmall=0)),
+             (format(round(sum(ratee2$coefficients[3]),digits=3),nsmall=0)),
+             (format(round(sum(ratee3$coefficients[3]),digits=3),nsmall=0)),
+             (format(round(sum(ratee3$coefficients[3]),digits=3),nsmall=0)),
+             (format(round(sum(ratee5$coefficients[3]),digits=3),nsmall=0))),
+           
+           c((format(round(se_ratee1[3],digits=3),nsmall=0)),
+             (format(round(se_ratee2[3],digits=3),nsmall=0)),
+             (format(round(se_ratee3[3],digits=3),nsmall=0)),
+             (format(round(se_ratee4[3],digits=3),nsmall=0)),
+             (format(round(se_ratee5[3],digits=3),nsmall=0))),
+           
+           c((format(round(summary(ratee1)$coefficients[3,4],digits=3),nsmall=0)),
+             (format(round(summary(ratee2)$coefficients[3,4],digits=3),nsmall=0)),
+             (format(round(summary(ratee3)$coefficients[3,4],digits=3),nsmall=0)),
+             (format(round(summary(ratee4)$coefficients[3,4],digits=3),nsmall=0)),
+             (format(round(summary(ratee5)$coefficients[3,4],digits=3),nsmall=0))),
+           
+           c((format(round(sum(ratee1$coefficients[4]),digits=3),nsmall=0)),
+             (format(round(sum(ratee2$coefficients[4]),digits=3),nsmall=0)),
+             (format(round(sum(ratee3$coefficients[4]),digits=3),nsmall=0)),
+             (format(round(sum(ratee3$coefficients[4]),digits=3),nsmall=0)),
+             (format(round(sum(ratee5$coefficients[4]),digits=3),nsmall=0))),
+           
+           c((format(round(se_ratee1[4],digits=3),nsmall=0)),
+             (format(round(se_ratee2[4],digits=3),nsmall=0)),
+             (format(round(se_ratee3[4],digits=3),nsmall=0)),
+             (format(round(se_ratee4[4],digits=3),nsmall=0)),
+             (format(round(se_ratee5[4],digits=3),nsmall=0))),
+           
+           c((format(round(summary(ratee1)$coefficients[4,4],digits=3),nsmall=0)),
+             (format(round(summary(ratee2)$coefficients[4,4],digits=3),nsmall=0)),
+             (format(round(summary(ratee3)$coefficients[4,4],digits=3),nsmall=0)),
+             (format(round(summary(ratee4)$coefficients[4,4],digits=3),nsmall=0)),
+             (format(round(summary(ratee5)$coefficients[4,4],digits=3),nsmall=0))),
+           
+           c((format(round(sum(ratee1$coefficients[5]),digits=3),nsmall=0)),
+             (format(round(sum(ratee2$coefficients[5]),digits=3),nsmall=0)),
+             (format(round(sum(ratee3$coefficients[5]),digits=3),nsmall=0)),
+             (format(round(sum(ratee3$coefficients[5]),digits=3),nsmall=0)),
+             (format(round(sum(ratee5$coefficients[5]),digits=3),nsmall=0))),
+           
+           c((format(round(se_ratee1[5],digits=3),nsmall=0)),
+             (format(round(se_ratee2[5],digits=3),nsmall=0)),
+             (format(round(se_ratee3[5],digits=3),nsmall=0)),
+             (format(round(se_ratee4[5],digits=3),nsmall=0)),
+             (format(round(se_ratee5[5],digits=3),nsmall=0))),
+           
+           c((format(round(summary(ratee1)$coefficients[5,4],digits=3),nsmall=0)),
+             (format(round(summary(ratee2)$coefficients[5,4],digits=3),nsmall=0)),
+             (format(round(summary(ratee3)$coefficients[5,4],digits=3),nsmall=0)),
+             (format(round(summary(ratee4)$coefficients[5,4],digits=3),nsmall=0)),
+             (format(round(summary(ratee5)$coefficients[5,4],digits=3),nsmall=0))),
+           
+           c((format(round(sum(ratee1$coefficients[6]),digits=3),nsmall=0)),
+             (format(round(sum(ratee2$coefficients[6]),digits=3),nsmall=0)),
+             (format(round(sum(ratee3$coefficients[6]),digits=3),nsmall=0)),
+             (format(round(sum(ratee3$coefficients[6]),digits=3),nsmall=0)),
+             (format(round(sum(ratee5$coefficients[6]),digits=3),nsmall=0))),
+           
+           c((format(round(se_ratee1[6],digits=3),nsmall=0)),
+             (format(round(se_ratee2[6],digits=3),nsmall=0)),
+             (format(round(se_ratee3[6],digits=3),nsmall=0)),
+             (format(round(se_ratee4[6],digits=3),nsmall=0)),
+             (format(round(se_ratee5[6],digits=3),nsmall=0))),
+           
+           c((format(round(summary(ratee1)$coefficients[6,4],digits=3),nsmall=0)),
+             (format(round(summary(ratee2)$coefficients[6,4],digits=3),nsmall=0)),
+             (format(round(summary(ratee3)$coefficients[6,4],digits=3),nsmall=0)),
+             (format(round(summary(ratee4)$coefficients[6,4],digits=3),nsmall=0)),
+             (format(round(summary(ratee5)$coefficients[6,4],digits=3),nsmall=0))),
+           
+           c((format(round(sum(ratee1$coefficients[7]),digits=3),nsmall=0)),
+             (format(round(sum(ratee2$coefficients[7]),digits=3),nsmall=0)),
+             (format(round(sum(ratee3$coefficients[7]),digits=3),nsmall=0)),
+             (format(round(sum(ratee3$coefficients[7]),digits=3),nsmall=0)),
+             (format(round(sum(ratee5$coefficients[7]),digits=3),nsmall=0))),
+           
+           c((format(round(se_ratee1[7],digits=3),nsmall=0)),
+             (format(round(se_ratee2[7],digits=3),nsmall=0)),
+             (format(round(se_ratee3[7],digits=3),nsmall=0)),
+             (format(round(se_ratee4[7],digits=3),nsmall=0)),
+             (format(round(se_ratee5[7],digits=3),nsmall=0))),
+           
+           c((format(round(summary(ratee1)$coefficients[7,4],digits=3),nsmall=0)),
+             (format(round(summary(ratee2)$coefficients[7,4],digits=3),nsmall=0)),
+             (format(round(summary(ratee3)$coefficients[7,4],digits=3),nsmall=0)),
+             (format(round(summary(ratee4)$coefficients[7,4],digits=3),nsmall=0)),
+             (format(round(summary(ratee5)$coefficients[7,4],digits=3),nsmall=0))),
+           
+           
+           c((format(round(summary(ratee1)$r.squared,digits=3),nsmall=0)),
+             (format(round(summary(ratee2)$r.squared,digits=3),nsmall=0)),
+             (format(round(summary(ratee3)$r.squared,digits=3),nsmall=0)),
+             (format(round(summary(ratee4)$r.squared,digits=3),nsmall=0)),
+             (format(round(summary(ratee5)$r.squared,digits=3),nsmall=0))),
+          
+           c((format(round(summary(ratee1)$adj.r.squared,digits=3),nsmall=0)),
+             (format(round(summary(ratee2)$adj.r.squared,digits=3),nsmall=0)),
+             (format(round(summary(ratee3)$adj.r.squared,digits=3),nsmall=0)),
+             (format(round(summary(ratee4)$adj.r.squared,digits=3),nsmall=0)),
+             (format(round(summary(ratee5)$adj.r.squared,digits=3),nsmall=0))),
+            
+           c((format(round(nobs(ratee1),digits=3),nsmall=0)),
+             (format(round(nobs(ratee2),digits=3),nsmall=0)),
+             (format(round(nobs(ratee3),digits=3),nsmall=0)),
+             (format(round(nobs(ratee4),digits=3),nsmall=0)),
+             (format(round(nobs(ratee5),digits=3),nsmall=0)))
+)
+
+
 ################################################################################################################
 ################################################################################################################
 

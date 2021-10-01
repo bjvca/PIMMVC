@@ -7829,35 +7829,39 @@ hline
 
 {Constant}                  & $
 \backslash
-Sexpr{format(round(sum(ratee1$coefficients[1]),digits=4),nsmall=0)}
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
+Sexpr{s1[1,1]}$ & $
 \backslash
-Sexpr{format(round(sum(ratee2$coefficients[1]),digits=4),nsmall=0)}
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
+Sexpr{s1[1,2]}$  & $
 \backslash
-Sexpr{format(round(sum(ratee3$coefficients[1]),digits=4),nsmall=0)}
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format(round(sum(ratee4$coefficients[1]),digits=4),nsmall=0)}
+Sexpr{s1[1,3]}$
 \end_layout
 
 \begin_layout Plain Layout
 
  & $
 \backslash
-Sexpr{format(round(sum(ratee5$coefficients[1]),digits=4),nsmall=0)}
+Sexpr{s1[1,4]}$ & $
+\backslash
+Sexpr{s1[1,5]}$
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& $(
+\backslash
+Sexpr{s1[2,1]})$ & $(
+\backslash
+Sexpr{s1[2,2]})$  & $(
+\backslash
+Sexpr{s1[2,3]})$ & $(
+\backslash
+Sexpr{s1[2,4]})$ & $(
+\backslash
+Sexpr{s1[2,5]})$
 \end_layout
 
 \begin_layout Plain Layout
@@ -7866,367 +7870,202 @@ Sexpr{format(round(sum(ratee5$coefficients[1]),digits=4),nsmall=0)}
 \backslash
 
 \backslash
-                              & $(
+ {Ratee is female} & $
 \backslash
-Sexpr{format(round(se_ratee1[1],digits=4),nsmall=0)})$     & $(
+Sexpr{s1[4,1]}^{
 \backslash
-Sexpr{format(round(se_ratee2[1],digits=4),nsmall=0)})$   & $(
+Sexpr{ifelse(s1[6,1]<.01,"***",ifelse(s1[6,1]<.05,"**",ifelse(s1[6,1]<.1,"*","")))}
+}$ & $
 \backslash
-Sexpr{format(round(se_ratee3[1],digits=4),nsmall=0)})$     & $(
+Sexpr{s1[4,2]}^{
 \backslash
-Sexpr{format(round(se_ratee4[1],digits=4),nsmall=0)})$     & $(
+Sexpr{ifelse(s1[6,2]<.01,"***",ifelse(s1[6,2]<.05,"**",ifelse(s1[6,2]<.1,"*","")))}
+}$  & $
 \backslash
-Sexpr{format(round(se_ratee5[1],digits=4),nsmall=0)})$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-                    
-\end_layout
-
-\begin_layout Plain Layout
-
-
+Sexpr{s1[4,3]}^{
 \backslash
-
-\backslash
- {Ratee is female}  
-\end_layout
-
-\begin_layout Plain Layout
-
-              & $
-\backslash
-Sexpr{format(round(sum(ratee1$coefficients[2]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(ratee1)$coefficients[2,4]<.01,"***",ifelse(summary(ratee1)$c
-oefficients[2,4]<.05,"**",ifelse(summary(ratee1)$coefficients[2,4]<.1,"*","")))}}$
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format(round(sum(ratee2$coefficients[2]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(ratee2)$coefficients[2,4]<.01,"***",ifelse(summary(ratee2)$c
-oefficients[2,4]<.05,"**",ifelse(summary(ratee2)$coefficients[2,4]<.1,"*","")))}}$
- 
+Sexpr{ifelse(s1[6,3]<.01,"***",ifelse(s1[6,3]<.05,"**",ifelse(s1[6,3]<.1,"*","")))}
+}$
 \end_layout
 
 \begin_layout Plain Layout
 
  & $
 \backslash
-Sexpr{format(round(sum(ratee3$coefficients[2]),digits=4),nsmall=0)}^{
+Sexpr{s1[4,4]}^{
 \backslash
-Sexpr{ifelse(summary(ratee3)$coefficients[2,4]<.01,"***",ifelse(summary(ratee3)$c
-oefficients[2,4]<.05,"**",ifelse(summary(ratee3)$coefficients[2,4]<.1,"*","")))}}$
- 
+Sexpr{ifelse(s1[6,4]<.01,"***",ifelse(s1[6,4]<.05,"**",ifelse(s1[6,4]<.1,"*","")))}
+}$
 \end_layout
 
 \begin_layout Plain Layout
 
 & $
 \backslash
-Sexpr{format(round(sum(ratee4$coefficients[2]),digits=4),nsmall=0)}^{
+Sexpr{s1[4,5]}^{
 \backslash
-Sexpr{ifelse(summary(ratee4)$coefficients[2,4]<.01,"***",ifelse(summary(ratee4)$c
-oefficients[2,4]<.05,"**",ifelse(summary(ratee4)$coefficients[2,4]<.1,"*","")))}}$
+Sexpr{ifelse(s1[6,5]<.01,"***",ifelse(s1[6,5]<.05,"**",ifelse(s1[6,5]<.1,"*","")))}
+}$
+\end_layout
+
+\begin_layout Plain Layout
+
  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $(
+\backslash
+Sexpr{s1[5,1]})$   &  $(
+\backslash
+Sexpr{s1[5,2]})$ & $(
+\backslash
+Sexpr{s1[5,3]})$ & $(
+\backslash
+Sexpr{s1[5,4]})$ & $(
+\backslash
+Sexpr{s1[5,5]})$           
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+   {Ratee's age} & $
+\backslash
+Sexpr{s1[7,1]}^{
+\backslash
+Sexpr{ifelse(s1[9,1]<.01,"***",ifelse(s1[9,1]<.05,"**",ifelse(s1[9,1]<.1,"*","")))}
+}$ & $
+\backslash
+Sexpr{s1[7,2]}^{
+\backslash
+Sexpr{ifelse(s1[9,2]<.01,"***",ifelse(s1[9,2]<.05,"**",ifelse(s1[9,2]<.1,"*","")))}
+}$  & $
+\backslash
+Sexpr{s1[7,3]}^{
+\backslash
+Sexpr{ifelse(s1[9,3]<.01,"***",ifelse(s1[9,3]<.05,"**",ifelse(s1[9,3]<.1,"*","")))}
+}$
 \end_layout
 
 \begin_layout Plain Layout
 
  & $
 \backslash
-Sexpr{format(round(sum(ratee5$coefficients[2]),digits=4),nsmall=0)}^{
+Sexpr{s1[7,4]}^{
 \backslash
-Sexpr{ifelse(summary(ratee5)$coefficients[2,4]<.01,"***",ifelse(summary(ratee5)$c
-oefficients[2,4]<.05,"**",ifelse(summary(ratee5)$coefficients[2,4]<.1,"*","")))}}$
-  
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-                              & $(
-\backslash
-Sexpr{format(round(se_ratee1[2],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_ratee2[2],digits=4),nsmall=0)})$   & $(
-\backslash
-Sexpr{format(round(se_ratee3[2],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_ratee4[2],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_ratee5[2],digits=4),nsmall=0)})$     
-\end_layout
-
-\begin_layout Plain Layout
-
-           
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-   {Ratee's age}
-\end_layout
-
-\begin_layout Plain Layout
-
-                 & $
-\backslash
-Sexpr{format(round(sum(ratee1$coefficients[3]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(ratee1)$coefficients[3,4]<.01,"***",ifelse(summary(ratee1)$c
-oefficients[3,4]<.05,"**",ifelse(summary(ratee1)$coefficients[3,4]<.1,"*","")))}}$
- 
+Sexpr{ifelse(s1[9,4]<.01,"***",ifelse(s1[9,4]<.05,"**",ifelse(s1[9,4]<.1,"*","")))}
+}$
 \end_layout
 
 \begin_layout Plain Layout
 
 & $
 \backslash
-Sexpr{format(round(sum(ratee2$coefficients[3]),digits=4),nsmall=0)}^{
+Sexpr{s1[7,5]}^{
 \backslash
-Sexpr{ifelse(summary(ratee2)$coefficients[3,4]<.01,"***",ifelse(summary(ratee2)$c
-oefficients[3,4]<.05,"**",ifelse(summary(ratee2)$coefficients[3,4]<.1,"*","")))}}$
+Sexpr{ifelse(s1[9,5]<.01,"***",ifelse(s1[9,5]<.05,"**",ifelse(s1[9,5]<.1,"*","")))}
+}$
+\end_layout
+
+\begin_layout Plain Layout
+
  
+\backslash
+
+\backslash
+ {(in years)}
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $(
+\backslash
+Sexpr{s1[8,1]})$   &  $(
+\backslash
+Sexpr{s1[8,2]})$ & $(
+\backslash
+Sexpr{s1[8,3]})$ & $(
+\backslash
+Sexpr{s1[8,4]})$ & $(
+\backslash
+Sexpr{s1[8,5]})$             
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ {Ratee is married} & $
+\backslash
+Sexpr{s1[10,1]}^{
+\backslash
+Sexpr{ifelse(s1[12,1]<.01,"***",ifelse(s1[12,1]<.05,"**",ifelse(s1[12,1]<.1,"*","")
+))}}$ & $
+\backslash
+Sexpr{s1[10,2]}^{
+\backslash
+Sexpr{ifelse(s1[12,2]<.01,"***",ifelse(s1[12,2]<.05,"**",ifelse(s1[12,2]<.1,"*","")
+))}}$  & $
+\backslash
+Sexpr{s1[10,3]}^{
+\backslash
+Sexpr{ifelse(s1[12,3]<.01,"***",ifelse(s1[12,3]<.05,"**",ifelse(s1[12,3]<.1,"*","")
+))}}$
 \end_layout
 
 \begin_layout Plain Layout
 
  & $
 \backslash
-Sexpr{format(round(sum(ratee3$coefficients[3]),digits=4),nsmall=0)}^{
+Sexpr{s1[10,4]}^{
 \backslash
-Sexpr{ifelse(summary(ratee3)$coefficients[3,4]<.01,"***",ifelse(summary(ratee3)$c
-oefficients[3,4]<.05,"**",ifelse(summary(ratee3)$coefficients[3,4]<.1,"*","")))}}$
- 
+Sexpr{ifelse(s1[12,4]<.01,"***",ifelse(s1[12,4]<.05,"**",ifelse(s1[12,4]<.1,"*","")
+))}}$
 \end_layout
 
 \begin_layout Plain Layout
 
 & $
 \backslash
-Sexpr{format(round(sum(ratee4$coefficients[3]),digits=4),nsmall=0)}^{
+Sexpr{s1[10,5]}^{
 \backslash
-Sexpr{ifelse(summary(ratee4)$coefficients[3,4]<.01,"***",ifelse(summary(ratee4)$c
-oefficients[3,4]<.05,"**",ifelse(summary(ratee4)$coefficients[3,4]<.1,"*","")))}}$
+Sexpr{ifelse(s1[12,5]<.01,"***",ifelse(s1[12,5]<.05,"**",ifelse(s1[12,5]<.1,"*","")
+))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
  
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{format(round(sum(ratee5$coefficients[3]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(ratee5)$coefficients[3,4]<.01,"***",ifelse(summary(ratee5)$c
-oefficients[3,4]<.05,"**",ifelse(summary(ratee5)$coefficients[3,4]<.1,"*","")))}}$
-    
-\end_layout
-
-\begin_layout Plain Layout
-
-
 \backslash
 
 \backslash
-    {(in years)}                          & $(
-\backslash
-Sexpr{format(round(se_ratee1[3],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_ratee2[3],digits=4),nsmall=0)})$   & $(
-\backslash
-Sexpr{format(round(se_ratee3[3],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_ratee4[3],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_ratee5[3],digits=4),nsmall=0)})$
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
 \begin_layout Plain Layout
 
-
+&  $(
 \backslash
-
+Sexpr{s1[11,1]})$   &  $(
 \backslash
- {Ratee is married} 
-\end_layout
-
-\begin_layout Plain Layout
-
-             & $
+Sexpr{s1[11,2]})$ & $(
 \backslash
-Sexpr{format(round(sum(ratee1$coefficients[4]),digits=4),nsmall=0)}^{
+Sexpr{s1[11,3]})$ & $(
 \backslash
-Sexpr{ifelse(summary(ratee1)$coefficients[4,4]<.01,"***",ifelse(summary(ratee1)$c
-oefficients[4,4]<.05,"**",ifelse(summary(ratee1)$coefficients[4,4]<.1,"*","")))}}$
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
+Sexpr{s1[11,4]})$ & $(
 \backslash
-Sexpr{format(round(sum(ratee2$coefficients[4]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(ratee2)$coefficients[4,4]<.01,"***",ifelse(summary(ratee2)$c
-oefficients[4,4]<.05,"**",ifelse(summary(ratee2)$coefficients[4,4]<.1,"*","")))}}$
- 
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{format(round(sum(ratee3$coefficients[4]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(ratee3)$coefficients[4,4]<.01,"***",ifelse(summary(ratee3)$c
-oefficients[4,4]<.05,"**",ifelse(summary(ratee3)$coefficients[4,4]<.1,"*","")))}}$
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format(round(sum(ratee4$coefficients[4]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(ratee4)$coefficients[4,4]<.01,"***",ifelse(summary(ratee4)$c
-oefficients[4,4]<.05,"**",ifelse(summary(ratee4)$coefficients[4,4]<.1,"*","")))}}$
- 
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{format(round(sum(ratee5$coefficients[4]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(ratee5)$coefficients[4,4]<.01,"***",ifelse(summary(ratee5)$c
-oefficients[4,4]<.05,"**",ifelse(summary(ratee5)$coefficients[4,4]<.1,"*","")))}}$
-   
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-                              & $(
-\backslash
-Sexpr{format(round(se_ratee1[4],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_ratee2[4],digits=4),nsmall=0)})$   & $(
-\backslash
-Sexpr{format(round(se_ratee3[4],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_ratee4[4],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_ratee5[4],digits=4),nsmall=0)})$
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
- {Ratee has finished}
-\end_layout
-
-\begin_layout Plain Layout
-
-                & $
-\backslash
-Sexpr{format(round(sum(ratee1$coefficients[5]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(ratee1)$coefficients[5,4]<.01,"***",ifelse(summary(ratee1)$c
-oefficients[5,4]<.05,"**",ifelse(summary(ratee1)$coefficients[5,4]<.1,"*","")))}}$
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format(round(sum(ratee2$coefficients[5]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(ratee2)$coefficients[5,4]<.01,"***",ifelse(summary(ratee2)$c
-oefficients[5,4]<.05,"**",ifelse(summary(ratee2)$coefficients[5,4]<.1,"*","")))}}$
- 
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{format(round(sum(ratee3$coefficients[5]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(ratee3)$coefficients[5,4]<.01,"***",ifelse(summary(ratee3)$c
-oefficients[5,4]<.05,"**",ifelse(summary(ratee3)$coefficients[5,4]<.1,"*","")))}}$
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{format(round(sum(ratee4$coefficients[5]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(ratee4)$coefficients[5,4]<.01,"***",ifelse(summary(ratee4)$c
-oefficients[5,4]<.05,"**",ifelse(summary(ratee4)$coefficients[5,4]<.1,"*","")))}}$
- 
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{format(round(sum(ratee5$coefficients[5]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(ratee5)$coefficients[5,4]<.01,"***",ifelse(summary(ratee5)$c
-oefficients[5,4]<.05,"**",ifelse(summary(ratee5)$coefficients[5,4]<.1,"*","")))}}$
-   
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-     {primary education}                         & $(
-\backslash
-Sexpr{format(round(se_ratee1[5],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_ratee2[5],digits=4),nsmall=0)})$   & $(
-\backslash
-Sexpr{format(round(se_ratee3[5],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_ratee4[5],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_ratee5[5],digits=4),nsmall=0)})$  
+Sexpr{s1[11,5]})$  
 \end_layout
 
 \begin_layout Plain Layout
@@ -8240,173 +8079,202 @@ Sexpr{format(round(se_ratee5[5],digits=4),nsmall=0)})$
 \backslash
 
 \backslash
- {Ratee is a dealer} 
-\end_layout
-
-\begin_layout Plain Layout
-
-                & $
+ {Ratee has finished} & $
 \backslash
-Sexpr{format(round(sum(ratee1$coefficients[6]),digits=4),nsmall=0)}^{
+Sexpr{s1[13,1]}^{
 \backslash
-Sexpr{ifelse(summary(ratee1)$coefficients[6,4]<.01,"***",ifelse(summary(ratee1)$c
-oefficients[6,4]<.05,"**",ifelse(summary(ratee1)$coefficients[6,4]<.1,"*","")))}}$
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
+Sexpr{ifelse(s1[15,1]<.01,"***",ifelse(s1[15,1]<.05,"**",ifelse(s1[15,1]<.1,"*","")
+))}}$ & $
 \backslash
-Sexpr{format(round(sum(ratee2$coefficients[6]),digits=4),nsmall=0)}^{
+Sexpr{s1[13,2]}^{
 \backslash
-Sexpr{ifelse(summary(ratee2)$coefficients[6,4]<.01,"***",ifelse(summary(ratee2)$c
-oefficients[6,4]<.05,"**",ifelse(summary(ratee2)$coefficients[6,4]<.1,"*","")))}}$
- 
+Sexpr{ifelse(s1[15,2]<.01,"***",ifelse(s1[15,2]<.05,"**",ifelse(s1[15,2]<.1,"*","")
+))}}$  & $
+\backslash
+Sexpr{s1[13,3]}^{
+\backslash
+Sexpr{ifelse(s1[15,3]<.01,"***",ifelse(s1[15,3]<.05,"**",ifelse(s1[15,3]<.1,"*","")
+))}}$
 \end_layout
 
 \begin_layout Plain Layout
 
  & $
 \backslash
-Sexpr{format(round(sum(ratee3$coefficients[6]),digits=4),nsmall=0)}^{
+Sexpr{s1[13,4]}^{
 \backslash
-Sexpr{ifelse(summary(ratee3)$coefficients[6,4]<.01,"***",ifelse(summary(ratee3)$c
-oefficients[6,4]<.05,"**",ifelse(summary(ratee3)$coefficients[6,4]<.1,"*","")))}}$
- 
+Sexpr{ifelse(s1[15,4]<.01,"***",ifelse(s1[15,4]<.05,"**",ifelse(s1[15,4]<.1,"*","")
+))}}$
 \end_layout
 
 \begin_layout Plain Layout
 
 & $
 \backslash
-Sexpr{format(round(sum(ratee4$coefficients[6]),digits=4),nsmall=0)}^{
+Sexpr{s1[13,5]}^{
 \backslash
-Sexpr{ifelse(summary(ratee4)$coefficients[6,4]<.01,"***",ifelse(summary(ratee4)$c
-oefficients[6,4]<.05,"**",ifelse(summary(ratee4)$coefficients[6,4]<.1,"*","")))}}$
+Sexpr{ifelse(s1[15,5]<.01,"***",ifelse(s1[15,5]<.05,"**",ifelse(s1[15,5]<.1,"*","")
+))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
  
+\backslash
+
+\backslash
+ {primary education}          
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $(
+\backslash
+Sexpr{s1[14,1]})$   &  $(
+\backslash
+Sexpr{s1[14,2]})$ & $(
+\backslash
+Sexpr{s1[14,3]})$ & $(
+\backslash
+Sexpr{s1[14,4]})$ & $(
+\backslash
+Sexpr{s1[14,5]})$       
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ {Ratee is a dealer} & $
+\backslash
+Sexpr{s1[16,1]}^{
+\backslash
+Sexpr{ifelse(s1[18,1]<.01,"***",ifelse(s1[18,1]<.05,"**",ifelse(s1[18,1]<.1,"*","")
+))}}$ & $
+\backslash
+Sexpr{s1[16,2]}^{
+\backslash
+Sexpr{ifelse(s1[18,2]<.01,"***",ifelse(s1[18,2]<.05,"**",ifelse(s1[18,2]<.1,"*","")
+))}}$  & $
+\backslash
+Sexpr{s1[16,3]}^{
+\backslash
+Sexpr{ifelse(s1[18,3]<.01,"***",ifelse(s1[18,3]<.05,"**",ifelse(s1[18,3]<.1,"*","")
+))}}$
 \end_layout
 
 \begin_layout Plain Layout
 
  & $
 \backslash
-Sexpr{format(round(sum(ratee5$coefficients[6]),digits=4),nsmall=0)}^{
+Sexpr{s1[16,4]}^{
 \backslash
-Sexpr{ifelse(summary(ratee5)$coefficients[6,4]<.01,"***",ifelse(summary(ratee5)$c
-oefficients[6,4]<.05,"**",ifelse(summary(ratee5)$coefficients[6,4]<.1,"*","")))}}$
-   
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-                              & $(
-\backslash
-Sexpr{format(round(se_ratee1[6],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_ratee2[6],digits=4),nsmall=0)})$   & $(
-\backslash
-Sexpr{format(round(se_ratee3[6],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_ratee4[6],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_ratee5[6],digits=4),nsmall=0)})$
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
- {Ratee is a trader} 
-\end_layout
-
-\begin_layout Plain Layout
-
-                     & $
-\backslash
-Sexpr{format(round(sum(ratee1$coefficients[7]),digits=4),nsmall=0)}^{
-\backslash
-Sexpr{ifelse(summary(ratee1)$coefficients[7,4]<.01,"***",ifelse(summary(ratee1)$c
-oefficients[7,4]<.05,"**",ifelse(summary(ratee1)$coefficients[7,4]<.1,"*","")))}}$
- 
+Sexpr{ifelse(s1[18,4]<.01,"***",ifelse(s1[18,4]<.05,"**",ifelse(s1[18,4]<.1,"*","")
+))}}$
 \end_layout
 
 \begin_layout Plain Layout
 
 & $
 \backslash
-Sexpr{format(round(sum(ratee2$coefficients[7]),digits=4),nsmall=0)}^{
+Sexpr{s1[16,5]}^{
 \backslash
-Sexpr{ifelse(summary(ratee2)$coefficients[7,4]<.01,"***",ifelse(summary(ratee2)$c
-oefficients[7,4]<.05,"**",ifelse(summary(ratee2)$coefficients[7,4]<.1,"*","")))}}$
+Sexpr{ifelse(s1[18,5]<.01,"***",ifelse(s1[18,5]<.05,"**",ifelse(s1[18,5]<.1,"*","")
+))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $(
+\backslash
+Sexpr{s1[17,1]})$   &  $(
+\backslash
+Sexpr{s1[17,2]})$ & $(
+\backslash
+Sexpr{s1[17,3]})$ & $(
+\backslash
+Sexpr{s1[17,4]})$ & $(
+\backslash
+Sexpr{s1[17,5]})$  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ {Ratee is a trader} & $
+\backslash
+Sexpr{s1[19,1]}^{
+\backslash
+Sexpr{ifelse(s1[21,1]<.01,"***",ifelse(s1[21,1]<.05,"**",ifelse(s1[21,1]<.1,"*","")
+))}}$ & $
+\backslash
+Sexpr{s1[19,2]}^{
+\backslash
+Sexpr{ifelse(s1[21,2]<.01,"***",ifelse(s1[21,2]<.05,"**",ifelse(s1[21,2]<.1,"*","")
+))}}$  & $
+\backslash
+Sexpr{s1[19,3]}^{
+\backslash
+Sexpr{ifelse(s1[21,3]<.01,"***",ifelse(s1[21,3]<.05,"**",ifelse(s1[21,3]<.1,"*","")
+))}}$
 \end_layout
 
 \begin_layout Plain Layout
 
  & $
 \backslash
-Sexpr{format(round(sum(ratee3$coefficients[7]),digits=4),nsmall=0)}^{
+Sexpr{s1[19,4]}^{
 \backslash
-Sexpr{ifelse(summary(ratee3)$coefficients[7,4]<.01,"***",ifelse(summary(ratee3)$c
-oefficients[7,4]<.05,"**",ifelse(summary(ratee3)$coefficients[7,4]<.1,"*","")))}}$
- 
+Sexpr{ifelse(s1[21,4]<.01,"***",ifelse(s1[21,4]<.05,"**",ifelse(s1[21,4]<.1,"*","")
+))}}$
 \end_layout
 
 \begin_layout Plain Layout
 
 & $
 \backslash
-Sexpr{format(round(sum(ratee4$coefficients[7]),digits=4),nsmall=0)}^{
+Sexpr{s1[19,5]}^{
 \backslash
-Sexpr{ifelse(summary(ratee4)$coefficients[7,4]<.01,"***",ifelse(summary(ratee4)$c
-oefficients[7,4]<.05,"**",ifelse(summary(ratee4)$coefficients[7,4]<.1,"*","")))}}$
+Sexpr{ifelse(s1[21,5]<.01,"***",ifelse(s1[21,5]<.05,"**",ifelse(s1[21,5]<.1,"*","")
+))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
  
+\backslash
+
+\backslash
+
 \end_layout
 
 \begin_layout Plain Layout
 
- & $
+&  $(
 \backslash
-Sexpr{format(round(sum(ratee5$coefficients[7]),digits=4),nsmall=0)}^{
+Sexpr{s1[20,1]})$   &  $(
 \backslash
-Sexpr{ifelse(summary(ratee5)$coefficients[7,4]<.01,"***",ifelse(summary(ratee5)$c
-oefficients[7,4]<.05,"**",ifelse(summary(ratee5)$coefficients[7,4]<.1,"*","")))}}$
-   
-\end_layout
-
-\begin_layout Plain Layout
-
-
+Sexpr{s1[20,2]})$ & $(
 \backslash
-
+Sexpr{s1[20,3]})$ & $(
 \backslash
-                              & $(
+Sexpr{s1[20,4]})$ & $(
 \backslash
-Sexpr{format(round(se_ratee1[7],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_ratee2[7],digits=4),nsmall=0)})$   & $(
-\backslash
-Sexpr{format(round(se_ratee3[7],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_ratee4[7],digits=4),nsmall=0)})$     & $(
-\backslash
-Sexpr{format(round(se_ratee5[7],digits=4),nsmall=0)})$  
-\end_layout
-
-\begin_layout Plain Layout
-
-  
+Sexpr{s1[20,5]})$  
 \end_layout
 
 \begin_layout Plain Layout
@@ -8424,15 +8292,15 @@ hline
 
 R$^2$  & $
 \backslash
-Sexpr{format(round(summary(ratee1)$r.squared,digits=4),nsmall=0)}$    & $
+Sexpr{s1[22,1]}$   &  $
 \backslash
-Sexpr{format(round(summary(ratee2)$r.squared,digits=4),nsmall=0)}$  & $
+Sexpr{s1[22,2]}$ & $
 \backslash
-Sexpr{format(round(summary(ratee3)$r.squared,digits=4),nsmall=0)}$   & $
+Sexpr{s1[22,3]}$ & $
 \backslash
-Sexpr{format(round(summary(ratee4)$r.squared,digits=4),nsmall=0)}$    & $
+Sexpr{s1[22,4]}$ & $
 \backslash
-Sexpr{format(round(summary(ratee5)$r.squared,digits=4),nsmall=0)}$  
+Sexpr{s1[22,5]}$    
 \end_layout
 
 \begin_layout Plain Layout
@@ -8442,26 +8310,17 @@ Sexpr{format(round(summary(ratee5)$r.squared,digits=4),nsmall=0)}$
 
 \backslash
  Adj.
- R$^2$                         & $
+ R$^2$        & $
 \backslash
-Sexpr{format(round(summary(ratee1)$adj.r.squared,digits=4),nsmall=0)}$   
-    & $
+Sexpr{s1[23,1]}$   &  $
 \backslash
-Sexpr{format(round(summary(ratee2)$adj.r.squared,digits=4),nsmall=0)}$   
-    & $
+Sexpr{s1[23,2]}$ & $
 \backslash
-Sexpr{format(round(summary(ratee3)$adj.r.squared,digits=4),nsmall=0)}$   
-        & $
+Sexpr{s1[23,3]}$ & $
 \backslash
-Sexpr{format(round(summary(ratee4)$adj.r.squared,digits=4),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-   & $
+Sexpr{s1[23,4]}$ & $
 \backslash
-Sexpr{format(round(summary(ratee5)$adj.r.squared,digits=4),nsmall=0)}$   
-            
+Sexpr{s1[23,5]}$        
 \end_layout
 
 \begin_layout Plain Layout
@@ -8471,17 +8330,17 @@ Sexpr{format(round(summary(ratee5)$adj.r.squared,digits=4),nsmall=0)}$
 
 \backslash
  Number of obs.
-                     & $
+        & $
 \backslash
-Sexpr{format(round(nobs(ratee1),digits=4),nsmall=0)}$       & $
+Sexpr{s1[24,1]}$   &  $
 \backslash
-Sexpr{format(round(nobs(ratee2),digits=4),nsmall=0)}$       & $
+Sexpr{s1[24,2]}$ & $
 \backslash
-Sexpr{format(round(nobs(ratee3),digits=4),nsmall=0)}$       & $
+Sexpr{s1[24,3]}$ & $
 \backslash
-Sexpr{format(round(nobs(ratee4),digits=4),nsmall=0)}$    & $
+Sexpr{s1[24,4]}$ & $
 \backslash
-Sexpr{format(round(nobs(ratee5),digits=4),nsmall=0)}$ 
+Sexpr{s1[24,5]}$  
 \end_layout
 
 \begin_layout Plain Layout
