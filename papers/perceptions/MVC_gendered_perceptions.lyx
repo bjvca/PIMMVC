@@ -1523,8 +1523,8 @@ ities (childcare, family responsibilities), inadequate skills and business
 \begin_layout Itemize
 \paragraph_spacing single
 \noindent
-Hypothesis 5: The impact of both rater and ratee being a woman (man) is
- significant on the ratings
+Hypothesis 5: The impact of both rater and ratee being a woman is significant
+ on the ratings
 \begin_inset CommandInset label
 LatexCommand label
 name "Hypothesis 5"
@@ -1536,17 +1536,15 @@ name "Hypothesis 5"
 
 \begin_layout Standard
 Finally, in hypothesis 5 we test the interaction between the sex of the
- rater (farmer) and the ratee in order to investigate if there is some significa
-nt impact of both being of the same sex on the ratings.
+ rater (farmer) and the ratee in order to investigate if there is a significant
+ impact of both being women on the ratings.
  This hypothesis is motivated by the literature on homophily in social networks.
  The homophily principle essentially focuses on network ties based on relationsh
 ips and characteristics of the actors involved.
- In the context of this study, gender homophily effects in rating would
- exist if ratings in matched gender rater-ratee pairs (eg female farmers
- rating female agro-input dealers or male farmers rating male processors)
- are consistently higher than ratings in mixed gender rater-ratiee linkages
- (eg a female farmer rating a male agro-input dealer or a male farmer rating
- a female processor).
+ In the context of this study, gender homophily effects for women in rating
+ would exist if ratings in female rater-ratee pairs (eg female farmers rating
+ female agro-input dealers, female traders, or female processors) are consistent
+ly higher than ratings in male-male or mixed gender rater-ratee linkages.
  
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -1563,19 +1561,10 @@ stics of the ties formed and interactions limited to these homogeneous networks,
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-Why should we care?
-\end_layout
-
-\end_inset
-
 Gender based homophily in food value chains may lead to several co-existing
  value chains aligned by gender.
  If a female farmer gives higher ratings to a female trader, she may always
- interact with traders of the same sex (the same holds for men).
+ interact with traders of the same sex.
  The higher ratings an lower levels of competition enjoyed by dealers, trader
  and processors may reduce effort and delay innovations.
  However, recent research suggests that increased competition in value chains
@@ -1828,19 +1817,6 @@ Sexpr{format(round(sum(table(pool$id.ratee[pool$rating_reputation_ratee>=5]))/su
  They seem to be the least confident about their location as among all the
  dimensions, the highest percentage adhere to a score of at most 2 for location.
  
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Check in this para all the statements.
- Include results after using ratee_pool dataset.
- Compare with the table of averages.
- Price is generally scored the lowest by the ratees.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Subsection
@@ -1918,9 +1894,9 @@ noprefix "false"
  Results also show that ratings for the different actors are consistent
  within farmers.
  The fact that intra-rater agreement is higher than inter-rater agreement
- may indicate that quality aligns within the chain (that is, farmers who
- select better performing agro-input dealers also tend to go to better processor
-s and sell to better traders).
+ may indicate some degree of assortative matching within the chain (that
+ is, farmers who select better performing agro-input dealers also tend to
+ go to better processors and sell to better traders).
  However, it may also be that farmer level heterogeneity is driving rating,
  whereby farmers consistently rate high or low.
  At the same time, as farmers rate different actors, it also seems reasonable
@@ -1942,83 +1918,21 @@ name "sec:Econometric-Analysis"
 \begin_layout Standard
 We start the analysis with a descriptive section based on simple averages
  in subgroups of the data.
- This is followed by a section that uses regression analysis for formal
- testing of the hypotheses.
- In this section, we elaborate on the specification of the models we will
- estimate.
- The regressions will be particularly useful to understand gender based
- differences in the ratings 
+ This is followed by a section that presents more formal tests of the hypotheses.
+ To test the first hypothesis, we use simple t-tests.
+ The other hypotheses will be tested in a regression framework.
+ In this section, we elaborate on the specifications we will estimate.
 \end_layout
 
 \begin_layout Standard
-We start from the following multivariate regression specification:
+We start from the following multivariate regression model:
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-y_{f,a}=\alpha+\beta_{1}g_{f}^{F}+\beta_{2}g_{a}^{A}+\beta_{3}g_{f}^{F}*g_{a}^{A}+\gamma x_{f,a}+\varepsilon_{f,a}
+y_{f,a}=\alpha+\beta_{1}g_{f}^{F}+\beta_{2}g_{a}^{A}+\beta_{3}g_{f}^{F}*g_{a}^{A}+\gamma X_{f,a}+\varepsilon_{f,a}
 \end{equation}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing single
-\noindent
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{equation} 
-\backslash
-label{eqn:eqn1} 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{array}{l}
-\end_layout
-
-\begin_layout Plain Layout
-
-Y_{ija} = 
-\backslash
-beta_0 + 
-\backslash
-beta_1*Gender(F)_{ija} + 
-\backslash
-beta_2*Gender(R)_{ja} + 
-\backslash
-beta_3*X_{ija} + 
-\backslash
-beta_4*Z_{ja} + 
-\backslash
-beta_5*
-\backslash
-Gamma_{a} + e_{ija} 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{array}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{equation}
-\end_layout
 
 \end_inset
 
@@ -2029,76 +1943,70 @@ end{equation}
 Here, 
 \emph on
 
-\begin_inset Formula $Y_{ija}$
+\begin_inset Formula $y_{f,a}$
 \end_inset
 
 
 \emph default
- is the primary outcome variable, the ratings from the farmers or the difference
-s in ratings between the farmer ratings and the self-ratings.
- The ratings are categorized into overall average, location, quality, price,
- and reputation.
- In equation
-\begin_inset ERT
-status open
+ is the primary outcome variable.
+ 
+\emph on
 
-\begin_layout Plain Layout
-
-~
-\backslash
-ref{eqn:eqn1}
-\end_layout
-
+\begin_inset Formula $y_{f,a}$
 \end_inset
 
-, 
-\emph on
-i 
+
 \emph default
-is each individual farmer, 
+ will be the rating (1 to 5) that farmer 
 \emph on
-j
+i
 \emph default
- is each individual ratee and 
+ gave to actor 
 \emph on
 a
 \emph default
- can be an agro-input dealer or assembly trader or processor (ratee groups).
- The main independent variables are gender of the farmer (
+ (hypotheses ).
+ We will run separate regressions for the ratings for the different dimensions,
+ and also a regression where 
 \emph on
 
-\begin_inset Formula $Gender(F)_{ija}$
+\begin_inset Formula $y_{f,a}$
+\end_inset
+
+
+\emph default
+ is the average of the ratings of the four dimensions that farmer 
+\emph on
+i
+\emph default
+ gave to actor 
+\emph on
+a
+\emph default
+.
+ The main variables of interest are gender of the farmer (
+\emph on
+
+\begin_inset Formula $g_{f}^{F}$
 \end_inset
 
 
 \emph default
 , a dummy variable which takes the value of 1 if the farmer is a woman and
- 0 otherwise) which can vary for each individual farmer 
+ 0 otherwise) which varies at the farmer level 
 \emph on
-i
+f
 \emph default
-, each individual ratee 
-\emph on
-j
-\emph default
- and each ratee group 
-\emph on
-a
-\emph default
- and the gender of the ratee (
+, and the gender of the actor (
 \emph on
 
-\begin_inset Formula $Gender(R)_{ja}$
+\begin_inset Formula $g_{a}^{A}$
 \end_inset
 
 
 \emph default
-, a dummy variable taking the value of 1 for female ratee and 0 otherwise),
- varying for each individual ratee 
-\emph on
-j
-\emph default
- and each ratee group 
+, a dummy variable taking the value of 1 for female actor and 0 otherwise),
+ which varies at the actor level 
 \emph on
 a
 \emph default
@@ -2106,43 +2014,30 @@ a
 
 \emph on
  
-\begin_inset Formula $X_{ija}$
+\begin_inset Formula $X_{f,a}$
 \end_inset
 
 
 \emph default
- includes all the control variables varying for individual farmer, ratee
- and ratee group.
- Those are farmer's age (in years), dummy variable indicating if the farmer
- has finished primary education, distance of farmer's homestead to tarmac
- and murram roads (in km) and marital status of farmer (dummy for married
- farmers).
- 
+ is a vector of control variables, some of which vary at the farmer level,
+ like farmer's age (in years), dummy variable indicating if the farmer has
+ finished primary education, distance of farmer's homestead to tarmac and
+ murram roads (in km) and marital status of farmer (dummy for married farmers).
+ Other control variables included 
 \emph on
-
-\begin_inset Formula $Z_{ja}$
+in 
+\begin_inset Formula $X_{f,a}$
 \end_inset
 
 
 \emph default
- consists of the control variables varying for individual ratee and ratee
- group like age, education (if primary education is finished) and dummy
- variable for marital status of the ratee (value of 1 if married).
- The dummies for input dealer (takes the value of 1 if a dealer and 0 otherwise)
- and trader (takes the value of 1 if a trader and 0 otherwise) are contained
- in 
-\emph on
-
-\begin_inset Formula $\Gamma_{a}$
-\end_inset
-
-
-\emph default
- where the ratee being a miller is the reference category.
+ vary at the level of the actor, like age, education (if primary education
+ is finished) and dummy variable for marital status of the dealer, trader
+ or processor (value of 1 if married).
  The error term in the model is 
 \emph on
 
-\begin_inset Formula $e_{ija}$
+\begin_inset Formula $\varepsilon_{f,a}$
 \end_inset
 
 
@@ -2164,95 +2059,6 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-Following this, for the analysis of how ratings vary if farmer (rater) and
- ratee are of the same sex, an interaction term between the sex of the farmer
- (rater) and the ratee (both dummy variables) is added to the equation presented
- above.
- This is presented in the specification below with cluster robust standard
- errors (equation
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-~
-\backslash
-ref{eqn:eqn2}
-\end_layout
-
-\end_inset
-
-):
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{equation} 
-\backslash
-label{eqn:eqn2} 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{array}{l}
-\end_layout
-
-\begin_layout Plain Layout
-
-Y_{ija} = 
-\backslash
-beta_0 + 
-\backslash
-beta_1*Gender(F)_{ija} + 
-\backslash
-beta_2*Gender(R)_{ja} + 
-\backslash
-beta_3*X_{ija} + 
-\backslash
-beta_4*Z_{ja} + 
-\backslash
-
-\backslash
- &
-\backslash
-quad 
-\backslash
-beta_5*
-\backslash
-Gamma_{a} + 
-\backslash
-beta_6*Gender(F)_{ija}*Gender(R)_{ja} + e_{ija} 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{array}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{equation}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 The coefficients of interest in these models are
 \emph on
  
@@ -2265,174 +2071,150 @@ The coefficients of interest in these models are
 \begin_inset Formula $\beta_{2}$
 \end_inset
 
- (equations
-\begin_inset ERT
-status open
+ and 
+\begin_inset Formula $\beta_{3}$
+\end_inset
 
-\begin_layout Plain Layout
+.
+ In particular, finding that 
+\begin_inset Formula $\beta_{1}>0$
+\end_inset
 
-~
-\backslash
-ref{eqn:eqn1}
+ would confirm hypothesis 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Hypothesis 2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, while finding that 
+\begin_inset Formula $\beta_{2}<0$
+\end_inset
+
+ would confirm 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Hypothesis 4"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ Gender homophilly among women would mean that 
+\begin_inset Formula $\beta_{3}>0$
+\end_inset
+
+ (hypothesis 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Hypothesis 5"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
 \end_layout
 
+\begin_layout Standard
+To test hypothesis 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Hypothesis 3"
+plural "false"
+caps "false"
+noprefix "false"
+
 \end_inset
 
- and
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-~
-\backslash
-ref{eqn:eqn2}
+, a regression that only uses self-rating data of the actors is used:
 \end_layout
 
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+y_{a}=\alpha+\beta_{1}g_{a}^{A}+\gamma X_{a}+\varepsilon_{a}
+\end{equation}
+
 \end_inset
 
-) and 
-\begin_inset Formula $\beta_{6}$
-\end_inset
 
- (equation
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-~
-\backslash
-ref{eqn:eqn2}
 \end_layout
 
-\end_inset
-
-), showing the gender impacts on the ratings from farmers and the differences
- in farmer ratings and self-ratings.
+\begin_layout Standard
+Here, the primary outcome variable is the self-rating
+\emph on
  
-\end_layout
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
 
-\begin_layout Standard
-The final regression model aims to study the relationship between the sex
- of the ratee and the self-ratings through multiple regression analysis:
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{equation} 
-\backslash
-label{eqn:eqn3} 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{array}{l}
-\end_layout
-
-\begin_layout Plain Layout
-
-Y_{ja} = 
-\backslash
-beta_0 + 
-\backslash
-beta_1*Gender(R)_{ja} + 
-\backslash
-beta_2*Z_{ja} + 
-\backslash
-beta_3*
-\backslash
-Gamma_{a} + e_{ja} 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{array}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{equation}
-\end_layout
-
+\begin_inset Formula $y_{a}$
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-Here, the primary outcome variable of self-ratings is 
+ of actor 
+\family default
+\series default
+\shape default
+\size default
 \emph on
-
-\begin_inset Formula $Y_{ja}$
-\end_inset
-
-,
-\emph default
- 
-\emph on
-j
-\emph default
- is each individual ratee and 
-\emph on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
 a
 \emph default
- can be input dealer or assembly trader or processor (ratee groups).
+ which is regressed on their gender 
+\begin_inset Formula $g_{a}^{A}$
+\end_inset
+
+.
 
 \emph on
  
 \emph default
-
-\begin_inset Formula $\beta_{1}$
+Finding that 
+\begin_inset Formula $\beta_{1}<0$
 \end_inset
 
- indicates the relationship between the sex of the ratee and the self-rating
- from the ratee.
- Some of the variables discussed above are included in this equation.
- The main independent variable is gender of the ratee (
-\emph on
+ would confirm hypothesis 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Hypothesis 3"
+plural "false"
+caps "false"
+noprefix "false"
 
-\begin_inset Formula $Gender(R)_{ja}$
 \end_inset
 
-
-\emph default
-).
- 
-\emph on
-
-\begin_inset Formula $Z_{ja}$
+.
+ Also here, we include a range of control variables 
+\begin_inset Formula $\left(X_{a}\right)$
 \end_inset
 
- 
-\emph default
-and 
-\emph on
-
-\begin_inset Formula $\Gamma_{a}$
-\end_inset
-
-
-\emph default
- consists of the control variables and the dummies for input dealer and
- trader.
+, including fixed effects for the type of actor (dealer, trader or processor).
  The error term in this model is 
 \emph on
 
-\begin_inset Formula $e_{ja}$
+\begin_inset Formula $\varepsilon_{a}$
 \end_inset
 
 
@@ -2442,29 +2224,33 @@ and
 \end_layout
 
 \begin_layout Standard
-An essential discussion is the motivation behind the inclusion of the control
- variables discussed in the models above.
+As we rely on observational data, we control for confounding bias through
+ the inclusion of exogenous control variables.
  Men are likely to be better educated than women.
  Better levels of education and knowledge will probably mean that farmers
  have a better understanding of what to expect from service and input providers,
- and so, may rate more or less favourably (the ratings or scores given will
- be better informed).
+ and so, may rate more or less favourably, as scores given will be better
+ informed.
  One does have to control for this impact pathway as otherwise, the gender
  and education effects will be conflated.
- In other words, correlation between the farmer's gender and the rating
- from the farmer may be confounded by education.
- Women are likely to be younger than men because of recent entry into farming
- activities and, older women devote more time to family responsibilities.
- Thus, age may directly affect ratings.
- For instance, older individuals may have more experience and so, may rate
- more or less critically.
+ 
+\end_layout
+
+\begin_layout Standard
+The age of the farmer may also affect ratings in some way.
+ At the same time, as we sample households, women are likely to be younger
+ than men 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "jensen2003early"
+literal "false"
+
+\end_inset
+
+.
  Therefore, age effects need to be purged from the model by controlling
  for it.
  Like age, mobility may directly affect ratings.
- In particular, men are more mobile and so more likely to have interacted
- with input dealers.
- If these interactions lead to systematically different ratings, it is necessary
- to control for it.
  
 \end_layout
 
@@ -2475,7 +2261,12 @@ Distance to murram and tarmac roads are proxies of remoteness.
  For instance, in semi-urban areas, mills often run on 3-phase electricity,
  while in remote areas, combustion engines are used to power the mills.
  The latter produce inferior quality maize products.
- These differences will be reflected in the ratings because farmers in remote
+ If women are also more likely to reside in remote areas, this may lead
+ to biased coefficient estimates.
+\end_layout
+
+\begin_layout Standard
+These differences will be reflected in the ratings because farmers in remote
  areas tend to reach out to the input and service providers operating in
  those same areas.
  Thus, by controlling for distance of farmer's homestead to murram and tarmac
@@ -5352,6 +5143,10 @@ name "subsec:Regressions"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Here, we need to add a paragraph for the t-tests.
 \end_layout
 
 \begin_layout Standard
