@@ -3271,4 +3271,4 @@ fe_modrep <- lm(rating_reputation ~ farmerID, data = pool)
 summary(fe_modrep)
 #reject null at 5% -- significant 
 
-x <- read.matrix("test")
+
