@@ -5161,6 +5161,234 @@ Here, we need to add a paragraph for the t-tests.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize 
+\backslash
+begin{center} 
+\backslash
+begin{tabular}{@{
+\backslash
+extracolsep{5pt}}lccc}  
+\backslash
+
+\backslash
+[-1.8ex]
+\backslash
+hline  
+\backslash
+hline 
+\backslash
+
+\backslash
+[-1.8ex]   & 
+\backslash
+multicolumn{3}{c}{
+\backslash
+textit{
+\backslash
+footnotesize T-tests: Differences between self-ratings and farmer ratings
+ > 0}} 
+\backslash
+
+\backslash
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-4} 
+\backslash
+
+\backslash
+[-1.8ex] & 
+\backslash
+multicolumn{1} {c} {
+\backslash
+scriptsize Self-ratings} &  
+\backslash
+multicolumn{1} {c} {
+\backslash
+scriptsize Farmer ratings}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {
+\backslash
+scriptsize P-value}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ 
+\backslash
+hline 
+\backslash
+
+\backslash
+[-1.8ex]  
+\end_layout
+
+\begin_layout Plain Layout
+
+{Overall}  & $
+\backslash
+Sexpr{hyp1[1,1]}$ & $
+\backslash
+Sexpr{hyp1[1,2]}$  & $
+\backslash
+Sexpr{hyp1[1,3]}$ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{Location}  & $
+\backslash
+Sexpr{hyp1[2,1]}$ & $
+\backslash
+Sexpr{hyp1[2,2]}$  & $
+\backslash
+Sexpr{hyp1[2,3]}$ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{Price}  & $
+\backslash
+Sexpr{hyp1[3,1]}$ & $
+\backslash
+Sexpr{hyp1[3,2]}$  & $
+\backslash
+Sexpr{hyp1[3,3]}$ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{Quality}  & $
+\backslash
+Sexpr{hyp1[4,1]}$ & $
+\backslash
+Sexpr{hyp1[4,2]}$  & $
+\backslash
+Sexpr{hyp1[4,3]}$ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{Reputation}  & $
+\backslash
+Sexpr{hyp1[5,1]}$ & $
+\backslash
+Sexpr{hyp1[5,2]}$  & $
+\backslash
+Sexpr{hyp1[5,3]}$
+\end_layout
+
+\begin_layout Plain Layout
+
+     
+\backslash
+
+\backslash
+ 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tabular} 
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: The average self-ratings for each dimension are mentioned in the first
+ column and the average farmer ratings for each dimension are mentioned
+ in the second column.
+ The p-value indicating the significance of each t-test is also presented.
+ The alternative hypothesis is that the differences between the self-ratings
+ and the farmer ratings are greater than 0.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+T-test results for differences between the self-ratings and the farmer ratings.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:T-test-results"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Tables 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -7339,1237 +7567,6 @@ noprefix "false"
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float table
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-scriptsize 
-\backslash
-begin{center} 
-\backslash
-begin{tabular}{@{
-\backslash
-extracolsep{5pt}}lccccc}  
-\backslash
-
-\backslash
-[-1.8ex]
-\backslash
-hline  
-\backslash
-hline 
-\backslash
-
-\backslash
-[-1.8ex]   & 
-\backslash
-multicolumn{5}{c}{
-\backslash
-textit{
-\backslash
-footnotesize Dependent variable: Differences between ratee self-ratings
- and farmer ratings}} 
-\backslash
-
-\backslash
-  
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-cline{2-6} 
-\backslash
-
-\backslash
-[-1.8ex] & 
-\backslash
-multicolumn{1} {c} {
-\backslash
-scriptsize Overall} &  
-\backslash
-multicolumn{1} {c} {
-\backslash
-scriptsize Location}  &
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-multicolumn{1} {c} {
-\backslash
-scriptsize Quality}&
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-multicolumn{1} {c} {
-\backslash
-scriptsize Price}&
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-multicolumn{1} {c} {
-\backslash
-scriptsize Reputation} 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-[-1.8ex] & (
-\backslash
-scriptsize 1) & (
-\backslash
-scriptsize 2) & (
-\backslash
-scriptsize 3) & (
-\backslash
-scriptsize 4) & (
-\backslash
-scriptsize 5) 
-\backslash
-
-\backslash
-  
-\backslash
-hline 
-\backslash
-
-\backslash
-[-1.8ex]  
-\end_layout
-
-\begin_layout Plain Layout
-
-{Constant}  & $
-\backslash
-Sexpr{mat[46,1]}^{
-\backslash
-Sexpr{ifelse(mat[48,1]<.01,"***",ifelse(mat[48,1]<.05,"**",ifelse(mat[48,1]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{mat[46,2]}^{
-\backslash
-Sexpr{ifelse(mat[48,2]<.01,"***",ifelse(mat[48,2]<.05,"**",ifelse(mat[48,2]<.1,"*",
-"")))}}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{mat[46,3]}^{
-\backslash
-Sexpr{ifelse(mat[48,3]<.01,"***",ifelse(mat[48,3]<.05,"**",ifelse(mat[48,3]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{mat[46,4]}^{
-\backslash
-Sexpr{ifelse(mat[48,4]<.01,"***",ifelse(mat[48,4]<.05,"**",ifelse(mat[48,4]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{mat[46,5]}^{
-\backslash
-Sexpr{ifelse(mat[48,5]<.01,"***",ifelse(mat[48,5]<.05,"**",ifelse(mat[48,5]<.1,"*",
-"")))}}$ 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-& $(
-\backslash
-Sexpr{mat[47,1]})$ & $(
-\backslash
-Sexpr{mat[47,2]})$  & $(
-\backslash
-Sexpr{mat[47,3]})$ & $(
-\backslash
-Sexpr{mat[47,4]})$ & $(
-\backslash
-Sexpr{mat[47,5]})$
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
- {Farmer is female} & $
-\backslash
-Sexpr{mat[49,1]}^{
-\backslash
-Sexpr{ifelse(mat[51,1]<.01,"***",ifelse(mat[51,1]<.05,"**",ifelse(mat[51,1]<.1,"*",
-"")))}}$ & $
-\backslash
-Sexpr{mat[49,2]}^{
-\backslash
-Sexpr{ifelse(mat[51,2]<.01,"***",ifelse(mat[51,2]<.05,"**",ifelse(mat[51,2]<.1,"*",
-"")))}}$  & $
-\backslash
-Sexpr{mat[49,3]}^{
-\backslash
-Sexpr{ifelse(mat[51,3]<.01,"***",ifelse(mat[51,3]<.05,"**",ifelse(mat[51,3]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{mat[49,4]}^{
-\backslash
-Sexpr{ifelse(mat[51,4]<.01,"***",ifelse(mat[51,4]<.05,"**",ifelse(mat[51,4]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{mat[49,5]}^{
-\backslash
-Sexpr{ifelse(mat[51,5]<.01,"***",ifelse(mat[51,5]<.05,"**",ifelse(mat[51,5]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-
-\backslash
- & $(
-\backslash
-Sexpr{mat[50,1]})$ & $(
-\backslash
-Sexpr{mat[50,2]})$  & $(
-\backslash
-Sexpr{mat[50,3]})$ & $(
-\backslash
-Sexpr{mat[50,4]})$ & $(
-\backslash
-Sexpr{mat[50,5]})$
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
- {Ratee is female}   & $
-\backslash
-Sexpr{mat[52,1]}^{
-\backslash
-Sexpr{ifelse(mat[54,1]<.01,"***",ifelse(mat[54,1]<.05,"**",ifelse(mat[54,1]<.1,"*",
-"")))}}$ & $
-\backslash
-Sexpr{mat[52,2]}^{
-\backslash
-Sexpr{ifelse(mat[54,2]<.01,"***",ifelse(mat[54,2]<.05,"**",ifelse(mat[54,2]<.1,"*",
-"")))}}$  & $
-\backslash
-Sexpr{mat[52,3]}^{
-\backslash
-Sexpr{ifelse(mat[54,3]<.01,"***",ifelse(mat[54,3]<.05,"**",ifelse(mat[54,3]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{mat[52,4]}^{
-\backslash
-Sexpr{ifelse(mat[54,4]<.01,"***",ifelse(mat[54,4]<.05,"**",ifelse(mat[54,4]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{mat[52,5]}^{
-\backslash
-Sexpr{ifelse(mat[54,5]<.01,"***",ifelse(mat[54,5]<.05,"**",ifelse(mat[54,5]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $(
-\backslash
-Sexpr{mat[53,1]})$   &  $(
-\backslash
-Sexpr{mat[53,2]})$ & $(
-\backslash
-Sexpr{mat[53,3]})$ & $(
-\backslash
-Sexpr{mat[53,4]})$ & $(
-\backslash
-Sexpr{mat[53,5]})$          
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
- {Farmer has finished} & $
-\backslash
-Sexpr{mat[55,1]}^{
-\backslash
-Sexpr{ifelse(mat[57,1]<.01,"***",ifelse(mat[57,1]<.05,"**",ifelse(mat[57,1]<.1,"*",
-"")))}}$ & $
-\backslash
-Sexpr{mat[55,2]}^{
-\backslash
-Sexpr{ifelse(mat[57,2]<.01,"***",ifelse(mat[57,2]<.05,"**",ifelse(mat[57,2]<.1,"*",
-"")))}}$  & $
-\backslash
-Sexpr{mat[55,3]}^{
-\backslash
-Sexpr{ifelse(mat[57,3]<.01,"***",ifelse(mat[57,3]<.05,"**",ifelse(mat[57,3]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{mat[55,4]}^{
-\backslash
-Sexpr{ifelse(mat[57,4]<.01,"***",ifelse(mat[57,4]<.05,"**",ifelse(mat[57,4]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{mat[55,5]}^{
-\backslash
-Sexpr{ifelse(mat[57,5]<.01,"***",ifelse(mat[57,5]<.05,"**",ifelse(mat[57,5]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-
-\backslash
-{primary education}
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $(
-\backslash
-Sexpr{mat[56,1]})$   &  $(
-\backslash
-Sexpr{mat[56,2]})$ & $(
-\backslash
-Sexpr{mat[56,3]})$ & $(
-\backslash
-Sexpr{mat[56,4]})$ & $(
-\backslash
-Sexpr{mat[56,5]})$        
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
- {Farmer's age} & $
-\backslash
-Sexpr{mat[58,1]}^{
-\backslash
-Sexpr{ifelse(mat[60,1]<.01,"***",ifelse(mat[60,1]<.05,"**",ifelse(mat[60,1]<.1,"*",
-"")))}}$ & $
-\backslash
-Sexpr{mat[58,2]}^{
-\backslash
-Sexpr{ifelse(mat[60,2]<.01,"***",ifelse(mat[60,2]<.05,"**",ifelse(mat[60,2]<.1,"*",
-"")))}}$  & $
-\backslash
-Sexpr{mat[58,3]}^{
-\backslash
-Sexpr{ifelse(mat[60,3]<.01,"***",ifelse(mat[60,3]<.05,"**",ifelse(mat[60,3]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{mat[58,4]}^{
-\backslash
-Sexpr{ifelse(mat[60,4]<.01,"***",ifelse(mat[60,4]<.05,"**",ifelse(mat[60,4]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{mat[58,5]}^{
-\backslash
-Sexpr{ifelse(mat[60,5]<.01,"***",ifelse(mat[60,5]<.05,"**",ifelse(mat[60,5]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-
-\backslash
- {(in years)}          
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $(
-\backslash
-Sexpr{mat[59,1]})$   &  $(
-\backslash
-Sexpr{mat[59,2]})$ & $(
-\backslash
-Sexpr{mat[59,3]})$ & $(
-\backslash
-Sexpr{mat[59,4]})$ & $(
-\backslash
-Sexpr{mat[59,5]})$       
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
- {Farmer's distance to} & $
-\backslash
-Sexpr{mat[61,1]}^{
-\backslash
-Sexpr{ifelse(mat[63,1]<.01,"***",ifelse(mat[63,1]<.05,"**",ifelse(mat[63,1]<.1,"*",
-"")))}}$ & $
-\backslash
-Sexpr{mat[61,2]}^{
-\backslash
-Sexpr{ifelse(mat[63,2]<.01,"***",ifelse(mat[63,2]<.05,"**",ifelse(mat[63,2]<.1,"*",
-"")))}}$  & $
-\backslash
-Sexpr{mat[61,3]}^{
-\backslash
-Sexpr{ifelse(mat[63,3]<.01,"***",ifelse(mat[63,3]<.05,"**",ifelse(mat[63,3]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{mat[61,4]}^{
-\backslash
-Sexpr{ifelse(mat[63,4]<.01,"***",ifelse(mat[63,4]<.05,"**",ifelse(mat[63,4]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{mat[61,5]}^{
-\backslash
-Sexpr{ifelse(mat[63,5]<.01,"***",ifelse(mat[63,5]<.05,"**",ifelse(mat[63,5]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-
-\backslash
-{tarmac road (in km)}
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $(
-\backslash
-Sexpr{mat[62,1]})$   &  $(
-\backslash
-Sexpr{mat[62,2]})$ & $(
-\backslash
-Sexpr{mat[62,3]})$ & $(
-\backslash
-Sexpr{mat[62,4]})$ & $(
-\backslash
-Sexpr{mat[62,5]})$  
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
- {Farmer's distance to} & $
-\backslash
-Sexpr{mat[64,1]}^{
-\backslash
-Sexpr{ifelse(mat[66,1]<.01,"***",ifelse(mat[66,1]<.05,"**",ifelse(mat[66,1]<.1,"*",
-"")))}}$ & $
-\backslash
-Sexpr{mat[64,2]}^{
-\backslash
-Sexpr{ifelse(mat[66,2]<.01,"***",ifelse(mat[66,2]<.05,"**",ifelse(mat[66,2]<.1,"*",
-"")))}}$  & $
-\backslash
-Sexpr{mat[64,3]}^{
-\backslash
-Sexpr{ifelse(mat[66,3]<.01,"***",ifelse(mat[66,3]<.05,"**",ifelse(mat[66,3]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{mat[64,4]}^{
-\backslash
-Sexpr{ifelse(mat[66,4]<.01,"***",ifelse(mat[66,4]<.05,"**",ifelse(mat[66,4]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{mat[64,5]}^{
-\backslash
-Sexpr{ifelse(mat[66,5]<.01,"***",ifelse(mat[66,5]<.05,"**",ifelse(mat[66,5]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-
-\backslash
-{murram road (in km)}
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $(
-\backslash
-Sexpr{mat[65,1]})$   &  $(
-\backslash
-Sexpr{mat[65,2]})$ & $(
-\backslash
-Sexpr{mat[65,3]})$ & $(
-\backslash
-Sexpr{mat[65,4]})$ & $(
-\backslash
-Sexpr{mat[65,5]})$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
- {Farmer is married} & $
-\backslash
-Sexpr{mat[67,1]}^{
-\backslash
-Sexpr{ifelse(mat[69,1]<.01,"***",ifelse(mat[69,1]<.05,"**",ifelse(mat[69,1]<.1,"*",
-"")))}}$ & $
-\backslash
-Sexpr{mat[67,2]}^{
-\backslash
-Sexpr{ifelse(mat[69,2]<.01,"***",ifelse(mat[69,2]<.05,"**",ifelse(mat[69,2]<.1,"*",
-"")))}}$  & $
-\backslash
-Sexpr{mat[67,3]}^{
-\backslash
-Sexpr{ifelse(mat[69,3]<.01,"***",ifelse(mat[69,3]<.05,"**",ifelse(mat[69,3]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{mat[67,4]}^{
-\backslash
-Sexpr{ifelse(mat[69,4]<.01,"***",ifelse(mat[69,4]<.05,"**",ifelse(mat[69,4]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{mat[67,5]}^{
-\backslash
-Sexpr{ifelse(mat[69,5]<.01,"***",ifelse(mat[69,5]<.05,"**",ifelse(mat[69,5]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $(
-\backslash
-Sexpr{mat[68,1]})$   &  $(
-\backslash
-Sexpr{mat[68,2]})$ & $(
-\backslash
-Sexpr{mat[68,3]})$ & $(
-\backslash
-Sexpr{mat[68,4]})$ & $(
-\backslash
-Sexpr{mat[68,5]})$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
- {Ratee's age} & $
-\backslash
-Sexpr{mat[70,1]}^{
-\backslash
-Sexpr{ifelse(mat[72,1]<.01,"***",ifelse(mat[72,1]<.05,"**",ifelse(mat[72,1]<.1,"*",
-"")))}}$ & $
-\backslash
-Sexpr{mat[70,2]}^{
-\backslash
-Sexpr{ifelse(mat[72,2]<.01,"***",ifelse(mat[72,2]<.05,"**",ifelse(mat[72,2]<.1,"*",
-"")))}}$  & $
-\backslash
-Sexpr{mat[70,3]}^{
-\backslash
-Sexpr{ifelse(mat[72,3]<.01,"***",ifelse(mat[72,3]<.05,"**",ifelse(mat[72,3]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{mat[70,4]}^{
-\backslash
-Sexpr{ifelse(mat[72,4]<.01,"***",ifelse(mat[72,4]<.05,"**",ifelse(mat[72,4]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{mat[70,5]}^{
-\backslash
-Sexpr{ifelse(mat[72,5]<.01,"***",ifelse(mat[72,5]<.05,"**",ifelse(mat[72,5]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-
-\backslash
-{(in years)}
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $(
-\backslash
-Sexpr{mat[71,1]})$   &  $(
-\backslash
-Sexpr{mat[71,2]})$ & $(
-\backslash
-Sexpr{mat[71,3]})$ & $(
-\backslash
-Sexpr{mat[71,4]})$ & $(
-\backslash
-Sexpr{mat[71,5]})$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
- {Ratee is married}
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{mat[73,1]}^{
-\backslash
-Sexpr{ifelse(mat[75,1]<.01,"***",ifelse(mat[75,1]<.05,"**",ifelse(mat[75,1]<.1,"*",
-"")))}}$ & $
-\backslash
-Sexpr{mat[73,2]}^{
-\backslash
-Sexpr{ifelse(mat[75,2]<.01,"***",ifelse(mat[75,2]<.05,"**",ifelse(mat[75,2]<.1,"*",
-"")))}}$  & $
-\backslash
-Sexpr{mat[73,3]}^{
-\backslash
-Sexpr{ifelse(mat[75,3]<.01,"***",ifelse(mat[75,3]<.05,"**",ifelse(mat[75,3]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{mat[73,4]}^{
-\backslash
-Sexpr{ifelse(mat[75,4]<.01,"***",ifelse(mat[75,4]<.05,"**",ifelse(mat[75,4]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{mat[73,5]}^{
-\backslash
-Sexpr{ifelse(mat[75,5]<.01,"***",ifelse(mat[75,5]<.05,"**",ifelse(mat[75,5]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $(
-\backslash
-Sexpr{mat[74,1]})$   &  $(
-\backslash
-Sexpr{mat[74,2]})$ & $(
-\backslash
-Sexpr{mat[74,3]})$ & $(
-\backslash
-Sexpr{mat[74,4]})$ & $(
-\backslash
-Sexpr{mat[74,5]})$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
- {Ratee has finished} & $
-\backslash
-Sexpr{mat[76,1]}^{
-\backslash
-Sexpr{ifelse(mat[78,1]<.01,"***",ifelse(mat[78,1]<.05,"**",ifelse(mat[78,1]<.1,"*",
-"")))}}$ & $
-\backslash
-Sexpr{mat[76,2]}^{
-\backslash
-Sexpr{ifelse(mat[78,2]<.01,"***",ifelse(mat[78,2]<.05,"**",ifelse(mat[78,2]<.1,"*",
-"")))}}$  & $
-\backslash
-Sexpr{mat[76,3]}^{
-\backslash
-Sexpr{ifelse(mat[78,3]<.01,"***",ifelse(mat[78,3]<.05,"**",ifelse(mat[78,3]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{mat[76,4]}^{
-\backslash
-Sexpr{ifelse(mat[78,4]<.01,"***",ifelse(mat[78,4]<.05,"**",ifelse(mat[78,4]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{mat[76,5]}^{
-\backslash
-Sexpr{ifelse(mat[78,5]<.01,"***",ifelse(mat[78,5]<.05,"**",ifelse(mat[78,5]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-
-\backslash
-  {primary education}
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $(
-\backslash
-Sexpr{mat[77,1]})$   &  $(
-\backslash
-Sexpr{mat[77,2]})$ & $(
-\backslash
-Sexpr{mat[77,3]})$ & $(
-\backslash
-Sexpr{mat[77,4]})$ & $(
-\backslash
-Sexpr{mat[77,5]})$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
- {Ratee is a dealer} & $
-\backslash
-Sexpr{mat[79,1]}^{
-\backslash
-Sexpr{ifelse(mat[81,1]<.01,"***",ifelse(mat[81,1]<.05,"**",ifelse(mat[81,1]<.1,"*",
-"")))}}$ & $
-\backslash
-Sexpr{mat[79,2]}^{
-\backslash
-Sexpr{ifelse(mat[81,2]<.01,"***",ifelse(mat[81,2]<.05,"**",ifelse(mat[81,2]<.1,"*",
-"")))}}$  & $
-\backslash
-Sexpr{mat[79,3]}^{
-\backslash
-Sexpr{ifelse(mat[81,3]<.01,"***",ifelse(mat[81,3]<.05,"**",ifelse(mat[81,3]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{mat[79,4]}^{
-\backslash
-Sexpr{ifelse(mat[81,4]<.01,"***",ifelse(mat[81,4]<.05,"**",ifelse(mat[81,4]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{mat[79,5]}^{
-\backslash
-Sexpr{ifelse(mat[81,5]<.01,"***",ifelse(mat[81,5]<.05,"**",ifelse(mat[81,5]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $(
-\backslash
-Sexpr{mat[80,1]})$   &  $(
-\backslash
-Sexpr{mat[80,2]})$ & $(
-\backslash
-Sexpr{mat[80,3]})$ & $(
-\backslash
-Sexpr{mat[80,4]})$ & $(
-\backslash
-Sexpr{mat[80,5]})$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
- {Ratee is a trader}  & $
-\backslash
-Sexpr{mat[82,1]}^{
-\backslash
-Sexpr{ifelse(mat[84,1]<.01,"***",ifelse(mat[84,1]<.05,"**",ifelse(mat[84,1]<.1,"*",
-"")))}}$ & $
-\backslash
-Sexpr{mat[82,2]}^{
-\backslash
-Sexpr{ifelse(mat[84,2]<.01,"***",ifelse(mat[84,2]<.05,"**",ifelse(mat[84,2]<.1,"*",
-"")))}}$  & $
-\backslash
-Sexpr{mat[82,3]}^{
-\backslash
-Sexpr{ifelse(mat[84,3]<.01,"***",ifelse(mat[84,3]<.05,"**",ifelse(mat[84,3]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{mat[82,4]}^{
-\backslash
-Sexpr{ifelse(mat[84,4]<.01,"***",ifelse(mat[84,4]<.05,"**",ifelse(mat[84,4]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{mat[82,5]}^{
-\backslash
-Sexpr{ifelse(mat[84,5]<.01,"***",ifelse(mat[84,5]<.05,"**",ifelse(mat[84,5]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $(
-\backslash
-Sexpr{mat[83,1]})$   &  $(
-\backslash
-Sexpr{mat[83,2]})$ & $(
-\backslash
-Sexpr{mat[83,3]})$ & $(
-\backslash
-Sexpr{mat[83,4]})$ & $(
-\backslash
-Sexpr{mat[83,5]})$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
- {Interaction: Farmer is female*}  & $
-\backslash
-Sexpr{mat[85,1]}^{
-\backslash
-Sexpr{ifelse(mat[87,1]<.01,"***",ifelse(mat[87,1]<.05,"**",ifelse(mat[87,1]<.1,"*",
-"")))}}$ & $
-\backslash
-Sexpr{mat[85,2]}^{
-\backslash
-Sexpr{ifelse(mat[87,2]<.01,"***",ifelse(mat[87,2]<.05,"**",ifelse(mat[87,2]<.1,"*",
-"")))}}$  & $
-\backslash
-Sexpr{mat[85,3]}^{
-\backslash
-Sexpr{ifelse(mat[87,3]<.01,"***",ifelse(mat[87,3]<.05,"**",ifelse(mat[87,3]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{mat[85,4]}^{
-\backslash
-Sexpr{ifelse(mat[87,4]<.01,"***",ifelse(mat[87,4]<.05,"**",ifelse(mat[87,4]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{mat[85,5]}^{
-\backslash
-Sexpr{ifelse(mat[87,5]<.01,"***",ifelse(mat[87,5]<.05,"**",ifelse(mat[87,5]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-
-\backslash
-  {Ratee is female} 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $(
-\backslash
-Sexpr{mat[86,1]})$   &  $(
-\backslash
-Sexpr{mat[86,2]})$ & $(
-\backslash
-Sexpr{mat[86,3]})$ & $(
-\backslash
-Sexpr{mat[86,4]})$ & $(
-\backslash
-Sexpr{mat[86,5]})$              
-\end_layout
-
-\begin_layout Plain Layout
-
-    
-\backslash
-
-\backslash
- 
-\backslash
-hline 
-\end_layout
-
-\begin_layout Plain Layout
-
-R$^2$  & $
-\backslash
-Sexpr{mat[88,1]}$   &  $
-\backslash
-Sexpr{mat[88,2]}$ & $
-\backslash
-Sexpr{mat[88,3]}$ & $
-\backslash
-Sexpr{mat[88,4]}$ & $
-\backslash
-Sexpr{mat[88,5]}$    
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-
-\backslash
- Adj.
- R$^2$        & $
-\backslash
-Sexpr{mat[89,1]}$   &  $
-\backslash
-Sexpr{mat[89,2]}$ & $
-\backslash
-Sexpr{mat[89,3]}$ & $
-\backslash
-Sexpr{mat[89,4]}$ & $
-\backslash
-Sexpr{mat[89,5]}$        
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
- Number of obs.
-        & $
-\backslash
-Sexpr{mat[90,1]}$   &  $
-\backslash
-Sexpr{mat[90,2]}$ & $
-\backslash
-Sexpr{mat[90,3]}$ & $
-\backslash
-Sexpr{mat[90,4]}$ & $
-\backslash
-Sexpr{mat[90,5]}$  
-\end_layout
-
-\begin_layout Plain Layout
-
-     
-\backslash
-
-\backslash
- 
-\backslash
-hline
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-multicolumn{5}{l}{ 
-\backslash
-tiny{$^{***}p<0.01$; $^{**}p<0.05$; $^{*}p<0.1$.}} 
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-end{tabular} 
-\backslash
-end{center}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-tiny
-\end_layout
-
-\begin_layout Plain Layout
-
-Note: Standard errors are clustered at the ratee level (agro-input dealers,
- traders, and millers) and the farmer level.
- The dependent variable is the differences between ratee self-ratings and
- farmer ratings and the main independent variables are farmer's and ratee's
- gender.
- The dimensions based on which the ratings are given are overall average
- (model 1), location (model 2), quality (model 3), price (model 4) and reputatio
-n (model 5).
- An interaction between the farmer's and ratee's gender is included in all
- the models.
-  
-\backslash
-label{table:table5}  
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Regression results for the impact of farmer's (rater's) and ratee's gender
- on the differences between ratee self-ratings and farmer ratings.
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:table7"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -10801,6 +9798,1237 @@ ICC coefficients for inter-rater reliability and intra-rater reliability.
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:table3"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize 
+\backslash
+begin{center} 
+\backslash
+begin{tabular}{@{
+\backslash
+extracolsep{5pt}}lccccc}  
+\backslash
+
+\backslash
+[-1.8ex]
+\backslash
+hline  
+\backslash
+hline 
+\backslash
+
+\backslash
+[-1.8ex]   & 
+\backslash
+multicolumn{5}{c}{
+\backslash
+textit{
+\backslash
+footnotesize Dependent variable: Differences between ratee self-ratings
+ and farmer ratings}} 
+\backslash
+
+\backslash
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-6} 
+\backslash
+
+\backslash
+[-1.8ex] & 
+\backslash
+multicolumn{1} {c} {
+\backslash
+scriptsize Overall} &  
+\backslash
+multicolumn{1} {c} {
+\backslash
+scriptsize Location}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {
+\backslash
+scriptsize Quality}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {
+\backslash
+scriptsize Price}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {
+\backslash
+scriptsize Reputation} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+[-1.8ex] & (
+\backslash
+scriptsize 1) & (
+\backslash
+scriptsize 2) & (
+\backslash
+scriptsize 3) & (
+\backslash
+scriptsize 4) & (
+\backslash
+scriptsize 5) 
+\backslash
+
+\backslash
+  
+\backslash
+hline 
+\backslash
+
+\backslash
+[-1.8ex]  
+\end_layout
+
+\begin_layout Plain Layout
+
+{Constant}  & $
+\backslash
+Sexpr{mat[46,1]}^{
+\backslash
+Sexpr{ifelse(mat[48,1]<.01,"***",ifelse(mat[48,1]<.05,"**",ifelse(mat[48,1]<.1,"*",
+"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{mat[46,2]}^{
+\backslash
+Sexpr{ifelse(mat[48,2]<.01,"***",ifelse(mat[48,2]<.05,"**",ifelse(mat[48,2]<.1,"*",
+"")))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{mat[46,3]}^{
+\backslash
+Sexpr{ifelse(mat[48,3]<.01,"***",ifelse(mat[48,3]<.05,"**",ifelse(mat[48,3]<.1,"*",
+"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{mat[46,4]}^{
+\backslash
+Sexpr{ifelse(mat[48,4]<.01,"***",ifelse(mat[48,4]<.05,"**",ifelse(mat[48,4]<.1,"*",
+"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{mat[46,5]}^{
+\backslash
+Sexpr{ifelse(mat[48,5]<.01,"***",ifelse(mat[48,5]<.05,"**",ifelse(mat[48,5]<.1,"*",
+"")))}}$ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& $(
+\backslash
+Sexpr{mat[47,1]})$ & $(
+\backslash
+Sexpr{mat[47,2]})$  & $(
+\backslash
+Sexpr{mat[47,3]})$ & $(
+\backslash
+Sexpr{mat[47,4]})$ & $(
+\backslash
+Sexpr{mat[47,5]})$
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ {Farmer is female} & $
+\backslash
+Sexpr{mat[49,1]}^{
+\backslash
+Sexpr{ifelse(mat[51,1]<.01,"***",ifelse(mat[51,1]<.05,"**",ifelse(mat[51,1]<.1,"*",
+"")))}}$ & $
+\backslash
+Sexpr{mat[49,2]}^{
+\backslash
+Sexpr{ifelse(mat[51,2]<.01,"***",ifelse(mat[51,2]<.05,"**",ifelse(mat[51,2]<.1,"*",
+"")))}}$  & $
+\backslash
+Sexpr{mat[49,3]}^{
+\backslash
+Sexpr{ifelse(mat[51,3]<.01,"***",ifelse(mat[51,3]<.05,"**",ifelse(mat[51,3]<.1,"*",
+"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{mat[49,4]}^{
+\backslash
+Sexpr{ifelse(mat[51,4]<.01,"***",ifelse(mat[51,4]<.05,"**",ifelse(mat[51,4]<.1,"*",
+"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{mat[49,5]}^{
+\backslash
+Sexpr{ifelse(mat[51,5]<.01,"***",ifelse(mat[51,5]<.05,"**",ifelse(mat[51,5]<.1,"*",
+"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+ & $(
+\backslash
+Sexpr{mat[50,1]})$ & $(
+\backslash
+Sexpr{mat[50,2]})$  & $(
+\backslash
+Sexpr{mat[50,3]})$ & $(
+\backslash
+Sexpr{mat[50,4]})$ & $(
+\backslash
+Sexpr{mat[50,5]})$
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ {Ratee is female}   & $
+\backslash
+Sexpr{mat[52,1]}^{
+\backslash
+Sexpr{ifelse(mat[54,1]<.01,"***",ifelse(mat[54,1]<.05,"**",ifelse(mat[54,1]<.1,"*",
+"")))}}$ & $
+\backslash
+Sexpr{mat[52,2]}^{
+\backslash
+Sexpr{ifelse(mat[54,2]<.01,"***",ifelse(mat[54,2]<.05,"**",ifelse(mat[54,2]<.1,"*",
+"")))}}$  & $
+\backslash
+Sexpr{mat[52,3]}^{
+\backslash
+Sexpr{ifelse(mat[54,3]<.01,"***",ifelse(mat[54,3]<.05,"**",ifelse(mat[54,3]<.1,"*",
+"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{mat[52,4]}^{
+\backslash
+Sexpr{ifelse(mat[54,4]<.01,"***",ifelse(mat[54,4]<.05,"**",ifelse(mat[54,4]<.1,"*",
+"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{mat[52,5]}^{
+\backslash
+Sexpr{ifelse(mat[54,5]<.01,"***",ifelse(mat[54,5]<.05,"**",ifelse(mat[54,5]<.1,"*",
+"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $(
+\backslash
+Sexpr{mat[53,1]})$   &  $(
+\backslash
+Sexpr{mat[53,2]})$ & $(
+\backslash
+Sexpr{mat[53,3]})$ & $(
+\backslash
+Sexpr{mat[53,4]})$ & $(
+\backslash
+Sexpr{mat[53,5]})$          
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ {Farmer has finished} & $
+\backslash
+Sexpr{mat[55,1]}^{
+\backslash
+Sexpr{ifelse(mat[57,1]<.01,"***",ifelse(mat[57,1]<.05,"**",ifelse(mat[57,1]<.1,"*",
+"")))}}$ & $
+\backslash
+Sexpr{mat[55,2]}^{
+\backslash
+Sexpr{ifelse(mat[57,2]<.01,"***",ifelse(mat[57,2]<.05,"**",ifelse(mat[57,2]<.1,"*",
+"")))}}$  & $
+\backslash
+Sexpr{mat[55,3]}^{
+\backslash
+Sexpr{ifelse(mat[57,3]<.01,"***",ifelse(mat[57,3]<.05,"**",ifelse(mat[57,3]<.1,"*",
+"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{mat[55,4]}^{
+\backslash
+Sexpr{ifelse(mat[57,4]<.01,"***",ifelse(mat[57,4]<.05,"**",ifelse(mat[57,4]<.1,"*",
+"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{mat[55,5]}^{
+\backslash
+Sexpr{ifelse(mat[57,5]<.01,"***",ifelse(mat[57,5]<.05,"**",ifelse(mat[57,5]<.1,"*",
+"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+{primary education}
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $(
+\backslash
+Sexpr{mat[56,1]})$   &  $(
+\backslash
+Sexpr{mat[56,2]})$ & $(
+\backslash
+Sexpr{mat[56,3]})$ & $(
+\backslash
+Sexpr{mat[56,4]})$ & $(
+\backslash
+Sexpr{mat[56,5]})$        
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ {Farmer's age} & $
+\backslash
+Sexpr{mat[58,1]}^{
+\backslash
+Sexpr{ifelse(mat[60,1]<.01,"***",ifelse(mat[60,1]<.05,"**",ifelse(mat[60,1]<.1,"*",
+"")))}}$ & $
+\backslash
+Sexpr{mat[58,2]}^{
+\backslash
+Sexpr{ifelse(mat[60,2]<.01,"***",ifelse(mat[60,2]<.05,"**",ifelse(mat[60,2]<.1,"*",
+"")))}}$  & $
+\backslash
+Sexpr{mat[58,3]}^{
+\backslash
+Sexpr{ifelse(mat[60,3]<.01,"***",ifelse(mat[60,3]<.05,"**",ifelse(mat[60,3]<.1,"*",
+"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{mat[58,4]}^{
+\backslash
+Sexpr{ifelse(mat[60,4]<.01,"***",ifelse(mat[60,4]<.05,"**",ifelse(mat[60,4]<.1,"*",
+"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{mat[58,5]}^{
+\backslash
+Sexpr{ifelse(mat[60,5]<.01,"***",ifelse(mat[60,5]<.05,"**",ifelse(mat[60,5]<.1,"*",
+"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+ {(in years)}          
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $(
+\backslash
+Sexpr{mat[59,1]})$   &  $(
+\backslash
+Sexpr{mat[59,2]})$ & $(
+\backslash
+Sexpr{mat[59,3]})$ & $(
+\backslash
+Sexpr{mat[59,4]})$ & $(
+\backslash
+Sexpr{mat[59,5]})$       
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ {Farmer's distance to} & $
+\backslash
+Sexpr{mat[61,1]}^{
+\backslash
+Sexpr{ifelse(mat[63,1]<.01,"***",ifelse(mat[63,1]<.05,"**",ifelse(mat[63,1]<.1,"*",
+"")))}}$ & $
+\backslash
+Sexpr{mat[61,2]}^{
+\backslash
+Sexpr{ifelse(mat[63,2]<.01,"***",ifelse(mat[63,2]<.05,"**",ifelse(mat[63,2]<.1,"*",
+"")))}}$  & $
+\backslash
+Sexpr{mat[61,3]}^{
+\backslash
+Sexpr{ifelse(mat[63,3]<.01,"***",ifelse(mat[63,3]<.05,"**",ifelse(mat[63,3]<.1,"*",
+"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{mat[61,4]}^{
+\backslash
+Sexpr{ifelse(mat[63,4]<.01,"***",ifelse(mat[63,4]<.05,"**",ifelse(mat[63,4]<.1,"*",
+"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{mat[61,5]}^{
+\backslash
+Sexpr{ifelse(mat[63,5]<.01,"***",ifelse(mat[63,5]<.05,"**",ifelse(mat[63,5]<.1,"*",
+"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+{tarmac road (in km)}
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $(
+\backslash
+Sexpr{mat[62,1]})$   &  $(
+\backslash
+Sexpr{mat[62,2]})$ & $(
+\backslash
+Sexpr{mat[62,3]})$ & $(
+\backslash
+Sexpr{mat[62,4]})$ & $(
+\backslash
+Sexpr{mat[62,5]})$  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ {Farmer's distance to} & $
+\backslash
+Sexpr{mat[64,1]}^{
+\backslash
+Sexpr{ifelse(mat[66,1]<.01,"***",ifelse(mat[66,1]<.05,"**",ifelse(mat[66,1]<.1,"*",
+"")))}}$ & $
+\backslash
+Sexpr{mat[64,2]}^{
+\backslash
+Sexpr{ifelse(mat[66,2]<.01,"***",ifelse(mat[66,2]<.05,"**",ifelse(mat[66,2]<.1,"*",
+"")))}}$  & $
+\backslash
+Sexpr{mat[64,3]}^{
+\backslash
+Sexpr{ifelse(mat[66,3]<.01,"***",ifelse(mat[66,3]<.05,"**",ifelse(mat[66,3]<.1,"*",
+"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{mat[64,4]}^{
+\backslash
+Sexpr{ifelse(mat[66,4]<.01,"***",ifelse(mat[66,4]<.05,"**",ifelse(mat[66,4]<.1,"*",
+"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{mat[64,5]}^{
+\backslash
+Sexpr{ifelse(mat[66,5]<.01,"***",ifelse(mat[66,5]<.05,"**",ifelse(mat[66,5]<.1,"*",
+"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+{murram road (in km)}
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $(
+\backslash
+Sexpr{mat[65,1]})$   &  $(
+\backslash
+Sexpr{mat[65,2]})$ & $(
+\backslash
+Sexpr{mat[65,3]})$ & $(
+\backslash
+Sexpr{mat[65,4]})$ & $(
+\backslash
+Sexpr{mat[65,5]})$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ {Farmer is married} & $
+\backslash
+Sexpr{mat[67,1]}^{
+\backslash
+Sexpr{ifelse(mat[69,1]<.01,"***",ifelse(mat[69,1]<.05,"**",ifelse(mat[69,1]<.1,"*",
+"")))}}$ & $
+\backslash
+Sexpr{mat[67,2]}^{
+\backslash
+Sexpr{ifelse(mat[69,2]<.01,"***",ifelse(mat[69,2]<.05,"**",ifelse(mat[69,2]<.1,"*",
+"")))}}$  & $
+\backslash
+Sexpr{mat[67,3]}^{
+\backslash
+Sexpr{ifelse(mat[69,3]<.01,"***",ifelse(mat[69,3]<.05,"**",ifelse(mat[69,3]<.1,"*",
+"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{mat[67,4]}^{
+\backslash
+Sexpr{ifelse(mat[69,4]<.01,"***",ifelse(mat[69,4]<.05,"**",ifelse(mat[69,4]<.1,"*",
+"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{mat[67,5]}^{
+\backslash
+Sexpr{ifelse(mat[69,5]<.01,"***",ifelse(mat[69,5]<.05,"**",ifelse(mat[69,5]<.1,"*",
+"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $(
+\backslash
+Sexpr{mat[68,1]})$   &  $(
+\backslash
+Sexpr{mat[68,2]})$ & $(
+\backslash
+Sexpr{mat[68,3]})$ & $(
+\backslash
+Sexpr{mat[68,4]})$ & $(
+\backslash
+Sexpr{mat[68,5]})$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ {Ratee's age} & $
+\backslash
+Sexpr{mat[70,1]}^{
+\backslash
+Sexpr{ifelse(mat[72,1]<.01,"***",ifelse(mat[72,1]<.05,"**",ifelse(mat[72,1]<.1,"*",
+"")))}}$ & $
+\backslash
+Sexpr{mat[70,2]}^{
+\backslash
+Sexpr{ifelse(mat[72,2]<.01,"***",ifelse(mat[72,2]<.05,"**",ifelse(mat[72,2]<.1,"*",
+"")))}}$  & $
+\backslash
+Sexpr{mat[70,3]}^{
+\backslash
+Sexpr{ifelse(mat[72,3]<.01,"***",ifelse(mat[72,3]<.05,"**",ifelse(mat[72,3]<.1,"*",
+"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{mat[70,4]}^{
+\backslash
+Sexpr{ifelse(mat[72,4]<.01,"***",ifelse(mat[72,4]<.05,"**",ifelse(mat[72,4]<.1,"*",
+"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{mat[70,5]}^{
+\backslash
+Sexpr{ifelse(mat[72,5]<.01,"***",ifelse(mat[72,5]<.05,"**",ifelse(mat[72,5]<.1,"*",
+"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+{(in years)}
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $(
+\backslash
+Sexpr{mat[71,1]})$   &  $(
+\backslash
+Sexpr{mat[71,2]})$ & $(
+\backslash
+Sexpr{mat[71,3]})$ & $(
+\backslash
+Sexpr{mat[71,4]})$ & $(
+\backslash
+Sexpr{mat[71,5]})$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ {Ratee is married}
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{mat[73,1]}^{
+\backslash
+Sexpr{ifelse(mat[75,1]<.01,"***",ifelse(mat[75,1]<.05,"**",ifelse(mat[75,1]<.1,"*",
+"")))}}$ & $
+\backslash
+Sexpr{mat[73,2]}^{
+\backslash
+Sexpr{ifelse(mat[75,2]<.01,"***",ifelse(mat[75,2]<.05,"**",ifelse(mat[75,2]<.1,"*",
+"")))}}$  & $
+\backslash
+Sexpr{mat[73,3]}^{
+\backslash
+Sexpr{ifelse(mat[75,3]<.01,"***",ifelse(mat[75,3]<.05,"**",ifelse(mat[75,3]<.1,"*",
+"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{mat[73,4]}^{
+\backslash
+Sexpr{ifelse(mat[75,4]<.01,"***",ifelse(mat[75,4]<.05,"**",ifelse(mat[75,4]<.1,"*",
+"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{mat[73,5]}^{
+\backslash
+Sexpr{ifelse(mat[75,5]<.01,"***",ifelse(mat[75,5]<.05,"**",ifelse(mat[75,5]<.1,"*",
+"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $(
+\backslash
+Sexpr{mat[74,1]})$   &  $(
+\backslash
+Sexpr{mat[74,2]})$ & $(
+\backslash
+Sexpr{mat[74,3]})$ & $(
+\backslash
+Sexpr{mat[74,4]})$ & $(
+\backslash
+Sexpr{mat[74,5]})$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ {Ratee has finished} & $
+\backslash
+Sexpr{mat[76,1]}^{
+\backslash
+Sexpr{ifelse(mat[78,1]<.01,"***",ifelse(mat[78,1]<.05,"**",ifelse(mat[78,1]<.1,"*",
+"")))}}$ & $
+\backslash
+Sexpr{mat[76,2]}^{
+\backslash
+Sexpr{ifelse(mat[78,2]<.01,"***",ifelse(mat[78,2]<.05,"**",ifelse(mat[78,2]<.1,"*",
+"")))}}$  & $
+\backslash
+Sexpr{mat[76,3]}^{
+\backslash
+Sexpr{ifelse(mat[78,3]<.01,"***",ifelse(mat[78,3]<.05,"**",ifelse(mat[78,3]<.1,"*",
+"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{mat[76,4]}^{
+\backslash
+Sexpr{ifelse(mat[78,4]<.01,"***",ifelse(mat[78,4]<.05,"**",ifelse(mat[78,4]<.1,"*",
+"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{mat[76,5]}^{
+\backslash
+Sexpr{ifelse(mat[78,5]<.01,"***",ifelse(mat[78,5]<.05,"**",ifelse(mat[78,5]<.1,"*",
+"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+  {primary education}
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $(
+\backslash
+Sexpr{mat[77,1]})$   &  $(
+\backslash
+Sexpr{mat[77,2]})$ & $(
+\backslash
+Sexpr{mat[77,3]})$ & $(
+\backslash
+Sexpr{mat[77,4]})$ & $(
+\backslash
+Sexpr{mat[77,5]})$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ {Ratee is a dealer} & $
+\backslash
+Sexpr{mat[79,1]}^{
+\backslash
+Sexpr{ifelse(mat[81,1]<.01,"***",ifelse(mat[81,1]<.05,"**",ifelse(mat[81,1]<.1,"*",
+"")))}}$ & $
+\backslash
+Sexpr{mat[79,2]}^{
+\backslash
+Sexpr{ifelse(mat[81,2]<.01,"***",ifelse(mat[81,2]<.05,"**",ifelse(mat[81,2]<.1,"*",
+"")))}}$  & $
+\backslash
+Sexpr{mat[79,3]}^{
+\backslash
+Sexpr{ifelse(mat[81,3]<.01,"***",ifelse(mat[81,3]<.05,"**",ifelse(mat[81,3]<.1,"*",
+"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{mat[79,4]}^{
+\backslash
+Sexpr{ifelse(mat[81,4]<.01,"***",ifelse(mat[81,4]<.05,"**",ifelse(mat[81,4]<.1,"*",
+"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{mat[79,5]}^{
+\backslash
+Sexpr{ifelse(mat[81,5]<.01,"***",ifelse(mat[81,5]<.05,"**",ifelse(mat[81,5]<.1,"*",
+"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $(
+\backslash
+Sexpr{mat[80,1]})$   &  $(
+\backslash
+Sexpr{mat[80,2]})$ & $(
+\backslash
+Sexpr{mat[80,3]})$ & $(
+\backslash
+Sexpr{mat[80,4]})$ & $(
+\backslash
+Sexpr{mat[80,5]})$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ {Ratee is a trader}  & $
+\backslash
+Sexpr{mat[82,1]}^{
+\backslash
+Sexpr{ifelse(mat[84,1]<.01,"***",ifelse(mat[84,1]<.05,"**",ifelse(mat[84,1]<.1,"*",
+"")))}}$ & $
+\backslash
+Sexpr{mat[82,2]}^{
+\backslash
+Sexpr{ifelse(mat[84,2]<.01,"***",ifelse(mat[84,2]<.05,"**",ifelse(mat[84,2]<.1,"*",
+"")))}}$  & $
+\backslash
+Sexpr{mat[82,3]}^{
+\backslash
+Sexpr{ifelse(mat[84,3]<.01,"***",ifelse(mat[84,3]<.05,"**",ifelse(mat[84,3]<.1,"*",
+"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{mat[82,4]}^{
+\backslash
+Sexpr{ifelse(mat[84,4]<.01,"***",ifelse(mat[84,4]<.05,"**",ifelse(mat[84,4]<.1,"*",
+"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{mat[82,5]}^{
+\backslash
+Sexpr{ifelse(mat[84,5]<.01,"***",ifelse(mat[84,5]<.05,"**",ifelse(mat[84,5]<.1,"*",
+"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $(
+\backslash
+Sexpr{mat[83,1]})$   &  $(
+\backslash
+Sexpr{mat[83,2]})$ & $(
+\backslash
+Sexpr{mat[83,3]})$ & $(
+\backslash
+Sexpr{mat[83,4]})$ & $(
+\backslash
+Sexpr{mat[83,5]})$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ {Interaction: Farmer is female*}  & $
+\backslash
+Sexpr{mat[85,1]}^{
+\backslash
+Sexpr{ifelse(mat[87,1]<.01,"***",ifelse(mat[87,1]<.05,"**",ifelse(mat[87,1]<.1,"*",
+"")))}}$ & $
+\backslash
+Sexpr{mat[85,2]}^{
+\backslash
+Sexpr{ifelse(mat[87,2]<.01,"***",ifelse(mat[87,2]<.05,"**",ifelse(mat[87,2]<.1,"*",
+"")))}}$  & $
+\backslash
+Sexpr{mat[85,3]}^{
+\backslash
+Sexpr{ifelse(mat[87,3]<.01,"***",ifelse(mat[87,3]<.05,"**",ifelse(mat[87,3]<.1,"*",
+"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{mat[85,4]}^{
+\backslash
+Sexpr{ifelse(mat[87,4]<.01,"***",ifelse(mat[87,4]<.05,"**",ifelse(mat[87,4]<.1,"*",
+"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{mat[85,5]}^{
+\backslash
+Sexpr{ifelse(mat[87,5]<.01,"***",ifelse(mat[87,5]<.05,"**",ifelse(mat[87,5]<.1,"*",
+"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+  {Ratee is female} 
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $(
+\backslash
+Sexpr{mat[86,1]})$   &  $(
+\backslash
+Sexpr{mat[86,2]})$ & $(
+\backslash
+Sexpr{mat[86,3]})$ & $(
+\backslash
+Sexpr{mat[86,4]})$ & $(
+\backslash
+Sexpr{mat[86,5]})$              
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+
+\backslash
+ 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+R$^2$  & $
+\backslash
+Sexpr{mat[88,1]}$   &  $
+\backslash
+Sexpr{mat[88,2]}$ & $
+\backslash
+Sexpr{mat[88,3]}$ & $
+\backslash
+Sexpr{mat[88,4]}$ & $
+\backslash
+Sexpr{mat[88,5]}$    
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+ Adj.
+ R$^2$        & $
+\backslash
+Sexpr{mat[89,1]}$   &  $
+\backslash
+Sexpr{mat[89,2]}$ & $
+\backslash
+Sexpr{mat[89,3]}$ & $
+\backslash
+Sexpr{mat[89,4]}$ & $
+\backslash
+Sexpr{mat[89,5]}$        
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ Number of obs.
+        & $
+\backslash
+Sexpr{mat[90,1]}$   &  $
+\backslash
+Sexpr{mat[90,2]}$ & $
+\backslash
+Sexpr{mat[90,3]}$ & $
+\backslash
+Sexpr{mat[90,4]}$ & $
+\backslash
+Sexpr{mat[90,5]}$  
+\end_layout
+
+\begin_layout Plain Layout
+
+     
+\backslash
+
+\backslash
+ 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{5}{l}{ 
+\backslash
+tiny{$^{***}p<0.01$; $^{**}p<0.05$; $^{*}p<0.1$.}} 
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tabular} 
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: Standard errors are clustered at the ratee level (agro-input dealers,
+ traders, and millers) and the farmer level.
+ The dependent variable is the differences between ratee self-ratings and
+ farmer ratings and the main independent variables are farmer's and ratee's
+ gender.
+ The dimensions based on which the ratings are given are overall average
+ (model 1), location (model 2), quality (model 3), price (model 4) and reputatio
+n (model 5).
+ An interaction between the farmer's and ratee's gender is included in all
+ the models.
+  
+\backslash
+label{table:table5}  
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Regression results for the impact of farmer's (rater's) and ratee's gender
+ on the differences between ratee self-ratings and farmer ratings.
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:table7"
 
 \end_inset
 
