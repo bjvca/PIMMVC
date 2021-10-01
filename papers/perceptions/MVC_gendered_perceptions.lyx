@@ -1808,15 +1808,16 @@ status open
 
 
 \backslash
-Sexpr{format(round(sum(table(pool$id.ratee[pool$rating_reputation_ratee>=5]))/sum
-(table(pool$id.ratee))*100,digits=0),nsmall=0)}
+Sexpr{format(round(sum(table(ratee_pool$id.ratee[ratee_pool$rating_reputation_rat
+ee>=5]))/sum(table(ratee_pool$id.ratee))*100,digits=0),nsmall=0)}
 \end_layout
 
 \end_inset
 
  percent).
- They seem to be the least confident about their location as among all the
- dimensions, the highest percentage adhere to a score of at most 2 for location.
+ They seem to be the least confident about their price competitiveness as
+ among all the dimensions, the highest percentage adhere to a score of at
+ most 3 for this dimension.
  
 \end_layout
 

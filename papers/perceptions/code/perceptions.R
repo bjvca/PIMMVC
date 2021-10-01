@@ -3,7 +3,6 @@ path <- getwd()
 library(irrICC)
 library(reshape2)
 library(miceadds)
-library(tseries)
 
 options(scipen=999)
 path_2 <- strsplit(path, "/papers/perceptions")[[1]]
@@ -3270,5 +3269,7 @@ summary(fe_modqual)
 fe_modrep <- lm(rating_reputation ~ farmerID, data = pool)
 summary(fe_modrep)
 #reject null at 5% -- significant 
+#
 
-x <- read.matrix("test")
+library(tseries)
+x <- read.table("test")
