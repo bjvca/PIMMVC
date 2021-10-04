@@ -155,9 +155,9 @@ Faced with imperfect information, how value chain actors perceive each other
  We also zoom in on heterogeneity in perceptions related to gender and find
  that for self-assessments, the gender of the individual does not matter.
  However, the difference between how these actors assess themselves and
- how farmers perceive other actors and is larger for men than for women,
- as women appear to rate the dealers, traders and millers significantly
- higher on several characteristics.
+ how farmers perceive other actors is larger for men than for women, as
+ women appear to rate the dealers, traders and millers significantly higher
+ on several characteristics.
  The sex of the actor being rated does not affect the rating and gender-based
  homophily is not present rating behaviour.
  
@@ -455,7 +455,8 @@ literal "true"
 
 \begin_layout Standard
 We find that agro-input dealers, traders and processors consistently rate
- themselves higher than how farmers rate them.
+ themselves higher than how farmers rate them, except for one tribute that
+ is easily observable by both those who rate and those who get rated.
  We do not find that gender plays a significant role in self-assessments.
  The sex of the actor being rated also does not affect the rating that they
  receive and we find no signs of gender-based homophily in the ratings.
@@ -1290,7 +1291,7 @@ literal "false"
 \begin_layout Itemize
 \paragraph_spacing single
 \noindent
-Hypothesis 2: Ratings by women are more favourable than ratings by men
+Hypothesis 2: Female farmers rate more favourable than male farmers
 \begin_inset CommandInset label
 LatexCommand label
 name "Hypothesis 2"
@@ -1948,7 +1949,7 @@ We start from the following multivariate regression model:
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-y_{f,a}=\alpha+\beta_{1}g_{f}^{F}+\beta_{2}g_{a}^{A}+\beta_{3}g_{f}^{F}*g_{a}^{A}+\gamma X_{f,a}+\varepsilon_{f,a}
+y_{f,a}=\alpha+\beta_{1}g_{f}^{F}+\beta_{2}g_{a}^{A}+\beta_{3}g_{f}^{F}*g_{a}^{A}+\gamma X_{f,a}+\varepsilon_{f,a}\label{eq:farmer_level}
 \end{equation}
 
 \end_inset
@@ -2156,7 +2157,7 @@ noprefix "false"
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-y_{a}=\alpha+\beta_{1}g_{a}^{A}+\gamma X_{a}+\varepsilon_{a}
+y_{a}=\alpha+\beta_{1}g_{a}^{A}+\gamma X_{a}+\varepsilon_{a}\label{eq:actor_level}
 \end{equation}
 
 \end_inset
@@ -2571,8 +2572,8 @@ There is also no clear pattern when we look at the different actors.
  men rate themselves highers on three of the four dimensions.
  For millers, it is the other way around.
  For traders, women consistently rate themselves higher.
- However, due to the small number of female agro-input dealers, this result
- needs to be interpreted with caution.
+ However, due to the small number of female traders, this result needs to
+ be interpreted with caution.
  Overall, we see that from the 20 comparisons, 9 are in line with hypothesis
  
 \begin_inset CommandInset ref
@@ -2613,7 +2614,7 @@ noprefix "false"
 
 \begin_layout Standard
 When we look at the different actors more in detail, we find no difference
- in the overall ratings between male and female agro-input dealers.
+ in the overall ratings between men and women.
  As is the case when all actors are pooled, women dealers are viewed more
  favorably for quality and reputation, while male dealer get higher scores
  for location and price.
@@ -2688,239 +2689,40 @@ name "subsec:Regressions"
 \end_layout
 
 \begin_layout Standard
-Here, we need to add a paragraph for the t-tests.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float table
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-T-test results for differences between the self-ratings and the farmer ratings.
- 
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:T-test-results"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-scriptsize 
-\backslash
-begin{center} 
-\backslash
-begin{tabular}{@{
-\backslash
-extracolsep{5pt}}lccc}  
-\backslash
-
-\backslash
-[-1.8ex]
-\backslash
-hline  
-\backslash
-hline 
-\backslash
-
-\backslash
-[-1.8ex]   & 
-\backslash
-multicolumn{3}{c}{
-\backslash
-textit{
-\backslash
-footnotesize T-tests: Differences between self-ratings and farmer ratings
- > 0}} 
-\backslash
-
-\backslash
-  
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-cline{2-4} 
-\backslash
-
-\backslash
-[-1.8ex] & 
-\backslash
-multicolumn{1} {c} {
-\backslash
-scriptsize Self-ratings} &  
-\backslash
-multicolumn{1} {c} {
-\backslash
-scriptsize Farmer ratings}  &
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-multicolumn{1} {c} {
-\backslash
-scriptsize P-value}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
- 
-\backslash
-hline 
-\backslash
-
-\backslash
-[-1.8ex]  
-\end_layout
-
-\begin_layout Plain Layout
-
-{Overall}  & $
-\backslash
-Sexpr{hyp1[1,1]}$ & $
-\backslash
-Sexpr{hyp1[1,2]}$  & $
-\backslash
-Sexpr{hyp1[1,3]}$ 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{Location}  & $
-\backslash
-Sexpr{hyp1[2,1]}$ & $
-\backslash
-Sexpr{hyp1[2,2]}$  & $
-\backslash
-Sexpr{hyp1[2,3]}$ 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{Price}  & $
-\backslash
-Sexpr{hyp1[3,1]}$ & $
-\backslash
-Sexpr{hyp1[3,2]}$  & $
-\backslash
-Sexpr{hyp1[3,3]}$ 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{Quality}  & $
-\backslash
-Sexpr{hyp1[4,1]}$ & $
-\backslash
-Sexpr{hyp1[4,2]}$  & $
-\backslash
-Sexpr{hyp1[4,3]}$ 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{Reputation}  & $
-\backslash
-Sexpr{hyp1[5,1]}$ & $
-\backslash
-Sexpr{hyp1[5,2]}$  & $
-\backslash
-Sexpr{hyp1[5,3]}$
-\end_layout
-
-\begin_layout Plain Layout
-
-     
-\backslash
-
-\backslash
- 
-\backslash
-hline
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-end{tabular} 
-\backslash
-end{center}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-tiny
-\end_layout
-
-\begin_layout Plain Layout
-
-Note: The average self-ratings for each dimension are mentioned in the first
- column and the average farmer ratings for each dimension are mentioned
- in the second column.
- The p-value indicating the significance of each t-test is also presented.
- The alternative hypothesis is that the differences between the self-ratings
- and the farmer ratings are greater than 0.
- 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Tables 
+To test hypothesis 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "tab:table5"
+reference "Hypothesis 1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ formally, we test if the difference between an actor's self rating and
+ the rating of the actor provided by the farmer is significantly larger
+ than zero.
+ Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:T-test-results"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ shows that we reject the null hypothesis the difference is equal to zero
+ in favour of the alternative hypothesis that actors rate themselves systematica
+lly higher than farmers do.
+ 
+\end_layout
+
+\begin_layout Standard
+Formally testing hypotheses 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Hypothesis 2"
 plural "false"
 caps "false"
 noprefix "false"
@@ -2930,7 +2732,7 @@ noprefix "false"
 , 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "tab:table6"
+reference "Hypothesis 4"
 plural "false"
 caps "false"
 noprefix "false"
@@ -2940,15 +2742,34 @@ noprefix "false"
  and 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "tab:table7"
+reference "Hypothesis 5"
 plural "false"
 caps "false"
 noprefix "false"
 
 \end_inset
 
- present results from the regressions implemented for this study.
- Table 
+ is done by estimating regression model 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:farmer_level"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ outlined in Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Econometric-Analysis"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, the results of which are reported in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:table5"
@@ -2958,29 +2779,13 @@ noprefix "false"
 
 \end_inset
 
- shows multivariate regressions with clustered standard errors (at the ratee
- level), discussing the impact of the sex of the farmer (rater) and the
- ratee on the ratings given by the farmers to the ratees.
- From models 3 and 7, it is noticeable that female farmers give more favourable
- ratings when compared to male farmers for location and price competitiveness,
- consistent with the results from table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:table4"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
 .
- The relation between the gender of the farmer and the overall average ratings
- from farmers is insignificant.
- It can be also noted that female ratees receive higher scores for quality
- and reputation attributes (reiterating the results from table 
+ Taking overall ratings as the dependent variable in column (1), we can
+ not reject the null that the sex of the farmers does not affects the rating
+ given (hypothesis 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "tab:table4"
+reference "Hypothesis 2"
 plural "false"
 caps "false"
 noprefix "false"
@@ -2988,62 +2793,48 @@ noprefix "false"
 \end_inset
 
 ).
- 
+ However, if we look at the different components of the rating index, we
+ see that women rate actors significantly higher when asked to assess location
+ and price competitiveness (columns (2) and (4)).
 \end_layout
 
 \begin_layout Standard
-\paragraph_spacing onehalf
-There is a negative relationship between the ratee's marital status and
- the ratings received by the ratee.
- If the ratee is married, the ratee receives a significantly lower average
- score.
- Also, older input dealers, traders and processors receive higher ratings.
- If the ratee has finished primary education, the ratings from the farmers
- are also higher in that case.
- Interestingly, ratings for traders are also significantly higher on average
- which was also observed in table 
+The gender of the actor that is being rated does not seem to be significantly
+ correlated with ratings given by the farmer.
+ As such, we do not find evidence for hypothesis 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "tab:table4"
+reference "Hypothesis 4"
 plural "false"
 caps "false"
 noprefix "false"
 
 \end_inset
 
-.
- The total number of observations is 
-\begin_inset ERT
-status open
+ in our data.
+\begin_inset Foot
+status collapsed
 
 \begin_layout Plain Layout
-
-
-\backslash
-Sexpr{format(round(nobs(lm_res1),digits=2),nsmall=0)}
-\end_layout
-
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_layout Standard
-The interaction between the sex of the farmer and the sex of the ratee is
- insignificant throughout all the models in table 
+In fact, there are some indications that women score higher on quality and
+ reputation, which runs against hypothesis 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "tab:table5"
+reference "Hypothesis 4"
 plural "false"
 caps "false"
 noprefix "false"
 
 \end_inset
 
-.
- In other words, no significant gender based homophily effect is found (disprovi
-ng hypothesis 
+, but differences are not significant.
+\end_layout
+
+\end_inset
+
+ Looking at the interaction between the gender of the farmer and the gender
+ of the actor, we also do not find any significant correlation, suggesting
+ there is no female gender homophilly effect (hypothesis 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "Hypothesis 5"
@@ -3054,53 +2845,10 @@ noprefix "false"
 \end_inset
 
 ).
- Thus, it can be inferred that female farmers give more favourable scores,
- particularly for location and price competitiveness and female ratees receive
- better scores from farmers only for quality and reputation.
- Henceforth, there is not enough evidence to support hypothesis 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "Hypothesis 2"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
- and 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "Hypothesis 4"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
-.
 \end_layout
 
 \begin_layout Standard
-Following this, table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:table6"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
- shows the results from multiple regression analysis looking at the impact
- of sex of the ratee on self-assessments (self-ratings).
- The relationship is insignificant for all attributes.
- It can be noted that ratees who have finished primary education, self-assess
- themselves significantly higher for all dimensions expect price competitiveness
- and reputation and traders significantly give higher self-ratings (except
- for price competitiveness and reputation).
- Henceforth, it can be inferred that while self-assessing, the gender of
- the ratee does not matter.
- Therefore, hypothesis 
+Formally testing hypotheses 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "Hypothesis 3"
@@ -3110,88 +2858,44 @@ noprefix "false"
 
 \end_inset
 
- is disproved.
-\end_layout
-
-\begin_layout Standard
-Finally, table 
+ is done by estimating regression model 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "tab:table7"
+reference "eq:actor_level"
 plural "false"
 caps "false"
 noprefix "false"
 
 \end_inset
 
- studies the relationship between farmer's and ratee's gender and the difference
-s between ratee's self-ratings and the farmer's ratings.
- Here, again the standard errors are clustered at the ratee level.
- The differences reduce significantly for the overall average ratings, location-
- and price-based ratings if the farmer is female.
- This means female farmers give significantly less different ratings compared
- to the self-assessments by the ratees themselves.
- The impact of the sex of the ratee on the differences is interesting as
- the differences in ratings increase significantly for quality and price
- if the ratee is a woman while the differences reduce in the case of reputation-
-based ratings.
- Thus, it can be argued that if the ratee is a woman, the quality- and price-bas
-ed ratings from the farmers are less similar to the self-assessments of
- these female ratees.
- However, the reputation-based ratings from the farmers are closer to the
- self-ratings if the ratee is a woman which could indicate that female ratees'
- self-perception about their reputation is similar to the perceptions of
- the farmers.
- 
-\end_layout
-
-\begin_layout Standard
-The interaction between sex of the farmer and the ratee (gender based homophily)
- is insignificant.
- If the distance between the farmer's homestead and nearest tarmac road
- rises, the differences in the ratings increase.
- Similarly, if the farmer is married, the differences also rise between
- the self-assessments and the farmers' ratings.
- Therefore, it can be stated that women give more similar ratings compared
- to self-assessments, particularly in the case of location and price.
- The gender of the ratee only matters significantly when differences in
- ratings based on quality, price and reputation are considered.
- From these inferences, it can be derived that indeed self-assessments can
- be different from the actual ratings received from the farmers (aligns
- with the idea of hypothesis 
+ outlined in Section 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "Hypothesis 1"
+reference "sec:Econometric-Analysis"
 plural "false"
 caps "false"
 noprefix "false"
 
 \end_inset
 
-) and gender influences these differences.
- 
-\end_layout
-
-\begin_layout Standard
-Investigating the intercepts in table 
+, the results of which are reported in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "tab:table7"
+reference "tab:table6"
 plural "false"
 caps "false"
 noprefix "false"
 
 \end_inset
 
-, it can be noted that the coefficients are significantly positive for overall
- average rating differences, quality-, price- and reputation-based rating
- differences.
- This indicates that self-ratings are always higher than the farmers' ratings
- (in the case of quality, price, and reputation), a strong evidence supporting
- hypothesis 
+.
+ While women seem rate themselves somewhat higher on the quality dimension,
+ the difference with men is not significant.
+ We certainly do not find that men rate themselves higher than women, leading
+ us to reject hypothesis 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "Hypothesis 1"
+reference "Hypothesis 3"
 plural "false"
 caps "false"
 noprefix "false"
@@ -3202,10 +2906,102 @@ noprefix "false"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Newpage newpage
+We also ran an additional regression similar to 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:farmer_level"
+plural "false"
+caps "false"
+noprefix "false"
+
 \end_inset
 
+ outlined in Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Econometric-Analysis"
+plural "false"
+caps "false"
+noprefix "false"
 
+\end_inset
+
+, but used the difference between actor self rating and farmer ratings as
+ the dependent variable.
+ Results are in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:table7"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ This provides an alternative way to test hypothesis 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Hypothesis 1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ by looking at the significance of the constant in equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:farmer_level"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ Interestingly, in a regression framework that controls for a range of farmer
+ and actor level characteristics, there is no significant difference anymore
+ between actor ratings and farmer ratings for the location dimension.
+ This seems plausible, as location the dimension that can be most easily
+ observed by both farmer and actor.
+ The table also shows that the gender of the farmer now also becomes significant
+ly negative, which makes sense as women rate more positive, making the gap
+ between actor and farmer rating smaller.
+ 
+\end_layout
+
+\begin_layout Standard
+The impact of the sex of the actor, although often not statistically significant
+, is also interesting as the differences in ratings increase substantially
+ for quality and price if the actor is a woman while the difference reduces
+ in the case of reputation-based ratings.
+ This suggests women actors rate themselves relatively higher and/or farmers
+ rate women actors relatively lower when price and quality considerations
+ are concerned.
+ Similarly, it suggests that women actors are too modest with respect to
+ their reputation.
+ These results are in line with findings in Tables 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:table5"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:table6"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section
@@ -3221,24 +3017,41 @@ name "sec:Conclusion"
 \end_layout
 
 \begin_layout Standard
-The aim of this study was to investigate the perceptions of maize farmers
- about the input and service providers in the maize value chain and the
+In informal food supply chains, perceptions about the quality of services
+ of value chain actors such as agro-input dealers, traders and processors
+ are an important input in the decision making processes underlying the
+ structure, conduct and performance of the value chain.
+ The aim of this study was to investigate perceptions of maize farmers about
+ the input and service providers in informal maize value chains; and the
  perceptions of these input and service providers about themselves.
- Focusing on gender, we tested if gender-based heterogeneity can be observed
- in perceptions.
- The perceptions were captured through the ratings given on dimensions like
- ease of access, quality of service, price competitiveness and reputation.
+ We were particularly interested in gender-based heterogeneity in these
+ perceptions.
+ Perceptions were captured through ratings given on dimensions like ease
+ of access, quality of service, price competitiveness and reputation.
 \end_layout
 
 \begin_layout Standard
-The main findings suggest that although there is not enough evidence to
- claim more favourable scores from women, they have significant positive
- perceptions across the dimensions of location and price competitiveness.
- This tendency of women to rate more favourably for these attributes can
- have some repercussions.
- For instance, the input and service providers can take advantage of the
- leniency of female farmers and provide them with worse price levels compared
- to the male farmers.
+We find that agro-input dealers, traders and processors consistently rate
+ themselves higher than how farmers rate them, except for one tribute that
+ is easily observable by both those who rate and those who get rated.
+ We do not find that gender plays a significant role in self-assessments.
+ The sex of the actor being rated also does not affect the rating that they
+ receive and we find no signs of gender-based homophily in the ratings.
+ There is some evidence that female farmers rate more favorably than male
+ farmers, but only in some dimensions.
+ This suggests women actors rate themselves relatively higher and/or farmers
+ rate women actors relatively lower when price and quality considerations
+ are concerned.
+ Similarly, it suggests that women actors are too modest with respect to
+ their reputation.
+\end_layout
+
+\begin_layout Standard
+The tendency of female farmers to rate more favourably for these attributes
+ can have some repercussions.
+ For instance, input and service providers may take advantage of the leniency
+ of female farmers and provide them with worse prices compared to the male
+ farmers.
  In this context, policy interventions are needed to ensure that all farmers
  are aware of the standard prices they deserve.
  However, sex of the individual being rated does not matter significantly.
@@ -3383,6 +3196,22 @@ status collapsed
 \begin_layout Plain Layout
 \paragraph_spacing single
 \noindent
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Summary Statistics of the variables related to the farmers.
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:table1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \begin_inset ERT
 status open
 
@@ -4310,25 +4139,6 @@ label{table:table1}
 
 \end_layout
 
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Summary Statistics of the variables related to the farmers.
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:table1"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \end_inset
 
 
@@ -4342,6 +4152,23 @@ sideways false
 status collapsed
 
 \begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Summary Statistics of the variables related to the ratees (dealers, traders,
+ and millers).
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:table2"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \begin_inset ERT
 status open
 
@@ -5143,26 +4970,6 @@ label{table:table2}
 
 \end_layout
 
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Summary Statistics of the variables related to the ratees (dealers, traders,
- and millers).
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:table2"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \end_inset
 
 
@@ -5176,7 +4983,25 @@ sideways false
 status collapsed
 
 \begin_layout Plain Layout
-\paragraph_spacing onehalf
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+ICC coefficients for inter-rater reliability and intra-rater reliability.
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:table3"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
@@ -5422,25 +5247,6 @@ label{table:table3}
 
 \end_layout
 
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-ICC coefficients for inter-rater reliability and intra-rater reliability.
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:table3"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \end_inset
 
 
@@ -5448,12 +5254,32 @@ name "tab:table3"
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways true
 status collapsed
 
 \begin_layout Plain Layout
-\paragraph_spacing onehalf
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Average ratings (all dimensions) from farmers and average self-ratings (all
+ dimensions) from dealers, traders, and processors, grouped by gender.
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:table4"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
@@ -7871,19 +7697,215 @@ end{landscape}
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
 \begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Average ratings (all dimensions) from farmers and average self-ratings (all
- dimensions) from dealers, traders, and processors, grouped by gender.
+T-test results for differences between the self-ratings and the farmer ratings.
+ 
 \begin_inset CommandInset label
 LatexCommand label
-name "tab:table4"
+name "tab:T-test-results"
 
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize 
+\backslash
+begin{center} 
+\backslash
+begin{tabular}{@{
+\backslash
+extracolsep{5pt}}lccc}  
+\backslash
+
+\backslash
+[-1.8ex]
+\backslash
+hline  
+\backslash
+hline 
+\backslash
+
+\backslash
+[-1.8ex]   & 
+\backslash
+multicolumn{3}{c}{
+\backslash
+textit{
+\backslash
+footnotesize T-tests: Differences between self-ratings and farmer ratings
+ > 0}} 
+\backslash
+
+\backslash
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-4} 
+\backslash
+
+\backslash
+[-1.8ex] & 
+\backslash
+multicolumn{1} {c} {
+\backslash
+scriptsize Self-ratings} &  
+\backslash
+multicolumn{1} {c} {
+\backslash
+scriptsize Farmer ratings}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {
+\backslash
+scriptsize P-value}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ 
+\backslash
+hline 
+\backslash
+
+\backslash
+[-1.8ex]  
+\end_layout
+
+\begin_layout Plain Layout
+
+{Overall}  & $
+\backslash
+Sexpr{hyp1[1,1]}$ & $
+\backslash
+Sexpr{hyp1[1,2]}$  & <0.001 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{Location}  & $
+\backslash
+Sexpr{hyp1[2,1]}$ & $
+\backslash
+Sexpr{hyp1[2,2]}$  & <0.001 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{Price}  & $
+\backslash
+Sexpr{hyp1[3,1]}$ & $
+\backslash
+Sexpr{hyp1[3,2]}$  & <0.001 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{Quality}  & $
+\backslash
+Sexpr{hyp1[4,1]}$ & $
+\backslash
+Sexpr{hyp1[4,2]}$  &  <0.001 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{Reputation}  & $
+\backslash
+Sexpr{hyp1[5,1]}$ & $
+\backslash
+Sexpr{hyp1[5,2]}$  & <0.001 
+\end_layout
+
+\begin_layout Plain Layout
+
+     
+\backslash
+
+\backslash
+ 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tabular} 
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: The average self-ratings for each dimension are mentioned in the first
+ column and the average farmer ratings for each dimension are mentioned
+ in the second column.
+ The p-value indicating the significance of each t-test is also presented.
+ The alternative hypothesis is that the differences between the self-ratings
+ and the farmer ratings are greater than 0.
+ 
 \end_layout
 
 \end_inset
@@ -7901,7 +7923,27 @@ name "tab:table4"
 placement H
 wide false
 sideways false
-status open
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Regression results for the impact of farmer's (rater's) and ratee's gender
+ on the ratings given by the farmers to the ratees.
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:table5"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -9065,23 +9107,6 @@ label{table:table5}
 \end_inset
 
 
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Regression results for the impact of farmer's (rater's) and ratee's gender
- on the ratings given by the farmers to the ratees.
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:table5"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \end_inset
@@ -9091,9 +9116,29 @@ name "tab:table5"
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Regression results looking at the impact of ratee's gender on their self-ratings.
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:table6"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -9762,22 +9807,6 @@ label{table:table6}
 \end_inset
 
 
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Regression results looking at the impact of ratee's gender on their self-ratings.
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:table6"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \end_inset
@@ -9791,6 +9820,26 @@ placement H
 wide false
 sideways false
 status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Regression results for the impact of farmer's (rater's) and ratee's gender
+ on the differences between ratee self-ratings and farmer ratings.
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:table7"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -10985,26 +11034,6 @@ n (model 5).
   
 \backslash
 label{table:table5}  
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Regression results for the impact of farmer's (rater's) and ratee's gender
- on the differences between ratee self-ratings and farmer ratings.
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:table7"
-
-\end_inset
-
-
 \end_layout
 
 \end_inset
