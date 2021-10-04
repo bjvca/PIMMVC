@@ -3419,3 +3419,45 @@ summary(fe_modrep)
 #reject null at 5% -- significant 
 #
 
+
+
+#########################################################################################
+####################   T TESTS FOR HYPOTHESIS 1 #########################################
+
+t.test(pool$ratee_rating_overall, pool$rating_overall)
+ttest1<-t.test(pool$ratingoverall_diff, alternative = c("greater"), var.equal=FALSE)
+
+t.test(pool$rating_location_ratee, pool$rating_location)
+ttest2<-t.test(pool$ratingloc_diff, alternative = c("greater"), var.equal=FALSE)
+
+t.test(pool$rating_price_ratee, pool$rating_price)
+ttest3<-t.test(pool$ratingprice_diff, alternative = c("greater"), var.equal=FALSE)
+
+t.test(pool$rating_quality_ratee, pool$rating_quality)
+ttest4<-t.test(pool$ratingqual_diff, alternative = c("greater"), var.equal=FALSE)
+
+t.test(pool$rating_reputation_ratee, pool$rating_reputation)
+ttest5<-t.test(pool$ratingrepu_diff, alternative = c("greater"), var.equal=FALSE)
+
+hyp1<- rbind( 
+  
+  c((format(round(mean(pool$ratee_rating_overall, na.rm=TRUE),digits=3),nsmall=0)), 
+    (format(round(mean(pool$rating_overall, na.rm=TRUE),digits=3),nsmall=0)), 
+    (format(round(sum(ttest1$p.value),digits=3),nsmall=0))), 
+  
+  c((format(round(mean(pool$rating_location_ratee, na.rm=TRUE),digits=3),nsmall=0)), 
+    (format(round(mean(pool$rating_location, na.rm=TRUE),digits=3),nsmall=0)), 
+    (format(round(sum(ttest2$p.value),digits=3),nsmall=0))), 
+  
+  c((format(round(mean(pool$rating_price_ratee, na.rm=TRUE),digits=3),nsmall=0)), 
+    (format(round(mean(pool$rating_price, na.rm=TRUE),digits=3),nsmall=0)), 
+    (format(round(sum(ttest3$p.value),digits=3),nsmall=0))), 
+  
+  c((format(round(mean(pool$rating_quality_ratee, na.rm=TRUE),digits=3),nsmall=0)), 
+    (format(round(mean(pool$rating_quality, na.rm=TRUE),digits=3),nsmall=0)), 
+    (format(round(sum(ttest4$p.value),digits=3),nsmall=0))), 
+  
+  c((format(round(mean(pool$rating_reputation_ratee, na.rm=TRUE),digits=3),nsmall=0)), 
+    (format(round(mean(pool$rating_reputation, na.rm=TRUE),digits=3),nsmall=0)), 
+    (format(round(sum(ttest5$p.value),digits=3),nsmall=0))))
+    

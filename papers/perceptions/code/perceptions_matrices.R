@@ -1084,3 +1084,5 @@ mat<- rbind(         #dependent variable is farmer ratings
 
 
 save(mat, file = paste(path_2,"papers/perceptions/results/res_clust.Rd", sep = "/"))
+
+
