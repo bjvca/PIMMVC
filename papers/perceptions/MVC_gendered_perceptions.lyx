@@ -2856,7 +2856,2374 @@ noprefix "false"
 \end_layout
 
 \begin_layout Standard
+Following this, table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:table6"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ shows the results from multiple regression analysis looking at the impact
+ of sex of the ratee on self-assessments (self-ratings).
+ The relationship is insignificant for all attributes.
+ It can be noted that ratees who have finished primary education, self-assess
+ themselves significantly higher for all dimensions expect price competitiveness
+ and reputation and traders significantly give higher self-ratings (except
+ for price competitiveness and reputation).
+ Henceforth, it can be inferred that while self-assessing, the gender of
+ the ratee does not matter.
+ Therefore, hypothesis 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Hypothesis 3"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ is disproved.
+\end_layout
+
+\begin_layout Standard
+Finally, table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:table7"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ studies the relationship between farmer's and ratee's gender and the difference
+s between ratee's self-ratings and the farmer's ratings.
+ Here, again the standard errors are clustered at the ratee level.
+ The differences reduce significantly for the overall average ratings, location-
+ and price-based ratings if the farmer is female.
+ This means female farmers give significantly less different ratings compared
+ to the self-assessments by the ratees themselves.
+ The impact of the sex of the ratee on the differences is interesting as
+ the differences in ratings increase significantly for quality and price
+ if the ratee is a woman while the differences reduce in the case of reputation-
+based ratings.
+ Thus, it can be argued that if the ratee is a woman, the quality- and price-bas
+ed ratings from the farmers are less similar to the self-assessments of
+ these female ratees.
+ However, the reputation-based ratings from the farmers are closer to the
+ self-ratings if the ratee is a woman which could indicate that female ratees'
+ self-perception about their reputation is similar to the perceptions of
+ the farmers.
+ 
+\end_layout
+
+\begin_layout Standard
+The interaction between sex of the farmer and the ratee (gender based homophily)
+ is insignificant.
+ If the distance between the farmer's homestead and nearest tarmac road
+ rises, the differences in the ratings increase.
+ Similarly, if the farmer is married, the differences also rise between
+ the self-assessments and the farmers' ratings.
+ Therefore, it can be stated that women give more similar ratings compared
+ to self-assessments, particularly in the case of location and price.
+ The gender of the ratee only matters significantly when differences in
+ ratings based on quality, price and reputation are considered.
+ From these inferences, it can be derived that indeed self-assessments can
+ be different from the actual ratings received from the farmers (aligns
+ with the idea of hypothesis 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Hypothesis 1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) and gender influences these differences.
+ 
+\end_layout
+
+\begin_layout Standard
+Investigating the intercepts in table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:table7"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, it can be noted that the coefficients are significantly positive for overall
+ average rating differences, quality-, price- and reputation-based rating
+ differences.
+ This indicates that self-ratings are always higher than the farmers' ratings
+ (in the case of quality, price, and reputation), a strong evidence supporting
+ hypothesis 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Hypothesis 1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\paragraph_spacing onehalf
+Conclusion
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Conclusion"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The aim of this study was to investigate the perceptions of maize farmers
+ about the input and service providers in the maize value chain and the
+ perceptions of these input and service providers about themselves.
+ Focusing on gender, we tested if gender-based heterogeneity can be observed
+ in perceptions.
+ The perceptions were captured through the ratings given on dimensions like
+ ease of access, quality of service, price competitiveness and reputation.
+\end_layout
+
+\begin_layout Standard
+The main findings suggest that although there is not enough evidence to
+ claim more favourable scores from women, they have significant positive
+ perceptions across the dimensions of location and price competitiveness.
+ This tendency of women to rate more favourably for these attributes can
+ have some repercussions.
+ For instance, the input and service providers can take advantage of the
+ leniency of female farmers and provide them with worse price levels compared
+ to the male farmers.
+ In this context, policy interventions are needed to ensure that all farmers
+ are aware of the standard prices they deserve.
+ However, sex of the individual being rated does not matter significantly.
+ 
+\end_layout
+
+\begin_layout Standard
+Self-assessments are always significantly more positive than the ratings
+ from the farmers across most of the dimensions (overall average, quality,
+ price competitiveness and reputation).
+ In other words, input dealers, traders and processors have more positive
+ perceptions about themselves compared to the perceptions (ratings) of the
+ farmers.
+ In particular, women's ratings are noticeably similar to the self-assessments
+ obtained (quality- and reputation-based scores are exceptions).
+ Consequently, men's ratings are more different from the self-assessments
+ obtained.
+ This indicates a gap between the farmers and the input and service providers.
+ The interactions between these actors need to be structured in a way where
+ perceived performance information can be conveyed easily, creating the
+ opportunity for improvements.
+ 
+\end_layout
+
+\begin_layout Standard
+This study shows that while self-assessing, the gender of the individual
+ does not matter.
+ From the average ratings, it can be inferred that traders receive the highest
+ ratings, followed by input dealers.
+ Millers obtain the lowest scores.
+ Millers' quality of services and reputation suffer from lowest ratings.
+ More focus is thus needed on the processors of maize in Uganda.
+ Female agro-input dealers, traders and millers always are perceived to
+ be performing better in terms of quality.
+ This is consistent with the self-perceptions of women.
+ Thus, may be women are more prone to caring about the quality of services
+ and inputs compared to the men.
+ Interestingly, male dealers and millers are perceived to be easily accessible
+ and have better prices.
+ Male millers and female input dealers and traders obtain good scores for
+ reputation.
+ 
+\end_layout
+
+\begin_layout Standard
+Surprisingly, price competitiveness is always scored the lowest.
+ Thus, standardized prices are needed in the sector.
+ Highly volatile prices threaten price protection for the farmers and can
+ create mistrust among the farmers and the input and service providers.
+ Among all the input and service providers, traders are the most easily
+ reachable actors and dealers and millers are the best reputed ones.
+ Input dealers are perceived to be performing worst in the case of location
+ and price competitiveness.
+ Hence, it is essential to ensure that agro-input dealers are easily reachable
+ to encourage higher usage of improved seed.
+ This can be one of the reasons explaining why lower usage of improved seed
+ has consistently been a matter of concern.
+ Subsidies for the sale prices of inputs and transportation aid from the
+ government can improve the sale prices and ease of access to these dealers.
+ However, ratings for quality are the highest in the case of dealers (indicating
+ provision of good quality seeds).
+ 
+\end_layout
+
+\begin_layout Standard
+These perceptions are very important in the maize supply chain and give
+ a lot of insight about the perceived performance levels of the input and
+ service providers.
+ Gender-based perceptions prominently indicate gendered preferences in the
+ supply chain which is essential to be addressed.
+ More women with greater support and business knowledge are needed in this
+ sector to tackle the imbalance of preferences revealed in the perceptions
+ (ratings) analysed in this study.
+ If gender issues in the agricultural value chains are not addressed, it
+ may lead to long-term gender disparities in development and growth.
+ Since the share of female millers and traders is very small in this study,
+ more balanced samples of the supply chain actors could reveal better and
+ highly significant results.
+ 
+\end_layout
+
+\begin_layout Standard
+Future research should focus on perceptions of the input and service providers
+ about the farmers, investigating similar trends in ratings and the change
+ in perceptions over time captured through future surveys.
+ A compelling addition to the literature can be the relationship between
+ competition in this sector and the perceived performances of the actors.
+ Investigating perceptions in the maize demand chain and then linking those
+ perceptions with the perceived performances of the supply chain actors
+ can reveal interesting results.
+ Thus, the maize value chain holds a lot of opportunities for future research
+ in different directions using perceptions of the value chain actors.
+ 
+\end_layout
+
+\begin_layout Section*
+Acknowledgments
+\end_layout
+
+\begin_layout Standard
+This research was partly funded by the CGIAR Research Program on Policies,
+ Institutions, and Markets (PIM), led by the International Food Policy Research
+ Institute (IFPRI) and carried out with support from the CGIAR Fund contributors
+ (https://www.cgiar.org/funders/).
+ The authors also acknowledge financial support from The Netherlands – CGIAR
+ research programme on Seed Systems Development, grant number W08.240.105,
+ funded by the Netherlands Organisation for Scientific Research (NWO-WOTRO).
+ We thank Richard Ariong, Leocardia Nabwire, Wilberforce Walukano and Marc
+ Charles Wanume for excellent field support.
+ The analysis contained here is the sole responsibility of the authors,
+ and does not reflect the views of any funding agency or organization mentioned
+ here.
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+btprint "btPrintCited"
+bibfiles "amsj,MVC_perceptions"
+options "bibtotoc,apalike"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+\begin_inset Newpage newpage
+\end_inset
+
+Tables
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\paragraph_spacing single
+\noindent
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+footnotesize 
+\backslash
+begin{center} 
+\backslash
+begin{tabular}{@{
+\backslash
+extracolsep{5pt}}lcccccc}  
+\backslash
+
+\backslash
+[-1.8ex]
+\backslash
+hline  
+\backslash
+hline 
+\backslash
+
+\backslash
+[-1.8ex]   & 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Summary Statistics (Farmers)}} 
+\backslash
+
+\backslash
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+cline{2-7} 
+\backslash
+
+\backslash
+[-1.8ex] & 
+\backslash
+multicolumn{1} {c} {Mean} &  
+\backslash
+multicolumn{1} {c} {Standard} &  
+\backslash
+multicolumn{1} {c} {Minimum} &  
+\backslash
+multicolumn{1} {c} {Maximum} &  
+\backslash
+multicolumn{1} {c} {First}&  
+\backslash
+multicolumn{1} {c} {Third}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+& 
+\backslash
+multicolumn{1} {c} {} &  
+\backslash
+multicolumn{1} {c} {Deviation} &  
+\backslash
+multicolumn{1} {c} {} &  
+\backslash
+multicolumn{1} {c} {} &  
+\backslash
+multicolumn{1} {c} {Quartile}&  
+\backslash
+multicolumn{1} {c} {Quartile} 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+
+\backslash
+[-1.8ex]  
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Overall rating (all ratees)}}                & $
+\backslash
+Sexpr{format( round(mean(pool$rating_overall, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(sd(pool$rating_overall, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(min(pool$rating_overall, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(max(pool$rating_overall, na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format( round(quantile(pool$rating_overall, na.rm=T, 0.25), digits=2),nsmall
+=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{format( round(quantile(pool$rating_overall, na.rm=T, 0.75), digits=2),nsmall
+=0)}$
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Location rating (all ratees)}}       & $
+\backslash
+Sexpr{format( round(mean(pool$rating_location, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(sd(pool$rating_location, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(min(pool$rating_location, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(max(pool$rating_location, na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(pool$rating_location, na.rm=T, 0.25), digits=2),nsmal
+l=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(pool$rating_location, na.rm=T, 0.75), digits=2),nsmal
+l=0)}$
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Quality rating (all ratees)}}       & $
+\backslash
+Sexpr{format( round(mean(pool$rating_quality, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(sd(pool$rating_quality, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(min(pool$rating_quality, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(max(pool$rating_quality, na.rm=T), digits=2),nsmall=0)}$
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(pool$rating_quality, na.rm=T, 0.25), digits=2),nsmall
+=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(pool$rating_quality, na.rm=T, 0.75), digits=2),nsmall
+=0)}$
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Price rating (all ratees)}}       & $
+\backslash
+Sexpr{format( round(mean(pool$rating_price, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(sd(pool$rating_price, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(min(pool$rating_price, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(max(pool$rating_price, na.rm=T), digits=2),nsmall=0)}$
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(pool$rating_price, na.rm=T, 0.25), digits=2),nsmall=0
+)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(pool$rating_price, na.rm=T, 0.75), digits=2),nsmall=0
+)}$
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Reputation rating (all ratees)}}       & $
+\backslash
+Sexpr{format( round(mean(pool$rating_reputation, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(sd(pool$rating_reputation, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(min(pool$rating_reputation, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(max(pool$rating_reputation, na.rm=T), digits=2),nsmall=0)}$
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(pool$rating_reputation, na.rm=T, 0.25), digits=2),nsm
+all=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(pool$rating_reputation, na.rm=T, 0.75), digits=2),nsm
+all=0)}$
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+
+\backslash
+[-1.8ex]  
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Overall rating (dealers)}}                & $
+\backslash
+Sexpr{format( round(mean(ratings$rating_overall, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(sd(ratings$rating_overall, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(min(ratings$rating_overall, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(max(ratings$rating_overall, na.rm=T), digits=2),nsmall=0)}$
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(ratings$rating_overall, na.rm=T, 0.25), digits=2),nsm
+all=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(ratings$rating_overall, na.rm=T, 0.75), digits=2),nsm
+all=0)}$
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Location rating (dealers)}}       & $
+\backslash
+Sexpr{format( round(mean(ratings$rating_location, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(sd(ratings$rating_location, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(min(ratings$rating_location, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(max(ratings$rating_location, na.rm=T), digits=2),nsmall=0)}$
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(ratings$rating_location, na.rm=T, 0.25), digits=2),ns
+mall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(ratings$rating_location, na.rm=T, 0.75), digits=2),ns
+mall=0)}$
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Quality rating (dealers)}}       & $
+\backslash
+Sexpr{format( round(mean(ratings$rating_quality, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(sd(ratings$rating_quality, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(min(ratings$rating_quality, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(max(ratings$rating_quality, na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(ratings$rating_quality, na.rm=T, 0.25), digits=2),nsm
+all=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(ratings$rating_quality, na.rm=T, 0.75), digits=2),nsm
+all=0)}$
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Price rating (dealers)}}       & $
+\backslash
+Sexpr{format( round(mean(ratings$rating_price, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(sd(ratings$rating_price, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(min(ratings$rating_price, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(max(ratings$rating_price, na.rm=T), digits=2),nsmall=0)}$
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(ratings$rating_price, na.rm=T, 0.25), digits=2),nsmal
+l=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(ratings$rating_price, na.rm=T, 0.75), digits=2),nsmal
+l=0)}$
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Reputation rating (dealers)}}       & $
+\backslash
+Sexpr{format( round(mean(ratings$rating_reputation, na.rm=T), digits=2),nsmall=0)
+}$        & $
+\backslash
+Sexpr{format( round(sd(ratings$rating_reputation, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(min(ratings$rating_reputation, na.rm=T), digits=2),nsmall=0)}
+$        & $
+\backslash
+Sexpr{format( round(max(ratings$rating_reputation, na.rm=T), digits=2),nsmall=0)}
+$ & $
+\backslash
+Sexpr{format( round(quantile(ratings$rating_reputation, na.rm=T, 0.25), digits=2),
+nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(ratings$rating_reputation, na.rm=T, 0.75), digits=2),
+nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+
+\backslash
+[-1.8ex]  
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Overall rating (traders)}}                & $
+\backslash
+Sexpr{format( round(mean(ratings_trader$rating_overall, na.rm=T), digits=2),nsmal
+l=0)}$        & $
+\backslash
+Sexpr{format( round(sd(ratings_trader$rating_overall, na.rm=T), digits=2),nsmall=
+0)}$        & $
+\backslash
+Sexpr{format( round(min(ratings_trader$rating_overall, na.rm=T), digits=2),nsmall
+=0)}$        & $
+\backslash
+Sexpr{format( round(max(ratings_trader$rating_overall, na.rm=T), digits=2),nsmall
+=0)}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(ratings_trader$rating_overall, na.rm=T, 0.25),
+ digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(ratings_trader$rating_overall, na.rm=T, 0.75),
+ digits=2),nsmall=0)}$
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Location rating (traders)}}       & $
+\backslash
+Sexpr{format( round(mean(ratings_trader$rating_location, na.rm=T), digits=2),nsma
+ll=0)}$        & $
+\backslash
+Sexpr{format( round(sd(ratings_trader$rating_location, na.rm=T), digits=2),nsmall
+=0)}$        & $
+\backslash
+Sexpr{format( round(min(ratings_trader$rating_location, na.rm=T), digits=2),nsmal
+l=0)}$        & $
+\backslash
+Sexpr{format( round(max(ratings_trader$rating_location, na.rm=T), digits=2),nsmal
+l=0)}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(ratings_trader$rating_location, na.rm=T, 0.25),
+ digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(ratings_trader$rating_location, na.rm=T, 0.75),
+ digits=2),nsmall=0)}$
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Quality rating (traders)}}       & $
+\backslash
+Sexpr{format( round(mean(ratings_trader$rating_quality, na.rm=T), digits=2),nsmal
+l=0)}$        & $
+\backslash
+Sexpr{format( round(sd(ratings_trader$rating_quality, na.rm=T), digits=2),nsmall=
+0)}$        & $
+\backslash
+Sexpr{format( round(min(ratings_trader$rating_quality, na.rm=T), digits=2),nsmall
+=0)}$        & $
+\backslash
+Sexpr{format( round(max(ratings_trader$rating_quality, na.rm=T), digits=2),nsmall
+=0)}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(ratings_trader$rating_quality, na.rm=T, 0.25),
+ digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(ratings_trader$rating_quality, na.rm=T, 0.75),
+ digits=2),nsmall=0)}$
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Price rating (traders)}}       & $
+\backslash
+Sexpr{format( round(mean(ratings_trader$rating_price, na.rm=T), digits=2),nsmall=
+0)}$        & $
+\backslash
+Sexpr{format( round(sd(ratings_trader$rating_price, na.rm=T), digits=2),nsmall=0)
+}$        & $
+\backslash
+Sexpr{format( round(min(ratings_trader$rating_price, na.rm=T), digits=2),nsmall=0
+)}$        & $
+\backslash
+Sexpr{format( round(max(ratings_trader$rating_price, na.rm=T), digits=2),nsmall=0
+)}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(ratings_trader$rating_price, na.rm=T, 0.25),
+ digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(ratings_trader$rating_price, na.rm=T, 0.75),
+ digits=2),nsmall=0)}$
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Reputation rating (traders)}}       & $
+\backslash
+Sexpr{format( round(mean(ratings_trader$rating_reputation, na.rm=T), digits=2),ns
+mall=0)}$        & $
+\backslash
+Sexpr{format( round(sd(ratings_trader$rating_reputation, na.rm=T), digits=2),nsma
+ll=0)}$        & $
+\backslash
+Sexpr{format( round(min(ratings_trader$rating_reputation, na.rm=T), digits=2),nsm
+all=0)}$        & $
+\backslash
+Sexpr{format( round(max(ratings_trader$rating_reputation, na.rm=T), digits=2),nsm
+all=0)}$ & $
+\backslash
+Sexpr{format( round(quantile(ratings_trader$rating_reputation, na.rm=T, 0.25),
+ digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(ratings_trader$rating_reputation, na.rm=T, 0.75),
+ digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+
+\backslash
+[-1.8ex]  
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Overall rating (millers)}}                & $
+\backslash
+Sexpr{format( round(mean(ratings_mill$rating_overall, na.rm=T), digits=2),nsmall=
+0)}$        & $
+\backslash
+Sexpr{format( round(sd(ratings_mill$rating_overall, na.rm=T), digits=2),nsmall=0)
+}$        & $
+\backslash
+Sexpr{format( round(min(ratings_mill$rating_overall, na.rm=T), digits=2),nsmall=0
+)}$        & $
+\backslash
+Sexpr{format( round(max(ratings_mill$rating_overall, na.rm=T), digits=2),nsmall=0
+)}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(ratings_mill$rating_overall, na.rm=T, 0.25),
+ digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(ratings_mill$rating_overall, na.rm=T, 0.75),
+ digits=2),nsmall=0)}$
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Location rating (millers)}}       & $
+\backslash
+Sexpr{format( round(mean(ratings_mill$rating_location, na.rm=T), digits=2),nsmall
+=0)}$        & $
+\backslash
+Sexpr{format( round(sd(ratings_mill$rating_location, na.rm=T), digits=2),nsmall=0
+)}$        & $
+\backslash
+Sexpr{format( round(min(ratings_mill$rating_location, na.rm=T), digits=2),nsmall=
+0)}$        & $
+\backslash
+Sexpr{format( round(max(ratings_mill$rating_location, na.rm=T), digits=2),nsmall=
+0)}$ & $
+\backslash
+Sexpr{format( round(quantile(ratings_mill$rating_location, na.rm=T, 0.25),
+ digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(ratings_mill$rating_location, na.rm=T, 0.75),
+ digits=2),nsmall=0)}$
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Quality rating (millers)}}       & $
+\backslash
+Sexpr{format( round(mean(ratings_mill$rating_quality, na.rm=T), digits=2),nsmall=
+0)}$        & $
+\backslash
+Sexpr{format( round(sd(ratings_mill$rating_quality, na.rm=T), digits=2),nsmall=0)
+}$        & $
+\backslash
+Sexpr{format( round(min(ratings_mill$rating_quality, na.rm=T), digits=2),nsmall=0
+)}$        & $
+\backslash
+Sexpr{format( round(max(ratings_mill$rating_quality, na.rm=T), digits=2),nsmall=0
+)}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(ratings_mill$rating_quality, na.rm=T, 0.25),
+ digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(ratings_mill$rating_quality, na.rm=T, 0.75),
+ digits=2),nsmall=0)}$
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Price rating (millers)}}       & $
+\backslash
+Sexpr{format( round(mean(ratings_mill$rating_price, na.rm=T), digits=2),nsmall=0)
+}$        & $
+\backslash
+Sexpr{format( round(sd(ratings_mill$rating_price, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(min(ratings_mill$rating_price, na.rm=T), digits=2),nsmall=0)}
+$        & $
+\backslash
+Sexpr{format( round(max(ratings_mill$rating_price, na.rm=T), digits=2),nsmall=0)}
+$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(ratings_mill$rating_price, na.rm=T, 0.25), digits=2),
+nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(ratings_mill$rating_price, na.rm=T, 0.75), digits=2),
+nsmall=0)}$
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Reputation rating (millers)}}       & $
+\backslash
+Sexpr{format( round(mean(ratings_mill$rating_reputation, na.rm=T), digits=2),nsma
+ll=0)}$        & $
+\backslash
+Sexpr{format( round(sd(ratings_mill$rating_reputation, na.rm=T), digits=2),nsmall
+=0)}$        & $
+\backslash
+Sexpr{format( round(min(ratings_mill$rating_reputation, na.rm=T), digits=2),nsmal
+l=0)}$        & $
+\backslash
+Sexpr{format( round(max(ratings_mill$rating_reputation, na.rm=T), digits=2),nsmal
+l=0)}$ & $
+\backslash
+Sexpr{format( round(quantile(ratings_mill$rating_reputation, na.rm=T, 0.25),
+ digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(ratings_mill$rating_reputation, na.rm=T, 0.75),
+ digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ 
+\backslash
+hline   
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tabular} 
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+label{table:table1} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Summary Statistics of the variables related to the farmers.
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:table1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize 
+\backslash
+begin{center} 
+\backslash
+begin{tabular}{@{
+\backslash
+extracolsep{5pt}}lcccccc}  
+\backslash
+
+\backslash
+[-1.8ex]
+\backslash
+hline  
+\backslash
+hline 
+\backslash
+
+\backslash
+[-1.8ex]   & 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Self-ratings of value chain actors}} 
+\backslash
+
+\backslash
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\backslash
+
+\backslash
+[-1.8ex] 
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6} {c} {
+\backslash
+textit{Agro-Input Dealers}}  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\backslash
+
+\backslash
+[-1.8ex]   
+\end_layout
+
+\begin_layout Plain Layout
+
+ & 
+\backslash
+multicolumn{1} {c} {Mean} &  
+\backslash
+multicolumn{1} {c} {Standard} &  
+\backslash
+multicolumn{1} {c} {Minimum} &  
+\backslash
+multicolumn{1} {c} {Maximum}&  
+\backslash
+multicolumn{1} {c} {First} &  
+\backslash
+multicolumn{1} {c} {Third} 
+\backslash
+
+\backslash
+  & 
+\backslash
+multicolumn{1} {c} {} &  
+\backslash
+multicolumn{1} {c} {Deviation} &  
+\backslash
+multicolumn{1} {c} {} &  
+\backslash
+multicolumn{1} {c} {}&  
+\backslash
+multicolumn{1} {c} {Quartile} &  
+\backslash
+multicolumn{1} {c} {Quartile} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+
+\backslash
+[-1.8ex]  
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Overall self-ratings}}       & $
+\backslash
+Sexpr{format( round(mean(dealers$ratee_rating_overall, na.rm=T), digits=2),nsmall
+=0)}$        & $
+\backslash
+Sexpr{format( round(sd(dealers$ratee_rating_overall, na.rm=T), digits=2),nsmall=0
+)}$        & $
+\backslash
+Sexpr{format( round(min(dealers$ratee_rating_overall, na.rm=T), digits=2),nsmall=
+0)}$        & $
+\backslash
+Sexpr{format( round(max(dealers$ratee_rating_overall, na.rm=T), digits=2),nsmall=
+0)}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(dealers$ratee_rating_overall, na.rm=T, 0.25),
+ digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(dealers$ratee_rating_overall, na.rm=T, 0.75),
+ digits=2),nsmall=0)}$
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Location self-ratings}}       & $
+\backslash
+Sexpr{format( round(mean(dealers$hh.maize.q79, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(sd(dealers$hh.maize.q79, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(min(dealers$hh.maize.q79, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(max(dealers$hh.maize.q79, na.rm=T), digits=2),nsmall=0)}$
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(dealers$hh.maize.q79, na.rm=T, 0.25), digits=2),nsmall=
+0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(dealers$hh.maize.q79, na.rm=T, 0.75), digits=2),nsmall=
+0)}$
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Quality self-ratings}}       & $
+\backslash
+Sexpr{format( round(mean(dealers$hh.maize.q81, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(sd(dealers$hh.maize.q81, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(min(dealers$hh.maize.q81, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(max(dealers$hh.maize.q81, na.rm=T), digits=2),nsmall=0)}$
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(dealers$hh.maize.q81, na.rm=T, 0.25), digits=2),nsmall=
+0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(dealers$hh.maize.q81, na.rm=T, 0.75), digits=2),nsmall=
+0)}$
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Price self-ratings}}       & $
+\backslash
+Sexpr{format( round(mean(dealers$hh.maize.q80, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(sd(dealers$hh.maize.q80, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(min(dealers$hh.maize.q80, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(max(dealers$hh.maize.q80, na.rm=T), digits=2),nsmall=0)}$
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(dealers$hh.maize.q80, na.rm=T, 0.25), digits=2),nsmall=
+0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(dealers$hh.maize.q80, na.rm=T, 0.75), digits=2),nsmall=
+0)}$
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Reputation self-ratings}}       & $
+\backslash
+Sexpr{format( round(mean(dealers$hh.maize.q83, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(sd(dealers$hh.maize.q83, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(min(dealers$hh.maize.q83, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(max(dealers$hh.maize.q83, na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(dealers$hh.maize.q83, na.rm=T, 0.25), digits=2),nsmall=
+0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(dealers$hh.maize.q83, na.rm=T, 0.75), digits=2),nsmall=
+0)}$
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\backslash
+
+\backslash
+[-1.8ex] 
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6} {c} {
+\backslash
+textit{Assembly Traders}}  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\backslash
+
+\backslash
+[-1.8ex]  
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Overall self-ratings}}       & $
+\backslash
+Sexpr{format( round(mean(traders$ratee_rating_overall, na.rm=T), digits=2),nsmall
+=0)}$        & $
+\backslash
+Sexpr{format( round(sd(traders$ratee_rating_overall, na.rm=T), digits=2),nsmall=0
+)}$        & $
+\backslash
+Sexpr{format( round(min(traders$ratee_rating_overall, na.rm=T), digits=2),nsmall=
+0)}$        & $
+\backslash
+Sexpr{format( round(max(traders$ratee_rating_overall, na.rm=T), digits=2),nsmall=
+0)}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(traders$ratee_rating_overall, na.rm=T, 0.25),
+ digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(traders$ratee_rating_overall, na.rm=T, 0.75),
+ digits=2),nsmall=0)}$
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Location self-ratings}}       & $
+\backslash
+Sexpr{format( round(mean(traders$hh.maize.q40a, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(sd(traders$hh.maize.q40a, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(min(traders$hh.maize.q40a, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(max(traders$hh.maize.q40a, na.rm=T), digits=2),nsmall=0)}$
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(traders$hh.maize.q40a, na.rm=T, 0.25), digits=2),nsmall
+=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(traders$hh.maize.q40a, na.rm=T, 0.75), digits=2),nsmall
+=0)}$ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Quality self-ratings}}       & $
+\backslash
+Sexpr{format( round(mean(traders$hh.maize.q40c, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(sd(traders$hh.maize.q40c, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(min(traders$hh.maize.q40c, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(max(traders$hh.maize.q40c, na.rm=T), digits=2),nsmall=0)}$
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(traders$hh.maize.q40c, na.rm=T, 0.25), digits=2),nsmall
+=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(traders$hh.maize.q40c, na.rm=T, 0.75), digits=2),nsmall
+=0)}$
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Price self-ratings}}       & $
+\backslash
+Sexpr{format( round(mean(traders$hh.maize.q40b, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(sd(traders$hh.maize.q40b, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(min(traders$hh.maize.q40b, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(max(traders$hh.maize.q40b, na.rm=T), digits=2),nsmall=0)}$
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(traders$hh.maize.q40b, na.rm=T, 0.25), digits=2),nsmall
+=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(traders$hh.maize.q40b, na.rm=T, 0.75), digits=2),nsmall
+=0)}$
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Reputation self-ratings}}       & $
+\backslash
+Sexpr{format( round(mean(traders$hh.maize.q40e, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(sd(traders$hh.maize.q40e, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(min(traders$hh.maize.q40e, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(max(traders$hh.maize.q40e, na.rm=T), digits=2),nsmall=0)}$
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(traders$hh.maize.q40e, na.rm=T, 0.25), digits=2),nsmall
+=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(traders$hh.maize.q40e, na.rm=T, 0.75), digits=2),nsmall
+=0)}$
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\backslash
+
+\backslash
+[-1.8ex] 
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6} {c} {
+\backslash
+textit{Millers}}  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\backslash
+
+\backslash
+[-1.8ex] 
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Overall self-ratings}}       & $
+\backslash
+Sexpr{format( round(mean(millers$ratee_rating_overall, na.rm=T), digits=2),nsmall
+=0)}$        & $
+\backslash
+Sexpr{format( round(sd(millers$ratee_rating_overall, na.rm=T), digits=2),nsmall=0
+)}$        & $
+\backslash
+Sexpr{format( round(min(millers$ratee_rating_overall, na.rm=T), digits=2),nsmall=
+0)}$        & $
+\backslash
+Sexpr{format( round(max(millers$ratee_rating_overall, na.rm=T), digits=2),nsmall=
+0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(millers$ratee_rating_overall, na.rm=T, 0.25),
+ digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(millers$ratee_rating_overall, na.rm=T, 0.75),
+ digits=2),nsmall=0)}$
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Location self-ratings}}       & $
+\backslash
+Sexpr{format( round(mean(millers$hh.maize.q36, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(sd(millers$hh.maize.q36, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(min(millers$hh.maize.q36, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(max(millers$hh.maize.q36, na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(millers$hh.maize.q36, na.rm=T, 0.25), digits=2),nsmall=
+0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(millers$hh.maize.q36, na.rm=T, 0.75), digits=2),nsmall=
+0)}$
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Quality self-ratings}}       & $
+\backslash
+Sexpr{format( round(mean(millers$hh.maize.q38, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(sd(millers$hh.maize.q38, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(min(millers$hh.maize.q38, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(max(millers$hh.maize.q38, na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(millers$hh.maize.q38, na.rm=T, 0.25), digits=2),nsmall=
+0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(millers$hh.maize.q38, na.rm=T, 0.75), digits=2),nsmall=
+0)}$
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Price self-ratings}}       & $
+\backslash
+Sexpr{format( round(mean(millers$hh.maize.q37, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(sd(millers$hh.maize.q37, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(min(millers$hh.maize.q37, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(max(millers$hh.maize.q37, na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(millers$hh.maize.q37, na.rm=T, 0.25), digits=2),nsmall=
+0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(millers$hh.maize.q37, na.rm=T, 0.75), digits=2),nsmall=
+0)}$
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Reputation self-ratings}}       & $
+\backslash
+Sexpr{format( round(mean(millers$hh.maize.q40, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(sd(millers$hh.maize.q40, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(min(millers$hh.maize.q40, na.rm=T), digits=2),nsmall=0)}$
+        & $
+\backslash
+Sexpr{format( round(max(millers$hh.maize.q40, na.rm=T), digits=2),nsmall=0)}$
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(millers$hh.maize.q40, na.rm=T, 0.25), digits=2),nsmall=
+0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{format( round(quantile(millers$hh.maize.q40, na.rm=T, 0.75), digits=2),nsmall=
+0)}$
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ 
+\backslash
+hline   
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tabular} 
+\backslash
+end{center} 
+\backslash
+label{table:table2} 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Summary Statistics of the variables related to the ratees (dealers, traders,
+ and millers).
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:table2"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\paragraph_spacing onehalf
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+small 
+\backslash
+begin{center} 
+\backslash
+begin{tabular}{@{
+\backslash
+extracolsep{5pt}}lcc}  
+\backslash
+
+\backslash
+[-1.8ex]
+\backslash
+hline  
+\backslash
+hline 
+\backslash
+
+\backslash
+[-1.8ex]   & 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{Intraclass correlation coefficients}} 
+\backslash
+
+\backslash
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-3} 
+\backslash
+
+\backslash
+[-1.8ex] & 
+\backslash
+multicolumn{1} {c} {
+\backslash
+textit{Inter-Rater Reliability (Agreement)}} &  
+\backslash
+multicolumn{1} {c} {
+\backslash
+textit{Intra-Rater Reliability (Agreement)}}  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+hline 
+\backslash
+
+\backslash
+[-1.8ex]  
+\end_layout
+
+\begin_layout Plain Layout
+
+{Overall}                 
+\end_layout
+
+\begin_layout Plain Layout
+
+&   $
+\backslash
+Sexpr{format(round(icc1a.fn(icc_recast_overall6)$icc1a,digits=2),nsmall=0)}$
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format(round(icc1b.fn(icc_recast_overall6)$icc1b,digits=2),nsmall=0)}$
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{Location}                
+\end_layout
+
+\begin_layout Plain Layout
+
+&   $
+\backslash
+Sexpr{format(round(icc1a.fn(icc_recast_loc)$icc1a,digits=2),nsmall=0)}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format(round(icc1b.fn(icc_recast_loc)$icc1b,digits=2),nsmall=0)}$ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{Quality}                 
+\end_layout
+
+\begin_layout Plain Layout
+
+&   $
+\backslash
+Sexpr{format(round(icc1a.fn(icc_recast_qual)$icc1a,digits=2),nsmall=0)}$
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format(round(icc1b.fn(icc_recast_qual)$icc1b,digits=2),nsmall=0)}$
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{Price}             
+\end_layout
+
+\begin_layout Plain Layout
+
+&   $
+\backslash
+Sexpr{format(round(icc1a.fn(icc_recast_price)$icc1a,digits=2),nsmall=0)}$
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format(round(icc1b.fn(icc_recast_price)$icc1b,digits=2),nsmall=0)}$
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{Reputation}                
+\end_layout
+
+\begin_layout Plain Layout
+
+&   $
+\backslash
+Sexpr{format(round(icc1a.fn(icc_recast_rep)$icc1a,digits=2),nsmall=0)}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format(round(icc1b.fn(icc_recast_rep)$icc1b,digits=2),nsmall=0)}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+    
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tabular} 
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+Note - The sample consists of all the raters and ratees (agro-input dealers,
+ traders, and processors).
+ The averaged overall ratings, ratings based on location, quality, price,
+ and reputation are taken into account.
+ ICC for Inter-Rater Reliability : Inter-rater reliability indicates the
+ level of agreement between the ratings given by different individual farmer
+ (rater) for the same ratee.
+ The ratee being rated is constant during the comparison of the ratings.
+ The sample consists of only the farmers who have rated more than 6 times.
+ ICC for Intra-Rater Reliability : Intra-rater reliability focuses on the
+ agreement between the different ratings given by each individual rater
+ for different ratees.
+ The farmer who has rated more than 6 times is constant during the comparison
+ of the ratings.
+ 
+\backslash
+label{table:table3} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+ICC coefficients for inter-rater reliability and intra-rater reliability.
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:table3"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
 wide false
 sideways false
 status collapsed
@@ -4042,46 +6409,9 @@ name "tab:table5"
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-Following this, table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:table6"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
- shows the results from multiple regression analysis looking at the impact
- of sex of the ratee on self-assessments (self-ratings).
- The relationship is insignificant for all attributes.
- It can be noted that ratees who have finished primary education, self-assess
- themselves significantly higher for all dimensions expect price competitiveness
- and reputation and traders significantly give higher self-ratings (except
- for price competitiveness and reputation).
- Henceforth, it can be inferred that while self-assessing, the gender of
- the ratee does not matter.
- Therefore, hypothesis 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "Hypothesis 3"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
- is disproved.
 \end_layout
 
 \begin_layout Standard
@@ -4775,105 +7105,14 @@ name "tab:table6"
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-Finally, table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:table7"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
- studies the relationship between farmer's and ratee's gender and the difference
-s between ratee's self-ratings and the farmer's ratings.
- Here, again the standard errors are clustered at the ratee level.
- The differences reduce significantly for the overall average ratings, location-
- and price-based ratings if the farmer is female.
- This means female farmers give significantly less different ratings compared
- to the self-assessments by the ratees themselves.
- The impact of the sex of the ratee on the differences is interesting as
- the differences in ratings increase significantly for quality and price
- if the ratee is a woman while the differences reduce in the case of reputation-
-based ratings.
- Thus, it can be argued that if the ratee is a woman, the quality- and price-bas
-ed ratings from the farmers are less similar to the self-assessments of
- these female ratees.
- However, the reputation-based ratings from the farmers are closer to the
- self-ratings if the ratee is a woman which could indicate that female ratees'
- self-perception about their reputation is similar to the perceptions of
- the farmers.
- 
-\end_layout
-
-\begin_layout Standard
-The interaction between sex of the farmer and the ratee (gender based homophily)
- is insignificant.
- If the distance between the farmer's homestead and nearest tarmac road
- rises, the differences in the ratings increase.
- Similarly, if the farmer is married, the differences also rise between
- the self-assessments and the farmers' ratings.
- Therefore, it can be stated that women give more similar ratings compared
- to self-assessments, particularly in the case of location and price.
- The gender of the ratee only matters significantly when differences in
- ratings based on quality, price and reputation are considered.
- From these inferences, it can be derived that indeed self-assessments can
- be different from the actual ratings received from the farmers (aligns
- with the idea of hypothesis 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "Hypothesis 1"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
-) and gender influences these differences.
- 
-\end_layout
-
-\begin_layout Standard
-Investigating the intercepts in table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:table7"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
-, it can be noted that the coefficients are significantly positive for overall
- average rating differences, quality-, price- and reputation-based rating
- differences.
- This indicates that self-ratings are always higher than the farmers' ratings
- (in the case of quality, price, and reputation), a strong evidence supporting
- hypothesis 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "Hypothesis 1"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
-.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status collapsed
@@ -5735,7 +7974,6 @@ Sexpr{ifelse(mat[78,5]<.01,"***",ifelse(mat[78,5]<.05,"**",ifelse(mat[78,5]<.1,"
   {primary education}
 \end_layout
 
-
 \begin_layout Plain Layout
 
 &  $(
@@ -6104,172 +8342,5 @@ name "tab:table7"
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Newpage newpage
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-\paragraph_spacing onehalf
-Conclusion
-\begin_inset CommandInset label
-LatexCommand label
-name "sec:Conclusion"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-The aim of this study was to investigate the perceptions of maize farmers
- about the input and service providers in the maize value chain and the
- perceptions of these input and service providers about themselves.
- Focusing on gender, we tested if gender-based heterogeneity can be observed
- in perceptions.
- The perceptions were captured through the ratings given on dimensions like
- ease of access, quality of service, price competitiveness and reputation.
-\end_layout
-
-\begin_layout Standard
-The main findings suggest that although there is not enough evidence to
- claim more favourable scores from women, they have significant positive
- perceptions across the dimensions of location and price competitiveness.
- This tendency of women to rate more favourably for these attributes can
- have some repercussions.
- For instance, the input and service providers can take advantage of the
- leniency of female farmers and provide them with worse price levels compared
- to the male farmers.
- In this context, policy interventions are needed to ensure that all farmers
- are aware of the standard prices they deserve.
- However, sex of the individual being rated does not matter significantly.
- 
-\end_layout
-
-\begin_layout Standard
-Self-assessments are always significantly more positive than the ratings
- from the farmers across most of the dimensions (overall average, quality,
- price competitiveness and reputation).
- In other words, input dealers, traders and processors have more positive
- perceptions about themselves compared to the perceptions (ratings) of the
- farmers.
- In particular, women's ratings are noticeably similar to the self-assessments
- obtained (quality- and reputation-based scores are exceptions).
- Consequently, men's ratings are more different from the self-assessments
- obtained.
- This indicates a gap between the farmers and the input and service providers.
- The interactions between these actors need to be structured in a way where
- perceived performance information can be conveyed easily, creating the
- opportunity for improvements.
- 
-\end_layout
-
-\begin_layout Standard
-This study shows that while self-assessing, the gender of the individual
- does not matter.
- From the average ratings, it can be inferred that traders receive the highest
- ratings, followed by input dealers.
- Millers obtain the lowest scores.
- Millers' quality of services and reputation suffer from lowest ratings.
- More focus is thus needed on the processors of maize in Uganda.
- Female agro-input dealers, traders and millers always are perceived to
- be performing better in terms of quality.
- This is consistent with the self-perceptions of women.
- Thus, may be women are more prone to caring about the quality of services
- and inputs compared to the men.
- Interestingly, male dealers and millers are perceived to be easily accessible
- and have better prices.
- Male millers and female input dealers and traders obtain good scores for
- reputation.
- 
-\end_layout
-
-\begin_layout Standard
-Surprisingly, price competitiveness is always scored the lowest.
- Thus, standardized prices are needed in the sector.
- Highly volatile prices threaten price protection for the farmers and can
- create mistrust among the farmers and the input and service providers.
- Among all the input and service providers, traders are the most easily
- reachable actors and dealers and millers are the best reputed ones.
- Input dealers are perceived to be performing worst in the case of location
- and price competitiveness.
- Hence, it is essential to ensure that agro-input dealers are easily reachable
- to encourage higher usage of improved seed.
- This can be one of the reasons explaining why lower usage of improved seed
- has consistently been a matter of concern.
- Subsidies for the sale prices of inputs and transportation aid from the
- government can improve the sale prices and ease of access to these dealers.
- However, ratings for quality are the highest in the case of dealers (indicating
- provision of good quality seeds).
- 
-\end_layout
-
-\begin_layout Standard
-These perceptions are very important in the maize supply chain and give
- a lot of insight about the perceived performance levels of the input and
- service providers.
- Gender-based perceptions prominently indicate gendered preferences in the
- supply chain which is essential to be addressed.
- More women with greater support and business knowledge are needed in this
- sector to tackle the imbalance of preferences revealed in the perceptions
- (ratings) analysed in this study.
- If gender issues in the agricultural value chains are not addressed, it
- may lead to long-term gender disparities in development and growth.
- Since the share of female millers and traders is very small in this study,
- more balanced samples of the supply chain actors could reveal better and
- highly significant results.
- 
-\end_layout
-
-\begin_layout Standard
-Future research should focus on perceptions of the input and service providers
- about the farmers, investigating similar trends in ratings and the change
- in perceptions over time captured through future surveys.
- A compelling addition to the literature can be the relationship between
- competition in this sector and the perceived performances of the actors.
- Investigating perceptions in the maize demand chain and then linking those
- perceptions with the perceived performances of the supply chain actors
- can reveal interesting results.
- Thus, the maize value chain holds a lot of opportunities for future research
- in different directions using perceptions of the value chain actors.
- 
-\end_layout
-
-\begin_layout Section*
-Acknowledgments
-\end_layout
-
-\begin_layout Standard
-This research was partly funded by the CGIAR Research Program on Policies,
- Institutions, and Markets (PIM), led by the International Food Policy Research
- Institute (IFPRI) and carried out with support from the CGIAR Fund contributors
- (https://www.cgiar.org/funders/).
- The authors also acknowledge financial support from The Netherlands – CGIAR
- research programme on Seed Systems Development, grant number W08.240.105,
- funded by the Netherlands Organisation for Scientific Research (NWO-WOTRO).
- We thank Richard Ariong, Leocardia Nabwire, Wilberforce Walukano and Marc
- Charles Wanume for excellent field support.
- The analysis contained here is the sole responsibility of the authors,
- and does not reflect the views of any funding agency or organization mentioned
- here.
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-\begin_inset CommandInset bibtex
-LatexCommand bibtex
-btprint "btPrintCited"
-bibfiles "amsj,MVC_perceptions"
-options "bibtotoc,apalike"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section*
-\begin_inset Newpage newpage
-\end_inset
-
+\end_body
+\end_document
