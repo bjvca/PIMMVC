@@ -1758,7 +1758,7 @@ noprefix "false"
  presents the ratings obtained from the farmers.
  It shows average scores over all value chain actors (top panel), and average
  scores for each actor separately in the four dimensions.
- Farmers are generally positive about dealers, traders and processors.
+ Farmers are generally pretty positive about dealers, traders and processors.
  For example, only about 
 \begin_inset ERT
 status open
@@ -1789,9 +1789,15 @@ pool$farmerID))*100,digits=0),nsmall=0)}
 \end_inset
 
  percent of the rating were a five.
- Interestingly, traders seem to get slightly better ratings.
- Ratings are lowest when farmers are asked to consider price competitiveness
- of the actors.
+ Interestingly, traders seem to get slightly better ratings than the other
+ actors.
+ The dimension that is always scores lowest is price competitiveness.
+ Location is scored highest when actors are pooled, and this seems to be
+ driven by the ease of access to traders.
+ Judged by this table, the biggest constraint to the adoption of commercial
+ seed and other purchased inputs is not related to quality, but rather price.
+ It is also reassuring that all actors seem to score very well in terns
+ of reputation.
 \end_layout
 
 \begin_layout Standard
@@ -2374,2460 +2380,6 @@ The rows represent the different dimensions on which raters were scored
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float table
-wide false
-sideways true
-status collapsed
-
-\begin_layout Plain Layout
-\paragraph_spacing onehalf
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{landscape}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-footnotesize 
-\backslash
-begin{center} 
-\backslash
-begin{tabular}{@{
-\backslash
-extracolsep{5pt}}lcccccccccccc}  
-\backslash
-
-\backslash
-[-1.8ex]
-\backslash
-hline  
-\backslash
-hline 
-\backslash
-
-\backslash
-[-1.8ex]   & 
-\backslash
-multicolumn{12}{c}{
-\backslash
-textit{Average Ratings (Mean)}} 
-\backslash
-
-\backslash
-  
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-cline{2-13} 
-\backslash
-
-\backslash
-[-1.8ex] 
-\end_layout
-
-\begin_layout Plain Layout
-
-& 
-\backslash
-multicolumn{12} {c} {
-\backslash
-textit{Overall Average (All Dimensions)}}  
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-cline{2-13} 
-\backslash
-
-\backslash
-[-1.8ex]   & 
-\backslash
-multicolumn{3} {c} {All Ratees} &  
-\backslash
-multicolumn{3} {c} {Agro-Input Dealers} &  
-\backslash
-multicolumn{3} {c} {Assembly Traders} &  
-\backslash
-multicolumn{3} {c} {Millers} 
-\backslash
-
-\backslash
-  
-\end_layout
-
-\begin_layout Plain Layout
-
- & 
-\backslash
-multicolumn{1} {c} {
-\backslash
-textit{Men}} &  
-\backslash
-multicolumn{1} {c} {
-\backslash
-textit{Women}} &  
-\backslash
-multicolumn{1} {c} {
-\backslash
-textit{All}} &  
-\backslash
-multicolumn{1} {c} {
-\backslash
-textit{Men}} &  
-\backslash
-multicolumn{1} {c} {
-\backslash
-textit{Women}} &  
-\backslash
-multicolumn{1} {c} {
-\backslash
-textit{All}} &  
-\backslash
-multicolumn{1} {c} {
-\backslash
-textit{Men}} &  
-\backslash
-multicolumn{1} {c} {
-\backslash
-textit{Women}} &  
-\backslash
-multicolumn{1} {c} {
-\backslash
-textit{All}} &  
-\backslash
-multicolumn{1} {c} {
-\backslash
-textit{Men}}  &  
-\backslash
-multicolumn{1} {c} {
-\backslash
-textit{Women}} &  
-\backslash
-multicolumn{1} {c} {
-\backslash
-textit{All}} 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-hline 
-\backslash
-
-\backslash
-[-1.8ex]  
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\backslash
-textit{Farmer is male}}                & $
-\backslash
-Sexpr{format( round(mean(pool$rating_overall [pool$farmer_fem=="0"& pool$ratee_f
-em=="0"], na.rm=T), digits=2),nsmall=0)}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_overall [pool$farmer_fem=="0"& pool$ratee_f
-em=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_overall [pool$farmer_fem=="0"], na.rm=T),
- digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_overall [pool$farmer_fem=="0"& pool$ratee_f
-em=="0" & pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_overall [pool$farmer_fem=="0"& pool$ratee_f
-em=="1" & pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_overall [pool$farmer_fem=="0" & pool$dealer
-_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_overall [pool$farmer_fem=="0"& pool$ratee_f
-em=="0" & pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_overall [pool$farmer_fem=="0"& pool$ratee_f
-em=="1" & pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_overall [pool$farmer_fem=="0" & pool$trader
-_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_overall [pool$farmer_fem=="0"& pool$ratee_f
-em=="0" & pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_overall [pool$farmer_fem=="0"& pool$ratee_f
-em=="1" & pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_overall [pool$farmer_fem=="0" & pool$miller
-_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\backslash
-textit{Farmer is female}}        & $
-\backslash
-Sexpr{format( round(mean(pool$rating_overall [pool$farmer_fem=="1"& pool$ratee_f
-em=="0"], na.rm=T), digits=2),nsmall=0)}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_overall [pool$farmer_fem=="1"& pool$ratee_f
-em=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_overall [pool$farmer_fem=="1"], na.rm=T),
- digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_overall [pool$farmer_fem=="1"& pool$ratee_f
-em=="0" & pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_overall [pool$farmer_fem=="1"& pool$ratee_f
-em=="1" & pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_overall [pool$farmer_fem=="1" & pool$dealer
-_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_overall [pool$farmer_fem=="1"& pool$ratee_f
-em=="0" & pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_overall [pool$farmer_fem=="1"& pool$ratee_f
-em=="1" & pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_overall [pool$farmer_fem=="1" & pool$trader
-_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_overall [pool$farmer_fem=="1"& pool$ratee_f
-em=="0" & pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_overall [pool$farmer_fem=="1"& pool$ratee_f
-em=="1" & pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_overall [pool$farmer_fem=="1" & pool$miller
-_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$       
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\backslash
-textit{Farmer is either male or female}}         & $
-\backslash
-Sexpr{format( round(mean(pool$rating_overall [ pool$ratee_fem=="0"], na.rm=T),
- digits=2),nsmall=0)}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_overall [ pool$ratee_fem=="1"], na.rm=T),
- digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_overall , na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_overall [ pool$ratee_fem=="0" & pool$dealer
-_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_overall [ pool$ratee_fem=="1" & pool$dealer
-_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_overall [ pool$dealer_dummy=="1"],
- na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_overall [ pool$ratee_fem=="0" & pool$trader
-_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_overall [ pool$ratee_fem=="1" & pool$trader
-_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_overall [pool$trader_dummy=="1"], na.rm=T),
- digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_overall [pool$ratee_fem=="0" & pool$miller_
-dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_overall [ pool$ratee_fem=="1" & pool$miller
-_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_overall [ pool$miller_dummy=="1"],
- na.rm=T), digits=2),nsmall=0)}$       
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\backslash
-textit{Self-ratings}}            & $
-\backslash
-Sexpr{format( round(mean(pool$ratee_rating_overall [pool$ratee_fem=="0"],
- na.rm=T), digits=2),nsmall=0)}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$ratee_rating_overall [ pool$ratee_fem=="1"],
- na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$ratee_rating_overall , na.rm=T), digits=2),nsmall=0
-)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$ratee_rating_overall [pool$ratee_fem=="0"
- & pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$ratee_rating_overall [ pool$ratee_fem=="1"
- & pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$ratee_rating_overall [ pool$dealer_dummy=="1"],
- na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$ratee_rating_overall [pool$ratee_fem=="0"
- & pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$ratee_rating_overall [ pool$ratee_fem=="1"
- & pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$ratee_rating_overall [ pool$trader_dummy=="1"],
- na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$ratee_rating_overall [ pool$ratee_fem=="0"
- & pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$ratee_rating_overall [pool$ratee_fem=="1"
- & pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$ratee_rating_overall [ pool$miller_dummy=="1"],
- na.rm=T), digits=2),nsmall=0)}$       
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-cline{2-13} 
-\backslash
-
-\backslash
-[-1.8ex] 
-\end_layout
-
-\begin_layout Plain Layout
-
-& 
-\backslash
-multicolumn{12} {c} {
-\backslash
-textit{Location}}  
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-cline{2-13} 
-\backslash
-
-\backslash
-[-1.8ex]  
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\backslash
-textit{Farmer is male}}                & $
-\backslash
-Sexpr{format( round(mean(pool$rating_location [pool$farmer_fem=="0"& pool$ratee_
-fem=="0"], na.rm=T), digits=2),nsmall=0)}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_location [pool$farmer_fem=="0"& pool$ratee_
-fem=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_location [pool$farmer_fem=="0"], na.rm=T),
- digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_location [pool$farmer_fem=="0"& pool$ratee_
-fem=="0" & pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_location [pool$farmer_fem=="0"& pool$ratee_
-fem=="1" & pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_location [pool$farmer_fem=="0" & pool$deale
-r_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_location [pool$farmer_fem=="0"& pool$ratee_
-fem=="0" & pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_location [pool$farmer_fem=="0"& pool$ratee_
-fem=="1" & pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_location [pool$farmer_fem=="0" & pool$trade
-r_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_location [pool$farmer_fem=="0"& pool$ratee_
-fem=="0" & pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_location [pool$farmer_fem=="0"& pool$ratee_
-fem=="1" & pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_location [pool$farmer_fem=="0" & pool$mille
-r_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\backslash
-textit{Farmer is female}}        & $
-\backslash
-Sexpr{format( round(mean(pool$rating_location [pool$farmer_fem=="1"& pool$ratee_
-fem=="0"], na.rm=T), digits=2),nsmall=0)}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_location [pool$farmer_fem=="1"& pool$ratee_
-fem=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_location [pool$farmer_fem=="1"], na.rm=T),
- digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_location [pool$farmer_fem=="1"& pool$ratee_
-fem=="0" & pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_location [pool$farmer_fem=="1"& pool$ratee_
-fem=="1" & pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_location [pool$farmer_fem=="1" & pool$deale
-r_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_location [pool$farmer_fem=="1"& pool$ratee_
-fem=="0" & pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_location [pool$farmer_fem=="1"& pool$ratee_
-fem=="1" & pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_location [pool$farmer_fem=="1" & pool$trade
-r_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_location [pool$farmer_fem=="1"& pool$ratee_
-fem=="0" & pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_location [pool$farmer_fem=="1"& pool$ratee_
-fem=="1" & pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_location [pool$farmer_fem=="1" & pool$mille
-r_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$       
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\backslash
-textit{Farmer is either male or female}}         & $
-\backslash
-Sexpr{format( round(mean(pool$rating_location [ pool$ratee_fem=="0"], na.rm=T),
- digits=2),nsmall=0)}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_location [ pool$ratee_fem=="1"], na.rm=T),
- digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_location , na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_location [ pool$ratee_fem=="0" & pool$deale
-r_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_location [ pool$ratee_fem=="1" & pool$deale
-r_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_location [ pool$dealer_dummy=="1"],
- na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_location [ pool$ratee_fem=="0" & pool$trade
-r_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_location [ pool$ratee_fem=="1" & pool$trade
-r_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_location [pool$trader_dummy=="1"],
- na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_location [pool$ratee_fem=="0" & pool$miller
-_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_location [ pool$ratee_fem=="1" & pool$mille
-r_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_location [ pool$miller_dummy=="1"],
- na.rm=T), digits=2),nsmall=0)}$       
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\backslash
-textit{Self-ratings}}            & $
-\backslash
-Sexpr{format( round(mean(pool$rating_location_ratee [pool$ratee_fem=="0"],
- na.rm=T), digits=2),nsmall=0)}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_location_ratee [ pool$ratee_fem=="1"],
- na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_location_ratee , na.rm=T), digits=2),nsmall=
-0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_location_ratee [pool$ratee_fem=="0"
- & pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_location_ratee [ pool$ratee_fem=="1"
- & pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_location_ratee [ pool$dealer_dummy=="1"],
- na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_location_ratee [pool$ratee_fem=="0"
- & pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_location_ratee [ pool$ratee_fem=="1"
- & pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_location_ratee [ pool$trader_dummy=="1"],
- na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_location_ratee [ pool$ratee_fem=="0"
- & pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_location_ratee [pool$ratee_fem=="1"
- & pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_location_ratee [ pool$miller_dummy=="1"],
- na.rm=T), digits=2),nsmall=0)}$       
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-cline{2-13} 
-\backslash
-
-\backslash
-[-1.8ex] 
-\end_layout
-
-\begin_layout Plain Layout
-
-& 
-\backslash
-multicolumn{12} {c} {
-\backslash
-textit{Quality}}  
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-cline{2-13} 
-\backslash
-
-\backslash
-[-1.8ex]  
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\backslash
-textit{Farmer is male}}                & $
-\backslash
-Sexpr{format( round(mean(pool$rating_quality [pool$farmer_fem=="0"& pool$ratee_f
-em=="0"], na.rm=T), digits=2),nsmall=0)}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_quality [pool$farmer_fem=="0"& pool$ratee_f
-em=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_quality [pool$farmer_fem=="0"], na.rm=T),
- digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_quality [pool$farmer_fem=="0"& pool$ratee_f
-em=="0" & pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_quality [pool$farmer_fem=="0"& pool$ratee_f
-em=="1" & pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_quality [pool$farmer_fem=="0" & pool$dealer
-_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_quality [pool$farmer_fem=="0"& pool$ratee_f
-em=="0" & pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_quality [pool$farmer_fem=="0"& pool$ratee_f
-em=="1" & pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_quality [pool$farmer_fem=="0" & pool$trader
-_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_quality [pool$farmer_fem=="0"& pool$ratee_f
-em=="0" & pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_quality [pool$farmer_fem=="0"& pool$ratee_f
-em=="1" & pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_quality [pool$farmer_fem=="0" & pool$miller
-_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\backslash
-textit{Farmer is female}}        & $
-\backslash
-Sexpr{format( round(mean(pool$rating_quality [pool$farmer_fem=="1"& pool$ratee_f
-em=="0"], na.rm=T), digits=2),nsmall=0)}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_quality [pool$farmer_fem=="1"& pool$ratee_f
-em=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_quality [pool$farmer_fem=="1"], na.rm=T),
- digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_quality [pool$farmer_fem=="1"& pool$ratee_f
-em=="0" & pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_quality [pool$farmer_fem=="1"& pool$ratee_f
-em=="1" & pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_quality [pool$farmer_fem=="1" & pool$dealer
-_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_quality [pool$farmer_fem=="1"& pool$ratee_f
-em=="0" & pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_quality [pool$farmer_fem=="1"& pool$ratee_f
-em=="1" & pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_quality [pool$farmer_fem=="1" & pool$trader
-_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_quality [pool$farmer_fem=="1"& pool$ratee_f
-em=="0" & pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_quality [pool$farmer_fem=="1"& pool$ratee_f
-em=="1" & pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_quality [pool$farmer_fem=="1" & pool$miller
-_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$       
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\backslash
-textit{Farmer is either male or female}}         & $
-\backslash
-Sexpr{format( round(mean(pool$rating_quality [ pool$ratee_fem=="0"], na.rm=T),
- digits=2),nsmall=0)}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_quality [ pool$ratee_fem=="1"], na.rm=T),
- digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_quality , na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_quality [ pool$ratee_fem=="0" & pool$dealer
-_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_quality [ pool$ratee_fem=="1" & pool$dealer
-_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_quality [ pool$dealer_dummy=="1"],
- na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_quality [ pool$ratee_fem=="0" & pool$trader
-_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_quality [ pool$ratee_fem=="1" & pool$trader
-_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_quality [pool$trader_dummy=="1"], na.rm=T),
- digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_quality [pool$ratee_fem=="0" & pool$miller_
-dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_quality [ pool$ratee_fem=="1" & pool$miller
-_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_quality [ pool$miller_dummy=="1"],
- na.rm=T), digits=2),nsmall=0)}$       
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\backslash
-textit{Self-ratings}}            & $
-\backslash
-Sexpr{format( round(mean(pool$rating_quality_ratee [pool$ratee_fem=="0"],
- na.rm=T), digits=2),nsmall=0)}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_quality_ratee [ pool$ratee_fem=="1"],
- na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_quality_ratee , na.rm=T), digits=2),nsmall=0
-)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_quality_ratee [pool$ratee_fem=="0"
- & pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_quality_ratee [ pool$ratee_fem=="1"
- & pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_quality_ratee [ pool$dealer_dummy=="1"],
- na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_quality_ratee [pool$ratee_fem=="0"
- & pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_quality_ratee [ pool$ratee_fem=="1"
- & pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_quality_ratee [ pool$trader_dummy=="1"],
- na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_quality_ratee [ pool$ratee_fem=="0"
- & pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_quality_ratee [pool$ratee_fem=="1"
- & pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_quality_ratee [ pool$miller_dummy=="1"],
- na.rm=T), digits=2),nsmall=0)}$       
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-cline{2-13} 
-\backslash
-
-\backslash
-[-1.8ex] 
-\end_layout
-
-\begin_layout Plain Layout
-
-& 
-\backslash
-multicolumn{12} {c} {
-\backslash
-textit{Price}}  
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-cline{2-13} 
-\backslash
-
-\backslash
-[-1.8ex]  
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\backslash
-textit{Farmer is male}}                & $
-\backslash
-Sexpr{format( round(mean(pool$rating_price [pool$farmer_fem=="0"& pool$ratee_fem
-=="0"], na.rm=T), digits=2),nsmall=0)}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_price [pool$farmer_fem=="0"& pool$ratee_fem
-=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_price [pool$farmer_fem=="0"], na.rm=T),
- digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_price [pool$farmer_fem=="0"& pool$ratee_fem
-=="0" & pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_price [pool$farmer_fem=="0"& pool$ratee_fem
-=="1" & pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_price [pool$farmer_fem=="0" & pool$dealer_d
-ummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_price [pool$farmer_fem=="0"& pool$ratee_fem
-=="0" & pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_price [pool$farmer_fem=="0"& pool$ratee_fem
-=="1" & pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_price [pool$farmer_fem=="0" & pool$trader_d
-ummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_price [pool$farmer_fem=="0"& pool$ratee_fem
-=="0" & pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_price [pool$farmer_fem=="0"& pool$ratee_fem
-=="1" & pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_price [pool$farmer_fem=="0" & pool$miller_d
-ummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\backslash
-textit{Farmer is female}}        & $
-\backslash
-Sexpr{format( round(mean(pool$rating_price [pool$farmer_fem=="1"& pool$ratee_fem
-=="0"], na.rm=T), digits=2),nsmall=0)}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_price [pool$farmer_fem=="1"& pool$ratee_fem
-=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_price [pool$farmer_fem=="1"], na.rm=T),
- digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_price [pool$farmer_fem=="1"& pool$ratee_fem
-=="0" & pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_price [pool$farmer_fem=="1"& pool$ratee_fem
-=="1" & pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_price [pool$farmer_fem=="1" & pool$dealer_d
-ummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_price [pool$farmer_fem=="1"& pool$ratee_fem
-=="0" & pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_price [pool$farmer_fem=="1"& pool$ratee_fem
-=="1" & pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_price [pool$farmer_fem=="1" & pool$trader_d
-ummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_price [pool$farmer_fem=="1"& pool$ratee_fem
-=="0" & pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_price [pool$farmer_fem=="1"& pool$ratee_fem
-=="1" & pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_price [pool$farmer_fem=="1" & pool$miller_d
-ummy=="1"], na.rm=T), digits=2),nsmall=0)}$       
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\backslash
-textit{Farmer is either male or female}}         & $
-\backslash
-Sexpr{format( round(mean(pool$rating_price [ pool$ratee_fem=="0"], na.rm=T),
- digits=2),nsmall=0)}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_price [ pool$ratee_fem=="1"], na.rm=T),
- digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_price , na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_price [ pool$ratee_fem=="0" & pool$dealer_d
-ummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_price [ pool$ratee_fem=="1" & pool$dealer_d
-ummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_price [ pool$dealer_dummy=="1"], na.rm=T),
- digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_price [ pool$ratee_fem=="0" & pool$trader_d
-ummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_price [ pool$ratee_fem=="1" & pool$trader_d
-ummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_price [pool$trader_dummy=="1"], na.rm=T),
- digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_price [pool$ratee_fem=="0" & pool$miller_du
-mmy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_price [ pool$ratee_fem=="1" & pool$miller_d
-ummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_price [ pool$miller_dummy=="1"], na.rm=T),
- digits=2),nsmall=0)}$       
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\backslash
-textit{Self-ratings}}            & $
-\backslash
-Sexpr{format( round(mean(pool$rating_price_ratee [pool$ratee_fem=="0"],
- na.rm=T), digits=2),nsmall=0)}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_price_ratee [ pool$ratee_fem=="1"],
- na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_price_ratee , na.rm=T), digits=2),nsmall=0)}
-$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_price_ratee [pool$ratee_fem=="0" &
- pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_price_ratee [ pool$ratee_fem=="1" &
- pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_price_ratee [ pool$dealer_dummy=="1"],
- na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_price_ratee [pool$ratee_fem=="0" &
- pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_price_ratee [ pool$ratee_fem=="1" &
- pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_price_ratee [ pool$trader_dummy=="1"],
- na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_price_ratee [ pool$ratee_fem=="0" &
- pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_price_ratee [pool$ratee_fem=="1" &
- pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_price_ratee [ pool$miller_dummy=="1"],
- na.rm=T), digits=2),nsmall=0)}$       
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-cline{2-13} 
-\backslash
-
-\backslash
-[-1.8ex] 
-\end_layout
-
-\begin_layout Plain Layout
-
-& 
-\backslash
-multicolumn{12} {c} {
-\backslash
-textit{Reputation}}  
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-cline{2-13} 
-\backslash
-
-\backslash
-[-1.8ex]  
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\backslash
-textit{Farmer is male}}                & $
-\backslash
-Sexpr{format( round(mean(pool$rating_reputation [pool$farmer_fem=="0"& pool$rate
-e_fem=="0"], na.rm=T), digits=2),nsmall=0)}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_reputation [pool$farmer_fem=="0"& pool$rate
-e_fem=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_reputation [pool$farmer_fem=="0"],
- na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_reputation [pool$farmer_fem=="0"& pool$rate
-e_fem=="0" & pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_reputation [pool$farmer_fem=="0"& pool$rate
-e_fem=="1" & pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_reputation [pool$farmer_fem=="0" &
- pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_reputation [pool$farmer_fem=="0"& pool$rate
-e_fem=="0" & pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_reputation [pool$farmer_fem=="0"& pool$rate
-e_fem=="1" & pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_reputation [pool$farmer_fem=="0" &
- pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_reputation [pool$farmer_fem=="0"& pool$rate
-e_fem=="0" & pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_reputation [pool$farmer_fem=="0"& pool$rate
-e_fem=="1" & pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_reputation [pool$farmer_fem=="0" &
- pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\backslash
-textit{Farmer is female}}        & $
-\backslash
-Sexpr{format( round(mean(pool$rating_reputation [pool$farmer_fem=="1"& pool$rate
-e_fem=="0"], na.rm=T), digits=2),nsmall=0)}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_reputation [pool$farmer_fem=="1"& pool$rate
-e_fem=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_reputation [pool$farmer_fem=="1"],
- na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_reputation [pool$farmer_fem=="1"& pool$rate
-e_fem=="0" & pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_reputation [pool$farmer_fem=="1"& pool$rate
-e_fem=="1" & pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_reputation [pool$farmer_fem=="1" &
- pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_reputation [pool$farmer_fem=="1"& pool$rate
-e_fem=="0" & pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_reputation [pool$farmer_fem=="1"& pool$rate
-e_fem=="1" & pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_reputation [pool$farmer_fem=="1" &
- pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_reputation [pool$farmer_fem=="1"& pool$rate
-e_fem=="0" & pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_reputation [pool$farmer_fem=="1"& pool$rate
-e_fem=="1" & pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_reputation [pool$farmer_fem=="1" &
- pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$       
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\backslash
-textit{Farmer is either male or female}}         & $
-\backslash
-Sexpr{format( round(mean(pool$rating_reputation [ pool$ratee_fem=="0"],
- na.rm=T), digits=2),nsmall=0)}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_reputation [ pool$ratee_fem=="1"],
- na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_reputation , na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_reputation [ pool$ratee_fem=="0" &
- pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_reputation [ pool$ratee_fem=="1" &
- pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_reputation [ pool$dealer_dummy=="1"],
- na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_reputation [ pool$ratee_fem=="0" &
- pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_reputation [ pool$ratee_fem=="1" &
- pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_reputation [pool$trader_dummy=="1"],
- na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_reputation [pool$ratee_fem=="0" & pool$mill
-er_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_reputation [ pool$ratee_fem=="1" &
- pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_reputation [ pool$miller_dummy=="1"],
- na.rm=T), digits=2),nsmall=0)}$       
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\backslash
-textit{Self-ratings}}            & $
-\backslash
-Sexpr{format( round(mean(pool$rating_reputation_ratee [pool$ratee_fem=="0"],
- na.rm=T), digits=2),nsmall=0)}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_reputation_ratee [ pool$ratee_fem=="1"],
- na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_reputation_ratee , na.rm=T), digits=2),nsmal
-l=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_reputation_ratee [pool$ratee_fem=="0"
- & pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_reputation_ratee [ pool$ratee_fem=="1"
- & pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_reputation_ratee [ pool$dealer_dummy=="1"],
- na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_reputation_ratee [pool$ratee_fem=="0"
- & pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_reputation_ratee [ pool$ratee_fem=="1"
- & pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_reputation_ratee [ pool$trader_dummy=="1"],
- na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_reputation_ratee [ pool$ratee_fem=="0"
- & pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_reputation_ratee [pool$ratee_fem=="1"
- & pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $
-\backslash
-Sexpr{format( round(mean(pool$rating_reputation_ratee [ pool$miller_dummy=="1"],
- na.rm=T), digits=2),nsmall=0)}$      
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
- 
-\backslash
-hline   
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-end{tabular} 
-\backslash
-end{center}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-label{table:table4} 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{landscape}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Average ratings (all dimensions) from farmers and average self-ratings (all
- dimensions) from dealers, traders, and processors, grouped by gender.
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:table4"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \paragraph_spacing onehalf
 In line with hypothesis 
 \begin_inset CommandInset ref
@@ -4974,7 +2526,8 @@ noprefix "false"
 \end_inset
 
 ).
- For overall average self-rating, women (
+ For overall average self-rating, women rate themselves lower than men rate
+ themselves (
 \begin_inset ERT
 status open
 
@@ -4988,7 +2541,8 @@ Sexpr{format(round(mean(pool$ratee_rating_overall [pool$ratee_fem=="1"],
 
 \end_inset
 
-) rate lower compared to men (
+ vs.
+ 
 \begin_inset ERT
 status open
 
@@ -5003,18 +2557,24 @@ Sexpr{format(round(mean(pool$ratee_rating_overall [pool$ratee_fem=="0"],
 \end_inset
 
 ).
- This is consistent for location and reputation based self-ratings.
+ We also find women rate themselves lower on location and reputation dimensions.
  However, for quality and price, men self-assess themselves worse than how
  women self-assess themselves.
- These findings are similar for each rating dimension in the case of input
- dealers.
- Self-ratings from male assembly traders are always lower than female assembly
- traders except when they are rating for reputation.
- The results obtained from the mean self-ratings of the entire ratee group
- reflect in the results for the miller group in particular.
- However, the only exception is the overall average self-rating where male
- millers assess themselves worse than the female millers.
- Thus, supporting hypothesis 
+ 
+\end_layout
+
+\begin_layout Standard
+There is also no clear pattern when we look at the different actors.
+ While female traders assess themselves higher than their male counterparts,
+ male input dealers assess themselves higher than female dealers.
+ When looking at the four dimensions, we find that for agro-input dealers,
+ men rate themselves highers on three of the four dimensions.
+ For millers, it is the other way around.
+ For traders, women consistently rate themselves higher.
+ However, due to the small number of female agro-input dealers, this result
+ needs to be interpreted with caution.
+ Overall, we see that from the 20 comparisons, 9 are in line with hypothesis
+ 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "Hypothesis 3"
@@ -5024,27 +2584,11 @@ noprefix "false"
 
 \end_inset
 
-, it can be stated that although women tend to generally self-assess less
- favourably; for quality and price, women tend to self-assess more favourably
- when compared to men.
+, indicating that the hypothesis is likely to be false.
 \end_layout
 
 \begin_layout Standard
-Following this, the focus is on the sex of the ratees and the ratings from
- the farmers.
- Men receive less favourable ratings for overall average, quality, and reputatio
-n.
- For location and price, men receive better scores than women.
- These findings are consistent for the group of agro-input dealers across
- the rating dimensions.
- However, both male and female input dealers receive the same overall average
- rating.
- Interestingly, all male assembly traders receive lower scores across all
- the rating dimensions than the female assembly traders.
- Thus, female assembly traders are perceived to be performing better.
- In the case of millers, women always receive less favourable ratings, with
- an exception for quality.
- Thus, hypothesis 
+In 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "Hypothesis 4"
@@ -5054,10 +2598,34 @@ noprefix "false"
 
 \end_inset
 
- does not entirely align with these findings from table 
+, we test if the sex of the actor leads to systematically different ratings.
+ Judged from the overall score, male value chain actors receive lower scores
+ than female actors, but the difference is negligible (3.59 vs.
+ 3.61).
+ When all actors are pooled, we see that male actors are scored higher on
+ location and price competitiveness, while they are scored lower on the
+ dimensions of quality and reputation.
+ This may indicate that women are located in poorer locations.
+ Some of the reasons behind that could be mobility constraints, lack of
+ capital to set up businesses in better locations and less knowledge about
+ optimal locations for business.
+\end_layout
+
+\begin_layout Standard
+When we look at the different actors more in detail, we find no difference
+ in the overall ratings between male and female agro-input dealers.
+ As is the case when all actors are pooled, women dealers are viewed more
+ favorably for quality and reputation, while male dealer get higher scores
+ for location and price.
+ For traders, women consistently receive higher scores then men, but again,
+ these results need to be interpreted with care given the very few female
+ traders we have in the sample.
+ For millers, men seem to get somewhat higher ratings, except perhaps on
+ the quality dimension.
+ In all, the descriptive analysis provides little support for 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "tab:table4"
+reference "Hypothesis 4"
 plural "false"
 caps "false"
 noprefix "false"
@@ -5065,23 +2633,11 @@ noprefix "false"
 \end_inset
 
 .
- Women mostly are rated lower for location and price whereas men are rated
- worse overall and for quality and reputation mostly.
- 
 \end_layout
 
 \begin_layout Standard
-Next, we examine how men rate other men and women rate other women.
- The average ratings show that women give more favourable ratings to other
- women compared to men's ratings for other men, only in the case of overall
- average, quality, and reputation.
- All female traders are always rated higher by female farmers in every dimension
- of rating.
- Male millers are generally rated higher by male farmers for location and
- price competitiveness.
- Women rate female agro-input dealers higher for all aspects except for
- location.
- These findings portray the underlying idea of hypothesis 
+Finally, we look for indications of female gender homophily (hypothesis
+ 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "Hypothesis 5"
@@ -5091,41 +2647,32 @@ noprefix "false"
 
 \end_inset
 
- with some exceptions.
- 
+).
+ Aggregating over actors and dimensions, we see that female farmers score
+ female actors higher (3.63) than any other combination.
+ But if we look at the different dimensions, there are no signs of female
+ gender homophily effects.
+ For location and price competitiveness, female farmers score male actors
+ highest; for quality, male farmers score female actors highest.
+ For reputation, male and female farmers give the same score to female actors.
 \end_layout
 
 \begin_layout Standard
-It is interesting to note that generally, women are always rated higher
- for quality (consistent for dealers, traders, and processors), indicating
- provision of better quality from female input and service providers.
- Similarly, men are consistently rated higher for location with an exception
- for traders.
- This may indicate that women (dealers and millers) are located in poorer
- locations.
- Some of the reasons behind that could be mobility constraints, lack of
- capital to set up businesses in better locations and less knowledge of
- good locations for business.
- 
-\end_layout
+When looking at dealers, traders and millers separately, we only find signs
+ of female gender homophilly effects for traders.
+ But again, these results are likely to suffer from a small sample size.
+ For other actors, there also seems to be no indication of female gender
+ homophilly effects, leading us to reject hypothesis 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Hypothesis 5"
+plural "false"
+caps "false"
+noprefix "false"
 
-\begin_layout Standard
-Farmer ratings indicate that price competitiveness of male input dealers
- and millers are perceived to be better, women in input dealing and trading
- and men in processing of maize are perceived to be well-reputed.
- The rating attribute that is always scored the lowest is price competitiveness
- and that is always scored the highest is ease of access for traders and
- reputation for agro-input dealers and millers.
- Input dealers get the lowest score for ease of access and price competitiveness
- while millers get the lowest rating for overall average, quality, and reputatio
-n.
- Thus, agro-input dealers are overall not easy to reach while assembly traders
- are.
- In terms of the quality attribute, input dealers are perceived to be the
- best in comparison to traders and millers.
- Thus, this may indicate that input dealers adhere to sale of good quality
- inputs.
- 
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsection
@@ -7329,7 +4876,7 @@ noprefix "false"
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -10785,6 +8332,2456 @@ ICC coefficients for inter-rater reliability and intra-rater reliability.
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:table3"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways true
+status collapsed
+
+\begin_layout Plain Layout
+\paragraph_spacing onehalf
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{landscape}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize 
+\backslash
+begin{center} 
+\backslash
+begin{tabular}{@{
+\backslash
+extracolsep{5pt}}lcccccccccccc}  
+\backslash
+
+\backslash
+[-1.8ex]
+\backslash
+hline  
+\backslash
+hline 
+\backslash
+
+\backslash
+[-1.8ex]   & 
+\backslash
+multicolumn{12}{c}{
+\backslash
+textit{Average Ratings (Mean)}} 
+\backslash
+
+\backslash
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-13} 
+\backslash
+
+\backslash
+[-1.8ex] 
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{12} {c} {
+\backslash
+textit{Overall Average (All Dimensions)}}  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-13} 
+\backslash
+
+\backslash
+[-1.8ex]   & 
+\backslash
+multicolumn{3} {c} {All Ratees} &  
+\backslash
+multicolumn{3} {c} {Agro-Input Dealers} &  
+\backslash
+multicolumn{3} {c} {Assembly Traders} &  
+\backslash
+multicolumn{3} {c} {Millers} 
+\backslash
+
+\backslash
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+ & 
+\backslash
+multicolumn{1} {c} {
+\backslash
+textit{Men}} &  
+\backslash
+multicolumn{1} {c} {
+\backslash
+textit{Women}} &  
+\backslash
+multicolumn{1} {c} {
+\backslash
+textit{All}} &  
+\backslash
+multicolumn{1} {c} {
+\backslash
+textit{Men}} &  
+\backslash
+multicolumn{1} {c} {
+\backslash
+textit{Women}} &  
+\backslash
+multicolumn{1} {c} {
+\backslash
+textit{All}} &  
+\backslash
+multicolumn{1} {c} {
+\backslash
+textit{Men}} &  
+\backslash
+multicolumn{1} {c} {
+\backslash
+textit{Women}} &  
+\backslash
+multicolumn{1} {c} {
+\backslash
+textit{All}} &  
+\backslash
+multicolumn{1} {c} {
+\backslash
+textit{Men}}  &  
+\backslash
+multicolumn{1} {c} {
+\backslash
+textit{Women}} &  
+\backslash
+multicolumn{1} {c} {
+\backslash
+textit{All}} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+
+\backslash
+[-1.8ex]  
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Farmer is male}}                & $
+\backslash
+Sexpr{format( round(mean(pool$rating_overall [pool$farmer_fem=="0"& pool$ratee_f
+em=="0"], na.rm=T), digits=2),nsmall=0)}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_overall [pool$farmer_fem=="0"& pool$ratee_f
+em=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_overall [pool$farmer_fem=="0"], na.rm=T),
+ digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_overall [pool$farmer_fem=="0"& pool$ratee_f
+em=="0" & pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_overall [pool$farmer_fem=="0"& pool$ratee_f
+em=="1" & pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_overall [pool$farmer_fem=="0" & pool$dealer
+_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_overall [pool$farmer_fem=="0"& pool$ratee_f
+em=="0" & pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_overall [pool$farmer_fem=="0"& pool$ratee_f
+em=="1" & pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_overall [pool$farmer_fem=="0" & pool$trader
+_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_overall [pool$farmer_fem=="0"& pool$ratee_f
+em=="0" & pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_overall [pool$farmer_fem=="0"& pool$ratee_f
+em=="1" & pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_overall [pool$farmer_fem=="0" & pool$miller
+_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Farmer is female}}        & $
+\backslash
+Sexpr{format( round(mean(pool$rating_overall [pool$farmer_fem=="1"& pool$ratee_f
+em=="0"], na.rm=T), digits=2),nsmall=0)}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_overall [pool$farmer_fem=="1"& pool$ratee_f
+em=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_overall [pool$farmer_fem=="1"], na.rm=T),
+ digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_overall [pool$farmer_fem=="1"& pool$ratee_f
+em=="0" & pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_overall [pool$farmer_fem=="1"& pool$ratee_f
+em=="1" & pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_overall [pool$farmer_fem=="1" & pool$dealer
+_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_overall [pool$farmer_fem=="1"& pool$ratee_f
+em=="0" & pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_overall [pool$farmer_fem=="1"& pool$ratee_f
+em=="1" & pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_overall [pool$farmer_fem=="1" & pool$trader
+_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_overall [pool$farmer_fem=="1"& pool$ratee_f
+em=="0" & pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_overall [pool$farmer_fem=="1"& pool$ratee_f
+em=="1" & pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_overall [pool$farmer_fem=="1" & pool$miller
+_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$       
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Farmer is either male or female}}         & $
+\backslash
+Sexpr{format( round(mean(pool$rating_overall [ pool$ratee_fem=="0"], na.rm=T),
+ digits=2),nsmall=0)}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_overall [ pool$ratee_fem=="1"], na.rm=T),
+ digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_overall , na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_overall [ pool$ratee_fem=="0" & pool$dealer
+_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_overall [ pool$ratee_fem=="1" & pool$dealer
+_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_overall [ pool$dealer_dummy=="1"],
+ na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_overall [ pool$ratee_fem=="0" & pool$trader
+_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_overall [ pool$ratee_fem=="1" & pool$trader
+_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_overall [pool$trader_dummy=="1"], na.rm=T),
+ digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_overall [pool$ratee_fem=="0" & pool$miller_
+dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_overall [ pool$ratee_fem=="1" & pool$miller
+_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_overall [ pool$miller_dummy=="1"],
+ na.rm=T), digits=2),nsmall=0)}$       
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Self-ratings}}            & $
+\backslash
+Sexpr{format( round(mean(pool$ratee_rating_overall [pool$ratee_fem=="0"],
+ na.rm=T), digits=2),nsmall=0)}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$ratee_rating_overall [ pool$ratee_fem=="1"],
+ na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$ratee_rating_overall , na.rm=T), digits=2),nsmall=0
+)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$ratee_rating_overall [pool$ratee_fem=="0"
+ & pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$ratee_rating_overall [ pool$ratee_fem=="1"
+ & pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$ratee_rating_overall [ pool$dealer_dummy=="1"],
+ na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$ratee_rating_overall [pool$ratee_fem=="0"
+ & pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$ratee_rating_overall [ pool$ratee_fem=="1"
+ & pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$ratee_rating_overall [ pool$trader_dummy=="1"],
+ na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$ratee_rating_overall [ pool$ratee_fem=="0"
+ & pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$ratee_rating_overall [pool$ratee_fem=="1"
+ & pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$ratee_rating_overall [ pool$miller_dummy=="1"],
+ na.rm=T), digits=2),nsmall=0)}$       
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-13} 
+\backslash
+
+\backslash
+[-1.8ex] 
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{12} {c} {
+\backslash
+textit{Location}}  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-13} 
+\backslash
+
+\backslash
+[-1.8ex]  
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Farmer is male}}                & $
+\backslash
+Sexpr{format( round(mean(pool$rating_location [pool$farmer_fem=="0"& pool$ratee_
+fem=="0"], na.rm=T), digits=2),nsmall=0)}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_location [pool$farmer_fem=="0"& pool$ratee_
+fem=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_location [pool$farmer_fem=="0"], na.rm=T),
+ digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_location [pool$farmer_fem=="0"& pool$ratee_
+fem=="0" & pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_location [pool$farmer_fem=="0"& pool$ratee_
+fem=="1" & pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_location [pool$farmer_fem=="0" & pool$deale
+r_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_location [pool$farmer_fem=="0"& pool$ratee_
+fem=="0" & pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_location [pool$farmer_fem=="0"& pool$ratee_
+fem=="1" & pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_location [pool$farmer_fem=="0" & pool$trade
+r_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_location [pool$farmer_fem=="0"& pool$ratee_
+fem=="0" & pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_location [pool$farmer_fem=="0"& pool$ratee_
+fem=="1" & pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_location [pool$farmer_fem=="0" & pool$mille
+r_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Farmer is female}}        & $
+\backslash
+Sexpr{format( round(mean(pool$rating_location [pool$farmer_fem=="1"& pool$ratee_
+fem=="0"], na.rm=T), digits=2),nsmall=0)}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_location [pool$farmer_fem=="1"& pool$ratee_
+fem=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_location [pool$farmer_fem=="1"], na.rm=T),
+ digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_location [pool$farmer_fem=="1"& pool$ratee_
+fem=="0" & pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_location [pool$farmer_fem=="1"& pool$ratee_
+fem=="1" & pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_location [pool$farmer_fem=="1" & pool$deale
+r_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_location [pool$farmer_fem=="1"& pool$ratee_
+fem=="0" & pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_location [pool$farmer_fem=="1"& pool$ratee_
+fem=="1" & pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_location [pool$farmer_fem=="1" & pool$trade
+r_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_location [pool$farmer_fem=="1"& pool$ratee_
+fem=="0" & pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_location [pool$farmer_fem=="1"& pool$ratee_
+fem=="1" & pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_location [pool$farmer_fem=="1" & pool$mille
+r_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$       
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Farmer is either male or female}}         & $
+\backslash
+Sexpr{format( round(mean(pool$rating_location [ pool$ratee_fem=="0"], na.rm=T),
+ digits=2),nsmall=0)}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_location [ pool$ratee_fem=="1"], na.rm=T),
+ digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_location , na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_location [ pool$ratee_fem=="0" & pool$deale
+r_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_location [ pool$ratee_fem=="1" & pool$deale
+r_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_location [ pool$dealer_dummy=="1"],
+ na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_location [ pool$ratee_fem=="0" & pool$trade
+r_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_location [ pool$ratee_fem=="1" & pool$trade
+r_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_location [pool$trader_dummy=="1"],
+ na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_location [pool$ratee_fem=="0" & pool$miller
+_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_location [ pool$ratee_fem=="1" & pool$mille
+r_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_location [ pool$miller_dummy=="1"],
+ na.rm=T), digits=2),nsmall=0)}$       
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Self-ratings}}            & $
+\backslash
+Sexpr{format( round(mean(pool$rating_location_ratee [pool$ratee_fem=="0"],
+ na.rm=T), digits=2),nsmall=0)}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_location_ratee [ pool$ratee_fem=="1"],
+ na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_location_ratee , na.rm=T), digits=2),nsmall=
+0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_location_ratee [pool$ratee_fem=="0"
+ & pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_location_ratee [ pool$ratee_fem=="1"
+ & pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_location_ratee [ pool$dealer_dummy=="1"],
+ na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_location_ratee [pool$ratee_fem=="0"
+ & pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_location_ratee [ pool$ratee_fem=="1"
+ & pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_location_ratee [ pool$trader_dummy=="1"],
+ na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_location_ratee [ pool$ratee_fem=="0"
+ & pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_location_ratee [pool$ratee_fem=="1"
+ & pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_location_ratee [ pool$miller_dummy=="1"],
+ na.rm=T), digits=2),nsmall=0)}$       
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-13} 
+\backslash
+
+\backslash
+[-1.8ex] 
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{12} {c} {
+\backslash
+textit{Quality}}  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-13} 
+\backslash
+
+\backslash
+[-1.8ex]  
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Farmer is male}}                & $
+\backslash
+Sexpr{format( round(mean(pool$rating_quality [pool$farmer_fem=="0"& pool$ratee_f
+em=="0"], na.rm=T), digits=2),nsmall=0)}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_quality [pool$farmer_fem=="0"& pool$ratee_f
+em=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_quality [pool$farmer_fem=="0"], na.rm=T),
+ digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_quality [pool$farmer_fem=="0"& pool$ratee_f
+em=="0" & pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_quality [pool$farmer_fem=="0"& pool$ratee_f
+em=="1" & pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_quality [pool$farmer_fem=="0" & pool$dealer
+_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_quality [pool$farmer_fem=="0"& pool$ratee_f
+em=="0" & pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_quality [pool$farmer_fem=="0"& pool$ratee_f
+em=="1" & pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_quality [pool$farmer_fem=="0" & pool$trader
+_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_quality [pool$farmer_fem=="0"& pool$ratee_f
+em=="0" & pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_quality [pool$farmer_fem=="0"& pool$ratee_f
+em=="1" & pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_quality [pool$farmer_fem=="0" & pool$miller
+_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Farmer is female}}        & $
+\backslash
+Sexpr{format( round(mean(pool$rating_quality [pool$farmer_fem=="1"& pool$ratee_f
+em=="0"], na.rm=T), digits=2),nsmall=0)}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_quality [pool$farmer_fem=="1"& pool$ratee_f
+em=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_quality [pool$farmer_fem=="1"], na.rm=T),
+ digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_quality [pool$farmer_fem=="1"& pool$ratee_f
+em=="0" & pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_quality [pool$farmer_fem=="1"& pool$ratee_f
+em=="1" & pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_quality [pool$farmer_fem=="1" & pool$dealer
+_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_quality [pool$farmer_fem=="1"& pool$ratee_f
+em=="0" & pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_quality [pool$farmer_fem=="1"& pool$ratee_f
+em=="1" & pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_quality [pool$farmer_fem=="1" & pool$trader
+_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_quality [pool$farmer_fem=="1"& pool$ratee_f
+em=="0" & pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_quality [pool$farmer_fem=="1"& pool$ratee_f
+em=="1" & pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_quality [pool$farmer_fem=="1" & pool$miller
+_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$       
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Farmer is either male or female}}         & $
+\backslash
+Sexpr{format( round(mean(pool$rating_quality [ pool$ratee_fem=="0"], na.rm=T),
+ digits=2),nsmall=0)}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_quality [ pool$ratee_fem=="1"], na.rm=T),
+ digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_quality , na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_quality [ pool$ratee_fem=="0" & pool$dealer
+_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_quality [ pool$ratee_fem=="1" & pool$dealer
+_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_quality [ pool$dealer_dummy=="1"],
+ na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_quality [ pool$ratee_fem=="0" & pool$trader
+_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_quality [ pool$ratee_fem=="1" & pool$trader
+_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_quality [pool$trader_dummy=="1"], na.rm=T),
+ digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_quality [pool$ratee_fem=="0" & pool$miller_
+dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_quality [ pool$ratee_fem=="1" & pool$miller
+_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_quality [ pool$miller_dummy=="1"],
+ na.rm=T), digits=2),nsmall=0)}$       
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Self-ratings}}            & $
+\backslash
+Sexpr{format( round(mean(pool$rating_quality_ratee [pool$ratee_fem=="0"],
+ na.rm=T), digits=2),nsmall=0)}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_quality_ratee [ pool$ratee_fem=="1"],
+ na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_quality_ratee , na.rm=T), digits=2),nsmall=0
+)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_quality_ratee [pool$ratee_fem=="0"
+ & pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_quality_ratee [ pool$ratee_fem=="1"
+ & pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_quality_ratee [ pool$dealer_dummy=="1"],
+ na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_quality_ratee [pool$ratee_fem=="0"
+ & pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_quality_ratee [ pool$ratee_fem=="1"
+ & pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_quality_ratee [ pool$trader_dummy=="1"],
+ na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_quality_ratee [ pool$ratee_fem=="0"
+ & pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_quality_ratee [pool$ratee_fem=="1"
+ & pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_quality_ratee [ pool$miller_dummy=="1"],
+ na.rm=T), digits=2),nsmall=0)}$       
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-13} 
+\backslash
+
+\backslash
+[-1.8ex] 
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{12} {c} {
+\backslash
+textit{Price}}  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-13} 
+\backslash
+
+\backslash
+[-1.8ex]  
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Farmer is male}}                & $
+\backslash
+Sexpr{format( round(mean(pool$rating_price [pool$farmer_fem=="0"& pool$ratee_fem
+=="0"], na.rm=T), digits=2),nsmall=0)}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_price [pool$farmer_fem=="0"& pool$ratee_fem
+=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_price [pool$farmer_fem=="0"], na.rm=T),
+ digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_price [pool$farmer_fem=="0"& pool$ratee_fem
+=="0" & pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_price [pool$farmer_fem=="0"& pool$ratee_fem
+=="1" & pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_price [pool$farmer_fem=="0" & pool$dealer_d
+ummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_price [pool$farmer_fem=="0"& pool$ratee_fem
+=="0" & pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_price [pool$farmer_fem=="0"& pool$ratee_fem
+=="1" & pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_price [pool$farmer_fem=="0" & pool$trader_d
+ummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_price [pool$farmer_fem=="0"& pool$ratee_fem
+=="0" & pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_price [pool$farmer_fem=="0"& pool$ratee_fem
+=="1" & pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_price [pool$farmer_fem=="0" & pool$miller_d
+ummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Farmer is female}}        & $
+\backslash
+Sexpr{format( round(mean(pool$rating_price [pool$farmer_fem=="1"& pool$ratee_fem
+=="0"], na.rm=T), digits=2),nsmall=0)}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_price [pool$farmer_fem=="1"& pool$ratee_fem
+=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_price [pool$farmer_fem=="1"], na.rm=T),
+ digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_price [pool$farmer_fem=="1"& pool$ratee_fem
+=="0" & pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_price [pool$farmer_fem=="1"& pool$ratee_fem
+=="1" & pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_price [pool$farmer_fem=="1" & pool$dealer_d
+ummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_price [pool$farmer_fem=="1"& pool$ratee_fem
+=="0" & pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_price [pool$farmer_fem=="1"& pool$ratee_fem
+=="1" & pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_price [pool$farmer_fem=="1" & pool$trader_d
+ummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_price [pool$farmer_fem=="1"& pool$ratee_fem
+=="0" & pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_price [pool$farmer_fem=="1"& pool$ratee_fem
+=="1" & pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_price [pool$farmer_fem=="1" & pool$miller_d
+ummy=="1"], na.rm=T), digits=2),nsmall=0)}$       
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Farmer is either male or female}}         & $
+\backslash
+Sexpr{format( round(mean(pool$rating_price [ pool$ratee_fem=="0"], na.rm=T),
+ digits=2),nsmall=0)}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_price [ pool$ratee_fem=="1"], na.rm=T),
+ digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_price , na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_price [ pool$ratee_fem=="0" & pool$dealer_d
+ummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_price [ pool$ratee_fem=="1" & pool$dealer_d
+ummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_price [ pool$dealer_dummy=="1"], na.rm=T),
+ digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_price [ pool$ratee_fem=="0" & pool$trader_d
+ummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_price [ pool$ratee_fem=="1" & pool$trader_d
+ummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_price [pool$trader_dummy=="1"], na.rm=T),
+ digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_price [pool$ratee_fem=="0" & pool$miller_du
+mmy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_price [ pool$ratee_fem=="1" & pool$miller_d
+ummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_price [ pool$miller_dummy=="1"], na.rm=T),
+ digits=2),nsmall=0)}$       
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Self-ratings}}            & $
+\backslash
+Sexpr{format( round(mean(pool$rating_price_ratee [pool$ratee_fem=="0"],
+ na.rm=T), digits=2),nsmall=0)}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_price_ratee [ pool$ratee_fem=="1"],
+ na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_price_ratee , na.rm=T), digits=2),nsmall=0)}
+$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_price_ratee [pool$ratee_fem=="0" &
+ pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_price_ratee [ pool$ratee_fem=="1" &
+ pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_price_ratee [ pool$dealer_dummy=="1"],
+ na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_price_ratee [pool$ratee_fem=="0" &
+ pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_price_ratee [ pool$ratee_fem=="1" &
+ pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_price_ratee [ pool$trader_dummy=="1"],
+ na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_price_ratee [ pool$ratee_fem=="0" &
+ pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_price_ratee [pool$ratee_fem=="1" &
+ pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_price_ratee [ pool$miller_dummy=="1"],
+ na.rm=T), digits=2),nsmall=0)}$       
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-13} 
+\backslash
+
+\backslash
+[-1.8ex] 
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{12} {c} {
+\backslash
+textit{Reputation}}  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-13} 
+\backslash
+
+\backslash
+[-1.8ex]  
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Farmer is male}}                & $
+\backslash
+Sexpr{format( round(mean(pool$rating_reputation [pool$farmer_fem=="0"& pool$rate
+e_fem=="0"], na.rm=T), digits=2),nsmall=0)}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_reputation [pool$farmer_fem=="0"& pool$rate
+e_fem=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_reputation [pool$farmer_fem=="0"],
+ na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_reputation [pool$farmer_fem=="0"& pool$rate
+e_fem=="0" & pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_reputation [pool$farmer_fem=="0"& pool$rate
+e_fem=="1" & pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_reputation [pool$farmer_fem=="0" &
+ pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_reputation [pool$farmer_fem=="0"& pool$rate
+e_fem=="0" & pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_reputation [pool$farmer_fem=="0"& pool$rate
+e_fem=="1" & pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_reputation [pool$farmer_fem=="0" &
+ pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_reputation [pool$farmer_fem=="0"& pool$rate
+e_fem=="0" & pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_reputation [pool$farmer_fem=="0"& pool$rate
+e_fem=="1" & pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_reputation [pool$farmer_fem=="0" &
+ pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Farmer is female}}        & $
+\backslash
+Sexpr{format( round(mean(pool$rating_reputation [pool$farmer_fem=="1"& pool$rate
+e_fem=="0"], na.rm=T), digits=2),nsmall=0)}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_reputation [pool$farmer_fem=="1"& pool$rate
+e_fem=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_reputation [pool$farmer_fem=="1"],
+ na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_reputation [pool$farmer_fem=="1"& pool$rate
+e_fem=="0" & pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_reputation [pool$farmer_fem=="1"& pool$rate
+e_fem=="1" & pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_reputation [pool$farmer_fem=="1" &
+ pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_reputation [pool$farmer_fem=="1"& pool$rate
+e_fem=="0" & pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_reputation [pool$farmer_fem=="1"& pool$rate
+e_fem=="1" & pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_reputation [pool$farmer_fem=="1" &
+ pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_reputation [pool$farmer_fem=="1"& pool$rate
+e_fem=="0" & pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_reputation [pool$farmer_fem=="1"& pool$rate
+e_fem=="1" & pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_reputation [pool$farmer_fem=="1" &
+ pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$       
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Farmer is either male or female}}         & $
+\backslash
+Sexpr{format( round(mean(pool$rating_reputation [ pool$ratee_fem=="0"],
+ na.rm=T), digits=2),nsmall=0)}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_reputation [ pool$ratee_fem=="1"],
+ na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_reputation , na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_reputation [ pool$ratee_fem=="0" &
+ pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_reputation [ pool$ratee_fem=="1" &
+ pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_reputation [ pool$dealer_dummy=="1"],
+ na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_reputation [ pool$ratee_fem=="0" &
+ pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_reputation [ pool$ratee_fem=="1" &
+ pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_reputation [pool$trader_dummy=="1"],
+ na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_reputation [pool$ratee_fem=="0" & pool$mill
+er_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_reputation [ pool$ratee_fem=="1" &
+ pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_reputation [ pool$miller_dummy=="1"],
+ na.rm=T), digits=2),nsmall=0)}$       
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+textit{Self-ratings}}            & $
+\backslash
+Sexpr{format( round(mean(pool$rating_reputation_ratee [pool$ratee_fem=="0"],
+ na.rm=T), digits=2),nsmall=0)}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_reputation_ratee [ pool$ratee_fem=="1"],
+ na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_reputation_ratee , na.rm=T), digits=2),nsmal
+l=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_reputation_ratee [pool$ratee_fem=="0"
+ & pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_reputation_ratee [ pool$ratee_fem=="1"
+ & pool$dealer_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_reputation_ratee [ pool$dealer_dummy=="1"],
+ na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_reputation_ratee [pool$ratee_fem=="0"
+ & pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_reputation_ratee [ pool$ratee_fem=="1"
+ & pool$trader_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_reputation_ratee [ pool$trader_dummy=="1"],
+ na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_reputation_ratee [ pool$ratee_fem=="0"
+ & pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_reputation_ratee [pool$ratee_fem=="1"
+ & pool$miller_dummy=="1"], na.rm=T), digits=2),nsmall=0)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $
+\backslash
+Sexpr{format( round(mean(pool$rating_reputation_ratee [ pool$miller_dummy=="1"],
+ na.rm=T), digits=2),nsmall=0)}$      
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ 
+\backslash
+hline   
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tabular} 
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+label{table:table4} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{landscape}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Average ratings (all dimensions) from farmers and average self-ratings (all
+ dimensions) from dealers, traders, and processors, grouped by gender.
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:table4"
 
 \end_inset
 
