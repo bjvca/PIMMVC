@@ -841,7 +841,7 @@ se67 <- sqrt(diag(vcov(mod67_gender)))
 s1<- rbind(c((format(round(sum(ratee1$coefficients[1]),digits=3),nsmall=0)), #coefficient 
              (format(round(sum(ratee2$coefficients[1]),digits=3),nsmall=0)),
              (format(round(sum(ratee3$coefficients[1]),digits=3),nsmall=0)),
-             (format(round(sum(ratee3$coefficients[1]),digits=3),nsmall=0)),
+             (format(round(sum(ratee4$coefficients[1]),digits=3),nsmall=0)),
              (format(round(sum(ratee5$coefficients[1]),digits=3),nsmall=0))),
             
            c((format(round(se_ratee1[1],digits=3),nsmall=0)), #standard error 
@@ -859,7 +859,7 @@ s1<- rbind(c((format(round(sum(ratee1$coefficients[1]),digits=3),nsmall=0)), #co
            c((format(round(sum(ratee1$coefficients[2]),digits=3),nsmall=0)),
              (format(round(sum(ratee2$coefficients[2]),digits=3),nsmall=0)),
              (format(round(sum(ratee3$coefficients[2]),digits=3),nsmall=0)),
-             (format(round(sum(ratee3$coefficients[2]),digits=3),nsmall=0)),
+             (format(round(sum(ratee4$coefficients[2]),digits=3),nsmall=0)),
              (format(round(sum(ratee5$coefficients[2]),digits=3),nsmall=0))),
            
            c((format(round(se_ratee1[2],digits=3),nsmall=0)),
@@ -877,7 +877,7 @@ s1<- rbind(c((format(round(sum(ratee1$coefficients[1]),digits=3),nsmall=0)), #co
            c((format(round(sum(ratee1$coefficients[3]),digits=3),nsmall=0)),
              (format(round(sum(ratee2$coefficients[3]),digits=3),nsmall=0)),
              (format(round(sum(ratee3$coefficients[3]),digits=3),nsmall=0)),
-             (format(round(sum(ratee3$coefficients[3]),digits=3),nsmall=0)),
+             (format(round(sum(ratee4$coefficients[3]),digits=3),nsmall=0)),
              (format(round(sum(ratee5$coefficients[3]),digits=3),nsmall=0))),
            
            c((format(round(se_ratee1[3],digits=3),nsmall=0)),
@@ -895,7 +895,7 @@ s1<- rbind(c((format(round(sum(ratee1$coefficients[1]),digits=3),nsmall=0)), #co
            c((format(round(sum(ratee1$coefficients[4]),digits=3),nsmall=0)),
              (format(round(sum(ratee2$coefficients[4]),digits=3),nsmall=0)),
              (format(round(sum(ratee3$coefficients[4]),digits=3),nsmall=0)),
-             (format(round(sum(ratee3$coefficients[4]),digits=3),nsmall=0)),
+             (format(round(sum(ratee4$coefficients[4]),digits=3),nsmall=0)),
              (format(round(sum(ratee5$coefficients[4]),digits=3),nsmall=0))),
            
            c((format(round(se_ratee1[4],digits=3),nsmall=0)),
@@ -913,7 +913,7 @@ s1<- rbind(c((format(round(sum(ratee1$coefficients[1]),digits=3),nsmall=0)), #co
            c((format(round(sum(ratee1$coefficients[5]),digits=3),nsmall=0)),
              (format(round(sum(ratee2$coefficients[5]),digits=3),nsmall=0)),
              (format(round(sum(ratee3$coefficients[5]),digits=3),nsmall=0)),
-             (format(round(sum(ratee3$coefficients[5]),digits=3),nsmall=0)),
+             (format(round(sum(ratee4$coefficients[5]),digits=3),nsmall=0)),
              (format(round(sum(ratee5$coefficients[5]),digits=3),nsmall=0))),
            
            c((format(round(se_ratee1[5],digits=3),nsmall=0)),
@@ -931,7 +931,7 @@ s1<- rbind(c((format(round(sum(ratee1$coefficients[1]),digits=3),nsmall=0)), #co
            c((format(round(sum(ratee1$coefficients[6]),digits=3),nsmall=0)),
              (format(round(sum(ratee2$coefficients[6]),digits=3),nsmall=0)),
              (format(round(sum(ratee3$coefficients[6]),digits=3),nsmall=0)),
-             (format(round(sum(ratee3$coefficients[6]),digits=3),nsmall=0)),
+             (format(round(sum(ratee4$coefficients[6]),digits=3),nsmall=0)),
              (format(round(sum(ratee5$coefficients[6]),digits=3),nsmall=0))),
            
            c((format(round(se_ratee1[6],digits=3),nsmall=0)),
@@ -949,7 +949,7 @@ s1<- rbind(c((format(round(sum(ratee1$coefficients[1]),digits=3),nsmall=0)), #co
            c((format(round(sum(ratee1$coefficients[7]),digits=3),nsmall=0)),
              (format(round(sum(ratee2$coefficients[7]),digits=3),nsmall=0)),
              (format(round(sum(ratee3$coefficients[7]),digits=3),nsmall=0)),
-             (format(round(sum(ratee3$coefficients[7]),digits=3),nsmall=0)),
+             (format(round(sum(ratee4$coefficients[7]),digits=3),nsmall=0)),
              (format(round(sum(ratee5$coefficients[7]),digits=3),nsmall=0))),
            
            c((format(round(se_ratee1[7],digits=3),nsmall=0)),
