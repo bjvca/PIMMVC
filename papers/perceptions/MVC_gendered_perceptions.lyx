@@ -2963,45 +2963,37 @@ noprefix "false"
  Interestingly, in a regression framework that controls for a range of farmer
  and actor level characteristics, there is no significant difference anymore
  between actor ratings and farmer ratings for the location dimension.
- This seems plausible, as location the dimension that can be most easily
- observed by both farmer and actor.
+ This seems plausible, as location can be easily observed by both farmer
+ and actor.
  The table also shows that the gender of the farmer now also becomes significant
-ly negative, which makes sense as women rate more positive, making the gap
- between actor and farmer rating smaller.
+ly negative, which makes sense as women rate more positive (hypothesis 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Hypothesis 2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+), making the gap between actor and farmer rating smaller.
  
 \end_layout
 
 \begin_layout Standard
 The impact of the sex of the actor, although often not statistically significant
-, is also interesting as the differences in ratings increase substantially
- for quality and price if the actor is a woman while the difference reduces
- in the case of reputation-based ratings.
- This suggests women actors rate themselves relatively higher and/or farmers
- rate women actors relatively lower when price and quality considerations
- are concerned.
- Similarly, it suggests that women actors are too modest with respect to
- their reputation.
- These results are in line with findings in Tables 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:table5"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
- and 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:table6"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
-.
+, is also interesting.
+ The differences in ratings increase substantially for quality and price
+ if the actor is a woman, while the difference reduces if the actor is a
+ women in the case of reputation-based ratings.
+ Women rate themselves higher on quality, while farmer ratings on quality
+ are not dependent on the sex of the actor being rated.
+ On price, the coefficient of the sex of the actor is also positive for
+ self-ratings, but here the lower rating of the farmers of female actors
+ seems to make the gap larger.
+ For reputation, women actors are too modest: the combination of a negative
+ gender effect on self-ratings and a positive gender effect on the farmer
+ ratings significantly reduces the gap.
 \end_layout
 
 \begin_layout Section
@@ -3021,9 +3013,9 @@ In informal food supply chains, perceptions about the quality of services
  of value chain actors such as agro-input dealers, traders and processors
  are an important input in the decision making processes underlying the
  structure, conduct and performance of the value chain.
- The aim of this study was to investigate perceptions of maize farmers about
- the input and service providers in informal maize value chains; and the
- perceptions of these input and service providers about themselves.
+ We thus investigated perceptions of maize farmers about the input and service
+ providers in informal maize value chains; and the perceptions of these
+ input and service providers about themselves.
  We were particularly interested in gender-based heterogeneity in these
  perceptions.
  Perceptions were captured through ratings given on dimensions like ease
@@ -3034,117 +3026,109 @@ In informal food supply chains, perceptions about the quality of services
 We find that agro-input dealers, traders and processors consistently rate
  themselves higher than how farmers rate them, except for one tribute that
  is easily observable by both those who rate and those who get rated.
- We do not find that gender plays a significant role in self-assessments.
- The sex of the actor being rated also does not affect the rating that they
- receive and we find no signs of gender-based homophily in the ratings.
+ We do not find that gender plays a significant role in self-assessments,
+ except perhaps for the fact that women seem to rate themselves somewhat
+ higher on the quality dimension.
+ The sex of the actor being rated does not affect the rating that they receive
+ and we find no signs of gender-based homophily in the ratings.
  There is some evidence that female farmers rate more favorably than male
  farmers, but only in some dimensions.
- This suggests women actors rate themselves relatively higher and/or farmers
- rate women actors relatively lower when price and quality considerations
+ Taken together, women actors rate themselves relatively higher and/or farmers
+ rate female actors relatively lower when price and quality considerations
  are concerned.
- Similarly, it suggests that women actors are too modest with respect to
- their reputation.
+ Female actors may also be too modest with respect to the reputation they
+ have.
 \end_layout
 
 \begin_layout Standard
-The tendency of female farmers to rate more favourably for these attributes
- can have some repercussions.
- For instance, input and service providers may take advantage of the leniency
- of female farmers and provide them with worse prices compared to the male
- farmers.
- In this context, policy interventions are needed to ensure that all farmers
- are aware of the standard prices they deserve.
- However, sex of the individual being rated does not matter significantly.
- 
+In terms of policy implications, it is reassuring to find that one of the
+ key hypotheses in this study, namely that female agro-input dealers, traders
+ and processors are systematically rated lower than male actors, is not
+ supported by the data.
+ Still, given an extensive literature that does find discrimination in a
+ variety of contexts 
+\begin_inset CommandInset citation
+LatexCommand citep
+before "eg."
+key "Mengel2018,Mitchell2018,lyness2006"
+literal "false"
+
+\end_inset
+
+, we caution sweeping conclusions.
+ Heterogeneous effects between actors may suffer from low sample size and
+ limited variation in the gender of the actor.
+ For instance,we do find that male agro-input dealers get higher scores
+ for location than women, and this effect may become significant if the
+ sample size grows.
 \end_layout
 
 \begin_layout Standard
-Self-assessments are always significantly more positive than the ratings
- from the farmers across most of the dimensions (overall average, quality,
- price competitiveness and reputation).
- In other words, input dealers, traders and processors have more positive
- perceptions about themselves compared to the perceptions (ratings) of the
- farmers.
- In particular, women's ratings are noticeably similar to the self-assessments
- obtained (quality- and reputation-based scores are exceptions).
- Consequently, men's ratings are more different from the self-assessments
- obtained.
- This indicates a gap between the farmers and the input and service providers.
- The interactions between these actors need to be structured in a way where
- perceived performance information can be conveyed easily, creating the
- opportunity for improvements.
+The fact that self-assessments are always larger than farmer rating may
+ either mean that actors are overconfident or farmers are overcritical.
+ Overconfidence of value chain actors may delay innovations within the chain
+ as actors do not see the need to improve.
+ Farmers that expect more from value chain actors are likely to demand less
+ services from these actors.
+ As such, policy interventions aimed at reducing the gap between actor self-asse
+ssments and farmer ratings are likely to increase efficiency in value chains.
+ Examples of such policy interventions include certification by independent
+ agency or non-centralized clearing house mechanisms based on crowd sourcing
  
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Hasanain2019"
+literal "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
-This study shows that while self-assessing, the gender of the individual
- does not matter.
- From the average ratings, it can be inferred that traders receive the highest
- ratings, followed by input dealers.
- Millers obtain the lowest scores.
- Millers' quality of services and reputation suffer from lowest ratings.
- More focus is thus needed on the processors of maize in Uganda.
- Female agro-input dealers, traders and millers always are perceived to
- be performing better in terms of quality.
- This is consistent with the self-perceptions of women.
- Thus, may be women are more prone to caring about the quality of services
- and inputs compared to the men.
- Interestingly, male dealers and millers are perceived to be easily accessible
- and have better prices.
- Male millers and female input dealers and traders obtain good scores for
- reputation.
- 
+Even though we did not find that farmers rate female agents differently,
+ gender may still affect inclusiveness of value chains.
+ For instance, the tendency of female farmers to rate more favourably may
+ result in input and service providers treating women farmers differently.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+The leniency of female farmer may mean actors are not compelled to provide
+ high quality inputs or services.
+ Alternatively, positive feedback may encourage actors to provide higher
+ quality inputs and services.
+\end_layout
+
+\end_inset
+
+ The fact that female farmers rate higher also means that the gap between
+ self assessments of actors and ratings of female farmers is smaller than
+ the gap between self assessments of actors and ratings of male farmers.
+ This may lead to differences in the efficiency of the chain conditional
+ on the gender of the farmers.
 \end_layout
 
 \begin_layout Standard
-Surprisingly, price competitiveness is always scored the lowest.
- Thus, standardized prices are needed in the sector.
- Highly volatile prices threaten price protection for the farmers and can
- create mistrust among the farmers and the input and service providers.
- Among all the input and service providers, traders are the most easily
- reachable actors and dealers and millers are the best reputed ones.
- Input dealers are perceived to be performing worst in the case of location
- and price competitiveness.
- Hence, it is essential to ensure that agro-input dealers are easily reachable
- to encourage higher usage of improved seed.
- This can be one of the reasons explaining why lower usage of improved seed
- has consistently been a matter of concern.
- Subsidies for the sale prices of inputs and transportation aid from the
- government can improve the sale prices and ease of access to these dealers.
- However, ratings for quality are the highest in the case of dealers (indicating
- provision of good quality seeds).
- 
-\end_layout
+Finally, judged by farmer perceptions, there seem to be issues related to
+ price competitiveness within the maize value chain, as agro-input dealers,
+ traders and processors are consistently scored lowest.
+ Quality, on the other hand, seems to be rated fairly good.
+ Input dealers, for example, are perceived to be performing worst in terms
+ of location and price competitiveness but get highest scores for quality.
+ This seem to contradict a number of recent studies that blame poor quality
+ of service providers as the root cause for low adoption by farmers 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Bold2017"
+literal "false"
 
-\begin_layout Standard
-These perceptions are very important in the maize supply chain and give
- a lot of insight about the perceived performance levels of the input and
- service providers.
- Gender-based perceptions prominently indicate gendered preferences in the
- supply chain which is essential to be addressed.
- More women with greater support and business knowledge are needed in this
- sector to tackle the imbalance of preferences revealed in the perceptions
- (ratings) analysed in this study.
- If gender issues in the agricultural value chains are not addressed, it
- may lead to long-term gender disparities in development and growth.
- Since the share of female millers and traders is very small in this study,
- more balanced samples of the supply chain actors could reveal better and
- highly significant results.
- 
-\end_layout
+\end_inset
 
-\begin_layout Standard
-Future research should focus on perceptions of the input and service providers
- about the farmers, investigating similar trends in ratings and the change
- in perceptions over time captured through future surveys.
- A compelling addition to the literature can be the relationship between
- competition in this sector and the perceived performances of the actors.
- Investigating perceptions in the maize demand chain and then linking those
- perceptions with the perceived performances of the supply chain actors
- can reveal interesting results.
- Thus, the maize value chain holds a lot of opportunities for future research
- in different directions using perceptions of the value chain actors.
- 
+.
+ Rather, policies that encourage market entry and competition between agro-input
+ dealers, traders and processors is likely to bring increase price competitivene
+ss of value chain actors.
 \end_layout
 
 \begin_layout Section*
