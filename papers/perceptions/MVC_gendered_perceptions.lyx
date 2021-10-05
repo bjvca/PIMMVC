@@ -552,9 +552,9 @@ name "subsec:Supply-Chain-Actors"
 
 \begin_layout Standard
 There is ample evidence of the key role of modern agricultural inputs, especiall
-y improved seed varieties, inorganic fertilizers and agro-chemicals, in
- enhancing agricultural productivity, poverty reduction, and structural
- transformation more in general 
+y improved seed varieties and inorganic fertilizers, in increasing agricultural
+ productivity, poverty reduction, and structural transformation more in
+ general 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "doi:10.1086/714444,McArthur2017,Evenson2003"
@@ -564,8 +564,8 @@ literal "true"
 
 .
  Yet, despite decades of policy and institutional reforms to promote their
- use in developing countries, adoption levels of such improved inputs remain
- low, especially in sub-Saharan Africa 
+ use in low and middle income countries, adoption levels of these inputs
+ remain low, especially in sub-Saharan Africa 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Sheahan2017,Benin2016"
@@ -596,12 +596,8 @@ literal "true"
 \end_inset
 
 .
- 
-\end_layout
-
-\begin_layout Standard
-These days, poor quality inputs, especially of purchased inputs, is emerging
- as an additional explanation for the limited adoption 
+ Lately, poor quality of purchased input, is emerging as an additional explanati
+on for limited adoption 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "BARRIGA2020104928,Ashour2019,Bold2017"
@@ -717,10 +713,6 @@ Sexpr{desc[2]}
  2018.
 \end_layout
 
-\begin_layout Standard
-
-\end_layout
-
 \begin_layout Subsection
 Traders
 \end_layout
@@ -780,7 +772,7 @@ literal "false"
 \end_inset
 
 .
- For example, studying market access in Southern and Eastern Africa, 
+ For example, studying market access in southern and eastern Africa, 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "Mather2013"
@@ -799,8 +791,8 @@ literal "true"
 
 \end_inset
 
- find that trading is highly competitive in Eastern and Southern Africa
- in terms of the marketing margins and the number of traders operating.
+ find that trading is highly competitive in eastern and southern Africa
+ in terms of marketing margins and the number of traders operating.
  
 \end_layout
 
@@ -851,7 +843,7 @@ Sexpr{desc[5]}
 \end_inset
 
  different buyers during peak season.
- The average storage capacity that a typical trader has is about 
+ The average storage capacity of a typical trader is about 
 \begin_inset ERT
 status open
 
@@ -894,7 +886,7 @@ A third important actor in the maize supply chain is the processor.
  from the maize kernels and mill the maize into maize flour for direct consumpti
 on.
  Some processors also have packing facilities to produce maize flour for
- supermarkets and export.
+ supermarkets or export.
  The smaller mills often provide milling as a service, whereby farmers come
  with bags of maize for milling against a fee.
  
@@ -906,7 +898,7 @@ There are again large differences between these processors.
  Some maize mills located in remote rural areas are diesel engine powered
  mills that are only able to produce low grade maize meal for home consumption.
  However, larger processors use machines powered by three phase electric
- power and mill multiple times to obtain fine export grade maize meal.
+ power and mill multiple times to obtain fine export grade maize flour.
  In our sample, we find that about 
 \begin_inset ERT
 status open
@@ -920,7 +912,7 @@ Sexpr{desc[8]}
 
 \end_inset
 
- percent of the millers use diesel mills, while 
+ percent of the millers use diesel powered mills, while 
 \begin_inset ERT
 status open
 
@@ -936,7 +928,7 @@ Sexpr{desc[9]}
  percent rely on three phase electric power.
  The quality of end product is indicated in grades, from highest (grade
  1) to lowest (grade 3).
- The grade that can be obtained depends on a variety of factors, including
+ The grade that can be obtained depends on a various factors, including
  the number of times the product is passed through the mill, the quality
  of the grain used and the type of mill.
  About 
@@ -978,7 +970,7 @@ Farmers
 \begin_layout Standard
 Central in our study are smallholder maize farmers, who buy inputs such
  as seed and fertilizer from agro-input dealers, sell to traders and/or
- use milers to process their maize for own consumption.
+ use millers to process their maize for own consumption.
  These are generally small farmers, cultivating maize on one or two plots,
  corresponding to 
 \begin_inset ERT
@@ -1094,7 +1086,7 @@ Sexpr{desc[14]}
 
  kg/acre.
  More than 95 percent of farmers in our sample report that they took part
- of the maize to a miller.
+ of the maize they harvested to a miller.
  In terms of market participation, we find that 
 \begin_inset ERT
 status open
@@ -1172,26 +1164,14 @@ name "sec:Study-Hypotheses"
 \noindent
 This section describes the hypotheses that we will test, and the theory
  in which these hypotheses are grounded.
- We will test 5 hypotheses:
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-Let's structure this a bit better: For each hypothesis say what is tested
- (the comparison)? Why we choose (related literature) and what the implications
- are (why should we care)
-\end_layout
-
-\end_inset
-
-
+ We will test 5 hypotheses.
 \end_layout
 
 \begin_layout Itemize
 \paragraph_spacing single
 \noindent
 Hypothesis 1: Self-ratings of dealers, traders and processors are higher
- than ratings given by raters (farmers) to them
+ than ratings given to them by farmers
 \begin_inset CommandInset label
 LatexCommand label
 name "Hypothesis 1"
@@ -1205,8 +1185,8 @@ name "Hypothesis 1"
 \begin_layout Standard
 \paragraph_spacing onehalf
 The first hypothesis revolves around how the agro-input dealers, processors
- and traders rate themselves (self-assessments) as compared to the scores
- that are give to them by the farmers.
+ and traders rate themselves as compared to the scores that are give to
+ them by the farmers.
  A significant (positive) difference could mean that agro-input dealer systemati
 cally overestimate their own performance, perhaps as a result of an overconfiden
 ce effect.
@@ -1220,27 +1200,8 @@ literal "false"
 \end_inset
 
 .
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-The results reported in the influential paper of 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "kruger1999unskilled"
-literal "false"
-
-\end_inset
-
- that first described this bias among students have been discarded as a
- statistical fallacy.
-\end_layout
-
-\end_inset
-
  At the same time, the difference can also increase if farmers systematically
  underestimate the performance of other value chain actors.
- 
 \end_layout
 
 \begin_layout Standard
@@ -1292,7 +1253,7 @@ name "Hypothesis 2"
 \paragraph_spacing onehalf
 In a second hypothesis, we test if female farmers rate input dealers, traders
  and processors systematically higher than male farmers do.
- There is some evidence that women generally rate more favourably than men
+ There is some evidence that women generally rate more positive than men
  
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -1325,8 +1286,8 @@ Women who are more forgiving towards other value chain actors may backfire
  standards.
  At the same time, relatively more positive feedback from women may mean
  that service providers also exert more effort when dealing with women.
- The fact that female farmer rate relatively higher also provides more scope
- for disappointment.
+ The fact that female farmers rate relatively higher also provides more
+ scope for disappointment.
  This may lead to a higher likelihood of women exiting the value chain if
  reality does not match up with higher (perceived) quality of services and
  inputs.
@@ -1351,10 +1312,28 @@ name "Hypothesis 3"
 \paragraph_spacing onehalf
 The third hypothesis compares the self-ratings given of female agro-input
  dealers, processors, and traders to the self-rating of their male counterparts.
- While we saw in hypothesis 1 that actors tend to overestimate own performance
- and in hypothesis 2 that women tend to rate others higher than men do,
- studies suggest that women generally tend to underrate themselves (relative
- to men).
+ While we saw in hypothesis 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Hypothesis 1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ that actors tend to overestimate own performance and in hypothesis 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Hypothesis 2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ that women tend to rate others higher than men do, studies suggest that
+ women generally tend to underrate themselves (relative to men).
  For instance, 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -1365,8 +1344,8 @@ literal "true"
 
  find that in the hotel industry, male department managers tend to hold
  inflated self-assessments, while the women assessed themselves lower.
- Similar patterns have consistently beenas among all the dimensions, the
- highest percentage adhere to a score found in a variety of contexts 
+ Similar patterns have consistently been found in a variety of contexts
+ 
 \begin_inset CommandInset citation
 LatexCommand citep
 before "eg."
@@ -1396,13 +1375,14 @@ Lower self-ratings of women as compared to men may signal a lack of confidence
  Cultural norms, societal expectations, and gender stereotyping will also
  be reflected in self-ratings.
  Such gendered ideas of self-assessment can thus be an important barrier
- to entry of women, leading to exclusive value chains.
+ to entry of women, leading to exclusive, male dominated value chains.
 \end_layout
 
 \begin_layout Itemize
 \paragraph_spacing single
 \noindent
-Hypothesis 4: Men receive more favourable ratings than women
+Hypothesis 4: Male agro-input dealers, traders and processors receive more
+ favourable ratings than their female counterparts
 \begin_inset CommandInset label
 LatexCommand label
 name "Hypothesis 4"
@@ -1415,9 +1395,19 @@ name "Hypothesis 4"
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-In hypothesis 4, ratings received from farmers by female agro-input dealers,
- traders, and processors are compared to rating received from farmers by
- their male counterparts.
+In hypothesis 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Hypothesis 4"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, ratings received from farmers by female agro-input dealers, traders, and
+ processors are compared to rating received from farmers by their male counterpa
+rts.
  The fact that women are held to more stringent standards than men has been
  repeatedly established over time.
  
@@ -1468,27 +1458,18 @@ nal sphere and higher in the domestic sphere or when physical appearance
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-Why should we care?
-\end_layout
-
-\end_inset
-
 In the context of this study, bias against women may again provide a barrier
- of entry for women in agro-input dealing, trading, and processing of maize.
+ of entry for women in agro-input dealing, trading, and processing.
  When women are aware that they are perceived to be less capable for these
  business activities, they might not enter the sector in the first place
  to avoid criticisms and performance obstacles at a later stage.
  However, a bias in rating may also lead to actual differences in the quality
  of service, as women who are perceived to be inferior struggle to attract
- credit to invest in their activities.
+ credit to invest in their activities or secure good locations to set up
+ shop.
  More in general, the cultural context might limit women from performing
- better and being equally competitive as the men.
- A study done on the women entrepreneurs in the Kigali region of Rwanda
- by 
+ better and being equally competitive as men.
+ A study done on women entrepreneurs in Kigali, Rwanda by 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "Nsengimana2017"
@@ -1505,7 +1486,7 @@ literal "true"
 
 \end_inset
 
- discusses the barriers faced by women entrepreneurs in Uganda.
+ discusses barriers faced by women entrepreneurs in Uganda.
  Some of the prominent issues faced by women are gender-related stereotypes
  (risk-taking behavior and lower aggressiveness), under-capitalization (credit
  access limits, availability of collateral), balance across multiple responsibil
@@ -1521,8 +1502,8 @@ ities (childcare, family responsibilities), inadequate skills and business
 \begin_layout Itemize
 \paragraph_spacing single
 \noindent
-Hypothesis 5: The impact of both rater and ratee being a woman is significant
- on the ratings
+Hypothesis 5: Female farmers give higher ratings to female agro-input dealers,
+ traders and processors
 \begin_inset CommandInset label
 LatexCommand label
 name "Hypothesis 5"
@@ -1533,9 +1514,19 @@ name "Hypothesis 5"
 \end_layout
 
 \begin_layout Standard
-Finally, in hypothesis 5 we test the interaction between the sex of the
- rater (farmer) and the ratee in order to investigate if there is a significant
- impact of both being women on the ratings.
+Finally, in hypothesis 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Hypothesis 5"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ we test the interaction between the gender of the farmer and the other
+ value chain actors in order to investigate if there is a significant impact
+ of both being women on the ratings.
  This hypothesis is motivated by the literature on homophily in social networks.
  The homophily principle essentially focuses on network ties based on relationsh
 ips and characteristics of the actors involved.
@@ -1594,7 +1585,7 @@ name "sec:Data"
 \begin_layout Standard
 This section explains the characteristics of the sample, describes the data
  collection, gives information about the variables, and discusses reliability
- of the ratings for the analysis.
+ of the ratings.
 \end_layout
 
 \begin_layout Subsection
