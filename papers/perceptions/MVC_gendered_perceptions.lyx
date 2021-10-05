@@ -474,19 +474,18 @@ We focus on the maize value chain in Uganda.
  Maize is both a staple and cash crop in Uganda, prioritized by the government
  for food security and household income.
  Judged in terms of land area, maize is the most important agricultural
- commodity in Uganda, covering 30% of the total cropped land, followed by
- beans, covering 15% of cropped land.
- 
+ commodity in Uganda, covering 30% of total cropped land, followed by beans,
+ covering 15% of cropped land.
 \end_layout
 
 \begin_layout Standard
 The government’s interventions in the maize sub-sector over the past decade
  have focused on increasing on-farm productivity and production, yet productivit
 y remains low.
- On-farm maize production data from 2018 (Uganda Annual Agricultural Survey)
- reports average yields of about 600 kg per acre, a figure that falls almost
- midway the yield range of 270 and 995 kg per acre found in an recent study
- on measuring maize yields in Uganda 
+ On-farm maize production data from the Uganda Annual Agricultural Survey
+ (2018) reports average yields of about 600 kg per acre, a figure that falls
+ almost midway the yield range of 270 and 995 kg per acre found in a recent
+ study that focused on estimating maize yields in Uganda 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Gourlay2019"
@@ -495,8 +494,8 @@ literal "true"
 \end_inset
 
 .
- Still, this is considerably lower than what research stations report, which
- range between 730 kg per acre and 1,820 kg per acre 
+ Still, this is considerably lower than the figures that research stations
+ report, which range between 730 kg per acre and 1,820 kg per acre 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Fermont2011"
@@ -535,9 +534,8 @@ literal "false"
  Limited processing capacity also leads to issues related to quality and
  shelf life, further depressing demand for the commodity.
  As input dealers, farmers, maize traders and maize processors are intricately
- relate in Ugandan maize supply chains, performance issues in one node can
- have major impacts for the entire value chain.
- 
+ related in Ugandan maize supply chains, performance issues in one node
+ can have consequences for the entire value chain.
 \end_layout
 
 \begin_layout Subsection
