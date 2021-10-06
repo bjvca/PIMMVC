@@ -3291,7 +3291,7 @@ hline
 
 {
 \backslash
-textit{Overall rating (all ratees)}}                & $
+textit{Overall rating (all actors)}}                & $
 \backslash
 Sexpr{format( round(mean(pool$rating_overall, na.rm=T), digits=2),nsmall=0)}$
         & $
@@ -3329,7 +3329,7 @@ Sexpr{format( round(quantile(pool$rating_overall, na.rm=T, 0.75), digits=2),nsma
 
 {
 \backslash
-textit{Location rating (all ratees)}}       & $
+textit{Location rating (all actors)}}       & $
 \backslash
 Sexpr{format( round(mean(pool$rating_location, na.rm=T), digits=2),nsmall=0)}$
         & $
@@ -3367,7 +3367,7 @@ l=0)}$
 
 {
 \backslash
-textit{Quality rating (all ratees)}}       & $
+textit{Quality rating (all actors)}}       & $
 \backslash
 Sexpr{format( round(mean(pool$rating_quality, na.rm=T), digits=2),nsmall=0)}$
         & $
@@ -3406,7 +3406,7 @@ Sexpr{format( round(quantile(pool$rating_quality, na.rm=T, 0.75), digits=2),nsma
 
 {
 \backslash
-textit{Price rating (all ratees)}}       & $
+textit{Price rating (all actors)}}       & $
 \backslash
 Sexpr{format( round(mean(pool$rating_price, na.rm=T), digits=2),nsmall=0)}$
         & $
@@ -3445,7 +3445,7 @@ Sexpr{format( round(quantile(pool$rating_price, na.rm=T, 0.75), digits=2),nsmall
 
 {
 \backslash
-textit{Reputation rating (all ratees)}}       & $
+textit{Reputation rating (all actors)}}       & $
 \backslash
 Sexpr{format( round(mean(pool$rating_reputation, na.rm=T), digits=2),nsmall=0)}$
         & $
@@ -4135,8 +4135,7 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Summary Statistics of the variables related to the ratees (dealers, traders,
- and processors).
+Summary Statistics of the variables related to dealers, traders, and processors
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:table2"
@@ -4960,7 +4959,7 @@ label{table:table2}
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -5198,27 +5197,6 @@ end{center}
 
 
 \backslash
-scriptsize
-\end_layout
-
-\begin_layout Plain Layout
-
-Note - The sample consists of all the raters and ratees (agro-input dealers,
- traders, and processors).
- The averaged overall ratings, ratings based on location, quality, price,
- and reputation are taken into account.
- ICC for Inter-Rater Reliability : Inter-rater reliability indicates the
- level of agreement between the ratings given by different individual farmer
- (rater) for the same ratee.
- The ratee being rated is constant during the comparison of the ratings.
- The sample consists of only the farmers who have rated more than 6 times.
- ICC for Intra-Rater Reliability : Intra-rater reliability focuses on the
- agreement between the different ratings given by each individual rater
- for different ratees.
- The farmer who has rated more than 6 times is constant during the comparison
- of the ratings.
- 
-\backslash
 label{table:table3} 
 \end_layout
 
@@ -5337,7 +5315,7 @@ cline{2-13}
 \backslash
 [-1.8ex]   & 
 \backslash
-multicolumn{3} {c} {All Ratees} &  
+multicolumn{3} {c} {All actors} &  
 \backslash
 multicolumn{3} {c} {Agro-Input Dealers} &  
 \backslash
@@ -7909,8 +7887,8 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Regression results for the impact of farmer's (rater's) and ratee's gender
- on the ratings given by the farmers to the ratees.
+Regression results for the impact of farmer's and actor's gender on the
+ ratings given by the farmers to the actors
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:table5"
@@ -7957,7 +7935,7 @@ multicolumn{5}{c}{
 \backslash
 textit{
 \backslash
-footnotesize Dependent variable: Ratings from Farmers (Raters)}} 
+footnotesize Dependent variable: Ratings from Farmers}} 
 \backslash
 
 \backslash
@@ -8559,7 +8537,7 @@ Sexpr{mat[23,5]})$
 \backslash
 
 \backslash
- {Ratee's age} & $
+ {Actor's age} & $
 \backslash
 Sexpr{mat[25,1]}^{
 \backslash
@@ -8627,7 +8605,7 @@ Sexpr{mat[26,5]})$
 \backslash
 
 \backslash
- {Ratee is married}
+ {Actor is married}
 \end_layout
 
 \begin_layout Plain Layout
@@ -8700,7 +8678,7 @@ Sexpr{mat[29,5]})$
 \backslash
 
 \backslash
- {Ratee has finished} & $
+ {Actor has finished} & $
 \backslash
 Sexpr{mat[31,1]}^{
 \backslash
@@ -8768,7 +8746,7 @@ Sexpr{mat[32,5]})$
 \backslash
 
 \backslash
- {Ratee is a dealer} & $
+ {Actor is a dealer} & $
 \backslash
 Sexpr{mat[34,1]}^{
 \backslash
@@ -8836,7 +8814,7 @@ Sexpr{mat[35,5]})$
 \backslash
 
 \backslash
- {Ratee is a trader}  & $
+ {Actor is a trader}  & $
 \backslash
 Sexpr{mat[37,1]}^{
 \backslash
@@ -8948,7 +8926,7 @@ Sexpr{ifelse(mat[42,5]<.01,"***",ifelse(mat[42,5]<.05,"**",ifelse(mat[42,5]<.1,"
 \backslash
 
 \backslash
-  {Ratee is female} 
+  {Actor is female} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -8979,45 +8957,6 @@ hline
 
 \begin_layout Plain Layout
 
-R$^2$  & $
-\backslash
-Sexpr{mat[43,1]}$   &  $
-\backslash
-Sexpr{mat[43,2]}$ & $
-\backslash
-Sexpr{mat[43,3]}$ & $
-\backslash
-Sexpr{mat[43,4]}$ & $
-\backslash
-Sexpr{mat[43,5]}$    
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-
-\backslash
- Adj.
- R$^2$        & $
-\backslash
-Sexpr{mat[44,1]}$   &  $
-\backslash
-Sexpr{mat[44,2]}$ & $
-\backslash
-Sexpr{mat[44,3]}$ & $
-\backslash
-Sexpr{mat[44,4]}$ & $
-\backslash
-Sexpr{mat[44,5]}$        
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
  Number of obs.
         & $
 \backslash
@@ -9070,15 +9009,8 @@ tiny
 
 \begin_layout Plain Layout
 
-Note: Standard errors are clustered at the ratee level (agro-input dealers,
+Note: Standard errors are clustered at the actor level (agro-input dealers,
  traders, and millers) and the farmer level.
- The dependent variable is the rating given by the farmers and the main
- independent variables are farmer's and ratee's gender.
- The dimensions based on which the ratings are given are overall average
- (model 1), location (model 2), quality (model 3), price (model 4) and reputatio
-n (model 5).
- An interaction between the farmer's and ratee's gender is included in all
- the models.
   
 \backslash
 label{table:table5}  
@@ -9105,7 +9037,7 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Regression results looking at the impact of ratee's gender on their self-ratings.
+Regression results looking at the impact of actor's gender on their self-ratings.
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:table6"
@@ -9262,7 +9194,7 @@ Sexpr{s1[2,5]})$
 \backslash
 
 \backslash
- {Ratee is female} & $
+ {Actor is female} & $
 \backslash
 Sexpr{s1[4,1]}^{
 \backslash
@@ -9330,7 +9262,7 @@ Sexpr{s1[5,5]})$
 \backslash
 
 \backslash
-   {Ratee's age} & $
+   {Actor's age} & $
 \backslash
 Sexpr{s1[7,1]}^{
 \backslash
@@ -9398,7 +9330,7 @@ Sexpr{s1[8,5]})$
 \backslash
 
 \backslash
- {Ratee is married} & $
+ {Actor is married} & $
 \backslash
 Sexpr{s1[10,1]}^{
 \backslash
@@ -9471,7 +9403,7 @@ Sexpr{s1[11,5]})$
 \backslash
 
 \backslash
- {Ratee has finished} & $
+ {Actor has finished} & $
 \backslash
 Sexpr{s1[13,1]}^{
 \backslash
@@ -9539,7 +9471,7 @@ Sexpr{s1[14,5]})$
 \backslash
 
 \backslash
- {Ratee is a dealer} & $
+ {Actor is a dealer} & $
 \backslash
 Sexpr{s1[16,1]}^{
 \backslash
@@ -9607,7 +9539,7 @@ Sexpr{s1[17,5]})$
 \backslash
 
 \backslash
- {Ratee is a trader} & $
+ {Actor is a trader} & $
 \backslash
 Sexpr{s1[19,1]}^{
 \backslash
@@ -9682,46 +9614,7 @@ hline
 
 \begin_layout Plain Layout
 
-R$^2$  & $
-\backslash
-Sexpr{s1[22,1]}$   &  $
-\backslash
-Sexpr{s1[22,2]}$ & $
-\backslash
-Sexpr{s1[22,3]}$ & $
-\backslash
-Sexpr{s1[22,4]}$ & $
-\backslash
-Sexpr{s1[22,5]}$    
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-
-\backslash
- Adj.
- R$^2$        & $
-\backslash
-Sexpr{s1[23,1]}$   &  $
-\backslash
-Sexpr{s1[23,2]}$ & $
-\backslash
-Sexpr{s1[23,3]}$ & $
-\backslash
-Sexpr{s1[23,4]}$ & $
-\backslash
-Sexpr{s1[23,5]}$        
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
- Number of obs.
+Number of obs.
         & $
 \backslash
 Sexpr{s1[24,1]}$   &  $
@@ -9773,12 +9666,7 @@ scriptsize
 
 \begin_layout Plain Layout
 
-Note: This table shows the results of a multiple regression analysis.
- The dependent variable is the self-rating given by the ratees and the main
- independent variable is ratee's gender.
- The dimensions based on which the self-ratings are given are overall average
- (model 1), location (model 2), quality (model 3), price (model 4) and reputatio
-n (model 5).
+Note: Dependent variable is the self-rating given by the actors.
  
 \backslash
 label{table:table6} 
@@ -9799,14 +9687,14 @@ label{table:table6}
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Regression results for the impact of farmer's (rater's) and ratee's gender
- on the differences between ratee self-ratings and farmer ratings.
+Regression results for the impact of farmer's and actor's gender on the
+ differences between actor self-ratings and farmer ratings.
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:table7"
@@ -9853,7 +9741,7 @@ multicolumn{5}{c}{
 \backslash
 textit{
 \backslash
-footnotesize Dependent variable: Differences between ratee self-ratings
+footnotesize Dependent variable: Differences between actor self-ratings
  and farmer ratings}} 
 \backslash
 
@@ -10082,7 +9970,7 @@ Sexpr{mat[50,5]})$
 \backslash
 
 \backslash
- {Ratee is female}   & $
+ {Actor is female}   & $
 \backslash
 Sexpr{mat[52,1]}^{
 \backslash
@@ -10490,7 +10378,7 @@ Sexpr{mat[68,5]})$
 \backslash
 
 \backslash
- {Ratee's age} & $
+ {Actor's age} & $
 \backslash
 Sexpr{mat[70,1]}^{
 \backslash
@@ -10558,7 +10446,7 @@ Sexpr{mat[71,5]})$
 \backslash
 
 \backslash
- {Ratee is married}
+ {Actor is married}
 \end_layout
 
 \begin_layout Plain Layout
@@ -10631,7 +10519,7 @@ Sexpr{mat[74,5]})$
 \backslash
 
 \backslash
- {Ratee has finished} & $
+ {Actor has finished} & $
 \backslash
 Sexpr{mat[76,1]}^{
 \backslash
@@ -10699,7 +10587,7 @@ Sexpr{mat[77,5]})$
 \backslash
 
 \backslash
- {Ratee is a dealer} & $
+ {Actor is a dealer} & $
 \backslash
 Sexpr{mat[79,1]}^{
 \backslash
@@ -10767,7 +10655,7 @@ Sexpr{mat[80,5]})$
 \backslash
 
 \backslash
- {Ratee is a trader}  & $
+ {Actor is a trader}  & $
 \backslash
 Sexpr{mat[82,1]}^{
 \backslash
@@ -10879,7 +10767,7 @@ Sexpr{ifelse(mat[87,5]<.01,"***",ifelse(mat[87,5]<.05,"**",ifelse(mat[87,5]<.1,"
 \backslash
 
 \backslash
-  {Ratee is female} 
+  {Actor is female} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -10910,46 +10798,7 @@ hline
 
 \begin_layout Plain Layout
 
-R$^2$  & $
-\backslash
-Sexpr{mat[88,1]}$   &  $
-\backslash
-Sexpr{mat[88,2]}$ & $
-\backslash
-Sexpr{mat[88,3]}$ & $
-\backslash
-Sexpr{mat[88,4]}$ & $
-\backslash
-Sexpr{mat[88,5]}$    
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-
-\backslash
- Adj.
- R$^2$        & $
-\backslash
-Sexpr{mat[89,1]}$   &  $
-\backslash
-Sexpr{mat[89,2]}$ & $
-\backslash
-Sexpr{mat[89,3]}$ & $
-\backslash
-Sexpr{mat[89,4]}$ & $
-\backslash
-Sexpr{mat[89,5]}$        
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
- Number of obs.
+Number of obs.
         & $
 \backslash
 Sexpr{mat[90,1]}$   &  $
@@ -11001,17 +10850,9 @@ tiny
 
 \begin_layout Plain Layout
 
-Note: Standard errors are clustered at the ratee level (agro-input dealers,
- traders, and millers) and the farmer level.
- The dependent variable is the differences between ratee self-ratings and
- farmer ratings and the main independent variables are farmer's and ratee's
- gender.
- The dimensions based on which the ratings are given are overall average
- (model 1), location (model 2), quality (model 3), price (model 4) and reputatio
-n (model 5).
- An interaction between the farmer's and ratee's gender is included in all
- the models.
-  
+Note: Standard errors are clustered at the actor (agro-input dealers, traders,
+ and millers) and farmer level.
+ 
 \backslash
 label{table:table5}  
 \end_layout
