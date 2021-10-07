@@ -378,7 +378,7 @@ In this paper, we study how perceptions align throughout maize value chains
 Ratings are often used to reveal perceptions.
  Advances in information and communication technology has facilitated the
  use of simple rating applications at a large scale to reveal consumer perceptio
-ns of a variety or products and services 
+ns of a variety of products and services 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "reimers2021digitization"
@@ -438,8 +438,8 @@ literal "false"
  find that in Senegal's emerging high-value horticulture supply chains,
  women participate as paid wage laborers on large-scale estates and in agro-indu
 strial processing.
- A range of studies looks at the opportunities of and constraints face by
- women in agricultural value chains 
+ A range of studies looks at the opportunities of and constraints faced
+ by women in agricultural value chains 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "barrientos2019,Kruijssen2018,Mnimbo2017"
@@ -468,11 +468,11 @@ literal "true"
 \end_inset
 
 ).
- Gender bias in perceptions can constitute an important barriers to market
+ Gender bias in perceptions can constitute important barriers to market
  access for women, leading to mistrust, lower access to credit, etc.
- Bias in self-rating along gender lines may also constrain women entry and
- performance, as this may affect aspirations which has been found to be
- an important determinant for success 
+ Bias in self-rating along gender lines may also constrain women's entry
+ and performance, as this may affect aspirations which have been found to
+ be an important determinant for success 
 \begin_inset CommandInset citation
 LatexCommand citep
 before "eg."
@@ -515,8 +515,8 @@ literal "true"
 
 \begin_layout Standard
 We find that agro-input dealers, traders and processors consistently rate
- themselves higher than how farmers rate them, except for one tribute that
- is easily observable by both those who rate and those who get rated.
+ themselves higher than how farmers rate them, except for one attribute
+ that is easily observable by both those who rate and those who get rated.
  We do not find that gender plays a significant role in self-assessments.
  The gender of the actor being rated also does not affect the rating that
  they receive and we find no signs of gender-based homophily among women
@@ -609,12 +609,12 @@ literal "false"
  related in Ugandan maize supply chains, performance issues in one node
  can have consequences for the entire value chain.
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
 Throughout this study we will differentiate between farmers and actors,
- where the latter is used to refer the agro-input dealers, traders and processor
-s as a group.
+ where the latter is used to refer to the agro-input dealers, traders and
+ processors as a group.
 \end_layout
 
 \end_inset
@@ -752,7 +752,7 @@ Sexpr{format( round(mean(dealers$gender*100, na.rm=T), digits=0),nsmall=0)}
 \end_inset
 
  percent of dealers are women.
- On average, an agro-input dealers sells 
+ On average, an agro-input dealer sells 
 \begin_inset ERT
 status open
 
@@ -803,7 +803,7 @@ Traders
 
 \begin_layout Standard
 Maize traders link producers to processors and consumers.
- Local assembly traders, using bicycles of light motorbikes, visit several
+ Local assembly traders, using bicycles or light motorbikes, visit several
  farmers in a day to buy maize at the farm gate.
  These traders then aggregate and sell further to larger traders or large
  scale processors.
@@ -1042,7 +1042,7 @@ Sexpr{format( round(mean(millers$gender, na.rm=T)*100, digits=2),nsmall=0)}
 
 \end_inset
 
- percent of processors are woman.
+ percent of processors are women.
  
 \end_layout
 
@@ -1257,7 +1257,7 @@ Hypothesis 1: Self-ratings of dealers, traders and processors are higher
  than ratings given to them by farmers
 \begin_inset CommandInset label
 LatexCommand label
-name "Hypothesis 1"
+name "1"
 
 \end_inset
 
@@ -1325,7 +1325,7 @@ literal "false"
 Hypothesis 2: Female farmers rate more favourable than male farmers
 \begin_inset CommandInset label
 LatexCommand label
-name "Hypothesis 2"
+name "2"
 
 \end_inset
 
@@ -1383,7 +1383,7 @@ Hypothesis 3: Self-ratings from women are less favourable than self-ratings
  from men
 \begin_inset CommandInset label
 LatexCommand label
-name "Hypothesis 3"
+name "3"
 
 \end_inset
 
@@ -1397,8 +1397,8 @@ The third hypothesis compares the self-ratings given of female agro-input
  dealers, processors, and traders to the self-rating of their male counterparts.
  While we saw in hypothesis 
 \begin_inset CommandInset ref
-LatexCommand ref
-reference "Hypothesis 1"
+LatexCommand labelonly
+reference "1"
 plural "false"
 caps "false"
 noprefix "false"
@@ -1407,8 +1407,8 @@ noprefix "false"
 
  that actors tend to overestimate own performance and in hypothesis 
 \begin_inset CommandInset ref
-LatexCommand ref
-reference "Hypothesis 2"
+LatexCommand labelonly
+reference "2"
 plural "false"
 caps "false"
 noprefix "false"
@@ -1468,7 +1468,7 @@ Hypothesis 4: Male agro-input dealers, traders and processors receive more
  favourable ratings than their female counterparts
 \begin_inset CommandInset label
 LatexCommand label
-name "Hypothesis 4"
+name "4"
 
 \end_inset
 
@@ -1480,8 +1480,8 @@ name "Hypothesis 4"
 \paragraph_spacing onehalf
 In hypothesis 
 \begin_inset CommandInset ref
-LatexCommand ref
-reference "Hypothesis 4"
+LatexCommand labelonly
+reference "4"
 plural "false"
 caps "false"
 noprefix "false"
@@ -1589,7 +1589,7 @@ Hypothesis 5: Female farmers give higher ratings to female agro-input dealers,
  traders and processors
 \begin_inset CommandInset label
 LatexCommand label
-name "Hypothesis 5"
+name "5"
 
 \end_inset
 
@@ -1599,8 +1599,8 @@ name "Hypothesis 5"
 \begin_layout Standard
 Finally, in hypothesis 
 \begin_inset CommandInset ref
-LatexCommand ref
-reference "Hypothesis 5"
+LatexCommand labelonly
+reference "5"
 plural "false"
 caps "false"
 noprefix "false"
@@ -2189,8 +2189,8 @@ The coefficients of interest in these models are
 
  would confirm hypothesis 
 \begin_inset CommandInset ref
-LatexCommand ref
-reference "Hypothesis 2"
+LatexCommand labelonly
+reference "2"
 plural "false"
 caps "false"
 noprefix "false"
@@ -2203,8 +2203,8 @@ noprefix "false"
 
  would confirm 
 \begin_inset CommandInset ref
-LatexCommand ref
-reference "Hypothesis 4"
+LatexCommand labelonly
+reference "4"
 plural "false"
 caps "false"
 noprefix "false"
@@ -2218,8 +2218,8 @@ noprefix "false"
 
  (hypothesis 
 \begin_inset CommandInset ref
-LatexCommand ref
-reference "Hypothesis 5"
+LatexCommand labelonly
+reference "5"
 plural "false"
 caps "false"
 noprefix "false"
@@ -2232,8 +2232,8 @@ noprefix "false"
 \begin_layout Standard
 To test hypothesis 
 \begin_inset CommandInset ref
-LatexCommand ref
-reference "Hypothesis 3"
+LatexCommand labelonly
+reference "3"
 plural "false"
 caps "false"
 noprefix "false"
@@ -2304,8 +2304,8 @@ Finding that
 
  would confirm hypothesis 
 \begin_inset CommandInset ref
-LatexCommand ref
-reference "Hypothesis 3"
+LatexCommand labelonly
+reference "3"
 plural "false"
 caps "false"
 noprefix "false"
@@ -2457,8 +2457,8 @@ The rows represent the different dimensions on which actors were scored
 \paragraph_spacing onehalf
 In line with hypothesis 
 \begin_inset CommandInset ref
-LatexCommand ref
-reference "Hypothesis 1"
+LatexCommand labelonly
+reference "1"
 plural "false"
 caps "false"
 noprefix "false"
@@ -2522,8 +2522,8 @@ noprefix "false"
 \paragraph_spacing onehalf
 In line with hypothesis 
 \begin_inset CommandInset ref
-LatexCommand ref
-reference "Hypothesis 2"
+LatexCommand labelonly
+reference "2"
 plural "false"
 caps "false"
 noprefix "false"
@@ -2576,8 +2576,8 @@ Looking across actor types, for average ratings we again find that women
  than male farmers.
  In all, out of 20 comparisons, 16 are in line with hypothesis 
 \begin_inset CommandInset ref
-LatexCommand ref
-reference "Hypothesis 2"
+LatexCommand labelonly
+reference "2"
 plural "false"
 caps "false"
 noprefix "false"
@@ -2591,8 +2591,8 @@ noprefix "false"
 Next, we focus on the comparison of self-ratings from female and male value
  chain actors (hypothesis 
 \begin_inset CommandInset ref
-LatexCommand ref
-reference "Hypothesis 3"
+LatexCommand labelonly
+reference "3"
 plural "false"
 caps "false"
 noprefix "false"
@@ -2650,8 +2650,8 @@ There is also no clear pattern when we look at the different actors.
  Overall, we see that from the 20 comparisons, 9 are in line with hypothesis
  
 \begin_inset CommandInset ref
-LatexCommand ref
-reference "Hypothesis 3"
+LatexCommand labelonly
+reference "3"
 plural "false"
 caps "false"
 noprefix "false"
@@ -2664,8 +2664,8 @@ noprefix "false"
 \begin_layout Standard
 In 
 \begin_inset CommandInset ref
-LatexCommand ref
-reference "Hypothesis 4"
+LatexCommand labelonly
+reference "4"
 plural "false"
 caps "false"
 noprefix "false"
@@ -2696,8 +2696,8 @@ When we look at the different actors more in detail, we find no systematic
  on the quality dimension.
  In all, the descriptive analysis provides little support for 
 \begin_inset CommandInset ref
-LatexCommand ref
-reference "Hypothesis 4"
+LatexCommand labelonly
+reference "4"
 plural "false"
 caps "false"
 noprefix "false"
@@ -2711,8 +2711,8 @@ noprefix "false"
 Finally, we look for indications of female gender homophily (hypothesis
  
 \begin_inset CommandInset ref
-LatexCommand ref
-reference "Hypothesis 5"
+LatexCommand labelonly
+reference "5"
 plural "false"
 caps "false"
 noprefix "false"
@@ -2733,8 +2733,8 @@ noprefix "false"
  For other actors, there also seems to be no indication of female gender
  homophilly effects, leading us to reject hypothesis 
 \begin_inset CommandInset ref
-LatexCommand ref
-reference "Hypothesis 5"
+LatexCommand labelonly
+reference "5"
 plural "false"
 caps "false"
 noprefix "false"
@@ -2759,8 +2759,8 @@ name "subsec:Regressions"
 \begin_layout Standard
 To test hypothesis 
 \begin_inset CommandInset ref
-LatexCommand ref
-reference "Hypothesis 1"
+LatexCommand labelonly
+reference "1"
 plural "false"
 caps "false"
 noprefix "false"
@@ -2789,8 +2789,8 @@ noprefix "false"
 \begin_layout Standard
 Formally testing hypotheses 
 \begin_inset CommandInset ref
-LatexCommand ref
-reference "Hypothesis 2"
+LatexCommand labelonly
+reference "2"
 plural "false"
 caps "false"
 noprefix "false"
@@ -2799,8 +2799,8 @@ noprefix "false"
 
 , 
 \begin_inset CommandInset ref
-LatexCommand ref
-reference "Hypothesis 4"
+LatexCommand labelonly
+reference "4"
 plural "false"
 caps "false"
 noprefix "false"
@@ -2809,8 +2809,8 @@ noprefix "false"
 
  and 
 \begin_inset CommandInset ref
-LatexCommand ref
-reference "Hypothesis 5"
+LatexCommand labelonly
+reference "5"
 plural "false"
 caps "false"
 noprefix "false"
@@ -2852,8 +2852,8 @@ noprefix "false"
  not reject the null that the sex of the farmers does not affects the rating
  given (hypothesis 
 \begin_inset CommandInset ref
-LatexCommand ref
-reference "Hypothesis 2"
+LatexCommand labelonly
+reference "2"
 plural "false"
 caps "false"
 noprefix "false"
@@ -2871,8 +2871,8 @@ The gender of the actor that is being rated does not seem to be significantly
  correlated with ratings given by the farmer.
  As such, we do not find evidence for hypothesis 
 \begin_inset CommandInset ref
-LatexCommand ref
-reference "Hypothesis 4"
+LatexCommand labelonly
+reference "4"
 plural "false"
 caps "false"
 noprefix "false"
@@ -2881,14 +2881,14 @@ noprefix "false"
 
  in our data.
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
 In fact, there are some indications that women score higher on quality and
  reputation, which runs against hypothesis 
 \begin_inset CommandInset ref
-LatexCommand ref
-reference "Hypothesis 4"
+LatexCommand labelonly
+reference "4"
 plural "false"
 caps "false"
 noprefix "false"
@@ -2904,8 +2904,8 @@ noprefix "false"
  of the actor, we also do not find any significant correlation, suggesting
  there is no female gender homophilly effect (hypothesis 
 \begin_inset CommandInset ref
-LatexCommand ref
-reference "Hypothesis 5"
+LatexCommand labelonly
+reference "5"
 plural "false"
 caps "false"
 noprefix "false"
@@ -2918,8 +2918,8 @@ noprefix "false"
 \begin_layout Standard
 Formally testing hypotheses 
 \begin_inset CommandInset ref
-LatexCommand ref
-reference "Hypothesis 3"
+LatexCommand labelonly
+reference "3"
 plural "false"
 caps "false"
 noprefix "false"
@@ -2962,8 +2962,8 @@ noprefix "false"
  We certainly do not find that men rate themselves higher than women, leading
  us to reject hypothesis 
 \begin_inset CommandInset ref
-LatexCommand ref
-reference "Hypothesis 3"
+LatexCommand labelonly
+reference "3"
 plural "false"
 caps "false"
 noprefix "false"
@@ -3009,8 +3009,8 @@ noprefix "false"
 .
  This provides an alternative way to test hypothesis 
 \begin_inset CommandInset ref
-LatexCommand ref
-reference "Hypothesis 1"
+LatexCommand labelonly
+reference "1"
 plural "false"
 caps "false"
 noprefix "false"
@@ -3036,8 +3036,8 @@ noprefix "false"
  The table also shows that the gender of the farmer now also becomes significant
 ly negative, which makes sense as women rate more positive (hypothesis 
 \begin_inset CommandInset ref
-LatexCommand ref
-reference "Hypothesis 2"
+LatexCommand labelonly
+reference "2"
 plural "false"
 caps "false"
 noprefix "false"
@@ -4201,7 +4201,7 @@ label{table:table1}
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -4780,7 +4780,7 @@ cline{2-7}
 \backslash
 multicolumn{6} {c} {
 \backslash
-textit{processors}}  
+textit{Processors}}  
 \backslash
 
 \backslash
@@ -4984,10 +4984,6 @@ Sexpr{format( round(quantile(millers$hh.maize.q40, na.rm=T, 0.25), digits=2),nsm
 \backslash
 Sexpr{format( round(quantile(millers$hh.maize.q40, na.rm=T, 0.75), digits=2),nsmall=
 0)}$
-\backslash
-
-\backslash
-
 \end_layout
 
 \begin_layout Plain Layout
@@ -7953,7 +7949,7 @@ Note: The average self-ratings for each dimension are mentioned in the first
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -8201,7 +8197,7 @@ Sexpr{mat[5,5]})$
 \backslash
 
 \backslash
- {Ratee is female}   & $
+ {Actor is female}   & $
 \backslash
 Sexpr{mat[7,1]}^{
 \backslash
