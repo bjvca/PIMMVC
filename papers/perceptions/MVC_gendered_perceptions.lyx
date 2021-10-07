@@ -138,57 +138,24 @@ Gendered Perceptions in Maize Supply Chains: Evidence from Uganda
 \end_layout
 
 \begin_layout Abstract
-\paragraph_spacing onehalf
-Faced with imperfect information, how value chain actors perceive each other
- is an important determinant of its structure and performance.
- Inaccurate perceptions may result in inefficient value chains and systematic
- bias in perceptions may affect inclusiveness.
- In a case study on perceptions in Ugandan maize supply chains, a random
- sample of farmers were asked to rate upstream and downstream value chain
- actors—agro-input dealers, traders and processors—on a set of important
- attributes—ease of access, quality of services rendered, price competitiveness,
- and overall reputation.
- These value chain actors were then tracked and asked to assess themselves
- on the same set of attributes.
- We find that input dealers, traders and processors assess themselves more
- favourably than how farmers perceive them to be.
- We also zoom in on heterogeneity in perceptions related to gender and find
- that for self-assessments, the gender of the value chain actor does not
- matter.
- However, the difference between how actors assess themselves and how farmers
- perceive them is larger for male than for female farmers, as female farmers
- appear to rate dealers, traders and processors significantly higher in
- several dimensions.
- The gender of the actor being rated does not affect the rating they get,
- and gender-based homophily among women is not present in rating behaviour.
- 
-\end_layout
 
-\begin_layout Standard
-
-\emph on
-\begin_inset CommandInset line
-LatexCommand rule
-offset "1ex"
-width "100col%"
-height "1pt"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Abstract
-Motivation: Faced with imperfect information, how value chain actors perceive
- each other is an important determinant of its structure and performance.
+\series bold
+Motivation:
+\series default
+ Faced with imperfect information about the performance of value chain actors,
+ transactions are often based on perceptions.
  Inaccurate perceptions may result in inefficient value chains and biased
  perceptions may affect inclusiveness.
 \end_layout
 
 \begin_layout Abstract
-Purpose: In a case study on perceptions in Ugandan maize supply chains,
- a random sample of farmers were asked to rate upstream and downstream value
- chain actors—agro-input dealers, traders and processors—on a set of important
+
+\series bold
+Purpose:
+\series default
+ In a case study on perceptions in Ugandan maize supply chains, a random
+ sample of farmers were asked to rate upstream and downstream value chain
+ actors—agro-input dealers, traders and processors—on a set of important
  attributes—ease of access, quality of services, price competitiveness,
  and reputation.
  These value chain actors were then tracked and asked to assess themselves
@@ -204,14 +171,22 @@ Purpose: In a case study on perceptions in Ugandan maize supply chains,
 \end_layout
 
 \begin_layout Abstract
-Approach and methods: T-tests and multivariate regression models with two-way
- non-nested clustering are used.
+
+\series bold
+Approach and methods:
+\series default
+ Descriptive analysis, t-tests and multivariate regression models with two-way
+ non-nested clustering is used.
  
 \end_layout
 
 \begin_layout Abstract
-Findings: We find that input dealers, traders and processors assess themselves
- more favourably than how farmers perceive them to be.
+
+\series bold
+Findings:
+\series default
+ We find that input dealers, traders and processors assess themselves more
+ favourably than how farmers perceive them to be.
  For self-assessments, the gender of the value chain actor does not matter.
  However, the difference between self-assessments and farmer ratings is
  larger for male than for female farmers, as female farmers appear to rate
@@ -221,19 +196,22 @@ Findings: We find that input dealers, traders and processors assess themselves
 \end_layout
 
 \begin_layout Abstract
-Policy implications: Policy interventions can reduce the gap between actor
- self-assessments and farmer ratings, increasing value chain efficiency.
- Similarly, encouraging market entry and competition can increase price
- competitiveness of value chain actors.
- 
-\end_layout
 
-\begin_layout Subsection
-Keywords
+\series bold
+Policy implications: 
+\series default
+Policy interventions that reduce the gap between actor self-assessments
+ and farmer ratings can increasing value chain efficiency.
+ Interventions that reduce gender bias, such as certification by an independent
+ agency, may prevent gender segregation in value chains.
 \end_layout
 
 \begin_layout Standard
-gender, maize supply chain, perceptions, ratings, Uganda 
+
+\series bold
+Keywords:
+\series default
+ gender, maize supply chain, perceptions, ratings, Uganda 
 \end_layout
 
 \begin_layout Standard
