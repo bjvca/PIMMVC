@@ -165,6 +165,78 @@ Faced with imperfect information, how value chain actors perceive each other
 \end_layout
 
 \begin_layout Standard
+
+\emph on
+\begin_inset CommandInset line
+LatexCommand rule
+offset "1ex"
+width "100col%"
+height "1pt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Abstract
+Motivation: Faced with imperfect information, how value chain actors perceive
+ each other is an important determinant of its structure and performance.
+ Inaccurate perceptions may result in inefficient value chains and biased
+ perceptions may affect inclusiveness.
+\end_layout
+
+\begin_layout Abstract
+Purpose: In a case study on perceptions in Ugandan maize supply chains,
+ a random sample of farmers were asked to rate upstream and downstream value
+ chain actors—agro-input dealers, traders and processors—on a set of important
+ attributes—ease of access, quality of services, price competitiveness,
+ and reputation.
+ These value chain actors were then tracked and asked to assess themselves
+ on the same set of attributes.
+ The first objective of this study is to establish how the ratings given
+ by farmers align with self-ratings of dealers, traders and processors.
+ Second, we test if male farmers rate systematically different than female
+ farmers.
+ Third, we test for gender related differences in self-rating and fourth,
+ we test if these actors are rated differently because of their gender.
+ The final objective is to test for the presence of gender-based homophily
+ among women.
+\end_layout
+
+\begin_layout Abstract
+Approach and methods: T-tests and multivariate regression models with two-way
+ non-nested clustering are used.
+ 
+\end_layout
+
+\begin_layout Abstract
+Findings: We find that input dealers, traders and processors assess themselves
+ more favourably than how farmers perceive them to be.
+ For self-assessments, the gender of the value chain actor does not matter.
+ However, the difference between self-assessments and farmer ratings is
+ larger for male than for female farmers, as female farmers appear to rate
+ significantly higher in several dimensions.
+ The gender of the actor being rated does not affect the rating they get,
+ and gender-based homophily among women is not present.
+\end_layout
+
+\begin_layout Abstract
+Policy implications: Policy interventions can reduce the gap between actor
+ self-assessments and farmer ratings, increasing value chain efficiency.
+ Similarly, encouraging market entry and competition can increase price
+ competitiveness of value chain actors.
+ 
+\end_layout
+
+\begin_layout Subsection
+Keywords
+\end_layout
+
+\begin_layout Standard
+gender, maize supply chain, perceptions, ratings, Uganda 
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
 status open
 
