@@ -99,7 +99,7 @@ graphicboxes
 
 \begin_body
 
-\begin_layout Standard
+\begin_layout Title
 \begin_inset Preview
 
 \begin_layout Standard
@@ -130,10 +130,6 @@ footnotemark[2]}
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Title
 Gendered Perceptions in Maize Supply Chains: Evidence from Uganda
 \end_layout
 
@@ -1702,7 +1698,7 @@ status open
 \noindent
 \align center
 \begin_inset Graphics
-	filename map_outlined.jpg
+	filename G:/My Drive/Classroom/Documents from Drive/Pre Doctoral KUL/Paper with Bjorn/PIMMVC/papers/perceptions/map_outlined.jpg
 	lyxscale 50
 	scale 50
 
@@ -1765,7 +1761,6 @@ Note that for input dealers and processors, price competitiveness would
  be rated higher if they charge lower prices to farmers.
  For traders, price competitiveness would be rated higher if they pay higher
  prices to farmers at the farm gate.
- 
 \end_layout
 
 \end_inset
@@ -7957,7 +7952,7 @@ Note: The average self-ratings for each dimension are mentioned in the first
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -9763,7 +9758,7 @@ label{table:table6}
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
