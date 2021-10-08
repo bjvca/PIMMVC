@@ -99,40 +99,6 @@ graphicboxes
 
 \begin_body
 
-\begin_layout Standard
-\begin_inset Preview
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-author{Bjorn Van Campenhout
-\backslash
-thanks{Development Strategy and Governance Division, International Food
- Policy Research Institute, Kampala, Uganda} 
-\backslash
-footnotemark[2], Anusha De
-\backslash
-thanks{LICOS Center for Institutions and Economic Performance, KULeuven,
- Belgium}
-\backslash
-footnotemark[2]}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Title
 Gendered Perceptions in Maize Supply Chains: Evidence from Uganda
 \end_layout
@@ -3205,25 +3171,6 @@ literal "false"
  Rather, policies that encourage market entry and competition between agro-input
  dealers, traders and processors are likely increase price competitiveness
  of value chain actors.
-\end_layout
-
-\begin_layout Section*
-Acknowledgments
-\end_layout
-
-\begin_layout Standard
-This research was partly funded by the CGIAR Research Program on Policies,
- Institutions, and Markets (PIM), led by the International Food Policy Research
- Institute (IFPRI) and carried out with support from the CGIAR Fund contributors
- (https://www.cgiar.org/funders/).
- The authors also acknowledge financial support from The Netherlands – CGIAR
- research programme on Seed Systems Development, grant number W08.240.105,
- funded by the Netherlands Organisation for Scientific Research (NWO-WOTRO).
- We thank Richard Ariong, Leocardia Nabwire, Wilberforce Walukano and Marc
- Charles Wanume for excellent field support.
- The analysis contained here is the sole responsibility of the authors,
- and does not reflect the views of any funding agency or organization mentioned
- here.
 \end_layout
 
 \begin_layout Standard
@@ -7957,7 +7904,7 @@ Note: The average self-ratings for each dimension are mentioned in the first
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
