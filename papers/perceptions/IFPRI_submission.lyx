@@ -117,7 +117,7 @@ thanks{Development Strategy and Governance Division, International Food
 \backslash
 footnotemark[2], Anusha De
 \backslash
-thanks{LICOS Center for Institutions and Economic Performance, KULeuven,
+thanks{LICOS Center for Institutions and Economic Performance, KU Leuven,
  Belgium}
 \backslash
 footnotemark[2]}
@@ -1830,12 +1830,12 @@ name "subsec:Validity-of-ratings"
 \begin_layout Standard
 In this section we test whether the ratings are actually meaningful (as
  opposed to just noise).
- To do so, we look at intra-class correlation (ICC)
+ To do so, we consider intra-class correlation (ICC)
 \series bold
  
 \series default
 coefficients determining the level of agreement between the ratings.
- We look at both inter-rater agreement and intra-rater agreement 
+ We include both inter-rater agreement and intra-rater agreement 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "gwet2014handbook"
@@ -1844,13 +1844,13 @@ literal "true"
 \end_inset
 
 .
- Inter-rater agreement looks at the correlation between ratings given by
+ Inter-rater agreement considers the correlation between ratings given by
  different farmers to a single actor, while intra-rater agreement is judged
  by the correlation between ratings received by different actors from a
  single farmer.
- Intra-class correlation coefficients range between zero and one, with zero
- being low agreement and one being total agreement.
- Only farmers who rated more than 6 times are considered for this analysis.
+ Intra-class correlation coefficients range between 0 and 1, with 0 being
+ low agreement and 1 being total agreement.
+ Only farmers who rated more than six times are considered in this analysis.
 \end_layout
 
 \begin_layout Standard
@@ -1866,7 +1866,7 @@ noprefix "false"
 
  presents the results for the ICC analysis.
  In the left panel, results for inter-rater agreement are shown.
- Judged by average ratings, farmer rate fairly consistent within actors.
+ Judging by average ratings, farmers rate different actors fairly consistently.
  However, farmers disagree more with each other when quality is assessed,
  or when reputation needs to be rated.
  This is expected, as location and prices are observable factors and hence,
@@ -1886,19 +1886,19 @@ noprefix "false"
 
 \end_inset
 
- shows results for intra-rater agreement.
- Results also show that ratings for the different actors are consistent
- within farmers.
+ shows the results for intra-rater agreement.
+ The results also show that ratings for different actors are consistent
+ among farmers.
  The fact that intra-rater agreement is higher than inter-rater agreement
  may indicate some degree of assortative matching within the chain, whereby
- farmers who select better performing agro-input dealers also tend to go
+ farmers who select better-performing agro-input dealers also tend to go
  to better processors and sell to better traders.
- However, it could also be that ratings are determined more by farmer level
- characteristics (such as the education level of the farmer) than by actor
- level characteristics, leading farmers to rate different actors in a more
- consistent way.
- At the same time, as farmers rate different actors, it also seems reasonable
- that there is no complete intra-rater agreement.
+ However, it could also be that ratings are determined more by farmer-level
+ characteristics (such as the education level of the farmer) than by actor-level
+ characteristics, leading farmers to rate different actors in a more consistent
+ way.
+ At the same time, because farmers rate different actors, it also seems
+ reasonable that there is no complete intra-rater agreement.
 \end_layout
 
 \begin_layout Section
@@ -1990,7 +1990,7 @@ noprefix "false"
 
 ).
  We will run separate regressions for the ratings for the different dimensions,
- and also a regression where 
+ as well as a regression where 
 \emph on
 
 \begin_inset Formula $y_{f,a}$
@@ -2029,7 +2029,7 @@ When we look at ratings on a particular dimension, this will be an integer
 
 
 \emph default
-, a dummy variable which takes the value of 1 if the farmer is a woman and
+, a dummy variable that takes the value of 1 if the farmer is a woman and
  0 otherwise), which varies at the farmer level 
 \emph on
 f
@@ -2059,7 +2059,7 @@ a
  is a vector of control variables, some of which vary at the farmer level,
  like farmer's age (in years), dummy variable indicating if the farmer has
  finished primary education, distance of farmer's homestead to tarmac and
- feeder roads (in km) and marital status.
+ feeder roads (in km), and marital status.
  Other control variables included in 
 \emph on
 
@@ -2069,7 +2069,7 @@ a
 
 \emph default
  vary at the level of the actor, like age, education (if primary education
- is finished) and dummy variable for marital status of the dealer, trader
+ is finished), and a dummy variable for marital status of the dealer, trader,
  or processor.
  The error term in the model is 
 \emph on
@@ -2091,8 +2091,7 @@ literal "false"
 
 \end_inset
 
- to allow for two-way non-nested clustering at the farmer and the actor
- level.
+ to allow for two-way non-nested clustering at the farmer and actor levels.
 \end_layout
 
 \begin_layout Standard
@@ -2108,7 +2107,7 @@ The coefficients of interest in these models are
 \begin_inset Formula $\beta_{2}$
 \end_inset
 
- and 
+, and 
 \begin_inset Formula $\beta_{3}$
 \end_inset
 
@@ -2170,7 +2169,7 @@ noprefix "false"
 
 \end_inset
 
-, a regression that only uses self-rating data of the actors is used:
+, a regression based on the actors' self-rating data only is used:
 \end_layout
 
 \begin_layout Standard
@@ -2247,7 +2246,7 @@ noprefix "false"
 \begin_inset Formula $\left(X_{a}\right)$
 \end_inset
 
-, including fixed effects for the type of actor (dealer, trader or processor).
+, including fixed effects for the type of actor (dealer, trader, or processor).
  The error term in this model is 
 \emph on
 
@@ -2265,11 +2264,11 @@ As we rely on observational data, we control for confounding bias through
  the inclusion of exogenous control variables.
  Men are likely to be better educated than women.
  Better levels of education and knowledge will probably mean that farmers
- have a better understanding of what to expect from service and input providers,
- and so, may rate more or less favourably, as scores given will be better
+ have a better understanding of what to expect from service and input providers
+ and thus may rate more or less favourably, as scores given will be better
  informed.
- One has to control for this impact pathway, as otherwise the gender and
- education effects will be conflated.
+ The impact pathway must be controlled for or else the gender and education
+ effects will be conflated.
  The age of the farmer may also affect ratings in some way.
  In our sample of farm households, women are likely to be younger than men
  
@@ -2284,37 +2283,37 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-Marital status of the person interviewed may also be correlated with ratings.
+An interviewee's marital status may also be correlated with ratings.
  It may be that single household heads are more likely to interact with
- lower rated agents (for instance, predatory traders who target households
+ lower-rated agents (for instance, predatory traders who target households
  with only one head).
  At the same time, the women we interviewed in our sample are also more
  likely to be unmarried, so we need to control for the effect of marital
- status on ratings that works through gender.
+ status on ratings that are affected by gender.
  Distance to murram and tarmac roads are proxies of remoteness.
- In remote areas, input and service providers face many challenges such
- as larger transaction costs and poor access to services such as power.
- For instance, in semi-urban areas, mills often run on 3-phase electricity,
+ In remote areas, input and service providers face many challenges, such
+ as larger transaction costs and poor access to services such as electricity.
+ For instance, in semi-urban areas, mills often run on three-phase electricity,
  while in remote areas, combustion engines are used to power the mills.
- The latter produce inferior quality maize products.
+ The latter produce inferior maize products.
  If women are also more likely to reside in remote areas, this may lead
  to biased coefficient estimates.
 \end_layout
 
 \begin_layout Standard
-Similar arguments can be made for the gender of the dealers, traders and
+Similar arguments can be made for the gender of the dealers, traders, and
  processors.
- Since men are likely to be more educated than women, the education and
- knowledge might define what kind of service and inputs they provide to
- their customers.
+ Since men are likely to be better educated than women, their education
+ and knowledge might define what kind of services and inputs they provide
+ to their customers.
  This would lead to more or less favourable ratings from farmers, so we
- need to control for education to disentangle the effect of actor gender
- and actor education levels.
- Men are likely to be older because of longer active periods in service
- providing and input dealing.
- Older individuals might have better experience in the business, which can
- impact the ratings.
- Controlling for marital status of input dealers, trader and processors
+ need to control for education to disentangle the effects of actor gender
+ and education levels.
+ Men are likely to be older, with more experience in service providing and
+ input dealing.
+ Older individuals might have more experience in business, which can impact
+ the ratings.
+ Controlling for marital status of input dealers, traders, and processors
  is necessary, as female value chain actors may be more likely to be single.
  
 \end_layout
@@ -2356,7 +2355,7 @@ noprefix "false"
 
 \end_inset
 
- based on subgroup averages reported in Table 
+ and based on the subgroup averages reported in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:table4"
@@ -2368,19 +2367,20 @@ noprefix "false"
 
 .
  The table shows scores aggregated over all input dealers (first three columns
- on the left), but also for each actor type separately (columns 4-6 for
- agro-input dealers, columns 7-9 for traders, and columns 10-12 for processors).
+ on the left), but also scores for each actor type separately (columns 4–6
+ for agro-input dealers, columns 7–9 for traders, and columns 10–12 for
+ processors).
  We further differentiate between scores received by male and female actors.
  
 \end_layout
 
 \begin_layout Standard
-The rows represent the different dimensions on which actors were scored
+The rows represent the different dimensions for which actors were scored
  (or were asked to rate themselves).
- We again start with an overall rating (rows 1-4) and then provide separate
- ratings for location (5-8), quality (9-12), and reputation (rows 13-16).
- We also differentiate between the gender of the farmer, and also add a
- line for self-ratings.
+ We again start with an overall rating (rows 1–4) and then provide separate
+ ratings for location (5–8), quality (9–12), and reputation (rows 13–16).
+ We also differentiate between the gender of the farmer and also add a line
+ for self-ratings.
 \end_layout
 
 \begin_layout Standard
@@ -2434,7 +2434,7 @@ Sexpr{format(round(mean(pool$rating_overall, na.rm=T),digits=2),nsmall=0)}
 
 ).
  This pattern is consistent across all the different rating dimensions.
- Looking at individual groups of input dealers, traders, and processors
+ In examining individual groups of input dealers, traders, and processors
  in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -2460,7 +2460,7 @@ noprefix "false"
 
 \end_inset
 
-, we find that the mean overall rating provided by female farmers is 
+, we find that the mean overall rating provided by female farmers (
 \begin_inset ERT
 status open
 
@@ -2474,7 +2474,7 @@ ts=2),nsmall=0)}
 
 \end_inset
 
- which is slightly higher than the mean overall rating given by male farmers
+) is slightly higher than the mean overall rating given by male farmers
  (
 \begin_inset ERT
 status open
@@ -2490,21 +2490,21 @@ ts=2),nsmall=0)}
 \end_inset
 
 ).
- We similarly see that location-, price- and reputation-based ratings are
+ We similarly see that location-, price-, and reputation-based ratings are
  higher among female farmers than among male farmers.
  However, for quality-based rating, male farmers give a higher rating.
  
 \end_layout
 
 \begin_layout Standard
-Looking across actor types, for average ratings we again find that women
+Looking at average ratings across actor types, we again find that women
  consistently rate higher than men, but the margin is small.
- For traders, women rate more favourable in all dimensions.
- For processors, women also generally rate more favorable, except for reputation
- where ratings between men and women are virtually the same.
+ Women rate traders rate more favourably in all dimensions.
+ Women also generally rate processors more favorably, except for reputation
+ where ratings between men and women are effectively the same.
  Female farmers rate dealers lower on both reputation and price competitiveness
- than male farmers.
- In all, out of 20 comparisons, 16 are in line with hypothesis 
+ than male farmers do.
+ In all, out of 20 comparisons, 16 show agreement with hypothesis 
 \begin_inset CommandInset ref
 LatexCommand labelonly
 reference "2"
@@ -2518,8 +2518,8 @@ noprefix "false"
 \end_layout
 
 \begin_layout Standard
-Next, we focus on the comparison of self-ratings from female and male value
- chain actors (hypothesis 
+Next, we focus on self-ratings from female and male value chain actors (hypothes
+is 
 \begin_inset CommandInset ref
 LatexCommand labelonly
 reference "3"
@@ -2562,18 +2562,19 @@ Sexpr{format(round(mean(pool$ratee_rating_overall [pool$ratee_fem=="0"],
 
 ).
  We also find women rate themselves lower on location and reputation dimensions.
- However, for quality and price, men self-assess themselves worse than how
- women self-assess themselves.
+ However, for quality and price, men assess themselves worse than women
+ do.
  
 \end_layout
 
 \begin_layout Standard
-There is also no clear pattern when we look at the different actors.
+There is no clear pattern when we consider different actors' self-ratings.
  While female traders assess themselves higher than their male counterparts,
- male input dealers rate themselves higher than female dealers.
- When looking at the four dimensions, we find that for agro-input dealers,
- men rate themselves higher on three of the four dimensions.
- For processors, it is the other way around.
+ male input dealers rate themselves higher than female dealers' self-assessments.
+ When evaluating across the four dimensions, we find that for agro-input
+ dealers, men rate themselves higher on three of the four dimensions.
+ For processors, the opposite trend emerges: women rate themselves higher
+ on two of the four dimensions and also, for the overall average.
  For traders, women consistently rate themselves higher.
  However, due to the small number of female traders, this result needs to
  be interpreted with caution.
@@ -2602,29 +2603,29 @@ noprefix "false"
 
 \end_inset
 
-, we test if the gender of the actor leads to systematically different ratings
- from farmers.
- Judged from the overall score, male value chain actors receive lower scores
+, we test whether the gender of the actor leads to systematically different
+ ratings from farmers.
+ Judging from the overall score, male value chain actors receive lower scores
  than female actors, but the difference is negligible (3.59 vs.
  3.61).
  When all actors are pooled, we see that male actors are scored higher on
- location and price competitiveness, while they are scored lower on the
- dimensions of quality and reputation.
+ location and price competitiveness, but they are scored lower on the dimensions
+ of quality and reputation.
  
 \end_layout
 
 \begin_layout Standard
-When we look at the different actors more in detail, we find no systematic
+When we examine the different actors in more detail, we find no systematic
  difference in the overall ratings between men and women.
- As is the case when all actors are pooled, women dealers are viewed more
- favorably for quality and reputation, while male dealers get higher scores
- for location and price.
+ As is the case when all actors are pooled, female dealers are viewed more
+ favorably for quality and reputation, while male dealers receive higher
+ scores for location and price.
  For traders, women consistently receive higher scores than men, but again,
- these results need to be interpreted with care given the very few female
- traders we have in the sample.
+ these results need to be interpreted with care given the very small numbe
+ of female traders in the sample.
  For processors, men seem to get somewhat higher ratings, except perhaps
  on the quality dimension.
- In all, the descriptive analysis provides little support for hypothesis
+ Overall, the descriptive analysis provides little support for hypothesis
  
 \begin_inset CommandInset ref
 LatexCommand labelonly
@@ -2639,8 +2640,7 @@ noprefix "false"
 \end_layout
 
 \begin_layout Standard
-Finally, we look for indications of female gender homophily (hypothesis
- 
+Finally, we seek indications of female gender homophily (hypothesis 
 \begin_inset CommandInset ref
 LatexCommand labelonly
 reference "5"
@@ -2651,18 +2651,18 @@ noprefix "false"
 \end_inset
 
 ).
- Aggregating over actors and dimensions, we see that female farmers score
+ Aggregating across actors and dimensions, we see that female farmers score
  female actors higher (3.63) than any other gender combination.
- But if we look at the different dimensions, there are no signs of female
- gender homophily effects.
+ But if we examine the different dimensions, there is no indication of female
+ gender homophily.
  For location and price competitiveness, female farmers score male actors
  highest; for quality, male farmers score female actors highest.
  For reputation, male and female farmers give the same score to female actors.
- When looking at dealers, traders and processors separately, we only find
- signs of female gender homophily effects for traders.
- But again, these results are likely to suffer from a small sample size.
+ When looking at dealers, traders, and processors separately, we only find
+ signs of female gender homophily for traders.
+ But again, these results likely suffer from the small sample size.
  For other actors, there also seems to be no indication of female gender
- homophily effects, leading us to reject hypothesis 
+ homophily, leading us to reject hypothesis 
 \begin_inset CommandInset ref
 LatexCommand labelonly
 reference "5"
@@ -2698,9 +2698,8 @@ noprefix "false"
 
 \end_inset
 
- formally, we test if the difference between an actor's self-rating and
- the rating of the actor provided by the farmer is significantly larger
- than zero.
+ formally, we test whether the difference between an actor's self-rating
+ and a rating of the actor is significantly larger than zero.
  Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -2718,7 +2717,7 @@ noprefix "false"
 \end_layout
 
 \begin_layout Standard
-Formally testing hypotheses 
+Formal testing of hypotheses 
 \begin_inset CommandInset ref
 LatexCommand labelonly
 reference "2"
@@ -2738,7 +2737,7 @@ noprefix "false"
 
 \end_inset
 
- and 
+, and 
 \begin_inset CommandInset ref
 LatexCommand labelonly
 reference "5"
@@ -2748,7 +2747,7 @@ noprefix "false"
 
 \end_inset
 
- is done by estimating regression model 
+ is done by estimating Regression Model 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:farmer_level"
@@ -2779,9 +2778,9 @@ noprefix "false"
 \end_inset
 
 .
- Taking overall ratings as the dependent variable in column (1), we can
- not reject the null that the sex of the farmers does not affect the rating
- given (hypothesis 
+ Taking overall ratings as the dependent variable in column 1, we cannot
+ reject the null hypothesis that the sex of the farmers does not affect
+ the rating given (hypothesis 
 \begin_inset CommandInset ref
 LatexCommand labelonly
 reference "2"
@@ -2792,14 +2791,14 @@ noprefix "false"
 \end_inset
 
 ).
- However, if we look at the different components of the rating index, we
+ However, if we review the different components of the rating index, we
  see that female farmers rate actors significantly higher when asked to
- assess location and price competitiveness (columns (2) and (4)).
+ assess location and price competitiveness (columns 2 and 4).
 \end_layout
 
 \begin_layout Standard
-The gender of the actor that is being rated does not seem to be significantly
- correlated with ratings given by the farmer.
+The gender of the actor being rated does not seem to be significantly correlated
+ with ratings given by the farmer.
  As such, we do not find evidence for hypothesis 
 \begin_inset CommandInset ref
 LatexCommand labelonly
@@ -2847,7 +2846,7 @@ noprefix "false"
 \end_layout
 
 \begin_layout Standard
-Formally testing hypothesis 
+Formal testing of hypothesis 
 \begin_inset CommandInset ref
 LatexCommand labelonly
 reference "3"
@@ -2857,7 +2856,7 @@ noprefix "false"
 
 \end_inset
 
- is done by estimating regression model 
+ is done by estimating Regression Model 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:actor_level"
@@ -2888,7 +2887,7 @@ noprefix "false"
 \end_inset
 
 .
- While women actors seem to rate themselves somewhat higher on the quality
+ While female actors seem to rate themselves somewhat higher on the quality
  dimension, the difference with men is not significant.
  We certainly do not find that men rate themselves higher than women, leading
  us to reject hypothesis 
@@ -2905,20 +2904,10 @@ noprefix "false"
 \end_layout
 
 \begin_layout Standard
-We also ran an additional regression similar to equation 
+We also ran an additional regression similar to Model 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:farmer_level"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
- outlined in Section 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:Econometric-Analysis"
 plural "false"
 caps "false"
 noprefix "false"
@@ -2948,7 +2937,7 @@ noprefix "false"
 
 \end_inset
 
- by looking at the significance of the constant in equation 
+ by looking at the significance of the constant in Model 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:farmer_level"
@@ -2959,13 +2948,14 @@ noprefix "false"
 \end_inset
 
 .
- Interestingly, in a regression framework that controls for a range of farmer
- and actor level characteristics, there is no significant difference anymore
- between actor ratings and farmer ratings for the location dimension.
+ Interestingly, in a regression framework that controls for a range of farmer-
+ and actor-level characteristics, there is no significant difference between
+ actor ratings and farmer ratings for the location dimension.
  This seems plausible, as location can be easily observed by both farmer
  and actor.
  The table also shows that the gender of the farmer now also becomes significant
-ly negative, which makes sense as women rate more positive (hypothesis 
+ly negative, which makes sense as women rate more positively (hypothesis
+ 
 \begin_inset CommandInset ref
 LatexCommand labelonly
 reference "2"
@@ -2975,24 +2965,25 @@ noprefix "false"
 
 \end_inset
 
-), making the gap between actor and farmer rating smaller.
+), making the gap between actor and farmer ratings smaller.
  
 \end_layout
 
 \begin_layout Standard
 The impact of the sex of the actor, although often not statistically significant
 , is also interesting.
- The differences in ratings increase substantially for quality and price
- if the actor is a woman, while the difference reduces in the case of reputation
--based ratings.
- Women rate themselves higher on quality, while farmer ratings on quality
- are not dependent on the sex of the actor being rated.
- On price, the coefficient of the sex of the actor is also positive for
- self-ratings, but here the lower rating from the farmers of female actors
- seems to make the gap larger.
- For reputation, women actors are too modest: the combination of a negative
- gender effect on self-ratings and a positive gender effect on the farmer
- ratings significantly reduces the gap.
+ The difference between self-ratings and ratings from farmers increases
+ substantially for quality and price if the actor is a woman, while the
+ difference declines in the case of reputation-based ratings.
+ Women rate themselves higher on quality compared to men, but farmer ratings
+ on quality are not dependent on the sex of the actor being rated.
+ On price, the coefficient of the actor's sex is also positive for self-ratings,
+ but here the lower rating from the farmers of female actors seems to make
+ the gap larger between self-ratings and ratings given by farmers.
+ For reputation, female actors rate themselves lower compared to the self-rating
+s of male actors: the combination of a negative gender effect on self-ratings
+ and a positive gender effect on farmer ratings significantly reduces the
+ gap.
 \end_layout
 
 \begin_layout Section
@@ -3009,22 +3000,22 @@ name "sec:Conclusion"
 
 \begin_layout Standard
 In informal food supply chains, perceptions about the quality of services
- of value chain actors such as agro-input dealers, traders and processors
- are an important input in the decision making processes underlying the
- structure, conduct and performance of the value chain.
- We thus investigated perceptions of maize farmers about the input and service
- providers in informal maize value chains; and the perceptions of these
- input and service providers about themselves.
+ of value chain actors such as agro-input dealers, traders, and processors
+ are an important input in the decision-making processes underlying the
+ structure, conduct, and performance of the value chain.
+ We thus investigated perceptions of maize farmers about input and service
+ providers in informal maize value chains, as well as these input and service
+ providers' self-perceptions.
  We were particularly interested in gender-based heterogeneity in these
  perceptions.
- Perceptions were captured through ratings given on dimensions like ease
- of access, quality of service, price competitiveness, and reputation.
+ Perceptions were captured through ratings given on dimensions that included
+ ease of access, quality of service, price competitiveness, and reputation.
 \end_layout
 
 \begin_layout Standard
-We find that agro-input dealers, traders and processors consistently rate
- themselves higher than how farmers rate them, except for one attribute
- that is easily observable by both those who rate and those who get rated.
+We find that agro-input dealers, traders, and processors consistently rate
+ themselves higher than farmers rate them, except for one attribute—gender—that
+ is easily observable by both those who rate and those who get rated.
  We do not find that gender plays a significant role in self-assessments,
  except perhaps for the fact that women seem to rate themselves somewhat
  higher on the quality dimension.
@@ -3032,20 +3023,19 @@ We find that agro-input dealers, traders and processors consistently rate
  and we find no signs of gender-based homophily for women in the ratings.
  There is some evidence that female farmers rate more favorably than male
  farmers, but only in some dimensions.
- Taken together, women actors rate themselves relatively higher and/or farmers
+ Taken together, women actors rate themselves relatively higher and farmers
  rate female actors relatively lower when price and quality considerations
  are concerned.
- Female actors may also be too modest with respect to the reputation they
- have.
+ Female actors rate themselves lower in regard to reputation.
+ 
 \end_layout
 
 \begin_layout Standard
-In terms of policy implications, it is reassuring to find that one of the
- key hypotheses in this study, namely that female agro-input dealers, traders
- and processors are systematically rated lower than male actors, was not
- supported by the data.
- Still, given an extensive literature that does find discrimination in a
- variety of contexts 
+The data did not support one of study's key hypotheses that female agro-input
+ dealers, traders, and processors are systematically rated lower than male
+ actors.
+ Still, given the extensive literature that finds discrimination in a variety
+ of contexts 
 \begin_inset CommandInset citation
 LatexCommand citep
 before "eg."
@@ -3055,24 +3045,24 @@ literal "false"
 \end_inset
 
 , we caution against sweeping conclusions.
- Heterogeneous effects between actors may suffer from low sample size and
- limited variation in the gender of the actor.
+ Heterogeneous effects between actors may potentially result from low sample
+ size and limited variation in the gender of the actor.
  For instance, we do find that male agro-input dealers get higher scores
- for location than women, and this effect may become significant if the
+ for location than women, an effect which may become significant if the
  sample size grows.
 \end_layout
 
 \begin_layout Standard
-The fact that self-assessments are always larger than farmer rating may
+The fact that self-assessments are always higher than farmer ratings may
  either mean that actors are overconfident or farmers are overcritical.
- Overconfidence of value chain actors may delay innovations within the chain
- as actors do not see the need to improve.
- Farmers that expect more from value chain actors are likely to demand less
- services from these actors.
+ Overconfidence of value chain actors may mean that actors do not see the
+ nee to improve, which may delay innovations within the chain.
+ Farmers that expect more from value chain actors are likely to demand more
+ limited services from these actors.
  As such, policy interventions aimed at reducing the gap between actor self-asse
 ssments and farmer ratings are likely to increase efficiency in value chains.
  Examples of such policy interventions include certification by independent
- agency or non-centralized clearing house mechanisms based on crowd sourcing
+ agencies or non-centralized clearinghouse mechanisms based on crowdsourcing
  
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -3085,10 +3075,10 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-Even though we did not find that farmers rate female agents differently,
- gender may still affect inclusiveness of value chains.
+Even though we did not find that farmers rate female actors differently,
+ gender may still affect the inclusiveness of value chains.
  For instance, the tendency of female farmers to rate more favourably may
- result in input and service providers treating women farmers differently.
+ result in input and service providers treating female farmers differently.
 \begin_inset Foot
 status collapsed
 
@@ -3101,22 +3091,23 @@ The leniency of female farmer may mean actors are not compelled to provide
 
 \end_inset
 
- The fact that female farmers rate higher also means that the gap between
- self-assessments of actors and ratings of female farmers is smaller than
- the gap between self-assessments of actors and ratings of male farmers.
- This may lead to differences in the efficiency of the chain conditional
+ The fact that female farmers provide higher ratings also means that the
+ gap between the self-assessments of actors and ratings by female farmers
+ is smaller than the gap between the self-assessments of actors and ratings
+ by male farmers.
+ This gap may lead to differences in the efficiency of the chain conditional
  on the gender of the farmers.
 \end_layout
 
 \begin_layout Standard
-Finally, judged by farmer perceptions, there seem to be issues related to
- price competitiveness within the maize value chain, as agro-input dealers,
- traders and processors are consistently scored lowest.
- Quality, on the other hand, seems to be rated fairly good.
+Finally, judging by farmer perceptions, there seem to be issues related
+ to price competitiveness within the maize value chain, as agro-input dealers,
+ traders, and processors are consistently scored lowest.
+ Quality, on the other hand, seems to be rated fairly well.
  Input dealers, for example, are perceived to be performing poorly in terms
- of price competitiveness but get highest scores for quality.
- This seems to contradict recent studies that blame poor quality of inputs
- as the root cause for low adoption by farmers 
+ of price competitiveness but receive the highest scores for quality.
+ This seems to contradict recent studies that blame the poor quality of
+ inputs as the root cause for low adoption by farmers 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Bold2017"
@@ -3126,8 +3117,8 @@ literal "false"
 
 .
  Rather, policies that encourage market entry and competition between agro-input
- dealers, traders and processors are likely increase price competitiveness
- of value chain actors.
+ dealers, traders, and processors are likely to increase the price competitivene
+ss of value chain actors.
 \end_layout
 
 \begin_layout Section*
@@ -3142,7 +3133,7 @@ This research was partly funded by the CGIAR Research Program on Policies,
  The authors also acknowledge financial support from The Netherlands – CGIAR
  research programme on Seed Systems Development, grant number W08.240.105,
  funded by the Netherlands Organisation for Scientific Research (NWO-WOTRO).
- We thank Richard Ariong, Leocardia Nabwire, Wilberforce Walukano and Marc
+ We thank Richard Ariong, Leocardia Nabwire, Wilberforce Walukano, and Marc
  Charles Wanume for excellent field support.
  The analysis contained here is the sole responsibility of the authors,
  and does not reflect the views of any funding agency or organization mentioned
