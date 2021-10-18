@@ -3173,7 +3173,7 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Summary Statistics of the variables related to the farmers.
+Summary statistics of variables related to farmers
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:table1"
@@ -3215,7 +3215,7 @@ hline
 \backslash
 multicolumn{6}{c}{
 \backslash
-textit{Summary Statistics (Farmers)}} 
+textit{Summary statistics (Farmers)}} 
 \backslash
 
 \backslash
@@ -4129,7 +4129,7 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Summary Statistics of the variables related to dealers, traders, and processors.
+Summary statistics of variables related to dealers, traders, and processors
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:table2"
@@ -4195,7 +4195,7 @@ cline{2-7}
 \backslash
 multicolumn{6} {c} {
 \backslash
-textit{Agro-Input Dealers}}  
+textit{Agro-input dealers}}  
 \backslash
 
 \backslash
@@ -4955,7 +4955,7 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-ICC coefficients for inter-rater reliability and intra-rater reliability.
+ICC coefficients for inter-rater reliability and intra-rater reliability
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:table3"
@@ -5019,11 +5019,11 @@ cline{2-3}
 \backslash
 multicolumn{1} {c} {
 \backslash
-textit{Inter-Rater Reliability (Agreement)}} &  
+textit{Inter-rater reliability (Agreement)}} &  
 \backslash
 multicolumn{1} {c} {
 \backslash
-textit{Intra-Rater Reliability (Agreement)}}  
+textit{Intra-rater reliability (Agreement)}}  
 \backslash
 
 \backslash
@@ -5212,7 +5212,7 @@ status collapsed
 
 \begin_layout Plain Layout
 Average ratings (all dimensions) from farmers and average self-ratings (all
- dimensions) from dealers, traders, and processors, grouped by gender.
+ dimensions) from dealers, traders, and processors, grouped by gender
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:table4"
@@ -5264,7 +5264,7 @@ hline
 \backslash
 multicolumn{12}{c}{
 \backslash
-textit{Average Ratings (Mean)}} 
+textit{Average ratings (Mean)}} 
 \backslash
 
 \backslash
@@ -5288,7 +5288,7 @@ cline{2-13}
 \backslash
 multicolumn{12} {c} {
 \backslash
-textit{Overall Average (All Dimensions)}}  
+textit{Overall average (All dimensions)}}  
 \backslash
 
 \backslash
@@ -5307,9 +5307,9 @@ cline{2-13}
 \backslash
 multicolumn{3} {c} {All actors} &  
 \backslash
-multicolumn{3} {c} {Agro-Input Dealers} &  
+multicolumn{3} {c} {Agro-input dealers} &  
 \backslash
-multicolumn{3} {c} {Assembly Traders} &  
+multicolumn{3} {c} {Assembly traders} &  
 \backslash
 multicolumn{3} {c} {Millers} 
 \backslash
@@ -7661,8 +7661,7 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-T-test results for differences between the self-ratings and the farmer ratings.
- 
+T-test results for differences between self-ratings and farmer ratings 
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:T-test-results"
@@ -7878,7 +7877,7 @@ status collapsed
 
 \begin_layout Plain Layout
 Regression results for the impact of farmer's and actor's gender on the
- ratings given by the farmers to the actors.
+ ratings given to actors by farmers
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:table5"
@@ -7925,7 +7924,7 @@ multicolumn{5}{c}{
 \backslash
 textit{
 \backslash
-footnotesize Dependent variable: Ratings from Farmers}} 
+footnotesize Dependent variable: Ratings from farmers}} 
 \backslash
 
 \backslash
@@ -9027,7 +9026,7 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Regression results looking at the impact of actor's gender on their self-ratings.
+Regression results looking at the impact of actor gender on self-ratings
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:table6"
@@ -9677,14 +9676,14 @@ label{table:table6}
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Regression results for the impact of farmer's and actor's gender on the
- differences between actor self-ratings and farmer ratings.
+Regression results for the impact of farmer and actor gender on the differences
+ between actor self-ratings and farmer ratings
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:table7"
