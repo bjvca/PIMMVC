@@ -1631,6 +1631,7 @@ status open
 
 \begin_layout Plain Layout
 Map of the study area.
+ Source: Authors.
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Map-of-the-study-area"
@@ -3056,7 +3057,7 @@ literal "false"
 The fact that self-assessments are always higher than farmer ratings may
  either mean that actors are overconfident or farmers are overcritical.
  Overconfidence of value chain actors may mean that actors do not see the
- nee to improve, which may delay innovations within the chain.
+ need to improve, which may delay innovations within the chain.
  Farmers that expect more from value chain actors are likely to demand more
  limited services from these actors.
  As such, policy interventions aimed at reducing the gap between actor self-asse
