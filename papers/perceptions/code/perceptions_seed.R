@@ -1,5 +1,5 @@
 ### run in:  ../PIMMVC/papers/perceptions
-#rm(list=ls())
+rm(list=ls())
 path <- getwd()
 
 library(miceadds)
@@ -24,11 +24,45 @@ path_2 <- strsplit(path, "/papers/perceptions")[[1]]
 ###########  MODEL 3 ###############
 ##################################################################################################################
 
+rating_dyads <- read.csv(paste(path_2,"papers/perceptions/data_seed_systems/data/farmer/rating_dyads.csv", sep = "/"), stringsAsFactors = FALSE)[c("shop_ID", "farmer_ID",          "general_rating","location_rating","price_rating","quality_rating", "stock_rating","reputation_rating","seed_quality_general_rating","seed_yield_rating","seed_drought_rating","seed_disease_rating","seed_maturing_rating","seed_germinate_rating")]
+rating_dyads_midline <- read.csv(paste(path_2,"papers/perceptions/data_seed_systems_midline/data/farmer/midline_rating_dyads.csv", sep = "/"), stringsAsFactors = FALSE)[c("shop_ID", "farmer_ID", "general_rating","location_rating","price_rating","quality_rating","stock_rating","reputation_rating","seed_quality_general_rating","seed_yield_rating","seed_drought_rating","seed_disease_rating","seed_maturing_rating","seed_germinate_rating")]
 
-rating_dyads <- read.csv(paste(path_2,"/papers/perceptions/data_seed_systems/data/farmer/rating_dyads.csv", sep = "/"), stringsAsFactors = FALSE)
+### check if gender of agro input dealer in baseline corresponds to gender in midline:
 baseline_dealer <- read.csv(paste(path_2,"papers/perceptions/data_seed_systems/data/input_dealer/baseline_dealer.csv", sep="/"), stringsAsFactors = FALSE)
+midline_dealer <- read.csv(paste(path_2,"papers/perceptions/data_seed_systems_midline/data/input_dealer/midline_dealer.csv", sep="/"), stringsAsFactors = FALSE)
 
-#how many farmers have rated at least one agro-input dealers (i.e. how many unique farmerIDs are in the dyads dataset)?
+
+merged_dealer <- merge(baseline_dealer, midline_dealer, by="shop_ID")
+
+#select only those that have same gender in baseline and endline
+to_select <- merged_dealer$shop_ID[merged_dealer$maize.owner.agree.gender == merged_dealer$owner.agree.gender]
+
+#stack rating dyads from the two rounds
+rating_dyads <- rbind(rating_dyads, rating_dyads_midline)
+
+#keep only those that have same gender in baseline and endline
+
+rating_dyads <- subset(rating_dyads,shop_ID  %in% to_select)
+
+# convert to numbers and aggregate scores at agro-input dealer level for between regression
+
+rating_dyads[c("general_rating","location_rating","price_rating","quality_rating","stock_rating","reputation_rating","seed_quality_general_rating","seed_yield_rating","seed_drought_rating","seed_disease_rating","seed_maturing_rating","seed_germinate_rating") ] <- lapply(rating_dyads[c("general_rating","location_rating","price_rating","quality_rating","stock_rating","reputation_rating","seed_quality_general_rating","seed_yield_rating","seed_drought_rating","seed_disease_rating","seed_maturing_rating","seed_germinate_rating")], function(x) as.numeric(as.character(x)))
+
+rating_dyads[c("seed_quality_general_rating","seed_yield_rating","seed_drought_rating","seed_disease_rating","seed_maturing_rating","seed_germinate_rating") ] <- lapply(rating_dyads[c("seed_quality_general_rating","seed_yield_rating","seed_drought_rating","seed_disease_rating","seed_maturing_rating","seed_germinate_rating")], function(x) replace(x, x == 98,NA) )
+
+shop_av <- aggregate(rating_dyads[c("general_rating","location_rating","price_rating","quality_rating","stock_rating","reputation_rating","seed_quality_general_rating","seed_yield_rating","seed_drought_rating","seed_disease_rating","seed_maturing_rating","seed_germinate_rating")],list(rating_dyads$shop_ID),FUN=mean, na.rm=T)
+
+names(shop_av)[1] <- "shop_ID"
+#merge in dealer gender from baseline data
+rating_dyads <- merge(shop_av, baseline_dealer[c("shop_ID","maize.owner.agree.gender")],  by.x="shop_ID", by.y="shop_ID", all.x=T)
+
+#rename
+names(rating_dyads)[names(rating_dyads) == "maize.owner.agree.gender"] <- "gender"
+
+rating_dyads$overall_rating <-  rowMeans(rating_dyads[c("general_rating","location_rating","price_rating","quality_rating","stock_rating","reputation_rating")],na.rm=T)
+rating_dyads$score  <-  rowMeans(rating_dyads[c("seed_quality_general_rating","seed_yield_rating","seed_drought_rating","seed_disease_rating","seed_maturing_rating","seed_germinate_rating")],na.rm=T)
+summary(lm(general_rating~gender,data=rating_dyads))
+
 #print(length(table(rating_dyads$farmer_ID)))
 
 
@@ -9742,9 +9776,15 @@ rann2<- rbind( c((format(round(sum(coefnn8[1,1]),digits=3),nsmall=0)),
 ####################### BETWEEN DEALER --- FOCUS ON FARMER'S GENDER ##############################################
 ###  Question 2
 
-rating_dyads <- read.csv(paste(path_2,"/papers/perceptions/data_seed_systems/data/farmer/rating_dyads.csv", sep = "/"), stringsAsFactors = FALSE)
+
+
 ##Farmers' dataset
 farmers_seed <- read.csv(paste(path_2,"/papers/perceptions/data_seed_systems/data/farmer/baseline_farmers.csv", sep = "/"), stringsAsFactors = FALSE)
+farmers_seed_midline <- read.csv(paste(path_2,"papers/perceptions/data_seed_systems_midline/data/farmer/midline.csv", sep = "/"), stringsAsFactors = FALSE)
+
+merged_farmers <- merge(farmers_seed, farmers_seed_midline, by="farmer_ID")
+
+/home/bjvca/data/projects/PIMMVC/papers/perceptions/data_seed_systems_midline/data/farmer/midline.csv
 #how many dealers have been rated (i.e. how many unique shopIDs are in the dyads dataset)?
 #print(length(table(rating_dyads$shop_ID)))
 
