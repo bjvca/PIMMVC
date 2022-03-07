@@ -50,6 +50,20 @@ rating_dyads[c("general_rating","location_rating","price_rating","quality_rating
 
 rating_dyads[c("seed_quality_general_rating","seed_yield_rating","seed_drought_rating","seed_disease_rating","seed_maturing_rating","seed_germinate_rating") ] <- lapply(rating_dyads[c("seed_quality_general_rating","seed_yield_rating","seed_drought_rating","seed_disease_rating","seed_maturing_rating","seed_germinate_rating")], function(x) replace(x, x == 98,NA) )
 
+##descriptive statistics
+rating_dyads <- subset(rating_dyads, !is.na(rating_dyads$general_rating))
+
+
+max(tapply(rating_dyads$ones,rating_dyads$shop_ID, sum))
+
+min(tapply(rating_dyads$ones,rating_dyads$shop_ID, sum))
+mean(tapply(rating_dyads$ones,rating_dyads$shop_ID, sum))
+max(tapply(rating_dyads$ones,rating_dyads$farmer_ID, sum))
+min(tapply(rating_dyads$ones,rating_dyads$farmer_ID, sum))
+mean(tapply(rating_dyads$ones,rating_dyads$farmer_ID, sum))
+
+#create averages for between regression
+
 shop_av <- aggregate(rating_dyads[c("general_rating","location_rating","price_rating","quality_rating","stock_rating","reputation_rating","seed_quality_general_rating","seed_yield_rating","seed_drought_rating","seed_disease_rating","seed_maturing_rating","seed_germinate_rating")],list(rating_dyads$shop_ID),FUN=mean, na.rm=T)
 
 names(shop_av)[1] <- "shop_ID"
