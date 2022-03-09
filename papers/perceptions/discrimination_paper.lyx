@@ -447,6 +447,22 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
+\begin_inset CommandInset citation
+LatexCommand citet
+key "KLEIN2021257"
+literal "false"
+
+\end_inset
+
+ find that financial advisor's gender is one of the most important factors
+ influencing a consumer's decision when choosing an investment advisor.
+ Female advisors’ gender was found to have a negative effect on the desire
+ to invest, and this negative attitude was found to be significantly higher
+ among male respondents.
+ 
+\end_layout
+
+\begin_layout Standard
 Discrimination has been less studied in instances where consumers assess
  a set of service providers or vendors.
  
