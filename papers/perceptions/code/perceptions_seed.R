@@ -298,6 +298,78 @@ summary(lm(stock_rating~gender+farmer_ID, data = rat))
 plm(reputation_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
 summary(lm(reputation_rating~gender+farmer_ID, data = rat))
 
+
+fe3<- rbind( c((format(round(mean(fixef(plm(overall_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within")))[1],digits=3),nsmall=0)),
+               (format(round(mean(fixef(plm(general_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within")))[1],digits=3),nsmall=0)),
+               (format(round(mean(fixef(plm(location_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within")))[1],digits=3),nsmall=0)),
+               (format(round(mean(fixef(plm(price_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within")))[1],digits=3),nsmall=0)),
+               (format(round(mean(fixef(plm(quality_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within")))[1],digits=3),nsmall=0)),
+               (format(round(mean(fixef(plm(stock_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within")))[1],digits=3),nsmall=0)),
+               (format(round(mean(fixef(plm(reputation_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within")))[1],digits=3),nsmall=0))),
+             c((format(round(sum((plm(overall_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$coefficients[1]),digits=3),nsmall=0)),
+               (format(round(sum((plm(general_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$coefficients[1]),digits=3),nsmall=0)),
+               (format(round(sum((plm(location_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$coefficients[1]),digits=3),nsmall=0)),
+               (format(round(sum((plm(price_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$coefficients[1]),digits=3),nsmall=0)),
+               (format(round(sum((plm(quality_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$coefficients[1]),digits=3),nsmall=0)),
+               (format(round(sum((plm(stock_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$coefficients[1]),digits=3),nsmall=0)),
+               (format(round(sum((plm(reputation_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$coefficients[1]),digits=3),nsmall=0))),
+             c((format(round((coeftest(plm(overall_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(overall_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
+                             [1,2],digits=3),nsmall=0)),
+               (format(round((coeftest(plm(general_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(general_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
+                             [1,2],digits=3),nsmall=0)),
+               (format(round((coeftest(plm(location_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(location_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
+                             [1,2],digits=3),nsmall=0)),
+               (format(round((coeftest(plm(price_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(price_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
+                             [1,2],digits=3),nsmall=0)),
+               (format(round((coeftest(plm(quality_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(quality_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
+                             [1,2],digits=3),nsmall=0)),
+               (format(round((coeftest(plm(stock_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(stock_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
+                             [1,2],digits=3),nsmall=0)),
+               (format(round((coeftest(plm(reputation_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(reputation_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
+                             [1,2],digits=3),nsmall=0))),
+             
+             c((format(round((coeftest(plm(overall_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(overall_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
+                             [1,4],digits=3),nsmall=0)),
+               (format(round((coeftest(plm(general_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(general_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
+                             [1,4],digits=3),nsmall=0)),
+               (format(round((coeftest(plm(location_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(location_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
+                             [1,4],digits=3),nsmall=0)),
+               (format(round((coeftest(plm(price_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(price_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
+                             [1,4],digits=3),nsmall=0)),
+               (format(round((coeftest(plm(quality_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(quality_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
+                             [1,4],digits=3),nsmall=0)),
+               (format(round((coeftest(plm(stock_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(stock_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
+                             [1,4],digits=3),nsmall=0)),
+               (format(round((coeftest(plm(reputation_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(reputation_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
+                             [1,4],digits=3),nsmall=0))),
+             
+             
+             c((format(round(summary(plm(overall_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[1],digits=3),nsmall=0)),
+               (format(round(summary(plm(general_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[1],digits=3),nsmall=0)),
+               (format(round(summary(plm(location_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[1],digits=3),nsmall=0)),
+               (format(round(summary(plm(price_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[1],digits=3),nsmall=0)),
+               (format(round(summary(plm(quality_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[1],digits=3),nsmall=0)),
+               (format(round(summary(plm(stock_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[1],digits=3),nsmall=0)),
+               (format(round(summary(plm(reputation_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[1],digits=3),nsmall=0))),
+             
+             c((format(round(summary(plm(overall_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[2],digits=3),nsmall=0)),
+               (format(round(summary(plm(general_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[2],digits=3),nsmall=0)),
+               (format(round(summary(plm(location_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[2],digits=3),nsmall=0)),
+               (format(round(summary(plm(price_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[2],digits=3),nsmall=0)),
+               (format(round(summary(plm(quality_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[2],digits=3),nsmall=0)),
+               (format(round(summary(plm(stock_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[2],digits=3),nsmall=0)),
+               (format(round(summary(plm(reputation_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[2],digits=3),nsmall=0))),
+             
+             c((format(round(nobs(plm(overall_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within")),digits=3),nsmall=0)),
+               (format(round(nobs(plm(general_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within")),digits=3),nsmall=0)),
+               (format(round(nobs(plm(location_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within")),digits=3),nsmall=0)),
+               (format(round(nobs(plm(price_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within")),digits=3),nsmall=0)),
+               (format(round(nobs(plm(quality_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within")),digits=3),nsmall=0)),
+               (format(round(nobs(plm(stock_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within")),digits=3),nsmall=0)),
+               (format(round(nobs(plm(reputation_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within")),digits=3),nsmall=0)))
+)
+
+
 #seed ratings 
 
 plm(score~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
