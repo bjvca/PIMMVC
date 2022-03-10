@@ -394,7 +394,7 @@ rat$dealer_ID <- 1:nrow(rat) #creating dealer ID, otherwise there will be couple
 rat$general_rating<-as.numeric(rat$general_rating)
 rat$location_rating<-as.numeric(rat$location_rating)
 rat$price_rating<-as.numeric(rat$price_rating)
-rat$quality_rating<-as.numeric(rat$stock_rating)
+rat$quality_rating<-as.numeric(rat$quality_rating)
 rat$stock_rating<-as.numeric(rat$stock_rating)
 rat$reputation_rating<-as.numeric(rat$reputation_rating)
 

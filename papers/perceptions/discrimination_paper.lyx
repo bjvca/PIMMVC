@@ -788,6 +788,19 @@ d
 \begin_inset Formula $\mu$
 \end_inset
 
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+not really, this would only be the case if the same set of farmers rate
+ all agro-input dealers.
+ Can we assume this is the case on average though? Maybe we should put this
+ in a footnote.
+\end_layout
+
+\end_inset
+
 , while the dealer specific component 
 \begin_inset Formula $\omega_{d}$
 \end_inset
@@ -2043,45 +2056,24 @@ noprefix "false"
 \end_layout
 
 \begin_layout Standard
-The fact that, even after controlling for observable dealer characteristics,
- we find a significant positive coefficient from being male suggests that
- the difference originates from the farmers.
- However, farmer level characteristics could confound the relationship between
+Farmer level characteristics could also confound the relationship between
  an agro-input dealer's gender and the rating that the farmer provides.
  For example, it may be that farmers that are better educated generally
  provide higher ratings.
  At the same time, it may be that farmers that are higher educated are more
  inclined to shop at male owned agro-input dealerships.
  This makes it difficult to differentiate the pure gender discrimination
- effect from the effect arising from differences in education.
- 
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-Should we add here that differentiating between these cases is very important
- for policy? Eg behavioural change communication campaigns addressing discrimina
-tion may have little impact if the effect comes from education.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Fortunately, we often have instances where the same farmer rates both male
+ effect from the effect arising from differences in education of the farmer.
+ Fortunately, we often have instances where the same farmer rates both male
  and female agro-input dealers.
- This allows us to exploit within-farmer variation for identification using
- farmer fixed effects.
+ This allows us to exploit within-farmer variation for identification.
  While we would be able to control for a farmer's education level by simply
- including it an OLS regression, using farmer fixed effects also controls
+ including it an OLS regression, a within-farmer transformation also controls
  for characteristics which would be (almost) impossible to measure and to
  control for like motivation, kindness, locus of control, norms and values,
  etc.
- The farmer fixed effects estimator removes farmer level heterogeneity for
- all attributes that remain constant within the farmer, regardless of which
- dealer is rated.
+ In other words, the within-farmer (fixed effects) estimator removes farmer
+ level heterogeneity.
  
 \end_layout
 
@@ -2108,7 +2100,17 @@ y_{f,d}-\overline{y}_{f}=\gamma\left(g_{f,d}-\overline{g}_{f}\right)+\varepsilon
 \end_layout
 
 \begin_layout Standard
-Table 
+Tables 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:q1_farmer_FE_dealer_no_controls"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ and 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:q1_farmer_FE_seed_no_controls"
@@ -2118,7 +2120,7 @@ noprefix "false"
 
 \end_inset
 
- shows parameter estimates for an indicator variable that takes the value
+ show parameter estimates for an indicator variable that takes the value
  of one if the agro-input dealer is male, estimated using a model that includes
  farmer fixed effects (using the within transformation of equation 
 \begin_inset CommandInset ref
@@ -2141,8 +2143,7 @@ As errors are also correlated within agro-input dealers, we report standard
 
 \end_inset
 
- The outcome variables are the seed quality ratings.
- Table 
+ In Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:q1_farmer_FE_dealer_no_controls"
@@ -2152,9 +2153,84 @@ noprefix "false"
 
 \end_inset
 
- estimates the same model, but now using the more general agro-input dealer
- ratings as outcome variables.
- Here we still find the difference related to price competitiveness that
+, we use the general agro-input dealer ratings as outcome variables.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:q1_farmer_FE_seed_no_controls"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ estimates the same model, but now for the more specific seed quality related
+ ratings.
+\end_layout
+
+\begin_layout Standard
+Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:q1_farmer_FE_dealer_no_controls"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, in line with Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:q1_betw_dealers_dealer_no_controls"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, shows that male agro-input dealers receive significantly higher ratings
+ in the areas of price competitiveness, reputation, and quality in general.
+ The index also shows a significant difference between male and female dealers.
+ Interestingly, the largest difference in now found for reputation: male
+ dealers have significant better reputation than female agro input dealers.
+ At the same time, the gender difference in perceptions related to stock
+ has disappeared now that we control for farmer level heterogeneity.
+ 
+\end_layout
+
+\begin_layout Standard
+Comparing table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:q1_farmer_FE_seed_no_controls"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ to 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:q1_betw_dealers_seed_no_controls"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, we see that now some of the differences have become significant.
+ For perceptions related to seed yield, male agro-input dealers receive
+ a rating score that is on average 0.095 higher.
+ Despite the fact that only two of the seed quality dimensions perceptions
+ seem to significantly differ between male and female dealers, the index
+ also shows a significant difference.
+ 
+\end_layout
+
+\begin_layout Standard
+Here we still find the difference related to price competitiveness that
  was also identified in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -2190,21 +2266,6 @@ noprefix "false"
 
  for the more general input dealer ratings.
  
-\end_layout
-
-\begin_layout Standard
-Overall, we see that, after controlling for farmer heterogeneity, the difference
-s in ratings between male and female agro-input dealers disappears.
- The fact that a within-farmer model does not lead the same patterns as
- regressions on dealer averages suggests that the difference in itself is
- not some homogeneous trait inherent to all farmers, but that it is caused
- by a combination of factors that differ between farmers.
- This seems reasonable, as differences in ratings are probably caused by
- factors such as education levels, or traits that are less easy to capture
- such as norms and values held by the farmer.
- These are typically constant within a farmer but may differ between farmers.
- Hence, controlling for such farmer level heterogeneity also removes the
- gender dealer effect.
 \end_layout
 
 \begin_layout Standard
@@ -2257,469 +2318,6 @@ noprefix "false"
 
 ).
  
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float table
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Farmer fixed effects model focusing on seed ratings (no controls included,
- Q1).
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:q1_farmer_FE_seed_no_controls"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-scriptsize 
-\backslash
-begin{center} 
-\backslash
-begin{tabular}{@{
-\backslash
-extracolsep{5pt}}lccccccc}  
-\backslash
-
-\backslash
-[-1.8ex]
-\backslash
-hline  
-\backslash
-hline 
-\backslash
-
-\backslash
-[-1.8ex]   & 
-\backslash
-multicolumn{7}{c}{
-\backslash
-textit{
-\backslash
-footnotesize Dependent variable: Ratings given by the farmers}} 
-\backslash
-
-\backslash
-  
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-cline{2-8} 
-\backslash
-
-\backslash
-[-1.8ex]  & 
-\backslash
-multicolumn{1} {c} {Average}  &
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-multicolumn{1} {c} {Seed's}&
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-multicolumn{1} {c} {Seed's}&
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-multicolumn{1} {c} {Seed's}&
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-multicolumn{1} {c} {Seed's}&
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-multicolumn{1} {c} {Seed's}&
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-multicolumn{1} {c} {Seed's}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-& 
-\backslash
-multicolumn{1} {c} {seed}  &
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-multicolumn{1} {c} {general}&
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-multicolumn{1} {c} {yield}&
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-multicolumn{1} {c} {drought}&
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-multicolumn{1} {c} {pest/disease}&
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-multicolumn{1} {c} {early}&
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-multicolumn{1} {c} {germination}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-& 
-\backslash
-multicolumn{1} {c} {rating}  &
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-multicolumn{1} {c} {quality}&
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-multicolumn{1} {c} {}&
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-multicolumn{1} {c} {tolerance}&
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-multicolumn{1} {c} {tolerance}&
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-multicolumn{1} {c} {maturing}&
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-multicolumn{1} {c} {}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-[-1.8ex] & (1) & (2) & (3) & (4) & (5)& (6)& (7) 
-\backslash
-
-\backslash
-  
-\backslash
-hline 
-\end_layout
-
-\begin_layout Plain Layout
-
-{Dealer is male}   & $
-\backslash
-Sexpr{fe1[2,1]}^{
-\backslash
-Sexpr{ifelse(fe1[4,1]<.01,"***",ifelse(fe1[4,1]<.03,"**",ifelse(fe1[4,1]<.1,"*","")
-))}}$ & $
-\backslash
-Sexpr{fe1[2,2]}^{
-\backslash
-Sexpr{ifelse(fe1[4,2]<.01,"***",ifelse(fe1[4,2]<.03,"**",ifelse(fe1[4,2]<.1,"*","")
-))}}$  & $
-\backslash
-Sexpr{fe1[2,3]}^{
-\backslash
-Sexpr{ifelse(fe1[4,3]<.01,"***",ifelse(fe1[4,3]<.03,"**",ifelse(fe1[4,3]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{fe1[2,4]}^{
-\backslash
-Sexpr{ifelse(fe1[4,4]<.01,"***",ifelse(fe1[4,4]<.03,"**",ifelse(fe1[4,4]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{fe1[2,5]}^{
-\backslash
-Sexpr{ifelse(fe1[4,5]<.01,"***",ifelse(fe1[4,5]<.03,"**",ifelse(fe1[4,5]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{fe1[2,6]}^{
-\backslash
-Sexpr{ifelse(fe1[4,6]<.01,"***",ifelse(fe1[4,6]<.03,"**",ifelse(fe1[4,6]<.1,"*","")
-))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{fe1[2,7]}^{
-\backslash
-Sexpr{ifelse(fe1[4,7]<.01,"***",ifelse(fe1[4,7]<.03,"**",ifelse(fe1[4,7]<.1,"*","")
-))}}$   
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $(
-\backslash
-Sexpr{fe1[3,1]})$   &  $(
-\backslash
-Sexpr{fe1[3,2]})$ & $(
-\backslash
-Sexpr{fe1[3,3]})$ & $(
-\backslash
-Sexpr{fe1[3,4]})$ & $(
-\backslash
-Sexpr{fe1[3,5]})$ & $(
-\backslash
-Sexpr{fe1[3,6]})$ & $(
-\backslash
-Sexpr{fe1[3,7]})$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-     
-\backslash
-
-\backslash
- 
-\backslash
-hline 
-\end_layout
-
-\begin_layout Plain Layout
-
-{R$^2$ }                 &  $
-\backslash
-Sexpr{fe1[5,1]}$   &  $
-\backslash
-Sexpr{fe1[5,2]}$ & $
-\backslash
-Sexpr{fe1[5,3]}$ & $
-\backslash
-Sexpr{fe1[5,4]}$ & $
-\backslash
-Sexpr{fe1[5,5]}$ & $
-\backslash
-Sexpr{fe1[5,6]}$ & $
-\backslash
-Sexpr{fe1[5,7]}$
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-{Adj.
- R$^2$}                 &  $
-\backslash
-Sexpr{fe1[6,1]}$   &  $
-\backslash
-Sexpr{fe1[6,2]}$ & $
-\backslash
-Sexpr{fe1[6,3]}$ & $
-\backslash
-Sexpr{fe1[6,4]}$ & $
-\backslash
-Sexpr{fe1[6,5]}$ & $
-\backslash
-Sexpr{fe1[6,6]}$ & $
-\backslash
-Sexpr{fe1[6,7]}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-{Number of obs.}                 &  $
-\backslash
-Sexpr{fe1[7,1]}$   &  $
-\backslash
-Sexpr{fe1[7,2]}$ & $
-\backslash
-Sexpr{fe1[7,3]}$ & $
-\backslash
-Sexpr{fe1[7,4]}$ & $
-\backslash
-Sexpr{fe1[7,5]}$ & $
-\backslash
-Sexpr{fe1[7,6]}$ & $
-\backslash
-Sexpr{fe1[7,7]}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
- 
-\backslash
-hline
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-multicolumn{8}{l}{ 
-\backslash
-scriptsize{$^{***}p<0.01$; $^{**}p<0.05$; $^{*}p<0.1$.}} 
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-end{tabular} 
-\backslash
-end{center}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-tiny
-\end_layout
-
-\begin_layout Plain Layout
-
-Note: Here, the gender of the input dealer is a dummy variable carrying
- the value of either 0 or 1.
- Fixed effects or within estimation has been used at the farmer level.
- Cluster-robust SE are obtained by clustering at the dealer level (presented
- in ()).
- 
-\backslash
-label{table:table9} 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -3173,6 +2771,469 @@ Note: Here, the gender of the input dealer is a dummy variable carrying
   
 \backslash
 label{table:table11} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Farmer fixed effects model focusing on seed ratings (no controls included,
+ Q1).
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:q1_farmer_FE_seed_no_controls"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize 
+\backslash
+begin{center} 
+\backslash
+begin{tabular}{@{
+\backslash
+extracolsep{5pt}}lccccccc}  
+\backslash
+
+\backslash
+[-1.8ex]
+\backslash
+hline  
+\backslash
+hline 
+\backslash
+
+\backslash
+[-1.8ex]   & 
+\backslash
+multicolumn{7}{c}{
+\backslash
+textit{
+\backslash
+footnotesize Dependent variable: Ratings given by the farmers}} 
+\backslash
+
+\backslash
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-8} 
+\backslash
+
+\backslash
+[-1.8ex]  & 
+\backslash
+multicolumn{1} {c} {Average}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Seed's}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Seed's}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Seed's}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Seed's}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Seed's}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {Seed's}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{1} {c} {seed}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {general}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {yield}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {drought}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {pest/disease}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {early}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {germination}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{1} {c} {rating}  &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {quality}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {tolerance}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {tolerance}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {maturing}&
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1} {c} {}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+[-1.8ex] & (1) & (2) & (3) & (4) & (5)& (6)& (7) 
+\backslash
+
+\backslash
+  
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+{Dealer is male}   & $
+\backslash
+Sexpr{fe1[2,1]}^{
+\backslash
+Sexpr{ifelse(fe1[4,1]<.01,"***",ifelse(fe1[4,1]<.03,"**",ifelse(fe1[4,1]<.1,"*","")
+))}}$ & $
+\backslash
+Sexpr{fe1[2,2]}^{
+\backslash
+Sexpr{ifelse(fe1[4,2]<.01,"***",ifelse(fe1[4,2]<.03,"**",ifelse(fe1[4,2]<.1,"*","")
+))}}$  & $
+\backslash
+Sexpr{fe1[2,3]}^{
+\backslash
+Sexpr{ifelse(fe1[4,3]<.01,"***",ifelse(fe1[4,3]<.03,"**",ifelse(fe1[4,3]<.1,"*","")
+))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{fe1[2,4]}^{
+\backslash
+Sexpr{ifelse(fe1[4,4]<.01,"***",ifelse(fe1[4,4]<.03,"**",ifelse(fe1[4,4]<.1,"*","")
+))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{fe1[2,5]}^{
+\backslash
+Sexpr{ifelse(fe1[4,5]<.01,"***",ifelse(fe1[4,5]<.03,"**",ifelse(fe1[4,5]<.1,"*","")
+))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{fe1[2,6]}^{
+\backslash
+Sexpr{ifelse(fe1[4,6]<.01,"***",ifelse(fe1[4,6]<.03,"**",ifelse(fe1[4,6]<.1,"*","")
+))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{fe1[2,7]}^{
+\backslash
+Sexpr{ifelse(fe1[4,7]<.01,"***",ifelse(fe1[4,7]<.03,"**",ifelse(fe1[4,7]<.1,"*","")
+))}}$   
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $(
+\backslash
+Sexpr{fe1[3,1]})$   &  $(
+\backslash
+Sexpr{fe1[3,2]})$ & $(
+\backslash
+Sexpr{fe1[3,3]})$ & $(
+\backslash
+Sexpr{fe1[3,4]})$ & $(
+\backslash
+Sexpr{fe1[3,5]})$ & $(
+\backslash
+Sexpr{fe1[3,6]})$ & $(
+\backslash
+Sexpr{fe1[3,7]})$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+     
+\backslash
+
+\backslash
+ 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+{R$^2$ }                 &  $
+\backslash
+Sexpr{fe1[5,1]}$   &  $
+\backslash
+Sexpr{fe1[5,2]}$ & $
+\backslash
+Sexpr{fe1[5,3]}$ & $
+\backslash
+Sexpr{fe1[5,4]}$ & $
+\backslash
+Sexpr{fe1[5,5]}$ & $
+\backslash
+Sexpr{fe1[5,6]}$ & $
+\backslash
+Sexpr{fe1[5,7]}$
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+{Adj.
+ R$^2$}                 &  $
+\backslash
+Sexpr{fe1[6,1]}$   &  $
+\backslash
+Sexpr{fe1[6,2]}$ & $
+\backslash
+Sexpr{fe1[6,3]}$ & $
+\backslash
+Sexpr{fe1[6,4]}$ & $
+\backslash
+Sexpr{fe1[6,5]}$ & $
+\backslash
+Sexpr{fe1[6,6]}$ & $
+\backslash
+Sexpr{fe1[6,7]}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+{Number of obs.}                 &  $
+\backslash
+Sexpr{fe1[7,1]}$   &  $
+\backslash
+Sexpr{fe1[7,2]}$ & $
+\backslash
+Sexpr{fe1[7,3]}$ & $
+\backslash
+Sexpr{fe1[7,4]}$ & $
+\backslash
+Sexpr{fe1[7,5]}$ & $
+\backslash
+Sexpr{fe1[7,6]}$ & $
+\backslash
+Sexpr{fe1[7,7]}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{8}{l}{ 
+\backslash
+scriptsize{$^{***}p<0.01$; $^{**}p<0.05$; $^{*}p<0.1$.}} 
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tabular} 
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: Here, the gender of the input dealer is a dummy variable carrying
+ the value of either 0 or 1.
+ Fixed effects or within estimation has been used at the farmer level.
+ Cluster-robust SE are obtained by clustering at the dealer level (presented
+ in ()).
+ 
+\backslash
+label{table:table9} 
 \end_layout
 
 \end_inset
