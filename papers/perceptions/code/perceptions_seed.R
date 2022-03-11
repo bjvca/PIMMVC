@@ -2283,6 +2283,108 @@ rat$seed_germinate_rating<-as.numeric(rat$seed_germinate_rating)
 rat$overall_rating <-  rowMeans(rat[c("general_rating","location_rating","price_rating","quality_rating","stock_rating","reputation_rating")],na.rm=T) #overall dealer rating 
 rat$score  <-  rowMeans(rat[c("seed_quality_general_rating","seed_yield_rating","seed_drought_rating","seed_disease_rating","seed_maturing_rating","seed_germinate_rating")],na.rm=T)    #overall seed rating 
 
+
+#checking the controls 
+table(rat$maize.owner.agree.age) #age
+
+table(rat$maize.owner.agree.educ)  #education
+rat$prim<-0
+#finished secondary educ --- e and f ; a,b,c,d --- did not finish secondary educ
+rat$prim[rat$maize.owner.agree.educ=="e"|rat$maize.owner.agree.educ=="f"] <- 1
+rat$prim[rat$maize.owner.agree.educ=="g"]<- NA  #since g is other 
+table(rat$prim)   #finished secondary education 
+
+table(rat$maize.owner.agree.q3) #distance to tarmac road in km
+
+table(rat$maize.owner.agree.q4) #distance to murram road in km
+
+#selling only farm inputs
+table(rat$maize.owner.agree.q5)
+rat$inputsale<- ifelse(rat$maize.owner.agree.q5== 'Yes', 1, 0)
+table(rat$inputsale)
+
+#Q8. When was this agro-input shop established? (year)
+rat$years_shop <- 2020 - as.numeric(as.character(substr(rat$maize.owner.agree.q8, start=1, stop=4)))
+table(rat$years_shop)
+
+#seed stored in dedicated area?
+rat$maize.owner.agree.q69
+rat$dedarea<-as.character(rat$maize.owner.agree.temp.q69)
+rat$dedicated_area<- ifelse(rat$dedarea== 'Yes', 1, 0)
+table(rat$dedicated_area)
+
+#problem with rats or pests?
+#we try to formulate this as a good quality variable --- So, no problem with pests is good
+rat$maize.owner.agree.q71
+rat$pest<-as.character(rat$maize.owner.agree.temp.q71)
+rat$pest_prob<- ifelse(rat$pest== 'No', 1, 0)
+table(rat$pest_prob)
+
+#roof insulated?
+rat$maize.owner.agree.q73
+rat$roof_insu<-as.character(rat$maize.owner.agree.temp.q73)
+rat$insulated<- ifelse(rat$roof_insu== 'Yes', 1, 0)
+table(rat$insulated)
+
+#walls insulated?
+rat$maize.owner.agree.q74
+rat$wall_insu<-as.character(rat$maize.owner.agree.temp.q74)
+rat$wall_heatproof<- ifelse(rat$wall_insu== 'Yes', 1, 0)
+table(rat$wall_heatproof)
+
+#area ventilated?
+rat$maize.owner.agree.q75
+rat$vent<-as.character(rat$maize.owner.agree.temp.q75)
+rat$ventilation<- ifelse(rat$vent== 'Yes', 1, 0)
+table(rat$ventilation)
+
+#Q78. Lighting conditions in area where seed is stored?
+#we try to formulate this as good quality variable --- 2 is good lighting
+rat$badlighting <- 0
+rat$badlighting[rat$maize.owner.agree.temp.q78=="2"]<-1
+table(rat$badlighting)
+
+#Q79. On what surface are seed stored?
+#we try to formulate this as good quality variable ---- 3,4,5 are good storage surfaces
+rat$badstored <- 0
+rat$badstored[rat$maize.owner.agree.temp.q79=="3"|rat$maize.owner.agree.temp.q79=="4"|rat$maize.owner.agree.temp.q79=="5"]<-1
+rat$badstored[rat$maize.owner.agree.temp.q79==96]<-NA
+table(rat$badstored)
+
+#Q80. Do you see maize seed that is stored in open bags or containers?
+#we try to formulate this as good quality variable --- Not being stored in open containers is good
+rat$maize.owner.agree.q80
+rat$open<-as.character(rat$maize.owner.agree.temp.q80)
+rat$open_storage<- ifelse(rat$open== 'No', 1, 0)
+table(rat$open_storage)
+
+#Q81. Do you see any official certificates displayed in the store (eg that the shop was inspected ,that the owner attended trainings or that the business is registered with some association)
+rat$maize.owner.agree.q81
+rat$cert<-as.character(rat$maize.owner.agree.temp.q81)
+rat$cert_yes<- ifelse(rat$cert== 'Yes', 1, 0)
+table(rat$cert_yes)
+
+#Q82. On a scale of 1 to 5, rate this shop in terms of cleanness and professionality 1 poor 5 excellent
+rat$shop_rate<-as.numeric(as.character(rat$maize.owner.agree.temp.q82))
+table(rat$shop_rate)
+
+#Q96. Since last season, did you receive any complaint from a customer that seed you sold was not good?
+#we try to formulate this as good quality variable, not getting any complaint is good
+table(rat$maize.owner.agree.q96)
+rat$complaint<- ifelse(rat$maize.owner.agree.q96== 'No', 1, 0)
+table(rat$complaint)
+
+#Q70. Enter the temperature in the seed store (where seed is stored)
+table(rat$maize.owner.agree.q70)
+
+#roof leak proof?
+rat$maize.owner.agree.q72
+rat$roof<-as.character(rat$maize.owner.agree.temp.q72)
+rat$leakproof<- ifelse(rat$roof== 'Yes', 1, 0)
+table(rat$leakproof)
+
+
+
 #FE at farmer level --- without controls 
 #dealer ratings 
 
@@ -2473,3 +2575,517 @@ c((format(round((coeftest(plm(score~gender, data = rat, index=c("farmer_ID","dea
                (format(round(nobs(plm(seed_maturing_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within")),digits=3),nsmall=0)),
                (format(round(nobs(plm(seed_germinate_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within")),digits=3),nsmall=0)))
 )
+
+
+#FE at farmer level --- with controls 
+#dealer ratings 
+
+plm1<-plm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+      badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
+summary(lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof+farmer_ID, data = rat))
+
+plm2<-plm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+      badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
+summary(lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof+farmer_ID, data = rat))
+
+plm3<-plm(location_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
+summary(lm(location_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+farmer_ID, data = rat))
+
+plm4<-plm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+      badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
+summary(lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof+farmer_ID, data = rat))
+
+plm5<-plm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+      badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
+summary(lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof+farmer_ID, data = rat))
+
+plm6<-plm(stock_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
+summary(lm(stock_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+farmer_ID, data = rat))
+
+plm7<-plm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+      badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
+summary(lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof+farmer_ID, data = rat))
+
+
+#storing dealer ratings
+fe4<- rbind(c((format(round(mean(fixef(plm1))[1],digits=3),nsmall=0)),
+              (format(round(mean(fixef(plm2))[1],digits=3),nsmall=0)),
+              (format(round(mean(fixef(plm3))[1],digits=3),nsmall=0)),
+              (format(round(mean(fixef(plm4))[1],digits=3),nsmall=0)),
+              (format(round(mean(fixef(plm5))[1],digits=3),nsmall=0)),
+              (format(round(mean(fixef(plm6))[1],digits=3),nsmall=0)),
+              (format(round(mean(fixef(plm7))[1],digits=3),nsmall=0))),
+            c((format(round(sum((plm1)$coefficients[1]),digits=3),nsmall=0)),
+              (format(round(sum((plm2)$coefficients[1]),digits=3),nsmall=0)),
+              (format(round(sum((plm3)$coefficients[1]),digits=3),nsmall=0)),
+              (format(round(sum((plm4)$coefficients[1]),digits=3),nsmall=0)),
+              (format(round(sum((plm5)$coefficients[1]),digits=3),nsmall=0)),
+              (format(round(sum((plm6)$coefficients[1]),digits=3),nsmall=0)),
+              (format(round(sum((plm7)$coefficients[1]),digits=3),nsmall=0))),
+            c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[1,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[1,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm3), vcovHC((plm3), type = "HC0",cluster = "time"))[1,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[1,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[1,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm6), vcovHC((plm6), type = "HC0",cluster = "time"))[1,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[1,2],digits=3),nsmall=0))),
+            c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[1,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[1,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm3), vcovHC((plm3), type = "HC0",cluster = "time"))[1,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[1,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[1,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm6), vcovHC((plm6), type = "HC0",cluster = "time"))[1,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[1,4],digits=3),nsmall=0))),
+            
+            c((format(round(sum((plm1)$coefficients[2]),digits=3),nsmall=0)),
+              (format(round(sum((plm2)$coefficients[2]),digits=3),nsmall=0)),
+              (format(round(sum((plm3)$coefficients[2]),digits=3),nsmall=0)),
+              (format(round(sum((plm4)$coefficients[2]),digits=3),nsmall=0)),
+              (format(round(sum((plm5)$coefficients[2]),digits=3),nsmall=0)),
+              (format(round(sum((plm6)$coefficients[2]),digits=3),nsmall=0)),
+              (format(round(sum((plm7)$coefficients[2]),digits=3),nsmall=0))),
+            c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[2,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[2,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm3), vcovHC((plm3), type = "HC0",cluster = "time"))[2,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[2,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[2,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm6), vcovHC((plm6), type = "HC0",cluster = "time"))[2,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[2,2],digits=3),nsmall=0))),
+            c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[2,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[2,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm3), vcovHC((plm3), type = "HC0",cluster = "time"))[2,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[2,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[2,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm6), vcovHC((plm6), type = "HC0",cluster = "time"))[2,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[2,4],digits=3),nsmall=0))),
+            
+            c((format(round(sum((plm1)$coefficients[3]),digits=3),nsmall=0)),
+              (format(round(sum((plm2)$coefficients[3]),digits=3),nsmall=0)),
+              (format(round(sum((plm3)$coefficients[3]),digits=3),nsmall=0)),
+              (format(round(sum((plm4)$coefficients[3]),digits=3),nsmall=0)),
+              (format(round(sum((plm5)$coefficients[3]),digits=3),nsmall=0)),
+              (format(round(sum((plm6)$coefficients[3]),digits=3),nsmall=0)),
+              (format(round(sum((plm7)$coefficients[3]),digits=3),nsmall=0))),
+            c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[3,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[3,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm3), vcovHC((plm3), type = "HC0",cluster = "time"))[3,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[3,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[3,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm6), vcovHC((plm6), type = "HC0",cluster = "time"))[3,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[3,2],digits=3),nsmall=0))),
+            c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[3,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[3,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm3), vcovHC((plm3), type = "HC0",cluster = "time"))[3,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[3,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[3,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm6), vcovHC((plm6), type = "HC0",cluster = "time"))[3,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[3,4],digits=3),nsmall=0))),
+            
+            c((format(round(sum((plm1)$coefficients[4]),digits=3),nsmall=0)),
+              (format(round(sum((plm2)$coefficients[4]),digits=3),nsmall=0)),
+              (format(round(sum((plm3)$coefficients[4]),digits=3),nsmall=0)),
+              (format(round(sum((plm4)$coefficients[4]),digits=3),nsmall=0)),
+              (format(round(sum((plm5)$coefficients[4]),digits=3),nsmall=0)),
+              (format(round(sum((plm6)$coefficients[4]),digits=3),nsmall=0)),
+              (format(round(sum((plm7)$coefficients[4]),digits=3),nsmall=0))),
+            c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[4,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[4,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm3), vcovHC((plm3), type = "HC0",cluster = "time"))[4,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[4,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[4,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm6), vcovHC((plm6), type = "HC0",cluster = "time"))[4,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[4,2],digits=3),nsmall=0))),
+            c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[4,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[4,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm3), vcovHC((plm3), type = "HC0",cluster = "time"))[4,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[4,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[4,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm6), vcovHC((plm6), type = "HC0",cluster = "time"))[4,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[4,4],digits=3),nsmall=0))),
+            
+            c((format(round(sum((plm1)$coefficients[5]),digits=3),nsmall=0)),
+              (format(round(sum((plm2)$coefficients[5]),digits=3),nsmall=0)),
+              (format(round(sum((plm3)$coefficients[5]),digits=3),nsmall=0)),
+              (format(round(sum((plm4)$coefficients[5]),digits=3),nsmall=0)),
+              (format(round(sum((plm5)$coefficients[5]),digits=3),nsmall=0)),
+              (format(round(sum((plm6)$coefficients[5]),digits=3),nsmall=0)),
+              (format(round(sum((plm7)$coefficients[5]),digits=3),nsmall=0))),
+            c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[5,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[5,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm3), vcovHC((plm3), type = "HC0",cluster = "time"))[5,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[5,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[5,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm6), vcovHC((plm6), type = "HC0",cluster = "time"))[5,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[5,2],digits=3),nsmall=0))),
+            c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[5,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[5,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm3), vcovHC((plm3), type = "HC0",cluster = "time"))[5,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[5,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[5,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm6), vcovHC((plm6), type = "HC0",cluster = "time"))[5,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[5,4],digits=3),nsmall=0))),
+              
+            c((format(round(sum((plm1)$coefficients[6]),digits=3),nsmall=0)),
+              (format(round(sum((plm2)$coefficients[6]),digits=3),nsmall=0)),
+             0,
+              (format(round(sum((plm4)$coefficients[6]),digits=3),nsmall=0)),
+              (format(round(sum((plm5)$coefficients[6]),digits=3),nsmall=0)),
+            0,
+              (format(round(sum((plm7)$coefficients[6]),digits=3),nsmall=0))),
+            c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[6,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[6,2],digits=3),nsmall=0)),
+             0,
+              (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[6,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[6,2],digits=3),nsmall=0)),
+          0,
+              (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[6,2],digits=3),nsmall=0))),
+            c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[6,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[6,4],digits=3),nsmall=0)),
+             0,
+              (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[6,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[6,4],digits=3),nsmall=0)),
+             0,
+              (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[6,4],digits=3),nsmall=0))),
+            
+            c((format(round(sum((plm1)$coefficients[7]),digits=3),nsmall=0)),
+              (format(round(sum((plm2)$coefficients[7]),digits=3),nsmall=0)),
+              0,
+              (format(round(sum((plm4)$coefficients[7]),digits=3),nsmall=0)),
+              (format(round(sum((plm5)$coefficients[7]),digits=3),nsmall=0)),
+              0,
+              (format(round(sum((plm7)$coefficients[7]),digits=3),nsmall=0))),
+            c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[7,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[7,2],digits=3),nsmall=0)),
+             0,
+              (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[7,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[7,2],digits=3),nsmall=0)),
+             0,
+              (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[7,2],digits=3),nsmall=0))),
+            c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[7,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[7,4],digits=3),nsmall=0)),
+             0,
+              (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[7,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[7,4],digits=3),nsmall=0)),
+              0,
+              (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[7,4],digits=3),nsmall=0))),
+            
+           
+            c((format(round(sum((plm1)$coefficients[8]),digits=3),nsmall=0)),
+              (format(round(sum((plm2)$coefficients[8]),digits=3),nsmall=0)),
+              0,
+              (format(round(sum((plm4)$coefficients[8]),digits=3),nsmall=0)),
+              (format(round(sum((plm5)$coefficients[8]),digits=3),nsmall=0)),
+              0,
+              (format(round(sum((plm7)$coefficients[8]),digits=3),nsmall=0))),
+            c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[8,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[8,2],digits=3),nsmall=0)),
+             0,
+              (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[8,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[8,2],digits=3),nsmall=0)),
+           0,
+              (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[8,2],digits=3),nsmall=0))),
+            c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[8,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[8,4],digits=3),nsmall=0)),
+             0,
+              (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[8,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[8,4],digits=3),nsmall=0)),
+            0,
+              (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[8,4],digits=3),nsmall=0))),
+            
+            c((format(round(sum((plm1)$coefficients[9]),digits=3),nsmall=0)),
+              (format(round(sum((plm2)$coefficients[9]),digits=3),nsmall=0)),
+             0,
+              (format(round(sum((plm4)$coefficients[9]),digits=3),nsmall=0)),
+              (format(round(sum((plm5)$coefficients[9]),digits=3),nsmall=0)),
+              0,
+              (format(round(sum((plm7)$coefficients[9]),digits=3),nsmall=0))),
+            c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[9,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[9,2],digits=3),nsmall=0)),
+             0,
+              (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[9,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[9,2],digits=3),nsmall=0)),
+            0,
+              (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[9,2],digits=3),nsmall=0))),
+            c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[9,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[9,4],digits=3),nsmall=0)),
+             0,
+              (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[9,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[9,4],digits=3),nsmall=0)),
+              0,
+              (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[9,4],digits=3),nsmall=0))),
+            
+            c((format(round(sum((plm1)$coefficients[10]),digits=3),nsmall=0)),
+              (format(round(sum((plm2)$coefficients[10]),digits=3),nsmall=0)),
+             0,
+              (format(round(sum((plm4)$coefficients[10]),digits=3),nsmall=0)),
+              (format(round(sum((plm5)$coefficients[10]),digits=3),nsmall=0)),
+              0,
+              (format(round(sum((plm7)$coefficients[10]),digits=3),nsmall=0))),
+            c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[10,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[10,2],digits=3),nsmall=0)),
+              0,
+              (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[10,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[10,2],digits=3),nsmall=0)),
+              0,
+              (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[10,2],digits=3),nsmall=0))),
+            c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[10,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[10,4],digits=3),nsmall=0)),
+             0,
+              (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[10,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[10,4],digits=3),nsmall=0)),
+            0,
+              (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[10,4],digits=3),nsmall=0))),
+            
+            c((format(round(sum((plm1)$coefficients[11]),digits=3),nsmall=0)),
+              (format(round(sum((plm2)$coefficients[11]),digits=3),nsmall=0)),
+              0,
+              (format(round(sum((plm4)$coefficients[11]),digits=3),nsmall=0)),
+              (format(round(sum((plm5)$coefficients[11]),digits=3),nsmall=0)),
+             0,
+              (format(round(sum((plm7)$coefficients[11]),digits=3),nsmall=0))),
+            c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[11,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[11,2],digits=3),nsmall=0)),
+              0,
+              (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[11,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[11,2],digits=3),nsmall=0)),
+              0,
+              (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[11,2],digits=3),nsmall=0))),
+            c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[11,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[11,4],digits=3),nsmall=0)),
+              0,
+              (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[11,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[11,4],digits=3),nsmall=0)),
+             0,
+              (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[11,4],digits=3),nsmall=0))),
+          
+        
+            c((format(round(sum((plm1)$coefficients[12]),digits=3),nsmall=0)),
+              (format(round(sum((plm2)$coefficients[12]),digits=3),nsmall=0)),
+             0,
+              (format(round(sum((plm4)$coefficients[12]),digits=3),nsmall=0)),
+              (format(round(sum((plm5)$coefficients[12]),digits=3),nsmall=0)),
+             0,
+              (format(round(sum((plm7)$coefficients[12]),digits=3),nsmall=0))),
+            c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[12,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[12,2],digits=3),nsmall=0)),
+             0,
+              (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[12,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[12,2],digits=3),nsmall=0)),
+             0,
+              (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[12,2],digits=3),nsmall=0))),
+            c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[12,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[12,4],digits=3),nsmall=0)),
+              0,
+              (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[12,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[12,4],digits=3),nsmall=0)),
+             0,
+              (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[12,4],digits=3),nsmall=0))),
+              
+            c((format(round(sum((plm1)$coefficients[13]),digits=3),nsmall=0)),
+              (format(round(sum((plm2)$coefficients[13]),digits=3),nsmall=0)),
+             0,
+              (format(round(sum((plm4)$coefficients[13]),digits=3),nsmall=0)),
+              (format(round(sum((plm5)$coefficients[13]),digits=3),nsmall=0)),
+             0,
+              (format(round(sum((plm7)$coefficients[13]),digits=3),nsmall=0))),
+            c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[13,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[13,2],digits=3),nsmall=0)),
+            0,
+              (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[13,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[13,2],digits=3),nsmall=0)),
+             0,
+              (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[13,2],digits=3),nsmall=0))),
+            c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[13,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[13,4],digits=3),nsmall=0)),
+             0,
+              (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[13,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[13,4],digits=3),nsmall=0)),
+             0,
+              (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[13,4],digits=3),nsmall=0))),
+            
+            c((format(round(sum((plm1)$coefficients[14]),digits=3),nsmall=0)),
+              (format(round(sum((plm2)$coefficients[14]),digits=3),nsmall=0)),
+              0,
+              (format(round(sum((plm4)$coefficients[14]),digits=3),nsmall=0)),
+              (format(round(sum((plm5)$coefficients[14]),digits=3),nsmall=0)),
+              0,
+              (format(round(sum((plm7)$coefficients[14]),digits=3),nsmall=0))),
+            c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[14,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[14,2],digits=3),nsmall=0)),
+             0,
+              (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[14,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[14,2],digits=3),nsmall=0)),
+            0,
+              (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[14,2],digits=3),nsmall=0))),
+            c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[14,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[14,4],digits=3),nsmall=0)),
+              0,
+              (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[14,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[14,4],digits=3),nsmall=0)),
+           0,
+              (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[14,4],digits=3),nsmall=0))),
+            
+            c((format(round(sum((plm1)$coefficients[15]),digits=3),nsmall=0)),
+              (format(round(sum((plm2)$coefficients[15]),digits=3),nsmall=0)),
+            0,
+              (format(round(sum((plm4)$coefficients[15]),digits=3),nsmall=0)),
+              (format(round(sum((plm5)$coefficients[15]),digits=3),nsmall=0)),
+            0,
+              (format(round(sum((plm7)$coefficients[15]),digits=3),nsmall=0))),
+            c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[15,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[15,2],digits=3),nsmall=0)),
+             0,
+              (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[15,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[15,2],digits=3),nsmall=0)),
+             0,
+              (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[15,2],digits=3),nsmall=0))),
+            c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[15,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[15,4],digits=3),nsmall=0)),
+             0,
+              (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[15,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[15,4],digits=3),nsmall=0)),
+              0,
+              (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[15,4],digits=3),nsmall=0))),
+            
+            c((format(round(sum((plm1)$coefficients[16]),digits=3),nsmall=0)),
+              (format(round(sum((plm2)$coefficients[16]),digits=3),nsmall=0)),
+             0,
+              (format(round(sum((plm4)$coefficients[16]),digits=3),nsmall=0)),
+              (format(round(sum((plm5)$coefficients[16]),digits=3),nsmall=0)),
+              0,
+              (format(round(sum((plm7)$coefficients[16]),digits=3),nsmall=0))),
+            c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[16,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[16,2],digits=3),nsmall=0)),
+             0,
+              (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[16,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[16,2],digits=3),nsmall=0)),
+             0,
+              (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[16,2],digits=3),nsmall=0))),
+            c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[16,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[16,4],digits=3),nsmall=0)),
+             0,
+              (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[16,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[16,4],digits=3),nsmall=0)),
+              0,
+              (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[16,4],digits=3),nsmall=0))),
+            
+            c((format(round(sum((plm1)$coefficients[17]),digits=3),nsmall=0)),
+              (format(round(sum((plm2)$coefficients[17]),digits=3),nsmall=0)),
+          0,
+              (format(round(sum((plm4)$coefficients[17]),digits=3),nsmall=0)),
+              (format(round(sum((plm5)$coefficients[17]),digits=3),nsmall=0)),
+             0,
+              (format(round(sum((plm7)$coefficients[17]),digits=3),nsmall=0))),
+            c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[17,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[17,2],digits=3),nsmall=0)),
+             0,
+              (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[17,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[17,2],digits=3),nsmall=0)),
+             0,
+              (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[17,2],digits=3),nsmall=0))),
+            c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[17,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[17,4],digits=3),nsmall=0)),
+            0,
+              (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[17,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[17,4],digits=3),nsmall=0)),
+              0,
+              (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[17,4],digits=3),nsmall=0))),
+            
+            c((format(round(sum((plm1)$coefficients[18]),digits=3),nsmall=0)),
+              (format(round(sum((plm2)$coefficients[18]),digits=3),nsmall=0)),
+        0,
+              (format(round(sum((plm4)$coefficients[18]),digits=3),nsmall=0)),
+              (format(round(sum((plm5)$coefficients[18]),digits=3),nsmall=0)),
+              0,
+              (format(round(sum((plm7)$coefficients[18]),digits=3),nsmall=0))),
+            c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[18,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[18,2],digits=3),nsmall=0)),
+             0,
+              (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[18,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[18,2],digits=3),nsmall=0)),
+              0,
+              (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[18,2],digits=3),nsmall=0))),
+            c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[18,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[18,4],digits=3),nsmall=0)),
+              0,
+              (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[18,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[18,4],digits=3),nsmall=0)),
+            0,
+              (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[18,4],digits=3),nsmall=0))),
+            
+            c((format(round(sum((plm1)$coefficients[19]),digits=3),nsmall=0)),
+              (format(round(sum((plm2)$coefficients[19]),digits=3),nsmall=0)),
+              0,
+              (format(round(sum((plm4)$coefficients[19]),digits=3),nsmall=0)),
+              (format(round(sum((plm5)$coefficients[19]),digits=3),nsmall=0)),
+           0,
+              (format(round(sum((plm7)$coefficients[19]),digits=3),nsmall=0))),
+            c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[19,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[19,2],digits=3),nsmall=0)),
+              0,
+              (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[19,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[19,2],digits=3),nsmall=0)),
+            0,
+              (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[19,2],digits=3),nsmall=0))),
+            c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[19,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[19,4],digits=3),nsmall=0)),
+              0,
+              (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[19,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[19,4],digits=3),nsmall=0)),
+             0,
+              (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[19,4],digits=3),nsmall=0))),
+        
+        c((format(round(sum((plm1)$coefficients[20]),digits=3),nsmall=0)),
+          (format(round(sum((plm2)$coefficients[20]),digits=3),nsmall=0)),
+          0,
+          (format(round(sum((plm4)$coefficients[20]),digits=3),nsmall=0)),
+          (format(round(sum((plm5)$coefficients[20]),digits=3),nsmall=0)),
+          0,
+          (format(round(sum((plm7)$coefficients[20]),digits=3),nsmall=0))),
+        c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[20,2],digits=3),nsmall=0)),
+          (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[20,2],digits=3),nsmall=0)),
+          0,
+          (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[20,2],digits=3),nsmall=0)),
+          (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[20,2],digits=3),nsmall=0)),
+          0,
+          (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[20,2],digits=3),nsmall=0))),
+        c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[20,4],digits=3),nsmall=0)),
+          (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[20,4],digits=3),nsmall=0)),
+          0,
+          (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[20,4],digits=3),nsmall=0)),
+          (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[20,4],digits=3),nsmall=0)),
+          0,
+          (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[20,4],digits=3),nsmall=0))),
+        
+              
+              
+              c((format(round(summary(plm1)$r.squared[1],digits=3),nsmall=0)),
+                (format(round(summary(plm2)$r.squared[1],digits=3),nsmall=0)),
+                (format(round(summary(plm3)$r.squared[1],digits=3),nsmall=0)),
+                (format(round(summary(plm4)$r.squared[1],digits=3),nsmall=0)),
+                (format(round(summary(plm5)$r.squared[1],digits=3),nsmall=0)),
+                (format(round(summary(plm6)$r.squared[1],digits=3),nsmall=0)),
+                (format(round(summary(plm7)$r.squared[1],digits=3),nsmall=0))),
+            c((format(round(summary(plm1)$r.squared[2],digits=3),nsmall=0)),
+              (format(round(summary(plm2)$r.squared[2],digits=3),nsmall=0)),
+              (format(round(summary(plm3)$r.squared[2],digits=3),nsmall=0)),
+              (format(round(summary(plm4)$r.squared[2],digits=3),nsmall=0)),
+              (format(round(summary(plm5)$r.squared[2],digits=3),nsmall=0)),
+              (format(round(summary(plm6)$r.squared[2],digits=3),nsmall=0)),
+              (format(round(summary(plm7)$r.squared[2],digits=3),nsmall=0))),
+              c((format(round(nobs(plm1),digits=3),nsmall=0)),
+                (format(round(nobs(plm2),digits=3),nsmall=0)),
+                (format(round(nobs(plm3),digits=3),nsmall=0)),
+                (format(round(nobs(plm4),digits=3),nsmall=0)),
+                (format(round(nobs(plm5),digits=3),nsmall=0)),
+                (format(round(nobs(plm6),digits=3),nsmall=0)),
+                (format(round(nobs(plm7),digits=3),nsmall=0)))
+            )
+            
+            
+
