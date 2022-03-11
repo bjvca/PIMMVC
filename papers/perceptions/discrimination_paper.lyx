@@ -797,6 +797,11 @@ not really, this would only be the case if the same set of farmers rate
  all agro-input dealers.
  Can we assume this is the case on average though? Maybe we should put this
  in a footnote.
+ Furthermore, it may also be important to note that an OLS on the means
+ gives equal weight to each agro input dealer (regardless of how many farmers
+ ranked the agro input dealer).
+ A regression on the dyadic data like equation 1 would result in a cluster
+ weighted regression.
 \end_layout
 
 \end_inset
