@@ -6905,7 +6905,7 @@ label{table:table11}
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -6915,7 +6915,7 @@ Farmer fixed effects model focusing on dealer ratings (control variables
  included, Q1).
 \begin_inset CommandInset label
 LatexCommand label
-name "tab:q1_farmer_FE_dealer_controls"
+name "tab:q1_farmer_FE_dealer_controls-1"
 
 \end_inset
 
@@ -8617,7 +8617,7 @@ Sexpr{fe4[54,7]})$
 
 \begin_layout Plain Layout
 
-{Shop's}   & $
+{Shop has}   & $
 \backslash
 Sexpr{fe4[56,1]}^{
 \backslash
@@ -8662,84 +8662,6 @@ Sexpr{ifelse(fe4[58,5]<.01,"***",ifelse(fe4[58,5]<.05,"**",ifelse(fe4[58,5]<.1,"
 Sexpr{fe4[56,7]}^{
 \backslash
 Sexpr{ifelse(fe4[58,7]<.01,"***",ifelse(fe4[58,7]<.05,"**",ifelse(fe4[58,7]<.1,"*",
-"")))}}$    
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{temperature} 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $(
-\backslash
-Sexpr{fe4[57,1]})$   &  $(
-\backslash
-Sexpr{fe4[57,2]})$ &  & $(
-\backslash
-Sexpr{fe4[57,4]})$ & $(
-\backslash
-Sexpr{fe4[57,5]})$ & & $(
-\backslash
-Sexpr{fe4[57,7]})$
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-{Shop has}   & $
-\backslash
-Sexpr{fe4[59,1]}^{
-\backslash
-Sexpr{ifelse(fe4[61,1]<.01,"***",ifelse(fe4[61,1]<.05,"**",ifelse(fe4[61,1]<.1,"*",
-"")))}}$ & $
-\backslash
-Sexpr{fe4[59,2]}^{
-\backslash
-Sexpr{ifelse(fe4[61,2]<.01,"***",ifelse(fe4[61,2]<.05,"**",ifelse(fe4[61,2]<.1,"*",
-"")))}}$  & 
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{fe4[59,4]}^{
-\backslash
-Sexpr{ifelse(fe4[61,4]<.01,"***",ifelse(fe4[61,4]<.05,"**",ifelse(fe4[61,4]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{fe4[59,5]}^{
-\backslash
-Sexpr{ifelse(fe4[61,5]<.01,"***",ifelse(fe4[61,5]<.05,"**",ifelse(fe4[61,5]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{fe4[59,7]}^{
-\backslash
-Sexpr{ifelse(fe4[61,7]<.01,"***",ifelse(fe4[61,7]<.05,"**",ifelse(fe4[61,7]<.1,"*",
 "")))}}$   
 \backslash
 
@@ -8756,15 +8678,15 @@ Sexpr{ifelse(fe4[61,7]<.01,"***",ifelse(fe4[61,7]<.05,"**",ifelse(fe4[61,7]<.1,"
 
 &  $(
 \backslash
-Sexpr{fe4[60,1]})$   &  $(
+Sexpr{fe4[57,1]})$   &  $(
 \backslash
-Sexpr{fe4[60,2]})$ &  & $(
+Sexpr{fe4[57,2]})$ &  & $(
 \backslash
-Sexpr{fe4[60,4]})$ & $(
+Sexpr{fe4[57,4]})$ & $(
 \backslash
-Sexpr{fe4[60,5]})$ &  & $(
+Sexpr{fe4[57,5]})$ &  & $(
 \backslash
-Sexpr{fe4[60,7]})$
+Sexpr{fe4[57,7]})$
 \end_layout
 
 \begin_layout Plain Layout
@@ -8782,19 +8704,19 @@ hline
 
 {R$^2$ }                 &  $
 \backslash
-Sexpr{fe4[62,1]}$   &  $
+Sexpr{fe4[59,1]}$   &  $
 \backslash
-Sexpr{fe4[62,2]}$ & $
+Sexpr{fe4[59,2]}$ & $
 \backslash
-Sexpr{fe4[62,3]}$ & $
+Sexpr{fe4[59,3]}$ & $
 \backslash
-Sexpr{fe4[62,4]}$ & $
+Sexpr{fe4[59,4]}$ & $
 \backslash
-Sexpr{fe4[62,5]}$ & $
+Sexpr{fe4[59,5]}$ & $
 \backslash
-Sexpr{fe4[62,6]}$ & $
+Sexpr{fe4[59,6]}$ & $
 \backslash
-Sexpr{fe4[62,7]}$  
+Sexpr{fe4[59,7]}$  
 \end_layout
 
 \begin_layout Plain Layout
@@ -8806,19 +8728,19 @@ Sexpr{fe4[62,7]}$
 {Adj.
  R$^2$}                 &  $
 \backslash
-Sexpr{fe4[63,1]}$   &  $
+Sexpr{fe4[60,1]}$   &  $
 \backslash
-Sexpr{fe4[63,2]}$ & $
+Sexpr{fe4[60,2]}$ & $
 \backslash
-Sexpr{fe4[63,3]}$ & $
+Sexpr{fe4[60,3]}$ & $
 \backslash
-Sexpr{fe4[63,4]}$ & $
+Sexpr{fe4[60,4]}$ & $
 \backslash
-Sexpr{fe4[63,5]}$ & $
+Sexpr{fe4[60,5]}$ & $
 \backslash
-Sexpr{fe4[63,6]}$ & $
+Sexpr{fe4[60,6]}$ & $
 \backslash
-Sexpr{fe4[63,7]}$    
+Sexpr{fe4[60,7]}$    
 \end_layout
 
 \begin_layout Plain Layout
@@ -8829,19 +8751,19 @@ Sexpr{fe4[63,7]}$
 \backslash
 {Number of obs.}                 &  $
 \backslash
-Sexpr{fe4[64,1]}$   &  $
+Sexpr{fe4[61,1]}$   &  $
 \backslash
-Sexpr{fe4[64,2]}$ & $
+Sexpr{fe4[61,2]}$ & $
 \backslash
-Sexpr{fe4[64,3]}$ & $
+Sexpr{fe4[61,3]}$ & $
 \backslash
-Sexpr{fe4[64,4]}$ & $
+Sexpr{fe4[61,4]}$ & $
 \backslash
-Sexpr{fe4[64,5]}$ & $
+Sexpr{fe4[61,5]}$ & $
 \backslash
-Sexpr{fe4[64,6]}$ & $
+Sexpr{fe4[61,6]}$ & $
 \backslash
-Sexpr{fe4[64,7]}$    
+Sexpr{fe4[61,7]}$    
 \end_layout
 
 \begin_layout Plain Layout

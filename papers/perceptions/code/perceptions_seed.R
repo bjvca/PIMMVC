@@ -37,7 +37,25 @@ midline_dealer <- read.csv(paste(path_2,"papers/perceptions/data_seed_systems_mi
 
 merged_dealer <- merge(baseline_dealer, midline_dealer, by="shop_ID") #merging baseline and midline 
 
-#getting controls as averages 
+
+#prepping data for FE
+#subsetting baseline dealers and considering only the required variables 
+base<-baseline_dealer[c("maize.owner.agree.gender", "maize.owner.agree.age","maize.owner.agree.educ", "maize.owner.agree.q3", "maize.owner.agree.q4", "maize.owner.agree.q5",
+                          "maize.owner.agree.q8", "maize.owner.agree.temp.q69", "maize.owner.agree.temp.q71", "maize.owner.agree.temp.q73", "maize.owner.agree.temp.q74", "maize.owner.agree.temp.q75",
+                          "maize.owner.agree.temp.q78", "maize.owner.agree.temp.q79", "maize.owner.agree.temp.q80" , "maize.owner.agree.temp.q81", "maize.owner.agree.temp.q82", "maize.owner.agree.q96",
+                          "maize.owner.agree.temp.q72", "shop_ID")]
+basem<-baseline_dealer[c( "maize.owner.agree.q3", "maize.owner.agree.q4", "maize.owner.agree.q8", "shop_ID")] #subsetting baseline to populate midline with the constant variables 
+mid<-midline_dealer[c("owner.agree.gender", "owner.agree.age","owner.agree.educ", "owner.agree.q5","owner.agree.temp.q69", "owner.agree.temp.q71", "owner.agree.temp.q73", "owner.agree.temp.q74", "owner.agree.temp.q75",
+                        "owner.agree.temp.q78", "owner.agree.temp.q79", "owner.agree.temp.q80" , "owner.agree.temp.q81", "owner.agree.temp.q82", "owner.agree.q96",
+                        "owner.agree.temp.q72", "shop_ID")] #subsetting midline dealers and considering only the required variables
+names(mid) <- gsub(x = names(mid), pattern = "owner.", replacement = "maize.owner.") #variable matching with baseline  
+
+midm<-merge(mid, basem, by="shop_ID") #merging both midline and baseline for FE
+
+dealer_stack <- rbind(base, midm) #stacking dealer data from both periods 
+
+
+#getting controls as averages for between dealers 
 merged_dealer[merged_dealer==999] <- NA
 
 merged_dealer$maize.owner.agree.age <-  rowMeans(merged_dealer[c("maize.owner.agree.age","owner.agree.age")],na.rm=T) #averaging age 
@@ -149,10 +167,10 @@ to_select <- merged_dealer$shop_ID[merged_dealer$maize.owner.agree.gender == mer
 #stack rating dyads from the two rounds
 rating_dyads <- rbind(rating_dyads, rating_dyads_midline)
 
-rat<-rating_dyads  #to be used for FE
-
 #keep only those that have same gender in baseline and endline
 rating_dyads <- subset(rating_dyads,shop_ID  %in% to_select)
+
+rat<-rating_dyads #prepping rating_dyads for FE
 
 #getting dealer characteristics for controls 
 rating_dyads <- merge(merged_dealer, rating_dyads, by="shop_ID")
@@ -2247,8 +2265,8 @@ s8<- rbind(c((format(round(sum((lm(overall_rating~gender+ maize.owner.agree.age 
 
 ############## FIXED EFFECTS 
 
-#merge to get gender 
-rat <- merge(rat, merged_dealer, by="shop_ID")
+#merge to get gender --- merging both stacked datasets 
+rat <- merge(rat, dealer_stack, by="shop_ID")
 
 #changing variable name 
 names(rat)[names(rat) == "maize.owner.agree.gender"] <- "gender"
@@ -2475,7 +2493,7 @@ fe3<- rbind( c((format(round(mean(fixef(plm(overall_rating~gender, data = rat, i
 )
 
 
-#seed ratings 
+#seed ratings -- without controls 
 
 plm(score~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
 summary(lm(score~gender+farmer_ID, data = rat))
@@ -2571,39 +2589,39 @@ c((format(round((coeftest(plm(score~gender, data = rat, index=c("farmer_ID","dea
 )
 
 
-#FE at farmer level --- with controls 
-#dealer ratings 
+#FE at farmer level --- with controls
+#dealer ratings
 
 plm1<-plm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-      badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
+      badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint  +leakproof, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
 summary(lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof+farmer_ID, data = rat))
+             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint  +leakproof+farmer_ID, data = rat))
 
 plm2<-plm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-      badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
+      badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint  +leakproof, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
 summary(lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof+farmer_ID, data = rat))
+             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +leakproof+farmer_ID, data = rat))
 
 plm3<-plm(location_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
 summary(lm(location_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+farmer_ID, data = rat))
 
 plm4<-plm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-      badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
+      badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +leakproof, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
 summary(lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof+farmer_ID, data = rat))
+             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +leakproof+farmer_ID, data = rat))
 
 plm5<-plm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-      badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
+      badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +leakproof, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
 summary(lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof+farmer_ID, data = rat))
+             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +leakproof+farmer_ID, data = rat))
 
 plm6<-plm(stock_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
 summary(lm(stock_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+farmer_ID, data = rat))
 
 plm7<-plm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-      badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
+      badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint  +leakproof, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
 summary(lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint + maize.owner.agree.q70 +leakproof+farmer_ID, data = rat))
+             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint+leakproof+farmer_ID, data = rat))
 
 
 #storing dealer ratings
@@ -2635,7 +2653,7 @@ fe4<- rbind(c((format(round(mean(fixef(plm1))[1],digits=3),nsmall=0)),
               (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[1,4],digits=3),nsmall=0)),
               (format(round(coeftest((plm6), vcovHC((plm6), type = "HC0",cluster = "time"))[1,4],digits=3),nsmall=0)),
               (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[1,4],digits=3),nsmall=0))),
-            
+
             c((format(round(sum((plm1)$coefficients[2]),digits=3),nsmall=0)),
               (format(round(sum((plm2)$coefficients[2]),digits=3),nsmall=0)),
               (format(round(sum((plm3)$coefficients[2]),digits=3),nsmall=0)),
@@ -2657,7 +2675,7 @@ fe4<- rbind(c((format(round(mean(fixef(plm1))[1],digits=3),nsmall=0)),
               (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[2,4],digits=3),nsmall=0)),
               (format(round(coeftest((plm6), vcovHC((plm6), type = "HC0",cluster = "time"))[2,4],digits=3),nsmall=0)),
               (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[2,4],digits=3),nsmall=0))),
-            
+
             c((format(round(sum((plm1)$coefficients[3]),digits=3),nsmall=0)),
               (format(round(sum((plm2)$coefficients[3]),digits=3),nsmall=0)),
               (format(round(sum((plm3)$coefficients[3]),digits=3),nsmall=0)),
@@ -2679,7 +2697,7 @@ fe4<- rbind(c((format(round(mean(fixef(plm1))[1],digits=3),nsmall=0)),
               (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[3,4],digits=3),nsmall=0)),
               (format(round(coeftest((plm6), vcovHC((plm6), type = "HC0",cluster = "time"))[3,4],digits=3),nsmall=0)),
               (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[3,4],digits=3),nsmall=0))),
-            
+
             c((format(round(sum((plm1)$coefficients[4]),digits=3),nsmall=0)),
               (format(round(sum((plm2)$coefficients[4]),digits=3),nsmall=0)),
               (format(round(sum((plm3)$coefficients[4]),digits=3),nsmall=0)),
@@ -2701,7 +2719,7 @@ fe4<- rbind(c((format(round(mean(fixef(plm1))[1],digits=3),nsmall=0)),
               (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[4,4],digits=3),nsmall=0)),
               (format(round(coeftest((plm6), vcovHC((plm6), type = "HC0",cluster = "time"))[4,4],digits=3),nsmall=0)),
               (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[4,4],digits=3),nsmall=0))),
-            
+
             c((format(round(sum((plm1)$coefficients[5]),digits=3),nsmall=0)),
               (format(round(sum((plm2)$coefficients[5]),digits=3),nsmall=0)),
               (format(round(sum((plm3)$coefficients[5]),digits=3),nsmall=0)),
@@ -2723,7 +2741,7 @@ fe4<- rbind(c((format(round(mean(fixef(plm1))[1],digits=3),nsmall=0)),
               (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[5,4],digits=3),nsmall=0)),
               (format(round(coeftest((plm6), vcovHC((plm6), type = "HC0",cluster = "time"))[5,4],digits=3),nsmall=0)),
               (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[5,4],digits=3),nsmall=0))),
-              
+
             c((format(round(sum((plm1)$coefficients[6]),digits=3),nsmall=0)),
               (format(round(sum((plm2)$coefficients[6]),digits=3),nsmall=0)),
              0,
@@ -2745,7 +2763,7 @@ fe4<- rbind(c((format(round(mean(fixef(plm1))[1],digits=3),nsmall=0)),
               (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[6,4],digits=3),nsmall=0)),
              0,
               (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[6,4],digits=3),nsmall=0))),
-            
+
             c((format(round(sum((plm1)$coefficients[7]),digits=3),nsmall=0)),
               (format(round(sum((plm2)$coefficients[7]),digits=3),nsmall=0)),
               0,
@@ -2767,8 +2785,8 @@ fe4<- rbind(c((format(round(mean(fixef(plm1))[1],digits=3),nsmall=0)),
               (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[7,4],digits=3),nsmall=0)),
               0,
               (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[7,4],digits=3),nsmall=0))),
-            
-           
+
+
             c((format(round(sum((plm1)$coefficients[8]),digits=3),nsmall=0)),
               (format(round(sum((plm2)$coefficients[8]),digits=3),nsmall=0)),
               0,
@@ -2790,7 +2808,7 @@ fe4<- rbind(c((format(round(mean(fixef(plm1))[1],digits=3),nsmall=0)),
               (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[8,4],digits=3),nsmall=0)),
             0,
               (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[8,4],digits=3),nsmall=0))),
-            
+
             c((format(round(sum((plm1)$coefficients[9]),digits=3),nsmall=0)),
               (format(round(sum((plm2)$coefficients[9]),digits=3),nsmall=0)),
              0,
@@ -2812,7 +2830,7 @@ fe4<- rbind(c((format(round(mean(fixef(plm1))[1],digits=3),nsmall=0)),
               (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[9,4],digits=3),nsmall=0)),
               0,
               (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[9,4],digits=3),nsmall=0))),
-            
+
             c((format(round(sum((plm1)$coefficients[10]),digits=3),nsmall=0)),
               (format(round(sum((plm2)$coefficients[10]),digits=3),nsmall=0)),
              0,
@@ -2834,7 +2852,7 @@ fe4<- rbind(c((format(round(mean(fixef(plm1))[1],digits=3),nsmall=0)),
               (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[10,4],digits=3),nsmall=0)),
             0,
               (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[10,4],digits=3),nsmall=0))),
-            
+
             c((format(round(sum((plm1)$coefficients[11]),digits=3),nsmall=0)),
               (format(round(sum((plm2)$coefficients[11]),digits=3),nsmall=0)),
               0,
@@ -2856,8 +2874,8 @@ fe4<- rbind(c((format(round(mean(fixef(plm1))[1],digits=3),nsmall=0)),
               (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[11,4],digits=3),nsmall=0)),
              0,
               (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[11,4],digits=3),nsmall=0))),
-          
-        
+
+
             c((format(round(sum((plm1)$coefficients[12]),digits=3),nsmall=0)),
               (format(round(sum((plm2)$coefficients[12]),digits=3),nsmall=0)),
              0,
@@ -2879,7 +2897,7 @@ fe4<- rbind(c((format(round(mean(fixef(plm1))[1],digits=3),nsmall=0)),
               (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[12,4],digits=3),nsmall=0)),
              0,
               (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[12,4],digits=3),nsmall=0))),
-              
+
             c((format(round(sum((plm1)$coefficients[13]),digits=3),nsmall=0)),
               (format(round(sum((plm2)$coefficients[13]),digits=3),nsmall=0)),
              0,
@@ -2901,7 +2919,7 @@ fe4<- rbind(c((format(round(mean(fixef(plm1))[1],digits=3),nsmall=0)),
               (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[13,4],digits=3),nsmall=0)),
              0,
               (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[13,4],digits=3),nsmall=0))),
-            
+
             c((format(round(sum((plm1)$coefficients[14]),digits=3),nsmall=0)),
               (format(round(sum((plm2)$coefficients[14]),digits=3),nsmall=0)),
               0,
@@ -2923,7 +2941,7 @@ fe4<- rbind(c((format(round(mean(fixef(plm1))[1],digits=3),nsmall=0)),
               (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[14,4],digits=3),nsmall=0)),
            0,
               (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[14,4],digits=3),nsmall=0))),
-            
+
             c((format(round(sum((plm1)$coefficients[15]),digits=3),nsmall=0)),
               (format(round(sum((plm2)$coefficients[15]),digits=3),nsmall=0)),
             0,
@@ -2945,7 +2963,7 @@ fe4<- rbind(c((format(round(mean(fixef(plm1))[1],digits=3),nsmall=0)),
               (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[15,4],digits=3),nsmall=0)),
               0,
               (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[15,4],digits=3),nsmall=0))),
-            
+
             c((format(round(sum((plm1)$coefficients[16]),digits=3),nsmall=0)),
               (format(round(sum((plm2)$coefficients[16]),digits=3),nsmall=0)),
              0,
@@ -2967,7 +2985,7 @@ fe4<- rbind(c((format(round(mean(fixef(plm1))[1],digits=3),nsmall=0)),
               (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[16,4],digits=3),nsmall=0)),
               0,
               (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[16,4],digits=3),nsmall=0))),
-            
+
             c((format(round(sum((plm1)$coefficients[17]),digits=3),nsmall=0)),
               (format(round(sum((plm2)$coefficients[17]),digits=3),nsmall=0)),
           0,
@@ -2989,7 +3007,7 @@ fe4<- rbind(c((format(round(mean(fixef(plm1))[1],digits=3),nsmall=0)),
               (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[17,4],digits=3),nsmall=0)),
               0,
               (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[17,4],digits=3),nsmall=0))),
-            
+
             c((format(round(sum((plm1)$coefficients[18]),digits=3),nsmall=0)),
               (format(round(sum((plm2)$coefficients[18]),digits=3),nsmall=0)),
         0,
@@ -3011,7 +3029,7 @@ fe4<- rbind(c((format(round(mean(fixef(plm1))[1],digits=3),nsmall=0)),
               (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[18,4],digits=3),nsmall=0)),
             0,
               (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[18,4],digits=3),nsmall=0))),
-            
+
             c((format(round(sum((plm1)$coefficients[19]),digits=3),nsmall=0)),
               (format(round(sum((plm2)$coefficients[19]),digits=3),nsmall=0)),
               0,
@@ -3033,31 +3051,31 @@ fe4<- rbind(c((format(round(mean(fixef(plm1))[1],digits=3),nsmall=0)),
               (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[19,4],digits=3),nsmall=0)),
              0,
               (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[19,4],digits=3),nsmall=0))),
-        
-        c((format(round(sum((plm1)$coefficients[20]),digits=3),nsmall=0)),
-          (format(round(sum((plm2)$coefficients[20]),digits=3),nsmall=0)),
-          0,
-          (format(round(sum((plm4)$coefficients[20]),digits=3),nsmall=0)),
-          (format(round(sum((plm5)$coefficients[20]),digits=3),nsmall=0)),
-          0,
-          (format(round(sum((plm7)$coefficients[20]),digits=3),nsmall=0))),
-        c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[20,2],digits=3),nsmall=0)),
-          (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[20,2],digits=3),nsmall=0)),
-          0,
-          (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[20,2],digits=3),nsmall=0)),
-          (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[20,2],digits=3),nsmall=0)),
-          0,
-          (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[20,2],digits=3),nsmall=0))),
-        c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[20,4],digits=3),nsmall=0)),
-          (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[20,4],digits=3),nsmall=0)),
-          0,
-          (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[20,4],digits=3),nsmall=0)),
-          (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[20,4],digits=3),nsmall=0)),
-          0,
-          (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[20,4],digits=3),nsmall=0))),
-        
-              
-              
+
+        # c((format(round(sum((plm1)$coefficients[20]),digits=3),nsmall=0)),
+        #   (format(round(sum((plm2)$coefficients[20]),digits=3),nsmall=0)),
+        #   0,
+        #   (format(round(sum((plm4)$coefficients[20]),digits=3),nsmall=0)),
+        #   (format(round(sum((plm5)$coefficients[20]),digits=3),nsmall=0)),
+        #   0,
+        #   (format(round(sum((plm7)$coefficients[20]),digits=3),nsmall=0))),
+        # c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[20,2],digits=3),nsmall=0)),
+        #   (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[20,2],digits=3),nsmall=0)),
+        #   0,
+        #   (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[20,2],digits=3),nsmall=0)),
+        #   (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[20,2],digits=3),nsmall=0)),
+        #   0,
+        #   (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[20,2],digits=3),nsmall=0))),
+        # c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[20,4],digits=3),nsmall=0)),
+        #   (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[20,4],digits=3),nsmall=0)),
+        #   0,
+        #   (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[20,4],digits=3),nsmall=0)),
+        #   (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[20,4],digits=3),nsmall=0)),
+        #   0,
+        #   (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[20,4],digits=3),nsmall=0))),
+
+
+
               c((format(round(summary(plm1)$r.squared[1],digits=3),nsmall=0)),
                 (format(round(summary(plm2)$r.squared[1],digits=3),nsmall=0)),
                 (format(round(summary(plm3)$r.squared[1],digits=3),nsmall=0)),
@@ -3080,6 +3098,6 @@ fe4<- rbind(c((format(round(mean(fixef(plm1))[1],digits=3),nsmall=0)),
                 (format(round(nobs(plm6),digits=3),nsmall=0)),
                 (format(round(nobs(plm7),digits=3),nsmall=0)))
             )
-            
-            
+
+
 
