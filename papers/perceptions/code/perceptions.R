@@ -275,10 +275,36 @@ dealers_pool <- subset(dealers, select = c('id.agro' , 'hh.maize.q7','hh.maize.q
 names(dealers_pool) <- c("id.ratee","gender_ratee","rating_location_ratee","rating_price_ratee","rating_quality_ratee","rating_reputation_ratee", 
                          "ratee_rating_overall","client_service","other_competitors","age_ratee","marital_status_ratee","education_ratee")
 
+
+
+#subset for merging --- reliability
+dealers_rel <- subset(dealers, select = c('id.agro' , 'hh.maize.q6a','hh.maize.q6b','hh.maize.q6c','hh.maize.seed.1..q21', 'hh.maize.seed.2..q21', 'hh.maize.seed.3..q21'))
+dealers_rel[dealers_rel=="n/a"] <- NA
+
+#getting numeric prices 
+dealers_rel$hh.maize.seed.1..q21 <- as.numeric(as.character(dealers_rel$hh.maize.seed.1..q21))
+dealers_rel$hh.maize.seed.2..q21 <- as.numeric(as.character(dealers_rel$hh.maize.seed.2..q21))
+dealers_rel$hh.maize.seed.3..q21 <- as.numeric(as.character(dealers_rel$hh.maize.seed.3..q21))
+
+dealers_rel$buying_price <-  rowMeans(dealers_rel[c("hh.maize.seed.1..q21","hh.maize.seed.2..q21","hh.maize.seed.3..q21")],na.rm=T) #buying price average
+dealers_rel<- dealers_rel[-c(5:7)] #dropping other price variables 
+dealers_rel[dealers_rel=="NaN"] <- NA
+names(dealers_rel) <- c("id.ratee","tarmac_ratee","murram_ratee","nearest_comp_ratee","buying_price") #changing names of variables 
+dealers_rel$ratee_who <- 1 #1 if a dealer
+
+#average ratings at dealer level 
+dealer_betw <- aggregate(ratings[c("rating_location","rating_price")],list(ratings$id.ratee),FUN=mean, na.rm=T)
+names(dealer_betw)[1] <- "id.ratee"
+#merging with dealer characteristics 
+merged_dealer_rel<-merge(dealer_betw, dealers_rel, by="id.ratee")
+
+
+#merging 
 merged_dealer_pool <- merge(ratings,dealers_pool, by="id.ratee")
 merged_dealer_pool[merged_dealer_pool=="999"] <- 0
 merged_dealer_pool[merged_dealer_pool=="n/a"] <- NA
 merged_dealer_pool$ratee_who <- 1 #1 if a dealer
+
 
 ############################### TRADERS #################################
 
@@ -350,6 +376,20 @@ traders_pool <- subset(traders, select = c('id.trader' , 'hh.maize.q7','hh.maize
                                            ,'hh.maize.q21','hh.maize.q6','hh.maize.q8','hh.maize.q9'))
 names(traders_pool) <- c("id.ratee","gender_ratee","rating_location_ratee","rating_price_ratee","rating_quality_ratee","rating_reputation_ratee", 
                          "ratee_rating_overall","client_service","other_competitors","age_ratee","marital_status_ratee","education_ratee")
+
+#subset for merging --- reliability
+traders_rel <- subset(traders, select = c('id.trader' ,'hh.maize.q22c', 'hh.maize.q23c'))
+traders_rel$buying_price <-  rowMeans(traders_rel[c("hh.maize.q22c","hh.maize.q23c")],na.rm=T) #buying price average
+traders_rel<- traders_rel[-c(2:3)] #dropping other price variables 
+names(traders_rel) <- c("id.ratee","buying_price") #changing names of variables 
+traders_rel$ratee_who <- 2 #1 if a trader
+
+#average ratings at trader level 
+trader_betw <- aggregate(ratings_trader[c("rating_location","rating_price")],list(ratings_trader$id.ratee),FUN=mean, na.rm=T)
+names(trader_betw)[1] <- "id.ratee"
+#merging with trader characteristics 
+merged_trader_rel<-merge(trader_betw, traders_rel, by="id.ratee")
+
 
 #Merging the datasets
 merged_trader_pool <- merge(ratings_trader,traders_pool, by="id.ratee")
@@ -426,12 +466,26 @@ millers_pool <- subset(millers, select = c('id.miller' , 'hh.maize.q7','hh.maize
                                            ,'hh.maize.q6d','hh.maize.q6g','hh.maize.q8','hh.maize.q9'))
 names(millers_pool) <- c("id.ratee","gender_ratee","rating_location_ratee","rating_price_ratee","rating_quality_ratee","rating_reputation_ratee", 
                          "ratee_rating_overall","client_service","other_competitors","age_ratee","marital_status_ratee","education_ratee")
+
+#subset for merging --- reliability
+millers_rel <- subset(millers, select = c('id.miller' , 'hh.maize.q6a','hh.maize.q6b','hh.maize.q6c', 'hh.maize.q20'))
+names(millers_rel) <- c("id.ratee","tarmac_ratee","murram_ratee","nearest_comp_ratee","buying_price")
+millers_rel$ratee_who <- 3 #if miller, then 3 
+#average ratings at miller level 
+miller_betw <- aggregate(ratings_mill[c("rating_location","rating_price")],list(ratings_mill$id.ratee),FUN=mean, na.rm=T)
+names(miller_betw)[1] <- "id.ratee"
+#merging with miller characteristics 
+merged_miller_rel<-merge(miller_betw, millers_rel, by="id.ratee")
+merged_miller_rel[merged_miller_rel=="n/a"] <- NA
+#only 31 obs for buying price 
+
 #Merging the datasets
 merged_miller_pool <- merge(ratings_mill,millers_pool, by="id.ratee")
 merged_miller_pool[merged_miller_pool=="999"] <- 0
 merged_miller_pool[merged_miller_pool=="n/a"] <- NA
 
 merged_miller_pool$ratee_who  <- 3 #if miller, then 3 
+
 
 #deleting the columns not needed
 merged_dealer_pool <- merged_dealer_pool[-c(7)]
@@ -3461,3 +3515,23 @@ hyp1<- rbind(
     (format(round(mean(pool$rating_reputation, na.rm=TRUE),digits=3),nsmall=0)), 
     (format(round(sum(ttest5$p.value),digits=3),nsmall=0))))
     
+
+
+###################################################################################################
+
+#stacking for checking data reliability
+deal_mill <-rbind(merged_miller_rel,merged_dealer_rel) #this dataset only has location and price characteristics for dealers and millers 
+deal_mill$buying_price<-as.numeric(as.character(deal_mill$buying_price))
+
+merged_miller_rel <- merged_miller_rel[-c(4:6)] #only need price to merge with traders data 
+merged_dealer_rel<- merged_dealer_rel[-c(4:6)] #only need price to merge with traders data 
+
+deal_mill_trad <-rbind(merged_miller_rel,merged_dealer_rel, merged_trader_rel) #this dataset has price characteristics for all actors 
+deal_mill_trad$buying_price<-as.numeric(as.character(deal_mill_trad$buying_price))
+
+#regressions 
+#location -- dealers and millers 
+summary(lm(data =deal_mill, formula = rating_location ~  tarmac_ratee+murram_ratee+nearest_comp_ratee))
+#price 
+summary(lm(data =deal_mill, formula = rating_price ~  buying_price)) #only millers and dealers 
+summary(lm(data =deal_mill_trad, formula = rating_price ~  buying_price)) #all actors 
