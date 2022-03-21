@@ -3518,6 +3518,8 @@ hyp1<- rbind(
 
 
 ###################################################################################################
+########### FOR MINOR REVISIONS ###############
+###############################################
 
 #stacking for checking data reliability
 deal_mill <-rbind(merged_miller_rel,merged_dealer_rel) #this dataset only has location and price characteristics for dealers and millers 
@@ -3535,3 +3537,42 @@ summary(lm(data =deal_mill, formula = rating_location ~  tarmac_ratee+murram_rat
 #price 
 summary(lm(data =deal_mill, formula = rating_price ~  buying_price)) #only millers and dealers 
 summary(lm(data =deal_mill_trad, formula = rating_price ~  buying_price)) #all actors 
+
+#################################################
+#checking how the interaction can be included 
+table(pool$interaction_yes) #where 1 is "yes interacted" with 3162 obs and 0 is "not interacted" with 435 observations 
+
+#let's first check the means 
+mean(pool$rating_overall, na.rm=T)
+mean(pool$rating_overall[pool$interaction_yes==1], na.rm=T) #interacted
+#3.639089
+mean(pool$rating_overall[pool$interaction_yes==0], na.rm=T)   #did not interact 
+#3.285977
+
+mean(pool$rating_location, na.rm=T)
+mean(pool$rating_location[pool$interaction_yes==1], na.rm=T) #interacted
+#3.908286
+mean(pool$rating_location[pool$interaction_yes==0], na.rm=T)   #did not interact 
+#3.708046
+
+mean(pool$rating_price, na.rm=T)
+mean(pool$rating_price[pool$interaction_yes==1], na.rm=T) #interacted
+#3.062935
+mean(pool$rating_price[pool$interaction_yes==0], na.rm=T)   #did not interact 
+#2.841379
+
+mean(pool$rating_reputation, na.rm=T)
+mean(pool$rating_reputation[pool$interaction_yes==1], na.rm=T) #interacted
+# 3.882669
+mean(pool$rating_reputation[pool$interaction_yes==0], na.rm=T)   #did not interact 
+#3.473563
+
+mean(pool$rating_quality, na.rm=T)
+mean(pool$rating_quality[pool$interaction_yes==1], na.rm=T) #interacted
+#3.552182
+mean(pool$rating_quality[pool$interaction_yes==0], na.rm=T)   #did not interact 
+#3.117241
+
+#### it is observed from the mean ratings that for all characteristics, farmers tend to rate higher when they have interacted with the actor 
+
+
