@@ -3538,6 +3538,8 @@ summary(lm(data =deal_mill, formula = rating_location ~  tarmac_ratee+murram_rat
 summary(lm(data =deal_mill, formula = rating_price ~  buying_price)) #only millers and dealers 
 summary(lm(data =deal_mill_trad, formula = rating_price ~  buying_price)) #all actors 
 
+
+
 #################################################
 #checking how the interaction can be included 
 table(pool$interaction_yes) #where 1 is "yes interacted" with 3162 obs and 0 is "not interacted" with 435 observations 
@@ -3575,4 +3577,64 @@ mean(pool$rating_quality[pool$interaction_yes==0], na.rm=T)   #did not interact
 
 #### it is observed from the mean ratings that for all characteristics, farmers tend to rate higher when they have interacted with the actor 
 
+
+#######################################
+#including interaction in regressions 
+### clustered regressions - looking at both farmers' and ratees' gender 
+### dependent variable is rating from farmers 
+
+#overall rating 
+summary(lm.cluster(data = pool, formula = rating_overall ~  interaction_yes+farmer_fem+ratee_fem + educ  + age + tarmac
+                   + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy, cluster="id.ratee")) #interaction variable in regression without interaction terms 
+#significant positive interaction coefficient at 1%
+summary(lm.cluster(data = pool, formula = rating_overall ~  interaction_yes+farmer_fem*ratee_fem + educ  + age + tarmac
+                   + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy, cluster="id.ratee")) #interaction variable in regression with interaction between farmer's and actor's gender
+#significant positive interaction coefficient at 1%
+summary(lm.cluster(data = pool, formula = rating_overall ~  interaction_yes*farmer_fem+interaction_yes*ratee_fem+farmer_fem*ratee_fem + educ  + age + tarmac
+                          + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy, cluster="id.ratee")) #interaction variable as an interaction with both the gender variables 
+#significant positive interaction coefficient at 1%, insignificant for the interactions with genders 
+
+#location rating 
+summary(lm.cluster(data = pool, formula = rating_location ~  interaction_yes+farmer_fem+ratee_fem + educ  + age + tarmac
+                   + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy, cluster="id.ratee")) #interaction variable in regression without interaction terms 
+#significant positive interaction coefficient at 1%
+summary(lm.cluster(data = pool, formula = rating_location~  interaction_yes+farmer_fem*ratee_fem + educ  + age + tarmac
+                   + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy, cluster="id.ratee")) #interaction variable in regression with interaction between farmer's and actor's gender
+#significant positive interaction coefficient at 1%
+summary(lm.cluster(data = pool, formula = rating_location ~  interaction_yes*farmer_fem+interaction_yes*ratee_fem+farmer_fem*ratee_fem + educ  + age + tarmac
+                   + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy, cluster="id.ratee")) #interaction variable as an interaction with both the gender variables 
+#significant positive interaction coefficient at 1%, insignificant for the interactions with gender 
+
+#price rating 
+summary(lm.cluster(data = pool, formula = rating_price ~  interaction_yes+farmer_fem+ratee_fem + educ  + age + tarmac
+                   + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy, cluster="id.ratee")) #interaction variable in regression without interaction terms 
+#significant positive interaction coefficient at 1%
+summary(lm.cluster(data = pool, formula = rating_price~  interaction_yes+farmer_fem*ratee_fem + educ  + age + tarmac
+                   + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy, cluster="id.ratee")) #interaction variable in regression with interaction between farmer's and actor's gender
+#significant positive interaction coefficient at 1%
+summary(lm.cluster(data = pool, formula = rating_price ~  interaction_yes*farmer_fem+interaction_yes*ratee_fem+farmer_fem*ratee_fem + educ  + age + tarmac
+                   + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy, cluster="id.ratee")) #interaction variable as an interaction with both the gender variables 
+#significant positive interaction coefficient at 1%, insignificant for the interactions with gender
+
+#quality rating 
+summary(lm.cluster(data = pool, formula = rating_quality~  interaction_yes+farmer_fem+ratee_fem + educ  + age + tarmac
+                   + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy, cluster="id.ratee")) #interaction variable in regression without interaction terms 
+#significant positive interaction coefficient at 1%
+summary(lm.cluster(data = pool, formula = rating_quality~  interaction_yes+farmer_fem*ratee_fem + educ  + age + tarmac
+                   + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy, cluster="id.ratee")) #interaction variable in regression with interaction between farmer's and actor's gender
+#significant positive interaction coefficient at 1%
+summary(lm.cluster(data = pool, formula = rating_quality~  interaction_yes*farmer_fem+interaction_yes*ratee_fem+farmer_fem*ratee_fem + educ  + age + tarmac
+                   + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy, cluster="id.ratee")) #interaction variable as an interaction with both the gender variables 
+#significant positive interaction coefficient at 1%, insignificant for the interaction with farmer's gender, significant at 10% for the interaction with ratee's gender (positive coefficient)
+
+#reputation rating 
+summary(lm.cluster(data = pool, formula = rating_reputation ~  interaction_yes+farmer_fem+ratee_fem + educ  + age + tarmac
+                   + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy, cluster="id.ratee")) #interaction variable in regression without interaction terms 
+#significant positive interaction coefficient at 1%
+summary(lm.cluster(data = pool, formula = rating_reputation ~  interaction_yes+farmer_fem*ratee_fem + educ  + age + tarmac
+                   + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy, cluster="id.ratee")) #interaction variable in regression with interaction between farmer's and actor's gender
+#significant positive interaction coefficient at 1%
+summary(lm.cluster(data = pool, formula = rating_reputation ~  interaction_yes*farmer_fem+interaction_yes*ratee_fem+farmer_fem*ratee_fem + educ  + age + tarmac
+                   + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy, cluster="id.ratee")) #interaction variable as an interaction with both the gender variables 
+#significant positive interaction coefficient at 1%, insignificant for the interactions with gender
 
