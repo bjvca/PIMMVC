@@ -197,9 +197,18 @@ Introduction
 \begin_layout Standard
 In the context of imperfect information, economic actors rely predominantly
  on perceptions and use mental shortcuts to make decisions using limited
- data.
- This will be especially the case if it is difficult for economic actors
- to objectively assess the value of the commodity or service being transacted.
+ data 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "daniel2017thinking"
+literal "false"
+
+\end_inset
+
+.
+ Reliance on instinct and emotions becomes dominant if it is difficult for
+ economic actors to objectively assess the value of the commodity or service
+ being transacted.
  However, perceptions and decision heuristics may suffer from a variety
  of cognitive biases such as stereotype thinking, and may be influenced
  by social and cultural phenomena such as homophily effects and prevailing
@@ -216,6 +225,8 @@ Agricultural inputs such as inorganic fertilizer or improved seed varieties
  Even after the commodity has been used and yields can be observed, it may
  still be difficult for the farmer to learn about the quality of the input,
  as many other factors in addition to the input affect yield.
+ As such, when farmers decide to acquire agricultural inputs or not, perceptions
+ and emotions often take the upper hand.
  
 \end_layout
 
@@ -243,8 +254,8 @@ literal "false"
 \end_inset
 
  tested herbicides and found that the average bottle in their sample was
- missing 15 per cent of the active ingredient and 31 per cent of samples
- contain less than 75 per cent of the ingredient advertised.
+ missing 15% of the active ingredient and 31 per cent of samples contain
+ less than 75% of the ingredient advertised.
  While it remains unclear if quality related issues are due to deliberate
  adulteration or due to poor storage and handling, and at what point in
  the value chain quality starts to deteriorate, the resulting uncertainty
@@ -286,7 +297,7 @@ literal "false"
 
 .
  In Uganda, we find that a surprisingly large share of agro-input shops
- are managed by women.
+ are operated and/or managed by women.
 \end_layout
 
 \begin_layout Standard
@@ -305,16 +316,18 @@ However, the same gender norms and customs may also mean that perceptions
 \end_layout
 
 \begin_layout Standard
-We test if farmers perceived female agro-input dealer less favorably than
- their male counterparts using a unique dyadic farmer-dealer dataset.
+We test if farmers perceive female agro-input dealer less favorably than
+ their male counterparts using a unique dyadic dataset of farmer-dealer
+ combinations.
  To operationalize perceptions, we asked farmer to rate agro-input dealers,
  on a scale from 1 to 5, on a range of characteristics.
  We then make between-dealer comparisons, accounting for observable differences
  in the quality of male- and female-managed shops.
- Furthermore, we will use the fact that a farmer will have experience with,
- and will have rated, both male and female agro-input dealers, allowing
- us to construct a within-farmer estimator that controls for farmer specific
- observable and unobservable characteristics.
+ Furthermore, we will use the fact that a farmer will generally have rated
+ more than one agro-input dealer.
+ If farmers rate both male and female agro-input dealers, we can exploit
+ this within-farmer variation and control for farmer specific observable
+ and unobservable characteristics.
 \end_layout
 
 \begin_layout Standard
@@ -330,43 +343,10 @@ Research question and relation to the literature
 \end_layout
 
 \begin_layout Standard
-Gender bias has been confirmed in a wide varieties of context where one
- of more person is asked to assess another person.
- Labour markets and hiring decisions involve situations where managers often
- make decisions based on limited information.
- Discrimination in labour markets, including discrimination related to gender,
- has been documented in several studies.
- 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "wu2020gender"
-literal "false"
-
-\end_inset
-
- uses data from an online forum for economics called 
-\begin_inset Quotes eld
-\end_inset
-
-Economic Job Market Rumors
-\begin_inset Quotes erd
-\end_inset
-
- to measures gender bias in discussions about women versus men.
- Gender equity bias is also often studied in the context of the wage gap,
- where women appear to make substantially less money for the same work as
- their male counterparts.
- Often, this is also tied to gender equity bias in performance appraisals,
- when managers’ beliefs about gender creep into their evaluations of workers
- 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "doi:10.1177/0003122420962080"
-literal "false"
-
-\end_inset
-
-.
+Gender equity bias has been confirmed in a wide varieties of contexts, usually
+ when one or more persons are asked to assess another person.
+ Gender stereotyping and gender role congruence are often catalysts for
+ distorted perceptions and false beliefs about the abilities of women.
 \end_layout
 
 \begin_layout Standard
@@ -381,7 +361,7 @@ literal "false"
 \end_inset
 
  look at differences in rejection rates at four top economics journals.
- The compare male authored papers to female authored papers, using citations
+ They compare male authored papers to female authored papers, using citations
  as a noisy measure of quality to account of potential sources of divergence
  between the two.
  They find that editors largely follow the referees, resulting in a 1.7 percentag
@@ -411,8 +391,8 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-Gender equity bias has been studied extensively in student evaluations of
- teaching.
+Gender equity bias has also been studied extensively in student evaluations
+ of teaching.
  For instance, 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -421,7 +401,85 @@ literal "false"
 
 \end_inset
 
+ find that the language students use in evaluations regarding male professors
+ is significantly different than language used in evaluating female professors.
+ They also show that a male instructor administering an identical online
+ course as a female instructor receives higher ordinal scores in teaching
+ evaluations.
+\end_layout
 
+\begin_layout Standard
+Gender equity bias is studied most in the context of peer review processes
+ such as those mentioned above.
+ However, the same perceptions surface when individuals decide on who to
+ engage with, be it who to work with, who to elect as leaders, or who to
+ consult.
+\end_layout
+
+\begin_layout Standard
+Labour markets and hiring decisions involve situations where managers make
+ decisions based on limited information.
+ Discrimination in labour markets, including discrimination related to gender,
+ has been documented in several studies.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "wu2020gender"
+literal "false"
+
+\end_inset
+
+ uses data from an online forum for economics called 
+\begin_inset Quotes eld
+\end_inset
+
+Economic Job Market Rumors
+\begin_inset Quotes erd
+\end_inset
+
+ to measures gender bias in discussions about women versus men.
+ Gender equity bias is also often studied in the context of the wage gap,
+ whereby women appear to make substantially less money for the same work
+ as their male counterparts.
+ Often, this is also tied to gender equity bias in performance appraisals,
+ when (often male) managers’ beliefs creep into their evaluations of workers
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "doi:10.1177/0003122420962080"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Gender equity bias is also pervasive in politics.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "10.3389/fpsyg.2021.712646"
+literal "false"
+
+\end_inset
+
+ use Natural Language Processing (NLP) to search for gender bias in Kenya's
+ leading newspaper and used sentiment analysis to predict quantitative sentiment
+ scores for sentences surrounding female leader names compared to male leader
+ names.
+ They find evidence of improvement in gender equality but also a backlash
+ from increased female representation in high-level governmental leadership.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "10.1093/jeea/jvab028"
+literal "false"
+
+\end_inset
+
+ find that female candidates obtain fewer votes in municipalities with higher
+ gender earnings gaps.
 \end_layout
 
 \begin_layout Standard
@@ -437,12 +495,6 @@ literal "false"
  Female advisors’ gender was found to have a negative effect on the desire
  to invest, and this negative attitude was found to be significantly higher
  among male respondents.
- 
-\end_layout
-
-\begin_layout Standard
-Discrimination has been less studied in instances where consumers assess
- a set of service providers or vendors.
  
 \end_layout
 
