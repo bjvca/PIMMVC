@@ -3,6 +3,7 @@ path <- getwd()
 library(irrICC)
 library(reshape2)
 library(miceadds)
+library(mosaic)  # standardizing variables
 
 options(scipen=999)
 path_2 <- strsplit(path, "/papers/perceptions")[[1]]
@@ -291,12 +292,16 @@ dealers_rel<- dealers_rel[-c(5:7)] #dropping other price variables
 dealers_rel[dealers_rel=="NaN"] <- NA
 names(dealers_rel) <- c("id.ratee","tarmac_ratee","murram_ratee","nearest_comp_ratee","buying_price") #changing names of variables 
 dealers_rel$ratee_who <- 1 #1 if a dealer
+#getting standardized price variable 
+dealrel_stan <- dealers_rel %>% mutate(buying_pricestan = scale(buying_price))
+#this standardized price variable should be negative so that higher price is better for the farmers in terms of interpretation (but in reality, lower seed prices is better for farmers)
+dealrel_stan$price_new <- dealrel_stan$buying_pricestan*(-1)
 
 #average ratings at dealer level 
 dealer_betw <- aggregate(ratings[c("rating_location","rating_price")],list(ratings$id.ratee),FUN=mean, na.rm=T)
 names(dealer_betw)[1] <- "id.ratee"
 #merging with dealer characteristics 
-merged_dealer_rel<-merge(dealer_betw, dealers_rel, by="id.ratee")
+merged_dealer_rel<-merge(dealer_betw, dealrel_stan, by="id.ratee")
 
 
 #merging 
@@ -383,12 +388,14 @@ traders_rel$buying_price <-  rowMeans(traders_rel[c("hh.maize.q22c","hh.maize.q2
 traders_rel<- traders_rel[-c(2:3)] #dropping other price variables 
 names(traders_rel) <- c("id.ratee","buying_price") #changing names of variables 
 traders_rel$ratee_who <- 2 #1 if a trader
+#standardising price variable --- here higher price is better for farmer as the trader is buying maize from farmer
+tradrel_stan <-   traders_rel %>%  mutate(price_new = scale(buying_price))
 
 #average ratings at trader level 
 trader_betw <- aggregate(ratings_trader[c("rating_location","rating_price")],list(ratings_trader$id.ratee),FUN=mean, na.rm=T)
 names(trader_betw)[1] <- "id.ratee"
 #merging with trader characteristics 
-merged_trader_rel<-merge(trader_betw, traders_rel, by="id.ratee")
+merged_trader_rel<-merge(trader_betw, tradrel_stan, by="id.ratee")
 
 
 #Merging the datasets
@@ -468,16 +475,22 @@ names(millers_pool) <- c("id.ratee","gender_ratee","rating_location_ratee","rati
                          "ratee_rating_overall","client_service","other_competitors","age_ratee","marital_status_ratee","education_ratee")
 
 #subset for merging --- reliability
-millers_rel <- subset(millers, select = c('id.miller' , 'hh.maize.q6a','hh.maize.q6b','hh.maize.q6c', 'hh.maize.q20'))
+millers_rel <- subset(millers, select = c('id.miller' , 'hh.maize.q6a','hh.maize.q6b','hh.maize.q6c', 'hh.maize.q18c'))
 names(millers_rel) <- c("id.ratee","tarmac_ratee","murram_ratee","nearest_comp_ratee","buying_price")
 millers_rel$ratee_who <- 3 #if miller, then 3 
+
+#standardising price variable 
+millers_rel$buying_price<- as.numeric(as.character(millers_rel$buying_price))
+millrel_stan <- millers_rel %>%  mutate(buying_pricestan = scale(buying_price))
+#ensuring standardised price variable is negative for the interpretation that higher price is better for farmer - in reality, lower service cost from miller is better for farmer 
+millrel_stan$price_new <- millrel_stan$buying_pricestan*(-1)
+
 #average ratings at miller level 
 miller_betw <- aggregate(ratings_mill[c("rating_location","rating_price")],list(ratings_mill$id.ratee),FUN=mean, na.rm=T)
 names(miller_betw)[1] <- "id.ratee"
 #merging with miller characteristics 
-merged_miller_rel<-merge(miller_betw, millers_rel, by="id.ratee")
+merged_miller_rel<-merge(miller_betw, millrel_stan, by="id.ratee")
 merged_miller_rel[merged_miller_rel=="n/a"] <- NA
-#only 31 obs for buying price 
 
 #Merging the datasets
 merged_miller_pool <- merge(ratings_mill,millers_pool, by="id.ratee")
@@ -3523,20 +3536,23 @@ hyp1<- rbind(
 
 #stacking for checking data reliability
 deal_mill <-rbind(merged_miller_rel,merged_dealer_rel) #this dataset only has location and price characteristics for dealers and millers 
-deal_mill$buying_price<-as.numeric(as.character(deal_mill$buying_price))
+deal_mill$price_new<-as.numeric(as.character(deal_mill$price_new))
 
-merged_miller_rel <- merged_miller_rel[-c(4:6)] #only need price to merge with traders data 
-merged_dealer_rel<- merged_dealer_rel[-c(4:6)] #only need price to merge with traders data 
+merged_miller_rel <- merged_miller_rel[-c(4:7,9)] #only need price to merge with traders data 
+merged_dealer_rel<- merged_dealer_rel[-c(4:7,9)] #only need price to merge with traders data 
+merged_trader_rel<- merged_trader_rel[-c(4)]
 
 deal_mill_trad <-rbind(merged_miller_rel,merged_dealer_rel, merged_trader_rel) #this dataset has price characteristics for all actors 
-deal_mill_trad$buying_price<-as.numeric(as.character(deal_mill_trad$buying_price))
+deal_mill_trad$price_new<-as.numeric(as.character(deal_mill_trad$price_new))
 
 #regressions 
 #location -- dealers and millers 
-summary(lm(data =deal_mill, formula = rating_location ~  tarmac_ratee+murram_ratee+nearest_comp_ratee))
+deal_mill$dealer_dummy <- ifelse(deal_mill$ratee_who == '1', 1, 0) 
+summary(lm(data =deal_mill, formula = rating_location ~  murram_ratee + dealer_dummy))
 #price 
-summary(lm(data =deal_mill, formula = rating_price ~  buying_price)) #only millers and dealers 
-summary(lm(data =deal_mill_trad, formula = rating_price ~  buying_price)) #all actors 
+deal_mill_trad$dealer_dummy <- ifelse(deal_mill_trad$ratee_who == '1', 1, 0) 
+deal_mill_trad$trader_dummy <- ifelse(deal_mill_trad$ratee_who == '2', 1, 0) 
+summary(lm(data =deal_mill_trad, formula = rating_price ~  price_new + dealer_dummy + trader_dummy)) #all actors 
 
 
 
