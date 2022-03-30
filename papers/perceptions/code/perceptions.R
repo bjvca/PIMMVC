@@ -279,7 +279,26 @@ names(dealers_pool) <- c("id.ratee","gender_ratee","rating_location_ratee","rati
 
 
 #subset for merging --- reliability
-dealers_rel <- subset(dealers, select = c('id.agro' , 'hh.maize.q6a','hh.maize.q6b','hh.maize.q6c','hh.maize.seed.1..q21', 'hh.maize.seed.2..q21', 'hh.maize.seed.3..q21'))
+dealers_q<-dealers
+#trying to create quality index 
+#75. What do they check for during the inspection
+dealers_q$ch_exp <- ifelse(dealers_q$hh.maize.q75.a== 'TRUE', 1, 0) #seed expiry
+dealers_q$ch_store <- ifelse(dealers_q$hh.maize.q75.b== 'TRUE', 1, 0) #seed storage 
+dealers_q$ch_permit <- ifelse(dealers_q$hh.maize.q75.c== 'TRUE', 1, 0) #permit 
+dealers_q$ch_sticker <- ifelse(dealers_q$hh.maize.q75.d== 'TRUE', 1, 0) #seed class sticker
+dealers_q$ch_package <- ifelse(dealers_q$hh.maize.q75.e== 'TRUE', 1, 0) #seed packaging 
+dealers_q$ch_lot <- ifelse(dealers_q$hh.maize.q75.f== 'TRUE', 1, 0) #seed lot 
+dealers_q$ch_germ <- ifelse(dealers_q$hh.maize.q75.g== 'TRUE', 1, 0) #germination
+dealers_q$ch_moist <- ifelse(dealers_q$hh.maize.q75.h== 'TRUE', 1, 0) #moisture
+dealers_q$ch_pure <- ifelse(dealers_q$hh.maize.q75.i== 'TRUE', 1, 0) #seed purity
+dealers_q$qual <-  rowSums(dealers_q[c("ch_exp","ch_store","ch_permit","ch_sticker","ch_package",
+                                        "ch_lot","ch_germ","ch_moist","ch_pure")],na.rm=T) #sum across rows -- if the 9 attributes were checked during inspection
+#creating quality index
+dealers_q$qual_index = ifelse(dealers_q$qual == 0, 0, rescale(dealers_q$qual, c(0, 5), from=c(median(dealers_q$qual), max(dealers_q$qual))))
+#standardizing the quality index
+dealqstan <- dealers_q %>% mutate(qual_indexstan = scale(qual_index))
+
+dealers_rel <- subset(dealqstan, select = c('id.agro' , 'hh.maize.q6a','hh.maize.q6b','hh.maize.q6c','hh.maize.seed.1..q21', 'hh.maize.seed.2..q21', 'hh.maize.seed.3..q21', 'qual_indexstan'))
 dealers_rel[dealers_rel=="n/a"] <- NA
 
 #getting numeric prices 
@@ -290,7 +309,7 @@ dealers_rel$hh.maize.seed.3..q21 <- as.numeric(as.character(dealers_rel$hh.maize
 dealers_rel$buying_price <-  rowMeans(dealers_rel[c("hh.maize.seed.1..q21","hh.maize.seed.2..q21","hh.maize.seed.3..q21")],na.rm=T) #buying price average
 dealers_rel<- dealers_rel[-c(5:7)] #dropping other price variables 
 dealers_rel[dealers_rel=="NaN"] <- NA
-names(dealers_rel) <- c("id.ratee","tarmac_ratee","murram_ratee","nearest_comp_ratee","buying_price") #changing names of variables 
+names(dealers_rel) <- c("id.ratee","tarmac_ratee","murram_ratee","nearest_comp_ratee", "qual_index","buying_price") #changing names of variables 
 dealers_rel$ratee_who <- 1 #1 if a dealer
 #getting standardized price variable 
 dealrel_stan <- dealers_rel %>% mutate(buying_pricestan = scale(buying_price))
@@ -298,7 +317,7 @@ dealrel_stan <- dealers_rel %>% mutate(buying_pricestan = scale(buying_price))
 dealrel_stan$price_new <- dealrel_stan$buying_pricestan*(-1)
 
 #average ratings at dealer level 
-dealer_betw <- aggregate(ratings[c("rating_location","rating_price")],list(ratings$id.ratee),FUN=mean, na.rm=T)
+dealer_betw <- aggregate(ratings[c("rating_location","rating_price","rating_quality")],list(ratings$id.ratee),FUN=mean, na.rm=T)
 names(dealer_betw)[1] <- "id.ratee"
 #merging with dealer characteristics 
 merged_dealer_rel<-merge(dealer_betw, dealrel_stan, by="id.ratee")
@@ -383,16 +402,30 @@ names(traders_pool) <- c("id.ratee","gender_ratee","rating_location_ratee","rati
                          "ratee_rating_overall","client_service","other_competitors","age_ratee","marital_status_ratee","education_ratee")
 
 #subset for merging --- reliability
-traders_rel <- subset(traders, select = c('id.trader' ,'hh.maize.q22c', 'hh.maize.q23c'))
+traders_q<-traders 
+#trying to create quality index 
+#30. Do you provide the following services to your sellers (farmers)? (multiple answers possible) 
+traders_q$pr_inputs <- ifelse(traders_q$hh.maize.q30.a== 'TRUE', 1, 0) #inputs like seeds or fertilizers 
+traders_q$pr_tarp <- ifelse(traders_q$hh.maize.q30.b== 'TRUE', 1, 0) #tarpaulins 
+traders_q$pr_pics <- ifelse(traders_q$hh.maize.q30.c== 'TRUE', 1, 0) #PICS bags 
+traders_q$pr_gunny <- ifelse(traders_q$hh.maize.q30.d== 'TRUE', 1, 0) #gunny bags 
+traders_q$pr_techassist <- ifelse(traders_q$hh.maize.q30.e== 'TRUE', 1, 0) #technical assistance to farmers 
+traders_q$pr_credit <- ifelse(traders_q$hh.maize.q30.f== 'TRUE', 1, 0) #credit
+traders_q$qual <-  rowSums(traders_q[c("pr_inputs","pr_tarp","pr_pics","pr_gunny","pr_techassist","pr_credit")],na.rm=T) #sum across rows -- if the 6 services were provided by the traders 
+#standardizing the quality index -- here, the quality variable above is already ranging between 0 and 5, so not creating an index separately 
+tradqstan <- traders_q %>% mutate(qual_indexstan = scale(qual))
+
+
+traders_rel <- subset(tradqstan, select = c('id.trader' ,'hh.maize.q22c', 'hh.maize.q23c', 'qual_indexstan'))
 traders_rel$buying_price <-  rowMeans(traders_rel[c("hh.maize.q22c","hh.maize.q23c")],na.rm=T) #buying price average
 traders_rel<- traders_rel[-c(2:3)] #dropping other price variables 
-names(traders_rel) <- c("id.ratee","buying_price") #changing names of variables 
+names(traders_rel) <- c("id.ratee","qual_index","buying_price") #changing names of variables 
 traders_rel$ratee_who <- 2 #1 if a trader
 #standardising price variable --- here higher price is better for farmer as the trader is buying maize from farmer
 tradrel_stan <-   traders_rel %>%  mutate(price_new = scale(buying_price))
 
 #average ratings at trader level 
-trader_betw <- aggregate(ratings_trader[c("rating_location","rating_price")],list(ratings_trader$id.ratee),FUN=mean, na.rm=T)
+trader_betw <- aggregate(ratings_trader[c("rating_location","rating_price","rating_quality")],list(ratings_trader$id.ratee),FUN=mean, na.rm=T)
 names(trader_betw)[1] <- "id.ratee"
 #merging with trader characteristics 
 merged_trader_rel<-merge(trader_betw, tradrel_stan, by="id.ratee")
@@ -475,8 +508,31 @@ names(millers_pool) <- c("id.ratee","gender_ratee","rating_location_ratee","rati
                          "ratee_rating_overall","client_service","other_competitors","age_ratee","marital_status_ratee","education_ratee")
 
 #subset for merging --- reliability
-millers_rel <- subset(millers, select = c('id.miller' , 'hh.maize.q6a','hh.maize.q6b','hh.maize.q6c', 'hh.maize.q18c'))
-names(millers_rel) <- c("id.ratee","tarmac_ratee","murram_ratee","nearest_comp_ratee","buying_price")
+millers_q<-millers
+#trying to create quality index
+#31. Material of roof 
+millers_q$roof <- ifelse(millers_q$hh.maize.q31== 'a', 1, 0)
+millers_q$roof[millers_q$hh.maize.q31== 'b'] <- 2
+millers_q$roof[millers_q$hh.maize.q31== 'c'] <- 3
+#32. Material of walls 
+millers_q$wall<- ifelse(millers_q$hh.maize.q32== 'b', 1, 0)
+millers_q$wall[millers_q$hh.maize.q32== 'd'] <- 2
+millers_q$wall[millers_q$hh.maize.q32== 'c'] <- 3
+millers_q$wall[millers_q$hh.maize.q32== 'a'] <- 4
+#33. Material of the Floor 
+millers_q$floor<- ifelse(millers_q$hh.maize.q33== 'b', 1, 0)
+millers_q$floor[millers_q$hh.maize.q33== 'd'] <- 2
+millers_q$floor[millers_q$hh.maize.q33== 'c'] <- 3
+millers_q$floor[millers_q$hh.maize.q33== 'a'] <- 4
+
+millers_q$qual <-  rowSums(millers_q[c("roof","wall","floor")],na.rm=T) #sum across rows -- how the roof, wall and floor are made 
+#creating quality index
+millers_q$qual_index = ifelse(millers_q$qual == 0, 0, rescale(millers_q$qual, c(0, 5), from=c(median(millers_q$qual), max(millers_q$qual))))
+#standardizing the quality index
+millqstan <- millers_q %>% mutate(qual_indexstan = scale(qual_index))
+
+millers_rel <- subset(millqstan, select = c('id.miller' , 'hh.maize.q6a','hh.maize.q6b','hh.maize.q6c', 'hh.maize.q18c','qual_indexstan'))
+names(millers_rel) <- c("id.ratee","tarmac_ratee","murram_ratee","nearest_comp_ratee","buying_price","qual_index")
 millers_rel$ratee_who <- 3 #if miller, then 3 
 
 #standardising price variable 
@@ -486,7 +542,7 @@ millrel_stan <- millers_rel %>%  mutate(buying_pricestan = scale(buying_price))
 millrel_stan$price_new <- millrel_stan$buying_pricestan*(-1)
 
 #average ratings at miller level 
-miller_betw <- aggregate(ratings_mill[c("rating_location","rating_price")],list(ratings_mill$id.ratee),FUN=mean, na.rm=T)
+miller_betw <- aggregate(ratings_mill[c("rating_location","rating_price","rating_quality")],list(ratings_mill$id.ratee),FUN=mean, na.rm=T)
 names(miller_betw)[1] <- "id.ratee"
 #merging with miller characteristics 
 merged_miller_rel<-merge(miller_betw, millrel_stan, by="id.ratee")
@@ -3535,14 +3591,14 @@ hyp1<- rbind(
 ###############################################
 
 #stacking for checking data reliability
-deal_mill <-rbind(merged_miller_rel,merged_dealer_rel) #this dataset only has location and price characteristics for dealers and millers 
+deal_mill <-rbind(merged_miller_rel,merged_dealer_rel) #this dataset only has location, price and quality characteristics for dealers and millers 
 deal_mill$price_new<-as.numeric(as.character(deal_mill$price_new))
 
-merged_miller_rel <- merged_miller_rel[-c(4:7,9)] #only need price to merge with traders data 
-merged_dealer_rel<- merged_dealer_rel[-c(4:7,9)] #only need price to merge with traders data 
-merged_trader_rel<- merged_trader_rel[-c(4)]
+merged_miller_rel <- merged_miller_rel[-c(5:8,11)] #only need price to merge with traders data 
+merged_dealer_rel<- merged_dealer_rel[-c(5:7,9,11)] #only need price to merge with traders data 
+merged_trader_rel<- merged_trader_rel[-c(6)]
 
-deal_mill_trad <-rbind(merged_miller_rel,merged_dealer_rel, merged_trader_rel) #this dataset has price characteristics for all actors 
+deal_mill_trad <-rbind(merged_miller_rel,merged_dealer_rel, merged_trader_rel) #this dataset has price and quality characteristics for all actors 
 deal_mill_trad$price_new<-as.numeric(as.character(deal_mill_trad$price_new))
 
 #regressions 
@@ -3553,8 +3609,8 @@ summary(lm(data =deal_mill, formula = rating_location ~  murram_ratee + dealer_d
 deal_mill_trad$dealer_dummy <- ifelse(deal_mill_trad$ratee_who == '1', 1, 0) 
 deal_mill_trad$trader_dummy <- ifelse(deal_mill_trad$ratee_who == '2', 1, 0) 
 summary(lm(data =deal_mill_trad, formula = rating_price ~  price_new + dealer_dummy + trader_dummy)) #all actors 
-
-
+#quality
+summary(lm(data =deal_mill_trad, formula = rating_quality ~  qual_index + dealer_dummy + trader_dummy)) #all actors 
 
 #################################################
 #checking how the interaction can be included 
