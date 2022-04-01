@@ -4,6 +4,7 @@ library(irrICC)
 library(reshape2)
 library(miceadds)
 library(mosaic)  # standardizing variables
+library(geodist) #for distance calculation
 
 options(scipen=999)
 path_2 <- strsplit(path, "/papers/perceptions")[[1]]
@@ -3674,4 +3675,98 @@ loc_int
 qual_int
 price_int
 rep_int
-==
+
+##########################################################
+#with non-nested two way clustering 
+#overall rating 
+summary(lm.cluster(data = pool, formula = rating_overall ~  interaction_yes +dealer_dummy + trader_dummy, cluster="id.ratee"))
+
+#location rating 
+summary(lm.cluster(data = pool, formula = rating_location ~  interaction_yes +dealer_dummy + trader_dummy, cluster="id.ratee"))
+
+#price rating 
+summary(lm.cluster(data = pool, formula = rating_price ~  interaction_yes +dealer_dummy + trader_dummy, cluster="id.ratee"))
+
+#quality rating 
+summary(lm.cluster(data = pool, formula = rating_quality ~  interaction_yes +dealer_dummy + trader_dummy, cluster="id.ratee"))
+
+#reputation rating 
+summary(lm.cluster(data = pool, formula = rating_reputation ~  interaction_yes +dealer_dummy + trader_dummy, cluster="id.ratee"))
+
+###################################################
+### calculating distance between farmers and millers and dealers
+
+##Farmers' raw dataset
+farmers_loc <- read.csv(paste(path_2,"data/raw_non_public/3rd level_Farmers_shops_Traders_Millers_LINKED.csv", sep = "/"),stringsAsFactors=FALSE )
+
+stack1_loc <- cbind(farmers_loc[c("id.agro1","hh.maize.gps","hh.maize._gps_altitude","hh.maize._gps_latitude","hh.maize._gps_longitude","hh.maize._gps_precision")])
+
+names(stack1_loc) <- c("id.ratee", "gps","altitude","latitude","longitude","precision")
+
+
+stack2_loc <- cbind(farmers_loc[c("id.agro2","hh.maize.gps","hh.maize._gps_altitude","hh.maize._gps_latitude","hh.maize._gps_longitude","hh.maize._gps_precision")])
+
+names(stack2_loc) <- c("id.ratee", "gps","altitude","latitude","longitude","precision")
+
+
+stack3_loc <- cbind(farmers_loc[c("id.agro3","hh.maize.gps","hh.maize._gps_altitude","hh.maize._gps_latitude","hh.maize._gps_longitude","hh.maize._gps_precision")])
+
+names(stack3_loc) <- c("id.ratee", "gps","altitude","latitude","longitude","precision")
+
+stack4_loc <- cbind(farmers_loc[c("id.miller1","hh.maize.gps","hh.maize._gps_altitude","hh.maize._gps_latitude","hh.maize._gps_longitude","hh.maize._gps_precision")])
+
+names(stack4_loc) <- c("id.ratee", "gps","altitude","latitude","longitude","precision")
+
+
+stack5_loc <- cbind(farmers_loc[c("id.miller2","hh.maize.gps","hh.maize._gps_altitude","hh.maize._gps_latitude","hh.maize._gps_longitude","hh.maize._gps_precision")])
+
+names(stack5_loc) <- c("id.ratee", "gps","altitude","latitude","longitude","precision")
+
+stack6_loc <- cbind(farmers_loc[c("id.miller3","hh.maize.gps","hh.maize._gps_altitude","hh.maize._gps_latitude","hh.maize._gps_longitude","hh.maize._gps_precision")])
+
+names(stack6_loc) <- c("id.ratee", "gps","altitude","latitude","longitude","precision")
+
+farm_loc <-rbind(stack1_loc,stack2_loc,stack3_loc, stack4_loc, stack5_loc, stack6_loc) #has gps locations 
+
+### Dealers' and millers' raw data
+dealers_loc <- read.csv(paste(path_2,"data/raw_non_public/RawData_Shops_ids.csv", sep = "/"),stringsAsFactors=FALSE )
+millers_loc <- read.csv(paste(path_2,"data/raw_non_public/RawData_Millers_ids.csv", sep = "/"),stringsAsFactors=FALSE )
+
+stack1_loc <- cbind(dealers_loc[c("id.agro","hh.maize.gps","hh.maize._gps_altitude","hh.maize._gps_latitude","hh.maize._gps_longitude","hh.maize._gps_precision")])
+
+names(stack1_loc) <- c("id.ratee", "gps_ratee","altitude_ratee","latitude_ratee","longitude_ratee","precision_ratee")
+
+stack2_loc <- cbind(millers_loc[c("id.miller","hh.maize.gps","hh.maize._gps_altitude","hh.maize._gps_latitude","hh.maize._gps_longitude","hh.maize._gps_precision")])
+
+names(stack2_loc) <- c("id.ratee", "gps_ratee","altitude_ratee","latitude_ratee","longitude_ratee","precision_ratee")
+
+ratee_loc <-rbind(stack1_loc,stack2_loc)
+
+#merging location datasets of farmers and ratees
+merged_loc<-merge(farm_loc, ratee_loc, by="id.ratee")
+
+## calcualte distance in metres using Haversine formula
+merged_loc$dist_m <- geodist::geodist_vec(
+  x1 = merged_loc$longitude
+  , y1 = merged_loc$latitude
+  , x2 = merged_loc$longitude_ratee
+  , y2 = merged_loc$latitude_ratee
+  , paired = TRUE
+  , measure = "haversine"
+)
+
+## convert to kms
+merged_loc$dist_km <- merged_loc$dist_m / 1000
+
+##aggregating the distance for each ratee 
+locdata <- aggregate(merged_loc[c("dist_km","dist_m")],list(merged_loc$id.ratee),FUN=mean, na.rm=T)
+##getting standardized distance variable 
+locstan <- locdata %>% mutate(dist_kmstan = scale(dist_km))
+locstan<-rename(locstan, id.ratee=Group.1) #renaming variable 
+
+#merging data to get the location ratings 
+deal_mill<-merge(deal_mill, locstan, by="id.ratee")
+
+#regressions 
+#location -- dealers and millers 
+summary(lm(data =deal_mill, formula = rating_location ~ dist_kmstan + dealer_dummy)) #significant negative coeff --- means that more the distance, lower is the rating 
