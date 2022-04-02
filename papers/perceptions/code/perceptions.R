@@ -3609,9 +3609,11 @@ summary(lm(data =deal_mill, formula = rating_location ~  murram_ratee + dealer_d
 #price 
 deal_mill_trad$dealer_dummy <- ifelse(deal_mill_trad$ratee_who == '1', 1, 0) 
 deal_mill_trad$trader_dummy <- ifelse(deal_mill_trad$ratee_who == '2', 1, 0) 
-summary(lm(data =deal_mill_trad, formula = rating_price ~  price_new + dealer_dummy + trader_dummy)) #all actors 
+loc3<-lm(data =deal_mill_trad, formula = rating_price ~  price_new + dealer_dummy + trader_dummy) #all actors 
+se_loc3 <- sqrt(diag(vcov(loc3)))
 #quality
-summary(lm(data =deal_mill_trad, formula = rating_quality ~  qual_index + dealer_dummy + trader_dummy)) #all actors 
+loc2<-lm(data =deal_mill_trad, formula = rating_quality ~  qual_index + dealer_dummy + trader_dummy) #all actors 
+se_loc2 <- sqrt(diag(vcov(loc2)))
 
 #################################################
 #checking how the interaction can be included 
@@ -3670,28 +3672,28 @@ qual_int<-summary(lm(data = pool, formula = rating_quality ~  interaction_yes +d
 #reputation rating 
 rep_int<-summary(lm(data = pool, formula = rating_reputation ~  interaction_yes +dealer_dummy + trader_dummy))
 
-overall_int
-loc_int
-qual_int
-price_int
-rep_int
+#overall_int
+#loc_int
+#qual_int
+#price_int
+#rep_int
 
 ##########################################################
 #with non-nested two way clustering 
 #overall rating 
-summary(lm.cluster(data = pool, formula = rating_overall ~  interaction_yes +dealer_dummy + trader_dummy, cluster="id.ratee"))
+int1<-lm.cluster(data = pool, formula = rating_overall ~  interaction_yes +dealer_dummy + trader_dummy, cluster="id.ratee")
 
-#location rating 
-summary(lm.cluster(data = pool, formula = rating_location ~  interaction_yes +dealer_dummy + trader_dummy, cluster="id.ratee"))
+# #location rating 
+int2<-lm.cluster(data = pool, formula = rating_location ~  interaction_yes +dealer_dummy + trader_dummy, cluster="id.ratee")
 
-#price rating 
-summary(lm.cluster(data = pool, formula = rating_price ~  interaction_yes +dealer_dummy + trader_dummy, cluster="id.ratee"))
+# #price rating 
+int3<-lm.cluster(data = pool, formula = rating_price ~  interaction_yes +dealer_dummy + trader_dummy, cluster="id.ratee")
 
-#quality rating 
-summary(lm.cluster(data = pool, formula = rating_quality ~  interaction_yes +dealer_dummy + trader_dummy, cluster="id.ratee"))
+# #quality rating 
+int4<-lm.cluster(data = pool, formula = rating_quality ~  interaction_yes +dealer_dummy + trader_dummy, cluster="id.ratee")
 
-#reputation rating 
-summary(lm.cluster(data = pool, formula = rating_reputation ~  interaction_yes +dealer_dummy + trader_dummy, cluster="id.ratee"))
+# #reputation rating 
+int5<-lm.cluster(data = pool, formula = rating_reputation ~  interaction_yes +dealer_dummy + trader_dummy, cluster="id.ratee")
 
 ###################################################
 ### calculating distance between farmers and millers and dealers
@@ -3769,4 +3771,69 @@ deal_mill<-merge(deal_mill, locstan, by="id.ratee")
 
 #regressions 
 #location -- dealers and millers 
-summary(lm(data =deal_mill, formula = rating_location ~ dist_kmstan + dealer_dummy)) #significant negative coeff --- means that more the distance, lower is the rating 
+loc1<-lm(data =deal_mill, formula = rating_location ~ dist_kmstan + dealer_dummy) #significant negative coeff --- means that more the distance, lower is the rating 
+se_loc1 <- sqrt(diag(vcov(loc1)))
+
+#for creating table     
+rel1<- rbind(c((format(round(sum(loc1$coefficients[1]),digits=3),nsmall=0)), #coefficient 
+             (format(round(sum(loc2$coefficients[1]),digits=3),nsmall=0)),
+             (format(round(sum(loc3$coefficients[1]),digits=3),nsmall=0))),
+           
+           c((format(round(se_loc1[1],digits=3),nsmall=0)), #standard error 
+             (format(round(se_loc2[1],digits=3),nsmall=0)),
+             (format(round(se_loc3[1],digits=3),nsmall=0))),
+           
+           c((format(round(summary(loc1)$coefficients[1,4],digits=3),nsmall=0)),  #p value 
+             (format(round(summary(loc2)$coefficients[1,4],digits=3),nsmall=0)),
+             (format(round(summary(loc3)$coefficients[1,4],digits=3),nsmall=0))),
+           
+           c((format(round(sum(loc1$coefficients[2]),digits=3),nsmall=0)), #coefficient 
+              (format(round(sum(loc2$coefficients[2]),digits=3),nsmall=0)),
+              (format(round(sum(loc3$coefficients[2]),digits=3),nsmall=0))),
+            
+            c((format(round(se_loc1[2],digits=3),nsmall=0)), #standard error 
+              (format(round(se_loc2[2],digits=3),nsmall=0)),
+              (format(round(se_loc3[2],digits=3),nsmall=0))),
+            
+            c((format(round(summary(loc1)$coefficients[2,4],digits=3),nsmall=0)),  #p value 
+              (format(round(summary(loc2)$coefficients[2,4],digits=3),nsmall=0)),
+              (format(round(summary(loc3)$coefficients[2,4],digits=3),nsmall=0))),
+            
+            c((format(round(sum(loc1$coefficients[3]),digits=3),nsmall=0)), #coefficient 
+               (format(round(sum(loc2$coefficients[3]),digits=3),nsmall=0)),
+               (format(round(sum(loc3$coefficients[3]),digits=3),nsmall=0))),
+             
+             c((format(round(se_loc1[3],digits=3),nsmall=0)), #standard error 
+               (format(round(se_loc2[3],digits=3),nsmall=0)),
+               (format(round(se_loc3[3],digits=3),nsmall=0))),
+             
+             c((format(round(summary(loc1)$coefficients[3,4],digits=3),nsmall=0)),  #p value 
+               (format(round(summary(loc2)$coefficients[3,4],digits=3),nsmall=0)),
+               (format(round(summary(loc3)$coefficients[3,4],digits=3),nsmall=0))),
+             
+             c((0), #coefficient 
+              (format(round(sum(loc2$coefficients[3]),digits=3),nsmall=0)),
+              (format(round(sum(loc3$coefficients[3]),digits=3),nsmall=0))),
+             
+             c((0), #standard error 
+             (format(round(se_loc2[3],digits=3),nsmall=0)),
+             (format(round(se_loc3[3],digits=3),nsmall=0))),
+            
+            c((0),  #p value 
+            (format(round(summary(loc2)$coefficients[3,4],digits=3),nsmall=0)),
+            (format(round(summary(loc3)$coefficients[3,4],digits=3),nsmall=0))),
+            
+           
+           c((format(round(summary(loc1)$r.squared,digits=3),nsmall=0)),
+             (format(round(summary(loc2)$r.squared,digits=3),nsmall=0)),
+             (format(round(summary(loc3)$r.squared,digits=3),nsmall=0))),
+           
+           c((format(round(summary(loc1)$adj.r.squared,digits=3),nsmall=0)),
+             (format(round(summary(loc2)$adj.r.squared,digits=3),nsmall=0)),
+             (format(round(summary(loc3)$adj.r.squared,digits=3),nsmall=0))),
+           
+           c((format(round(nobs(loc1),digits=3),nsmall=0)),
+             (format(round(nobs(loc2),digits=3),nsmall=0)),
+             (format(round(nobs(loc3),digits=3),nsmall=0)))
+)
+5
