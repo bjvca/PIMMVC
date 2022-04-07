@@ -11,6 +11,8 @@ library(lme4)
 library(Rcpp)
 library(sjPlot)
 library(tidyverse)
+library(clubSandwich)
+library(dplyr)
 options(scipen=999)
 path_2 <- strsplit(path, "/papers/perceptions")[[1]]
 
@@ -35,19 +37,315 @@ baseline_dealer <- read.csv(paste(path_2,"papers/perceptions/data_seed_systems/d
 #midline data 
 midline_dealer <- read.csv(paste(path_2,"papers/perceptions/data_seed_systems_midline/data/input_dealer/midline_dealer.csv", sep="/"), stringsAsFactors = FALSE)
 
-merged_dealer <- merge(baseline_dealer, midline_dealer, by="shop_ID") #merging baseline and midline 
+###############################################################################################
+###Anderson, 2008: https://are.berkeley.edu/~mlanderson/pdf/Anderson%202008a.pdf p. 1485
 
+###1. For all outcomes, switch signs where necessary so that the positive direction always indicates a "better" outcome.
+
+#### Index of capital-intensive seed handling and storage practices observed by enumerator ####
+
+#Is the roof leak-proof? yes=good
+baseline_dealer$base_roofleak <- ifelse(baseline_dealer$maize.owner.agree.temp.q72=="Yes",1,0) 
+midline_dealer$mid_roofleak <- ifelse(midline_dealer$owner.agree.temp.q72=="Yes",1,0) 
+
+#Is the roof insulated to keep heat out? yes=good
+baseline_dealer$base_roofinsul <- ifelse(baseline_dealer$maize.owner.agree.temp.q73=="Yes",1,0) 
+midline_dealer$mid_roofinsul <- ifelse(midline_dealer$owner.agree.temp.q73=="Yes",1,0)
+
+#Are the walls insulated to keep the heat out? yes=good
+baseline_dealer$base_wallinsul <- ifelse(baseline_dealer$maize.owner.agree.temp.q74=="Yes",1,0) 
+midline_dealer$mid_wallinsul <- ifelse(midline_dealer$owner.agree.temp.q74=="Yes",1,0)
+
+#Is the area ventilated? yes=good
+baseline_dealer$base_ventilation <- ifelse(baseline_dealer$maize.owner.agree.temp.q75=="Yes",1,0) 
+midline_dealer$mid_ventilation <- ifelse(midline_dealer$owner.agree.temp.q75=="Yes",1,0)
+
+#Do you see any official certificates displayed in the shop (e.g. inspection, trainings, registration with association)? yes=good
+baseline_dealer$base_cert <- ifelse(baseline_dealer$maize.owner.agree.temp.q81=="Yes",1,0) 
+midline_dealer$mid_cert <- ifelse(midline_dealer$owner.agree.temp.q81=="Yes",1,0)
+
+#### Index of efforts of dealer and services offered by dealer ####
+
+#When farmers buy seed, do you explain how the seed should be used (seed spacing, seed rate, complementary inputs) yes=good
+baseline_dealer$base_alwaysexplains[baseline_dealer$maize.owner.agree.q85=="a"] <- 0 
+baseline_dealer$base_alwaysexplains[baseline_dealer$maize.owner.agree.q85=="b"] <- 0 
+baseline_dealer$base_alwaysexplains[baseline_dealer$maize.owner.agree.q85=="c"] <- 1
+
+midline_dealer$mid_alwaysexplains[midline_dealer$owner.agree.q85=="a"] <- 0 
+midline_dealer$mid_alwaysexplains[midline_dealer$owner.agree.q85=="b"] <- 0 
+midline_dealer$mid_alwaysexplains[midline_dealer$owner.agree.q85=="c"] <- 1
+
+
+#When farmers buy seed, do you usually recommend complementary inputs (fertilizer, chemical,.) yes=good
+baseline_dealer$base_alwaysrecom[baseline_dealer$maize.owner.agree.q86=="a"] <- 0 
+baseline_dealer$base_alwaysrecom[baseline_dealer$maize.owner.agree.q86=="b"] <- 0 
+baseline_dealer$base_alwaysrecom[baseline_dealer$maize.owner.agree.q86=="c"] <- 1
+
+midline_dealer$mid_alwaysrecom[midline_dealer$owner.agree.q86=="a"] <- 0 
+midline_dealer$mid_alwaysrecom[midline_dealer$owner.agree.q86=="b"] <- 0 
+midline_dealer$mid_alwaysrecom[midline_dealer$owner.agree.q86=="c"] <- 1
+
+
+#Do you offer extension/training to your clients on how to use improved seed varieties? yes=good
+baseline_dealer$base_extension[baseline_dealer$maize.owner.agree.q87=="1"] <- 0 
+baseline_dealer$base_extension[baseline_dealer$maize.owner.agree.q87=="2"] <- 1
+baseline_dealer$base_extension[baseline_dealer$maize.owner.agree.q87=="3"] <- 1
+
+midline_dealer$mid_extension[midline_dealer$owner.agree.q87=="1"] <- 0 
+midline_dealer$mid_extension[midline_dealer$owner.agree.q87=="2"] <- 1 
+midline_dealer$mid_extension[midline_dealer$owner.agree.q87=="3"] <- 1
+
+
+#Did you offer discounts to clients that buy large quantities of maize seed during the second season of 2020? yes=good
+baseline_dealer$base_largequan<-ifelse(baseline_dealer$maize.owner.agree.q88=="Yes",1,0)
+midline_dealer$mid_largequan<-ifelse(midline_dealer$owner.agree.q88=="Yes",1,0)
+
+
+#What is that smallest package of improved seed (OPV/hybird) that you stocked during this season (without repackaging) yes=good
+baseline_dealer$base_smallpack[baseline_dealer$maize.owner.agree.q89=="1"] <- 1 
+baseline_dealer$base_smallpack[baseline_dealer$maize.owner.agree.q89=="2"] <- 0
+baseline_dealer$base_smallpack[baseline_dealer$maize.owner.agree.q89=="3"] <- 0
+baseline_dealer$base_smallpack[baseline_dealer$maize.owner.agree.q89=="4"] <- 0
+baseline_dealer$base_smallpack[baseline_dealer$maize.owner.agree.q89=="other"] <- NA
+
+midline_dealer$mid_smallpack[midline_dealer$owner.agree.q89=="1"] <- 1 
+midline_dealer$mid_smallpack[midline_dealer$owner.agree.q89=="2"] <- 0
+midline_dealer$mid_smallpack[midline_dealer$owner.agree.q89=="3"] <- 0
+midline_dealer$mid_smallpack[midline_dealer$owner.agree.q89=="4"] <- 0
+midline_dealer$mid_smallpack[midline_dealer$owner.agree.q89=="other"] <- NA
+
+
+#Do you provide seed on credit (pay after harvest)? yes=good
+baseline_dealer$base_seedcredit[baseline_dealer$maize.owner.agree.q93=="1"] <- 0 
+baseline_dealer$base_seedcredit[baseline_dealer$maize.owner.agree.q93=="2"] <- 1
+baseline_dealer$base_seedcredit[baseline_dealer$maize.owner.agree.q93=="3"] <- 1
+
+midline_dealer$mid_seedcredit[midline_dealer$owner.agree.q93=="1"] <- 0 
+midline_dealer$mid_seedcredit[midline_dealer$owner.agree.q93=="2"] <- 1
+midline_dealer$mid_seedcredit[midline_dealer$owner.agree.q93=="3"] <- 1
+
+
+#Since last season, did you receive any complaint from a customer that seed you sold was not good? yes=BAD
+baseline_dealer$base_complaint<-ifelse(baseline_dealer$maize.owner.agree.q96=="Yes",0,1)
+midline_dealer$mid_complaint<-ifelse(midline_dealer$owner.agree.q96=="Yes",0,1)
+
+
+#What payment modalities do you accept?
+baseline_dealer$base_mobmoney<-ifelse(baseline_dealer$maize.owner.agree.q97.b=="True",1,0) 
+midline_dealer$mid_mobmoney<-ifelse(midline_dealer$owner.agree.q97.b=="True",1,0) 
+
+
+############ shelflife ##############
+# Days since packaging date/expiry date minus 6 months
+
+###BASELINE 
+baseline_dealer$base_date <- as.Date(baseline_dealer$date)  #date is the date of the interview
+baseline_dealer$base_exp <- as.Date(baseline_dealer$exp)   #exp is the expiry date and in the future 
+baseline_dealer$base_date_pack <- as.Date(baseline_dealer$date_pack) #date_pack is the date of packaging and in the past
+
+#now we combine both because most seed bags only have one number (pack date or exp date)
+baseline_dealer$base_date_pack_incltransformedexp <- baseline_dealer$base_date_pack   #this is just the pack date
+baseline_dealer$base_transformedexp <- baseline_dealer$base_exp - 183 #6x366/12 
+#this is the exp date minus half a year (as the exp date is approximately 6 months after packaging)
+
+baseline_dealer$base_date_pack_incltransformedexp[is.na(baseline_dealer$base_date_pack)]<-baseline_dealer$base_transformedexp[is.na(baseline_dealer$base_date_pack)] 
+#so we take this number as pack date if pack date is not on the bag
+
+baseline_dealer$base_shelflife_Caro <- baseline_dealer$base_date - as.Date(baseline_dealer$base_date_pack_incltransformedexp)
+#this is the number of days between (fake) pack date and interview, a positive number, 180 days (~6 months) in my example
+baseline_dealer$base_shelflife_Caro[baseline_dealer$base_shelflife_Caro < 0] <- NA 
+#a neg number means that the seed was packed AFTER in enumerator bought the bag, which is impossible and becomes NA
+baseline_dealer$maize.owner.shelflife_Caro <- as.numeric(as.character(baseline_dealer$base_shelflife_Caro)) ##shelflife variable 
+
+###MIDLINE 
+midline_dealer$mid_date <- as.Date(midline_dealer$date)  #date is the date of the interview
+midline_dealer$mid_exp <- as.Date(midline_dealer$exp)   #exp is the expiry date and in the future 
+midline_dealer$mid_date_pack <- as.Date(midline_dealer$date_pack) #date_pack is the date of packaging and in the past
+
+#now we combine both because most seed bags only have one number (pack date or exp date)
+midline_dealer$mid_date_pack_incltransformedexp <- midline_dealer$mid_date_pack   #this is just the pack date
+midline_dealer$mid_transformedexp <- midline_dealer$mid_exp - 183 #6x366/12 
+#this is the exp date minus half a year (as the exp date is approximately 6 months after packaging)
+
+midline_dealer$mid_date_pack_incltransformedexp[is.na(midline_dealer$mid_date_pack)]<-midline_dealer$mid_transformedexp[is.na(midline_dealer$mid_date_pack)] 
+#so we take this number as pack date if pack date is not on the bag
+
+midline_dealer$mid_shelflife_Caro <- midline_dealer$mid_date - as.Date(midline_dealer$mid_date_pack_incltransformedexp)
+#this is the number of days between (fake) pack date and interview, a positive number, 180 days (~6 months) in my example
+midline_dealer$mid_shelflife_Caro[midline_dealer$mid_shelflife_Caro < 0] <- NA 
+#a neg number means that the seed was packed AFTER in enumerator bought the bag, which is impossible and becomes NA
+midline_dealer$owner.shelflife_Caro <- as.numeric(as.character(midline_dealer$mid_shelflife_Caro)) ##shelflife variable 
+
+
+
+###2. Demean and divide outcomes by control group standard deviation (normalizes outcomes to be on comparable scale)
+
+#https://github.com/cdsamii/make_index/blob/master/r/index_comparison.R
+
+#function to standardize columns of matrix, sgroup = control group = logical vector
+
+matStand <- function(x, sgroup = rep(TRUE, nrow(x))){
+  
+  for(j in 1:ncol(x)){
+    
+    x[,j] <- (x[,j] - mean(x[sgroup,j],na.rm = T))/sd(x[sgroup,j],na.rm = T)
+    
+  }
+  
+  return(x)
+  
+}
+
+###3. Define groupings/areas/domains of outcomes: each outcome is assigned to one of these areas
+
+## index of capital intensive seed handling and storage practices 
+variables_practices_cap_mid <- cbind(midline_dealer$mid_roofleak,midline_dealer$mid_roofinsul, midline_dealer$mid_wallinsul, midline_dealer$mid_ventilation,
+                                     midline_dealer$mid_cert) #x
+
+variables_practices_cap_base <- cbind(baseline_dealer$base_roofleak,baseline_dealer$base_roofinsul, baseline_dealer$base_wallinsul, baseline_dealer$base_ventilation,
+                                      baseline_dealer$base_cert)
+
+#index of efforts by dealer 
+variables_efforts_mid <- cbind(midline_dealer$mid_alwaysexplains,midline_dealer$mid_alwaysrecom,midline_dealer$mid_extension
+                               ,midline_dealer$mid_largequan,midline_dealer$mid_smallpack,midline_dealer$mid_seedcredit 
+                               ,midline_dealer$mid_complaint,midline_dealer$mid_mobmoney)
+
+variables_efforts_base <- cbind(baseline_dealer$base_alwaysexplains,baseline_dealer$base_alwaysrecom,baseline_dealer$base_extension
+                                ,baseline_dealer$base_largequan,baseline_dealer$base_smallpack,baseline_dealer$base_seedcredit 
+                                ,baseline_dealer$base_complaint,baseline_dealer$base_mobmoney)
+
+###4. Create index: weighted average of outcomes for individual i in area j
+
+###weight inputs (outcomes) by inverse of covariance matrix of transformed outcomes in area j
+
+###simple way: set weight on each outcome equal to sum of its row entries in inverted covariance matrix for area j
+
+
+
+#function that takes in data in matrix format and returns IC weights and ICW index
+
+#wgts argument: weights can be incorporated
+
+#revcols argument: takes vector indicating which columns should have reversed values (standardized values * -1) prior to construction of index
+
+icwIndex <- function(     xmat,
+                          
+                          #wgts=rep(1, nrow(xmat)), #nrow: number of rows present in xmat --> many 1s
+                          
+                          revcols = NULL,
+                          
+                          sgroup = rep(TRUE, nrow(xmat))){
+  
+  X <- matStand(xmat, sgroup)
+  
+  if(length(revcols)>0){
+    
+    X[,revcols] <-  -1*X[,revcols]
+    
+  }
+  
+  i.vec <- as.matrix(rep(1,ncol(xmat)))
+  
+  #Sx <- cov.wt(X, wt=wgts)[[1]]
+  
+  #list with estimates of the weighted covariance matrix and the mean of the data
+  
+  Sx <- cov(X,use = "pairwise.complete.obs")
+  
+  #cov: covariance of x and y if these are vectors/covariances between columns of x and columns of y are computed if these are matrices
+  
+  #use = "everything" produces NAs for the index.
+  
+  #use = "all.obs" produces an error.
+  
+  #use = "complete.obs" and use = "na.or.complete": works, NAs are handled by casewise deletion.
+  
+  #use = "pairwise.complete.obs": works, covariance between each pair of variables is computed using all complete pairs of observations on those variables
+  
+  weights <- solve(t(i.vec)%*%solve(Sx)%*%i.vec)%*%t(i.vec)%*%solve(Sx)
+  
+  index <- t(solve(t(i.vec)%*%solve(Sx)%*%i.vec)%*%t(i.vec)%*%solve(Sx)%*%t(X))
+  
+  return(list(weights = weights, index = index))
+  
+}
+
+
+### index of capital intensive seed handling and storage practices 
+
+index_practices_cap_mid <- icwIndex(xmat=variables_practices_cap_mid) #x
+### creating index in midline 
+midline_dealer$owner.index_practices_cap <- index_practices_cap_mid$index #x
+
+index_practices_cap_base <- icwIndex(xmat=variables_practices_cap_base)
+### creating index in baseline 
+baseline_dealer$maize.owner.index_practices_cap <- index_practices_cap_base$index
+
+### index of efforts by dealer 
+
+index_efforts_mid <- icwIndex(xmat=variables_efforts_mid)
+### creating index in midline 
+midline_dealer$owner.index_efforts <- index_efforts_mid$index 
+
+index_efforts_base <- icwIndex(xmat=variables_efforts_base)
+### creating index in baseline 
+baseline_dealer$maize.owner.index_efforts <- index_efforts_base$index
+
+
+####moisture reading 
+baseline_dealer$maize.owner.moistread<-baseline_dealer$reading
+midline_dealer$owner.moistread<-midline_dealer$reading
+
+###average sales price -- 4 types of maize seeds 
+### BASELINE 
+baseline_dealer$maize.owner.agree.long10h.q26[baseline_dealer$maize.owner.agree.long10h.q26=="n/a"]<-NA
+baseline_dealer$maize.owner.agree.long10h.q26<- as.numeric(as.character(baseline_dealer$maize.owner.agree.long10h.q26))
+
+baseline_dealer$maize.owner.agree.longe7h.q38[baseline_dealer$maize.owner.agree.longe7h.q38=="n/a"]<-NA
+baseline_dealer$maize.owner.agree.longe7h.q38<- as.numeric(as.character(baseline_dealer$maize.owner.agree.longe7h.q38))
+
+baseline_dealer$maize.owner.agree.longe5.q51[baseline_dealer$maize.owner.agree.longe5.q51=="n/a"]<-NA
+baseline_dealer$maize.owner.agree.longe5.q51<- as.numeric(as.character(baseline_dealer$maize.owner.agree.longe5.q51))
+
+baseline_dealer$maize.owner.agree.longe4.q63[baseline_dealer$maize.owner.agree.longe4.q63=="n/a"]<-NA
+baseline_dealer$maize.owner.agree.longe4.q63<- as.numeric(as.character(baseline_dealer$maize.owner.agree.longe4.q63))
+
+baseline_dealer$base_price <-  rowMeans(baseline_dealer[c("maize.owner.agree.long10h.q26","maize.owner.agree.longe7h.q38","maize.owner.agree.longe5.q51","maize.owner.agree.longe4.q63")],na.rm=T) 
+
+baseline_dealer <- baseline_dealer %>%  mutate(maize.owner.saleprice = scale(base_price)) #standardising 
+
+
+### midLINE 
+midline_dealer$owner.agree.long10h.q26[midline_dealer$owner.agree.long10h.q26=="n/a"]<-NA
+midline_dealer$owner.agree.long10h.q26<- as.numeric(as.character(midline_dealer$owner.agree.long10h.q26))
+
+midline_dealer$owner.agree.longe7H.q38[midline_dealer$owner.agree.longe7H.q38=="n/a"]<-NA
+midline_dealer$owner.agree.longe7H.q38<- as.numeric(as.character(midline_dealer$owner.agree.longe7H.q38))
+
+midline_dealer$owner.agree.longe5.q51[midline_dealer$owner.agree.longe5.q51=="n/a"]<-NA
+midline_dealer$owner.agree.longe5.q51<- as.numeric(as.character(midline_dealer$owner.agree.longe5.q51))
+
+midline_dealer$owner.agree.longe4.q63[midline_dealer$owner.agree.longe4.q63=="n/a"]<-NA
+midline_dealer$owner.agree.longe4.q63<- as.numeric(as.character(midline_dealer$owner.agree.longe4.q63))
+
+midline_dealer$mid_price <-  rowMeans(midline_dealer[c("owner.agree.long10h.q26","owner.agree.longe7H.q38","owner.agree.longe5.q51","owner.agree.longe4.q63")],na.rm=T) 
+
+midline_dealer <- midline_dealer %>%  mutate(owner.saleprice = scale(mid_price)) #standardising 
+
+
+
+merged_dealer <- merge(baseline_dealer, midline_dealer, by="shop_ID") #merging baseline and midline 
 
 #prepping data for FE
 #subsetting baseline dealers and considering only the required variables 
 base<-baseline_dealer[c("maize.owner.agree.gender", "maize.owner.agree.age","maize.owner.agree.educ", "maize.owner.agree.q3", "maize.owner.agree.q4", "maize.owner.agree.q5",
                           "maize.owner.agree.q8", "maize.owner.agree.temp.q69", "maize.owner.agree.temp.q71", "maize.owner.agree.temp.q73", "maize.owner.agree.temp.q74", "maize.owner.agree.temp.q75",
                           "maize.owner.agree.temp.q78", "maize.owner.agree.temp.q79", "maize.owner.agree.temp.q80" , "maize.owner.agree.temp.q81", "maize.owner.agree.temp.q82", "maize.owner.agree.q96",
-                          "maize.owner.agree.temp.q72", "shop_ID")]
+                          "maize.owner.agree.temp.q72", "maize.owner.index_practices_cap","maize.owner.index_efforts","maize.owner.shelflife_Caro","maize.owner.moistread", "maize.owner.saleprice","shop_ID")]
 basem<-baseline_dealer[c( "maize.owner.agree.q3", "maize.owner.agree.q4", "maize.owner.agree.q8", "shop_ID")] #subsetting baseline to populate midline with the constant variables 
 mid<-midline_dealer[c("owner.agree.gender", "owner.agree.age","owner.agree.educ", "owner.agree.q5","owner.agree.temp.q69", "owner.agree.temp.q71", "owner.agree.temp.q73", "owner.agree.temp.q74", "owner.agree.temp.q75",
                         "owner.agree.temp.q78", "owner.agree.temp.q79", "owner.agree.temp.q80" , "owner.agree.temp.q81", "owner.agree.temp.q82", "owner.agree.q96",
-                        "owner.agree.temp.q72", "shop_ID")] #subsetting midline dealers and considering only the required variables
+                        "owner.agree.temp.q72", "owner.index_practices_cap","owner.index_efforts","owner.shelflife_Caro","owner.moistread","owner.saleprice","shop_ID")] #subsetting midline dealers and considering only the required variables
 names(mid) <- gsub(x = names(mid), pattern = "owner.", replacement = "maize.owner.") #variable matching with baseline  
 
 midm<-merge(mid, basem, by="shop_ID") #merging both midline and baseline for FE
@@ -58,6 +356,22 @@ dealer_stack <- rbind(base, midm) #stacking dealer data from both periods
 #getting controls as averages for between dealers 
 merged_dealer[merged_dealer==999] <- NA
 
+#averaging moisture reading 
+merged_dealer$moist <-  rowMeans(merged_dealer[c("maize.owner.moistread","owner.moistread")],na.rm=T) 
+
+#averaging shelflife 
+merged_dealer$shelflife<-  rowMeans(merged_dealer[c("maize.owner.shelflife_Caro","owner.shelflife_Caro")],na.rm=T)
+
+#averaging efforts by dealer
+merged_dealer$dealereffort<-  rowMeans(merged_dealer[c("maize.owner.index_efforts","owner.index_efforts")],na.rm=T)
+
+#averaging capital intensive seed handling and storage practices 
+merged_dealer$index_cap<-  rowMeans(merged_dealer[c("maize.owner.index_practices_cap","owner.index_practices_cap")],na.rm=T)
+
+#averaging sales price 
+merged_dealer$saleprice <-  rowMeans(merged_dealer[c("maize.owner.saleprice","owner.saleprice")],na.rm=T) 
+
+#age
 merged_dealer$maize.owner.agree.age <-  rowMeans(merged_dealer[c("maize.owner.agree.age","owner.agree.age")],na.rm=T) #averaging age 
 
 #education -- finished secondary educ --- e and f ; a,b,c,d --- did not finish secondary educ
@@ -207,7 +521,7 @@ shop_av <- aggregate(rating_dyads[c("general_rating","location_rating","price_ra
 
 names(shop_av)[1] <- "shop_ID"
 #merge in dealer gender and controls 
-rating_dyads <- merge(shop_av, merged_dealer[c("shop_ID","maize.owner.agree.gender",
+rating_dyads <- merge(shop_av, merged_dealer[c("shop_ID","maize.owner.agree.gender", "dealereffort", "index_cap", "shelflife", "moist", "saleprice",
                                                "maize.owner.agree.age","prim","maize.owner.agree.q3", "maize.owner.agree.q4",  "inputsale", "years_shop", "dedicated_area", "pest_prob", "insulated", "wall_heatproof", "ventilation", "badlighting", "badstored", "open_storage", "cert_yes", "shop_rate", "complaint", "leakproof")],  by.x="shop_ID", by.y="shop_ID", all.x=T)
 
 #rename
@@ -400,6 +714,26 @@ s7<- rbind(c((format(round(sum((lm(overall_rating~gender,data=rating_dyads))$coe
 
 #regressions with controls -- between regression 
 #seed ratings 
+#regressions with the controls --- moisture reading and shelflife
+summary(lm(score~gender+ maize.owner.agree.age +prim +moist+shelflife,data=rating_dyads))
+summary(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +moist+shelflife,data=rating_dyads))
+summary(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +moist+shelflife,data=rating_dyads))
+summary(lm(seed_drought_rating ~gender+ maize.owner.agree.age +prim +moist+shelflife,data=rating_dyads))
+summary(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +moist+shelflife,data=rating_dyads))
+summary(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim+moist+shelflife,data=rating_dyads))
+summary(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +moist+shelflife,data=rating_dyads))
+
+#number of observations 
+nobs(lm(score~gender+ maize.owner.agree.age +prim +moist+shelflife,data=rating_dyads)) #118
+nobs(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +moist+shelflife,data=rating_dyads))    #118
+nobs(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +moist+shelflife,data=rating_dyads))    #118
+nobs(lm(seed_drought_rating ~gender+ maize.owner.agree.age +prim +moist+shelflife,data=rating_dyads))  #116
+nobs(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +moist+shelflife,data=rating_dyads))  #118
+nobs(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim+moist+shelflife,data=rating_dyads))  #117
+nobs(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +moist+shelflife,data=rating_dyads))  #118
+
+
+
 summary(lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +leakproof,data=rating_dyads))
 
@@ -1417,13 +1751,14 @@ s6<- rbind(c((format(round(sum((lm(score~gender+ maize.owner.agree.age +prim +ma
 
 
 #dealer ratings 
-summary(lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +leakproof,data=rating_dyads))
+summary(lm(overall_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap +saleprice,data=rating_dyads))
 
-summary(lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint  +leakproof,data=rating_dyads))
+summary(lm(general_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap,data=rating_dyads))
 
 summary(lm(location_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4,data=rating_dyads))
+
+summary(lm(price_rating~gender+ maize.owner.agree.age +prim+ saleprice ,data=rating_dyads))
+
 
 summary(lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +leakproof,data=rating_dyads))
