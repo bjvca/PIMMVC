@@ -64,6 +64,72 @@ midline_dealer$mid_ventilation <- ifelse(midline_dealer$owner.agree.temp.q75=="Y
 baseline_dealer$base_cert <- ifelse(baseline_dealer$maize.owner.agree.temp.q81=="Yes",1,0) 
 midline_dealer$mid_cert <- ifelse(midline_dealer$owner.agree.temp.q81=="Yes",1,0)
 
+### Index of all handling and storage practices observed by the enumerator ###
+#What do you do with seed that have exceeded shelf live (expired)? yes=good
+#(a This has never happened/b Return to supplier/c Sell at discount/d Given away/e Thrown away/f sell at normal price/g mix with other seed/96 Other)
+
+baseline_dealer$goodpractice_expired2 <- 1
+baseline_dealer$goodpractice_expired2[baseline_dealer$maize.owner.agree.q83.96=="True"] <- NA
+baseline_dealer$goodpractice_expired2[baseline_dealer$maize.owner.agree.q83.c=="True"] <- 0
+baseline_dealer$goodpractice_expired2[baseline_dealer$maize.owner.agree.q83.d=="True"] <- 0
+baseline_dealer$goodpractice_expired2[baseline_dealer$maize.owner.agree.q83.f=="True"] <- 0
+baseline_dealer$goodpractice_expired2[baseline_dealer$maize.owner.agree.q83.g=="True"] <- 0
+
+
+midline_dealer$mid_goodpractice_expired2 <- 1 #x
+midline_dealer$mid_goodpractice_expired2[midline_dealer$owner.agree.q83.96=="True"] <- NA
+midline_dealer$mid_goodpractice_expired2[midline_dealer$owner.agree.q83.c=="True"] <- 0 
+midline_dealer$mid_goodpractice_expired2[midline_dealer$owner.agree.q83.d=="True"] <- 0 
+midline_dealer$mid_goodpractice_expired2[midline_dealer$owner.agree.q83.f=="True"] <- 0 
+midline_dealer$mid_goodpractice_expired2[midline_dealer$owner.agree.q83.g=="True"] <- 0 
+
+
+#Are seed stored in a dedicated area, away from other merchandize? yes=good
+baseline_dealer$maize.owner.dedarea <- ifelse(baseline_dealer$maize.owner.agree.temp.q69=="Yes",1,0) 
+midline_dealer$owner.dedarea <- ifelse(midline_dealer$owner.agree.temp.q69=="Yes",1,0) 
+
+
+#Do you have a problem with rats or pests (insects, rats)? yes=BAD
+baseline_dealer$maize.owner.ratpest<-ifelse(baseline_dealer$maize.owner.agree.temp.q71=="Yes",0,1)
+midline_dealer$owner.ratpest<-ifelse(midline_dealer$owner.agree.temp.q71=="Yes",0,1) 
+
+
+#Lighting conditions in area where seed is stored? yes=good
+#Wilberforce: ambient lighting condition is ideal for seed storage
+baseline_dealer$maize.owner.lighting[baseline_dealer$maize.owner.agree.temp.q78==1] <- 0
+baseline_dealer$maize.owner.lighting[baseline_dealer$maize.owner.agree.temp.q78==2] <- 1
+baseline_dealer$maize.owner.lighting[baseline_dealer$maize.owner.agree.temp.q78==3] <- 0
+
+midline_dealer$owner.lighting[midline_dealer$owner.agree.temp.q78==1] <- 0
+midline_dealer$owner.lighting[midline_dealer$owner.agree.temp.q78==2] <- 1
+midline_dealer$owner.lighting[midline_dealer$owner.agree.temp.q78==3] <- 0
+
+
+#On what surface are seed stored? yes=good
+baseline_dealer$maize.owner.surface[baseline_dealer$maize.owner.agree.temp.q79==1] <- 0 
+baseline_dealer$maize.owner.surface[baseline_dealer$maize.owner.agree.temp.q79==2] <- 0 
+baseline_dealer$maize.owner.surface[baseline_dealer$maize.owner.agree.temp.q79==3] <- 0 
+baseline_dealer$maize.owner.surface[baseline_dealer$maize.owner.agree.temp.q79==4] <- 1 
+baseline_dealer$maize.owner.surface[baseline_dealer$maize.owner.agree.temp.q79==5] <- 1
+baseline_dealer$maize.owner.surface[baseline_dealer$maize.owner.agree.temp.q79==96] <- NA
+
+midline_dealer$owner.surface[midline_dealer$owner.agree.temp.q79==1] <- 0 
+midline_dealer$owner.surface[midline_dealer$owner.agree.temp.q79==2] <- 0 
+midline_dealer$owner.surface[midline_dealer$owner.agree.temp.q79==3] <- 0 
+midline_dealer$owner.surface[midline_dealer$owner.agree.temp.q79==4] <- 1 
+midline_dealer$owner.surface[midline_dealer$owner.agree.temp.q79==5] <- 1
+midline_dealer$owner.surface[midline_dealer$owner.agree.temp.q79==96] <- NA
+
+#Do you see maize seed that is stored in open bags or open containers? yes=BAD
+baseline_dealer$maize.owner.openstorage<-ifelse(baseline_dealer$maize.owner.agree.temp.q80=="Yes",0,1)
+midline_dealer$owner.openstorage<-ifelse(midline_dealer$owner.agree.temp.q80=="Yes",0,1)
+
+
+#On a scale of 1 to 5, rate this shop in terms of cleanness and professionality 
+baseline_dealer$maize.owner.rate <- baseline_dealer$maize.owner.agree.temp.q82 
+midline_dealer$owner.rate <- midline_dealer$owner.agree.temp.q82 
+
+
 #### Index of efforts of dealer and services offered by dealer ####
 
 #When farmers buy seed, do you explain how the seed should be used (seed spacing, seed rate, complementary inputs) yes=good
@@ -214,6 +280,18 @@ variables_efforts_base <- cbind(baseline_dealer$base_alwaysexplains,baseline_dea
                                 ,baseline_dealer$base_largequan,baseline_dealer$base_smallpack,baseline_dealer$base_seedcredit 
                                 ,baseline_dealer$base_complaint,baseline_dealer$base_mobmoney)
 
+
+#index of all handling and storage practices observed by enumerator 
+variables_practices_all_mid <- cbind(midline_dealer$mid_roofleak,midline_dealer$mid_roofinsul, midline_dealer$mid_wallinsul, midline_dealer$mid_ventilation,
+                                     midline_dealer$mid_cert, midline_dealer$mid_goodpractice_expired2, midline_dealer$owner.dedarea, midline_dealer$owner.ratpest,
+                                     midline_dealer$owner.lighting, midline_dealer$owner.surface, midline_dealer$owner.openstorage, midline_dealer$owner.rate) 
+
+variables_practices_all_base <- cbind(baseline_dealer$base_roofleak,baseline_dealer$base_roofinsul, baseline_dealer$base_wallinsul, baseline_dealer$base_ventilation,
+                                      baseline_dealer$base_cert, baseline_dealer$base_goodpractice_expired2, baseline_dealer$maize.owner.dedarea, baseline_dealer$maize.owner.ratpest,
+                                      baseline_dealer$maize.owner.lighting, baseline_dealer$maize.owner.surface, baseline_dealer$maize.owner.openstorage, baseline_dealer$maize.owner.rate) 
+
+
+
 ###4. Create index: weighted average of outcomes for individual i in area j
 
 ###weight inputs (outcomes) by inverse of covariance matrix of transformed outcomes in area j
@@ -281,6 +359,13 @@ index_practices_cap_base <- icwIndex(xmat=variables_practices_cap_base)
 ### creating index in baseline 
 baseline_dealer$maize.owner.index_practices_cap <- index_practices_cap_base$index
 
+##index of all handling and storage practices observed by enumerator 
+index_practices_all_mid <- icwIndex(xmat=variables_practices_all_mid) 
+midline_dealer$owner.practices_all <- index_practices_all_mid$index 
+
+index_practices_all_base <- icwIndex(xmat=variables_practices_all_base)
+baseline_dealer$maize.owner.practices_all <- index_practices_all_base$index
+
 ### index of efforts by dealer 
 
 index_efforts_mid <- icwIndex(xmat=variables_efforts_mid)
@@ -315,7 +400,7 @@ baseline_dealer$base_price <-  rowMeans(baseline_dealer[c("maize.owner.agree.lon
 baseline_dealer <- baseline_dealer %>%  mutate(maize.owner.saleprice = scale(base_price)) #standardising 
 
 
-### midLINE 
+### MIDLINE 
 midline_dealer$owner.agree.long10h.q26[midline_dealer$owner.agree.long10h.q26=="n/a"]<-NA
 midline_dealer$owner.agree.long10h.q26<- as.numeric(as.character(midline_dealer$owner.agree.long10h.q26))
 
@@ -333,6 +418,104 @@ midline_dealer$mid_price <-  rowMeans(midline_dealer[c("owner.agree.long10h.q26"
 midline_dealer <- midline_dealer %>%  mutate(owner.saleprice = scale(mid_price)) #standardising 
 
 
+###average cost of buying seeds  -- 2 types of maize seeds 
+#BASELINE 
+baseline_dealer$maize.owner.agree.long10h.q24[baseline_dealer$maize.owner.agree.long10h.q24=="n/a"]<-NA
+baseline_dealer$maize.owner.agree.long10h.q24<- as.numeric(as.character(baseline_dealer$maize.owner.agree.long10h.q24))
+
+baseline_dealer$maize.owner.agree.longe5.q49[baseline_dealer$maize.owner.agree.longe5.q49=="n/a"]<-NA
+baseline_dealer$maize.owner.agree.longe5.q49<- as.numeric(as.character(baseline_dealer$maize.owner.agree.longe5.q49))
+
+baseline_dealer$base_cost_seed <-  rowMeans(baseline_dealer[c("maize.owner.agree.long10h.q24","maize.owner.agree.longe5.q49")],na.rm=T) 
+
+baseline_dealer <- baseline_dealer %>%  mutate(maize.owner.costseed = scale(base_cost_seed)) #standardising 
+
+## MIDLINE
+midline_dealer$owner.agree.long10h.q24[midline_dealer$owner.agree.long10h.q24=="n/a"]<-NA
+midline_dealer$owner.agree.long10h.q24<- as.numeric(as.character(midline_dealer$owner.agree.long10h.q24))
+
+midline_dealer$owner.agree.longe5.q49[midline_dealer$owner.agree.longe5.q49=="n/a"]<-NA
+midline_dealer$owner.agree.longe5.q49<- as.numeric(as.character(midline_dealer$owner.agree.longe5.q49))
+
+midline_dealer$mid_cost_seed <-  rowMeans(midline_dealer[c("owner.agree.long10h.q24","owner.agree.longe5.q49")],na.rm=T) 
+
+midline_dealer <- midline_dealer %>%  mutate(owner.costseed = scale(mid_cost_seed)) #standardising 
+
+# ## how often the dealers ran out of stock --- higher it is, better it gets 
+# #1 = everyday ; 2 = once a week ; 3 = once a month ; 4 = once in a season ; 5 = never ; 6 = not sure 
+# 
+# ##BASELINE 
+# baseline_dealer$maize.owner.agree.long10h.q30[baseline_dealer$maize.owner.agree.long10h.q30=="n/a"]<-NA
+# baseline_dealer$maize.owner.agree.long10h.q30[baseline_dealer$maize.owner.agree.long10h.q30=="6"]<-NA
+# baseline_dealer$maize.owner.agree.long10h.q30<-as.numeric(as.character(baseline_dealer$maize.owner.agree.long10h.q30))
+# 
+# baseline_dealer$maize.owner.agree.longe5.q55[baseline_dealer$maize.owner.agree.longe5.q55=="n/a"]<-NA
+# baseline_dealer$maize.owner.agree.longe5.q55[baseline_dealer$maize.owner.agree.longe5.q55=="6"]<-NA
+# baseline_dealer$maize.owner.agree.longe5.q55<-as.numeric(as.character(baseline_dealer$maize.owner.agree.longe5.q55))
+# 
+# baseline_dealer$maize.owner.stockfin <-  rowMeans(baseline_dealer[c("maize.owner.agree.long10h.q30","maize.owner.agree.longe5.q55")],na.rm=T) 
+# 
+# #baseline_dealer <- baseline_dealer %>%  mutate(maize.owner.stockfin = scale(maize.owner.stockfin)) #standardising 
+# 
+# #creating dummy
+# baseline_dealer$maize.owner.stockfin[baseline_dealer$maize.owner.stockfin<=3]<-0  #everyday, once a week or once a month are bad
+# baseline_dealer$maize.owner.stockfin[baseline_dealer$maize.owner.stockfin>3]<-1 #once in a season or never are good 
+# 
+# ## MIDLINE
+# midline_dealer$owner.agree.long10h.q30[midline_dealer$owner.agree.long10h.q30=="n/a"]<-NA
+# midline_dealer$owner.agree.long10h.q30[midline_dealer$owner.agree.long10h.q30=="6"]<-NA
+# midline_dealer$owner.agree.long10h.q30<-as.numeric(as.character(midline_dealer$owner.agree.long10h.q30))
+# 
+# midline_dealer$owner.agree.longe5.q55[midline_dealer$owner.agree.longe5.q55=="n/a"]<-NA
+# midline_dealer$owner.agree.longe5.q55[midline_dealer$owner.agree.longe5.q55=="6"]<-NA
+# midline_dealer$owner.agree.longe5.q55<-as.numeric(as.character(midline_dealer$owner.agree.longe5.q55))
+# 
+# midline_dealer$owner.stockfin <-  rowMeans(midline_dealer[c("owner.agree.long10h.q30","owner.agree.longe5.q55")],na.rm=T) 
+# 
+# #midline_dealer <- midline_dealer %>%  mutate(owner.stockfin = scale(owner.stockfin)) #standardising 
+# 
+# #creating dummy
+# midline_dealer$owner.stockfin[midline_dealer$owner.stockfin<=3]<-0  #everyday, once a week or once a month are bad
+# midline_dealer$owner.stockfin[midline_dealer$owner.stockfin>3]<-1  #once in a season or never are good 
+
+
+### quantity of seeds bought from the provider by the dealer 
+##BASELINE 
+baseline_dealer$maize.owner.agree.long10h.q22[baseline_dealer$maize.owner.agree.long10h.q22=="n/a"]<-NA
+baseline_dealer$maize.owner.agree.long10h.q22[baseline_dealer$maize.owner.agree.long10h.q22=="999"]<-NA
+baseline_dealer$maize.owner.agree.long10h.q22<-as.numeric(as.character(baseline_dealer$maize.owner.agree.long10h.q22))
+
+baseline_dealer$maize.owner.agree.longe5.q47[baseline_dealer$maize.owner.agree.longe5.q47=="n/a"]<-NA
+baseline_dealer$maize.owner.agree.longe5.q47[baseline_dealer$maize.owner.agree.longe5.q47=="999"]<-NA
+baseline_dealer$maize.owner.agree.longe5.q47<-as.numeric(as.character(baseline_dealer$maize.owner.agree.longe5.q47))
+                                                          
+baseline_dealer$maize.owner.quanprovider <-  rowMeans(baseline_dealer[c("maize.owner.agree.long10h.q22","maize.owner.agree.longe5.q47")],na.rm=T) 
+
+#standardising
+baseline_dealer <- baseline_dealer %>%  mutate(maize.owner.quanprovider = scale(maize.owner.quanprovider))
+
+## MIDLINE
+midline_dealer$owner.agree.long10h.q22[midline_dealer$owner.agree.long10h.q22=="n/a"]<-NA
+midline_dealer$owner.agree.long10h.q22[midline_dealer$owner.agree.long10h.q22=="999"]<-NA
+midline_dealer$owner.agree.long10h.q22<-as.numeric(as.character(midline_dealer$owner.agree.long10h.q22))
+
+midline_dealer$owner.agree.longe5.q47[midline_dealer$owner.agree.longe5.q47=="n/a"]<-NA
+midline_dealer$owner.agree.longe5.q47[midline_dealer$owner.agree.longe5.q47=="999"]<-NA
+midline_dealer$owner.agree.longe5.q47<-as.numeric(as.character(midline_dealer$owner.agree.longe5.q47))
+
+midline_dealer$owner.quanprovider <-  rowMeans(midline_dealer[c("owner.agree.long10h.q22","owner.agree.longe5.q47")],na.rm=T) 
+
+#standardising
+midline_dealer <- midline_dealer %>%  mutate(owner.quanprovider = scale(owner.quanprovider))
+
+#is the shop registered with UNADA 
+baseline_dealer$maize.owner.unada<- ifelse(baseline_dealer$maize.owner.agree.inspection.q114== 'Yes', 1, 0)
+midline_dealer$owner.unada<- ifelse(midline_dealer$owner.agree.inspection.q114== 'Yes', 1, 0)
+
+### have you received a warning as a result of inspection if something was not up to standard?
+baseline_dealer$maize.owner.warning <- ifelse(baseline_dealer$maize.owner.agree.inspection.q118== 'Yes', 1, 0)
+midline_dealer$owner.warning<- ifelse(midline_dealer$owner.agree.inspection.q118== 'Yes', 1, 0)   
+
 
 merged_dealer <- merge(baseline_dealer, midline_dealer, by="shop_ID") #merging baseline and midline 
 
@@ -341,11 +524,13 @@ merged_dealer <- merge(baseline_dealer, midline_dealer, by="shop_ID") #merging b
 base<-baseline_dealer[c("maize.owner.agree.gender", "maize.owner.agree.age","maize.owner.agree.educ", "maize.owner.agree.q3", "maize.owner.agree.q4", "maize.owner.agree.q5",
                           "maize.owner.agree.q8", "maize.owner.agree.temp.q69", "maize.owner.agree.temp.q71", "maize.owner.agree.temp.q73", "maize.owner.agree.temp.q74", "maize.owner.agree.temp.q75",
                           "maize.owner.agree.temp.q78", "maize.owner.agree.temp.q79", "maize.owner.agree.temp.q80" , "maize.owner.agree.temp.q81", "maize.owner.agree.temp.q82", "maize.owner.agree.q96",
-                          "maize.owner.agree.temp.q72", "maize.owner.index_practices_cap","maize.owner.index_efforts","maize.owner.shelflife_Caro","maize.owner.moistread", "maize.owner.saleprice","shop_ID")]
+                          "maize.owner.agree.temp.q72", "maize.owner.index_practices_cap","maize.owner.index_efforts","maize.owner.shelflife_Caro","maize.owner.moistread", "maize.owner.saleprice","maize.owner.costseed",
+                          "maize.owner.agree.q19","maize.owner.quanprovider","maize.owner.unada","maize.owner.practices_all","maize.owner.warning","shop_ID")]
 basem<-baseline_dealer[c( "maize.owner.agree.q3", "maize.owner.agree.q4", "maize.owner.agree.q8", "shop_ID")] #subsetting baseline to populate midline with the constant variables 
 mid<-midline_dealer[c("owner.agree.gender", "owner.agree.age","owner.agree.educ", "owner.agree.q5","owner.agree.temp.q69", "owner.agree.temp.q71", "owner.agree.temp.q73", "owner.agree.temp.q74", "owner.agree.temp.q75",
                         "owner.agree.temp.q78", "owner.agree.temp.q79", "owner.agree.temp.q80" , "owner.agree.temp.q81", "owner.agree.temp.q82", "owner.agree.q96",
-                        "owner.agree.temp.q72", "owner.index_practices_cap","owner.index_efforts","owner.shelflife_Caro","owner.moistread","owner.saleprice","shop_ID")] #subsetting midline dealers and considering only the required variables
+                        "owner.agree.temp.q72", "owner.index_practices_cap","owner.index_efforts","owner.shelflife_Caro","owner.moistread","owner.saleprice",
+                      "owner.costseed","owner.agree.q19","owner.quanprovider","owner.unada","owner.practices_all","owner.warning","shop_ID")] #subsetting midline dealers and considering only the required variables
 names(mid) <- gsub(x = names(mid), pattern = "owner.", replacement = "maize.owner.") #variable matching with baseline  
 
 midm<-merge(mid, basem, by="shop_ID") #merging both midline and baseline for FE
@@ -368,8 +553,29 @@ merged_dealer$dealereffort<-  rowMeans(merged_dealer[c("maize.owner.index_effort
 #averaging capital intensive seed handling and storage practices 
 merged_dealer$index_cap<-  rowMeans(merged_dealer[c("maize.owner.index_practices_cap","owner.index_practices_cap")],na.rm=T)
 
+#averaging all handling and storage practices 
+merged_dealer$index_allprac<-  rowMeans(merged_dealer[c("maize.owner.practices_all","owner.practices_all")],na.rm=T)
+
 #averaging sales price 
 merged_dealer$saleprice <-  rowMeans(merged_dealer[c("maize.owner.saleprice","owner.saleprice")],na.rm=T) 
+
+#averaging cost of buying maize seed for dealers 
+merged_dealer$costseed <-  rowMeans(merged_dealer[c("maize.owner.costseed","owner.costseed")],na.rm=T) 
+
+#averaging number of hybrid maize seed varieties in stock 
+merged_dealer$hybridnum <-  rowMeans(merged_dealer[c("maize.owner.agree.q19","owner.agree.q19")],na.rm=T) 
+
+# #averaging number of times dealer ran out of stock -- longe 10H and longe 5 
+# merged_dealer$stockfin <-  rowMeans(merged_dealer[c("maize.owner.stockfin","owner.stockfin")],na.rm=T) 
+
+#averaging the quantity obtained from the provider by the dealer -- longe 10H and longe 5 
+merged_dealer$quanprovider <-  rowMeans(merged_dealer[c("maize.owner.quanprovider","owner.quanprovider")],na.rm=T)
+
+#averaging unada registration 
+merged_dealer$unada <-  rowMeans(merged_dealer[c("maize.owner.unada","owner.unada")],na.rm=T)
+
+#averaging warning as a result of inspection 
+merged_dealer$warning <-  rowMeans(merged_dealer[c("maize.owner.warning","owner.warning")],na.rm=T)
 
 #age
 merged_dealer$maize.owner.agree.age <-  rowMeans(merged_dealer[c("maize.owner.agree.age","owner.agree.age")],na.rm=T) #averaging age 
@@ -521,7 +727,7 @@ shop_av <- aggregate(rating_dyads[c("general_rating","location_rating","price_ra
 
 names(shop_av)[1] <- "shop_ID"
 #merge in dealer gender and controls 
-rating_dyads <- merge(shop_av, merged_dealer[c("shop_ID","maize.owner.agree.gender", "dealereffort", "index_cap", "shelflife", "moist", "saleprice",
+rating_dyads <- merge(shop_av, merged_dealer[c("shop_ID","maize.owner.agree.gender", "dealereffort", "index_cap", "shelflife", "moist", "saleprice", "costseed","hybridnum","quanprovider","unada", "index_allprac","warning",
                                                "maize.owner.agree.age","prim","maize.owner.agree.q3", "maize.owner.agree.q4",  "inputsale", "years_shop", "dedicated_area", "pest_prob", "insulated", "wall_heatproof", "ventilation", "badlighting", "badstored", "open_storage", "cert_yes", "shop_rate", "complaint", "leakproof")],  by.x="shop_ID", by.y="shop_ID", all.x=T)
 
 #rename
@@ -715,13 +921,14 @@ s7<- rbind(c((format(round(sum((lm(overall_rating~gender,data=rating_dyads))$coe
 #regressions with controls -- between regression 
 #seed ratings 
 #regressions with the controls --- moisture reading and shelflife
-summary(lm(score~gender+ maize.owner.agree.age +prim +moist+shelflife,data=rating_dyads))
-summary(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +moist+shelflife,data=rating_dyads))
-summary(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +moist+shelflife,data=rating_dyads))
-summary(lm(seed_drought_rating ~gender+ maize.owner.agree.age +prim +moist+shelflife,data=rating_dyads))
-summary(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +moist+shelflife,data=rating_dyads))
-summary(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim+moist+shelflife,data=rating_dyads))
-summary(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +moist+shelflife,data=rating_dyads))
+summary(lm(score~gender+ maize.owner.agree.age +prim +moist+shelflife,data=rating_dyads)) #118
+summary(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +moist+shelflife,data=rating_dyads))    #118
+summary(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +moist+shelflife,data=rating_dyads))    #118
+summary(lm(seed_drought_rating ~gender+ maize.owner.agree.age +prim +moist+shelflife,data=rating_dyads))  #116
+summary(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +moist+shelflife,data=rating_dyads))  #118
+summary(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim+moist+shelflife,data=rating_dyads))  #117
+summary(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +moist+shelflife,data=rating_dyads))  #118
+
 
 #number of observations 
 nobs(lm(score~gender+ maize.owner.agree.age +prim +moist+shelflife,data=rating_dyads)) #118
@@ -733,27 +940,27 @@ nobs(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim+moist+shelflife
 nobs(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +moist+shelflife,data=rating_dyads))  #118
 
 
-
-summary(lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +leakproof,data=rating_dyads))
-
-summary(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +leakproof,data=rating_dyads))
-
-summary(lm(seed_yield_rating ~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +leakproof,data=rating_dyads))
-
-summary(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint  +leakproof,data=rating_dyads))
-
-summary(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +leakproof,data=rating_dyads))
-
-summary(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +leakproof,data=rating_dyads))
-
-summary(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint  +leakproof,data=rating_dyads))
+# 
+# summary(lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+#              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +leakproof,data=rating_dyads))
+# 
+# summary(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+#              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +leakproof,data=rating_dyads))
+# 
+# summary(lm(seed_yield_rating ~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+#              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +leakproof,data=rating_dyads))
+# 
+# summary(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+#              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint  +leakproof,data=rating_dyads))
+# 
+# summary(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+#              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +leakproof,data=rating_dyads))
+# 
+# summary(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+#              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +leakproof,data=rating_dyads))
+# 
+# summary(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
+#              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint  +leakproof,data=rating_dyads))
 
 #storing seed ratings 
 s6<- rbind(c((format(round(sum((lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
@@ -1751,25 +1958,22 @@ s6<- rbind(c((format(round(sum((lm(score~gender+ maize.owner.agree.age +prim +ma
 
 
 #dealer ratings 
-summary(lm(overall_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap +saleprice,data=rating_dyads))
+summary(lm(overall_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap +saleprice +costseed +moist+shelflife+hybridnum+quanprovider
+           +years_shop+unada,data=rating_dyads))
 
 summary(lm(general_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap,data=rating_dyads))
+#shop rating coeff is negative here which means if the shop rating is lower, the general rating is higher 
 
 summary(lm(location_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4,data=rating_dyads))
 
-summary(lm(price_rating~gender+ maize.owner.agree.age +prim+ saleprice ,data=rating_dyads))
+summary(lm(price_rating~gender+ maize.owner.agree.age +prim+ saleprice +costseed ,data=rating_dyads))
+#cost of seed from provider coeff is positive here which means if the cost of seed is higher, the price rating is higher 
 
+summary(lm(quality_rating~gender+ maize.owner.agree.age +prim +moist+shelflife,data=rating_dyads))
 
-summary(lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +leakproof,data=rating_dyads))
+summary(lm(stock_rating~gender+ maize.owner.agree.age +prim +hybridnum+quanprovider,data=rating_dyads))
 
-summary(lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint  +leakproof,data=rating_dyads))
-
-summary(lm(stock_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4,data=rating_dyads))
-
-summary(lm(reputation_rating ~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint  +leakproof,data=rating_dyads))
+summary(lm(reputation_rating ~gender+ maize.owner.agree.age +prim +years_shop+unada ,data=rating_dyads))
 
 
 
@@ -2927,36 +3131,28 @@ c((format(round((coeftest(plm(score~gender, data = rat, index=c("farmer_ID","dea
 #FE at farmer level --- with controls
 #dealer ratings
 
-plm1<-plm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-      badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint  +leakproof, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
-summary(lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint  +leakproof+farmer_ID, data = rat))
+plm1<-plm(overall_rating~gender+ maize.owner.agree.age +prim +shop_rate+maize.owner.index_practices_cap+maize.owner.index_efforts+maize.owner.saleprice+maize.owner.costseed
+          +maize.owner.moistread + maize.owner.shelflife_Caro+maize.owner.agree.q19+maize.owner.quanprovider+years_shop+maize.owner.unada, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
+summary(plm(overall_rating~gender+ maize.owner.agree.age +prim +shop_rate+maize.owner.index_practices_cap+maize.owner.index_efforts+maize.owner.saleprice+maize.owner.costseed
+            +maize.owner.moistread + maize.owner.shelflife_Caro+maize.owner.agree.q19+maize.owner.quanprovider+years_shop+maize.owner.unada, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
 
-plm2<-plm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-      badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint  +leakproof, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
-summary(lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +leakproof+farmer_ID, data = rat))
+plm2<-plm(general_rating~gender+ maize.owner.agree.age +prim +shop_rate+maize.owner.index_practices_cap+maize.owner.index_efforts, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
+summary(plm(general_rating~gender+ maize.owner.agree.age +prim +shop_rate+maize.owner.index_practices_cap+maize.owner.index_efforts, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
 
 plm3<-plm(location_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
 summary(lm(location_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+farmer_ID, data = rat))
 
-plm4<-plm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-      badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +leakproof, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
-summary(lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +leakproof+farmer_ID, data = rat))
+plm4<-plm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.saleprice+maize.owner.costseed, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
+summary(plm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.saleprice+maize.owner.costseed, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
 
-plm5<-plm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-      badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +leakproof, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
-summary(lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +leakproof+farmer_ID, data = rat))
+plm5<-plm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.moistread + maize.owner.shelflife_Caro, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
+summary(plm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.moistread + maize.owner.shelflife_Caro, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
 
-plm6<-plm(stock_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
-summary(lm(stock_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+farmer_ID, data = rat))
+plm6<-plm(stock_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q19+maize.owner.quanprovider, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
+summary(plm(stock_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q19+maize.owner.quanprovider, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
 
-plm7<-plm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-      badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint  +leakproof, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
-summary(lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint+leakproof+farmer_ID, data = rat))
+plm7<-plm(reputation_rating~gender+ maize.owner.agree.age +prim +years_shop+maize.owner.unada, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
+summary(plm(reputation_rating~gender+ maize.owner.agree.age +prim +years_shop+maize.owner.unada, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
 
 
 #storing dealer ratings
@@ -3439,40 +3635,26 @@ fe4<- rbind(c((format(round(mean(fixef(plm1))[1],digits=3),nsmall=0)),
 #FE at farmer level --- with controls
 #seed ratings
 
-plm8<-plm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-            badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint  +leakproof, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
-summary(lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint  +leakproof+farmer_ID, data = rat))
+plm8<-plm(score~gender+ maize.owner.agree.age +prim +maize.owner.moistread + maize.owner.shelflife_Caro, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
+summary(plm(score~gender+ maize.owner.agree.age +prim +maize.owner.moistread + maize.owner.shelflife_Caro, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
 
-plm9<-plm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-            badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint  +leakproof, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
-summary(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +leakproof+farmer_ID, data = rat))
+plm9<-plm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim+maize.owner.moistread + maize.owner.shelflife_Caro, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
+summary(plm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim+maize.owner.moistread + maize.owner.shelflife_Caro, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
 
-plm10<-plm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint  +leakproof, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
-summary(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint  +leakproof+farmer_ID, data = rat))
+plm10<-plm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.moistread + maize.owner.shelflife_Caro, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
+summary(plm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.moistread + maize.owner.shelflife_Caro, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
 
-plm11<-plm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-            badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +leakproof, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
-summary(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +leakproof+farmer_ID, data = rat))
+plm11<-plm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.moistread + maize.owner.shelflife_Caro, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
+summary(plm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.moistread + maize.owner.shelflife_Caro, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
 
-plm12<-plm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-            badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +leakproof, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
-summary(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +leakproof+farmer_ID, data = rat))
+plm12<-plm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.moistread + maize.owner.shelflife_Caro, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
+summary(plm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.moistread + maize.owner.shelflife_Caro, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
 
-plm13<-plm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint  +leakproof, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
-summary(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint  +leakproof+farmer_ID, data = rat))
+plm13<-plm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.moistread + maize.owner.shelflife_Caro, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
+summary(plm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.moistread + maize.owner.shelflife_Caro, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
 
-plm14<-plm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-            badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint  +leakproof, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
-summary(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-             badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint+leakproof+farmer_ID, data = rat))
+plm14<-plm(seed_germinate_rating~gender+ maize.owner.agree.age +prim+maize.owner.moistread + maize.owner.shelflife_Caro, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
+summary(plm(seed_germinate_rating~gender+ maize.owner.agree.age +prim+maize.owner.moistread + maize.owner.shelflife_Caro, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
 
 
 #storing seed ratings
