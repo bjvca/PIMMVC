@@ -517,6 +517,28 @@ baseline_dealer$maize.owner.warning <- ifelse(baseline_dealer$maize.owner.agree.
 midline_dealer$owner.warning<- ifelse(midline_dealer$owner.agree.inspection.q118== 'Yes', 1, 0)   
 
 
+#including location variable -- distance between farmer and dealer -- calculated using GPS coordinates 
+distance <- read.csv(paste(path_2,"papers/perceptions/data_seed_systems/data/input_dealer/distance.csv", sep = "/"), stringsAsFactors = FALSE) #reading in baseline data for location
+distance_mid <- read.csv(paste(path_2,"papers/perceptions/data_seed_systems_midline/data/input_dealer/distance.csv", sep = "/"), stringsAsFactors = FALSE) #reading in midline data for location
+
+###baseline 
+##aggregating the distance for each dealer 
+distance <- aggregate(distance[c("maize.owner.dist")],list(distance$shop_ID),FUN=mean, na.rm=T)
+##getting standardized distance variable 
+distance <- distance %>% mutate(maize.owner.dist = scale(maize.owner.dist))
+names(distance)[1] <- "shop_ID"   #renaming variable 
+
+###midline
+##aggregating the distance for each dealer 
+distance_mid <- aggregate(distance_mid[c("owner.dist")],list(distance_mid$shop_ID),FUN=mean, na.rm=T)
+##getting standardized distance variable 
+distance_mid <- distance_mid %>% mutate(owner.dist = scale(owner.dist))
+names(distance_mid)[1] <- "shop_ID"   #renaming variable 
+
+
+baseline_dealer <- merge(baseline_dealer, distance, by="shop_ID") #baseline
+midline_dealer <- merge(midline_dealer, distance_mid, by="shop_ID")   #midline 
+
 merged_dealer <- merge(baseline_dealer, midline_dealer, by="shop_ID") #merging baseline and midline 
 
 #prepping data for FE
@@ -525,12 +547,12 @@ base<-baseline_dealer[c("maize.owner.agree.gender", "maize.owner.agree.age","mai
                           "maize.owner.agree.q8", "maize.owner.agree.temp.q69", "maize.owner.agree.temp.q71", "maize.owner.agree.temp.q73", "maize.owner.agree.temp.q74", "maize.owner.agree.temp.q75",
                           "maize.owner.agree.temp.q78", "maize.owner.agree.temp.q79", "maize.owner.agree.temp.q80" , "maize.owner.agree.temp.q81", "maize.owner.agree.temp.q82", "maize.owner.agree.q96",
                           "maize.owner.agree.temp.q72", "maize.owner.index_practices_cap","maize.owner.index_efforts","maize.owner.shelflife_Caro","maize.owner.moistread", "maize.owner.saleprice","maize.owner.costseed",
-                          "maize.owner.agree.q19","maize.owner.quanprovider","maize.owner.unada","maize.owner.practices_all","maize.owner.warning","shop_ID")]
-basem<-baseline_dealer[c( "maize.owner.agree.q3", "maize.owner.agree.q4", "maize.owner.agree.q8", "shop_ID")] #subsetting baseline to populate midline with the constant variables 
+                          "maize.owner.agree.q19","maize.owner.quanprovider","maize.owner.unada","maize.owner.practices_all","maize.owner.warning", "maize.owner.dist","shop_ID")]
+basem<-baseline_dealer[c( "maize.owner.agree.q3", "maize.owner.agree.q4", "maize.owner.agree.q8","shop_ID")] #subsetting baseline to populate midline with the constant variables 
 mid<-midline_dealer[c("owner.agree.gender", "owner.agree.age","owner.agree.educ", "owner.agree.q5","owner.agree.temp.q69", "owner.agree.temp.q71", "owner.agree.temp.q73", "owner.agree.temp.q74", "owner.agree.temp.q75",
                         "owner.agree.temp.q78", "owner.agree.temp.q79", "owner.agree.temp.q80" , "owner.agree.temp.q81", "owner.agree.temp.q82", "owner.agree.q96",
                         "owner.agree.temp.q72", "owner.index_practices_cap","owner.index_efforts","owner.shelflife_Caro","owner.moistread","owner.saleprice",
-                      "owner.costseed","owner.agree.q19","owner.quanprovider","owner.unada","owner.practices_all","owner.warning","shop_ID")] #subsetting midline dealers and considering only the required variables
+                      "owner.costseed","owner.agree.q19","owner.quanprovider","owner.unada","owner.practices_all","owner.warning", "owner.dist","shop_ID")] #subsetting midline dealers and considering only the required variables
 names(mid) <- gsub(x = names(mid), pattern = "owner.", replacement = "maize.owner.") #variable matching with baseline  
 
 midm<-merge(mid, basem, by="shop_ID") #merging both midline and baseline for FE
@@ -576,6 +598,9 @@ merged_dealer$unada <-  rowMeans(merged_dealer[c("maize.owner.unada","owner.unad
 
 #averaging warning as a result of inspection 
 merged_dealer$warning <-  rowMeans(merged_dealer[c("maize.owner.warning","owner.warning")],na.rm=T)
+
+#averaging distance between frmer and dealer 
+merged_dealer$distance <-  rowMeans(merged_dealer[c("maize.owner.dist","owner.dist")],na.rm=T)
 
 #age
 merged_dealer$maize.owner.agree.age <-  rowMeans(merged_dealer[c("maize.owner.agree.age","owner.agree.age")],na.rm=T) #averaging age 
@@ -727,7 +752,7 @@ shop_av <- aggregate(rating_dyads[c("general_rating","location_rating","price_ra
 
 names(shop_av)[1] <- "shop_ID"
 #merge in dealer gender and controls 
-rating_dyads <- merge(shop_av, merged_dealer[c("shop_ID","maize.owner.agree.gender", "dealereffort", "index_cap", "shelflife", "moist", "saleprice", "costseed","hybridnum","quanprovider","unada", "index_allprac","warning",
+rating_dyads <- merge(shop_av, merged_dealer[c("shop_ID","maize.owner.agree.gender", "dealereffort", "index_cap", "shelflife", "moist", "saleprice", "costseed","hybridnum","quanprovider","unada", "index_allprac","warning", "distance",
                                                "maize.owner.agree.age","prim","maize.owner.agree.q3", "maize.owner.agree.q4",  "inputsale", "years_shop", "dedicated_area", "pest_prob", "insulated", "wall_heatproof", "ventilation", "badlighting", "badstored", "open_storage", "cert_yes", "shop_rate", "complaint", "leakproof")],  by.x="shop_ID", by.y="shop_ID", all.x=T)
 
 #rename
@@ -1958,13 +1983,13 @@ s6<- rbind(c((format(round(sum((lm(score~gender+ maize.owner.agree.age +prim +ma
 
 
 #dealer ratings 
-summary(lm(overall_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap +saleprice +costseed +moist+shelflife+hybridnum+quanprovider
-           +years_shop+unada,data=rating_dyads))
+summary(lm(overall_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap +distance+saleprice +costseed +moist+shelflife+hybridnum+quanprovider
+           +years_shop+unada ,data=rating_dyads))
 
 summary(lm(general_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap,data=rating_dyads))
 #shop rating coeff is negative here which means if the shop rating is lower, the general rating is higher 
 
-summary(lm(location_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4,data=rating_dyads))
+summary(lm(location_rating~gender+ maize.owner.agree.age +prim +distance,data=rating_dyads))
 
 summary(lm(price_rating~gender+ maize.owner.agree.age +prim+ saleprice +costseed ,data=rating_dyads))
 #cost of seed from provider coeff is positive here which means if the cost of seed is higher, the price rating is higher 
@@ -3131,16 +3156,16 @@ c((format(round((coeftest(plm(score~gender, data = rat, index=c("farmer_ID","dea
 #FE at farmer level --- with controls
 #dealer ratings
 
-plm1<-plm(overall_rating~gender+ maize.owner.agree.age +prim +shop_rate+maize.owner.index_practices_cap+maize.owner.index_efforts+maize.owner.saleprice+maize.owner.costseed
+plm1<-plm(overall_rating~gender+ maize.owner.agree.age +prim +shop_rate+maize.owner.index_practices_cap+maize.owner.index_efforts+maize.owner.dist+maize.owner.saleprice+maize.owner.costseed
           +maize.owner.moistread + maize.owner.shelflife_Caro+maize.owner.agree.q19+maize.owner.quanprovider+years_shop+maize.owner.unada, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
-summary(plm(overall_rating~gender+ maize.owner.agree.age +prim +shop_rate+maize.owner.index_practices_cap+maize.owner.index_efforts+maize.owner.saleprice+maize.owner.costseed
+summary(plm(overall_rating~gender+ maize.owner.agree.age +prim +shop_rate+maize.owner.index_practices_cap+maize.owner.index_efforts+maize.owner.dist+maize.owner.saleprice+maize.owner.costseed
             +maize.owner.moistread + maize.owner.shelflife_Caro+maize.owner.agree.q19+maize.owner.quanprovider+years_shop+maize.owner.unada, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
 
 plm2<-plm(general_rating~gender+ maize.owner.agree.age +prim +shop_rate+maize.owner.index_practices_cap+maize.owner.index_efforts, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
 summary(plm(general_rating~gender+ maize.owner.agree.age +prim +shop_rate+maize.owner.index_practices_cap+maize.owner.index_efforts, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
 
-plm3<-plm(location_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
-summary(lm(location_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+farmer_ID, data = rat))
+plm3<-plm(location_rating~gender+ maize.owner.agree.age +prim +maize.owner.dist, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
+summary(lm(location_rating~gender+ maize.owner.agree.age +prim +maize.owner.dist+farmer_ID, data = rat))
 
 plm4<-plm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.saleprice+maize.owner.costseed, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
 summary(plm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.saleprice+maize.owner.costseed, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
