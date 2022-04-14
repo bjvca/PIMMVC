@@ -3764,7 +3764,9 @@ merged_loc$dist_km <- merged_loc$dist_m / 1000
 locdata <- aggregate(merged_loc[c("dist_km","dist_m")],list(merged_loc$id.ratee),FUN=mean, na.rm=T)
 ##getting standardized distance variable 
 locstan <- locdata %>% mutate(dist_kmstan = scale(dist_km))
-locstan<-rename(locstan, id.ratee=Group.1) #renaming variable 
+#locstan<-rename(locstan, id.ratee=Group.1) 
+#renaming variable 
+names(locstan)[names(locstan) == "Group.1"] <- "id.ratee"
 
 #merging data to get the location ratings 
 deal_mill<-merge(deal_mill, locstan, by="id.ratee")
@@ -3812,16 +3814,16 @@ rel1<- rbind(c((format(round(sum(loc1$coefficients[1]),digits=3),nsmall=0)), #co
                (format(round(summary(loc3)$coefficients[3,4],digits=3),nsmall=0))),
              
              c((0), #coefficient 
-              (format(round(sum(loc2$coefficients[3]),digits=3),nsmall=0)),
-              (format(round(sum(loc3$coefficients[3]),digits=3),nsmall=0))),
+              (format(round(sum(loc2$coefficients[4]),digits=3),nsmall=0)),
+              (format(round(sum(loc3$coefficients[4]),digits=3),nsmall=0))),
              
              c((0), #standard error 
-             (format(round(se_loc2[3],digits=3),nsmall=0)),
-             (format(round(se_loc3[3],digits=3),nsmall=0))),
+             (format(round(se_loc2[4],digits=3),nsmall=0)),
+             (format(round(se_loc3[4],digits=3),nsmall=0))),
             
             c((0),  #p value 
-            (format(round(summary(loc2)$coefficients[3,4],digits=3),nsmall=0)),
-            (format(round(summary(loc3)$coefficients[3,4],digits=3),nsmall=0))),
+            (format(round(summary(loc2)$coefficients[4,4],digits=3),nsmall=0)),
+            (format(round(summary(loc3)$coefficients[4,4],digits=3),nsmall=0))),
             
            
            c((format(round(summary(loc1)$r.squared,digits=3),nsmall=0)),
