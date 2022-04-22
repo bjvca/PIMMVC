@@ -90,7 +90,7 @@ graphicboxes
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
-\tracking_changes true
+\tracking_changes false
 \output_changes false
 \html_math_output 0
 \html_css_as_file 0
@@ -2121,26 +2121,12 @@ noprefix "false"
  consistent way.
  At the same time, as farmers rate different actors, it also seems reasonable
  that there is no complete intra-rater agreement.
-\change_inserted 1522110021 1648916893
-
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted 1522110021 1648918010
-An additional assesment aims at understanding how the perceptions can be
- linked with reality.
- Since it is hard to obtain a 
-\begin_inset Quotes eld
-\end_inset
-
-real
-\begin_inset Quotes erd
-\end_inset
-
- measure of reputation, we focus only on the dimensions of location, quality
- and price competitiveness.
- Table 
+The fact that we find reasonable inter-rater agreement seems to suggest
+ that ratings are valid proxies for attributes of actors being rated.
+ In Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:table-reliability"
@@ -2150,24 +2136,39 @@ noprefix "false"
 
 \end_inset
 
- shows the results of the regressions analysing the relation between the
- perceptions (ratings) of the farmers and the observed reality.
- There is a significamt negative correlation between the location based
- rating given by the farmer and the observed distance between the farmer
- and the input dealer or processor of maize.
- This would mean that greater the distance, lower is the rating.
- There is also a significant positive correlation between the observed quality
- of the different actors and the quality based rating from the farmers (better
- the quality, higher is the rating).
- There is no significant correlation between the prices observed in the
- market and the price related rating.
- Thus, the ratings given by the farmers for location and quality are close
- to the observed reality which defies the idea of random perceptions (ratings)
- in this regard.
- However, ratings judging price competitiveness maybe influenced by other
- factors and not mainly by the real prices in the market.
-\change_unchanged
+, we test validity further by correlating average ratings received by actors
+ to observable characteristics of the actor.
+ Some of these dimensions, like reputation, are hard to measure, but for
+ others like location, quality and prices charged we are able to construct
+ proxies.
+ In the first column of Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:table-reliability"
+plural "false"
+caps "false"
+noprefix "false"
 
+\end_inset
+
+, we correlate the location based rating to a measure that attempts to capture
+ the location of the actor (dealer or miller) relative to where the customers
+ are and find that indeed, actors that are less centrally located are scored
+ lower on the location attribute.
+ To test if quality ratings are associated to observable quality characteristics
+ of the actors, we first compute an index that is based on various observables.
+ For instance, for agro-input dealers, the index measures if various seed
+ quality related attributes such as shelf life and moisture content were
+ checked over the course of the previous year.
+ For traders, the index includes whether the trader uses improved storage
+ bags and the services they provide to farmers.
+ For millers, quality is summarized in an index consisting of material of
+ roof, walls and floor.
+ Using this quality index, we also find that there is a positive correlation
+ between observed quality and the quality ratings actors get.
+ The last column show that there is no significant correlation between the
+ price that value chain actors charge for their services and products, and
+ the price competitiveness ratings.
 \end_layout
 
 \begin_layout Section
@@ -3417,8 +3418,6 @@ options "bibtotoc,apalike"
 \end_inset
 
 Tables
-\change_inserted 1522110021 1648901954
-
 \end_layout
 
 \begin_layout Standard
@@ -5210,7 +5209,7 @@ label{table:table2}
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -5459,27 +5458,19 @@ label{table:table3}
 \end_inset
 
 
-\change_inserted 1522110021 1648916844
-
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted 1522110021 1648916845
 \begin_inset Float table
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
-
-\change_inserted 1522110021 1648916845
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
-\change_inserted 1522110021 1648916845
 Regression results looking at the relation between ratings given by the
  farmers and the actual market attributes.
 \begin_inset CommandInset label
@@ -5497,14 +5488,10 @@ name "tab:table-reliability"
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1522110021 1648916845
 \begin_inset ERT
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted 1522110021 1648916845
 
  
 \backslash
@@ -5539,8 +5526,6 @@ textit{Dependent variable: Ratings from farmers}}
 
 \begin_layout Plain Layout
 
-\change_inserted 1522110021 1648916845
-
 
 \backslash
 cline{2-4} 
@@ -5556,8 +5541,6 @@ multicolumn{1} {c} {Quality}  &
 
 \begin_layout Plain Layout
 
-\change_inserted 1522110021 1648916845
-
 
 \backslash
 multicolumn{1} {c} {Price} 
@@ -5568,8 +5551,6 @@ multicolumn{1} {c} {Price}
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1522110021 1648916845
 
 
 \backslash
@@ -5590,8 +5571,6 @@ hline
 
 \begin_layout Plain Layout
 
-\change_inserted 1522110021 1648916845
-
 {Constant}                  & $
 \backslash
 Sexpr{rel1[1,1]}$ & $
@@ -5607,8 +5586,6 @@ Sexpr{rel1[1,3]}$
 
 \begin_layout Plain Layout
 
-\change_inserted 1522110021 1648916845
-
 & $(
 \backslash
 Sexpr{rel1[2,1]})$ & $(
@@ -5619,8 +5596,6 @@ Sexpr{rel1[2,3]})$
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1522110021 1648916845
 
 
 \backslash
@@ -5640,16 +5615,12 @@ Sexpr{ifelse(rel1[6,1]<.01,"***",ifelse(rel1[6,1]<.05,"**",ifelse(rel1[6,1]<.1,"
 
 \begin_layout Plain Layout
 
-\change_inserted 1522110021 1648916845
-
 &  $(
 \backslash
 Sexpr{rel1[5,1]})$   &   &            
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1522110021 1648916845
 
 
 \backslash
@@ -5665,8 +5636,6 @@ Sexpr{ifelse(rel1[6,2]<.01,"***",ifelse(rel1[6,2]<.05,"**",ifelse(rel1[6,2]<.1,"
 
 \begin_layout Plain Layout
 
-\change_inserted 1522110021 1648916845
-
  
 \backslash
 
@@ -5677,8 +5646,6 @@ Sexpr{rel1[5,2]})$ &
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1522110021 1648916845
 
 
 \backslash
@@ -5698,16 +5665,12 @@ Sexpr{ifelse(rel1[6,3]<.01,"***",ifelse(rel1[6,3]<.05,"**",ifelse(rel1[6,3]<.1,"
 
 \begin_layout Plain Layout
 
-\change_inserted 1522110021 1648916845
-
 &   &   & $(
 \backslash
 Sexpr{rel1[5,3]})$  
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1522110021 1648916845
 
 
 \backslash
@@ -5733,8 +5696,6 @@ Sexpr{ifelse(rel1[9,3]<.01,"***",ifelse(rel1[9,3]<.05,"**",ifelse(rel1[9,3]<.1,"
 
 \begin_layout Plain Layout
 
-\change_inserted 1522110021 1648916845
-
  
 \backslash
 
@@ -5749,8 +5710,6 @@ Sexpr{rel1[8,3]})$
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1522110021 1648916845
 
 
 \backslash
@@ -5771,8 +5730,6 @@ Sexpr{ifelse(rel1[12,3]<.01,"***",ifelse(rel1[12,3]<.05,"**",ifelse(rel1[12,3]<.
 
 \begin_layout Plain Layout
 
-\change_inserted 1522110021 1648916845
-
  
 \backslash
 
@@ -5782,8 +5739,6 @@ Sexpr{ifelse(rel1[12,3]<.01,"***",ifelse(rel1[12,3]<.05,"**",ifelse(rel1[12,3]<.
 
 \begin_layout Plain Layout
 
-\change_inserted 1522110021 1648916845
-
 &   &  $(
 \backslash
 Sexpr{rel1[11,2]})$ & $(
@@ -5792,8 +5747,6 @@ Sexpr{rel1[11,3]})$
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1522110021 1648916845
 
     
 \backslash
@@ -5805,8 +5758,6 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1522110021 1648916845
 
 Number of obs.
         & $
@@ -5820,8 +5771,6 @@ Sexpr{rel1[15,3]}$
 
 \begin_layout Plain Layout
 
-\change_inserted 1522110021 1648916845
-
  
 \backslash
 
@@ -5833,8 +5782,6 @@ hline
 
 \begin_layout Plain Layout
 
-\change_inserted 1522110021 1648916845
-
 
 \backslash
 multicolumn{5}{l}{ 
@@ -5843,8 +5790,6 @@ scriptsize{$^{***}p<0.01$; $^{**}p<0.05$; $^{*}p<0.1$.}}
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1522110021 1648916845
 
  
 \backslash
@@ -5855,8 +5800,6 @@ end{center}
 
 \begin_layout Plain Layout
 
-\change_inserted 1522110021 1648916845
-
 
 \backslash
 scriptsize
@@ -5864,29 +5807,28 @@ scriptsize
 
 \begin_layout Plain Layout
 
-\change_inserted 1522110021 1648916845
-
 Note: Dependent variable is the rating given by the farmers.
  For the location attribute (independent variable), only input dealers and
  processors are considered.
  This is because traders are very mobile.
  The distance between the farmers’ location and dealers’/processors’ location
  is calculated using the GPS coordinates collected during the surveys.
- The distance is calculated in kilometres and then standardized.
- The quality index ranges between 0 and 5 (the values are standardized).
- For the input dealers, the quality is indicated using attributes like seed
+ The (haversine) distance is calculated in kilometres and then standardized.
+ For the input dealers, the quality is constructed base on inspection that
+ happend in the previous year (for instance did an inspector look at seed
  expiry, seed storage, permit of the dealer, seed class sticker, packaging,
- seed lot, germination, moisture level of the seeds and seed purity.
+ seed lot, germination, moisture level of the seeds and seed purity).
  For the traders, the quality of their service is indicated using attributes
  like the provision of inputs, tarpaulins, PICS (Purdue Improved Crop Storage)
  bags, gunny bags, technical assistance for the farmers and the provision
  of credit.
  For the millers, the quality is indicated using attributes like material
  of the roof, walls and floor.
- Price charged by the actor is also a standardized variable considering
- the price at which the input dealers sold the seed to the farmers, the
- price at which traders bought the maize from the farmers and the cost at
- which the processors mill the maize for the farmers.
+ The resulting indices are stanardized at the actor level and then stacked.
+ Price charged by the actor is  a variable considering the price at which
+ the input dealers sold seed to the farmers, the price at which traders
+ bought the maize from the farmers and the cost at which the processors
+ mill the maize for the farmers, again standardized at the actor level.
   
 \backslash
 label{table:reliability} 
@@ -5899,8 +5841,6 @@ label{table:reliability}
 
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 
