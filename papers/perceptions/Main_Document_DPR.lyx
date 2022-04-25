@@ -90,7 +90,7 @@ graphicboxes
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
-\tracking_changes false
+\tracking_changes true
 \output_changes false
 \html_math_output 0
 \html_css_as_file 0
@@ -518,6 +518,23 @@ literal "true"
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 1522110021 1650890836
+The different actors in the maize supply chains of Uganda interact with
+ each other to form an intricate structure.
+ The producers of maize, the farmers, buy the maize seeds from the input
+ dealers for the production of maize.
+ They generally sell their marketable maize surplus to the traders who then
+ sell these at the nearest town markets or farm gates or to the processers
+ (millers).
+ These processers process the maize for market consumption.
+ ̇In other occassions, the farmers also bring their produce to the nearest
+ maize mills to process the maize for home consumption.
+\change_deleted 1522110021 1650890683
+
 \end_layout
 
 \begin_layout Standard
@@ -1168,185 +1185,6 @@ Sexpr{format(round(table(farmers$hh.maize.q25)[1]/sum(table(farmers$hh.maize.q25
 \end_inset
 
  percent of the farmers are women.
- 
-\change_inserted 1522110021 1648804615
-
-\end_layout
-
-\begin_layout Section
-\paragraph_spacing single
-\noindent
-
-\change_inserted 1522110021 1648804681
-Perceived attributes of supply chain actors 
-\begin_inset CommandInset label
-LatexCommand label
-name "sec:Perceived-attributes"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-
-\change_inserted 1522110021 1648804682
-Due to limited knowledge and information asymmetries, it is often hard for
- farmers to assess the quality of products and services offered by input
- dealers.
- Products sold by agro-input dealers such as improved seed varieties, inorganic
- fertilizer, and pesticides or herbicides are considered 
-\begin_inset Quotes eld
-\end_inset
-
-experience goods
-\begin_inset Quotes erd
-\end_inset
-
-.
- The quality of these goods is hard to assess ex-ante, and the information
- advantage of the input dealer may lead to a lemons market 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Bold2017"
-literal "false"
-
-\end_inset
-
-.
- Based on limited knowledge, own experience, and the dealer's reputation
- (information that other buyers have about the seller), a farmer may form
- his or her own perceptions about quality of inputs and services provided
- by the input dealer.
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-
-\change_inserted 1522110021 1648804682
-In addition to the quality attribute, farmers may use perceptions and beliefs
- related to a range of other attributes of the input dealer.
- For instance, price considerations and the relative competitiveness of
- the dealer will be important when a farmer decides to transact with a particula
-r input dealer.
- Primarily, ease of access to an input dealer determines transaction costs
- and subsequently farmer's access to and use of improved inputs 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Alene2008"
-literal "true"
-
-\end_inset
-
-.
- Secondly, ease of access to input dealers may increase interaction between
- farmers and the input dealers, thereby increasing farmers' learning about
- improved seed.
- The theoretical framework motivating a possible link between input dealer
- attributes and use of improved seed can be located in the literature on
- customer perceived value and consumption behavior 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Jayashankar2018,Chiu2014"
-literal "true"
-
-\end_inset
-
-.
- This literature suggests that (continued) usage of a given product or service
- is accompanied by not just a customer’s perceived value (price or quality)
- of that product/service, but also the perceived value (e.g.
- trust/reputation, accessibility) of the provider of the product.
- Thus, the perceptions formed based on price competitiveness, quality of
- seeds, ease of access and reputation can determine the use of improved
- inputs to some extent.
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-
-\change_inserted 1522110021 1648804682
-Next, I turn to the perceived attributes of traders.
- In remote locations, if the traders are easily accessible, that would mean
- that the farmers have greater exposure to selling opportunities, might
- reduce wastage of harvest, ensure constant income for the farmer and increase
- availability of maize harvests at the buying points.
- Thus, ease of access is likely to be more important than for instance,
- quality when assessing traders.
- Traders having better reputation will influence the perceived reputation
- attributes, i.e., if a farmer hears something good about a trader from another
- farmer, he or she will perceive that trader to be well-reputed.
- Reputation of the trader may also be motivated by trustworthiness and higher
- number of business interactions.
- Traders in greater demand are likely to be well-reputed.
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-
-\change_inserted 1522110021 1648804682
-The perceived quality of service can be driven by many aspects like behavior
- of the trader, flexibility of the trader, risks taken by the trader for
- the transportation of the harvest, etc.
- The price paid by traders while buying the harvest is an essential part
- of the interaction between the trader and the farmer.
- It is very important to know how accurately the farmers perceive the prices
- being paid by the traders and how accurately the traders perceive the prices
- they are paying themselves.
- This is an observable attribute of the trader, so most farmers should agree
- on their perceptions.
- However, these perceptions can have some underlying factors like length
- of the relationship between the trader and farmer.
- For instance, if a trader has been buying maize from a farmer for a long
- period of time, the farmer might agree at a lower price because he or she
- will be ensured that the harvest will always be sold on time without any
- hassle.
- Therefore, these perceived attributes about the traders can give better
- insights about access to maize marketing channels.
- 
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-
-\change_inserted 1522110021 1648804682
-Millers or processors are scored by the farmers based on similar factors
- or attributes.
- The location of the mill is necessary to understand how easy it is for
- the traders or farmers to take the harvest to the processing points since
- in Uganda, both farmers and traders can take the harvests to the mills.
- For farmers living in remote areas, it may be hard to transport their harvest
- for milling or processing.
- Thus, location of the mills can influence perceptions of the farmers about
- the millers.
- In addition, perceptions are formed based on the quality of service and
- the quality of end product provided by these mills.
- Better milling technologies, cleanliness of the mills, transparency at
- the mills and flexibility provided by the mill staff can result in good
- perceived performance levels.
- Similarly, friendly behavior and shorter waiting times at the mills can
- ensure good perceived reputation of the processors.
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-
-\change_inserted 1522110021 1648804682
-Perceived prices cannot directly indicate the actual price charged at the
- mills because perceptions are not objectively measured or directly observed.
- High prices may not always be perceived as bad as they can be coupled with
- the quality of processing and the quality of the end product ensured by
- the mill.
- This may point towards the provision of price competitiveness among the
- processors.
- Finer end products can improve the perceived quality of end product along
- with the perceived reputation of the mill or the processor.
- Thus, the quality of processed maize available for the consumers can be
- partially explained by the perceived attributes of the maize millers.
- 
-\change_unchanged
-
 \end_layout
 
 \begin_layout Section
@@ -1939,7 +1777,52 @@ literal "true"
  full elicitation of the distribution of beliefs, most often conducted with
  visual aids.
  The ratings in this study reflect Likert style assessment where scores
- range from 1 to 5, 1 being the worst score and 5 being the best.
+ range from 1 to 5
+\change_inserted 1522110021 1650892636
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1522110021 1650893863
+The presence of anchoring bias in performance ratings has been discussed
+ intensively by researchers in various contexts 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Furnham2011,tversky1974judgment"
+literal "true"
+
+\end_inset
+
+.
+ However, anchoring bias in the ratings from the farmers should be negligible
+ in this study.
+ This is because the farmers have not been provided with any other information
+ from other sources about the individuals they are rating.
+ ̇The farmers choose the individuals to rate themselves which makes them
+ less prone to any irrelevant assumption based on information given by the
+ enumerator.
+ In each case, the rating attributes are clearly mentioned during the interview.
+ Henceforth, since the participants have clear knowledge related to the
+ individual in concern, anchoring effects should be less prevalent 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Mussweiler2000,wilson1996new"
+literal "true"
+
+\end_inset
+
+.
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+, 1 being the worst score and 5 being the best.
  This is the case for both farmer ratings and self-ratings from agro-input
  dealers, traders, and processors.
  
@@ -2121,9 +2004,13 @@ noprefix "false"
  consistent way.
  At the same time, as farmers rate different actors, it also seems reasonable
  that there is no complete intra-rater agreement.
+\change_inserted 1522110021 1650889699
+
 \end_layout
 
 \begin_layout Standard
+
+\change_inserted 1522110021 1650889699
 The fact that we find reasonable inter-rater agreement seems to suggest
  that ratings are valid proxies for attributes of actors being rated.
  In Table 
@@ -2169,6 +2056,8 @@ noprefix "false"
  The last column show that there is no significant correlation between the
  price that value chain actors charge for their services and products, and
  the price competitiveness ratings.
+\change_unchanged
+
 \end_layout
 
 \begin_layout Section
@@ -5461,16 +5350,22 @@ label{table:table3}
 \end_layout
 
 \begin_layout Standard
+
+\change_inserted 1522110021 1650889670
 \begin_inset Float table
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
+
+\change_inserted 1522110021 1650889670
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+
+\change_inserted 1522110021 1650889670
 Regression results looking at the relation between ratings given by the
  farmers and the actual market attributes.
 \begin_inset CommandInset label
@@ -5488,10 +5383,14 @@ name "tab:table-reliability"
 \end_layout
 
 \begin_layout Plain Layout
+
+\change_inserted 1522110021 1650889670
 \begin_inset ERT
 status open
 
 \begin_layout Plain Layout
+
+\change_inserted 1522110021 1650889670
 
  
 \backslash
@@ -5526,6 +5425,8 @@ textit{Dependent variable: Ratings from farmers}}
 
 \begin_layout Plain Layout
 
+\change_inserted 1522110021 1650889670
+
 
 \backslash
 cline{2-4} 
@@ -5541,6 +5442,8 @@ multicolumn{1} {c} {Quality}  &
 
 \begin_layout Plain Layout
 
+\change_inserted 1522110021 1650889670
+
 
 \backslash
 multicolumn{1} {c} {Price} 
@@ -5551,6 +5454,8 @@ multicolumn{1} {c} {Price}
 \end_layout
 
 \begin_layout Plain Layout
+
+\change_inserted 1522110021 1650889670
 
 
 \backslash
@@ -5571,6 +5476,8 @@ hline
 
 \begin_layout Plain Layout
 
+\change_inserted 1522110021 1650889670
+
 {Constant}                  & $
 \backslash
 Sexpr{rel1[1,1]}$ & $
@@ -5586,6 +5493,8 @@ Sexpr{rel1[1,3]}$
 
 \begin_layout Plain Layout
 
+\change_inserted 1522110021 1650889670
+
 & $(
 \backslash
 Sexpr{rel1[2,1]})$ & $(
@@ -5596,6 +5505,8 @@ Sexpr{rel1[2,3]})$
 \end_layout
 
 \begin_layout Plain Layout
+
+\change_inserted 1522110021 1650889670
 
 
 \backslash
@@ -5615,12 +5526,16 @@ Sexpr{ifelse(rel1[6,1]<.01,"***",ifelse(rel1[6,1]<.05,"**",ifelse(rel1[6,1]<.1,"
 
 \begin_layout Plain Layout
 
+\change_inserted 1522110021 1650889670
+
 &  $(
 \backslash
 Sexpr{rel1[5,1]})$   &   &            
 \end_layout
 
 \begin_layout Plain Layout
+
+\change_inserted 1522110021 1650889670
 
 
 \backslash
@@ -5636,6 +5551,8 @@ Sexpr{ifelse(rel1[6,2]<.01,"***",ifelse(rel1[6,2]<.05,"**",ifelse(rel1[6,2]<.1,"
 
 \begin_layout Plain Layout
 
+\change_inserted 1522110021 1650889670
+
  
 \backslash
 
@@ -5646,6 +5563,8 @@ Sexpr{rel1[5,2]})$ &
 \end_layout
 
 \begin_layout Plain Layout
+
+\change_inserted 1522110021 1650889670
 
 
 \backslash
@@ -5665,12 +5584,16 @@ Sexpr{ifelse(rel1[6,3]<.01,"***",ifelse(rel1[6,3]<.05,"**",ifelse(rel1[6,3]<.1,"
 
 \begin_layout Plain Layout
 
+\change_inserted 1522110021 1650889670
+
 &   &   & $(
 \backslash
 Sexpr{rel1[5,3]})$  
 \end_layout
 
 \begin_layout Plain Layout
+
+\change_inserted 1522110021 1650889670
 
 
 \backslash
@@ -5696,6 +5619,8 @@ Sexpr{ifelse(rel1[9,3]<.01,"***",ifelse(rel1[9,3]<.05,"**",ifelse(rel1[9,3]<.1,"
 
 \begin_layout Plain Layout
 
+\change_inserted 1522110021 1650889670
+
  
 \backslash
 
@@ -5710,6 +5635,8 @@ Sexpr{rel1[8,3]})$
 \end_layout
 
 \begin_layout Plain Layout
+
+\change_inserted 1522110021 1650889670
 
 
 \backslash
@@ -5730,6 +5657,8 @@ Sexpr{ifelse(rel1[12,3]<.01,"***",ifelse(rel1[12,3]<.05,"**",ifelse(rel1[12,3]<.
 
 \begin_layout Plain Layout
 
+\change_inserted 1522110021 1650889670
+
  
 \backslash
 
@@ -5739,6 +5668,8 @@ Sexpr{ifelse(rel1[12,3]<.01,"***",ifelse(rel1[12,3]<.05,"**",ifelse(rel1[12,3]<.
 
 \begin_layout Plain Layout
 
+\change_inserted 1522110021 1650889670
+
 &   &  $(
 \backslash
 Sexpr{rel1[11,2]})$ & $(
@@ -5747,6 +5678,8 @@ Sexpr{rel1[11,3]})$
 \end_layout
 
 \begin_layout Plain Layout
+
+\change_inserted 1522110021 1650889670
 
     
 \backslash
@@ -5758,6 +5691,8 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
+
+\change_inserted 1522110021 1650889670
 
 Number of obs.
         & $
@@ -5771,6 +5706,8 @@ Sexpr{rel1[15,3]}$
 
 \begin_layout Plain Layout
 
+\change_inserted 1522110021 1650889670
+
  
 \backslash
 
@@ -5782,6 +5719,8 @@ hline
 
 \begin_layout Plain Layout
 
+\change_inserted 1522110021 1650889670
+
 
 \backslash
 multicolumn{5}{l}{ 
@@ -5790,6 +5729,8 @@ scriptsize{$^{***}p<0.01$; $^{**}p<0.05$; $^{*}p<0.1$.}}
 \end_layout
 
 \begin_layout Plain Layout
+
+\change_inserted 1522110021 1650889670
 
  
 \backslash
@@ -5800,12 +5741,16 @@ end{center}
 
 \begin_layout Plain Layout
 
+\change_inserted 1522110021 1650889670
+
 
 \backslash
 scriptsize
 \end_layout
 
 \begin_layout Plain Layout
+
+\change_inserted 1522110021 1650889670
 
 Note: Dependent variable is the rating given by the farmers.
  For the location attribute (independent variable), only input dealers and
