@@ -95,6 +95,7 @@ graphicboxes
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\author -461408743 "Bjorn Van Campenhout"
 \author 1522110021 "u0133866"
 \end_header
 
@@ -525,14 +526,56 @@ literal "true"
 \change_inserted 1522110021 1650890836
 The different actors in the maize supply chains of Uganda interact with
  each other to form an intricate structure.
- The producers of maize, the farmers, buy the maize seeds from the input
- dealers for the production of maize.
- They generally sell their marketable maize surplus to the traders who then
- sell these at the nearest town markets or farm gates or to the processers
- (millers).
+ The producers of maize, the farmers, buy 
+\change_deleted -461408743 1651176615
+the 
+\change_inserted 1522110021 1650890836
+maize seed
+\change_deleted -461408743 1651176618
+s
+\change_inserted -461408743 1651176626
+ (and other inputs)
+\change_inserted 1522110021 1650890836
+ from 
+\change_deleted -461408743 1651176637
+the
+\change_inserted 1522110021 1650890836
+ 
+\change_inserted -461408743 1651176639
+agro-
+\change_inserted 1522110021 1650890836
+input dealers
+\change_deleted -461408743 1651176652
+ for the production of maize
+\change_inserted 1522110021 1650890836
+.
+ 
+\change_deleted -461408743 1651176699
+They generally sell their marketable maize surplus to the
+\change_inserted -461408743 1651176725
+Part of the maize that farmers produce is sold to itinerant
+\change_inserted 1522110021 1650890836
+ traders
+\change_inserted -461408743 1651176792
+ at the farm gate, while the other part is used for own consumption.
+
+\change_inserted 1522110021 1650890836
+ 
+\change_inserted -461408743 1651176963
+Maize is generally consumed in the form of maize flour, so farmers rely
+ on small scale maize millers to process the maize into flour against a
+ fee.
+ 
+\change_deleted -461408743 1651176987
+who then sell these at the nearest town markets or farm gates or to the
+ processers (millers).
  These processers process the maize for market consumption.
  ̇In other occassions, the farmers also bring their produce to the nearest
  maize mills to process the maize for home consumption.
+
+\change_inserted -461408743 1651177031
+ Traders aggregate and sell to bigger traders or to (large scale) processors
+ further downstream.
 \change_deleted 1522110021 1650890683
 
 \end_layout
@@ -562,8 +605,13 @@ literal "false"
 \end_inset
 
 .
- Limited processing capacity also leads to issues related to quality and
- shelf life, further depressing demand for the commodity.
+ Limited processing capacity also leads to 
+\change_deleted -461408743 1651177118
+issues related to quality and shelf life
+\change_inserted -461408743 1651177129
+quality deterioration
+\change_unchanged
+, further depressing demand for the commodity.
  As input dealers, farmers, maize traders and maize processors are intricately
  related in Ugandan maize supply chains, performance issues in one node
  can have consequences for the entire value chain.
@@ -571,9 +619,12 @@ literal "false"
 status open
 
 \begin_layout Plain Layout
-Throughout this study we will differentiate between farmers and actors,
- where the latter is used to refer to the agro-input dealers, traders and
- processors as a group.
+Throughout this study we will differentiate between farmers and 
+\change_inserted -461408743 1651176593
+value chain 
+\change_unchanged
+actors, where the latter is used to refer to the agro-input dealers, traders
+ and processors as a group.
 \end_layout
 
 \end_inset
@@ -1785,9 +1836,23 @@ status open
 
 \begin_layout Plain Layout
 
+\change_inserted -461408743 1651249313
+If the same individual needs to rate various actors on various attributes,
+ the resulting ratings may suffer form some kind of 
+\change_deleted -461408743 1651177470
+The presence of a
+\change_inserted -461408743 1651249316
+a
 \change_inserted 1522110021 1650893863
-The presence of anchoring bias in performance ratings has been discussed
- intensively by researchers in various contexts 
+nchoring bias
+\change_deleted -461408743 1651249328
+ in performance ratings has been discussed intensively by researchers in
+ various contexts
+\change_inserted -461408743 1651249333
+ if for instance a farmer that gives 2 positive ratings is more (or less)
+ likely to give a third positive rating
+\change_inserted 1522110021 1650893863
+ 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Furnham2011,tversky1974judgment"
@@ -1796,7 +1861,9 @@ literal "true"
 \end_inset
 
 .
- However, anchoring bias in the ratings from the farmers should be negligible
+ 
+\change_deleted -461408743 1651249353
+However, anchoring bias in the ratings from the farmers should be negligible
  in this study.
  This is because the farmers have not been provided with any other information
  from other sources about the individuals they are rating.
@@ -1814,6 +1881,15 @@ literal "true"
 \end_inset
 
 .
+\change_inserted -461408743 1651249569
+As the direction of this bias is unclear a priori and likely depends on
+ where in the rating distribution the farmer starts (that is, if a farmer
+ starts with a five, they are likely to adjust downward, if the farmer start
+ with a 1 they are likely to adjust upward), it is also not clear how this
+ feature in the data will affect our findings.
+ In any case, the fact that we cluster standard errors at the level of the
+ farmer (see below) is expected to diminish concerns related to heteroscedaticit
+y resulting from this correlation.
 \change_unchanged
 
 \end_layout
@@ -2053,9 +2129,13 @@ noprefix "false"
  roof, walls and floor.
  Using this quality index, we also find that there is a positive correlation
  between observed quality and the quality ratings actors get.
- The last column show that there is no significant correlation between the
- price that value chain actors charge for their services and products, and
- the price competitiveness ratings.
+ The last column show
+\change_inserted -461408743 1651226849
+s
+\change_inserted 1522110021 1650889699
+ that there is no significant correlation between the price that value chain
+ actors charge for their services and products, and the price competitiveness
+ ratings.
 \change_unchanged
 
 \end_layout
