@@ -1835,24 +1835,19 @@ literal "true"
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted -461408743 1651249313
 If the same individual needs to rate various actors on various attributes,
- the resulting ratings may suffer form some kind of 
-\change_deleted -461408743 1651177470
-The presence of a
-\change_inserted -461408743 1651249316
-a
-\change_inserted 1522110021 1650893863
-nchoring bias
-\change_deleted -461408743 1651249328
- in performance ratings has been discussed intensively by researchers in
- various contexts
-\change_inserted -461408743 1651249333
- if for instance a farmer that gives 2 positive ratings is more (or less)
- likely to give a third positive rating
-\change_inserted 1522110021 1650893863
- 
+ the resulting ratings may suffer f
+\change_inserted 1522110021 1651303184
+ro
+\change_deleted 1522110021 1651303183
+or
+\change_unchanged
+m some kind of anchoring bias if for instance
+\change_inserted 1522110021 1651302160
+,
+\change_unchanged
+ a farmer that gives 2 positive ratings is more (or less) likely to give
+ a third positive rating 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Furnham2011,tversky1974judgment"
@@ -1861,37 +1856,43 @@ literal "true"
 \end_inset
 
 .
- 
-\change_deleted -461408743 1651249353
-However, anchoring bias in the ratings from the farmers should be negligible
- in this study.
- This is because the farmers have not been provided with any other information
- from other sources about the individuals they are rating.
- ̇The farmers choose the individuals to rate themselves which makes them
- less prone to any irrelevant assumption based on information given by the
- enumerator.
- In each case, the rating attributes are clearly mentioned during the interview.
- Henceforth, since the participants have clear knowledge related to the
- individual in concern, anchoring effects should be less prevalent 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Mussweiler2000,wilson1996new"
-literal "true"
-
-\end_inset
-
-.
-\change_inserted -461408743 1651249569
-As the direction of this bias is unclear a priori and likely depends on
+ As the direction of this bias is unclear a priori and likely depends on
  where in the rating distribution the farmer starts (that is, if a farmer
- starts with a five, they are likely to adjust downward, if the farmer start
- with a 1 they are likely to adjust upward), it is also not clear how this
- feature in the data will affect our findings.
- In any case, the fact that we cluster standard errors at the level of the
- farmer (see below) is expected to diminish concerns related to heteroscedaticit
-y resulting from this correlation.
+ 
+\change_inserted 1522110021 1651302321
+(the rater) 
 \change_unchanged
-
+starts with a five
+\change_inserted 1522110021 1651302634
+ (one)
+\change_unchanged
+, 
+\change_inserted 1522110021 1651302378
+the farmer is
+\change_deleted 1522110021 1651302328
+they are
+\change_unchanged
+ likely to adjust downward
+\change_inserted 1522110021 1651303235
+ (upward) making the direction of adaptive adjustment in the ratings unpredictab
+le
+\change_deleted 1522110021 1651302671
+, if the farmer start with a 1 they are likely to adjust upward
+\change_unchanged
+), it is also not clear how this feature in the data will affect our findings.
+ 
+\change_inserted 1522110021 1651303044
+Although anchoring bias can result in within-farmer correlations as the
+ following rating will be negatively correlated with the previous rating
+\change_deleted 1522110021 1651303058
+In any case
+\change_unchanged
+, the fact that we cluster standard errors at the level of the farmer (see
+ below) is expected to diminish concerns related to heterosceda
+\change_inserted 1522110021 1651302462
+s
+\change_unchanged
+ticity resulting from this correlation.
 \end_layout
 
 \end_inset
@@ -2086,7 +2087,7 @@ noprefix "false"
 
 \begin_layout Standard
 
-\change_inserted 1522110021 1650889699
+\change_inserted 1522110021 1651303475
 The fact that we find reasonable inter-rater agreement seems to suggest
  that ratings are valid proxies for attributes of actors being rated.
  In Table 
@@ -2102,7 +2103,7 @@ noprefix "false"
 , we test validity further by correlating average ratings received by actors
  to observable characteristics of the actor.
  Some of these dimensions, like reputation, are hard to measure, but for
- others like location, quality and prices charged we are able to construct
+ others like location, quality and prices charged, we are able to construct
  proxies.
  In the first column of Table 
 \begin_inset CommandInset ref
@@ -5436,7 +5437,7 @@ label{table:table3}
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -5830,7 +5831,7 @@ scriptsize
 
 \begin_layout Plain Layout
 
-\change_inserted 1522110021 1650889670
+\change_inserted 1522110021 1651303666
 
 Note: Dependent variable is the rating given by the farmers.
  For the location attribute (independent variable), only input dealers and
@@ -5840,7 +5841,7 @@ Note: Dependent variable is the rating given by the farmers.
  is calculated using the GPS coordinates collected during the surveys.
  The (haversine) distance is calculated in kilometres and then standardized.
  For the input dealers, the quality is constructed base on inspection that
- happend in the previous year (for instance did an inspector look at seed
+ happened in the previous year (for instance, did an inspector look at seed
  expiry, seed storage, permit of the dealer, seed class sticker, packaging,
  seed lot, germination, moisture level of the seeds and seed purity).
  For the traders, the quality of their service is indicated using attributes
@@ -5849,7 +5850,7 @@ Note: Dependent variable is the rating given by the farmers.
  of credit.
  For the millers, the quality is indicated using attributes like material
  of the roof, walls and floor.
- The resulting indices are stanardized at the actor level and then stacked.
+ The resulting indices are standardized at the actor level and then stacked.
  Price charged by the actor is  a variable considering the price at which
  the input dealers sold seed to the farmers, the price at which traders
  bought the maize from the farmers and the cost at which the processors
