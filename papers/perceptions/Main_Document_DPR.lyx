@@ -466,7 +466,7 @@ We find that agro-input dealers, traders and processors consistently rate
  in the ratings.
  There is some evidence that female farmers rate more favorably than male
  farmers
-\change_inserted 1522110021 1651490981
+\change_deleted -461408743 1651501430
  overall and in certain dimensions like location and price competitiveness
 \change_deleted 1522110021 1651490986
 , but only in some dimensions
@@ -530,8 +530,11 @@ literal "true"
 \begin_layout Standard
 
 \change_inserted 1522110021 1650890836
-The different actors in the maize supply chains of Uganda interact with
- each other to form an intricate structure.
+The different actors in the maize supply chain
+\change_deleted -461408743 1651501494
+s of Uganda
+\change_inserted 1522110021 1650890836
+ interact with each other to form an intricate structure.
  The producers of maize, the farmers, buy 
 \change_deleted -461408743 1651176615
 the 
@@ -1862,8 +1865,14 @@ m some kind of anchoring bias if
 \change_inserted 1522110021 1651302160
 ,
 \change_unchanged
- a farmer that gives 2 positive ratings is more (or less) likely to give
- a third positive rating 
+ a farmer that gives 
+\change_deleted -461408743 1651501546
+2
+\change_inserted -461408743 1651501553
+two consecutive
+\change_unchanged
+ positive ratings is more (or less) likely to give a third positive rating
+ 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Furnham2011,tversky1974judgment"
@@ -1875,7 +1884,7 @@ literal "true"
  As the direction of this bias is unclear a priori and likely depends on
  where in the rating distribution the farmer starts (that is, if a farmer
  
-\change_inserted 1522110021 1651302321
+\change_deleted -461408743 1651501638
 (the rater) 
 \change_unchanged
 starts with a five
@@ -1884,23 +1893,63 @@ starts with a five
 \change_unchanged
 , 
 \change_inserted 1522110021 1651302378
-the farmer is
+the farmer 
+\change_deleted -461408743 1651501600
+is
+\change_inserted -461408743 1651501601
+may be
 \change_deleted 1522110021 1651302328
 they are
 \change_unchanged
  likely to adjust downward
 \change_inserted 1522110021 1651303235
- (upward) making the direction of adaptive adjustment in the ratings unpredictab
-le
+ (upward)
+\change_inserted -461408743 1651501643
+,
+\change_inserted 1522110021 1651303235
+ making the direction of adaptive adjustment in the ratings unpredictable
 \change_deleted 1522110021 1651302671
 , if the farmer start with a 1 they are likely to adjust upward
+\change_deleted -461408743 1651501662
+),
+\change_inserted -461408743 1651501666
+.
+ Hence,
 \change_unchanged
-), it is also not clear how this feature in the data will affect our findings.
+ it is 
+\change_deleted -461408743 1651501672
+also 
+\change_unchanged
+not clear how this feature in the data will affect our findings.
  
 \change_inserted 1522110021 1651491876
-Although anchoring bias can result in within-farmer and within-actor correlation
-s as the following rating will be negatively correlated with the previous
+Although anchoring bias can 
+\change_inserted -461408743 1651501708
+thus 
+\change_inserted 1522110021 1651491876
+result in within-farmer and within-actor correlations as 
+\change_deleted -461408743 1651501724
+the following
+\change_inserted -461408743 1651501726
+consecutive
+\change_inserted 1522110021 1651491876
  rating
+\change_inserted -461408743 1651501730
+s
+\change_inserted 1522110021 1651491876
+ 
+\change_deleted -461408743 1651501732
+will
+\change_inserted -461408743 1651501732
+may
+\change_inserted 1522110021 1651491876
+ be 
+\change_deleted -461408743 1651501737
+negatively 
+\change_inserted 1522110021 1651491876
+correlated
+\change_deleted -461408743 1651501742
+ with the previous rating
 \change_deleted 1522110021 1651303058
 In any case
 \change_unchanged
@@ -2157,10 +2206,19 @@ noprefix "false"
 \change_deleted -461408743 1651307958
  indeed,
 \change_inserted 1522110021 1651303475
- actors that are less centrally located are scored lower on the location
- attribute.
+ actors that are less centrally located are
+\change_inserted -461408743 1651501816
+ also
+\change_inserted 1522110021 1651303475
+ scored lower on the location attribute.
  To test if quality ratings are associated to observable quality characteristics
- of the actors, we first compute an index that is based on various observables.
+ of the actors, we first 
+\change_deleted -461408743 1651501830
+compute
+\change_inserted -461408743 1651501832
+construct
+\change_inserted 1522110021 1651303475
+ an index that is based on various observables.
  For instance, for agro-input dealers, the index measures if various seed
  quality related attributes such as shelf life and moisture content were
  checked over the course of the previous year
@@ -2595,33 +2653,13 @@ Marital status of the person interviewed may also be correlated with ratings.
  The latter produce inferior quality maize products.
  If women are also more likely to reside in remote areas, this may lead
  to biased coefficient estimates.
-\change_inserted 1522110021 1651491368
+\change_inserted -461408743 1651502405
 
 \end_layout
 
 \begin_layout Standard
 
-\change_inserted 1522110021 1651491743
-We checked if farmers that interact more with a particular actor score significa
-ntly different from farmers that interact less.
- We find that farmers that report repeated interactions also score higher
- – this was to be expected as farmers that are happy are more likely to
- keep working with the actor they like.
- However, this may also confound the relationships we study.
- For instance, if gender of the actor (farmer) is also correlated to the
- likelihood of interaction, then the estimate of the relationship between
- gender of the actor (farmer) and the rating may be biased.
- Fortunately, we do not find that the gender of the actor is correlated
- with the likelihood of interaction.
- However, we do find significant correlation between the gender of the farmer
- and the likelihood of interaction.
- ̇Thus, we also control for the effect of likelihood of interaction between
- the farmer and the actor on ratings.
-\change_unchanged
-
-\end_layout
-
-\begin_layout Standard
+\change_inserted -461408743 1651502405
 Similar arguments can be made for the gender of the dealers, traders and
  processors.
  Since men are likely to be more educated than women, the education and
@@ -2637,6 +2675,136 @@ Similar arguments can be made for the gender of the dealers, traders and
  Controlling for marital status of input dealers, trader and processors
  is necessary, as female value chain actors may be more likely to be single.
  
+\change_inserted 1522110021 1651491368
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 1522110021 1651491743
+We
+\change_inserted -461408743 1651502415
+ also
+\change_inserted 1522110021 1651491743
+ checked if farmers that interact
+\change_inserted -461408743 1651501905
+ed
+\change_inserted 1522110021 1651491743
+ 
+\change_deleted -461408743 1651501907
+more 
+\change_inserted 1522110021 1651491743
+with a particular actor score significantly different from farmers
+\change_deleted -461408743 1651501917
+ that interact less
+\change_inserted -461408743 1651501934
+ that do not have first hand experience with the trader, dealer or miller
+\change_inserted 1522110021 1651491743
+.
+ We find that farmers that report
+\change_deleted -461408743 1651501945
+ repeated
+\change_inserted 1522110021 1651491743
+ interactions also score higher 
+\change_deleted -461408743 1651501985
+– this was to be expected as farmers that are happy are more likely to keep
+ working with the actor they like.
+\change_inserted -461408743 1651501985
+– which was to be expected as farmers would self-select into relationships
+ with actors.
+ 
+\change_deleted -461408743 1651501994
+ 
+\change_inserted 1522110021 1651491743
+However, this may also confound the relationships we study.
+ For instance, if gender of the actor (farmer) is also correlated to the
+ likelihood of interaction, then the estimate of the relationship between
+ gender of the actor (farmer) and the rating may be biased
+\change_inserted -461408743 1651502065
+ (hypothesis 4)
+\change_inserted 1522110021 1651491743
+.
+ 
+\change_deleted -461408743 1651502024
+Fortunately,
+\change_inserted -461408743 1651502025
+While
+\change_inserted 1522110021 1651491743
+ we do not find that the gender of the actor is correlated with the 
+\change_deleted -461408743 1651502104
+likelihood of
+\change_inserted 1522110021 1651491743
+ interaction
+\change_inserted -461408743 1651502109
+ dummy
+\change_deleted -461408743 1651502078
+.
+ However
+\change_inserted 1522110021 1651491743
+, we do find significant correlation between the gender of the farmer and
+ the 
+\change_deleted -461408743 1651502091
+likelihood
+\change_inserted -461408743 1651502095
+indicator
+\change_inserted 1522110021 1651491743
+ of interaction
+\change_inserted -461408743 1651502144
+, which may affect hypothesis 2
+\change_inserted 1522110021 1651491743
+.
+
+\change_deleted -461408743 1651502150
+ ̇Thus, we
+\change_inserted -461408743 1651502155
+ To be on the safe side, 
+\change_deleted -461408743 1651502158
+ also
+\change_inserted -461408743 1651502160
+we thus
+\change_inserted 1522110021 1651491743
+ control for 
+\change_deleted -461408743 1651502211
+the effect of likelihood of interaction between the farmer and the actor
+ on ratings
+\change_inserted -461408743 1651502317
+ interaction between farmer and actor in equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:farmer_level"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+
+\change_inserted 1522110021 1651491743
+.
+\change_unchanged
+
+\end_layout
+
+\begin_layout Standard
+
+\change_deleted -461408743 1651502402
+Similar arguments can be made for the gender of the dealers, traders and
+ processors.
+ Since men are likely to be more educated than women, the education and
+ knowledge might define what kind of service and inputs they provide to
+ their customers.
+ This would lead to more or less favourable ratings from farmers, so we
+ need to control for education to disentangle the effect of actor gender
+ and actor education levels.
+ Men are likely to be older because of longer active periods in service
+ providing and input dealing.
+ Older individuals might have better experience in the business, which can
+ impact the ratings.
+ Controlling for marital status of input dealers, trader and processors
+ is necessary, as female value chain actors may be more likely to be single.
+ 
+\change_unchanged
+
 \end_layout
 
 \begin_layout Section
@@ -3099,7 +3267,10 @@ noprefix "false"
 \end_inset
 
 .
- Taking overall ratings as the dependent variable in column (1), we can
+ Taking overall ratings as the dependent variable in column (1), we 
+\change_deleted -461408743 1651502588
+can
+\change_unchanged
  
 \change_deleted 1522110021 1651490453
 not 
@@ -3370,7 +3541,9 @@ We find that agro-input dealers, traders and processors consistently rate
  There is some evidence that female farmers rate more favorably than male
  farmers
 \change_inserted 1522110021 1651490060
- overall and for certain dimensions like location and price competitiveness.
+ 
+\change_deleted -461408743 1651502639
+overall and for certain dimensions like location and price competitiveness.
 \change_deleted 1522110021 1651489259
 , but only in some dimensions
 \change_unchanged
