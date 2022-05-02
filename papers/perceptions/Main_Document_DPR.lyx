@@ -1842,7 +1842,11 @@ ro
 \change_deleted 1522110021 1651303183
 or
 \change_unchanged
-m some kind of anchoring bias if for instance
+m some kind of anchoring bias if
+\change_inserted -461408743 1651308133
+,
+\change_unchanged
+ for instance
 \change_inserted 1522110021 1651302160
 ,
 \change_unchanged
@@ -2089,7 +2093,19 @@ noprefix "false"
 
 \change_inserted 1522110021 1651303475
 The fact that we find reasonable inter-rater agreement seems to suggest
- that ratings are valid proxies for attributes of actors being rated.
+ that ratings are valid proxies for 
+\change_inserted -461408743 1651307889
+the 
+\change_inserted 1522110021 1651303475
+attributes of
+\change_inserted -461408743 1651307893
+ the
+\change_inserted 1522110021 1651303475
+ 
+\change_inserted -461408743 1651307902
+value chain 
+\change_inserted 1522110021 1651303475
+actors being rated.
  In Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -2117,17 +2133,41 @@ noprefix "false"
 
 , we correlate the location based rating to a measure that attempts to capture
  the location of the actor (dealer or miller) relative to where the customers
- are and find that indeed, actors that are less centrally located are scored
- lower on the location attribute.
+ are
+\change_inserted -461408743 1651307940
+,
+\change_inserted 1522110021 1651303475
+ and find that
+\change_deleted -461408743 1651307958
+ indeed,
+\change_inserted 1522110021 1651303475
+ actors that are less centrally located are scored lower on the location
+ attribute.
  To test if quality ratings are associated to observable quality characteristics
  of the actors, we first compute an index that is based on various observables.
  For instance, for agro-input dealers, the index measures if various seed
  quality related attributes such as shelf life and moisture content were
- checked over the course of the previous year.
+ checked over the course of the previous year
+\change_inserted -461408743 1651308005
+ by official inspectors
+\change_inserted 1522110021 1651303475
+.
  For traders, the index includes whether the trader uses improved storage
- bags and the services they provide to farmers.
- For millers, quality is summarized in an index consisting of material of
- roof, walls and floor.
+ bags
+\change_inserted -461408743 1651308029
+, as well as a number of
+\change_deleted -461408743 1651308032
+ and the
+\change_inserted 1522110021 1651303475
+ services they provide to farmers.
+ For millers, quality is 
+\change_deleted -461408743 1651308051
+summarized in an index consisting of material of roof, walls and floor
+\change_inserted -461408743 1651308077
+proxied by looking at the structure where the mill is located in (type of
+ roof, wall and floor)
+\change_inserted 1522110021 1651303475
+.
  Using this quality index, we also find that there is a positive correlation
  between observed quality and the quality ratings actors get.
  The last column show
@@ -5840,21 +5880,44 @@ Note: Dependent variable is the rating given by the farmers.
  The distance between the farmers’ location and dealers’/processors’ location
  is calculated using the GPS coordinates collected during the surveys.
  The (haversine) distance is calculated in kilometres and then standardized.
- For the input dealers, the quality is constructed base on inspection that
- happened in the previous year (for instance, did an inspector look at seed
- expiry, seed storage, permit of the dealer, seed class sticker, packaging,
- seed lot, germination, moisture level of the seeds and seed purity).
+ For the input dealers, the quality is constructed base
+\change_inserted -461408743 1651307734
+d
+\change_inserted 1522110021 1651303666
+ on inspection that happened in the previous year (for instance, did an
+ inspector look at seed expiry, seed storage, permit of the dealer, seed
+ class sticker, packaging, seed lot, germination, moisture level of the
+ seeds and seed purity).
  For the traders, the quality of their service is indicated using attributes
  like the provision of inputs, tarpaulins, PICS (Purdue Improved Crop Storage)
  bags, gunny bags, technical assistance for the farmers and the provision
  of credit.
  For the millers, the quality is indicated using attributes like material
- of the roof, walls and floor.
+ of the roof, walls and floor
+\change_inserted -461408743 1651307799
+ of the structure where the mill is located
+\change_inserted 1522110021 1651303666
+.
  The resulting indices are standardized at the actor level and then stacked.
- Price charged by the actor is  a variable considering the price at which
- the input dealers sold seed to the farmers, the price at which traders
- bought the maize from the farmers and the cost at which the processors
- mill the maize for the farmers, again standardized at the actor level.
+ Price charged by the actor is  a variable 
+\change_deleted -461408743 1651307817
+considering
+\change_inserted -461408743 1651307818
+reflecting
+\change_inserted 1522110021 1651303666
+ the price at which the input dealers sold seed to the farmers, the price
+ at which traders bought the maize from the farmers
+\change_inserted -461408743 1651307837
+,
+\change_inserted 1522110021 1651303666
+ and the 
+\change_deleted -461408743 1651307848
+cost
+\change_inserted -461408743 1651307848
+fee
+\change_inserted 1522110021 1651303666
+ at which the processors mill the maize for the farmers, again standardized
+ at the actor level.
   
 \backslash
 label{table:reliability} 
