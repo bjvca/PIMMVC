@@ -690,6 +690,8 @@ mod5_gender <- lm.cluster(data = pool, formula = rating_overall ~  farmer_fem*ra
 se5 <- sqrt(diag(vcov(mod5_gender)))
 lm_res5<-mod5_gender$lm_res
 
+#summary(lm.cluster(data = pool, formula = rating_overall ~  farmer_fem*ratee_fem + educ  + age + tarmac
+         #  + murram + married + age_ratee + married_ratee + educ_ratee +  interaction_yes + dealer_dummy + trader_dummy, cluster="id.ratee") )
 
 #saving regression
 #screenreg(list(mod1_gender,mod5_gender), file="gen_overall_farmer", stars = c(0.01, 0.05, 0.1), digits=4)
@@ -712,6 +714,9 @@ se15 <- sqrt(diag(vcov(mod15_gender)))
 lm_res15<-mod15_gender$lm_res
 
 
+#summary(lm.cluster(data = pool, formula = rating_location ~  farmer_fem*ratee_fem + educ  + age + tarmac
+                 #  + murram + married + age_ratee + married_ratee + educ_ratee +  interaction_yes +dealer_dummy + trader_dummy, cluster="id.ratee") )
+
 #saving regression
 #screenreg(list(mod11_gender,mod15_gender), file="gen_loc_farmer", stars = c(0.01, 0.05, 0.1), digits=4)
 #texreg(list(mod11_gender,mod15_gender), file="gen_loc_farmer_latex", stars = c(0.01, 0.05, 0.1), digits=4)
@@ -732,6 +737,8 @@ mod25_gender <- lm.cluster(data = pool, formula = rating_quality ~  farmer_fem*r
 se25 <- sqrt(diag(vcov(mod25_gender)))
 lm_res25<-mod25_gender$lm_res
 
+#summary(lm.cluster(data = pool, formula = rating_quality~  farmer_fem*ratee_fem + educ  + age + tarmac
+ #                  + murram + married + age_ratee + married_ratee + educ_ratee + interaction_yes + dealer_dummy + trader_dummy, cluster="id.ratee") )
 
 #saving regression
 #screenreg(list(mod21_gender,mod25_gender), file="gen_qual_farmer", stars = c(0.01, 0.05, 0.1), digits=4)
@@ -753,6 +760,9 @@ mod35_gender <- lm.cluster(data = pool, formula = rating_price ~  farmer_fem*rat
 se35 <- sqrt(diag(vcov(mod35_gender)))
 lm_res35<-mod35_gender$lm_res
 
+#summary(lm.cluster(data = pool, formula = rating_price~  farmer_fem*ratee_fem + educ  + age + tarmac
+ #                  + murram + married + age_ratee + married_ratee + educ_ratee + interaction_yes + dealer_dummy + trader_dummy, cluster="id.ratee") )
+
 
 #saving regression
 #screenreg(list(mod31_gender,mod35_gender), file="gen_price_farmer", stars = c(0.01, 0.05, 0.1), digits=4)
@@ -773,6 +783,10 @@ mod45_gender <- lm.cluster(data = pool, formula = rating_reputation ~  farmer_fe
                            + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy , cluster = "id.ratee") 
 se45 <- sqrt(diag(vcov(mod45_gender)))
 lm_res45<-mod45_gender$lm_res
+
+#summary(lm.cluster(data = pool, formula = rating_reputation~  farmer_fem*ratee_fem + educ  + age + tarmac
+ #                  + murram + married + age_ratee + married_ratee + educ_ratee +  interaction_yes +dealer_dummy + trader_dummy, cluster="id.ratee") )
+
 
 #saving regression
 #screenreg(list(mod41_gender,mod45_gender), file="gen_reputation_farmer", stars = c(0.01, 0.05, 0.1), digits=4)
@@ -3838,4 +3852,17 @@ rel1<- rbind(c((format(round(sum(loc1$coefficients[1]),digits=3),nsmall=0)), #co
              (format(round(nobs(loc2),digits=3),nsmall=0)),
              (format(round(nobs(loc3),digits=3),nsmall=0)))
 )
-5
+
+#################################################################################################
+
+#### CHECKING CORRELATION BETWEEN LIKELIHOOD OF INTERACTION AND GENDER OF RATEE AND FARMER ######
+#summary(lm.cluster(data=pool, formula=ratee_fem~interaction_yes+dealer_dummy+trader_dummy, cluster="id.ratee")) #no significant corr
+#summary(lm.cluster(data=pool, formula=farmer_fem~interaction_yes+dealer_dummy+trader_dummy, cluster="id.ratee")) #significant negative corr -- if interaction happens, less likely a female farmer
+#summary(lm.cluster(data=pool, formula=farmer_fem*ratee_fem~interaction_yes+dealer_dummy+trader_dummy, cluster="id.ratee")) #no significant corr
+
+summary(lm(data =pool, formula = ratee_fem~interaction_yes+ trader_dummy+dealer_dummy))   #no significant corr
+summary(lm(data =pool, formula = farmer_fem~interaction_yes+ trader_dummy+dealer_dummy))  #significant negative corr -- if interaction happens, less likely a female farmer
+summary(lm(data =pool, formula = farmer_fem*ratee_fem~interaction_yes+ trader_dummy+dealer_dummy))     #no significant corr
+
+
+

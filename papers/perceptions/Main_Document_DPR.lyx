@@ -465,7 +465,13 @@ We find that agro-input dealers, traders and processors consistently rate
  they receive and we find no signs of gender-based homophily among women
  in the ratings.
  There is some evidence that female farmers rate more favorably than male
- farmers, but only in some dimensions.
+ farmers
+\change_inserted 1522110021 1651490981
+ overall and in certain dimensions like location and price competitiveness
+\change_deleted 1522110021 1651490986
+, but only in some dimensions
+\change_unchanged
+.
  In the sections that follow, we expound on the study context and hypotheses;
  explain the data used and econometric models we estimate; present the results;
  and finally provide a conclusion and reflect on the consequences.
@@ -1277,11 +1283,17 @@ name "1"
 \begin_layout Standard
 \paragraph_spacing onehalf
 The first hypothesis revolves around how the agro-input dealers, processors
- and traders rate themselves as compared to the scores that are give to
- them by the farmers.
- A significant (positive) difference could mean that agro-input dealer systemati
-cally overestimate their own performance, perhaps as a result of an overconfiden
-ce effect.
+ and traders rate themselves as compared to the scores that are give
+\change_inserted 1522110021 1651491940
+n
+\change_unchanged
+ to them by the farmers.
+ A significant (positive) difference could mean that agro-input dealer
+\change_inserted 1522110021 1651491952
+s
+\change_unchanged
+ systematically overestimate their own performance, perhaps as a result
+ of an overconfidence effect.
  However, research has shown that agents are generally pretty good at assessing
  own performance 
 \begin_inset CommandInset citation
@@ -1885,15 +1897,19 @@ le
 \change_unchanged
 ), it is also not clear how this feature in the data will affect our findings.
  
-\change_inserted 1522110021 1651303044
-Although anchoring bias can result in within-farmer correlations as the
- following rating will be negatively correlated with the previous rating
+\change_inserted 1522110021 1651491876
+Although anchoring bias can result in within-farmer and within-actor correlation
+s as the following rating will be negatively correlated with the previous
+ rating
 \change_deleted 1522110021 1651303058
 In any case
 \change_unchanged
-, the fact that we cluster standard errors at the level of the farmer (see
- below) is expected to diminish concerns related to heterosceda
-\change_inserted 1522110021 1651302462
+, the fact that we cluster standard errors at the level of the farmer
+\change_inserted 1522110021 1651491852
+ and the actor
+\change_unchanged
+ (see below) is expected to diminish concerns related to heterosceda
+\change_inserted 1522110021 1651491821
 s
 \change_unchanged
 ticity resulting from this correlation.
@@ -2579,6 +2595,30 @@ Marital status of the person interviewed may also be correlated with ratings.
  The latter produce inferior quality maize products.
  If women are also more likely to reside in remote areas, this may lead
  to biased coefficient estimates.
+\change_inserted 1522110021 1651491368
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 1522110021 1651491743
+We checked if farmers that interact more with a particular actor score significa
+ntly different from farmers that interact less.
+ We find that farmers that report repeated interactions also score higher
+ – this was to be expected as farmers that are happy are more likely to
+ keep working with the actor they like.
+ However, this may also confound the relationships we study.
+ For instance, if gender of the actor (farmer) is also correlated to the
+ likelihood of interaction, then the estimate of the relationship between
+ gender of the actor (farmer) and the rating may be biased.
+ Fortunately, we do not find that the gender of the actor is correlated
+ with the likelihood of interaction.
+ However, we do find significant correlation between the gender of the farmer
+ and the likelihood of interaction.
+ ̇Thus, we also control for the effect of likelihood of interaction between
+ the farmer and the actor on ratings.
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -3060,8 +3100,12 @@ noprefix "false"
 
 .
  Taking overall ratings as the dependent variable in column (1), we can
- not reject the null that the sex of the farmers does not affect the rating
- given (hypothesis 
+ 
+\change_deleted 1522110021 1651490453
+not 
+\change_unchanged
+reject the null that the sex of the farmers does not affect the rating given
+ (hypothesis 
 \begin_inset CommandInset ref
 LatexCommand labelonly
 reference "2"
@@ -3072,9 +3116,15 @@ noprefix "false"
 \end_inset
 
 ).
- However, if we look at the different components of the rating index, we
- see that female farmers rate actors significantly higher when asked to
- assess location and price competitiveness (columns (2) and (4)).
+ 
+\change_inserted 1522110021 1651490489
+Also
+\change_deleted 1522110021 1651490488
+However
+\change_unchanged
+, if we look at the different components of the rating index, we see that
+ female farmers rate actors significantly higher when asked to assess location
+ and price competitiveness (columns (2) and (4)).
 \end_layout
 
 \begin_layout Standard
@@ -3095,8 +3145,15 @@ noprefix "false"
 status open
 
 \begin_layout Plain Layout
-In fact, there are some indications that women score higher on quality and
- reputation, which runs against hypothesis 
+In fact, there are some indications that women 
+\change_inserted 1522110021 1651490592
+are 
+\change_unchanged
+score
+\change_inserted 1522110021 1651490594
+d
+\change_unchanged
+ higher on quality and reputation, which runs against hypothesis 
 \begin_inset CommandInset ref
 LatexCommand labelonly
 reference "4"
@@ -3311,10 +3368,29 @@ We find that agro-input dealers, traders and processors consistently rate
  The sex of the actor being rated does not affect the rating that they receive
  and we find no signs of gender-based homophily for women in the ratings.
  There is some evidence that female farmers rate more favorably than male
- farmers, but only in some dimensions.
+ farmers
+\change_inserted 1522110021 1651490060
+ overall and for certain dimensions like location and price competitiveness.
+\change_deleted 1522110021 1651489259
+, but only in some dimensions
+\change_unchanged
+.
  Taken together, women actors rate themselves relatively higher and/or farmers
- rate female actors relatively lower when price and quality considerations
- are concerned.
+ rate female actors relatively lower when price 
+\change_inserted 1522110021 1651489890
+competitiveness is concerned 
+\change_unchanged
+and 
+\change_inserted 1522110021 1651489895
+higher when 
+\change_unchanged
+quality 
+\change_inserted 1522110021 1651489910
+is considered
+\change_deleted 1522110021 1651489908
+considerations are concerned
+\change_unchanged
+.
  Female actors may also be too modest with respect to the reputation they
  have.
 \end_layout
@@ -3370,7 +3446,7 @@ Even though we did not find that farmers rate female agents differently,
  For instance, the tendency of female farmers to rate more favourably may
  result in input and service providers treating women farmers differently.
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
 The leniency of female farmer may mean actors are not compelled to provide
@@ -3394,7 +3470,11 @@ Finally, judged by farmer perceptions, there seem to be issues related to
  traders and processors are consistently scored lowest.
  Quality, on the other hand, seems to be rated fairly good.
  Input dealers, for example, are perceived to be performing poorly in terms
- of price competitiveness but get highest scores for quality.
+ of price competitiveness but get high
+\change_deleted 1522110021 1651490254
+est
+\change_unchanged
+ scores for quality.
  This seems to contradict recent studies that blame poor quality of inputs
  as the root cause for low adoption by farmers 
 \begin_inset CommandInset citation
@@ -5219,7 +5299,7 @@ label{table:table2}
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -5477,7 +5557,7 @@ label{table:table3}
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -9469,7 +9549,7 @@ Sexpr{mat[32,5]})$
 \backslash
 
 \backslash
- {Actor is a dealer} & $
+ {Likelihood of interaction} & $
 \backslash
 Sexpr{mat[34,1]}^{
 \backslash
@@ -9513,7 +9593,7 @@ Sexpr{ifelse(mat[36,5]<.01,"***",ifelse(mat[36,5]<.05,"**",ifelse(mat[36,5]<.1,"
 \backslash
 
 \backslash
-
+  {between farmer and actor}
 \end_layout
 
 \begin_layout Plain Layout
@@ -9537,7 +9617,7 @@ Sexpr{mat[35,5]})$
 \backslash
 
 \backslash
- {Actor is a trader}  & $
+ {Actor is a dealer} & $
 \backslash
 Sexpr{mat[37,1]}^{
 \backslash
@@ -9605,7 +9685,7 @@ Sexpr{mat[38,5]})$
 \backslash
 
 \backslash
- {Interaction: Farmer is female*}  & $
+ {Actor is a trader}  & $
 \backslash
 Sexpr{mat[40,1]}^{
 \backslash
@@ -9649,7 +9729,7 @@ Sexpr{ifelse(mat[42,5]<.01,"***",ifelse(mat[42,5]<.05,"**",ifelse(mat[42,5]<.1,"
 \backslash
 
 \backslash
-  {Actor is female} 
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -9664,7 +9744,75 @@ Sexpr{mat[41,3]})$ & $(
 \backslash
 Sexpr{mat[41,4]})$ & $(
 \backslash
-Sexpr{mat[41,5]})$              
+Sexpr{mat[41,5]})$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ {Interaction: Farmer is female*}  & $
+\backslash
+Sexpr{mat[43,1]}^{
+\backslash
+Sexpr{ifelse(mat[45,1]<.01,"***",ifelse(mat[45,1]<.05,"**",ifelse(mat[45,1]<.1,"*",
+"")))}}$ & $
+\backslash
+Sexpr{mat[43,2]}^{
+\backslash
+Sexpr{ifelse(mat[45,2]<.01,"***",ifelse(mat[45,2]<.05,"**",ifelse(mat[45,2]<.1,"*",
+"")))}}$  & $
+\backslash
+Sexpr{mat[43,3]}^{
+\backslash
+Sexpr{ifelse(mat[45,3]<.01,"***",ifelse(mat[45,3]<.05,"**",ifelse(mat[45,3]<.1,"*",
+"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{mat[43,4]}^{
+\backslash
+Sexpr{ifelse(mat[45,4]<.01,"***",ifelse(mat[45,4]<.05,"**",ifelse(mat[45,4]<.1,"*",
+"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{mat[43,5]}^{
+\backslash
+Sexpr{ifelse(mat[45,5]<.01,"***",ifelse(mat[45,5]<.05,"**",ifelse(mat[45,5]<.1,"*",
+"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+  {Actor is female} 
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $(
+\backslash
+Sexpr{mat[44,1]})$   &  $(
+\backslash
+Sexpr{mat[44,2]})$ & $(
+\backslash
+Sexpr{mat[44,3]})$ & $(
+\backslash
+Sexpr{mat[44,4]})$ & $(
+\backslash
+Sexpr{mat[44,5]})$              
 \end_layout
 
 \begin_layout Plain Layout
@@ -9683,15 +9831,15 @@ hline
  Number of obs.
         & $
 \backslash
-Sexpr{mat[45,1]}$   &  $
+Sexpr{mat[48,1]}$   &  $
 \backslash
-Sexpr{mat[45,2]}$ & $
+Sexpr{mat[48,2]}$ & $
 \backslash
-Sexpr{mat[45,3]}$ & $
+Sexpr{mat[48,3]}$ & $
 \backslash
-Sexpr{mat[45,4]}$ & $
+Sexpr{mat[48,4]}$ & $
 \backslash
-Sexpr{mat[45,5]}$  
+Sexpr{mat[48,5]}$  
 \end_layout
 
 \begin_layout Plain Layout
@@ -9746,6 +9894,10 @@ label{table:table5}
 
 \end_inset
 
+
+\change_inserted 1522110021 1651493389
+ 
+\change_unchanged
 
 \end_layout
 
@@ -10555,92 +10707,25 @@ hline
 
 {Constant}  & $
 \backslash
-Sexpr{mat[46,1]}^{
-\backslash
-Sexpr{ifelse(mat[48,1]<.01,"***",ifelse(mat[48,1]<.05,"**",ifelse(mat[48,1]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{mat[46,2]}^{
-\backslash
-Sexpr{ifelse(mat[48,2]<.01,"***",ifelse(mat[48,2]<.05,"**",ifelse(mat[48,2]<.1,"*",
-"")))}}$ 
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{mat[46,3]}^{
-\backslash
-Sexpr{ifelse(mat[48,3]<.01,"***",ifelse(mat[48,3]<.05,"**",ifelse(mat[48,3]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
- & $
-\backslash
-Sexpr{mat[46,4]}^{
-\backslash
-Sexpr{ifelse(mat[48,4]<.01,"***",ifelse(mat[48,4]<.05,"**",ifelse(mat[48,4]<.1,"*",
-"")))}}$
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
-\backslash
-Sexpr{mat[46,5]}^{
-\backslash
-Sexpr{ifelse(mat[48,5]<.01,"***",ifelse(mat[48,5]<.05,"**",ifelse(mat[48,5]<.1,"*",
-"")))}}$ 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-& $(
-\backslash
-Sexpr{mat[47,1]})$ & $(
-\backslash
-Sexpr{mat[47,2]})$  & $(
-\backslash
-Sexpr{mat[47,3]})$ & $(
-\backslash
-Sexpr{mat[47,4]})$ & $(
-\backslash
-Sexpr{mat[47,5]})$
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
- {Farmer is female} & $
-\backslash
 Sexpr{mat[49,1]}^{
 \backslash
 Sexpr{ifelse(mat[51,1]<.01,"***",ifelse(mat[51,1]<.05,"**",ifelse(mat[51,1]<.1,"*",
-"")))}}$ & $
+"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
 \backslash
 Sexpr{mat[49,2]}^{
 \backslash
 Sexpr{ifelse(mat[51,2]<.01,"***",ifelse(mat[51,2]<.05,"**",ifelse(mat[51,2]<.1,"*",
-"")))}}$  & $
+"")))}}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
 \backslash
 Sexpr{mat[49,3]}^{
 \backslash
@@ -10665,16 +10750,16 @@ Sexpr{ifelse(mat[51,4]<.01,"***",ifelse(mat[51,4]<.05,"**",ifelse(mat[51,4]<.1,"
 Sexpr{mat[49,5]}^{
 \backslash
 Sexpr{ifelse(mat[51,5]<.01,"***",ifelse(mat[51,5]<.05,"**",ifelse(mat[51,5]<.1,"*",
-"")))}}$
+"")))}}$ 
+\backslash
+
+\backslash
+
 \end_layout
 
 \begin_layout Plain Layout
 
- 
-\backslash
-
-\backslash
- & $(
+& $(
 \backslash
 Sexpr{mat[50,1]})$ & $(
 \backslash
@@ -10689,11 +10774,15 @@ Sexpr{mat[50,5]})$
 
 \begin_layout Plain Layout
 
+\end_layout
+
+\begin_layout Plain Layout
+
 
 \backslash
 
 \backslash
- {Actor is female}   & $
+ {Farmer is female} & $
 \backslash
 Sexpr{mat[52,1]}^{
 \backslash
@@ -10737,22 +10826,17 @@ Sexpr{ifelse(mat[54,5]<.01,"***",ifelse(mat[54,5]<.05,"**",ifelse(mat[54,5]<.1,"
 \backslash
 
 \backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  $(
+ & $(
 \backslash
-Sexpr{mat[53,1]})$   &  $(
+Sexpr{mat[53,1]})$ & $(
 \backslash
-Sexpr{mat[53,2]})$ & $(
+Sexpr{mat[53,2]})$  & $(
 \backslash
 Sexpr{mat[53,3]})$ & $(
 \backslash
 Sexpr{mat[53,4]})$ & $(
 \backslash
-Sexpr{mat[53,5]})$          
+Sexpr{mat[53,5]})$
 \end_layout
 
 \begin_layout Plain Layout
@@ -10761,7 +10845,7 @@ Sexpr{mat[53,5]})$
 \backslash
 
 \backslash
- {Farmer has finished} & $
+ {Actor is female}   & $
 \backslash
 Sexpr{mat[55,1]}^{
 \backslash
@@ -10805,7 +10889,7 @@ Sexpr{ifelse(mat[57,5]<.01,"***",ifelse(mat[57,5]<.05,"**",ifelse(mat[57,5]<.1,"
 \backslash
 
 \backslash
-{primary education}
+ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -10820,7 +10904,7 @@ Sexpr{mat[56,3]})$ & $(
 \backslash
 Sexpr{mat[56,4]})$ & $(
 \backslash
-Sexpr{mat[56,5]})$        
+Sexpr{mat[56,5]})$          
 \end_layout
 
 \begin_layout Plain Layout
@@ -10829,7 +10913,7 @@ Sexpr{mat[56,5]})$
 \backslash
 
 \backslash
- {Farmer's age} & $
+ {Farmer has finished} & $
 \backslash
 Sexpr{mat[58,1]}^{
 \backslash
@@ -10873,7 +10957,7 @@ Sexpr{ifelse(mat[60,5]<.01,"***",ifelse(mat[60,5]<.05,"**",ifelse(mat[60,5]<.1,"
 \backslash
 
 \backslash
- {(in years)}          
+{primary education}
 \end_layout
 
 \begin_layout Plain Layout
@@ -10888,7 +10972,7 @@ Sexpr{mat[59,3]})$ & $(
 \backslash
 Sexpr{mat[59,4]})$ & $(
 \backslash
-Sexpr{mat[59,5]})$       
+Sexpr{mat[59,5]})$        
 \end_layout
 
 \begin_layout Plain Layout
@@ -10897,7 +10981,7 @@ Sexpr{mat[59,5]})$
 \backslash
 
 \backslash
- {Farmer's distance to} & $
+ {Farmer's age} & $
 \backslash
 Sexpr{mat[61,1]}^{
 \backslash
@@ -10941,7 +11025,7 @@ Sexpr{ifelse(mat[63,5]<.01,"***",ifelse(mat[63,5]<.05,"**",ifelse(mat[63,5]<.1,"
 \backslash
 
 \backslash
-{tarmac road (in km)}
+ {(in years)}          
 \end_layout
 
 \begin_layout Plain Layout
@@ -10956,7 +11040,7 @@ Sexpr{mat[62,3]})$ & $(
 \backslash
 Sexpr{mat[62,4]})$ & $(
 \backslash
-Sexpr{mat[62,5]})$  
+Sexpr{mat[62,5]})$       
 \end_layout
 
 \begin_layout Plain Layout
@@ -11009,7 +11093,7 @@ Sexpr{ifelse(mat[66,5]<.01,"***",ifelse(mat[66,5]<.05,"**",ifelse(mat[66,5]<.1,"
 \backslash
 
 \backslash
-{murram road (in km)}
+{tarmac road (in km)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -11024,7 +11108,7 @@ Sexpr{mat[65,3]})$ & $(
 \backslash
 Sexpr{mat[65,4]})$ & $(
 \backslash
-Sexpr{mat[65,5]})$ 
+Sexpr{mat[65,5]})$  
 \end_layout
 
 \begin_layout Plain Layout
@@ -11033,7 +11117,7 @@ Sexpr{mat[65,5]})$
 \backslash
 
 \backslash
- {Farmer is married} & $
+ {Farmer's distance to} & $
 \backslash
 Sexpr{mat[67,1]}^{
 \backslash
@@ -11077,7 +11161,7 @@ Sexpr{ifelse(mat[69,5]<.01,"***",ifelse(mat[69,5]<.05,"**",ifelse(mat[69,5]<.1,"
 \backslash
 
 \backslash
-
+{murram road (in km)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -11101,7 +11185,7 @@ Sexpr{mat[68,5]})$
 \backslash
 
 \backslash
- {Actor's age} & $
+ {Farmer is married} & $
 \backslash
 Sexpr{mat[70,1]}^{
 \backslash
@@ -11145,7 +11229,7 @@ Sexpr{ifelse(mat[72,5]<.01,"***",ifelse(mat[72,5]<.05,"**",ifelse(mat[72,5]<.1,"
 \backslash
 
 \backslash
-{(in years)}
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -11169,12 +11253,7 @@ Sexpr{mat[71,5]})$
 \backslash
 
 \backslash
- {Actor is married}
-\end_layout
-
-\begin_layout Plain Layout
-
-& $
+ {Actor's age} & $
 \backslash
 Sexpr{mat[73,1]}^{
 \backslash
@@ -11218,7 +11297,7 @@ Sexpr{ifelse(mat[75,5]<.01,"***",ifelse(mat[75,5]<.05,"**",ifelse(mat[75,5]<.1,"
 \backslash
 
 \backslash
-
+{(in years)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -11242,7 +11321,12 @@ Sexpr{mat[74,5]})$
 \backslash
 
 \backslash
- {Actor has finished} & $
+ {Actor is married}
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
 \backslash
 Sexpr{mat[76,1]}^{
 \backslash
@@ -11286,7 +11370,7 @@ Sexpr{ifelse(mat[78,5]<.01,"***",ifelse(mat[78,5]<.05,"**",ifelse(mat[78,5]<.1,"
 \backslash
 
 \backslash
-  {primary education}
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -11310,7 +11394,7 @@ Sexpr{mat[77,5]})$
 \backslash
 
 \backslash
- {Actor is a dealer} & $
+ {Actor has finished} & $
 \backslash
 Sexpr{mat[79,1]}^{
 \backslash
@@ -11354,7 +11438,7 @@ Sexpr{ifelse(mat[81,5]<.01,"***",ifelse(mat[81,5]<.05,"**",ifelse(mat[81,5]<.1,"
 \backslash
 
 \backslash
-
+  {primary education}
 \end_layout
 
 \begin_layout Plain Layout
@@ -11378,7 +11462,7 @@ Sexpr{mat[80,5]})$
 \backslash
 
 \backslash
- {Actor is a trader}  & $
+ {Likelihood of interaction} & $
 \backslash
 Sexpr{mat[82,1]}^{
 \backslash
@@ -11422,7 +11506,7 @@ Sexpr{ifelse(mat[84,5]<.01,"***",ifelse(mat[84,5]<.05,"**",ifelse(mat[84,5]<.1,"
 \backslash
 
 \backslash
-
+  {between farmer and actor}
 \end_layout
 
 \begin_layout Plain Layout
@@ -11446,7 +11530,7 @@ Sexpr{mat[83,5]})$
 \backslash
 
 \backslash
- {Interaction: Farmer is female*}  & $
+ {Actor is a dealer} & $
 \backslash
 Sexpr{mat[85,1]}^{
 \backslash
@@ -11490,7 +11574,7 @@ Sexpr{ifelse(mat[87,5]<.01,"***",ifelse(mat[87,5]<.05,"**",ifelse(mat[87,5]<.1,"
 \backslash
 
 \backslash
-  {Actor is female} 
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -11505,7 +11589,143 @@ Sexpr{mat[86,3]})$ & $(
 \backslash
 Sexpr{mat[86,4]})$ & $(
 \backslash
-Sexpr{mat[86,5]})$              
+Sexpr{mat[86,5]})$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ {Actor is a trader}  & $
+\backslash
+Sexpr{mat[88,1]}^{
+\backslash
+Sexpr{ifelse(mat[90,1]<.01,"***",ifelse(mat[90,1]<.05,"**",ifelse(mat[90,1]<.1,"*",
+"")))}}$ & $
+\backslash
+Sexpr{mat[88,2]}^{
+\backslash
+Sexpr{ifelse(mat[90,2]<.01,"***",ifelse(mat[90,2]<.05,"**",ifelse(mat[90,2]<.1,"*",
+"")))}}$  & $
+\backslash
+Sexpr{mat[88,3]}^{
+\backslash
+Sexpr{ifelse(mat[90,3]<.01,"***",ifelse(mat[90,3]<.05,"**",ifelse(mat[90,3]<.1,"*",
+"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{mat[88,4]}^{
+\backslash
+Sexpr{ifelse(mat[90,4]<.01,"***",ifelse(mat[90,4]<.05,"**",ifelse(mat[90,4]<.1,"*",
+"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{mat[88,5]}^{
+\backslash
+Sexpr{ifelse(mat[90,5]<.01,"***",ifelse(mat[90,5]<.05,"**",ifelse(mat[90,5]<.1,"*",
+"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $(
+\backslash
+Sexpr{mat[89,1]})$   &  $(
+\backslash
+Sexpr{mat[89,2]})$ & $(
+\backslash
+Sexpr{mat[89,3]})$ & $(
+\backslash
+Sexpr{mat[89,4]})$ & $(
+\backslash
+Sexpr{mat[89,5]})$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ {Interaction: Farmer is female*}  & $
+\backslash
+Sexpr{mat[91,1]}^{
+\backslash
+Sexpr{ifelse(mat[93,1]<.01,"***",ifelse(mat[93,1]<.05,"**",ifelse(mat[93,1]<.1,"*",
+"")))}}$ & $
+\backslash
+Sexpr{mat[91,2]}^{
+\backslash
+Sexpr{ifelse(mat[93,2]<.01,"***",ifelse(mat[93,2]<.05,"**",ifelse(mat[93,2]<.1,"*",
+"")))}}$  & $
+\backslash
+Sexpr{mat[91,3]}^{
+\backslash
+Sexpr{ifelse(mat[93,3]<.01,"***",ifelse(mat[93,3]<.05,"**",ifelse(mat[93,3]<.1,"*",
+"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ & $
+\backslash
+Sexpr{mat[91,4]}^{
+\backslash
+Sexpr{ifelse(mat[93,4]<.01,"***",ifelse(mat[93,4]<.05,"**",ifelse(mat[93,4]<.1,"*",
+"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
+\backslash
+Sexpr{mat[91,5]}^{
+\backslash
+Sexpr{ifelse(mat[93,5]<.01,"***",ifelse(mat[93,5]<.05,"**",ifelse(mat[93,5]<.1,"*",
+"")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+
+\backslash
+  {Actor is female} 
+\end_layout
+
+\begin_layout Plain Layout
+
+&  $(
+\backslash
+Sexpr{mat[92,1]})$   &  $(
+\backslash
+Sexpr{mat[92,2]})$ & $(
+\backslash
+Sexpr{mat[92,3]})$ & $(
+\backslash
+Sexpr{mat[92,4]})$ & $(
+\backslash
+Sexpr{mat[92,5]})$              
 \end_layout
 
 \begin_layout Plain Layout
@@ -11524,15 +11744,15 @@ hline
 Number of obs.
         & $
 \backslash
-Sexpr{mat[90,1]}$   &  $
+Sexpr{mat[96,1]}$   &  $
 \backslash
-Sexpr{mat[90,2]}$ & $
+Sexpr{mat[96,2]}$ & $
 \backslash
-Sexpr{mat[90,3]}$ & $
+Sexpr{mat[96,3]}$ & $
 \backslash
-Sexpr{mat[90,4]}$ & $
+Sexpr{mat[96,4]}$ & $
 \backslash
-Sexpr{mat[90,5]}$  
+Sexpr{mat[96,5]}$  
 \end_layout
 
 \begin_layout Plain Layout
@@ -11587,6 +11807,10 @@ label{table:table5}
 
 \end_inset
 
+
+\change_inserted 1522110021 1651493391
+ 
+\change_unchanged
 
 \end_layout
 

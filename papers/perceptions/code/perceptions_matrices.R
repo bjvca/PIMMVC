@@ -463,27 +463,27 @@ pool<-pool[!(pool$id.ratee=="."),]
 ############# TWO WAY CLUSTERING
 
 test1 <- lm(rating_overall ~  farmer_fem*ratee_fem + educ  + age + tarmac
-            + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy, data=pool)
+            + murram + married + age_ratee + married_ratee + educ_ratee + interaction_yes+dealer_dummy + trader_dummy, data=pool)
 test_se1 <- cluster.boot(test1,c(pool$id.ratee,pool$farmerID))                        
 coef1 <- coeftest(test1,test_se1)
 
 test2 <- lm(rating_location ~  farmer_fem*ratee_fem + educ  + age + tarmac
-            + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy, data=pool)
+            + murram + married + age_ratee + married_ratee + educ_ratee +  interaction_yes+dealer_dummy + trader_dummy, data=pool)
 test_se2 <- cluster.boot(test2,c(pool$id.ratee,pool$farmerID))                        
 coef2 <- coeftest(test2,test_se2)
 
 test3 <- lm(rating_quality ~  farmer_fem*ratee_fem + educ  + age + tarmac
-            + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy, data=pool)
+            + murram + married + age_ratee + married_ratee + educ_ratee + interaction_yes +dealer_dummy + trader_dummy, data=pool)
 test_se3 <- cluster.boot(test3,c(pool$id.ratee,pool$farmerID))                        
 coef3 <- coeftest(test3,test_se3)
 
 test4 <- lm(rating_price ~  farmer_fem*ratee_fem + educ  + age + tarmac
-            + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy, data=pool)
+            + murram + married + age_ratee + married_ratee + educ_ratee + interaction_yes +dealer_dummy + trader_dummy, data=pool)
 test_se4 <- cluster.boot(test4,c(pool$id.ratee,pool$farmerID))                        
 coef4 <- coeftest(test4,test_se4)
 
 test5 <- lm(rating_reputation ~  farmer_fem*ratee_fem + educ  + age + tarmac
-            + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy, data=pool)
+            + murram + married + age_ratee + married_ratee + educ_ratee + interaction_yes+ dealer_dummy + trader_dummy, data=pool)
 test_se5 <- cluster.boot(test5,c(pool$id.ratee,pool$farmerID))                        
 coef5 <- coeftest(test5,test_se5)
 
@@ -510,29 +510,29 @@ pool$ratingrepu_diff <- pool$rating_reputation_ratee - pool$rating_reputation ##
 # Regressions
 
 testt1 <- lm(ratingoverall_diff ~  farmer_fem*ratee_fem + educ  + age + tarmac
-            + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy, data=pool)
+            + murram + married + age_ratee + married_ratee + educ_ratee + interaction_yes+dealer_dummy + trader_dummy, data=pool)
 testt_se1 <- cluster.boot(testt1,c(pool$id.ratee,pool$farmerID))                        
 coeft1 <- coeftest(testt1,testt_se1)
 
 
 testt2 <- lm(ratingloc_diff ~  farmer_fem*ratee_fem + educ  + age + tarmac
-             + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy, data=pool)
+             + murram + married + age_ratee + married_ratee + educ_ratee +interaction_yes+ dealer_dummy + trader_dummy, data=pool)
 testt_se2 <- cluster.boot(testt2,c(pool$id.ratee,pool$farmerID))                        
 coeft2 <- coeftest(testt2,testt_se2)
 
 
 testt3 <- lm(ratingprice_diff ~  farmer_fem*ratee_fem + educ  + age + tarmac
-             + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy, data=pool)
+             + murram + married + age_ratee + married_ratee + educ_ratee + interaction_yes+dealer_dummy + trader_dummy, data=pool)
 testt_se3 <- cluster.boot(testt3,c(pool$id.ratee,pool$farmerID))                        
 coeft3 <- coeftest(testt3,testt_se3)
 
 testt4 <- lm(ratingqual_diff ~  farmer_fem*ratee_fem + educ  + age + tarmac
-             + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy, data=pool)
+             + murram + married + age_ratee + married_ratee + educ_ratee +interaction_yes+ dealer_dummy + trader_dummy, data=pool)
 testt_se4 <- cluster.boot(testt4,c(pool$id.ratee,pool$farmerID))                        
 coeft4 <- coeftest(testt4,testt_se4)
 
 testt5 <- lm(ratingrepu_diff ~  farmer_fem*ratee_fem + educ  + age + tarmac
-             + murram + married + age_ratee + married_ratee + educ_ratee + dealer_dummy + trader_dummy, data=pool)
+             + murram + married + age_ratee + married_ratee + educ_ratee + interaction_yes+dealer_dummy + trader_dummy, data=pool)
 testt_se5 <- cluster.boot(testt5,c(pool$id.ratee,pool$farmerID))                        
 coeft5 <- coeftest(testt5,testt_se4)
 
@@ -790,6 +790,24 @@ mat<- rbind(         #dependent variable is farmer ratings
                (format(round(sum(coef3[14,4]),digits=3),nsmall=0)),
                (format(round(sum(coef4[14,4]),digits=3),nsmall=0)),
                (format(round(sum(coef5[14,4]),digits=3),nsmall=0))),
+             
+             c((format(round(sum(coef1[15,1]),digits=3),nsmall=0)), #coefficients 
+               (format(round(sum(coef2[15,1]),digits=3),nsmall=0)),
+               (format(round(sum(coef3[15,1]),digits=3),nsmall=0)),
+               (format(round(sum(coef4[15,1]),digits=3),nsmall=0)),
+               (format(round(sum(coef5[15,1]),digits=3),nsmall=0))),
+             
+             c((format(round(sum(coef1[15,2]),digits=3),nsmall=0)),  #SE
+               (format(round(sum(coef2[15,2]),digits=3),nsmall=0)),
+               (format(round(sum(coef3[15,2]),digits=3),nsmall=0)),
+               (format(round(sum(coef4[15,2]),digits=3),nsmall=0)),
+               (format(round(sum(coef5[15,2]),digits=3),nsmall=0))),
+             
+             c((format(round(sum(coef1[15,4]),digits=3),nsmall=0)),  #pvalue
+               (format(round(sum(coef2[15,4]),digits=3),nsmall=0)),
+               (format(round(sum(coef3[15,4]),digits=3),nsmall=0)),
+               (format(round(sum(coef4[15,4]),digits=3),nsmall=0)),
+               (format(round(sum(coef5[15,4]),digits=3),nsmall=0))),
              
              
                 c((format(round(summary(test1)$r.squared[1],digits=3),nsmall=0)),
@@ -1062,6 +1080,24 @@ mat<- rbind(         #dependent variable is farmer ratings
                (format(round(sum(coeft3[14,4]),digits=3),nsmall=0)),
                (format(round(sum(coeft4[14,4]),digits=3),nsmall=0)),
                (format(round(sum(coeft5[14,4]),digits=3),nsmall=0))),
+             
+             c((format(round(sum(coeft1[15,1]),digits=3),nsmall=0)), #coefficients 
+               (format(round(sum(coeft2[15,1]),digits=3),nsmall=0)),
+               (format(round(sum(coeft3[15,1]),digits=3),nsmall=0)),
+               (format(round(sum(coeft4[15,1]),digits=3),nsmall=0)),
+               (format(round(sum(coeft5[15,1]),digits=3),nsmall=0))),
+             
+             c((format(round(sum(coeft1[15,2]),digits=3),nsmall=0)),  #SE
+               (format(round(sum(coeft2[15,2]),digits=3),nsmall=0)),
+               (format(round(sum(coeft3[15,2]),digits=3),nsmall=0)),
+               (format(round(sum(coeft4[15,2]),digits=3),nsmall=0)),
+               (format(round(sum(coeft5[15,2]),digits=3),nsmall=0))),
+             
+             c((format(round(sum(coeft1[15,4]),digits=3),nsmall=0)),  #pvalue
+               (format(round(sum(coeft2[15,4]),digits=3),nsmall=0)),
+               (format(round(sum(coeft3[15,4]),digits=3),nsmall=0)),
+               (format(round(sum(coeft4[15,4]),digits=3),nsmall=0)),
+               (format(round(sum(coeft5[15,4]),digits=3),nsmall=0))),
              
              
              c((format(round(summary(testt1)$r.squared[1],digits=3),nsmall=0)),
