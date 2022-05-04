@@ -6994,10 +6994,14 @@ label{table:table11}
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -8916,6 +8920,11 @@ label{table:table12}
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 \begin_inset Float table
 wide false
@@ -9380,6 +9389,10 @@ label{table:table9}
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
 \begin_inset Float table
 wide false
 sideways false
@@ -11486,6 +11499,11 @@ Note: Here, the gender of the input dealer is a dummy variable carrying
    
 \backslash
 label{table:table10} 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
