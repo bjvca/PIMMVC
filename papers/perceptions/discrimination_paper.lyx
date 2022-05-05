@@ -254,12 +254,12 @@ literal "false"
 \end_inset
 
  tested herbicides and found that the average bottle in their sample was
- missing 15% of the active ingredient and 31 per cent of samples contain
- less than 75% of the ingredient advertised.
+ missing 15% of the active ingredient and 31% of samples contain less than
+ 75% of the ingredient advertised.
  While it remains unclear if quality related issues are due to deliberate
  adulteration or due to poor storage and handling, and at what point in
  the value chain quality starts to deteriorate, the resulting uncertainty
- makes reliance on perceptions decision heuristics more likely 
+ makes reliance on perceptions and decision heuristics more likely 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "BARRIGA2020104928"
@@ -320,11 +320,11 @@ We test if farmers perceive female agro-input dealer less favorably than
  their male counterparts using a unique dyadic dataset of farmer-dealer
  combinations.
  To operationalize perceptions, we asked farmer to rate agro-input dealers,
- on a scale from 1 to 5, on a range of characteristics.
+ on a scale of 1 to 5, on a range of characteristics.
  We then make between-dealer comparisons, accounting for observable differences
  in the quality of male- and female-managed shops.
- Furthermore, we will use the fact that a farmer will generally have rated
- more than one agro-input dealer.
+ Furthermore, we use the fact that a farmer will generally have rated more
+ than one agro-input dealer.
  If farmers rate both male and female agro-input dealers, we can exploit
  this within-farmer variation and control for farmer specific observable
  and unobservable characteristics.
@@ -345,13 +345,10 @@ Research question and relation to the literature
 \begin_layout Standard
 We aim to test if gender equity bias is present when farmers rate agro-input
  dealers in their neighborhood.
-\end_layout
-
-\begin_layout Standard
-Gender equity bias has been confirmed in a wide varieties of contexts, usually
- when one or more persons are asked to assess another person.
- Gender stereotyping and gender role congruence are often catalysts for
- distorted perceptions and false beliefs about the abilities of women.
+ Gender equity bias has been confirmed in a wide varieties of contexts,
+ usually when one or more persons are asked to assess another person.
+ Gender stereotyping and role congruence are often catalysts for distorted
+ perceptions and false beliefs about the abilities of women.
 \end_layout
 
 \begin_layout Standard
@@ -519,17 +516,17 @@ Central to our analysis is the quantification of the perceptions of the
  quality of services provided by agro-input dealers and of the products
  they sell—improved maize seed varieties in particular.
  To do so, we did a census of all agro-input dealers in our study area.
- Based on this data, we delineated catchment areas for each agro-input dealer.We
- then sampled farmers in the catchment areas and asked them to rate agro-input
- dealers in their catchment area on a range of attributes.
- We broadly categorized them into two families.
- A first set of indicators attempts to measure overall quality of agro input
+ Based on this data, we delineated catchment areas for each agro-input dealer.
+ We then sampled farmers in the catchment areas and asked them to rate agro-inpu
+t dealers in their catchment area on a range of attributes.
+ We broadly categorized the attributes into two families of indicators.
+ A first set of indicators attempts to measure overall quality of agro-input
  dealers and the services they provide, while a second set of indicators
  has a much more narrow focus and asks about a particular product sold by
  the agro-input dealer (maize seed).
- Note that agro-input dealers are often clustered in towns and trading centers,
- catchment areas often overlap, and so farmers often rank several agro-input
- dealers.
+ Note that as agro-input dealers are often clustered in towns and trading
+ centers, catchment areas often overlap, and so farmers often rank several
+ agro-input dealers.
  
 \end_layout
 
@@ -537,11 +534,25 @@ Central to our analysis is the quantification of the perceptions of the
 To measure the (perceived) quality of agro-input dealers, farmers were asked
  to rate these dealers on a scale of 1 to 5 on their general quality, location
  (convenience, accessibility, closeness to clients), price (competitive
- pricing, discounts), seed quality, stock (availability of seed), and reputation
- (what do other farmers think about the agro-input dealer).
- We also compute an average of these six dealer ratings.
- Mind that for these indicators, farmers were asked to rate the shop and
- the person that sells seed.
+ pricing, discounts), seed quality, stock (availability of seed, number
+ of varieties in stock), and reputation (what do other farmers think about
+ the agro-input dealer).
+ We also compute an average of these six dealer level ratings.
+ Mind that for these indicators, farmers were asked to rate the shop as
+ a whole, which also includes the person who operates the shop.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+It may be that the shop is owned by a particular persons, but the owner
+ employs someone to manage the shop.
+ This is especially the case for larger shops in town.
+ In villages and trading centers, the shop owner is generally also the manager.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -549,7 +560,21 @@ To measure the (perceived) quality of seed, farmers were asked to rate the
  maize seed that dealers sell on a scale of 1 to 5 on its general quality,
  yield, drought tolerance, pest/disease tolerance, crop duration/maturation
  period, and germination reliability.
- We also compute an average of these six seed ratings.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Some of these attributes may be variety specific.
+ For instance, some hybrid seed may be particularly drought tolerant, why
+ other seed may be higher yielding.
+ Therefore, we specifically asked farmers to rate seed relative to what
+ is advertised for these attributes.
+ 
+\end_layout
+
+\end_inset
+
+ We also compute an average of these six seed level ratings.
  Note that for these variables, farmers were asked to rate seed, the product
  itself.
  Farmers were also allowed to indicate that they could not rate seed on
@@ -559,11 +584,11 @@ To measure the (perceived) quality of seed, farmers were asked to rate the
 
 \begin_layout Standard
 We asked farmers to rate agro-input dealers twice, a first time in April
- 2021 and a second time in Januari 2022.
- The average farmer in our dataset provided about two ratings, with some
- farmers providing up to 15 ratings.
- The average agro-input shop received almost 12 ratings, while one agro-input
- shop got almost 50 ratings.
+ 2021 and a second time in January 2022.
+ The average farmer in our data-set provided ratings for about two agro-input
+ dealers, with some farmers rating up to 15 agro-input dealers.
+ The average agro-input shop received ratings from almost 12 farmers, while
+ one agro-input shop got ratings from almost 50 farmers.
 \end_layout
 
 \begin_layout Section*
