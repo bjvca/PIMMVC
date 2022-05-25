@@ -130,8 +130,9 @@ literal "false"
  argue that increased competition in agriculture markets sustained by informal
  contracts can diminish performance and value for all players in the supply
  chain.
- This paper revisits this question for the maize value chain in Uganda,
- and extends it to other links in the chain than just the farm to mill linkage.
+ This paper revisits this question for two value chains in Uganda (dairy
+ and maize), and extends it to other links in the chain than just the farm
+ to processor link.
  
 \end_layout
 
@@ -181,7 +182,7 @@ analysis/competition.R
 \end_layout
 
 \begin_layout Section*
-Motivation
+Introduction
 \end_layout
 
 \begin_layout Standard
@@ -199,17 +200,18 @@ literal "false"
 \end_inset
 
 .
- In informal value chains, some value chain actors may provide services
- to actors immediately up and/and down-stream 
+ In interlinked contracts, the relationship between buyer and seller goes
+ much further than simply exchanging a commodity for money.
+ The buyer often provides a range of other services and complementary inputs
+ in exchange for a stable and guaranteed supply 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "https://doi.org/10.1111/agec.12638"
+key "bardhan1989economic"
 literal "false"
 
 \end_inset
 
 .
- 
 \end_layout
 
 \begin_layout Standard
@@ -245,7 +247,7 @@ Unlike contacts that are legally enforced, relational contacts are affected
  by competition within the value chain.
  As alternative opportunities open up, parties may be tempted into side
  selling.
- The may reduce the likelihood that parties enter into relational contracts
+ This may reduce the likelihood that parties enter into relational contracts
  in the future, in turn affecting input and service provisions within the
  value chain.
  The reduction in value chain efficiency as a result of reduced inputs and
@@ -260,7 +262,7 @@ literal "false"
 
 .
  As such, in settings characterized by weak contract enforceability and
- a high incidence fo relational contacting, the effects of increased competition
+ a high incidence of relational contacting, the effects of increased competition
  on firms and indeed, the value chain at large are theoretically ambiguous.
  
 \end_layout
@@ -298,7 +300,8 @@ literal "false"
 \end_inset
 
  use a somewhat narrow definition of the value chain by solely focusing
- on the link between coffee farmers and coffee mills.
+ on the link between producers and processors ( in their case, coffee farmers
+ and coffee mills).
  For many commodities, farmers will also sell substantial amounts at the
  farm gate to a trader, who may then aggregate production and link further
  to processors.
@@ -348,9 +351,78 @@ An alternative model that would lead to a contrasting conclusion would be
  contracts.
  In this case, a positive correlation between relational contracts and competiti
 on would emerge.
- This seems to be the case when moral hazard is one sided only? Examples
- of this can be found in the trade credit literature where an increase in
- competition leads firms to compete by extending trade credit.
+ 
+\end_layout
+
+\begin_layout Standard
+In this paper, we provide a broader (yet arguably more descriptive) account
+ of the relationship between competition and relational contracts.
+ First, we will compare two value chains that differ substantially in terms
+ of organization, largely due to the characteristics of the underlying commodity.
+ The dairy value chain involves daily transactions between many of the value
+ chain actors, who are often grouped in producer cooperatives.
+ The maize value chain is much more informal, as farmers sell a surplus
+ to itinerant traders often only once per agricultural season.
+ Second, we investigate the link between competition and relational contract
+ between various actors in the value chain.
+ In particular, in addition to processors and farmers, we also consider
+ trader and, in the case of maize, agro-input dealers.
+\end_layout
+
+\begin_layout Section*
+Theoretical model
+\end_layout
+
+\begin_layout Standard
+The theoretical framework used by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "10.1093/qje/qjaa048"
+literal "false"
+
+\end_inset
+
+ focuses on two impact pathways of increased competition.
+ A direct effect increases farmer's temptation to renege on the relational
+ contract.
+ An indirect effect reduces volumes processed and profits of mills, again
+ making it harder to sustain relational contracts.
+\end_layout
+
+\begin_layout Standard
+In our model, we also propose a direct and an indirect effect.
+ As a direct effect, increased competition leads downstream players to expand
+ relational contracting as a way to tie upstream agents to them.
+ The indirect effect is the standard one, where increased competition forces
+ value chain actors to increase efficiency to stay in the market (we can
+ draw from the literature review in 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "10.1093/qje/qjaa048"
+literal "false"
+
+\end_inset
+
+ p 1095 par 2).
+ In a context of weak institutions, this will also lead to institutional
+ innovations where downstream value chain actors start providing much of
+ the midstream service delivery through relational contracting.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset citation
+LatexCommand citet
+key "10.1093/qje/qjaa048"
+literal "false"
+
+\end_inset
+
+ seem to suggest that the direct effect, where relational contracts are
+ used to compete with others, is restricted to situations characerized by
+ one-sided moral hazard.
+ Examples of this can be found in the trade credit literature where an increase
+ in competition leads firms to compete by extending trade credit (Ghani
+ and Reed: relationships on the rocks).
  But 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -361,11 +433,135 @@ literal "false"
 
  argue that they deal with two-sided moral hazard as both farmer and mill
  can cheat.
- 
+ But even when moral hazard is two-sided, I think both farmers and processors
+ may be more inclined to enter relational contracts, depending on where
+ the completion increases.
+ For instance, if the number of producers increases, they may want to makes
+ sure they have a buyer by entering into relational contracts.
+ If the competition at the processor level increases, then processors may
+ want to increase relational contracting with producers to make sure they
+ can procure sufficient quantities.
+ So I think the relative (evolution in) competition is much more important
+ to explain changes in relational contracting than the moral hazard story.
 \end_layout
 
 \begin_layout Section*
-Theoretical model
+Maize and Dairy Value Chains
+\end_layout
+
+\begin_layout Standard
+We start by describing stylized versions of the maize and dairy value chains.
+\end_layout
+
+\begin_layout Standard
+Maize is grown by the majority of farmers in Uganda.
+ Maize is often inter-cropped with beans.
+ It has a fairly good value to weight ratio, which means it is also a widely
+ traded commodity.
+ Farmers grow maize on one or two plots.
+ Input use in Uganda is low, with most farmers using traditional seed saved
+ from previous harvest.
+ Some farmer buy improved seed varieties such as hybird or open pollinated
+ varieties from small agro-input dealers which are located in towns or trading
+ centers throughout Uganda.
+ These agro-input shops also sell inorganic fertilizers and chemicals.
+ The also sell rudimentary farming equipment such as hoes and rucksack sprayers.
+\end_layout
+
+\begin_layout Standard
+Farmers consume maize themselves, but also sell substantial amounts.
+ Often, maize is sold at the farmgate to small itinerant traders that aggregate
+ maize for further transport and sale to larger traders or processors.
+ These traders mostly use Indian or Chinese made light motorbikes (
+\emph on
+boda-boda
+\emph default
+) to execute their business.
+\end_layout
+
+\begin_layout Standard
+Maize is generally consumed in the form of 
+\emph on
+posho
+\emph default
+, where maize flour is cooked with water to a porridge- or dough-like consistenc
+y.
+ As such, maize mills are important links between producers and consumers.
+ Also for home consumption, farmers rely on small combustion engine powered
+ maize mills (
+\emph on
+baga-baga
+\emph default
+) that are scattered throughout the rural areas.
+ For commercial grade maize flour production, larger mills that run on three-pha
+se electrical power are used.
+ 
+\end_layout
+
+\begin_layout Standard
+Dairy is produced only in certain areas in Uganda.
+ Most dairy is produced in the so-called southwestern milk shed and the
+ central milk shed.
+ Especially the southwestern milk shed around Mbrara has seen an important
+ influx of foreign direct investment in the sub-sector 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "https://doi.org/10.1111/agec.12638"
+literal "false"
+
+\end_inset
+
+.
+ This has resulted in a good number of milk processing plants in Mbarara
+ that produce for the local, regional and international market.
+\end_layout
+
+\begin_layout Standard
+Dairy farmers mostly sell milk at the farmgate, again to small itinerant
+ traders that aggregate milk for further transport to milk collection centers.
+ These traders use or bicycles or light motorbikes (
+\emph on
+boda-boda
+\emph default
+), but often the motorbikes or bicycles are fitted with aluminum alloy milk
+ churns or jerry cans.
+ Some traders provide transport services against a fee, while other traders
+ buy milk directly from farmers and sell further downstream to milk collection
+ centers or directly to processors.
+\end_layout
+
+\begin_layout Standard
+Milk collection centers are central to the dairy value chain.
+ They bulk and chill the milk and are essentially the start of the cold
+ chain.
+ Milk collection centers usually have one or two milk collection tanks that
+ is powered by generators of mains electricity.
+ 
+\end_layout
+
+\begin_layout Standard
+The value chains we study have some similarities with the the coffee value
+ chain 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "10.1093/qje/qjaa048"
+literal "false"
+
+\end_inset
+
+ study.
+ For instance, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "10.1093/qje/qjaa048"
+literal "false"
+
+\end_inset
+
+ mention that coffee cherries mush be processed within hours of harvest,
+ which can be challenging when roads are in poor conditions.
+ This is similar for dairy, that needs to be chilled within XXX to XXX to
+ preserve quality 
 \end_layout
 
 \begin_layout Section*
@@ -373,7 +569,15 @@ Data collection
 \end_layout
 
 \begin_layout Standard
-Data was collected from four actors in the maize value chain.
+To study the relationship between competition, relational contracting and
+ value chain performance, we collected primary data from different actors
+ in dairy and maize value chains in Uganda.
+\end_layout
+
+\begin_layout Standard
+For maize value chains, data was collected from four actors in the maize
+ value chain: agro-input dealers, farmers, traders and processors (maize
+ mills).
  We started by randomly selecting maize farmers in 3 maize growing districts
  in eastern Uganda.
  (Iganga, Bugiri and Namutumba).
@@ -426,82 +630,14 @@ The farmers provide the starting point for sampling other value chain actors.
  different value chain actors.
  This will affect variable construction and subsequent analysis.
  We collected most data to characterize the farmer trader relationship.
-\end_layout
-
-\begin_layout Section*
-Maize Value Chains
-\end_layout
-
-\begin_layout Standard
-We start by describing a stylized version of the maize value chain and the
- volumes of maize transacted.
- We then provide more detailed information on the key actors in the value
- chain.
- Next, we report on the measures we will use to capture relational agreements
- between the different actors.
- Finally, we explain how competition was measured.
-\end_layout
-
-\begin_layout Subsection*
-Structure of the maize value chain
-\end_layout
-
-\begin_layout Standard
-Maize is grown by the majority of farmers in Uganda.
- Maize is often inter-cropped with beans.
- It has a fairly good value to weight ratio, which means it is also a widely
- traded commodity.
-\end_layout
-
-\begin_layout Standard
-Farmers grow maize on one or two plots.
- Input use in Uganda is low, with most farmers using traditional seed saved
- from previous harvest.
- Some farmer buy improved seed varieties such as hybird or open pollinated
- varieties from small agro-input dealers which are located in towns or trading
- centers throughout Uganda.
- These agro-input shops also sell inorganic fertilizers and chemicals.
- The also sell rudimentary farming equipment such as hoes and rucksack sprayers.
-\end_layout
-
-\begin_layout Standard
-Farmers consume maize themselves, but also sell substantial amounts.
- Often, maize is sold at the farmgate to small itinerant traders that aggregate
- maize for further transport and sale to larger traders or processors.
- These traders use Indian of Chinese made light motorbikes or bicycles (
-\emph on
-boda-boda
-\emph default
-) to execute their business.
-\end_layout
-
-\begin_layout Standard
-Maize is generally consumed in the form of 
-\emph on
-posho
-\emph default
-, where maize flour is cooked with water to a porridge- or dough-like consistenc
-y.
- As such, maize mills are important links between producers and consumers.
- Also for home consumption, farmers rely on small combustion engine powered
- maize mills (
-\emph on
-baga-baga
-\emph default
-) that are scattered throughout the rural areas.
- For commercial grade maize flour production, larger mills that run on three-pha
-se electrical power are used.
+ Follow-up rounds of data collection happened via phone.
  
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Also add figures for volumes transacted.
 \end_layout
 
-\end_inset
-
-
+\begin_layout Standard
+For dairy value chains, data was collected from three value chain actors:
+ farmers, traders and processors (maize mills).
+ 
 \end_layout
 
 \begin_layout Subsection*
@@ -509,8 +645,8 @@ Descriptive statistics for actors
 \end_layout
 
 \begin_layout Standard
-Summary statistics for the characteristics of traders and farmers are shown
- in Table 
+Summary statistics for the characteristics of maize traders and farmers
+ are shown in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:summary_stats"
@@ -1385,6 +1521,18 @@ Note:
 
 \end_layout
 
+\begin_layout Standard
+Processors 
+\end_layout
+
+\begin_layout Standard
+Maize mills
+\end_layout
+
+\begin_layout Standard
+Milk collection centers Milk collection centers vary in installed capacity.
+\end_layout
+
 \begin_layout Subsection*
 Relational agreements
 \end_layout
@@ -2207,7 +2355,7 @@ literal "false"
 
 \end_inset
 
-, competition between mills is determined location.
+, competition between mills is determined by location.
  In particular, they define catchment areas with a radius of 5km around
  the mills and assert that two mills compete with each other if their catchment
  areas overlap.
@@ -2246,7 +2394,7 @@ Doing so, we find that there are on average 5 traders working in the area.
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -2571,43 +2719,6 @@ name "sec:Does-competition-affect"
 
 \end_layout
 
-\begin_layout Standard
-Look up in literature:
-\end_layout
-
-\begin_layout Standard
-Swinnen and Vandeplas 2010 (AgEcon -- my IAAE Plenary presentation from
- Beijing)
-\begin_inset CommandInset citation
-LatexCommand citet
-key "https://doi.org/10.1111/j.1574-0862.2010.00493.x"
-literal "false"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-to do:
-\end_layout
-
-\begin_layout Itemize
-descriptive statistics like table 1 in 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "10.1093/qje/qjaa048"
-literal "false"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-develop theoretical model
-\end_layout
-
 \begin_layout Itemize
 alternative ways to link traders to farmers
 \end_layout
@@ -2641,6 +2752,26 @@ alternative ways to measure competition at the trader level.
  In the analysis We asked traders to indicate how many traders similar to
  themselves were operating in the area.
  Unfortunately
+\end_layout
+
+\begin_layout Section*
+Random ideas
+\end_layout
+
+\begin_layout Standard
+In a results section, we should also test the effect of competition on quality
+ testing by actors, as 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "10.1093/qje/qjaa048"
+literal "false"
+
+\end_inset
+
+ find a negative effect of competition on lab-tesitng quality of random
+ samples of coffee production by the mills, particularly on quality dimensions
+ that depend on farmers' practices.
+ 
 \end_layout
 
 \begin_layout Section*
