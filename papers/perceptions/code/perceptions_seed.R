@@ -2019,10 +2019,9 @@ s6<- rbind(c((format(round(sum((lm(score~gender+ maize.owner.agree.age +prim +ma
 #summary(lm(overall_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap +distance+saleprice +costseed +lotnumber+complaint+hybridnum+quanprovider
 #           +years_shop+unada ,data=rating_dyads))
 
-summary(lm(overall_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap +distance+saleprice +costseed +index_allprac+dealereffort+hybridnum+quanprovider
+summary(lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
            +years_shop+unada ,data=rating_dyads))
-summary(lm(overall_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap +distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
-           +years_shop+unada ,data=rating_dyads))
+
 
 
 summary(lm(general_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap,data=rating_dyads))
@@ -3199,7 +3198,7 @@ c((format(round((coeftest(plm(score~gender, data = rat, index=c("farmer_ID","dea
 
 plm1<-plm(overall_rating~gender+ maize.owner.agree.age +prim +shop_rate+maize.owner.index_practices_cap+maize.owner.index_efforts+maize.owner.dist+maize.owner.saleprice+maize.owner.costseed
           +maize.owner.agree.q19+maize.owner.practices_all+maize.owner.quanprovider+years_shop+maize.owner.unada, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
-summary(plm(overall_rating~gender+ maize.owner.agree.age +prim +shop_rate+maize.owner.index_practices_cap+maize.owner.index_efforts+maize.owner.dist+maize.owner.saleprice+maize.owner.costseed
+summary(plm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.index_efforts+maize.owner.dist+maize.owner.saleprice+maize.owner.costseed
             +maize.owner.agree.q19+maize.owner.practices_all+maize.owner.quanprovider+years_shop+maize.owner.unada, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
 
 plm2<-plm(general_rating~gender+ maize.owner.agree.age +prim +shop_rate+maize.owner.index_practices_cap+maize.owner.index_efforts, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
