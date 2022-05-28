@@ -951,8 +951,10 @@ s7<- rbind(c((format(round(sum((lm(overall_rating~gender,data=rating_dyads))$coe
 )
 
 #regressions with controls -- between regression 
-#seed ratings 
-#regressions with the controls --- lot number abd complaint 
+#seed ratings
+
+
+#regressions with the controls --- lot number and complaint 
 
 #summary(lm(score~gender+ maize.owner.agree.age +prim +moist+shelflife,data=rating_dyads)) #118
 #summary(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +moist+shelflife,data=rating_dyads))    #118
@@ -970,13 +972,6 @@ s7<- rbind(c((format(round(sum((lm(overall_rating~gender,data=rating_dyads))$coe
 #summary(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim+lotnumber + complaint,data=rating_dyads))  
 #summary(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +lotnumber + complaint,data=rating_dyads))  
 
-summary(lm(score~gender+ maize.owner.agree.age +prim +dealereffort+index_allprac,data=rating_dyads)) 
-summary(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +dealereffort+index_allprac,data=rating_dyads))    
-summary(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +dealereffort+index_allprac,data=rating_dyads))   
-summary(lm(seed_drought_rating ~gender+ maize.owner.agree.age +prim +dealereffort+index_allprac,data=rating_dyads))
-summary(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +dealereffort+index_allprac,data=rating_dyads))  
-summary(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim+dealereffort+index_allprac,data=rating_dyads))  
-summary(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim+dealereffort+index_allprac,data=rating_dyads))  
 
 summary(lm(score~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads)) 
 summary(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))    
@@ -1021,995 +1016,153 @@ summary(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim+index_allpr
 #              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint  +leakproof,data=rating_dyads))
 
 #storing seed ratings 
-s6<- rbind(c((format(round(sum((lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[1]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[1]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[1]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[1]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[1]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[1]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[1]),digits=3),nsmall=0))),
+s6<- rbind(c((format(round(sum((lm(score~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[1]),digits=3),nsmall=0)),
+             (format(round(sum((lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[1]),digits=3),nsmall=0)),
+             (format(round(sum((lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[1]),digits=3),nsmall=0)),
+             (format(round(sum((lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[1]),digits=3),nsmall=0)),
+             (format(round(sum((lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[1]),digits=3),nsmall=0)),
+             (format(round(sum((lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[1]),digits=3),nsmall=0)),
+             (format(round(sum((lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[1]),digits=3),nsmall=0))),
            
-           c((format(round(sqrt(diag(vcov(lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[1],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[1],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[1],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[1],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[1],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[1],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[1],digits=3),nsmall=0))),
+           c((format(round(sqrt(diag(vcov(lm(score~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))))[1],digits=3),nsmall=0)),
+             (format(round(sqrt(diag(vcov(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))))[1],digits=3),nsmall=0)),
+             (format(round(sqrt(diag(vcov(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))))[1],digits=3),nsmall=0)),
+             (format(round(sqrt(diag(vcov(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))))[1],digits=3),nsmall=0)),
+             (format(round(sqrt(diag(vcov(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))))[1],digits=3),nsmall=0)),
+             (format(round(sqrt(diag(vcov(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))))[1],digits=3),nsmall=0)),
+             (format(round(sqrt(diag(vcov(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))))[1],digits=3),nsmall=0))),
            
-           c((format(round(summary(lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[1,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[1,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[1,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[1,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[1,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[1,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[1,4],digits=3),nsmall=0))),
+           c((format(round(summary(lm(score~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[1,4],digits=3),nsmall=0)),
+             (format(round(summary(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[1,4],digits=3),nsmall=0)),
+             (format(round(summary(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[1,4],digits=3),nsmall=0)),
+             (format(round(summary(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[1,4],digits=3),nsmall=0)),
+             (format(round(summary(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +index_allprac, data=rating_dyads))$coefficients[1,4],digits=3),nsmall=0)),
+             (format(round(summary(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[1,4],digits=3),nsmall=0)),
+             (format(round(summary(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[1,4],digits=3),nsmall=0))),
            
-           c((format(round(sum((lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[2]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[2]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[2]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[2]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[2]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[2]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[2]),digits=3),nsmall=0))),
+          
+           c((format(round(sum((lm(score~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[2]),digits=3),nsmall=0)),
+             (format(round(sum((lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[2]),digits=3),nsmall=0)),
+             (format(round(sum((lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[2]),digits=3),nsmall=0)),
+             (format(round(sum((lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[2]),digits=3),nsmall=0)),
+             (format(round(sum((lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[2]),digits=3),nsmall=0)),
+             (format(round(sum((lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[2]),digits=3),nsmall=0)),
+             (format(round(sum((lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[2]),digits=3),nsmall=0))),
            
-           c((format(round(sqrt(diag(vcov(lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[2],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[2],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[2],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[2],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[2],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[2],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[2],digits=3),nsmall=0))),
+           c((format(round(sqrt(diag(vcov(lm(score~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))))[2],digits=3),nsmall=0)),
+             (format(round(sqrt(diag(vcov(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))))[2],digits=3),nsmall=0)),
+             (format(round(sqrt(diag(vcov(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))))[2],digits=3),nsmall=0)),
+             (format(round(sqrt(diag(vcov(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))))[2],digits=3),nsmall=0)),
+             (format(round(sqrt(diag(vcov(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))))[2],digits=3),nsmall=0)),
+             (format(round(sqrt(diag(vcov(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))))[2],digits=3),nsmall=0)),
+             (format(round(sqrt(diag(vcov(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))))[2],digits=3),nsmall=0))),
            
-           c((format(round(summary(lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[2,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[2,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[2,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[2,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[2,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[2,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[2,4],digits=3),nsmall=0))),
+           c((format(round(summary(lm(score~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[2,4],digits=3),nsmall=0)),
+             (format(round(summary(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[2,4],digits=3),nsmall=0)),
+             (format(round(summary(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[2,4],digits=3),nsmall=0)),
+             (format(round(summary(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[2,4],digits=3),nsmall=0)),
+             (format(round(summary(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +index_allprac, data=rating_dyads))$coefficients[2,4],digits=3),nsmall=0)),
+             (format(round(summary(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[2,4],digits=3),nsmall=0)),
+             (format(round(summary(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[2,4],digits=3),nsmall=0))),
            
-           c((format(round(sum((lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[3]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[3]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[3]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[3]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[3]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[3]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[3]),digits=3),nsmall=0))),
+           c((format(round(sum((lm(score~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[3]),digits=3),nsmall=0)),
+             (format(round(sum((lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[3]),digits=3),nsmall=0)),
+             (format(round(sum((lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[3]),digits=3),nsmall=0)),
+             (format(round(sum((lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[3]),digits=3),nsmall=0)),
+             (format(round(sum((lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[3]),digits=3),nsmall=0)),
+             (format(round(sum((lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[3]),digits=3),nsmall=0)),
+             (format(round(sum((lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[3]),digits=3),nsmall=0))),
            
-           c((format(round(sqrt(diag(vcov(lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[3],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[3],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[3],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[3],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[3],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[3],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[3],digits=3),nsmall=0))),
+           c((format(round(sqrt(diag(vcov(lm(score~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))))[3],digits=3),nsmall=0)),
+             (format(round(sqrt(diag(vcov(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))))[3],digits=3),nsmall=0)),
+             (format(round(sqrt(diag(vcov(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))))[3],digits=3),nsmall=0)),
+             (format(round(sqrt(diag(vcov(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))))[3],digits=3),nsmall=0)),
+             (format(round(sqrt(diag(vcov(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))))[3],digits=3),nsmall=0)),
+             (format(round(sqrt(diag(vcov(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))))[3],digits=3),nsmall=0)),
+             (format(round(sqrt(diag(vcov(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))))[3],digits=3),nsmall=0))),
            
-           c((format(round(summary(lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[3,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[3,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[3,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[3,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[3,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[3,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[3,4],digits=3),nsmall=0))),
+           c((format(round(summary(lm(score~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[3,4],digits=3),nsmall=0)),
+             (format(round(summary(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[3,4],digits=3),nsmall=0)),
+             (format(round(summary(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[3,4],digits=3),nsmall=0)),
+             (format(round(summary(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[3,4],digits=3),nsmall=0)),
+             (format(round(summary(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +index_allprac, data=rating_dyads))$coefficients[3,4],digits=3),nsmall=0)),
+             (format(round(summary(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[3,4],digits=3),nsmall=0)),
+             (format(round(summary(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[3,4],digits=3),nsmall=0))),
            
-           c((format(round(sum((lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[4]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[4]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[4]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[4]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[4]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[4]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[4]),digits=3),nsmall=0))),
+           c((format(round(sum((lm(score~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[4]),digits=3),nsmall=0)),
+             (format(round(sum((lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[4]),digits=3),nsmall=0)),
+             (format(round(sum((lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[4]),digits=3),nsmall=0)),
+             (format(round(sum((lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[4]),digits=3),nsmall=0)),
+             (format(round(sum((lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[4]),digits=3),nsmall=0)),
+             (format(round(sum((lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[4]),digits=3),nsmall=0)),
+             (format(round(sum((lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[4]),digits=3),nsmall=0))),
            
-           c((format(round(sqrt(diag(vcov(lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[4],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[4],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[4],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[4],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[4],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[4],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[4],digits=3),nsmall=0))),
+           c((format(round(sqrt(diag(vcov(lm(score~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))))[4],digits=3),nsmall=0)),
+             (format(round(sqrt(diag(vcov(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))))[4],digits=3),nsmall=0)),
+             (format(round(sqrt(diag(vcov(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))))[4],digits=3),nsmall=0)),
+             (format(round(sqrt(diag(vcov(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))))[4],digits=3),nsmall=0)),
+             (format(round(sqrt(diag(vcov(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))))[4],digits=3),nsmall=0)),
+             (format(round(sqrt(diag(vcov(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))))[4],digits=3),nsmall=0)),
+             (format(round(sqrt(diag(vcov(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))))[4],digits=3),nsmall=0))),
            
-           c((format(round(summary(lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[4,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[4,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[4,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[4,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[4,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[4,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[4,4],digits=3),nsmall=0))),
+           c((format(round(summary(lm(score~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[4,4],digits=3),nsmall=0)),
+             (format(round(summary(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[4,4],digits=3),nsmall=0)),
+             (format(round(summary(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[4,4],digits=3),nsmall=0)),
+             (format(round(summary(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[4,4],digits=3),nsmall=0)),
+             (format(round(summary(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +index_allprac, data=rating_dyads))$coefficients[4,4],digits=3),nsmall=0)),
+             (format(round(summary(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[4,4],digits=3),nsmall=0)),
+             (format(round(summary(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[4,4],digits=3),nsmall=0))),
            
-           c((format(round(sum((lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[5]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[5]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[5]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[5]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[5]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[5]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[5]),digits=3),nsmall=0))),
+           c((format(round(sum((lm(score~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[5]),digits=3),nsmall=0)),
+             (format(round(sum((lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[5]),digits=3),nsmall=0)),
+             (format(round(sum((lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[5]),digits=3),nsmall=0)),
+             (format(round(sum((lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[5]),digits=3),nsmall=0)),
+             (format(round(sum((lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[5]),digits=3),nsmall=0)),
+             (format(round(sum((lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[5]),digits=3),nsmall=0)),
+             (format(round(sum((lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[5]),digits=3),nsmall=0))),
            
-           c((format(round(sqrt(diag(vcov(lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[5],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[5],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[5],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[5],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[5],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[5],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[5],digits=3),nsmall=0))),
+           c((format(round(sqrt(diag(vcov(lm(score~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))))[5],digits=3),nsmall=0)),
+             (format(round(sqrt(diag(vcov(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))))[5],digits=3),nsmall=0)),
+             (format(round(sqrt(diag(vcov(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))))[5],digits=3),nsmall=0)),
+             (format(round(sqrt(diag(vcov(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))))[5],digits=3),nsmall=0)),
+             (format(round(sqrt(diag(vcov(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))))[5],digits=3),nsmall=0)),
+             (format(round(sqrt(diag(vcov(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))))[5],digits=3),nsmall=0)),
+             (format(round(sqrt(diag(vcov(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))))[5],digits=3),nsmall=0))),
            
-           c((format(round(summary(lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[5,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[5,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[5,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[5,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[5,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[5,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[5,4],digits=3),nsmall=0))),
-           
-           c((format(round(sum((lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[6]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[6]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[6]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[6]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[6]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[6]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[6]),digits=3),nsmall=0))),
-           
-           c((format(round(sqrt(diag(vcov(lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[6],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[6],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[6],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[6],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[6],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[6],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[6],digits=3),nsmall=0))),
-           
-           c((format(round(summary(lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[6,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[6,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[6,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[6,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[6,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[6,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[6,4],digits=3),nsmall=0))),
-           
-           c((format(round(sum((lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[7]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[7]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[7]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[7]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[7]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[7]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[7]),digits=3),nsmall=0))),
-           
-           c((format(round(sqrt(diag(vcov(lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[7],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[7],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[7],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[7],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[7],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[7],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[7],digits=3),nsmall=0))),
-           
-           c((format(round(summary(lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[7,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[7,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[7,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[7,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[7,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[7,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[7,4],digits=3),nsmall=0))),
-           
-           c((format(round(sum((lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[8]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[8]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[8]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[8]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[8]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[8]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[8]),digits=3),nsmall=0))),
-           
-           c((format(round(sqrt(diag(vcov(lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[8],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[8],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[8],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[8],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[8],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[8],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[8],digits=3),nsmall=0))),
-           
-           c((format(round(summary(lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[8,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[8,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[8,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[8,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[8,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[8,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[8,4],digits=3),nsmall=0))),
-           c((format(round(sum((lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[9]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[9]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[9]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[9]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[9]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[9]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[9]),digits=3),nsmall=0))),
-           
-           c((format(round(sqrt(diag(vcov(lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[9],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[9],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[9],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[9],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[9],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[9],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[9],digits=3),nsmall=0))),
-           
-           c((format(round(summary(lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[9,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[9,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[9,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[9,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[9,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[9,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[9,4],digits=3),nsmall=0))),
-           
-           c((format(round(sum((lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[10]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[10]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[10]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[10]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[10]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[10]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[10]),digits=3),nsmall=0))),
-           
-           c((format(round(sqrt(diag(vcov(lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[10],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[10],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[10],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[10],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[10],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[10],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[10],digits=3),nsmall=0))),
-           
-           c((format(round(summary(lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[10,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[10,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[10,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[10,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[10,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[10,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[10,4],digits=3),nsmall=0))),
-           
-           c((format(round(sum((lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[11]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[11]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[11]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[11]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[11]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[11]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[11]),digits=3),nsmall=0))),
-           
-           c((format(round(sqrt(diag(vcov(lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[11],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[11],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[11],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[11],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[11],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[11],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[11],digits=3),nsmall=0))),
-           
-           c((format(round(summary(lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[11,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[11,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[11,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[11,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[11,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[11,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[11,4],digits=3),nsmall=0))),
-           
-           c((format(round(sum((lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[12]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[12]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[12]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[12]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[12]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[12]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[12]),digits=3),nsmall=0))),
-           
-           c((format(round(sqrt(diag(vcov(lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[12],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[12],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[12],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[12],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[12],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[12],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[12],digits=3),nsmall=0))),
-           
-           c((format(round(summary(lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[12,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[12,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[12,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[12,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[12,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[12,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[12,4],digits=3),nsmall=0))),
-           
-           c((format(round(sum((lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[13]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[13]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[13]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[13]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[13]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[13]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[13]),digits=3),nsmall=0))),
-           
-           c((format(round(sqrt(diag(vcov(lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[13],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[13],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[13],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[13],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[13],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[13],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[13],digits=3),nsmall=0))),
-           
-           c((format(round(summary(lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[13,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[13,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[13,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[13,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[13,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[13,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[13,4],digits=3),nsmall=0))),
-           
-           c((format(round(sum((lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[14]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[14]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[14]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[14]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[14]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[14]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[14]),digits=3),nsmall=0))),
-           
-           c((format(round(sqrt(diag(vcov(lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[14],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[14],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[14],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[14],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[14],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[14],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[14],digits=3),nsmall=0))),
-           
-           c((format(round(summary(lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[14,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[14,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[14,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[14,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[14,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[14,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[14,4],digits=3),nsmall=0))),
-           
-           c((format(round(sum((lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[15]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[15]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[15]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[15]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[15]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[15]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[15]),digits=3),nsmall=0))),
-           
-           c((format(round(sqrt(diag(vcov(lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[15],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[15],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[15],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[15],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[15],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[15],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[15],digits=3),nsmall=0))),
-           
-           c((format(round(summary(lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[15,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[15,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[15,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[15,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[15,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[15,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[15,4],digits=3),nsmall=0))),
-           
-           c((format(round(sum((lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[16]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[16]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[16]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[16]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[16]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[16]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[16]),digits=3),nsmall=0))),
-           
-           c((format(round(sqrt(diag(vcov(lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[16],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[16],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[16],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[16],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[16],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[16],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[16],digits=3),nsmall=0))),
-           
-           c((format(round(summary(lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[16,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[16,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[16,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[16,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[16,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[16,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[16,4],digits=3),nsmall=0))),
-           
-           c((format(round(sum((lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[17]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[17]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[17]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[17]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[17]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[17]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[17]),digits=3),nsmall=0))),
-           
-           c((format(round(sqrt(diag(vcov(lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[17],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[17],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[17],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[17],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[17],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[17],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[17],digits=3),nsmall=0))),
-           
-           c((format(round(summary(lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[17,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[17,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[17,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[17,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[17,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[17,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[17,4],digits=3),nsmall=0))),
-           
-           c((format(round(sum((lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[18]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[18]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[18]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[18]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[18]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[18]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[18]),digits=3),nsmall=0))),
-           
-           c((format(round(sqrt(diag(vcov(lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[18],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[18],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[18],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[18],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[18],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[18],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[18],digits=3),nsmall=0))),
-           
-           c((format(round(summary(lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[18,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[18,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[18,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[18,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[18,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[18,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[18,4],digits=3),nsmall=0))),
-           
-           c((format(round(sum((lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[19]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[19]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[19]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[19]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[19]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[19]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[19]),digits=3),nsmall=0))),
-           
-           c((format(round(sqrt(diag(vcov(lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[19],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[19],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[19],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[19],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[19],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[19],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[19],digits=3),nsmall=0))),
-           
-           c((format(round(summary(lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[19,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[19,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[19,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[19,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[19,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[19,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[19,4],digits=3),nsmall=0))),
-           
-           c((format(round(sum((lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[20]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[20]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[20]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[20]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[20]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[20]),digits=3),nsmall=0)),
-             (format(round(sum((lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[20]),digits=3),nsmall=0))),
-           
-           c((format(round(sqrt(diag(vcov(lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[20],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[20],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[20],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[20],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[20],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[20],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[20],digits=3),nsmall=0))),
-           
-           c((format(round(summary(lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[20,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[20,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[20,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[20,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[20,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[20,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[20,4],digits=3),nsmall=0))),
-           
-           # c((format(round(sum((lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-           #                           badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[21]),digits=3),nsmall=0)),
-           #   (format(round(sum((lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-           #                           badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[21]),digits=3),nsmall=0)),
-           #   (format(round(sum((lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-           #                           badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[21]),digits=3),nsmall=0)),
-           #   (format(round(sum((lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-           #                           badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[21]),digits=3),nsmall=0)),
-           #   (format(round(sum((lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-           #                           badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[21]),digits=3),nsmall=0)),
-           #   (format(round(sum((lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-           #                           badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[21]),digits=3),nsmall=0)),
-           #   (format(round(sum((lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-           #                           badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[21]),digits=3),nsmall=0))),
-           # 
-           # c((format(round(sqrt(diag(vcov(lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-           #                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[21],digits=3),nsmall=0)),
-           #   (format(round(sqrt(diag(vcov(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-           #                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[21],digits=3),nsmall=0)),
-           #   (format(round(sqrt(diag(vcov(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-           #                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[21],digits=3),nsmall=0)),
-           #   (format(round(sqrt(diag(vcov(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-           #                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[21],digits=3),nsmall=0)),
-           #   (format(round(sqrt(diag(vcov(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-           #                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[21],digits=3),nsmall=0)),
-           #   (format(round(sqrt(diag(vcov(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-           #                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[21],digits=3),nsmall=0)),
-           #   (format(round(sqrt(diag(vcov(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-           #                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))))[21],digits=3),nsmall=0))),
-           # 
-           # c((format(round(summary(lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-           #                              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[21,4],digits=3),nsmall=0)),
-           #   (format(round(summary(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-           #                              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[21,4],digits=3),nsmall=0)),
-           #   (format(round(summary(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-           #                              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[21,4],digits=3),nsmall=0)),
-           #   (format(round(summary(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-           #                              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[21,4],digits=3),nsmall=0)),
-           #   (format(round(summary(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-           #                              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[21,4],digits=3),nsmall=0)),
-           #   (format(round(summary(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-           #                              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[21,4],digits=3),nsmall=0)),
-           #   (format(round(summary(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-           #                              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$coefficients[21,4],digits=3),nsmall=0))),
+           c((format(round(summary(lm(score~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[5,4],digits=3),nsmall=0)),
+             (format(round(summary(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[5,4],digits=3),nsmall=0)),
+             (format(round(summary(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[5,4],digits=3),nsmall=0)),
+             (format(round(summary(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[5,4],digits=3),nsmall=0)),
+             (format(round(summary(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +index_allprac, data=rating_dyads))$coefficients[5,4],digits=3),nsmall=0)),
+             (format(round(summary(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[5,4],digits=3),nsmall=0)),
+             (format(round(summary(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[5,4],digits=3),nsmall=0))),
            
            
-           c((format(round(summary(lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$r.squared,digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$r.squared,digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$r.squared,digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$r.squared,digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$r.squared,digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$r.squared,digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$r.squared,digits=3),nsmall=0))),
+    
            
-           c((format(round(summary(lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$adj.r.squared,digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$adj.r.squared,digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$adj.r.squared,digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$adj.r.squared,digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$adj.r.squared,digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$adj.r.squared,digits=3),nsmall=0)),
-             (format(round(summary(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads))$adj.r.squared,digits=3),nsmall=0))),
+           c((format(round(summary(lm(score~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$r.squared,digits=3),nsmall=0)),
+             (format(round(summary(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim+index_allprac,data=rating_dyads))$r.squared,digits=3),nsmall=0)),
+             (format(round(summary(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$r.squared,digits=3),nsmall=0)),
+             (format(round(summary(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$r.squared,digits=3),nsmall=0)),
+             (format(round(summary(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$r.squared,digits=3),nsmall=0)),
+             (format(round(summary(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$r.squared,digits=3),nsmall=0)),
+             (format(round(summary(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim+index_allprac,data=rating_dyads))$r.squared,digits=3),nsmall=0))),
            
-           c((format(round(nobs(lm(score~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads)),digits=3),nsmall=0)),
-             (format(round(nobs(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads)),digits=3),nsmall=0)),
-             (format(round(nobs(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads)),digits=3),nsmall=0)),
-             (format(round(nobs(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads)),digits=3),nsmall=0)),
-             (format(round(nobs(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads)),digits=3),nsmall=0)),
-             (format(round(nobs(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads)),digits=3),nsmall=0)),
-             (format(round(nobs(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +    leakproof,data=rating_dyads)),digits=3),nsmall=0)))
+           c((format(round(summary(lm(score~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$adj.r.squared,digits=3),nsmall=0)),
+             (format(round(summary(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$adj.r.squared,digits=3),nsmall=0)),
+             (format(round(summary(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$adj.r.squared,digits=3),nsmall=0)),
+             (format(round(summary(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$adj.r.squared,digits=3),nsmall=0)),
+             (format(round(summary(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$adj.r.squared,digits=3),nsmall=0)),
+             (format(round(summary(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$adj.r.squared,digits=3),nsmall=0)),
+             (format(round(summary(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$adj.r.squared,digits=3),nsmall=0))),
+           
+           c((format(round(nobs(lm(score~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads)),digits=3),nsmall=0)),
+             (format(round(nobs(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads)),digits=3),nsmall=0)),
+             (format(round(nobs(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads)),digits=3),nsmall=0)),
+             (format(round(nobs(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads)),digits=3),nsmall=0)),
+             (format(round(nobs(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads)),digits=3),nsmall=0)),
+             (format(round(nobs(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads)),digits=3),nsmall=0)),
+             (format(round(nobs(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads)),digits=3),nsmall=0)))
 )
 
 
@@ -2032,7 +1185,6 @@ summary(lm(location_rating~gender+ maize.owner.agree.age +prim +distance,data=ra
 summary(lm(price_rating~gender+ maize.owner.agree.age +prim+ saleprice +costseed ,data=rating_dyads))
 #cost of seed from provider coeff is positive here which means if the cost of seed is higher, the price rating is higher 
 
-summary(lm(quality_rating~gender+ maize.owner.agree.age +prim +index_allprac+dealereffort,data=rating_dyads))
 summary(lm(quality_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))
 
 
@@ -2043,828 +1195,394 @@ summary(lm(reputation_rating ~gender+ maize.owner.agree.age +prim +years_shop+un
 
 
 #storing dealer ratings
-s8<- rbind(c((format(round(sum((lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[1]),digits=3),nsmall=0)),
-             (format(round(sum((lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[1]),digits=3),nsmall=0)),
-             (format(round(sum((lm(location_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4,data=rating_dyads))$coefficients[1]),digits=3),nsmall=0)),
-             (format(round(sum((lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[1]),digits=3),nsmall=0)),
-             (format(round(sum((lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[1]),digits=3),nsmall=0)),
-             (format(round(sum((lm(stock_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4,data=rating_dyads))$coefficients[1]),digits=3),nsmall=0)),
-             (format(round(sum((lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[1]),digits=3),nsmall=0))),
-           
-           c((format(round(sqrt(diag(vcov(lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[1],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[1],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(location_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4,data=rating_dyads))))[1],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[1],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[1],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(stock_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4,data=rating_dyads))))[1],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[1],digits=3),nsmall=0))),
-           
-           c((format(round(summary(lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[1,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[1,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(location_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4,data=rating_dyads))$coefficients[1,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[1,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[1,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(stock_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4,data=rating_dyads))$coefficients[1,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[1,4],digits=3),nsmall=0))),
-           
-           c((format(round(sum((lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[2]),digits=3),nsmall=0)),
-             (format(round(sum((lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[2]),digits=3),nsmall=0)),
-             (format(round(sum((lm(location_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4,data=rating_dyads))$coefficients[2]),digits=3),nsmall=0)),
-             (format(round(sum((lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[2]),digits=3),nsmall=0)),
-             (format(round(sum((lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[2]),digits=3),nsmall=0)),
-             (format(round(sum((lm(stock_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4,data=rating_dyads))$coefficients[2]),digits=3),nsmall=0)),
-             (format(round(sum((lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[2]),digits=3),nsmall=0))),
-           
-           c((format(round(sqrt(diag(vcov(lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[2],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[2],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(location_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4,data=rating_dyads))))[2],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[2],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[2],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(stock_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4,data=rating_dyads))))[2],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[2],digits=3),nsmall=0))),
-           
-           c((format(round(summary(lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[2,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[2,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(location_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4,data=rating_dyads))$coefficients[2,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[2,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[2,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(stock_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4,data=rating_dyads))$coefficients[2,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[2,4],digits=3),nsmall=0))),
-           
-           c((format(round(sum((lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[3]),digits=3),nsmall=0)),
-             (format(round(sum((lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[3]),digits=3),nsmall=0)),
-             (format(round(sum((lm(location_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4,data=rating_dyads))$coefficients[3]),digits=3),nsmall=0)),
-             (format(round(sum((lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[3]),digits=3),nsmall=0)),
-             (format(round(sum((lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[3]),digits=3),nsmall=0)),
-             (format(round(sum((lm(stock_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale,data=rating_dyads))$coefficients[3]),digits=3),nsmall=0)),
-             (format(round(sum((lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[3]),digits=3),nsmall=0))),
-           
-           c((format(round(sqrt(diag(vcov(lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[3],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[3],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(location_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4,data=rating_dyads))))[3],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[3],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[3],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(stock_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4,data=rating_dyads))))[3],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[3],digits=3),nsmall=0))),
-           
-           c((format(round(summary(lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[3,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[3,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(location_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4,data=rating_dyads))$coefficients[3,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[3,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[3,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(stock_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4,data=rating_dyads))$coefficients[3,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[3,4],digits=3),nsmall=0))),
-           
-           c((format(round(sum((lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[4]),digits=3),nsmall=0)),
-             (format(round(sum((lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[4]),digits=3),nsmall=0)),
-             (format(round(sum((lm(location_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4,data=rating_dyads))$coefficients[4]),digits=3),nsmall=0)),
-             (format(round(sum((lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[4]),digits=3),nsmall=0)),
-             (format(round(sum((lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[4]),digits=3),nsmall=0)),
-             (format(round(sum((lm(stock_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4,data=rating_dyads))$coefficients[4]),digits=3),nsmall=0)),
-             (format(round(sum((lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[4]),digits=3),nsmall=0))),
-           
-           c((format(round(sqrt(diag(vcov(lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[4],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[4],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(location_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4,data=rating_dyads))))[4],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[4],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[4],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(stock_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4,data=rating_dyads))))[4],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[4],digits=3),nsmall=0))),
-           
-           c((format(round(summary(lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[4,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[4,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(location_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4,data=rating_dyads))$coefficients[4,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[4,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[4,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(stock_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4,data=rating_dyads))$coefficients[4,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[4,4],digits=3),nsmall=0))),
-           
-           c((format(round(sum((lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[5]),digits=3),nsmall=0)),
-             (format(round(sum((lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[5]),digits=3),nsmall=0)),
-             (format(round(sum((lm(location_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4,data=rating_dyads))$coefficients[5]),digits=3),nsmall=0)),
-             (format(round(sum((lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[5]),digits=3),nsmall=0)),
-             (format(round(sum((lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[5]),digits=3),nsmall=0)),
-             (format(round(sum((lm(stock_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4,data=rating_dyads))$coefficients[5]),digits=3),nsmall=0)),
-             (format(round(sum((lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[5]),digits=3),nsmall=0))),
-           
-           c((format(round(sqrt(diag(vcov(lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[5],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[5],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(location_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4,data=rating_dyads))))[5],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[5],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[5],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(stock_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4,data=rating_dyads))))[5],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[5],digits=3),nsmall=0))),
-           
-           c((format(round(summary(lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[5,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[5,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(location_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4,data=rating_dyads))$coefficients[5,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[5,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[5,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(stock_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4,data=rating_dyads))$coefficients[5,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[5,4],digits=3),nsmall=0))),
-           
-           c((format(round(sum((lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[6]),digits=3),nsmall=0)),
-             (format(round(sum((lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[6]),digits=3),nsmall=0)),
-             (format(round(sum((lm(location_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4,data=rating_dyads))$coefficients[6]),digits=3),nsmall=0)),
-             (format(round(sum((lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[6]),digits=3),nsmall=0)),
-             (format(round(sum((lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[6]),digits=3),nsmall=0)),
-             (format(round(sum((lm(stock_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4,data=rating_dyads))$coefficients[6]),digits=3),nsmall=0)),
-             (format(round(sum((lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[6]),digits=3),nsmall=0))),
-           
-           c((format(round(sqrt(diag(vcov(lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[6],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[6],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(location_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4,data=rating_dyads))))[6],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[6],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[6],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(stock_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4,data=rating_dyads))))[6],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[6],digits=3),nsmall=0))),
-           
-           c((format(round(summary(lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[6,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[6,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(location_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4,data=rating_dyads))$coefficients[6,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[6,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[6,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(stock_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4,data=rating_dyads))$coefficients[6,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[6,4],digits=3),nsmall=0))),
-           
-           c((format(round(sum((lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[7]),digits=3),nsmall=0)),
-             (format(round(sum((lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[7]),digits=3),nsmall=0)),
-             0,
-             (format(round(sum((lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[7]),digits=3),nsmall=0)),
-             (format(round(sum((lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[7]),digits=3),nsmall=0)),
-             0,
-             (format(round(sum((lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[7]),digits=3),nsmall=0))),
-           
-           c((format(round(sqrt(diag(vcov(lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[7],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[7],digits=3),nsmall=0)),
-             0,
-             (format(round(sqrt(diag(vcov(lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[7],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[7],digits=3),nsmall=0)),
-             0,
-             (format(round(sqrt(diag(vcov(lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[7],digits=3),nsmall=0))),
-           
-           c((format(round(summary(lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[7,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[7,4],digits=3),nsmall=0)),
-             0,
-             (format(round(summary(lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[7,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[7,4],digits=3),nsmall=0)),
-             0,
-             (format(round(summary(lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[7,4],digits=3),nsmall=0))),
-           
-           c((format(round(sum((lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[8]),digits=3),nsmall=0)),
-             (format(round(sum((lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[8]),digits=3),nsmall=0)),
-             0,
-             (format(round(sum((lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[8]),digits=3),nsmall=0)),
-             (format(round(sum((lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[8]),digits=3),nsmall=0)),
-             0,
-             (format(round(sum((lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[8]),digits=3),nsmall=0))),
-           
-           c((format(round(sqrt(diag(vcov(lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[8],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[8],digits=3),nsmall=0)),
-             0,
-             (format(round(sqrt(diag(vcov(lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[8],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[8],digits=3),nsmall=0)),
-             0,
-             (format(round(sqrt(diag(vcov(lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[8],digits=3),nsmall=0))),
-           
-           c((format(round(summary(lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[8,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[8,4],digits=3),nsmall=0)),
-             0,
-             (format(round(summary(lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[8,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[8,4],digits=3),nsmall=0)),
-             0,
-             (format(round(summary(lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[8,4],digits=3),nsmall=0))),
-           
-           c((format(round(sum((lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[9]),digits=3),nsmall=0)),
-             (format(round(sum((lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[9]),digits=3),nsmall=0)),
-             0,
-             (format(round(sum((lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[9]),digits=3),nsmall=0)),
-             (format(round(sum((lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[9]),digits=3),nsmall=0)),
-             0,
-             (format(round(sum((lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[9]),digits=3),nsmall=0))),
-           
-           c((format(round(sqrt(diag(vcov(lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[9],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[9],digits=3),nsmall=0)),
-             0,
-             (format(round(sqrt(diag(vcov(lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[9],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[9],digits=3),nsmall=0)),
-             0,
-             (format(round(sqrt(diag(vcov(lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[9],digits=3),nsmall=0))),
-           
-           c((format(round(summary(lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[9,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[9,4],digits=3),nsmall=0)),
-             0,
-             (format(round(summary(lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[9,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[9,4],digits=3),nsmall=0)),
-             0,
-             (format(round(summary(lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[9,4],digits=3),nsmall=0))),
-           
-           c((format(round(sum((lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[10]),digits=3),nsmall=0)),
-             (format(round(sum((lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[10]),digits=3),nsmall=0)),
-             0,
-             (format(round(sum((lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[10]),digits=3),nsmall=0)),
-             (format(round(sum((lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[10]),digits=3),nsmall=0)),
-             0,
-             (format(round(sum((lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[10]),digits=3),nsmall=0))),
-           
-           c((format(round(sqrt(diag(vcov(lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[10],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[10],digits=3),nsmall=0)),
-             0,
-             (format(round(sqrt(diag(vcov(lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[10],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[10],digits=3),nsmall=0)),
-             0,
-             (format(round(sqrt(diag(vcov(lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[10],digits=3),nsmall=0))),
-           
-           c((format(round(summary(lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[10,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[10,4],digits=3),nsmall=0)),
-             0,
-             (format(round(summary(lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[10,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[10,4],digits=3),nsmall=0)),
-             0,
-             (format(round(summary(lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[10,4],digits=3),nsmall=0))),
-           
-           c((format(round(sum((lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[11]),digits=3),nsmall=0)),
-             (format(round(sum((lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[11]),digits=3),nsmall=0)),
-             0,
-             (format(round(sum((lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[11]),digits=3),nsmall=0)),
-             (format(round(sum((lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[11]),digits=3),nsmall=0)),
-             0,
-             (format(round(sum((lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[11]),digits=3),nsmall=0))),
-           
-           c((format(round(sqrt(diag(vcov(lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[11],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[11],digits=3),nsmall=0)),
-             0,
-             (format(round(sqrt(diag(vcov(lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[11],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[11],digits=3),nsmall=0)),
-             0,
-             (format(round(sqrt(diag(vcov(lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[11],digits=3),nsmall=0))),
-           
-           c((format(round(summary(lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[11,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[11,4],digits=3),nsmall=0)),
-             0,
-             (format(round(summary(lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[11,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[11,4],digits=3),nsmall=0)),
-             0,
-             (format(round(summary(lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[11,4],digits=3),nsmall=0))),
-           
-           c((format(round(sum((lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[12]),digits=3),nsmall=0)),
-             (format(round(sum((lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[12]),digits=3),nsmall=0)),
-             0,
-             (format(round(sum((lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[12]),digits=3),nsmall=0)),
-             (format(round(sum((lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[12]),digits=3),nsmall=0)),
-             0,
-             (format(round(sum((lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[12]),digits=3),nsmall=0))),
-           
-           c((format(round(sqrt(diag(vcov(lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[12],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[12],digits=3),nsmall=0)),
-             0,
-             (format(round(sqrt(diag(vcov(lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[12],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[12],digits=3),nsmall=0)),
-             0,
-             (format(round(sqrt(diag(vcov(lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[12],digits=3),nsmall=0))),
-           
-           c((format(round(summary(lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[12,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[12,4],digits=3),nsmall=0)),
-             0,
-             (format(round(summary(lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[12,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[12,4],digits=3),nsmall=0)),
-             0,
-             (format(round(summary(lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[12,4],digits=3),nsmall=0))),
-           
-           c((format(round(sum((lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[13]),digits=3),nsmall=0)),
-             (format(round(sum((lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[13]),digits=3),nsmall=0)),
-             0,
-             (format(round(sum((lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[13]),digits=3),nsmall=0)),
-             (format(round(sum((lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[13]),digits=3),nsmall=0)),
-             0,
-             (format(round(sum((lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[13]),digits=3),nsmall=0))),
-           
-           c((format(round(sqrt(diag(vcov(lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[13],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[13],digits=3),nsmall=0)),
-             0,
-             (format(round(sqrt(diag(vcov(lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[13],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[13],digits=3),nsmall=0)),
-             0,
-             (format(round(sqrt(diag(vcov(lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[13],digits=3),nsmall=0))),
-           
-           c((format(round(summary(lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[13,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[13,4],digits=3),nsmall=0)),
-             0,
-             (format(round(summary(lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[13,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[13,4],digits=3),nsmall=0)),
-             0,
-             (format(round(summary(lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[13,4],digits=3),nsmall=0))),
-           
-           c((format(round(sum((lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[14]),digits=3),nsmall=0)),
-             (format(round(sum((lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[14]),digits=3),nsmall=0)),
-             0,
-             (format(round(sum((lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[14]),digits=3),nsmall=0)),
-             (format(round(sum((lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[14]),digits=3),nsmall=0)),
-             0,
-             (format(round(sum((lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[14]),digits=3),nsmall=0))),
-           
-           c((format(round(sqrt(diag(vcov(lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[14],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[14],digits=3),nsmall=0)),
-             0,
-             (format(round(sqrt(diag(vcov(lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[14],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[14],digits=3),nsmall=0)),
-             0,
-             (format(round(sqrt(diag(vcov(lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[14],digits=3),nsmall=0))),
-           
-           c((format(round(summary(lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[14,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[14,4],digits=3),nsmall=0)),
-             0,
-             (format(round(summary(lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[14,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[14,4],digits=3),nsmall=0)),
-             0,
-             (format(round(summary(lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[14,4],digits=3),nsmall=0))),
-           
-           c((format(round(sum((lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[15]),digits=3),nsmall=0)),
-             (format(round(sum((lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[15]),digits=3),nsmall=0)),
-             0,
-             (format(round(sum((lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[15]),digits=3),nsmall=0)),
-             (format(round(sum((lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[15]),digits=3),nsmall=0)),
-             0,
-             (format(round(sum((lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[15]),digits=3),nsmall=0))),
-           
-           c((format(round(sqrt(diag(vcov(lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[15],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[15],digits=3),nsmall=0)),
-             0,
-             (format(round(sqrt(diag(vcov(lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[15],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[15],digits=3),nsmall=0)),
-             0,
-             (format(round(sqrt(diag(vcov(lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[15],digits=3),nsmall=0))),
-           
-           c((format(round(summary(lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[15,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[15,4],digits=3),nsmall=0)),
-             0,
-             (format(round(summary(lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[15,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[15,4],digits=3),nsmall=0)),
-             0,
-             (format(round(summary(lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[15,4],digits=3),nsmall=0))),
-           
-           c((format(round(sum((lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[16]),digits=3),nsmall=0)),
-             (format(round(sum((lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[16]),digits=3),nsmall=0)),
-             0,
-             (format(round(sum((lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[16]),digits=3),nsmall=0)),
-             (format(round(sum((lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[16]),digits=3),nsmall=0)),
-             0,
-             (format(round(sum((lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[16]),digits=3),nsmall=0))),
-           
-           c((format(round(sqrt(diag(vcov(lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[16],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[16],digits=3),nsmall=0)),
-             0,
-             (format(round(sqrt(diag(vcov(lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[16],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[16],digits=3),nsmall=0)),
-             0,
-             (format(round(sqrt(diag(vcov(lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[16],digits=3),nsmall=0))),
-           
-           c((format(round(summary(lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[16,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[16,4],digits=3),nsmall=0)),
-             0,
-             (format(round(summary(lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[16,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[16,4],digits=3),nsmall=0)),
-             0,
-             (format(round(summary(lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[16,4],digits=3),nsmall=0))),
-           
-           c((format(round(sum((lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[17]),digits=3),nsmall=0)),
-             (format(round(sum((lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[17]),digits=3),nsmall=0)),
-             0,
-             (format(round(sum((lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[17]),digits=3),nsmall=0)),
-             (format(round(sum((lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[17]),digits=3),nsmall=0)),
-             0,
-             (format(round(sum((lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[17]),digits=3),nsmall=0))),
-           
-           c((format(round(sqrt(diag(vcov(lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[17],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[17],digits=3),nsmall=0)),
-             0,
-             (format(round(sqrt(diag(vcov(lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[17],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[17],digits=3),nsmall=0)),
-             0,
-             (format(round(sqrt(diag(vcov(lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[17],digits=3),nsmall=0))),
-           
-           c((format(round(summary(lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[17,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[17,4],digits=3),nsmall=0)),
-             0,
-             (format(round(summary(lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[17,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[17,4],digits=3),nsmall=0)),
-             0,
-             (format(round(summary(lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[17,4],digits=3),nsmall=0))),
-           
-           c((format(round(sum((lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[18]),digits=3),nsmall=0)),
-             (format(round(sum((lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[18]),digits=3),nsmall=0)),
-             0,
-             (format(round(sum((lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[18]),digits=3),nsmall=0)),
-             (format(round(sum((lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[18]),digits=3),nsmall=0)),
-             0,
-             (format(round(sum((lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[18]),digits=3),nsmall=0))),
-           
-           c((format(round(sqrt(diag(vcov(lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[18],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[18],digits=3),nsmall=0)),
-             0,
-             (format(round(sqrt(diag(vcov(lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[18],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[18],digits=3),nsmall=0)),
-             0,
-             (format(round(sqrt(diag(vcov(lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[18],digits=3),nsmall=0))),
-           
-           c((format(round(summary(lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[18,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[18,4],digits=3),nsmall=0)),
-             0,
-             (format(round(summary(lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[18,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[18,4],digits=3),nsmall=0)),
-             0,
-             (format(round(summary(lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[18,4],digits=3),nsmall=0))),
-           
-           c((format(round(sum((lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[19]),digits=3),nsmall=0)),
-             (format(round(sum((lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[19]),digits=3),nsmall=0)),
-             0,
-             (format(round(sum((lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[19]),digits=3),nsmall=0)),
-             (format(round(sum((lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[19]),digits=3),nsmall=0)),
-             0,
-             (format(round(sum((lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[19]),digits=3),nsmall=0))),
-           
-           c((format(round(sqrt(diag(vcov(lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[19],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[19],digits=3),nsmall=0)),
-             0,
-             (format(round(sqrt(diag(vcov(lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[19],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[19],digits=3),nsmall=0)),
-             0,
-             (format(round(sqrt(diag(vcov(lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[19],digits=3),nsmall=0))),
-           
-           c((format(round(summary(lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[19,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[19,4],digits=3),nsmall=0)),
-             0,
-             (format(round(summary(lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[19,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[19,4],digits=3),nsmall=0)),
-             0,
-             (format(round(summary(lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[19,4],digits=3),nsmall=0))),
-           
-           c((format(round(sum((lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[20]),digits=3),nsmall=0)),
-             (format(round(sum((lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[20]),digits=3),nsmall=0)),
-             0,
-             (format(round(sum((lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[20]),digits=3),nsmall=0)),
-             (format(round(sum((lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[20]),digits=3),nsmall=0)),
-             0,
-             (format(round(sum((lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[20]),digits=3),nsmall=0))),
-           
-           c((format(round(sqrt(diag(vcov(lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[20],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[20],digits=3),nsmall=0)),
-             0,
-             (format(round(sqrt(diag(vcov(lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[20],digits=3),nsmall=0)),
-             (format(round(sqrt(diag(vcov(lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[20],digits=3),nsmall=0)),
-             0,
-             (format(round(sqrt(diag(vcov(lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                               badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))))[20],digits=3),nsmall=0))),
-           
-           c((format(round(summary(lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[20,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[20,4],digits=3),nsmall=0)),
-             0,
-             (format(round(summary(lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[20,4],digits=3),nsmall=0)),
-             (format(round(summary(lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[20,4],digits=3),nsmall=0)),
-             0,
-             (format(round(summary(lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$coefficients[20,4],digits=3),nsmall=0))),
-           
-           
-           
-           
-           c((format(round(summary(lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$r.squared,digits=3),nsmall=0)),
-             (format(round(summary(lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$r.squared,digits=3),nsmall=0)),
-             (format(round(summary(lm(location_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4,data=rating_dyads))$r.squared,digits=3),nsmall=0)),
-             (format(round(summary(lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$r.squared,digits=3),nsmall=0)),
-             (format(round(summary(lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$r.squared,digits=3),nsmall=0)),
-             (format(round(summary(lm(stock_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4,data=rating_dyads))$r.squared,digits=3),nsmall=0)),
-             (format(round(summary(lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$r.squared,digits=3),nsmall=0))),
-           
-           c((format(round(summary(lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$adj.r.squared,digits=3),nsmall=0)),
-             (format(round(summary(lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$adj.r.squared,digits=3),nsmall=0)),
-             (format(round(summary(lm(location_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4,data=rating_dyads))$adj.r.squared,digits=3),nsmall=0)),
-             (format(round(summary(lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$adj.r.squared,digits=3),nsmall=0)),
-             (format(round(summary(lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$adj.r.squared,digits=3),nsmall=0)),
-             (format(round(summary(lm(stock_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4,data=rating_dyads))$adj.r.squared,digits=3),nsmall=0)),
-             (format(round(summary(lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                        badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads))$adj.r.squared,digits=3),nsmall=0))),
-           
-           c((format(round(nobs(lm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads)),digits=3),nsmall=0)),
-             (format(round(nobs(lm(general_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads)),digits=3),nsmall=0)),
-             (format(round(nobs(lm(location_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4,data=rating_dyads)),digits=3),nsmall=0)),
-             (format(round(nobs(lm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads)),digits=3),nsmall=0)),
-             (format(round(nobs(lm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads)),digits=3),nsmall=0)),
-             (format(round(nobs(lm(stock_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4,data=rating_dyads)),digits=3),nsmall=0)),
-             (format(round(nobs(lm(reputation_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q3 +maize.owner.agree.q4+inputsale+years_shop +dedicated_area +pest_prob +insulated+ wall_heatproof +ventilation +
-                                     badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint +  leakproof,data=rating_dyads)),digits=3),nsmall=0)))
-)
+s8<- rbind(c((format(round(sum((lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                   +years_shop+unada ,data=rating_dyads))$coefficients[1]),digits=3),nsmall=0)),
+             (format(round(sum((lm(general_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap,data=rating_dyads))$coefficients[1]),digits=3),nsmall=0)),
+             (format(round(sum((lm(location_rating~gender+ maize.owner.agree.age +prim +distance,data=rating_dyads))$coefficients[1]),digits=3),nsmall=0)),
+             (format(round(sum((lm(price_rating~gender+ maize.owner.agree.age +prim+ saleprice +costseed,data=rating_dyads))$coefficients[1]),digits=3),nsmall=0)),
+             (format(round(sum((lm(quality_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[1]),digits=3),nsmall=0)),
+             (format(round(sum((lm(stock_rating~gender+ maize.owner.agree.age +prim +hybridnum+quanprovider,data=rating_dyads))$coefficients[1]),digits=3),nsmall=0)),
+             (format(round(sum((lm(reputation_rating~gender+ maize.owner.agree.age +prim +years_shop+unada,data=rating_dyads))$coefficients[1]),digits=3),nsmall=0))),
+           
+           c((format(round(sqrt(diag(vcov(lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                             +years_shop+unada ,data=rating_dyads))))[1],digits=3),nsmall=0)),
+             (format(round(sqrt(diag(vcov(lm(general_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap,data=rating_dyads))))[1],digits=3),nsmall=0)),
+             (format(round(sqrt(diag(vcov(lm(location_rating~gender+ maize.owner.agree.age +prim +distance,data=rating_dyads))))[1],digits=3),nsmall=0)),
+             (format(round(sqrt(diag(vcov(lm(price_rating~gender+ maize.owner.agree.age +prim+ saleprice +costseed,data=rating_dyads))))[1],digits=3),nsmall=0)),
+             (format(round(sqrt(diag(vcov(lm(quality_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))))[1],digits=3),nsmall=0)),
+             (format(round(sqrt(diag(vcov(lm(stock_rating~gender+ maize.owner.agree.age +prim +hybridnum+quanprovider,data=rating_dyads))))[1],digits=3),nsmall=0)),
+             (format(round(sqrt(diag(vcov(lm(reputation_rating~gender+ maize.owner.agree.age +prim +years_shop+unada,data=rating_dyads))))[1],digits=3),nsmall=0))),
+           
+           c((format(round(summary(lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                      +years_shop+unada,data=rating_dyads))$coefficients[1,4],digits=3),nsmall=0)),
+             (format(round(summary(lm(general_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap,data=rating_dyads))$coefficients[1,4],digits=3),nsmall=0)),
+             (format(round(summary(lm(location_rating~gender+ maize.owner.agree.age +prim +distance,data=rating_dyads))$coefficients[1,4],digits=3),nsmall=0)),
+             (format(round(summary(lm(price_rating~gender+ maize.owner.agree.age +prim+ saleprice +costseed,data=rating_dyads))$coefficients[1,4],digits=3),nsmall=0)),
+             (format(round(summary(lm(quality_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[1,4],digits=3),nsmall=0)),
+             (format(round(summary(lm(stock_rating~gender+ maize.owner.agree.age +prim +hybridnum+quanprovider,data=rating_dyads))$coefficients[1,4],digits=3),nsmall=0)),
+             (format(round(summary(lm(reputation_rating~gender+ maize.owner.agree.age +prim +years_shop+unada,data=rating_dyads))$coefficients[1,4],digits=3),nsmall=0))),
+           
+           c((format(round(sum((lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                   +years_shop+unada ,data=rating_dyads))$coefficients[2]),digits=3),nsmall=0)),
+             (format(round(sum((lm(general_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap,data=rating_dyads))$coefficients[2]),digits=3),nsmall=0)),
+             (format(round(sum((lm(location_rating~gender+ maize.owner.agree.age +prim +distance,data=rating_dyads))$coefficients[2]),digits=3),nsmall=0)),
+             (format(round(sum((lm(price_rating~gender+ maize.owner.agree.age +prim+ saleprice +costseed,data=rating_dyads))$coefficients[2]),digits=3),nsmall=0)),
+             (format(round(sum((lm(quality_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[2]),digits=3),nsmall=0)),
+             (format(round(sum((lm(stock_rating~gender+ maize.owner.agree.age +prim +hybridnum+quanprovider,data=rating_dyads))$coefficients[2]),digits=3),nsmall=0)),
+             (format(round(sum((lm(reputation_rating~gender+ maize.owner.agree.age +prim +years_shop+unada,data=rating_dyads))$coefficients[2]),digits=3),nsmall=0))),
+           
+           c((format(round(sqrt(diag(vcov(lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                             +years_shop+unada ,data=rating_dyads))))[2],digits=3),nsmall=0)),
+             (format(round(sqrt(diag(vcov(lm(general_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap,data=rating_dyads))))[2],digits=3),nsmall=0)),
+             (format(round(sqrt(diag(vcov(lm(location_rating~gender+ maize.owner.agree.age +prim +distance,data=rating_dyads))))[2],digits=3),nsmall=0)),
+             (format(round(sqrt(diag(vcov(lm(price_rating~gender+ maize.owner.agree.age +prim+ saleprice +costseed,data=rating_dyads))))[2],digits=3),nsmall=0)),
+             (format(round(sqrt(diag(vcov(lm(quality_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))))[2],digits=3),nsmall=0)),
+             (format(round(sqrt(diag(vcov(lm(stock_rating~gender+ maize.owner.agree.age +prim +hybridnum+quanprovider,data=rating_dyads))))[2],digits=3),nsmall=0)),
+             (format(round(sqrt(diag(vcov(lm(reputation_rating~gender+ maize.owner.agree.age +prim +years_shop+unada,data=rating_dyads))))[2],digits=3),nsmall=0))),
+           
+           c((format(round(summary(lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                      +years_shop+unada,data=rating_dyads))$coefficients[2,4],digits=3),nsmall=0)),
+             (format(round(summary(lm(general_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap,data=rating_dyads))$coefficients[2,4],digits=3),nsmall=0)),
+             (format(round(summary(lm(location_rating~gender+ maize.owner.agree.age +prim +distance,data=rating_dyads))$coefficients[2,4],digits=3),nsmall=0)),
+             (format(round(summary(lm(price_rating~gender+ maize.owner.agree.age +prim+ saleprice +costseed,data=rating_dyads))$coefficients[2,4],digits=3),nsmall=0)),
+             (format(round(summary(lm(quality_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[2,4],digits=3),nsmall=0)),
+             (format(round(summary(lm(stock_rating~gender+ maize.owner.agree.age +prim +hybridnum+quanprovider,data=rating_dyads))$coefficients[2,4],digits=3),nsmall=0)),
+             (format(round(summary(lm(reputation_rating~gender+ maize.owner.agree.age +prim +years_shop+unada,data=rating_dyads))$coefficients[2,4],digits=3),nsmall=0))),
+           
+           
+           c((format(round(sum((lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                   +years_shop+unada ,data=rating_dyads))$coefficients[3]),digits=3),nsmall=0)),
+             (format(round(sum((lm(general_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap,data=rating_dyads))$coefficients[3]),digits=3),nsmall=0)),
+             (format(round(sum((lm(location_rating~gender+ maize.owner.agree.age +prim +distance,data=rating_dyads))$coefficients[3]),digits=3),nsmall=0)),
+             (format(round(sum((lm(price_rating~gender+ maize.owner.agree.age +prim+ saleprice +costseed,data=rating_dyads))$coefficients[3]),digits=3),nsmall=0)),
+             (format(round(sum((lm(quality_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[3]),digits=3),nsmall=0)),
+             (format(round(sum((lm(stock_rating~gender+ maize.owner.agree.age +prim +hybridnum+quanprovider,data=rating_dyads))$coefficients[3]),digits=3),nsmall=0)),
+             (format(round(sum((lm(reputation_rating~gender+ maize.owner.agree.age +prim +years_shop+unada,data=rating_dyads))$coefficients[3]),digits=3),nsmall=0))),
+           
+           c((format(round(sqrt(diag(vcov(lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                             +years_shop+unada ,data=rating_dyads))))[3],digits=3),nsmall=0)),
+             (format(round(sqrt(diag(vcov(lm(general_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap,data=rating_dyads))))[3],digits=3),nsmall=0)),
+             (format(round(sqrt(diag(vcov(lm(location_rating~gender+ maize.owner.agree.age +prim +distance,data=rating_dyads))))[3],digits=3),nsmall=0)),
+             (format(round(sqrt(diag(vcov(lm(price_rating~gender+ maize.owner.agree.age +prim+ saleprice +costseed,data=rating_dyads))))[3],digits=3),nsmall=0)),
+             (format(round(sqrt(diag(vcov(lm(quality_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))))[3],digits=3),nsmall=0)),
+             (format(round(sqrt(diag(vcov(lm(stock_rating~gender+ maize.owner.agree.age +prim +hybridnum+quanprovider,data=rating_dyads))))[3],digits=3),nsmall=0)),
+             (format(round(sqrt(diag(vcov(lm(reputation_rating~gender+ maize.owner.agree.age +prim +years_shop+unada,data=rating_dyads))))[3],digits=3),nsmall=0))),
+           
+           c((format(round(summary(lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                      +years_shop+unada,data=rating_dyads))$coefficients[3,4],digits=3),nsmall=0)),
+             (format(round(summary(lm(general_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap,data=rating_dyads))$coefficients[3,4],digits=3),nsmall=0)),
+             (format(round(summary(lm(location_rating~gender+ maize.owner.agree.age +prim +distance,data=rating_dyads))$coefficients[3,4],digits=3),nsmall=0)),
+             (format(round(summary(lm(price_rating~gender+ maize.owner.agree.age +prim+ saleprice +costseed,data=rating_dyads))$coefficients[3,4],digits=3),nsmall=0)),
+             (format(round(summary(lm(quality_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[3,4],digits=3),nsmall=0)),
+             (format(round(summary(lm(stock_rating~gender+ maize.owner.agree.age +prim +hybridnum+quanprovider,data=rating_dyads))$coefficients[3,4],digits=3),nsmall=0)),
+             (format(round(summary(lm(reputation_rating~gender+ maize.owner.agree.age +prim +years_shop+unada,data=rating_dyads))$coefficients[3,4],digits=3),nsmall=0))),
+           
+           
+           c((format(round(sum((lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                   +years_shop+unada ,data=rating_dyads))$coefficients[4]),digits=3),nsmall=0)),
+             (format(round(sum((lm(general_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap,data=rating_dyads))$coefficients[4]),digits=3),nsmall=0)),
+             (format(round(sum((lm(location_rating~gender+ maize.owner.agree.age +prim +distance,data=rating_dyads))$coefficients[4]),digits=3),nsmall=0)),
+             (format(round(sum((lm(price_rating~gender+ maize.owner.agree.age +prim+ saleprice +costseed,data=rating_dyads))$coefficients[4]),digits=3),nsmall=0)),
+             (format(round(sum((lm(quality_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[4]),digits=3),nsmall=0)),
+             (format(round(sum((lm(stock_rating~gender+ maize.owner.agree.age +prim +hybridnum+quanprovider,data=rating_dyads))$coefficients[4]),digits=3),nsmall=0)),
+             (format(round(sum((lm(reputation_rating~gender+ maize.owner.agree.age +prim +years_shop+unada,data=rating_dyads))$coefficients[4]),digits=3),nsmall=0))),
+           
+           c((format(round(sqrt(diag(vcov(lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                             +years_shop+unada ,data=rating_dyads))))[4],digits=3),nsmall=0)),
+             (format(round(sqrt(diag(vcov(lm(general_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap,data=rating_dyads))))[4],digits=3),nsmall=0)),
+             (format(round(sqrt(diag(vcov(lm(location_rating~gender+ maize.owner.agree.age +prim +distance,data=rating_dyads))))[4],digits=3),nsmall=0)),
+             (format(round(sqrt(diag(vcov(lm(price_rating~gender+ maize.owner.agree.age +prim+ saleprice +costseed,data=rating_dyads))))[4],digits=3),nsmall=0)),
+             (format(round(sqrt(diag(vcov(lm(quality_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))))[4],digits=3),nsmall=0)),
+             (format(round(sqrt(diag(vcov(lm(stock_rating~gender+ maize.owner.agree.age +prim +hybridnum+quanprovider,data=rating_dyads))))[4],digits=3),nsmall=0)),
+             (format(round(sqrt(diag(vcov(lm(reputation_rating~gender+ maize.owner.agree.age +prim +years_shop+unada,data=rating_dyads))))[4],digits=3),nsmall=0))),
+           
+           c((format(round(summary(lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                      +years_shop+unada,data=rating_dyads))$coefficients[4,4],digits=3),nsmall=0)),
+             (format(round(summary(lm(general_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap,data=rating_dyads))$coefficients[4,4],digits=3),nsmall=0)),
+             (format(round(summary(lm(location_rating~gender+ maize.owner.agree.age +prim +distance,data=rating_dyads))$coefficients[4,4],digits=3),nsmall=0)),
+             (format(round(summary(lm(price_rating~gender+ maize.owner.agree.age +prim+ saleprice +costseed,data=rating_dyads))$coefficients[4,4],digits=3),nsmall=0)),
+             (format(round(summary(lm(quality_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[4,4],digits=3),nsmall=0)),
+             (format(round(summary(lm(stock_rating~gender+ maize.owner.agree.age +prim +hybridnum+quanprovider,data=rating_dyads))$coefficients[4,4],digits=3),nsmall=0)),
+             (format(round(summary(lm(reputation_rating~gender+ maize.owner.agree.age +prim +years_shop+unada,data=rating_dyads))$coefficients[4,4],digits=3),nsmall=0))),
+           
+           
+           c((format(round(sum((lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                   +years_shop+unada ,data=rating_dyads))$coefficients[5]),digits=3),nsmall=0)),
+             (format(round(sum((lm(general_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap,data=rating_dyads))$coefficients[5]),digits=3),nsmall=0)),
+             (format(round(sum((lm(location_rating~gender+ maize.owner.agree.age +prim +distance,data=rating_dyads))$coefficients[5]),digits=3),nsmall=0)),
+             (format(round(sum((lm(price_rating~gender+ maize.owner.agree.age +prim+ saleprice +costseed,data=rating_dyads))$coefficients[5]),digits=3),nsmall=0)),
+             (format(round(sum((lm(quality_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[5]),digits=3),nsmall=0)),
+             (format(round(sum((lm(stock_rating~gender+ maize.owner.agree.age +prim +hybridnum+quanprovider,data=rating_dyads))$coefficients[5]),digits=3),nsmall=0)),
+             (format(round(sum((lm(reputation_rating~gender+ maize.owner.agree.age +prim +years_shop+unada,data=rating_dyads))$coefficients[5]),digits=3),nsmall=0))),
+           
+           c((format(round(sqrt(diag(vcov(lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                             +years_shop+unada ,data=rating_dyads))))[5],digits=3),nsmall=0)),
+             (format(round(sqrt(diag(vcov(lm(general_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap,data=rating_dyads))))[5],digits=3),nsmall=0)),
+             (format(round(sqrt(diag(vcov(lm(location_rating~gender+ maize.owner.agree.age +prim +distance,data=rating_dyads))))[5],digits=3),nsmall=0)),
+             (format(round(sqrt(diag(vcov(lm(price_rating~gender+ maize.owner.agree.age +prim+ saleprice +costseed,data=rating_dyads))))[5],digits=3),nsmall=0)),
+             (format(round(sqrt(diag(vcov(lm(quality_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))))[5],digits=3),nsmall=0)),
+             (format(round(sqrt(diag(vcov(lm(stock_rating~gender+ maize.owner.agree.age +prim +hybridnum+quanprovider,data=rating_dyads))))[5],digits=3),nsmall=0)),
+             (format(round(sqrt(diag(vcov(lm(reputation_rating~gender+ maize.owner.agree.age +prim +years_shop+unada,data=rating_dyads))))[5],digits=3),nsmall=0))),
+           
+           c((format(round(summary(lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                      +years_shop+unada,data=rating_dyads))$coefficients[5,4],digits=3),nsmall=0)),
+             (format(round(summary(lm(general_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap,data=rating_dyads))$coefficients[5,4],digits=3),nsmall=0)),
+             (format(round(summary(lm(location_rating~gender+ maize.owner.agree.age +prim +distance,data=rating_dyads))$coefficients[5,4],digits=3),nsmall=0)),
+             (format(round(summary(lm(price_rating~gender+ maize.owner.agree.age +prim+ saleprice +costseed,data=rating_dyads))$coefficients[5,4],digits=3),nsmall=0)),
+             (format(round(summary(lm(quality_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[5,4],digits=3),nsmall=0)),
+             (format(round(summary(lm(stock_rating~gender+ maize.owner.agree.age +prim +hybridnum+quanprovider,data=rating_dyads))$coefficients[5,4],digits=3),nsmall=0)),
+             (format(round(summary(lm(reputation_rating~gender+ maize.owner.agree.age +prim +years_shop+unada,data=rating_dyads))$coefficients[5,4],digits=3),nsmall=0))),
+           
+           c((format(round(sum((lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                   +years_shop+unada ,data=rating_dyads))$coefficients[6]),digits=3),nsmall=0)),
+             (format(round(sum((lm(general_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap,data=rating_dyads))$coefficients[6]),digits=3),nsmall=0)),
+             0,
+             (format(round(sum((lm(price_rating~gender+ maize.owner.agree.age +prim+ saleprice +costseed,data=rating_dyads))$coefficients[6]),digits=3),nsmall=0)),
+             0,
+             (format(round(sum((lm(stock_rating~gender+ maize.owner.agree.age +prim +hybridnum+quanprovider,data=rating_dyads))$coefficients[6]),digits=3),nsmall=0)),
+             (format(round(sum((lm(reputation_rating~gender+ maize.owner.agree.age +prim +years_shop+unada,data=rating_dyads))$coefficients[6]),digits=3),nsmall=0))),
+           
+           c((format(round(sqrt(diag(vcov(lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                             +years_shop+unada ,data=rating_dyads))))[6],digits=3),nsmall=0)),
+             (format(round(sqrt(diag(vcov(lm(general_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap,data=rating_dyads))))[6],digits=3),nsmall=0)),
+             0,
+             (format(round(sqrt(diag(vcov(lm(price_rating~gender+ maize.owner.agree.age +prim+ saleprice +costseed,data=rating_dyads))))[6],digits=3),nsmall=0)),
+             0,
+             (format(round(sqrt(diag(vcov(lm(stock_rating~gender+ maize.owner.agree.age +prim +hybridnum+quanprovider,data=rating_dyads))))[6],digits=3),nsmall=0)),
+             (format(round(sqrt(diag(vcov(lm(reputation_rating~gender+ maize.owner.agree.age +prim +years_shop+unada,data=rating_dyads))))[6],digits=3),nsmall=0))),
+           
+           c((format(round(summary(lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                      +years_shop+unada,data=rating_dyads))$coefficients[6,4],digits=3),nsmall=0)),
+             (format(round(summary(lm(general_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap,data=rating_dyads))$coefficients[6,4],digits=3),nsmall=0)),
+             0,
+             (format(round(summary(lm(price_rating~gender+ maize.owner.agree.age +prim+ saleprice +costseed,data=rating_dyads))$coefficients[6,4],digits=3),nsmall=0)),
+             0,
+             (format(round(summary(lm(stock_rating~gender+ maize.owner.agree.age +prim +hybridnum+quanprovider,data=rating_dyads))$coefficients[6,4],digits=3),nsmall=0)),
+             (format(round(summary(lm(reputation_rating~gender+ maize.owner.agree.age +prim +years_shop+unada,data=rating_dyads))$coefficients[6,4],digits=3),nsmall=0))),
+           
+           
+           c((format(round(sum((lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                   +years_shop+unada ,data=rating_dyads))$coefficients[7]),digits=3),nsmall=0)),
+             (format(round(sum((lm(general_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap,data=rating_dyads))$coefficients[7]),digits=3),nsmall=0)),
+             0,
+             0,
+             0,
+             0,
+             0),
+           
+           c((format(round(sqrt(diag(vcov(lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                             +years_shop+unada ,data=rating_dyads))))[7],digits=3),nsmall=0)),
+             (format(round(sqrt(diag(vcov(lm(general_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap,data=rating_dyads))))[7],digits=3),nsmall=0)),
+             0,
+             0,
+             0,
+             0,
+             0),
+           
+           c((format(round(summary(lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                      +years_shop+unada,data=rating_dyads))$coefficients[7,4],digits=3),nsmall=0)),
+             (format(round(summary(lm(general_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap,data=rating_dyads))$coefficients[7,4],digits=3),nsmall=0)),
+             0,
+             0,
+             0,
+             0,
+             0),
+           
+           
+           c((format(round(sum((lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                   +years_shop+unada ,data=rating_dyads))$coefficients[8]),digits=3),nsmall=0)),
+             0,
+             0,
+             0,
+             0,
+             0,
+             0),
+           
+           c((format(round(sqrt(diag(vcov(lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                             +years_shop+unada ,data=rating_dyads))))[8],digits=3),nsmall=0)),
+             0,
+             0,
+             0,
+             0,
+             0,
+             0),
+           
+           c((format(round(summary(lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                      +years_shop+unada,data=rating_dyads))$coefficients[8,4],digits=3),nsmall=0)),
+             0,
+             0,
+             0,
+             0,
+             0,
+             0),
+           
+           c((format(round(sum((lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                   +years_shop+unada ,data=rating_dyads))$coefficients[9]),digits=3),nsmall=0)),
+             0,
+             0,
+             0,
+             0,
+             0,
+             0),
+           
+           c((format(round(sqrt(diag(vcov(lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                             +years_shop+unada ,data=rating_dyads))))[9],digits=3),nsmall=0)),
+             0,
+             0,
+             0,
+             0,
+             0,
+             0),
+           
+           c((format(round(summary(lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                      +years_shop+unada,data=rating_dyads))$coefficients[9,4],digits=3),nsmall=0)),
+             0,
+             0,
+             0,
+             0,
+             0,
+             0),
+           
+           c((format(round(sum((lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                   +years_shop+unada ,data=rating_dyads))$coefficients[10]),digits=3),nsmall=0)),
+             0,
+             0,
+             0,
+             0,
+             0,
+             0),
+           
+           c((format(round(sqrt(diag(vcov(lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                             +years_shop+unada ,data=rating_dyads))))[10],digits=3),nsmall=0)),
+             0,
+             0,
+             0,
+             0,
+             0,
+             0),
+           
+           c((format(round(summary(lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                      +years_shop+unada,data=rating_dyads))$coefficients[10,4],digits=3),nsmall=0)),
+             0,
+             0,
+             0,
+             0,
+             0,
+             0),
+           
+           
+           c((format(round(sum((lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                   +years_shop+unada ,data=rating_dyads))$coefficients[11]),digits=3),nsmall=0)),
+             0,
+             0,
+             0,
+             0,
+             0,
+             0),
+           
+           c((format(round(sqrt(diag(vcov(lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                             +years_shop+unada ,data=rating_dyads))))[11],digits=3),nsmall=0)),
+             0,
+             0,
+             0,
+             0,
+             0,
+             0),
+           
+           c((format(round(summary(lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                      +years_shop+unada,data=rating_dyads))$coefficients[11,4],digits=3),nsmall=0)),
+             0,
+             0,
+             0,
+             0,
+             0,
+             0),
+           
+           
+           c((format(round(sum((lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                   +years_shop+unada ,data=rating_dyads))$coefficients[12]),digits=3),nsmall=0)),
+             0,
+             0,
+             0,
+             0,
+             0,
+             0),
+           
+           c((format(round(sqrt(diag(vcov(lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                             +years_shop+unada ,data=rating_dyads))))[12],digits=3),nsmall=0)),
+             0,
+             0,
+             0,
+             0,
+             0,
+             0),
+           
+           c((format(round(summary(lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                      +years_shop+unada,data=rating_dyads))$coefficients[12,4],digits=3),nsmall=0)),
+             0,
+             0,
+             0,
+             0,
+             0,
+             0),
+           
+           
+           c((format(round(sum((lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                   +years_shop+unada ,data=rating_dyads))$coefficients[13]),digits=3),nsmall=0)),
+             0,
+             0,
+             0,
+             0,
+             0,
+             0),
+           
+           c((format(round(sqrt(diag(vcov(lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                             +years_shop+unada ,data=rating_dyads))))[13],digits=3),nsmall=0)),
+             0,
+             0,
+             0,
+             0,
+             0,
+             0),
+           
+           c((format(round(summary(lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                      +years_shop+unada,data=rating_dyads))$coefficients[13,4],digits=3),nsmall=0)),
+             0,
+             0,
+             0,
+             0,
+             0,
+             0),
+           
+           
+           
+           
+           c((format(round(summary(lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                      +years_shop+unada,data=rating_dyads))$r.squared,digits=3),nsmall=0)),
+             (format(round(summary(lm(general_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap,data=rating_dyads))$r.squared,digits=3),nsmall=0)),
+             (format(round(summary(lm(location_rating~gender+ maize.owner.agree.age +prim +distance,data=rating_dyads))$r.squared,digits=3),nsmall=0)),
+             (format(round(summary(lm(price_rating~gender+ maize.owner.agree.age +prim+ saleprice +costseed,data=rating_dyads))$r.squared,digits=3),nsmall=0)),
+             (format(round(summary(lm(quality_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$r.squared,digits=3),nsmall=0)),
+             (format(round(summary(lm(stock_rating~gender+ maize.owner.agree.age +prim +hybridnum+quanprovider,data=rating_dyads))$r.squared,digits=3),nsmall=0)),
+             (format(round(summary(lm(reputation_rating~gender+ maize.owner.agree.age +prim +years_shop+unada,data=rating_dyads))$r.squared,digits=3),nsmall=0))),
+           
+           c((format(round(summary(lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                      +years_shop+unada,data=rating_dyads))$adj.r.squared,digits=3),nsmall=0)),
+             (format(round(summary(lm(general_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap,data=rating_dyads))$adj.r.squared,digits=3),nsmall=0)),
+             (format(round(summary(lm(location_rating~gender+ maize.owner.agree.age +prim +distance,data=rating_dyads))$adj.r.squared,digits=3),nsmall=0)),
+             (format(round(summary(lm(price_rating~gender+ maize.owner.agree.age +prim+ saleprice +costseed,data=rating_dyads))$adj.r.squared,digits=3),nsmall=0)),
+             (format(round(summary(lm(quality_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$adj.r.squared,digits=3),nsmall=0)),
+             (format(round(summary(lm(stock_rating~gender+ maize.owner.agree.age +prim +hybridnum+quanprovider,data=rating_dyads))$adj.r.squared,digits=3),nsmall=0)),
+             (format(round(summary(lm(reputation_rating~gender+ maize.owner.agree.age +prim +years_shop+unada,data=rating_dyads))$adj.r.squared,digits=3),nsmall=0))),
+           
+           c((format(round(nobs(lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                   +years_shop+unada,data=rating_dyads)),digits=3),nsmall=0)),
+             (format(round(nobs(lm(general_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap,data=rating_dyads)),digits=3),nsmall=0)),
+             (format(round(nobs(lm(location_rating~gender+ maize.owner.agree.age +prim +distance,data=rating_dyads)),digits=3),nsmall=0)),
+             (format(round(nobs(lm(price_rating~gender+ maize.owner.agree.age +prim+ saleprice +costseed,data=rating_dyads)),digits=3),nsmall=0)),
+             (format(round(nobs(lm(quality_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads)),digits=3),nsmall=0)),
+             (format(round(nobs(lm(stock_rating~gender+ maize.owner.agree.age +prim +hybridnum+quanprovider,data=rating_dyads)),digits=3),nsmall=0)),
+             (format(round(nobs(lm(reputation_rating~gender+ maize.owner.agree.age +prim +years_shop+unada,data=rating_dyads)),digits=3),nsmall=0))))
 
 
 ############## FIXED EFFECTS 
@@ -3196,24 +1914,22 @@ c((format(round((coeftest(plm(score~gender, data = rat, index=c("farmer_ID","dea
 #FE at farmer level --- with controls
 #dealer ratings
 
-plm1<-plm(overall_rating~gender+ maize.owner.agree.age +prim +shop_rate+maize.owner.index_practices_cap+maize.owner.index_efforts+maize.owner.dist+maize.owner.saleprice+maize.owner.costseed
-          +maize.owner.agree.q19+maize.owner.practices_all+maize.owner.quanprovider+years_shop+maize.owner.unada, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
+plm1<-plm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.index_efforts+maize.owner.dist+maize.owner.saleprice+maize.owner.costseed
+          +maize.owner.practices_all+maize.owner.agree.q19+maize.owner.quanprovider+years_shop+maize.owner.unada, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
 summary(plm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.index_efforts+maize.owner.dist+maize.owner.saleprice+maize.owner.costseed
-            +maize.owner.agree.q19+maize.owner.practices_all+maize.owner.quanprovider+years_shop+maize.owner.unada, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
+            +maize.owner.practices_all+maize.owner.agree.q19+maize.owner.quanprovider+years_shop+maize.owner.unada, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
 
-plm2<-plm(general_rating~gender+ maize.owner.agree.age +prim +shop_rate+maize.owner.index_practices_cap+maize.owner.index_efforts, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
-summary(plm(general_rating~gender+ maize.owner.agree.age +prim +shop_rate+maize.owner.index_practices_cap+maize.owner.index_efforts, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
+plm2<-plm(general_rating~gender+ maize.owner.agree.age +prim +shop_rate+maize.owner.index_efforts+maize.owner.index_practices_cap, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
+summary(plm(general_rating~gender+ maize.owner.agree.age +prim +shop_rate+maize.owner.index_efforts+maize.owner.index_practices_cap, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
 
 plm3<-plm(location_rating~gender+ maize.owner.agree.age +prim +maize.owner.dist, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
-summary(lm(location_rating~gender+ maize.owner.agree.age +prim +maize.owner.dist+farmer_ID, data = rat))
+summary(plm(location_rating~gender+ maize.owner.agree.age +prim +maize.owner.dist, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
 
 plm4<-plm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.saleprice+maize.owner.costseed, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
 summary(plm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.saleprice+maize.owner.costseed, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
 
-plm5<-plm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.index_efforts+maize.owner.practices_all, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
-summary(plm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.index_efforts+maize.owner.practices_all, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
+plm5<-plm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.practices_all, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
 summary(plm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.practices_all, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
-
 
 
 plm6<-plm(stock_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q19+maize.owner.quanprovider, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
@@ -3224,975 +1940,497 @@ summary(plm(reputation_rating~gender+ maize.owner.agree.age +prim +years_shop+ma
 
 
 #storing dealer ratings
-# fe4<- rbind(c((format(round(mean(fixef(plm1))[1],digits=3),nsmall=0)),
-#               (format(round(mean(fixef(plm2))[1],digits=3),nsmall=0)),
-#               (format(round(mean(fixef(plm3))[1],digits=3),nsmall=0)),
-#               (format(round(mean(fixef(plm4))[1],digits=3),nsmall=0)),
-#               (format(round(mean(fixef(plm5))[1],digits=3),nsmall=0)),
-#               (format(round(mean(fixef(plm6))[1],digits=3),nsmall=0)),
-#               (format(round(mean(fixef(plm7))[1],digits=3),nsmall=0))),
-#             c((format(round(sum((plm1)$coefficients[1]),digits=3),nsmall=0)),
-#               (format(round(sum((plm2)$coefficients[1]),digits=3),nsmall=0)),
-#               (format(round(sum((plm3)$coefficients[1]),digits=3),nsmall=0)),
-#               (format(round(sum((plm4)$coefficients[1]),digits=3),nsmall=0)),
-#               (format(round(sum((plm5)$coefficients[1]),digits=3),nsmall=0)),
-#               (format(round(sum((plm6)$coefficients[1]),digits=3),nsmall=0)),
-#               (format(round(sum((plm7)$coefficients[1]),digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[1,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[1,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm3), vcovHC((plm3), type = "HC0",cluster = "time"))[1,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[1,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[1,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm6), vcovHC((plm6), type = "HC0",cluster = "time"))[1,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[1,2],digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[1,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[1,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm3), vcovHC((plm3), type = "HC0",cluster = "time"))[1,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[1,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[1,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm6), vcovHC((plm6), type = "HC0",cluster = "time"))[1,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[1,4],digits=3),nsmall=0))),
-# 
-#             c((format(round(sum((plm1)$coefficients[2]),digits=3),nsmall=0)),
-#               (format(round(sum((plm2)$coefficients[2]),digits=3),nsmall=0)),
-#               (format(round(sum((plm3)$coefficients[2]),digits=3),nsmall=0)),
-#               (format(round(sum((plm4)$coefficients[2]),digits=3),nsmall=0)),
-#               (format(round(sum((plm5)$coefficients[2]),digits=3),nsmall=0)),
-#               (format(round(sum((plm6)$coefficients[2]),digits=3),nsmall=0)),
-#               (format(round(sum((plm7)$coefficients[2]),digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[2,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[2,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm3), vcovHC((plm3), type = "HC0",cluster = "time"))[2,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[2,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[2,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm6), vcovHC((plm6), type = "HC0",cluster = "time"))[2,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[2,2],digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[2,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[2,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm3), vcovHC((plm3), type = "HC0",cluster = "time"))[2,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[2,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[2,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm6), vcovHC((plm6), type = "HC0",cluster = "time"))[2,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[2,4],digits=3),nsmall=0))),
-# 
-#             c((format(round(sum((plm1)$coefficients[3]),digits=3),nsmall=0)),
-#               (format(round(sum((plm2)$coefficients[3]),digits=3),nsmall=0)),
-#               (format(round(sum((plm3)$coefficients[3]),digits=3),nsmall=0)),
-#               (format(round(sum((plm4)$coefficients[3]),digits=3),nsmall=0)),
-#               (format(round(sum((plm5)$coefficients[3]),digits=3),nsmall=0)),
-#               (format(round(sum((plm6)$coefficients[3]),digits=3),nsmall=0)),
-#               (format(round(sum((plm7)$coefficients[3]),digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[3,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[3,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm3), vcovHC((plm3), type = "HC0",cluster = "time"))[3,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[3,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[3,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm6), vcovHC((plm6), type = "HC0",cluster = "time"))[3,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[3,2],digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[3,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[3,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm3), vcovHC((plm3), type = "HC0",cluster = "time"))[3,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[3,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[3,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm6), vcovHC((plm6), type = "HC0",cluster = "time"))[3,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[3,4],digits=3),nsmall=0))),
-# 
-#             c((format(round(sum((plm1)$coefficients[4]),digits=3),nsmall=0)),
-#               (format(round(sum((plm2)$coefficients[4]),digits=3),nsmall=0)),
-#               (format(round(sum((plm3)$coefficients[4]),digits=3),nsmall=0)),
-#               (format(round(sum((plm4)$coefficients[4]),digits=3),nsmall=0)),
-#               (format(round(sum((plm5)$coefficients[4]),digits=3),nsmall=0)),
-#               (format(round(sum((plm6)$coefficients[4]),digits=3),nsmall=0)),
-#               (format(round(sum((plm7)$coefficients[4]),digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[4,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[4,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm3), vcovHC((plm3), type = "HC0",cluster = "time"))[4,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[4,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[4,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm6), vcovHC((plm6), type = "HC0",cluster = "time"))[4,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[4,2],digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[4,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[4,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm3), vcovHC((plm3), type = "HC0",cluster = "time"))[4,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[4,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[4,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm6), vcovHC((plm6), type = "HC0",cluster = "time"))[4,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[4,4],digits=3),nsmall=0))),
-# 
-#             c((format(round(sum((plm1)$coefficients[5]),digits=3),nsmall=0)),
-#               (format(round(sum((plm2)$coefficients[5]),digits=3),nsmall=0)),
-#               (format(round(sum((plm3)$coefficients[5]),digits=3),nsmall=0)),
-#               (format(round(sum((plm4)$coefficients[5]),digits=3),nsmall=0)),
-#               (format(round(sum((plm5)$coefficients[5]),digits=3),nsmall=0)),
-#               (format(round(sum((plm6)$coefficients[5]),digits=3),nsmall=0)),
-#               (format(round(sum((plm7)$coefficients[5]),digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[5,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[5,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm3), vcovHC((plm3), type = "HC0",cluster = "time"))[5,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[5,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[5,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm6), vcovHC((plm6), type = "HC0",cluster = "time"))[5,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[5,2],digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[5,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[5,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm3), vcovHC((plm3), type = "HC0",cluster = "time"))[5,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[5,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[5,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm6), vcovHC((plm6), type = "HC0",cluster = "time"))[5,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[5,4],digits=3),nsmall=0))),
-# 
-#             c((format(round(sum((plm1)$coefficients[6]),digits=3),nsmall=0)),
-#               (format(round(sum((plm2)$coefficients[6]),digits=3),nsmall=0)),
-#              0,
-#               (format(round(sum((plm4)$coefficients[6]),digits=3),nsmall=0)),
-#               (format(round(sum((plm5)$coefficients[6]),digits=3),nsmall=0)),
-#             0,
-#               (format(round(sum((plm7)$coefficients[6]),digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[6,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[6,2],digits=3),nsmall=0)),
-#              0,
-#               (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[6,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[6,2],digits=3),nsmall=0)),
-#           0,
-#               (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[6,2],digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[6,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[6,4],digits=3),nsmall=0)),
-#              0,
-#               (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[6,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[6,4],digits=3),nsmall=0)),
-#              0,
-#               (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[6,4],digits=3),nsmall=0))),
-# 
-#             c((format(round(sum((plm1)$coefficients[7]),digits=3),nsmall=0)),
-#               (format(round(sum((plm2)$coefficients[7]),digits=3),nsmall=0)),
-#               0,
-#               (format(round(sum((plm4)$coefficients[7]),digits=3),nsmall=0)),
-#               (format(round(sum((plm5)$coefficients[7]),digits=3),nsmall=0)),
-#               0,
-#               (format(round(sum((plm7)$coefficients[7]),digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[7,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[7,2],digits=3),nsmall=0)),
-#              0,
-#               (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[7,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[7,2],digits=3),nsmall=0)),
-#              0,
-#               (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[7,2],digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[7,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[7,4],digits=3),nsmall=0)),
-#              0,
-#               (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[7,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[7,4],digits=3),nsmall=0)),
-#               0,
-#               (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[7,4],digits=3),nsmall=0))),
-# 
-# 
-#             c((format(round(sum((plm1)$coefficients[8]),digits=3),nsmall=0)),
-#               (format(round(sum((plm2)$coefficients[8]),digits=3),nsmall=0)),
-#               0,
-#               (format(round(sum((plm4)$coefficients[8]),digits=3),nsmall=0)),
-#               (format(round(sum((plm5)$coefficients[8]),digits=3),nsmall=0)),
-#               0,
-#               (format(round(sum((plm7)$coefficients[8]),digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[8,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[8,2],digits=3),nsmall=0)),
-#              0,
-#               (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[8,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[8,2],digits=3),nsmall=0)),
-#            0,
-#               (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[8,2],digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[8,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[8,4],digits=3),nsmall=0)),
-#              0,
-#               (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[8,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[8,4],digits=3),nsmall=0)),
-#             0,
-#               (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[8,4],digits=3),nsmall=0))),
-# 
-#             c((format(round(sum((plm1)$coefficients[9]),digits=3),nsmall=0)),
-#               (format(round(sum((plm2)$coefficients[9]),digits=3),nsmall=0)),
-#              0,
-#               (format(round(sum((plm4)$coefficients[9]),digits=3),nsmall=0)),
-#               (format(round(sum((plm5)$coefficients[9]),digits=3),nsmall=0)),
-#               0,
-#               (format(round(sum((plm7)$coefficients[9]),digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[9,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[9,2],digits=3),nsmall=0)),
-#              0,
-#               (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[9,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[9,2],digits=3),nsmall=0)),
-#             0,
-#               (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[9,2],digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[9,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[9,4],digits=3),nsmall=0)),
-#              0,
-#               (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[9,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[9,4],digits=3),nsmall=0)),
-#               0,
-#               (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[9,4],digits=3),nsmall=0))),
-# 
-#             c((format(round(sum((plm1)$coefficients[10]),digits=3),nsmall=0)),
-#               (format(round(sum((plm2)$coefficients[10]),digits=3),nsmall=0)),
-#              0,
-#               (format(round(sum((plm4)$coefficients[10]),digits=3),nsmall=0)),
-#               (format(round(sum((plm5)$coefficients[10]),digits=3),nsmall=0)),
-#               0,
-#               (format(round(sum((plm7)$coefficients[10]),digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[10,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[10,2],digits=3),nsmall=0)),
-#               0,
-#               (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[10,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[10,2],digits=3),nsmall=0)),
-#               0,
-#               (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[10,2],digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[10,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[10,4],digits=3),nsmall=0)),
-#              0,
-#               (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[10,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[10,4],digits=3),nsmall=0)),
-#             0,
-#               (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[10,4],digits=3),nsmall=0))),
-# 
-#             c((format(round(sum((plm1)$coefficients[11]),digits=3),nsmall=0)),
-#               (format(round(sum((plm2)$coefficients[11]),digits=3),nsmall=0)),
-#               0,
-#               (format(round(sum((plm4)$coefficients[11]),digits=3),nsmall=0)),
-#               (format(round(sum((plm5)$coefficients[11]),digits=3),nsmall=0)),
-#              0,
-#               (format(round(sum((plm7)$coefficients[11]),digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[11,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[11,2],digits=3),nsmall=0)),
-#               0,
-#               (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[11,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[11,2],digits=3),nsmall=0)),
-#               0,
-#               (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[11,2],digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[11,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[11,4],digits=3),nsmall=0)),
-#               0,
-#               (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[11,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[11,4],digits=3),nsmall=0)),
-#              0,
-#               (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[11,4],digits=3),nsmall=0))),
-# 
-# 
-#             c((format(round(sum((plm1)$coefficients[12]),digits=3),nsmall=0)),
-#               (format(round(sum((plm2)$coefficients[12]),digits=3),nsmall=0)),
-#              0,
-#               (format(round(sum((plm4)$coefficients[12]),digits=3),nsmall=0)),
-#               (format(round(sum((plm5)$coefficients[12]),digits=3),nsmall=0)),
-#              0,
-#               (format(round(sum((plm7)$coefficients[12]),digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[12,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[12,2],digits=3),nsmall=0)),
-#              0,
-#               (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[12,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[12,2],digits=3),nsmall=0)),
-#              0,
-#               (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[12,2],digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[12,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[12,4],digits=3),nsmall=0)),
-#               0,
-#               (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[12,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[12,4],digits=3),nsmall=0)),
-#              0,
-#               (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[12,4],digits=3),nsmall=0))),
-# 
-#             c((format(round(sum((plm1)$coefficients[13]),digits=3),nsmall=0)),
-#               (format(round(sum((plm2)$coefficients[13]),digits=3),nsmall=0)),
-#              0,
-#               (format(round(sum((plm4)$coefficients[13]),digits=3),nsmall=0)),
-#               (format(round(sum((plm5)$coefficients[13]),digits=3),nsmall=0)),
-#              0,
-#               (format(round(sum((plm7)$coefficients[13]),digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[13,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[13,2],digits=3),nsmall=0)),
-#             0,
-#               (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[13,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[13,2],digits=3),nsmall=0)),
-#              0,
-#               (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[13,2],digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[13,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[13,4],digits=3),nsmall=0)),
-#              0,
-#               (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[13,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[13,4],digits=3),nsmall=0)),
-#              0,
-#               (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[13,4],digits=3),nsmall=0))),
-# 
-#             c((format(round(sum((plm1)$coefficients[14]),digits=3),nsmall=0)),
-#               (format(round(sum((plm2)$coefficients[14]),digits=3),nsmall=0)),
-#               0,
-#               (format(round(sum((plm4)$coefficients[14]),digits=3),nsmall=0)),
-#               (format(round(sum((plm5)$coefficients[14]),digits=3),nsmall=0)),
-#               0,
-#               (format(round(sum((plm7)$coefficients[14]),digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[14,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[14,2],digits=3),nsmall=0)),
-#              0,
-#               (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[14,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[14,2],digits=3),nsmall=0)),
-#             0,
-#               (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[14,2],digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[14,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[14,4],digits=3),nsmall=0)),
-#               0,
-#               (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[14,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[14,4],digits=3),nsmall=0)),
-#            0,
-#               (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[14,4],digits=3),nsmall=0))),
-# 
-#             c((format(round(sum((plm1)$coefficients[15]),digits=3),nsmall=0)),
-#               (format(round(sum((plm2)$coefficients[15]),digits=3),nsmall=0)),
-#             0,
-#               (format(round(sum((plm4)$coefficients[15]),digits=3),nsmall=0)),
-#               (format(round(sum((plm5)$coefficients[15]),digits=3),nsmall=0)),
-#             0,
-#               (format(round(sum((plm7)$coefficients[15]),digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[15,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[15,2],digits=3),nsmall=0)),
-#              0,
-#               (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[15,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[15,2],digits=3),nsmall=0)),
-#              0,
-#               (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[15,2],digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[15,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[15,4],digits=3),nsmall=0)),
-#              0,
-#               (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[15,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[15,4],digits=3),nsmall=0)),
-#               0,
-#               (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[15,4],digits=3),nsmall=0))),
-# 
-#             c((format(round(sum((plm1)$coefficients[16]),digits=3),nsmall=0)),
-#               (format(round(sum((plm2)$coefficients[16]),digits=3),nsmall=0)),
-#              0,
-#               (format(round(sum((plm4)$coefficients[16]),digits=3),nsmall=0)),
-#               (format(round(sum((plm5)$coefficients[16]),digits=3),nsmall=0)),
-#               0,
-#               (format(round(sum((plm7)$coefficients[16]),digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[16,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[16,2],digits=3),nsmall=0)),
-#              0,
-#               (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[16,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[16,2],digits=3),nsmall=0)),
-#              0,
-#               (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[16,2],digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[16,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[16,4],digits=3),nsmall=0)),
-#              0,
-#               (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[16,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[16,4],digits=3),nsmall=0)),
-#               0,
-#               (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[16,4],digits=3),nsmall=0))),
-# 
-#             c((format(round(sum((plm1)$coefficients[17]),digits=3),nsmall=0)),
-#               (format(round(sum((plm2)$coefficients[17]),digits=3),nsmall=0)),
-#           0,
-#               (format(round(sum((plm4)$coefficients[17]),digits=3),nsmall=0)),
-#               (format(round(sum((plm5)$coefficients[17]),digits=3),nsmall=0)),
-#              0,
-#               (format(round(sum((plm7)$coefficients[17]),digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[17,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[17,2],digits=3),nsmall=0)),
-#              0,
-#               (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[17,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[17,2],digits=3),nsmall=0)),
-#              0,
-#               (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[17,2],digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[17,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[17,4],digits=3),nsmall=0)),
-#             0,
-#               (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[17,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[17,4],digits=3),nsmall=0)),
-#               0,
-#               (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[17,4],digits=3),nsmall=0))),
-# 
-#             c((format(round(sum((plm1)$coefficients[18]),digits=3),nsmall=0)),
-#               (format(round(sum((plm2)$coefficients[18]),digits=3),nsmall=0)),
-#         0,
-#               (format(round(sum((plm4)$coefficients[18]),digits=3),nsmall=0)),
-#               (format(round(sum((plm5)$coefficients[18]),digits=3),nsmall=0)),
-#               0,
-#               (format(round(sum((plm7)$coefficients[18]),digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[18,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[18,2],digits=3),nsmall=0)),
-#              0,
-#               (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[18,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[18,2],digits=3),nsmall=0)),
-#               0,
-#               (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[18,2],digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[18,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[18,4],digits=3),nsmall=0)),
-#               0,
-#               (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[18,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[18,4],digits=3),nsmall=0)),
-#             0,
-#               (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[18,4],digits=3),nsmall=0))),
-# 
-#             c((format(round(sum((plm1)$coefficients[19]),digits=3),nsmall=0)),
-#               (format(round(sum((plm2)$coefficients[19]),digits=3),nsmall=0)),
-#               0,
-#               (format(round(sum((plm4)$coefficients[19]),digits=3),nsmall=0)),
-#               (format(round(sum((plm5)$coefficients[19]),digits=3),nsmall=0)),
-#            0,
-#               (format(round(sum((plm7)$coefficients[19]),digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[19,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[19,2],digits=3),nsmall=0)),
-#               0,
-#               (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[19,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[19,2],digits=3),nsmall=0)),
-#             0,
-#               (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[19,2],digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[19,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[19,4],digits=3),nsmall=0)),
-#               0,
-#               (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[19,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[19,4],digits=3),nsmall=0)),
-#              0,
-#               (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[19,4],digits=3),nsmall=0))),
-# 
-#         # c((format(round(sum((plm1)$coefficients[20]),digits=3),nsmall=0)),
-#         #   (format(round(sum((plm2)$coefficients[20]),digits=3),nsmall=0)),
-#         #   0,
-#         #   (format(round(sum((plm4)$coefficients[20]),digits=3),nsmall=0)),
-#         #   (format(round(sum((plm5)$coefficients[20]),digits=3),nsmall=0)),
-#         #   0,
-#         #   (format(round(sum((plm7)$coefficients[20]),digits=3),nsmall=0))),
-#         # c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[20,2],digits=3),nsmall=0)),
-#         #   (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[20,2],digits=3),nsmall=0)),
-#         #   0,
-#         #   (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[20,2],digits=3),nsmall=0)),
-#         #   (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[20,2],digits=3),nsmall=0)),
-#         #   0,
-#         #   (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[20,2],digits=3),nsmall=0))),
-#         # c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[20,4],digits=3),nsmall=0)),
-#         #   (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[20,4],digits=3),nsmall=0)),
-#         #   0,
-#         #   (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[20,4],digits=3),nsmall=0)),
-#         #   (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[20,4],digits=3),nsmall=0)),
-#         #   0,
-#         #   (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[20,4],digits=3),nsmall=0))),
-# 
-# 
-# 
-#               c((format(round(summary(plm1)$r.squared[1],digits=3),nsmall=0)),
-#                 (format(round(summary(plm2)$r.squared[1],digits=3),nsmall=0)),
-#                 (format(round(summary(plm3)$r.squared[1],digits=3),nsmall=0)),
-#                 (format(round(summary(plm4)$r.squared[1],digits=3),nsmall=0)),
-#                 (format(round(summary(plm5)$r.squared[1],digits=3),nsmall=0)),
-#                 (format(round(summary(plm6)$r.squared[1],digits=3),nsmall=0)),
-#                 (format(round(summary(plm7)$r.squared[1],digits=3),nsmall=0))),
-#             c((format(round(summary(plm1)$r.squared[2],digits=3),nsmall=0)),
-#               (format(round(summary(plm2)$r.squared[2],digits=3),nsmall=0)),
-#               (format(round(summary(plm3)$r.squared[2],digits=3),nsmall=0)),
-#               (format(round(summary(plm4)$r.squared[2],digits=3),nsmall=0)),
-#               (format(round(summary(plm5)$r.squared[2],digits=3),nsmall=0)),
-#               (format(round(summary(plm6)$r.squared[2],digits=3),nsmall=0)),
-#               (format(round(summary(plm7)$r.squared[2],digits=3),nsmall=0))),
-#               c((format(round(nobs(plm1),digits=3),nsmall=0)),
-#                 (format(round(nobs(plm2),digits=3),nsmall=0)),
-#                 (format(round(nobs(plm3),digits=3),nsmall=0)),
-#                 (format(round(nobs(plm4),digits=3),nsmall=0)),
-#                 (format(round(nobs(plm5),digits=3),nsmall=0)),
-#                 (format(round(nobs(plm6),digits=3),nsmall=0)),
-#                 (format(round(nobs(plm7),digits=3),nsmall=0)))
-#             )
+fe4<- rbind(c(0,
+              0,
+             0,
+             0,
+             0,
+             0,
+             0),
+  
+            c(0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0),
+              
+            c(0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0),
+  
+  
+  c((format(round(sum((plm1)$coefficients[1]),digits=3),nsmall=0)),
+              (format(round(sum((plm2)$coefficients[1]),digits=3),nsmall=0)),
+              (format(round(sum((plm3)$coefficients[1]),digits=3),nsmall=0)),
+              (format(round(sum((plm4)$coefficients[1]),digits=3),nsmall=0)),
+              (format(round(sum((plm5)$coefficients[1]),digits=3),nsmall=0)),
+              (format(round(sum((plm6)$coefficients[1]),digits=3),nsmall=0)),
+              (format(round(sum((plm7)$coefficients[1]),digits=3),nsmall=0))),
+            c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[1,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[1,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm3), vcovHC((plm3), type = "HC0",cluster = "time"))[1,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[1,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[1,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm6), vcovHC((plm6), type = "HC0",cluster = "time"))[1,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[1,2],digits=3),nsmall=0))),
+            c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[1,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[1,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm3), vcovHC((plm3), type = "HC0",cluster = "time"))[1,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[1,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[1,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm6), vcovHC((plm6), type = "HC0",cluster = "time"))[1,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[1,4],digits=3),nsmall=0))),
+
+            c((format(round(sum((plm1)$coefficients[2]),digits=3),nsmall=0)),
+              (format(round(sum((plm2)$coefficients[2]),digits=3),nsmall=0)),
+              (format(round(sum((plm3)$coefficients[2]),digits=3),nsmall=0)),
+              (format(round(sum((plm4)$coefficients[2]),digits=3),nsmall=0)),
+              (format(round(sum((plm5)$coefficients[2]),digits=3),nsmall=0)),
+              (format(round(sum((plm6)$coefficients[2]),digits=3),nsmall=0)),
+              (format(round(sum((plm7)$coefficients[2]),digits=3),nsmall=0))),
+            c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[2,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[2,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm3), vcovHC((plm3), type = "HC0",cluster = "time"))[2,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[2,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[2,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm6), vcovHC((plm6), type = "HC0",cluster = "time"))[2,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[2,2],digits=3),nsmall=0))),
+            c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[2,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[2,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm3), vcovHC((plm3), type = "HC0",cluster = "time"))[2,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[2,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[2,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm6), vcovHC((plm6), type = "HC0",cluster = "time"))[2,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[2,4],digits=3),nsmall=0))),
+
+            c((format(round(sum((plm1)$coefficients[3]),digits=3),nsmall=0)),
+              (format(round(sum((plm2)$coefficients[3]),digits=3),nsmall=0)),
+              (format(round(sum((plm3)$coefficients[3]),digits=3),nsmall=0)),
+              (format(round(sum((plm4)$coefficients[3]),digits=3),nsmall=0)),
+              (format(round(sum((plm5)$coefficients[3]),digits=3),nsmall=0)),
+              (format(round(sum((plm6)$coefficients[3]),digits=3),nsmall=0)),
+              (format(round(sum((plm7)$coefficients[3]),digits=3),nsmall=0))),
+            c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[3,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[3,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm3), vcovHC((plm3), type = "HC0",cluster = "time"))[3,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[3,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[3,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm6), vcovHC((plm6), type = "HC0",cluster = "time"))[3,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[3,2],digits=3),nsmall=0))),
+            c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[3,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[3,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm3), vcovHC((plm3), type = "HC0",cluster = "time"))[3,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[3,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[3,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm6), vcovHC((plm6), type = "HC0",cluster = "time"))[3,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[3,4],digits=3),nsmall=0))),
+
+            c((format(round(sum((plm1)$coefficients[4]),digits=3),nsmall=0)),
+              (format(round(sum((plm2)$coefficients[4]),digits=3),nsmall=0)),
+              (format(round(sum((plm3)$coefficients[4]),digits=3),nsmall=0)),
+              (format(round(sum((plm4)$coefficients[4]),digits=3),nsmall=0)),
+              (format(round(sum((plm5)$coefficients[4]),digits=3),nsmall=0)),
+              (format(round(sum((plm6)$coefficients[4]),digits=3),nsmall=0)),
+              (format(round(sum((plm7)$coefficients[4]),digits=3),nsmall=0))),
+            c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[4,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[4,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm3), vcovHC((plm3), type = "HC0",cluster = "time"))[4,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[4,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[4,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm6), vcovHC((plm6), type = "HC0",cluster = "time"))[4,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[4,2],digits=3),nsmall=0))),
+            c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[4,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[4,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm3), vcovHC((plm3), type = "HC0",cluster = "time"))[4,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[4,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm5), vcovHC((plm5), type = "HC0",cluster = "time"))[4,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm6), vcovHC((plm6), type = "HC0",cluster = "time"))[4,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[4,4],digits=3),nsmall=0))),
+
+            c((format(round(sum((plm1)$coefficients[5]),digits=3),nsmall=0)),
+              (format(round(sum((plm2)$coefficients[5]),digits=3),nsmall=0)),
+             0,
+              (format(round(sum((plm4)$coefficients[5]),digits=3),nsmall=0)),
+            0,
+              (format(round(sum((plm6)$coefficients[5]),digits=3),nsmall=0)),
+              (format(round(sum((plm7)$coefficients[5]),digits=3),nsmall=0))),
+            c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[5,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[5,2],digits=3),nsmall=0)),
+              0,
+              (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[5,2],digits=3),nsmall=0)),
+            0,
+              (format(round(coeftest((plm6), vcovHC((plm6), type = "HC0",cluster = "time"))[5,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[5,2],digits=3),nsmall=0))),
+            c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[5,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[5,4],digits=3),nsmall=0)),
+             0,
+              (format(round(coeftest((plm4), vcovHC((plm4), type = "HC0",cluster = "time"))[5,4],digits=3),nsmall=0)),
+              0,
+              (format(round(coeftest((plm6), vcovHC((plm6), type = "HC0",cluster = "time"))[5,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm7), vcovHC((plm7), type = "HC0",cluster = "time"))[5,4],digits=3),nsmall=0))),
+
+            c((format(round(sum((plm1)$coefficients[6]),digits=3),nsmall=0)),
+              (format(round(sum((plm2)$coefficients[6]),digits=3),nsmall=0)),
+             0,
+             0,
+              0,
+            0,
+            0),
+            c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[6,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[6,2],digits=3),nsmall=0)),
+             0,
+              0,
+             0,
+             0,
+             0),
+            c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[6,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm2), vcovHC((plm2), type = "HC0",cluster = "time"))[6,4],digits=3),nsmall=0)),
+             0,
+             0,
+              0,
+            0,
+            0),
+
+            c((format(round(sum((plm1)$coefficients[7]),digits=3),nsmall=0)),
+             0,
+              0,
+              0,
+              0,
+              0,
+              0),
+            c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[7,2],digits=3),nsmall=0)),
+             0,
+             0,
+            0,
+             0,
+            0,
+            0),
+            c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[7,4],digits=3),nsmall=0)),
+             0,
+             0,
+             0,
+             0,
+              0,
+             0),
+
+
+            c((format(round(sum((plm1)$coefficients[8]),digits=3),nsmall=0)),
+             0,
+             0,
+             0,
+             0,
+             0,
+             0),
+            c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[8,2],digits=3),nsmall=0)),
+              0,
+             0,
+             0,
+             0,
+           0,
+             0),
+            c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[8,4],digits=3),nsmall=0)),
+              0,
+             0,
+              0,
+             0,
+            0,
+            0),
+
+            c((format(round(sum((plm1)$coefficients[9]),digits=3),nsmall=0)),
+             0,
+             0,
+              0,
+             0,
+              0,
+             0),
+            c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[9,2],digits=3),nsmall=0)),
+              0,
+             0,
+              0,
+             0,
+            0,
+            0),
+            c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[9,4],digits=3),nsmall=0)),
+              0,
+             0,
+              0,
+             0,
+              0,
+             0),
+
+            c((format(round(sum((plm1)$coefficients[10]),digits=3),nsmall=0)),
+           0,
+             0,
+             0,
+           0,
+              0,
+              0),
+            c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[10,2],digits=3),nsmall=0)),
+             0,
+              0,
+             0,
+             0,
+              0,
+             0),
+            c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[10,4],digits=3),nsmall=0)),
+             0,
+             0,
+              0,
+             0,
+            0,
+             0),
+
+            c((format(round(sum((plm1)$coefficients[11]),digits=3),nsmall=0)),
+            0,
+              0,
+              0,
+            0,
+             0,
+           0),
+            c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[11,2],digits=3),nsmall=0)),
+              0,
+              0,
+              0,
+              0,
+              0,
+             0),
+            c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[11,4],digits=3),nsmall=0)),
+              0,
+              0,
+             0,
+             0,
+             0,
+            0),
+
+
+            c((format(round(sum((plm1)$coefficients[12]),digits=3),nsmall=0)),
+              0,
+             0,
+              0,
+             0,
+             0,
+              0),
+            c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[12,2],digits=3),nsmall=0)),
+              0,
+             0,
+             0,
+             0,
+             0,
+             0),
+            c((format(round(coeftest((plm1), vcovHC((plm1), type = "HC0",cluster = "time"))[12,4],digits=3),nsmall=0)),
+              0,
+              0,
+             0,
+             0,
+             0,
+            0),
+
+        
+
+
+              c((format(round(summary(plm1)$r.squared[1],digits=3),nsmall=0)),
+                (format(round(summary(plm2)$r.squared[1],digits=3),nsmall=0)),
+                (format(round(summary(plm3)$r.squared[1],digits=3),nsmall=0)),
+                (format(round(summary(plm4)$r.squared[1],digits=3),nsmall=0)),
+                (format(round(summary(plm5)$r.squared[1],digits=3),nsmall=0)),
+                (format(round(summary(plm6)$r.squared[1],digits=3),nsmall=0)),
+                (format(round(summary(plm7)$r.squared[1],digits=3),nsmall=0))),
+            c((format(round(summary(plm1)$r.squared[2],digits=3),nsmall=0)),
+              (format(round(summary(plm2)$r.squared[2],digits=3),nsmall=0)),
+              (format(round(summary(plm3)$r.squared[2],digits=3),nsmall=0)),
+              (format(round(summary(plm4)$r.squared[2],digits=3),nsmall=0)),
+              (format(round(summary(plm5)$r.squared[2],digits=3),nsmall=0)),
+              (format(round(summary(plm6)$r.squared[2],digits=3),nsmall=0)),
+              (format(round(summary(plm7)$r.squared[2],digits=3),nsmall=0))),
+              c((format(round(nobs(plm1),digits=3),nsmall=0)),
+                (format(round(nobs(plm2),digits=3),nsmall=0)),
+                (format(round(nobs(plm3),digits=3),nsmall=0)),
+                (format(round(nobs(plm4),digits=3),nsmall=0)),
+                (format(round(nobs(plm5),digits=3),nsmall=0)),
+                (format(round(nobs(plm6),digits=3),nsmall=0)),
+                (format(round(nobs(plm7),digits=3),nsmall=0))))
 
 
 
 #FE at farmer level --- with controls
 #seed ratings
 
-plm8<-plm(score~gender+ maize.owner.agree.age +prim +maize.owner.index_efforts+maize.owner.practices_all, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
-summary(plm(score~gender+ maize.owner.agree.age +prim+maize.owner.index_efforts+maize.owner.practices_all, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
+plm8<-plm(score~gender+ maize.owner.agree.age +prim +maize.owner.practices_all, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
 summary(plm(score~gender+ maize.owner.agree.age +prim+maize.owner.practices_all, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
 
 
-plm9<-plm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim+maize.owner.index_efforts+maize.owner.practices_all, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
-summary(plm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim+maize.owner.index_efforts+maize.owner.practices_all, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
+plm9<-plm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim+maize.owner.practices_all, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
 summary(plm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim+maize.owner.practices_all, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
 
 
-plm10<-plm(seed_yield_rating~gender+ maize.owner.agree.age +prim+maize.owner.index_efforts+maize.owner.practices_all, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
-summary(plm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.index_efforts+maize.owner.practices_all, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
+plm10<-plm(seed_yield_rating~gender+ maize.owner.agree.age +prim+maize.owner.practices_all, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
 summary(plm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.practices_all, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
 
 
-plm11<-plm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.index_efforts+maize.owner.practices_all, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
-summary(plm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.index_efforts+maize.owner.practices_all, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
+plm11<-plm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.practices_all, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
 summary(plm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.practices_all, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
 
 
-plm12<-plm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.index_efforts+maize.owner.practices_all, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
-summary(plm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.index_efforts+maize.owner.practices_all, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
+plm12<-plm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.practices_all, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
 summary(plm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.practices_all, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
 
 
-plm13<-plm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.index_efforts+maize.owner.practices_all, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
-summary(plm(seed_maturing_rating~gender+ maize.owner.agree.age +prim+maize.owner.index_efforts+maize.owner.practices_all, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
+plm13<-plm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.practices_all, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
 summary(plm(seed_maturing_rating~gender+ maize.owner.agree.age +prim+maize.owner.practices_all, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
 
 
-plm14<-plm(seed_germinate_rating~gender+ maize.owner.agree.age +prim+maize.owner.index_efforts+maize.owner.practices_all, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
-summary(plm(seed_germinate_rating~gender+ maize.owner.agree.age +prim+maize.owner.index_efforts+maize.owner.practices_all, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
+plm14<-plm(seed_germinate_rating~gender+ maize.owner.agree.age +prim+maize.owner.practices_all, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
 summary(plm(seed_germinate_rating~gender+ maize.owner.agree.age +prim+maize.owner.practices_all, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
 
 
 
 #storing seed ratings
-# fe2<- rbind(c((format(round(mean(fixef(plm8))[1],digits=3),nsmall=0)),
-#               (format(round(mean(fixef(plm9))[1],digits=3),nsmall=0)),
-#               (format(round(mean(fixef(plm10))[1],digits=3),nsmall=0)),
-#               (format(round(mean(fixef(plm11))[1],digits=3),nsmall=0)),
-#               (format(round(mean(fixef(plm12))[1],digits=3),nsmall=0)),
-#               (format(round(mean(fixef(plm13))[1],digits=3),nsmall=0)),
-#               (format(round(mean(fixef(plm14))[1],digits=3),nsmall=0))),
-#             c((format(round(sum((plm8)$coefficients[1]),digits=3),nsmall=0)),
-#               (format(round(sum((plm9)$coefficients[1]),digits=3),nsmall=0)),
-#               (format(round(sum((plm10)$coefficients[1]),digits=3),nsmall=0)),
-#               (format(round(sum((plm11)$coefficients[1]),digits=3),nsmall=0)),
-#               (format(round(sum((plm12)$coefficients[1]),digits=3),nsmall=0)),
-#               (format(round(sum((plm13)$coefficients[1]),digits=3),nsmall=0)),
-#               (format(round(sum((plm14)$coefficients[1]),digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm8), vcovHC((plm8), type = "HC0",cluster = "time"))[1,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm9), vcovHC((plm9), type = "HC0",cluster = "time"))[1,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm10), vcovHC((plm10), type = "HC0",cluster = "time"))[1,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm11), vcovHC((plm11), type = "HC0",cluster = "time"))[1,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm12), vcovHC((plm12), type = "HC0",cluster = "time"))[1,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm13), vcovHC((plm13), type = "HC0",cluster = "time"))[1,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm14), vcovHC((plm14), type = "HC0",cluster = "time"))[1,2],digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm8), vcovHC((plm8), type = "HC0",cluster = "time"))[1,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm9), vcovHC((plm9), type = "HC0",cluster = "time"))[1,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm10), vcovHC((plm10), type = "HC0",cluster = "time"))[1,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm11), vcovHC((plm11), type = "HC0",cluster = "time"))[1,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm12), vcovHC((plm12), type = "HC0",cluster = "time"))[1,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm13), vcovHC((plm13), type = "HC0",cluster = "time"))[1,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm14), vcovHC((plm14), type = "HC0",cluster = "time"))[1,4],digits=3),nsmall=0))),
-#             
-#             c((format(round(sum((plm8)$coefficients[2]),digits=3),nsmall=0)),
-#               (format(round(sum((plm9)$coefficients[2]),digits=3),nsmall=0)),
-#               (format(round(sum((plm10)$coefficients[2]),digits=3),nsmall=0)),
-#               (format(round(sum((plm11)$coefficients[2]),digits=3),nsmall=0)),
-#               (format(round(sum((plm12)$coefficients[2]),digits=3),nsmall=0)),
-#               (format(round(sum((plm13)$coefficients[2]),digits=3),nsmall=0)),
-#               (format(round(sum((plm14)$coefficients[2]),digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm8), vcovHC((plm8), type = "HC0",cluster = "time"))[2,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm9), vcovHC((plm9), type = "HC0",cluster = "time"))[2,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm10), vcovHC((plm10), type = "HC0",cluster = "time"))[2,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm11), vcovHC((plm11), type = "HC0",cluster = "time"))[2,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm12), vcovHC((plm12), type = "HC0",cluster = "time"))[2,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm13), vcovHC((plm13), type = "HC0",cluster = "time"))[2,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm14), vcovHC((plm14), type = "HC0",cluster = "time"))[2,2],digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm8), vcovHC((plm8), type = "HC0",cluster = "time"))[2,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm9), vcovHC((plm9), type = "HC0",cluster = "time"))[2,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm10), vcovHC((plm10), type = "HC0",cluster = "time"))[2,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm11), vcovHC((plm11), type = "HC0",cluster = "time"))[2,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm12), vcovHC((plm12), type = "HC0",cluster = "time"))[2,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm13), vcovHC((plm13), type = "HC0",cluster = "time"))[2,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm14), vcovHC((plm14), type = "HC0",cluster = "time"))[2,4],digits=3),nsmall=0))),
-#             
-#             c((format(round(sum((plm8)$coefficients[3]),digits=3),nsmall=0)),
-#               (format(round(sum((plm9)$coefficients[3]),digits=3),nsmall=0)),
-#               (format(round(sum((plm10)$coefficients[3]),digits=3),nsmall=0)),
-#               (format(round(sum((plm11)$coefficients[3]),digits=3),nsmall=0)),
-#               (format(round(sum((plm12)$coefficients[3]),digits=3),nsmall=0)),
-#               (format(round(sum((plm13)$coefficients[3]),digits=3),nsmall=0)),
-#               (format(round(sum((plm14)$coefficients[3]),digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm8), vcovHC((plm8), type = "HC0",cluster = "time"))[3,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm9), vcovHC((plm9), type = "HC0",cluster = "time"))[3,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm10), vcovHC((plm10), type = "HC0",cluster = "time"))[3,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm11), vcovHC((plm11), type = "HC0",cluster = "time"))[3,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm12), vcovHC((plm12), type = "HC0",cluster = "time"))[3,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm13), vcovHC((plm13), type = "HC0",cluster = "time"))[3,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm14), vcovHC((plm14), type = "HC0",cluster = "time"))[3,2],digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm8), vcovHC((plm8), type = "HC0",cluster = "time"))[3,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm9), vcovHC((plm9), type = "HC0",cluster = "time"))[3,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm10), vcovHC((plm10), type = "HC0",cluster = "time"))[3,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm11), vcovHC((plm11), type = "HC0",cluster = "time"))[3,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm12), vcovHC((plm12), type = "HC0",cluster = "time"))[3,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm13), vcovHC((plm13), type = "HC0",cluster = "time"))[3,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm14), vcovHC((plm14), type = "HC0",cluster = "time"))[3,4],digits=3),nsmall=0))),
-#             
-#             c((format(round(sum((plm8)$coefficients[4]),digits=3),nsmall=0)),
-#               (format(round(sum((plm9)$coefficients[4]),digits=3),nsmall=0)),
-#               (format(round(sum((plm10)$coefficients[4]),digits=3),nsmall=0)),
-#               (format(round(sum((plm11)$coefficients[4]),digits=3),nsmall=0)),
-#               (format(round(sum((plm12)$coefficients[4]),digits=3),nsmall=0)),
-#               (format(round(sum((plm13)$coefficients[4]),digits=3),nsmall=0)),
-#               (format(round(sum((plm14)$coefficients[4]),digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm8), vcovHC((plm8), type = "HC0",cluster = "time"))[4,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm9), vcovHC((plm9), type = "HC0",cluster = "time"))[4,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm10), vcovHC((plm10), type = "HC0",cluster = "time"))[4,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm11), vcovHC((plm11), type = "HC0",cluster = "time"))[4,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm12), vcovHC((plm12), type = "HC0",cluster = "time"))[4,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm13), vcovHC((plm13), type = "HC0",cluster = "time"))[4,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm14), vcovHC((plm14), type = "HC0",cluster = "time"))[4,2],digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm8), vcovHC((plm8), type = "HC0",cluster = "time"))[4,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm9), vcovHC((plm9), type = "HC0",cluster = "time"))[4,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm10), vcovHC((plm10), type = "HC0",cluster = "time"))[4,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm11), vcovHC((plm11), type = "HC0",cluster = "time"))[4,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm12), vcovHC((plm12), type = "HC0",cluster = "time"))[4,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm13), vcovHC((plm13), type = "HC0",cluster = "time"))[4,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm14), vcovHC((plm14), type = "HC0",cluster = "time"))[4,4],digits=3),nsmall=0))),
-#             
-#             c((format(round(sum((plm8)$coefficients[5]),digits=3),nsmall=0)),
-#               (format(round(sum((plm9)$coefficients[5]),digits=3),nsmall=0)),
-#               (format(round(sum((plm10)$coefficients[5]),digits=3),nsmall=0)),
-#               (format(round(sum((plm11)$coefficients[5]),digits=3),nsmall=0)),
-#               (format(round(sum((plm12)$coefficients[5]),digits=3),nsmall=0)),
-#               (format(round(sum((plm13)$coefficients[5]),digits=3),nsmall=0)),
-#               (format(round(sum((plm14)$coefficients[5]),digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm8), vcovHC((plm8), type = "HC0",cluster = "time"))[5,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm9), vcovHC((plm9), type = "HC0",cluster = "time"))[5,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm10), vcovHC((plm10), type = "HC0",cluster = "time"))[5,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm11), vcovHC((plm11), type = "HC0",cluster = "time"))[5,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm12), vcovHC((plm12), type = "HC0",cluster = "time"))[5,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm13), vcovHC((plm13), type = "HC0",cluster = "time"))[5,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm14), vcovHC((plm14), type = "HC0",cluster = "time"))[5,2],digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm8), vcovHC((plm8), type = "HC0",cluster = "time"))[5,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm9), vcovHC((plm9), type = "HC0",cluster = "time"))[5,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm10), vcovHC((plm10), type = "HC0",cluster = "time"))[5,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm11), vcovHC((plm11), type = "HC0",cluster = "time"))[5,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm12), vcovHC((plm12), type = "HC0",cluster = "time"))[5,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm13), vcovHC((plm13), type = "HC0",cluster = "time"))[5,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm14), vcovHC((plm14), type = "HC0",cluster = "time"))[5,4],digits=3),nsmall=0))),
-#             
-#             c((format(round(sum((plm8)$coefficients[6]),digits=3),nsmall=0)),
-#               (format(round(sum((plm9)$coefficients[6]),digits=3),nsmall=0)),
-#               (format(round(sum((plm10)$coefficients[6]),digits=3),nsmall=0)),
-#               (format(round(sum((plm11)$coefficients[6]),digits=3),nsmall=0)),
-#               (format(round(sum((plm12)$coefficients[6]),digits=3),nsmall=0)),
-#               (format(round(sum((plm13)$coefficients[6]),digits=3),nsmall=0)),
-#               (format(round(sum((plm14)$coefficients[6]),digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm8), vcovHC((plm8), type = "HC0",cluster = "time"))[6,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm9), vcovHC((plm9), type = "HC0",cluster = "time"))[6,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm10), vcovHC((plm10), type = "HC0",cluster = "time"))[6,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm11), vcovHC((plm11), type = "HC0",cluster = "time"))[6,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm12), vcovHC((plm12), type = "HC0",cluster = "time"))[6,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm13), vcovHC((plm13), type = "HC0",cluster = "time"))[6,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm14), vcovHC((plm14), type = "HC0",cluster = "time"))[6,2],digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm8), vcovHC((plm8), type = "HC0",cluster = "time"))[6,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm9), vcovHC((plm9), type = "HC0",cluster = "time"))[6,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm10), vcovHC((plm10), type = "HC0",cluster = "time"))[6,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm11), vcovHC((plm11), type = "HC0",cluster = "time"))[6,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm12), vcovHC((plm12), type = "HC0",cluster = "time"))[6,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm13), vcovHC((plm13), type = "HC0",cluster = "time"))[6,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm14), vcovHC((plm14), type = "HC0",cluster = "time"))[6,4],digits=3),nsmall=0))),
-#             
-#             
-#             c((format(round(sum((plm8)$coefficients[7]),digits=3),nsmall=0)),
-#               (format(round(sum((plm9)$coefficients[7]),digits=3),nsmall=0)),
-#               (format(round(sum((plm10)$coefficients[7]),digits=3),nsmall=0)),
-#               (format(round(sum((plm11)$coefficients[7]),digits=3),nsmall=0)),
-#               (format(round(sum((plm12)$coefficients[7]),digits=3),nsmall=0)),
-#               (format(round(sum((plm13)$coefficients[7]),digits=3),nsmall=0)),
-#               (format(round(sum((plm14)$coefficients[7]),digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm8), vcovHC((plm8), type = "HC0",cluster = "time"))[7,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm9), vcovHC((plm9), type = "HC0",cluster = "time"))[7,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm10), vcovHC((plm10), type = "HC0",cluster = "time"))[7,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm11), vcovHC((plm11), type = "HC0",cluster = "time"))[7,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm12), vcovHC((plm12), type = "HC0",cluster = "time"))[7,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm13), vcovHC((plm13), type = "HC0",cluster = "time"))[7,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm14), vcovHC((plm14), type = "HC0",cluster = "time"))[7,2],digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm8), vcovHC((plm8), type = "HC0",cluster = "time"))[7,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm9), vcovHC((plm9), type = "HC0",cluster = "time"))[7,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm10), vcovHC((plm10), type = "HC0",cluster = "time"))[7,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm11), vcovHC((plm11), type = "HC0",cluster = "time"))[7,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm12), vcovHC((plm12), type = "HC0",cluster = "time"))[7,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm13), vcovHC((plm13), type = "HC0",cluster = "time"))[7,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm14), vcovHC((plm14), type = "HC0",cluster = "time"))[7,4],digits=3),nsmall=0))),
-#             
-#             c((format(round(sum((plm8)$coefficients[8]),digits=3),nsmall=0)),
-#               (format(round(sum((plm9)$coefficients[8]),digits=3),nsmall=0)),
-#               (format(round(sum((plm10)$coefficients[8]),digits=3),nsmall=0)),
-#               (format(round(sum((plm11)$coefficients[8]),digits=3),nsmall=0)),
-#               (format(round(sum((plm12)$coefficients[8]),digits=3),nsmall=0)),
-#               (format(round(sum((plm13)$coefficients[8]),digits=3),nsmall=0)),
-#               (format(round(sum((plm14)$coefficients[8]),digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm8), vcovHC((plm8), type = "HC0",cluster = "time"))[8,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm9), vcovHC((plm9), type = "HC0",cluster = "time"))[8,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm10), vcovHC((plm10), type = "HC0",cluster = "time"))[8,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm11), vcovHC((plm11), type = "HC0",cluster = "time"))[8,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm12), vcovHC((plm12), type = "HC0",cluster = "time"))[8,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm13), vcovHC((plm13), type = "HC0",cluster = "time"))[8,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm14), vcovHC((plm14), type = "HC0",cluster = "time"))[8,2],digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm8), vcovHC((plm8), type = "HC0",cluster = "time"))[8,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm9), vcovHC((plm9), type = "HC0",cluster = "time"))[8,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm10), vcovHC((plm10), type = "HC0",cluster = "time"))[8,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm11), vcovHC((plm11), type = "HC0",cluster = "time"))[8,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm12), vcovHC((plm12), type = "HC0",cluster = "time"))[8,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm13), vcovHC((plm13), type = "HC0",cluster = "time"))[8,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm14), vcovHC((plm14), type = "HC0",cluster = "time"))[8,4],digits=3),nsmall=0))),
-#             
-#             c((format(round(sum((plm8)$coefficients[9]),digits=3),nsmall=0)),
-#               (format(round(sum((plm9)$coefficients[9]),digits=3),nsmall=0)),
-#               (format(round(sum((plm10)$coefficients[9]),digits=3),nsmall=0)),
-#               (format(round(sum((plm11)$coefficients[9]),digits=3),nsmall=0)),
-#               (format(round(sum((plm12)$coefficients[9]),digits=3),nsmall=0)),
-#               (format(round(sum((plm13)$coefficients[9]),digits=3),nsmall=0)),
-#               (format(round(sum((plm14)$coefficients[9]),digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm8), vcovHC((plm8), type = "HC0",cluster = "time"))[9,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm9), vcovHC((plm9), type = "HC0",cluster = "time"))[9,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm10), vcovHC((plm10), type = "HC0",cluster = "time"))[9,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm11), vcovHC((plm11), type = "HC0",cluster = "time"))[9,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm12), vcovHC((plm12), type = "HC0",cluster = "time"))[9,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm13), vcovHC((plm13), type = "HC0",cluster = "time"))[9,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm14), vcovHC((plm14), type = "HC0",cluster = "time"))[9,2],digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm8), vcovHC((plm8), type = "HC0",cluster = "time"))[9,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm9), vcovHC((plm9), type = "HC0",cluster = "time"))[9,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm10), vcovHC((plm10), type = "HC0",cluster = "time"))[9,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm11), vcovHC((plm11), type = "HC0",cluster = "time"))[9,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm12), vcovHC((plm12), type = "HC0",cluster = "time"))[9,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm13), vcovHC((plm13), type = "HC0",cluster = "time"))[9,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm14), vcovHC((plm14), type = "HC0",cluster = "time"))[9,4],digits=3),nsmall=0))),
-#             
-#             
-#             c((format(round(sum((plm8)$coefficients[10]),digits=3),nsmall=0)),
-#               (format(round(sum((plm9)$coefficients[10]),digits=3),nsmall=0)),
-#               (format(round(sum((plm10)$coefficients[10]),digits=3),nsmall=0)),
-#               (format(round(sum((plm11)$coefficients[10]),digits=3),nsmall=0)),
-#               (format(round(sum((plm12)$coefficients[10]),digits=3),nsmall=0)),
-#               (format(round(sum((plm13)$coefficients[10]),digits=3),nsmall=0)),
-#               (format(round(sum((plm14)$coefficients[10]),digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm8), vcovHC((plm8), type = "HC0",cluster = "time"))[10,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm9), vcovHC((plm9), type = "HC0",cluster = "time"))[10,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm10), vcovHC((plm10), type = "HC0",cluster = "time"))[10,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm11), vcovHC((plm11), type = "HC0",cluster = "time"))[10,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm12), vcovHC((plm12), type = "HC0",cluster = "time"))[10,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm13), vcovHC((plm13), type = "HC0",cluster = "time"))[10,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm14), vcovHC((plm14), type = "HC0",cluster = "time"))[10,2],digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm8), vcovHC((plm8), type = "HC0",cluster = "time"))[10,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm9), vcovHC((plm9), type = "HC0",cluster = "time"))[10,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm10), vcovHC((plm10), type = "HC0",cluster = "time"))[10,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm11), vcovHC((plm11), type = "HC0",cluster = "time"))[10,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm12), vcovHC((plm12), type = "HC0",cluster = "time"))[10,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm13), vcovHC((plm13), type = "HC0",cluster = "time"))[10,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm14), vcovHC((plm14), type = "HC0",cluster = "time"))[10,4],digits=3),nsmall=0))),
-#             
-#             c((format(round(sum((plm8)$coefficients[11]),digits=3),nsmall=0)),
-#               (format(round(sum((plm9)$coefficients[11]),digits=3),nsmall=0)),
-#               (format(round(sum((plm10)$coefficients[11]),digits=3),nsmall=0)),
-#               (format(round(sum((plm11)$coefficients[11]),digits=3),nsmall=0)),
-#               (format(round(sum((plm12)$coefficients[11]),digits=3),nsmall=0)),
-#               (format(round(sum((plm13)$coefficients[11]),digits=3),nsmall=0)),
-#               (format(round(sum((plm14)$coefficients[11]),digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm8), vcovHC((plm8), type = "HC0",cluster = "time"))[11,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm9), vcovHC((plm9), type = "HC0",cluster = "time"))[11,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm10), vcovHC((plm10), type = "HC0",cluster = "time"))[11,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm11), vcovHC((plm11), type = "HC0",cluster = "time"))[11,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm12), vcovHC((plm12), type = "HC0",cluster = "time"))[11,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm13), vcovHC((plm13), type = "HC0",cluster = "time"))[11,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm14), vcovHC((plm14), type = "HC0",cluster = "time"))[11,2],digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm8), vcovHC((plm8), type = "HC0",cluster = "time"))[11,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm9), vcovHC((plm9), type = "HC0",cluster = "time"))[11,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm10), vcovHC((plm10), type = "HC0",cluster = "time"))[11,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm11), vcovHC((plm11), type = "HC0",cluster = "time"))[11,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm12), vcovHC((plm12), type = "HC0",cluster = "time"))[11,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm13), vcovHC((plm13), type = "HC0",cluster = "time"))[11,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm14), vcovHC((plm14), type = "HC0",cluster = "time"))[11,4],digits=3),nsmall=0))),
-#             
-#             c((format(round(sum((plm8)$coefficients[12]),digits=3),nsmall=0)),
-#               (format(round(sum((plm9)$coefficients[12]),digits=3),nsmall=0)),
-#               (format(round(sum((plm10)$coefficients[12]),digits=3),nsmall=0)),
-#               (format(round(sum((plm11)$coefficients[12]),digits=3),nsmall=0)),
-#               (format(round(sum((plm12)$coefficients[12]),digits=3),nsmall=0)),
-#               (format(round(sum((plm13)$coefficients[12]),digits=3),nsmall=0)),
-#               (format(round(sum((plm14)$coefficients[12]),digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm8), vcovHC((plm8), type = "HC0",cluster = "time"))[12,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm9), vcovHC((plm9), type = "HC0",cluster = "time"))[12,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm10), vcovHC((plm10), type = "HC0",cluster = "time"))[12,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm11), vcovHC((plm11), type = "HC0",cluster = "time"))[12,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm12), vcovHC((plm12), type = "HC0",cluster = "time"))[12,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm13), vcovHC((plm13), type = "HC0",cluster = "time"))[12,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm14), vcovHC((plm14), type = "HC0",cluster = "time"))[12,2],digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm8), vcovHC((plm8), type = "HC0",cluster = "time"))[12,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm9), vcovHC((plm9), type = "HC0",cluster = "time"))[12,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm10), vcovHC((plm10), type = "HC0",cluster = "time"))[12,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm11), vcovHC((plm11), type = "HC0",cluster = "time"))[12,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm12), vcovHC((plm12), type = "HC0",cluster = "time"))[12,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm13), vcovHC((plm13), type = "HC0",cluster = "time"))[12,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm14), vcovHC((plm14), type = "HC0",cluster = "time"))[12,4],digits=3),nsmall=0))),
-#             
-#             c((format(round(sum((plm8)$coefficients[13]),digits=3),nsmall=0)),
-#               (format(round(sum((plm9)$coefficients[13]),digits=3),nsmall=0)),
-#               (format(round(sum((plm10)$coefficients[13]),digits=3),nsmall=0)),
-#               (format(round(sum((plm11)$coefficients[13]),digits=3),nsmall=0)),
-#               (format(round(sum((plm12)$coefficients[13]),digits=3),nsmall=0)),
-#               (format(round(sum((plm13)$coefficients[13]),digits=3),nsmall=0)),
-#               (format(round(sum((plm14)$coefficients[13]),digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm8), vcovHC((plm8), type = "HC0",cluster = "time"))[13,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm9), vcovHC((plm9), type = "HC0",cluster = "time"))[13,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm10), vcovHC((plm10), type = "HC0",cluster = "time"))[13,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm11), vcovHC((plm11), type = "HC0",cluster = "time"))[13,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm12), vcovHC((plm12), type = "HC0",cluster = "time"))[13,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm13), vcovHC((plm13), type = "HC0",cluster = "time"))[13,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm14), vcovHC((plm14), type = "HC0",cluster = "time"))[13,2],digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm8), vcovHC((plm8), type = "HC0",cluster = "time"))[13,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm9), vcovHC((plm9), type = "HC0",cluster = "time"))[13,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm10), vcovHC((plm10), type = "HC0",cluster = "time"))[13,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm11), vcovHC((plm11), type = "HC0",cluster = "time"))[13,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm12), vcovHC((plm12), type = "HC0",cluster = "time"))[13,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm13), vcovHC((plm13), type = "HC0",cluster = "time"))[13,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm14), vcovHC((plm14), type = "HC0",cluster = "time"))[13,4],digits=3),nsmall=0))),
-#             
-#             c((format(round(sum((plm8)$coefficients[14]),digits=3),nsmall=0)),
-#               (format(round(sum((plm9)$coefficients[14]),digits=3),nsmall=0)),
-#               (format(round(sum((plm10)$coefficients[14]),digits=3),nsmall=0)),
-#               (format(round(sum((plm11)$coefficients[14]),digits=3),nsmall=0)),
-#               (format(round(sum((plm12)$coefficients[14]),digits=3),nsmall=0)),
-#               (format(round(sum((plm13)$coefficients[14]),digits=3),nsmall=0)),
-#               (format(round(sum((plm14)$coefficients[14]),digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm8), vcovHC((plm8), type = "HC0",cluster = "time"))[14,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm9), vcovHC((plm9), type = "HC0",cluster = "time"))[14,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm10), vcovHC((plm10), type = "HC0",cluster = "time"))[14,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm11), vcovHC((plm11), type = "HC0",cluster = "time"))[14,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm12), vcovHC((plm12), type = "HC0",cluster = "time"))[14,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm13), vcovHC((plm13), type = "HC0",cluster = "time"))[14,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm14), vcovHC((plm14), type = "HC0",cluster = "time"))[14,2],digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm8), vcovHC((plm8), type = "HC0",cluster = "time"))[14,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm9), vcovHC((plm9), type = "HC0",cluster = "time"))[14,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm10), vcovHC((plm10), type = "HC0",cluster = "time"))[14,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm11), vcovHC((plm11), type = "HC0",cluster = "time"))[14,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm12), vcovHC((plm12), type = "HC0",cluster = "time"))[14,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm13), vcovHC((plm13), type = "HC0",cluster = "time"))[14,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm14), vcovHC((plm14), type = "HC0",cluster = "time"))[14,4],digits=3),nsmall=0))),
-#             
-#             
-#             c((format(round(sum((plm8)$coefficients[15]),digits=3),nsmall=0)),
-#               (format(round(sum((plm9)$coefficients[15]),digits=3),nsmall=0)),
-#               (format(round(sum((plm10)$coefficients[15]),digits=3),nsmall=0)),
-#               (format(round(sum((plm11)$coefficients[15]),digits=3),nsmall=0)),
-#               (format(round(sum((plm12)$coefficients[15]),digits=3),nsmall=0)),
-#               (format(round(sum((plm13)$coefficients[15]),digits=3),nsmall=0)),
-#               (format(round(sum((plm14)$coefficients[15]),digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm8), vcovHC((plm8), type = "HC0",cluster = "time"))[15,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm9), vcovHC((plm9), type = "HC0",cluster = "time"))[15,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm10), vcovHC((plm10), type = "HC0",cluster = "time"))[15,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm11), vcovHC((plm11), type = "HC0",cluster = "time"))[15,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm12), vcovHC((plm12), type = "HC0",cluster = "time"))[15,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm13), vcovHC((plm13), type = "HC0",cluster = "time"))[15,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm14), vcovHC((plm14), type = "HC0",cluster = "time"))[15,2],digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm8), vcovHC((plm8), type = "HC0",cluster = "time"))[15,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm9), vcovHC((plm9), type = "HC0",cluster = "time"))[15,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm10), vcovHC((plm10), type = "HC0",cluster = "time"))[15,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm11), vcovHC((plm11), type = "HC0",cluster = "time"))[15,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm12), vcovHC((plm12), type = "HC0",cluster = "time"))[15,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm13), vcovHC((plm13), type = "HC0",cluster = "time"))[15,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm14), vcovHC((plm14), type = "HC0",cluster = "time"))[15,4],digits=3),nsmall=0))),
-#             
-#             c((format(round(sum((plm8)$coefficients[16]),digits=3),nsmall=0)),
-#               (format(round(sum((plm9)$coefficients[16]),digits=3),nsmall=0)),
-#               (format(round(sum((plm10)$coefficients[16]),digits=3),nsmall=0)),
-#               (format(round(sum((plm11)$coefficients[16]),digits=3),nsmall=0)),
-#               (format(round(sum((plm12)$coefficients[16]),digits=3),nsmall=0)),
-#               (format(round(sum((plm13)$coefficients[16]),digits=3),nsmall=0)),
-#               (format(round(sum((plm14)$coefficients[16]),digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm8), vcovHC((plm8), type = "HC0",cluster = "time"))[16,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm9), vcovHC((plm9), type = "HC0",cluster = "time"))[16,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm10), vcovHC((plm10), type = "HC0",cluster = "time"))[16,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm11), vcovHC((plm11), type = "HC0",cluster = "time"))[16,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm12), vcovHC((plm12), type = "HC0",cluster = "time"))[16,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm13), vcovHC((plm13), type = "HC0",cluster = "time"))[16,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm14), vcovHC((plm14), type = "HC0",cluster = "time"))[16,2],digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm8), vcovHC((plm8), type = "HC0",cluster = "time"))[16,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm9), vcovHC((plm9), type = "HC0",cluster = "time"))[16,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm10), vcovHC((plm10), type = "HC0",cluster = "time"))[16,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm11), vcovHC((plm11), type = "HC0",cluster = "time"))[16,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm12), vcovHC((plm12), type = "HC0",cluster = "time"))[16,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm13), vcovHC((plm13), type = "HC0",cluster = "time"))[16,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm14), vcovHC((plm14), type = "HC0",cluster = "time"))[16,4],digits=3),nsmall=0))),
-#             
-#             c((format(round(sum((plm8)$coefficients[17]),digits=3),nsmall=0)),
-#               (format(round(sum((plm9)$coefficients[17]),digits=3),nsmall=0)),
-#               (format(round(sum((plm10)$coefficients[17]),digits=3),nsmall=0)),
-#               (format(round(sum((plm11)$coefficients[17]),digits=3),nsmall=0)),
-#               (format(round(sum((plm12)$coefficients[17]),digits=3),nsmall=0)),
-#               (format(round(sum((plm13)$coefficients[17]),digits=3),nsmall=0)),
-#               (format(round(sum((plm14)$coefficients[17]),digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm8), vcovHC((plm8), type = "HC0",cluster = "time"))[17,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm9), vcovHC((plm9), type = "HC0",cluster = "time"))[17,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm10), vcovHC((plm10), type = "HC0",cluster = "time"))[17,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm11), vcovHC((plm11), type = "HC0",cluster = "time"))[17,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm12), vcovHC((plm12), type = "HC0",cluster = "time"))[17,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm13), vcovHC((plm13), type = "HC0",cluster = "time"))[17,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm14), vcovHC((plm14), type = "HC0",cluster = "time"))[17,2],digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm8), vcovHC((plm8), type = "HC0",cluster = "time"))[17,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm9), vcovHC((plm9), type = "HC0",cluster = "time"))[17,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm10), vcovHC((plm10), type = "HC0",cluster = "time"))[17,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm11), vcovHC((plm11), type = "HC0",cluster = "time"))[17,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm12), vcovHC((plm12), type = "HC0",cluster = "time"))[17,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm13), vcovHC((plm13), type = "HC0",cluster = "time"))[17,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm14), vcovHC((plm14), type = "HC0",cluster = "time"))[17,4],digits=3),nsmall=0))),
-#             
-#             
-#             c((format(round(sum((plm8)$coefficients[18]),digits=3),nsmall=0)),
-#               (format(round(sum((plm9)$coefficients[18]),digits=3),nsmall=0)),
-#               (format(round(sum((plm10)$coefficients[18]),digits=3),nsmall=0)),
-#               (format(round(sum((plm11)$coefficients[18]),digits=3),nsmall=0)),
-#               (format(round(sum((plm12)$coefficients[18]),digits=3),nsmall=0)),
-#               (format(round(sum((plm13)$coefficients[18]),digits=3),nsmall=0)),
-#               (format(round(sum((plm14)$coefficients[18]),digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm8), vcovHC((plm8), type = "HC0",cluster = "time"))[18,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm9), vcovHC((plm9), type = "HC0",cluster = "time"))[18,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm10), vcovHC((plm10), type = "HC0",cluster = "time"))[18,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm11), vcovHC((plm11), type = "HC0",cluster = "time"))[18,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm12), vcovHC((plm12), type = "HC0",cluster = "time"))[18,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm13), vcovHC((plm13), type = "HC0",cluster = "time"))[18,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm14), vcovHC((plm14), type = "HC0",cluster = "time"))[18,2],digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm8), vcovHC((plm8), type = "HC0",cluster = "time"))[18,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm9), vcovHC((plm9), type = "HC0",cluster = "time"))[18,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm10), vcovHC((plm10), type = "HC0",cluster = "time"))[18,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm11), vcovHC((plm11), type = "HC0",cluster = "time"))[18,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm12), vcovHC((plm12), type = "HC0",cluster = "time"))[18,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm13), vcovHC((plm13), type = "HC0",cluster = "time"))[18,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm14), vcovHC((plm14), type = "HC0",cluster = "time"))[18,4],digits=3),nsmall=0))),
-#             
-#             
-#             c((format(round(sum((plm8)$coefficients[19]),digits=3),nsmall=0)),
-#               (format(round(sum((plm9)$coefficients[19]),digits=3),nsmall=0)),
-#               (format(round(sum((plm10)$coefficients[19]),digits=3),nsmall=0)),
-#               (format(round(sum((plm11)$coefficients[19]),digits=3),nsmall=0)),
-#               (format(round(sum((plm12)$coefficients[19]),digits=3),nsmall=0)),
-#               (format(round(sum((plm13)$coefficients[19]),digits=3),nsmall=0)),
-#               (format(round(sum((plm14)$coefficients[19]),digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm8), vcovHC((plm8), type = "HC0",cluster = "time"))[19,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm9), vcovHC((plm9), type = "HC0",cluster = "time"))[19,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm10), vcovHC((plm10), type = "HC0",cluster = "time"))[19,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm11), vcovHC((plm11), type = "HC0",cluster = "time"))[19,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm12), vcovHC((plm12), type = "HC0",cluster = "time"))[19,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm13), vcovHC((plm13), type = "HC0",cluster = "time"))[19,2],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm14), vcovHC((plm14), type = "HC0",cluster = "time"))[19,2],digits=3),nsmall=0))),
-#             c((format(round(coeftest((plm8), vcovHC((plm8), type = "HC0",cluster = "time"))[19,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm9), vcovHC((plm9), type = "HC0",cluster = "time"))[19,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm10), vcovHC((plm10), type = "HC0",cluster = "time"))[19,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm11), vcovHC((plm11), type = "HC0",cluster = "time"))[19,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm12), vcovHC((plm12), type = "HC0",cluster = "time"))[19,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm13), vcovHC((plm13), type = "HC0",cluster = "time"))[19,4],digits=3),nsmall=0)),
-#               (format(round(coeftest((plm14), vcovHC((plm14), type = "HC0",cluster = "time"))[19,4],digits=3),nsmall=0))),
-#             
-#             
-#             
-#             
-#             c((format(round(summary(plm8)$r.squared[1],digits=3),nsmall=0)),
-#               (format(round(summary(plm9)$r.squared[1],digits=3),nsmall=0)),
-#               (format(round(summary(plm10)$r.squared[1],digits=3),nsmall=0)),
-#               (format(round(summary(plm11)$r.squared[1],digits=3),nsmall=0)),
-#               (format(round(summary(plm12)$r.squared[1],digits=3),nsmall=0)),
-#               (format(round(summary(plm13)$r.squared[1],digits=3),nsmall=0)),
-#               (format(round(summary(plm14)$r.squared[1],digits=3),nsmall=0))),
-#             c((format(round(summary(plm8)$r.squared[2],digits=3),nsmall=0)),
-#               (format(round(summary(plm9)$r.squared[2],digits=3),nsmall=0)),
-#               (format(round(summary(plm10)$r.squared[2],digits=3),nsmall=0)),
-#               (format(round(summary(plm11)$r.squared[2],digits=3),nsmall=0)),
-#               (format(round(summary(plm12)$r.squared[2],digits=3),nsmall=0)),
-#               (format(round(summary(plm13)$r.squared[2],digits=3),nsmall=0)),
-#               (format(round(summary(plm14)$r.squared[2],digits=3),nsmall=0))),
-#             c((format(round(nobs(plm8),digits=3),nsmall=0)),
-#               (format(round(nobs(plm9),digits=3),nsmall=0)),
-#               (format(round(nobs(plm10),digits=3),nsmall=0)),
-#               (format(round(nobs(plm11),digits=3),nsmall=0)),
-#               (format(round(nobs(plm12),digits=3),nsmall=0)),
-#               (format(round(nobs(plm13),digits=3),nsmall=0)),
-#               (format(round(nobs(plm14),digits=3),nsmall=0)))
-# )
+fe2<- rbind(c((format(round(mean(fixef(plm8))[1],digits=3),nsmall=0)),
+              (format(round(mean(fixef(plm9))[1],digits=3),nsmall=0)),
+              (format(round(mean(fixef(plm10))[1],digits=3),nsmall=0)),
+              (format(round(mean(fixef(plm11))[1],digits=3),nsmall=0)),
+              (format(round(mean(fixef(plm12))[1],digits=3),nsmall=0)),
+              (format(round(mean(fixef(plm13))[1],digits=3),nsmall=0)),
+              (format(round(mean(fixef(plm14))[1],digits=3),nsmall=0))),
+            c((format(round(sum((plm8)$coefficients[1]),digits=3),nsmall=0)),
+              (format(round(sum((plm9)$coefficients[1]),digits=3),nsmall=0)),
+              (format(round(sum((plm10)$coefficients[1]),digits=3),nsmall=0)),
+              (format(round(sum((plm11)$coefficients[1]),digits=3),nsmall=0)),
+              (format(round(sum((plm12)$coefficients[1]),digits=3),nsmall=0)),
+              (format(round(sum((plm13)$coefficients[1]),digits=3),nsmall=0)),
+              (format(round(sum((plm14)$coefficients[1]),digits=3),nsmall=0))),
+            c((format(round(coeftest((plm8), vcovHC((plm8), type = "HC0",cluster = "time"))[1,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm9), vcovHC((plm9), type = "HC0",cluster = "time"))[1,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm10), vcovHC((plm10), type = "HC0",cluster = "time"))[1,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm11), vcovHC((plm11), type = "HC0",cluster = "time"))[1,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm12), vcovHC((plm12), type = "HC0",cluster = "time"))[1,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm13), vcovHC((plm13), type = "HC0",cluster = "time"))[1,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm14), vcovHC((plm14), type = "HC0",cluster = "time"))[1,2],digits=3),nsmall=0))),
+            c((format(round(coeftest((plm8), vcovHC((plm8), type = "HC0",cluster = "time"))[1,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm9), vcovHC((plm9), type = "HC0",cluster = "time"))[1,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm10), vcovHC((plm10), type = "HC0",cluster = "time"))[1,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm11), vcovHC((plm11), type = "HC0",cluster = "time"))[1,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm12), vcovHC((plm12), type = "HC0",cluster = "time"))[1,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm13), vcovHC((plm13), type = "HC0",cluster = "time"))[1,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm14), vcovHC((plm14), type = "HC0",cluster = "time"))[1,4],digits=3),nsmall=0))),
+
+            c((format(round(sum((plm8)$coefficients[2]),digits=3),nsmall=0)),
+              (format(round(sum((plm9)$coefficients[2]),digits=3),nsmall=0)),
+              (format(round(sum((plm10)$coefficients[2]),digits=3),nsmall=0)),
+              (format(round(sum((plm11)$coefficients[2]),digits=3),nsmall=0)),
+              (format(round(sum((plm12)$coefficients[2]),digits=3),nsmall=0)),
+              (format(round(sum((plm13)$coefficients[2]),digits=3),nsmall=0)),
+              (format(round(sum((plm14)$coefficients[2]),digits=3),nsmall=0))),
+            c((format(round(coeftest((plm8), vcovHC((plm8), type = "HC0",cluster = "time"))[2,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm9), vcovHC((plm9), type = "HC0",cluster = "time"))[2,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm10), vcovHC((plm10), type = "HC0",cluster = "time"))[2,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm11), vcovHC((plm11), type = "HC0",cluster = "time"))[2,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm12), vcovHC((plm12), type = "HC0",cluster = "time"))[2,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm13), vcovHC((plm13), type = "HC0",cluster = "time"))[2,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm14), vcovHC((plm14), type = "HC0",cluster = "time"))[2,2],digits=3),nsmall=0))),
+            c((format(round(coeftest((plm8), vcovHC((plm8), type = "HC0",cluster = "time"))[2,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm9), vcovHC((plm9), type = "HC0",cluster = "time"))[2,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm10), vcovHC((plm10), type = "HC0",cluster = "time"))[2,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm11), vcovHC((plm11), type = "HC0",cluster = "time"))[2,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm12), vcovHC((plm12), type = "HC0",cluster = "time"))[2,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm13), vcovHC((plm13), type = "HC0",cluster = "time"))[2,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm14), vcovHC((plm14), type = "HC0",cluster = "time"))[2,4],digits=3),nsmall=0))),
+
+            c((format(round(sum((plm8)$coefficients[3]),digits=3),nsmall=0)),
+              (format(round(sum((plm9)$coefficients[3]),digits=3),nsmall=0)),
+              (format(round(sum((plm10)$coefficients[3]),digits=3),nsmall=0)),
+              (format(round(sum((plm11)$coefficients[3]),digits=3),nsmall=0)),
+              (format(round(sum((plm12)$coefficients[3]),digits=3),nsmall=0)),
+              (format(round(sum((plm13)$coefficients[3]),digits=3),nsmall=0)),
+              (format(round(sum((plm14)$coefficients[3]),digits=3),nsmall=0))),
+            c((format(round(coeftest((plm8), vcovHC((plm8), type = "HC0",cluster = "time"))[3,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm9), vcovHC((plm9), type = "HC0",cluster = "time"))[3,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm10), vcovHC((plm10), type = "HC0",cluster = "time"))[3,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm11), vcovHC((plm11), type = "HC0",cluster = "time"))[3,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm12), vcovHC((plm12), type = "HC0",cluster = "time"))[3,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm13), vcovHC((plm13), type = "HC0",cluster = "time"))[3,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm14), vcovHC((plm14), type = "HC0",cluster = "time"))[3,2],digits=3),nsmall=0))),
+            c((format(round(coeftest((plm8), vcovHC((plm8), type = "HC0",cluster = "time"))[3,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm9), vcovHC((plm9), type = "HC0",cluster = "time"))[3,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm10), vcovHC((plm10), type = "HC0",cluster = "time"))[3,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm11), vcovHC((plm11), type = "HC0",cluster = "time"))[3,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm12), vcovHC((plm12), type = "HC0",cluster = "time"))[3,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm13), vcovHC((plm13), type = "HC0",cluster = "time"))[3,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm14), vcovHC((plm14), type = "HC0",cluster = "time"))[3,4],digits=3),nsmall=0))),
+
+            c((format(round(sum((plm8)$coefficients[4]),digits=3),nsmall=0)),
+              (format(round(sum((plm9)$coefficients[4]),digits=3),nsmall=0)),
+              (format(round(sum((plm10)$coefficients[4]),digits=3),nsmall=0)),
+              (format(round(sum((plm11)$coefficients[4]),digits=3),nsmall=0)),
+              (format(round(sum((plm12)$coefficients[4]),digits=3),nsmall=0)),
+              (format(round(sum((plm13)$coefficients[4]),digits=3),nsmall=0)),
+              (format(round(sum((plm14)$coefficients[4]),digits=3),nsmall=0))),
+            c((format(round(coeftest((plm8), vcovHC((plm8), type = "HC0",cluster = "time"))[4,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm9), vcovHC((plm9), type = "HC0",cluster = "time"))[4,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm10), vcovHC((plm10), type = "HC0",cluster = "time"))[4,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm11), vcovHC((plm11), type = "HC0",cluster = "time"))[4,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm12), vcovHC((plm12), type = "HC0",cluster = "time"))[4,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm13), vcovHC((plm13), type = "HC0",cluster = "time"))[4,2],digits=3),nsmall=0)),
+              (format(round(coeftest((plm14), vcovHC((plm14), type = "HC0",cluster = "time"))[4,2],digits=3),nsmall=0))),
+            c((format(round(coeftest((plm8), vcovHC((plm8), type = "HC0",cluster = "time"))[4,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm9), vcovHC((plm9), type = "HC0",cluster = "time"))[4,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm10), vcovHC((plm10), type = "HC0",cluster = "time"))[4,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm11), vcovHC((plm11), type = "HC0",cluster = "time"))[4,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm12), vcovHC((plm12), type = "HC0",cluster = "time"))[4,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm13), vcovHC((plm13), type = "HC0",cluster = "time"))[4,4],digits=3),nsmall=0)),
+              (format(round(coeftest((plm14), vcovHC((plm14), type = "HC0",cluster = "time"))[4,4],digits=3),nsmall=0))),
+
+            # c((format(round(sum((plm8)$coefficients[5]),digits=3),nsmall=0)),
+            #   (format(round(sum((plm9)$coefficients[5]),digits=3),nsmall=0)),
+            #   (format(round(sum((plm10)$coefficients[5]),digits=3),nsmall=0)),
+            #   (format(round(sum((plm11)$coefficients[5]),digits=3),nsmall=0)),
+            #   (format(round(sum((plm12)$coefficients[5]),digits=3),nsmall=0)),
+            #   (format(round(sum((plm13)$coefficients[5]),digits=3),nsmall=0)),
+            #   (format(round(sum((plm14)$coefficients[5]),digits=3),nsmall=0))),
+            # c((format(round(coeftest((plm8), vcovHC((plm8), type = "HC0",cluster = "time"))[5,2],digits=3),nsmall=0)),
+            #   (format(round(coeftest((plm9), vcovHC((plm9), type = "HC0",cluster = "time"))[5,2],digits=3),nsmall=0)),
+            #   (format(round(coeftest((plm10), vcovHC((plm10), type = "HC0",cluster = "time"))[5,2],digits=3),nsmall=0)),
+            #   (format(round(coeftest((plm11), vcovHC((plm11), type = "HC0",cluster = "time"))[5,2],digits=3),nsmall=0)),
+            #   (format(round(coeftest((plm12), vcovHC((plm12), type = "HC0",cluster = "time"))[5,2],digits=3),nsmall=0)),
+            #   (format(round(coeftest((plm13), vcovHC((plm13), type = "HC0",cluster = "time"))[5,2],digits=3),nsmall=0)),
+            #   (format(round(coeftest((plm14), vcovHC((plm14), type = "HC0",cluster = "time"))[5,2],digits=3),nsmall=0))),
+            # c((format(round(coeftest((plm8), vcovHC((plm8), type = "HC0",cluster = "time"))[5,4],digits=3),nsmall=0)),
+            #   (format(round(coeftest((plm9), vcovHC((plm9), type = "HC0",cluster = "time"))[5,4],digits=3),nsmall=0)),
+            #   (format(round(coeftest((plm10), vcovHC((plm10), type = "HC0",cluster = "time"))[5,4],digits=3),nsmall=0)),
+            #   (format(round(coeftest((plm11), vcovHC((plm11), type = "HC0",cluster = "time"))[5,4],digits=3),nsmall=0)),
+            #   (format(round(coeftest((plm12), vcovHC((plm12), type = "HC0",cluster = "time"))[5,4],digits=3),nsmall=0)),
+            #   (format(round(coeftest((plm13), vcovHC((plm13), type = "HC0",cluster = "time"))[5,4],digits=3),nsmall=0)),
+            #   (format(round(coeftest((plm14), vcovHC((plm14), type = "HC0",cluster = "time"))[5,4],digits=3),nsmall=0))),
+
+           
+
+
+            c((format(round(summary(plm8)$r.squared[1],digits=3),nsmall=0)),
+              (format(round(summary(plm9)$r.squared[1],digits=3),nsmall=0)),
+              (format(round(summary(plm10)$r.squared[1],digits=3),nsmall=0)),
+              (format(round(summary(plm11)$r.squared[1],digits=3),nsmall=0)),
+              (format(round(summary(plm12)$r.squared[1],digits=3),nsmall=0)),
+              (format(round(summary(plm13)$r.squared[1],digits=3),nsmall=0)),
+              (format(round(summary(plm14)$r.squared[1],digits=3),nsmall=0))),
+            c((format(round(summary(plm8)$r.squared[2],digits=3),nsmall=0)),
+              (format(round(summary(plm9)$r.squared[2],digits=3),nsmall=0)),
+              (format(round(summary(plm10)$r.squared[2],digits=3),nsmall=0)),
+              (format(round(summary(plm11)$r.squared[2],digits=3),nsmall=0)),
+              (format(round(summary(plm12)$r.squared[2],digits=3),nsmall=0)),
+              (format(round(summary(plm13)$r.squared[2],digits=3),nsmall=0)),
+              (format(round(summary(plm14)$r.squared[2],digits=3),nsmall=0))),
+            c((format(round(nobs(plm8),digits=3),nsmall=0)),
+              (format(round(nobs(plm9),digits=3),nsmall=0)),
+              (format(round(nobs(plm10),digits=3),nsmall=0)),
+              (format(round(nobs(plm11),digits=3),nsmall=0)),
+              (format(round(nobs(plm12),digits=3),nsmall=0)),
+              (format(round(nobs(plm13),digits=3),nsmall=0)),
+              (format(round(nobs(plm14),digits=3),nsmall=0)))
+)
 
