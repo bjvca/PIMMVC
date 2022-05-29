@@ -1080,8 +1080,8 @@ eness of the agro-input dealers.
  dealer in terms of product availability.
  Here male agro-input dealers receive an average score of almost 4 out of
  five, while female dealers get 3.792.
- Interestingly, female agro-input dealers are not rated worse when asked
- about the quality of seed sold.
+ Interestingly, female agro-input dealers are not rated significantly worse
+ when asked about the quality of seed sold.
  They also appear to be equally rated with respect to location.
 \end_layout
 
@@ -1649,8 +1649,8 @@ noprefix "false"
 
 \end_inset
 
-, where we found that male agro-input dealers are rated higher when asked
- about seed quality, but the difference is not significant.
+, where we also failed to find a significant difference when asked about
+ seed quality.
  This may suggest that when farmers are asked to think about a particular
  product, farmers make abstraction of the person selling it and the gender
  effect becomes less important.
@@ -2246,19 +2246,9 @@ noprefix "false"
 
  we start again by explaining overall dealer rating.
  As this is an average of all the other attributes, we also included most
- controls in this regression, twelve in total.
- In particular, we control for the rating of the shop provided by the enumerator
-, an index we constructed to reflect dealer effort, an index we created
- to reflect the level of capital intensive seed handling and storage practices,
- average distance between farmer and dealer from GPS coordinates in kilometer,
- average price of seed that the dealer sells, average cost obtaining seed
- from seed producer or wholesaler, moisture content of randomly selected
- bag of improved variety seed (%), shelf-life of seed calculated from expiry
- date or date of production (days), number of hybrid maize varieties that
- the dealer has in stock, average quantity bought from the seed producer
- or wholesaler by the dealer (kg), number of years the shop has been in
- business, and whether the shop is registered with Uganda National Agro-input
- Dealer Association (UNADA).
+ controls in this regression, nine in addition to dealers age and education.
+ The reason why each control is included is provided below where we discuss
+ regressions for each rating attribute.
  We find that, even after controlling for a range of observable indicators
  for overall quality differences between male and female agro-input dealers,
  male agro-input dealers are still rated significantly higher by consumers.
@@ -2288,44 +2278,38 @@ noprefix "false"
 
  that compares average general ratings given to male versus female agro-input
  dealers.
- We see that after controlling for relevant observables like the rating
- of the shop provided by the enumerator, an index we constructed to reflect
- dealer effort, and an index we created to reflect the level of capital
- intensive seed handling and storage practices, the male premium on general
- ratings increase from 0.13 to 0.16.
- 
+ We have three relatively objective observable proxies for general dealership
+ quality.
+ First, we asked enumerators to provide an overall score based for the agro-inpu
+t dealer they collected data on.
+ Second, we construct an index from 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+X
 \end_layout
 
-\begin_layout Standard
-When farmers are asked to assess agro-input dealers in terms of their location,
- the average distance between the agro-input dealer and their customers,
- capturing some indication of centrality of the agro-input dealer, provides
- an obvious candidate as a control variable (third column in Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:q1_betw_dealers_dealer_controls-1"
-plural "false"
-caps "false"
-noprefix "false"
+\end_inset
+
+ that measures dealer effort and the services that dealers offer to clients.
+ Third, we asked enumerators to carefully observe and note down 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+X what are the capital intensive seed 
+\end_layout
 
 \end_inset
 
-).
- We did not find a gender equity effect on ratings concerning location in
- Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:q1_betw_dealers_dealer_no_controls"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
- and we also do not find a difference after controlling for centrality.
- Note that the control variable is significant and in the expected direction,
- as increased average distance between input dealer and customer (or reduced
- centrality) reduces location ratings.
+ which were also summarized in an index.
+ We see that after controlling for these three control variables, the male
+ premium on general ratings increase from 0.13 to 0.16.
+ Note that the index of capital intensive seed handling and storage practices
+ observed by the enumerator is significant has the expected sign, as input
+ dealers that score better on the index also received higher scores on general
+ dealership quality.
 \begin_inset Foot
 status collapsed
 
@@ -2351,6 +2335,40 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
+When farmers are asked to assess agro-input dealers in terms of their location,
+ the average distance between the agro-input dealer and their customers
+ (based on GPS coordinates), capturing some indication of centrality of
+ the agro-input dealer, provides an obvious candidate as a control variable
+ (third column in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:q1_betw_dealers_dealer_controls-1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+ We did not find a gender equity effect on ratings concerning location in
+ Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:q1_betw_dealers_dealer_no_controls"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ and we also do not find a difference after controlling for centrality.
+ Note that also here, the control variable is significant in the expected
+ direction, as dealers where the average distance between input dealer and
+ customer is higher (or centrality is lower) also seem to be scored lower
+ in terms of location.
+\end_layout
+
+\begin_layout Standard
 In the fourth column of Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -2370,8 +2388,21 @@ s between male and female agro-input dealers, we control for average price
  The analysis confirms that there is indeed a difference in perception between
  male and female farmers, and that this difference is not due to actual
  price differences.
+ The gender equity effect is similar in size than the one found without
+ controlling for actual price differences in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:q1_betw_dealers_dealer_no_controls"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
  Note again that one of the control variables is significant and suggests
- higher prices lead to lower ratings.
+ that dealers that charge higher prices also receive significantly lower
+ price competitiveness ratings.
 \end_layout
 
 \begin_layout Standard
@@ -2385,13 +2416,22 @@ noprefix "false"
 
 \end_inset
 
- added moisture content of a randomly selected bag and the time that has
- passed since production of the bag as controls.
+ added 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+moisture content of a randomly selected bag and the time that has passed
+ since production of the bag as controls.
  Moisture content and age of the seed are two important observable proxies
  for seed quality that can be objectively verified using a mystery shopper
  approach.
  We find that, in line with expectations, agro-input dealers that sell seed
  with higher moisture content also get lower scores on seed quality.
+\end_layout
+
+\end_inset
+
  As in column 5 of Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -2430,8 +2470,8 @@ noprefix "false"
 \begin_layout Standard
 In the seventh column we repeat the analysis for reputation, now controlling
  for number of years the shop has been in business, and whether the shop
- is registered with UNADA, both of which we expect a direct impact on the
- dealer's reputation.
+ is registered with Uganda National Agro-input Dealer Association (UNADA),
+ both of which we expect a direct impact on the dealer's reputation.
  Also here, we see that male dealers keep receiving higher scores conditional
  on experience and registration with UNADA, with the effect becoming slightly
  weaker (as compared to column 7 in Table 
@@ -2451,7 +2491,7 @@ noprefix "false"
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -5660,7 +5700,7 @@ We find that controlling for dealer level observable characteristics does
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
