@@ -132,13 +132,21 @@ Gender equity bias in consumer perceptions: the case of agro-input dealers
 \begin_layout Abstract
 Faced with incomplete and imperfect information, economic actors rely predominan
 tly on perceptions and often base decisions on heuristics prone to bias.
- Gender bias in perceptions has been found in a wide variety of settings
- and may be an important reason why some sectors are dominated by men and
- gender gaps persist.
- We study interactions between smallholder maize farmers and agro-input
- dealers in Uganda, and test for gender equity bias whereby farmers perceive
- male agro-input dealers differently than female agro-input dealers.
- We find that XXX.
+ Gender bias in perceptions favoring men has been found in a wide variety
+ of settings and may be an important reason why some sectors are dominated
+ by men and gender gaps persist.
+ Using ratings provided by smallholder farmers of agro-input dealers in
+ their vicinity, we test if farmers perceive male managed agro-input shops
+ differently than agro-input shops managed by a woman.
+ After controlling for input dealer level observable characteristics and
+ including fixed effects to account for farmer level heterogeneity, we find
+ that farmers rate male managed agro-input outlets higher on a range of
+ attributes related to the dealership in general, as well as when farmers
+ are asked to consider the quality of inputs sold by the dealer.
+ Our results suggest that biased perceptions by consumers continue to be
+ an important entry barrier for women in the sub-sector, and we conclude
+ that policies and interventions designed to challenge gender norms and
+ customs are needed to correct bias in perceptions.
 \end_layout
 
 \begin_layout Standard
@@ -257,9 +265,9 @@ literal "false"
  missing 15% of the active ingredient and 31% of samples contain less than
  75% of the ingredient advertised.
  While it remains unclear if quality related issues are due to deliberate
- adulteration or due to poor storage and handling, and at what point in
- the value chain quality starts to deteriorate, the resulting uncertainty
- makes reliance on perceptions and decision heuristics more likely 
+ adulteration or poor storage and handling and at what point in the value
+ chain quality starts to deteriorate, the resulting uncertainty makes reliance
+ on perceptions and decision heuristics more likely 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "BARRIGA2020104928"
@@ -310,32 +318,48 @@ However, the same gender norms and customs may also mean that perceptions
  beans or cassava.
  Again, commercial crops are often considered to be the responsibility of
  the men, while women are assumed to take care of the household food supply.
- As a result, we conjecture that female agro-input dealers may be disadvantaged
- when farmers form opinions about the quality of services rendered or good
- sold.
+ As a result, we conjecture that female managed agro-input shops may be
+ disadvantaged when farmers form opinions about the quality of services
+ rendered or good sold.
 \end_layout
 
 \begin_layout Standard
-We test if farmers perceive female agro-input dealer less favorably than
- their male counterparts using a unique dyadic dataset of farmer-dealer
- combinations.
+In this paper, we test if farmers perceive agro-input shops managed by women
+ less favorably than agro-input shops under male management using a unique
+ dyadic dataset of farmer-dealer combinations.
  To operationalize perceptions, we asked farmer to rate agro-input dealers,
  on a scale of 1 to 5, on a range of characteristics.
  We then make between-dealer comparisons, accounting for observable differences
  in the quality of male- and female-managed shops.
  Furthermore, we use the fact that a farmer will generally have rated more
  than one agro-input dealer.
- If farmers rate both male and female agro-input dealers, we can exploit
- this within-farmer variation and control for farmer specific observable
- and unobservable characteristics.
+ If the same farmer rates both male and female managed agro-input shops,
+ we can exploit this within-farmer variation and control for farmer specific
+ observable and unobservable characteristics.
 \end_layout
 
 \begin_layout Standard
-We find that...
+We find that farmers generally rate male managed agro-input shops more favorable
+ than agro-input shops managed by a woman.
+ The difference in rating is highest when farmers are asked to rate the
+ agro-input dealership in terms of price competitiveness and in terms of
+ reputation.
+ We also find that seed from male managed agro-input shops is rated higher
+ than seed from shops managed by a woman.
+ As the differences in ratings can not be immediately explained by differences
+ in the quality of the dealerships or the services and products they provide,
+ we conclude that biased perceptions create an important disadvantage for
+ female managed agro-input shops.
 \end_layout
 
 \begin_layout Standard
-The remainder of the paper is organized as follows...
+In the remainder of this article we first situate the research question
+ in the wider literature.
+ The next section provides the context for the study and describes the main
+ economic actors: agro-input dealers and smallholder maize farmers.
+ We then describe how we measure perceptions, a key variable in this study.
+ Next, we lay out the empirical strategy, followed by the results.
+ A final section concludes and offers some policy guidance.
 \end_layout
 
 \begin_layout Section*
@@ -343,12 +367,16 @@ Research question and relation to the literature
 \end_layout
 
 \begin_layout Standard
-We aim to test if gender equity bias is present when farmers rate agro-input
- dealers in their neighborhood.
+We aim to test if gender equity bias—behavior that shows favoritism toward
+ one gender over another—is present in the way smallholder maize farmers
+ in southwestern Uganda perceive agro-input dealers in their neighborhood.
  Gender equity bias has been confirmed in a wide varieties of contexts,
- usually when one or more persons are asked to assess another person.
- Gender stereotyping and role congruence are often catalysts for distorted
- perceptions and false beliefs about the abilities of women.
+ usually when one or more persons are asked to assess the performance another
+ person.
+ Stereotyping and role congruence are often catalysts for distorted perceptions
+ and false beliefs about the abilities of particular groups of people.
+ We highlight some of the most important studies that search for systematic
+ bias related to the gender of the person being assessed.
 \end_layout
 
 \begin_layout Standard
@@ -388,12 +416,9 @@ literal "false"
 
 \end_inset
 
- do find a significant advantage for male authors at three different European
- conferences.
-\end_layout
-
-\begin_layout Standard
-Gender equity bias has also been studied extensively in student evaluations
+ do find a significant advantage for male authors being accepted at three
+ different European conferences.
+ Gender equity bias has also been studied extensively in student evaluations
  of teaching.
  For instance, 
 \begin_inset CommandInset citation
@@ -416,10 +441,7 @@ Gender equity bias is studied most in the context of peer review processes
  However, the same perceptions surface when individuals decide on who to
  engage with, be it who to work with, who to elect as leaders, or who to
  consult.
-\end_layout
-
-\begin_layout Standard
-Labour markets and hiring decisions involve situations where managers make
+ Labour markets and hiring decisions involve situations where managers make
  decisions based on limited information.
  Discrimination in labour markets, including discrimination related to gender,
  has been documented in several studies.
@@ -482,9 +504,7 @@ literal "false"
 
  find that female candidates obtain fewer votes in municipalities with higher
  gender earnings gaps.
-\end_layout
-
-\begin_layout Standard
+ 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "KLEIN2021257"
@@ -497,11 +517,63 @@ literal "false"
  Female advisors’ gender was found to have a negative effect on the desire
  to invest, and this negative attitude was found to be significantly higher
  among male respondents.
- 
+\end_layout
+
+\begin_layout Standard
+The reason why gender bias features so prominently in areas such as scholarly
+ peer review, teaching assessments or labour markets is partly due to the
+ fact that perceptions are made explicit in the process, for instance through
+ review reports, student feedback or hiring committees.
+ However, in economic transactions, gender bias in perceptions remains hidden
+ as perceptions are never measured and differences in outcomes is attributed
+ to various other causes, such as differences in education levels between
+ men and women.
 \end_layout
 
 \begin_layout Section*
-Data and indicators used
+Study context
+\end_layout
+
+\begin_layout Standard
+Our study area comprises of 11 districts in southeastern Uganda, which roughly
+ corresponds to the Busoga kingdom.
+ In these districts, we carried out a census of all agro-input shops, which
+ resulted in an effective sample size of about 350 dealers.
+ Based on location, these agro-input shops are then grouped in catchment
+ areas.
+ In some catchment areas, there is a high density of agro input dealers,
+ while in others there are only one or two agro-input dealers.
+ In each catchment area, we also sampled farmers in proportion to the number
+ of agro-input dealers in the catchment area.
+\end_layout
+
+\begin_layout Standard
+There is quite some heterogeneity in the agro-input shops.
+ Some are small informal shops located in rural areas, that sell other goods
+ and only stock seed during the planting season.
+ Others are located in towns or trading centers and specialize in farm inputs
+ and tools.
+ About 60 percent of the agro-input shop managers are male.
+ The average shop receives about 40 customers a day, half of which come
+ there to buy maize seed and has been in operation for about 6 years.
+ The shop has on average about 3 maize seed varieties in stock.
+\end_layout
+
+\begin_layout Standard
+The average farmer in our sample is small, with about 3.3 acres of land for
+ crop production.
+ Half of our sample indicate that they used improved maize seed on at least
+ one plot in the season preceding the survey, and of the farmers that used
+ improved seed, two thirds obtained the seed from an agro-input shop.
+ However, use of fertilizer is very low.
+ As a result, productivity is also low with the average farmer harvesting
+ only about 500 kg of maize per acre.
+ Almost 70 percent of farmers are of the opinion that maize sold at the
+ agro-input shop is counterfeit.
+\end_layout
+
+\begin_layout Section*
+Measuring perceptions
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Data-and-indicators"
@@ -515,18 +587,15 @@ name "sec:Data-and-indicators"
 Central to our analysis is the quantification of the perceptions of the
  quality of services provided by agro-input dealers and of the products
  they sell—improved maize seed varieties in particular.
- To do so, we did a census of all agro-input dealers in our study area.
- Based on this data, we delineated catchment areas for each agro-input dealer.
- We then sampled farmers in the catchment areas and asked them to rate agro-inpu
-t dealers in their catchment area on a range of attributes.
+ To do so, we asked farmers to rate agro-input dealers in their catchment
+ area on a range of attributes.
  We broadly categorized the attributes into two families of indicators.
  A first set of indicators attempts to measure overall quality of agro-input
  dealers and the services they provide, while a second set of indicators
  has a much more narrow focus and asks about a particular product sold by
  the agro-input dealer (maize seed).
  Note that as agro-input dealers are often clustered in towns and trading
- centers, catchment areas often overlap, and so farmers often rank several
- agro-input dealers.
+ centers, farmers often rank several agro-input dealers.
  
 \end_layout
 
@@ -788,8 +857,8 @@ literal "false"
 
 \begin_layout Standard
 A useful starting point to test for an agro-input dealer gender effect is
- to simply compare average ratings received by male agro-input dealers to
- average ratings received by female agro-input dealers.
+ to simply compare average ratings received by male managed agro-input shops
+ to average ratings received by female managed agro-input shops.
  Equation 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -913,9 +982,9 @@ noprefix "false"
 \end_inset
 
 .
- This would be the case if, for example, female agro-input dealers are on
- average lower educated than male agro-input dealers, and lower educated
- agro-input dealers are rated lower by farmers.
+ This would be the case if, for example, female agro-input shop managers
+ are on average lower educated than male agro-input shop managers, and lower
+ educated agro-input dealers are rated lower by farmers.
  In this case, differential ratings are not caused by gender in itself,
  but rather driven by differences in education.
  We will control for a range of agro-input dealer level potential confounders
@@ -959,9 +1028,9 @@ As we are interested in explaining gender equity bias in perceptions in
  characteristics that are directly related to quality, such as storage technolog
 y, infrastructure such as leak proof roof or insulation, etc.
  In this way, we attempt to differentiate between situations where farmers
- perceive female agro-input dealers less favorably and situations where
- differences in ratings reflect real differences between male and female
- agro-input dealers.
+ perceive female managed agro-input shops less favorably and situations
+ where differences in ratings reflect real differences between male and
+ female managed shops.
 \end_layout
 
 \begin_layout Standard
@@ -974,7 +1043,7 @@ Farmer level characteristics could also confound the relationship between
  This makes it difficult to differentiate a gender equity effect from an
  effect arising from differences in education of the farmer.
  Fortunately, we often have instances where the same farmer rates both male
- and female agro-input dealers.
+ and female managed agro-input shops.
  This allows us to exploit within-farmer variation for identification.
  While we would be able to control for a farmer's education level by simply
  including it in an OLS regression, a within-farmer transformation also
@@ -1056,8 +1125,8 @@ noprefix "false"
 \end_inset
 
  reports differences on perceived agro-input dealer quality between male
- and female agro-input dealers using an OLS regression based on equation
- 
+ and female managed agro-input outlets using an OLS regression based on
+ equation 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:four-1"
@@ -1068,20 +1137,20 @@ noprefix "false"
 \end_inset
 
 .
- We find that on all but one dimension, male agro-input dealers are rated
- higher than female agro-input dealers, and the difference in rating is
+ We find that on all but one dimension, male managed agro-input shops are
+ rated higher than female managed shops, and the difference in rating is
  significant for five out of the seven comparisons (at a 10 percent significance
  level).
  The largest difference is found when farmers are asked to rate price competitiv
 eness of the agro-input dealers.
- Here, female agro-input dealers are scored only 3.237 out of 5, while male
- agro-input dealers receive a score of 3.437 out of 5.
+ Here, female managed agro-input shops are scored only 3.237 out of 5, while
+ male managed agro-input shops receive a score of 3.437 out of 5.
  Equally large differences exist when farmers are asked to rate an agro-input
  dealer in terms of product availability.
- Here male agro-input dealers receive an average score of almost 4 out of
- five, while female dealers get 3.792.
- Interestingly, female agro-input dealers are not rated significantly worse
- when asked about the quality of seed sold.
+ Heremale managed agro-input shops receive an average score of almost 4
+ out of five, while female dealers get 3.792.
+ Interestingly, female managed agro-input shops are not rated significantly
+ worse when asked about the quality of seed sold.
  They also appear to be equally rated with respect to location.
 \end_layout
 
@@ -1635,9 +1704,9 @@ noprefix "false"
 
  repeats the between input dealer analysis, but now compares ratings for
  seed quality attributes sold by the agro-input dealers.
- While we still find that on most characteristics, male agro-input dealers
- get a higher rating than female agro-input dealers, the differences are
- never significant.
+ While we still find that on most characteristics, male managed agro-input
+ shops get a higher rating than female managed agro-input shops, the differences
+ are never significant.
  Note also that the results are consistent with what was found in table
  
 \begin_inset CommandInset ref
@@ -2250,8 +2319,9 @@ noprefix "false"
  The reason why each control is included is provided below where we discuss
  regressions for each rating attribute.
  We find that, even after controlling for a range of observable indicators
- for overall quality differences between male and female agro-input dealers,
- male agro-input dealers are still rated significantly higher by consumers.
+ for overall quality differences between male and female managed agro-input
+ shops, male managed agro-input shops are still rated significantly higher
+ by consumers.
  
 \end_layout
 
@@ -2276,34 +2346,51 @@ noprefix "false"
 
 \end_inset
 
- that compares average general ratings given to male versus female agro-input
- dealers.
+ that compares average general ratings given to male versus female managed
+ agro-input shops.
  We have three relatively objective observable proxies for general dealership
  quality.
  First, we asked enumerators to provide an overall score based for the agro-inpu
 t dealer they collected data on.
- Second, we construct an index from 
-\begin_inset Note Note
-status open
+ Second, we construct an index that measures dealer effort and a range of
+ services that dealers offer to clients.
+\begin_inset Foot
+status collapsed
 
 \begin_layout Plain Layout
-X
+Indices were created by weighing each component by the inverse covariance
+ matrix, constructed following 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "anderson2008multiple"
+literal "false"
+
+\end_inset
+
+.
 \end_layout
 
 \end_inset
 
- that measures dealer effort and the services that dealers offer to clients.
- Third, we asked enumerators to carefully observe and note down 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-X what are the capital intensive seed 
-\end_layout
-
-\end_inset
-
- which were also summarized in an index.
+ In particular, the index includes 1) if agro-input dealers always explain
+ how the seed should be used (seed spacing, seed rate, complementary inputs);
+ 2) if agro-input dealer always recommend complementary inputs such as fertilize
+r and chemicals; 3) if agro-input dealers provide extension/training to
+ their clients on how to use improved seed varieties; 4) if agro-input dealers
+ provide discounts to clients that buy large quantities of maize seed; 5)
+ if agro-input dealers sell small quantities; 6) if agro-input dealers provide
+ seed on credit; 7) if agro-input dealers received a complaint from a customer
+ that seed you sold was not good; 8) if mobile money was accepted as a payment
+ modality.
+ Third, we asked enumerators to carefully observe and note down a range
+ of capital intensive seed handling and storage practices which were also
+ summarized in an index.
+ In this index, we included 1) if the roof is leak-proof; 2) if the roof
+ is insulated to keep heat out; 3) if the walls are insulated to keep the
+ heat out; 4) if the area where s eed is stored is properly ventilated;
+ 5) if any official certificates are on display in the shop (e.g.
+ inspection certificates, training certificates, registration with association,
+ etc).
  We see that after controlling for these three control variables, the male
  premium on general ratings increase from 0.13 to 0.16.
  Note that the index of capital intensive seed handling and storage practices
@@ -2381,10 +2468,11 @@ noprefix "false"
 
  we look at price competitiveness again.
  To account for the fact that the difference in price competitiveness ratings
- between male and female agro-input dealers is driven by actual price difference
-s between male and female agro-input dealers, we control for average price
- charged by the dealer, as well as for the cost at which agro-input dealers
- obtain seed (which is an important determinant of the price).
+ between male and female managed agro-input shops is driven by actual price
+ differences between male and female managed agro-input shops, we control
+ for average price charged by the dealer, as well as for the cost at which
+ agro-input dealers obtain seed (which is an important determinant of the
+ price).
  The analysis confirms that there is indeed a difference in perception between
  male and female farmers, and that this difference is not due to actual
  price differences.
@@ -2416,22 +2504,17 @@ noprefix "false"
 
 \end_inset
 
- added 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-moisture content of a randomly selected bag and the time that has passed
- since production of the bag as controls.
- Moisture content and age of the seed are two important observable proxies
- for seed quality that can be objectively verified using a mystery shopper
- approach.
- We find that, in line with expectations, agro-input dealers that sell seed
- with higher moisture content also get lower scores on seed quality.
-\end_layout
-
-\end_inset
-
+ adds another index, this time of all seed handling and storage practices
+ observed by the enumerator.
+ This index includes the components of the five capital intensive seed handling
+ and storage practices mentioned above, but also adds that 1) the agro-dealer
+ destroys seed that exceeded shelf-life; 2) the agro-dealer stores seed
+ in a dedicated area, away from other merchandise; 3) the agro-input dealer
+ has not problem with rats, insects or other infestations; 4) the agro-input
+ dealer stores seed in ambient light conditions as recomended; 5) the agro-input
+ dealer stores seed on pallets or shelves; 6) the enumerator does not see
+ maize seed that is stored in open bags or open containers.
+ The index also includes the overall rating that is provided by the enumerator.
  As in column 5 of Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -3692,9 +3775,20 @@ noprefix "false"
 
 \end_inset
 
- concern quality, we include the same two controls in all regressions.
- In particular, we again use moisture content of a randomly selected bag
- and the time that has passed since production of the bag as controls.
+ concern quality, we include the same controls in all regressions.
+ In particular,, we use the most elaborate index of all seed alding and
+ storage practices as observed by the enumerator that was also used in model
+ (5) of Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:q1_betw_dealers_dealer_controls-1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
  Recall from Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -3706,10 +3800,10 @@ noprefix "false"
 \end_inset
 
  that we did not find a gender equity effect for any of seed quality related
- dimensions we look at; adding controls for quality does not change this.
- Note also that moisture content as a control shows up significant when
- farmers are asked to rate seed germination and to rate seed quality more
- broadly.
+ dimensions we look at; adding the index to control for quality does not
+ change this.
+ Note that the index is generally positively correlated to the rating, but
+ only significantly so when a farmers is asked to assess the seed's yield.
 \end_layout
 
 \begin_layout Standard
@@ -4564,11 +4658,11 @@ noprefix "false"
 \begin_inset Formula $\beta$
 \end_inset
 
- and its significance, are generally very similar.
- This suggests that difference between male and female agro-input dealers
- reflects structural differences in perception between the two sexes, rather
- than actual differences in the dimension being rated (quality, price competitiv
-eness, stocks and reputation).
+ and its significance, are very similar.
+ This suggests that difference between male and female managed agro-input
+ shops reflects structural differences in perception between the two sexes,
+ rather than actual differences in the dimension being rated (quality, price
+ competitiveness, stocks and reputation).
 \end_layout
 
 \begin_layout Standard
@@ -4625,7 +4719,18 @@ noprefix "false"
 
 \end_inset
 
-, we use the general agro-input dealer ratings as outcome variables.
+, we use the general agro-input dealer ratings as outcome variables, similar
+ to Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:q1_betw_dealers_dealer_no_controls"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -4637,7 +4742,17 @@ noprefix "false"
 \end_inset
 
  estimates the same model, but now for the more specific seed quality related
- ratings.
+ ratings, similar to Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:q1_betw_dealers_seed_no_controls"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -5114,7 +5229,22 @@ noprefix "false"
 
 \end_inset
 
-, in line with Table 
+ shows that male managed agro-input outlets receive significantly higher
+ ratings in the areas of price competitiveness, reputation, quality in general,
+ and stock.
+ The average dealer rating index also shows a significant difference between
+ male and female dealers.
+ Comparing Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:q1_farmer_FE_dealer_no_controls"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ to Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:q1_betw_dealers_dealer_no_controls"
@@ -5124,18 +5254,14 @@ noprefix "false"
 
 \end_inset
 
-, shows that male agro-input dealers receive significantly higher ratings
- in the areas of price competitiveness, reputation, stock, and quality in
- general.
- The index also shows a significant difference between male and female dealers.
- The largest difference can still be found for price competitiveness, even
- though it decreased somewhat.
+, the largest difference can still be found for price competitiveness, even
+ though the magnitude of the effect decreased somewhat.
  The effect of gender on ratings related to stocks reduced sharply after
  controlling for farmer level heterogeneity.
 \end_layout
 
 \begin_layout Standard
-Comparing table 
+For seed quality specific ratings, comparing Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:q1_farmer_FE_seed_no_controls"
@@ -5157,12 +5283,47 @@ noprefix "false"
 
 , we see that, after controlling for farmer level heterogeneity, some of
  the differences in seed quality related ratings between male and female
- dealers have become significant.
- For perceptions related to seed germination, male agro-input dealers receive
- a rating score that is on average 0.11 higher.
+ dealers turned significant.
+ For perceptions related to seed germination, male managed agro-input shops
+ receive a rating score that is on average 0.11 higher than the seed germination
+ rating female managed agro-input shops receive.
  We further find signs of gender equity effects when farmers are asked to
  rate seed quality in general and whether seed maturity is as advertised.
- The index also shows a significant difference.
+ The gender equity bias in these dimensions is also reflected in a significant
+ difference in the average seed rating index between male and female managed
+ agro-input shops (column 1).
+\end_layout
+
+\begin_layout Standard
+The fact that we also find gender equity bias when farmers are asked to
+ assess seed quality after controlling for farmer fixed effect suggests
+ that, in the between regressions of Tables 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:q1_betw_dealers_seed_no_controls"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:q1_betw_dealers_seed_controls"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, gender equity bias is obscured by farmer level confounders.
+ For instance, it could be that farmers that are higher educated also provide
+ higher rankings and that these higher educated farmers are also more likely
+ to shop at female owned dealerships.
+ Not controlling for differences in education levels of farmers may then
+ lead to an underestimation of discrimination against female managed agro-input
+ shops.
 \end_layout
 
 \begin_layout Standard
@@ -5690,9 +5851,11 @@ We find that controlling for dealer level observable characteristics does
  not change findings for the first set of rating that evaluate the agro-input
  dealer.
  Largest gender equity effects are found when farmers are asked to rate
- agro-input dealer reputation (difference of 0.2) and price competitiveness.
- Differences in rating between male and female agro-input dealers for the
- stock attribute disappeared.
+ agro-input dealer reputation (column 7) and price competitiveness (column
+ 7); in both cases male managed agro-input shops are rated about .2 points
+ higher.
+ Differences in rating between male and female managed agro-input shops
+ for the stock attribute has become indistinguishable from zero.
  
 \end_layout
 
@@ -6795,14 +6958,31 @@ label{table:table12}
 \end_layout
 
 \begin_layout Standard
-What is more interesting is that after controlling for dealer level heterogeneit
-y, the gender equity bias that emerged for seed related attributes after
- controlling for farmer level heterogeneity disappears again.
- In fact, the only significant difference we find now is on an attribute
- that was previously never significant.
- In particular, we now find that male agro-input dealers are rated almost
- 0.1 higher than female agro-input dealers when farmers are asked if seed
- drought tolerance was as advertised.
+Comparing Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:q1_farmer_FE_seed_no_controls"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ and Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:q1_farmer_FE_seed_controls"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, the significant difference between male and female managed agro-input
+ shops with respect to seed maturity rating (column 6), germination (column
+ 7), and overall seed quality ratings (column 2) found in Table persist
+ after controlling for observable dealer level differences in seed quality.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -7553,159 +7733,195 @@ label{table:table10}
 
 \end_layout
 
-\begin_layout Part*
-Control variables
-\end_layout
-
-\begin_layout Itemize
-Dealer/dealer shop related controls 
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Education of dealer: This is a dummy variable having the value of 1 if the
- dealer has finished secondary education.
-\end_layout
-
-\begin_layout Itemize
-Age of dealer: This is measured in years.
-\end_layout
-
-\begin_layout Itemize
-Distance of shop to nearest tarmac road: This is measured in kms.
-\end_layout
-
-\begin_layout Itemize
-Distance of shop to nearest murram road: This is measured in kms.
- 
-\end_layout
-
-\begin_layout Itemize
-Selling only farm inputs: This is a dummy variable having the value of 1
- if the shop is a specialized agro-input shop that only sells farm inputs.
- 
-\end_layout
-
-\begin_layout Itemize
-Number of years the shop operated: This is measured in years.
-\end_layout
-
-\begin_layout Itemize
-Dedicated area: This is a dummy variable which is 1 when the seed is stored
- in a dedicated area, away from the merchandise.
- 
-\end_layout
-
-\begin_layout Itemize
-Pest problem: This is a dummy variable which is 1 when the dealer reports
- problems with rats or pests.
- 
-\end_layout
-
-\begin_layout Itemize
-Leak proof roof: This is a dummy variable which is 1 when the roof is leak
- proof.
- 
-\end_layout
-
-\begin_layout Itemize
-Insulated roof: This is a dummy variable which is 1 when the roof is insulated
- to keep the heat out.
- 
-\end_layout
-
-\begin_layout Itemize
-Insulated walls: This is a dummy variable which is 1 when the walls of the
- shop are insulated to keep the heat out.
- 
-\end_layout
-
-\begin_layout Itemize
-Ventilated area: This is a dummy variable which is 1 when the area is ventilated.
-\end_layout
-
-\begin_layout Itemize
-Bad lighting: This is a dummy variable which is 1 when there is either direct
- sunlight in the seed storage area or it is dark in the seed storage area.
-\end_layout
-
-\begin_layout Itemize
-Badly stored: This is a dummy variable which is 1 when the seed is stored
- directly on the floor or on cardboard.
- 
-\end_layout
-
-\begin_layout Itemize
-Open storage: This is a dummy variable which is 1 when the seed is stored
- in open bags or open containers.
-\end_layout
-
-\begin_layout Itemize
-Has certificate: This is a dummy variable which is 1 when the dealer has
- an official certificate displayed in the store.
-\end_layout
-
-\begin_layout Itemize
-Shop rating: This is a scale of 1 (poor) to 5 (excellent) where the shops
- are rated based on cleanliness and professionality.
- 
-\end_layout
-
-\begin_layout Itemize
-Complaint: This is a dummy variable which is 1 when the dealer received
- a complaint from a customer mentioning the seed he or she sold being not
- good.
- 
-\end_layout
-
-\begin_layout Itemize
-Temperature: This is the temperature in the seed storage area.
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Farmer related controls
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Education of farmer: This is a dummy variable which is 1 if the farmer has
- finished primary education.
- 
-\end_layout
-
-\begin_layout Itemize
-Married farmer: This is a dummy variable which is 1 if the farmer is married.
-\end_layout
-
-\begin_layout Itemize
-Age of farmers: This is measured in years.
-\end_layout
-
-\begin_layout Itemize
-Distance from tarmac road: This is measured in kms.
- 
-\end_layout
-
-\end_deeper
 \begin_layout Section*
-Conclusion
+Conclusion and Policy Implications
 \end_layout
 
 \begin_layout Standard
-We find some evidence that female agro-input dealers are rated lower than
- their male counterparts.
- We further find that these difference in ratings originate at the farmer
- level: the differences in rating persist even after controlling for (quality
- related) observables at the dealer level.
- They are also not due to unobservable dealer level characteristics, such
- as for instance dealer effort.
- At the same time, we do not find that differences are due to discrimination,
- but rather emanate from differences between farmers that confound the relations
-hip between dealer gender and how dealers are rated.
- This could be both observable (eg education level of farmers) or unobservable
- (conservative farmers rating lower).
+Using survey data from smallholder farmers and agro-input dealers in southeaster
+n Uganda, we tested if farmers perceived female managed agro-input shops
+ differently than male managed agro-input shops.
+ To do so, we asked a random sample of farmers to rate agro-input dealers
+ in their immediate neighborhood on a scale ranging from 1 (poor) to 5 (very
+ good).
+ Not only did we ask farmers to rate agro-input dealers on a set of general
+ characteristics such as accessibility and price competitiveness, we also
+ asked farmer to focus on a particular product that these agro-input dealers
+ sold (maize seed), and to rate this product on various dimensions like
+ germination, yield, etc.
  
+\end_layout
+
+\begin_layout Standard
+Using simple agro-input dealer comparisons of average ratings given to male
+ and female managed agro-input shops, we found that female managed agro-input
+ shops were generally rated lower than their male counterparts.
+ However, when farmers were asked to focus on a specific product, the difference
+ became insignificant.
+ When adding controls for agro-input dealer level observable characteristics,
+ parameter estimates and significance remained similar, suggesting that
+ differences between male and female managed agro-input shops reflect structural
+ differences in perception between the two sexes rather than actual differences.
+\end_layout
+
+\begin_layout Standard
+However, ratings of agro-input dealers provided by the farmer may also be
+ influenced by farmer characteristics.
+ To control for farmer heterogeneity, we exploited the fact that farmers
+ often rated several agro-input dealers of different gender, and ran farmer
+ fixed effects models.
+ Doing so, we confirmed the existence of gender equity bias when farmers
+ were asked to rate general characteristics of agro-input dealers, but also
+ found differences in ratings of different dimension of seed quality sold
+ by agro-input dealers of different gender.
+\end_layout
+
+\begin_layout Standard
+Looking into the different dimensions that were rated, we found particularly
+ strong gender equity bias when farmers were asked to rate agro-input dealers
+ in terms of price competitiveness.
+ Furthermore, and especially after controlling for farmer level heterogeneity,
+ we found male managed agro-input shops to have significantly better reputation
+ than female dealers.
+ This reputation difference was also reflected in a significant difference
+ between male and female dealers when directly asked about overall general
+ quality.
+ On the other hand, we did not find that male and female managed agro-input
+ shops were rated differently when farmers were asked to consider location.
+ This may be because location is easier to assess objectively.
+ For attributes related to seed itself, gender equity bias was largest when
+ farmers were asked to assess seed germination rates and whether the seed
+ being rated had the maturing period as advertised.
+\end_layout
+
+\begin_layout Standard
+The prevalence of gender equity bias in the context of agro-input dealers
+ again underscores the importance of customs and norms in rural societies.
+ Interventions and initiatives that focus solemnly on increasing women empowerme
+nt are unlikely to be sufficient, and may in some cases even backfire.
+ It will be important to challenge gender stereotypes and role congruence
+ and such interventions should not only focus on one gender.
+ 
+\end_layout
+
+\begin_layout Standard
+Gender norms and customs prevent women from aspiring and developing an internal
+ locus of control.
+ Role models have been found particularly effective in raising aspirations.
+ For example, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "10.1257/app.20180426"
+literal "false"
+
+\end_inset
+
+ find that successful and charismatic women who majored in economics at
+ the same university led to an increase in girls choosing economics as a
+ major.
+ Role model effects may also emanate from fictional characters.
+ For example, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "10.1162/rest_a_01153"
+literal "false"
+
+\end_inset
+
+ shows how the female protagonist in a Disney feel good movie impacts secondary
+ school students' exam performance in Uganda.
+ This opens the prospect of using mass media to influence gender roles and
+ customs 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "10.1257/app.4.4.1"
+literal "false"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Gender roles and customs also prevent women from realizing their full potential
+ indirectly, as men do not support (or even prevent participation of) women
+ and girls in male dominated sectors.
+ However, social norms are also perceived by individuals.
+ Sometimes, men prevent their wives from participating in the economy because
+ they think it will be frowned upon by their peers.
+ In case this perception is inaccurate, simply correcting this perception
+ may be effective.
+ For example, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "10.1257/aer.20180975"
+literal "false"
+
+\end_inset
+
+ find that in Saudi Arabia, a country with strict norms and traditions on
+ mobility of women, many men overestimate the degree of peer judgment if
+ their wives work outside of the house.
+ Correcting this false perception lead to a significant increase in women
+ employment.
+ Also here, role models can be important to challenge beliefs and stereotypes
+ about lesser abilities of another group held by other groups: 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "beaman2009powerful"
+literal "true"
+
+\end_inset
+
+ show that the appointment of women leaders to Indian village councils improved
+ men’s perceptions of women’s leadership abilities.
+ 
+\end_layout
+
+\begin_layout Standard
+Apart from underscoring the importance of gender norms and customs in shaping
+ perceptions, our study also serves to draw specific lessons for policy.
+ We restrict ourselves to three areas where our findings can be operationalized.
+\end_layout
+
+\begin_layout Standard
+First, even though we find no evidence of actual differences in quality
+ between male and female managed agro-input shops, existing training and
+ advisory services for agro-input dealers are likely to be biased toward
+ men.
+ Ensuring that women entrepreneurs have access to, and benefit from, training
+ should be an important policy priority.
+ The effectiveness and inclusiveness of training programs depends on many
+ attributes of the program.
+ This include the more obvious things such as the content of what is taught
+ in the training and who is targeted but also less obvious attributes such
+ as the gender of who provides the training, timings of training, etc.
+ However, it is also important to change the perception that female managed
+ agro-input shops are likely to receive less training.
+ This could be achieved by make training attendance publicly visible, perhaps
+ through a register of trained agro-input dealers, through certificates
+ that are advertised in the shops etc, such that equal ability between male
+ and female managed agro-input shops becomes more salient to clients.
+\end_layout
+
+\begin_layout Standard
+Second, the share of women among opinion leaders and experts in the sector
+ also needs to increase.
+ In light of the emerging evidence of the importance of role models, the
+ presence of women among agro-input dealers, inspectors, and leadership
+ of professional associations such as the Uganda National Agro-input Dealer
+ Association (UNADA) needs to increase.
+ For public sector positions, quota's may be considered.
+ 
+\end_layout
+
+\begin_layout Standard
+Finally, we found that biased perception exist especially with respect to
+ prices charged by agro-input dealers.
+ Also here, simply advertising prices may be sufficient to make prices objective
+ly verifiable, and customers need to depend less on perceptions and use
+ mental shortcuts that are prone to gender equity bias.
 \end_layout
 
 \begin_layout Section*
