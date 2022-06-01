@@ -1894,7 +1894,7 @@ multicolumn{1} {c} {pest/disease}&
 
 
 \backslash
-multicolumn{1} {c} {early}&
+multicolumn{1} {c} {speed of}&
 \end_layout
 
 \begin_layout Plain Layout
@@ -2574,7 +2574,7 @@ noprefix "false"
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -3043,7 +3043,7 @@ Sexpr{ifelse(s8[9,7]<.01,"***",ifelse(s8[9,7]<.05,"**",ifelse(s8[9,7]<.1,"*","")
 
 \begin_layout Plain Layout
 
-{(in years)}
+{in years}
 \end_layout
 
 \begin_layout Plain Layout
@@ -3163,7 +3163,7 @@ Sexpr{s8[11,7]})$
 
 \begin_layout Plain Layout
 
-{Shop's rating provided}   &  & $
+{Shop’s cleanness/professionality}   &  & $
 \backslash
 Sexpr{s8[13,2]}^{
 \backslash
@@ -3177,7 +3177,7 @@ Sexpr{ifelse(s8[15,2]<.01,"***",ifelse(s8[15,2]<.05,"**",ifelse(s8[15,2]<.1,"*",
 
 \begin_layout Plain Layout
 
-{by enumerator} 
+{rating by enumerator} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -3193,7 +3193,7 @@ Sexpr{s8[14,2]})$ &  &  &  &  &
 
 \begin_layout Plain Layout
 
-{Index of efforts and}   & $
+{Index of dealer’s}   & $
 \backslash
 Sexpr{s8[13,1]}^{
 \backslash
@@ -3212,7 +3212,7 @@ Sexpr{ifelse(s8[18,2]<.01,"***",ifelse(s8[18,2]<.05,"**",ifelse(s8[18,2]<.1,"*",
 
 \begin_layout Plain Layout
 
-{services offered by dealer} 
+{efforts and services} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -3230,7 +3230,7 @@ Sexpr{s8[17,2]})$ &  &  &  &  &
 
 \begin_layout Plain Layout
 
-{Index of capital intensive seed}   &  & $
+{Index of capital-intensive seed}   &  & $
 \backslash
 Sexpr{s8[19,2]}^{
 \backslash
@@ -3269,7 +3269,7 @@ Sexpr{s8[20,2]})$ &  &  &  &  &
 
 \begin_layout Plain Layout
 
-{Distance between farmer}   & $
+{Standardized distance}   & $
 \backslash
 Sexpr{s8[16,1]}^{
 \backslash
@@ -3293,7 +3293,7 @@ Sexpr{ifelse(s8[15,3]<.01,"***",ifelse(s8[15,3]<.05,"**",ifelse(s8[15,3]<.1,"*",
 
 \begin_layout Plain Layout
 
-{and dealer} 
+{between farmer and dealer} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -3311,7 +3311,7 @@ Sexpr{s8[14,3]})$ &  &  &  &
 
 \begin_layout Plain Layout
 
-{Sales price of}   & $
+{Standardized sales price}   & $
 \backslash
 Sexpr{s8[19,1]}^{
 \backslash
@@ -3340,7 +3340,7 @@ Sexpr{ifelse(s8[15,4]<.01,"***",ifelse(s8[15,4]<.05,"**",ifelse(s8[15,4]<.1,"*",
 
 \begin_layout Plain Layout
 
-{maize seeds}
+{of maize varieties}
 \end_layout
 
 \begin_layout Plain Layout
@@ -3358,7 +3358,7 @@ Sexpr{s8[14,4]})$ &  &  &
 
 \begin_layout Plain Layout
 
-{Cost of buying maize}   & $
+{Cost of maize varieties}   & $
 \backslash
 Sexpr{s8[22,1]}^{
 \backslash
@@ -3382,7 +3382,7 @@ Sexpr{ifelse(s8[18,4]<.01,"***",ifelse(s8[18,4]<.05,"**",ifelse(s8[18,4]<.1,"*",
 
 \begin_layout Plain Layout
 
-{seeds for dealer} 
+{for dealer in UGX/kg} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -3451,7 +3451,7 @@ Sexpr{s8[14,5]})$ & &
 
 \begin_layout Plain Layout
 
-{Hybrid maize seed varieties}   & $
+{Number of hybrid}   & $
 \backslash
 Sexpr{s8[28,1]}^{
 \backslash
@@ -3475,7 +3475,7 @@ Sexpr{ifelse(s8[15,6]<.01,"***",ifelse(s8[15,6]<.05,"**",ifelse(s8[15,6]<.1,"*",
 
 \begin_layout Plain Layout
 
-{in stock}
+{maize varieties in stock}
 \end_layout
 
 \begin_layout Plain Layout
@@ -3493,7 +3493,7 @@ Sexpr{s8[14,6]})$ &
 
 \begin_layout Plain Layout
 
-{Quantity of maize seeds}   & $
+{Standardized amount of seed}   & $
 \backslash
 Sexpr{s8[31,1]}^{
 \backslash
@@ -3517,7 +3517,7 @@ Sexpr{ifelse(s8[18,6]<.01,"***",ifelse(s8[18,6]<.05,"**",ifelse(s8[18,6]<.1,"*",
 
 \begin_layout Plain Layout
 
-{obtained by dealer}
+{bought by dealer from provider}
 \end_layout
 
 \begin_layout Plain Layout
@@ -3535,7 +3535,7 @@ Sexpr{s8[17,6]})$ &
 
 \begin_layout Plain Layout
 
-{Shop's age}   & $
+{Number of years since}   & $
 \backslash
 Sexpr{s8[34,1]}^{
 \backslash
@@ -3554,7 +3554,7 @@ Sexpr{ifelse(s8[15,7]<.01,"***",ifelse(s8[15,7]<.05,"**",ifelse(s8[15,7]<.1,"*",
 
 \begin_layout Plain Layout
 
-{(in years)}
+{shop’s establishment}
 \end_layout
 
 \begin_layout Plain Layout
@@ -3974,7 +3974,7 @@ multicolumn{1} {c} {pest/disease}&
 
 
 \backslash
-multicolumn{1} {c} {early}&
+multicolumn{1} {c} {speed of}&
 \end_layout
 
 \begin_layout Plain Layout
@@ -4279,7 +4279,7 @@ Sexpr{ifelse(s6[9,7]<.01,"***",ifelse(s6[9,7]<.05,"**",ifelse(s6[9,7]<.1,"*","")
 
 \begin_layout Plain Layout
 
-{(in years)} &  $(
+{in years} &  $(
 \backslash
 Sexpr{s6[8,1]})$   &  $(
 \backslash
@@ -5489,7 +5489,7 @@ multicolumn{1} {c} {pest/disease}&
 
 
 \backslash
-multicolumn{1} {c} {early}&
+multicolumn{1} {c} {speed of}&
 \end_layout
 
 \begin_layout Plain Layout
@@ -6257,7 +6257,7 @@ Sexpr{ifelse(fe4[9,7]<.01,"***",ifelse(fe4[9,7]<.05,"**",ifelse(fe4[9,7]<.1,"*",
 
 \begin_layout Plain Layout
 
-{(in years)}
+{in years}
 \end_layout
 
 \begin_layout Plain Layout
@@ -6377,7 +6377,7 @@ Sexpr{fe4[11,7]})$
 
 \begin_layout Plain Layout
 
-{Shop's rating provided}   &  & $
+{Shop’s cleanness/professionality}   &  & $
 \backslash
 Sexpr{fe4[13,2]}^{
 \backslash
@@ -6391,7 +6391,7 @@ Sexpr{ifelse(fe4[15,2]<.01,"***",ifelse(fe4[15,2]<.05,"**",ifelse(fe4[15,2]<.1,"
 
 \begin_layout Plain Layout
 
-{by enumerator} 
+{rating by enumerator} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -6407,7 +6407,7 @@ Sexpr{fe4[14,2]})$ &  &  &  &  &
 
 \begin_layout Plain Layout
 
-{Index of efforts and}   & $
+{Index of dealer’s}   & $
 \backslash
 Sexpr{fe4[13,1]}^{
 \backslash
@@ -6426,7 +6426,7 @@ Sexpr{ifelse(fe4[18,2]<.01,"***",ifelse(fe4[18,2]<.05,"**",ifelse(fe4[18,2]<.1,"
 
 \begin_layout Plain Layout
 
-{services offered by dealer} 
+{efforts and services} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -6444,7 +6444,7 @@ Sexpr{fe4[17,2]})$ &  &  &  &  &
 
 \begin_layout Plain Layout
 
-{Index of capital intensive seed}   &  & $
+{Index of capital-intensive seed}   &  & $
 \backslash
 Sexpr{fe4[19,2]}^{
 \backslash
@@ -6483,7 +6483,7 @@ Sexpr{fe4[20,2]})$ &  &  &  &  &
 
 \begin_layout Plain Layout
 
-{Distance between farmer}   & $
+{Standardized distance}   & $
 \backslash
 Sexpr{fe4[16,1]}^{
 \backslash
@@ -6507,7 +6507,7 @@ Sexpr{ifelse(fe4[15,3]<.01,"***",ifelse(fe4[15,3]<.05,"**",ifelse(fe4[15,3]<.1,"
 
 \begin_layout Plain Layout
 
-{and dealer} 
+{between farmer and dealer} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -6525,7 +6525,7 @@ Sexpr{fe4[14,3]})$ &  &  &  &
 
 \begin_layout Plain Layout
 
-{Sales price of}   & $
+{Standardized sales price}   & $
 \backslash
 Sexpr{fe4[19,1]}^{
 \backslash
@@ -6554,7 +6554,7 @@ Sexpr{ifelse(fe4[15,4]<.01,"***",ifelse(fe4[15,4]<.05,"**",ifelse(fe4[15,4]<.1,"
 
 \begin_layout Plain Layout
 
-{maize seeds}
+{of maize varieties}
 \end_layout
 
 \begin_layout Plain Layout
@@ -6572,7 +6572,7 @@ Sexpr{fe4[14,4]})$ &  &  &
 
 \begin_layout Plain Layout
 
-{Cost of buying maize}   & $
+{Cost of maize varieties}   & $
 \backslash
 Sexpr{fe4[22,1]}^{
 \backslash
@@ -6596,7 +6596,7 @@ Sexpr{ifelse(fe4[18,4]<.01,"***",ifelse(fe4[18,4]<.05,"**",ifelse(fe4[18,4]<.1,"
 
 \begin_layout Plain Layout
 
-{seeds for dealer} 
+{for dealer in UGX/kg} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -6665,7 +6665,7 @@ Sexpr{fe4[14,5]})$ & &
 
 \begin_layout Plain Layout
 
-{Hybrid maize seed varieties}   & $
+{Number of hybrid}   & $
 \backslash
 Sexpr{fe4[28,1]}^{
 \backslash
@@ -6689,7 +6689,7 @@ Sexpr{ifelse(fe4[15,6]<.01,"***",ifelse(fe4[15,6]<.05,"**",ifelse(fe4[15,6]<.1,"
 
 \begin_layout Plain Layout
 
-{in stock}
+{maize varieties in stock}
 \end_layout
 
 \begin_layout Plain Layout
@@ -6707,7 +6707,7 @@ Sexpr{fe4[14,6]})$ &
 
 \begin_layout Plain Layout
 
-{Quantity of maize seeds}   & $
+{Standardized amount of seed}   & $
 \backslash
 Sexpr{fe4[31,1]}^{
 \backslash
@@ -6731,7 +6731,7 @@ Sexpr{ifelse(fe4[18,6]<.01,"***",ifelse(fe4[18,6]<.05,"**",ifelse(fe4[18,6]<.1,"
 
 \begin_layout Plain Layout
 
-{obtained by dealer}
+{bought by dealer from provider}
 \end_layout
 
 \begin_layout Plain Layout
@@ -6749,7 +6749,7 @@ Sexpr{fe4[17,6]})$ &
 
 \begin_layout Plain Layout
 
-{Shop's age}   & $
+{Number of years since}   & $
 \backslash
 Sexpr{fe4[34,1]}^{
 \backslash
@@ -6768,7 +6768,7 @@ Sexpr{ifelse(fe4[15,7]<.01,"***",ifelse(fe4[15,7]<.05,"**",ifelse(fe4[15,7]<.1,"
 
 \begin_layout Plain Layout
 
-{(in years)}
+{shop’s establishment}
 \end_layout
 
 \begin_layout Plain Layout
@@ -7148,7 +7148,7 @@ multicolumn{1} {c} {pest/disease}&
 
 
 \backslash
-multicolumn{1} {c} {early}&
+multicolumn{1} {c} {speed of}&
 \end_layout
 
 \begin_layout Plain Layout
@@ -7383,7 +7383,7 @@ Sexpr{ifelse(fe2[7,7]<.01,"***",ifelse(fe2[7,7]<.05,"**",ifelse(fe2[7,7]<.1,"*",
 
 \begin_layout Plain Layout
 
-{(in years)} 
+{in years} 
 \end_layout
 
 \begin_layout Plain Layout
