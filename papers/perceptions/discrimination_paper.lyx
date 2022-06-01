@@ -2574,7 +2574,7 @@ noprefix "false"
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -2979,7 +2979,7 @@ Sexpr{s8[5,7]})$
 
 \begin_layout Plain Layout
 
-{Dealer's age}   & $
+{Dealer's age in years}   & $
 \backslash
 Sexpr{s8[7,1]}^{
 \backslash
@@ -3043,7 +3043,7 @@ Sexpr{ifelse(s8[9,7]<.01,"***",ifelse(s8[9,7]<.05,"**",ifelse(s8[9,7]<.1,"*","")
 
 \begin_layout Plain Layout
 
-{in years}
+{}
 \end_layout
 
 \begin_layout Plain Layout
@@ -3071,7 +3071,7 @@ Sexpr{s8[8,7]})$
 
 \begin_layout Plain Layout
 
-{Dealer finished}   & $
+{Dealer finished secondary}   & $
 \backslash
 Sexpr{s8[10,1]}^{
 \backslash
@@ -3135,7 +3135,7 @@ Sexpr{ifelse(s8[12,7]<.01,"***",ifelse(s8[12,7]<.05,"**",ifelse(s8[12,7]<.1,"*",
 
 \begin_layout Plain Layout
 
-{secondary education}
+{        education}
 \end_layout
 
 \begin_layout Plain Layout
@@ -3177,7 +3177,7 @@ Sexpr{ifelse(s8[15,2]<.01,"***",ifelse(s8[15,2]<.05,"**",ifelse(s8[15,2]<.1,"*",
 
 \begin_layout Plain Layout
 
-{rating by enumerator} 
+{        rating by enumerator} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -3193,7 +3193,7 @@ Sexpr{s8[14,2]})$ &  &  &  &  &
 
 \begin_layout Plain Layout
 
-{Index of dealer’s}   & $
+{Index of dealer’s efforts}   & $
 \backslash
 Sexpr{s8[13,1]}^{
 \backslash
@@ -3212,7 +3212,7 @@ Sexpr{ifelse(s8[18,2]<.01,"***",ifelse(s8[18,2]<.05,"**",ifelse(s8[18,2]<.1,"*",
 
 \begin_layout Plain Layout
 
-{efforts and services} 
+{        and services} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -3244,7 +3244,7 @@ Sexpr{ifelse(s8[21,2]<.01,"***",ifelse(s8[21,2]<.05,"**",ifelse(s8[21,2]<.1,"*",
 
 \begin_layout Plain Layout
 
-{handling and storage practices}
+{        handling/storage practices}
 \end_layout
 
 \begin_layout Plain Layout
@@ -3260,7 +3260,7 @@ Sexpr{s8[20,2]})$ &  &  &  &  &
 
 \begin_layout Plain Layout
 
-{observed by enumerator} &  & & & & & & 
+{        observed by enumerator} &  & & & & & & 
 \backslash
 
 \backslash
@@ -3269,7 +3269,7 @@ Sexpr{s8[20,2]})$ &  &  &  &  &
 
 \begin_layout Plain Layout
 
-{Standardized distance}   & $
+{Standardized distance between}   & $
 \backslash
 Sexpr{s8[16,1]}^{
 \backslash
@@ -3293,7 +3293,7 @@ Sexpr{ifelse(s8[15,3]<.01,"***",ifelse(s8[15,3]<.05,"**",ifelse(s8[15,3]<.1,"*",
 
 \begin_layout Plain Layout
 
-{between farmer and dealer} 
+{        farmer and dealer} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -3340,7 +3340,7 @@ Sexpr{ifelse(s8[15,4]<.01,"***",ifelse(s8[15,4]<.05,"**",ifelse(s8[15,4]<.1,"*",
 
 \begin_layout Plain Layout
 
-{of maize varieties}
+{        of maize seed}
 \end_layout
 
 \begin_layout Plain Layout
@@ -3358,7 +3358,7 @@ Sexpr{s8[14,4]})$ &  &  &
 
 \begin_layout Plain Layout
 
-{Cost of maize varieties}   & $
+{Standardized cost of maize}   & $
 \backslash
 Sexpr{s8[22,1]}^{
 \backslash
@@ -3382,7 +3382,7 @@ Sexpr{ifelse(s8[18,4]<.01,"***",ifelse(s8[18,4]<.05,"**",ifelse(s8[18,4]<.1,"*",
 
 \begin_layout Plain Layout
 
-{for dealer in UGX/kg} 
+{        seed for dealer} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -3400,7 +3400,7 @@ Sexpr{s8[17,4]})$ &  &  &
 
 \begin_layout Plain Layout
 
-{Index of all seed handling}   & $
+{Index of all seed}   & $
 \backslash
 Sexpr{s8[25,1]}^{
 \backslash
@@ -3424,7 +3424,7 @@ Sexpr{ifelse(s8[15,5]<.01,"***",ifelse(s8[15,5]<.05,"**",ifelse(s8[15,5]<.1,"*",
 
 \begin_layout Plain Layout
 
-{and storage practices}
+{        handling/storage practices}
 \end_layout
 
 \begin_layout Plain Layout
@@ -3442,7 +3442,7 @@ Sexpr{s8[14,5]})$ & &
 
 \begin_layout Plain Layout
 
-{observed by enumerator} & & & & & & & 
+{        observed by enumerator} & & & & & & & 
 \backslash
 
 \backslash
@@ -3451,7 +3451,7 @@ Sexpr{s8[14,5]})$ & &
 
 \begin_layout Plain Layout
 
-{Number of hybrid}   & $
+{Number of hybrid maize}   & $
 \backslash
 Sexpr{s8[28,1]}^{
 \backslash
@@ -3475,7 +3475,7 @@ Sexpr{ifelse(s8[15,6]<.01,"***",ifelse(s8[15,6]<.05,"**",ifelse(s8[15,6]<.1,"*",
 
 \begin_layout Plain Layout
 
-{maize varieties in stock}
+{        varieties in stock}
 \end_layout
 
 \begin_layout Plain Layout
@@ -3493,7 +3493,7 @@ Sexpr{s8[14,6]})$ &
 
 \begin_layout Plain Layout
 
-{Standardized amount of seed}   & $
+{Standardized amount of maize}   & $
 \backslash
 Sexpr{s8[31,1]}^{
 \backslash
@@ -3517,7 +3517,7 @@ Sexpr{ifelse(s8[18,6]<.01,"***",ifelse(s8[18,6]<.05,"**",ifelse(s8[18,6]<.1,"*",
 
 \begin_layout Plain Layout
 
-{bought by dealer from provider}
+{        seed dealer bought}
 \end_layout
 
 \begin_layout Plain Layout
@@ -3554,7 +3554,7 @@ Sexpr{ifelse(s8[15,7]<.01,"***",ifelse(s8[15,7]<.05,"**",ifelse(s8[15,7]<.1,"*",
 
 \begin_layout Plain Layout
 
-{shop’s establishment}
+{        shop’s establishment}
 \end_layout
 
 \begin_layout Plain Layout
@@ -3596,7 +3596,7 @@ Sexpr{ifelse(s8[18,7]<.01,"***",ifelse(s8[18,7]<.05,"**",ifelse(s8[18,7]<.1,"*",
 
 \begin_layout Plain Layout
 
-{registration}
+{        registration}
 \end_layout
 
 \begin_layout Plain Layout
@@ -4215,7 +4215,7 @@ Sexpr{s6[5,7]})$
 
 \begin_layout Plain Layout
 
-{Dealer's age}   & $
+{Dealer's age in years}   & $
 \backslash
 Sexpr{s6[7,1]}^{
 \backslash
@@ -4279,7 +4279,7 @@ Sexpr{ifelse(s6[9,7]<.01,"***",ifelse(s6[9,7]<.05,"**",ifelse(s6[9,7]<.1,"*","")
 
 \begin_layout Plain Layout
 
-{in years} &  $(
+{} &  $(
 \backslash
 Sexpr{s6[8,1]})$   &  $(
 \backslash
@@ -4302,7 +4302,7 @@ Sexpr{s6[8,7]})$
 
 \begin_layout Plain Layout
 
-{Dealer finished}   & $
+{Dealer finished secondary}   & $
 \backslash
 Sexpr{s6[10,1]}^{
 \backslash
@@ -4366,7 +4366,7 @@ Sexpr{ifelse(s6[12,7]<.01,"***",ifelse(s6[12,7]<.05,"**",ifelse(s6[12,7]<.1,"*",
 
 \begin_layout Plain Layout
 
-{secondary education}&  $(
+{        education}&  $(
 \backslash
 Sexpr{s6[11,1]})$   &  $(
 \backslash
@@ -4389,7 +4389,7 @@ Sexpr{s6[11,7]})$
 
 \begin_layout Plain Layout
 
-{Index of all seed handling}   & $
+{Index of all seed}   & $
 \backslash
 Sexpr{s6[13,1]}^{
 \backslash
@@ -4453,7 +4453,7 @@ Sexpr{ifelse(s6[15,7]<.01,"***",ifelse(s6[15,7]<.05,"**",ifelse(s6[15,7]<.1,"*",
 
 \begin_layout Plain Layout
 
-{and storage practices} &  $(
+{        handling/storage practices} &  $(
 \backslash
 Sexpr{s6[14,1]})$   &  $(
 \backslash
@@ -4476,7 +4476,7 @@ Sexpr{s6[14,7]})$
 
 \begin_layout Plain Layout
 
-{observed by enumerator} &  &  &  &  &  &  &  
+{        observed by enumerator} &  &  &  &  &  &  &  
 \end_layout
 
 \begin_layout Plain Layout
@@ -6193,7 +6193,7 @@ Sexpr{fe4[5,7]})$
 
 \begin_layout Plain Layout
 
-{Dealer's age}   & $
+{Dealer's age in years}   & $
 \backslash
 Sexpr{fe4[7,1]}^{
 \backslash
@@ -6257,7 +6257,7 @@ Sexpr{ifelse(fe4[9,7]<.01,"***",ifelse(fe4[9,7]<.05,"**",ifelse(fe4[9,7]<.1,"*",
 
 \begin_layout Plain Layout
 
-{in years}
+{}
 \end_layout
 
 \begin_layout Plain Layout
@@ -6285,7 +6285,7 @@ Sexpr{fe4[8,7]})$
 
 \begin_layout Plain Layout
 
-{Dealer finished}   & $
+{Dealer finished secondary}   & $
 \backslash
 Sexpr{fe4[10,1]}^{
 \backslash
@@ -6349,7 +6349,7 @@ Sexpr{ifelse(fe4[12,7]<.01,"***",ifelse(fe4[12,7]<.05,"**",ifelse(fe4[12,7]<.1,"
 
 \begin_layout Plain Layout
 
-{secondary education}
+{        education}
 \end_layout
 
 \begin_layout Plain Layout
@@ -6391,7 +6391,7 @@ Sexpr{ifelse(fe4[15,2]<.01,"***",ifelse(fe4[15,2]<.05,"**",ifelse(fe4[15,2]<.1,"
 
 \begin_layout Plain Layout
 
-{rating by enumerator} 
+{        rating by enumerator} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -6407,7 +6407,7 @@ Sexpr{fe4[14,2]})$ &  &  &  &  &
 
 \begin_layout Plain Layout
 
-{Index of dealer’s}   & $
+{Index of dealer’s efforts}   & $
 \backslash
 Sexpr{fe4[13,1]}^{
 \backslash
@@ -6426,7 +6426,7 @@ Sexpr{ifelse(fe4[18,2]<.01,"***",ifelse(fe4[18,2]<.05,"**",ifelse(fe4[18,2]<.1,"
 
 \begin_layout Plain Layout
 
-{efforts and services} 
+{        and services} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -6458,7 +6458,7 @@ Sexpr{ifelse(fe4[21,2]<.01,"***",ifelse(fe4[21,2]<.05,"**",ifelse(fe4[21,2]<.1,"
 
 \begin_layout Plain Layout
 
-{handling and storage practices}
+{        handling/storage practices}
 \end_layout
 
 \begin_layout Plain Layout
@@ -6474,7 +6474,7 @@ Sexpr{fe4[20,2]})$ &  &  &  &  &
 
 \begin_layout Plain Layout
 
-{observed by enumerator} &  & & & & & & 
+{        observed by enumerator} &  & & & & & & 
 \backslash
 
 \backslash
@@ -6483,7 +6483,7 @@ Sexpr{fe4[20,2]})$ &  &  &  &  &
 
 \begin_layout Plain Layout
 
-{Standardized distance}   & $
+{Standardized distance between}   & $
 \backslash
 Sexpr{fe4[16,1]}^{
 \backslash
@@ -6507,7 +6507,7 @@ Sexpr{ifelse(fe4[15,3]<.01,"***",ifelse(fe4[15,3]<.05,"**",ifelse(fe4[15,3]<.1,"
 
 \begin_layout Plain Layout
 
-{between farmer and dealer} 
+{        farmer and dealer} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -6554,7 +6554,7 @@ Sexpr{ifelse(fe4[15,4]<.01,"***",ifelse(fe4[15,4]<.05,"**",ifelse(fe4[15,4]<.1,"
 
 \begin_layout Plain Layout
 
-{of maize varieties}
+{        of maize seed}
 \end_layout
 
 \begin_layout Plain Layout
@@ -6572,7 +6572,7 @@ Sexpr{fe4[14,4]})$ &  &  &
 
 \begin_layout Plain Layout
 
-{Cost of maize varieties}   & $
+{Standardized cost of maize}   & $
 \backslash
 Sexpr{fe4[22,1]}^{
 \backslash
@@ -6596,7 +6596,7 @@ Sexpr{ifelse(fe4[18,4]<.01,"***",ifelse(fe4[18,4]<.05,"**",ifelse(fe4[18,4]<.1,"
 
 \begin_layout Plain Layout
 
-{for dealer in UGX/kg} 
+{        seed for dealer} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -6614,7 +6614,7 @@ Sexpr{fe4[17,4]})$ &  &  &
 
 \begin_layout Plain Layout
 
-{Index of all seed handling}   & $
+{Index of all seed}   & $
 \backslash
 Sexpr{fe4[25,1]}^{
 \backslash
@@ -6638,7 +6638,7 @@ Sexpr{ifelse(fe4[15,5]<.01,"***",ifelse(fe4[15,5]<.05,"**",ifelse(fe4[15,5]<.1,"
 
 \begin_layout Plain Layout
 
-{and storage practices}
+{        handling/storage practices}
 \end_layout
 
 \begin_layout Plain Layout
@@ -6656,7 +6656,7 @@ Sexpr{fe4[14,5]})$ & &
 
 \begin_layout Plain Layout
 
-{observed by enumerator} & & & & & & & 
+{        observed by enumerator} & & & & & & & 
 \backslash
 
 \backslash
@@ -6665,7 +6665,7 @@ Sexpr{fe4[14,5]})$ & &
 
 \begin_layout Plain Layout
 
-{Number of hybrid}   & $
+{Number of hybrid maize}   & $
 \backslash
 Sexpr{fe4[28,1]}^{
 \backslash
@@ -6689,7 +6689,7 @@ Sexpr{ifelse(fe4[15,6]<.01,"***",ifelse(fe4[15,6]<.05,"**",ifelse(fe4[15,6]<.1,"
 
 \begin_layout Plain Layout
 
-{maize varieties in stock}
+{        varieties in stock}
 \end_layout
 
 \begin_layout Plain Layout
@@ -6707,7 +6707,7 @@ Sexpr{fe4[14,6]})$ &
 
 \begin_layout Plain Layout
 
-{Standardized amount of seed}   & $
+{Standardized amount of maize}   & $
 \backslash
 Sexpr{fe4[31,1]}^{
 \backslash
@@ -6731,7 +6731,7 @@ Sexpr{ifelse(fe4[18,6]<.01,"***",ifelse(fe4[18,6]<.05,"**",ifelse(fe4[18,6]<.1,"
 
 \begin_layout Plain Layout
 
-{bought by dealer from provider}
+{        seed dealer bought}
 \end_layout
 
 \begin_layout Plain Layout
@@ -6768,7 +6768,7 @@ Sexpr{ifelse(fe4[15,7]<.01,"***",ifelse(fe4[15,7]<.05,"**",ifelse(fe4[15,7]<.1,"
 
 \begin_layout Plain Layout
 
-{shop’s establishment}
+{        shop’s establishment}
 \end_layout
 
 \begin_layout Plain Layout
@@ -6810,7 +6810,7 @@ Sexpr{ifelse(fe4[18,7]<.01,"***",ifelse(fe4[18,7]<.05,"**",ifelse(fe4[18,7]<.1,"
 
 \begin_layout Plain Layout
 
-{registration}
+{        registration}
 \end_layout
 
 \begin_layout Plain Layout
@@ -6989,7 +6989,7 @@ noprefix "false"
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -7319,7 +7319,7 @@ Sexpr{fe2[3,7]})$
 
 \begin_layout Plain Layout
 
-{Dealer's age}   & $
+{Dealer's age in years}   & $
 \backslash
 Sexpr{fe2[5,1]}^{
 \backslash
@@ -7383,7 +7383,7 @@ Sexpr{ifelse(fe2[7,7]<.01,"***",ifelse(fe2[7,7]<.05,"**",ifelse(fe2[7,7]<.1,"*",
 
 \begin_layout Plain Layout
 
-{in years} 
+{} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -7411,7 +7411,7 @@ Sexpr{fe2[6,7]})$
 
 \begin_layout Plain Layout
 
-{Dealer finished}   & $
+{Dealer finished secondary}   & $
 \backslash
 Sexpr{fe2[8,1]}^{
 \backslash
@@ -7475,7 +7475,7 @@ Sexpr{ifelse(fe2[10,7]<.01,"***",ifelse(fe2[10,7]<.05,"**",ifelse(fe2[10,7]<.1,"
 
 \begin_layout Plain Layout
 
-{secondary education} 
+{        education} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -7503,7 +7503,7 @@ Sexpr{fe2[9,7]})$
 
 \begin_layout Plain Layout
 
-{Index of all seed handling}   & $
+{Index of all seed}   & $
 \backslash
 Sexpr{fe2[11,1]}^{
 \backslash
@@ -7567,7 +7567,7 @@ Sexpr{ifelse(fe2[13,7]<.01,"***",ifelse(fe2[13,7]<.05,"**",ifelse(fe2[13,7]<.1,"
 
 \begin_layout Plain Layout
 
-{and storage practices}
+{        handling/storage practices}
 \end_layout
 
 \begin_layout Plain Layout
@@ -7595,7 +7595,7 @@ Sexpr{fe2[12,7]})$
 
 \begin_layout Plain Layout
 
-{observed by enumerator} &  &  &  &  &  &  &  
+{        observed by enumerator} &  &  &  &  &  &  &  
 \end_layout
 
 \begin_layout Plain Layout
