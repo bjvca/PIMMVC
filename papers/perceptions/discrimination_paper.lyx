@@ -2423,10 +2423,26 @@ literal "false"
 
 \begin_layout Standard
 When farmers are asked to assess agro-input dealers in terms of their location,
- the average distance between the agro-input dealer and their customers
- (based on GPS coordinates), capturing some indication of centrality of
- the agro-input dealer, provides an obvious candidate as a control variable
- (third column in Table 
+ the average distance
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+The haversine formula calculating the arc distance between two points on
+ earth is used.
+ The latitudes and longitudes are extracted from the GPS coordinates for
+ both farmers and input dealer shops and inserted as paired values in the
+ haversine formula.
+ This formula then calulates the distances between these paired latitudes
+ and longitudes in metres, following which we obtain the distances in kilometres
+ and standardize the variable.
+\end_layout
+
+\end_inset
+
+ between the agro-input dealer and their customers (based on GPS coordinates),
+ capturing some indication of centrality of the agro-input dealer, provides
+ an obvious candidate as a control variable (third column in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:q1_betw_dealers_dealer_controls-1"
