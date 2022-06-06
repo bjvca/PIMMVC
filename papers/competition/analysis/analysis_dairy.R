@@ -142,3 +142,7 @@ farmers$trader_sup_drugs <- as.numeric(as.character(farmers$dairy.sales.neighbou
 summary(lm(trader_sup_drugs~dairy.sales.q95, data=farmers))
 
 
+
+
+
+
