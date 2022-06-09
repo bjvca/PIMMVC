@@ -1216,17 +1216,7 @@ status collapsed
 
 \begin_layout Plain Layout
 Between dealers model focusing on dealer ratings (control variables not
- included, Q1 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-What is Q1 referring to? (also all following tables
-\end_layout
-
-\end_inset
-
-).
+ included).
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:q1_betw_dealers_dealer_no_controls"
@@ -1748,8 +1738,7 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Between dealers model focusing on seed ratings (control variables not included,
- Q1).
+Between dealers model focusing on seed ratings (control variables not included).
  
 \begin_inset CommandInset label
 LatexCommand label
@@ -2556,8 +2545,7 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Between dealers model focusing on dealer ratings (control variables included,
- Q1).
+Between dealers model focusing on dealer ratings (control variables included).
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:q1_betw_dealers_dealer_controls-1"
@@ -3745,8 +3733,7 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Between dealers model focusing on seed ratings (control variables included,
- Q1).
+Between dealers model focusing on seed ratings (control variables included).
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:q1_betw_dealers_seed_controls"
@@ -4662,7 +4649,7 @@ status collapsed
 
 \begin_layout Plain Layout
 Farmer fixed effects model focusing on dealer ratings (control variables
- not included, Q1).
+ not included).
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:q1_farmer_FE_dealer_no_controls"
@@ -5184,8 +5171,7 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Farmer fixed effects model focusing on seed ratings (no controls included,
- Q1).
+Farmer fixed effects model focusing on seed ratings (no controls included).
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:q1_farmer_FE_seed_no_controls"
@@ -5671,7 +5657,7 @@ status collapsed
 
 \begin_layout Plain Layout
 Farmer fixed effects model focusing on dealer ratings (control variables
- included, Q1).
+ included).
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:q1_farmer_FE_dealer_controls-1"
@@ -6760,8 +6746,7 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Farmer fixed effects model focusing on seed ratings (control variables included,
- Q1).
+Farmer fixed effects model focusing on seed ratings (control variables included).
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:q1_farmer_FE_seed_controls"
