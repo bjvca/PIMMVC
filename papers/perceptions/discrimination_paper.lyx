@@ -125,24 +125,15 @@ footnotemark[1]}
 
 \end_inset
 
-Gender equity bias 
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-Caro: I'm in favor of "Gender bias" instead of "Gender equity bias"
-\end_layout
-
-\end_inset
-
-in consumer perceptions: the case of agro-input dealers in Uganda 
+Gender bias in consumer perceptions: the case of agro-input dealers in Uganda
+ 
 \end_layout
 
 \begin_layout Abstract
 Faced with incomplete and imperfect information, economic actors rely predominan
 tly on perceptions and often base decisions on heuristics prone to bias.
  Gender bias in perceptions favoring men has been found in a wide variety
- of settings and may be an important reason why some sectors are dominated
+ of settings and may be an important reason why some sectors remain dominated
  by men and gender gaps persist.
  Using ratings of agro-input dealers provided by smallholder farmers in
  their vicinity, we test if farmers perceive male managed agro-input shops
@@ -151,7 +142,7 @@ tly on perceptions and often base decisions on heuristics prone to bias.
  and including fixed effects to account for farmer level heterogeneity,
  we find that farmers rate male managed agro-input outlets higher on a range
  of attributes related to the dealership in general, as well as when farmers
- are asked to consider the quality of inputs sold by the dealer in particular.
+ are asked to consider the quality of inputs sold by the dealer.
  Our results suggest that biased perceptions by consumers continue to be
  an important entry barrier for women in the sub-sector, and we conclude
  that policies and interventions designed to challenge gender norms and
@@ -223,9 +214,9 @@ literal "false"
  economic actors to objectively assess the value of a commodity or service
  being transacted.
  However, perceptions and decision heuristics may suffer from a variety
- of cognitive biases such as stereotype thinking, and may be influenced
- by social and cultural phenomena such as homophily effects and prevailing
- norms and customs.
+ of cognitive biases such as stereotype thinking and availability bias,
+ and may be influenced by social and cultural phenomena such as homophily
+ effects and prevailing norms and customs.
 \end_layout
 
 \begin_layout Standard
@@ -246,7 +237,7 @@ Agricultural inputs such as inorganic fertilizers or improved seed varieties
 \begin_layout Standard
 In addition to the fact that the quality of agricultural inputs is difficult
  to judge, several studies note that there is considerable heterogeneity
- in the quality of inputs on the market.
+ in the quality of inputs in the market.
  For instance, in Uganda, 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -287,18 +278,9 @@ literal "false"
 In traditional societies with strong gender norms and customs, small businesses
  at different nodes along food supply chains are often one of the few options
  open to women to earn some money independently from the husband.
- While rapid urbanization has led to the emergensource(paste(path, "code/percept
-ions_seed.R
-\begin_inset Quotes erd
-\end_inset
-
-, sep = "/"))
-\end_layout
-
-\begin_layout Standard
-ce of fast food restaurants, informal food vendors, who tend to be self-employed
- women, are still the main source of food for the majority of households
- 
+ While rapid urbanization has led to the emergence of fast food restaurants,
+ informal food vendors, who tend to be self-employed women, are still the
+ main source of food for the majority of households 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "GIROUX2021101997"
@@ -324,14 +306,24 @@ literal "false"
 
 \begin_layout Standard
 However, the same gender norms and customs may also mean that perceptions
- are stacked against women.
+ are stacked against women if they venture into certain areas such as agro-input
+ provision.
  Farmers, both male and female, may be of the opinion that modern agricultural
  technologies are in the male domain.
  Furthermore, agro-input shops primarily deal in seed for semi-commercial
  crops such as maize or rice, as opposed to food security crops such as
  beans or cassava.
  Again, commercial crops are often considered to be the responsibility of
- the men, while women are assumed to take care of the household food supply.
+ the men, while women are assumed to take care of the household food supply
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "orr2016we,doi:10.1080/00220380412331321961"
+literal "false"
+
+\end_inset
+
+.
  As a result, we conjecture that female managed agro-input shops may be
  disadvantaged when farmers form opinions about the quality of services
  rendered or goods sold.
@@ -342,7 +334,7 @@ In this paper, we test if farmers perceive agro-input shops managed by women
  less favorably than agro-input shops under male management using a unique
  dyadic dataset of farmer-dealer combinations.
  To operationalize perceptions, we asked farmer to rate agro-input dealers,
- on a scale of 1 to 5, on a range of characteristics.
+ on a scale of 1 to 5 on a range of characteristics.
  We then make between-dealer comparisons, accounting for observable differences
  in the quality of male- and female-managed shops.
  Furthermore, we use the fact that a farmer has generally rated more than
@@ -369,9 +361,9 @@ We find that farmers generally rate male managed agro-input shops more favorable
 \begin_layout Standard
 In the remainder of this article we first situate the research question
  in the wider literature.
- The next section provides the context for the study and describes the main
- economic actors: agro-input dealers and smallholder maize farmers.
- We then describe how we measure perceptions, the key variable in this study.
+ We then provide the context for the study and describe the main economic
+ actors: agro-input dealers and smallholder maize farmers.
+ We also describe how we measure perceptions, the key variable in this study.
  Next, we lay out the empirical strategy, followed by the results.
  A final section concludes and offers some policy guidance.
 \end_layout
@@ -384,8 +376,8 @@ Research question and relation to the literature
 We aim to test if gender equity bias—behavior that shows favoritism toward
  one gender over another—is present in the way smallholder maize farmers
  in southwestern Uganda perceive agro-input dealers in their neighborhood.
- Gender equity bias has been confirmed in a wide varieties of contexts,
- usually when people are asked to assess the performance of another person.
+ Gender equity bias has been confirmed in a wide range of contexts, usually
+ when people are asked to assess the performance of another person.
  Stereotyping and role congruence are often catalysts for distorted perceptions
  and false beliefs about the abilities of particular groups of people.
  We highlight some of the most important studies that search for systematic
@@ -467,7 +459,7 @@ literal "false"
 
 \end_inset
 
- uses data from an online forum for economics called 
+ uses data from an online forum for economists called 
 \begin_inset Quotes eld
 \end_inset
 
@@ -539,8 +531,9 @@ The reason why gender bias features so prominently in areas such as scholarly
  fact that perceptions are made explicit in the process, for instance through
  review reports, student feedback or hiring committees.
  However, in economic transactions, gender biases remain hidden as perceptions
- are never measured and differences in outcomes are attributed to various
- other causes, such as differences in education levels between men and women.
+ are never measured.
+ As a result, differences in outcomes are often attributed to various other
+ causes, such as differences in education of ability between men and women.
 \end_layout
 
 \begin_layout Section*
@@ -562,8 +555,8 @@ A catchment area is defined as an area that is served by an agro-input dealer,
  as the area where this dealer's customers live.
  Catchment areas of two or more dealers overlap if these dealers operate
  in the same town, street or right next to each other.
- The assignment of agro-input shops to catchment areas is done on the basis
- of their geographical location.
+ More in particular, the assignment of different agro-input shops to the
+ same catchment areas is done on the basis of their geographical location.
  Using GPS coordinates of the dealers, the halversine function is used to
  construct an adjacency matrix, and shops that are less than 5 kilometers
  apart are grouped into a single catchment area.
@@ -591,19 +584,44 @@ There is quite some heterogeneity when it comes to agro-input shops.
  The average shop receives about 40 customers a day, half of which come
  there to buy maize seed, and has been in operation for about 5 years.
  The shop has on average 3 maize seed varieties in stock.
+ Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Descriptive-agro-input-dealer"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ provides some descriptive statistics of the agro-input shops included in
+ our study.
 \end_layout
 
 \begin_layout Standard
-The average farmer in our sample has a small field, with about 3.3 acres
- of land for crop production.
- Half of our sample indicate that they used improved maize seed on at least
- one plot in the season preceding the survey, and of the farmers that used
- improved seed, two thirds obtained this seed from an agro-input shop.
+The average farmer in our sample has is small, with about 3.3 acres of land
+ for crop production.
+ Half of our sample of farmers indicate that they used improved maize seed
+ on at least one plot in the season preceding the survey, and of the farmers
+ that used improved seed, two thirds obtained this seed from an agro-input
+ shop.
  However, fertilizer use is very low.
  As a result, productivity is also low with the average farmer harvesting
  only about 500 kg of maize per acre.
  Almost 70 percent of farmers are of the opinion that maize sold at the
  agro-input shop is counterfeit.
+ Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Descriptive-farmer-statistics"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ provides additional descriptive statistics of the farmers included in our
+ study.
 \end_layout
 
 \begin_layout Standard
@@ -619,7 +637,7 @@ status collapsed
 Descriptive agro-input dealer statistics
 \begin_inset CommandInset label
 LatexCommand label
-name "descriptives_dealer1"
+name "tab:Descriptive-agro-input-dealer"
 
 \end_inset
 
@@ -1331,7 +1349,7 @@ status collapsed
 Descriptive farmer statistics
 \begin_inset CommandInset label
 LatexCommand label
-name "descriptives_farmer1"
+name "tab:Descriptive-farmer-statistics"
 
 \end_inset
 
@@ -2067,20 +2085,8 @@ ly unobservable) characteristic of the farmer (eg.
  leading to interdependence in the other dimension.
  For example, the ratings that an agro-input dealer receives may be affected
  by a (potentially unobservable) characteristic of the dealer (eg.
- dealer effort
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-perhaps we better use an example that isn't related to dealer quality and
- therefore a real "error" e.g.
- dealer friendlyness
-\end_layout
-
-\end_inset
-
-), which may affect the ratings given by all farmers that rated this particular
- dealer.
+ dealer friendliness), which may affect the ratings given by all farmers
+ that rated this particular dealer.
  To account for this two-way interdependence in equation 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -2133,18 +2139,7 @@ noprefix "false"
 
 \end_inset
 
- 
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-There's something wrong with this cross-reference to eq.
- 2 but I can weirdly not fix it
-\end_layout
-
-\end_inset
-
-shows that the dyadic nature of our data leads to two-way clustering in
+ shows that the dyadic nature of our data leads to two-way clustering in
  the error term.
  As long as the error term is uncorrelated with the explanatory variable(s)
  included in equation 
@@ -2160,7 +2155,7 @@ noprefix "false"
 , Ordinary Least Squares (OLS) remains consistent.
  However, not taking into account within-cluster error correlation generally
  leads to standard errors that are biased downward, leading to under-rejection
- of the null of no effect.
+ of the null hypothesis that gender does not affect ratings.
  In our case, it should be noted that clustering is non-nested.
  As traditional cluster-robust inference can only deal with clustering in
  one of the dimensions, our strategy will consist of including sufficient
@@ -2177,9 +2172,9 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-A useful starting point to test for an agro-input dealer gender effect is
- to simply compare average ratings received by male managed agro-input shops
- to average ratings received by female managed agro-input shops.
+To test for an agro-input dealer gender effect, one can simply compare average
+ ratings received by male managed agro-input shops to average ratings received
+ by female managed agro-input shops.
  Equation 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -2390,7 +2385,7 @@ y_{f,d}-\frac{1}{D}\underset{d}{\sum}y_{f,d}=\beta\left(g_{f,d}-\frac{1}{D}\unde
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-y_{f,d}-\overline{y}_{f}=\gamma\left(g_{f,d}-\overline{g}_{f}\right)+\varepsilon_{f,d}
+y_{f,d}-\overline{y}_{f}=\gamma\left(g_{f,d}-\overline{g}_{f}\right)+\varepsilon_{f,d}\label{eq:five}
 \end{equation}
 
 \end_inset
@@ -2409,7 +2404,7 @@ Finally, we will also run a fixed effects model that, in addition to controlling
  in equation 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "eq:four"
+reference "eq:five"
 plural "false"
 caps "false"
 noprefix "false"
@@ -3039,7 +3034,7 @@ noprefix "false"
 , where we also failed to find a significant difference when asking about
  seed quality.
  This may suggest that when farmers are asked to think about a particular
- product, they make an abstraction of the person selling it and the gender
+ product, they make abstraction of the person selling it and the gender
  effect becomes less important.
 \end_layout
 
@@ -3750,7 +3745,7 @@ noprefix "false"
  we look at price competitiveness again.
  To account for the possibility that the difference in price ratings between
  male and female managed agro-input shops is driven by actual price differences
- between male and female managed agro-input shops, we control for an average
+ between male and female managed agro-input shops, we control for the average
  price charged by the dealer, as well as for the cost at which the dealer
  obtains seed (which is an important determinant of the price).
  The analysis confirms that there is a difference in perception of male
@@ -3826,18 +3821,18 @@ noprefix "false"
 
 \end_inset
 
-)T
+).
 \end_layout
 
 \begin_layout Standard
-Then the analysis regarding reputation is repeated in the seventh column,
- now controlling for the number of years the shop has been in business,
- and whether the shop is registered with the Uganda National Agro-input
- Dealer Association (UNADA), as we expect both to have an impact on a dealer's
+The analysis regarding reputation is repeated in the seventh column, now
+ controlling for the number of years the shop has been in business, and
+ whether the shop is registered with the Uganda National Agro-input Dealer
+ Association (UNADA), as we expect both to have an impact on a dealer's
  reputation.
- Also here, we see that male dealers receive higher scores conditional on
- experience and UNADA registration, with the effect becoming slightly weaker
- (as compared to column 7 in Table 
+ Also here, we see that male dealers receive higher scores even after controllin
+g for experience and UNADA registration, with the effect becoming slightly
+ weaker (as compared to column 7 in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:q1_betw_dealers_dealer_no_controls"
@@ -5821,7 +5816,7 @@ noprefix "false"
  and Table 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "tab:q1_betw_dealers_seed_no_controls"
+reference "tab:q1_betw_dealers_seed_controls"
 plural "false"
 caps "false"
 noprefix "false"
@@ -5831,7 +5826,7 @@ noprefix "false"
  to Table 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "tab:q1_betw_dealers_seed_controls"
+reference "tab:q1_betw_dealers_seed_no_controls"
 plural "false"
 caps "false"
 noprefix "false"
@@ -6437,8 +6432,8 @@ noprefix "false"
  For perceptions related to seed germination, male managed agro-input shops
  receive a score that is on average 0.11 higher than the germination rating
  female managed shops receive.
- We further find signs of gender equity effects when farmers are asked to
- rate seed quality in general and whether seed maturity is as advertised.
+ We further find signs of gender effects when farmers are asked to rate
+ seed quality in general and whether seed maturity is as advertised.
  The gender equity bias in these dimensions is also reflected in a significant
  difference in the average seed rating between male and female managed agro-inpu
 t shops (column 1).
@@ -8808,16 +8803,24 @@ Looking into the individual dimensions that were rated, we find particularly
  On the other hand, we do not find that male and female managed agro-input
  shops were rated differently when farmers were asked to consider location.
  This may be because location is easier to assess objectively.
- For attributes related to quality seed itself, gender equity bias was largest
- when farmers were asked to assess seed germination rates and whether the
- seed being rated had the maturing period as advertised.
+ For attributes related to the quality of seed sold by agro-input dealers,
+ gender equity bias was largest when farmers were asked to assess seed germinati
+on rates and whether the seed being rated had the maturing period as advertised.
 \end_layout
 
 \begin_layout Standard
 The prevalence of gender equity bias in the context of agro-input dealers
  again underscores the importance of customs and norms in rural societies.
  Interventions and initiatives that focus solemnly on increasing women empowerme
-nt are unlikely to be sufficient, and may in some cases even backfire.
+nt are unlikely to be sufficient, and may in some cases even backfire 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "10.3389/fpsyg.2021.712646"
+literal "false"
+
+\end_inset
+
+.
  It will be important to challenge gender stereotypes and role congruence
  and such interventions should not only focus on one gender.
  
@@ -8883,7 +8886,7 @@ literal "false"
  find that in Saudi Arabia, a country with strict norms and traditions on
  mobility of women, many men overestimate the degree of peer judgment if
  their wives work outside of the house.
- Correcting this false perception lead to a significant increase in women
+ Correcting this false perception led to a significant increase in women
  employment.
  Also here, role models can be important to challenge beliefs and stereotypes
  about lesser abilities of one group held by another group: 
@@ -8900,7 +8903,7 @@ literal "true"
 \end_layout
 
 \begin_layout Standard
-In addition yo underscoring the importance of gender norms and customs in
+In addition to underscoring the importance of gender norms and customs in
  shaping perceptions, our study serves to draw specific lessons for policy.
  We restrict ourselves to three areas where our findings can be operationalized.
 \end_layout
