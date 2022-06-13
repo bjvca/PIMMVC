@@ -544,6 +544,177 @@ midline_dealer <- merge(midline_dealer, distance_mid, by="shop_ID")   #midline
 
 merged_dealer <- merge(baseline_dealer, midline_dealer, by="shop_ID") #merging baseline and midline 
 
+
+################# DESCRIPTIVE STATISTICS ###############
+
+mean(baseline_dealer$maize.owner.index_practices_cap, na.rm=T)
+min(baseline_dealer$maize.owner.index_practices_cap , na.rm=T)
+max(baseline_dealer$maize.owner.index_practices_cap , na.rm=T)
+sd(baseline_dealer$maize.owner.index_practices_cap , na.rm=T)
+quantile(baseline_dealer$maize.owner.index_practices_cap, na.rm=T, 0.25)
+quantile(baseline_dealer$maize.owner.index_practices_cap, na.rm=T, 0.75)
+
+sum(!is.na (baseline_dealer$maize.owner.index_practices_cap))
+
+
+mean(baseline_dealer$maize.owner.index_efforts, na.rm=T)
+min(baseline_dealer$maize.owner.index_efforts , na.rm=T)
+max(baseline_dealer$maize.owner.index_efforts , na.rm=T)
+sd(baseline_dealer$maize.owner.index_efforts , na.rm=T)
+quantile(baseline_dealer$maize.owner.index_efforts, na.rm=T, 0.25)
+quantile(baseline_dealer$maize.owner.index_efforts, na.rm=T, 0.75)
+
+sum(!is.na (baseline_dealer$maize.owner.index_efforts))
+
+
+mean(baseline_dealer$maize.owner.dist, na.rm=T)
+min(baseline_dealer$maize.owner.dist , na.rm=T)
+max(baseline_dealer$maize.owner.dist , na.rm=T)
+sd(baseline_dealer$maize.owner.dist , na.rm=T)
+quantile(baseline_dealer$maize.owner.dist, na.rm=T, 0.25)
+quantile(baseline_dealer$maize.owner.dist, na.rm=T, 0.75)
+
+sum(!is.na (baseline_dealer$maize.owner.dist))
+
+
+mean(baseline_dealer$maize.owner.saleprice, na.rm=T)
+min(baseline_dealer$maize.owner.saleprice , na.rm=T)
+max(baseline_dealer$maize.owner.saleprice, na.rm=T)
+sd(baseline_dealer$maize.owner.saleprice , na.rm=T)
+quantile(baseline_dealer$maize.owner.saleprice, na.rm=T, 0.25)
+quantile(baseline_dealer$maize.owner.saleprice, na.rm=T, 0.75)
+
+sum(!is.na (baseline_dealer$maize.owner.saleprice))
+
+
+mean(baseline_dealer$maize.owner.costseed, na.rm=T)
+min(baseline_dealer$maize.owner.costseed , na.rm=T)
+max(baseline_dealer$maize.owner.costseed, na.rm=T)
+sd(baseline_dealer$maize.owner.costseed , na.rm=T)
+quantile(baseline_dealer$maize.owner.costseed, na.rm=T, 0.25)
+quantile(baseline_dealer$maize.owner.costseed, na.rm=T, 0.75)
+
+sum(!is.na (baseline_dealer$maize.owner.costseed))
+
+
+mean(baseline_dealer$maize.owner.practices_all, na.rm=T)
+min(baseline_dealer$maize.owner.practices_all , na.rm=T)
+max(baseline_dealer$maize.owner.practices_all, na.rm=T)
+sd(baseline_dealer$maize.owner.practices_all , na.rm=T)
+quantile(baseline_dealer$maize.owner.practices_all, na.rm=T, 0.25)
+quantile(baseline_dealer$maize.owner.practices_all, na.rm=T, 0.75)
+
+sum(!is.na (baseline_dealer$maize.owner.practices_all))
+
+
+mean(baseline_dealer$maize.owner.quanprovider, na.rm=T)
+min(baseline_dealer$maize.owner.quanprovider , na.rm=T)
+max(baseline_dealer$maize.owner.quanprovider, na.rm=T)
+sd(baseline_dealer$maize.owner.quanprovider , na.rm=T)
+quantile(baseline_dealer$maize.owner.quanprovider, na.rm=T, 0.25)
+quantile(baseline_dealer$maize.owner.quanprovider, na.rm=T, 0.75)
+
+sum(!is.na (baseline_dealer$maize.owner.quanprovider))
+
+
+
+############ storing descriptives
+
+desc<- rbind(c( mean(baseline_dealer$maize.owner.index_practices_cap, na.rm=T),
+                min(baseline_dealer$maize.owner.index_practices_cap , na.rm=T),
+                max(baseline_dealer$maize.owner.index_practices_cap , na.rm=T),
+                sd(baseline_dealer$maize.owner.index_practices_cap , na.rm=T),
+                sum(!is.na (baseline_dealer$maize.owner.index_practices_cap))),
+          
+              c(  mean(baseline_dealer$maize.owner.index_efforts, na.rm=T),
+               min(baseline_dealer$maize.owner.index_efforts , na.rm=T),
+               max(baseline_dealer$maize.owner.index_efforts , na.rm=T),
+               sd(baseline_dealer$maize.owner.index_efforts , na.rm=T),
+               sum(!is.na (baseline_dealer$maize.owner.index_efforts))),
+
+           c(mean(baseline_dealer$maize.owner.dist, na.rm=T),
+min(baseline_dealer$maize.owner.dist , na.rm=T),
+max(baseline_dealer$maize.owner.dist , na.rm=T),
+sd(baseline_dealer$maize.owner.dist , na.rm=T),
+sum(!is.na (baseline_dealer$maize.owner.dist))),
+           
+         c(  mean(baseline_dealer$maize.owner.saleprice, na.rm=T),
+           min(baseline_dealer$maize.owner.saleprice , na.rm=T),
+           max(baseline_dealer$maize.owner.saleprice, na.rm=T),
+           sd(baseline_dealer$maize.owner.saleprice , na.rm=T),
+           sum(!is.na (baseline_dealer$maize.owner.saleprice))),
+           
+           
+          c( mean(baseline_dealer$maize.owner.costseed, na.rm=T),
+           min(baseline_dealer$maize.owner.costseed , na.rm=T),
+           max(baseline_dealer$maize.owner.costseed, na.rm=T),
+           sd(baseline_dealer$maize.owner.costseed , na.rm=T),
+           sum(!is.na (baseline_dealer$maize.owner.costseed))),
+           
+           
+         c(  mean(baseline_dealer$maize.owner.practices_all, na.rm=T),
+           min(baseline_dealer$maize.owner.practices_all , na.rm=T),
+           max(baseline_dealer$maize.owner.practices_all, na.rm=T),
+           sd(baseline_dealer$maize.owner.practices_all , na.rm=T),
+           sum(!is.na (baseline_dealer$maize.owner.practices_all))),
+           
+           
+          c( mean(baseline_dealer$maize.owner.quanprovider, na.rm=T),
+           min(baseline_dealer$maize.owner.quanprovider , na.rm=T),
+           max(baseline_dealer$maize.owner.quanprovider, na.rm=T),
+           sd(baseline_dealer$maize.owner.quanprovider , na.rm=T),
+           sum(!is.na (baseline_dealer$maize.owner.quanprovider))))
+           
+           
+######################## getting descriptives of the ratings 
+
+baserat <- merge(baseline_dealer, rating_dyads, by="shop_ID") 
+           
+baserat$general_rating <- as.numeric(as.character(baserat$general_rating))
+baserat$location_rating <- as.numeric(as.character(baserat$location_rating))
+baserat$price_rating <- as.numeric(as.character(baserat$price_rating))
+baserat$quality_rating <- as.numeric(as.character(baserat$quality_rating))
+baserat$stock_rating <- as.numeric(as.character(baserat$stock_rating))
+baserat$reputation_rating <- as.numeric(as.character(baserat$reputation_rating))
+
+desc_rat<- rbind(c(mean(baserat$general_rating, na.rm=T),
+min(baserat$general_rating, na.rm=T),
+max(baserat$general_rating, na.rm=T),
+sd(baserat$general_rating, na.rm=T),
+quantile(baserat$general_rating, na.rm=T, 0.25),
+quantile(baserat$general_rating, na.rm=T, 0.75)),
+
+c(mean(baserat$location_rating, na.rm=T),
+  min(baserat$location_rating, na.rm=T),
+  max(baserat$location_rating, na.rm=T),
+  sd(baserat$location_rating, na.rm=T),
+  quantile(baserat$location_rating, na.rm=T, 0.25),
+  quantile(baserat$location_rating, na.rm=T, 0.75)),
+
+c(mean(baserat$price_rating, na.rm=T),
+  min(baserat$price_rating, na.rm=T),
+  max(baserat$price_rating, na.rm=T),
+  sd(baserat$price_rating, na.rm=T),
+  quantile(baserat$price_rating, na.rm=T, 0.25),
+  quantile(baserat$price_rating, na.rm=T, 0.75)),
+
+c(mean(baserat$stock_rating, na.rm=T),
+  min(baserat$stock_rating, na.rm=T),
+  max(baserat$stock_rating, na.rm=T),
+  sd(baserat$stock_rating, na.rm=T),
+  quantile(baserat$stock_rating, na.rm=T, 0.25),
+  quantile(baserat$stock_rating, na.rm=T, 0.75)),
+
+c(mean(baserat$reputation_rating, na.rm=T),
+  min(baserat$reputation_rating, na.rm=T),
+  max(baserat$reputation_rating, na.rm=T),
+  sd(baserat$reputation_rating, na.rm=T),
+  quantile(baserat$reputation_rating, na.rm=T, 0.25),
+  quantile(baserat$reputation_rating, na.rm=T, 0.75)))
+
+
+         
+           
 #prepping data for FE
 #subsetting baseline dealers and considering only the required variables 
 base<-baseline_dealer[c("maize.owner.agree.gender", "maize.owner.agree.age","maize.owner.agree.educ", "maize.owner.agree.q3", "maize.owner.agree.q4", "maize.owner.agree.q5",
