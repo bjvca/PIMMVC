@@ -658,7 +658,7 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Descriptive agro-input dealer statistics.
+Descriptive agro-input dealer statistics
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:Descriptive-agro-input-dealer"
@@ -880,7 +880,7 @@ Sexpr{format(round(df_descriptives_dealer[6,5],digits=3),nsmall=0)}
 
 \begin_layout Plain Layout
 
-Distance between dealer and farmer (standardized) & 
+Standardized distance between farmer and shop & 
 \backslash
 Sexpr{format(round(desc[3,1],digits=3),nsmall=3)} & 
 \backslash
@@ -975,7 +975,7 @@ Sexpr{format(round(df_descriptives_dealer[10,5],digits=3),nsmall=0)}
 
 \begin_layout Plain Layout
 
-Years since shop establishment & 
+Number of years since shop’s establishment & 
 \backslash
 Sexpr{format(round(df_descriptives_dealer[11,1],digits=3),nsmall=3)} & 
 \backslash
@@ -1088,7 +1088,7 @@ Sexpr{format(round(df_descriptives_dealer[23,5],digits=3),nsmall=0)}
 
 \begin_layout Plain Layout
 
-Sales price of maize seeds (standardized) & 
+Standardized sales price of maize seeds & 
 \backslash
 Sexpr{format(round(desc[4,1],digits=3),nsmall=3)} & 
 \backslash
@@ -1111,7 +1111,7 @@ Sexpr{format(round(desc[4,5],digits=3),nsmall=0)}
 
 \begin_layout Plain Layout
 
-Cost of maize seed for dealer (standardized) & 
+Standardized cost of maize seed for dealer & 
 \backslash
 Sexpr{format(round(desc[5,1],digits=3),nsmall=3)} & 
 \backslash
@@ -1134,7 +1134,7 @@ Sexpr{format(round(desc[5,5],digits=3),nsmall=0)}
 
 \begin_layout Plain Layout
 
-Amount of maize seed dealer bought (standardized) & 
+Standardized amount of maize seed dealer bought & 
 \backslash
 Sexpr{format(round(desc[7,1],digits=3),nsmall=3)} & 
 \backslash
@@ -1218,7 +1218,7 @@ Sexpr{format(round(df_descriptives_dealer[52,5],digits=3),nsmall=0)}
 
 \begin_layout Plain Layout
 
-Shop is registered with UNADA & 
+Shop’s UNADA registration & 
 \backslash
 Sexpr{format(round(df_descriptives_dealer[60,1],digits=3),nsmall=3)} & 
 \backslash
@@ -1266,8 +1266,8 @@ Sexpr{format(round(df_descriptives_dealer[61,5],digits=3),nsmall=0)}
 
 \begin_layout Plain Layout
 
-Index of capital-intensive seed handling or storage practices observed by
- enumerator & 
+Index of capital-intensive seed handling/storage practices observed by enumerato
+r & 
 \backslash
 Sexpr{format(round(desc[1,1],digits=3),nsmall=3)} & 
 \backslash
@@ -1313,8 +1313,7 @@ Sexpr{format(round(desc[2,5],digits=3),nsmall=0)}
 
 \begin_layout Plain Layout
 
-Index of all seed handling or storage practices observed by enumerator &
- 
+Index of all seed handling/storage practices observed by enumerator & 
 \backslash
 Sexpr{format(round(desc[6,1],digits=3),nsmall=3)} & 
 \backslash
@@ -1410,7 +1409,7 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Descriptive farmer statistics.
+Descriptive farmer statistics
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:Descriptive-farmer-statistics"
@@ -1854,7 +1853,7 @@ Sexpr{format(round(df_descriptives_farmer[20,5],digits=3),nsmall=0)}
 
 \begin_layout Plain Layout
 
-Farmers thinks seed at agro-input shop is counterfeit/adulterated  & 
+Farmers thinks seed at agro-input shops is counterfeit/adulterated  & 
 \backslash
 Sexpr{format(round(df_descriptives_farmer[29,1],digits=3),nsmall=3)} & 
 \backslash
@@ -1878,7 +1877,7 @@ Sexpr{format(round(df_descriptives_farmer[29,5],digits=3),nsmall=0)}
 
 \begin_layout Plain Layout
 
-Farmer was satisfied with maize seed used on field & 
+Farmer is satisfied with maize seed used on field & 
 \backslash
 Sexpr{format(round(df_descriptives_farmer[62,1],digits=3),nsmall=3)} & 
 \backslash
@@ -2075,7 +2074,7 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Descriptive agro-input dealer ratings.
+Descriptive agro-input dealer ratings
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:Descriptive-dealer-ratings"
@@ -2123,7 +2122,7 @@ hline
 
 \begin_layout Plain Layout
 
-& mean & min & max & SD & first quartile & third quartile
+& mean & min & max & SD & 1st quartile & 3rd quartile
 \backslash
 
 \backslash
@@ -2143,7 +2142,7 @@ cline{2-7}
 
 \begin_layout Plain Layout
 
-Shop's maize seed rating on quality by farmers & 
+Dealer's maize seed rating on general quality by farmers & 
 \backslash
 Sexpr{format(round(desc_rat[6,1],digits=3),nsmall=3)} & 
 \backslash
@@ -2168,7 +2167,7 @@ Sexpr{format(round(desc_rat[6,6],digits=3),nsmall=0)}
 
 \begin_layout Plain Layout
 
-Shop's maize seed rating on yield by farmers & 
+Dealer's maize seed rating on yield by farmers & 
 \backslash
 Sexpr{format(round(desc_rat[7,1],digits=3),nsmall=3)} & 
 \backslash
@@ -2193,7 +2192,7 @@ Sexpr{format(round(desc_rat[7,6],digits=3),nsmall=0)}
 
 \begin_layout Plain Layout
 
-Shop's maize seed rating on drought tolerance by farmers & 
+Dealer's maize seed rating on drought tolerance by farmers & 
 \backslash
 Sexpr{format(round(desc_rat[8,1],digits=3),nsmall=3)} & 
 \backslash
@@ -2218,7 +2217,7 @@ Sexpr{format(round(desc_rat[8,6],digits=3),nsmall=0)}
 
 \begin_layout Plain Layout
 
-Shop's maize seed rating on pest/disease tolerance by farmers & 
+Dealer's maize seed rating on pest/disease tolerance by farmers & 
 \backslash
 Sexpr{format(round(desc_rat[9,1],digits=3),nsmall=3)} & 
 \backslash
@@ -2243,7 +2242,7 @@ Sexpr{format(round(desc_rat[9,6],digits=3),nsmall=0)}
 
 \begin_layout Plain Layout
 
-Shop's maize seed rating on time of maturity by farmers & 
+Dealer's maize seed rating on speed of maturing by farmers & 
 \backslash
 Sexpr{format(round(desc_rat[10,1],digits=3),nsmall=3)} & 
 \backslash
@@ -2268,7 +2267,7 @@ Sexpr{format(round(desc_rat[10,6],digits=3),nsmall=0)}
 
 \begin_layout Plain Layout
 
-Shop's maize seed rating on germination by farmers & 
+Dealer's maize seed rating rating on germination by farmers & 
 \backslash
 Sexpr{format(round(desc_rat[11,1],digits=3),nsmall=3)} & 
 \backslash
@@ -2306,7 +2305,7 @@ Sexpr{format(round(desc_rat[11,6],digits=3),nsmall=0)}
 
 \begin_layout Plain Layout
 
-Shop's rating on general quality by farmers & 
+Dealer's rating on general quality by farmers & 
 \backslash
 Sexpr{format(round(desc_rat[1,1],digits=3),nsmall=3)} & 
 \backslash
@@ -2331,7 +2330,7 @@ Sexpr{format(round(desc_rat[1,6],digits=3),nsmall=0)}
 
 \begin_layout Plain Layout
 
-Shop's rating on location by farmers & 
+Dealer's rating on location by farmers & 
 \backslash
 Sexpr{format(round(desc_rat[2,1],digits=3),nsmall=3)} & 
 \backslash
@@ -2356,7 +2355,7 @@ Sexpr{format(round(desc_rat[2,6],digits=3),nsmall=0)}
 
 \begin_layout Plain Layout
 
-Shop's rating on price competitiveness by farmers & 
+Dealer's rating on price competitiveness by farmers & 
 \backslash
 Sexpr{format(round(desc_rat[3,1],digits=3),nsmall=3)} & 
 \backslash
@@ -2381,7 +2380,7 @@ Sexpr{format(round(desc_rat[3,6],digits=3),nsmall=0)}
 
 \begin_layout Plain Layout
 
-Shop's rating on maize seed stock by farmers & 
+Dealer's rating on maize seed stock by farmers & 
 \backslash
 Sexpr{format(round(desc_rat[4,1],digits=3),nsmall=3)} & 
 \backslash
@@ -2406,7 +2405,7 @@ Sexpr{format(round(desc_rat[4,6],digits=3),nsmall=0)}
 
 \begin_layout Plain Layout
 
-Shop's rating on reputation by farmers & 
+Dealer's rating on reputation by farmers & 
 \backslash
 Sexpr{format(round(desc_rat[5,1],digits=3),nsmall=3)} & 
 \backslash
@@ -3084,8 +3083,7 @@ multicolumn{7}{c}{
 \backslash
 textit{
 \backslash
-footnotesize Dependent variable: Average of all ratings received by dealers}}
- 
+footnotesize Dependent variable: Average rating received by dealer}} 
 \backslash
 
 \backslash
@@ -3606,8 +3604,7 @@ multicolumn{7}{c}{
 \backslash
 textit{
 \backslash
-footnotesize Dependent variable: Average of all ratings received by dealers}}
- 
+footnotesize Dependent variable: Average rating received by dealer}} 
 \backslash
 
 \backslash
@@ -4664,8 +4661,7 @@ multicolumn{7}{c}{
 \backslash
 textit{
 \backslash
-footnotesize Dependent variable: Average of all ratings received by dealers}}
- 
+footnotesize Dependent variable: Average rating received by dealer}} 
 \backslash
 
 \backslash
@@ -5225,7 +5221,7 @@ Sexpr{s8[14,2]})$ &  &  &  &  &
 
 \begin_layout Plain Layout
 
-{Index of dealer’s efforts}   & $
+{Index of dealer's efforts}   & $
 \backslash
 Sexpr{s8[13,1]}^{
 \backslash
@@ -5325,7 +5321,7 @@ Sexpr{ifelse(s8[15,3]<.01,"***",ifelse(s8[15,3]<.05,"**",ifelse(s8[15,3]<.1,"*",
 
 \begin_layout Plain Layout
 
-{        farmer and dealer} 
+{        farmer and shop} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -5820,8 +5816,7 @@ multicolumn{7}{c}{
 \backslash
 textit{
 \backslash
-footnotesize Dependent variable: Average of all ratings received by dealers}}
- 
+footnotesize Dependent variable: Average rating received by dealer}} 
 \backslash
 
 \backslash
@@ -6608,7 +6603,8 @@ multicolumn{7}{c}{
 \backslash
 textit{
 \backslash
-footnotesize Dependent variable: Ratings given by farmers}} 
+footnotesize Dependent variable: Rating of a particular farmer given to
+ a particular dealer}} 
 \backslash
 
 \backslash
@@ -7218,7 +7214,7 @@ begin{landscape}
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -7272,7 +7268,8 @@ multicolumn{7}{c}{
 \backslash
 textit{
 \backslash
-footnotesize Dependent variable: Ratings given by farmers}} 
+footnotesize Dependent variable: Rating of a particular farmer given to
+ a particular dealer}} 
 \backslash
 
 \backslash
@@ -7720,7 +7717,8 @@ multicolumn{7}{c}{
 \backslash
 textit{
 \backslash
-footnotesize Dependent variable: Ratings given by farmers}} 
+footnotesize Dependent variable: Rating of a particular farmer given to
+ a particular dealer}} 
 \backslash
 
 \backslash
@@ -8210,7 +8208,7 @@ Sexpr{fe4[14,2]})$ &  &  &  &  &
 
 \begin_layout Plain Layout
 
-{Index of dealer’s efforts}   & $
+{Index of dealer's efforts}   & $
 \backslash
 Sexpr{fe4[13,1]}^{
 \backslash
@@ -8301,7 +8299,7 @@ Sexpr{ifelse(fe4[15,3]<.01,"***",ifelse(fe4[15,3]<.05,"**",ifelse(fe4[15,3]<.1,"
 
 \begin_layout Plain Layout
 
-{        farmer and dealer} 
+{        farmer and shop} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -8731,7 +8729,7 @@ begin{landscape}
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -8784,7 +8782,8 @@ multicolumn{7}{c}{
 \backslash
 textit{
 \backslash
-footnotesize Dependent variable: Ratings given by farmers}} 
+footnotesize Dependent variable: Rating of a particular farmer given to
+ a particular dealer}} 
 \backslash
 
 \backslash
@@ -9660,6 +9659,18 @@ This research was partly funded by the CGIAR Research Program on Policies,
  Charles Wanume for excellent field support.
  The analysis is the sole responsibility of the authors, and does not reflect
  the views of any funding agency or organization mentioned here.
+ 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Also mention Anusha's and Caro's PhD funding here e.g.
+ PIM and EOS?
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
