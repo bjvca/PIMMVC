@@ -198,6 +198,13 @@ source(paste(path, "code/perceptions_seed.R
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 \paragraph_spacing onehalf
 Introduction
@@ -373,6 +380,13 @@ In the remainder of this article we first situate the research question
  A final section concludes and offers some policy guidance.
 \end_layout
 
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 \paragraph_spacing onehalf
 Research question and relation to the literature
@@ -540,6 +554,13 @@ The reason why gender bias features so prominently in areas such as scholarly
  are never measured.
  As a result, differences in outcomes are often attributed to various other
  causes, such as differences in education of ability between men and women.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -2921,6 +2942,13 @@ noprefix "false"
 y_{f,d}-\overline{y}_{f}=\gamma\left(g_{f,d}-\overline{g}_{f}\right)+\varphi\left(x_{f,d}-\overline{x}_{f}\right)+\varepsilon_{f,d}\label{eq:fe_contr}
 \end{equation}
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
 \end_inset
 
 
@@ -9641,6 +9669,13 @@ Finally, we find that biased perceptions exist especially with respect to
  Also here, simply advertising prices may be sufficient to make prices objective
 ly verifiable, and customers need to depend less on perceptions and the
  use of mental shortcuts that are prone to gender equity bias.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section*
