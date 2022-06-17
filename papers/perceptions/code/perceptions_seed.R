@@ -33,6 +33,7 @@ rating_dyads_midline <- read.csv(paste(path_2,"papers/perceptions/data_seed_syst
 ### check if gender of agro input dealer in baseline corresponds to gender in midline:
 #baseline data 
 baseline_dealer <- read.csv(paste(path_2,"papers/perceptions/data_seed_systems/data/input_dealer/baseline_dealer.csv", sep="/"), stringsAsFactors = FALSE)
+baseline_dealer[baseline_dealer=="999"]<-NA
 
 #midline data 
 midline_dealer <- read.csv(paste(path_2,"papers/perceptions/data_seed_systems_midline/data/input_dealer/midline_dealer.csv", sep="/"), stringsAsFactors = FALSE)
@@ -494,6 +495,8 @@ baseline_dealer$maize.owner.agree.longe5.q47<-as.numeric(as.character(baseline_d
                                                           
 baseline_dealer$maize.owner.quanprovider <-  rowMeans(baseline_dealer[c("maize.owner.agree.long10h.q22","maize.owner.agree.longe5.q47")],na.rm=T) 
 
+baseline_dealer$maize.owner.quan_nonstan<- baseline_dealer$maize.owner.quanprovider
+
 #standardising
 baseline_dealer <- baseline_dealer %>%  mutate(maize.owner.quanprovider = scale(maize.owner.quanprovider))
 
@@ -527,6 +530,7 @@ distance_mid <- read.csv(paste(path_2,"papers/perceptions/data_seed_systems_midl
 ###baseline 
 ##aggregating the distance for each dealer 
 distance <- aggregate(distance[c("maize.owner.dist")],list(distance$shop_ID),FUN=mean, na.rm=T)
+distance$dist_km<-distance$maize.owner.dist
 ##getting standardized distance variable 
 distance <- distance %>% mutate(maize.owner.dist = scale(maize.owner.dist))
 names(distance)[1] <- "shop_ID"   #renaming variable 
@@ -587,12 +591,12 @@ quantile(baseline_dealer$maize.owner.saleprice, na.rm=T, 0.75)
 sum(!is.na (baseline_dealer$maize.owner.saleprice))
 
 
-mean(baseline_dealer$maize.owner.costseed, na.rm=T)
-min(baseline_dealer$maize.owner.costseed , na.rm=T)
-max(baseline_dealer$maize.owner.costseed, na.rm=T)
-sd(baseline_dealer$maize.owner.costseed , na.rm=T)
-quantile(baseline_dealer$maize.owner.costseed, na.rm=T, 0.25)
-quantile(baseline_dealer$maize.owner.costseed, na.rm=T, 0.75)
+mean(baseline_dealer$base_cost_seed, na.rm=T)
+min(baseline_dealer$base_cost_seed , na.rm=T)
+max(baseline_dealer$base_cost_seed, na.rm=T)
+sd(baseline_dealer$base_cost_seed, na.rm=T)
+quantile(baseline_dealer$base_cost_seed, na.rm=T, 0.25)
+quantile(baseline_dealer$base_cost_seed, na.rm=T, 0.75)
 
 sum(!is.na (baseline_dealer$maize.owner.costseed))
 
@@ -632,24 +636,24 @@ desc<- rbind(c( mean(baseline_dealer$maize.owner.index_practices_cap, na.rm=T),
                sd(baseline_dealer$maize.owner.index_efforts , na.rm=T),
                sum(!is.na (baseline_dealer$maize.owner.index_efforts))),
 
-           c(mean(baseline_dealer$maize.owner.dist, na.rm=T),
-min(baseline_dealer$maize.owner.dist , na.rm=T),
-max(baseline_dealer$maize.owner.dist , na.rm=T),
-sd(baseline_dealer$maize.owner.dist , na.rm=T),
-sum(!is.na (baseline_dealer$maize.owner.dist))),
+           c(mean(baseline_dealer$dist_km, na.rm=T),
+min(baseline_dealer$dist_km , na.rm=T),
+max(baseline_dealer$dist_km, na.rm=T),
+sd(baseline_dealer$dist_km , na.rm=T),
+sum(!is.na (baseline_dealer$dist_km))),
            
-         c(  mean(baseline_dealer$maize.owner.saleprice, na.rm=T),
-           min(baseline_dealer$maize.owner.saleprice , na.rm=T),
-           max(baseline_dealer$maize.owner.saleprice, na.rm=T),
-           sd(baseline_dealer$maize.owner.saleprice , na.rm=T),
-           sum(!is.na (baseline_dealer$maize.owner.saleprice))),
+         c(  mean(baseline_dealer$base_price, na.rm=T),
+           min(baseline_dealer$base_price , na.rm=T),
+           max(baseline_dealer$base_price, na.rm=T),
+           sd(baseline_dealer$base_price , na.rm=T),
+           sum(!is.na (baseline_dealer$base_price))),
            
            
-          c( mean(baseline_dealer$maize.owner.costseed, na.rm=T),
-           min(baseline_dealer$maize.owner.costseed , na.rm=T),
-           max(baseline_dealer$maize.owner.costseed, na.rm=T),
-           sd(baseline_dealer$maize.owner.costseed , na.rm=T),
-           sum(!is.na (baseline_dealer$maize.owner.costseed))),
+          c( mean(baseline_dealer$base_cost_seed, na.rm=T),
+           min(baseline_dealer$base_cost_seed , na.rm=T),
+           max(baseline_dealer$base_cost_seed, na.rm=T),
+           sd(baseline_dealer$base_cost_seed , na.rm=T),
+           sum(!is.na (baseline_dealer$base_cost_seed))),
            
            
          c(  mean(baseline_dealer$maize.owner.practices_all, na.rm=T),
@@ -659,11 +663,17 @@ sum(!is.na (baseline_dealer$maize.owner.dist))),
            sum(!is.na (baseline_dealer$maize.owner.practices_all))),
            
            
-          c( mean(baseline_dealer$maize.owner.quanprovider, na.rm=T),
-           min(baseline_dealer$maize.owner.quanprovider , na.rm=T),
-           max(baseline_dealer$maize.owner.quanprovider, na.rm=T),
-           sd(baseline_dealer$maize.owner.quanprovider , na.rm=T),
-           sum(!is.na (baseline_dealer$maize.owner.quanprovider))))
+          c( mean(baseline_dealer$maize.owner.quan_nonstan, na.rm=T),
+           min(baseline_dealer$maize.owner.quan_nonstan, na.rm=T),
+           max(baseline_dealer$maize.owner.quan_nonstan, na.rm=T),
+           sd(baseline_dealer$maize.owner.quan_nonstan , na.rm=T),
+           sum(!is.na (baseline_dealer$maize.owner.quan_nonstan))),
+
+c( mean(baseline_dealer$goodpractice_expired2, na.rm=T),
+   min(baseline_dealer$goodpractice_expired2 , na.rm=T),
+   max(baseline_dealer$goodpractice_expired2, na.rm=T),
+   sd(baseline_dealer$goodpractice_expired2 , na.rm=T),
+   sum(!is.na (baseline_dealer$goodpractice_expired2))))
            
            
 ######################## getting descriptives of the ratings 
@@ -682,89 +692,110 @@ baserat$seed_drought_rating [baserat$seed_drought_rating=="98"] <- NA
 baserat$seed_disease_rating [baserat$seed_disease_rating=="98"] <- NA
 baserat$seed_maturing_rating [baserat$seed_maturing_rating=="98"] <- NA
 baserat$seed_germinate_rating [baserat$seed_germinate_rating=="98"] <- NA
+baserat$seed_quality_general_rating [baserat$seed_quality_general_rating=="98"] <- NA
 
 baserat$seed_yield_rating <- as.numeric(as.character(baserat$seed_yield_rating))
 baserat$seed_drought_rating <- as.numeric(as.character(baserat$seed_drought_rating))
 baserat$seed_disease_rating <- as.numeric(as.character(baserat$seed_disease_rating))
 baserat$seed_maturing_rating <- as.numeric(as.character(baserat$seed_maturing_rating))
 baserat$seed_germinate_rating <- as.numeric(as.character(baserat$seed_germinate_rating))
+baserat$seed_quality_general_rating <- as.numeric(as.character(baserat$seed_quality_general_rating))
 
 desc_rat<- rbind(c(mean(baserat$general_rating, na.rm=T),
 min(baserat$general_rating, na.rm=T),
 max(baserat$general_rating, na.rm=T),
 sd(baserat$general_rating, na.rm=T),
 quantile(baserat$general_rating, na.rm=T, 0.25),
-quantile(baserat$general_rating, na.rm=T, 0.75)),
+quantile(baserat$general_rating, na.rm=T, 0.75),
+sum(!is.na (baserat$general_rating))),
 
 c(mean(baserat$location_rating, na.rm=T),
   min(baserat$location_rating, na.rm=T),
   max(baserat$location_rating, na.rm=T),
   sd(baserat$location_rating, na.rm=T),
   quantile(baserat$location_rating, na.rm=T, 0.25),
-  quantile(baserat$location_rating, na.rm=T, 0.75)),
+  quantile(baserat$location_rating, na.rm=T, 0.75),
+  sum(!is.na (baserat$location_rating))),
 
 c(mean(baserat$price_rating, na.rm=T),
   min(baserat$price_rating, na.rm=T),
   max(baserat$price_rating, na.rm=T),
   sd(baserat$price_rating, na.rm=T),
   quantile(baserat$price_rating, na.rm=T, 0.25),
-  quantile(baserat$price_rating, na.rm=T, 0.75)),
+  quantile(baserat$price_rating, na.rm=T, 0.75),
+  sum(!is.na (baserat$price_rating))),
 
 c(mean(baserat$stock_rating, na.rm=T),
   min(baserat$stock_rating, na.rm=T),
   max(baserat$stock_rating, na.rm=T),
   sd(baserat$stock_rating, na.rm=T),
   quantile(baserat$stock_rating, na.rm=T, 0.25),
-  quantile(baserat$stock_rating, na.rm=T, 0.75)),
+  quantile(baserat$stock_rating, na.rm=T, 0.75),
+  sum(!is.na (baserat$stock_rating))),
 
 c(mean(baserat$reputation_rating, na.rm=T),
   min(baserat$reputation_rating, na.rm=T),
   max(baserat$reputation_rating, na.rm=T),
   sd(baserat$reputation_rating, na.rm=T),
   quantile(baserat$reputation_rating, na.rm=T, 0.25),
-  quantile(baserat$reputation_rating, na.rm=T, 0.75)),
+  quantile(baserat$reputation_rating, na.rm=T, 0.75),
+  sum(!is.na (baserat$reputation_rating))),
 
-c(mean(baserat$quality_rating, na.rm=T),
-  min(baserat$quality_rating, na.rm=T),
-  max(baserat$quality_rating, na.rm=T),
-  sd(baserat$quality_rating, na.rm=T),
-  quantile(baserat$quality_rating, na.rm=T, 0.25),
-  quantile(baserat$quality_rating, na.rm=T, 0.75)), 
+c(mean(baserat$seed_quality_general_rating, na.rm=T),
+  min(baserat$seed_quality_general_rating, na.rm=T),
+  max(baserat$seed_quality_general_rating, na.rm=T),
+  sd(baserat$seed_quality_general_rating, na.rm=T),
+  quantile(baserat$seed_quality_general_rating, na.rm=T, 0.25),
+  quantile(baserat$seed_quality_general_rating, na.rm=T, 0.75), 
+  sum(!is.na (baserat$seed_quality_general_rating))),
 
 c(mean(baserat$seed_yield_rating, na.rm=T),
   min(baserat$seed_yield_rating, na.rm=T),
   max(baserat$seed_yield_rating, na.rm=T),
   sd(baserat$seed_yield_rating, na.rm=T),
   quantile(baserat$seed_yield_rating, na.rm=T, 0.25),
-  quantile(baserat$seed_yield_rating, na.rm=T, 0.75)), 
+  quantile(baserat$seed_yield_rating, na.rm=T, 0.75), 
+  sum(!is.na (baserat$seed_yield_rating))),
 
 c(mean(baserat$seed_drought_rating, na.rm=T),
   min(baserat$seed_drought_rating, na.rm=T),
   max(baserat$seed_drought_rating, na.rm=T),
   sd(baserat$seed_drought_rating, na.rm=T),
   quantile(baserat$seed_drought_rating, na.rm=T, 0.25),
-  quantile(baserat$seed_drought_rating, na.rm=T, 0.75)), 
+  quantile(baserat$seed_drought_rating, na.rm=T, 0.75),
+  sum(!is.na (baserat$seed_drought_rating))),
 
 c(mean(baserat$seed_disease_rating, na.rm=T),
   min(baserat$seed_disease_rating, na.rm=T),
   max(baserat$seed_disease_rating, na.rm=T),
   sd(baserat$seed_disease_rating, na.rm=T),
   quantile(baserat$seed_disease_rating, na.rm=T, 0.25),
-  quantile(baserat$seed_disease_rating, na.rm=T, 0.75)), 
+  quantile(baserat$seed_disease_rating, na.rm=T, 0.75), 
+  sum(!is.na (baserat$seed_disease_rating))),
 
 c(mean(baserat$seed_maturing_rating, na.rm=T),
   min(baserat$seed_maturing_rating, na.rm=T),
   max(baserat$seed_maturing_rating, na.rm=T),
   sd(baserat$seed_maturing_rating, na.rm=T),
   quantile(baserat$seed_maturing_rating, na.rm=T, 0.25),
-  quantile(baserat$seed_maturing_rating, na.rm=T, 0.75)), 
+  quantile(baserat$seed_maturing_rating, na.rm=T, 0.75), 
+  sum(!is.na (baserat$seed_maturing_rating))),
 
 c(mean(baserat$seed_germinate_rating, na.rm=T),
   min(baserat$seed_germinate_rating, na.rm=T),
   max(baserat$seed_germinate_rating, na.rm=T),
   sd(baserat$seed_germinate_rating, na.rm=T),
   quantile(baserat$seed_germinate_rating, na.rm=T, 0.25),
-  quantile(baserat$seed_germinate_rating, na.rm=T, 0.75)))
+  quantile(baserat$seed_germinate_rating, na.rm=T, 0.75),
+  sum(!is.na (baserat$seed_germinate_rating))),
+
+c(mean(baserat$quality_rating, na.rm=T),
+  min(baserat$quality_rating, na.rm=T),
+  max(baserat$quality_rating, na.rm=T),
+  sd(baserat$quality_rating, na.rm=T),
+  quantile(baserat$quality_rating, na.rm=T, 0.25),
+  quantile(baserat$quality_rating, na.rm=T, 0.75),
+sum(!is.na (baserat$quality_rating))))
 
 
          
@@ -2664,8 +2695,14 @@ fe2<- rbind(c((format(round(mean(fixef(plm8))[1],digits=3),nsmall=0)),
 ##################################################################################################################
 #rm(list=ls())
 
+#baseline_deal <- read.csv(paste(path_2,"papers/perceptions/data_seed_systems/data/input_dealer/baseline_dealer.csv",sep="/"))
+#baseline_deal=subset(baseline_dealers,clearing==T)
+#write.csv(baseline_deal,"papers/perceptions/data_seed_systems/data/input_dealer/baseline_deal.csv",row.names = F)
+
 baseline_dealers <- read.csv(paste(path_2,"papers/perceptions/data_seed_systems/data/input_dealer/baseline_dealer.csv",sep="/"))
+baseline_dealers=subset(baseline_dealers,clearing==T)
 baseline_farmers <- read.csv(paste(path_2,"papers/perceptions/data_seed_systems/data/farmer/baseline_farmers.csv",sep="/"))
+baseline_farmers=subset(baseline_farmers,Check2.check.maize.clearing==T)
 
 #merge in more data
 
@@ -2938,64 +2975,74 @@ baseline_dealers$maize.owner.agree.inspection.q122<-ifelse(baseline_dealers$maiz
 
 ###
 
-baseline_dealers$visible_expdate<-ifelse(baseline_dealers$exp=="n/a",0,1) #2 names
-
-baseline_dealers$seed_expired <- 0
-baseline_dealers$seed_expired[is.na(baseline_dealers$exp)] <- NA
-baseline_dealers$seed_expired[baseline_dealers$exp=="n/a"] <- NA
-baseline_dealers$seed_expired[is.na(baseline_dealers$date)] <- NA
-baseline_dealers$seed_expired[baseline_dealers$date=="n/a"] <- NA
-#1 shop has n/a for date but not for exp
-baseline_dealers$date <- as.Date(baseline_dealers$date)
-baseline_dealers$exp <- as.Date(baseline_dealers$exp)
-baseline_dealers$days_since_exp <- baseline_dealers$date - baseline_dealers$exp
-baseline_dealers$seed_expired[baseline_dealers$days_since_exp > 0] <- 1
-
-baseline_dealers$visible_packdate<-ifelse(baseline_dealers$date_pack=="n/a",0,1)
-
-baseline_dealers$seedolderthan6m <- 0
-baseline_dealers$seedolderthan6m[is.na(baseline_dealers$date_pack)] <- NA
-baseline_dealers$seedolderthan6m[baseline_dealers$date_pack=="n/a"] <- NA
-baseline_dealers$seedolderthan6m[is.na(baseline_dealers$date)] <- NA
-baseline_dealers$date_pack <- as.Date(baseline_dealers$date_pack)
-baseline_dealers$shelflife <- baseline_dealers$date - baseline_dealers$date_pack
-baseline_dealers$seedolderthan6m[baseline_dealers$shelflife > 183] <- 1 #6x366/12
-
-# #compare my "shelflife" with Bjorn's "age"
-# #my "shelflife"
-# summary(as.numeric(baseline_dealers$shelflife))
-# # Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
-# #  -15.00   32.25   58.50   62.40   77.75  261.00     194
-# #Bjorn's "age" in baseline_dealers
-# summary(baseline_dealers$age)
-# # Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
-# #  -15.00   33.00   52.00   66.35   79.00  259.96     159
-# #Bjorn's "age" when using only his first line of code
-# baseline_dealers$age2 <- difftime(strptime("01.10.2020", format = "%d.%m.%Y"),strptime(baseline_dealers$date_pack,format="%Y-%m-%d"),units="days")
-# summary(as.numeric(baseline_dealers$age2))
-# # Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
-# #  -15.00   35.00   57.00   64.97   79.00  259.96     191
-# #my "shelflife" after using 01/10/21
-# baseline_dealers$shelflife2 <- as.Date("2020-10-01") - as.Date(baseline_dealers$date_pack)
-# summary(as.numeric(baseline_dealers$shelflife2))
-# #Bjorn's "age" when using only his first line of code & my "shelflife2" after using 01/10/21 MATCH
-# sum(is.na(baseline_dealers$date_pack) & !is.na(baseline_dealers$exp))
-# #32 shop have an NA for date_pack but no NA for exp
-# #baseline_dealers$date_pack2 <- ifelse(is.na(baseline_dealers$date_pack), as.Date(baseline_dealers$exp), as.Date(baseline_dealers$date_pack))
-# baseline_dealers$date_pack_incltransformedexp<-baseline_dealers$date_pack
-# baseline_dealers$transformedexp <- baseline_dealers$exp - 180
+#baseline_dealers$visible_expdate<-ifelse(baseline_dealers$exp=="n/a",0,1) #2 names
+# baseline_dealers$visible_expdate<-0
+# 
+# baseline_dealers$seed_expired <- 0
+# #baseline_dealers$seed_expired[is.na(baseline_dealers$exp)] <- NA
+# #baseline_dealers$seed_expired[baseline_dealers$exp=="n/a"] <- NA
+# #baseline_dealers$seed_expired[is.na(baseline_dealers$date)] <- NA
+# #baseline_dealers$seed_expired[baseline_dealers$date=="n/a"] <- NA
+# #1 shop has n/a for date but not for exp
+# baseline_dealers$date <- as.Date(baseline_dealers$date)
+# #baseline_dealers$date <- as.POSIXct(as.numeric(as.character(baseline_dealers$date)), origin = "1984-01-01")
+# #baseline_dealers$exp<- as.POSIXct(as.numeric(as.character(baseline_dealers$exp)), origin = "1984-01-01")
+# baseline_dealers$exp <- as.Date(baseline_dealers$exp)
+# baseline_dealers$days_since_exp <- baseline_dealers$date - baseline_dealers$exp
+# #baseline_dealers$seed_expired[baseline_dealers$days_since_exp > 0] <- 1
+# 
+# #baseline_dealers$visible_packdate<-ifelse(baseline_dealers$date_pack=="n/a",0,1)
+# baseline_dealers$visible_packdate<-1
+#   
+# baseline_dealers$seedolderthan6m <- 0
+# baseline_dealers$seedolderthan6m[is.na(baseline_dealers$date_pack)] <- NA
+# baseline_dealers$seedolderthan6m[baseline_dealers$date_pack=="n/a"] <- NA
+# baseline_dealers$seedolderthan6m[is.na(baseline_dealers$date)] <- NA
+# baseline_dealers$date_pack <- as.Date(baseline_dealers$date_pack)
+# baseline_dealers$shelflife <- baseline_dealers$date - baseline_dealers$date_pack
+# baseline_dealers$seedolderthan6m[baseline_dealers$shelflife > 183] <- 1 #6x366/12
+# 
+# # #compare my "shelflife" with Bjorn's "age"
+# # #my "shelflife"
+# # summary(as.numeric(baseline_dealers$shelflife))
+# # # Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+# # #  -15.00   32.25   58.50   62.40   77.75  261.00     194
+# # #Bjorn's "age" in baseline_dealers
+# # summary(baseline_dealers$age)
+# # # Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+# # #  -15.00   33.00   52.00   66.35   79.00  259.96     159
+# # #Bjorn's "age" when using only his first line of code
+# # baseline_dealers$age2 <- difftime(strptime("01.10.2020", format = "%d.%m.%Y"),strptime(baseline_dealers$date_pack,format="%Y-%m-%d"),units="days")
+# # summary(as.numeric(baseline_dealers$age2))
+# # # Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+# # #  -15.00   35.00   57.00   64.97   79.00  259.96     191
+# # #my "shelflife" after using 01/10/21
+# # baseline_dealers$shelflife2 <- as.Date("2020-10-01") - as.Date(baseline_dealers$date_pack)
+# # summary(as.numeric(baseline_dealers$shelflife2))
+# # #Bjorn's "age" when using only his first line of code & my "shelflife2" after using 01/10/21 MATCH
+# # sum(is.na(baseline_dealers$date_pack) & !is.na(baseline_dealers$exp))
+# # #32 shop have an NA for date_pack but no NA for exp
+# # #baseline_dealers$date_pack2 <- ifelse(is.na(baseline_dealers$date_pack), as.Date(baseline_dealers$exp), as.Date(baseline_dealers$date_pack))
+# # baseline_dealers$date_pack_incltransformedexp<-baseline_dealers$date_pack
+# # baseline_dealers$transformedexp <- baseline_dealers$exp - 180
+# # baseline_dealers$date_pack_incltransformedexp[is.na(baseline_dealers$date_pack)]<-baseline_dealers$transformedexp[is.na(baseline_dealers$date_pack)]
+# # baseline_dealers$shelflife3 <- as.Date("2020-10-01") - as.Date(baseline_dealers$date_pack_incltransformedexp)
+# # summary(as.numeric(baseline_dealers$age))
+# # summary(as.numeric(baseline_dealers$shelflife3))
+# 
+# baseline_dealers$date_pack_incltransformedexp <- baseline_dealers$date_pack
+# baseline_dealers$transformedexp <- baseline_dealers$exp - 183 #6x366/12
 # baseline_dealers$date_pack_incltransformedexp[is.na(baseline_dealers$date_pack)]<-baseline_dealers$transformedexp[is.na(baseline_dealers$date_pack)]
-# baseline_dealers$shelflife3 <- as.Date("2020-10-01") - as.Date(baseline_dealers$date_pack_incltransformedexp)
-# summary(as.numeric(baseline_dealers$age))
-# summary(as.numeric(baseline_dealers$shelflife3))
-
-baseline_dealers$date_pack_incltransformedexp <- baseline_dealers$date_pack
-baseline_dealers$transformedexp <- baseline_dealers$exp - 183 #6x366/12
-baseline_dealers$date_pack_incltransformedexp[is.na(baseline_dealers$date_pack)]<-baseline_dealers$transformedexp[is.na(baseline_dealers$date_pack)]
-baseline_dealers$shelflife_Caro <- baseline_dealers$date - as.Date(baseline_dealers$date_pack_incltransformedexp)
-baseline_dealers$shelflife_Caro[baseline_dealers$shelflife_Caro < 0] <- NA
-baseline_dealers$shelflife_Caro <- as.numeric(as.character(baseline_dealers$shelflife_Caro))
+# baseline_dealers$shelflife_Caro <- baseline_dealers$date - as.Date(baseline_dealers$date_pack_incltransformedexp)
+# baseline_dealers$shelflife_Caro[baseline_dealers$shelflife_Caro < 0] <- NA
+# baseline_dealers$shelflife_Caro <- as.numeric(as.character(baseline_dealers$shelflife_Caro))
 #nobs: 348 obs - 159 NA's for Bjorn's "age" in baseline_dealers or my shelflife3 - 3 sum(is.na(baseline_dealers$date)) - 3 packaging date after interview
+
+baseline_dealers$visible_expdate<-0
+baseline_dealers$seed_expired<-0
+baseline_dealers$visible_packdate<-0
+baseline_dealers$seedolderthan6m<-0
+baseline_dealers$shelflife_Caro<-0
 
 baseline_dealers$origin<-ifelse(baseline_dealers$origin=="Yes",1,0)
 baseline_dealers$cert<-ifelse(baseline_dealers$cert=="Yes",1,0)
