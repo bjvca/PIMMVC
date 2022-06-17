@@ -572,11 +572,21 @@ Study Context
 Our study area comprises 11 districts in southeastern Uganda, which roughly
  corresponds to the Busoga kingdom.
  In these districts, we carried out a census of all agro-input shops, which
- resulted in an effective sample size of about 350 dealers.
+ resulted in an effective sample size of about 350 dealers
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Only half of these (193) are part of this study, right?
+\end_layout
+
+\end_inset
+
+.
  Based on location, these agro-input shops were then grouped in catchment
  areas
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
 A catchment area is defined as an area that is served by an agro-input dealer,
@@ -609,7 +619,7 @@ There is quite some heterogeneity when it comes to agro-input shops.
  Others are located in towns or trading centers and specialize in farm inputs
  and tools.
  About 60 percent of the agro-input shop managers are male.
- The average shop receives about 40 customers a day, half of which come
+ The average shop receives about 45 customers a day, half of which come
  there to buy maize seed, and has been in operation for about 5 years.
  The shop has on average 3 maize seed varieties in stock.
  Table 
@@ -624,10 +634,24 @@ noprefix "false"
 
  provides some descriptive statistics of the agro-input shops included in
  our study.
+ More descriptive statistics, describing the seed handling and storage practices
+, efforts and services of agro-input dealers, are presented in the appendix
+ in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:descriptives indices"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ 
 \end_layout
 
 \begin_layout Standard
-The average farmer in our sample has is small, with about 3.3 acres of land
+The average farmer in our sample has is small, with about 3.4 acres of land
  for crop production.
  Half of our sample of farmers indicate that they used improved maize seed
  on at least one plot in the season preceding the survey, and of the farmers
@@ -4159,7 +4183,7 @@ noprefix "false"
  Second, we construct an index that measures dealer effort and a range of
  services that dealers offer to clients.
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Indices were created by weighing each component by the inverse covariance
@@ -4172,8 +4196,20 @@ literal "false"
 \end_inset
 
 .
- Descriptive statistics for the variables used in the indices are shown
- in the appendix in Table 
+\end_layout
+
+\end_inset
+
+ In particular, this index includes if an agro-input dealer 1) always explains
+ how seed should be used (seed spacing, seed rate, complementary inputs);
+ 2) always recommends complementary inputs such as fertilizers and chemicals;
+ 3) provides extension/training to clients on how to use improved seed varieties
+; 4) provides discounts to clients that buy large quantities of seed; 5)
+ sells small quantities; 6) provides seed on credit; 7) received a seed
+ related complaint from a customer; 8) accepts mobile money as a payment
+ modality.
+ Descriptive statistics for the variables which constitute this effort and
+ service index are shown in the appendix in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:descriptives indices"
@@ -4184,18 +4220,6 @@ noprefix "false"
 \end_inset
 
 .
-\end_layout
-
-\end_inset
-
- In particular, the index includes if an agro-input dealer 1) always explains
- how seed should be used (seed spacing, seed rate, complementary inputs);
- 2) always recommends complementary inputs such as fertilizers and chemicals;
- 3) provides extension/training to clients on how to use improved seed varieties
-; 4) provides discounts to clients that buy large quantities of seed; 5)
- sells small quantities; 6) provides seed on credit; 7) received a seed
- related complaint from a customer; 8) accepts mobile money as a payment
- modality.
  Third, we asked enumerators to carefully observe and note down a range
  of capital intensive seed handling and storage practices which were also
  summarized in an index.
@@ -4205,6 +4229,18 @@ noprefix "false"
  5) if any official certificates are on display in the shop (e.g.
  inspection certificates, training certificates, registration with association,
  etc).
+ Also for these variables which constitute the capital-intensive practices
+ index, descriptive statistics are shown in the appendix in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:descriptives indices"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
  We see that after controlling for these three variables, the male premium
  on general quality ratings increases from 0.13 to 0.16.
  Note that the index of capital intensive seed handling and storage practices
@@ -4342,6 +4378,20 @@ noprefix "false"
  6) does not store seed in open bags or open containers.
  This index also includes the shop’s overall cleanness and professionality
  rating that is provided by the enumerator.
+ Again, descriptive statistics for the variables which constitute this all
+ (i.e.
+ capital- and labor intensive) practices index can be found in the appendix
+ in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:descriptives indices"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
  As in column 5 of Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -9747,8 +9797,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Descriptive agro-input dealer statistics: Variables in indices.
- 
+Descriptive agro-input dealer statistics: Variables in indices 
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:descriptives indices"
