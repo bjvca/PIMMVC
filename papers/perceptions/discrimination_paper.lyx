@@ -1627,7 +1627,7 @@ Sexpr{format(round(df_descriptives_farmer[6,5],digits=3),nsmall=0)}
 
 \begin_layout Plain Layout
 
-Farmer is male & 
+Household head is male & 
 \backslash
 Sexpr{format(round(df_descriptives_farmer[7,1],digits=3),nsmall=3)} & 
 \backslash
