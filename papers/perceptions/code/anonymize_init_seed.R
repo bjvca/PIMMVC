@@ -471,9 +471,10 @@ baseline_loc$dist_m <- geodist::geodist_vec(
 
 ## convert to kms
 baseline_loc$maize.owner.dist <-baseline_loc$dist_m / 1000
+write.csv(baseline_loc,paste(path,"perceptions/data_seed_systems/data/input_dealer/distance_more.csv", sep="/"), row.names=FALSE) #creating the dataset
 baseline_loc<-baseline_loc[, c("maize.owner.dist", "shop_ID")] #only distance info
 
-write.csv(baseline_loc,paste(path,"papers/perceptions/data_seed_systems/data/input_dealer/distance.csv", sep="/"), row.names=FALSE) #creating the dataset
+write.csv(baseline_loc,paste(path,"perceptions/data_seed_systems/data/input_dealer/distance.csv", sep="/"), row.names=FALSE) #creating the dataset
 
 
 

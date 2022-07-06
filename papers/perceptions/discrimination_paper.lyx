@@ -587,14 +587,14 @@ Our study area comprises 11 districts in southeastern Uganda, which roughly
 \begin_layout Standard
 After the census, these agro-input shops were grouped in catchment areas
  based on their location.
- A catchment area is defined as the area that is served by a dealer, as
- the area where this dealer's customers live.
+ A catchment area is defined as the area that is served by a dealer, the
+ area where this dealer's customers live.
  If catchment areas of two or more dealers overlap because these dealers
  operate in the same town, street or right next to each other, they are
  assigned to the same catchment area.
  This is done on the basis of geographical location.
- Using GPS coordinates of the input dealers, the halversine function is
- used to construct an adjacency matrix, and shops that are less than 5 kilometer
+ Using GPS coordinates of the input dealers, the haversine function is used
+ to construct an adjacency matrix, and shops that are less than 5 kilometer
  apart are assigned to the same catchment area.
  The 5 kilometer threshold was selected based on visual inspection of the
  map, the size of an average village and reported distance between farmers
@@ -608,11 +608,11 @@ After the census, these agro-input shops were grouped in catchment areas
 
 \begin_layout Standard
 In each catchment area, we also sampled farmers in proportion to the number
- of agro-input dealers in thearea.
+ of agro-input dealers in the area.
  We connected shops to villages by asking every dealer from which village
  most of his/her customers come from
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
 If this village was already named by another dealer, the village with the
@@ -624,19 +624,19 @@ If this village was already named by another dealer, the village with the
 .
  Enumerators were sent to these villages and instructed to randomly sample
  ten households that meet the inclusion criteria.
- Consequently, we sampled 3470 farmers and collected information their character
-istics in April 2021.
+ Consequently, we sampled 3470 farmers and collected information about their
+ characteristics in April 2021.
 \end_layout
 
 \begin_layout Standard
 It is important to note that only farmers in half of the catchment areas
  rated dealers
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
-These ratings are part of the intervention of a different study, where was
- a computer algorithm allocated the rating treatment randomly at the level
+These ratings are part of the intervention of a different study, where a
+ computer algorithm allocated the rating treatment randomly at the level
  of the catchment area.
 \end_layout
 
@@ -644,8 +644,8 @@ These ratings are part of the intervention of a different study, where was
 
 .
  This means that 1931 farmers rated 193 dealers in April 2021.
- To have a sufficient number, ratings were collected a second time collected
- in January in February 2022.
+ To have a sufficient number, ratings were collected a second time in January
+ in February 2022.
  While these ratings were provided by the same farmers, only 1893 of them
  were found during the second wave.
  These two rounds of surveys constitute the key sources of data for the
