@@ -1,4 +1,4 @@
-### run in:  ../PIMMVC/papers/perceptions
+### run in:  ../PIMMVC/perceptions
 rm(list=ls())
 path <- getwd()
 
@@ -14,7 +14,7 @@ library(tidyverse)
 library(clubSandwich)
 library(dplyr)
 options(scipen=999)
-path_2 <- strsplit(path, "/papers/perceptions")[[1]]
+path_2 <- strsplit(path, "/perceptions")[[1]]
 
 
 
@@ -27,16 +27,16 @@ path_2 <- strsplit(path, "/papers/perceptions")[[1]]
 ###########  MODEL 3 ###############
 ##################################################################################################################
 
-rating_dyads <- read.csv(paste(path_2,"papers/perceptions/data_seed_systems/data/farmer/rating_dyads.csv", sep = "/"), stringsAsFactors = FALSE)[c("shop_ID", "farmer_ID",          "general_rating","location_rating","price_rating","quality_rating", "stock_rating","reputation_rating","seed_quality_general_rating","seed_yield_rating","seed_drought_rating","seed_disease_rating","seed_maturing_rating","seed_germinate_rating")]
-rating_dyads_midline <- read.csv(paste(path_2,"papers/perceptions/data_seed_systems_midline/data/farmer/midline_rating_dyads.csv", sep = "/"), stringsAsFactors = FALSE)[c("shop_ID", "farmer_ID", "general_rating","location_rating","price_rating","quality_rating","stock_rating","reputation_rating","seed_quality_general_rating","seed_yield_rating","seed_drought_rating","seed_disease_rating","seed_maturing_rating","seed_germinate_rating")]
+rating_dyads <- read.csv(paste(path_2,"perceptions/data_seed_systems/data/farmer/rating_dyads.csv", sep = "/"), stringsAsFactors = FALSE)[c("shop_ID", "farmer_ID",          "general_rating","location_rating","price_rating","quality_rating", "stock_rating","reputation_rating","seed_quality_general_rating","seed_yield_rating","seed_drought_rating","seed_disease_rating","seed_maturing_rating","seed_germinate_rating")]
+rating_dyads_midline <- read.csv(paste(path_2,"perceptions/data_seed_systems_midline/data/farmer/midline_rating_dyads.csv", sep = "/"), stringsAsFactors = FALSE)[c("shop_ID", "farmer_ID", "general_rating","location_rating","price_rating","quality_rating","stock_rating","reputation_rating","seed_quality_general_rating","seed_yield_rating","seed_drought_rating","seed_disease_rating","seed_maturing_rating","seed_germinate_rating")]
 
 ### check if gender of agro input dealer in baseline corresponds to gender in midline:
 #baseline data 
-baseline_dealer <- read.csv(paste(path_2,"papers/perceptions/data_seed_systems/data/input_dealer/baseline_dealer.csv", sep="/"), stringsAsFactors = FALSE)
+baseline_dealer <- read.csv(paste(path_2,"perceptions/data_seed_systems/data/input_dealer/baseline_dealer.csv", sep="/"), stringsAsFactors = FALSE)
 baseline_dealer[baseline_dealer=="999"]<-NA
 
 #midline data 
-midline_dealer <- read.csv(paste(path_2,"papers/perceptions/data_seed_systems_midline/data/input_dealer/midline_dealer.csv", sep="/"), stringsAsFactors = FALSE)
+midline_dealer <- read.csv(paste(path_2,"perceptions/data_seed_systems_midline/data/input_dealer/midline_dealer.csv", sep="/"), stringsAsFactors = FALSE)
 
 ###############################################################################################
 ###Anderson, 2008: https://are.berkeley.edu/~mlanderson/pdf/Anderson%202008a.pdf p. 1485
@@ -524,8 +524,8 @@ midline_dealer$owner.warning<- ifelse(midline_dealer$owner.agree.inspection.q118
 
 
 #including location variable -- distance between farmer and dealer -- calculated using GPS coordinates 
-distance <- read.csv(paste(path_2,"papers/perceptions/data_seed_systems/data/input_dealer/distance.csv", sep = "/"), stringsAsFactors = FALSE) #reading in baseline data for location
-distance_mid <- read.csv(paste(path_2,"papers/perceptions/data_seed_systems_midline/data/input_dealer/distance.csv", sep = "/"), stringsAsFactors = FALSE) #reading in midline data for location
+distance <- read.csv(paste(path_2,"perceptions/data_seed_systems/data/input_dealer/distance.csv", sep = "/"), stringsAsFactors = FALSE) #reading in baseline data for location
+distance_mid <- read.csv(paste(path_2,"perceptions/data_seed_systems_midline/data/input_dealer/distance.csv", sep = "/"), stringsAsFactors = FALSE) #reading in midline data for location
 
 ###baseline 
 ##aggregating the distance for each dealer 
@@ -1974,6 +1974,12 @@ rat$leakproof<- ifelse(rat$roof== 'Yes', 1, 0)
 table(rat$leakproof)
 
 
+###checking for shelflife and moisture for women and men
+summary(rat$maize.owner.moistread[rat$gender=="Female"])
+summary(rat$maize.owner.moistread[rat$gender=="Male"])
+
+summary(rat$maize.owner.shelflife_Caro[rat$gender=="Female"])
+summary(rat$maize.owner.shelflife_Caro[rat$gender=="Male"])
 
 #FE at farmer level --- without controls 
 #dealer ratings 
@@ -2695,13 +2701,13 @@ fe2<- rbind(c((format(round(mean(fixef(plm8))[1],digits=3),nsmall=0)),
 ##################################################################################################################
 #rm(list=ls())
 
-#baseline_deal <- read.csv(paste(path_2,"papers/perceptions/data_seed_systems/data/input_dealer/baseline_dealer.csv",sep="/"))
+#baseline_deal <- read.csv(paste(path_2,"perceptions/data_seed_systems/data/input_dealer/baseline_dealer.csv",sep="/"))
 #baseline_deal=subset(baseline_dealers,clearing==T)
-#write.csv(baseline_deal,"papers/perceptions/data_seed_systems/data/input_dealer/baseline_deal.csv",row.names = F)
+#write.csv(baseline_deal,"perceptions/data_seed_systems/data/input_dealer/baseline_deal.csv",row.names = F)
 
-baseline_dealers <- read.csv(paste(path_2,"papers/perceptions/data_seed_systems/data/input_dealer/baseline_dealer.csv",sep="/"))
+baseline_dealers <- read.csv(paste(path_2,"perceptions/data_seed_systems/data/input_dealer/baseline_dealer.csv",sep="/"))
 baseline_dealers=subset(baseline_dealers,clearing==T)
-baseline_farmers <- read.csv(paste(path_2,"papers/perceptions/data_seed_systems/data/farmer/baseline_farmers.csv",sep="/"))
+baseline_farmers <- read.csv(paste(path_2,"perceptions/data_seed_systems/data/farmer/baseline_farmers.csv",sep="/"))
 baseline_farmers=subset(baseline_farmers,Check2.check.maize.clearing==T)
 
 #merge in more data
@@ -2713,7 +2719,7 @@ baseline_farmers=subset(baseline_farmers,Check2.check.maize.clearing==T)
 #BASELINE
 
 #farmers
-rating_dyads_des <- read.csv(paste(path_2,"papers/perceptions/data_seed_systems/data/farmer/rating_dyads.csv",sep="/"))
+rating_dyads_des <- read.csv(paste(path_2,"perceptions/data_seed_systems/data/farmer/rating_dyads.csv",sep="/"))
 
 rating_dyads_des[rating_dyads_des=="n/a"] <- NA
 rating_dyads_des[rating_dyads_des==98] <- NA
@@ -2759,7 +2765,7 @@ baseline_dealers$germination <- baseline_dealers$seed_germinate_rating
 ###
 
 #BASELINE
-dealer_services_dyads <- read.csv(paste(path_2,"papers/perceptions/data_seed_systems/data/farmer/dealer_services_dyads.csv",sep="/"))
+dealer_services_dyads <- read.csv(paste(path_2,"perceptions/data_seed_systems/data/farmer/dealer_services_dyads.csv",sep="/"))
 
 dealer_services_dyads[dealer_services_dyads=="n/a"] <- NA
 dealer_services_dyads[dealer_services_dyads==98] <- NA
