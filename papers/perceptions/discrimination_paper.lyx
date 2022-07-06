@@ -741,7 +741,7 @@ begin{landscape}
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -1377,6 +1377,29 @@ end{tabular}
 end{center}
 \end_layout
 
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: 
+\begin_inset Quotes eld
+\end_inset
+
+Distance between farmer and shop in km
+\begin_inset Quotes erd
+\end_inset
+
+ is calculated using the haversine function based on the GPS coordinates
+ obtained during data collection.
+ Farmers were asked to rate agro-input shops they know (one farmer can rate
+ multiple shops) and these shops are not necessarily located in the vicinity.
+\end_layout
+
 \end_inset
 
 
@@ -1423,7 +1446,7 @@ begin{landscape}
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -1943,6 +1966,28 @@ end{tabular}
 end{center}
 \end_layout
 
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: 
+\begin_inset Quotes eld
+\end_inset
+
+Homestead's distance to nearest agro-input shop in km
+\begin_inset Quotes erd
+\end_inset
+
+ is the distance reported by the farmer.
+ Respondents could only report one answer for the nearest agro-input shop.
+ 
+\end_layout
+
 \end_inset
 
 
@@ -2088,7 +2133,7 @@ begin{landscape}
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -2568,28 +2613,7 @@ Empirical Strategy
 Our empirical strategy exploits the particular nature of the data, that
  is, that each farmer in our dataset rates several agro-input dealers (and
  each dealer is rated by several farmers).
- A useful starting point is the following specification
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-To keep notation simple, we omit the time subscript, even though as mentioned
- in Section 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "Measuring perceptions"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
- , farmers were asked to rate agro-input dealers twice.
-\end_layout
-
-\end_inset
-
-:
+ A useful starting point is the following specification:
 \end_layout
 
 \begin_layout Standard
