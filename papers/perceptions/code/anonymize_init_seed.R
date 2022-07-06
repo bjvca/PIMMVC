@@ -23,7 +23,7 @@ path <- getwd()
 ##################   BASELINE   ############################
 
 ### reads in raw data (not public)
-shops <- rbind(read.csv(paste(path,"papers/perceptions/data_seed_systems/data/raw/baseline/Baseline_DealerXX_2020_09_27_03_06_54_713799.csv", sep="/")),read.csv(paste(path,"papers/perceptions/data_seed_systems/data/raw/baseline/Baseline_DealerXXXX_2020_10_02_14_55_02_970765.csv", sep="/")))
+shops <- rbind(read.csv(paste(path,"perceptions/data_seed_systems/data/raw/baseline/Baseline_DealerXX_2020_09_27_03_06_54_713799.csv", sep="/")),read.csv(paste(path,"perceptions/data_seed_systems/data/raw/baseline/Baseline_DealerXXXX_2020_10_02_14_55_02_970765.csv", sep="/")))
 # moisture1 <- read.csv(paste(path,"Moisture_formX2_2020_10_04_07_57_19_019044.csv", sep="/"))[c("id", "reading", "exp",  "date_pack", "origin", "cert", "lot", "verif", "variety", "other_var","company")]
 # moisture2 <- read.csv(paste(path,"Moisture_formXX_2020_10_05_08_15_54_391127.csv", sep="/"))[c("id", "reading", "exp", "origin", "cert", "lot", "verif", "variety", "other_var","company")]
 # moisture2$date_pack <- "n/a" 
@@ -321,7 +321,7 @@ shops_base<-shops[, c("shop_ID", "maize.owner.agree._gps_latitude", "maize.owner
 #write.csv(shops,paste(path,"papers/perceptions/data_seed_systems/data/raw/baseline/dealer_location.csv", sep="/"), row.names=FALSE)
 
 #reading in farmers' baseline data to get the locations 
-farmers <- read.csv(paste(path,"papers/perceptions/data_seed_systems/data/raw/baseline/baseline_farmer_2021_04_25_15_03_43_633118.csv", sep = "/"), stringsAsFactors = FALSE)
+farmers <- read.csv(paste(path,"perceptions/data_seed_systems/data/raw/baseline/baseline_farmer_2021_04_25_15_03_43_633118.csv", sep = "/"), stringsAsFactors = FALSE)
 
 
 ###################### prepping farmers' baseline data #######################
@@ -431,7 +431,7 @@ farmers$farmer_ID[duplicated(farmers$farmer_ID)]
 
 farmers_base<-farmers[, c("farmer_ID", "Check2.check.maize._gps_latitude", "Check2.check.maize._gps_longitude")] #getting only location info 
 
-ratings_dyads_base <- read.csv(paste(path,"papers/perceptions/data_seed_systems/data/farmer/rating_dyads.csv", sep = "/"), stringsAsFactors = FALSE) #ratings dataset with dealer IDs also 
+ratings_dyads_base <- read.csv(paste(path,"perceptions/data_seed_systems/data/farmer/rating_dyads.csv", sep = "/"), stringsAsFactors = FALSE) #ratings dataset with dealer IDs also 
 
 #merging location datasets of farmers to have a dataset with both farmer and dealer IDS
 merged_farmer<-merge(farmers_base, ratings_dyads_base, by="farmer_ID")
@@ -440,6 +440,7 @@ farmers_loc_base<-merged_farmer[, c("farmer_ID", "Check2.check.maize._gps_latitu
 
 #creating dataset with location details of farmers and dealers 
 baseline_loc<- merge(shops_base, farmers_loc_base, by="shop_ID")
+#baseline_loc<- merge(shops_base, merged_farmer, by="shop_ID")
 baseline_loc[baseline_loc=="n/a"]<-NA
 
 ## calcualte distance in metres using Haversine formula -- baseline 
@@ -451,6 +452,22 @@ baseline_loc$dist_m <- geodist::geodist_vec(
   , paired = TRUE
   , measure = "haversine"
 )
+
+## another method for calculation 
+# #gcd.slc <- function(long1, lat1, long2, lat2) {
+#   R <- 6371 # Earth mean radius [km]
+#   d <- acos(sin(lat1)*sin(lat2) + cos(lat1)*cos(lat2) * cos(long2-long1)) * R
+#   return(d) # Distance in km
+# }
+
+# baseline_loc$Check2.check.maize._gps_longitude<-as.numeric(as.character(baseline_loc$Check2.check.maize._gps_longitude))
+# baseline_loc$Check2.check.maize._gps_latitude <- as.numeric(as.character(baseline_loc$Check2.check.maize._gps_latitude))
+# baseline_loc$maize.owner.agree._gps_longitude<- as.numeric (as.character(baseline_loc$maize.owner.agree._gps_longitude))
+# baseline_loc$maize.owner.agree._gps_latitude<- as.numeric (as.character(baseline_loc$maize.owner.agree._gps_latitude))
+# 
+# baseline_loc$distdist<- gcd.slc(baseline_loc$Check2.check.maize._gps_longitude, baseline_loc$Check2.check.maize._gps_latitude, baseline_loc$maize.owner.agree._gps_longitude, 
+#                                 baseline_loc$maize.owner.agree._gps_latitude)
+
 
 ## convert to kms
 baseline_loc$maize.owner.dist <-baseline_loc$dist_m / 1000

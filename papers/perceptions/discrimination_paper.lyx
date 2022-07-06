@@ -694,7 +694,7 @@ begin{landscape}
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -1330,6 +1330,29 @@ end{tabular}
 end{center}
 \end_layout
 
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: 
+\begin_inset Quotes eld
+\end_inset
+
+Distance between farmer and shop in km
+\begin_inset Quotes erd
+\end_inset
+
+ is calculated using the haversine function based on the GPS coordinates
+ obtained during data collection.
+ Farmers were asked to rate agro-input shops they know (one farmer can rate
+ multiple shops) and these shops are not necessarily located in the vicinity.
+\end_layout
+
 \end_inset
 
 
@@ -1376,7 +1399,7 @@ begin{landscape}
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -1896,6 +1919,28 @@ end{tabular}
 end{center}
 \end_layout
 
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: 
+\begin_inset Quotes eld
+\end_inset
+
+Homestead's distance to nearest agro-input shop in km
+\begin_inset Quotes erd
+\end_inset
+
+ is the distance reported by the farmer.
+ Respondents could only report one answer for the nearest agro-input shop.
+ 
+\end_layout
+
 \end_inset
 
 
@@ -2041,7 +2086,7 @@ begin{landscape}
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
