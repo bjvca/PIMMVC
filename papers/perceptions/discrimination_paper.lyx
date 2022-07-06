@@ -568,45 +568,92 @@ Gender bias features so prominently in areas such as scholarly peer review,
 Study Context
 \end_layout
 
+\begin_layout Subsection
+Sample
+\end_layout
+
 \begin_layout Standard
 Our study area comprises 11 districts in southeastern Uganda, which roughly
  corresponds to the Busoga kingdom.
- In these districts, we carried out a census of all agro-input shops, which
- resulted in an effective sample size of about 350 dealers.
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-Only half of these (193) are part of this study, right?
+ We include agro-input dealers located in trading centers and villages as
+ well as maize farmers that live in the catchment areas of these key market
+ sheds.
+ The dealer sample was obtained by listing all agro-input shops in the area
+ during a census, which resulted in 348 dealers.
+ We collected information on their characteristics in September and October
+ 2020.
 \end_layout
 
-\end_inset
+\begin_layout Standard
+After the census, these agro-input shops were grouped in catchment areas
+ based on their location.
+ A catchment area is defined as the area that is served by a dealer, as
+ the area where this dealer's customers live.
+ If catchment areas of two or more dealers overlap because these dealers
+ operate in the same town, street or right next to each other, they are
+ assigned to the same catchment area.
+ This is done on the basis of geographical location.
+ Using GPS coordinates of the input dealers, the halversine function is
+ used to construct an adjacency matrix, and shops that are less than 5 kilometer
+ apart are assigned to the same catchment area.
+ The 5 kilometer threshold was selected based on visual inspection of the
+ map, the size of an average village and reported distance between farmers
+ and dealers.
+ The 348 agro-input dealers in Busoga were assigned to 130 catchment areas.
+ In some catchment areas, there is a high density of shops, while in others
+ there are only one or two dealers.
+ On average, there are 2.7 dealers in an area, with a minimum of 1 and a
+ maximum of 18.
+\end_layout
 
- Based on location, these agro-input shops were then grouped in catchment
- areas.
+\begin_layout Standard
+In each catchment area, we also sampled farmers in proportion to the number
+ of agro-input dealers in thearea.
+ We connected shops to villages by asking every dealer from which village
+ most of his/her customers come from
 \begin_inset Foot
 status collapsed
 
 \begin_layout Plain Layout
-A catchment area is defined as an area that is served by an agro-input dealer,
- that is, the area where the dealer's customers live.
- Agro-input shops are assigned to a catchment areas based on their geographic
- location, and thus the catchment areas of two or more dealers overlap if
- these dealers operate in the same town, street, or right next to each other.
- Using the GPS coordinates of the dealers, we use the Haversine function
- to construct an adjacency matrix, and shops that are less than 5 km apart
- are grouped into a single catchment area.
- The 5 km threshold was selected based on visual inspection of the map,
- the size of an average village, and reported distances between farmers
- and dealers.
+If this village was already named by another dealer, the village with the
+ second most customers was chosen.
 \end_layout
 
 \end_inset
 
- In some catchment areas, there is a high density of agro-input dealers,
- while in others there are only one or two agro-input dealers.
- In each catchment area, we also sampled farmers in proportion to the number
- of agro-input dealers in the catchment area.
+.
+ Enumerators were sent to these villages and instructed to randomly sample
+ ten households that meet the inclusion criteria.
+ Consequently, we sampled 3470 farmers and collected information their character
+istics in April 2021.
+\end_layout
+
+\begin_layout Standard
+It is important to note that only farmers in half of the catchment areas
+ rated dealers
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+These ratings are part of the intervention of a different study, where was
+ a computer algorithm allocated the rating treatment randomly at the level
+ of the catchment area.
+\end_layout
+
+\end_inset
+
+.
+ This means that 1931 farmers rated 193 dealers in April 2021.
+ To have a sufficient number, ratings were collected a second time collected
+ in January in February 2022.
+ While these ratings were provided by the same farmers, only 1893 of them
+ were found during the second wave.
+ These two rounds of surveys constitute the key sources of data for the
+ study.
+\end_layout
+
+\begin_layout Subsection
+Descriptive statistics
 \end_layout
 
 \begin_layout Standard
