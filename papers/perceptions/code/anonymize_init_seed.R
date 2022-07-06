@@ -314,8 +314,11 @@ to_drop <- c("subID","district","sub")
 
 ##############################################################################################################
  
+### data with the correct gps coordinates of dealers 
+ shops_coordinate <- read.csv(paste(path,"perceptions/data_seed_systems/data/raw/baseline/final_richard.csv", sep="/"))
+ 
 #dataset only having gps locations of dealers in baseline 
-shops_base<-shops[, c("shop_ID", "maize.owner.agree._gps_latitude", "maize.owner.agree._gps_longitude")]
+shops_base<-shops_coordinate[, c("shop_ID", "gps_latitude", "gps_longitude")]
   
 #path <- strsplit(path, "/raw")[[1]]
 #write.csv(shops,paste(path,"papers/perceptions/data_seed_systems/data/raw/baseline/dealer_location.csv", sep="/"), row.names=FALSE)
@@ -447,8 +450,8 @@ baseline_loc[baseline_loc=="n/a"]<-NA
 baseline_loc$dist_m <- geodist::geodist_vec(
   x1 = baseline_loc$Check2.check.maize._gps_longitude
   , y1 = baseline_loc$Check2.check.maize._gps_latitude
-  , x2 = baseline_loc$maize.owner.agree._gps_longitude
-  , y2 = baseline_loc$maize.owner.agree._gps_latitude
+  , x2 = baseline_loc$gps_longitude
+  , y2 = baseline_loc$gps_latitude
   , paired = TRUE
   , measure = "haversine"
 )

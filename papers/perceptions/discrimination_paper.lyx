@@ -1397,7 +1397,8 @@ Distance between farmer and shop in km
  is calculated using the haversine function based on the GPS coordinates
  obtained during data collection.
  Farmers were asked to rate agro-input shops they know (one farmer can rate
- multiple shops) and these shops are not necessarily located in the vicinity.
+ multiple shops) and these shops are not necessarily located in the immediate
+ vicinity.
 \end_layout
 
 \end_inset
