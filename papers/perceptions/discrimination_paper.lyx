@@ -555,6 +555,19 @@ Gender bias features so prominently in areas such as scholarly peer review,
  are never measured.
  As a result, differences in outcomes are often attributed to various other
  causes, such as differences in education or ability between men and women.
+ 
+\end_layout
+
+\begin_layout Standard
+Such misperceptions can be particularly damaging in traditional agricultural
+ societies with strong norms and customs.
+ In these societies, women's opportunities are already severely restricted,
+ and gender bias may further restrain women from entering productive activities.
+ This in turn will reinforce gender stereotypes and the view that women
+ are less able to perform particular tasks.
+ It is therefore important to be aware of gender bias in this context, and
+ to design policies to increase participation of women in sectors that are
+ affected by this bias.
 \end_layout
 
 \begin_layout Standard
@@ -567,6 +580,23 @@ Gender bias features so prominently in areas such as scholarly peer review,
 \begin_layout Section
 \paragraph_spacing onehalf
 Study Context
+\end_layout
+
+\begin_layout Standard
+Our study was carried out in Uganda.
+ As in many traditional agricultural societies, women's roles in Uganda
+ are largely domestic, including housekeeping, child rearing, fetching water,
+ cooking, and tending to community needs.
+ Strong gendered norms and stereotypes about the different capabilities
+ of women and men means that women shy away from many economic activities
+ such as cash cropping or post harvest processing.
+ Women do tend to participate to some extent in economic life through marketing
+ as owners of small shops or vendors during market days.
+ While the government already signaled a willingness to mainstream gender
+ as early as in 1997 with its first National Gender Policy, and women are
+ reasonably represented at higher levels in government, norms and customs
+ still prevent women from participating in economic life in most of the
+ rural areas in Uganda.
 \end_layout
 
 \begin_layout Subsection
@@ -9781,9 +9811,19 @@ First, even though we find no evidence of actual differences in quality
 Second, the share of women among opinion leaders and experts in the sector
  needs to increase.
  In light of the emerging evidence of the importance of role models, the
- presence of women among agro-input dealers, inspectors, and leadership
- of professional associations such as UNADA needs to increase.
- For public sector positions, quota's may be considered.
+ presence of women among agro-input dealers, inspectors, extension staff,
+ and leadership of professional associations such as UNADA needs to increase.
+ For public sector positions, quota's may be considered, since research
+ suggests that quota's may be an effective way to challenge gender stereotypes
+ held by men 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "beaman2009powerful"
+literal "false"
+
+\end_inset
+
+.
  
 \end_layout
 
