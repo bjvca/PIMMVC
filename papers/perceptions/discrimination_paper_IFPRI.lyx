@@ -98,41 +98,6 @@ knitr
 
 \begin_body
 
-\begin_layout Title
-\begin_inset Preview
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-author{Anusha De
-\backslash
-thanks{LICOS Centre for Institutions and Economic Performance, KU Leuven,
- Belgium}, Caroline Miehe
-\backslash
-footnotemark[1] , and Bjorn Van Campenhout
-\backslash
-thanks{Development Strategy and Governance Division, International Food
- Policy Research Institute, United States} 
-\backslash
-footnotemark[1]}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-Gender bias in consumer perceptions: The case of agro-input dealers in Uganda
- 
-\end_layout
-
 \begin_layout Abstract
 Faced with incomplete and imperfect information, economic actors rely predominan
 tly on perceptions and often base decisions on heuristics prone to bias.
@@ -142,12 +107,11 @@ tly on perceptions and often base decisions on heuristics prone to bias.
  Using ratings of agro-input dealers provided by smallholder farmers in
  their vicinity, we test if farmers perceive male-managed agro-input shops
  differently than agro-input shops managed by women.
- After explicitly controlling for quality differences between male and female
- managed agro-input shops and including fixed effects to account for farmer-leve
-l heterogeneity, we find that farmers rate male-managed agro-input outlets
- higher on a range of attributes related to the dealership in general, as
- well as when farmers are asked to consider the quality of inputs sold by
- the dealer.
+ After controlling for observable characteristics at the input dealer level
+ and including fixed effects to account for farmer-level heterogeneity,
+ we find that farmers rate male-managed agro-input outlets higher on a range
+ of attributes related to the dealership in general, as well as when farmers
+ are asked to consider the quality of inputs sold by the dealer.
  Our results suggest that consumers' biased perceptions continue to be an
  important entry barrier for women in the subsector, and we conclude that
  policies and interventions designed to challenge gender norms and customs
@@ -201,6 +165,13 @@ source(paste(path, "code/perceptions_seed.R
 
 \begin_layout Standard
 \begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
 \end_inset
 
 
@@ -348,8 +319,8 @@ In this paper, we test if farmers perceive agro-input shops managed by women
  dyadic dataset of farmer-dealer combinations.
  To operationalize perceptions, we asked farmers to rate agro-input dealers,
  on a scale of 1 to 5 on a range of characteristics.
- We then make between-dealer comparisons, explicitly accounting for observable
- differences in the quality of male- and female-managed shops.
+ We then make between-dealer comparisons, accounting for observable differences
+ in the quality of male- and female-managed shops.
  Furthermore, we use the fact that a farmer has generally rated more than
  one agro-input dealer.
  If the same farmer rates both male and female-managed agro-input shops,
@@ -365,8 +336,8 @@ We find that farmers generally rate male-managed agro-input shops more favorably
  reputation.
  We also find that seed from male-managed agro-input shops is rated higher
  than seed from shops managed by women.
- As the differences in ratings persist after explicitly controlling for
- the quality of the dealerships or the services and products they provide,
+ As the differences in ratings cannot immediately be explained by differences
+ in the quality of the dealerships or the services and products they provide,
  we conclude that biased perceptions create an important disadvantage for
  female-managed agro-input shops.
 \end_layout
@@ -555,19 +526,6 @@ Gender bias features so prominently in areas such as scholarly peer review,
  are never measured.
  As a result, differences in outcomes are often attributed to various other
  causes, such as differences in education or ability between men and women.
- 
-\end_layout
-
-\begin_layout Standard
-Such misperceptions can be particularly damaging in traditional agricultural
- societies with strong norms and customs.
- In these societies, women's opportunities are already severely restricted,
- and gender bias may further restrain women from entering productive activities.
- This in turn will reinforce gender stereotypes and the view that women
- are less able to perform particular tasks.
- It is therefore important to be aware of gender bias in this context, and
- to design policies to increase participation of women in sectors that are
- affected by this bias.
 \end_layout
 
 \begin_layout Standard
@@ -580,23 +538,6 @@ Such misperceptions can be particularly damaging in traditional agricultural
 \begin_layout Section
 \paragraph_spacing onehalf
 Study Context
-\end_layout
-
-\begin_layout Standard
-Our study was carried out in Uganda.
- As in many traditional agricultural societies, women's roles in Uganda
- are largely domestic, including housekeeping, child rearing, fetching water,
- cooking, and tending to community needs.
- Strong gendered norms and stereotypes about the different capabilities
- of women and men means that women shy away from many economic activities
- such as cash cropping or post harvest processing.
- Women do tend to participate to some extent in economic life through marketing
- as owners of small shops or vendors during market days.
- While the government already signaled a willingness to mainstream gender
- as early as in 1997 with its first National Gender Policy, and women are
- reasonably represented at higher levels in government, norms and customs
- still prevent women from participating in economic life in most of the
- rural areas in Uganda.
 \end_layout
 
 \begin_layout Subsection
@@ -772,7 +713,7 @@ begin{landscape}
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -1478,7 +1419,7 @@ begin{landscape}
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -2090,11 +2031,8 @@ status open
 \begin_layout Plain Layout
 It may be that the shop is owned by a particular person, but the owner employs
  another person to manage the shop.
- If the gender of the shop manager is different from the gender of the owner,
- the question emerges who's gender affects perceptions of the shop as a
- whole.
- We feel that the person who manages the shop is most visible and as such
- most likely to affect perceptions.
+ This is especially the case for larger shops in towns.
+ In villages and trading centers, the shop owner is generally also the manager.
 \end_layout
 
 \end_inset
@@ -9812,19 +9750,9 @@ First, even though we find no evidence of actual differences in quality
 Second, the share of women among opinion leaders and experts in the sector
  needs to increase.
  In light of the emerging evidence of the importance of role models, the
- presence of women among agro-input dealers, inspectors, extension staff,
- and leadership of professional associations such as UNADA needs to increase.
- For public sector positions, quota's may be considered, since research
- suggests that quota's may be an effective way to challenge gender stereotypes
- held by men 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "beaman2009powerful"
-literal "false"
-
-\end_inset
-
-.
+ presence of women among agro-input dealers, inspectors, and leadership
+ of professional associations such as UNADA needs to increase.
+ For public sector positions, quota's may be considered.
  
 \end_layout
 
