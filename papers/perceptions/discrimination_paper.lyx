@@ -142,11 +142,12 @@ tly on perceptions and often base decisions on heuristics prone to bias.
  Using ratings of agro-input dealers provided by smallholder farmers in
  their vicinity, we test if farmers perceive male-managed agro-input shops
  differently than agro-input shops managed by women.
- After controlling for observable characteristics at the input dealer level
- and including fixed effects to account for farmer-level heterogeneity,
- we find that farmers rate male-managed agro-input outlets higher on a range
- of attributes related to the dealership in general, as well as when farmers
- are asked to consider the quality of inputs sold by the dealer.
+ After explicitly controlling for quality differences between male and female
+ managed agro-input shops and including fixed effects to account for farmer-leve
+l heterogeneity, we find that farmers rate male-managed agro-input outlets
+ higher on a range of attributes related to the dealership in general, as
+ well as when farmers are asked to consider the quality of inputs sold by
+ the dealer.
  Our results suggest that consumers' biased perceptions continue to be an
  important entry barrier for women in the subsector, and we conclude that
  policies and interventions designed to challenge gender norms and customs
@@ -347,8 +348,8 @@ In this paper, we test if farmers perceive agro-input shops managed by women
  dyadic dataset of farmer-dealer combinations.
  To operationalize perceptions, we asked farmers to rate agro-input dealers,
  on a scale of 1 to 5 on a range of characteristics.
- We then make between-dealer comparisons, accounting for observable differences
- in the quality of male- and female-managed shops.
+ We then make between-dealer comparisons, explicitly accounting for observable
+ differences in the quality of male- and female-managed shops.
  Furthermore, we use the fact that a farmer has generally rated more than
  one agro-input dealer.
  If the same farmer rates both male and female-managed agro-input shops,
@@ -364,8 +365,8 @@ We find that farmers generally rate male-managed agro-input shops more favorably
  reputation.
  We also find that seed from male-managed agro-input shops is rated higher
  than seed from shops managed by women.
- As the differences in ratings cannot immediately be explained by differences
- in the quality of the dealerships or the services and products they provide,
+ As the differences in ratings persist after explicitly controlling for
+ the quality of the dealerships or the services and products they provide,
  we conclude that biased perceptions create an important disadvantage for
  female-managed agro-input shops.
 \end_layout
@@ -741,7 +742,7 @@ begin{landscape}
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -1446,7 +1447,7 @@ begin{landscape}
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -2058,8 +2059,11 @@ status open
 \begin_layout Plain Layout
 It may be that the shop is owned by a particular person, but the owner employs
  another person to manage the shop.
- This is especially the case for larger shops in towns.
- In villages and trading centers, the shop owner is generally also the manager.
+ If the gender of the shop manager is different from the gender of the owner,
+ the question emerges who's gender affects perceptions of the shop as a
+ whole.
+ We feel that the person who manages the shop is most visible and as such
+ most likely to affect perceptions.
 \end_layout
 
 \end_inset
