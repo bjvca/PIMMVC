@@ -112,7 +112,10 @@ status open
 author{Anusha De
 \backslash
 thanks{LICOS Centre for Institutions and Economic Performance, KU Leuven,
- Belgium}, Caroline Miehe
+ Belgium} 
+\backslash
+thanks{Department of Agricultural Economics and Rural Development, University
+ of Göttingen, Germany}, Caroline Miehe
 \backslash
 footnotemark[1] , and Bjorn Van Campenhout
 \backslash
@@ -2108,7 +2111,7 @@ To measure the perceived quality of seed, farmers were asked to rate the
  general quality, yield, drought tolerance, pest/disease tolerance, crop
  duration/maturation period, and germination reliability.
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
 Some of these attributes are variety specific.
@@ -3001,7 +3004,18 @@ Farmer-level characteristics could also confound the relationship between
  effect arising from differences in education of the farmer.
  Fortunately, we often have instances where the same farmer rates both male-
  and female-managed agro-input shops.
- This allows us to exploit within-farmer variation for identification.
+ This allows us to exploit within-farmer variation for identification in
+ equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:four"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
  While we would be able to control for a farmer's education level by simply
  including it in an OLS regression, a within-farmer transformation also
  controls for characteristics that would be difficult or impossible to measure
@@ -4228,8 +4242,8 @@ noprefix "false"
 
  for ratings directly related to seed quality.
  In all regressions, we add dealer age and dealer education level as general
- control variables, and additional controls depending on the attribute being
- rated.
+ control variables as they are considered proxies for quality, and additional
+ controls depending on the attribute being rated.
  
 \end_layout
 
@@ -4251,7 +4265,7 @@ noprefix "false"
  of the regressions for each rating attribute.
  We find that, even after controlling for a range of observable indicators
  for overall quality differences between male- and female-managed agro-input
- shops, male-managed shops are rated significantly higher by consumers.
+ shops, male-managed shops are rated significantly higher by farmers.
 \end_layout
 
 \begin_layout Standard
@@ -9656,6 +9670,10 @@ Using simple comparisons of average ratings given to male- and female-managed
  parameter estimates and significance remained similar, suggesting that
  differences in ratings between male- and female-managed agro-input shops
  reflect structural differences in perceptions rather than actual differences.
+ It is to be noted that although in the situations of incomplete or imperfect
+ information these supply chain actors use perceptions to make decisions,
+ the usage of these perceptions or even the formation of these perceptions
+ do not solve the incomplete information puzzle.
 \end_layout
 
 \begin_layout Standard
