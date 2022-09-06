@@ -349,8 +349,11 @@ literal "false"
 In this paper, we test if farmers perceive agro-input shops managed by women
  less favorably than agro-input shops under male management using a unique
  dyadic dataset of farmer-dealer combinations.
- To operationalize perceptions, we asked farmers to rate agro-input dealers,
- on a scale of 1 to 5 on a range of characteristics.
+ To operationalize perceptions, 
+\end_layout
+
+\begin_layout Standard
+s to rate agro-input dealers, on a scale of 1 to 5 on a range of characteristics.
  We then make between-dealer comparisons, explicitly accounting for observable
  differences in the quality of male- and female-managed shops.
  Furthermore, we use the fact that a farmer has generally rated more than
@@ -2079,11 +2082,11 @@ Quantifying perceptions of the quality of services provided by agro-input
 
 \begin_layout Standard
 To measure the perceived quality of agro-input dealers, farmers were asked
- to rate these dealers on a scale of 1 to 5 on their general quality, location
- (convenience, accessibility, closeness to clients), price (competitive
- pricing, discounts), seed quality, stock (availability of seed, number
- of varieties in stock), and reputation (what do other farmers think about
- the dealer).
+ to rate these dealers on a scale of 1 to 5 (5 being the best and 1 being
+ the worst) on their general quality, location (convenience, accessibility,
+ closeness to clients), price (competitive pricing, discounts), seed quality,
+ stock (availability of seed, number of varieties in stock), and reputation
+ (what do other farmers think about the dealer).
  We also compute an average of these six dealer level ratings.
  For these indicators, farmers were asked to rate the shop as a whole, which
  also includes the person who operates the shop.
