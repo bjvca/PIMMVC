@@ -132,7 +132,7 @@ footnotemark[1]}
 
 \end_inset
 
-Gender bias in consumer perceptions: The case of agro-input dealers in Uganda
+Gender bias in customer perceptions: The case of agro-input dealers in Uganda
  
 \end_layout
 
@@ -149,12 +149,11 @@ tly on perceptions and often base decisions on heuristics prone to bias.
  managed agro-input shops and including fixed effects to account for farmer-leve
 l heterogeneity, we find that farmers rate male-managed agro-input outlets
  higher on a range of attributes related to the dealership in general, as
- well as when farmers are asked to consider the quality of inputs sold by
- the dealer.
- Our results suggest that consumers' biased perceptions continue to be an
- important entry barrier for women in the subsector, and we conclude that
- policies and interventions designed to challenge gender norms and customs
- are needed to correct bias in perceptions.
+ well as on the quality of inputs sold by the dealer.
+ Our results show that gender bias in customer perceptions persist and continue
+ to be an important entry barrier for female agro-input dealers, and we
+ conclude that policies and interventions designed to challenge gender norms
+ and customs are needed to correct this bias.
 \end_layout
 
 \begin_layout Standard
@@ -168,15 +167,7 @@ status open
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\begin_layout Plain Layout
-
 path <- getwd()
-\end_layout
-
-\begin_layout Plain Layout
-
 \end_layout
 
 \begin_layout Plain Layout
@@ -186,10 +177,6 @@ source(paste(path, "code/perceptions_seed.R
 \end_inset
 
 , sep = "/"))
-\end_layout
-
-\begin_layout Plain Layout
-
 \end_layout
 
 \begin_layout Plain Layout
@@ -373,8 +360,11 @@ We find that farmers generally rate male-managed agro-input shops more favorably
  than seed from shops managed by women.
  As the differences in ratings persist after explicitly controlling for
  the quality of the dealerships or the services and products they provide,
- we conclude that biased perceptions create an important disadvantage for
- female-managed agro-input shops.
+ we conclude that gender biased customer perceptions and persist and create
+ an important disadvantage for female-managed agro-input shops.
+ Finding this bias in yet another setting is a notable contribution to the
+ literature about gender equity bias, and has important policy implications
+ for developing countries with more traditional societies.
 \end_layout
 
 \begin_layout Standard
@@ -546,7 +536,7 @@ literal "false"
 \end_inset
 
  find that a financial advisor's gender is one of the most important factors
- influencing a consumer's choice of investment advisor.
+ influencing a customer's choice of investment advisor.
  Female advisors’ gender was found to have a negative effect on the desire
  to invest, and this negative attitude was found to be significantly higher
  among male respondents.
@@ -2174,7 +2164,7 @@ begin{landscape}
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -9680,8 +9670,8 @@ Using simple comparisons of average ratings given to male- and female-managed
 \end_layout
 
 \begin_layout Standard
-However, ratings of agro-input dealers provided by farmers may also be influence
-d by farmer characteristics.
+Furthermore, ratings of agro-input dealers provided by farmers may also
+ be influenced by farmer characteristics.
  To control for farmer heterogeneity, we exploited the fact that farmers
  often rated several agro-input dealers of different genders, and ran farmer
  fixed effects models.
@@ -9700,19 +9690,22 @@ Looking into the individual dimensions that were rated, we find particularly
  than female shops.
  This difference in reputation is also reflected in a significant difference
  between male and female dealers in the general quality rating.
- Thus, we cannot deny the fact that these perceptions could be an important
- entry barrier for women in this subsector.
  On the other hand, we do not find that male- and female-managed agro-input
  shops were rated differently when farmers were asked to consider location.
  This may be because location is easier to assess objectively.
  For attributes related to the quality of seed sold by agro-input dealers,
  gender equity bias was largest when farmers were asked to assess seed germinati
 on rates and whether the seed being rated had the advertised maturing period.
+ Thus, we cannot deny the fact that gender biased customer perceptions persist
+ and could be an important entry barrier for women in this subsector.
 \end_layout
 
 \begin_layout Standard
-The prevalence of gender equity bias in the context of agro-input dealers
- again underscores the importance of customs and norms in rural societies.
+Finding this bias in the developing countries context is a notable contribution
+ to the literature about gender equity bias, and has important policy implicatio
+ns.
+ It underscores the importance of customs and norms in rural more traditional
+ societies.
  Interventions and initiatives that focus solely on increasing women's empowerme
 nt are unlikely to be sufficient, and may in some cases even backfire 
 \begin_inset CommandInset citation
