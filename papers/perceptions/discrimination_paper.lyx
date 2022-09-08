@@ -332,9 +332,17 @@ literal "false"
  As a result, we conjecture that female-managed agro-input shops may be
  disadvantaged when farmers form opinions about the quality of services
  rendered or goods sold.
- Van Campenhout and De (2022) compared how farmers perceive agro-input dealers,
- traders and processors in Uganda’s maize value chain and found that the
- sex of the actor rated does not affect the rating he or she receives.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "VanCampenhoutDe"
+literal "false"
+
+\end_inset
+
+ compared how farmers perceive agro-input dealers, traders and processors
+ in Uganda’s maize value chain and found that the sex of the actor rated
+ does not affect the rating he or she receives.
 \end_layout
 
 \begin_layout Standard
@@ -342,7 +350,15 @@ Because this result conflicts with our hypothesis, we reinvestigate the
  issue in this paper and test if farmers perceive agro-input shops managed
  by women less favorably than agro-input shops under male management using
  a different and unique dyadic dataset of farmer-dealer combinations and
- a different econometric approach than Van Campenhout and De (2022).
+ a different econometric approach than 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "VanCampenhoutDe"
+literal "false"
+
+\end_inset
+
+.
  To operationalize perceptions, we asked farmers to rate agro-input dealers,
  on a scale of 1 to 5 on a range of characteristics.
  We then make between-dealer comparisons, explicitly accounting for observable
