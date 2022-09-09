@@ -151,9 +151,10 @@ l heterogeneity, we find that farmers rate male-managed agro-input outlets
  higher on a range of attributes related to the dealership in general, as
  well as on the quality of inputs sold by the dealer.
  Our results show that gender bias in customer perceptions persist and continue
- to be an important entry barrier for female agro-input dealers, and we
- conclude that policies and interventions designed to challenge gender norms
- and customs are needed to correct this bias.
+ to be a severe comparative disadvantage and an important entry barrier
+ for female agro-input dealers, and we conclude that policies and interventions
+ designed to challenge gender norms and customs are needed to correct this
+ bias.
 \end_layout
 
 \begin_layout Standard
@@ -346,10 +347,10 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-Because this result conflicts with our hypothesis, we reinvestigate the
+Because this result conflicts with our hypothesis, we re-investigate the
  issue in this paper and test if farmers perceive agro-input shops managed
  by women less favorably than agro-input shops under male management using
- a different and unique dyadic dataset of farmer-dealer combinations and
+ a different and unique dyadic data set of farmer-dealer combinations and
  a different econometric approach than 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -381,7 +382,8 @@ We find that farmers generally rate male-managed agro-input shops more favorably
  As the differences in ratings persist after explicitly controlling for
  the quality of the dealerships or the services and products they provide,
  we conclude that gender biased customer perceptions and persist and create
- an important disadvantage for female-managed agro-input shops.
+ comparative disadvantages and entry barriers for female-managed agro-input
+ shops.
  Finding this bias in yet another setting is a notable contribution to the
  literature about gender equity bias, and has important policy implications
  for developing countries with more traditional societies.
@@ -555,18 +557,18 @@ literal "false"
 
 \end_inset
 
- find that a financial advisor's gender is one of the most important factors
- influencing a customer's choice of investment advisor.
- Female advisors’ gender was found to have a negative effect on the desire
+ find that a financial adviser's gender is one of the most important factors
+ influencing a customer's choice of investment adviser.
+ Female advisers’ gender was found to have a negative effect on the desire
  to invest, and this negative attitude was found to be significantly higher
  among male respondents.
 \end_layout
 
 \begin_layout Standard
 Gender bias features so prominently in areas such as scholarly peer review,
- teaching assessments, or labour markets partly because perceptions are
- made explicit in the process, for instance through review reports, student
- feedback, or hiring committees.
+ teaching assessments, or labor markets partly because perceptions are made
+ explicit in the process, for instance through review reports, student feedback,
+ or hiring committees.
  However, in economic transactions, gender biases remain hidden as perceptions
  are never measured.
  As a result, differences in outcomes are often attributed to various other
@@ -575,7 +577,7 @@ Gender bias features so prominently in areas such as scholarly peer review,
 \end_layout
 
 \begin_layout Standard
-Such misperceptions can be particularly damaging in traditional agricultural
+Such misperception can be particularly damaging in traditional agricultural
  societies with strong norms and customs.
  In these societies, women's opportunities are already severely restricted,
  and gender bias may further restrain women from entering productive activities.
@@ -2148,7 +2150,7 @@ Some of these attributes are variety specific.
 \begin_layout Standard
 We asked farmers to rate agro-input dealers twice, a first time in April
  2021 and a second in January 2022.
- The average farmer in our dataset provided ratings for about two agro-input
+ The average farmer in our data set provided ratings for about two agro-input
  dealers, with some farmers rating up to 15 dealers.
  The average agro-input shop received ratings from almost 12 farmers, while
  one shop received ratings from almost 50 farmers.
@@ -2669,7 +2671,7 @@ Empirical strategy
 
 \begin_layout Standard
 Our empirical strategy exploits the particular nature of the data, that
- is, that each farmer in our dataset rates several agro-input dealers (and
+ is, that each farmer in our data set rates several agro-input dealers (and
  each dealer is rated by several farmers).
  A useful starting point is the following specification:
 \end_layout
@@ -9765,7 +9767,7 @@ Looking into the individual dimensions that were rated, we find particularly
  gender equity bias was largest when farmers were asked to assess seed germinati
 on rates and whether the seed being rated had the advertised maturing period.
  Thus, we cannot deny the fact that gender biased customer perceptions persist
- and could be an important entry barrier for women in this subsector.
+ and could be an important entry barrier for women in this sub-sector.
 \end_layout
 
 \begin_layout Standard
@@ -9884,7 +9886,7 @@ In addition to underscoring the importance of gender norms and customs in
  This could be achieved by making training attendance publicly visible,
  perhaps through a register of trained agro-input dealers, through certificates
  that are posted in the shops, etc.
- such that equal capactity between male- and female-managed agro-input shops
+ such that equal capacity between male- and female-managed agro-input shops
  becomes more apparent to clients.
  Second, the share of women among opinion leaders and experts in the sector
  needs to increase.
