@@ -334,24 +334,17 @@ literal "false"
  disadvantaged when farmers form opinions about the quality of services
  rendered or goods sold.
  
-\begin_inset CommandInset citation
-LatexCommand citet
-key "VanCampenhoutDe"
-literal "false"
-
-\end_inset
-
- compared how farmers perceive agro-input dealers, traders and processors
- in Uganda’s maize value chain and found that the sex of the actor rated
- does not affect the rating he or she receives.
 \end_layout
 
 \begin_layout Standard
-Because this result conflicts with our hypothesis, we re-investigate the
- issue in this paper and test if farmers perceive agro-input shops managed
- by women less favorably than agro-input shops under male management using
- a different and unique dyadic data set of farmer-dealer combinations and
- a different econometric approach than 
+In this paper, we test if farmers perceive agro-input shops managed by women
+ less favorably than agro-input shops under male management using a unique
+ dyadic dataset of farmer-dealer combinations.
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+The paper builds on earlier exploratory work published in 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "VanCampenhoutDe"
@@ -359,7 +352,13 @@ literal "false"
 
 \end_inset
 
-.
+ that looks at gender related perceptions in Uganda’s maize value chain
+ more broadly, and prompted us to formulate a more specific hypothesis and
+ purposely collect data to test this using appropriate quantitative methods.
+\end_layout
+
+\end_inset
+
  To operationalize perceptions, we asked farmers to rate agro-input dealers,
  on a scale of 1 to 5 on a range of characteristics.
  We then make between-dealer comparisons, explicitly accounting for observable
@@ -2103,7 +2102,7 @@ To measure the perceived quality of agro-input dealers, farmers were asked
  For these indicators, farmers were asked to rate the shop as a whole, which
  also includes the person who operates the shop.
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
 It may be that the shop is owned by a particular person, but the owner employs
@@ -2126,7 +2125,7 @@ To measure the perceived quality of seed, farmers were asked to rate the
  general quality, yield, drought tolerance, pest/disease tolerance, crop
  duration/maturation period, and germination reliability.
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
 Some of these attributes are variety specific.
