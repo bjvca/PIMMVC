@@ -147,11 +147,23 @@ tly on perceptions and often base decisions on heuristics prone to bias.
  their vicinity, we test if farmers perceive male-managed agro-input shops
  differently than agro-input shops managed by women.
  After explicitly controlling for quality differences between male and female
- managed agro-input shops and including fixed effects to account for farmer-leve
-l heterogeneity, we find that farmers rate male-managed agro-input outlets
+\change_inserted 1522110021 1663323428
+-
+\change_deleted 1522110021 1663323423
+ 
+\change_unchanged
+managed agro-input shops and including fixed effects to account for farmer-level
+ heterogeneity, we find that farmers rate male-managed agro-input outlets
  higher on a range of attributes related to the dealership in general, as
  well as on the quality of inputs sold by the dealer.
- Our results show that gender bias in customer perceptions persist and continue
+ Our results show that gender bias in customer perceptions persist
+\change_inserted 1522110021 1663323372
+s
+\change_unchanged
+ and continue
+\change_inserted 1522110021 1663323374
+s
+\change_unchanged
  to be a severe comparative disadvantage and an important entry barrier
  for female agro-input dealers, and we conclude that policies and interventions
  designed to challenge gender norms and customs are needed to correct this
