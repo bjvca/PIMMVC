@@ -89,11 +89,12 @@ knitr
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
-\tracking_changes false
+\tracking_changes true
 \output_changes false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\author 1522110021 "u0133866"
 \end_header
 
 \begin_body
@@ -320,7 +321,10 @@ However, the same gender norms and customs may also mean that perceptions
  crops such as maize or rice, as opposed to food security crops such as
  beans or cassava.
  Again, commercial crops are often considered to be the responsibility of
- the men, while women are assumed to take care of the household food supply
+\change_deleted 1522110021 1663314539
+ the
+\change_unchanged
+ men, while women are assumed to take care of the household food supply
  
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -330,9 +334,30 @@ literal "false"
 \end_inset
 
 .
- As a result, we conjecture that female-managed agro-input shops may be
- disadvantaged when farmers form opinions about the quality of services
- rendered or goods sold.
+ 
+\change_inserted 1522110021 1663320267
+A more recent study by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Ntakyo2022"
+literal "false"
+
+\end_inset
+
+ further confirms this traditional stance in the context of smallholder
+ production in Uganda where a significant negative impact of commercialisation
+ program was prominent on women empowerment in crop production and their
+ control over income, clearly showing a power shift to men in rural households
+ of Uganda.
+ 
+\change_unchanged
+As a result, we conjecture that female-managed agro-input shops may be disadvant
+aged when farmers form opinions about the quality of services rendered or
+ goods sold
+\change_inserted 1522110021 1663314591
+, deeming women to be not completely fit for these commercial roles
+\change_unchanged
+.
  
 \end_layout
 
@@ -380,12 +405,27 @@ We find that farmers generally rate male-managed agro-input shops more favorably
  than seed from shops managed by women.
  As the differences in ratings persist after explicitly controlling for
  the quality of the dealerships or the services and products they provide,
- we conclude that gender biased customer perceptions and persist and create
- comparative disadvantages and entry barriers for female-managed agro-input
- shops.
+ we conclude that gender biased customer perceptions
+\change_deleted 1522110021 1663320425
+ and
+\change_unchanged
+ persist and create comparative disadvantages and entry barriers for female-mana
+ged agro-input shops.
+ 
+\change_deleted 1522110021 1663318686
+Finding this bias in yet another setting is a notable contribution to the
+ literature about gender equity bias, and has important policy implications
+ for developing countries with more traditional societies.
+\change_inserted 1522110021 1663318773
+A pertinent fact in this regard is that there is an intricate difference
+ between being allowed to run a business and being able to access the means
+ and admiration for further growth and success in the business.
+ What restrains the latter is these gender biased customer perceptions.
  Finding this bias in yet another setting is a notable contribution to the
  literature about gender equity bias, and has important policy implications
  for developing countries with more traditional societies.
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -9765,16 +9805,73 @@ Looking into the individual dimensions that were rated, we find particularly
  For attributes related to the quality of seed sold by agro-input dealers,
  gender equity bias was largest when farmers were asked to assess seed germinati
 on rates and whether the seed being rated had the advertised maturing period.
- Thus, we cannot deny the fact that gender biased customer perceptions persist
- and could be an important entry barrier for women in this sub-sector.
+ Thus, we cannot deny the 
+\change_inserted 1522110021 1663317174
+persistence of
+\change_deleted 1522110021 1663317170
+fact that
+\change_unchanged
+ gender biased customer perceptions
+\change_deleted 1522110021 1663317181
+ persist
+\change_unchanged
+ and 
+\change_inserted 1522110021 1663317207
+the probability of resulting comparative disadvantage or
+\change_deleted 1522110021 1663317218
+could be an important
+\change_unchanged
+ entry barrier for women in this sub-sector.
+\change_inserted 1522110021 1663316860
+
 \end_layout
 
 \begin_layout Standard
-Finding this bias in the developing countries context is a notable contribution
- to the literature about gender equity bias, and has important policy implicatio
-ns.
- It underscores the importance of customs and norms in rural more traditional
- societies.
+
+\change_inserted 1522110021 1663320955
+Even though a surprisingly large share of Ugandan agro-input shops are operated
+ and/or managed by women, our findings imply that these women face severe
+ comparative disadvantages with large implications for their daily business.
+ Female-managed shops which are perceived to perform worse than their male
+ competitors are likely to have less customers and sell less products, leading
+ to lower revenues and profits.
+ Next to the direct implications for the success of these shops managed
+ by women, fewer earnings will lead to fewer investments.
+ In the long run, female-managed shops will have less capital to invest
+ in a leak-proof roof or to buy a product against storage pests, even worsening
+ the competitive disadvantage created by the gender bias.
+ In other words, women do participate in agro-input businesses but are not
+ able to fully partake in the economy, as their (potential) customers’ perceptio
+ns continue to be biased and their shops experience an untold lack of acceptance
+ (for instance, worse reputation irrespective of the quality of inputs).
+ Hence, even if female agro-input dealers are in business, gender biased
+ perceptions put them in the backseat.
+\change_unchanged
+
+\end_layout
+
+\begin_layout Standard
+Finding this bias in the 
+\change_inserted 1522110021 1663315106
+context of a developing country in a particular sub-sector which has experienced
+ more female entrants in the recent years,
+\change_deleted 1522110021 1663314995
+developing countries context
+\change_unchanged
+ is a notable contribution to the 
+\change_inserted 1522110021 1663315118
+gender bias 
+\change_unchanged
+literature
+\change_deleted 1522110021 1663315140
+ about gender equity bias
+\change_unchanged
+, and has important policy implications.
+ It underscores the importance of customs and norms in rural 
+\change_inserted 1522110021 1663315159
+and 
+\change_unchanged
+more traditional societies.
  Interventions and initiatives that focus solely on increasing women's empowerme
 nt are unlikely to be sufficient, and may in some cases even backfire 
 \begin_inset CommandInset citation
@@ -9788,6 +9885,19 @@ literal "false"
  It will be important to challenge gender stereotypes and role congruence
  and such interventions should not focus on only one gender.
  
+\change_inserted 1522110021 1663321063
+As suggested by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Ntakyo2022"
+literal "false"
+
+\end_inset
+
+, targeting women explicitly will not suffice anymore if a balance in power
+ and control is aimed for in local agricultural markets or even in the household.
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -9830,7 +9940,12 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-On the side of men, they may not support (or may even prevent) participating
+On the side of men, they may not support (or may even prevent) participati
+\change_inserted 1522110021 1663321135
+on
+\change_deleted 1522110021 1663321134
+ng
+\change_unchanged
  of women and girls in male-dominated sectors, so that gender roles and
  customs also indirectly prevent women from realizing their full potential.
  Sometimes, men prevent their wives from participating in the economy because
@@ -9868,7 +9983,24 @@ literal "true"
 \begin_layout Standard
 In addition to underscoring the importance of gender norms and customs in
  shaping perceptions, our study serves to draw specific lessons for policy.
- We restrict ourselves to three areas where our findings can be operationalized.
+ 
+\change_inserted 1522110021 1663321234
+Over the years, policymakers have encouraged women to enter business domains
+ which were traditionally dominated by men with women striving towards newer
+ opportunities and ways to earn for their livelihoods or families.
+ However, the current scenario shows the need for policies addressing the
+ lack of acceptance or integration that still prevails decelerating the
+ growth and success of women in these domains.
+ If these perceptions cannot be corrected in good time, the future may see
+ withdrawal of women from these sub-sectors in larger numbers due to women’s
+ awareness about the higher likelihood of restricted growth and difficulties
+ faced in business.
+\change_unchanged
+
+\end_layout
+
+\begin_layout Standard
+We restrict ourselves to three areas where our findings can be operationalized.
  First, even though we find no evidence of actual differences in quality
  between male- and female-managed agro-input shops, existing training and
  advisory services for agro-input dealers are also likely to be biased toward
@@ -9892,9 +10024,21 @@ In addition to underscoring the importance of gender norms and customs in
  In light of the emerging evidence of the importance of role models, the
  presence of women among agro-input dealers, inspectors, extension staff,
  and leadership of professional associations such as UNADA needs to increase.
- For public sector positions, quota's may be considered, since research
- suggests that quota's may be an effective way to challenge gender stereotypes
- held by men 
+ 
+\change_inserted 1522110021 1663318129
+This will not only motivate more women but also bring forth wider acceptance
+ across the value chain or agricultural markets.
+ 
+\change_unchanged
+For public sector positions, quota
+\change_deleted 1522110021 1663316386
+'
+\change_unchanged
+s may be considered, since research suggests that quota
+\change_deleted 1522110021 1663316392
+'
+\change_unchanged
+s may be an effective way to challenge gender stereotypes held by men 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "beaman2009powerful"
