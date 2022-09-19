@@ -89,12 +89,11 @@ knitr
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
-\tracking_changes true
+\tracking_changes false
 \output_changes false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
-\author 1522110021 "u0133866"
 \end_header
 
 \begin_body
@@ -146,28 +145,16 @@ tly on perceptions and often base decisions on heuristics prone to bias.
  Using ratings of agro-input dealers provided by smallholder farmers in
  their vicinity, we test if farmers perceive male-managed agro-input shops
  differently than agro-input shops managed by women.
- After explicitly controlling for quality differences between male and female
-\change_inserted 1522110021 1663323428
--
-\change_deleted 1522110021 1663323423
- 
-\change_unchanged
-managed agro-input shops and including fixed effects to account for farmer-level
- heterogeneity, we find that farmers rate male-managed agro-input outlets
- higher on a range of attributes related to the dealership in general, as
- well as on the quality of inputs sold by the dealer.
- Our results show that gender bias in customer perceptions persist
-\change_inserted 1522110021 1663323372
-s
-\change_unchanged
- and continue
-\change_inserted 1522110021 1663323374
-s
-\change_unchanged
- to be a severe comparative disadvantage and an important entry barrier
- for female agro-input dealers, and we conclude that policies and interventions
- designed to challenge gender norms and customs are needed to correct this
- bias.
+ After explicitly controlling for quality differences between male- and
+ female-managed agro-input shops and including fixed effects to account
+ for farmer-level heterogeneity, we find that farmers rate male-managed
+ agro-input outlets higher on a range of attributes related to the dealership
+ in general, as well as on the quality of inputs sold by the dealer.
+ Our results show that gender bias in customer perceptions persists and
+ continues to be a severe comparative disadvantage and an important entry
+ barrier for female agro-input dealers, and we conclude that policies and
+ interventions designed to challenge gender norms and customs are needed
+ to correct this bias.
 \end_layout
 
 \begin_layout Standard
@@ -238,8 +225,7 @@ literal "false"
 
 \begin_layout Standard
 Agricultural inputs such as inorganic fertilizers or improved seed varieties
- lie somewhere on the continuum between theoretical experience goods and
- credence goods.
+ lie somewhere on the continuum between experience goods and credence goods.
  When farmers inspect goods at the agro-input shop, the quality can only
  be assessed superficially from readily observable characteristics such
  as homogeneity of the seed or by checking if the fertilizer package is
@@ -249,7 +235,6 @@ Agricultural inputs such as inorganic fertilizers or improved seed varieties
  as many other factors in addition to the input affect yield.
  As such, when farmers decide to acquire agricultural inputs or not, perceptions
  and emotions often take the upper hand.
- 
 \end_layout
 
 \begin_layout Standard
@@ -333,9 +318,6 @@ However, the same gender norms and customs may also mean that perceptions
  crops such as maize or rice, as opposed to food security crops such as
  beans or cassava.
  Again, commercial crops are often considered to be the responsibility of
-\change_deleted 1522110021 1663314539
- the
-\change_unchanged
  men, while women are assumed to take care of the household food supply
  
 \begin_inset CommandInset citation
@@ -346,9 +328,7 @@ literal "false"
 \end_inset
 
 .
- 
-\change_inserted 1522110021 1663320267
-A more recent study by 
+ A case in point is the recent study by 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "Ntakyo2022"
@@ -357,28 +337,22 @@ literal "false"
 \end_inset
 
  further confirms this traditional stance in the context of smallholder
- production in Uganda where a significant negative impact of commercialisation
+ production in Uganda where a significant negative impact of a commercialization
  program was prominent on women empowerment in crop production and their
  control over income, clearly showing a power shift to men in rural households
  of Uganda.
- 
-\change_unchanged
-As a result, we conjecture that female-managed agro-input shops may be disadvant
-aged when farmers form opinions about the quality of services rendered or
- goods sold
-\change_inserted 1522110021 1663314591
-, deeming women to be not completely fit for these commercial roles
-\change_unchanged
-.
- 
+ As a result, we conjecture that female-managed agro-input shops may be
+ disadvantaged when farmers form opinions about the quality of services
+ rendered or goods sold, deeming women not to be fit for these commercial
+ roles.
 \end_layout
 
 \begin_layout Standard
 In this paper, we test if farmers perceive agro-input shops managed by women
  less favorably than agro-input shops under male management using a unique
- dyadic dataset of farmer-dealer combinations.
+ dyadic dataset of farmer-dealer links.
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
 The paper builds on earlier exploratory work published in 
@@ -397,14 +371,14 @@ literal "false"
 \end_inset
 
  To operationalize perceptions, we asked farmers to rate agro-input dealers,
- on a scale of 1 to 5 on a range of characteristics.
+ on a scale of 1 to 5, on a range of characteristics.
  We then make between-dealer comparisons, explicitly accounting for observable
  differences in the quality of male- and female-managed shops.
  Furthermore, we use the fact that a farmer has generally rated more than
  one agro-input dealer.
  If the same farmer rates both male and female-managed agro-input shops,
  we can exploit this within-farmer variation and control for farmer specific
- observable and unobservable characteristics.
+ observable and unobservable confounders.
 \end_layout
 
 \begin_layout Standard
@@ -417,27 +391,9 @@ We find that farmers generally rate male-managed agro-input shops more favorably
  than seed from shops managed by women.
  As the differences in ratings persist after explicitly controlling for
  the quality of the dealerships or the services and products they provide,
- we conclude that gender biased customer perceptions
-\change_deleted 1522110021 1663320425
- and
-\change_unchanged
- persist and create comparative disadvantages and entry barriers for female-mana
-ged agro-input shops.
- 
-\change_deleted 1522110021 1663318686
-Finding this bias in yet another setting is a notable contribution to the
- literature about gender equity bias, and has important policy implications
- for developing countries with more traditional societies.
-\change_inserted 1522110021 1663318773
-A pertinent fact in this regard is that there is an intricate difference
- between being allowed to run a business and being able to access the means
- and admiration for further growth and success in the business.
- What restrains the latter is these gender biased customer perceptions.
- Finding this bias in yet another setting is a notable contribution to the
- literature about gender equity bias, and has important policy implications
- for developing countries with more traditional societies.
-\change_unchanged
-
+ we conclude that gender biased customer perceptions persist and create
+ comparative disadvantages and entry barriers for female-managed agro-input
+ shops.
 \end_layout
 
 \begin_layout Standard
@@ -649,7 +605,7 @@ Such misperception can be particularly damaging in traditional agricultural
 
 \begin_layout Section
 \paragraph_spacing onehalf
-Data and methods
+Context and data
 \end_layout
 
 \begin_layout Subsection
@@ -2715,7 +2671,7 @@ end{landscape}
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 \paragraph_spacing onehalf
 Empirical strategy
 \end_layout
@@ -9768,10 +9724,10 @@ n Uganda, we tested if farmers perceive female-managed agro-input shops
  To do so, we asked a random sample of farmers to rate agro-input dealers
  in their immediate neighborhood on a scale ranging from 1 (poor) to 5 (excellen
 t).
- On the one hand, farmers rated agro-input dealers on a set of general character
-istics such as accessibility and price competitiveness.
- On the other hand, they rated maize seed, a particular product that these
- dealers sell, on various dimensions like germination, yield, etc.
+ Farmers rated agro-input dealers on a set of general characteristics such
+ as accessibility and price competitiveness.
+ They also rated maize seed, a particular product that these dealers sell,
+ on various dimensions like germination, yield, etc.
 \end_layout
 
 \begin_layout Standard
@@ -9783,11 +9739,8 @@ Using simple comparisons of average ratings given to male- and female-managed
  When adding controls for agro-input dealer-level observable characteristics,
  parameter estimates and significance remained similar, suggesting that
  differences in ratings between male- and female-managed agro-input shops
- reflect structural differences in perceptions rather than actual differences.
- It is to be noted that although in the situations of incomplete or imperfect
- information these supply chain actors use perceptions to make decisions,
- the usage of these perceptions or even the formation of these perceptions
- do not solve the incomplete information puzzle.
+ reflect structural differences in perceptions rather than actual differences
+ in quality.
 \end_layout
 
 \begin_layout Standard
@@ -9807,7 +9760,7 @@ Looking into the individual dimensions that were rated, we find particularly
  strong gender equity bias when farmers were asked to rate agro-input dealers
  in terms of price competitiveness.
  Furthermore, and especially after controlling for farmer-level heterogeneity,
- we find male-managed agro-input shops to have significantly better reputation
+ we find male-managed agro-input shops to have a significantly better reputation
  than female shops.
  This difference in reputation is also reflected in a significant difference
  between male and female dealers in the general quality rating.
@@ -9817,78 +9770,37 @@ Looking into the individual dimensions that were rated, we find particularly
  For attributes related to the quality of seed sold by agro-input dealers,
  gender equity bias was largest when farmers were asked to assess seed germinati
 on rates and whether the seed being rated had the advertised maturing period.
- Thus, we cannot deny the 
-\change_inserted 1522110021 1663317174
-persistence of
-\change_deleted 1522110021 1663317170
-fact that
-\change_unchanged
- gender biased customer perceptions
-\change_deleted 1522110021 1663317181
- persist
-\change_unchanged
- and 
-\change_inserted 1522110021 1663317207
-the probability of resulting comparative disadvantage or
-\change_deleted 1522110021 1663317218
-could be an important
-\change_unchanged
- entry barrier for women in this sub-sector.
-\change_inserted 1522110021 1663316860
-
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted 1522110021 1663320955
 Even though a surprisingly large share of Ugandan agro-input shops are operated
  and/or managed by women, our findings imply that these women face severe
- comparative disadvantages with large implications for their daily business.
+ comparative disadvantages with potentially large implications for their
+ daily business.
  Female-managed shops which are perceived to perform worse than their male
  competitors are likely to have less customers and sell less products, leading
  to lower revenues and profits.
  Next to the direct implications for the success of these shops managed
  by women, fewer earnings will lead to fewer investments.
  In the long run, female-managed shops will have less capital to invest
- in a leak-proof roof or to buy a product against storage pests, even worsening
- the competitive disadvantage created by the gender bias.
- In other words, women do participate in agro-input businesses but are not
- able to fully partake in the economy, as their (potential) customers’ perceptio
-ns continue to be biased and their shops experience an untold lack of acceptance
- (for instance, worse reputation irrespective of the quality of inputs).
- Hence, even if female agro-input dealers are in business, gender biased
- perceptions put them in the backseat.
-\change_unchanged
-
+ in a eg.
+ leak-proof roof or to stock sufficient improved seed varieties, turning
+ a disadvantage that initially only exists in the perceptions of the customer
+ into a real difference.
 \end_layout
 
 \begin_layout Standard
-Finding this bias in the 
-\change_inserted 1522110021 1663315106
-context of a developing country in a particular sub-sector which has experienced
- more female entrants in the recent years,
-\change_deleted 1522110021 1663314995
-developing countries context
-\change_unchanged
- is a notable contribution to the 
-\change_inserted 1522110021 1663315118
-gender bias 
-\change_unchanged
-literature
-\change_deleted 1522110021 1663315140
- about gender equity bias
-\change_unchanged
-, and has important policy implications.
- It underscores the importance of customs and norms in rural 
-\change_inserted 1522110021 1663315159
-and 
-\change_unchanged
-more traditional societies.
+Finding this bias in the context of a developing country in a particular
+ sub-sector which has experienced more female entrants in the recent years,
+ is a notable contribution to the gender bias literature, and has important
+ policy implications.
+ It underscores the importance of customs and norms in rural and more traditiona
+l societies.
  Interventions and initiatives that focus solely on increasing women's empowerme
 nt are unlikely to be sufficient, and may in some cases even backfire 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "10.3389/fpsyg.2021.712646"
+key "Ntakyo2022"
 literal "false"
 
 \end_inset
@@ -9896,134 +9808,43 @@ literal "false"
 .
  It will be important to challenge gender stereotypes and role congruence
  and such interventions should not focus on only one gender.
- 
-\change_inserted 1522110021 1663321063
-As suggested by 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Ntakyo2022"
-literal "false"
-
-\end_inset
-
-, targeting women explicitly will not suffice anymore if a balance in power
- and control is aimed for in local agricultural markets or even in the household.
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
-On the side of women, gender norms and customs prevent them from aspiring
- and developing an internal locus of control.
- To overcome this, role models have been found particularly effective in
- raising aspirations.
- For example, 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "10.1257/app.20180426"
-literal "false"
+Our study serves to draw specific lessons for policy.
+ Over the years, policymakers have encouraged women to enter business domains
+ which were traditionally dominated by men with women striving towards newer
+ opportunities and ways to earn for their livelihoods or families.
+ However, the current scenario shows the need for policies addressing the
+ lack of acceptance or integration that still prevails.
+ If these perceptions cannot be corrected, the future may see withdrawal
+ of women from these sub-sectors in larger numbers due to women’s awareness
+ about the higher likelihood of restricted growth and difficulties faced
+ in business.
+ We restrict ourselves to three areas where we see scope for policy action.
+\end_layout
 
-\end_inset
-
- find that successful and charismatic women who majored in economics at
- the same university led to an increase in girls choosing economics as a
- major.
- Role model effects may also emanate from fictional characters.
- For example, 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "10.1162/rest_a_01153"
-literal "false"
-
-\end_inset
-
- shows how the female protagonist in a feel-good Disney movie impacts secondary
- school students' exam performance in Uganda.
- This opens the prospect of using mass media to influence gender roles and
- customs 
+\begin_layout Standard
+First, even though we find no evidence of actual differences in quality
+ between male- and female-managed agro-input shops, existing training and
+ advisory services for agro-input dealers are also likely to be biased toward
+ men, and this may indirectly influence perceptions related to the abilities
+ of female managers.
+ Ensuring that women entrepreneurs have access to training should be an
+ important policy priority.
+ The effectiveness and inclusiveness of training programs depend on many
+ attributes of the program.
+ This includes more obvious aspects such as the content of what is taught
+ in the training and who is targeted, but also less obvious attributes such
+ as the gender of who provides the training, timings of training, etc 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "10.1257/app.4.4.1"
+key "lecoutere2020women"
 literal "false"
 
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
-On the side of men, they may not support (or may even prevent) participati
-\change_inserted 1522110021 1663321135
-on
-\change_deleted 1522110021 1663321134
-ng
-\change_unchanged
- of women and girls in male-dominated sectors, so that gender roles and
- customs also indirectly prevent women from realizing their full potential.
- Sometimes, men prevent their wives from participating in the economy because
- they think it will be frowned upon by their peers.
- In cases where this perception is inaccurate, simply correcting this perception
- may be effective.
- For example, 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "10.1257/aer.20180975"
-literal "false"
-
-\end_inset
-
- find that in Saudi Arabia, a country with strict norms and traditions on
- women's mobility, many men overestimate the severity of peer judgment if
- their wives work outside of the house.
- Correcting this false perception led to a significant increase in women's
- employment.
- Role models can also be important to challenge beliefs and stereotypes
- about lesser abilities of one group held by another group.
- For example, 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "beaman2009powerful"
-literal "true"
-
-\end_inset
-
- show that the appointment of women leaders to Indian village councils improved
- men’s perceptions of women’s leadership abilities.
- 
-\end_layout
-
-\begin_layout Standard
-In addition to underscoring the importance of gender norms and customs in
- shaping perceptions, our study serves to draw specific lessons for policy.
- 
-\change_inserted 1522110021 1663321234
-Over the years, policymakers have encouraged women to enter business domains
- which were traditionally dominated by men with women striving towards newer
- opportunities and ways to earn for their livelihoods or families.
- However, the current scenario shows the need for policies addressing the
- lack of acceptance or integration that still prevails decelerating the
- growth and success of women in these domains.
- If these perceptions cannot be corrected in good time, the future may see
- withdrawal of women from these sub-sectors in larger numbers due to women’s
- awareness about the higher likelihood of restricted growth and difficulties
- faced in business.
-\change_unchanged
-
-\end_layout
-
-\begin_layout Standard
-We restrict ourselves to three areas where our findings can be operationalized.
- First, even though we find no evidence of actual differences in quality
- between male- and female-managed agro-input shops, existing training and
- advisory services for agro-input dealers are also likely to be biased toward
- men.
- Ensuring that women entrepreneurs have access to, and benefit from, training
- should be an important policy priority.
- The effectiveness and inclusiveness of training programs depend on many
- attributes of the program.
- This includes more obvious aspects such as the content of what is taught
- in the training and who is targeted, but also less obvious attributes such
- as the gender of who provides the training, timings of training, etc.
  However, it is also important to change the perception that female-managed
  agro-input shops are likely to receive less training.
  This could be achieved by making training attendance publicly visible,
@@ -10031,26 +9852,28 @@ We restrict ourselves to three areas where our findings can be operationalized.
  that are posted in the shops, etc.
  such that equal capacity between male- and female-managed agro-input shops
  becomes more apparent to clients.
- Second, the share of women among opinion leaders and experts in the sector
- needs to increase.
- In light of the emerging evidence of the importance of role models, the
- presence of women among agro-input dealers, inspectors, extension staff,
- and leadership of professional associations such as UNADA needs to increase.
+\end_layout
+
+\begin_layout Standard
+Second, in a variety of contexts, female role models have been shown effective
+ in increasing female participation on otherwise male dominated sectors
  
-\change_inserted 1522110021 1663318129
-This will not only motivate more women but also bring forth wider acceptance
+\begin_inset CommandInset citation
+LatexCommand citep
+key "10.1257/app.20180426,10.1162/rest_a_01153"
+literal "false"
+
+\end_inset
+
+.
+ In light of this, perceptions may evolve in line with the presence of women
+ among agro-input dealers, inspectors, extension staff, and leadership of
+ professional associations such as UNADA.
+ This will not only motivate more women but also bring forth wider acceptance
  across the value chain or agricultural markets.
- 
-\change_unchanged
-For public sector positions, quota
-\change_deleted 1522110021 1663316386
-'
-\change_unchanged
-s may be considered, since research suggests that quota
-\change_deleted 1522110021 1663316392
-'
-\change_unchanged
-s may be an effective way to challenge gender stereotypes held by men 
+ For public sector positions, quotas may be considered, since research suggests
+ that quotas may be an effective way to challenge gender stereotypes held
+ by men 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "beaman2009powerful"
@@ -10059,8 +9882,11 @@ literal "false"
 \end_inset
 
 .
- Finally, we find that biased perceptions exist especially with respect
- to prices charged by female agro-input dealers.
+\end_layout
+
+\begin_layout Standard
+Finally, we find that biased perceptions exist especially with respect to
+ prices charged by female agro-input dealers.
  Simply advertising prices may be sufficient to make prices objectively
  verifiable, and customers will need to depend less on perceptions and the
  use of mental shortcuts that are prone to gender equity bias.
@@ -10084,7 +9910,9 @@ This research was partly funded by the CGIAR Research Program on Policies,
  (https://www.cgiar.org/funders/).
  The authors also acknowledge financial support from The Netherlands – CGIAR
  research programme on Seed Systems Development, grant number W08.240.105,
- funded by the Netherlands Organisation for Scientific Research (NWO-WOTRO).
+ funded by the Netherlands Organisation for Scientific Research (NWO-WOTRO),
+ and from the Belgian Public Service for Foreign Affairs, Foreign Trade
+ and Development Cooperation, grant number 302015.002.002 (bridge funding).
  We thank Richard Ariong, Leocardia Nabwire, Wilberforce Walukano and Marc
  Charles Wanume for excellent field support.
  The analysis is the sole responsibility of the authors, and does not reflect
