@@ -350,7 +350,7 @@ literal "false"
 \begin_layout Standard
 In this paper, we test if farmers perceive agro-input shops managed by women
  less favorably than agro-input shops under male management using a unique
- dyadic dataset of farmer-dealer links.
+ dyadic data set of farmer-dealer links.
 \begin_inset Foot
 status collapsed
 
@@ -540,7 +540,7 @@ literal "false"
 
 \end_inset
 
- use natural language processing (NLP) to search for gender bias in Kenya's
+ use Natural Language Processing (NLP) to search for gender bias in Kenya's
  leading newspaper and sentiment analysis to predict quantitative sentiment
  scores for sentences surrounding female leader names compared to male leader
  names.
@@ -2745,15 +2745,15 @@ noprefix "false"
 
 ) are independent.
  For example, the ratings that a farmer provides may be affected by a (potential
-ly unobservable) characteristic of the farmer (e.g., a poor experience with
- an agro-input dealer in a previous year), which may affect the ratings
+ly unobservable) characteristic of the farmer (for example a poor experience
+ with an agro-input dealer in a previous year), which may affect the ratings
  received by all agro-input dealer rated by this particular farmer.
  Furthermore, the same agro-input dealer may be rated by several farmers,
  leading to interdependence in the other dimension.
  For example, the ratings that an agro-input dealer receives may be affected
- by a (potentially unobservable) characteristic of the dealer (e.g., dealer
- friendliness), which may affect the ratings given by all farmers that rated
- this particular dealer.
+ by a (potentially unobservable) characteristic of the dealer (for example
+ dealer friendliness), which may affect the ratings given by all farmers
+ that rated this particular dealer.
  To account for this two-way interdependence in equation (
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -4365,7 +4365,7 @@ noprefix "false"
  In this index, we account for whether 1) the roof is leak-proof; 2) the
  roof is insulated to keep the heat out; 3) the walls are insulated to keep
  the heat out; 4) the area where seed is stored is properly ventilated;
- 5) any official certificates are on display in the shop (e.g., inspection
+ 5) any official certificates are on display in the shop (for example inspection
  certificates, training certificates, registration with association, etc.).
  Also for these variables which constitute the capital-intensive practices
  index, descriptive statistics are shown in the appendix in Table 
@@ -9648,11 +9648,10 @@ Even though a surprisingly large share of Ugandan agro-input shops are operated
  to lower revenues and profits.
  Next to the direct implications for the success of these shops managed
  by women, fewer earnings will lead to fewer investments.
- In the long run, female-managed shops will have less capital to invest
- in a eg.
- leak-proof roof or to stock sufficient improved seed varieties, turning
- a disadvantage that initially only exists in the perceptions of the customer
- into a real difference.
+ In the long run, female-managed shops will have less capital to invest,
+ for example in a leak-proof roof or to stock sufficient improved seed varieties
+, turning a disadvantage that initially only exists in the perceptions of
+ the customer into a real difference.
 \end_layout
 
 \begin_layout Standard
@@ -9770,10 +9769,11 @@ Acknowledgments
 \end_layout
 
 \begin_layout Standard
-This research was partly funded by the CGIAR Research Program on Policies,
- Institutions, and Markets (PIM), led by the International Food Policy Research
- Institute (IFPRI) and carried out with support from the CGIAR Fund contributors
- (https://www.cgiar.org/funders/).
+This research was partly funded by the Consultative Group for International
+ Agricultural Research (CGIAR) Research Program on Policies, Institutions,
+ and Markets (PIM), led by the International Food Policy Research Institute
+ (IFPRI) and carried out with support from the CGIAR Fund contributors (https://
+www.cgiar.org/funders/).
  The authors also acknowledge financial support from The Netherlands – CGIAR
  research programme on Seed Systems Development, grant number W08.240.105,
  funded by the Netherlands Organisation for Scientific Research (NWO-WOTRO),
