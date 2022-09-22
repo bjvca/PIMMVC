@@ -218,9 +218,9 @@ literal "false"
  economic actors to objectively assess the value of a commodity or service
  being bought and sold.
  However, perceptions and decision heuristics may suffer from a variety
- of cognitive biases such as stereotype thinking and availability bias,
- and may be influenced by social and cultural phenomena such as homophily
- effects and prevailing norms and customs.
+ of cognitive biases such as stereotype thinking and availability bias and
+ may be influenced by social and cultural phenomena such as homophily effects
+ and prevailing norms and customs.
 \end_layout
 
 \begin_layout Standard
@@ -249,7 +249,7 @@ literal "false"
 
 \end_inset
 
- tested agricultural inputs purchased in local markets, and found that 30
+ tested agricultural inputs purchased in local markets and found that 30
  percent of nutrient is missing in fertilizer, and hybrid maize seed is
  estimated to contain less than 50 percent authentic seeds.
  Also in Uganda, 
@@ -283,8 +283,7 @@ In traditional societies with strong gender norms and customs, small businesses
  to earn some money independently from their husband.
  While rapid urbanization has led to the emergence of fast-food restaurants,
  informal food vendors, who tend to be self-employed women, are still the
- main source of food for the majority of households in sub-Saharan Africa
- 
+ main source of food for most households in sub-Saharan Africa 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "GIROUX2021101997"
@@ -294,8 +293,8 @@ literal "false"
 
 .
  And while supermarkets are emerging throughout the developing world, wet
- markets where mostly women sell produce continue to account for the majority
- of expenditure on fresh produce in many countries 
+ markets where mostly women sell produce continue to account for most of
+ the expenditure on fresh produce in many countries 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "GORTON20111624"
@@ -305,15 +304,15 @@ literal "false"
 
 .
  In Uganda, we find that a surprisingly large share of agro-input shops
- are operated and/or managed by women.
+ is operated and/or managed by women.
 \end_layout
 
 \begin_layout Standard
 However, the same gender norms and customs may also mean that perceptions
  are stacked against women if they venture into areas such as agro-input
  provision.
- Farmers, both male and female, may be of the opinion that modern agricultural
- technologies fall in the male domain.
+ Farmers, both male and female, may believe modern agricultural technologies
+ fall in the male domain.
  Furthermore, agro-input shops primarily deal in seed for semi-commercial
  crops such as maize or rice, as opposed to food security crops such as
  beans or cassava.
@@ -425,7 +424,7 @@ We aim to test if gender equity bias—behavior that shows favoritism toward
  Gender equity bias has been confirmed in a wide range of contexts, usually
  when people are asked to assess the performance of another person.
  Stereotyping and role congruence are often catalysts for distorted perceptions
- and false beliefs about the abilities of particular groups of people.
+ and false beliefs about the abilities of groups of people.
  We highlight some of the most important studies that search for systematic
  bias related to the gender of the person being assessed.
 \end_layout
@@ -619,7 +618,7 @@ Our study was carried out in Uganda.
  cooking, and tending to community needs.
  Strong gendered norms and stereotypes about the different capabilities
  of women and men means that women shy away from many economic activities
- such as cash cropping or post harvest processing.
+ such as cash cropping or post-harvest processing.
  Women do tend to participate to some extent in economic life through marketing
  as owners of small shops or vendors during market days.
  While the government already signaled a willingness to mainstream gender
@@ -653,11 +652,11 @@ After the census, these agro-input shops were grouped in catchment areas
  If catchment areas of two or more dealers overlap because these dealers
  operate in the same town, street or right next to each other, they are
  assigned to the same catchment area.
- This is done on the basis of geographical location.
+ This is done on based on geographical location.
  Using GPS coordinates of the input dealers, the haversine function is used
- to construct an adjacency matrix, and shops that are less than 5 kilometer
+ to construct an adjacency matrix, and shops that are less than 5 kilometers
  apart are assigned to the same catchment area.
- The 5 kilometer threshold was selected based on visual inspection of the
+ The 5-kilometer threshold was selected based on visual inspection of the
  map, the size of an average village and reported distance between farmers
  and dealers.
  The 348 agro-input dealers in Busoga were assigned to 130 catchment areas.
@@ -705,8 +704,8 @@ These ratings are part of the intervention of a different study, where a
 
 .
  This means that 1931 farmers rated 193 dealers in April 2021.
- To have a sufficient number, ratings were collected a second time in January
- and February 2022.
+ To have enough ratings, a second round was collected in January and February
+ 2022.
  While these ratings were provided by the same farmers, only 1893 of them
  were found during the second wave.
  These two rounds of surveys constitute the key sources of data for the
@@ -2086,8 +2085,8 @@ Quantifying perceptions of the quality of services provided by agro-input
  We broadly categorized the attributes into two families of indicators.
  A first set of indicators attempts to measure overall quality of agro-input
  dealers and the services they provide, while a second set of indicators
- has a much more narrow focus and asks about a particular product sold by
- the agro-input dealer (maize seed).
+ has a narrower focus and asks about a particular product sold by the agro-input
+ dealer (maize seed).
  Note that as agro-input dealers are often clustered in towns and trading
  centers, farmers often rate several agro-input dealers.
  
@@ -2671,9 +2670,9 @@ Empirical strategy
 \end_layout
 
 \begin_layout Standard
-Our empirical strategy exploits the particular nature of the data, that
- is, that each farmer in our data set rates several agro-input dealers (and
- each dealer is rated by several farmers).
+Our empirical strategy exploits the nature of the data, that is, that each
+ farmer in our data set rates several agro-input dealers (and each dealer
+ is rated by several farmers).
  A useful starting point is the following specification:
 \end_layout
 
@@ -2747,13 +2746,13 @@ noprefix "false"
  For example, the ratings that a farmer provides may be affected by a (potential
 ly unobservable) characteristic of the farmer (for example a poor experience
  with an agro-input dealer in a previous year), which may affect the ratings
- received by all agro-input dealer rated by this particular farmer.
+ received by all agro-input dealer rated by this farmer.
  Furthermore, the same agro-input dealer may be rated by several farmers,
  leading to interdependence in the other dimension.
  For example, the ratings that an agro-input dealer receives may be affected
  by a (potentially unobservable) characteristic of the dealer (for example
  dealer friendliness), which may affect the ratings given by all farmers
- that rated this particular dealer.
+ that rated this dealer.
  To account for this two-way interdependence in equation (
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -2808,8 +2807,8 @@ noprefix "false"
 
 ) shows that the dyadic nature of our data leads to two-way clustering in
  the error term.
- As long as the error term is uncorrelated with the explanatory variable(s)
- included in equation (
+ If the error term is uncorrelated with the explanatory variable(s) included
+ in equation (
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:base"
@@ -2820,8 +2819,8 @@ noprefix "false"
 \end_inset
 
 ), Ordinary Least Squares (OLS) remains consistent.
- However, not taking into account within-cluster error correlation generally
- leads to standard errors that are biased downward, leading to under-rejection
+ However, not considering within-cluster error correlation generally leads
+ to standard errors that are biased downward, leading to under-rejection
  of the null hypothesis that gender does not affect ratings.
  In our case, it should be noted that clustering is non-nested.
  As traditional cluster-robust inference can only deal with clustering in
@@ -2894,8 +2893,8 @@ noprefix "false"
 \end_inset
 
  relies on differences between agro-input dealers.
- As dealer gender is constant for all farmers that rate a particular dealer,
- the average 
+ As dealer gender is constant for all farmers that rate a dealer, the average
+ 
 \begin_inset Formula $g_{d}$
 \end_inset
 
@@ -2968,8 +2967,8 @@ noprefix "false"
  This would be the case if, for example, female agro-input shop managers
  are on average less educated than male agro-input shop managers, and less
  educated agro-input dealers are rated lower by farmers.
- In this case, differential ratings are not caused by gender in itself,
- but rather driven by differences in education.
+ In this case, differential ratings are not caused by gender, but rather
+ driven by differences in education.
  We will control for a range of agro-input dealer-level potential confounders
  by including them as additional regressors 
 \begin_inset Formula $\left(x_{d}\right)$
@@ -4210,8 +4209,8 @@ noprefix "false"
 
 \end_inset
 
- repeats the between-dealers analysis, but compares ratings for quality
- attributes of maize seed sold by these dealers, called 
+ repeats the between-dealers analysis but compares ratings for quality attribute
+s of maize seed sold by these dealers, called 
 \shape italic
 seed ratings
 \shape default
@@ -9613,7 +9612,7 @@ Using simple comparisons of average ratings given to male- and female-managed
 Furthermore, ratings of agro-input dealers provided by farmers may also
  be influenced by farmer characteristics.
  To control for farmer heterogeneity, we exploited the fact that farmers
- often rated several agro-input dealers of different genders, and ran farmer
+ often rated several agro-input dealers of different genders and ran farmer
  fixed effects models.
  In doing so, we confirmed the existence of gender equity bias when farmers
  were asked to rate general characteristics of agro-input dealers, but also
@@ -9639,7 +9638,7 @@ on rates and whether the seed being rated had the advertised maturing period.
 \end_layout
 
 \begin_layout Standard
-Even though a surprisingly large share of Ugandan agro-input shops are operated
+Even though a surprisingly large share of Ugandan agro-input shops is operated
  and/or managed by women, our findings imply that these women face severe
  comparative disadvantages with potentially large implications for their
  daily business.
@@ -9662,7 +9661,7 @@ Finding this bias in the context of a developing country in a particular
  It underscores the importance of customs and norms in rural and more traditiona
 l societies.
  Interventions and initiatives that focus solely on increasing women's empowerme
-nt are unlikely to be sufficient, and may in some cases even backfire 
+nt are unlikely to be sufficient and may in some cases even backfire 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Ntakyo2022"
@@ -9701,7 +9700,8 @@ First, even though we find no evidence of actual differences in quality
  attributes of the program.
  This includes more obvious aspects such as the content of what is taught
  in the training and who is targeted, but also less obvious attributes such
- as the gender of who provides the training, timings of training, etc 
+ as the gender of who provides the training, timings of training, and so
+ forth 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "lecoutere2020women"
@@ -9731,7 +9731,7 @@ literal "false"
 \end_inset
 
 .
- In light of this, perceptions may evolve in line with the presence of women
+ Considering this, perceptions may evolve in line with the presence of women
  among agro-input dealers, inspectors, extension staff, and leadership of
  professional associations such as UNADA.
  This will not only motivate more women but also bring forth wider acceptance
@@ -9783,7 +9783,7 @@ www.cgiar.org/funders/).
  Charles Wanume for excellent field support.
  We also thank Gbenga Akinwehinmi, Gero Laurenz Höhn, Hannah Ameye and Hyejin
  Lee for their feedback.
- The analysis is the sole responsibility of the authors, and does not reflect
+ The analysis is the sole responsibility of the authors and does not reflect
  the views of any funding agency or organization mentioned here.
  
 \begin_inset Note Note
