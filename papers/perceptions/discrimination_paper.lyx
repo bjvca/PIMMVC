@@ -1096,9 +1096,7 @@ Sexpr{format(round(df_descriptives_dealer[9,5],digits=3),nsmall=0)}
 
 \begin_layout Plain Layout
 
-Number of customers per day 
-\backslash
-textbf{buying maize seed} & 
+Number of customers per day buying maize seed & 
 \backslash
 Sexpr{format(round(df_descriptives_dealer[10,1],digits=2),nsmall=2)} & 
 \backslash
@@ -1183,9 +1181,7 @@ Sexpr{format(round(df_descriptives_dealer[19,5],digits=3),nsmall=0)}
 
 \begin_layout Plain Layout
 
-Number of 
-\backslash
-textbf{hybrid} maize varieties in stock & 
+Number of hybrid maize varieties in stock & 
 \backslash
 Sexpr{format(round(df_descriptives_dealer[20,1],digits=3),nsmall=3)} & 
 \backslash
@@ -1209,9 +1205,7 @@ Sexpr{format(round(df_descriptives_dealer[20,5],digits=3),nsmall=0)}
 
 \begin_layout Plain Layout
 
-Number of 
-\backslash
-textbf{OPV} maize varieties in stock & 
+Number of OPV maize varieties in stock & 
 \backslash
 Sexpr{format(round(df_descriptives_dealer[23,1],digits=3),nsmall=3)} & 
 \backslash
@@ -9787,8 +9781,8 @@ This research was partly funded by the CGIAR Research Program on Policies,
  and Development Cooperation, grant number 302015.002.002 (bridge funding).
  We thank Richard Ariong, Leocardia Nabwire, Wilberforce Walukano and Marc
  Charles Wanume for excellent field support.
- We also thank Hannah Ameye, Hyejin Lee, Gero Laurenz Höhn and Gbenga Akinwehinm
-i for their feedback.
+ We also thank Gbenga Akinwehinmi, Gero Laurenz Höhn, Hannah Ameye and Hyejin
+ Lee and for their feedback.
  The analysis is the sole responsibility of the authors, and does not reflect
  the views of any funding agency or organization mentioned here.
  
