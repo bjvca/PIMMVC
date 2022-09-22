@@ -146,7 +146,7 @@ tly on perceptions and often base decisions on heuristics prone to bias.
  their vicinity, we test if farmers perceive male-managed agro-input shops
  differently than agro-input shops managed by women.
  After explicitly controlling for quality differences between male- and
- female-managed agro-input shops and including fixed effects to account
+ female-managed agro-input shops and including fixed-effects to account
  for farmer-level heterogeneity, we find that farmers rate male-managed
  agro-input outlets higher on a range of attributes related to the dealership
  in general, as well as on the quality of inputs sold by the dealer.
@@ -214,9 +214,9 @@ literal "false"
 \end_inset
 
 .
- Reliance on instinct and emotions becomes dominant if it is difficult for
- economic actors to objectively assess the value of a commodity or service
- being bought and sold.
+ Reliance on instinct and emotions becomes dominant if it is difficult to
+ objectively assess the value of a commodity or service being bought and
+ sold.
  However, perceptions and decision heuristics may suffer from a variety
  of cognitive biases such as stereotype thinking and availability bias and
  may be influenced by social and cultural phenomena such as homophily effects
@@ -224,8 +224,10 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-Agricultural inputs such as inorganic fertilizers or improved seed varieties
- lie somewhere on the continuum between experience goods and credence goods.
+Agricultural inputs such as inorganic fertilizers or improved seed varieties,
+ which are high yielding cultivars like open-pollinated and hybrid maize
+ varieties, lie somewhere on the continuum between experience goods and
+ credence goods.
  When farmers inspect goods at the agro-input shop, the quality can only
  be assessed superficially from readily observable characteristics such
  as homogeneity of the seed or by checking if the fertilizer package is
@@ -371,7 +373,7 @@ literal "false"
 
  To operationalize perceptions, we asked farmers to rate agro-input dealers,
  on a scale of 1 to 5, on a range of characteristics.
- We then make between-dealer comparisons, explicitly accounting for observable
+ We then make between-dealers comparisons, explicitly accounting for observable
  differences in the quality of male- and female-managed shops.
  Furthermore, we use the fact that a farmer has generally rated more than
  one agro-input dealer.
@@ -382,7 +384,7 @@ literal "false"
 
 \begin_layout Standard
 We find that farmers generally rate male-managed agro-input shops more favorably
- than agro-input shops managed by women.
+ than shops managed by women.
  The difference in ratings is highest when farmers are asked to rate the
  agro-input dealership in terms of price competitiveness and in terms of
  reputation.
@@ -652,7 +654,7 @@ After the census, these agro-input shops were grouped in catchment areas
  If catchment areas of two or more dealers overlap because these dealers
  operate in the same town, street or right next to each other, they are
  assigned to the same catchment area.
- This is done on based on geographical location.
+ This is done based on geographical location.
  Using GPS coordinates of the input dealers, the haversine function is used
  to construct an adjacency matrix, and shops that are less than 5 kilometers
  apart are assigned to the same catchment area.
@@ -669,8 +671,8 @@ After the census, these agro-input shops were grouped in catchment areas
 \begin_layout Standard
 In each catchment area, we also sampled farmers in proportion to the number
  of agro-input dealers in the area.
- We connected shops to villages by asking every dealer from which village
- most of his/her customers come from
+ We connected shops to villages by asking every dealer where most of his/her
+ customers come from.
 \begin_inset Foot
 status collapsed
 
@@ -681,16 +683,15 @@ If this village was already named by another dealer, the village with the
 
 \end_inset
 
-.
  Enumerators were sent to these villages and instructed to randomly sample
- ten households that grow maize in these villages.
+ ten households that grow maize.
  Consequently, we sampled about 3500 smallholder maize farmers and collected
  information about their characteristics in April 2021.
 \end_layout
 
 \begin_layout Standard
 It is important to note that only farmers in half of the catchment areas
- rated dealers
+ rated dealers.
 \begin_inset Foot
 status collapsed
 
@@ -702,7 +703,6 @@ These ratings are part of the intervention of a different study, where a
 
 \end_inset
 
-.
  This means that 1931 farmers rated 193 dealers in April 2021.
  To have enough ratings, a second round was collected in January and February
  2022.
@@ -733,13 +733,13 @@ noprefix "false"
  and only stock seed during the planting season.
  Others are located in towns or trading centers and specialize in farm inputs
  and tools.
- About 60 percent of the agro-input shop managers are male.
+ About 60 percent of agro-input shop managers are male.
  The average shop has been in operation for about five years and serves
- about 40 customers a day, half of who come to buy maize seed.
+ about 40 customers a day, half of whom come to buy maize seed.
  A shop stocks on average three maize seed varieties.
- More descriptive statistics describing seed handling and storage practices,
- efforts, and services of agro-input dealers, are presented in the appendix
- in Table 
+ More statistics describing seed handling and storage practices, efforts,
+ and services of agro-input dealers, are presented in the appendix in Table
+ 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:descriptives indices"
@@ -774,7 +774,7 @@ noprefix "false"
  As a result, productivity is also low, with the average farmer harvesting
  only about 500 kg of maize per acre.
  Almost 70 percent of farmers are of the opinion that maize seed sold at
- the agro-input shop is counterfeit.
+ agro-input shops is counterfeit.
 \end_layout
 
 \begin_layout Standard
@@ -1228,7 +1228,7 @@ Sexpr{format(round(df_descriptives_dealer[23,5],digits=3),nsmall=0)}
 
 \begin_layout Plain Layout
 
-Sales price of maize seeds (per kilogram) & 
+Sales price of maize seed (UGX/kg) & 
 \backslash
 Sexpr{format(round(desc[4,1],digits=3),nsmall=3)} & 
 \backslash
@@ -1251,7 +1251,7 @@ Sexpr{format(round(desc[4,5],digits=3),nsmall=0)}
 
 \begin_layout Plain Layout
 
-Cost of maize seed for dealer (UGX per kilogram) & 
+Cost of maize seed for dealer (UGX/kg) & 
 \backslash
 Sexpr{format(round(desc[5,1],digits=3),nsmall=3)} & 
 \backslash
@@ -1274,7 +1274,7 @@ Sexpr{format(round(desc[5,5],digits=3),nsmall=0)}
 
 \begin_layout Plain Layout
 
-Amount of maize seed dealer bought (in kilograms) & 
+Amount of maize seed dealer bought (in kg) & 
 \backslash
 Sexpr{format(round(desc[7,1],digits=3),nsmall=3)} & 
 \backslash
@@ -1358,7 +1358,7 @@ Sexpr{format(round(df_descriptives_dealer[52,5],digits=3),nsmall=0)}
 
 \begin_layout Plain Layout
 
-Shop’s UNADA registration & 
+Shop is registered with UNADA & 
 \backslash
 Sexpr{format(round(df_descriptives_dealer[60,1],digits=3),nsmall=3)} & 
 \backslash
@@ -1860,7 +1860,7 @@ Sexpr{format(round(df_descriptives_farmer[15,5],digits=3),nsmall=0)}
 
 \begin_layout Plain Layout
 
-Land productivity in kg/acre (yield/area) & 
+Yield in kg/acre & 
 \backslash
 Sexpr{format(round(df_descriptives_farmer[86,1],digits=1),nsmall=1)} & 
 \backslash
@@ -2085,8 +2085,8 @@ Quantifying perceptions of the quality of services provided by agro-input
  We broadly categorized the attributes into two families of indicators.
  A first set of indicators attempts to measure overall quality of agro-input
  dealers and the services they provide, while a second set of indicators
- has a narrower focus and asks about a particular product sold by the agro-input
- dealer (maize seed).
+ has a narrower focus and asks about maize seed, a particular product sold
+ by the agro-input dealer.
  Note that as agro-input dealers are often clustered in towns and trading
  centers, farmers often rate several agro-input dealers.
  
@@ -2103,11 +2103,11 @@ To measure the perceived quality of agro-input dealers, farmers were asked
  For these indicators, farmers were asked to rate the shop as a whole, which
  also includes the person who operates the shop.
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
-It may be that the shop is owned by a particular person, but the owner employs
- another person to manage the shop.
+It may be that the shop is owned by one person, but the owner employs another
+ person to manage the shop.
  If the gender of the shop manager is different from the gender of the owner,
  the question emerges who's gender affects perceptions of the shop as a
  whole.
@@ -2126,7 +2126,7 @@ To measure the perceived quality of seed, farmers were asked to rate the
  general quality, yield, drought tolerance, pest/disease tolerance, crop
  duration/maturation period, and germination reliability.
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Some of these attributes are variety specific.
@@ -2140,7 +2140,7 @@ Some of these attributes are variety specific.
 \end_inset
 
  We also compute an average of these six seed-level ratings.
- For these variables, farmers were asked to rate seed, the product itself.
+ Here, farmers were asked to rate seed, the product itself.
  Farmers were also allowed to indicate that they could not rate seed on
  a particular dimension (for instance because they never bought seed from
  the agro-input dealer).
@@ -2149,7 +2149,7 @@ Some of these attributes are variety specific.
 
 \begin_layout Standard
 We asked farmers to rate agro-input dealers twice, a first time in April
- 2021 and a second in January 2022.
+ 2021 and a second time in January 2022.
  The average farmer in our data set provided ratings for about two agro-input
  dealers, with some farmers rating up to 15 dealers.
  The average agro-input shop received ratings from almost 12 farmers, while
@@ -2165,7 +2165,6 @@ noprefix "false"
 \end_inset
 
  provides descriptive statistics of the ratings used in our study.
- Ratings range from 1 to 5.
  For example, when assessing the quality of maize seed sold by agro-input
  dealers in our sample, farmers rate its germination with 3.68 out of 5 on
  average.
@@ -2551,7 +2550,7 @@ Sexpr{format(round(desc_rat[12,7],digits=3),nsmall=0)}
 
 \begin_layout Plain Layout
 
-Dealer's rating on maize seed stock by farmers & 
+Dealer's rating on seed stock by farmers & 
 \backslash
 Sexpr{format(round(desc_rat[4,1],digits=3),nsmall=3)} & 
 \backslash
@@ -2670,9 +2669,9 @@ Empirical strategy
 \end_layout
 
 \begin_layout Standard
-Our empirical strategy exploits the nature of the data, that is, that each
- farmer in our data set rates several agro-input dealers (and each dealer
- is rated by several farmers).
+Our empirical strategy exploits the nature of the data, that is, that farmers
+ in our data set rate several agro-input dealers (and dealers are rated
+ by several farmers).
  A useful starting point is the following specification:
 \end_layout
 
@@ -2746,13 +2745,12 @@ noprefix "false"
  For example, the ratings that a farmer provides may be affected by a (potential
 ly unobservable) characteristic of the farmer (for example a poor experience
  with an agro-input dealer in a previous year), which may affect the ratings
- received by all agro-input dealer rated by this farmer.
+ received by all agro-input dealers rated by this farmer.
  Furthermore, the same agro-input dealer may be rated by several farmers,
  leading to interdependence in the other dimension.
- For example, the ratings that an agro-input dealer receives may be affected
- by a (potentially unobservable) characteristic of the dealer (for example
- dealer friendliness), which may affect the ratings given by all farmers
- that rated this dealer.
+ For example, the ratings that a dealer receives may be affected by a (potential
+ly unobservable) characteristic of the dealer (for example dealer friendliness),
+ which may affect the ratings given by all farmers that rated this dealer.
  To account for this two-way interdependence in equation (
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -2763,7 +2761,7 @@ noprefix "false"
 
 \end_inset
 
-), we define a composite error term, 
+), we define a composite error term 
 \begin_inset Formula $\left(\varepsilon_{f,d}\right)$
 \end_inset
 
@@ -3008,7 +3006,7 @@ As we are interested in explaining gender equity bias in perceptions in
  particularly interested in testing if the coefficient on the gender of
  the agro-input dealer changes after adjusting for various observable dealer
  characteristics that are directly related to quality, such as storage technolog
-y, infrastructure such as leak-proof roof or insulation, etc.
+y, infrastructure such as leak-proof roof or insulation, and so forth.
  In this way, we attempt to differentiate between situations where farmers
  perceive female-managed agro-input shops less favorably and situations
  where differences in ratings reflect real differences between male- and
@@ -3042,8 +3040,8 @@ noprefix "false"
  including it in an OLS regression, a within-farmer transformation also
  controls for characteristics that would be difficult or impossible to measure
  and to control for, like motivation, kindness, locus of control, norms
- and values, etc.
- In other words, the within-farmer (fixed effects) estimator removes all
+ and values, and so forth.
+ In other words, the within-farmer (fixed-effects) estimator removes all
  farmer-level heterogeneity.
  
 \end_layout
@@ -3071,8 +3069,8 @@ y_{f,d}-\overline{y}_{f}=\gamma\left(g_{f,d}-\overline{g}_{f}\right)+\varepsilon
 \end_layout
 
 \begin_layout Standard
-Finally, we will also run a fixed effects model that, in addition to controlling
- for farmer heterogeneity through fixed effects, also controls for dealer-level
+Finally, we will also run a fixed-effects model that, in addition to controlling
+ for farmer heterogeneity through fixed-effects, also controls for dealer-level
  observable characteristics.
  We will again do this by including additional regressors 
 \begin_inset Formula $\left(x_{d}\right)$
@@ -3209,7 +3207,7 @@ begin{landscape}
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -4216,8 +4214,8 @@ seed ratings
 \shape default
  in the tables.
  While we still find that on most characteristics, male-managed agro-input
- shops get a higher rating than female-managed agro-input shops, the differences
- are never significant.
+ shops get a higher rating than female-managed shops, the differences are
+ never significant.
  Note that these results are consistent with what was found in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -4236,7 +4234,7 @@ noprefix "false"
 \end_layout
 
 \begin_layout Standard
-Results of between-dealer regressions with added control variables (see
+Results of between-dealers regressions with added control variables (see
  equation (
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -4324,8 +4322,8 @@ naged agro-input shops.
 status collapsed
 
 \begin_layout Plain Layout
-Indices were created by weighing each component by the inverse covariance
- matrix, constructed following 
+Indices were constructed by weighing each component by the inverse covariance
+ matrix following 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "anderson2008multiple"
@@ -4365,7 +4363,8 @@ noprefix "false"
  roof is insulated to keep the heat out; 3) the walls are insulated to keep
  the heat out; 4) the area where seed is stored is properly ventilated;
  5) any official certificates are on display in the shop (for example inspection
- certificates, training certificates, registration with association, etc.).
+ certificates, training certificates, registration with association, and
+ so forth).
  Also for these variables which constitute the capital-intensive practices
  index, descriptive statistics are shown in the appendix in Table 
 \begin_inset CommandInset ref
@@ -4415,11 +4414,11 @@ When farmers were asked to assess agro-input dealers in terms of their location,
 status collapsed
 
 \begin_layout Plain Layout
-The Haversine formula calculating the arc distance between two points on
- Earth is used.
+The haversine formula calculating the arc distance between two points is
+ used.
  The latitudes and longitudes are extracted from the GPS coordinates for
  both farmers and agro-input shops and inserted as paired values in the
- Haversine formula.
+ haversine formula.
  This formula then calculates the distances between these paired latitudes
  and longitudes in meters, following which we obtain the distances in kilometers
  and standardize the variable.
@@ -4595,7 +4594,7 @@ noprefix "false"
 
 \end_inset
 
- repeats the between dealer analysis for quality attributes of maize seed
+ repeats the between-dealers analysis for quality attributes of maize seed
  sold by the agro-input shops reported in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -4720,7 +4719,7 @@ begin{landscape}
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -6623,7 +6622,7 @@ In order to clarify whether the bias persists after accounting for farmer-level
  one agro-input dealer.
  If the same farmer rates both male and female-managed agro-input shops,
  we can exploit this within-farmer variation and control for farmer specific
- observable and unobservable characteristics by including farmer fixed effects.
+ observable and unobservable characteristics by including farmer fixed-effects.
  
 \end_layout
 
@@ -6648,9 +6647,8 @@ noprefix "false"
 
 \end_inset
 
- show parameter estimates for an indicator variable that takes the value
- of one if the agro-input dealer is male, estimated using a model that includes
- farmer fixed effects (using the within transformation of equation (
+ show parameters, estimated with a model that includes farmer fixed-effects
+ (using the within transformation of equation (
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:four"
@@ -7188,7 +7186,7 @@ scriptsize
 
 Note: Here, the gender of the input dealer is a dummy variable carrying
  the value of either 0 or 1.
- Fixed effects or within estimation has been used at the farmer level.
+ Fixed-effects or within estimation has been used at the farmer level.
  Cluster-robust SE are obtained by clustering at the dealer level (presented
  in ()).
   
@@ -7605,7 +7603,7 @@ scriptsize
 
 Note: Here, the gender of the input dealer is a dummy variable carrying
  the value of either 0 or 1.
- Fixed effects or within estimation has been used at the farmer level.
+ Fixed-effects or within estimation has been used at the farmer level.
  Cluster-robust SE are obtained by clustering at the dealer level (presented
  in ()).
  
@@ -7674,8 +7672,8 @@ noprefix "false"
 
 \begin_layout Standard
 The fact that we do find gender equity bias when farmers are asked to assess
- seed quality if we control for farmer fixed effects suggests that, in the
- between-dealer regressions of Tables 
+ seed quality if we control for farmer fixed-effects suggests that, in the
+ between-dealers regressions of Tables 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "table: between_seed ratings_no controls"
@@ -7696,16 +7694,16 @@ noprefix "false"
 \end_inset
 
 , gender equity bias is obscured by farmer-level confounders.
- For instance, it could be that farmers that are better educated also provide
- higher ratings and that these better-educated farmers are also more likely
- to shop at male-managed dealerships.
+ For instance, it could be that farmers that are higher educated also provide
+ higher ratings and that these higher educated farmers are also more likely
+ to shop at female owned dealerships.
  Not controlling for differences in education levels of farmers may then
- lead to an overestimation of discrimination against female-managed agro-input
+ lead to an underestimation of discrimination against female managed agro-input
  shops.
 \end_layout
 
 \begin_layout Standard
-Finally, we run a fixed effects model that, in addition to controlling for
+Finally, we run a fixed-effects model that, in addition to controlling for
  farmer heterogeneity, also controls for dealer-level observable characteristics
  (see equation (
 \begin_inset CommandInset ref
@@ -7758,7 +7756,7 @@ noprefix "false"
 
 \end_inset
 
- presets the seed quality ratings.
+ presents the seed quality ratings.
  We find that controlling for observable characteristics at the dealer level
  does not change findings for the first set of ratings, which evaluate the
  agro-input dealer.
@@ -7830,7 +7828,7 @@ begin{landscape}
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -8597,7 +8595,7 @@ Sexpr{ifelse(fe4[15,5]<.01,"***",ifelse(fe4[15,5]<.05,"**",ifelse(fe4[15,5]<.1,"
 
 \begin_layout Plain Layout
 
-{practices observed by enumerator}
+{        practices observed by enumerator}
 \end_layout
 
 \begin_layout Plain Layout
@@ -8842,7 +8840,7 @@ tiny
 
 Note: Here, the gender of the input dealer is a dummy variable carrying
  the value of either 0 or 1.
- Fixed effects or within estimation has been used at the farmer level.
+ Fixed-effects or within estimation has been used at the farmer level.
  Cluster-robust SE are obtained by clustering at the dealer level (presented
  in ()).
   
@@ -9543,7 +9541,7 @@ scriptsize
 
 Note: Here, the gender of the input dealer is a dummy variable carrying
  the value of either 0 or 1.
- Fixed effects or within estimation has been used at the farmer level.
+ Fixed-effects or within estimation has been used at the farmer level.
  Cluster-robust SE are obtained by clustering at the dealer level (presented
  in ()).
    
@@ -9584,15 +9582,14 @@ Conclusion and policy implications
 
 \begin_layout Standard
 Using survey data from smallholder farmers and agro-input dealers in southeaster
-n Uganda, we tested if farmers perceive female-managed agro-input shops
- differently than male-managed agro-input shops.
+n Uganda, we tested if farmers perceive female-managed shops differently
+ than male-managed shops.
  To do so, we asked a random sample of farmers to rate agro-input dealers
- in their immediate neighborhood on a scale ranging from 1 (poor) to 5 (excellen
-t).
- Farmers rated agro-input dealers on a set of general characteristics such
- as accessibility and price competitiveness.
+ in their neighborhood on a scale ranging from 1 (poor) to 5 (excellent).
+ Farmers rated dealers on a set of general characteristics such as accessibility
+ and price competitiveness.
  They also rated maize seed, a particular product that these dealers sell,
- on various dimensions like germination, yield, etc.
+ on various dimensions like germination, yield, and so forth.
 \end_layout
 
 \begin_layout Standard
@@ -9613,7 +9610,7 @@ Furthermore, ratings of agro-input dealers provided by farmers may also
  be influenced by farmer characteristics.
  To control for farmer heterogeneity, we exploited the fact that farmers
  often rated several agro-input dealers of different genders and ran farmer
- fixed effects models.
+ fixed-effects models.
  In doing so, we confirmed the existence of gender equity bias when farmers
  were asked to rate general characteristics of agro-input dealers, but also
  found differences in ratings of different dimensions of seed quality sold
@@ -9650,7 +9647,7 @@ Even though a surprisingly large share of Ugandan agro-input shops is operated
  In the long run, female-managed shops will have less capital to invest,
  for example in a leak-proof roof or to stock sufficient improved seed varieties
 , turning a disadvantage that initially only exists in the perceptions of
- the customer into a real difference.
+ the customers into a real quality differences.
 \end_layout
 
 \begin_layout Standard
@@ -9677,7 +9674,7 @@ literal "false"
 \begin_layout Standard
 Our study serves to draw specific lessons for policy.
  Over the years, policymakers have encouraged women to enter business domains
- which were traditionally dominated by men with women striving towards newer
+ which were traditionally dominated by men with women striving towards new
  opportunities and ways to earn for their livelihoods or families.
  However, the current scenario shows the need for policies addressing the
  lack of acceptance or integration that still prevails.
@@ -9714,9 +9711,8 @@ literal "false"
  agro-input shops are likely to receive less training.
  This could be achieved by making training attendance publicly visible,
  perhaps through a register of trained agro-input dealers, through certificates
- that are posted in the shops, etc.
- such that equal capacity between male- and female-managed agro-input shops
- becomes more apparent to clients.
+ that are posted in the shops, and so forth, such that equal capacity between
+ male- and female-managed agro-input shops becomes more apparent to clients.
 \end_layout
 
 \begin_layout Standard
