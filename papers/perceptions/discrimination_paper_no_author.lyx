@@ -99,39 +99,6 @@ knitr
 \begin_body
 
 \begin_layout Title
-\begin_inset Preview
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-author{Anusha De
-\backslash
-thanks{LICOS Centre for Institutions and Economic Performance, KU Leuven,
- Belgium} 
-\backslash
-thanks{Department of Agricultural Economics and Rural Development, University
- of Göttingen, Germany}, Caroline Miehe
-\backslash
-footnotemark[1] , and Bjorn Van Campenhout
-\backslash
-thanks{Development Strategy and Governance Division, International Food
- Policy Research Institute, United States} 
-\backslash
-footnotemark[1]}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
 Gender bias in customer perceptions: The case of agro-input dealers in Uganda
  
 \end_layout
@@ -360,17 +327,10 @@ In this paper, we test if farmers perceive agro-input shops managed by women
 status open
 
 \begin_layout Plain Layout
-The paper builds on earlier exploratory work published in 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "VanCampenhoutDe"
-literal "false"
-
-\end_inset
-
- that looks at gender related perceptions in Uganda’s maize value chain
- more broadly, and prompted us to formulate a more specific hypothesis and
- collect data to test this using appropriate quantitative methods.
+The paper builds on earlier exploratory work that looks at gender related
+ perceptions in Uganda’s maize value chain more broadly, and prompted us
+ to formulate a more specific hypothesis and collect data to test this using
+ appropriate quantitative methods.
 \end_layout
 
 \end_inset
@@ -697,7 +657,7 @@ If this village was already named by another dealer, the village with the
 It is important to note that only farmers in half of the catchment areas
  rated dealers.
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
 These ratings are part of the intervention of a different study, where a
@@ -9755,51 +9715,6 @@ Finally, we find that biased perceptions exist especially with respect to
  Simply advertising prices may be sufficient to make prices objectively
  verifiable, and customers will need to depend less on perceptions and the
  use of mental shortcuts that are prone to gender equity bias.
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace defskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section*
-Acknowledgments
-\end_layout
-
-\begin_layout Standard
-This research was partly funded by the Consultative Group for International
- Agricultural Research (CGIAR) Research Program on Policies, Institutions,
- and Markets (PIM), led by the International Food Policy Research Institute
- (IFPRI) and carried out with support from the CGIAR Fund contributors (https://
-www.cgiar.org/funders/).
- The authors also acknowledge financial support from The Netherlands – CGIAR
- research programme on Seed Systems Development, grant number W08.240.105,
- funded by the Netherlands Organisation for Scientific Research (NWO-WOTRO),
- and from the Belgian Public Service for Foreign Affairs, Foreign Trade
- and Development Cooperation, grant number 302015.002.002 (bridge funding).
- Acknowledgment is also extended to the Fonds Wetenschappelijk Onderzoek
- – Vlaanderen (FWO), Fonds de la Recherche Scientifique – FNRS (EOS project
- G0G4318N) and the KU Leuven Methusalem program.
- We thank Leocardia Nabwire, Marc Charles Wanume, Richard Ariong and Wilberforce
- Walukano for excellent field support.
- We also thank Gbenga Akinwehinmi, Gero Laurenz Höhn, Hannah Ameye and Hyejin
- Lee for their feedback.
- The analysis is the sole responsibility of the authors and does not reflect
- the views of any funding agency or organization mentioned here.
- 
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-Also mention Anusha's and Caro's PhD funding here e.g.
- PIM and EOS?
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
