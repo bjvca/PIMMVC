@@ -588,17 +588,24 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Also refer to https://documents1.worldbank.org/curated/en/244611577766368167/pdf/G
-ender-Bias-in-SME-Lending-Experimental-Evidence-from-Turkey.pdf
-\end_layout
+In the context of smalls and medium enterprises (SMEs), and agricultural
+ in particular, we found few studies that look at gender equity bias.
+ The study that comes closest is 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "alibhai2019gender"
+literal "false"
 
 \end_inset
 
-
+ who study discrimination against female-led SMEs in Turkey.
+ Using a novel loan application experiment conducted with 77 loan officers
+ in banks and find that 35 percent of the loan officers are biased against
+ female applicants, with women receiving significantly smaller loans than
+ men.
+ The authors argue that loan officers may use gender bias as a heuristic
+ device given limited information and risk aversion.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -610,7 +617,6 @@ Gender bias features so prominently in areas such as scholarly peer review,
  are never measured.
  As a result, differences in outcomes are often attributed to various other
  causes, such as differences in education or ability between men and women.
- 
 \end_layout
 
 \begin_layout Standard
@@ -3209,8 +3215,8 @@ noprefix "false"
  educated agro-input dealers are rated lower by farmers.
  In this case, differential ratings are not caused by gender, but rather
  driven by differences in education.
- We will control for a range of agro-input dealer-level potential confounders
- by including them as additional regressors 
+ Therefore, in all regressions, we will control for the education level
+ of the shop manager as additional regressor 
 \begin_inset Formula $\left(x_{d}\right)$
 \end_inset
 
@@ -3224,7 +3230,10 @@ noprefix "false"
 
 \end_inset
 
-):
+).
+ A similar argument can be made for the age of the agro-input shop manager,
+ which is a characteristic that is also easily observable and likely to
+ affect perception:
 \end_layout
 
 \begin_layout Standard
@@ -3239,8 +3248,20 @@ noprefix "false"
 \end_layout
 
 \begin_layout Standard
-As we are interested in explaining gender equity bias in perceptions in
- different dimensions, the set of control variables used will also differ.
+One may wonder if controlling for age and education is sufficient, as causal
+ inference using regressions based on observational data often suffer from
+ unobservable heterogeneity.
+ It is important to note that this is likely to be less of a problem in
+ our setting, as the dependent variable is derived from observations made
+ by different actors (farmers) than the characteristics included on the
+ right hand side that is collected from agro-input shop managers (which
+ is different from the standard case where both dependent and independent
+ variables are obtained from the same units).
+ For example, it is unlikely that an unobserved characteristic such as the
+ motivation of the agro-input manager directly affects perceptions of farmers,
+ unless this is reflected in the attribute that the farmer is assessing.
+ This is why we also add control variables that differ depending on the
+ attribute that is being rated.
  For example, when farmers are asked to rate agro-input dealers in terms
  of price competitiveness, it seems reasonable to include prices charged
  by dealers as controls.
@@ -3253,6 +3274,25 @@ y, infrastructure such as leak-proof roof or insulation, and so forth.
  perceive female-managed agro-input shops less favorably and situations
  where differences in ratings reflect real differences between male- and
  female-managed shops.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+The decision on what controls to include is not always obvious.
+ Indeed, the core message of this paper is that potential gender differences
+ in perceptions of agro-input shop managers are particularly alarming because
+ seed quality is hard to verify objectively, and as such farmers are likely
+ to rely more on (biased) perceptions.
+ The decision on what controls to be used are based on quantitative and
+ qualitative data of different stakeholders (including extension staff,
+ agronomists, seed inspectors,...) that was collected prior to the study.
+ During the study, enumerators were also asked provide a detailed assessment
+ of seed storage practices and facilities of agro-input dealers.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -9888,19 +9928,28 @@ ics and farmer-level heterogeneity, proves that female-operated shops are
 \end_layout
 
 \begin_layout Standard
-Even though a surprisingly large share of Ugandan agro-input shops is operated
- and/or managed by women, our findings imply that these women face severe
- comparative disadvantages with potentially large implications for their
- daily business.
- Female-managed shops which are perceived to perform worse than their male
- competitors are likely to have less customers and sell less products, leading
- to lower revenues and profits.
- Next to the direct implications for the success of these shops managed
- by women, fewer earnings will lead to fewer investments.
- In the long run, female-managed shops will have less capital to invest,
- for example in a leak-proof roof or to stock sufficient improved seed varieties
-, turning a disadvantage that initially only exists in the perceptions of
- the customers into a real quality differences.
+The finding that farmers, both male and female, are perhaps subconsciously
+ discriminating against shops managed by women is troubling for a variety
+ of reasons.
+ Not only does it directly impact women’s capabilities and aspirations,
+ constraining women’s empowerment in agi-food systems 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "jayachandran2021social"
+literal "false"
+
+\end_inset
+
+; it also will likely affect future generations, as women tend to invest
+ more of their income than men in healthcare, nutrition and education of
+ their children.
+ But there are consequences beyond the household.
+ Almost half of the agro-input shops in our sample were managed by women.
+ If farmers do not trust shops managed by women, this may pose challenges
+ for varietal turnover at more aggregate levels: in a village where only
+ women manage shops, farmers may be less likely to buy commercial seed from
+ the market, and instead use farmer-saved seed obtained through informal
+ channels.
 \end_layout
 
 \begin_layout Standard
