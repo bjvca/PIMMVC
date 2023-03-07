@@ -198,7 +198,18 @@ source(paste(path, "code/perceptions_seed.R
 \end_layout
 
 \begin_layout Standard
-keywords: gender bias, agro-input dealer, perceptions, maize, Uganda
+keywords: gender bias, agro-input dealer, perceptions, maize, Uganda 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Caro: I'm in favor of "maize seed systems" instead of "maize" and adding
+ "information asymmetries".
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -746,12 +757,31 @@ noprefix "false"
 \end_inset
 
  describes the average agro-input dealer included in our study.
- There is substantial heterogeneity across shops.
+ About 60 percent of shop managers are male.
+ When enumerators approached a shop, they tried to interview the manager,
+ i.e.
+ the person who is most knowledgeable about the day to day operations of
+ the business, inventories, sales, and so on.
+ That is why an agro-input shop is considered to be male-managed if the
+ interviewed respondent is a man.
+ It may be that the shop is owned by one person, but the owner employs another
+ person to manage the shop.
+ In 55% of the cases, the respondent is the manager and owner of the shop.
+ In the other 45% of the cases, the respondent is only the manager.
+ If the gender of the shop manager is different from the gender of the owner,
+ the question emerges who's gender affects perceptions of the shop as a
+ whole.
+ We feel that the person who manages the shop is most visible and as such
+ most likely to affect perceptions, therefore the gender of the respondent
+ determines if a shop is categorized as female or male-managed.
+\end_layout
+
+\begin_layout Standard
+There is substantial heterogeneity across shops.
  Some are small informal shops located in rural areas, that sell other goods
  and only stock seed during the planting season.
  Others are located in towns or trading centers and specialize in farm inputs
  and tools.
- About 60 percent of agro-input shop managers are male.
  The average shop has been in operation for about five years and serves
  about 40 customers a day, half of whom come to buy maize seed.
  A shop stocks on average three maize seed varieties.
@@ -2120,22 +2150,6 @@ To measure the perceived quality of agro-input dealers, farmers were asked
  We also compute an average of these six dealer level ratings.
  For these indicators, farmers were asked to rate the shop as a whole, which
  also includes the person who operates the shop.
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-It may be that the shop is owned by one person, but the owner employs another
- person to manage the shop.
- If the gender of the shop manager is different from the gender of the owner,
- the question emerges who's gender affects perceptions of the shop as a
- whole.
- We feel that the person who manages the shop is most visible and as such
- most likely to affect perceptions.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -2143,20 +2157,6 @@ To measure the perceived quality of seed, farmers were asked to rate the
  improved maize varieties that dealers sell on a scale of 1 to 5 on their
  general quality, yield, drought tolerance, pest/disease tolerance, crop
  duration/maturation period, and germination reliability.
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-Some of these attributes are variety specific.
- For instance, some hybrid seeds may be particularly drought tolerant, while
- other seeds may be higher yielding.
- Therefore, we specifically asked farmers to rate varieties relative to
- what is advertised for these attributes.
- 
-\end_layout
-
-\end_inset
-
  We also compute an average of these six seed-level ratings.
  Here, farmers were asked to rate seed, the product itself.
  Farmers were also allowed to indicate that they could not rate seed on
@@ -2192,22 +2192,6 @@ noprefix "false"
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{landscape}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float table
 wide false
 sideways false
@@ -2217,7 +2201,7 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Descriptive agro-input dealer ratings
+Descriptive agro-input dealer ratings by farmers
 \begin_inset CommandInset label
 LatexCommand label
 name "table: descriptives ratings"
@@ -2247,7 +2231,7 @@ begin{center}
 
 
 \backslash
-begin{tabular}{rccccccc}
+begin{tabular}{rccccc}
 \end_layout
 
 \begin_layout Plain Layout
@@ -2265,7 +2249,8 @@ hline
 
 \begin_layout Plain Layout
 
-& mean & min & max & SD & 1st quartile & 3rd quartile & nobs
+& mean & SD & $Q_{1}$ & $Q_{3}$ & obs.
+ 
 \backslash
 
 \backslash
@@ -2276,7 +2261,7 @@ hline
 
 
 \backslash
-cline{2-8}
+cline{2-6}
 \end_layout
 
 \begin_layout Plain Layout
@@ -2285,19 +2270,40 @@ cline{2-8}
 
 \begin_layout Plain Layout
 
-Dealer's maize seed rating on general quality by farmers & 
+Dealer's maize seed rating on general quality 
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
 \backslash
-Sexpr{format(round(desc_rat[6,1],digits=3),nsmall=3)} & 
+Sexpr{format(round(desc_rat[6,1],digits=3),nsmall=3)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
 \backslash
-Sexpr{format(round(desc_rat[6,2],digits=3),nsmall=0)} & 
+Sexpr{format(round(desc_rat[6,4],digits=3),nsmall=3)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
 \backslash
-Sexpr{format(round(desc_rat[6,3],digits=3),nsmall=0)}  & 
+Sexpr{format(round(desc_rat[6,5],digits=3),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
 \backslash
-Sexpr{format(round(desc_rat[6,4],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(desc_rat[6,5],digits=3),nsmall=0)}& 
-\backslash
-Sexpr{format(round(desc_rat[6,6],digits=3),nsmall=0)}& 
+Sexpr{format(round(desc_rat[6,6],digits=3),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
 \backslash
 Sexpr{format(round(desc_rat[6,7],digits=3),nsmall=0)}
 \backslash
@@ -2312,19 +2318,40 @@ Sexpr{format(round(desc_rat[6,7],digits=3),nsmall=0)}
 
 \begin_layout Plain Layout
 
-Dealer's maize seed rating on yield by farmers & 
+Dealer's maize seed rating on yield
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
 \backslash
-Sexpr{format(round(desc_rat[7,1],digits=3),nsmall=3)} & 
+Sexpr{format(round(desc_rat[7,1],digits=3),nsmall=3)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
 \backslash
-Sexpr{format(round(desc_rat[7,2],digits=3),nsmall=0)} & 
+Sexpr{format(round(desc_rat[7,4],digits=3),nsmall=3)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
 \backslash
-Sexpr{format(round(desc_rat[7,3],digits=3),nsmall=0)}  & 
+Sexpr{format(round(desc_rat[7,5],digits=3),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
 \backslash
-Sexpr{format(round(desc_rat[7,4],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(desc_rat[7,5],digits=3),nsmall=0)}& 
-\backslash
-Sexpr{format(round(desc_rat[7,6],digits=3),nsmall=0)}& 
+Sexpr{format(round(desc_rat[7,6],digits=3),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
 \backslash
 Sexpr{format(round(desc_rat[7,7],digits=3),nsmall=0)}
 \backslash
@@ -2339,19 +2366,40 @@ Sexpr{format(round(desc_rat[7,7],digits=3),nsmall=0)}
 
 \begin_layout Plain Layout
 
-Dealer's maize seed rating on drought tolerance by farmers & 
+Dealer's maize seed rating on drought tolerance
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
 \backslash
-Sexpr{format(round(desc_rat[8,1],digits=3),nsmall=3)} & 
+Sexpr{format(round(desc_rat[8,1],digits=3),nsmall=3)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
 \backslash
-Sexpr{format(round(desc_rat[8,2],digits=3),nsmall=0)} & 
+Sexpr{format(round(desc_rat[8,4],digits=3),nsmall=3)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
 \backslash
-Sexpr{format(round(desc_rat[8,3],digits=3),nsmall=0)}  & 
+Sexpr{format(round(desc_rat[8,5],digits=3),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
 \backslash
-Sexpr{format(round(desc_rat[8,4],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(desc_rat[8,5],digits=3),nsmall=0)}& 
-\backslash
-Sexpr{format(round(desc_rat[8,6],digits=3),nsmall=0)}& 
+Sexpr{format(round(desc_rat[8,6],digits=3),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
 \backslash
 Sexpr{format(round(desc_rat[8,7],digits=3),nsmall=0)}
 \backslash
@@ -2366,19 +2414,40 @@ Sexpr{format(round(desc_rat[8,7],digits=3),nsmall=0)}
 
 \begin_layout Plain Layout
 
-Dealer's maize seed rating on pest/disease tolerance by farmers & 
+Dealer's maize seed rating on pest/disease tolerance
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
 \backslash
-Sexpr{format(round(desc_rat[9,1],digits=3),nsmall=3)} & 
+Sexpr{format(round(desc_rat[9,1],digits=3),nsmall=3)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
 \backslash
-Sexpr{format(round(desc_rat[9,2],digits=3),nsmall=0)} & 
+Sexpr{format(round(desc_rat[9,4],digits=3),nsmall=3)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
 \backslash
-Sexpr{format(round(desc_rat[9,3],digits=3),nsmall=0)}  & 
+Sexpr{format(round(desc_rat[9,5],digits=3),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
 \backslash
-Sexpr{format(round(desc_rat[9,4],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(desc_rat[9,5],digits=3),nsmall=0)}& 
-\backslash
-Sexpr{format(round(desc_rat[9,6],digits=3),nsmall=0)}& 
+Sexpr{format(round(desc_rat[9,6],digits=3),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
 \backslash
 Sexpr{format(round(desc_rat[9,7],digits=3),nsmall=0)}
 \backslash
@@ -2393,19 +2462,40 @@ Sexpr{format(round(desc_rat[9,7],digits=3),nsmall=0)}
 
 \begin_layout Plain Layout
 
-Dealer's maize seed rating on speed of maturing by farmers & 
+Dealer's maize seed rating on speed of maturing
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
 \backslash
-Sexpr{format(round(desc_rat[10,1],digits=3),nsmall=3)} & 
+Sexpr{format(round(desc_rat[10,1],digits=3),nsmall=3)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
 \backslash
-Sexpr{format(round(desc_rat[10,2],digits=3),nsmall=0)} & 
+Sexpr{format(round(desc_rat[10,4],digits=3),nsmall=3)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
 \backslash
-Sexpr{format(round(desc_rat[10,3],digits=3),nsmall=0)}  & 
+Sexpr{format(round(desc_rat[10,5],digits=3),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
 \backslash
-Sexpr{format(round(desc_rat[10,4],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(desc_rat[10,5],digits=3),nsmall=0)}& 
-\backslash
-Sexpr{format(round(desc_rat[10,6],digits=3),nsmall=0)}& 
+Sexpr{format(round(desc_rat[10,6],digits=3),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
 \backslash
 Sexpr{format(round(desc_rat[10,7],digits=3),nsmall=0)}
 \backslash
@@ -2420,19 +2510,40 @@ Sexpr{format(round(desc_rat[10,7],digits=3),nsmall=0)}
 
 \begin_layout Plain Layout
 
-Dealer's maize seed rating on germination by farmers & 
+Dealer's maize seed rating on germination
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
 \backslash
-Sexpr{format(round(desc_rat[11,1],digits=3),nsmall=3)} & 
+Sexpr{format(round(desc_rat[11,1],digits=3),nsmall=3)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
 \backslash
-Sexpr{format(round(desc_rat[11,2],digits=3),nsmall=0)} & 
+Sexpr{format(round(desc_rat[11,4],digits=3),nsmall=3)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
 \backslash
-Sexpr{format(round(desc_rat[11,3],digits=3),nsmall=0)}  & 
+Sexpr{format(round(desc_rat[11,5],digits=3),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
 \backslash
-Sexpr{format(round(desc_rat[11,4],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(desc_rat[11,5],digits=3),nsmall=0)}& 
-\backslash
-Sexpr{format(round(desc_rat[11,6],digits=3),nsmall=0)}& 
+Sexpr{format(round(desc_rat[11,6],digits=3),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
 \backslash
 Sexpr{format(round(desc_rat[11,7],digits=3),nsmall=0)}
 \backslash
@@ -2460,19 +2571,40 @@ Sexpr{format(round(desc_rat[11,7],digits=3),nsmall=0)}
 
 \begin_layout Plain Layout
 
-Dealer's rating on general quality by farmers & 
+Dealer's rating on general quality
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
 \backslash
-Sexpr{format(round(desc_rat[1,1],digits=3),nsmall=3)} & 
+Sexpr{format(round(desc_rat[1,1],digits=3),nsmall=3)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
 \backslash
-Sexpr{format(round(desc_rat[1,2],digits=3),nsmall=0)} & 
+Sexpr{format(round(desc_rat[1,4],digits=3),nsmall=3)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
 \backslash
-Sexpr{format(round(desc_rat[1,3],digits=3),nsmall=0)}  & 
+Sexpr{format(round(desc_rat[1,5],digits=3),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
 \backslash
-Sexpr{format(round(desc_rat[1,4],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(desc_rat[1,5],digits=3),nsmall=0)}& 
-\backslash
-Sexpr{format(round(desc_rat[1,6],digits=3),nsmall=0)}& 
+Sexpr{format(round(desc_rat[1,6],digits=3),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
 \backslash
 Sexpr{format(round(desc_rat[1,7],digits=3),nsmall=0)}
 \backslash
@@ -2487,19 +2619,40 @@ Sexpr{format(round(desc_rat[1,7],digits=3),nsmall=0)}
 
 \begin_layout Plain Layout
 
-Dealer's rating on location by farmers & 
+Dealer's rating on location
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
 \backslash
-Sexpr{format(round(desc_rat[2,1],digits=3),nsmall=3)} & 
+Sexpr{format(round(desc_rat[2,1],digits=3),nsmall=3)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
 \backslash
-Sexpr{format(round(desc_rat[2,2],digits=3),nsmall=0)} & 
+Sexpr{format(round(desc_rat[2,4],digits=3),nsmall=3)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
 \backslash
-Sexpr{format(round(desc_rat[2,3],digits=3),nsmall=0)}  & 
+Sexpr{format(round(desc_rat[2,5],digits=3),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
 \backslash
-Sexpr{format(round(desc_rat[2,4],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(desc_rat[2,5],digits=3),nsmall=0)}& 
-\backslash
-Sexpr{format(round(desc_rat[2,6],digits=3),nsmall=0)}& 
+Sexpr{format(round(desc_rat[2,6],digits=3),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
 \backslash
 Sexpr{format(round(desc_rat[2,7],digits=3),nsmall=0)}
 \backslash
@@ -2514,19 +2667,40 @@ Sexpr{format(round(desc_rat[2,7],digits=3),nsmall=0)}
 
 \begin_layout Plain Layout
 
-Dealer's rating on price competitiveness by farmers & 
+Dealer's rating on price competitiveness
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
 \backslash
-Sexpr{format(round(desc_rat[3,1],digits=3),nsmall=3)} & 
+Sexpr{format(round(desc_rat[3,1],digits=3),nsmall=3)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
 \backslash
-Sexpr{format(round(desc_rat[3,2],digits=3),nsmall=0)} & 
+Sexpr{format(round(desc_rat[3,4],digits=3),nsmall=3)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
 \backslash
-Sexpr{format(round(desc_rat[3,3],digits=3),nsmall=0)}  & 
+Sexpr{format(round(desc_rat[3,5],digits=3),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
 \backslash
-Sexpr{format(round(desc_rat[3,4],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(desc_rat[3,5],digits=3),nsmall=0)}& 
-\backslash
-Sexpr{format(round(desc_rat[3,6],digits=3),nsmall=0)}& 
+Sexpr{format(round(desc_rat[3,6],digits=3),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
 \backslash
 Sexpr{format(round(desc_rat[3,7],digits=3),nsmall=0)}
 \backslash
@@ -2541,19 +2715,40 @@ Sexpr{format(round(desc_rat[3,7],digits=3),nsmall=0)}
 
 \begin_layout Plain Layout
 
-Dealer's rating on seed quality by farmers & 
+Dealer's rating on seed quality
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
 \backslash
-Sexpr{format(round(desc_rat[12,1],digits=3),nsmall=3)} & 
+Sexpr{format(round(desc_rat[12,1],digits=3),nsmall=3)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
 \backslash
-Sexpr{format(round(desc_rat[12,2],digits=3),nsmall=0)} & 
+Sexpr{format(round(desc_rat[12,4],digits=3),nsmall=3)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
 \backslash
-Sexpr{format(round(desc_rat[12,3],digits=3),nsmall=0)}  & 
+Sexpr{format(round(desc_rat[12,5],digits=3),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
 \backslash
-Sexpr{format(round(desc_rat[12,4],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(desc_rat[12,5],digits=3),nsmall=0)}& 
-\backslash
-Sexpr{format(round(desc_rat[12,6],digits=3),nsmall=0)}& 
+Sexpr{format(round(desc_rat[12,6],digits=3),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
 \backslash
 Sexpr{format(round(desc_rat[12,7],digits=3),nsmall=0)}
 \backslash
@@ -2568,19 +2763,40 @@ Sexpr{format(round(desc_rat[12,7],digits=3),nsmall=0)}
 
 \begin_layout Plain Layout
 
-Dealer's rating on seed stock by farmers & 
+Dealer's rating on seed stock
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
 \backslash
-Sexpr{format(round(desc_rat[4,1],digits=3),nsmall=3)} & 
+Sexpr{format(round(desc_rat[4,1],digits=3),nsmall=3)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
 \backslash
-Sexpr{format(round(desc_rat[4,2],digits=3),nsmall=0)} & 
+Sexpr{format(round(desc_rat[4,4],digits=3),nsmall=3)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
 \backslash
-Sexpr{format(round(desc_rat[4,3],digits=3),nsmall=0)}  & 
+Sexpr{format(round(desc_rat[4,5],digits=3),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
 \backslash
-Sexpr{format(round(desc_rat[4,4],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(desc_rat[4,5],digits=3),nsmall=0)}& 
-\backslash
-Sexpr{format(round(desc_rat[4,6],digits=3),nsmall=0)}& 
+Sexpr{format(round(desc_rat[4,6],digits=3),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
 \backslash
 Sexpr{format(round(desc_rat[4,7],digits=3),nsmall=0)}
 \backslash
@@ -2595,19 +2811,40 @@ Sexpr{format(round(desc_rat[4,7],digits=3),nsmall=0)}
 
 \begin_layout Plain Layout
 
-Dealer's rating on reputation by farmers & 
+Dealer's rating on reputation
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
 \backslash
-Sexpr{format(round(desc_rat[5,1],digits=3),nsmall=3)} & 
+Sexpr{format(round(desc_rat[5,1],digits=3),nsmall=3)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
 \backslash
-Sexpr{format(round(desc_rat[5,2],digits=3),nsmall=0)} & 
+Sexpr{format(round(desc_rat[5,4],digits=3),nsmall=3)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
 \backslash
-Sexpr{format(round(desc_rat[5,3],digits=3),nsmall=0)}  & 
+Sexpr{format(round(desc_rat[5,5],digits=3),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
 \backslash
-Sexpr{format(round(desc_rat[5,4],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(desc_rat[5,5],digits=3),nsmall=0)}& 
-\backslash
-Sexpr{format(round(desc_rat[5,6],digits=3),nsmall=0)}& 
+Sexpr{format(round(desc_rat[5,6],digits=3),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
 \backslash
 Sexpr{format(round(desc_rat[5,7],digits=3),nsmall=0)}
 \backslash
@@ -2652,28 +2889,15 @@ scriptsize
 
 \begin_layout Plain Layout
 
-Note: The descriptives convey the dyadic nature of the dataset.
+Note: SD is the standard deviation, $Q_{1}$ the 1st quartile, and $Q_{3}$
+ the 3rd quartile.
+ The minimum rating is 1 and the maximum rating is 5.
+ The descriptives convey the dyadic nature of the dataset.
 \end_layout
 
 \end_inset
 
 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{landscape}
 \end_layout
 
 \end_inset
@@ -3225,7 +3449,7 @@ begin{landscape}
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -4737,7 +4961,7 @@ begin{landscape}
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -7714,7 +7938,7 @@ noprefix "false"
 , gender equity bias is obscured by farmer-level confounders.
  For instance, it could be that farmers that are higher educated also provide
  higher ratings and that these higher educated farmers are also more likely
- to shop at female owned dealerships.
+ to shop at female managed dealerships.
  Not controlling for differences in education levels of farmers may then
  lead to an underestimation of discrimination against female managed agro-input
  shops.
@@ -9650,6 +9874,17 @@ Looking into the individual dimensions that were rated, we find particularly
  For attributes related to the quality of seed sold by agro-input dealers,
  gender equity bias was largest when farmers were asked to assess seed germinati
 on rates and whether the seed being rated had the advertised maturing period.
+\end_layout
+
+\begin_layout Standard
+The fact that some differences in ratings between male-managed and female-manage
+d agro-input shops persist, even after controlling for dealer-level characterist
+ics and farmer-level heterogeneity, proves that female-operated shops are
+ perceived to be worse without actually being worse.
+ Our analyses confirm the existence of a gender equity bias because the
+ different perceptions are not based on real differences: While agro-input
+ shops managed by women and men are comparable, smallholder farmers perceive
+ them to be different.
 \end_layout
 
 \begin_layout Standard
