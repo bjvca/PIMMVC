@@ -674,6 +674,116 @@ c( mean(baseline_dealer$goodpractice_expired2, na.rm=T),
    max(baseline_dealer$goodpractice_expired2, na.rm=T),
    sd(baseline_dealer$goodpractice_expired2 , na.rm=T),
    sum(!is.na (baseline_dealer$goodpractice_expired2))))
+
+#male dealers 
+baseline_dealer$gen<-ifelse(baseline_dealer$maize.owner.agree.gender=="Male",1,0)
+baseline_dealer_male <- baseline_dealer[baseline_dealer$gen==1,]
+
+desc_male<- rbind(c( mean(baseline_dealer_male$maize.owner.index_practices_cap, na.rm=T),
+                min(baseline_dealer_male$maize.owner.index_practices_cap , na.rm=T),
+                max(baseline_dealer_male$maize.owner.index_practices_cap , na.rm=T),
+                sd(baseline_dealer_male$maize.owner.index_practices_cap , na.rm=T),
+                sum(!is.na (baseline_dealer_male$maize.owner.index_practices_cap))),
+             
+             c(  mean(baseline_dealer_male$maize.owner.index_efforts, na.rm=T),
+                 min(baseline_dealer_male$maize.owner.index_efforts , na.rm=T),
+                 max(baseline_dealer_male$maize.owner.index_efforts , na.rm=T),
+                 sd(baseline_dealer_male$maize.owner.index_efforts , na.rm=T),
+                 sum(!is.na (baseline_dealer_male$maize.owner.index_efforts))),
+             
+             c(mean(baseline_dealer_male$dist_km, na.rm=T),
+               min(baseline_dealer_male$dist_km , na.rm=T),
+               max(baseline_dealer_male$dist_km, na.rm=T),
+               sd(baseline_dealer_male$dist_km , na.rm=T),
+               sum(!is.na (baseline_dealer_male$dist_km))),
+             
+             c(  mean(baseline_dealer_male$base_price, na.rm=T),
+                 min(baseline_dealer_male$base_price , na.rm=T),
+                 max(baseline_dealer_male$base_price, na.rm=T),
+                 sd(baseline_dealer_male$base_price , na.rm=T),
+                 sum(!is.na (baseline_dealer_male$base_price))),
+             
+             
+             c( mean(baseline_dealer_male$base_cost_seed, na.rm=T),
+                min(baseline_dealer_male$base_cost_seed , na.rm=T),
+                max(baseline_dealer_male$base_cost_seed, na.rm=T),
+                sd(baseline_dealer_male$base_cost_seed , na.rm=T),
+                sum(!is.na (baseline_dealer_male$base_cost_seed))),
+             
+             
+             c(  mean(baseline_dealer_male$maize.owner.practices_all, na.rm=T),
+                 min(baseline_dealer_male$maize.owner.practices_all , na.rm=T),
+                 max(baseline_dealer_male$maize.owner.practices_all, na.rm=T),
+                 sd(baseline_dealer_male$maize.owner.practices_all , na.rm=T),
+                 sum(!is.na (baseline_dealer_male$maize.owner.practices_all))),
+             
+             
+             c( mean(baseline_dealer_male$maize.owner.quan_nonstan, na.rm=T),
+                min(baseline_dealer_male$maize.owner.quan_nonstan, na.rm=T),
+                max(baseline_dealer_male$maize.owner.quan_nonstan, na.rm=T),
+                sd(baseline_dealer_male$maize.owner.quan_nonstan , na.rm=T),
+                sum(!is.na (baseline_dealer_male$maize.owner.quan_nonstan))),
+             
+             c( mean(baseline_dealer_male$goodpractice_expired2, na.rm=T),
+                min(baseline_dealer_male$goodpractice_expired2 , na.rm=T),
+                max(baseline_dealer_male$goodpractice_expired2, na.rm=T),
+                sd(baseline_dealer_male$goodpractice_expired2 , na.rm=T),
+                sum(!is.na (baseline_dealer_male$goodpractice_expired2))))
+
+#female dealers 
+
+baseline_dealer_female <- baseline_dealer[baseline_dealer$gen==0,]
+
+desc_female<- rbind(c( mean(baseline_dealer_female$maize.owner.index_practices_cap, na.rm=T),
+                       min(baseline_dealer_female$maize.owner.index_practices_cap , na.rm=T),
+                       max(baseline_dealer_female$maize.owner.index_practices_cap , na.rm=T),
+                       sd(baseline_dealer_female$maize.owner.index_practices_cap , na.rm=T),
+                       sum(!is.na (baseline_dealer_female$maize.owner.index_practices_cap))),
+                    
+                    c(  mean(baseline_dealer_female$maize.owner.index_efforts, na.rm=T),
+                        min(baseline_dealer_female$maize.owner.index_efforts , na.rm=T),
+                        max(baseline_dealer_female$maize.owner.index_efforts , na.rm=T),
+                        sd(baseline_dealer_female$maize.owner.index_efforts , na.rm=T),
+                        sum(!is.na (baseline_dealer_female$maize.owner.index_efforts))),
+                    
+                    c(mean(baseline_dealer_female$dist_km, na.rm=T),
+                      min(baseline_dealer_female$dist_km , na.rm=T),
+                      max(baseline_dealer_female$dist_km, na.rm=T),
+                      sd(baseline_dealer_female$dist_km , na.rm=T),
+                      sum(!is.na (baseline_dealer_female$dist_km))),
+                    
+                    c(  mean(baseline_dealer_female$base_price, na.rm=T),
+                        min(baseline_dealer_female$base_price , na.rm=T),
+                        max(baseline_dealer_female$base_price, na.rm=T),
+                        sd(baseline_dealer_female$base_price , na.rm=T),
+                        sum(!is.na (baseline_dealer_female$base_price))),
+                    
+                    
+                    c( mean(baseline_dealer_female$base_cost_seed, na.rm=T),
+                       min(baseline_dealer_female$base_cost_seed , na.rm=T),
+                       max(baseline_dealer_female$base_cost_seed, na.rm=T),
+                       sd(baseline_dealer_female$base_cost_seed , na.rm=T),
+                       sum(!is.na (baseline_dealer_female$base_cost_seed))),
+                    
+                    
+                    c(  mean(baseline_dealer_female$maize.owner.practices_all, na.rm=T),
+                        min(baseline_dealer_female$maize.owner.practices_all , na.rm=T),
+                        max(baseline_dealer_female$maize.owner.practices_all, na.rm=T),
+                        sd(baseline_dealer_female$maize.owner.practices_all , na.rm=T),
+                        sum(!is.na (baseline_dealer_female$maize.owner.practices_all))),
+                    
+                    
+                    c( mean(baseline_dealer_female$maize.owner.quan_nonstan, na.rm=T),
+                       min(baseline_dealer_female$maize.owner.quan_nonstan, na.rm=T),
+                       max(baseline_dealer_female$maize.owner.quan_nonstan, na.rm=T),
+                       sd(baseline_dealer_female$maize.owner.quan_nonstan , na.rm=T),
+                       sum(!is.na (baseline_dealer_female$maize.owner.quan_nonstan))),
+                    
+                    c( mean(baseline_dealer_female$goodpractice_expired2, na.rm=T),
+                       min(baseline_dealer_female$goodpractice_expired2 , na.rm=T),
+                       max(baseline_dealer_female$goodpractice_expired2, na.rm=T),
+                       sd(baseline_dealer_female$goodpractice_expired2 , na.rm=T),
+                       sum(!is.na (baseline_dealer_female$goodpractice_expired2))))
            
            
 ######################## getting descriptives of the ratings 
@@ -798,8 +908,203 @@ c(mean(baserat$quality_rating, na.rm=T),
 sum(!is.na (baserat$quality_rating))))
 
 
-         
+#Male
+
+baserat_male <- baserat[baserat$gen==1,]
+desc_rat_male<- rbind(c(mean(baserat_male$general_rating, na.rm=T),
+                   min(baserat_male$general_rating, na.rm=T),
+                   max(baserat_male$general_rating, na.rm=T),
+                   sd(baserat_male$general_rating, na.rm=T),
+                   quantile(baserat_male$general_rating, na.rm=T, 0.25),
+                   quantile(baserat_male$general_rating, na.rm=T, 0.75),
+                   sum(!is.na (baserat_male$general_rating))),
+                 
+                 c(mean(baserat_male$location_rating, na.rm=T),
+                   min(baserat_male$location_rating, na.rm=T),
+                   max(baserat_male$location_rating, na.rm=T),
+                   sd(baserat_male$location_rating, na.rm=T),
+                   quantile(baserat_male$location_rating, na.rm=T, 0.25),
+                   quantile(baserat_male$location_rating, na.rm=T, 0.75),
+                   sum(!is.na (baserat_male$location_rating))),
+                 
+                 c(mean(baserat_male$price_rating, na.rm=T),
+                   min(baserat_male$price_rating, na.rm=T),
+                   max(baserat_male$price_rating, na.rm=T),
+                   sd(baserat_male$price_rating, na.rm=T),
+                   quantile(baserat_male$price_rating, na.rm=T, 0.25),
+                   quantile(baserat_male$price_rating, na.rm=T, 0.75),
+                   sum(!is.na (baserat_male$price_rating))),
+                 
+                 c(mean(baserat_male$stock_rating, na.rm=T),
+                   min(baserat_male$stock_rating, na.rm=T),
+                   max(baserat_male$stock_rating, na.rm=T),
+                   sd(baserat_male$stock_rating, na.rm=T),
+                   quantile(baserat_male$stock_rating, na.rm=T, 0.25),
+                   quantile(baserat_male$stock_rating, na.rm=T, 0.75),
+                   sum(!is.na (baserat_male$stock_rating))),
+                 
+                 c(mean(baserat_male$reputation_rating, na.rm=T),
+                   min(baserat_male$reputation_rating, na.rm=T),
+                   max(baserat_male$reputation_rating, na.rm=T),
+                   sd(baserat_male$reputation_rating, na.rm=T),
+                   quantile(baserat_male$reputation_rating, na.rm=T, 0.25),
+                   quantile(baserat_male$reputation_rating, na.rm=T, 0.75),
+                   sum(!is.na (baserat_male$reputation_rating))),
+                 
+                 c(mean(baserat_male$seed_quality_general_rating, na.rm=T),
+                   min(baserat_male$seed_quality_general_rating, na.rm=T),
+                   max(baserat_male$seed_quality_general_rating, na.rm=T),
+                   sd(baserat_male$seed_quality_general_rating, na.rm=T),
+                   quantile(baserat_male$seed_quality_general_rating, na.rm=T, 0.25),
+                   quantile(baserat_male$seed_quality_general_rating, na.rm=T, 0.75), 
+                   sum(!is.na (baserat_male$seed_quality_general_rating))),
+                 
+                 c(mean(baserat_male$seed_yield_rating, na.rm=T),
+                   min(baserat_male$seed_yield_rating, na.rm=T),
+                   max(baserat_male$seed_yield_rating, na.rm=T),
+                   sd(baserat_male$seed_yield_rating, na.rm=T),
+                   quantile(baserat_male$seed_yield_rating, na.rm=T, 0.25),
+                   quantile(baserat_male$seed_yield_rating, na.rm=T, 0.75), 
+                   sum(!is.na (baserat_male$seed_yield_rating))),
+                 
+                 c(mean(baserat_male$seed_drought_rating, na.rm=T),
+                   min(baserat_male$seed_drought_rating, na.rm=T),
+                   max(baserat_male$seed_drought_rating, na.rm=T),
+                   sd(baserat_male$seed_drought_rating, na.rm=T),
+                   quantile(baserat_male$seed_drought_rating, na.rm=T, 0.25),
+                   quantile(baserat_male$seed_drought_rating, na.rm=T, 0.75),
+                   sum(!is.na (baserat_male$seed_drought_rating))),
+                 
+                 c(mean(baserat_male$seed_disease_rating, na.rm=T),
+                   min(baserat_male$seed_disease_rating, na.rm=T),
+                   max(baserat_male$seed_disease_rating, na.rm=T),
+                   sd(baserat_male$seed_disease_rating, na.rm=T),
+                   quantile(baserat_male$seed_disease_rating, na.rm=T, 0.25),
+                   quantile(baserat_male$seed_disease_rating, na.rm=T, 0.75), 
+                   sum(!is.na (baserat_male$seed_disease_rating))),
+                 
+                 c(mean(baserat_male$seed_maturing_rating, na.rm=T),
+                   min(baserat_male$seed_maturing_rating, na.rm=T),
+                   max(baserat_male$seed_maturing_rating, na.rm=T),
+                   sd(baserat_male$seed_maturing_rating, na.rm=T),
+                   quantile(baserat_male$seed_maturing_rating, na.rm=T, 0.25),
+                   quantile(baserat_male$seed_maturing_rating, na.rm=T, 0.75), 
+                   sum(!is.na (baserat_male$seed_maturing_rating))),
+                 
+                 c(mean(baserat_male$seed_germinate_rating, na.rm=T),
+                   min(baserat_male$seed_germinate_rating, na.rm=T),
+                   max(baserat_male$seed_germinate_rating, na.rm=T),
+                   sd(baserat_male$seed_germinate_rating, na.rm=T),
+                   quantile(baserat_male$seed_germinate_rating, na.rm=T, 0.25),
+                   quantile(baserat_male$seed_germinate_rating, na.rm=T, 0.75),
+                   sum(!is.na (baserat_male$seed_germinate_rating))),
+                 
+                 c(mean(baserat_male$quality_rating, na.rm=T),
+                   min(baserat_male$quality_rating, na.rm=T),
+                   max(baserat_male$quality_rating, na.rm=T),
+                   sd(baserat_male$quality_rating, na.rm=T),
+                   quantile(baserat_male$quality_rating, na.rm=T, 0.25),
+                   quantile(baserat_male$quality_rating, na.rm=T, 0.75),
+                   sum(!is.na (baserat_male$quality_rating))))
            
+#Female
+baserat_female <- baserat[baserat$gen==0,]
+desc_rat_female<- rbind(c(mean(baserat_female$general_rating, na.rm=T),
+                          min(baserat_female$general_rating, na.rm=T),
+                          max(baserat_female$general_rating, na.rm=T),
+                          sd(baserat_female$general_rating, na.rm=T),
+                          quantile(baserat_female$general_rating, na.rm=T, 0.25),
+                          quantile(baserat_female$general_rating, na.rm=T, 0.75),
+                          sum(!is.na (baserat_female$general_rating))),
+                        
+                        c(mean(baserat_female$location_rating, na.rm=T),
+                          min(baserat_female$location_rating, na.rm=T),
+                          max(baserat_female$location_rating, na.rm=T),
+                          sd(baserat_female$location_rating, na.rm=T),
+                          quantile(baserat_female$location_rating, na.rm=T, 0.25),
+                          quantile(baserat_female$location_rating, na.rm=T, 0.75),
+                          sum(!is.na (baserat_female$location_rating))),
+                        
+                        c(mean(baserat_female$price_rating, na.rm=T),
+                          min(baserat_female$price_rating, na.rm=T),
+                          max(baserat_female$price_rating, na.rm=T),
+                          sd(baserat_female$price_rating, na.rm=T),
+                          quantile(baserat_female$price_rating, na.rm=T, 0.25),
+                          quantile(baserat_female$price_rating, na.rm=T, 0.75),
+                          sum(!is.na (baserat_female$price_rating))),
+                        
+                        c(mean(baserat_female$stock_rating, na.rm=T),
+                          min(baserat_female$stock_rating, na.rm=T),
+                          max(baserat_female$stock_rating, na.rm=T),
+                          sd(baserat_female$stock_rating, na.rm=T),
+                          quantile(baserat_female$stock_rating, na.rm=T, 0.25),
+                          quantile(baserat_female$stock_rating, na.rm=T, 0.75),
+                          sum(!is.na (baserat_female$stock_rating))),
+                        
+                        c(mean(baserat_female$reputation_rating, na.rm=T),
+                          min(baserat_female$reputation_rating, na.rm=T),
+                          max(baserat_female$reputation_rating, na.rm=T),
+                          sd(baserat_female$reputation_rating, na.rm=T),
+                          quantile(baserat_female$reputation_rating, na.rm=T, 0.25),
+                          quantile(baserat_female$reputation_rating, na.rm=T, 0.75),
+                          sum(!is.na (baserat_female$reputation_rating))),
+                        
+                        c(mean(baserat_female$seed_quality_general_rating, na.rm=T),
+                          min(baserat_female$seed_quality_general_rating, na.rm=T),
+                          max(baserat_female$seed_quality_general_rating, na.rm=T),
+                          sd(baserat_female$seed_quality_general_rating, na.rm=T),
+                          quantile(baserat_female$seed_quality_general_rating, na.rm=T, 0.25),
+                          quantile(baserat_female$seed_quality_general_rating, na.rm=T, 0.75), 
+                          sum(!is.na (baserat_female$seed_quality_general_rating))),
+                        
+                        c(mean(baserat_female$seed_yield_rating, na.rm=T),
+                          min(baserat_female$seed_yield_rating, na.rm=T),
+                          max(baserat_female$seed_yield_rating, na.rm=T),
+                          sd(baserat_female$seed_yield_rating, na.rm=T),
+                          quantile(baserat_female$seed_yield_rating, na.rm=T, 0.25),
+                          quantile(baserat_female$seed_yield_rating, na.rm=T, 0.75), 
+                          sum(!is.na (baserat_female$seed_yield_rating))),
+                        
+                        c(mean(baserat_female$seed_drought_rating, na.rm=T),
+                          min(baserat_female$seed_drought_rating, na.rm=T),
+                          max(baserat_female$seed_drought_rating, na.rm=T),
+                          sd(baserat_female$seed_drought_rating, na.rm=T),
+                          quantile(baserat_female$seed_drought_rating, na.rm=T, 0.25),
+                          quantile(baserat_female$seed_drought_rating, na.rm=T, 0.75),
+                          sum(!is.na (baserat_female$seed_drought_rating))),
+                        
+                        c(mean(baserat_female$seed_disease_rating, na.rm=T),
+                          min(baserat_female$seed_disease_rating, na.rm=T),
+                          max(baserat_female$seed_disease_rating, na.rm=T),
+                          sd(baserat_female$seed_disease_rating, na.rm=T),
+                          quantile(baserat_female$seed_disease_rating, na.rm=T, 0.25),
+                          quantile(baserat_female$seed_disease_rating, na.rm=T, 0.75), 
+                          sum(!is.na (baserat_female$seed_disease_rating))),
+                        
+                        c(mean(baserat_female$seed_maturing_rating, na.rm=T),
+                          min(baserat_female$seed_maturing_rating, na.rm=T),
+                          max(baserat_female$seed_maturing_rating, na.rm=T),
+                          sd(baserat_female$seed_maturing_rating, na.rm=T),
+                          quantile(baserat_female$seed_maturing_rating, na.rm=T, 0.25),
+                          quantile(baserat_female$seed_maturing_rating, na.rm=T, 0.75), 
+                          sum(!is.na (baserat_female$seed_maturing_rating))),
+                        
+                        c(mean(baserat_female$seed_germinate_rating, na.rm=T),
+                          min(baserat_female$seed_germinate_rating, na.rm=T),
+                          max(baserat_female$seed_germinate_rating, na.rm=T),
+                          sd(baserat_female$seed_germinate_rating, na.rm=T),
+                          quantile(baserat_female$seed_germinate_rating, na.rm=T, 0.25),
+                          quantile(baserat_female$seed_germinate_rating, na.rm=T, 0.75),
+                          sum(!is.na (baserat_female$seed_germinate_rating))),
+                        
+                        c(mean(baserat_female$quality_rating, na.rm=T),
+                          min(baserat_female$quality_rating, na.rm=T),
+                          max(baserat_female$quality_rating, na.rm=T),
+                          sd(baserat_female$quality_rating, na.rm=T),
+                          quantile(baserat_female$quality_rating, na.rm=T, 0.25),
+                          quantile(baserat_female$quality_rating, na.rm=T, 0.75),
+                          sum(!is.na (baserat_female$quality_rating))))
+
 #prepping data for FE
 #subsetting baseline dealers and considering only the required variables 
 base<-baseline_dealer[c("maize.owner.agree.gender", "maize.owner.agree.age","maize.owner.agree.educ", "maize.owner.agree.q3", "maize.owner.agree.q4", "maize.owner.agree.q5",
@@ -2815,7 +3120,7 @@ baseline_farmers <- merge(baseline_farmers, dealer_services_dyads_aggr_F, by.x="
 #####Descriptive statistics: agro-input dealer#####
 ###################################################
 
-df_descriptives_dealer <- array(NA,dim=c(99,5))
+df_descriptives_dealer <- array(NA,dim=c(120,5))
 
 ###variable transformation###
 baseline_dealers$maize.owner.agree.gender<-ifelse(baseline_dealers$maize.owner.agree.gender=="Male",1,0)
@@ -3055,6 +3360,75 @@ baseline_dealers$cert<-ifelse(baseline_dealers$cert=="Yes",1,0)
 baseline_dealers$lot<-ifelse(baseline_dealers$lot=="Yes",1,0)
 baseline_dealers$verif<-ifelse(baseline_dealers$verif=="Yes",1,0)
 
+# Quantity of maize seed sold in kg
+baseline_dealers$maize.owner.agree.q20[baseline_dealers$maize.owner.agree.q20=="Yes"] <- 1
+baseline_dealers$maize.owner.agree.q20[baseline_dealers$maize.owner.agree.q20=="No"] <- 0
+
+baseline_dealers$maize.owner.agree.q32[baseline_dealers$maize.owner.agree.q32=="Yes"] <- 1
+baseline_dealers$maize.owner.agree.q32[baseline_dealers$maize.owner.agree.q32=="No"] <- 0
+
+baseline_dealers$maize.owner.agree.q45[baseline_dealers$maize.owner.agree.q45=="Yes"] <- 1
+baseline_dealers$maize.owner.agree.q45[baseline_dealers$maize.owner.agree.q45=="No"] <- 0
+
+baseline_dealers$maize.owner.agree.q57[baseline_dealers$maize.owner.agree.q57=="Yes"] <- 1
+baseline_dealers$maize.owner.agree.q57[baseline_dealers$maize.owner.agree.q57=="No"] <- 0
+
+baseline_dealers$maize.owner.agree.long10h.q25[baseline_dealers$maize.owner.agree.long10h.q25=="n/a"] <- NA #x
+baseline_dealers$maize.owner.agree.long10h.q25 <- as.numeric(as.character(baseline_dealers$maize.owner.agree.long10h.q25)) #x
+baseline_dealers$maize.owner.agree.long10h.q25[baseline_dealers$maize.owner.agree.long10h.q25==999]<-NA #x
+baseline_dealers$maize.owner.agree.long10h.q25[baseline_dealers$maize.owner.agree.q20=="0"] <- 0 #x
+
+baseline_dealers$maize.owner.agree.longe7h.q37 <- baseline_dealers$maize.owner.agree.longe7h.q38 #x #different numbers in bl and ml
+baseline_dealers$maize.owner.agree.longe7h.q37[baseline_dealers$maize.owner.agree.longe7h.q37=="n/a"] <- NA #x
+baseline_dealers$maize.owner.agree.longe7h.q37 <- as.numeric(as.character(baseline_dealers$maize.owner.agree.longe7h.q37)) #x
+baseline_dealers$maize.owner.agree.longe7h.q37[baseline_dealers$maize.owner.agree.longe7h.q37==999]<-NA #x
+baseline_dealers$maize.owner.agree.longe7h.q37[baseline_dealers$maize.owner.agree.q32=="0"] <- 0 #x
+
+baseline_dealers$maize.owner.agree.longe5.q50[baseline_dealers$maize.owner.agree.longe5.q50=="n/a"] <- NA #x
+baseline_dealers$maize.owner.agree.longe5.q50 <- as.numeric(as.character(baseline_dealers$maize.owner.agree.longe5.q50)) #x
+baseline_dealers$maize.owner.agree.longe5.q50[baseline_dealers$maize.owner.agree.longe5.q50==999]<-NA #x
+baseline_dealers$maize.owner.agree.longe5.q50[baseline_dealers$maize.owner.agree.q45=="0"] <- 0 #x
+
+baseline_dealers$maize.owner.agree.longe4.q62[baseline_dealers$maize.owner.agree.longe4.q62=="n/a"] <- NA #x
+baseline_dealers$maize.owner.agree.longe4.q62 <- as.numeric(as.character(baseline_dealers$maize.owner.agree.longe4.q62)) #x
+baseline_dealers$maize.owner.agree.longe4.q62[baseline_dealers$maize.owner.agree.longe4.q62==999]<-NA #x
+baseline_dealers$maize.owner.agree.longe4.q62[baseline_dealers$maize.owner.agree.q57=="0"] <- 0 #x
+
+baseline_dealers$quantitysold <- baseline_dealers$maize.owner.agree.long10h.q25+baseline_dealers$maize.owner.agree.longe7h.q37+baseline_dealers$maize.owner.agree.longe5.q50+baseline_dealers$maize.owner.agree.longe4.q62 #x
+
+trim <- function(var,dataset,trim_perc=.02){
+  
+  dataset[var][dataset[var]<quantile(dataset[var],c(trim_perc/2,1-(trim_perc/2)),na.rm=T)[1]|dataset[var]>quantile(dataset[var],c(trim_perc/2,1-(trim_perc/2)),na.rm=T)[2]] <- NA
+  
+  return(dataset)}
+
+baseline_dealers <- trim("quantitysold",baseline_dealers,trim_perc=.02) #x
+
+#Revenue from maize seed in mln UGX
+baseline_dealers$maize.owner.agree.long10h.q26 <- as.numeric(as.character(baseline_dealers$maize.owner.agree.long10h.q26))
+baseline_dealers$revenue_long10h.q25 <- (baseline_dealers$maize.owner.agree.long10h.q25*baseline_dealers$maize.owner.agree.long10h.q26) #x
+baseline_dealers$revenue_long10h.q25[baseline_dealers$maize.owner.agree.q20=="0"] <- 0 #x
+
+baseline_dealers$maize.owner.agree.longe7h.q38 <- as.numeric(as.character(baseline_dealers$maize.owner.agree.longe7h.q38))
+baseline_dealers$revenue_longe7h <- (baseline_dealers$maize.owner.agree.longe7h.q37*baseline_dealers$maize.owner.agree.longe7h.q38) #x
+baseline_dealers$revenue_longe7h[baseline_dealers$maize.owner.agree.q32=="0"] <- 0 #x
+
+baseline_dealers$maize.owner.agree.longe5.q51 <- as.numeric(as.character(baseline_dealers$maize.owner.agree.longe5.q51))
+baseline_dealers$revenue_longe5 <- (baseline_dealers$maize.owner.agree.longe5.q50*baseline_dealers$maize.owner.agree.longe5.q51) #x
+baseline_dealers$revenue_longe5[baseline_dealers$maize.owner.agree.q45=="0"] <- 0 #x
+
+baseline_dealers$maize.owner.agree.longe4.q63 <- as.numeric(as.character(baseline_dealers$maize.owner.agree.longe4.q63))
+baseline_dealers$revenue_longe4 <- (baseline_dealers$maize.owner.agree.longe4.q62*baseline_dealers$maize.owner.agree.longe4.q63) #x
+baseline_dealers$revenue_longe4[baseline_dealers$maize.owner.agree.q57=="0"] <- 0 #x
+
+baseline_dealers$revenue <- (baseline_dealers$revenue_long10h.q25+baseline_dealers$revenue_longe7h
+                                 +baseline_dealers$revenue_longe5+baseline_dealers$revenue_longe4) #x
+baseline_dealers$revenue <- baseline_dealers$revenue/1000000 #x
+
+baseline_dealers <- trim("revenue",baseline_dealers,trim_perc=.02) #x
+
+#baseline_dealers$revenue <- ihs(baseline_dealers$revenue) #x
+
 ###loop###
 variables <- c("maize.owner.agree.age","maize.owner.agree.gender","finished_primary","finished_secondary","maize.owner.agree.ownership"
                ,"maize.owner.agree.q3","maize.owner.agree.q4","maize.owner.agree.q5","maize.owner.agree.q6","maize.owner.agree.q7","years_shop"
@@ -3076,7 +3450,7 @@ variables <- c("maize.owner.agree.age","maize.owner.agree.gender","finished_prim
                ,"gives_credit","gives_advice","delivers","after_sales_service","payment_mehtods"
                ,"small_quant"
                ,"general","yield","drought_resistent","disease_resistent","early_maturing"
-               ,"germination")
+               ,"germination", "quantitysold", "revenue")
 
 baseline_dealers[variables] <- lapply(baseline_dealers[variables],function(x) replace(x,x==999,NA))
 baseline_dealers[variables] <- lapply(baseline_dealers[variables],function(x) replace(x,x==98,NA))
@@ -3089,6 +3463,43 @@ for (i in 1:length(variables)) {
   df_descriptives_dealer[i,3] <- max(baseline_dealers[variables[i]], na.rm=T)
   df_descriptives_dealer[i,4] <- sqrt(var(baseline_dealers[variables[i]], na.rm=T))
   df_descriptives_dealer[i,5] <- nrow(baseline_dealers) - sum(is.na(baseline_dealers[variables[i]]))}
+
+#Descriptive statistics by gender
+
+#male
+baseline_dealers_male <- subset(baseline_dealers, baseline_dealers$maize.owner.agree.gender==1)
+
+baseline_dealers_male[variables] <- lapply(baseline_dealers_male[variables],function(x) replace(x,x==999,NA))
+baseline_dealers_male[variables] <- lapply(baseline_dealers_male[variables],function(x) replace(x,x==98,NA))
+baseline_dealers_male[variables] <- lapply(baseline_dealers_male[variables],function(x) replace(x,x==96,NA))
+baseline_dealers_male[variables] <- lapply(baseline_dealers_male[variables],function(x) replace(x,x=="n/a",NA))
+
+df_descriptives_dealer_male <- array(NA,dim=c(120,5))
+
+for (i in 1:length(variables)) {
+  df_descriptives_dealer_male[i,1] <- sum(baseline_dealers_male[variables[i]], na.rm=T)/(nrow(baseline_dealers_male)-sum(is.na(baseline_dealers_male[variables[i]])))
+  df_descriptives_dealer_male[i,2] <- min(baseline_dealers_male[variables[i]], na.rm=T)
+  df_descriptives_dealer_male[i,3] <- max(baseline_dealers_male[variables[i]], na.rm=T)
+  df_descriptives_dealer_male[i,4] <- sqrt(var(baseline_dealers_male[variables[i]], na.rm=T))
+  df_descriptives_dealer_male[i,5] <- nrow(baseline_dealers_male) - sum(is.na(baseline_dealers_male[variables[i]]))}
+
+#female
+baseline_dealers_female <- subset(baseline_dealers, baseline_dealers$maize.owner.agree.gender==0)
+
+baseline_dealers_female[variables] <- lapply(baseline_dealers_female[variables],function(x) replace(x,x==999,NA))
+baseline_dealers_female[variables] <- lapply(baseline_dealers_female[variables],function(x) replace(x,x==98,NA))
+baseline_dealers_female[variables] <- lapply(baseline_dealers_female[variables],function(x) replace(x,x==96,NA))
+baseline_dealers_female[variables] <- lapply(baseline_dealers_female[variables],function(x) replace(x,x=="n/a",NA))
+
+df_descriptives_dealer_female <- array(NA,dim=c(120,5))
+
+for (i in 1:length(variables)) {
+  df_descriptives_dealer_female[i,1] <- sum(baseline_dealers_female[variables[i]], na.rm=T)/(nrow(baseline_dealers_female)-sum(is.na(baseline_dealers_female[variables[i]])))
+  df_descriptives_dealer_female[i,2] <- min(baseline_dealers_female[variables[i]], na.rm=T)
+  df_descriptives_dealer_female[i,3] <- max(baseline_dealers_female[variables[i]], na.rm=T)
+  df_descriptives_dealer_female[i,4] <- sqrt(var(baseline_dealers_female[variables[i]], na.rm=T))
+  df_descriptives_dealer_female[i,5] <- nrow(baseline_dealers_female) - sum(is.na(baseline_dealers_female[variables[i]]))}
+
 
 ########################################
 #####Descriptive statistics: farmer#####
