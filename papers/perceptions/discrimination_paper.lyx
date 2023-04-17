@@ -141,7 +141,7 @@ Faced with incomplete and imperfect information, economic actors rely predominan
 tly on perceptions and often base decisions on heuristics prone to bias.
  Gender bias in perceptions favoring men has been found in a wide variety
  of settings and may be an important reason why some sectors remain dominated
- by men and gender gaps persist.
+ by men and gender gaps in terms of benefits persist.
  Using ratings of agro-input dealers provided by smallholder farmers in
  their vicinity, we test if farmers perceive male-managed agro-input shops
  differently than agro-input shops managed by women.
@@ -152,9 +152,9 @@ tly on perceptions and often base decisions on heuristics prone to bias.
  in general, as well as on the quality of inputs sold by the dealer.
  Our results show that gender bias in customer perceptions persists and
  continues to be a severe comparative disadvantage and an important entry
- barrier for female agro-input dealers, and we conclude that policies and
- interventions designed to challenge gender norms and customs are needed
- to correct this bias.
+ barrier for female agro-input dealers.
+ Policies and interventions designed to challenge gender norms and customs
+ are needed to correct this bias.
 \end_layout
 
 \begin_layout Standard
@@ -199,21 +199,7 @@ source(paste(path, "code/perceptions_seed.R
 
 \begin_layout Standard
 keywords: gender bias, agro-input dealer, perceptions, maize seed systems,
- information asymmetries 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Caro: I'm in favor of "maize seed systems" instead of "maize" and adding
- "information asymmetries".
- Anusha - Maize seed systems added, removing Uganda to add information asymmetri
-es.
- 
-\end_layout
-
-\end_inset
-
-
+ Uganda
 \end_layout
 
 \begin_layout Section
@@ -243,10 +229,9 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-Agricultural inputs such as inorganic fertilizers or improved seed varieties,
- which are high yielding cultivars like open-pollinated and hybrid maize
- varieties, lie somewhere on the continuum between experience goods and
- credence goods.
+Agricultural inputs such as inorganic fertilizers or improved seed varieties
+ (high yielding cultivars like open-pollinated and hybrid maize varieties),
+ lie somewhere on the continuum between experience goods and credence goods.
  When farmers inspect goods at the agro-input shop, the quality can only
  be assessed superficially from readily observable characteristics such
  as homogeneity of the seed or by checking if the fertilizer package is
@@ -261,7 +246,7 @@ Agricultural inputs such as inorganic fertilizers or improved seed varieties,
 \begin_layout Standard
 In addition to the difficulty of judging quality of agricultural inputs,
  several studies note that there is considerable heterogeneity in the actual
- quality of inputs on the market.
+ quality of agricultural inputs on the market.
  For instance, in Uganda, 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -358,9 +343,9 @@ literal "false"
 
  which further confirms this traditional stance in the context of smallholder
  production in Uganda where a significant negative impact of a commercialization
- program was prominent on women empowerment in crop production and their
- control over income, clearly showing a power shift to men in rural households
- of Uganda.
+ program was found on women empowerment in crop production and their control
+ over income, clearly showing a power shift to men in rural households of
+ Uganda.
  As a result, we conjecture that female-managed agro-input shops may be
  disadvantaged when farmers form opinions about the quality of services
  rendered or goods sold, deeming women not to be fit for these commercial
@@ -372,7 +357,7 @@ In this paper, we test if farmers perceive agro-input shops managed by women
  less favorably than agro-input shops under male management using a unique
  dyadic data set of farmer-dealer links.
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
 The paper builds on earlier exploratory work published in 
@@ -407,8 +392,8 @@ We find that farmers generally rate male-managed agro-input shops more favorably
  The difference in ratings is highest when farmers are asked to rate the
  agro-input dealership in terms of price competitiveness and in terms of
  reputation.
- We also find that seed from male-managed agro-input shops is rated higher
- than seed from shops managed by women.
+ We also find that the quality of seed from male-managed agro-input shops
+ is rated higher than the quality of seed from shops managed by women.
  As the differences in ratings persist after explicitly controlling for
  the quality of the dealerships or the services and products they provide,
  we conclude that gender biased customer perceptions persist and create
@@ -421,7 +406,8 @@ In the remainder of this article, we first situate the research question
  in the wider literature.
  We then provide the context for the study and describe the main economic
  actors: agro-input dealers and smallholder maize farmers.
- We also describe how we measure perceptions, the key variable in this study.
+ We also describe how we measure perceptions, the key variable of interest
+ in this study.
  Next, we lay out the empirical strategy, followed by the results.
  A final section concludes and offers some policy guidance.
 \end_layout
@@ -439,9 +425,12 @@ Research question and relation to the literature
 \end_layout
 
 \begin_layout Standard
-We aim to test if gender equity bias—behavior that shows favoritism toward
- one gender over another—is present in the way smallholder maize farmers
- in southeastern Uganda perceive agro-input dealers in their neighborhood.
+We aim to test if gender related discrimination is present in the way smallholde
+r maize farmers in southeastern Uganda perceive agro-input dealers in their
+ neighborhood.
+ In the wider literature, gender related discrimination is often referred
+ to as gender equity bias—behavior that shows favoritism toward one gender
+ over another.
  Gender equity bias has been confirmed in a wide range of contexts, usually
  when people are asked to assess the performance of another person.
  Stereotyping and role congruence are often catalysts for distorted perceptions
@@ -464,7 +453,7 @@ literal "false"
  look at differences in rejection rates at four top economics journals.
  They compare male-authored papers to female-authored papers, using citations
  as a noisy measure of quality to account for potential sources of divergence
- between the two.
+ between the two (other than gender).
  They find that editors largely follow the referees, resulting in a 1.7 percentag
 e point lower probability of a revise and re-submit verdict for papers with
  female authors relative to a citation-maximizing benchmark.
@@ -538,8 +527,8 @@ Economic Job Market Rumors
  that is, when women appear to make substantially less money for the same
  work than their male counterparts.
  Often, this is also tied to gender equity bias in performance appraisals,
- where (often male) managers’ beliefs creep into their evaluations of workers
- 
+ where (often male) managers’ gendered beliefs and perceptions creep into
+ evaluations of their subordinates 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "doi:10.1177/0003122420962080"
@@ -592,7 +581,7 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-In the context of smalls and medium enterprises (SMEs), and agricultural
+In the context of smalls and medium enterprises (SMEs), and agriculture
  in particular, we found few studies that look at gender equity bias.
  The study that comes closest is 
 \begin_inset CommandInset citation
@@ -604,7 +593,7 @@ literal "false"
 
  who study discrimination against female-led SMEs in Turkey.
  Using a novel loan application experiment conducted with 77 loan officers
- in banks and find that 35 percent of the loan officers are biased against
+ in banks, they find that 35 percent of the loan officers are biased against
  female applicants, with women receiving significantly smaller loans than
  men.
  The authors argue that loan officers may use gender bias as a heuristic
@@ -614,7 +603,7 @@ literal "false"
 
 \begin_layout Standard
 Gender bias features so prominently in areas such as scholarly peer review,
- teaching assessments, or labor markets partly because perceptions are made
+ teaching assessments or labor markets partly because perceptions are made
  explicit in the process, for instance through review reports, student feedback,
  or hiring committees.
  However, in economic transactions, gender biases remain hidden as perceptions
@@ -624,7 +613,7 @@ Gender bias features so prominently in areas such as scholarly peer review,
 \end_layout
 
 \begin_layout Standard
-Such misperception can be particularly damaging in traditional agricultural
+Biased perceptions can be particularly damaging in traditional agricultural
  societies with strong norms and customs.
  In these societies, women's opportunities are already severely restricted,
  and gender bias may further restrain women from entering productive activities.
@@ -691,8 +680,8 @@ After the census, these agro-input shops were grouped in catchment areas
  A catchment area is defined as the area that is served by a dealer, the
  area where this dealer's customers live.
  If catchment areas of two or more dealers overlap because these dealers
- operate in the same town, street or right next to each other, they are
- assigned to the same catchment area.
+ operate in the same town or trading center, they are assigned to the same
+ catchment area.
  This is done based on geographical location.
  Using GPS coordinates of the input dealers, the haversine function is used
  to construct an adjacency matrix, and shops that are less than 5 kilometers
@@ -700,7 +689,7 @@ After the census, these agro-input shops were grouped in catchment areas
  The 5-kilometer threshold was selected based on visual inspection of the
  map, the size of an average village and reported distance between farmers
  and dealers.
- The 348 agro-input dealers in Busoga were assigned to 130 catchment areas.
+ The 193 agro-input dealers in Busoga were assigned to 65 catchment areas.
  In some catchment areas, there is a high density of shops, while in others
  there are only one or two dealers.
  On average, there are 2.7 dealers in an area, with a minimum of 1 and a
@@ -724,39 +713,11 @@ If this village was already named by another dealer, the village with the
 
  Enumerators were sent to these villages and instructed to randomly sample
  ten households that grow maize.
- Consequently, we sampled about 3500 smallholder maize farmers and collected
+ Consequently, we sampled 1,930 smallholder maize farmers and collected
  information about their characteristics in April 2021.
-\end_layout
-
-\begin_layout Standard
-It is important to note that only farmers in half of the catchment areas
- rated dealers.
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-These ratings are part of the intervention of a different study, where a
- computer algorithm allocated the rating treatment randomly at the level
- of the catchment area.
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Anusha - The indication about why the sample is being cut into half is here
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- This means that 1931 farmers rated 193 dealers in April 2021.
- To have enough ratings, a second round was collected in January and February
- 2022.
- While these ratings were provided by the same farmers, only 1893 of them
+ To further increase the number of ratings enough ratings, a second round
+ was collected in January and February 2022.
+ While these ratings were provided by the same farmers, only 1,893 of them
  were found during the second wave.
  These two rounds of surveys constitute the key sources of data for the
  study.
@@ -777,24 +738,24 @@ noprefix "false"
 
 \end_inset
 
- describes the average agro-input dealer included in our study.
+ describes the average agro-input dealer included in our study, differentiated
+ by gender of the shop manager.
  About 60 percent of shop managers are male.
  When enumerators approached a shop, they tried to interview the manager,
  i.e.
  the person who is most knowledgeable about the day to day operations of
  the business, inventories, sales, and so on.
- That is why an agro-input shop is considered to be male-managed if the
- interviewed respondent is a man.
  It may be that the shop is owned by one person, but the owner employs another
  person to manage the shop.
- In 55% of the cases, the respondent is the manager and owner of the shop.
- In the other 45% of the cases, the respondent is only the manager.
+ In 63% of the cases, the male respondent is also the owner of the shop,
+ while only 47 percent of female managers are also the owner.
  If the gender of the shop manager is different from the gender of the owner,
  the question emerges who's gender affects perceptions of the shop as a
  whole.
  We feel that the person who manages the shop is most visible and as such
  most likely to affect perceptions, therefore the gender of the respondent
- determines if a shop is categorized as female or male-managed.
+ determines if a shop is categorized as female or male-managed in the analysis
+ below.
 \end_layout
 
 \begin_layout Standard
@@ -803,8 +764,11 @@ There is substantial heterogeneity across shops.
  and only stock seed during the planting season.
  Others are located in towns or trading centers and specialize in farm inputs
  and tools.
- The average shop has been in operation for about five years and serves
- about 44 customers a day, half of whom come to buy maize seed.
+ The average shop has been in operation for about five to five and a half
+ years.
+ We already see signs of potential discrimination when we look at the number
+ of customers: male managers report serving more than 50 customers a day;
+ female managers only serve 35 customers per day.
  A shop stocks on average three maize seed varieties.
  More statistics describing seed handling and storage practices, efforts,
  and services of agro-input dealers, are presented in the appendix in Table
@@ -819,31 +783,11 @@ noprefix "false"
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
-Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "table: descriptives farmer"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
- provides descriptive statistics of the farmers included in the study.
- The average farmer in our sample works on a small farm, with about 3.4 acres
- of land for crop production.
- Half of our sampled farmers indicate that they used improved maize seed
- on at least one plot in the season preceding the survey, and of the farmers
- that used improved seed, two-thirds obtained this seed from an agro-input
- shop.
- However, fertilizer use is very low.
- As a result, productivity is also low, with the average farmer harvesting
- only about 500 kg of maize per acre.
- Almost 70 percent of farmers are of the opinion that maize seed sold at
- agro-input shops is counterfeit.
+ Results in that table suggest that female managers do not use worse storage
+ and handling practices than male managers.
+ In fact, on many measures, female managers appear to do better than male
+ managers.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -2068,6 +2012,31 @@ end{landscape}
 \end_layout
 
 \begin_layout Standard
+Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "table: descriptives farmer"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ provides descriptive statistics of the farmers included in the study.
+ The average farmer in our sample works on a small farm, with about 3.4 acres
+ of land for crop production.
+ Half of our sampled farmers indicate that they used improved maize seed
+ on at least one plot in the season preceding the survey, and of the farmers
+ that used improved seed, two-thirds obtained this seed from an agro-input
+ shop.
+ However, fertilizer use is very low.
+ As a result, productivity is also low, with the average farmer harvesting
+ only about 500 kg of maize per acre.
+ Almost 70 percent of farmers are of the opinion that maize seed sold at
+ agro-input shops is counterfeit.
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -2677,18 +2646,15 @@ Quantifying perceptions of the quality of services provided by agro-input
  dealers and the services they provide, while a second set of indicators
  has a narrower focus and asks about maize seed, a particular product sold
  by the agro-input dealer.
- Note that as agro-input dealers are often clustered in towns and trading
- centers, farmers often rate several agro-input dealers.
- 
 \end_layout
 
 \begin_layout Standard
 To measure the perceived quality of agro-input dealers, farmers were asked
- to rate these dealers on a scale of 1 to 5 (5 being the best and 1 being
- the worst) on their general quality, location (convenience, accessibility,
- closeness to clients), price (competitive pricing, discounts), seed quality,
- stock (availability of seed, number of varieties in stock), and reputation
- (what do other farmers think about the dealer).
+ to rate these dealers on a scale of 1 to 5 (1 being worst and 5 best) on
+ their general quality, location (convenience, accessibility, closeness
+ to clients), price (competitive pricing, discounts), seed quality, stock
+ (availability of seed, number of varieties in stock), and reputation (what
+ do other farmers think about the dealer).
  We also compute an average of these six dealer level ratings.
  For these indicators, farmers were asked to rate the shop as a whole, which
  also includes the person who operates the shop.
@@ -2700,7 +2666,7 @@ To measure the perceived quality of seed, farmers were asked to rate the
  general quality, yield, drought tolerance, pest/disease tolerance, crop
  duration/maturation period, and germination reliability.
  We also compute an average of these six seed-level ratings.
- Here, farmers were asked to rate seed, the product itself.
+ Here, farmers were asked to rate the product itself (seed).
  Farmers were also allowed to indicate that they could not rate seed on
  a particular dimension (for instance because they never bought seed from
  the agro-input dealer).
@@ -2732,7 +2698,6 @@ noprefix "false"
  dimensions related to the product quality.
  For instance, the mean location rating is 3.75 out of 5 for male agro-input
  dealers and 3.91 for female agro-input dealers.
- 
 \end_layout
 
 \begin_layout Standard
@@ -3999,14 +3964,14 @@ noprefix "false"
 \end_inset
 
 ) are independent.
- For example, the ratings that a farmer provides may be affected by a (potential
-ly unobservable) characteristic of the farmer (for example a poor experience
+ For example, the ratings that a farmer provides may be affected by (potentially
+ unobservable) characteristics of the farmer (for example a poor experience
  with an agro-input dealer in a previous year), which may affect the ratings
  received by all agro-input dealers rated by this farmer.
  Furthermore, the same agro-input dealer may be rated by several farmers,
  leading to interdependence in the other dimension.
- For example, the ratings that a dealer receives may be affected by a (potential
-ly unobservable) characteristic of the dealer (for example dealer friendliness),
+ For example, the ratings that a dealer receives may be affected by (potentially
+ unobservable) characteristics of the dealer (for example dealer friendliness),
  which may affect the ratings given by all farmers that rated this dealer.
  To account for this two-way interdependence in equation (
 \begin_inset CommandInset ref
@@ -4168,7 +4133,7 @@ d
 
 
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 not really, this would only be the case if the same set of farmers rate
@@ -4401,31 +4366,6 @@ y_{f,d}-\overline{y}_{f}=\gamma\left(g_{f,d}-\overline{g}_{f}\right)+\varphi\lef
 \begin_layout Section
 \paragraph_spacing onehalf
 Results
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-The mean ratings (ranging from 1 to 5) given by farmers generaly lie within
- a very small range of 2.5 to 4 approximately.
- The quartiles can be further observed in table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "table: descriptives ratings bygender"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
- which shows the minimal difference between the first and third quartiles.
- This implịes that even a small coefficient would mean bias of a considerable
- magnitude as the range within which farmers tend to rate is relatively
- small.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Subsection
@@ -4465,21 +4405,15 @@ noprefix "false"
 \end_inset
 
 ).
- The difference between the two tables is that on the one hand, farmers
+ The difference between the two tables is that in the first table farmers
  rated dealerships on a set of general characteristics like location and
- pricing, and on the other hand, they rated maize seed, a particular product
- that these dealers sell, on various dimensions like germination and yield.
+ pricing, while in the second table they rated maize seed, a particular
+ product that these dealers sell, on various dimensions like germination
+ and yield.
 \end_layout
 
 \begin_layout Standard
-Looking at general dealerships ratings, called 
-\shape italic
-dealer ratings
-\shape default
- in the tables, we find that on all but one dimension, male-managed agro-input
- shops are rated higher than female-managed shops, and the difference in
- rating is significant for five out of the seven comparisons (at the 10
- percent significance level), see table 
+Looking at general dealerships ratings in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "table: between_dealer ratings_no controls"
@@ -4489,11 +4423,26 @@ noprefix "false"
 
 \end_inset
 
-.
- A small but significant difference is found when farmers are asked to rate
- price competitiveness.
+, we find that on all but one dimension, male-managed agro-input shops are
+ rated higher than female-managed shops, and the difference in rating is
+ significant for five out of the seven comparisons (at the 10 percent significan
+ce level).
+ A significant difference is found when farmers are asked to rate price
+ competitiveness.
  Here, female-managed agro-input shops are scored only 3.21 out of 5, while
  male-managed agro-input shops receive a score of 3.28 out of 5.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+While these effects may seem small, it should be noted that ratings generally
+ lie within a small range (of approximately 2.5 to 4).
+ Thus, even a small coefficient estimate may reflect a considerable bias.
+ 
+\end_layout
+
+\end_inset
+
  Similar differences exist when farmers are asked to rate an agro-input
  dealer in terms of product availability.
  Here, male-managed agro-input shops receive an average score of almost
@@ -5528,11 +5477,7 @@ noprefix "false"
 \end_inset
 
  repeats the between-dealers analysis but compares ratings for quality attribute
-s of maize seed sold by these dealers, called 
-\shape italic
-seed ratings
-\shape default
- in the tables.
+s of maize seed sold by these dealers.
  While we still find that on most characteristics, male-managed agro-input
  shops get a higher rating than female-managed shops, the differences are
  never significant.
@@ -5546,8 +5491,7 @@ noprefix "false"
 
 \end_inset
 
-, where we also failed to find a significant difference when asking about
- seed quality.
+, where the only non-significant difference was related to seed quality.
  This suggests that when farmers are asked to think about a particular product,
  they make abstraction of the person selling it, and the gender effect becomes
  less important.
@@ -5740,8 +5684,7 @@ The haversine formula calculating the arc distance between two points is
  both farmers and agro-input shops and inserted as paired values in the
  haversine formula.
  This formula then calculates the distances between these paired latitudes
- and longitudes in meters, following which we obtain the distances in kilometers
- and standardize the variable.
+ and longitudes.
 \end_layout
 
 \end_inset
@@ -5758,8 +5701,8 @@ noprefix "false"
 \end_inset
 
 ).
- We do not find a gender equity effect on ratings concerning location in
- Table 
+ We do not find a gender effect on ratings concerning location in Table
+ 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "table: between_dealer ratings_no controls"
@@ -5787,7 +5730,7 @@ noprefix "false"
 
 \end_inset
 
-, we look at price competitiveness again.
+, we look at price competitiveness.
  To account for the possibility that the difference in price ratings between
  male- and female-managed agro-input shops is driven by actual price differences
  between these shops, we control for the average price charged by the dealer,
@@ -5858,8 +5801,8 @@ noprefix "false"
 
 \end_inset
 
-, we do not find a gender equity effect regarding the seed quality rating
- after controlling for observable quality indicators.
+, we do not find a gender effect regarding the seed quality rating after
+ controlling for observable quality indicators.
 \end_layout
 
 \begin_layout Standard
@@ -5960,9 +5903,8 @@ noprefix "false"
 
 \end_inset
 
- that we did not find a gender equity effect for any seed-quality-related
- dimensions, and adding the index to control for quality does not change
- this.
+ that we did not find a gender effect for any seed-quality-related dimensions,
+ and adding the index to control for quality does not change this.
  Note that the index is generally positively correlated with the rating,
  but only significantly so when farmers are asked to assess the seed's yield.
 \end_layout
@@ -6014,9 +5956,9 @@ noprefix "false"
 
  and their significance, are very similar.
  This suggests that differences between male- and female-managed agro-input
- shops reflect structural differences in perception of the two genders,
- rather than actual differences in the dimension being rated (quality, price
- competitiveness, stock, and reputation).
+ shops reflect differences in perception of the two genders, rather than
+ actual differences in the dimension being rated (quality, price competitiveness
+, stock, and reputation).
 \end_layout
 
 \begin_layout Standard
@@ -7941,9 +7883,9 @@ Farmer fixed-effects models
 \end_layout
 
 \begin_layout Standard
-In order to clarify whether the bias persists after accounting for farmer-level
- heterogeneity, we use the fact that a farmer has generally rated more than
- one agro-input dealer.
+In order to test whether male bias persists after accounting for farmer-level
+ heterogeneity, we use the fact that farmers generally rated more than one
+ agro-input dealer.
  If the same farmer rates both male and female-managed agro-input shops,
  we can exploit this within-farmer variation and control for farmer specific
  observable and unobservable characteristics by including farmer fixed-effects.
@@ -8014,8 +7956,7 @@ noprefix "false"
 
 \end_inset
 
-.
- Table 
+; Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "table: FE_seed ratings_no controls"
@@ -8039,7 +7980,7 @@ noprefix "false"
 .
  
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Perhaps we should add here that now the unit of analysis changes from "few"
@@ -9098,7 +9039,7 @@ noprefix "false"
 \end_layout
 
 \begin_layout Standard
-Comparing Tables 
+Finally, comparing Tables 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "table: FE_seed ratings_no controls"
@@ -10933,8 +10874,8 @@ Using simple comparisons of average ratings given to male- and female-managed
  When adding controls for agro-input dealer-level observable characteristics,
  parameter estimates and significance remained similar, suggesting that
  differences in ratings between male- and female-managed agro-input shops
- reflect structural differences in perceptions rather than actual differences
- in quality.
+ reflect differences in perceptions rather than actual differences in the
+ attributes being rated.
 \end_layout
 
 \begin_layout Standard
@@ -10962,25 +10903,13 @@ Looking into the individual dimensions that were rated, we find particularly
  shops were rated differently when farmers were asked to consider location.
  This may be because location is easier to assess objectively.
  For attributes related to the quality of seed sold by agro-input dealers,
- gender equity bias was largest when farmers were asked to assess seed germinati
-on rates and whether the seed being rated had the advertised maturing period.
+ gender bias was largest when farmers were asked to assess seed germination
+ rates and whether the seed being rated had the advertised maturing period.
 \end_layout
 
 \begin_layout Standard
-The fact that some differences in ratings between male-managed and female-manage
-d agro-input shops persist, even after controlling for dealer-level characterist
-ics and farmer-level heterogeneity, proves that female-operated shops are
- perceived to be worse without actually being worse.
- Our analyses confirm the existence of a gender equity bias because the
- different perceptions are not based on real differences: While agro-input
- shops managed by women and men are comparable, smallholder farmers perceive
- them to be different.
-\end_layout
-
-\begin_layout Standard
-The finding that farmers, both male and female, are perhaps subconsciously
- discriminating against shops managed by women is troubling for a variety
- of reasons.
+The finding that farmers are discriminating against shops managed by women
+ is troubling for a variety of reasons.
  Not only does it directly impact women’s capabilities and aspirations,
  constraining women’s empowerment in agi-food systems 
 \begin_inset CommandInset citation
@@ -10992,8 +10921,16 @@ literal "false"
 
 ; it also will likely affect future generations, as women tend to invest
  more of their income than men in healthcare, nutrition and education of
- their children.
- But there are consequences beyond the household.
+ their children 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "10.2307/145670"
+literal "false"
+
+\end_inset
+
+.
+ But there are consequences that go beyond the household.
  Almost half of the agro-input shops in our sample were managed by women.
  If farmers do not trust shops managed by women, this may pose challenges
  for varietal turnover at more aggregate levels: in a village where only
@@ -11021,10 +10958,7 @@ noprefix "false"
 \end_layout
 
 \begin_layout Standard
-Finding this bias in the context of a developing country in a particular
- sub-sector which has experienced more female entrants in the recent years,
- is a notable contribution to the gender bias literature, and has important
- policy implications.
+Our finding has important implications.
  It underscores the importance of customs and norms in rural and more traditiona
 l societies.
  Interventions and initiatives that focus solely on increasing women's empowerme
@@ -11071,7 +11005,7 @@ First, even though we find no evidence of actual differences in quality
  forth 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "lecoutere2020women"
+key "lecoutere2023empowering"
 literal "false"
 
 \end_inset
@@ -12319,1385 +12253,6 @@ end{tabular}
 
 \backslash
 end{center}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{landscape}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Anusha – I still keep the tables below with the descriptive statistics which
- are not by gender, do we still need them or would it be better to still
- have them in the paper?
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float table
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Descriptive agro-input dealer statistics: Variables in indices
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:descriptives indices"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-small 
-\backslash
-begin{center}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{tabular}{rccccc}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-hline
-\backslash
-hline
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-& mean & min & max & SD & nobs
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-cline{2-6}
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-textbf{Capital-intensive seed handling/storage practices observed by enumerator}
- & & & & & 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Shop has leak-proof roof & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[28,1],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[28,2],digits=3),nsmall=0)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[28,3],digits=3),nsmall=0)}  &
- 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[28,4],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[28,5],digits=3),nsmall=0)}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Shop has insulated roof & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[29,1],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[29,2],digits=3),nsmall=0)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[29,3],digits=3),nsmall=0)}  &
- 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[29,4],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[29,5],digits=3),nsmall=0)}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Shop has insulated walls & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[30,1],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[30,2],digits=3),nsmall=0)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[30,3],digits=3),nsmall=0)}  &
- 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[30,4],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[30,5],digits=3),nsmall=0)}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Shop is ventilated & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[31,1],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[31,2],digits=3),nsmall=0)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[31,3],digits=3),nsmall=0)}  &
- 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[31,4],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[31,5],digits=3),nsmall=0)}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Shop displays official certificate & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[37,1],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[37,2],digits=3),nsmall=0)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[37,3],digits=3),nsmall=0)}  &
- 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[37,4],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[37,5],digits=3),nsmall=0)}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Shop always handles expired seed correctly & 
-\backslash
-Sexpr{format(round(desc[8,1],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(desc[8,2],digits=3),nsmall=0)} & 
-\backslash
-Sexpr{format(round(desc[8,3],digits=3),nsmall=0)}  & 
-\backslash
-Sexpr{format(round(desc[8,4],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(desc[8,5],digits=3),nsmall=0)} 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-cline{1-6}
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-textbf{Labor-intensive seed handling/storage practices observed by enumerator}
- & & & & & 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Shop stores seed away from other products & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[26,1],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[26,2],digits=3),nsmall=0)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[26,3],digits=3),nsmall=0)}  &
- 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[26,4],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[26,5],digits=3),nsmall=0)}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Shop has problem with pests & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[27,1],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[27,2],digits=3),nsmall=0)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[27,3],digits=3),nsmall=0)}  &
- 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[27,4],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[27,5],digits=3),nsmall=0)}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Shop's light is ambient (not direct sunlight/dark) & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[34,1],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[34,2],digits=3),nsmall=0)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[34,3],digits=3),nsmall=0)}  &
- 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[34,4],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[34,5],digits=3),nsmall=0)}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Shop stores seed on pallets/shelves (not directly on wood/floor/cardboard)
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[35,1],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[35,2],digits=3),nsmall=0)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[35,3],digits=3),nsmall=0)}  &
- 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[35,4],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[35,5],digits=3),nsmall=0)}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Shop stores maize seed in open containers & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[36,1],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[36,2],digits=3),nsmall=0)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[36,3],digits=3),nsmall=0)}  &
- 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[36,4],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[36,5],digits=3),nsmall=0)}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Shop's cleanness/professionality rating by enumerator & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[38,1],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[38,2],digits=3),nsmall=0)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[38,3],digits=3),nsmall=0)}  &
- 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[38,4],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[38,5],digits=3),nsmall=0)}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-cline{1-6}
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-textbf{Dealer's efforts and services} & & & & & 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Shop always explains to customers how seed should be used & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[41,1],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[41,2],digits=3),nsmall=0)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[41,3],digits=3),nsmall=0)}  &
- 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[41,4],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[41,5],digits=3),nsmall=0)}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Shop always recommends complementary inputs to customers & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[42,1],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[42,2],digits=3),nsmall=0)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[42,3],digits=3),nsmall=0)}  &
- 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[42,4],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[42,5],digits=3),nsmall=0)}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Shop offers extension/training & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[43,1],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[43,2],digits=3),nsmall=0)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[43,3],digits=3),nsmall=0)}  &
- 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[43,4],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[43,5],digits=3),nsmall=0)}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Shop offers discounts for large quantities & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[44,1],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[44,2],digits=3),nsmall=0)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[44,3],digits=3),nsmall=0)}  &
- 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[44,4],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[44,5],digits=3),nsmall=0)}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Shop's smallest seed bag is 1 kg (not larger) & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[45,1],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[45,2],digits=3),nsmall=0)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[45,3],digits=3),nsmall=0)}  &
- 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[45,4],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[45,5],digits=3),nsmall=0)}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Shop provides seed on credit & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[49,1],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[49,2],digits=3),nsmall=0)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[49,3],digits=3),nsmall=0)}  &
- 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[49,4],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[49,5],digits=3),nsmall=0)}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Shop received seed related complaint from customer & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[52,1],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[52,2],digits=3),nsmall=0)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[52,3],digits=3),nsmall=0)}  &
- 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[52,4],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[52,5],digits=3),nsmall=0)}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Shop accepts mobile money as payment & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[53,1],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[53,2],digits=3),nsmall=0)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[53,3],digits=3),nsmall=0)}  &
- 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[53,4],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[53,5],digits=3),nsmall=0)}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-hline
-\backslash
-hline
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{tabular}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{center}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{landscape}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float table
-placement H
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Descriptive agro-input dealer statistics
-\begin_inset CommandInset label
-LatexCommand label
-name "table: descriptives dealer"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-footnotesize 
-\backslash
-begin{center}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{tabular}{rccccc}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-hline
-\backslash
-hline
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-& mean & min & max & SD & nobs
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-cline{2-6}
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Dealer's age in years & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[1,1],digits=2),nsmall=2)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[1,2],digits=3),nsmall=0)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[1,3],digits=3),nsmall=0)}  & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[1,4],digits=2),nsmall=2)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[1,5],digits=3),nsmall=0)}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Dealer is male & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[2,1],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[2,2],digits=3),nsmall=0)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[2,3],digits=3),nsmall=0)}  & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[2,4],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[2,5],digits=3),nsmall=0)}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Dealer finished secondary education & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[4,1],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[4,2],digits=3),nsmall=0)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[4,3],digits=3),nsmall=0)}  & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[4,4],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[4,5],digits=3),nsmall=0)}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Dealer owns shop & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[5,1],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[5,2],digits=3),nsmall=0)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[5,3],digits=3),nsmall=0)}  & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[5,4],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[5,5],digits=3),nsmall=0)}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Dealer received training on maize seed handling/storage & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[16,1],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[16,2],digits=3),nsmall=0)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[16,3],digits=3),nsmall=0)}  &
- 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[16,4],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[16,5],digits=3),nsmall=0)}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Shop's distance to nearest tarmac road in km & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[6,1],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[6,2],digits=3),nsmall=0)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[6,3],digits=3),nsmall=0)}  & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[6,4],digits=2),nsmall=2)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[6,5],digits=3),nsmall=0)}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Distance between farmer and shop in km      & 
-\backslash
-Sexpr{format(round(desc[3,1],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(desc[3,2],digits=3),nsmall=0)} & 
-\backslash
-Sexpr{format(round(desc[3,3],digits=3),nsmall=0)}  & 
-\backslash
-Sexpr{format(round(desc[3,4],digits=2),nsmall=2)} & 
-\backslash
-Sexpr{format(round(desc[3,5],digits=3),nsmall=0)}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Shop only sells farm inputs & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[8,1],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[8,2],digits=3),nsmall=0)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[8,3],digits=3),nsmall=0)}  & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[8,4],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[8,5],digits=3),nsmall=0)}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Number of customers per day & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[9,1],digits=2),nsmall=2)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[9,2],digits=3),nsmall=0)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[9,3],digits=3),nsmall=0)}  & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[9,4],digits=2),nsmall=2)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[9,5],digits=3),nsmall=0)}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Number of customers per day buying maize seed & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[10,1],digits=2),nsmall=2)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[10,2],digits=3),nsmall=0)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[10,3],digits=3),nsmall=0)}  &
- 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[10,4],digits=2),nsmall=2)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[10,5],digits=3),nsmall=0)}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Number of years since shop’s establishment & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[11,1],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[11,2],digits=3),nsmall=0)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[11,3],digits=3),nsmall=0)}  &
- 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[11,4],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[11,5],digits=3),nsmall=0)}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Number of maize varieties in stock & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[19,1],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[19,2],digits=3),nsmall=0)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[19,3],digits=3),nsmall=0)}  &
- 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[19,4],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[19,5],digits=3),nsmall=0)}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Number of hybrid maize varieties in stock & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[20,1],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[20,2],digits=3),nsmall=0)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[20,3],digits=3),nsmall=0)}  &
- 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[20,4],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[20,5],digits=3),nsmall=0)}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Number of OPV maize varieties in stock & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[23,1],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[23,2],digits=3),nsmall=0)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[23,3],digits=3),nsmall=0)}  &
- 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[23,4],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[23,5],digits=3),nsmall=0)}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Sales price of maize seed (UGX/kg) & 
-\backslash
-Sexpr{format(round(desc[4,1],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(desc[4,2],digits=3),nsmall=0)} & 
-\backslash
-Sexpr{format(round(desc[4,3],digits=3),nsmall=0)}  & 
-\backslash
-Sexpr{format(round(desc[4,4],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(desc[4,5],digits=3),nsmall=0)}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Cost of maize seed for dealer (UGX/kg) & 
-\backslash
-Sexpr{format(round(desc[5,1],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(desc[5,2],digits=3),nsmall=0)} & 
-\backslash
-Sexpr{format(round(desc[5,3],digits=3),nsmall=0)}  & 
-\backslash
-Sexpr{format(round(desc[5,4],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(desc[5,5],digits=3),nsmall=0)}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Amount of maize seed dealer bought (in kg) & 
-\backslash
-Sexpr{format(round(desc[7,1],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(desc[7,2],digits=3),nsmall=0)} & 
-\backslash
-Sexpr{format(round(desc[7,3],digits=3),nsmall=0)}  & 
-\backslash
-Sexpr{format(round(desc[7,4],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(desc[7,5],digits=3),nsmall=0)}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Shop's cleanness/professionality rating by enumerator & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[38,1],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[38,2],digits=3),nsmall=0)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[38,3],digits=3),nsmall=0)}  &
- 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[38,4],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[38,5],digits=3),nsmall=0)}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Shop received seed-related complaint from customer & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[52,1],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[52,2],digits=3),nsmall=0)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[52,3],digits=3),nsmall=0)}  &
- 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[52,4],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[52,5],digits=3),nsmall=0)}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Shop is registered with UNADA & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[60,1],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[60,2],digits=3),nsmall=0)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[60,3],digits=3),nsmall=0)}  &
- 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[60,4],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[60,5],digits=3),nsmall=0)}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Shop has trading license from local government & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[61,1],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[61,2],digits=3),nsmall=0)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[61,3],digits=3),nsmall=0)}  &
- 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[61,4],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer[61,5],digits=3),nsmall=0)}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-hline
-\backslash
-hline
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{tabular}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{center}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-scriptsize
-\end_layout
-
-\begin_layout Plain Layout
-
-Note: 
-\begin_inset Quotes eld
-\end_inset
-
-Distance between farmer and shop in km
-\begin_inset Quotes erd
-\end_inset
-
- is calculated using the haversine function based on the GPS coordinates
- obtained during data collection.
- Farmers were asked to rate agro-input shops they know (one farmer can rate
- multiple shops) and these shops are not necessarily located in the immediate
- vicinity.
 \end_layout
 
 \end_inset
