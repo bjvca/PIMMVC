@@ -191,8 +191,11 @@ source(paste(path, "code/perceptions_seed.R
 \end_layout
 
 \begin_layout Standard
-Keywords: gender bias, perceptions, agro-input dealers, maize seed systems,
- Uganda
+
+\series bold
+Keywords:
+\series default
+ gender bias, perceptions, agro-input dealers, maize seed systems, Uganda
 \end_layout
 
 \begin_layout Section
@@ -386,7 +389,7 @@ We find that farmers generally rate male-managed agro-input shops more favorably
  We also find that the quality of seed from male-managed agro-input shops
  is rated higher than the quality of seed from shops managed by women.
  As the differences in ratings persist after explicitly controlling for
- the quality of the dealerships or the services and products they provide,
+ the quality of the dealerships and the services and products they provide,
  we conclude that gender biased customer perceptions persist and create
  comparative disadvantages and entry barriers for female-managed agro-input
  shops.
@@ -791,7 +794,7 @@ There is substantial heterogeneity across shops.
  The average shop has been in operation for about five to five and a half
  years.
  We already see signs of potential discrimination when we look at the number
- of customers: male managers report serving more than 50 customers a day,
+ of customers: Male managers report serving more than 50 customers a day,
  female managers serve only 35 customers per day.
  A shop stocks on average three maize seed varieties.
  More statistics describing seed handling and storage practices, efforts,
@@ -3546,19 +3549,18 @@ To measure the perceived quality of agro-input dealers, farmers were asked
  of seed, number of varieties in stock), and reputation (what do other farmers
  think about the dealer).
  We also compute an average of these six dealer level ratings.
- For these indicators, farmers were asked to rate the shop as a whole, also
- including the person who operates the shop.
+ For these indicators, farmers were asked to rate the shop as a whole.
 \end_layout
 
 \begin_layout Standard
 To measure the perceived quality of seed, farmers were asked to rate the
  improved maize varieties that dealers sell on a scale of one to five on
- their general quality, yield, drought tolerance, pest/ disease tolerance,
+ their general quality, yield, drought tolerance, pest/disease tolerance,
  crop duration/maturation period, and germination reliability.
  We also compute an average of these six seed-level ratings.
  Here, farmers were asked to rate the product itself.
  Farmers were also allowed to indicate that they could not rate seed on
- a particular dimension (for instance because they never bought seed from
+ a particular dimension (for instance, because they never bought seed from
  the agro-input dealer).
  Then this dimension was not considered when computing the average.
 \end_layout
@@ -5077,7 +5079,7 @@ status collapsed
 
 \begin_layout Plain Layout
 Caro: affect perceptions or affect quality (better education/ more experience
- lead to better seed handling and storage practices/ more capital to invest
+ lead to better seed handling and storage practices/more capital to invest
  etc.
 \end_layout
 
@@ -11690,7 +11692,7 @@ literal "false"
  But there are consequences that go beyond the household.
  Almost half of the agro-input shops in our sample are managed by women.
  If farmers do not trust these shops, this may pose challenges for varietal
- turnover at more aggregate levels: in a village where only women manage
+ turnover at more aggregate levels: In a village where only women manage
  shops, farmers may be less likely to buy commercial improved seed from
  the market, and instead use farmer-saved seed obtained through informal
  channels.
