@@ -30,6 +30,8 @@ path_2 <- strsplit(path, "/perceptions")[[1]]
 rating_dyads <- read.csv(paste(path_2,"perceptions/data_seed_systems/data/farmer/rating_dyads.csv", sep = "/"), stringsAsFactors = FALSE)[c("shop_ID", "farmer_ID",          "general_rating","location_rating","price_rating","quality_rating", "stock_rating","reputation_rating","seed_quality_general_rating","seed_yield_rating","seed_drought_rating","seed_disease_rating","seed_maturing_rating","seed_germinate_rating")]
 rating_dyads_midline <- read.csv(paste(path_2,"perceptions/data_seed_systems_midline/data/farmer/midline_rating_dyads.csv", sep = "/"), stringsAsFactors = FALSE)[c("shop_ID", "farmer_ID", "general_rating","location_rating","price_rating","quality_rating","stock_rating","reputation_rating","seed_quality_general_rating","seed_yield_rating","seed_drought_rating","seed_disease_rating","seed_maturing_rating","seed_germinate_rating")]
 
+ratFE<- rating_dyads
+
 ### check if gender of agro input dealer in baseline corresponds to gender in midline:
 #baseline data 
 baseline_dealer <- read.csv(paste(path_2,"perceptions/data_seed_systems/data/input_dealer/baseline_dealer.csv", sep="/"), stringsAsFactors = FALSE)
@@ -1283,6 +1285,8 @@ rating_dyads <- rbind(rating_dyads, rating_dyads_midline)
 #keep only those that have same gender in baseline and endline
 rating_dyads <- subset(rating_dyads,shop_ID  %in% to_select)
 
+ratFE <- subset(ratFE,shop_ID  %in% to_select)
+
 rat<-rating_dyads #prepping rating_dyads for FE
 
 #getting dealer characteristics for controls 
@@ -2148,8 +2152,15 @@ s8<- rbind(c((format(round(sum((lm(overall_rating~gender+ maize.owner.agree.age 
 
 ############## FIXED EFFECTS 
 
+ratFE<-merge(ratFE, base, by="shop_ID")
+ratFEmid <- subset(rating_dyads_midline,shop_ID  %in% to_select)
+ratFEmid<-merge(ratFEmid,midm, by="shop_ID")
+
+rat <- rbind(ratFE, ratFEmid)
+
+
 #merge to get gender --- merging both stacked datasets 
-rat <- merge(rat, dealer_stack, by="shop_ID")
+#rat <- merge(rat, dealer_stack, by="shop_ID")
 
 #changing variable name 
 names(rat)[names(rat) == "maize.owner.agree.gender"] <- "gender"
