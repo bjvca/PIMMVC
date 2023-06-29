@@ -5398,8 +5398,8 @@ noprefix "false"
  level).
  We find a particularly large difference when farmers are asked to rate
  price competitiveness.
- Here, female-managed agro-input shops are scored only 3.21 out of 5, while
- male-managed agro-input shops receive a score of 3.28 out of 5.
+ Here, female-managed agro-input shops are scored only 3.24 out of 5, while
+ male-managed agro-input shops receive a score of 3.44 out of 5.
 \begin_inset Foot
 status collapsed
 
@@ -5413,9 +5413,9 @@ While these effects may seem small, it should be noted that ratings generally
 \end_inset
 
  Similar differences exist when farmers are asked to rate an agro-input
- dealer in terms of product availability.
- Here, male-managed agro-input shops receive an average score of almost
- 3.92 out of 5, while female dealers get 3.89.
+ dealer in terms of stock.
+ Here, male-managed agro-input shops receive an average score of 3.99 out
+ of 5, while female dealers get 3.79.
  Interestingly, female-managed agro-input shops are not rated significantly
  worse with regards to the quality of seed sold.
  They also appear to be equally rated with respect to location.
@@ -5447,8 +5447,8 @@ noprefix "false"
 
 \end_inset
 
-, where the only non-significant difference was related to perceived seed
- quality.
+, where one of the few non-significant differences was related to perceived
+ seed quality.
  This suggests that when farmers are asked to think about a particular product,
  they make abstraction of the person selling it, and the gender effect becomes
  less important.
@@ -5458,7 +5458,7 @@ noprefix "false"
 \begin_inset Float table
 wide false
 sideways true
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -6758,8 +6758,8 @@ noprefix "false"
  The analysis confirms that there is a difference in perception of male
  and female dealers, and that this difference cannot be explained by actual
  price differences.
- The gender equity effect is similar in size to the one found without controllin
-g for actual price differences in Table 
+ The gender equity effect is larger than the one found without controlling
+ for actual price differences in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "table: between_dealer ratings_no controls"
@@ -8250,8 +8250,7 @@ noprefix "false"
 \end_inset
 
  shows that male-managed agro-input outlets receive significantly higher
- ratings in the areas of general quality, price competitiveness, stock,
- and reputation.
+ ratings in the areas of general quality, price competitiveness, and reputation.
  The average dealer rating also significantly differs between male and female
  dealers.
  Comparing Table 
@@ -9543,9 +9542,7 @@ noprefix "false"
  For perceptions related to seed germination, male-managed agro-input shops
  receive a score that is on average 0.11 higher than the germination rating
  female-managed shops receive.
- We further find signs of gender effects when farmers are asked to rate
- seed quality in general and whether seed maturing happens as advertised.
- The gender equity bias in these dimensions is also reflected in a significant
+ The gender equity bias in this dimension is also reflected in a significant
  difference in the average seed rating between male- and female-managed
  agro-input shops in column (1).
 \end_layout
@@ -9642,7 +9639,7 @@ noprefix "false"
  the dealership.
  The largest gender equity effects are found when farmers rate price competitive
 ness in column (4) and agro-input dealer reputation in column (7).
- In both cases, male-managed agro-input shops are rated about 0.2 points
+ In both cases, male-managed agro-input shops are rated about 0.22 points
  higher.
  The difference in ratings between male- and female-managed agro-input shops
  for the stock attribute has become indistinguishable from zero.
@@ -9669,11 +9666,12 @@ noprefix "false"
 
 \end_inset
 
-, the significant differences between male- and female-managed agro-input
- shops with respect to the general seed quality ratings in column (2), the
- maturity rating in column (6), and the germination rating in column (7)
- persist after controlling for observable dealer-level differences in seed
- quality.
+, the significant difference between male- and female-managed agro-input
+ shops with respect to the average seed rating persists after controlling
+ for observable dealer-level differences in seed quality.
+ The difference in germination ratings in column (7) becomes insignificant
+ but we now find a significant male premium for the general seed quality
+ ratings in column (2).
 \end_layout
 
 \begin_layout Standard
