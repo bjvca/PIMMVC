@@ -351,7 +351,7 @@ In this paper, we test if farmers perceive agro-input shops managed by women
  less favorably than agro-input shops under male management using a unique
  dyadic data set of farmer-dealer links.
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
 The paper builds on earlier exploratory work published in 
@@ -455,13 +455,6 @@ noprefix "false"
 \end_inset
 
  concludes and offers some policy guidance.
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace medskip
-\end_inset
-
-
 \end_layout
 
 \begin_layout Section
@@ -661,13 +654,6 @@ Gender bias features so prominently in areas such as scholarly peer review,
  causes, such as differences in education or ability between men and women.
 \end_layout
 
-\begin_layout Standard
-\begin_inset VSpace medskip
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section
 \paragraph_spacing onehalf
 Context and data
@@ -764,6 +750,9 @@ If this village was already named by another dealer, the village with the
  were found during the second wave.
  These two rounds of surveys constitute the key sources of data for the
  study.
+ Note that we only include shops in our analysis if the gender of their
+ manager did not change between the first and the second round of rating
+ collections.
 \end_layout
 
 \begin_layout Subsection
@@ -854,13 +843,6 @@ noprefix "false"
  shops is counterfeit.
 \end_layout
 
-\begin_layout Standard
-\begin_inset VSpace smallskip
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subsection
 \paragraph_spacing onehalf
 Measuring perceptions
@@ -941,7 +923,7 @@ noprefix "false"
 placement H
 wide false
 sideways true
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -970,7 +952,12 @@ status open
 
 
 \backslash
-footnotesize 
+small
+\end_layout
+
+\begin_layout Plain Layout
+
+
 \backslash
 begin{center}
 \end_layout
@@ -1043,7 +1030,7 @@ Dealer's age in years
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_male[1,1],digits=2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_male[1,1],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -1064,7 +1051,7 @@ Sexpr{format(round(df_descriptives_dealer_male[1,3],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_male[1,4],digits=2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_male[1,4],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -1078,7 +1065,7 @@ Sexpr{format(round(df_descriptives_dealer_male[1,5],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_female[1,1],digits =2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_female[1,1],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -1099,7 +1086,7 @@ Sexpr{format(round(df_descriptives_dealer_female[1,3],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_female[1,4],digits=2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_female[1,4],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -1131,7 +1118,7 @@ Dealer finished secondary education
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_male[4,1],digits =2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_male[4,1],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -1152,7 +1139,7 @@ Sexpr{format(round(df_descriptives_dealer_male[4,3],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_male[4,4],digits =2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_male[4,4],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -1166,7 +1153,7 @@ Sexpr{format(round(df_descriptives_dealer_male[4,5],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_female[4,1],digits =2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_female[4,1],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -1187,7 +1174,7 @@ Sexpr{format(round(df_descriptives_dealer_female[4,3],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_female[4,4],digits =2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_female[4,4],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -1219,7 +1206,7 @@ Dealer owns shop
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_male[5,1],digits =2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_male[5,1],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -1240,7 +1227,7 @@ Sexpr{format(round(df_descriptives_dealer_male[5,3],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_male[5,4],digits =2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_male[5,4],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -1254,7 +1241,7 @@ Sexpr{format(round(df_descriptives_dealer_male[5,5],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_female[5,1],digits =2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_female[5,1],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -1275,7 +1262,7 @@ Sexpr{format(round(df_descriptives_dealer_female[5,3],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_female[5,4],digits =2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_female[5,4],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -1307,7 +1294,7 @@ Dealer received training on seed handling
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_male[16,1],digits =2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_male[16,1],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -1328,7 +1315,7 @@ Sexpr{format(round(df_descriptives_dealer_male[16,3],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_male[16,4],digits =2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_male[16,4],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -1342,7 +1329,7 @@ Sexpr{format(round(df_descriptives_dealer_male[16,5],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_female[16,1],digits =2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_female[16,1],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -1363,7 +1350,7 @@ Sexpr{format(round(df_descriptives_dealer_female[16,3],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_female[16,4],digits =2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_female[16,4],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -1399,7 +1386,7 @@ Shop's distance to nearest tarmac road in km
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_male[6,1],digits =2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_male[6,1],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -1420,7 +1407,7 @@ Sexpr{format(round(df_descriptives_dealer_male[6,3],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_male[6,4],digits=2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_male[6,4],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -1434,7 +1421,7 @@ Sexpr{format(round(df_descriptives_dealer_male[6,5],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_female[6,1],digits =2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_female[6,1],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -1455,7 +1442,7 @@ Sexpr{format(round(df_descriptives_dealer_female[6,3],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_female[6,4],digits=2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_female[6,4],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -1487,7 +1474,7 @@ Distance between shop and farmer in km$^1$
 
 & 
 \backslash
-Sexpr{format(round(desc_male[3,1],digits =2),nsmall=2)}
+Sexpr{format(round(desc_male[3,1],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -1508,7 +1495,7 @@ Sexpr{format(round(desc_male[3,3],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(desc_male[3,4],digits=2),nsmall=2)}
+Sexpr{format(round(desc_male[3,4],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -1522,7 +1509,7 @@ Sexpr{format(round(desc_male[3,5],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(desc_female[3,1],digits =2),nsmall=2)}
+Sexpr{format(round(desc_female[3,1],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -1543,7 +1530,7 @@ Sexpr{format(round(desc_female[3,3],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(desc_female[3,4],digits=2),nsmall=2)}
+Sexpr{format(round(desc_female[3,4],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -1570,7 +1557,7 @@ Shop only sells farm inputs
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_male[8,1],digits =2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_male[8,1],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -1591,7 +1578,7 @@ Sexpr{format(round(df_descriptives_dealer_male[8,3],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_male[8,4],digits =2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_male[8,4],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -1605,7 +1592,7 @@ Sexpr{format(round(df_descriptives_dealer_male[8,5],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_female[8,1],digits =2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_female[8,1],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -1626,7 +1613,7 @@ Sexpr{format(round(df_descriptives_dealer_female[8,3],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_female[8,4],digits =2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_female[8,4],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -1658,7 +1645,7 @@ Number of customers per day
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_male[9,1],digits=2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_male[9,1],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -1679,7 +1666,7 @@ Sexpr{format(round(df_descriptives_dealer_male[9,3],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_male[9,4],digits=2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_male[9,4],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -1693,7 +1680,7 @@ Sexpr{format(round(df_descriptives_dealer_male[9,5],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_female[9,1],digits=2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_female[9,1],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -1714,7 +1701,7 @@ Sexpr{format(round(df_descriptives_dealer_female[9,3],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_female[9,4],digits=2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_female[9,4],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -1741,7 +1728,7 @@ Number of customers buying maize seed per day
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_male[10,1],digits=2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_male[10,1],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -1762,7 +1749,7 @@ Sexpr{format(round(df_descriptives_dealer_male[10,3],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_male[10,4],digits=2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_male[10,4],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -1776,7 +1763,7 @@ Sexpr{format(round(df_descriptives_dealer_male[10,5],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_female[10,1],digits=2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_female[10,1],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -1797,7 +1784,7 @@ Sexpr{format(round(df_descriptives_dealer_female[10,3],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_female[10,4],digits=2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_female[10,4],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -1829,7 +1816,7 @@ Number of years since shop’s establishment
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_male[11,1],digits =2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_male[11,1],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -1850,7 +1837,7 @@ Sexpr{format(round(df_descriptives_dealer_male[11,3],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_male[11,4],digits =2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_male[11,4],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -1864,7 +1851,7 @@ Sexpr{format(round(df_descriptives_dealer_male[11,5],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_female[11,1],digits =2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_female[11,1],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -1885,7 +1872,7 @@ Sexpr{format(round(df_descriptives_dealer_female[11,3],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_female[11,4],digits =2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_female[11,4],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -1925,7 +1912,7 @@ Number of maize varieties in stock
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_male[19,1],digits =2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_male[19,1],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -1946,7 +1933,7 @@ Sexpr{format(round(df_descriptives_dealer_male[19,3],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_male[19,4],digits =2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_male[19,4],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -1960,7 +1947,7 @@ Sexpr{format(round(df_descriptives_dealer_male[19,5],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_female[19,1],digits =2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_female[19,1],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -1981,7 +1968,7 @@ Sexpr{format(round(df_descriptives_dealer_female[19,3],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_female[19,4],digits =2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_female[19,4],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -2013,7 +2000,7 @@ Number of hybrid maize varieties in stock
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_male[20,1],digits =2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_male[20,1],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -2034,7 +2021,7 @@ Sexpr{format(round(df_descriptives_dealer_male[20,3],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_male[20,4],digits =2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_male[20,4],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -2048,7 +2035,7 @@ Sexpr{format(round(df_descriptives_dealer_male[20,5],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_female[20,1],digits =2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_female[20,1],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -2069,7 +2056,7 @@ Sexpr{format(round(df_descriptives_dealer_female[20,3],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_female[20,4],digits =2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_female[20,4],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -2096,7 +2083,7 @@ Number of maize OPVs in stock
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_male[23,1],digits =2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_male[23,1],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -2117,7 +2104,7 @@ Sexpr{format(round(df_descriptives_dealer_male[23,3],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_male[23,4],digits =2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_male[23,4],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -2131,7 +2118,7 @@ Sexpr{format(round(df_descriptives_dealer_male[23,5],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_female[23,1],digits =2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_female[23,1],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -2152,7 +2139,7 @@ Sexpr{format(round(df_descriptives_dealer_female[23,3],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_female[23,4],digits =2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_female[23,4],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -2184,7 +2171,7 @@ Sales price of maize seed in UGX/kg
 
 & 
 \backslash
-Sexpr{format(round(desc_male[4,1],digits =2),nsmall=2)}
+Sexpr{format(round(desc_male[4,1],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -2205,7 +2192,7 @@ Sexpr{format(round(desc_male[4,3],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(desc_male[4,4],digits =2),nsmall=2)}
+Sexpr{format(round(desc_male[4,4],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -2219,7 +2206,7 @@ Sexpr{format(round(desc_male[4,5],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(desc_female[4,1],digits =2),nsmall=2)}
+Sexpr{format(round(desc_female[4,1],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -2240,7 +2227,7 @@ Sexpr{format(round(desc_female[4,3],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(desc_female[4,4],digits =2),nsmall=2)}
+Sexpr{format(round(desc_female[4,4],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -2272,7 +2259,7 @@ Cost of maize seed for dealer in UGX/kg
 
 & 
 \backslash
-Sexpr{format(round(desc_male[5,1],digits =2),nsmall=2)}
+Sexpr{format(round(desc_male[5,1],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -2293,7 +2280,7 @@ Sexpr{format(round(desc_male[5,3],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(desc_male[5,4],digits =2),nsmall=2)}
+Sexpr{format(round(desc_male[5,4],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -2307,7 +2294,7 @@ Sexpr{format(round(desc_male[5,5],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(desc_female[5,1],digits =2),nsmall=2)}
+Sexpr{format(round(desc_female[5,1],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -2328,7 +2315,7 @@ Sexpr{format(round(desc_female[5,3],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(desc_female[5,4],digits =2),nsmall=2)}
+Sexpr{format(round(desc_female[5,4],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -2355,7 +2342,7 @@ Revenue from maize seed in million UGX
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_male[98,1],digits =2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_male[98,1],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -2376,7 +2363,7 @@ Sexpr{format(round(df_descriptives_dealer_male[98,3],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_male[98,4],digits =2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_male[98,4],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -2390,7 +2377,7 @@ Sexpr{format(round(df_descriptives_dealer_male[98,5],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_female[98,1],digits =2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_female[98,1],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -2411,7 +2398,7 @@ Sexpr{format(round(df_descriptives_dealer_female[98,3],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_female[98,4],digits =2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_female[98,4],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -2438,7 +2425,7 @@ Amount of maize seed dealer bought from provider in kg
 
 & 
 \backslash
-Sexpr{format(round(desc_male[7,1],digits =2),nsmall=2)}
+Sexpr{format(round(desc_male[7,1],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -2459,7 +2446,7 @@ Sexpr{format(round(desc_male[7,3],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(desc_male[7,4],digits =2),nsmall=2)}
+Sexpr{format(round(desc_male[7,4],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -2473,7 +2460,7 @@ Sexpr{format(round(desc_male[7,5],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(desc_female[7,1],digits =2),nsmall=2)}
+Sexpr{format(round(desc_female[7,1],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -2494,7 +2481,7 @@ Sexpr{format(round(desc_female[7,3],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(desc_female[7,4],digits =2),nsmall=2)}
+Sexpr{format(round(desc_female[7,4],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -2521,7 +2508,7 @@ Amount of maize seed dealer sold in kg
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_male[97,1],digits =2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_male[97,1],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -2542,7 +2529,7 @@ Sexpr{format(round(df_descriptives_dealer_male[97,3],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_male[97,4],digits =2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_male[97,4],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -2556,7 +2543,7 @@ Sexpr{format(round(df_descriptives_dealer_male[97,5],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_female[97,1],digits =2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_female[97,1],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -2577,7 +2564,7 @@ Sexpr{format(round(df_descriptives_dealer_female[97,3],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_female[97,4],digits =2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_female[97,4],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -2617,7 +2604,7 @@ Shop's cleanness/professionality rating by enumerator
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_male[38,1],digits =2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_male[38,1],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -2638,7 +2625,7 @@ Sexpr{format(round(df_descriptives_dealer_male[38,3],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_male[38,4],digits =2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_male[38,4],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -2652,7 +2639,7 @@ Sexpr{format(round(df_descriptives_dealer_male[38,5],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_female[38,1],digits =2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_female[38,1],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -2673,7 +2660,7 @@ Sexpr{format(round(df_descriptives_dealer_female[38,3],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_female[38,4],digits =2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_female[38,4],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -2705,7 +2692,7 @@ Shop received seed-related complaint from customer
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_male[52,1],digits =2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_male[52,1],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -2726,7 +2713,7 @@ Sexpr{format(round(df_descriptives_dealer_male[52,3],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_male[52,4],digits =2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_male[52,4],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -2740,7 +2727,7 @@ Sexpr{format(round(df_descriptives_dealer_male[52,5],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_female[52,1],digits =2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_female[52,1],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -2761,7 +2748,7 @@ Sexpr{format(round(df_descriptives_dealer_female[52,3],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_female[52,4],digits =2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_female[52,4],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -2788,7 +2775,7 @@ Shop is registered with UNADA
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_male[60,1],digits =2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_male[60,1],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -2809,7 +2796,7 @@ Sexpr{format(round(df_descriptives_dealer_male[60,3],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_male[60,4],digits =2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_male[60,4],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -2823,7 +2810,7 @@ Sexpr{format(round(df_descriptives_dealer_male[60,5],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_female[60,1],digits =2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_female[60,1],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -2844,7 +2831,7 @@ Sexpr{format(round(df_descriptives_dealer_female[60,3],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_female[60,4],digits =2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_female[60,4],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -2871,7 +2858,7 @@ Shop has trading license from local government
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_male[61,1],digits =2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_male[61,1],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -2892,7 +2879,7 @@ Sexpr{format(round(df_descriptives_dealer_male[61,3],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_male[61,4],digits =2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_male[61,4],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -2906,7 +2893,7 @@ Sexpr{format(round(df_descriptives_dealer_male[61,5],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_female[61,1],digits =2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_female[61,1],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -2927,7 +2914,7 @@ Sexpr{format(round(df_descriptives_dealer_female[61,3],digits =0),nsmall=0)}
 
 & 
 \backslash
-Sexpr{format(round(df_descriptives_dealer_female[61,4],digits =2),nsmall=2)}
+Sexpr{format(round(df_descriptives_dealer_female[61,4],digits=3),nsmall=3)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -2972,17 +2959,39 @@ end{center}
 
 
 \backslash
-scriptsize
+footnotesize
 \end_layout
 
 \begin_layout Plain Layout
 
 Note: SD is the standard deviation.
- $^1$The distance between shop and farmer is calculated using the haversine
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Number of observations: All 193 agro-input dealers are included in this
+ table.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$^1$The distance between shop and farmer is calculated using the haversine
  function based on the GPS coordinates obtained during data collection.
  Farmers were asked to rate agro-input shops they know (one farmer can rate
  multiple shops) and these shops are not necessarily located in the immediate
  vicinity.
+\backslash
+
+\backslash
+
 \end_layout
 
 \end_inset
@@ -3023,6 +3032,13 @@ name "table: descriptives farmer"
 \begin_layout Plain Layout
 \begin_inset ERT
 status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+small
+\end_layout
 
 \begin_layout Plain Layout
 
@@ -3080,13 +3096,13 @@ Homestead's distance to nearest tarmac road in km &
 
 
 \backslash
-Sexpr{format(round(df_descriptives_farmer[1,1],digits=2),nsmall=2)} & 
+Sexpr{format(round(df_descriptives_farmer[1,1],digits=3),nsmall=3)} & 
 \backslash
 Sexpr{format(round(df_descriptives_farmer[1,2],digits=0),nsmall=0)} & 
 \backslash
 Sexpr{format(round(df_descriptives_farmer[1,3],digits=0),nsmall=0)}  & 
 \backslash
-Sexpr{format(round(df_descriptives_farmer[1,4],digits=2),nsmall=2)} & 
+Sexpr{format(round(df_descriptives_farmer[1,4],digits=3),nsmall=3)} & 
 \backslash
 Sexpr{format(round(df_descriptives_farmer[1,5],digits=0),nsmall=0)}
 \backslash
@@ -3108,13 +3124,13 @@ Homestead's distance to village headquarters in km &
 
 
 \backslash
-Sexpr{format(round(df_descriptives_farmer[2,1],digits=2),nsmall=2)} & 
+Sexpr{format(round(df_descriptives_farmer[2,1],digits=3),nsmall=3)} & 
 \backslash
 Sexpr{format(round(df_descriptives_farmer[2,2],digits=0),nsmall=0)} & 
 \backslash
 Sexpr{format(round(df_descriptives_farmer[2,3],digits=0),nsmall=0)}  & 
 \backslash
-Sexpr{format(round(df_descriptives_farmer[2,4],digits=2),nsmall=2)} & 
+Sexpr{format(round(df_descriptives_farmer[2,4],digits=3),nsmall=3)} & 
 \backslash
 Sexpr{format(round(df_descriptives_farmer[2,5],digits=0),nsmall=0)}
 \backslash
@@ -3136,13 +3152,13 @@ Homestead's distance to nearest agro-input shop in km$^1$ &
 
 
 \backslash
-Sexpr{format(round(df_descriptives_farmer[3,1],digits=2),nsmall=2)} & 
+Sexpr{format(round(df_descriptives_farmer[3,1],digits=3),nsmall=3)} & 
 \backslash
 Sexpr{format(round(df_descriptives_farmer[3,2],digits=0),nsmall=0)} & 
 \backslash
 Sexpr{format(round(df_descriptives_farmer[3,3],digits=0),nsmall=0)}  & 
 \backslash
-Sexpr{format(round(df_descriptives_farmer[3,4],digits=2),nsmall=2)} & 
+Sexpr{format(round(df_descriptives_farmer[3,4],digits=3),nsmall=3)} & 
 \backslash
 Sexpr{format(round(df_descriptives_farmer[3,5],digits=0),nsmall=0)}
 \backslash
@@ -3177,13 +3193,13 @@ Farmer's age in years &
 
 
 \backslash
-Sexpr{format(round(df_descriptives_farmer[6,1],digits=2),nsmall=2)} & 
+Sexpr{format(round(df_descriptives_farmer[6,1],digits=3),nsmall=3)} & 
 \backslash
 Sexpr{format(round(df_descriptives_farmer[6,2],digits=0),nsmall=0)} & 
 \backslash
 Sexpr{format(round(df_descriptives_farmer[6,3],digits=0),nsmall=0)}  & 
 \backslash
-Sexpr{format(round(df_descriptives_farmer[6,4],digits=2),nsmall=2)} & 
+Sexpr{format(round(df_descriptives_farmer[6,4],digits=3),nsmall=3)} & 
 \backslash
 Sexpr{format(round(df_descriptives_farmer[6,5],digits=0),nsmall=0)}
 \backslash
@@ -3205,13 +3221,13 @@ Household head is male &
 
 
 \backslash
-Sexpr{format(round(df_descriptives_farmer[7,1],digits=2),nsmall=2)} & 
+Sexpr{format(round(df_descriptives_farmer[7,1],digits=3),nsmall=3)} & 
 \backslash
 Sexpr{format(round(df_descriptives_farmer[7,2],digits=0),nsmall=0)} & 
 \backslash
 Sexpr{format(round(df_descriptives_farmer[7,3],digits=0),nsmall=0)}  & 
 \backslash
-Sexpr{format(round(df_descriptives_farmer[7,4],digits=2),nsmall=2)} & 
+Sexpr{format(round(df_descriptives_farmer[7,4],digits=3),nsmall=3)} & 
 \backslash
 Sexpr{format(round(df_descriptives_farmer[7,5],digits=0),nsmall=0)}
 \backslash
@@ -3233,13 +3249,13 @@ Farmer is married &
 
 
 \backslash
-Sexpr{format(round(df_descriptives_farmer[8,1],digits=2),nsmall=2)} & 
+Sexpr{format(round(df_descriptives_farmer[8,1],digits=3),nsmall=3)} & 
 \backslash
 Sexpr{format(round(df_descriptives_farmer[8,2],digits=0),nsmall=0)} & 
 \backslash
 Sexpr{format(round(df_descriptives_farmer[8,3],digits=0),nsmall=0)}  & 
 \backslash
-Sexpr{format(round(df_descriptives_farmer[8,4],digits=2),nsmall=2)} & 
+Sexpr{format(round(df_descriptives_farmer[8,4],digits=3),nsmall=3)} & 
 \backslash
 Sexpr{format(round(df_descriptives_farmer[8,5],digits=0),nsmall=0)}
 \backslash
@@ -3261,14 +3277,14 @@ Farmer finished primary education &
 
 
 \backslash
-Sexpr{format(round(df_descriptives_farmer[10,1],digits=2),nsmall=2)} & 
+Sexpr{format(round(df_descriptives_farmer[10,1],digits=3),nsmall=3)} & 
 \backslash
 Sexpr{format(round(df_descriptives_farmer[10,2],digits=0),nsmall=0)} & 
 \backslash
 Sexpr{format(round(df_descriptives_farmer[10,3],digits=0),nsmall=0)}  &
  
 \backslash
-Sexpr{format(round(df_descriptives_farmer[10,4],digits=2),nsmall=2)} & 
+Sexpr{format(round(df_descriptives_farmer[10,4],digits=3),nsmall=3)} & 
 \backslash
 Sexpr{format(round(df_descriptives_farmer[10,5],digits=0),nsmall=0)}
 \backslash
@@ -3291,14 +3307,14 @@ Number of people in household (incl.
 
 
 \backslash
-Sexpr{format(round(df_descriptives_farmer[12,1],digits=2),nsmall=2)} & 
+Sexpr{format(round(df_descriptives_farmer[12,1],digits=3),nsmall=3)} & 
 \backslash
 Sexpr{format(round(df_descriptives_farmer[12,2],digits=0),nsmall=0)} & 
 \backslash
 Sexpr{format(round(df_descriptives_farmer[12,3],digits=0),nsmall=0)}  &
  
 \backslash
-Sexpr{format(round(df_descriptives_farmer[12,4],digits=2),nsmall=2)} & 
+Sexpr{format(round(df_descriptives_farmer[12,4],digits=3),nsmall=3)} & 
 \backslash
 Sexpr{format(round(df_descriptives_farmer[12,5],digits=0),nsmall=0)}
 \backslash
@@ -3337,14 +3353,14 @@ Years since farmer started growing maize &
 
 
 \backslash
-Sexpr{format(round(df_descriptives_farmer[16,1],digits=2),nsmall=2)} & 
+Sexpr{format(round(df_descriptives_farmer[16,1],digits=3),nsmall=3)} & 
 \backslash
 Sexpr{format(round(df_descriptives_farmer[16,2],digits=0),nsmall=0)} & 
 \backslash
 Sexpr{format(round(df_descriptives_farmer[16,3],digits=0),nsmall=0)}  &
  
 \backslash
-Sexpr{format(round(df_descriptives_farmer[16,4],digits=2),nsmall=2)} & 
+Sexpr{format(round(df_descriptives_farmer[16,4],digits=3),nsmall=3)} & 
 \backslash
 Sexpr{format(round(df_descriptives_farmer[16,5],digits=0),nsmall=0)}
 \backslash
@@ -3366,14 +3382,14 @@ Farmer is member of farmer group/association/cooperative &
 
 
 \backslash
-Sexpr{format(round(df_descriptives_farmer[17,1],digits=2),nsmall=2)} & 
+Sexpr{format(round(df_descriptives_farmer[17,1],digits=3),nsmall=3)} & 
 \backslash
 Sexpr{format(round(df_descriptives_farmer[17,2],digits=0),nsmall=0)} & 
 \backslash
 Sexpr{format(round(df_descriptives_farmer[17,3],digits=0),nsmall=0)}  &
  
 \backslash
-Sexpr{format(round(df_descriptives_farmer[17,4],digits=2),nsmall=2)} & 
+Sexpr{format(round(df_descriptives_farmer[17,4],digits=3),nsmall=3)} & 
 \backslash
 Sexpr{format(round(df_descriptives_farmer[17,5],digits=0),nsmall=0)}
 \backslash
@@ -3395,14 +3411,14 @@ Farmer's land for crop production in acres &
 
 
 \backslash
-Sexpr{format(round(df_descriptives_farmer[15,1],digits=2),nsmall=2)} & 
+Sexpr{format(round(df_descriptives_farmer[15,1],digits=3),nsmall=3)} & 
 \backslash
 Sexpr{format(round(df_descriptives_farmer[15,2],digits=0),nsmall=0)} & 
 \backslash
 Sexpr{format(round(df_descriptives_farmer[15,3],digits=0),nsmall=0)}  &
  
 \backslash
-Sexpr{format(round(df_descriptives_farmer[15,4],digits=2),nsmall=2)} & 
+Sexpr{format(round(df_descriptives_farmer[15,4],digits=3),nsmall=3)} & 
 \backslash
 Sexpr{format(round(df_descriptives_farmer[15,5],digits=0),nsmall=0)}
 \backslash
@@ -3461,14 +3477,14 @@ Sexpr{format(round(df_descriptives_farmer[86,5],digits=0),nsmall=0)}
 
 Farmer used improved maize seed for any field last season & 
 \backslash
-Sexpr{format(round(df_descriptives_farmer[18,1],digits=2),nsmall=2)} & 
+Sexpr{format(round(df_descriptives_farmer[18,1],digits=3),nsmall=3)} & 
 \backslash
 Sexpr{format(round(df_descriptives_farmer[18,2],digits=0),nsmall=0)} & 
 \backslash
 Sexpr{format(round(df_descriptives_farmer[18,3],digits=0),nsmall=0)}  &
  
 \backslash
-Sexpr{format(round(df_descriptives_farmer[18,4],digits=2),nsmall=2)} & 
+Sexpr{format(round(df_descriptives_farmer[18,4],digits=3),nsmall=3)} & 
 \backslash
 Sexpr{format(round(df_descriptives_farmer[18,5],digits=0),nsmall=0)}
 \backslash
@@ -3490,14 +3506,14 @@ Farmer bought this maize seed at agro-input shop &
 
 
 \backslash
-Sexpr{format(round(df_descriptives_farmer[20,1],digits=2),nsmall=2)} & 
+Sexpr{format(round(df_descriptives_farmer[20,1],digits=3),nsmall=3)} & 
 \backslash
 Sexpr{format(round(df_descriptives_farmer[20,2],digits=0),nsmall=0)} & 
 \backslash
 Sexpr{format(round(df_descriptives_farmer[20,3],digits=0),nsmall=0)}  &
  
 \backslash
-Sexpr{format(round(df_descriptives_farmer[20,4],digits=2),nsmall=2)} & 
+Sexpr{format(round(df_descriptives_farmer[20,4],digits=3),nsmall=3)} & 
 \backslash
 Sexpr{format(round(df_descriptives_farmer[20,5],digits=0),nsmall=0)}
 \backslash
@@ -3514,14 +3530,14 @@ Sexpr{format(round(df_descriptives_farmer[20,5],digits=0),nsmall=0)}
 
 Farmers thinks seed at agro-input shops is counterfeit/adulterated  & 
 \backslash
-Sexpr{format(round(df_descriptives_farmer[29,1],digits=2),nsmall=2)} & 
+Sexpr{format(round(df_descriptives_farmer[29,1],digits=3),nsmall=3)} & 
 \backslash
 Sexpr{format(round(df_descriptives_farmer[29,2],digits=0),nsmall=0)} & 
 \backslash
 Sexpr{format(round(df_descriptives_farmer[29,3],digits=0),nsmall=0)}  &
  
 \backslash
-Sexpr{format(round(df_descriptives_farmer[29,4],digits=2),nsmall=2)} & 
+Sexpr{format(round(df_descriptives_farmer[29,4],digits=3),nsmall=3)} & 
 \backslash
 Sexpr{format(round(df_descriptives_farmer[29,5],digits=0),nsmall=0)}
 \backslash
@@ -3543,14 +3559,14 @@ Farmer is satisfied with maize seed used on plot &
 
 
 \backslash
-Sexpr{format(round(df_descriptives_farmer[62,1],digits=2),nsmall=2)} & 
+Sexpr{format(round(df_descriptives_farmer[62,1],digits=3),nsmall=3)} & 
 \backslash
 Sexpr{format(round(df_descriptives_farmer[62,2],digits=0),nsmall=0)} & 
 \backslash
 Sexpr{format(round(df_descriptives_farmer[62,3],digits=0),nsmall=0)}  &
  
 \backslash
-Sexpr{format(round(df_descriptives_farmer[62,4],digits=2),nsmall=2)} & 
+Sexpr{format(round(df_descriptives_farmer[62,4],digits=3),nsmall=3)} & 
 \backslash
 Sexpr{format(round(df_descriptives_farmer[62,5],digits=0),nsmall=0)}
 \backslash
@@ -3590,16 +3606,41 @@ end{center}
 
 
 \backslash
-scriptsize
+footnotesize
 \end_layout
 
 \begin_layout Plain Layout
 
-Note: SD is the standard deviation.
- $^1$The homestead's distance to the nearest agro-input shop is the distance
+Note:
+\end_layout
+
+\begin_layout Plain Layout
+
+SD is the standard deviation.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Number of observations: All 1,931 farmers are included in this table.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$^1$The homestead's distance to the nearest agro-input shop is the distance
  reported by the farmer.
  Respondents could only report one answer for the nearest shop.
- 
+\backslash
+
+\backslash
+
 \end_layout
 
 \end_inset
@@ -3640,6 +3681,13 @@ name "table: descriptives ratings bygender"
 \begin_layout Plain Layout
 \begin_inset ERT
 status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+small
+\end_layout
 
 \begin_layout Plain Layout
 
@@ -4744,15 +4792,37 @@ end{center}
 
 
 \backslash
-scriptsize
+footnotesize
 \end_layout
 
 \begin_layout Plain Layout
 
 Note: SD is the standard deviation, $Q_{1}$ the 1st quartile, and $Q_{3}$
  the 3rd quartile.
- The minimum rating is 1 and the maximum rating is 5.
- The descriptives convey the dyadic nature of the dataset.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+The minimum rating is 1 and the maximum rating is 5.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Number of observations: All ratings by farmers given to dealers during the
+ first round of collection are included in this table, conveying the dyadic
+ nature of the dataset.
+\backslash
+
+\backslash
+
 \end_layout
 
 \end_inset
@@ -4760,13 +4830,6 @@ Note: SD is the standard deviation, $Q_{1}$ the 1st quartile, and $Q_{3}$
 
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace medskip
 \end_inset
 
 
@@ -5262,13 +5325,6 @@ y_{f,d}-\overline{y}_{f}=\gamma\left(g_{f,d}-\overline{g}_{f}\right)+\varphi\lef
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset VSpace medskip
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section
 \paragraph_spacing onehalf
 Results
@@ -5402,7 +5458,7 @@ noprefix "false"
 \begin_inset Float table
 wide false
 sideways true
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -5430,13 +5486,14 @@ status open
 
 \begin_layout Plain Layout
 
+
+\backslash
+small
 \end_layout
 
 \begin_layout Plain Layout
 
 
-\backslash
-small 
 \backslash
 begin{center} 
 \backslash
@@ -5460,7 +5517,7 @@ multicolumn{7}{c}{
 \backslash
 textit{
 \backslash
-footnotesize Dependent variable: Average rating received by dealer}} 
+small Dependent variable: Average rating received by dealer}} 
 \backslash
 
 \backslash
@@ -5653,18 +5710,33 @@ hline
 
 \begin_layout Plain Layout
 
-{Constant}                  & $
+{Constant}
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
 \backslash
-Sexpr{s7[1,1]}$ & $
+Sexpr{s7[1,1]}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
 \backslash
-Sexpr{s7[1,2]}$  & $
+Sexpr{s7[1,2]}$
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
 \backslash
 Sexpr{s7[1,3]}$
 \end_layout
 
 \begin_layout Plain Layout
 
- & $
+& $
 \backslash
 Sexpr{s7[1,4]}$
 \end_layout
@@ -5719,12 +5791,26 @@ Sexpr{s7[2,7]})$
 
 \begin_layout Plain Layout
 
-{Dealer is male}   & $
+{Dealer is male}
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
 \backslash
 Sexpr{s7[4,1]}^{
 \backslash
 Sexpr{ifelse(s7[6,1]<.01,"***",ifelse(s7[6,1]<.05,"**",ifelse(s7[6,1]<.1,"*","")))}
-}$ & $
+}$
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& $
 \backslash
 Sexpr{s7[4,2]}^{
 \backslash
@@ -5863,16 +5949,38 @@ end{center}
 
 
 \backslash
-scriptsize
+footnotesize
 \end_layout
 
 \begin_layout Plain Layout
 
 Note: The gender of the dealer is a dummy variable where 1 is male and 0
  is female.
- The ratings by farmers given to dealers are averaged at the dealer level.
- The number of observations represents the number of rated dealers.
- Standard errors are presented in parentheses.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Standard errors are clustered at the farmer level and presented in parentheses.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Number of observations: Per round of collection, the ratings by farmers
+ given to dealers are first averaged at the dealer level.
+ We then take the average of round 1 and 2.
+ 152 shops are included in this table as the gender of their manager did
+ not change between rounds.
+\backslash
+
+\backslash
  
 \backslash
 label{table:table7} 
@@ -5919,13 +6027,14 @@ status open
 
 \begin_layout Plain Layout
 
+
+\backslash
+small
 \end_layout
 
 \begin_layout Plain Layout
 
 
-\backslash
-small 
 \backslash
 begin{center} 
 \backslash
@@ -5949,7 +6058,7 @@ multicolumn{7}{c}{
 \backslash
 textit{
 \backslash
-footnotesize Dependent variable: Average rating received by dealer}} 
+small Dependent variable: Average rating received by dealer}} 
 \backslash
 
 \backslash
@@ -6352,17 +6461,48 @@ end{center}
 
 
 \backslash
-scriptsize
+footnotesize
 \end_layout
 
 \begin_layout Plain Layout
 
-Note: The gender of the dealer is a dummy variable where 1 is male and 0
- is female.
- The ratings by farmers given to dealers are averaged at the dealer level.
- The number of observations represents the number of rated dealers.
- Standard errors are presented in parentheses.
- 
+Note:
+\end_layout
+
+\begin_layout Plain Layout
+
+The gender of the dealer is a dummy variable where 1 is male and 0 is female.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Standard errors are clustered at the farmer level and presented in parentheses.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Number of observations: Per round of collection, the ratings by farmers
+ given to dealers are first averaged at the dealer level.
+ We then take the average of round 1 and 2.
+ 152 shops are included in this table as the gender of their manager did
+ not change between rounds.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
 \backslash
 label{table:table5} 
 \end_layout
@@ -6758,13 +6898,14 @@ status open
 
 \begin_layout Plain Layout
 
+
+\backslash
+small
 \end_layout
 
 \begin_layout Plain Layout
 
 
-\backslash
-scriptsize 
 \backslash
 begin{center} 
 \backslash
@@ -6788,7 +6929,7 @@ multicolumn{7}{c}{
 \backslash
 textit{
 \backslash
-footnotesize Dependent variable: Average rating received by dealer}} 
+small Dependent variable: Average rating received by dealer}} 
 \backslash
 
 \backslash
@@ -7826,17 +7967,44 @@ end{center}
 
 
 \backslash
-tiny
+footnotesize
 \end_layout
 
 \begin_layout Plain Layout
 
 Note: The gender of the dealer is a dummy variable where 1 is male and 0
  is female.
- The ratings by farmers given to dealers are averaged at the dealer level.
- The number of observations represents the number of rated dealers.
- Standard errors are presented in parentheses.
- 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Standard errors are clustered at the farmer level and presented in parentheses.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Number of observations: Per round of collection, the ratings by farmers
+ given to dealers are first averaged at the dealer level.
+ We then take the average of round 1 and 2.
+ 152 shops are included in this table as the gender of their manager did
+ not change between rounds.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
 \backslash
 label{table:table8} 
 \end_layout
@@ -8143,13 +8311,14 @@ status open
 
 \begin_layout Plain Layout
 
+
+\backslash
+small
 \end_layout
 
 \begin_layout Plain Layout
 
 
-\backslash
-small 
 \backslash
 begin{center} 
 \backslash
@@ -8173,7 +8342,7 @@ multicolumn{7}{c}{
 \backslash
 textit{
 \backslash
-footnotesize Dependent variable: Average rating received by dealer}} 
+small Dependent variable: Average rating received by dealer}} 
 \backslash
 
 \backslash
@@ -8846,17 +9015,44 @@ end{center}
 
 
 \backslash
-scriptsize
+footnotesize
 \end_layout
 
 \begin_layout Plain Layout
 
 Note: The gender of the dealer is a dummy variable where 1 is male and 0
  is female.
- The ratings by farmers given to dealers are averaged at the dealer level.
- The number of observations represents the number of rated dealers.
- Standard errors are presented in parentheses.
- 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Standard errors are clustered at the farmer level and presented in parentheses.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Number of observations: Per round of collection, the ratings by farmers
+ given to dealers are first averaged at the dealer level.
+ We then take the average of round 1 and 2.
+ 152 shops are included in this table as the gender of their manager did
+ not change between rounds.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
 \backslash
 label{table:table6} 
 \end_layout
@@ -8905,7 +9101,12 @@ status open
 
 
 \backslash
-small 
+small
+\end_layout
+
+\begin_layout Plain Layout
+
+
 \backslash
 begin{center} 
 \backslash
@@ -8929,8 +9130,8 @@ multicolumn{7}{c}{
 \backslash
 textit{
 \backslash
-footnotesize Dependent variable: Rating of a particular farmer given to
- a particular dealer}} 
+small Dependent variable: Rating of a particular farmer given to a particular
+ dealer}} 
 \backslash
 
 \backslash
@@ -9263,19 +9464,45 @@ end{center}
 
 
 \backslash
-scriptsize
+footnotesize
 \end_layout
 
 \begin_layout Plain Layout
 
 Note: The gender of the dealer is a dummy variable where 1 is male and 0
  is female.
- Fixed-effects or within estimation has been used at the farmer level.
- The number of observations represents the total number of ratings by farmers
- given to dealers.
- Cluster-robust standard errors (presented in parentheses) are obtained
- by clustering at the dealer level.
-  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Standard errors are clustered at the dealer level and presented in parentheses.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Number of observations: We first stack all ratings by farmers given to dealers
+ of both rounds of collection, then exclude ratings of shops if the gender
+ of their manager changed between rounds.
+ E.g., for Dealer’s location, we collected 837 ratings in the first round
+ and 944 in the second round, leading to 1,781 observations included in
+ this table, conveying the dyadic nature of the dataset.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
 \backslash
 label{table:table11} 
 \end_layout
@@ -9483,7 +9710,12 @@ status open
 
 
 \backslash
-small 
+small
+\end_layout
+
+\begin_layout Plain Layout
+
+
 \backslash
 begin{center} 
 \backslash
@@ -9507,8 +9739,8 @@ multicolumn{7}{c}{
 \backslash
 textit{
 \backslash
-footnotesize Dependent variable: Rating of a particular farmer given to
- a particular dealer}} 
+small Dependent variable: Rating of a particular farmer given to a particular
+ dealer}} 
 \backslash
 
 \backslash
@@ -9841,19 +10073,45 @@ end{center}
 
 
 \backslash
-scriptsize
+footnotesize
 \end_layout
 
 \begin_layout Plain Layout
 
 Note: The gender of the dealer is a dummy variable where 1 is male and 0
  is female.
- Fixed-effects or within estimation has been used at the farmer level.
- The number of observations represents the total number of ratings by farmers
- given to dealers.
- Cluster-robust standard errors (presented in parentheses) are obtained
- by clustering at the dealer level.
- 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Standard errors are clustered at the dealer level and presented in parentheses.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Number of observations: We first stack all ratings by farmers given to dealers
+ of both rounds of collection, then exclude ratings of shops if the gender
+ of their manager changed between rounds.
+ E.g., for Seed’s yield, we collected 797 ratings in the first round and 924
+ in the second round, leading to 1,721 observations included in this table,
+ conveying the dyadic nature of the dataset.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
 \backslash
 label{table:table9} 
 \end_layout
@@ -9902,7 +10160,12 @@ status open
 
 
 \backslash
-scriptsize 
+small
+\end_layout
+
+\begin_layout Plain Layout
+
+
 \backslash
 begin{center} 
 \backslash
@@ -9926,8 +10189,8 @@ multicolumn{7}{c}{
 \backslash
 textit{
 \backslash
-footnotesize Dependent variable: Rating of a particular farmer given to
- a particular dealer}} 
+small Dependent variable: Rating of a particular farmer given to a particular
+ dealer}} 
 \backslash
 
 \backslash
@@ -10877,19 +11140,45 @@ end{center}
 
 
 \backslash
-tiny
+footnotesize
 \end_layout
 
 \begin_layout Plain Layout
 
 Note: The gender of the dealer is a dummy variable where 1 is male and 0
  is female.
- Fixed-effects or within estimation has been used at the farmer level.
- The number of observations represents the total number of ratings by farmers
- given to dealers.
- Cluster-robust standard errors (presented in parentheses) are obtained
- by clustering at the dealer level.
-  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Standard errors are clustered at the dealer level and presented in parentheses.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Number of observations: We first stack all ratings by farmers given to dealers
+ of both rounds of collection, then exclude ratings of shops if the gender
+ of their manager changed between rounds.
+ E.g., for Dealer’s location, we collected 837 ratings in the first round
+ and 944 in the second round, but for 75 observations control variables
+ were missing, leading to 1,706 observations being included in this table.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
 \backslash
 label{table:table12} 
 \end_layout
@@ -10937,7 +11226,12 @@ status open
 
 
 \backslash
-small 
+small
+\end_layout
+
+\begin_layout Plain Layout
+
+
 \backslash
 begin{center} 
 \backslash
@@ -10961,8 +11255,8 @@ multicolumn{7}{c}{
 \backslash
 textit{
 \backslash
-footnotesize Dependent variable: Rating of a particular farmer given to
- a particular dealer}} 
+small Dependent variable: Rating of a particular farmer given to a particular
+ dealer}} 
 \backslash
 
 \backslash
@@ -11147,6 +11441,10 @@ multicolumn{1} {c} {}
   
 \backslash
 hline  
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -11580,19 +11878,45 @@ end{center}
 
 
 \backslash
-scriptsize
+footnotesize
 \end_layout
 
 \begin_layout Plain Layout
 
 Note: The gender of the dealer is a dummy variable where 1 is male and 0
  is female.
- Fixed-effects or within estimation has been used at the farmer level.
- The number of observations represents the total number of ratings by farmers
- given to dealers.
- Cluster-robust standard errors (presented in parentheses) are obtained
- by clustering at the dealer level.
-   
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Standard errors are clustered at the dealer level and presented in parentheses.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Number of observations: We first stack all ratings by farmers given to dealers
+ of both rounds of collection, then exclude ratings of shops if the gender
+ of their manager changed between rounds.
+ E.g., for Seed’s yield, we collected 797 ratings in the first round and 924
+ in the second round, but for 236 observations control variables were missing,
+ leading to 1,485 observations being included in this table.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
 \backslash
 label{table:table10} 
 \end_layout
@@ -11602,13 +11926,6 @@ label{table:table10}
 
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace medskip
 \end_inset
 
 
@@ -11953,7 +12270,12 @@ status open
 
 
 \backslash
-small 
+small
+\end_layout
+
+\begin_layout Plain Layout
+
+
 \backslash
 begin{center}
 \end_layout
@@ -13041,12 +13363,26 @@ end{center}
 
 
 \backslash
-scriptsize
+footnotesize
 \end_layout
 
 \begin_layout Plain Layout
 
 Note: SD is the standard deviation.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Number of observations: All 193 agro-input dealers are included in this
+ table.
+\backslash
+
+\backslash
+
 \end_layout
 
 \end_inset
