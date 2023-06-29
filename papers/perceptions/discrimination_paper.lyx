@@ -107,16 +107,14 @@ status open
 \backslash
 author{Anusha De
 \backslash
-thanks{LICOS Centre for Institutions and Economic Performance, KU Leuven,
- Belgium} 
+thanks{LICOS, KU Leuven, Belgium} 
 \backslash
 thanks{Department of Agricultural Economics and Rural Development, University
  of Göttingen, Germany}, Caroline Miehe
 \backslash
 footnotemark[1], and Bjorn Van Campenhout
 \backslash
-thanks{Development Strategy and Governance Division, International Food
- Policy Research Institute, United States} 
+thanks{Innovation Policy and Scaling Unit, IFPRI, Belgium} 
 \backslash
 footnotemark[1]}
 \end_layout
@@ -276,8 +274,8 @@ literal "false"
 
 \begin_layout Standard
 In traditional societies with strong gender norms and customs, small businesses
- alongside food supply chains are often one of the few options for women
- to earn some money independently from their husbands.
+ alongside food supply chains are often some of the few options for women
+ to earn money independently from their husbands.
  While rapid urbanization has led to the emergence of fast-food restaurants,
  informal food vendors, who tend to be self-employed women, are still the
  main source of food for most households in sub-Saharan Africa 
@@ -290,7 +288,7 @@ literal "false"
 
 .
  And while supermarkets are emerging throughout the developing world, wet
- markets where mostly women sell produce continue to account for most of
+ markets where mostly women sell products continue to account for most of
  the expenditure on fresh produce in many countries 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -318,7 +316,7 @@ However, the same gender norms and customs also mean that perceptions may
  
 \begin_inset CommandInset citation
 LatexCommand citep
-key "orr2016we,doi:10.1080/00220380412331321961"
+key "doi:10.1080/00220380412331321961,orr2016we"
 literal "false"
 
 \end_inset
@@ -347,7 +345,7 @@ In this paper, we test if farmers perceive agro-input shops managed by women
  less favorably than agro-input shops under male management using a unique
  dyadic data set of farmer-dealer links.
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
 The paper builds on earlier exploratory work published in 
@@ -549,7 +547,7 @@ literal "false"
 \end_inset
 
  find no disparity in the acceptance rates of female- and male-authored
- papers for National Bureau of Economic Research (NBER) conferences; 
+ papers for National Bureau of Economic Research conferences; 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "https://doi.org/10.1111/obes.12409"
@@ -586,10 +584,9 @@ literal "false"
 
 \end_inset
 
- use Natural Language Processing (NLP) to search for gender bias in Kenya's
- leading newspaper and sentiment analysis to predict quantitative sentiment
- scores for sentences surrounding female leader names compared to male leader
- names.
+ use Natural Language Processing to search for gender bias in Kenya's leading
+ newspaper and sentiment analysis to predict quantitative sentiment scores
+ for sentences surrounding female leader names compared to male leader names.
  They find evidence of improvement in gender equality but also a backlash
  from increased female representation in high-level governmental leadership.
  
@@ -723,18 +720,8 @@ After the census, these agro-input shops were grouped in catchment areas
 \begin_layout Standard
 In each catchment area, we also sampled farmers in proportion to the number
  of agro-input dealers in the area.
- We connected shops to villages by asking every dealer where most of his/her
- customers come from.
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-If this village was already named by another dealer, the village with the
- second most customers was chosen.
-\end_layout
-
-\end_inset
-
+ We connected shops to villages by asking every dealer where most of his
+ or her customers come from.
  Enumerators were sent to these villages and instructed to randomly sample
  ten households that grow maize.
  Consequently, we sampled 1,931 smallholder maize farmers and collected
@@ -768,12 +755,12 @@ noprefix "false"
 
  describes the average agro-input dealer included in our study, differentiated
  by gender of the shop manager.
- About 60 percent of managers are male.
  When enumerators approached a shop, they tried to interview the manager,
  i.e., the person who is most knowledgeable about the day-to-day operations
  of the business, inventories, sales, and so on.
  It may be that the shop is owned by one person, but the owner employs another
  person to manage it.
+ About 60 percent of managers are male.
  In 63 percent of the cases, the male respondent is also the owner of the
  shop, while only 47 percent of female managers are also the owner.
  If the gender of the shop manager is different from the gender of the owner,
@@ -793,8 +780,8 @@ There is substantial heterogeneity across shops.
  The average shop has been in operation for about five to five and a half
  years.
  We already see signs of potential discrimination when we look at the number
- of customers: Male managers report serving more than 50 customers a day,
- female managers serve only 35 customers per day.
+ of customers: male managers report serving more than 51 customers a day,
+ female managers serve only 36 customers per day.
  A shop stocks on average three maize seed varieties.
  More statistics describing seed handling and storage practices, efforts,
  and services of agro-input dealers, are presented in Table 
@@ -2919,7 +2906,7 @@ noprefix "false"
  seed, two-thirds obtained it from an agro-input shop.
  However, fertilizer use is low.
  As a result, productivity is also low, with the average farmer harvesting
- only about 500 kg of maize per acre.
+ only about 450 kg of maize per acre.
  Almost 70 percent of farmers believe that maize seed sold at agro-input
  shops is counterfeit.
 \end_layout
@@ -3612,8 +3599,8 @@ To measure the perceived quality of agro-input dealers, farmers were asked
 \begin_layout Standard
 To measure the perceived quality of seed, farmers were asked to rate the
  improved maize varieties that dealers sell on a scale of one to five on
- their general quality, yield, drought tolerance, pest/disease tolerance,
- crop duration/maturation period, and germination reliability.
+ their general quality, yield, drought tolerance, pest and disease tolerance,
+ crop duration or maturation period, and germination reliability.
  We also compute an average of these six seed-level ratings.
  Here, farmers were asked to rate the product itself.
  Farmers were also allowed to indicate that they could not rate seed on
@@ -5214,7 +5201,7 @@ One may wonder if controlling for age and education is sufficient, as causal
  where differences in ratings reflect real differences between male- and
  female-managed shops.
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Deciding which control variables to include is not always straightforward,
@@ -5224,8 +5211,6 @@ es in perceptions of agro-input shop managers are particularly alarming).
  The decision on what controls to use is based on quantitative and qualitative
  data of different stakeholders (including extension staff, agronomists,
  seed inspectors, and so forth) that was collected prior to the study.
- During the study, enumerators were also asked to provide a detailed assessment
- of seed handling and storage practices and facilities of agro-input dealers.
 \end_layout
 
 \end_inset
@@ -5390,24 +5375,14 @@ noprefix "false"
 
 , we find that on all but one dimension, male-managed agro-input shops are
  rated higher than female-managed shops, and that the difference in ratings
- is significant for five out of the seven comparisons (at the ten percent
- level).
+ is significant for five out of the seven comparisons.
  We find a particularly large difference when farmers are asked to rate
  price competitiveness.
  Here, female-managed agro-input shops are scored only 3.24 out of 5, while
  male-managed agro-input shops receive a score of 3.44 out of 5.
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-While these effects may seem small, it should be noted that ratings generally
+ While these effects may seem small, it should be noted that ratings generally
  lie within a small range (of approximately 2.5 to 4).
  Thus, even a small coefficient estimate may reflect a considerable bias.
- 
-\end_layout
-
-\end_inset
-
  Similar differences exist when farmers are asked to rate an agro-input
  dealer in terms of stock.
  Here, male-managed agro-input shops receive an average score of 3.99 out
@@ -5421,7 +5396,7 @@ While these effects may seem small, it should be noted that ratings generally
 \begin_inset Float table
 wide false
 sideways true
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -5888,20 +5863,13 @@ Sexpr{s7[9,7]}$
  
 \backslash
 hline
+\backslash
+hline
 \end_layout
 
 \begin_layout Plain Layout
 
 
-\backslash
-multicolumn{8}{l}{ 
-\backslash
-scriptsize{$^{***}p<0.01$; $^{**}p<0.05$; $^{*}p<0.1$.}} 
-\end_layout
-
-\begin_layout Plain Layout
-
- 
 \backslash
 end{tabular} 
 \backslash
@@ -5919,6 +5887,17 @@ footnotesize
 
 Note: The gender of the dealer is a dummy variable where 1 is male and 0
  is female.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+***, **, and * denote significance at the 1, 5 and 10
+\backslash
+% levels.
 \backslash
 
 \backslash
@@ -5996,7 +5975,7 @@ noprefix "false"
 \begin_inset Float table
 wide false
 sideways true
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -6433,15 +6412,8 @@ Sexpr{s5[9,7]}$
  
 \backslash
 hline
-\end_layout
-
-\begin_layout Plain Layout
-
-
 \backslash
-multicolumn{8}{l}{ 
-\backslash
-scriptsize{$^{***}p<0.01$; $^{**}p<0.05$; $^{*}p<0.1$.}} 
+hline
 \end_layout
 
 \begin_layout Plain Layout
@@ -6468,6 +6440,17 @@ Note:
 \begin_layout Plain Layout
 
 The gender of the dealer is a dummy variable where 1 is male and 0 is female.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+***, **, and * denote significance at the 1, 5 and 10
+\backslash
+% levels.
 \backslash
 
 \backslash
@@ -6597,12 +6580,8 @@ noprefix "false"
 ty rating for the agro-input shop for which they collected data.
  Second, we construct an index that measures dealer effort and a range of
  services that dealers offer to clients.
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-Indices were constructed by weighing each component by the inverse covariance
- matrix following 
+ All indices were constructed by weighing each component by the inverse
+ covariance matrix following 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "anderson2008multiple"
@@ -6611,10 +6590,6 @@ literal "false"
 \end_inset
 
 .
-\end_layout
-
-\end_inset
-
  In particular, this index accounts for whether an agro-input dealer 1)
  always explains how seed should be used (seed spacing, seed rate, complementary
  inputs); 2) always recommends complementary inputs such as fertilizers
@@ -6867,7 +6842,7 @@ noprefix "false"
 \begin_inset Float table
 wide false
 sideways true
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -7939,15 +7914,8 @@ Sexpr{s8[42,7]}$
  
 \backslash
 hline
-\end_layout
-
-\begin_layout Plain Layout
-
-
 \backslash
-multicolumn{8}{l}{ 
-\backslash
-scriptsize{$^{***}p<0.01$; $^{**}p<0.05$; $^{*}p<0.1$.}} 
+hline
 \end_layout
 
 \begin_layout Plain Layout
@@ -7970,6 +7938,17 @@ footnotesize
 
 Note: The gender of the dealer is a dummy variable where 1 is male and 0
  is female.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+***, **, and * denote significance at the 1, 5 and 10
+\backslash
+% levels.
 \backslash
 
 \backslash
@@ -8750,7 +8729,7 @@ Sexpr{s6[14,7]})$
 \backslash
  
 \backslash
-hline 
+hline
 \end_layout
 
 \begin_layout Plain Layout
@@ -8781,15 +8760,8 @@ Sexpr{s6[18,7]}$
  
 \backslash
 hline
-\end_layout
-
-\begin_layout Plain Layout
-
-
 \backslash
-multicolumn{8}{l}{ 
-\backslash
-scriptsize{$^{***}p<0.01$; $^{**}p<0.05$; $^{*}p<0.1$.}} 
+hline
 \end_layout
 
 \begin_layout Plain Layout
@@ -8812,6 +8784,17 @@ footnotesize
 
 Note: The gender of the dealer is a dummy variable where 1 is male and 0
  is female.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+***, **, and * denote significance at the 1, 5 and 10
+\backslash
+% levels.
 \backslash
 
 \backslash
@@ -8956,16 +8939,8 @@ noprefix "false"
 \end_inset
 
 ).
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-As errors are also correlated within agro-input dealers, we report standard
+ As errors are also correlated within agro-input dealers, we report standard
  errors that are robust to clustering in this dimension.
-\end_layout
-
-\end_inset
-
  In Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -9436,15 +9411,8 @@ Sexpr{fe3[7,7]}$
  
 \backslash
 hline
-\end_layout
-
-\begin_layout Plain Layout
-
-
 \backslash
-multicolumn{8}{l}{ 
-\backslash
-scriptsize{$^{***}p<0.01$; $^{**}p<0.05$; $^{*}p<0.1$.}} 
+hline
 \end_layout
 
 \begin_layout Plain Layout
@@ -9467,6 +9435,17 @@ footnotesize
 
 Note: The gender of the dealer is a dummy variable where 1 is male and 0
  is female.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+***, **, and * denote significance at the 1, 5 and 10
+\backslash
+% levels.
 \backslash
 
 \backslash
@@ -9917,15 +9896,8 @@ Sexpr{fe1[7,7]}$
  
 \backslash
 hline
-\end_layout
-
-\begin_layout Plain Layout
-
-
 \backslash
-multicolumn{8}{l}{ 
-\backslash
-scriptsize{$^{***}p<0.01$; $^{**}p<0.05$; $^{*}p<0.1$.}} 
+hline
 \end_layout
 
 \begin_layout Plain Layout
@@ -9948,6 +9920,17 @@ footnotesize
 
 Note: The gender of the dealer is a dummy variable where 1 is male and 0
  is female.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+***, **, and * denote significance at the 1, 5 and 10
+\backslash
+% levels.
 \backslash
 
 \backslash
@@ -11082,15 +11065,8 @@ Sexpr{fe4[42,7]}$
  
 \backslash
 hline
-\end_layout
-
-\begin_layout Plain Layout
-
-
 \backslash
-multicolumn{8}{l}{ 
-\backslash
-scriptsize{$^{***}p<0.01$; $^{**}p<0.05$; $^{*}p<0.1$.}} 
+hline
 \end_layout
 
 \begin_layout Plain Layout
@@ -11113,6 +11089,17 @@ footnotesize
 
 Note: The gender of the dealer is a dummy variable where 1 is male and 0
  is female.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+***, **, and * denote significance at the 1, 5 and 10
+\backslash
+% levels.
 \backslash
 
 \backslash
@@ -11192,7 +11179,7 @@ noprefix "false"
 \begin_inset Float table
 wide false
 sideways true
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -11818,7 +11805,7 @@ Sexpr{fe2[12,7]})$
 \backslash
  
 \backslash
-hline 
+hline
 \end_layout
 
 \begin_layout Plain Layout
@@ -11849,15 +11836,8 @@ Sexpr{fe2[16,7]}$
  
 \backslash
 hline
-\end_layout
-
-\begin_layout Plain Layout
-
-
 \backslash
-multicolumn{7}{l}{  
-\backslash
-scriptsize{$^{***}p<0.01$; $^{**}p<0.05$; $^{*}p<0.1$.}} 
+hline
 \end_layout
 
 \begin_layout Plain Layout
@@ -11880,6 +11860,17 @@ footnotesize
 
 Note: The gender of the dealer is a dummy variable where 1 is male and 0
  is female.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+***, **, and * denote significance at the 1, 5 and 10
+\backslash
+% levels.
 \backslash
 
 \backslash
@@ -11988,8 +11979,8 @@ Looking into the individual dimensions that were rated, we find particularly
  shops were rated differently when farmers were asked to consider location.
  This may be because location is easier to assess objectively.
  For attributes related to the quality of seed sold by agro-input dealers,
- gender bias was largest when farmers were asked to assess seed germination
- rates and whether the seed being rated had the advertised maturing period.
+ gender bias was only persistently found for the average seed rating after
+ controlling for farmer-level heterogeneity.
 \end_layout
 
 \begin_layout Standard
@@ -12121,7 +12112,7 @@ literal "false"
 
 .
  It is also likely to affect future generations, as women tend to invest
- more of their income than men in healthcare, nutrition and education of
+ more of their income than men in healthcare, nutrition, and education of
  their children 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -12134,10 +12125,10 @@ literal "false"
  But there are consequences that go beyond the household.
  Almost half of the agro-input shops in our sample are managed by women.
  If farmers do not trust these shops, this may pose challenges for varietal
- turnover at more aggregate levels: In a village where only women manage
+ turnover at more aggregate levels: in a village where only women manage
  shops, farmers may be less likely to buy commercial improved seed from
  the market, and instead use farmer-saved seed obtained through informal
- channels.
+ channels, hindering agricultural productivity and rural transformation.
 \end_layout
 
 \begin_layout Standard
@@ -12182,11 +12173,11 @@ Our study serves to draw specific lessons for policy.
 \end_layout
 
 \begin_layout Standard
-First, even though we do not find evidence of actual differences in quality
- between male- and female-managed agro-input shops, existing training and
- advisory services for agro-input dealers are also likely to be biased toward
- men, and this may indirectly influence perceptions related to the abilities
- of female managers.
+First, even though we do not find evidence of male-managed agro-input shops
+ actually providing better quality than female-managed shops, existing training
+ and advisory services for agro-input dealers are also likely to be biased
+ toward men, and this may indirectly influence perceptions related to the
+ abilities of female managers.
  Ensuring that women entrepreneurs have access to training should be a policy
  priority.
  The effectiveness and inclusiveness of training programs depend on many
@@ -12256,8 +12247,8 @@ Acknowledgments
 \begin_layout Standard
 This research was partly funded by the Consultative Group for International
  Agricultural Research (CGIAR) Research Program on Policies, Institutions,
- and Markets (PIM), led by the International Food Policy Research Institute
- (IFPRI) and carried out with support from the 
+ and Markets, led by the International Food Policy Research Institute (IFPRI)
+ and carried out with support from the 
 \begin_inset CommandInset href
 LatexCommand href
 name "CGIAR Fund contributors"
