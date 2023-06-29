@@ -5,9 +5,6 @@
 \save_transient_properties true
 \origin unavailable
 \textclass article
-\begin_preamble
-\usepackage{pdflscape}
-\end_preamble
 \use_default_options true
 \begin_modules
 knitr
@@ -458,7 +455,8 @@ noprefix "false"
 \end_layout
 
 \begin_layout Section
-\paragraph_spacing onehalf
+\paragraph_spacing single
+\noindent
 Research question and relation to the literature
 \begin_inset CommandInset label
 LatexCommand label
@@ -923,7 +921,7 @@ noprefix "false"
 placement H
 wide false
 sideways true
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -3440,14 +3438,14 @@ Yield in kg/acre &
 
 
 \backslash
-Sexpr{format(round(df_descriptives_farmer[86,1],digits=1),nsmall=1)} & 
+Sexpr{format(round(df_descriptives_farmer[86,1],digits=3),nsmall=3)} & 
 \backslash
 Sexpr{format(round(df_descriptives_farmer[86,2],digits=0),nsmall=0)} & 
 \backslash
 Sexpr{format(round(df_descriptives_farmer[86,3],digits=0),nsmall=0)}  &
  
 \backslash
-Sexpr{format(round(df_descriptives_farmer[86,4],digits=1),nsmall=1)} & 
+Sexpr{format(round(df_descriptives_farmer[86,4],digits=3),nsmall=3)} & 
 \backslash
 Sexpr{format(round(df_descriptives_farmer[86,5],digits=0),nsmall=0)}
 \backslash
