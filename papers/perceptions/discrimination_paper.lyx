@@ -5424,7 +5424,7 @@ While these effects may seem small, it should be noted that ratings generally
 \begin_inset Float table
 wide false
 sideways true
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -11993,6 +11993,94 @@ Looking into the individual dimensions that were rated, we find particularly
  For attributes related to the quality of seed sold by agro-input dealers,
  gender bias was largest when farmers were asked to assess seed germination
  rates and whether the seed being rated had the advertised maturing period.
+\end_layout
+
+\begin_layout Standard
+Despite this gender bias favoring men, 40 percent of Ugandan agro-input
+ shops are managed by women, raising the question how this surprisingly
+ large share of female dealers remains in the market.
+ We see that they are on average younger, less educated, and less trained
+ than their male competitors, and that their shops have been established
+ more recently, but perhaps these women have another competitive advantage
+ at their disposal that attracts at least some customers.
+ It cannot be better prices as we saw that farmers discriminate most on
+ this dimension.
+ Seeing that location is the only general dealership characteristic for
+ which female-managed shops receive better ratings than male-managed shops
+ (see Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "table: between_dealer ratings_no controls"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+), we investigate whether these shops are located better.
+ However, apparently these shops are further way from roads and customers,
+ implying that location is not the competitive advantage that keeps female
+ dealers in the market.
+ It is however possible that there is less competition in these more remote
+ areas, which could explain why even discriminated dealers are not driven
+ out of the market.
+ Alternatively, shops managed by women may provide better products than
+ their male competitors.
+ We see for example that female-managed shops are more likely to be specialized
+ stores that only sell farm inputs and that they are cleaner, according
+ to enumerators.
+ These shops also have better roofing, walls, and ventilation, and are more
+ likely to store seed on pallets or shelves, instead of in open containers.
+ All this could lead to woman selling better seed, as 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "BARRIGA2020104928"
+literal "true"
+
+\end_inset
+
+ document how handling and storage practices affect seed quality.
+ Open air storage of bags can lower the quality of seeds 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "10.1093/qje/qjx009"
+literal "false"
+
+\end_inset
+
+, temperature control after the seed leaves the breeders is crucial 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "BARRIGA2020104928"
+literal "false"
+
+\end_inset
+
+, and storage in moist conditions or in direct sunlight further reduce seed
+ quality 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "govender2008effect,Curzi2022"
+literal "false"
+
+\end_inset
+
+.
+ In line with this, we see that shops managed by women receive less seed-related
+ complaints from customers and appear more professional: on average, they
+ are more likely to display official certificates, to be registered with
+ UNADA, and to have a trading license from the local government.
+ If customers realize that these female dealers sell better seed, this will
+ result in a comparative advantage and explain why 40 percent of Ugandan
+ agro-input shops are managed by women, even though perceptions are stacked
+ against them.
+ An alternative but complementary explanation is that many women simply
+ have no other opportunity to earn money.
+ While men may compare their earnings through agro-input dealing with a
+ lucrative outside option, women may have to compare it with earning nothing.
+ This would explain why they do not leave the market, even though they earn
+ significantly less than their male competitors, pointing to a more structural
+ bias in the economy.
 \end_layout
 
 \begin_layout Standard
