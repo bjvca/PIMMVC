@@ -3766,6 +3766,8 @@ baseline_farmers$area<-ifelse(baseline_farmers$Check2.check.maize.q30=="Yes",bas
 baseline_farmers$yield_inkg <- baseline_farmers$Check2.check.maize.q50*baseline_farmers$Check2.check.maize.q51 #production in kg
 baseline_farmers$landproductivity <- baseline_farmers$yield_inkg/baseline_farmers$Check2.check.maize.q29 #yield in kg per acre
 
+baseline_farmers <- trim("landproductivity",baseline_farmers,trim_perc=.02)
+
 baseline_farmers$yield_inUGX <- baseline_farmers$Check2.check.maize.q50*baseline_farmers$Check2.check.maize.q52
 baseline_farmers$yield_indollar <- baseline_farmers$yield_inUGX/3561.51
 baseline_farmers$landproductivity_inUGX <- baseline_farmers$yield_inUGX/baseline_farmers$Check2.check.maize.q29
