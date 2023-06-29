@@ -481,8 +481,48 @@ r maize farmers in southeastern Uganda perceive agro-input dealers in their
 \end_layout
 
 \begin_layout Standard
-One area where gender equity bias has been studied extensively is in scientific
- publishing using peer review.
+Gender equity bias often surfaces when individuals decide on who to engage
+ with, be it who to work with, who to elect as leaders, or who to consult.
+ For example, when it comes to hiring decisions, managers must decide based
+ on limited information.
+ Discrimination in labor markets, including discrimination related to gender,
+ has been documented in several studies.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "wu2020gender"
+literal "false"
+
+\end_inset
+
+ uses data from an online forum for economists called 
+\begin_inset Quotes eld
+\end_inset
+
+Economic Job Market Rumors
+\begin_inset Quotes erd
+\end_inset
+
+ to measure gender bias in discussions about women versus men.
+ Gender equity bias is also studied in the context of the wage gap, that
+ is, when women appear to make substantially less money for the same work
+ than their male counterparts.
+ Often, this is also tied to gender equity bias in performance appraisals,
+ where (often male) managers’ gendered beliefs and perceptions creep into
+ evaluations of their subordinates 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "doi:10.1177/0003122420962080"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Another area where gender equity bias has been studied extensively is in
+ scientific publishing using peer review.
  For instance, 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -534,49 +574,6 @@ literal "false"
  They also show that a male instructor administering an identical online
  course as a female instructor receives higher ordinal scores in teaching
  evaluations.
-\end_layout
-
-\begin_layout Standard
-Gender equity bias is studied most extensively in the context of peer review
- processes such as those mentioned above.
- However, the same perceptions surface when individuals decide on who to
- engage with, be it who to work with, who to elect as leaders, or who to
- consult.
- For example, when it comes to hiring decisions, managers must decide based
- on limited information.
- Discrimination in labor markets, including discrimination related to gender,
- has been documented in several studies.
- 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "wu2020gender"
-literal "false"
-
-\end_inset
-
- uses data from an online forum for economists called 
-\begin_inset Quotes eld
-\end_inset
-
-Economic Job Market Rumors
-\begin_inset Quotes erd
-\end_inset
-
- to measure gender bias in discussions about women versus men.
- Gender equity bias is also studied in the context of the wage gap, that
- is, when women appear to make substantially less money for the same work
- than their male counterparts.
- Often, this is also tied to gender equity bias in performance appraisals,
- where (often male) managers’ gendered beliefs and perceptions creep into
- evaluations of their subordinates 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "doi:10.1177/0003122420962080"
-literal "false"
-
-\end_inset
-
-.
 \end_layout
 
 \begin_layout Standard
@@ -640,8 +637,8 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-Gender bias features so prominently in areas such as scholarly peer review,
- teaching assessments or labor markets, partly because perceptions are made
+Gender bias features so prominently in areas such as labor markets, scholarly
+ peer review, or teaching assessments partly because perceptions are made
  explicit in the process, for instance through review reports, student feedback,
  or hiring committees.
  However, in economic transactions, gender biases remain hidden as perceptions
@@ -5424,7 +5421,7 @@ While these effects may seem small, it should be noted that ratings generally
 \begin_inset Float table
 wide false
 sideways true
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
