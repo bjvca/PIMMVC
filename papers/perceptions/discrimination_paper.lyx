@@ -31,7 +31,6 @@ knitr
 \output_sync 0
 \bibtex_command default
 \index_command default
-\float_placement H
 \paperfontsize default
 \spacing onehalf
 \use_hyperref true
@@ -196,7 +195,7 @@ Keywords:
 \end_layout
 
 \begin_layout Section
-\paragraph_spacing onehalf
+\noindent
 Introduction
 \end_layout
 
@@ -455,7 +454,6 @@ noprefix "false"
 \end_layout
 
 \begin_layout Section
-\paragraph_spacing single
 \noindent
 Research question and relation to the literature
 \begin_inset CommandInset label
@@ -653,7 +651,7 @@ Gender bias features so prominently in areas such as scholarly peer review,
 \end_layout
 
 \begin_layout Section
-\paragraph_spacing onehalf
+\noindent
 Context and data
 \begin_inset CommandInset label
 LatexCommand label
@@ -665,6 +663,7 @@ name "section: Context and data"
 \end_layout
 
 \begin_layout Subsection
+\noindent
 Study context
 \end_layout
 
@@ -686,6 +685,7 @@ The study was conducted in Uganda.
 \end_layout
 
 \begin_layout Subsection
+\noindent
 Sample
 \end_layout
 
@@ -754,6 +754,7 @@ If this village was already named by another dealer, the village with the
 \end_layout
 
 \begin_layout Subsection
+\noindent
 Descriptive statistics
 \end_layout
 
@@ -817,108 +818,7 @@ noprefix "false"
 \end_layout
 
 \begin_layout Standard
-Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "table: descriptives farmer"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
- provides descriptive statistics of the farmers included in the study.
- The average farmer in our sample works on a small farm, with about 3.4 acres
- of land for crop production.
- Half of our sampled farmers indicate that they used improved maize seed,
- i.e., seed of a hybrid or open-pollinated variety, on at least one plot in
- the season preceding the survey, and of the farmers that used improved
- seed, two-thirds obtained it from an agro-input shop.
- However, fertilizer use is low.
- As a result, productivity is also low, with the average farmer harvesting
- only about 500 kg of maize per acre.
- Almost 70 percent of farmers believe that maize seed sold at agro-input
- shops is counterfeit.
-\end_layout
-
-\begin_layout Subsection
-\paragraph_spacing onehalf
-Measuring perceptions
-\begin_inset CommandInset label
-LatexCommand label
-name "Measuring perceptions"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Quantifying perceptions of the quality of services provided by agro-input
- dealers and of the products they sell—improved maize varieties in particular—is
- central to our analysis.
- To do so, we asked farmers to rate agro-input dealers in the catchment
- area on a range of attributes.
- We broadly categorized the attributes into two families.
- A first set of indicators attempts to measure overall quality of agro-input
- dealers and the services they provide, while a second set of indicators
- has a narrower focus and asks about maize seed, a particular product sold
- by the agro-input dealer.
-\end_layout
-
-\begin_layout Standard
-To measure the perceived quality of agro-input dealers, farmers were asked
- to rate these dealers on a scale of one (worst) to five (best) on their
- general quality, location (convenience, accessibility, closeness to clients),
- price (competitive pricing, discounts), seed quality, stock (availability
- of seed, number of varieties in stock), and reputation (what do other farmers
- think about the dealer).
- We also compute an average of these six dealer-level ratings.
- For these indicators, farmers were asked to rate the shop as a whole.
-\end_layout
-
-\begin_layout Standard
-To measure the perceived quality of seed, farmers were asked to rate the
- improved maize varieties that dealers sell on a scale of one to five on
- their general quality, yield, drought tolerance, pest/disease tolerance,
- crop duration/maturation period, and germination reliability.
- We also compute an average of these six seed-level ratings.
- Here, farmers were asked to rate the product itself.
- Farmers were also allowed to indicate that they could not rate seed on
- a particular dimension (for instance, because they never bought seed from
- the agro-input dealer).
- Then this dimension was not considered when computing the average.
-\end_layout
-
-\begin_layout Standard
-We asked farmers to rate agro-input dealers twice, a first time in April
- 2021 and a second time in January and February 2022.
- The average farmer in our data set provided ratings for about two agro-input
- dealers, with some farmers rating up to 15 dealers.
- The average agro-input shop received ratings from almost twelve farmers,
- while one shop received ratings from almost 50 farmers.
- Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "table: descriptives ratings bygender"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
- provides descriptive statistics of the ratings used in our study.
- For example, when assessing the quality of maize seed sold by male agro-input
- dealers, farmers rate its germination with 3.67 out of 5 on average.
- Farmers generally rate dimensions related to the dealership better than
- dimensions related to the product.
- For instance, the mean location rating is 3.91 out of 5 for female agro-input
- dealers.
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float table
-placement H
 wide false
 sideways true
 status collapsed
@@ -3003,6 +2903,31 @@ $^1$The distance between shop and farmer is calculated using the haversine
 \end_layout
 
 \begin_layout Standard
+Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "table: descriptives farmer"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ provides descriptive statistics of the farmers included in the study.
+ The average farmer in our sample works on a small farm, with about 3.4 acres
+ of land for crop production.
+ Half of our sampled farmers indicate that they used improved maize seed,
+ i.e., seed of a hybrid or open-pollinated variety, on at least one plot in
+ the season preceding the survey, and of the farmers that used improved
+ seed, two-thirds obtained it from an agro-input shop.
+ However, fertilizer use is low.
+ As a result, productivity is also low, with the average farmer harvesting
+ only about 500 kg of maize per acre.
+ Almost 70 percent of farmers believe that maize seed sold at agro-input
+ shops is counterfeit.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float table
 wide false
 sideways true
@@ -3649,6 +3574,81 @@ $^1$The homestead's distance to the nearest agro-input shop is the distance
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsection
+\noindent
+Measuring perceptions
+\begin_inset CommandInset label
+LatexCommand label
+name "Measuring perceptions"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Quantifying perceptions of the quality of services provided by agro-input
+ dealers and of the products they sell—improved maize varieties in particular—is
+ central to our analysis.
+ To do so, we asked farmers to rate agro-input dealers in the catchment
+ area on a range of attributes.
+ We broadly categorized the attributes into two families.
+ A first set of indicators attempts to measure overall quality of agro-input
+ dealers and the services they provide, while a second set of indicators
+ has a narrower focus and asks about maize seed, a particular product sold
+ by the agro-input dealer.
+\end_layout
+
+\begin_layout Standard
+To measure the perceived quality of agro-input dealers, farmers were asked
+ to rate these dealers on a scale of one (worst) to five (best) on their
+ general quality, location (convenience, accessibility, closeness to clients),
+ price (competitive pricing, discounts), seed quality, stock (availability
+ of seed, number of varieties in stock), and reputation (what do other farmers
+ think about the dealer).
+ We also compute an average of these six dealer-level ratings.
+ For these indicators, farmers were asked to rate the shop as a whole.
+\end_layout
+
+\begin_layout Standard
+To measure the perceived quality of seed, farmers were asked to rate the
+ improved maize varieties that dealers sell on a scale of one to five on
+ their general quality, yield, drought tolerance, pest/disease tolerance,
+ crop duration/maturation period, and germination reliability.
+ We also compute an average of these six seed-level ratings.
+ Here, farmers were asked to rate the product itself.
+ Farmers were also allowed to indicate that they could not rate seed on
+ a particular dimension (for instance, because they never bought seed from
+ the agro-input dealer).
+ Then this dimension was not considered when computing the average.
+\end_layout
+
+\begin_layout Standard
+We asked farmers to rate agro-input dealers twice, a first time in April
+ 2021 and a second time in January and February 2022.
+ The average farmer in our data set provided ratings for about two agro-input
+ dealers, with some farmers rating up to 15 dealers.
+ The average agro-input shop received ratings from almost twelve farmers,
+ while one shop received ratings from almost 50 farmers.
+ Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "table: descriptives ratings bygender"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ provides descriptive statistics of the ratings used in our study.
+ For example, when assessing the quality of maize seed sold by male agro-input
+ dealers, farmers rate its germination with 3.67 out of 5 on average.
+ Farmers generally rate dimensions related to the dealership better than
+ dimensions related to the product.
+ For instance, the mean location rating is 3.91 out of 5 for female agro-input
+ dealers.
 \end_layout
 
 \begin_layout Standard
@@ -4834,7 +4834,7 @@ Number of observations: All ratings by farmers given to dealers during the
 \end_layout
 
 \begin_layout Section
-\paragraph_spacing onehalf
+\noindent
 Empirical strategy
 \begin_inset CommandInset label
 LatexCommand label
@@ -5324,7 +5324,7 @@ y_{f,d}-\overline{y}_{f}=\gamma\left(g_{f,d}-\overline{g}_{f}\right)+\varphi\lef
 \end_layout
 
 \begin_layout Section
-\paragraph_spacing onehalf
+\noindent
 Results
 \begin_inset CommandInset label
 LatexCommand label
@@ -5336,6 +5336,7 @@ name "section: Results"
 \end_layout
 
 \begin_layout Subsection
+\noindent
 Between-dealers models
 \end_layout
 
@@ -5423,7 +5424,7 @@ While these effects may seem small, it should be noted that ratings generally
 \begin_inset Float table
 wide false
 sideways true
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -5998,7 +5999,7 @@ noprefix "false"
 \begin_inset Float table
 wide false
 sideways true
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -6869,7 +6870,7 @@ noprefix "false"
 \begin_inset Float table
 wide false
 sideways true
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -8076,7 +8077,7 @@ noprefix "false"
 \begin_inset Float table
 wide false
 sideways true
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -8912,6 +8913,7 @@ noprefix "false"
 \end_layout
 
 \begin_layout Subsection
+\noindent
 Farmer fixed-effects models
 \end_layout
 
@@ -11928,7 +11930,7 @@ label{table:table10}
 \end_layout
 
 \begin_layout Section
-\paragraph_spacing onehalf
+\noindent
 Conclusion and policy implications
 \begin_inset CommandInset label
 LatexCommand label
@@ -12162,6 +12164,7 @@ Finally, we find that biased perceptions exist especially with respect to
 \end_layout
 
 \begin_layout Section*
+\noindent
 Acknowledgments
 \end_layout
 
@@ -12227,6 +12230,7 @@ options "IFPRI_Style"
 \end_layout
 
 \begin_layout Section*
+\noindent
 \begin_inset Newpage newpage
 \end_inset
 
