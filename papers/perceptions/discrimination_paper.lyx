@@ -33,7 +33,7 @@ knitr
 \index_command default
 \float_placement H
 \paperfontsize default
-\spacing double
+\spacing onehalf
 \use_hyperref true
 \pdf_bookmarks true
 \pdf_bookmarksnumbered false
