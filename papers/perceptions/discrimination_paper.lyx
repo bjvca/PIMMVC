@@ -114,7 +114,8 @@ thanks{Department of Agricultural Economics and Rural Development, University
 \backslash
 footnotemark[1], and Bjorn Van Campenhout
 \backslash
-thanks{Innovation Policy and Scaling Unit, IFPRI, Belgium} 
+thanks{Innovation Policy and Scaling Unit, IFPRI, Belgium - corresponding
+ author: b.vancampenhout@cgiar.org} 
 \backslash
 footnotemark[1]}
 \end_layout
@@ -131,22 +132,61 @@ Gender bias in customer perceptions: The case of agro-input dealers in Uganda
 \end_layout
 
 \begin_layout Abstract
+CONTEXT:
+\end_layout
+
+\begin_layout Abstract
 Faced with incomplete and imperfect information, economic actors rely predominan
 tly on perceptions and often base decisions on heuristics prone to bias.
- Gender bias in perceptions favoring men has been found in a wide variety
- of settings and may be an important reason why some sectors remain dominated
+ Gender bias in perceptions favoring men has been found in a variety of
+ settings and may be an important reason why some sectors remain dominated
  by men and gender gaps in terms of benefits persist.
- Using ratings of agro-input dealers provided by smallholder farmers in
- their vicinity, we test if farmers perceive male-managed agro-input shops
- differently than agro-input shops managed by women.
- After explicitly controlling for quality differences between male- and
- female-managed agro-input shops and including fixed-effects to account
- for farmer-level heterogeneity, we find that farmers rate male-managed
- agro-input outlets higher on a range of attributes related to the dealership
- in general, as well as on the quality of inputs sold by the dealer.
- Our results show that gender bias in customer perceptions persists and
- continues to be a severe comparative disadvantage and an important entry
- barrier for female agro-input dealers.
+ In modernizing food supply chains in a patriarchal context such as the
+ maize sub-sector in Uganda, women may face significant barriers to entry.
+\end_layout
+
+\begin_layout Abstract
+OBJECTIVE:
+\end_layout
+
+\begin_layout Abstract
+Using a unique dataset of ratings of agro-input dealers provided by smallholder
+ farmers in their vicinity, we test if farmers perceive male-managed agro-input
+ shops differently than agro-input shops managed by women.
+ 
+\end_layout
+
+\begin_layout Abstract
+METHODS:
+\end_layout
+
+\begin_layout Abstract
+We use a unique dyadic data set of farmer-dealer links to explicitly control
+ for quality differences between male- and female-managed agro-input shops
+ and use the fact that a farmer has generally rated more than one agro-input
+ to account for farmer-level heterogeneity using fixed-effects regression.
+ 
+\end_layout
+
+\begin_layout Abstract
+RESULTS AND CONCLUSIONS:
+\end_layout
+
+\begin_layout Abstract
+We find that farmers rate male-managed agro-input outlets higher on a range
+ of attributes related to the dealership in general, as well as on the quality
+ of inputs sold by the dealer.
+ 
+\end_layout
+
+\begin_layout Abstract
+SIGNIFICANCE:
+\end_layout
+
+\begin_layout Abstract
+Our results show that gender bias in customer perceptions persists and continues
+ to be a severe comparative disadvantage and an important entry barrier
+ for female agro-input dealers.
  The gender equity bias affects social outcomes like women's capabilities,
  aspirations, and empowerment in seed systems but also impairs development
  at more aggregate levels: as a considerable share of agro-input shops is
@@ -392,6 +432,15 @@ We find that farmers generally rate male-managed agro-input shops more favorably
  we conclude that gender-biased customer perceptions persist and create
  comparative disadvantages and entry barriers for female-managed agro-input
  shops.
+ 
+\end_layout
+
+\begin_layout Standard
+The gender bias we uncover is rooted in the commercialization of the maize
+ subsector as a result of increased regional trade in maize and wider used
+ of improved maize seed varieties in the emerging formal seed sector.
+ In patriarchal societies it has often been observed that men start to dominate
+ once the stakes become high.
  This gender equity bias directly affects social outcomes like women’s capabilit
 ies, aspirations, and their empowerment in agricultural and seed systems.
  Additionally, there are consequences at more aggregate levels: as almost
@@ -11191,7 +11240,7 @@ noprefix "false"
 \begin_inset Float table
 wide false
 sideways true
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -12251,6 +12300,39 @@ Finally, we find that biased perceptions exist especially with respect to
  shortcuts that are prone to gender equity bias.
 \end_layout
 
+\begin_layout Standard
+Our research also has implications for integrated seed system development.
+ As the bias we uncover is partly related to the formal nature of the maize
+ value chain—with increasing engagement in input and output markets disadvantagi
+ng women—more informal seed systems may provide more scope for equitable
+ development.
+ Seed for food crops in which the private sector is less interest, such
+ as sweet potato or beans, are often perceived as more in the female domain
+ than crops that are also grown for cash.
+ Furthermore, alternative forms of certification which are less stringent
+ than existing regulatory frameworks, such as quality declared seed, may
+ also provide more room for women 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "mastenbroek2021institutionalizing"
+literal "false"
+
+\end_inset
+
+.
+ In sum, to increase food and nutrition security, we agree with 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "puskur2021moving"
+literal "false"
+
+\end_inset
+
+ on the importance of applying gender analysis to improve seed systems and
+ reduce/overcome existing biases.
+ 
+\end_layout
+
 \begin_layout Section*
 \noindent
 Acknowledgments
@@ -12260,7 +12342,8 @@ Acknowledgments
 This research was partly funded by the Consultative Group for International
  Agricultural Research (CGIAR) Research Program on Policies, Institutions,
  and Markets, led by the International Food Policy Research Institute (IFPRI)
- and carried out with support from the 
+ and the CGIAR Seed Equal Research Initiative and carried out with support
+ from the 
 \begin_inset CommandInset href
 LatexCommand href
 name "CGIAR Fund contributors"
