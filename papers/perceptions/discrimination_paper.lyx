@@ -5,6 +5,10 @@
 \save_transient_properties true
 \origin unavailable
 \textclass article
+\begin_preamble
+\usepackage{lineno}
+\linenumbers
+\end_preamble
 \use_default_options true
 \begin_modules
 knitr
@@ -785,10 +789,57 @@ In each catchment area, we also sampled farmers in proportion to the number
  or her customers come from.
  Enumerators were sent to these villages and instructed to randomly sample
  ten households that grow maize.
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+One may argue that for results to hold for the entire farmer population,
+ sampling should be proportionate to the village size.
+ While this would have been the preferred way, our approach of starting
+ from a complete listing of all agro-dealers is likely to lead to implicit
+ weighting as more densely populated areas are also more likely to have
+ more agro-dealers, leading to relatively more farmers sampled that are
+ connected to these agro-dealers.
+ 
+\end_layout
+
+\end_inset
+
+ In particular, enumerators obtained lists of all households within the
+ village obtained from village health workers or from the village chairman
+ and used systematic sampling to select the ten households (choosing the
+ n-th household where n=(total number of households in village)/10).
  Consequently, we sampled 1,931 smallholder maize farmers and collected
  information about their characteristics in April 2021.
- To increase the number of ratings, a second round was collected in January
- and February 2022.
+ A second round of ratings by the same farmers of the same agro-dealers
+ was collected in January and February 2022.
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+This was done to increase the number of rating (as some farmers rated different
+ agro-input dealers in the first and second round and some agro-dealers
+ were rated by different farmers in the first and second round).
+ Furthermore, this also created a subset of repeat ratings (as some farmers
+ rated the same agro-input dealers in both rounds and some agro-dealers
+ were rated by the same farmers in both seasons) which can potentially reduce
+ measurement error.
+ The fact that the latter may be correlated within farmer and/or within
+ agro-dealer is dealt with in Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "section: Empirical strategy"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
  While these ratings were provided by the same farmers, only 1,893 of them
  were found during the second wave.
  These two rounds of surveys constitute the key sources of data for the
@@ -3671,8 +3722,8 @@ To measure the perceived quality of seed, farmers were asked to rate the
 \end_layout
 
 \begin_layout Standard
-We asked farmers to rate agro-input dealers twice, a first time in April
- 2021 and a second time in January and February 2022.
+As mentioned above, we asked farmers to rate agro-input dealers twice, a
+ first time in April 2021 and a second time in January and February 2022.
  The average farmer in our data set provided ratings for about two agro-input
  dealers, with some farmers rating up to 15 dealers.
  The average agro-input shop received ratings from almost twelve farmers,
