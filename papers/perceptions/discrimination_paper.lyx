@@ -191,11 +191,11 @@ SIGNIFICANCE:
 Our results show that gender bias in customer perceptions persists and continues
  to be a severe comparative disadvantage and an important entry barrier
  for female agro-input dealers.
- The gender equity bias affects social outcomes like women's capabilities,
- aspirations, and empowerment in seed systems but also impairs development
- at more aggregate levels: as a considerable share of agro-input shops is
- managed by women, this finding may impose challenges for varietal turnover,
- hindering agricultural productivity, food security, and rural transformation.
+ The gender bias affects social outcomes like women's capabilities, aspirations,
+ and empowerment in seed systems but also impairs development at more aggregate
+ levels: as a considerable share of agro-input shops is managed by women,
+ this finding may impose challenges for varietal turnover, hindering agricultura
+l productivity, food security, and rural transformation.
  Policies and interventions designed to challenge gender norms and customs
  are needed to correct this bias.
 \end_layout
@@ -323,8 +323,8 @@ literal "false"
 
 \begin_layout Standard
 In traditional societies with strong gender norms and customs, small businesses
- alongside food supply chains are often some of the few options for women
- to earn money independently from their husbands.
+ along food supply chains are often some of the few options for women to
+ earn money independently from their husbands.
  While rapid urbanization has led to the emergence of fast-food restaurants,
  informal food vendors, who tend to be self-employed women, are still the
  main source of food for most households in sub-Saharan Africa 
@@ -445,8 +445,8 @@ The gender bias we uncover is rooted in the commercialization of the maize
  of improved maize seed varieties in the emerging formal seed sector.
  In patriarchal societies it has often been observed that men start to dominate
  once the stakes become high.
- This gender equity bias directly affects social outcomes like women’s capabilit
-ies, aspirations, and their empowerment in agricultural and seed systems.
+ This gender bias directly affects social outcomes like women’s capabilities,
+ aspirations, and their empowerment in agricultural and seed systems.
  Additionally, there are consequences at more aggregate levels: as almost
  half of the agro-input shops in our sample are managed by women, the finding
  that farmers do not trust these shops may impose challenges for varietal
@@ -533,10 +533,10 @@ We aim to test if gender related discrimination is present in the way smallholde
 r maize farmers in southeastern Uganda perceive agro-input dealers in their
  neighborhood.
  In the wider literature, gender related discrimination is often referred
- to as gender equity bias—behavior that shows favoritism toward one gender
- over another.
- Gender equity bias has been confirmed in a wide range of contexts, usually
- when people are asked to assess the performance of another person.
+ to as gender bias—behavior that shows favoritism toward one gender over
+ another.
+ Gender bias has been confirmed in a wide range of contexts, usually when
+ people are asked to assess the performance of another person.
  Stereotyping and role congruence are often catalysts for distorted perceptions
  and false beliefs about the abilities of groups of people.
  We highlight some of the most important studies that search for systematic
@@ -544,8 +544,8 @@ r maize farmers in southeastern Uganda perceive agro-input dealers in their
 \end_layout
 
 \begin_layout Standard
-Gender equity bias often surfaces when individuals decide on who to engage
- with, be it who to work with, who to elect as leaders, or who to consult.
+Gender bias often surfaces when individuals decide on who to engage with,
+ be it who to work with, who to elect as leaders, or who to consult.
  For example, when it comes to hiring decisions, managers must decide based
  on limited information.
  Discrimination in labor markets, including discrimination related to gender,
@@ -567,12 +567,12 @@ Economic Job Market Rumors
 \end_inset
 
  to measure gender bias in discussions about women versus men.
- Gender equity bias is also studied in the context of the wage gap, that
- is, when women appear to make substantially less money for the same work
- than their male counterparts.
- Often, this is also tied to gender equity bias in performance appraisals,
- where (often male) managers’ gendered beliefs and perceptions creep into
- evaluations of their subordinates 
+ Gender bias is also studied in the context of the wage gap, that is, when
+ women appear to make substantially less money for the same work than their
+ male counterparts.
+ Often, this is also tied to gender bias in performance appraisals, where
+ (often male) managers’ gendered beliefs and perceptions creep into evaluations
+ of their subordinates 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "doi:10.1177/0003122420962080"
@@ -584,8 +584,8 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-Another area where gender equity bias has been studied extensively is in
- scientific publishing using peer review.
+Another area where gender bias has been studied extensively is in scientific
+ publishing using peer review.
  For instance, 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -622,8 +622,8 @@ literal "false"
 
  do find a significant advantage for male authors being accepted at three
  different European conferences.
- Gender equity bias has also been studied extensively in student evaluations
- of teaching.
+ Gender bias has also been studied extensively in student evaluations of
+ teaching.
  For instance, 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -640,7 +640,7 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-Gender equity bias is also pervasive in politics.
+Gender bias is also pervasive in politics.
  
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -664,24 +664,11 @@ literal "false"
 
  find that female candidates obtain fewer votes in municipalities with higher
  gender earning gaps.
- 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "KLEIN2021257"
-literal "false"
-
-\end_inset
-
- find that the adviser's gender is one of the most important factors influencing
- a customer's choice of financial adviser.
- The female advisers’ gender was found to have a negative effect on the
- desire to invest, and this negative attitude was found to be significantly
- higher among male respondents.
 \end_layout
 
 \begin_layout Standard
 In the context of small and medium-sized enterprises (SMEs), in the agricultural
- sector in particular, we find few studies that look at gender equity bias.
+ sector in particular, we find few studies that look at gender bias.
  
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -814,7 +801,7 @@ One may argue that for results to hold for the entire farmer population,
  A second round of ratings by the same farmers of the same agro-dealers
  was collected in January and February 2022.
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
 This was done to increase the number of rating (as some farmers rated different
@@ -847,6 +834,45 @@ noprefix "false"
  Note that we only include shops in our analysis if the gender of their
  manager did not change between the first and the second round of rating
  collections.
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Change in gender between the two surveys is probably more likely if the
+ shop owner employs someone to manage the shop (instead of running the shop
+ themselves).
+ These shops are probably also more likely to be more formal businesses.
+ As such, removing these shops may mean that are results are specific to
+ smaller, more informal agro-input shops where the manager is also the owner.
+ At the same time, we feel that gender bias is particularly damaging for
+ these types of agro-dealers.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Within sampled households, we choose the person that was most knowledgeable
+ about maize farming and takes most of the decisions for the ranking and
+ interviews.
+ In most cases, this was the male household head.
+ However, as in the area where we did the research most maize plots are
+ jointly managed and decisions are taken together 
+\begin_inset CommandInset citation
+LatexCommand citep
+before "see eg."
+key "lecoutere2023empowering"
+literal "false"
+
+\end_inset
+
+, we sometimes interviewed the women if the man was unavailable (eg.
+ away from the household for longer term).
+ As such, we think our sample is fairly representative of the population
+ of farmers that interfaces with agro-input dealers.
+ 
 \end_layout
 
 \begin_layout Subsection
@@ -876,41 +902,11 @@ noprefix "false"
  In 63 percent of the cases, the male respondent is also the owner of the
  shop, while only 47 percent of female managers are also the owner.
  If the gender of the shop manager is different from the gender of the owner,
- the question emerges who's gender affects perceptions of the shop as a
+ the question emerges whose gender affects perceptions of the shop as a
  whole.
  We feel that the person who manages the shop is most visible and as such
  most likely to affect perceptions, therefore the gender of the respondent
  determines if a shop is categorized as female or male-managed in our analyses.
-\end_layout
-
-\begin_layout Standard
-There is substantial heterogeneity across shops.
- Some are small informal shops located in rural areas, which sell other
- goods and only stock seed during the planting season.
- Others are located in towns or trading centers and specialize in farm inputs
- and tools.
- The average shop has been in operation for about five to five and a half
- years.
- We already see signs of potential discrimination when we look at the number
- of customers: male managers report serving more than 51 customers a day,
- female managers serve only 36 customers per day.
- A shop stocks on average three maize seed varieties.
- More statistics describing seed handling and storage practices, efforts,
- and services of agro-input dealers, are presented in Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:descriptives indices-by gender"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
- in the appendix.
- We see that female managers do not seem to handle or store seed in less
- appropriate ways than male managers.
- In fact, on many measures, female managers appear to do better than male
- managers.
 \end_layout
 
 \begin_layout Standard
@@ -1899,7 +1895,7 @@ Sexpr{format(round(df_descriptives_dealer_female[11,5],digits =0),nsmall=0)}
 
 \begin_layout Plain Layout
 
-Number of maize varieties in stock
+Number of maize varieties in stock (last season)
 \end_layout
 
 \begin_layout Plain Layout
@@ -1987,7 +1983,7 @@ Sexpr{format(round(df_descriptives_dealer_female[19,5],digits =0),nsmall=0)}
 
 \begin_layout Plain Layout
 
-Number of hybrid maize varieties in stock
+Number of hybrid maize varieties in stock (last season)
 \end_layout
 
 \begin_layout Plain Layout
@@ -2070,7 +2066,7 @@ Sexpr{format(round(df_descriptives_dealer_female[20,5],digits =0),nsmall=0)}
 
 \begin_layout Plain Layout
 
-Number of maize OPVs in stock
+Number of maize OPVs in stock (last season)
 \end_layout
 
 \begin_layout Plain Layout
@@ -2158,7 +2154,7 @@ Sexpr{format(round(df_descriptives_dealer_female[23,5],digits =0),nsmall=0)}
 
 \begin_layout Plain Layout
 
-Sales price of maize seed in UGX/kg
+Sales price of maize seed in UGX/kg (last season)
 \end_layout
 
 \begin_layout Plain Layout
@@ -2246,7 +2242,7 @@ Sexpr{format(round(desc_female[4,5],digits =0),nsmall=0)}
 
 \begin_layout Plain Layout
 
-Cost of maize seed for dealer in UGX/kg
+Cost of maize seed for dealer in UGX/kg (last season)
 \end_layout
 
 \begin_layout Plain Layout
@@ -2329,7 +2325,7 @@ Sexpr{format(round(desc_female[5,5],digits =0),nsmall=0)}
 
 \begin_layout Plain Layout
 
-Revenue from maize seed in million UGX
+Revenue from maize seed in million UGX (last season)
 \end_layout
 
 \begin_layout Plain Layout
@@ -2412,7 +2408,7 @@ Sexpr{format(round(df_descriptives_dealer_female[98,5],digits =0),nsmall=0)}
 
 \begin_layout Plain Layout
 
-Amount of maize seed dealer bought from provider in kg
+Amount of maize seed dealer bought from provider in kg (last season)
 \end_layout
 
 \begin_layout Plain Layout
@@ -2495,7 +2491,7 @@ Sexpr{format(round(desc_female[7,5],digits =0),nsmall=0)}
 
 \begin_layout Plain Layout
 
-Amount of maize seed dealer sold in kg
+Amount of maize seed dealer sold in kg (last season)
 \end_layout
 
 \begin_layout Plain Layout
@@ -2982,6 +2978,1197 @@ $^1$The distance between shop and farmer is calculated using the haversine
  Farmers were asked to rate agro-input shops they know (one farmer can rate
  multiple shops) and these shops are not necessarily located in the immediate
  vicinity.
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+There is substantial heterogeneity across shops.
+ Some are small informal shops located in rural areas, which sell other
+ goods and only stock seed during the planting season.
+ Others are located in towns or trading centers and specialize in farm inputs
+ and tools.
+ The average shop has been in operation for about five to five and a half
+ years.
+ We find differences in the number of customers conditional on the gender
+ of the agro-dealer manager: male managers report serving more than 51 customers
+ a day, female managers serve only 36 customers per day.
+ A shop had on average three maize seed varieties in stock during the last
+ season.
+ We asked more detailed question on the four most common seed types, such
+ as amounts obtained and sold, and prices.
+ Additional statistics describing seed handling and storage practices, efforts,
+ and services of agro-input dealers, are presented in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:descriptives indices-by gender"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ We see that female managers do not seem to handle or store seed in less
+ appropriate ways than male managers.
+ In fact, on many measures, female managers appear to do better than male
+ managers.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways true
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Descriptive agro-input dealer statistics: Variables in indices
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:descriptives indices-by gender"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+small
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccccccc}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\backslash
+hline 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{5} {c} {Male} &  
+\backslash
+multicolumn{5} {c} {Female} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& mean & min & max & SD & obs.
+ & mean & min & max & SD & obs.
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-11}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Capital-intensive seed handling/storage practices observed by enumerator}
+ & & & & & & & & & & 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Shop has leak-proof roof & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[28,1],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[28,2],digits=3),nsmall=0)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[28,3],digits=3),nsmall=0)}
+  & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[28,4],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[28,5],digits=3),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[28,1],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[28,2],digits=3),nsmall=0)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[28,3],digits=3),nsmall=0)}
+  & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[28,4],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[28,5],digits=3),nsmall=0)}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Shop has insulated roof & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[29,1],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[29,2],digits=3),nsmall=0)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[29,3],digits=3),nsmall=0)}
+  & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[29,4],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[29,5],digits=3),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[29,1],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[29,2],digits=3),nsmall=0)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[29,3],digits=3),nsmall=0)}
+  & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[29,4],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[29,5],digits=3),nsmall=0)}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Shop has insulated walls & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[30,1],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[30,2],digits=3),nsmall=0)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[30,3],digits=3),nsmall=0)}
+  & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[30,4],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[30,5],digits=3),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[30,1],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[30,2],digits=3),nsmall=0)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[30,3],digits=3),nsmall=0)}
+  & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[30,4],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[30,5],digits=3),nsmall=0)}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Shop is ventilated & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[31,1],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[31,2],digits=3),nsmall=0)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[31,3],digits=3),nsmall=0)}
+  & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[31,4],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[31,5],digits=3),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[31,1],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[31,2],digits=3),nsmall=0)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[31,3],digits=3),nsmall=0)}
+  & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[31,4],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[31,5],digits=3),nsmall=0)}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Shop displays official certificate & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[37,1],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[37,2],digits=3),nsmall=0)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[37,3],digits=3),nsmall=0)}
+  & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[37,4],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[37,5],digits=3),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[37,1],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[37,2],digits=3),nsmall=0)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[37,3],digits=3),nsmall=0)}
+  & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[37,4],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[37,5],digits=3),nsmall=0)}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Shop always handles expired seed correctly & 
+\backslash
+Sexpr{format(round(desc_male[8,1],digits=3),nsmall=3)} & 
+\backslash
+Sexpr{format(round(desc_male[8,2],digits=3),nsmall=0)} & 
+\backslash
+Sexpr{format(round(desc_male[8,3],digits=3),nsmall=0)}  & 
+\backslash
+Sexpr{format(round(desc_male[8,4],digits=3),nsmall=3)} & 
+\backslash
+Sexpr{format(round(desc_male[8,5],digits=3),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+Sexpr{format(round(desc_female[8,1],digits=3),nsmall=3)} & 
+\backslash
+Sexpr{format(round(desc_female[8,2],digits=3),nsmall=0)} & 
+\backslash
+Sexpr{format(round(desc_female[8,3],digits=3),nsmall=0)}  & 
+\backslash
+Sexpr{format(round(desc_female[8,4],digits=3),nsmall=3)} & 
+\backslash
+Sexpr{format(round(desc_female[8,5],digits=3),nsmall=0)} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{1-11}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Labor-intensive seed handling/storage practices observed by enumerator}
+ & & & & & & & & & &  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Shop stores seed away from other products & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[26,1],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[26,2],digits=3),nsmall=0)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[26,3],digits=3),nsmall=0)}
+  & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[26,4],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[26,5],digits=3),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[26,1],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[26,2],digits=3),nsmall=0)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[26,3],digits=3),nsmall=0)}
+  & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[26,4],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[26,5],digits=3),nsmall=0)}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Shop has problem with pests & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[27,1],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[27,2],digits=3),nsmall=0)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[27,3],digits=3),nsmall=0)}
+  & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[27,4],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[27,5],digits=3),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[27,1],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[27,2],digits=3),nsmall=0)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[27,3],digits=3),nsmall=0)}
+  & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[27,4],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[27,5],digits=3),nsmall=0)}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Shop's light is ambient (not direct sunlight/dark) & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[34,1],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[34,2],digits=3),nsmall=0)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[34,3],digits=3),nsmall=0)}
+  & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[34,4],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[34,5],digits=3),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[34,1],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[34,2],digits=3),nsmall=0)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[34,3],digits=3),nsmall=0)}
+  & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[34,4],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[34,5],digits=3),nsmall=0)}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Shop stores seed on pallets/shelves (not directly on wood/floor/cardboard)
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[35,1],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[35,2],digits=3),nsmall=0)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[35,3],digits=3),nsmall=0)}
+  & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[35,4],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[35,5],digits=3),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[35,1],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[35,2],digits=3),nsmall=0)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[35,3],digits=3),nsmall=0)}
+  & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[35,4],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[35,5],digits=3),nsmall=0)}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Shop stores maize seed in open containers & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[36,1],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[36,2],digits=3),nsmall=0)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[36,3],digits=3),nsmall=0)}
+  & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[36,4],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[36,5],digits=3),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[36,1],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[36,2],digits=3),nsmall=0)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[36,3],digits=3),nsmall=0)}
+  & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[36,4],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[36,5],digits=3),nsmall=0)}
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Shop's cleanliness/professionality rating by enumerator & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[38,1],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[38,2],digits=3),nsmall=0)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[38,3],digits=3),nsmall=0)}
+  & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[38,4],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[38,5],digits=3),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[38,1],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[38,2],digits=3),nsmall=0)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[38,3],digits=3),nsmall=0)}
+  & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[38,4],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[38,5],digits=3),nsmall=0)}
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{1-11}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Dealer's efforts and services} & & & & & & & & & & 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Shop always explains to customers how seed should be used & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[41,1],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[41,2],digits=3),nsmall=0)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[41,3],digits=3),nsmall=0)}
+  & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[41,4],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[41,5],digits=3),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[41,1],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[41,2],digits=3),nsmall=0)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[41,3],digits=3),nsmall=0)}
+  & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[41,4],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[41,5],digits=3),nsmall=0)}
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Shop always recommends complementary inputs to customers & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[42,1],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[42,2],digits=3),nsmall=0)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[42,3],digits=3),nsmall=0)}
+  & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[42,4],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[42,5],digits=3),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[42,1],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[42,2],digits=3),nsmall=0)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[42,3],digits=3),nsmall=0)}
+  & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[42,4],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[42,5],digits=3),nsmall=0)}
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Shop offers extension/training & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[43,1],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[43,2],digits=3),nsmall=0)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[43,3],digits=3),nsmall=0)}
+  & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[43,4],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[43,5],digits=3),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[43,1],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[43,2],digits=3),nsmall=0)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[43,3],digits=3),nsmall=0)}
+  & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[43,4],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[43,5],digits=3),nsmall=0)}
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Shop offers discounts for large quantities & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[44,1],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[44,2],digits=3),nsmall=0)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[44,3],digits=3),nsmall=0)}
+  & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[44,4],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[44,5],digits=3),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[44,1],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[44,2],digits=3),nsmall=0)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[44,3],digits=3),nsmall=0)}
+  & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[44,4],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[44,5],digits=3),nsmall=0)}
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Shop's smallest seed bag is 1 kg (not larger) & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[45,1],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[45,2],digits=3),nsmall=0)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[45,3],digits=3),nsmall=0)}
+  & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[45,4],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[45,5],digits=3),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[45,1],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[45,2],digits=3),nsmall=0)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[45,3],digits=3),nsmall=0)}
+  & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[45,4],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[45,5],digits=3),nsmall=0)}
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Shop provides seed on credit & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[49,1],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[49,2],digits=3),nsmall=0)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[49,3],digits=3),nsmall=0)}
+  & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[49,4],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[49,5],digits=3),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[49,1],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[49,2],digits=3),nsmall=0)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[49,3],digits=3),nsmall=0)}
+  & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[49,4],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[49,5],digits=3),nsmall=0)}
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Shop received seed related complaint from customer & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[52,1],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[52,2],digits=3),nsmall=0)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[52,3],digits=3),nsmall=0)}
+  & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[52,4],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[52,5],digits=3),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[52,1],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[52,2],digits=3),nsmall=0)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[52,3],digits=3),nsmall=0)}
+  & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[52,4],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[52,5],digits=3),nsmall=0)}
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Shop accepts mobile money as payment & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[53,1],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[53,2],digits=3),nsmall=0)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[53,3],digits=3),nsmall=0)}
+  & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[53,4],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_male[53,5],digits=3),nsmall=0)}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[53,1],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[53,2],digits=3),nsmall=0)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[53,3],digits=3),nsmall=0)}
+  & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[53,4],digits=3),nsmall=3)}
+ & 
+\backslash
+Sexpr{format(round(df_descriptives_dealer_female[53,5],digits=3),nsmall=0)}
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: SD is the standard deviation.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Number of observations: All 193 agro-input dealers are included in this
+ table.
 \backslash
 
 \backslash
@@ -3645,6 +4832,8 @@ SD is the standard deviation.
 \begin_layout Plain Layout
 
 Number of observations: All 1,931 farmers are included in this table.
+ However, farmers were allowed to indicate that they did not know, sometimes
+ leading to lower response rate on sensitive or harder questions.
 \backslash
 
 \backslash
@@ -5090,8 +6279,8 @@ noprefix "false"
 \end_inset
 
 ), Ordinary Least Squares (OLS) remains consistent.
- However, not considering within-cluster error correlation generally leads
- to standard errors that are biased downward, leading to under-rejection
+ However, not considering (positive) within-cluster error correlation generally
+ leads to standard errors that are biased downward, leading to over-rejection
  of the null hypothesis that gender does not affect ratings.
  In our case, it should be noted that clustering is non-nested.
  As traditional cluster-robust inference can only deal with clustering in
@@ -5159,7 +6348,7 @@ noprefix "false"
 
 \end_inset
 
-), the identification of the gender equity effect 
+), the identification of the gender effect 
 \begin_inset Formula $\left(\beta\right)$
 \end_inset
 
@@ -5313,16 +6502,16 @@ One may wonder if controlling for age and education is sufficient, as causal
  where differences in ratings reflect real differences between male- and
  female-managed shops.
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
 Deciding which control variables to include is not always straightforward,
  especially for seed quality, which is difficult to verify objectively (which
  is why farmers are likely to rely on perceptions and potential gender differenc
 es in perceptions of agro-input shop managers are particularly alarming).
- The decision on what controls to use is based on quantitative and qualitative
- data of different stakeholders (including extension staff, agronomists,
- seed inspectors, and so forth) that was collected prior to the study.
+ The decision on what controls to use is based on focus group discussions
+ and expert interviews with different stakeholders (including extension
+ staff, agronomists, seed inspectors, and so forth).
 \end_layout
 
 \end_inset
@@ -5337,8 +6526,8 @@ Farmer-level characteristics could also confound the relationship between
  higher ratings.
  At the same time, imagine that better-educated farmers are more inclined
  to shop at male-managed agro-input dealerships.
- This would make it difficult to differentiate a gender equity effect from
- an effect arising from differences in farmer education.
+ This would make it difficult to differentiate a gender effect from an effect
+ arising from differences in farmer education.
  Fortunately, we often have instances where the same farmer rates both male-
  and female-managed agro-input shops.
  This allows us to exploit within-farmer variation for identification in
@@ -6711,7 +7900,7 @@ literal "false"
  7) has received a seed-related complaint from a customer; and 8) accepts
  mobile money as a payment modality.
  Descriptive statistics for the variables which constitute this effort and
- service index are shown in the appendix in Table 
+ service index are shown in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:descriptives indices-by gender"
@@ -6732,7 +7921,7 @@ noprefix "false"
 n certificates, training certificates, registration with an association,
  and so forth).
  Also for these variables which constitute the capital-intensive practices
- index, descriptive statistics are shown in the appendix in Table 
+ index, descriptive statistics are shown in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:descriptives indices-by gender"
@@ -6841,8 +8030,8 @@ noprefix "false"
  The analysis confirms that there is a difference in perception of male
  and female dealers, and that this difference cannot be explained by actual
  price differences.
- The gender equity effect is larger than the one found without controlling
- for actual price differences in Table 
+ The gender effect is larger than the one found without controlling for
+ actual price differences in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "table: between_dealer ratings_no controls"
@@ -6883,8 +8072,7 @@ all
  This index also includes the shop’s overall cleanliness and professionality
  rating provided by the enumerator.
  Descriptive statistics for the variables which constitute this (capital-
- and labor-intensive) practices index can be found in the appendix in Table
- 
+ and labor-intensive) practices index can be found in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:descriptives indices-by gender"
@@ -9630,9 +10818,9 @@ noprefix "false"
  For perceptions related to seed germination, male-managed agro-input shops
  receive a score that is on average 0.11 higher than the germination rating
  female-managed shops receive.
- The gender equity bias in this dimension is also reflected in a significant
- difference in the average seed rating between male- and female-managed
- agro-input shops in column (1).
+ The gender bias in this dimension is also reflected in a significant difference
+ in the average seed rating between male- and female-managed agro-input
+ shops in column (1).
 \end_layout
 
 \begin_layout Standard
@@ -10090,9 +11278,9 @@ label{table:table9}
 \end_layout
 
 \begin_layout Standard
-The fact that we do find gender equity bias when farmers are asked to assess
- seed quality if we control for farmer fixed-effects suggests that, in the
- between-dealers regressions of Tables 
+The fact that we do find gender bias when farmers are asked to assess seed
+ quality if we control for farmer fixed-effects suggests that, in the between-de
+alers regressions of Tables 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "table: between_seed ratings_no controls"
@@ -10112,7 +11300,7 @@ noprefix "false"
 
 \end_inset
 
-, gender equity bias is obscured by farmer-level confounders.
+, gender bias is obscured by farmer-level confounders.
  For instance, it could be that farmers that are higher educated also provide
  higher ratings and that these higher-educated farmers are also more likely
  to shop at female-managed dealerships.
@@ -10179,8 +11367,8 @@ noprefix "false"
  We find that controlling for observable characteristics at the dealer level
  does not change the findings for the first set of ratings, which evaluate
  the dealership.
- The largest gender equity effects are found when farmers rate price competitive
-ness in column (4) and agro-input dealer reputation in column (7).
+ The largest gender effects are found when farmers rate price competitiveness
+ in column (4) and agro-input dealer reputation in column (7).
  In both cases, male-managed agro-input shops are rated about 0.22 points
  higher.
  The difference in ratings between male- and female-managed agro-input shops
@@ -12072,18 +13260,18 @@ Furthermore, ratings of agro-input dealers provided by farmers may also
  To control for farmer heterogeneity, we exploit the fact that farmers often
  rated several agro-input dealers of different genders and ran farmer fixed-effe
 cts models.
- Doing so, we confirm the existence of gender equity bias when farmers were
- asked to rate general characteristics of agro-input dealers, but also find
- differences in ratings of different dimensions of seed quality sold by
- dealers of different genders.
+ Doing so, we confirm the existence of gender bias when farmers were asked
+ to rate general characteristics of agro-input dealers, but also find difference
+s in ratings of different dimensions of seed quality sold by dealers of
+ different genders.
 \end_layout
 
 \begin_layout Standard
 Looking into the individual dimensions that were rated, we find particularly
- strong gender equity bias when farmers rated agro-input dealers in terms
- of price competitiveness.
+ strong gender bias when farmers rated agro-input dealers in terms of price
+ competitiveness.
  Furthermore, and especially after controlling for farmer-level heterogeneity,
- we find that male-managed agro-input shops to have a significantly better
+ we find that male-managed agro-input shops have a significantly better
  reputation than female-managed shops.
  This contrast in reputation is also reflected in a significant difference
  between male and female dealers in the general quality rating.
@@ -12118,7 +13306,7 @@ noprefix "false"
 \end_inset
 
 ), we investigate whether these shops are located better.
- However, apparently these shops are further way from roads and customers,
+ However, apparently these shops are further away from roads and customers,
  implying that location is not the competitive advantage that keeps female
  dealers in the market.
  It is however possible that there is less competition in these more remote
@@ -12156,8 +13344,8 @@ literal "false"
 
 \end_inset
 
-, and storage in moist conditions or in direct sunlight further reduce seed
- quality 
+, and storage in moist conditions or in direct sunlight further reduces
+ seed quality 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "govender2008effect,Curzi2022"
@@ -12213,7 +13401,7 @@ noprefix "false"
 \end_layout
 
 \begin_layout Standard
-However, gender equity bias does not only directly impact women’s capabilities,
+However, gender bias does not only directly impact women’s capabilities,
  aspirations, and their empowerment in agri-food systems 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -12289,7 +13477,15 @@ First, even though we do not find evidence of male-managed agro-input shops
  actually providing better quality than female-managed shops, existing training
  and advisory services for agro-input dealers are also likely to be biased
  toward men, and this may indirectly influence perceptions related to the
- abilities of female managers.
+ abilities of female managers 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "doi:10.1080/1389224X.2013.817343"
+literal "false"
+
+\end_inset
+
+.
  Ensuring that women entrepreneurs have access to training should be a policy
  priority.
  The effectiveness and inclusiveness of training programs depend on many
@@ -12348,7 +13544,7 @@ Finally, we find that biased perceptions exist especially with respect to
  prices charged by female agro-input dealers.
  Simply advertising prices may be sufficient to make them objectively verifiable
 , and customers will need to depend less on perceptions and the use of mental
- shortcuts that are prone to gender equity bias.
+ shortcuts that are prone to gender bias.
 \end_layout
 
 \begin_layout Standard
@@ -12357,7 +13553,7 @@ Our research also has implications for integrated seed system development.
  value chain—with increasing engagement in input and output markets disadvantagi
 ng women—more informal seed systems may provide more scope for equitable
  development.
- Seed for food crops in which the private sector is less interest, such
+ Seed for food crops in which the private sector is less interested, such
  as sweet potato or beans, are often perceived as more in the female domain
  than crops that are also grown for cash.
  Furthermore, alternative forms of certification which are less stringent
@@ -12445,1172 +13641,6 @@ LatexCommand bibtex
 btprint "btPrintCited"
 bibfiles "discrimination"
 options "IFPRI_Style"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section*
-\noindent
-\begin_inset Newpage newpage
-\end_inset
-
-Appendix
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float table
-wide false
-sideways true
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Descriptive agro-input dealer statistics: Variables in indices
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:descriptives indices-by gender"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-small
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{center}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{tabular}{rcccccccccc}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-hline
-\backslash
-hline 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-& 
-\backslash
-multicolumn{5} {c} {Male} &  
-\backslash
-multicolumn{5} {c} {Female} 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-& mean & min & max & SD & obs.
- & mean & min & max & SD & obs.
- 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-cline{2-11}
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-textbf{Capital-intensive seed handling/storage practices observed by enumerator}
- & & & & & & & & & & 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Shop has leak-proof roof & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[28,1],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[28,2],digits=3),nsmall=0)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[28,3],digits=3),nsmall=0)}
-  & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[28,4],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[28,5],digits=3),nsmall=0)}
-\end_layout
-
-\begin_layout Plain Layout
-
-& 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[28,1],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[28,2],digits=3),nsmall=0)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[28,3],digits=3),nsmall=0)}
-  & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[28,4],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[28,5],digits=3),nsmall=0)}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Shop has insulated roof & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[29,1],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[29,2],digits=3),nsmall=0)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[29,3],digits=3),nsmall=0)}
-  & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[29,4],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[29,5],digits=3),nsmall=0)}
-\end_layout
-
-\begin_layout Plain Layout
-
-& 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[29,1],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[29,2],digits=3),nsmall=0)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[29,3],digits=3),nsmall=0)}
-  & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[29,4],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[29,5],digits=3),nsmall=0)}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Shop has insulated walls & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[30,1],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[30,2],digits=3),nsmall=0)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[30,3],digits=3),nsmall=0)}
-  & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[30,4],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[30,5],digits=3),nsmall=0)}
-\end_layout
-
-\begin_layout Plain Layout
-
-& 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[30,1],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[30,2],digits=3),nsmall=0)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[30,3],digits=3),nsmall=0)}
-  & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[30,4],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[30,5],digits=3),nsmall=0)}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Shop is ventilated & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[31,1],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[31,2],digits=3),nsmall=0)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[31,3],digits=3),nsmall=0)}
-  & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[31,4],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[31,5],digits=3),nsmall=0)}
-\end_layout
-
-\begin_layout Plain Layout
-
-& 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[31,1],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[31,2],digits=3),nsmall=0)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[31,3],digits=3),nsmall=0)}
-  & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[31,4],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[31,5],digits=3),nsmall=0)}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Shop displays official certificate & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[37,1],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[37,2],digits=3),nsmall=0)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[37,3],digits=3),nsmall=0)}
-  & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[37,4],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[37,5],digits=3),nsmall=0)}
-\end_layout
-
-\begin_layout Plain Layout
-
-& 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[37,1],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[37,2],digits=3),nsmall=0)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[37,3],digits=3),nsmall=0)}
-  & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[37,4],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[37,5],digits=3),nsmall=0)}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Shop always handles expired seed correctly & 
-\backslash
-Sexpr{format(round(desc_male[8,1],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(desc_male[8,2],digits=3),nsmall=0)} & 
-\backslash
-Sexpr{format(round(desc_male[8,3],digits=3),nsmall=0)}  & 
-\backslash
-Sexpr{format(round(desc_male[8,4],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(desc_male[8,5],digits=3),nsmall=0)}
-\end_layout
-
-\begin_layout Plain Layout
-
-& 
-\backslash
-Sexpr{format(round(desc_female[8,1],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(desc_female[8,2],digits=3),nsmall=0)} & 
-\backslash
-Sexpr{format(round(desc_female[8,3],digits=3),nsmall=0)}  & 
-\backslash
-Sexpr{format(round(desc_female[8,4],digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(desc_female[8,5],digits=3),nsmall=0)} 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-cline{1-11}
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-textbf{Labor-intensive seed handling/storage practices observed by enumerator}
- & & & & & & & & & &  
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Shop stores seed away from other products & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[26,1],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[26,2],digits=3),nsmall=0)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[26,3],digits=3),nsmall=0)}
-  & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[26,4],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[26,5],digits=3),nsmall=0)}
-\end_layout
-
-\begin_layout Plain Layout
-
-& 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[26,1],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[26,2],digits=3),nsmall=0)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[26,3],digits=3),nsmall=0)}
-  & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[26,4],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[26,5],digits=3),nsmall=0)}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Shop has problem with pests & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[27,1],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[27,2],digits=3),nsmall=0)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[27,3],digits=3),nsmall=0)}
-  & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[27,4],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[27,5],digits=3),nsmall=0)}
-\end_layout
-
-\begin_layout Plain Layout
-
-& 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[27,1],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[27,2],digits=3),nsmall=0)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[27,3],digits=3),nsmall=0)}
-  & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[27,4],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[27,5],digits=3),nsmall=0)}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Shop's light is ambient (not direct sunlight/dark) & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[34,1],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[34,2],digits=3),nsmall=0)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[34,3],digits=3),nsmall=0)}
-  & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[34,4],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[34,5],digits=3),nsmall=0)}
-\end_layout
-
-\begin_layout Plain Layout
-
-& 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[34,1],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[34,2],digits=3),nsmall=0)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[34,3],digits=3),nsmall=0)}
-  & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[34,4],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[34,5],digits=3),nsmall=0)}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Shop stores seed on pallets/shelves (not directly on wood/floor/cardboard)
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[35,1],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[35,2],digits=3),nsmall=0)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[35,3],digits=3),nsmall=0)}
-  & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[35,4],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[35,5],digits=3),nsmall=0)}
-\end_layout
-
-\begin_layout Plain Layout
-
-& 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[35,1],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[35,2],digits=3),nsmall=0)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[35,3],digits=3),nsmall=0)}
-  & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[35,4],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[35,5],digits=3),nsmall=0)}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Shop stores maize seed in open containers & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[36,1],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[36,2],digits=3),nsmall=0)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[36,3],digits=3),nsmall=0)}
-  & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[36,4],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[36,5],digits=3),nsmall=0)}
-\end_layout
-
-\begin_layout Plain Layout
-
-& 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[36,1],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[36,2],digits=3),nsmall=0)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[36,3],digits=3),nsmall=0)}
-  & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[36,4],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[36,5],digits=3),nsmall=0)}
- 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Shop's cleanliness/professionality rating by enumerator & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[38,1],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[38,2],digits=3),nsmall=0)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[38,3],digits=3),nsmall=0)}
-  & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[38,4],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[38,5],digits=3),nsmall=0)}
-\end_layout
-
-\begin_layout Plain Layout
-
-& 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[38,1],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[38,2],digits=3),nsmall=0)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[38,3],digits=3),nsmall=0)}
-  & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[38,4],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[38,5],digits=3),nsmall=0)}
- 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-cline{1-11}
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-textbf{Dealer's efforts and services} & & & & & & & & & & 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Shop always explains to customers how seed should be used & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[41,1],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[41,2],digits=3),nsmall=0)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[41,3],digits=3),nsmall=0)}
-  & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[41,4],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[41,5],digits=3),nsmall=0)}
-\end_layout
-
-\begin_layout Plain Layout
-
-& 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[41,1],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[41,2],digits=3),nsmall=0)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[41,3],digits=3),nsmall=0)}
-  & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[41,4],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[41,5],digits=3),nsmall=0)}
- 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Shop always recommends complementary inputs to customers & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[42,1],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[42,2],digits=3),nsmall=0)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[42,3],digits=3),nsmall=0)}
-  & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[42,4],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[42,5],digits=3),nsmall=0)}
-\end_layout
-
-\begin_layout Plain Layout
-
-& 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[42,1],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[42,2],digits=3),nsmall=0)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[42,3],digits=3),nsmall=0)}
-  & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[42,4],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[42,5],digits=3),nsmall=0)}
- 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Shop offers extension/training & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[43,1],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[43,2],digits=3),nsmall=0)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[43,3],digits=3),nsmall=0)}
-  & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[43,4],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[43,5],digits=3),nsmall=0)}
-\end_layout
-
-\begin_layout Plain Layout
-
-& 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[43,1],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[43,2],digits=3),nsmall=0)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[43,3],digits=3),nsmall=0)}
-  & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[43,4],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[43,5],digits=3),nsmall=0)}
- 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Shop offers discounts for large quantities & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[44,1],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[44,2],digits=3),nsmall=0)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[44,3],digits=3),nsmall=0)}
-  & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[44,4],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[44,5],digits=3),nsmall=0)}
-\end_layout
-
-\begin_layout Plain Layout
-
-& 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[44,1],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[44,2],digits=3),nsmall=0)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[44,3],digits=3),nsmall=0)}
-  & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[44,4],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[44,5],digits=3),nsmall=0)}
- 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Shop's smallest seed bag is 1 kg (not larger) & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[45,1],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[45,2],digits=3),nsmall=0)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[45,3],digits=3),nsmall=0)}
-  & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[45,4],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[45,5],digits=3),nsmall=0)}
-\end_layout
-
-\begin_layout Plain Layout
-
-& 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[45,1],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[45,2],digits=3),nsmall=0)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[45,3],digits=3),nsmall=0)}
-  & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[45,4],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[45,5],digits=3),nsmall=0)}
- 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Shop provides seed on credit & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[49,1],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[49,2],digits=3),nsmall=0)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[49,3],digits=3),nsmall=0)}
-  & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[49,4],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[49,5],digits=3),nsmall=0)}
-\end_layout
-
-\begin_layout Plain Layout
-
-& 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[49,1],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[49,2],digits=3),nsmall=0)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[49,3],digits=3),nsmall=0)}
-  & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[49,4],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[49,5],digits=3),nsmall=0)}
- 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Shop received seed related complaint from customer & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[52,1],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[52,2],digits=3),nsmall=0)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[52,3],digits=3),nsmall=0)}
-  & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[52,4],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[52,5],digits=3),nsmall=0)}
-\end_layout
-
-\begin_layout Plain Layout
-
-& 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[52,1],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[52,2],digits=3),nsmall=0)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[52,3],digits=3),nsmall=0)}
-  & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[52,4],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[52,5],digits=3),nsmall=0)}
- 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Shop accepts mobile money as payment & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[53,1],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[53,2],digits=3),nsmall=0)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[53,3],digits=3),nsmall=0)}
-  & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[53,4],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_male[53,5],digits=3),nsmall=0)}
-\end_layout
-
-\begin_layout Plain Layout
-
-& 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[53,1],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[53,2],digits=3),nsmall=0)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[53,3],digits=3),nsmall=0)}
-  & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[53,4],digits=3),nsmall=3)}
- & 
-\backslash
-Sexpr{format(round(df_descriptives_dealer_female[53,5],digits=3),nsmall=0)}
- 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-hline
-\backslash
-hline
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{tabular}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{center}
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-footnotesize
-\end_layout
-
-\begin_layout Plain Layout
-
-Note: SD is the standard deviation.
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Number of observations: All 193 agro-input dealers are included in this
- table.
-\backslash
-
-\backslash
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
 
 \end_inset
 
