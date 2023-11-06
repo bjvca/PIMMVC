@@ -835,7 +835,7 @@ noprefix "false"
  manager did not change between the first and the second round of rating
  collections.
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Change in gender between the two surveys is probably more likely if the
@@ -4202,7 +4202,8 @@ noprefix "false"
  Half of our sampled farmers indicate that they used improved maize seed,
  i.e., seed of a hybrid or open-pollinated variety, on at least one plot in
  the season preceding the survey, and of the farmers that used improved
- seed, two-thirds obtained it from an agro-input shop.
+ seed, two-thirds obtained it from an agro-input shop, suggesting reasonable
+ varietal turnover at this level.
  However, fertilizer use is low.
  As a result, productivity is also low, with the average farmer harvesting
  only about 450 kg of maize per acre.
@@ -6116,6 +6117,19 @@ Number of observations: All ratings by farmers given to dealers during the
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+As this study explicitly focuses on perceptions, farmers were allowed to
+ rate all agro-dealers in their neighborhood, regardless of their experience
+ with them.
+ However, we collected some data on actual farmer-dealer interaction to
+ get a sense of the degree of personal cognizance.
+ The data suggests that about 26 percent of farmers ever bought seed from
+ the agro-dealer that they rated.
+ Those that did ever buy seed have been a customer for about 4 years.
+ Roughly 44 percent of these farmers also bought seed in the year preceding
+ the study.
 \end_layout
 
 \begin_layout Section
