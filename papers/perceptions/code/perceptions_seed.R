@@ -4440,7 +4440,9 @@ baseline_dealers$maize.owner.agree.longe4.q62 <- as.numeric(as.character(baselin
 baseline_dealers$maize.owner.agree.longe4.q62[baseline_dealers$maize.owner.agree.longe4.q62==999]<-NA #x
 baseline_dealers$maize.owner.agree.longe4.q62[baseline_dealers$maize.owner.agree.q57=="0"] <- 0 #x
 
-baseline_dealers$quantitysold <- baseline_dealers$maize.owner.agree.long10h.q25+baseline_dealers$maize.owner.agree.longe7h.q37+baseline_dealers$maize.owner.agree.longe5.q50+baseline_dealers$maize.owner.agree.longe4.q62 #x
+#baseline_dealers$quantitysold <- baseline_dealers$maize.owner.agree.long10h.q25+baseline_dealers$maize.owner.agree.longe7h.q37+baseline_dealers$maize.owner.agree.longe5.q50
+#                                          +baseline_dealers$maize.owner.agree.longe4.q62 #x
+baseline_dealers$quantitysold <- baseline_dealers$maize.owner.agree.long10h.q25+baseline_dealers$maize.owner.agree.longe5.q50    #x
 
 trim <- function(var,dataset,trim_perc=.02){
   
