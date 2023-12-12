@@ -32,6 +32,9 @@ rating_dyads_midline <- read.csv(paste(path_2,"perceptions/data_seed_systems_mid
 
 ratFE<- rating_dyads
 
+dyad_1<-rating_dyads
+dyad_2<-rating_dyads_midline
+
 ### check if gender of agro input dealer in baseline corresponds to gender in midline:
 #baseline data 
 baseline_dealer <- read.csv(paste(path_2,"perceptions/data_seed_systems/data/input_dealer/baseline_dealer.csv", sep="/"), stringsAsFactors = FALSE)
@@ -1124,9 +1127,24 @@ names(mid) <- gsub(x = names(mid), pattern = "owner.", replacement = "maize.owne
 
 midm<-merge(mid, basem, by="shop_ID") #merging both midline and baseline for FE
 
+#analysing using year dummy 
+base_yr<-base
+midm_yr<-midm
+
+rat1<-rating_dyads
+rat2<-rating_dyads_midline
+
+brat <- merge(base_yr, rat1, by="shop_ID")
+mrat <- merge(midm_yr, rat2, by="shop_ID")
+
+brat$year<-0
+mrat$year<-1
+
+dealer_stackyr<-rbind(brat, mrat) #stacking dealer data from both periods 
+
+################
+
 dealer_stack <- rbind(base, midm) #stacking dealer data from both periods 
-
-
 #getting controls as averages for between dealers 
 merged_dealer[merged_dealer==999] <- NA
 
@@ -1181,6 +1199,28 @@ merged_dealer$primmid[merged_dealer$owner.agree.educ=="e"|merged_dealer$owner.ag
 merged_dealer$prim <-  rowMeans(merged_dealer[c("primbase","primmid")],na.rm=T) 
 table(merged_dealer$prim)
 
+############## year dummy
+dealer_stackyr[dealer_stackyr==999] <- NA
+dealer_stackyr$moist <-  dealer_stackyr$maize.owner.moistread
+dealer_stackyr$shelflife<-  dealer_stackyr$maize.owner.shelflife_Caro
+dealer_stackyr$dealereffort <-  dealer_stackyr$maize.owner.index_efforts
+dealer_stackyr$index_cap <-  dealer_stackyr$maize.owner.index_practices_cap
+dealer_stackyr$index_allprac <-  dealer_stackyr$maize.owner.practices_all
+dealer_stackyr$saleprice <-  dealer_stackyr$maize.owner.saleprice
+dealer_stackyr$costseed <-  dealer_stackyr$maize.owner.costseed
+dealer_stackyr$moist <-  dealer_stackyr$maize.owner.moistread
+dealer_stackyr$hybridnum <-  dealer_stackyr$maize.owner.agree.q19
+dealer_stackyr$quanprovider <-dealer_stackyr$maize.owner.quanprovider
+dealer_stackyr$unada <-  dealer_stackyr$maize.owner.unada
+dealer_stackyr$warning<-  dealer_stackyr$maize.owner.warning
+dealer_stackyr$distance <-  dealer_stackyr$maize.owner.dist
+dealer_stackyr$moist <-  dealer_stackyr$maize.owner.moistread
+
+dealer_stackyr$prim<-0
+dealer_stackyr$prim[dealer_stackyr$maize.owner.agree.educ=="e"|dealer_stackyr$maize.owner.agree.educ=="f"] <- 1
+table(dealer_stackyr$prim)
+###########
+
 table(merged_dealer$maize.owner.agree.q3) #distance to tarmac road in km, only in baseline 
 table(merged_dealer$maize.owner.agree.q4) #distance to murram road in km, only in baseline 
 
@@ -1189,9 +1229,17 @@ merged_dealer$inputsale_base<- ifelse(merged_dealer$maize.owner.agree.q5== 'Yes'
 merged_dealer$inputsale_mid<- ifelse(merged_dealer$owner.agree.q5== 'Yes', 1, 0) #midline 
 merged_dealer$inputsale<-  rowMeans(merged_dealer[c("inputsale_base","inputsale_mid")],na.rm=T) #averaging 
 
+###############
+dealer_stackyr$inputsale<- ifelse(dealer_stackyr$maize.owner.agree.q5== 'Yes', 1, 0)
+###########
+
 #Q8. When was this agro-input shop established? (year)  ---- only in baseline 
 merged_dealer$years_shop <- 2022 - as.numeric(as.character(substr(merged_dealer$maize.owner.agree.q8, start=1, stop=4)))
 table(merged_dealer$years_shop)
+
+##############
+dealer_stackyr$years_shop <- 2022 - as.numeric(as.character(substr(dealer_stackyr$maize.owner.agree.q8, start=1, stop=4)))
+############
 
 #seed stored in dedicated area?
 merged_dealer$dedicated_areabase<- ifelse(merged_dealer$maize.owner.agree.temp.q69== 'Yes', 1, 0)   #baseline
@@ -1199,6 +1247,25 @@ table(merged_dealer$dedicated_areabase)
 merged_dealer$dedicated_areamid<- ifelse(merged_dealer$owner.agree.temp.q69== 'Yes', 1, 0)   #midline
 table(merged_dealer$dedicated_areamid)
 merged_dealer$dedicated_area<-  rowMeans(merged_dealer[c("dedicated_areabase","dedicated_areamid")],na.rm=T) #averaging 
+
+################## year dummy 
+dealer_stackyr$dedicated_area <- ifelse(dealer_stackyr$maize.owner.agree.temp.q69== 'Yes', 1, 0) 
+dealer_stackyr$pest_prob<- ifelse(dealer_stackyr$maize.owner.agree.temp.q71== 'No', 1, 0)
+dealer_stackyr$insulated<- ifelse(dealer_stackyr$maize.owner.agree.temp.q73== 'Yes', 1, 0)
+dealer_stackyr$wall_heatproof<- ifelse(dealer_stackyr$maize.owner.agree.temp.q74== 'Yes', 1, 0)
+dealer_stackyr$ventilationbase<- ifelse(dealer_stackyr$maize.owner.agree.temp.q75== 'Yes', 1, 0)
+dealer_stackyr$badlighting <- 0
+dealer_stackyr$badlighting[dealer_stackyr$maize.owner.agree.temp.q78=="2"]<-1
+dealer_stackyr$badstored <- 0 #baseline 
+dealer_stackyr$badstored[dealer_stackyr$maize.owner.agree.temp.q79=="3"|dealer_stackyr$maize.owner.agree.temp.q79=="4"|dealer_stackyr$maize.owner.agree.temp.q79=="5"]<-1
+dealer_stackyr$open_storage<- ifelse(dealer_stackyr$maize.owner.agree.temp.q80== 'No', 1, 0)
+dealer_stackyr$cert_yes<- ifelse(dealer_stackyr$maize.owner.agree.temp.q81== 'Yes', 1, 0)
+dealer_stackyr$shop_rate<- dealer_stackyr$maize.owner.agree.temp.q82
+dealer_stackyr$complaint<-dealer_stackyr$maize.owner.complaint
+dealer_stackyr$leakproof<- ifelse(dealer_stackyr$maize.owner.agree.temp.q72== 'Yes', 1, 0)  
+dealer_stackyr$lotnumber<-  dealer_stackyr$maize.owner.lot
+
+###################
 
 #problem with rats or pests?
 #we try to formulate this as a good quality variable --- So, no problem with pests is good
@@ -1292,6 +1359,10 @@ rat<-rating_dyads #prepping rating_dyads for FE
 #getting dealer characteristics for controls 
 rating_dyads <- merge(merged_dealer, rating_dyads, by="shop_ID")
 
+###############################   using year dummy analysis 
+#keep only those that have same gender in baseline and midline
+dealer_stackyr<- subset(dealer_stackyr,shop_ID  %in% to_select)
+#####################
 
 # convert to numbers and aggregate scores at agro-input dealer level for between regression -- also including controls 
 
@@ -1334,6 +1405,49 @@ rating_dyads$overall_rating <-  rowMeans(rating_dyads[c("general_rating","locati
 rating_dyads$score  <-  rowMeans(rating_dyads[c("seed_quality_general_rating","seed_yield_rating","seed_drought_rating","seed_disease_rating","seed_maturing_rating","seed_germinate_rating")],na.rm=T)
 
 
+############################################  year dummy
+
+# convert to numbers for between regression -- also including controls 
+
+dealer_stackyr[c("general_rating","location_rating","price_rating","quality_rating","stock_rating","reputation_rating","seed_quality_general_rating","seed_yield_rating","seed_drought_rating","seed_disease_rating","seed_maturing_rating","seed_germinate_rating"
+) ] <- lapply(dealer_stackyr[c("general_rating","location_rating","price_rating","quality_rating","stock_rating","reputation_rating","seed_quality_general_rating","seed_yield_rating","seed_drought_rating","seed_disease_rating","seed_maturing_rating","seed_germinate_rating"
+)], function(x) as.numeric(as.character(x)))
+
+dealer_stackyr[c("seed_quality_general_rating","seed_yield_rating","seed_drought_rating","seed_disease_rating","seed_maturing_rating","seed_germinate_rating") ] <- lapply(dealer_stackyr[c("seed_quality_general_rating","seed_yield_rating","seed_drought_rating","seed_disease_rating","seed_maturing_rating","seed_germinate_rating")], function(x) replace(x, x == 98,NA) )
+
+#dealer_stackyr <- subset(dealer_stackyr, !is.na(dealer_stackyr$general_rating))
+
+dealer_stackyr$gender<-ifelse(dealer_stackyr$maize.owner.agree.gender== 'Male', 1, 0)
+
+names <- names(dealer_stackyr) %in% c("shop_ID","year","gender", "dealereffort", "index_cap", "shelflife", "moist", "saleprice", "costseed","hybridnum","quanprovider","unada", "index_allprac","warning", "distance",
+                                               "maize.owner.agree.age","prim","maize.owner.agree.q3", "maize.owner.agree.q4",  "inputsale", "years_shop", "dedicated_area", "pest_prob", "insulated", "wall_heatproof", "ventilation", "badlighting", "badstored", "open_storage", "cert_yes", "shop_rate", "complaint", "lotnumber","leakproof",
+                                               "general_rating","location_rating","price_rating","quality_rating","stock_rating","reputation_rating","seed_quality_general_rating","seed_yield_rating","seed_drought_rating","seed_disease_rating","seed_maturing_rating","seed_germinate_rating")
+
+dealer_stackyr <- dealer_stackyr[names]
+
+data1<-dealer_stackyr[dealer_stackyr$year==0,]
+data1 <- subset(data1, !is.na(data1$general_rating))
+data1<-aggregate(x = data1,   by = list(data1$shop_ID),  FUN = mean)
+
+data2<-dealer_stackyr[dealer_stackyr$year==1,]
+data2 <- subset(data2, !is.na(data2$general_rating))
+data2<-aggregate(x = data2,   by = list(data2$shop_ID),  FUN = mean)
+
+data_dealyr<-rbind(data1, data2)
+
+data_dealyr$score  <-  rowMeans(data_dealyr[c("seed_quality_general_rating","seed_yield_rating","seed_drought_rating","seed_disease_rating","seed_maturing_rating","seed_germinate_rating")],na.rm=T)
+data_dealyr$overall_rating  <-  rowMeans(data_dealyr[c("general_rating","location_rating","price_rating","quality_rating","stock_rating","reputation_rating")],na.rm=T)
+
+#for FE
+dealer_stackyr <- subset(dealer_stackyr, !is.na(dealer_stackyr$general_rating))
+
+dealer_stackyr$score  <-  rowMeans(dealer_stackyr[c("seed_quality_general_rating","seed_yield_rating","seed_drought_rating","seed_disease_rating","seed_maturing_rating","seed_germinate_rating")],na.rm=T)
+dealer_stackyr$overall_rating  <-  rowMeans(dealer_stackyr[c("general_rating","location_rating","price_rating","quality_rating","stock_rating","reputation_rating")],na.rm=T)
+
+################################################
+
+
+
 # rating_dyads$prim[rating_dyads$prim==0.5] <- NA
 # rating_dyads$inputsale[rating_dyads$inputsale==0.5] <- NA
 # rating_dyads$dedicated_area[rating_dyads$dedicated_area==0.5] <- NA
@@ -1360,8 +1474,21 @@ summary(lm(seed_disease_rating~gender,data=rating_dyads))
 summary(lm(seed_maturing_rating~gender,data=rating_dyads))
 summary(lm(seed_germinate_rating~gender,data=rating_dyads))
 
+############### year dummy
+summary(lm(score~gender+year,data=data_dealyr))
+summary(lm(seed_quality_general_rating~gender+year,data=data_dealyr))
+summary(lm(seed_yield_rating~gender+year,data=data_dealyr))
+summary(lm(seed_drought_rating~gender+year,data=data_dealyr))
+summary(lm(seed_disease_rating~gender+year,data=data_dealyr))
+summary(lm(seed_maturing_rating~gender+year,data=data_dealyr))
+summary(lm(seed_germinate_rating~gender+year,data=data_dealyr))
+
+
+#####################################
+
+
 #storing seed ratings 
-s5<- rbind(c((format(round(sum((lm(score~gender,data=rating_dyads))$coefficients[1]),digits=3),nsmall=3)),
+s5_<- rbind(c((format(round(sum((lm(score~gender,data=rating_dyads))$coefficients[1]),digits=3),nsmall=3)),
              (format(round(sum((lm(seed_quality_general_rating~gender,data=rating_dyads))$coefficients[1]),digits=3),nsmall=3)),
              (format(round(sum((lm(seed_yield_rating~gender,data=rating_dyads))$coefficients[1]),digits=3),nsmall=3)),
              (format(round(sum((lm(seed_drought_rating~gender,data=rating_dyads))$coefficients[1]),digits=3),nsmall=3)),
@@ -1431,6 +1558,77 @@ s5<- rbind(c((format(round(sum((lm(score~gender,data=rating_dyads))$coefficients
              (format(round(nobs(lm(seed_germinate_rating~gender,data=rating_dyads)),digits=0),nsmall=0)))
 )
 
+s5<- rbind(c((format(round(sum((lm(score~gender+year,data=data_dealyr))$coefficients[1]),digits=3),nsmall=3)),
+             (format(round(sum((lm(seed_quality_general_rating~gender+year,data=data_dealyr))$coefficients[1]),digits=3),nsmall=3)),
+             (format(round(sum((lm(seed_yield_rating~gender+year,data=data_dealyr))$coefficients[1]),digits=3),nsmall=3)),
+             (format(round(sum((lm(seed_drought_rating~gender+year,data=data_dealyr))$coefficients[1]),digits=3),nsmall=3)),
+             (format(round(sum((lm(seed_disease_rating~gender+year,data=data_dealyr))$coefficients[1]),digits=3),nsmall=3)),
+             (format(round(sum((lm(seed_maturing_rating~gender+year,data=data_dealyr))$coefficients[1]),digits=3),nsmall=3)),
+             (format(round(sum((lm(seed_germinate_rating~gender+year,data=data_dealyr))$coefficients[1]),digits=3),nsmall=3))),
+           c((format(round(sqrt(diag(vcov(lm(score~gender+year,data=data_dealyr))))[1],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(seed_quality_general_rating~gender+year,data=data_dealyr))))[1],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(seed_yield_rating~gender+year,data=data_dealyr))))[1],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(seed_drought_rating~gender+year,data=data_dealyr))))[1],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(seed_disease_rating~gender+year,data=data_dealyr))))[1],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(seed_maturing_rating~gender+year,data=data_dealyr))))[1],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(seed_germinate_rating~gender+year,data=data_dealyr))))[1],digits=3),nsmall=3))),
+           
+           c((format(round(summary(lm(score~gender+year,data=data_dealyr))$coefficients[1,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_quality_general_rating~gender+year,data=data_dealyr))$coefficients[1,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_yield_rating~gender+year,data=data_dealyr))$coefficients[1,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_drought_rating~gender+year,data=data_dealyr))$coefficients[1,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_disease_rating~gender+year,data=data_dealyr))$coefficients[1,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_maturing_rating~gender+year,data=data_dealyr))$coefficients[1,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_germinate_rating~gender+year,data=data_dealyr))$coefficients[1,4],digits=3),nsmall=3))),
+           
+           c((format(round(sum((lm(score~gender+year,data=data_dealyr))$coefficients[2]),digits=3),nsmall=3)),
+             (format(round(sum((lm(seed_quality_general_rating~gender+year,data=data_dealyr))$coefficients[2]),digits=3),nsmall=3)),
+             (format(round(sum((lm(seed_yield_rating~gender+year,data=data_dealyr))$coefficients[2]),digits=3),nsmall=3)),
+             (format(round(sum((lm(seed_drought_rating~gender+year,data=data_dealyr))$coefficients[2]),digits=3),nsmall=3)),
+             (format(round(sum((lm(seed_disease_rating~gender+year,data=data_dealyr))$coefficients[2]),digits=3),nsmall=3)),
+             (format(round(sum((lm(seed_maturing_rating~gender+year,data=data_dealyr))$coefficients[2]),digits=3),nsmall=3)),
+             (format(round(sum((lm(seed_germinate_rating~gender+year,data=data_dealyr))$coefficients[2]),digits=3),nsmall=3))),
+           c((format(round(sqrt(diag(vcov(lm(score~gender+year,data=data_dealyr))))[2],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(seed_quality_general_rating~gender+year,data=data_dealyr))))[2],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(seed_yield_rating~gender+year,data=data_dealyr))))[2],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(seed_drought_rating~gender+year,data=data_dealyr))))[2],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(seed_disease_rating~gender+year,data=data_dealyr))))[2],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(seed_maturing_rating~gender+year,data=data_dealyr))))[2],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(seed_germinate_rating~gender+year,data=data_dealyr))))[2],digits=3),nsmall=3))),
+           
+           c((format(round(summary(lm(score~gender+year,data=data_dealyr))$coefficients[2,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_quality_general_rating~gender+year,data=data_dealyr))$coefficients[2,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_yield_rating~gender+year,data=data_dealyr))$coefficients[2,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_drought_rating~gender+year,data=data_dealyr))$coefficients[2,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_disease_rating~gender+year,data=data_dealyr))$coefficients[2,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_maturing_rating~gender+year,data=data_dealyr))$coefficients[2,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_germinate_rating~gender+year,data=data_dealyr))$coefficients[2,4],digits=3),nsmall=3))),
+           
+           c((format(round(summary(lm(score~gender+year,data=data_dealyr))$r.squared,digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_quality_general_rating~gender+year,data=data_dealyr))$r.squared,digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_yield_rating~gender+year,data=data_dealyr))$r.squared,digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_drought_rating~gender+year,data=data_dealyr))$r.squared,digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_disease_rating~gender+year,data=data_dealyr))$r.squared,digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_maturing_rating~gender+year,data=data_dealyr))$r.squared,digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_germinate_rating~gender+year,data=data_dealyr))$r.squared,digits=3),nsmall=3))),
+           c((format(round(summary(lm(score~gender+year,data=data_dealyr))$adj.r.squared,digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_quality_general_rating~gender+year,data=data_dealyr))$adj.r.squared,digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_yield_rating~gender+year,data=data_dealyr))$adj.r.squared,digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_drought_rating~gender+year,data=data_dealyr))$adj.r.squared,digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_disease_rating~gender+year,data=data_dealyr))$adj.r.squared,digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_maturing_rating~gender+year,data=data_dealyr))$adj.r.squared,digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_germinate_rating~gender+year,data=data_dealyr))$adj.r.squared,digits=3),nsmall=3))),
+           
+           c((format(round(nobs(lm(score~gender+year,data=data_dealyr)),digits=0),nsmall=0)),
+             (format(round(nobs(lm(seed_quality_general_rating~gender+year,data=data_dealyr)),digits=0),nsmall=0)),
+             (format(round(nobs(lm(seed_yield_rating~gender+year,data=data_dealyr)),digits=0),nsmall=0)),
+             (format(round(nobs(lm(seed_drought_rating~gender+year,data=data_dealyr)),digits=0),nsmall=0)),
+             (format(round(nobs(lm(seed_disease_rating~gender+year,data=data_dealyr)),digits=0),nsmall=0)),
+             (format(round(nobs(lm(seed_maturing_rating~gender+year,data=data_dealyr)),digits=0),nsmall=0)),
+             (format(round(nobs(lm(seed_germinate_rating~gender+year,data=data_dealyr)),digits=0),nsmall=0)))
+)
+
+
 #dealer ratings 
 summary(lm(overall_rating~gender,data=rating_dyads))
 summary(lm(general_rating~gender,data=rating_dyads))
@@ -1441,80 +1639,162 @@ summary(lm(stock_rating~gender,data=rating_dyads))
 summary(lm(reputation_rating~gender,data=rating_dyads))
 
 
+################### year dummy
+summary(lm(overall_rating~gender+year,data=data_dealyr))
+summary(lm(general_rating~gender+year,data=data_dealyr))
+summary(lm(location_rating~gender+year,data=data_dealyr))
+summary(lm(price_rating~gender+year,data=data_dealyr))
+summary(lm(quality_rating~gender+year,data=data_dealyr))
+summary(lm(stock_rating~gender+year,data=data_dealyr))
+summary(lm(reputation_rating~gender+year
+          ,data=data_dealyr))
+############################
+
 
 #storing dealer ratings 
-s7<- rbind(c((format(round(sum((lm(overall_rating~gender,data=rating_dyads))$coefficients[1]),digits=3),nsmall=3)),
-             (format(round(sum((lm(general_rating~gender,data=rating_dyads))$coefficients[1]),digits=3),nsmall=3)),
-             (format(round(sum((lm(location_rating~gender,data=rating_dyads))$coefficients[1]),digits=3),nsmall=3)),
-             (format(round(sum((lm(price_rating~gender,data=rating_dyads))$coefficients[1]),digits=3),nsmall=3)),
-             (format(round(sum((lm(quality_rating~gender,data=rating_dyads))$coefficients[1]),digits=3),nsmall=3)),
-             (format(round(sum((lm(stock_rating~gender,data=rating_dyads))$coefficients[1]),digits=3),nsmall=3)),
-             (format(round(sum((lm(reputation_rating~gender,data=rating_dyads))$coefficients[1]),digits=3),nsmall=3))),
-           
-           c((format(round(sqrt(diag(vcov(lm(overall_rating~gender,data=rating_dyads))))[1],digits=3),nsmall=3)),
-             (format(round(sqrt(diag(vcov(lm(general_rating~gender,data=rating_dyads))))[1],digits=3),nsmall=3)),
-             (format(round(sqrt(diag(vcov(lm(location_rating~gender,data=rating_dyads))))[1],digits=3),nsmall=3)),
-             (format(round(sqrt(diag(vcov(lm(price_rating~gender,data=rating_dyads))))[1],digits=3),nsmall=3)),
-             (format(round(sqrt(diag(vcov(lm(quality_rating~gender,data=rating_dyads))))[1],digits=3),nsmall=3)),
-             (format(round(sqrt(diag(vcov(lm(stock_rating~gender,data=rating_dyads))))[1],digits=3),nsmall=3)),
-             (format(round(sqrt(diag(vcov(lm(reputation_rating~gender,data=rating_dyads))))[1],digits=3),nsmall=3))),
-           
-           c((format(round(summary(lm(overall_rating~gender,data=rating_dyads))$coefficients[1,4],digits=3),nsmall=3)),
-             (format(round(summary(lm(general_rating~gender,data=rating_dyads))$coefficients[1,4],digits=3),nsmall=3)),
-             (format(round(summary(lm(location_rating~gender,data=rating_dyads))$coefficients[1,4],digits=3),nsmall=3)),
-             (format(round(summary(lm(price_rating~gender,data=rating_dyads))$coefficients[1,4],digits=3),nsmall=3)),
-             (format(round(summary(lm(quality_rating~gender,data=rating_dyads))$coefficients[1,4],digits=3),nsmall=3)),
-             (format(round(summary(lm(stock_rating~gender,data=rating_dyads))$coefficients[1,4],digits=3),nsmall=3)),
-             (format(round(summary(lm(reputation_rating~gender,data=rating_dyads))$coefficients[1,4],digits=3),nsmall=3))),
-           
-           c((format(round(sum((lm(overall_rating~gender,data=rating_dyads))$coefficients[2]),digits=3),nsmall=3)),
-             (format(round(sum((lm(general_rating~gender,data=rating_dyads))$coefficients[2]),digits=3),nsmall=3)),
-             (format(round(sum((lm(location_rating~gender,data=rating_dyads))$coefficients[2]),digits=3),nsmall=3)),
-             (format(round(sum((lm(price_rating~gender,data=rating_dyads))$coefficients[2]),digits=3),nsmall=3)),
-             (format(round(sum((lm(quality_rating~gender,data=rating_dyads))$coefficients[2]),digits=3),nsmall=3)),
-             (format(round(sum((lm(stock_rating~gender,data=rating_dyads))$coefficients[2]),digits=3),nsmall=3)),
-             (format(round(sum((lm(reputation_rating~gender,data=rating_dyads))$coefficients[2]),digits=3),nsmall=3))),
-           c((format(round(sqrt(diag(vcov(lm(overall_rating~gender,data=rating_dyads))))[2],digits=3),nsmall=3)),
-             (format(round(sqrt(diag(vcov(lm(general_rating~gender,data=rating_dyads))))[2],digits=3),nsmall=3)),
-             (format(round(sqrt(diag(vcov(lm(location_rating~gender,data=rating_dyads))))[2],digits=3),nsmall=3)),
-             (format(round(sqrt(diag(vcov(lm(price_rating~gender,data=rating_dyads))))[2],digits=3),nsmall=3)),
-             (format(round(sqrt(diag(vcov(lm(quality_rating~gender,data=rating_dyads))))[2],digits=3),nsmall=3)),
-             (format(round(sqrt(diag(vcov(lm(stock_rating~gender,data=rating_dyads))))[2],digits=3),nsmall=3)),
-             (format(round(sqrt(diag(vcov(lm(reputation_rating~gender,data=rating_dyads))))[2],digits=3),nsmall=3))),
-           
-           c((format(round(summary(lm(overall_rating~gender,data=rating_dyads))$coefficients[2,4],digits=3),nsmall=3)),
-             (format(round(summary(lm(general_rating~gender,data=rating_dyads))$coefficients[2,4],digits=3),nsmall=3)),
-             (format(round(summary(lm(location_rating~gender,data=rating_dyads))$coefficients[2,4],digits=3),nsmall=3)),
-             (format(round(summary(lm(price_rating~gender,data=rating_dyads))$coefficients[2,4],digits=3),nsmall=3)),
-             (format(round(summary(lm(quality_rating~gender,data=rating_dyads))$coefficients[2,4],digits=3),nsmall=3)),
-             (format(round(summary(lm(stock_rating~gender,data=rating_dyads))$coefficients[2,4],digits=3),nsmall=3)),
-             (format(round(summary(lm(reputation_rating~gender,data=rating_dyads))$coefficients[2,4],digits=3),nsmall=3))),
-           
-           c((format(round(summary(lm(overall_rating~gender,data=rating_dyads))$r.squared,digits=3),nsmall=3)),
-             (format(round(summary(lm(general_rating~gender,data=rating_dyads))$r.squared,digits=3),nsmall=3)),
-             (format(round(summary(lm(location_rating~gender,data=rating_dyads))$r.squared,digits=3),nsmall=3)),
-             (format(round(summary(lm(price_rating~gender,data=rating_dyads))$r.squared,digits=3),nsmall=3)),
-             (format(round(summary(lm(quality_rating~gender,data=rating_dyads))$r.squared,digits=3),nsmall=3)),
-             (format(round(summary(lm(stock_rating~gender,data=rating_dyads))$r.squared,digits=3),nsmall=3)),
-             (format(round(summary(lm(reputation_rating~gender,data=rating_dyads))$r.squared,digits=3),nsmall=3))),
-           
-           c((format(round(summary(lm(overall_rating~gender,data=rating_dyads))$adj.r.squared,digits=3),nsmall=3)),
-             (format(round(summary(lm(general_rating~gender,data=rating_dyads))$adj.r.squared,digits=3),nsmall=3)),
-             (format(round(summary(lm(location_rating~gender,data=rating_dyads))$adj.r.squared,digits=3),nsmall=3)),
-             (format(round(summary(lm(price_rating~gender,data=rating_dyads))$adj.r.squared,digits=3),nsmall=3)),
-             (format(round(summary(lm(quality_rating~gender,data=rating_dyads))$adj.r.squared,digits=3),nsmall=3)),
-             (format(round(summary(lm(stock_rating~gender,data=rating_dyads))$adj.r.squared,digits=3),nsmall=3)),
-             (format(round(summary(lm(reputation_rating~gender,data=rating_dyads))$adj.r.squared,digits=3),nsmall=3))),
-           
-           c((format(round(nobs(lm(overall_rating~gender,data=rating_dyads)),digits=0),nsmall=0)),
-             (format(round(nobs(lm(general_rating~gender,data=rating_dyads)),digits=0),nsmall=0)),
-             (format(round(nobs(lm(location_rating~gender,data=rating_dyads)),digits=0),nsmall=0)),
-             (format(round(nobs(lm(price_rating~gender,data=rating_dyads)),digits=0),nsmall=0)),
-             (format(round(nobs(lm(quality_rating~gender,data=rating_dyads)),digits=0),nsmall=0)),
-             (format(round(nobs(lm(stock_rating~gender,data=rating_dyads)),digits=0),nsmall=0)),
-             (format(round(nobs(lm(reputation_rating~gender,data=rating_dyads)),digits=0),nsmall=0)))
+s7_<- rbind(c((format(round(sum((lm(overall_rating~gender,data=rating_dyads))$coefficients[1]),digits=3),nsmall=3)),
+              (format(round(sum((lm(general_rating~gender,data=rating_dyads))$coefficients[1]),digits=3),nsmall=3)),
+              (format(round(sum((lm(location_rating~gender,data=rating_dyads))$coefficients[1]),digits=3),nsmall=3)),
+              (format(round(sum((lm(price_rating~gender,data=rating_dyads))$coefficients[1]),digits=3),nsmall=3)),
+              (format(round(sum((lm(quality_rating~gender,data=rating_dyads))$coefficients[1]),digits=3),nsmall=3)),
+              (format(round(sum((lm(stock_rating~gender,data=rating_dyads))$coefficients[1]),digits=3),nsmall=3)),
+              (format(round(sum((lm(reputation_rating~gender,data=rating_dyads))$coefficients[1]),digits=3),nsmall=3))),
+            
+            c((format(round(sqrt(diag(vcov(lm(overall_rating~gender,data=rating_dyads))))[1],digits=3),nsmall=3)),
+              (format(round(sqrt(diag(vcov(lm(general_rating~gender,data=rating_dyads))))[1],digits=3),nsmall=3)),
+              (format(round(sqrt(diag(vcov(lm(location_rating~gender,data=rating_dyads))))[1],digits=3),nsmall=3)),
+              (format(round(sqrt(diag(vcov(lm(price_rating~gender,data=rating_dyads))))[1],digits=3),nsmall=3)),
+              (format(round(sqrt(diag(vcov(lm(quality_rating~gender,data=rating_dyads))))[1],digits=3),nsmall=3)),
+              (format(round(sqrt(diag(vcov(lm(stock_rating~gender,data=rating_dyads))))[1],digits=3),nsmall=3)),
+              (format(round(sqrt(diag(vcov(lm(reputation_rating~gender,data=rating_dyads))))[1],digits=3),nsmall=3))),
+            
+            c((format(round(summary(lm(overall_rating~gender,data=rating_dyads))$coefficients[1,4],digits=3),nsmall=3)),
+              (format(round(summary(lm(general_rating~gender,data=rating_dyads))$coefficients[1,4],digits=3),nsmall=3)),
+              (format(round(summary(lm(location_rating~gender,data=rating_dyads))$coefficients[1,4],digits=3),nsmall=3)),
+              (format(round(summary(lm(price_rating~gender,data=rating_dyads))$coefficients[1,4],digits=3),nsmall=3)),
+              (format(round(summary(lm(quality_rating~gender,data=rating_dyads))$coefficients[1,4],digits=3),nsmall=3)),
+              (format(round(summary(lm(stock_rating~gender,data=rating_dyads))$coefficients[1,4],digits=3),nsmall=3)),
+              (format(round(summary(lm(reputation_rating~gender,data=rating_dyads))$coefficients[1,4],digits=3),nsmall=3))),
+            
+            c((format(round(sum((lm(overall_rating~gender,data=rating_dyads))$coefficients[2]),digits=3),nsmall=3)),
+              (format(round(sum((lm(general_rating~gender,data=rating_dyads))$coefficients[2]),digits=3),nsmall=3)),
+              (format(round(sum((lm(location_rating~gender,data=rating_dyads))$coefficients[2]),digits=3),nsmall=3)),
+              (format(round(sum((lm(price_rating~gender,data=rating_dyads))$coefficients[2]),digits=3),nsmall=3)),
+              (format(round(sum((lm(quality_rating~gender,data=rating_dyads))$coefficients[2]),digits=3),nsmall=3)),
+              (format(round(sum((lm(stock_rating~gender,data=rating_dyads))$coefficients[2]),digits=3),nsmall=3)),
+              (format(round(sum((lm(reputation_rating~gender,data=rating_dyads))$coefficients[2]),digits=3),nsmall=3))),
+            c((format(round(sqrt(diag(vcov(lm(overall_rating~gender,data=rating_dyads))))[2],digits=3),nsmall=3)),
+              (format(round(sqrt(diag(vcov(lm(general_rating~gender,data=rating_dyads))))[2],digits=3),nsmall=3)),
+              (format(round(sqrt(diag(vcov(lm(location_rating~gender,data=rating_dyads))))[2],digits=3),nsmall=3)),
+              (format(round(sqrt(diag(vcov(lm(price_rating~gender,data=rating_dyads))))[2],digits=3),nsmall=3)),
+              (format(round(sqrt(diag(vcov(lm(quality_rating~gender,data=rating_dyads))))[2],digits=3),nsmall=3)),
+              (format(round(sqrt(diag(vcov(lm(stock_rating~gender,data=rating_dyads))))[2],digits=3),nsmall=3)),
+              (format(round(sqrt(diag(vcov(lm(reputation_rating~gender,data=rating_dyads))))[2],digits=3),nsmall=3))),
+            
+            c((format(round(summary(lm(overall_rating~gender,data=rating_dyads))$coefficients[2,4],digits=3),nsmall=3)),
+              (format(round(summary(lm(general_rating~gender,data=rating_dyads))$coefficients[2,4],digits=3),nsmall=3)),
+              (format(round(summary(lm(location_rating~gender,data=rating_dyads))$coefficients[2,4],digits=3),nsmall=3)),
+              (format(round(summary(lm(price_rating~gender,data=rating_dyads))$coefficients[2,4],digits=3),nsmall=3)),
+              (format(round(summary(lm(quality_rating~gender,data=rating_dyads))$coefficients[2,4],digits=3),nsmall=3)),
+              (format(round(summary(lm(stock_rating~gender,data=rating_dyads))$coefficients[2,4],digits=3),nsmall=3)),
+              (format(round(summary(lm(reputation_rating~gender,data=rating_dyads))$coefficients[2,4],digits=3),nsmall=3))),
+            
+            c((format(round(summary(lm(overall_rating~gender,data=rating_dyads))$r.squared,digits=3),nsmall=3)),
+              (format(round(summary(lm(general_rating~gender,data=rating_dyads))$r.squared,digits=3),nsmall=3)),
+              (format(round(summary(lm(location_rating~gender,data=rating_dyads))$r.squared,digits=3),nsmall=3)),
+              (format(round(summary(lm(price_rating~gender,data=rating_dyads))$r.squared,digits=3),nsmall=3)),
+              (format(round(summary(lm(quality_rating~gender,data=rating_dyads))$r.squared,digits=3),nsmall=3)),
+              (format(round(summary(lm(stock_rating~gender,data=rating_dyads))$r.squared,digits=3),nsmall=3)),
+              (format(round(summary(lm(reputation_rating~gender,data=rating_dyads))$r.squared,digits=3),nsmall=3))),
+            
+            c((format(round(summary(lm(overall_rating~gender,data=rating_dyads))$adj.r.squared,digits=3),nsmall=3)),
+              (format(round(summary(lm(general_rating~gender,data=rating_dyads))$adj.r.squared,digits=3),nsmall=3)),
+              (format(round(summary(lm(location_rating~gender,data=rating_dyads))$adj.r.squared,digits=3),nsmall=3)),
+              (format(round(summary(lm(price_rating~gender,data=rating_dyads))$adj.r.squared,digits=3),nsmall=3)),
+              (format(round(summary(lm(quality_rating~gender,data=rating_dyads))$adj.r.squared,digits=3),nsmall=3)),
+              (format(round(summary(lm(stock_rating~gender,data=rating_dyads))$adj.r.squared,digits=3),nsmall=3)),
+              (format(round(summary(lm(reputation_rating~gender,data=rating_dyads))$adj.r.squared,digits=3),nsmall=3))),
+            
+            c((format(round(nobs(lm(overall_rating~gender,data=rating_dyads)),digits=0),nsmall=0)),
+              (format(round(nobs(lm(general_rating~gender,data=rating_dyads)),digits=0),nsmall=0)),
+              (format(round(nobs(lm(location_rating~gender,data=rating_dyads)),digits=0),nsmall=0)),
+              (format(round(nobs(lm(price_rating~gender,data=rating_dyads)),digits=0),nsmall=0)),
+              (format(round(nobs(lm(quality_rating~gender,data=rating_dyads)),digits=0),nsmall=0)),
+              (format(round(nobs(lm(stock_rating~gender,data=rating_dyads)),digits=0),nsmall=0)),
+              (format(round(nobs(lm(reputation_rating~gender,data=rating_dyads)),digits=0),nsmall=0)))
 )
 
+s7<- rbind(c((format(round(sum((lm(overall_rating~gender+year,data=data_dealyr))$coefficients[1]),digits=3),nsmall=3)),
+             (format(round(sum((lm(general_rating~gender+year,data=data_dealyr))$coefficients[1]),digits=3),nsmall=3)),
+             (format(round(sum((lm(location_rating~gender+year,data=data_dealyr))$coefficients[1]),digits=3),nsmall=3)),
+             (format(round(sum((lm(price_rating~gender+year,data=data_dealyr))$coefficients[1]),digits=3),nsmall=3)),
+             (format(round(sum((lm(quality_rating~gender+year,data=data_dealyr))$coefficients[1]),digits=3),nsmall=3)),
+             (format(round(sum((lm(stock_rating~gender+year,data=data_dealyr))$coefficients[1]),digits=3),nsmall=3)),
+             (format(round(sum((lm(reputation_rating~gender+year,data=data_dealyr))$coefficients[1]),digits=3),nsmall=3))),
+           
+           c((format(round(sqrt(diag(vcov(lm(overall_rating~gender+year,data=data_dealyr))))[1],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(general_rating~gender+year,data=data_dealyr))))[1],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(location_rating~gender+year,data=data_dealyr))))[1],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(price_rating~gender+year,data=data_dealyr))))[1],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(quality_rating~gender+year,data=data_dealyr))))[1],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(stock_rating~gender+year,data=data_dealyr))))[1],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(reputation_rating~gender+year,data=data_dealyr))))[1],digits=3),nsmall=3))),
+           
+           c((format(round(summary(lm(overall_rating~gender+year,data=data_dealyr))$coefficients[1,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(general_rating~gender+year,data=data_dealyr))$coefficients[1,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(location_rating~gender+year,data=data_dealyr))$coefficients[1,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(price_rating~gender+year,data=data_dealyr))$coefficients[1,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(quality_rating~gender+year,data=data_dealyr))$coefficients[1,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(stock_rating~gender+year,data=data_dealyr))$coefficients[1,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(reputation_rating~gender+year,data=data_dealyr))$coefficients[1,4],digits=3),nsmall=3))),
+           
+           c((format(round(sum((lm(overall_rating~gender+year,data=data_dealyr))$coefficients[2]),digits=3),nsmall=3)),
+             (format(round(sum((lm(general_rating~gender+year,data=data_dealyr))$coefficients[2]),digits=3),nsmall=3)),
+             (format(round(sum((lm(location_rating~gender+year,data=data_dealyr))$coefficients[2]),digits=3),nsmall=3)),
+             (format(round(sum((lm(price_rating~gender+year,data=data_dealyr))$coefficients[2]),digits=3),nsmall=3)),
+             (format(round(sum((lm(quality_rating~gender+year,data=data_dealyr))$coefficients[2]),digits=3),nsmall=3)),
+             (format(round(sum((lm(stock_rating~gender+year,data=data_dealyr))$coefficients[2]),digits=3),nsmall=3)),
+             (format(round(sum((lm(reputation_rating~gender+year,data=data_dealyr))$coefficients[2]),digits=3),nsmall=3))),
+           c((format(round(sqrt(diag(vcov(lm(overall_rating~gender+year,data=data_dealyr))))[2],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(general_rating~gender+year,data=data_dealyr))))[2],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(location_rating~gender+year,data=data_dealyr))))[2],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(price_rating~gender+year,data=data_dealyr))))[2],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(quality_rating~gender+year,data=data_dealyr))))[2],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(stock_rating~gender+year,data=data_dealyr))))[2],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(reputation_rating~gender+year,data=data_dealyr))))[2],digits=3),nsmall=3))),
+           
+           c((format(round(summary(lm(overall_rating~gender+year,data=data_dealyr))$coefficients[2,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(general_rating~gender+year,data=data_dealyr))$coefficients[2,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(location_rating~gender+year,data=data_dealyr))$coefficients[2,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(price_rating~gender+year,data=data_dealyr))$coefficients[2,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(quality_rating~gender+year,data=data_dealyr))$coefficients[2,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(stock_rating~gender+year,data=data_dealyr))$coefficients[2,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(reputation_rating~gender+year,data=data_dealyr))$coefficients[2,4],digits=3),nsmall=3))),
+           
+           c((format(round(summary(lm(overall_rating~gender+year,data=data_dealyr))$r.squared,digits=3),nsmall=3)),
+             (format(round(summary(lm(general_rating~gender+year,data=data_dealyr))$r.squared,digits=3),nsmall=3)),
+             (format(round(summary(lm(location_rating~gender+year,data=data_dealyr))$r.squared,digits=3),nsmall=3)),
+             (format(round(summary(lm(price_rating~gender+year,data=data_dealyr))$r.squared,digits=3),nsmall=3)),
+             (format(round(summary(lm(quality_rating~gender+year,data=data_dealyr))$r.squared,digits=3),nsmall=3)),
+             (format(round(summary(lm(stock_rating~gender+year,data=data_dealyr))$r.squared,digits=3),nsmall=3)),
+             (format(round(summary(lm(reputation_rating~gender+year,data=data_dealyr))$r.squared,digits=3),nsmall=3))),
+           
+           c((format(round(summary(lm(overall_rating~gender+year,data=data_dealyr))$adj.r.squared,digits=3),nsmall=3)),
+             (format(round(summary(lm(general_rating~gender+year,data=data_dealyr))$adj.r.squared,digits=3),nsmall=3)),
+             (format(round(summary(lm(location_rating~gender+year,data=data_dealyr))$adj.r.squared,digits=3),nsmall=3)),
+             (format(round(summary(lm(price_rating~gender+year,data=data_dealyr))$adj.r.squared,digits=3),nsmall=3)),
+             (format(round(summary(lm(quality_rating~gender+year,data=data_dealyr))$adj.r.squared,digits=3),nsmall=3)),
+             (format(round(summary(lm(stock_rating~gender+year,data=data_dealyr))$adj.r.squared,digits=3),nsmall=3)),
+             (format(round(summary(lm(reputation_rating~gender+year,data=data_dealyr))$adj.r.squared,digits=3),nsmall=3))),
+           
+           c((format(round(nobs(lm(overall_rating~gender+year,data=data_dealyr)),digits=0),nsmall=0)),
+             (format(round(nobs(lm(general_rating~gender+year,data=data_dealyr)),digits=0),nsmall=0)),
+             (format(round(nobs(lm(location_rating~gender+year,data=data_dealyr)),digits=0),nsmall=0)),
+             (format(round(nobs(lm(price_rating~gender+year,data=data_dealyr)),digits=0),nsmall=0)),
+             (format(round(nobs(lm(quality_rating~gender+year,data=data_dealyr)),digits=0),nsmall=0)),
+             (format(round(nobs(lm(stock_rating~gender+year,data=data_dealyr)),digits=0),nsmall=0)),
+             (format(round(nobs(lm(reputation_rating~gender+year,data=data_dealyr)),digits=0),nsmall=0)))
+)
 #regressions with controls -- between regression 
 #seed ratings
 
@@ -1545,6 +1825,46 @@ summary(lm(seed_drought_rating ~gender+ maize.owner.agree.age +prim +index_allpr
 summary(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))  
 summary(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim+index_allprac,data=rating_dyads))  
 summary(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim+index_allprac,data=rating_dyads))  
+
+
+################################### year dummy
+
+
+dealyr1<-data_dealyr[data_dealyr$year==0,] #baseline
+dealyr2<-data_dealyr[data_dealyr$year==1,]  #midline
+
+
+summary(lm(score~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr)) 
+summary(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))    
+summary(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))   
+summary(lm(seed_drought_rating ~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))
+summary(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))  
+summary(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim+index_allprac+year,data=data_dealyr))  
+summary(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim+index_allprac+year,data=data_dealyr))  
+
+
+#baseline
+
+summary(lm(score~gender+ maize.owner.agree.age +prim +index_allprac,data=dealyr1)) 
+summary(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=dealyr1))    
+summary(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=dealyr1))   
+summary(lm(seed_drought_rating ~gender+ maize.owner.agree.age +prim +index_allprac,data=dealyr1))
+summary(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=dealyr1))  
+summary(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim+index_allprac,data=dealyr1))  
+summary(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim+index_allprac,data=dealyr1))  
+
+#midline
+
+summary(lm(score~gender+ maize.owner.agree.age +prim +index_allprac,data=dealyr2)) 
+summary(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=dealyr2))    
+summary(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=dealyr2))   
+summary(lm(seed_drought_rating ~gender+ maize.owner.agree.age +prim +index_allprac,data=dealyr2))
+summary(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=dealyr2))  
+summary(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim+index_allprac,data=dealyr2))  
+summary(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim+index_allprac,data=dealyr2))
+
+
+##############################################
 
 
 
@@ -1581,7 +1901,7 @@ summary(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim+index_allpr
 #              badlighting +badstored+ open_storage+ cert_yes+ shop_rate+ complaint  +leakproof,data=rating_dyads))
 
 #storing seed ratings 
-s6<- rbind(c((format(round(sum((lm(score~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[1]),digits=3),nsmall=3)),
+s6_<- rbind(c((format(round(sum((lm(score~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[1]),digits=3),nsmall=3)),
              (format(round(sum((lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[1]),digits=3),nsmall=3)),
              (format(round(sum((lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[1]),digits=3),nsmall=3)),
              (format(round(sum((lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=rating_dyads))$coefficients[1]),digits=3),nsmall=3)),
@@ -1732,6 +2052,155 @@ s6<- rbind(c((format(round(sum((lm(score~gender+ maize.owner.agree.age +prim +in
 
 
 
+s6<- rbind(c((format(round(sum((lm(score~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[1]),digits=3),nsmall=3)),
+             (format(round(sum((lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[1]),digits=3),nsmall=3)),
+             (format(round(sum((lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[1]),digits=3),nsmall=3)),
+             (format(round(sum((lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[1]),digits=3),nsmall=3)),
+             (format(round(sum((lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[1]),digits=3),nsmall=3)),
+             (format(round(sum((lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[1]),digits=3),nsmall=3)),
+             (format(round(sum((lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[1]),digits=3),nsmall=3))),
+           
+           c((format(round(sqrt(diag(vcov(lm(score~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))))[1],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))))[1],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))))[1],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))))[1],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))))[1],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))))[1],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))))[1],digits=3),nsmall=3))),
+           
+           c((format(round(summary(lm(score~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[1,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[1,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[1,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[1,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[1,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[1,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[1,4],digits=3),nsmall=3))),
+           
+           
+           c((format(round(sum((lm(score~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[2]),digits=3),nsmall=3)),
+             (format(round(sum((lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[2]),digits=3),nsmall=3)),
+             (format(round(sum((lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[2]),digits=3),nsmall=3)),
+             (format(round(sum((lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[2]),digits=3),nsmall=3)),
+             (format(round(sum((lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[2]),digits=3),nsmall=3)),
+             (format(round(sum((lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[2]),digits=3),nsmall=3)),
+             (format(round(sum((lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[2]),digits=3),nsmall=3))),
+           
+           c((format(round(sqrt(diag(vcov(lm(score~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))))[2],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))))[2],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))))[2],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))))[2],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))))[2],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))))[2],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))))[2],digits=3),nsmall=3))),
+           
+           c((format(round(summary(lm(score~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[2,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[2,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[2,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[2,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[2,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[2,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[2,4],digits=3),nsmall=3))),
+           
+           c((format(round(sum((lm(score~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[3]),digits=3),nsmall=3)),
+             (format(round(sum((lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[3]),digits=3),nsmall=3)),
+             (format(round(sum((lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[3]),digits=3),nsmall=3)),
+             (format(round(sum((lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[3]),digits=3),nsmall=3)),
+             (format(round(sum((lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[3]),digits=3),nsmall=3)),
+             (format(round(sum((lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[3]),digits=3),nsmall=3)),
+             (format(round(sum((lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[3]),digits=3),nsmall=3))),
+           
+           c((format(round(sqrt(diag(vcov(lm(score~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))))[3],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))))[3],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))))[3],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))))[3],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))))[3],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))))[3],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))))[3],digits=3),nsmall=3))),
+           
+           c((format(round(summary(lm(score~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[3,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[3,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[3,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[3,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[3,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[3,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[3,4],digits=3),nsmall=3))),
+           
+           c((format(round(sum((lm(score~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[4]),digits=3),nsmall=3)),
+             (format(round(sum((lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[4]),digits=3),nsmall=3)),
+             (format(round(sum((lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[4]),digits=3),nsmall=3)),
+             (format(round(sum((lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[4]),digits=3),nsmall=3)),
+             (format(round(sum((lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[4]),digits=3),nsmall=3)),
+             (format(round(sum((lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[4]),digits=3),nsmall=3)),
+             (format(round(sum((lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[4]),digits=3),nsmall=3))),
+           
+           c((format(round(sqrt(diag(vcov(lm(score~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))))[4],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))))[4],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))))[4],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))))[4],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))))[4],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))))[4],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))))[4],digits=3),nsmall=3))),
+           
+           c((format(round(summary(lm(score~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[4,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[4,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[4,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[4,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[4,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[4,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[4,4],digits=3),nsmall=3))),
+           
+           c((format(round(sum((lm(score~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[5]),digits=3),nsmall=3)),
+             (format(round(sum((lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[5]),digits=3),nsmall=3)),
+             (format(round(sum((lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[5]),digits=3),nsmall=3)),
+             (format(round(sum((lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[5]),digits=3),nsmall=3)),
+             (format(round(sum((lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[5]),digits=3),nsmall=3)),
+             (format(round(sum((lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[5]),digits=3),nsmall=3)),
+             (format(round(sum((lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[5]),digits=3),nsmall=3))),
+           
+           c((format(round(sqrt(diag(vcov(lm(score~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))))[5],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))))[5],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))))[5],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))))[5],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))))[5],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))))[5],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))))[5],digits=3),nsmall=3))),
+           
+           c((format(round(summary(lm(score~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[5,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[5,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[5,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[5,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[5,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[5,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[5,4],digits=3),nsmall=3))),
+           
+           
+           
+           
+           c((format(round(summary(lm(score~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$r.squared,digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim+index_allprac+year,data=data_dealyr))$r.squared,digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$r.squared,digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$r.squared,digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$r.squared,digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$r.squared,digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim+index_allprac+year,data=data_dealyr))$r.squared,digits=3),nsmall=3))),
+           
+           c((format(round(summary(lm(score~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$adj.r.squared,digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$adj.r.squared,digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$adj.r.squared,digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$adj.r.squared,digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$adj.r.squared,digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$adj.r.squared,digits=3),nsmall=3)),
+             (format(round(summary(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$adj.r.squared,digits=3),nsmall=3))),
+           
+           c((format(round(nobs(lm(score~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr)),digits=0),nsmall=0)),
+             (format(round(nobs(lm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr)),digits=0),nsmall=0)),
+             (format(round(nobs(lm(seed_yield_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr)),digits=0),nsmall=0)),
+             (format(round(nobs(lm(seed_drought_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr)),digits=0),nsmall=0)),
+             (format(round(nobs(lm(seed_disease_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr)),digits=0),nsmall=0)),
+             (format(round(nobs(lm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr)),digits=0),nsmall=0)),
+             (format(round(nobs(lm(seed_germinate_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr)),digits=0),nsmall=0)))
+)
+
 
 #dealer ratings 
 #summary(lm(overall_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap +distance+saleprice +costseed +lotnumber+complaint+hybridnum+quanprovider
@@ -1759,8 +2228,69 @@ summary(lm(reputation_rating ~gender+ maize.owner.agree.age +prim +years_shop+un
 
 
 
+############################# year dummy
+summary(lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+           +years_shop+unada+year ,data=data_dealyr))
+
+summary(lm(general_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap+year,data=data_dealyr))
+#shop rating coeff is negative here which means if the shop rating is lower, the general rating is higher 
+
+summary(lm(location_rating~gender+ maize.owner.agree.age +prim +distance+year,data=data_dealyr))
+
+summary(lm(price_rating~gender+ maize.owner.agree.age +prim+ saleprice +costseed+year ,data=data_dealyr))
+#cost of seed from provider coeff is positive here which means if the cost of seed is higher, the price rating is higher 
+
+summary(lm(quality_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))
+
+
+summary(lm(stock_rating~gender+ maize.owner.agree.age +prim +hybridnum+quanprovider+year,data=data_dealyr))
+
+summary(lm(reputation_rating ~gender+ maize.owner.agree.age +prim +years_shop+unada +year,data=data_dealyr))
+
+#baseline
+summary(lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+           +years_shop+unada,data=dealyr1))
+
+summary(lm(general_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap,data=dealyr1))
+#shop rating coeff is negative here which means if the shop rating is lower, the general rating is higher 
+
+summary(lm(location_rating~gender+ maize.owner.agree.age +prim +distance,data=dealyr1))
+
+summary(lm(price_rating~gender+ maize.owner.agree.age +prim+ saleprice +costseed ,data=dealyr1))
+#cost of seed from provider coeff is positive here which means if the cost of seed is higher, the price rating is higher 
+
+summary(lm(quality_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=dealyr1))
+
+
+summary(lm(stock_rating~gender+ maize.owner.agree.age +prim +hybridnum+quanprovider,data=dealyr1))
+
+summary(lm(reputation_rating ~gender+ maize.owner.agree.age +prim +years_shop+unada ,data=dealyr1))
+
+
+
+#midline
+summary(lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+           +years_shop+unada,data=dealyr2))
+
+summary(lm(general_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap,data=dealyr2))
+#shop rating coeff is negative here which means if the shop rating is lower, the general rating is higher 
+
+summary(lm(location_rating~gender+ maize.owner.agree.age +prim +distance,data=dealyr2))
+
+summary(lm(price_rating~gender+ maize.owner.agree.age +prim+ saleprice +costseed ,data=dealyr2))
+#cost of seed from provider coeff is positive here which means if the cost of seed is higher, the price rating is higher 
+
+summary(lm(quality_rating~gender+ maize.owner.agree.age +prim +index_allprac,data=dealyr2))
+
+
+summary(lm(stock_rating~gender+ maize.owner.agree.age +prim +hybridnum+quanprovider,data=dealyr2))
+
+summary(lm(reputation_rating ~gender+ maize.owner.agree.age +prim +years_shop+unada ,data=dealyr2))
+########################################
+
+
 #storing dealer ratings
-s8<- rbind(c((format(round(sum((lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+s8_<- rbind(c((format(round(sum((lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
                                    +years_shop+unada ,data=rating_dyads))$coefficients[1]),digits=3),nsmall=3)),
              (format(round(sum((lm(general_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap,data=rating_dyads))$coefficients[1]),digits=3),nsmall=3)),
              (format(round(sum((lm(location_rating~gender+ maize.owner.agree.age +prim +distance,data=rating_dyads))$coefficients[1]),digits=3),nsmall=3)),
@@ -2150,14 +2680,407 @@ s8<- rbind(c((format(round(sum((lm(overall_rating~gender+ maize.owner.agree.age 
              (format(round(nobs(lm(reputation_rating~gender+ maize.owner.agree.age +prim +years_shop+unada,data=rating_dyads)),digits=0),nsmall=0))))
 
 
+s8<- rbind(c((format(round(sum((lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                   +years_shop+unada +year,data=data_dealyr))$coefficients[1]),digits=3),nsmall=3)),
+             (format(round(sum((lm(general_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap+year,data=data_dealyr))$coefficients[1]),digits=3),nsmall=3)),
+             (format(round(sum((lm(location_rating~gender+ maize.owner.agree.age +prim +distance+year,data=data_dealyr))$coefficients[1]),digits=3),nsmall=3)),
+             (format(round(sum((lm(price_rating~gender+ maize.owner.agree.age +prim+ saleprice +costseed+year,data=data_dealyr))$coefficients[1]),digits=3),nsmall=3)),
+             (format(round(sum((lm(quality_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[1]),digits=3),nsmall=3)),
+             (format(round(sum((lm(stock_rating~gender+ maize.owner.agree.age +prim +hybridnum+quanprovider+year,data=data_dealyr))$coefficients[1]),digits=3),nsmall=3)),
+             (format(round(sum((lm(reputation_rating~gender+ maize.owner.agree.age +prim +years_shop+unada+year,data=data_dealyr))$coefficients[1]),digits=3),nsmall=3))),
+           
+           c((format(round(sqrt(diag(vcov(lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                             +years_shop+unada +year,data=data_dealyr))))[1],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(general_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap+year,data=data_dealyr))))[1],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(location_rating~gender+ maize.owner.agree.age +prim +distance+year,data=data_dealyr))))[1],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(price_rating~gender+ maize.owner.agree.age +prim+ saleprice +costseed+year,data=data_dealyr))))[1],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(quality_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))))[1],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(stock_rating~gender+ maize.owner.agree.age +prim +hybridnum+quanprovider+year,data=data_dealyr))))[1],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(reputation_rating~gender+ maize.owner.agree.age +prim +years_shop+unada+year,data=data_dealyr))))[1],digits=3),nsmall=3))),
+           
+           c((format(round(summary(lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                      +years_shop+unada+year,data=data_dealyr))$coefficients[1,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(general_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap+year,data=data_dealyr))$coefficients[1,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(location_rating~gender+ maize.owner.agree.age +prim +distance+year,data=data_dealyr))$coefficients[1,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(price_rating~gender+ maize.owner.agree.age +prim+ saleprice +costseed+year,data=data_dealyr))$coefficients[1,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(quality_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[1,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(stock_rating~gender+ maize.owner.agree.age +prim +hybridnum+quanprovider+year,data=data_dealyr))$coefficients[1,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(reputation_rating~gender+ maize.owner.agree.age +prim +years_shop+unada+year,data=data_dealyr))$coefficients[1,4],digits=3),nsmall=3))),
+           
+           c((format(round(sum((lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                   +years_shop+unada +year,data=data_dealyr))$coefficients[2]),digits=3),nsmall=3)),
+             (format(round(sum((lm(general_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap+year,data=data_dealyr))$coefficients[2]),digits=3),nsmall=3)),
+             (format(round(sum((lm(location_rating~gender+ maize.owner.agree.age +prim +distance+year,data=data_dealyr))$coefficients[2]),digits=3),nsmall=3)),
+             (format(round(sum((lm(price_rating~gender+ maize.owner.agree.age +prim+ saleprice +costseed+year,data=data_dealyr))$coefficients[2]),digits=3),nsmall=3)),
+             (format(round(sum((lm(quality_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[2]),digits=3),nsmall=3)),
+             (format(round(sum((lm(stock_rating~gender+ maize.owner.agree.age +prim +hybridnum+quanprovider+year,data=data_dealyr))$coefficients[2]),digits=3),nsmall=3)),
+             (format(round(sum((lm(reputation_rating~gender+ maize.owner.agree.age +prim +years_shop+unada+year,data=data_dealyr))$coefficients[2]),digits=3),nsmall=3))),
+           
+           c((format(round(sqrt(diag(vcov(lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                             +years_shop+unada +year,data=data_dealyr))))[2],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(general_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap+year,data=data_dealyr))))[2],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(location_rating~gender+ maize.owner.agree.age +prim +distance+year,data=data_dealyr))))[2],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(price_rating~gender+ maize.owner.agree.age +prim+ saleprice +costseed+year,data=data_dealyr))))[2],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(quality_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))))[2],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(stock_rating~gender+ maize.owner.agree.age +prim +hybridnum+quanprovider+year,data=data_dealyr))))[2],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(reputation_rating~gender+ maize.owner.agree.age +prim +years_shop+unada+year,data=data_dealyr))))[2],digits=3),nsmall=3))),
+           
+           c((format(round(summary(lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                      +years_shop+unada+year,data=data_dealyr))$coefficients[2,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(general_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap+year,data=data_dealyr))$coefficients[2,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(location_rating~gender+ maize.owner.agree.age +prim +distance+year,data=data_dealyr))$coefficients[2,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(price_rating~gender+ maize.owner.agree.age +prim+ saleprice +costseed+year,data=data_dealyr))$coefficients[2,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(quality_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[2,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(stock_rating~gender+ maize.owner.agree.age +prim +hybridnum+quanprovider+year,data=data_dealyr))$coefficients[2,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(reputation_rating~gender+ maize.owner.agree.age +prim +years_shop+unada+year,data=data_dealyr))$coefficients[2,4],digits=3),nsmall=3))),
+           
+           
+           c((format(round(sum((lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                   +years_shop+unada +year,data=data_dealyr))$coefficients[3]),digits=3),nsmall=3)),
+             (format(round(sum((lm(general_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap+year,data=data_dealyr))$coefficients[3]),digits=3),nsmall=3)),
+             (format(round(sum((lm(location_rating~gender+ maize.owner.agree.age +prim +distance+year,data=data_dealyr))$coefficients[3]),digits=3),nsmall=3)),
+             (format(round(sum((lm(price_rating~gender+ maize.owner.agree.age +prim+ saleprice +costseed+year,data=data_dealyr))$coefficients[3]),digits=3),nsmall=3)),
+             (format(round(sum((lm(quality_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[3]),digits=3),nsmall=3)),
+             (format(round(sum((lm(stock_rating~gender+ maize.owner.agree.age +prim +hybridnum+quanprovider+year,data=data_dealyr))$coefficients[3]),digits=3),nsmall=3)),
+             (format(round(sum((lm(reputation_rating~gender+ maize.owner.agree.age +prim +years_shop+unada+year,data=data_dealyr))$coefficients[3]),digits=3),nsmall=3))),
+           
+           c((format(round(sqrt(diag(vcov(lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                             +years_shop+unada +year,data=data_dealyr))))[3],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(general_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap+year,data=data_dealyr))))[3],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(location_rating~gender+ maize.owner.agree.age +prim +distance+year,data=data_dealyr))))[3],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(price_rating~gender+ maize.owner.agree.age +prim+ saleprice +costseed+year,data=data_dealyr))))[3],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(quality_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))))[3],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(stock_rating~gender+ maize.owner.agree.age +prim +hybridnum+quanprovider+year,data=data_dealyr))))[3],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(reputation_rating~gender+ maize.owner.agree.age +prim +years_shop+unada+year,data=data_dealyr))))[3],digits=3),nsmall=3))),
+           
+           c((format(round(summary(lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                      +years_shop+unada+year,data=data_dealyr))$coefficients[3,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(general_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap+year,data=data_dealyr))$coefficients[3,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(location_rating~gender+ maize.owner.agree.age +prim +distance+year,data=data_dealyr))$coefficients[3,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(price_rating~gender+ maize.owner.agree.age +prim+ saleprice +costseed+year,data=data_dealyr))$coefficients[3,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(quality_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[3,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(stock_rating~gender+ maize.owner.agree.age +prim +hybridnum+quanprovider+year,data=data_dealyr))$coefficients[3,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(reputation_rating~gender+ maize.owner.agree.age +prim +years_shop+unada+year,data=data_dealyr))$coefficients[3,4],digits=3),nsmall=3))),
+           
+           
+           c((format(round(sum((lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                   +years_shop+unada +year,data=data_dealyr))$coefficients[4]),digits=3),nsmall=3)),
+             (format(round(sum((lm(general_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap+year,data=data_dealyr))$coefficients[4]),digits=3),nsmall=3)),
+             (format(round(sum((lm(location_rating~gender+ maize.owner.agree.age +prim +distance+year,data=data_dealyr))$coefficients[4]),digits=3),nsmall=3)),
+             (format(round(sum((lm(price_rating~gender+ maize.owner.agree.age +prim+ saleprice +costseed+year,data=data_dealyr))$coefficients[4]),digits=3),nsmall=3)),
+             (format(round(sum((lm(quality_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[4]),digits=3),nsmall=3)),
+             (format(round(sum((lm(stock_rating~gender+ maize.owner.agree.age +prim +hybridnum+quanprovider+year,data=data_dealyr))$coefficients[4]),digits=3),nsmall=3)),
+             (format(round(sum((lm(reputation_rating~gender+ maize.owner.agree.age +prim +years_shop+unada+year,data=data_dealyr))$coefficients[4]),digits=3),nsmall=3))),
+           
+           c((format(round(sqrt(diag(vcov(lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                             +years_shop+unada +year,data=data_dealyr))))[4],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(general_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap+year,data=data_dealyr))))[4],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(location_rating~gender+ maize.owner.agree.age +prim +distance+year,data=data_dealyr))))[4],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(price_rating~gender+ maize.owner.agree.age +prim+ saleprice +costseed+year,data=data_dealyr))))[4],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(quality_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))))[4],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(stock_rating~gender+ maize.owner.agree.age +prim +hybridnum+quanprovider+year,data=data_dealyr))))[4],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(reputation_rating~gender+ maize.owner.agree.age +prim +years_shop+unada+year,data=data_dealyr))))[4],digits=3),nsmall=3))),
+           
+           c((format(round(summary(lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                      +years_shop+unada+year,data=data_dealyr))$coefficients[4,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(general_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap+year,data=data_dealyr))$coefficients[4,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(location_rating~gender+ maize.owner.agree.age +prim +distance+year,data=data_dealyr))$coefficients[4,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(price_rating~gender+ maize.owner.agree.age +prim+ saleprice +costseed+year,data=data_dealyr))$coefficients[4,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(quality_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[4,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(stock_rating~gender+ maize.owner.agree.age +prim +hybridnum+quanprovider+year,data=data_dealyr))$coefficients[4,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(reputation_rating~gender+ maize.owner.agree.age +prim +years_shop+unada+year,data=data_dealyr))$coefficients[4,4],digits=3),nsmall=3))),
+           
+           
+           c((format(round(sum((lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                   +years_shop+unada +year,data=data_dealyr))$coefficients[5]),digits=3),nsmall=3)),
+             (format(round(sum((lm(general_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap+year,data=data_dealyr))$coefficients[5]),digits=3),nsmall=3)),
+             (format(round(sum((lm(location_rating~gender+ maize.owner.agree.age +prim +distance+year,data=data_dealyr))$coefficients[5]),digits=3),nsmall=3)),
+             (format(round(sum((lm(price_rating~gender+ maize.owner.agree.age +prim+ saleprice +costseed+year,data=data_dealyr))$coefficients[5]),digits=3),nsmall=3)),
+             (format(round(sum((lm(quality_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[5]),digits=3),nsmall=3)),
+             (format(round(sum((lm(stock_rating~gender+ maize.owner.agree.age +prim +hybridnum+quanprovider+year,data=data_dealyr))$coefficients[5]),digits=3),nsmall=3)),
+             (format(round(sum((lm(reputation_rating~gender+ maize.owner.agree.age +prim +years_shop+unada+year,data=data_dealyr))$coefficients[5]),digits=3),nsmall=3))),
+           
+           c((format(round(sqrt(diag(vcov(lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                             +years_shop+unada +year,data=data_dealyr))))[5],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(general_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap+year,data=data_dealyr))))[5],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(location_rating~gender+ maize.owner.agree.age +prim +distance+year,data=data_dealyr))))[5],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(price_rating~gender+ maize.owner.agree.age +prim+ saleprice +costseed+year,data=data_dealyr))))[5],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(quality_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))))[5],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(stock_rating~gender+ maize.owner.agree.age +prim +hybridnum+quanprovider+year,data=data_dealyr))))[5],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(reputation_rating~gender+ maize.owner.agree.age +prim +years_shop+unada+year,data=data_dealyr))))[5],digits=3),nsmall=3))),
+           
+           c((format(round(summary(lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                      +years_shop+unada+year,data=data_dealyr))$coefficients[5,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(general_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap+year,data=data_dealyr))$coefficients[5,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(location_rating~gender+ maize.owner.agree.age +prim +distance+year,data=data_dealyr))$coefficients[5,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(price_rating~gender+ maize.owner.agree.age +prim+ saleprice +costseed+year,data=data_dealyr))$coefficients[5,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(quality_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$coefficients[5,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(stock_rating~gender+ maize.owner.agree.age +prim +hybridnum+quanprovider+year,data=data_dealyr))$coefficients[5,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(reputation_rating~gender+ maize.owner.agree.age +prim +years_shop+unada+year,data=data_dealyr))$coefficients[5,4],digits=3),nsmall=3))),
+           
+           c((format(round(sum((lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                   +years_shop+unada +year,data=data_dealyr))$coefficients[6]),digits=3),nsmall=3)),
+             (format(round(sum((lm(general_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap+year,data=data_dealyr))$coefficients[6]),digits=3),nsmall=3)),
+             0,
+             (format(round(sum((lm(price_rating~gender+ maize.owner.agree.age +prim+ saleprice +costseed+year,data=data_dealyr))$coefficients[6]),digits=3),nsmall=3)),
+             0,
+             (format(round(sum((lm(stock_rating~gender+ maize.owner.agree.age +prim +hybridnum+quanprovider+year,data=data_dealyr))$coefficients[6]),digits=3),nsmall=3)),
+             (format(round(sum((lm(reputation_rating~gender+ maize.owner.agree.age +prim +years_shop+unada+year,data=data_dealyr))$coefficients[6]),digits=3),nsmall=3))),
+           
+           c((format(round(sqrt(diag(vcov(lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                             +years_shop+unada +year,data=data_dealyr))))[6],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(general_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap+year,data=data_dealyr))))[6],digits=3),nsmall=3)),
+             0,
+             (format(round(sqrt(diag(vcov(lm(price_rating~gender+ maize.owner.agree.age +prim+ saleprice +costseed+year,data=data_dealyr))))[6],digits=3),nsmall=3)),
+             0,
+             (format(round(sqrt(diag(vcov(lm(stock_rating~gender+ maize.owner.agree.age +prim +hybridnum+quanprovider+year,data=data_dealyr))))[6],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(reputation_rating~gender+ maize.owner.agree.age +prim +years_shop+unada+year,data=data_dealyr))))[6],digits=3),nsmall=3))),
+           
+           c((format(round(summary(lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                      +years_shop+unada+year,data=data_dealyr))$coefficients[6,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(general_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap+year,data=data_dealyr))$coefficients[6,4],digits=3),nsmall=3)),
+             0,
+             (format(round(summary(lm(price_rating~gender+ maize.owner.agree.age +prim+ saleprice +costseed+year,data=data_dealyr))$coefficients[6,4],digits=3),nsmall=3)),
+             0,
+             (format(round(summary(lm(stock_rating~gender+ maize.owner.agree.age +prim +hybridnum+quanprovider+year,data=data_dealyr))$coefficients[6,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(reputation_rating~gender+ maize.owner.agree.age +prim +years_shop+unada+year,data=data_dealyr))$coefficients[6,4],digits=3),nsmall=3))),
+           
+           
+           c((format(round(sum((lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                   +years_shop+unada +year,data=data_dealyr))$coefficients[7]),digits=3),nsmall=3)),
+             (format(round(sum((lm(general_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap+year,data=data_dealyr))$coefficients[7]),digits=3),nsmall=3)),
+             0,
+             0,
+             0,
+             0,
+             0),
+           
+           c((format(round(sqrt(diag(vcov(lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                             +years_shop+unada +year,data=data_dealyr))))[7],digits=3),nsmall=3)),
+             (format(round(sqrt(diag(vcov(lm(general_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap+year,data=data_dealyr))))[7],digits=3),nsmall=3)),
+             0,
+             0,
+             0,
+             0,
+             0),
+           
+           c((format(round(summary(lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                      +years_shop+unada+year,data=data_dealyr))$coefficients[7,4],digits=3),nsmall=3)),
+             (format(round(summary(lm(general_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap+year,data=data_dealyr))$coefficients[7,4],digits=3),nsmall=3)),
+             0,
+             0,
+             0,
+             0,
+             0),
+           
+           
+           c((format(round(sum((lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                   +years_shop+unada +year,data=data_dealyr))$coefficients[8]),digits=3),nsmall=3)),
+             0,
+             0,
+             0,
+             0,
+             0,
+             0),
+           
+           c((format(round(sqrt(diag(vcov(lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                             +years_shop+unada +year,data=data_dealyr))))[8],digits=3),nsmall=3)),
+             0,
+             0,
+             0,
+             0,
+             0,
+             0),
+           
+           c((format(round(summary(lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                      +years_shop+unada+year,data=data_dealyr))$coefficients[8,4],digits=3),nsmall=3)),
+             0,
+             0,
+             0,
+             0,
+             0,
+             0),
+           
+           c((format(round(sum((lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                   +years_shop+unada +year,data=data_dealyr))$coefficients[9]),digits=3),nsmall=3)),
+             0,
+             0,
+             0,
+             0,
+             0,
+             0),
+           
+           c((format(round(sqrt(diag(vcov(lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                             +years_shop+unada +year,data=data_dealyr))))[9],digits=3),nsmall=3)),
+             0,
+             0,
+             0,
+             0,
+             0,
+             0),
+           
+           c((format(round(summary(lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                      +years_shop+unada+year,data=data_dealyr))$coefficients[9,4],digits=3),nsmall=3)),
+             0,
+             0,
+             0,
+             0,
+             0,
+             0),
+           
+           c((format(round(sum((lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                   +years_shop+unada +year,data=data_dealyr))$coefficients[10]),digits=3),nsmall=3)),
+             0,
+             0,
+             0,
+             0,
+             0,
+             0),
+           
+           c((format(round(sqrt(diag(vcov(lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                             +years_shop+unada +year,data=data_dealyr))))[10],digits=3),nsmall=3)),
+             0,
+             0,
+             0,
+             0,
+             0,
+             0),
+           
+           c((format(round(summary(lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                      +years_shop+unada+year,data=data_dealyr))$coefficients[10,4],digits=3),nsmall=3)),
+             0,
+             0,
+             0,
+             0,
+             0,
+             0),
+           
+           
+           c((format(round(sum((lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                   +years_shop+unada +year,data=data_dealyr))$coefficients[11]),digits=3),nsmall=3)),
+             0,
+             0,
+             0,
+             0,
+             0,
+             0),
+           
+           c((format(round(sqrt(diag(vcov(lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                             +years_shop+unada +year,data=data_dealyr))))[11],digits=3),nsmall=3)),
+             0,
+             0,
+             0,
+             0,
+             0,
+             0),
+           
+           c((format(round(summary(lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                      +years_shop+unada+year,data=data_dealyr))$coefficients[11,4],digits=3),nsmall=3)),
+             0,
+             0,
+             0,
+             0,
+             0,
+             0),
+           
+           
+           c((format(round(sum((lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                   +years_shop+unada +year,data=data_dealyr))$coefficients[12]),digits=3),nsmall=3)),
+             0,
+             0,
+             0,
+             0,
+             0,
+             0),
+           
+           c((format(round(sqrt(diag(vcov(lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                             +years_shop+unada +year,data=data_dealyr))))[12],digits=3),nsmall=3)),
+             0,
+             0,
+             0,
+             0,
+             0,
+             0),
+           
+           c((format(round(summary(lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                      +years_shop+unada+year,data=data_dealyr))$coefficients[12,4],digits=3),nsmall=3)),
+             0,
+             0,
+             0,
+             0,
+             0,
+             0),
+           
+           
+           c((format(round(sum((lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                   +years_shop+unada +year,data=data_dealyr))$coefficients[13]),digits=3),nsmall=3)),
+             0,
+             0,
+             0,
+             0,
+             0,
+             0),
+           
+           c((format(round(sqrt(diag(vcov(lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                             +years_shop+unada +year,data=data_dealyr))))[13],digits=3),nsmall=3)),
+             0,
+             0,
+             0,
+             0,
+             0,
+             0),
+           
+           c((format(round(summary(lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                      +years_shop+unada+year,data=data_dealyr))$coefficients[13,4],digits=3),nsmall=3)),
+             0,
+             0,
+             0,
+             0,
+             0,
+             0),
+           
+           
+           
+           
+           c((format(round(summary(lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                      +years_shop+unada+year,data=data_dealyr))$r.squared,digits=3),nsmall=3)),
+             (format(round(summary(lm(general_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap+year,data=data_dealyr))$r.squared,digits=3),nsmall=3)),
+             (format(round(summary(lm(location_rating~gender+ maize.owner.agree.age +prim +distance+year,data=data_dealyr))$r.squared,digits=3),nsmall=3)),
+             (format(round(summary(lm(price_rating~gender+ maize.owner.agree.age +prim+ saleprice +costseed+year,data=data_dealyr))$r.squared,digits=3),nsmall=3)),
+             (format(round(summary(lm(quality_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$r.squared,digits=3),nsmall=3)),
+             (format(round(summary(lm(stock_rating~gender+ maize.owner.agree.age +prim +hybridnum+quanprovider+year,data=data_dealyr))$r.squared,digits=3),nsmall=3)),
+             (format(round(summary(lm(reputation_rating~gender+ maize.owner.agree.age +prim +years_shop+unada+year,data=data_dealyr))$r.squared,digits=3),nsmall=3))),
+           
+           c((format(round(summary(lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                      +years_shop+unada+year,data=data_dealyr))$adj.r.squared,digits=3),nsmall=3)),
+             (format(round(summary(lm(general_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap+year,data=data_dealyr))$adj.r.squared,digits=3),nsmall=3)),
+             (format(round(summary(lm(location_rating~gender+ maize.owner.agree.age +prim +distance+year,data=data_dealyr))$adj.r.squared,digits=3),nsmall=3)),
+             (format(round(summary(lm(price_rating~gender+ maize.owner.agree.age +prim+ saleprice +costseed+year,data=data_dealyr))$adj.r.squared,digits=3),nsmall=3)),
+             (format(round(summary(lm(quality_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr))$adj.r.squared,digits=3),nsmall=3)),
+             (format(round(summary(lm(stock_rating~gender+ maize.owner.agree.age +prim +hybridnum+quanprovider+year,data=data_dealyr))$adj.r.squared,digits=3),nsmall=3)),
+             (format(round(summary(lm(reputation_rating~gender+ maize.owner.agree.age +prim +years_shop+unada+year,data=data_dealyr))$adj.r.squared,digits=3),nsmall=3))),
+           
+           c((format(round(nobs(lm(overall_rating~gender+ maize.owner.agree.age +prim+ +dealereffort+distance+saleprice +costseed +index_allprac+hybridnum+quanprovider
+                                   +years_shop+unada+year,data=data_dealyr)),digits=0),nsmall=0)),
+             (format(round(nobs(lm(general_rating~gender+ maize.owner.agree.age +prim+ shop_rate+dealereffort+index_cap+year,data=data_dealyr)),digits=0),nsmall=0)),
+             (format(round(nobs(lm(location_rating~gender+ maize.owner.agree.age +prim +distance+year,data=data_dealyr)),digits=0),nsmall=0)),
+             (format(round(nobs(lm(price_rating~gender+ maize.owner.agree.age +prim+ saleprice +costseed+year,data=data_dealyr)),digits=0),nsmall=0)),
+             (format(round(nobs(lm(quality_rating~gender+ maize.owner.agree.age +prim +index_allprac+year,data=data_dealyr)),digits=0),nsmall=0)),
+             (format(round(nobs(lm(stock_rating~gender+ maize.owner.agree.age +prim +hybridnum+quanprovider+year,data=data_dealyr)),digits=0),nsmall=0)),
+             (format(round(nobs(lm(reputation_rating~gender+ maize.owner.agree.age +prim +years_shop+unada+year,data=data_dealyr)),digits=0),nsmall=0))))
+
 ############## FIXED EFFECTS 
 
 ratFE<-merge(ratFE, base, by="shop_ID")
+ratFE$year<-0
 ratFEmid <- subset(rating_dyads_midline,shop_ID  %in% to_select)
 ratFEmid<-merge(ratFEmid,midm, by="shop_ID")
-
+ratFEmid$year<-1
 rat <- rbind(ratFE, ratFEmid)
 
+
+#dyad_1<-subset(dyad_1,shop_ID  %in% to_select)
+#dyad_2<-subset(dyad_2,shop_ID  %in% to_select)
 
 #merge to get gender --- merging both stacked datasets 
 #rat <- merge(rat, dealer_stack, by="shop_ID")
@@ -2300,221 +3223,278 @@ summary(rat$maize.owner.shelflife_Caro[rat$gender=="Male"])
 #FE at farmer level --- without controls 
 #dealer ratings 
 
-plm(overall_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
-summary(lm(overall_rating~gender+farmer_ID, data = rat))
+plm(overall_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
+summary(lm(overall_rating~gender+year+farmer_ID, data = rat))
 
-plm(general_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
-summary(lm(general_rating~gender+farmer_ID, data = rat))
+plm(general_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
+summary(lm(general_rating~gender+year+farmer_ID, data = rat))
 
-plm(location_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
-summary(lm(location_rating~gender+farmer_ID, data = rat))
+plm(location_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
+summary(lm(location_rating~gender+year+farmer_ID, data = rat))
 
-plm(price_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
-summary(lm(price_rating~gender+farmer_ID, data = rat))
+plm(price_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
+summary(lm(price_rating~gender+year+farmer_ID, data = rat))
 
-plm(quality_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
-summary(lm(quality_rating~gender+farmer_ID, data = rat))
+plm(quality_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
+summary(lm(quality_rating~gender+year+farmer_ID, data = rat))
 
-plm(stock_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
-summary(lm(stock_rating~gender+farmer_ID, data = rat))
+plm(stock_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
+summary(lm(stock_rating~gender+year+farmer_ID, data = rat))
 
-plm(reputation_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
-summary(lm(reputation_rating~gender+farmer_ID, data = rat))
+plm(reputation_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
+summary(lm(reputation_rating~gender+year+farmer_ID, data = rat))
 
 
-fe3<- rbind( c((format(round(mean(fixef(plm(overall_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within")))[1],digits=3),nsmall=3)),
-               (format(round(mean(fixef(plm(general_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within")))[1],digits=3),nsmall=3)),
-               (format(round(mean(fixef(plm(location_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within")))[1],digits=3),nsmall=3)),
-               (format(round(mean(fixef(plm(price_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within")))[1],digits=3),nsmall=3)),
-               (format(round(mean(fixef(plm(quality_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within")))[1],digits=3),nsmall=3)),
-               (format(round(mean(fixef(plm(stock_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within")))[1],digits=3),nsmall=3)),
-               (format(round(mean(fixef(plm(reputation_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within")))[1],digits=3),nsmall=3))),
-             c((format(round(sum((plm(overall_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$coefficients[1]),digits=3),nsmall=3)),
-               (format(round(sum((plm(general_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$coefficients[1]),digits=3),nsmall=3)),
-               (format(round(sum((plm(location_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$coefficients[1]),digits=3),nsmall=3)),
-               (format(round(sum((plm(price_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$coefficients[1]),digits=3),nsmall=3)),
-               (format(round(sum((plm(quality_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$coefficients[1]),digits=3),nsmall=3)),
-               (format(round(sum((plm(stock_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$coefficients[1]),digits=3),nsmall=3)),
-               (format(round(sum((plm(reputation_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$coefficients[1]),digits=3),nsmall=3))),
-             c((format(round((coeftest(plm(overall_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(overall_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
+
+fe3<- rbind( c((format(round(mean(fixef(plm(overall_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within")))[1],digits=3),nsmall=3)),
+               (format(round(mean(fixef(plm(general_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within")))[1],digits=3),nsmall=3)),
+               (format(round(mean(fixef(plm(location_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within")))[1],digits=3),nsmall=3)),
+               (format(round(mean(fixef(plm(price_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within")))[1],digits=3),nsmall=3)),
+               (format(round(mean(fixef(plm(quality_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within")))[1],digits=3),nsmall=3)),
+               (format(round(mean(fixef(plm(stock_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within")))[1],digits=3),nsmall=3)),
+               (format(round(mean(fixef(plm(reputation_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within")))[1],digits=3),nsmall=3))),
+             c((format(round(sum((plm(overall_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$coefficients[1]),digits=3),nsmall=3)),
+               (format(round(sum((plm(general_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$coefficients[1]),digits=3),nsmall=3)),
+               (format(round(sum((plm(location_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$coefficients[1]),digits=3),nsmall=3)),
+               (format(round(sum((plm(price_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$coefficients[1]),digits=3),nsmall=3)),
+               (format(round(sum((plm(quality_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$coefficients[1]),digits=3),nsmall=3)),
+               (format(round(sum((plm(stock_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$coefficients[1]),digits=3),nsmall=3)),
+               (format(round(sum((plm(reputation_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$coefficients[1]),digits=3),nsmall=3))),
+             c((format(round((coeftest(plm(overall_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(overall_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
                              [1,2],digits=3),nsmall=3)),
-               (format(round((coeftest(plm(general_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(general_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
+               (format(round((coeftest(plm(general_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(general_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
                              [1,2],digits=3),nsmall=3)),
-               (format(round((coeftest(plm(location_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(location_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
+               (format(round((coeftest(plm(location_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(location_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
                              [1,2],digits=3),nsmall=3)),
-               (format(round((coeftest(plm(price_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(price_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
+               (format(round((coeftest(plm(price_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(price_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
                              [1,2],digits=3),nsmall=3)),
-               (format(round((coeftest(plm(quality_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(quality_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
+               (format(round((coeftest(plm(quality_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(quality_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
                              [1,2],digits=3),nsmall=3)),
-               (format(round((coeftest(plm(stock_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(stock_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
+               (format(round((coeftest(plm(stock_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(stock_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
                              [1,2],digits=3),nsmall=3)),
-               (format(round((coeftest(plm(reputation_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(reputation_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
+               (format(round((coeftest(plm(reputation_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(reputation_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
                              [1,2],digits=3),nsmall=3))),
              
-             c((format(round((coeftest(plm(overall_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(overall_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
+             c((format(round((coeftest(plm(overall_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(overall_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
                              [1,4],digits=3),nsmall=3)),
-               (format(round((coeftest(plm(general_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(general_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
+               (format(round((coeftest(plm(general_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(general_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
                              [1,4],digits=3),nsmall=3)),
-               (format(round((coeftest(plm(location_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(location_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
+               (format(round((coeftest(plm(location_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(location_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
                              [1,4],digits=3),nsmall=3)),
-               (format(round((coeftest(plm(price_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(price_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
+               (format(round((coeftest(plm(price_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(price_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
                              [1,4],digits=3),nsmall=3)),
-               (format(round((coeftest(plm(quality_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(quality_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
+               (format(round((coeftest(plm(quality_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(quality_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
                              [1,4],digits=3),nsmall=3)),
-               (format(round((coeftest(plm(stock_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(stock_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
+               (format(round((coeftest(plm(stock_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(stock_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
                              [1,4],digits=3),nsmall=3)),
-               (format(round((coeftest(plm(reputation_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(reputation_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
+               (format(round((coeftest(plm(reputation_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(reputation_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
                              [1,4],digits=3),nsmall=3))),
              
              
-             c((format(round(summary(plm(overall_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[1],digits=3),nsmall=3)),
-               (format(round(summary(plm(general_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[1],digits=3),nsmall=3)),
-               (format(round(summary(plm(location_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[1],digits=3),nsmall=3)),
-               (format(round(summary(plm(price_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[1],digits=3),nsmall=3)),
-               (format(round(summary(plm(quality_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[1],digits=3),nsmall=3)),
-               (format(round(summary(plm(stock_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[1],digits=3),nsmall=3)),
-               (format(round(summary(plm(reputation_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[1],digits=3),nsmall=3))),
+             c((format(round(summary(plm(overall_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[1],digits=3),nsmall=3)),
+               (format(round(summary(plm(general_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[1],digits=3),nsmall=3)),
+               (format(round(summary(plm(location_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[1],digits=3),nsmall=3)),
+               (format(round(summary(plm(price_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[1],digits=3),nsmall=3)),
+               (format(round(summary(plm(quality_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[1],digits=3),nsmall=3)),
+               (format(round(summary(plm(stock_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[1],digits=3),nsmall=3)),
+               (format(round(summary(plm(reputation_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[1],digits=3),nsmall=3))),
              
-             c((format(round(summary(plm(overall_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[2],digits=3),nsmall=3)),
-               (format(round(summary(plm(general_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[2],digits=3),nsmall=3)),
-               (format(round(summary(plm(location_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[2],digits=3),nsmall=3)),
-               (format(round(summary(plm(price_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[2],digits=3),nsmall=3)),
-               (format(round(summary(plm(quality_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[2],digits=3),nsmall=3)),
-               (format(round(summary(plm(stock_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[2],digits=3),nsmall=3)),
-               (format(round(summary(plm(reputation_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[2],digits=3),nsmall=3))),
+             c((format(round(summary(plm(overall_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[2],digits=3),nsmall=3)),
+               (format(round(summary(plm(general_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[2],digits=3),nsmall=3)),
+               (format(round(summary(plm(location_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[2],digits=3),nsmall=3)),
+               (format(round(summary(plm(price_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[2],digits=3),nsmall=3)),
+               (format(round(summary(plm(quality_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[2],digits=3),nsmall=3)),
+               (format(round(summary(plm(stock_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[2],digits=3),nsmall=3)),
+               (format(round(summary(plm(reputation_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[2],digits=3),nsmall=3))),
              
-             c((format(round(nobs(plm(overall_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within")),digits=0),nsmall=0)),
-               (format(round(nobs(plm(general_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within")),digits=0),nsmall=0)),
-               (format(round(nobs(plm(location_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within")),digits=0),nsmall=0)),
-               (format(round(nobs(plm(price_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within")),digits=0),nsmall=0)),
-               (format(round(nobs(plm(quality_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within")),digits=0),nsmall=0)),
-               (format(round(nobs(plm(stock_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within")),digits=0),nsmall=0)),
-               (format(round(nobs(plm(reputation_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within")),digits=0),nsmall=0)))
+             c((format(round(nobs(plm(overall_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within")),digits=0),nsmall=0)),
+               (format(round(nobs(plm(general_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within")),digits=0),nsmall=0)),
+               (format(round(nobs(plm(location_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within")),digits=0),nsmall=0)),
+               (format(round(nobs(plm(price_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within")),digits=0),nsmall=0)),
+               (format(round(nobs(plm(quality_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within")),digits=0),nsmall=0)),
+               (format(round(nobs(plm(stock_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within")),digits=0),nsmall=0)),
+               (format(round(nobs(plm(reputation_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within")),digits=0),nsmall=0)))
 )
-
 
 #seed ratings -- without controls 
 
-plm(score~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
-summary(lm(score~gender+farmer_ID, data = rat))
+plm(score~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
+summary(lm(score~gender+year+farmer_ID, data = rat))
 
-plm(seed_quality_general_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
-summary(lm(seed_quality_general_rating~gender+farmer_ID, data = rat))
+plm(seed_quality_general_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
+summary(lm(seed_quality_general_rating~gender+year+farmer_ID, data = rat))
 
-plm(seed_yield_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
-summary(lm(seed_yield_rating~gender+farmer_ID, data = rat))
+plm(seed_yield_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
+summary(lm(seed_yield_rating~gender+year+farmer_ID, data = rat))
 
-plm(seed_drought_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
-summary(lm(seed_drought_rating~gender+farmer_ID, data = rat))
+plm(seed_drought_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
+summary(lm(seed_drought_rating~gender+year+farmer_ID, data = rat))
 
-plm(seed_disease_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
-summary(lm(seed_disease_rating~gender+farmer_ID, data = rat))
+plm(seed_disease_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
+summary(lm(seed_disease_rating~gender+year+farmer_ID, data = rat))
 
-plm(seed_maturing_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
-summary(lm(seed_maturing_rating~gender+farmer_ID, data = rat))
+plm(seed_maturing_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
+summary(lm(seed_maturing_rating~gender+year+farmer_ID, data = rat))
 
-plm(seed_germinate_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
-summary(lm(seed_germinate_rating~gender+farmer_ID, data = rat))
+plm(seed_germinate_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
+summary(lm(seed_germinate_rating~gender+year+farmer_ID, data = rat))
 
 
 
-fe1<- rbind( c((format(round(mean(fixef(plm(score~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within")))[1],digits=3),nsmall=3)),
-               (format(round(mean(fixef(plm(seed_quality_general_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within")))[1],digits=3),nsmall=3)),
-               (format(round(mean(fixef(plm(seed_yield_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within")))[1],digits=3),nsmall=3)),
-               (format(round(mean(fixef(plm(seed_drought_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within")))[1],digits=3),nsmall=3)),
-               (format(round(mean(fixef(plm(seed_disease_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within")))[1],digits=3),nsmall=3)),
-               (format(round(mean(fixef(plm(seed_maturing_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within")))[1],digits=3),nsmall=3)),
-               (format(round(mean(fixef(plm(seed_germinate_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within")))[1],digits=3),nsmall=3))),
-             c((format(round(sum((plm(score~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$coefficients[1]),digits=3),nsmall=3)),
-               (format(round(sum((plm(seed_quality_general_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$coefficients[1]),digits=3),nsmall=3)),
-               (format(round(sum((plm(seed_yield_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$coefficients[1]),digits=3),nsmall=3)),
-               (format(round(sum((plm(seed_drought_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$coefficients[1]),digits=3),nsmall=3)),
-               (format(round(sum((plm(seed_disease_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$coefficients[1]),digits=3),nsmall=3)),
-               (format(round(sum((plm(seed_maturing_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$coefficients[1]),digits=3),nsmall=3)),
-               (format(round(sum((plm(seed_germinate_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$coefficients[1]),digits=3),nsmall=3))),
-             c((format(round((coeftest(plm(score~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(score~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
-[1,2],digits=3),nsmall=3)),
-(format(round((coeftest(plm(seed_quality_general_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(seed_quality_general_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
-              [1,2],digits=3),nsmall=3)),
-(format(round((coeftest(plm(seed_yield_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(seed_yield_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
-              [1,2],digits=3),nsmall=3)),
-(format(round((coeftest(plm(seed_drought_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(seed_drought_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
-              [1,2],digits=3),nsmall=3)),
-(format(round((coeftest(plm(seed_disease_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(seed_disease_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
-              [1,2],digits=3),nsmall=3)),
-(format(round((coeftest(plm(seed_maturing_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(seed_maturing_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
-              [1,2],digits=3),nsmall=3)),
-(format(round((coeftest(plm(seed_germinate_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(seed_germinate_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
-              [1,2],digits=3),nsmall=3))),
-
-c((format(round((coeftest(plm(score~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(score~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
-                [1,4],digits=3),nsmall=3)),
-  (format(round((coeftest(plm(seed_quality_general_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(seed_quality_general_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
-                [1,4],digits=3),nsmall=3)),
-  (format(round((coeftest(plm(seed_yield_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(seed_yield_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
-                [1,4],digits=3),nsmall=3)),
-  (format(round((coeftest(plm(seed_drought_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(seed_drought_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
-                [1,4],digits=3),nsmall=3)),
-  (format(round((coeftest(plm(seed_disease_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(seed_disease_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
-                [1,4],digits=3),nsmall=3)),
-  (format(round((coeftest(plm(seed_maturing_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(seed_maturing_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
-                [1,4],digits=3),nsmall=3)),
-  (format(round((coeftest(plm(seed_germinate_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(seed_germinate_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
-                [1,4],digits=3),nsmall=3))),
+fe1<- rbind( c((format(round(mean(fixef(plm(score~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within")))[1],digits=3),nsmall=3)),
+               (format(round(mean(fixef(plm(seed_quality_general_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within")))[1],digits=3),nsmall=3)),
+               (format(round(mean(fixef(plm(seed_yield_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within")))[1],digits=3),nsmall=3)),
+               (format(round(mean(fixef(plm(seed_drought_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within")))[1],digits=3),nsmall=3)),
+               (format(round(mean(fixef(plm(seed_disease_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within")))[1],digits=3),nsmall=3)),
+               (format(round(mean(fixef(plm(seed_maturing_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within")))[1],digits=3),nsmall=3)),
+               (format(round(mean(fixef(plm(seed_germinate_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within")))[1],digits=3),nsmall=3))),
+             c((format(round(sum((plm(score~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$coefficients[1]),digits=3),nsmall=3)),
+               (format(round(sum((plm(seed_quality_general_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$coefficients[1]),digits=3),nsmall=3)),
+               (format(round(sum((plm(seed_yield_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$coefficients[1]),digits=3),nsmall=3)),
+               (format(round(sum((plm(seed_drought_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$coefficients[1]),digits=3),nsmall=3)),
+               (format(round(sum((plm(seed_disease_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$coefficients[1]),digits=3),nsmall=3)),
+               (format(round(sum((plm(seed_maturing_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$coefficients[1]),digits=3),nsmall=3)),
+               (format(round(sum((plm(seed_germinate_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$coefficients[1]),digits=3),nsmall=3))),
+             c((format(round((coeftest(plm(score~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(score~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
+                             [1,2],digits=3),nsmall=3)),
+               (format(round((coeftest(plm(seed_quality_general_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(seed_quality_general_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
+                             [1,2],digits=3),nsmall=3)),
+               (format(round((coeftest(plm(seed_yield_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(seed_yield_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
+                             [1,2],digits=3),nsmall=3)),
+               (format(round((coeftest(plm(seed_drought_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(seed_drought_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
+                             [1,2],digits=3),nsmall=3)),
+               (format(round((coeftest(plm(seed_disease_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(seed_disease_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
+                             [1,2],digits=3),nsmall=3)),
+               (format(round((coeftest(plm(seed_maturing_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(seed_maturing_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
+                             [1,2],digits=3),nsmall=3)),
+               (format(round((coeftest(plm(seed_germinate_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(seed_germinate_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
+                             [1,2],digits=3),nsmall=3))),
+             
+             c((format(round((coeftest(plm(score~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(score~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
+                             [1,4],digits=3),nsmall=3)),
+               (format(round((coeftest(plm(seed_quality_general_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(seed_quality_general_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
+                             [1,4],digits=3),nsmall=3)),
+               (format(round((coeftest(plm(seed_yield_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(seed_yield_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
+                             [1,4],digits=3),nsmall=3)),
+               (format(round((coeftest(plm(seed_drought_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(seed_drought_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
+                             [1,4],digits=3),nsmall=3)),
+               (format(round((coeftest(plm(seed_disease_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(seed_disease_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
+                             [1,4],digits=3),nsmall=3)),
+               (format(round((coeftest(plm(seed_maturing_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(seed_maturing_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
+                             [1,4],digits=3),nsmall=3)),
+               (format(round((coeftest(plm(seed_germinate_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), vcovHC(plm(seed_germinate_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"), type = "HC0", cluster = "time")))
+                             [1,4],digits=3),nsmall=3))),
              
              
-             c((format(round(summary(plm(score~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[1],digits=3),nsmall=3)),
-               (format(round(summary(plm(seed_quality_general_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[1],digits=3),nsmall=3)),
-               (format(round(summary(plm(seed_yield_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[1],digits=3),nsmall=3)),
-               (format(round(summary(plm(seed_drought_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[1],digits=3),nsmall=3)),
-               (format(round(summary(plm(seed_disease_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[1],digits=3),nsmall=3)),
-               (format(round(summary(plm(seed_maturing_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[1],digits=3),nsmall=3)),
-               (format(round(summary(plm(seed_germinate_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[1],digits=3),nsmall=3))),
-           
-  c((format(round(summary(plm(score~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[2],digits=3),nsmall=3)),
-               (format(round(summary(plm(seed_quality_general_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[2],digits=3),nsmall=3)),
-               (format(round(summary(plm(seed_yield_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[2],digits=3),nsmall=3)),
-               (format(round(summary(plm(seed_drought_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[2],digits=3),nsmall=3)),
-               (format(round(summary(plm(seed_disease_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[2],digits=3),nsmall=3)),
-               (format(round(summary(plm(seed_maturing_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[2],digits=3),nsmall=3)),
-               (format(round(summary(plm(seed_germinate_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[2],digits=3),nsmall=3))),
-           
-  c((format(round(nobs(plm(score~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within")),digits=0),nsmall=0)),
-               (format(round(nobs(plm(seed_quality_general_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within")),digits=0),nsmall=0)),
-               (format(round(nobs(plm(seed_yield_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within")),digits=0),nsmall=0)),
-               (format(round(nobs(plm(seed_drought_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within")),digits=0),nsmall=0)),
-               (format(round(nobs(plm(seed_disease_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within")),digits=0),nsmall=0)),
-               (format(round(nobs(plm(seed_maturing_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within")),digits=0),nsmall=0)),
-               (format(round(nobs(plm(seed_germinate_rating~gender, data = rat, index=c("farmer_ID","dealer_ID"), model="within")),digits=0),nsmall=0)))
+             c((format(round(summary(plm(score~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[1],digits=3),nsmall=3)),
+               (format(round(summary(plm(seed_quality_general_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[1],digits=3),nsmall=3)),
+               (format(round(summary(plm(seed_yield_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[1],digits=3),nsmall=3)),
+               (format(round(summary(plm(seed_drought_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[1],digits=3),nsmall=3)),
+               (format(round(summary(plm(seed_disease_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[1],digits=3),nsmall=3)),
+               (format(round(summary(plm(seed_maturing_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[1],digits=3),nsmall=3)),
+               (format(round(summary(plm(seed_germinate_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[1],digits=3),nsmall=3))),
+             
+             c((format(round(summary(plm(score~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[2],digits=3),nsmall=3)),
+               (format(round(summary(plm(seed_quality_general_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[2],digits=3),nsmall=3)),
+               (format(round(summary(plm(seed_yield_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[2],digits=3),nsmall=3)),
+               (format(round(summary(plm(seed_drought_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[2],digits=3),nsmall=3)),
+               (format(round(summary(plm(seed_disease_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[2],digits=3),nsmall=3)),
+               (format(round(summary(plm(seed_maturing_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[2],digits=3),nsmall=3)),
+               (format(round(summary(plm(seed_germinate_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))$r.squared[2],digits=3),nsmall=3))),
+             
+             c((format(round(nobs(plm(score~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within")),digits=0),nsmall=0)),
+               (format(round(nobs(plm(seed_quality_general_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within")),digits=0),nsmall=0)),
+               (format(round(nobs(plm(seed_yield_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within")),digits=0),nsmall=0)),
+               (format(round(nobs(plm(seed_drought_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within")),digits=0),nsmall=0)),
+               (format(round(nobs(plm(seed_disease_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within")),digits=0),nsmall=0)),
+               (format(round(nobs(plm(seed_maturing_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within")),digits=0),nsmall=0)),
+               (format(round(nobs(plm(seed_germinate_rating~gender+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within")),digits=0),nsmall=0)))
 )
+
 
 
 #FE at farmer level --- with controls
 #dealer ratings
 
+ratyr1<-rat[rat$year==0,]
+ratyr2<-rat[rat$year==1,]
+
 plm1<-plm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.index_efforts+maize.owner.dist+maize.owner.saleprice+maize.owner.costseed
-          +maize.owner.practices_all+maize.owner.agree.q19+maize.owner.quanprovider+years_shop+maize.owner.unada, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
+          +maize.owner.practices_all+maize.owner.agree.q19+maize.owner.quanprovider+years_shop+maize.owner.unada+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
 summary(plm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.index_efforts+maize.owner.dist+maize.owner.saleprice+maize.owner.costseed
-            +maize.owner.practices_all+maize.owner.agree.q19+maize.owner.quanprovider+years_shop+maize.owner.unada, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
+            +maize.owner.practices_all+maize.owner.agree.q19+maize.owner.quanprovider+years_shop+maize.owner.unada+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
 
-plm2<-plm(general_rating~gender+ maize.owner.agree.age +prim +shop_rate+maize.owner.index_efforts+maize.owner.index_practices_cap, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
-summary(plm(general_rating~gender+ maize.owner.agree.age +prim +shop_rate+maize.owner.index_efforts+maize.owner.index_practices_cap, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
+plm2<-plm(general_rating~gender+ maize.owner.agree.age +prim +shop_rate+maize.owner.index_efforts+maize.owner.index_practices_cap+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
+summary(plm(general_rating~gender+ maize.owner.agree.age +prim +shop_rate+maize.owner.index_efforts+maize.owner.index_practices_cap+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
 
-plm3<-plm(location_rating~gender+ maize.owner.agree.age +prim +maize.owner.dist, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
-summary(plm(location_rating~gender+ maize.owner.agree.age +prim +maize.owner.dist, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
+plm3<-plm(location_rating~gender+ maize.owner.agree.age +prim +maize.owner.dist+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
+summary(plm(location_rating~gender+ maize.owner.agree.age +prim +maize.owner.dist+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
 
-plm4<-plm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.saleprice+maize.owner.costseed, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
-summary(plm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.saleprice+maize.owner.costseed, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
+plm4<-plm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.saleprice+maize.owner.costseed+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
+summary(plm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.saleprice+maize.owner.costseed+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
 
-plm5<-plm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.practices_all, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
-summary(plm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.practices_all, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
+plm5<-plm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.practices_all+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
+summary(plm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.practices_all+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
 
 
-plm6<-plm(stock_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q19+maize.owner.quanprovider, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
-summary(plm(stock_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q19+maize.owner.quanprovider, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
+plm6<-plm(stock_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q19+maize.owner.quanprovider+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
+summary(plm(stock_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q19+maize.owner.quanprovider+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
 
-plm7<-plm(reputation_rating~gender+ maize.owner.agree.age +prim +years_shop+maize.owner.unada, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
-summary(plm(reputation_rating~gender+ maize.owner.agree.age +prim +years_shop+maize.owner.unada, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
+plm7<-plm(reputation_rating~gender+ maize.owner.agree.age +prim +years_shop+maize.owner.unada+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
+summary(plm(reputation_rating~gender+ maize.owner.agree.age +prim +years_shop+maize.owner.unada+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
+
+#baseline
+
+plm1b<-plm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.index_efforts+maize.owner.dist+maize.owner.saleprice+maize.owner.costseed
+          +maize.owner.practices_all+maize.owner.agree.q19+maize.owner.quanprovider+years_shop+maize.owner.unada, data =  ratyr1, index=c("farmer_ID","dealer_ID"), model="within")
+summary(plm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.index_efforts+maize.owner.dist+maize.owner.saleprice+maize.owner.costseed
+            +maize.owner.practices_all+maize.owner.agree.q19+maize.owner.quanprovider+years_shop+maize.owner.unada, data =  ratyr1, index=c("farmer_ID","dealer_ID"), model="within"))
+
+plm2b<-plm(general_rating~gender+ maize.owner.agree.age +prim +shop_rate+maize.owner.index_efforts+maize.owner.index_practices_cap, data =  ratyr1, index=c("farmer_ID","dealer_ID"), model="within")
+summary(plm(general_rating~gender+ maize.owner.agree.age +prim +shop_rate+maize.owner.index_efforts+maize.owner.index_practices_cap, data =  ratyr1, index=c("farmer_ID","dealer_ID"), model="within"))
+
+plm3b<-plm(location_rating~gender+ maize.owner.agree.age +prim +maize.owner.dist, data =  ratyr1, index=c("farmer_ID","dealer_ID"), model="within")
+summary(plm(location_rating~gender+ maize.owner.agree.age +prim +maize.owner.dist, data =  ratyr1, index=c("farmer_ID","dealer_ID"), model="within"))
+
+plm4b<-plm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.saleprice+maize.owner.costseed, data =  ratyr1, index=c("farmer_ID","dealer_ID"), model="within")
+summary(plm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.saleprice+maize.owner.costseed, data =  ratyr1, index=c("farmer_ID","dealer_ID"), model="within"))
+
+plm5b<-plm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.practices_all, data =  ratyr1, index=c("farmer_ID","dealer_ID"), model="within")
+summary(plm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.practices_all, data =  ratyr1, index=c("farmer_ID","dealer_ID"), model="within"))
+
+
+plm6b<-plm(stock_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q19+maize.owner.quanprovider, data =  ratyr1, index=c("farmer_ID","dealer_ID"), model="within")
+summary(plm(stock_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q19+maize.owner.quanprovider, data =  ratyr1, index=c("farmer_ID","dealer_ID"), model="within"))
+
+plm7b<-plm(reputation_rating~gender+ maize.owner.agree.age +prim +years_shop+maize.owner.unada, data =  ratyr1, index=c("farmer_ID","dealer_ID"), model="within")
+summary(plm(reputation_rating~gender+ maize.owner.agree.age +prim +years_shop+maize.owner.unada, data =  ratyr1, index=c("farmer_ID","dealer_ID"), model="within"))
+
+#midline
+
+plm1m<-plm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.index_efforts+maize.owner.dist+maize.owner.saleprice+maize.owner.costseed
+          +maize.owner.practices_all+maize.owner.agree.q19+maize.owner.quanprovider+years_shop+maize.owner.unada, data =  ratyr2, index=c("farmer_ID","dealer_ID"), model="within")
+summary(plm(overall_rating~gender+ maize.owner.agree.age +prim +maize.owner.index_efforts+maize.owner.dist+maize.owner.saleprice+maize.owner.costseed
+            +maize.owner.practices_all+maize.owner.agree.q19+maize.owner.quanprovider+years_shop+maize.owner.unada, data =  ratyr2, index=c("farmer_ID","dealer_ID"), model="within"))
+
+plm2m<-plm(general_rating~gender+ maize.owner.agree.age +prim +shop_rate+maize.owner.index_efforts+maize.owner.index_practices_cap, data =  ratyr2, index=c("farmer_ID","dealer_ID"), model="within")
+summary(plm(general_rating~gender+ maize.owner.agree.age +prim +shop_rate+maize.owner.index_efforts+maize.owner.index_practices_cap, data =  ratyr2, index=c("farmer_ID","dealer_ID"), model="within"))
+
+plm3m<-plm(location_rating~gender+ maize.owner.agree.age +prim +maize.owner.dist, data =  ratyr2, index=c("farmer_ID","dealer_ID"), model="within")
+summary(plm(location_rating~gender+ maize.owner.agree.age +prim +maize.owner.dist, data =  ratyr2, index=c("farmer_ID","dealer_ID"), model="within"))
+
+plm4m<-plm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.saleprice+maize.owner.costseed, data =  ratyr2, index=c("farmer_ID","dealer_ID"), model="within")
+summary(plm(price_rating~gender+ maize.owner.agree.age +prim +maize.owner.saleprice+maize.owner.costseed, data =  ratyr2, index=c("farmer_ID","dealer_ID"), model="within"))
+
+plm5m<-plm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.practices_all, data =  ratyr2, index=c("farmer_ID","dealer_ID"), model="within")
+summary(plm(quality_rating~gender+ maize.owner.agree.age +prim +maize.owner.practices_all, data =  ratyr2, index=c("farmer_ID","dealer_ID"), model="within"))
+
+
+plm6m<-plm(stock_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q19+maize.owner.quanprovider, data =  ratyr2, index=c("farmer_ID","dealer_ID"), model="within")
+summary(plm(stock_rating~gender+ maize.owner.agree.age +prim +maize.owner.agree.q19+maize.owner.quanprovider, data =  ratyr2, index=c("farmer_ID","dealer_ID"), model="within"))
+
+plm7m<-plm(reputation_rating~gender+ maize.owner.agree.age +prim +years_shop+maize.owner.unada, data =  ratyr2, index=c("farmer_ID","dealer_ID"), model="within")
+summary(plm(reputation_rating~gender+ maize.owner.agree.age +prim +years_shop+maize.owner.unada, data =  ratyr2, index=c("farmer_ID","dealer_ID"), model="within"))
+
 
 
 #storing dealer ratings
@@ -2839,33 +3819,88 @@ fe4<- rbind(c(0,
 #FE at farmer level --- with controls
 #seed ratings
 
-plm8<-plm(score~gender+ maize.owner.agree.age +prim +maize.owner.practices_all, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
-summary(plm(score~gender+ maize.owner.agree.age +prim+maize.owner.practices_all, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
+plm8<-plm(score~gender+ maize.owner.agree.age +prim +maize.owner.practices_all+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
+summary(plm(score~gender+ maize.owner.agree.age +prim+maize.owner.practices_all+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
 
 
-plm9<-plm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim+maize.owner.practices_all, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
-summary(plm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim+maize.owner.practices_all, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
+plm9<-plm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim+maize.owner.practices_all+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
+summary(plm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim+maize.owner.practices_all+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
 
 
-plm10<-plm(seed_yield_rating~gender+ maize.owner.agree.age +prim+maize.owner.practices_all, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
-summary(plm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.practices_all, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
+plm10<-plm(seed_yield_rating~gender+ maize.owner.agree.age +prim+maize.owner.practices_all+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
+summary(plm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.practices_all+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
 
 
-plm11<-plm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.practices_all, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
-summary(plm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.practices_all, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
+plm11<-plm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.practices_all+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
+summary(plm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.practices_all+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
 
 
-plm12<-plm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.practices_all, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
-summary(plm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.practices_all, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
+plm12<-plm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.practices_all+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
+summary(plm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.practices_all+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
 
 
-plm13<-plm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.practices_all, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
-summary(plm(seed_maturing_rating~gender+ maize.owner.agree.age +prim+maize.owner.practices_all, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
+plm13<-plm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.practices_all+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
+summary(plm(seed_maturing_rating~gender+ maize.owner.agree.age +prim+maize.owner.practices_all+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
 
 
-plm14<-plm(seed_germinate_rating~gender+ maize.owner.agree.age +prim+maize.owner.practices_all, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
-summary(plm(seed_germinate_rating~gender+ maize.owner.agree.age +prim+maize.owner.practices_all, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
+plm14<-plm(seed_germinate_rating~gender+ maize.owner.agree.age +prim+maize.owner.practices_all+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within")
+summary(plm(seed_germinate_rating~gender+ maize.owner.agree.age +prim+maize.owner.practices_all+year, data = rat, index=c("farmer_ID","dealer_ID"), model="within"))
 
+#baseline
+plm8b<-plm(score~gender+ maize.owner.agree.age +prim +maize.owner.practices_all, data = ratyr1, index=c("farmer_ID","dealer_ID"), model="within")
+summary(plm(score~gender+ maize.owner.agree.age +prim+maize.owner.practices_all, data = ratyr1, index=c("farmer_ID","dealer_ID"), model="within"))
+
+
+plm9b<-plm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim+maize.owner.practices_all, data = ratyr1, index=c("farmer_ID","dealer_ID"), model="within")
+summary(plm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim+maize.owner.practices_all, data = ratyr1, index=c("farmer_ID","dealer_ID"), model="within"))
+
+
+plm10b<-plm(seed_yield_rating~gender+ maize.owner.agree.age +prim+maize.owner.practices_all, data = ratyr1, index=c("farmer_ID","dealer_ID"), model="within")
+summary(plm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.practices_all, data = ratyr1, index=c("farmer_ID","dealer_ID"), model="within"))
+
+
+plm11b<-plm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.practices_all, data = ratyr1, index=c("farmer_ID","dealer_ID"), model="within")
+summary(plm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.practices_all, data = ratyr1, index=c("farmer_ID","dealer_ID"), model="within"))
+
+
+plm12b<-plm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.practices_all, data = ratyr1, index=c("farmer_ID","dealer_ID"), model="within")
+summary(plm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.practices_all, data = ratyr1, index=c("farmer_ID","dealer_ID"), model="within"))
+
+
+plm13b<-plm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.practices_all, data = ratyr1, index=c("farmer_ID","dealer_ID"), model="within")
+summary(plm(seed_maturing_rating~gender+ maize.owner.agree.age +prim+maize.owner.practices_all, data = ratyr1, index=c("farmer_ID","dealer_ID"), model="within"))
+
+
+plm14b<-plm(seed_germinate_rating~gender+ maize.owner.agree.age +prim+maize.owner.practices_all, data = ratyr1, index=c("farmer_ID","dealer_ID"), model="within")
+summary(plm(seed_germinate_rating~gender+ maize.owner.agree.age +prim+maize.owner.practices_all, data = ratyr1, index=c("farmer_ID","dealer_ID"), model="within"))
+
+#midline 
+plm8m<-plm(score~gender+ maize.owner.agree.age +prim +maize.owner.practices_all, data = ratyr2, index=c("farmer_ID","dealer_ID"), model="within")
+summary(plm(score~gender+ maize.owner.agree.age +prim+maize.owner.practices_all, data = ratyr2, index=c("farmer_ID","dealer_ID"), model="within"))
+
+
+plm9m<-plm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim+maize.owner.practices_all, data = ratyr2, index=c("farmer_ID","dealer_ID"), model="within")
+summary(plm(seed_quality_general_rating~gender+ maize.owner.agree.age +prim+maize.owner.practices_all, data = ratyr2, index=c("farmer_ID","dealer_ID"), model="within"))
+
+
+plm10m<-plm(seed_yield_rating~gender+ maize.owner.agree.age +prim+maize.owner.practices_all, data = ratyr2, index=c("farmer_ID","dealer_ID"), model="within")
+summary(plm(seed_yield_rating~gender+ maize.owner.agree.age +prim +maize.owner.practices_all, data = ratyr2, index=c("farmer_ID","dealer_ID"), model="within"))
+
+
+plm11m<-plm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.practices_all, data = ratyr2, index=c("farmer_ID","dealer_ID"), model="within")
+summary(plm(seed_drought_rating~gender+ maize.owner.agree.age +prim +maize.owner.practices_all, data = ratyr2, index=c("farmer_ID","dealer_ID"), model="within"))
+
+
+plm12m<-plm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.practices_all, data = ratyr2, index=c("farmer_ID","dealer_ID"), model="within")
+summary(plm(seed_disease_rating~gender+ maize.owner.agree.age +prim +maize.owner.practices_all, data = ratyr2, index=c("farmer_ID","dealer_ID"), model="within"))
+
+
+plm13m<-plm(seed_maturing_rating~gender+ maize.owner.agree.age +prim +maize.owner.practices_all, data = ratyr2, index=c("farmer_ID","dealer_ID"), model="within")
+summary(plm(seed_maturing_rating~gender+ maize.owner.agree.age +prim+maize.owner.practices_all, data = ratyr2, index=c("farmer_ID","dealer_ID"), model="within"))
+
+
+plm14m<-plm(seed_germinate_rating~gender+ maize.owner.agree.age +prim+maize.owner.practices_all, data = ratyr2, index=c("farmer_ID","dealer_ID"), model="within")
+summary(plm(seed_germinate_rating~gender+ maize.owner.agree.age +prim+maize.owner.practices_all, data = ratyr2, index=c("farmer_ID","dealer_ID"), model="within"))
 
 
 #storing seed ratings
