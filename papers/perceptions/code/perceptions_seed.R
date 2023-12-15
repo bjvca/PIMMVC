@@ -501,7 +501,7 @@ baseline_dealer$maize.owner.agree.longe5.q47<-as.numeric(as.character(baseline_d
 baseline_dealer$maize.owner.quanprovider <-  rowMeans(baseline_dealer[c("maize.owner.agree.long10h.q22","maize.owner.agree.longe5.q47")],na.rm=T) 
 
 baseline_dealer$maize.owner.quan_nonstan<- baseline_dealer$maize.owner.quanprovider
-
+baseline_dealer$maize.owner.quan_nonstan[baseline_dealer$maize.owner.quan_nonstan> 2500] <- NA
 #standardising
 baseline_dealer <- baseline_dealer %>%  mutate(maize.owner.quanprovider = scale(maize.owner.quanprovider))
 
@@ -4443,6 +4443,7 @@ baseline_dealers$maize.owner.agree.longe4.q62[baseline_dealers$maize.owner.agree
 #baseline_dealers$quantitysold <- baseline_dealers$maize.owner.agree.long10h.q25+baseline_dealers$maize.owner.agree.longe7h.q37+baseline_dealers$maize.owner.agree.longe5.q50
 #                                          +baseline_dealers$maize.owner.agree.longe4.q62 #x
 baseline_dealers$quantitysold <- baseline_dealers$maize.owner.agree.long10h.q25+baseline_dealers$maize.owner.agree.longe5.q50    #x
+baseline_dealers$quantitysold[baseline_dealers$quantitysold > 2500] <- NA
 
 trim <- function(var,dataset,trim_perc=.02){
   
@@ -4450,7 +4451,7 @@ trim <- function(var,dataset,trim_perc=.02){
   
   return(dataset)}
 
-baseline_dealers <- trim("quantitysold",baseline_dealers,trim_perc=.02) #x
+
 
 #Revenue from maize seed in mln UGX
 baseline_dealers$maize.owner.agree.long10h.q26 <- as.numeric(as.character(baseline_dealers$maize.owner.agree.long10h.q26))

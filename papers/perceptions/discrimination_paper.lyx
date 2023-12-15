@@ -165,9 +165,9 @@ METHODS:
 \end_layout
 
 \begin_layout Abstract
-We use a unique dyadic data set of farmer-dealer links to explicitly control
- for quality differences between male- and female-managed agro-input shops
- and use the fact that a farmer has generally rated more than one agro-input
+We use a dyadic data set of farmer-dealer links to explicitly control for
+ quality differences between male- and female-managed agro-input shops and
+ use the fact that a farmer has generally rated more than one agro-input
  to account for farmer-level heterogeneity using fixed-effects regression.
  
 \end_layout
@@ -268,7 +268,7 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-Agricultural inputs such as inorganic fertilizers or improved seed varieties
+Agricultural inputs such as inorganic fertilizers or seed of improved varieties
  (high yielding cultivars like open-pollinated or hybrid maize varieties),
  lie somewhere on the continuum between experience goods and credence goods.
  When farmers inspect products at the agro-input shop, they can assess quality
@@ -801,7 +801,7 @@ One may argue that for results to hold for the entire farmer population,
  A second round of ratings by the same farmers of the same agro-dealers
  was collected in January and February 2022.
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
 This was done to increase the number of rating (as some farmers rated different
@@ -823,6 +823,10 @@ noprefix "false"
 \end_inset
 
 .
+ We confirm that our finding are robust to the decision to pool ratings
+ from different rounds by also estimating equations separately for first
+ and second round ratings.
+ Results are available from authors upon request.
 \end_layout
 
 \end_inset
@@ -833,24 +837,8 @@ noprefix "false"
  study.
  Note that we only include shops in our analysis if the gender of their
  manager did not change between the first and the second round of rating
- collections.
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-Change in gender between the two surveys is probably more likely if the
- shop owner employs someone to manage the shop (instead of running the shop
- themselves).
- These shops are probably also more likely to be more formal businesses.
- As such, removing these shops may mean that are results are specific to
- smaller, more informal agro-input shops where the manager is also the owner.
- At the same time, we feel that gender bias is particularly damaging for
- these types of agro-dealers.
-\end_layout
-
-\end_inset
-
-
+ collections, which led to the removal of 27 agro-input dealers (or 15 %
+ of the sample of agro-input dealers).
 \end_layout
 
 \begin_layout Standard
@@ -913,7 +901,7 @@ noprefix "false"
 \begin_inset Float table
 wide false
 sideways true
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -4199,11 +4187,11 @@ noprefix "false"
  provides descriptive statistics of the farmers included in the study.
  The average farmer in our sample works on a small farm, with about 3.4 acres
  of land for crop production.
- Half of our sampled farmers indicate that they used improved maize seed,
- i.e., seed of a hybrid or open-pollinated variety, on at least one plot in
- the season preceding the survey, and of the farmers that used improved
- seed, two-thirds obtained it from an agro-input shop, suggesting reasonable
- varietal turnover at this level.
+ Half of our sampled farmers indicate that they used maize seed of an improved
+ variety, i.e., seed of a hybrid or open-pollinated variety, on at least one
+ plot in the season preceding the survey, and of the farmers that used seed
+ of an improved variety, two-thirds obtained it from an agro-input shop,
+ suggesting reasonable varietal turnover at this level.
  However, fertilizer use is low.
  As a result, productivity is also low, with the average farmer harvesting
  only about 450 kg of maize per acre.
@@ -4682,7 +4670,7 @@ Sexpr{format(round(df_descriptives_farmer[86,5],digits=0),nsmall=0)}
 
 \begin_layout Plain Layout
 
-Farmer used improved maize seed for any field last season & 
+Farmer used improved maize seed varieties for any field last season & 
 \backslash
 Sexpr{format(round(df_descriptives_farmer[18,1],digits=3),nsmall=3)} & 
 \backslash
@@ -4899,12 +4887,26 @@ To measure the perceived quality of agro-input dealers, farmers were asked
 \end_layout
 
 \begin_layout Standard
-To measure the perceived quality of seed, farmers were asked to rate the
- improved maize varieties that dealers sell on a scale of one to five on
- their general quality, yield, drought tolerance, pest and disease tolerance,
+To measure the perceived quality of seed, farmers were asked to rate seed
+ of improved varieties that dealers sell on a scale of one to five on their
+ general quality, yield, drought tolerance, pest and disease tolerance,
  crop duration or maturation period, and germination reliability.
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+It should be noted that, when asked about particular traits of seed such
+ as yield, drought tolerance or maturation period, we asked farmer to rate
+ in the seed based on how it was advertised.
+ As such, a particular seed may still outperform another seed on a particular
+ trait (eg.
+ yield), but it may still be deemed of poor quality (eg.
+ if yield of a high yielding variety was disappointing).
+\end_layout
+
+\end_inset
+
  We also compute an average of these six seed-level ratings.
- Here, farmers were asked to rate the product itself.
  Farmers were also allowed to indicate that they could not rate seed on
  a particular dimension (for instance, because they never bought seed from
  the agro-input dealer).
@@ -6199,6 +6201,36 @@ d
 \end_inset
 
  is a residual.
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Note that, as farmers rated agro-input dealers twice, there is also a time
+ dimension in the data.
+ However, to keep notation uncluttered, we omit the time subscript from
+ the equation (see also footnote 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fn:dummy"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+\begin_inset CommandInset label
+LatexCommand label
+name "fn:timedim"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -6254,6 +6286,34 @@ noprefix "false"
 \end_inset
 
  that varies at the level of the farmer-dealer interaction.
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+In fact, given that we also have a time dimension in the data (see footnote
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fn:timedim"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+), we also have a time specific component which we capture by including
+ a time dummy in all specifications.
+\begin_inset CommandInset label
+LatexCommand label
+name "fn:dummy"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
  
 \end_layout
 
@@ -6711,7 +6771,7 @@ noprefix "false"
 \begin_inset Float table
 wide false
 sideways true
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -7221,7 +7281,8 @@ Note: The gender of the dealer is a dummy variable where 1 is male and 0
 
 \begin_layout Plain Layout
 
-Standard errors are clustered at the farmer level and presented in parentheses.
+Standard errors are clustered at the farmer level and presented in parentheses,
+ and a time dummy was included in all specifications.
 \backslash
 
 \backslash
@@ -7289,7 +7350,7 @@ noprefix "false"
 \begin_inset Float table
 wide false
 sideways true
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -7773,7 +7834,8 @@ The gender of the dealer is a dummy variable where 1 is male and 0 is female.
 
 \begin_layout Plain Layout
 
-Standard errors are clustered at the farmer level and presented in parentheses.
+Standard errors are clustered at the farmer level and presented in parentheses,
+ and a time dummy was included in all specifications.
 \backslash
 
 \backslash
@@ -7907,11 +7969,11 @@ literal "false"
  In particular, this index accounts for whether an agro-input dealer 1)
  always explains how seed should be used (seed spacing, seed rate, complementary
  inputs); 2) always recommends complementary inputs such as fertilizers
- and chemicals; 3) provides extension or training on how to use improved
- seed varieties to clients; 4) provides discounts to clients who buy large
- quantities of seed; 5) sells small quantities; 6) provides seed on credit;
- 7) has received a seed-related complaint from a customer; and 8) accepts
- mobile money as a payment modality.
+ and chemicals; 3) provides extension or training on how to use seed of
+ an improved variety to clients; 4) provides discounts to clients who buy
+ large quantities of seed; 5) sells small quantities; 6) provides seed on
+ credit; 7) has received a seed-related complaint from a customer; and 8)
+ accepts mobile money as a payment modality.
  Descriptive statistics for the variables which constitute this effort and
  service index are shown in Table 
 \begin_inset CommandInset ref
@@ -8038,8 +8100,8 @@ noprefix "false"
  To account for the possibility that the difference in price ratings between
  male- and female-managed agro-input shops is driven by actual price differences
 , we control for the average price the dealer charges for improved maize
- seed, as well as for the cost at which the dealer obtains seed, an important
- determinant of the price.
+ seed varieties, as well as for the cost at which the dealer obtains seed,
+ an important determinant of the price.
  The analysis confirms that there is a difference in perception of male
  and female dealers, and that this difference cannot be explained by actual
  price differences.
@@ -8155,7 +8217,7 @@ noprefix "false"
 \begin_inset Float table
 wide false
 sideways true
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -9270,7 +9332,8 @@ Note: The gender of the dealer is a dummy variable where 1 is male and 0
 
 \begin_layout Plain Layout
 
-Standard errors are clustered at the farmer level and presented in parentheses.
+Standard errors are clustered at the farmer level and presented in parentheses,
+ and a time dummy was included in all specifications.
 \backslash
 
 \backslash
@@ -10116,7 +10179,8 @@ Note: The gender of the dealer is a dummy variable where 1 is male and 0
 
 \begin_layout Plain Layout
 
-Standard errors are clustered at the farmer level and presented in parentheses.
+Standard errors are clustered at the farmer level and presented in parentheses,
+ and a time dummy was included in all specifications.
 \backslash
 
 \backslash
@@ -10767,7 +10831,8 @@ Note: The gender of the dealer is a dummy variable where 1 is male and 0
 
 \begin_layout Plain Layout
 
-Standard errors are clustered at the dealer level and presented in parentheses.
+Standard errors are clustered at the dealer level and presented in parentheses,
+ and a time dummy was included in all specifications.
 \backslash
 
 \backslash
@@ -11252,7 +11317,8 @@ Note: The gender of the dealer is a dummy variable where 1 is male and 0
 
 \begin_layout Plain Layout
 
-Standard errors are clustered at the dealer level and presented in parentheses.
+Standard errors are clustered at the dealer level and presented in parentheses,
+ and a time dummy was included in all specifications.
 \backslash
 
 \backslash
@@ -12421,7 +12487,8 @@ Note: The gender of the dealer is a dummy variable where 1 is male and 0
 
 \begin_layout Plain Layout
 
-Standard errors are clustered at the dealer level and presented in parentheses.
+Standard errors are clustered at the dealer level and presented in parentheses,
+ and a time dummy was included in all specifications.
 \backslash
 
 \backslash
@@ -13192,7 +13259,8 @@ Note: The gender of the dealer is a dummy variable where 1 is male and 0
 
 \begin_layout Plain Layout
 
-Standard errors are clustered at the dealer level and presented in parentheses.
+Standard errors are clustered at the dealer level and presented in parentheses,
+ and a time dummy was included in all specifications.
 \backslash
 
 \backslash
@@ -13439,9 +13507,9 @@ literal "false"
  Almost half of the agro-input shops in our sample are managed by women.
  If farmers do not trust these shops, this may pose challenges for varietal
  turnover at more aggregate levels: in a village where only women manage
- shops, farmers may be less likely to buy commercial improved seed from
- the market, and instead use farmer-saved seed obtained through informal
- channels, hindering agricultural productivity and rural transformation.
+ shops, farmers may be less likely to buy commercial seed from the market,
+ and instead use farmer-saved seed obtained through informal channels, hindering
+ agricultural productivity and rural transformation.
 \end_layout
 
 \begin_layout Standard
